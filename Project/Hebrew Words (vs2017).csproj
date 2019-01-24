@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4E4C05B-71ED-42DE-A2FA-345AE793A9AC}</ProjectGuid>
+    <ProjectGuid>{9117FA5B-51DE-481E-9CB1-65A606D6CA69}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Ordisoftware.HebrewWords</RootNamespace>
     <AssemblyName>Ordisoftware.HebrewWords</AssemblyName>
@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Dependencies\Core Library\Core.DIagnostics.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
@@ -53,15 +58,6 @@
     <Compile Include="Source\Classes\Letters.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
     <Compile Include="Source\Classes\SettingsHelper.cs" />
-    <Compile Include="Source\Forms\LettersControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\LettersControl.designer.cs">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm.DB.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Enums\ControlLocation.cs" />
     <Compile Include="Source\Enums\ViewModeType.cs" />
     <Compile Include="Source\Forms\AboutBox.cs">
@@ -71,6 +67,9 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.DB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Designer.cs">
@@ -104,12 +103,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Data\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dependencies\Core Library\Ordisoftware Code Library.url" />
+    <None Include="Dependencies\Fatcow\Fatcow.com Free Icons Pack.url" />
     <None Include="License\MPL 2.0.rtf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,7 +133,48 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Content Include="Dependencies\Core Library\GPL 3.0.txt" />
+    <Content Include="Dependencies\Core Library\LGPL 3.0.txt" />
+    <Content Include="Dependencies\Fatcow\add.ico" />
+    <Content Include="Dependencies\Fatcow\application_view_columns.ico" />
+    <Content Include="Dependencies\Fatcow\application_view_list.ico" />
+    <Content Include="Dependencies\Fatcow\calendar_view_month.ico" />
+    <Content Include="Dependencies\Fatcow\CC-BY 3.0.txt" />
+    <Content Include="Dependencies\Fatcow\clipboard_invoice.ico" />
+    <Content Include="Dependencies\Fatcow\control_stop_blue.ico" />
+    <Content Include="Dependencies\Fatcow\database_add.ico" />
+    <Content Include="Dependencies\Fatcow\database_save.ico" />
+    <Content Include="Dependencies\Fatcow\date_previous_gray.ico" />
+    <Content Include="Dependencies\Fatcow\delete.ico" />
+    <Content Include="Dependencies\Fatcow\door_out.ico" />
+    <Content Include="Dependencies\Fatcow\draw_eraser.ico" />
+    <Content Include="Dependencies\Fatcow\email.ico" />
+    <Content Include="Dependencies\Fatcow\events.ico" />
+    <Content Include="Dependencies\Fatcow\find.ico" />
+    <Content Include="Dependencies\Fatcow\folder_database.ico" />
+    <Content Include="Dependencies\Fatcow\gear_in.ico" />
+    <Content Include="Dependencies\Fatcow\help.ico" />
+    <Content Include="Dependencies\Fatcow\house.ico" />
+    <Content Include="Dependencies\Fatcow\info_rhombus.ico" />
+    <Content Include="Dependencies\Fatcow\interface_preferences.ico" />
+    <Content Include="Dependencies\Fatcow\lightning.ico" />
+    <Content Include="Dependencies\Fatcow\moon.ico" />
+    <Content Include="Dependencies\Fatcow\page_white_csharp.ico" />
+    <Content Include="Dependencies\Fatcow\page_white_edit.ico" />
+    <Content Include="Dependencies\Fatcow\pencil_add.ico" />
+    <Content Include="Dependencies\Fatcow\pencil_delete.ico" />
+    <Content Include="Dependencies\Fatcow\preferences.ico" />
+    <Content Include="Dependencies\Fatcow\printer.ico" />
+    <Content Include="Dependencies\Fatcow\save_as.ico" />
+    <Content Include="Dependencies\Fatcow\table_gear.ico" />
+    <Content Include="Dependencies\Fatcow\table_tab_search.ico" />
+    <Content Include="Dependencies\Fatcow\textfield_add.ico" />
+    <Content Include="Dependencies\Fatcow\textfield_delete.ico" />
+    <Content Include="Dependencies\Fatcow\text_document.ico" />
+    <Content Include="Dependencies\Fatcow\undo.ico" />
+    <Content Include="Dependencies\Fatcow\watch_window.ico" />
+    <Content Include="License\MPL 2.0.htm" />
+    <Content Include="License\MPL 2.0.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

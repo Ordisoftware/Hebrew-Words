@@ -121,6 +121,18 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Analyse")]
+        public global::Ordisoftware.HebrewWords.ViewModeType CurrentView {
+            get {
+                return ((global::Ordisoftware.HebrewWords.ViewModeType)(this["CurrentView"]));
+            }
+            set {
+                this["CurrentView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool UpgradeRequired {
             get {
@@ -131,15 +143,13 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Analyse")]
-        public global::Ordisoftware.HebrewWords.ViewModeType CurrentView {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Words")]
+        public string ConnectionString {
             get {
-                return ((global::Ordisoftware.HebrewWords.ViewModeType)(this["CurrentView"]));
-            }
-            set {
-                this["CurrentView"] = value;
+                return ((string)(this["ConnectionString"]));
             }
         }
     }

@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Hebrew Words")]
-[assembly: AssemblyDescription("A tool that helps for the translation of the Bible's hebrew words")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ordisoftware")]
-[assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-letters")]
-[assembly: AssemblyCopyright("Copyright 2012-2019 Olivier Rogier")]
-[assembly: AssemblyTrademark("www.ordisoftware.com")]
+[assembly: AssemblyCompany("Organization")]
+[assembly: AssemblyProduct("Hebrew Words")]
+[assembly: AssemblyCopyright("Copyright © Organization 2019")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("190A5BEF-2C8A-42D9-91E8-17DCBCE2C776")]
+[assembly: Guid("9117fa5b-51de-481e-9cb1-65a606d6ca69")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

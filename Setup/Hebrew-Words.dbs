@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project_299985" template="Default" database="Sqlite" >
+	<schema name="Default" schemaname="Default" >
+		<table name="Books" >
+			<column name="ID" type="integer" jt="4" mandatory="y" />
+			<column name="Name" type="varchar" length="20" jt="12" mandatory="y" />
+			<index name="Pk_Book_ID" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="Chapters" >
+			<column name="ID" type="integer" jt="4" mandatory="y" />
+			<column name="ELS50" type="text" jt="-1" />
+			<column name="BookID" type="integer" jt="4" />
+			<index name="Pk_Chapter_ID" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="Fk_Chapters" to_schema="Default" to_table="Books" >
+				<fk_column name="BookID" pk="ID" />
+			</fk>
+		</table>
+		<table name="Verses" >
+			<column name="ID" type="integer" jt="4" mandatory="y" />
+			<column name="Translation" type="text" jt="-1" mandatory="y" />
+			<column name="ChapterID" type="integer" jt="4" />
+			<index name="Pk_Verses_ID" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="Fk_Verses" to_schema="Default" to_table="Chapters" >
+				<fk_column name="ChapterID" pk="ID" />
+			</fk>
+		</table>
+		<table name="Words" >
+			<column name="ID" type="integer" jt="4" mandatory="y" />
+			<column name="Hebrew" type="text" jt="-1" mandatory="y" />
+			<column name="Translation" type="text" jt="-1" />
+			<column name="Comment" type="text" jt="-1" />
+			<column name="ConcordanceID" type="integer" jt="4" />
+			<column name="VerseID" type="integer" jt="4" />
+			<index name="Pk_Words_ID" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="Fk_Words" to_schema="Default" to_table="Verses" >
+				<fk_column name="VerseID" pk="ID" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.23.1.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/Olivier/Projects/Software/Public/Hebrew Words/Hebrew-Words.sqlite" />
+	<layout name="Default Layout" id="Layout_18f1bbf" show_relation="columns" >
+		<entity schema="Default" name="Books" color="C1D8EE" x="48" y="48" />
+		<entity schema="Default" name="Chapters" color="C1D8EE" x="192" y="48" />
+		<entity schema="Default" name="Verses" color="C1D8EE" x="368" y="48" />
+		<entity schema="Default" name="Words" color="C1D8EE" x="544" y="48" />
+	</layout>
+</project>
