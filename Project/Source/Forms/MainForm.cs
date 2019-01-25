@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Letters.
+/// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -58,6 +58,9 @@ namespace Ordisoftware.HebrewWords
     /// INdicate last showned tooltip.
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
+
+    private Font HebrewFont = new Font("Hebrew", 12F);
+    private Font LatinFont = new Font("Verdana", 10F);
 
     /// <summary>
     /// Default constructor.
@@ -207,14 +210,47 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewSearch for click events.
+    /// Event handler. Called by ActionViewVerses for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewSearch_Click(object sender, EventArgs e)
+    private void ActionViewVerses_Click(object sender, EventArgs e)
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
       SetView(ViewModeType.Verses);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewTranslations for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewTranslations_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      SetView(ViewModeType.Translations);
+      UpdateTranslations();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewELS50 for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewELS50_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      SetView(ViewModeType.ELS50);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewText for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewText_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Text);
     }
 
     /// <summary>
@@ -300,6 +336,11 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
+    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(EditELS50.Text);
+    }
+
     private void EditBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
@@ -307,7 +348,10 @@ namespace Ordisoftware.HebrewWords
 
     private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      UpdateView();
+      UpdateVerses();
+      UpdateTranslations();
+      UpdateRawText();
+      UpdateELS50All();
     }
 
     private void HebrewWordClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -321,59 +365,62 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(ex.Message);
+          ex.Manage();
         }
     }
 
-    private void UpdateView()
+    private void UpdateTranslations()
     {
-      EditELS50.Text = ( (ChapterItem)EditChapter.SelectedItem ).Row.ELS50;
-      EditVerses.SuspendLayout();
-      try
+      EditTranslations.Clear();
+      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
       {
-        EditVerses.Controls.Clear();
-        var control = new WordControl();
-        int dx = control.Width;
-        int dy = control.Height;
-        int marginX = 50 + 10;
-        int marginY = 50;
-        int x = EditVerses.Size.Width - dx - marginX;
-        int y = 10;
-        foreach ( var verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
-        {
-          var label = new Label();
-          label.AutoSize = false;
-          label.Width = 40;
-          label.Font = new Font("Calibri", 12f, FontStyle.Bold);
-          label.Location = new Point(x + dx + 0, y);
-          label.Text = verse.Number.ToString();
-          EditVerses.Controls.Add(label);
-          bool emptyline = false;
-          foreach ( var word in verse.GetWordsRows() )
-          {
-            emptyline = false;
-            control = new WordControl();
-            control.HebrewClicked += HebrewWordClicked;
-            control.Word = word;
-            control.Location = new Point(x, y);
-            EditVerses.Controls.Add(control);
-            x -= dx;
-            if ( x < 10 )
-            {
-              x = EditVerses.Size.Width - dx - marginX;
-              y += dy;
-              emptyline = true;
-            }
-          }
-          if (emptyline) y -= dy;
-          x = EditVerses.Size.Width - dx - marginX;
-          y = y + dy + marginY;
-        }
+        string str = verse.Number + ". ";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = str + word.Translation + " ";
+        str = str.Remove(str.Length - 1, 1);
+        EditTranslations.AppendText(str + Environment.NewLine);
       }
-      finally
+    }
+
+    private void UpdateELS50All()
+    {
+      void add(Font font, string str)
       {
-        EditVerses.ResumeLayout();
+        EditELS50All.SelectionFont = font;
+        EditELS50All.SelectedText = str;
       }
+      EditELS50All.Clear();
+      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows() )
+      {
+        add(HebrewFont, chapter.ELS50);
+        add(LatinFont, " :" + chapter.Number);
+        EditELS50All.AppendText(Environment.NewLine);
+      }
+      EditELS50All.SelectAll();
+      EditELS50All.SelectionAlignment = HorizontalAlignment.Right;
+      EditELS50All.SelectionLength = 0;
+    }
+
+    private void UpdateRawText()
+    {
+      void add(Font font, string str)
+      {
+        EditRawText.SelectionFont = font;
+        EditRawText.SelectedText = str;
+      }
+      EditRawText.Clear();
+      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
+      {
+        string str = "";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = word.Hebrew + " " + str;
+        add(HebrewFont, str);
+        add(LatinFont, ":" + verse.Number);
+        EditRawText.AppendText(Environment.NewLine);
+      }
+      EditRawText.SelectAll();
+      EditRawText.SelectionAlignment = HorizontalAlignment.Right;
+      EditRawText.SelectionLength = 0;
     }
 
   }

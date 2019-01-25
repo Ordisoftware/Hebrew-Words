@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Lettriq.
+/// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -18,20 +18,30 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Provide data view mode type.
+  /// Provide view mode type.
   /// </summary>
   public enum ViewModeType
   {
 
     /// <summary>
-    /// Text view mode to display the analyse panel.
+    /// Verses panels view mode.
     /// </summary>
     Verses,
 
     /// <summary>
-    /// Grid view mode to display the settings panel.
+    /// Translations panel view mode.
     /// </summary>
-    Settings
+    Translations,
+
+    /// <summary>
+    /// Text view mode.
+    /// </summary>
+    Text,
+
+    /// <summary>
+    /// ELS50 view mode.
+    /// </summary>
+    ELS50
 
   }
 

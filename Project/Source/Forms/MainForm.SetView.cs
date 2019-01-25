@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Lettriq.
+/// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -71,9 +71,36 @@ namespace Ordisoftware.HebrewWords
           ViewModeType.Verses,
           new ViewConnector
           {
-            MenuItem = ActionViewSearch,
-            Panel = PanelViewSearch,
-            Focused = PanelViewSearch
+            MenuItem = ActionViewVerses,
+            Panel = PanelViewVerses,
+            Focused = PanelViewVerses
+          }
+        },
+        {
+          ViewModeType.Translations,
+          new ViewConnector
+          {
+            MenuItem = ActionViewTranslations,
+            Panel = PanelViewTranslations,
+            Focused = EditTranslations
+          }
+        },
+        {
+          ViewModeType.Text,
+          new ViewConnector
+          {
+            MenuItem = ActionViewText,
+            Panel = PanelViewRawText,
+            Focused = EditRawText
+          }
+        },
+        {
+          ViewModeType.ELS50,
+          new ViewConnector
+          {
+            MenuItem = ActionViewELS50,
+            Panel = PanelViewELS50,
+            Focused = EditELS50All
           }
         }
       };

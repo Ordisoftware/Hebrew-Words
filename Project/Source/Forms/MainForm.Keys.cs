@@ -32,9 +32,6 @@ namespace Ordisoftware.HebrewWords
         case Keys.F1:
           ActionHelp.PerformClick();
           return true;
-        case Keys.F2:
-          ActionViewSearch.PerformClick();
-          return true;
         case Keys.F12:
           ActionAbout.PerformClick();
           return true;

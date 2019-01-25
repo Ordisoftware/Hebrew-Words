@@ -36,17 +36,24 @@
       this.PanelMainCenter = new System.Windows.Forms.Panel();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageText = new System.Windows.Forms.TabPage();
-      this.PanelViewSearch = new System.Windows.Forms.Panel();
-      this.EditELS50 = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
-      this.EditVerses = new System.Windows.Forms.Panel();
-      this.label3 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
-      this.EditChapter = new System.Windows.Forms.ComboBox();
+      this.PanelViewVerses = new System.Windows.Forms.Panel();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.PanelViewTranslations = new System.Windows.Forms.Panel();
+      this.EditTranslations = new System.Windows.Forms.TextBox();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.PanelViewRawText = new System.Windows.Forms.Panel();
+      this.EditRawText = new System.Windows.Forms.RichTextBox();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.PanelViewELS50 = new System.Windows.Forms.Panel();
+      this.EditELS50All = new System.Windows.Forms.RichTextBox();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.ActionCopyToClipboard = new System.Windows.Forms.Button();
       this.EditBook = new System.Windows.Forms.ComboBox();
-      this.PanelSepBottom = new System.Windows.Forms.Panel();
-      this.PanelProgress = new System.Windows.Forms.Panel();
-      this.BarProgress = new System.Windows.Forms.ProgressBar();
+      this.EditELS50 = new System.Windows.Forms.TextBox();
+      this.EditChapter = new System.Windows.Forms.ComboBox();
+      this.label4 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
@@ -59,6 +66,7 @@
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
+      this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionContact = new System.Windows.Forms.ToolStripButton();
@@ -67,6 +75,7 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +88,9 @@
       this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewText = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -103,8 +114,13 @@
       this.PanelMainCenter.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageText.SuspendLayout();
-      this.PanelViewSearch.SuspendLayout();
-      this.PanelProgress.SuspendLayout();
+      this.tabPage1.SuspendLayout();
+      this.PanelViewTranslations.SuspendLayout();
+      this.tabPage3.SuspendLayout();
+      this.PanelViewRawText.SuspendLayout();
+      this.tabPage2.SuspendLayout();
+      this.PanelViewELS50.SuspendLayout();
+      this.panel1.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
@@ -118,8 +134,7 @@
       // PanelMain
       // 
       this.PanelMain.Controls.Add(this.PanelMainOuter);
-      this.PanelMain.Controls.Add(this.PanelSepBottom);
-      this.PanelMain.Controls.Add(this.PanelProgress);
+      this.PanelMain.Controls.Add(this.panel1);
       this.PanelMain.Controls.Add(this.PanelSepTop);
       this.PanelMain.Controls.Add(this.PanelTitle);
       resources.ApplyResources(this.PanelMain, "PanelMain");
@@ -148,6 +163,9 @@
       // TabControl
       // 
       this.TabControl.Controls.Add(this.TabPageText);
+      this.TabControl.Controls.Add(this.tabPage1);
+      this.TabControl.Controls.Add(this.tabPage3);
+      this.TabControl.Controls.Add(this.tabPage2);
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
@@ -155,83 +173,140 @@
       // 
       // TabPageText
       // 
-      this.TabPageText.Controls.Add(this.PanelViewSearch);
+      this.TabPageText.Controls.Add(this.PanelViewVerses);
       resources.ApplyResources(this.TabPageText, "TabPageText");
       this.TabPageText.Name = "TabPageText";
       this.TabPageText.UseVisualStyleBackColor = true;
       // 
-      // PanelViewSearch
+      // PanelViewVerses
       // 
-      resources.ApplyResources(this.PanelViewSearch, "PanelViewSearch");
-      this.PanelViewSearch.BackColor = System.Drawing.SystemColors.Control;
-      this.PanelViewSearch.Controls.Add(this.EditELS50);
-      this.PanelViewSearch.Controls.Add(this.label4);
-      this.PanelViewSearch.Controls.Add(this.EditVerses);
-      this.PanelViewSearch.Controls.Add(this.label3);
-      this.PanelViewSearch.Controls.Add(this.label2);
-      this.PanelViewSearch.Controls.Add(this.EditChapter);
-      this.PanelViewSearch.Controls.Add(this.EditBook);
-      this.PanelViewSearch.Name = "PanelViewSearch";
+      resources.ApplyResources(this.PanelViewVerses, "PanelViewVerses");
+      this.PanelViewVerses.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelViewVerses.Name = "PanelViewVerses";
+      // 
+      // tabPage1
+      // 
+      this.tabPage1.Controls.Add(this.PanelViewTranslations);
+      resources.ApplyResources(this.tabPage1, "tabPage1");
+      this.tabPage1.Name = "tabPage1";
+      this.tabPage1.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewTranslations
+      // 
+      this.PanelViewTranslations.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewTranslations.Controls.Add(this.EditTranslations);
+      resources.ApplyResources(this.PanelViewTranslations, "PanelViewTranslations");
+      this.PanelViewTranslations.Name = "PanelViewTranslations";
+      // 
+      // EditTranslations
+      // 
+      this.EditTranslations.BackColor = System.Drawing.SystemColors.Window;
+      this.EditTranslations.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditTranslations, "EditTranslations");
+      this.EditTranslations.Name = "EditTranslations";
+      this.EditTranslations.ReadOnly = true;
+      // 
+      // tabPage3
+      // 
+      this.tabPage3.Controls.Add(this.PanelViewRawText);
+      resources.ApplyResources(this.tabPage3, "tabPage3");
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewRawText
+      // 
+      this.PanelViewRawText.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewRawText.Controls.Add(this.EditRawText);
+      resources.ApplyResources(this.PanelViewRawText, "PanelViewRawText");
+      this.PanelViewRawText.Name = "PanelViewRawText";
+      // 
+      // EditRawText
+      // 
+      this.EditRawText.BackColor = System.Drawing.SystemColors.Window;
+      this.EditRawText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditRawText, "EditRawText");
+      this.EditRawText.Name = "EditRawText";
+      this.EditRawText.ReadOnly = true;
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.PanelViewELS50);
+      resources.ApplyResources(this.tabPage2, "tabPage2");
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewELS50
+      // 
+      this.PanelViewELS50.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewELS50.Controls.Add(this.EditELS50All);
+      resources.ApplyResources(this.PanelViewELS50, "PanelViewELS50");
+      this.PanelViewELS50.Name = "PanelViewELS50";
+      // 
+      // EditELS50All
+      // 
+      this.EditELS50All.BackColor = System.Drawing.SystemColors.Window;
+      this.EditELS50All.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditELS50All, "EditELS50All");
+      this.EditELS50All.Name = "EditELS50All";
+      this.EditELS50All.ReadOnly = true;
+      // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.ActionCopyToClipboard);
+      this.panel1.Controls.Add(this.EditBook);
+      this.panel1.Controls.Add(this.EditELS50);
+      this.panel1.Controls.Add(this.EditChapter);
+      this.panel1.Controls.Add(this.label4);
+      this.panel1.Controls.Add(this.label2);
+      this.panel1.Controls.Add(this.label3);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // ActionCopyToClipboard
+      // 
+      this.ActionCopyToClipboard.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
+      this.ActionCopyToClipboard.UseVisualStyleBackColor = true;
+      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      // 
+      // EditBook
+      // 
+      this.EditBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditBook, "EditBook");
+      this.EditBook.FormattingEnabled = true;
+      this.EditBook.Name = "EditBook";
+      this.EditBook.SelectedIndexChanged += new System.EventHandler(this.EditBook_SelectedIndexChanged);
       // 
       // EditELS50
       // 
       resources.ApplyResources(this.EditELS50, "EditELS50");
+      this.EditELS50.BackColor = System.Drawing.Color.LightYellow;
+      this.EditELS50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditELS50.Name = "EditELS50";
+      // 
+      // EditChapter
+      // 
+      this.EditChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditChapter, "EditChapter");
+      this.EditChapter.FormattingEnabled = true;
+      this.EditChapter.Name = "EditChapter";
+      this.EditChapter.SelectedIndexChanged += new System.EventHandler(this.EditChapter_SelectedIndexChanged);
       // 
       // label4
       // 
       resources.ApplyResources(this.label4, "label4");
       this.label4.Name = "label4";
       // 
-      // EditVerses
-      // 
-      resources.ApplyResources(this.EditVerses, "EditVerses");
-      this.EditVerses.BackColor = System.Drawing.Color.Transparent;
-      this.EditVerses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditVerses.Name = "EditVerses";
-      // 
-      // label3
-      // 
-      resources.ApplyResources(this.label3, "label3");
-      this.label3.Name = "label3";
-      // 
       // label2
       // 
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
-      // EditChapter
+      // label3
       // 
-      this.EditChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditChapter.FormattingEnabled = true;
-      resources.ApplyResources(this.EditChapter, "EditChapter");
-      this.EditChapter.Name = "EditChapter";
-      this.EditChapter.SelectedIndexChanged += new System.EventHandler(this.EditChapter_SelectedIndexChanged);
-      // 
-      // EditBook
-      // 
-      this.EditBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditBook.FormattingEnabled = true;
-      resources.ApplyResources(this.EditBook, "EditBook");
-      this.EditBook.Name = "EditBook";
-      this.EditBook.SelectedIndexChanged += new System.EventHandler(this.EditBook_SelectedIndexChanged);
-      // 
-      // PanelSepBottom
-      // 
-      resources.ApplyResources(this.PanelSepBottom, "PanelSepBottom");
-      this.PanelSepBottom.Name = "PanelSepBottom";
-      // 
-      // PanelProgress
-      // 
-      this.PanelProgress.Controls.Add(this.BarProgress);
-      resources.ApplyResources(this.PanelProgress, "PanelProgress");
-      this.PanelProgress.Name = "PanelProgress";
-      // 
-      // BarProgress
-      // 
-      resources.ApplyResources(this.BarProgress, "BarProgress");
-      this.BarProgress.Name = "BarProgress";
-      this.BarProgress.Step = 1;
+      resources.ApplyResources(this.label3, "label3");
+      this.label3.Name = "label3";
       // 
       // PanelSepTop
       // 
@@ -299,6 +374,7 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionViewVerses,
             this.ActionExit,
             this.Sep4,
             this.ActionContact,
@@ -307,10 +383,23 @@
             this.ActionHelp,
             this.ActionAbout,
             this.Sep6,
+            this.ActionPreferences,
             this.MenuSettings,
-            this.ActionViewSearch});
+            this.ActionViewTranslations,
+            this.ActionViewText,
+            this.ActionViewELS50});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
+      // 
+      // ActionViewVerses
+      // 
+      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
+      this.ActionViewVerses.Name = "ActionViewVerses";
+      this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
+      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionExit
       // 
@@ -384,6 +473,14 @@
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
+      // 
+      // ActionPreferences
+      // 
+      this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
+      this.ActionPreferences.Name = "ActionPreferences";
+      this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
       // 
       // MenuSettings
       // 
@@ -479,15 +576,35 @@
       this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditConfirmClosing.Name = "EditConfirmClosing";
       // 
-      // ActionViewSearch
+      // ActionViewTranslations
       // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
-      this.ActionViewSearch.Name = "ActionViewSearch";
-      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewTranslations, "ActionViewTranslations");
+      this.ActionViewTranslations.Name = "ActionViewTranslations";
+      this.ActionViewTranslations.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
+      this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionViewText
+      // 
+      this.ActionViewText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewText, "ActionViewText");
+      this.ActionViewText.Name = "ActionViewText";
+      this.ActionViewText.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewText.Click += new System.EventHandler(this.ActionViewText_Click);
+      this.ActionViewText.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewText.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionViewELS50
+      // 
+      this.ActionViewELS50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewELS50, "ActionViewELS50");
+      this.ActionViewELS50.Name = "ActionViewELS50";
+      this.ActionViewELS50.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
+      this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // bindingNavigatorMoveFirstItem
       // 
@@ -592,9 +709,15 @@
       this.PanelMainCenter.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
       this.TabPageText.ResumeLayout(false);
-      this.PanelViewSearch.ResumeLayout(false);
-      this.PanelViewSearch.PerformLayout();
-      this.PanelProgress.ResumeLayout(false);
+      this.tabPage1.ResumeLayout(false);
+      this.PanelViewTranslations.ResumeLayout(false);
+      this.PanelViewTranslations.PerformLayout();
+      this.tabPage3.ResumeLayout(false);
+      this.PanelViewRawText.ResumeLayout(false);
+      this.tabPage2.ResumeLayout(false);
+      this.PanelViewELS50.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
@@ -643,8 +766,7 @@
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.TabPage TabPageText;
-    private System.Windows.Forms.Panel PanelViewSearch;
-    private System.Windows.Forms.ToolStripButton ActionViewSearch;
+    private System.Windows.Forms.ToolStripButton ActionViewTranslations;
     private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
     private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -685,16 +807,28 @@
     private System.Windows.Forms.BindingSource VersesBindingSource;
     private Data.DataSetTableAdapters.WordsTableAdapter WordsTableAdapter;
     private System.Windows.Forms.BindingSource WordsBindingSource;
-    private System.Windows.Forms.Panel PanelSepBottom;
-    private System.Windows.Forms.Panel PanelProgress;
-    private System.Windows.Forms.ProgressBar BarProgress;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.ComboBox EditChapter;
     private System.Windows.Forms.ComboBox EditBook;
-    private System.Windows.Forms.Panel EditVerses;
     private System.Windows.Forms.TextBox EditELS50;
     private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Button ActionCopyToClipboard;
+    private System.Windows.Forms.ToolStripButton ActionViewVerses;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelViewVerses;
+    private System.Windows.Forms.TabPage tabPage1;
+    private System.Windows.Forms.Panel PanelViewTranslations;
+    private System.Windows.Forms.TextBox EditTranslations;
+    internal System.Windows.Forms.ToolStripButton ActionPreferences;
+    private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.Panel PanelViewELS50;
+    private System.Windows.Forms.ToolStripButton ActionViewELS50;
+    private System.Windows.Forms.ToolStripButton ActionViewText;
+    private System.Windows.Forms.TabPage tabPage3;
+    private System.Windows.Forms.Panel PanelViewRawText;
+    private System.Windows.Forms.RichTextBox EditRawText;
+    private System.Windows.Forms.RichTextBox EditELS50All;
   }
 }
 

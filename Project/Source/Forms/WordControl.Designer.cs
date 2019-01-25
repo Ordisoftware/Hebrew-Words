@@ -42,16 +42,16 @@
       this.FlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
       this.FlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-      this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 50);
+      this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 62);
       this.FlowLayoutPanel.TabIndex = 0;
       // 
       // LabelHebrew
       // 
       this.LabelHebrew.AutoSize = true;
-      this.LabelHebrew.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LabelHebrew.Location = new System.Drawing.Point(104, 0);
+      this.LabelHebrew.Font = new System.Drawing.Font("Hebrew", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.LabelHebrew.Location = new System.Drawing.Point(82, 0);
       this.LabelHebrew.Name = "LabelHebrew";
-      this.LabelHebrew.Size = new System.Drawing.Size(73, 23);
+      this.LabelHebrew.Size = new System.Drawing.Size(95, 30);
       this.LabelHebrew.TabIndex = 0;
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Text = "ty>arb";
@@ -61,9 +61,10 @@
       // 
       this.EditTranslation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.EditTranslation.Location = new System.Drawing.Point(3, 26);
+      this.EditTranslation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.EditTranslation.Location = new System.Drawing.Point(3, 33);
       this.EditTranslation.Name = "EditTranslation";
-      this.EditTranslation.Size = new System.Drawing.Size(174, 20);
+      this.EditTranslation.Size = new System.Drawing.Size(174, 22);
       this.EditTranslation.TabIndex = 1;
       this.EditTranslation.Text = "Pour commencer";
       this.EditTranslation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -75,7 +76,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.FlowLayoutPanel);
       this.Name = "WordControl";
-      this.Size = new System.Drawing.Size(180, 50);
+      this.Size = new System.Drawing.Size(180, 62);
       this.FlowLayoutPanel.ResumeLayout(false);
       this.FlowLayoutPanel.PerformLayout();
       this.ResumeLayout(false);

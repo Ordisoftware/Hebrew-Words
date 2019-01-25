@@ -123,14 +123,13 @@ namespace Ordisoftware.HebrewWords
         string strELS50 = "";
         foreach ( AllBooks bookid in Enum.GetValues(typeof(AllBooks)) )
         {
-          UpdateProgress((int)bookid, Enum.GetValues(typeof(AllBooks)).Length);
           string filename = path + bookid.ToString() + ".txt";
           string[] filecontent = File.ReadAllLines(filename);
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
           book.Hebrew = TorahHebrewNames.Books[bookid];
-          book.Name = bookid.ToString(); 
+          book.Name = bookid.ToString();
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;
           int countVerses = 0;
@@ -178,7 +177,7 @@ namespace Ordisoftware.HebrewWords
                 listWords = convert(line).Split(' ').Reverse().ToArray();
               }
               foreach ( string s in listWords )
-                if (s != "")
+                if ( s != "" )
                 {
                   word = DataSet.Words.NewWordsRow();
                   word.Number = ++countWords;
