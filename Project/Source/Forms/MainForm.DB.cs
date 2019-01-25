@@ -68,7 +68,6 @@ namespace Ordisoftware.HebrewWords
                             ID text NOT NULL,
                             ChapterID text NOT NULL,
                             Number integer NOT NULL,
-                            Translation text NOT NULL,
                             CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                             FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                           )");
@@ -78,10 +77,10 @@ namespace Ordisoftware.HebrewWords
                            Number integer NOT NULL,
                            Hebrew text NOT NULL,
                            Translation text NOT NULL,
-                           Comment text NOT NULL,
                            CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                            FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                          )");
+        CreateData();
       }
       finally
       {
@@ -90,25 +89,15 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Create or re-create database content
+    /// Create database content.
     /// </summary>
     public void CreateData()
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
-      var command = new OdbcCommand("DELETE FROM Words", connection);
-      command.ExecuteNonQuery();
-      command = new OdbcCommand("DELETE FROM Verses", connection);
-      command.ExecuteNonQuery();
-      command = new OdbcCommand("DELETE FROM Chapters", connection);
-      command.ExecuteNonQuery();
-      command = new OdbcCommand("DELETE FROM Books", connection);
-      command.ExecuteNonQuery();
+      var command = new OdbcCommand("select count(*) FROM Books", connection);
+      if ( (int)command.ExecuteScalar() > 0 ) return;
       connection.Close();
-      WordsTableAdapter.Fill(DataSet.Words);
-      VersesTableAdapter.Fill(DataSet.Verses);
-      ChaptersTableAdapter.Fill(DataSet.Chapters);
-      BooksTableAdapter.Fill(DataSet.Books);
       LoadFromFiles();
       TableAdapterManager.UpdateAll(DataSet);
     }
@@ -131,6 +120,7 @@ namespace Ordisoftware.HebrewWords
         Data.DataSet.VersesRow verse = null;
         Data.DataSet.WordsRow word = null;
         string path = Program.DocumentsPath;
+        string strELS50 = "";
         foreach ( AllBooks bookid in Enum.GetValues(typeof(AllBooks)) )
         {
           UpdateProgress((int)bookid, Enum.GetValues(typeof(AllBooks)).Length);
@@ -139,14 +129,12 @@ namespace Ordisoftware.HebrewWords
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
-          book.Hebrew = bookid.ToString();
-          book.Name = TorahNames.BookNames[bookid];
+          book.Hebrew = TorahHebrewNames.Books[bookid];
+          book.Name = bookid.ToString(); 
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;
           int countVerses = 0;
           int countWords = 0;
-          bool verseAdded = false;
-          string strELS50 = "";
           foreach ( string item in filecontent )
           {
             string line = item;
@@ -182,9 +170,7 @@ namespace Ordisoftware.HebrewWords
                 verse.Number = ++countVerses;
                 verse.ID = Guid.NewGuid().ToString();
                 verse.ChapterID = chapter.ID;
-                verse.Translation = "";
                 listWords = convert(list[0]).Split(' ').Reverse().ToArray();
-                verseAdded = true;
                 DataSet.Verses.AddVersesRow(verse);
               }
               else
@@ -200,7 +186,6 @@ namespace Ordisoftware.HebrewWords
                   word.VerseID = verse.ID;
                   word.Hebrew = s;
                   word.Translation = "";
-                  word.Comment = "";
                   DataSet.Words.AddWordsRow(word);
                   strELS50 = s + strELS50;
                 }
@@ -210,8 +195,14 @@ namespace Ordisoftware.HebrewWords
         if ( chapter != null )
         {
           chapter.ELS50 = "";
-          //chapter.InitializeHiddenVerse();
           DataSet.Chapters.AddChaptersRow(chapter);
+          foreach ( var v in Letters.FinaleDisable ) strELS50 = strELS50.Replace(v.Key, v.Value);
+          int i = strELS50.Length - 1;
+          while ( i >= 0 && strELS50[i] != 't' ) i--;
+          string res = "";
+          for ( int p = i; p >= 0; p -= 50 ) res = strELS50[p] + res;
+          chapter.ELS50 = res;
+          strELS50 = "";
         }
         TableAdapterManager.UpdateAll(DataSet);
       }

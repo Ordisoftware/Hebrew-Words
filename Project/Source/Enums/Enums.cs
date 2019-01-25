@@ -56,10 +56,10 @@ namespace Ordisoftware.HebrewWords
     Proverbs = AllBooks.Proverbs,
   };
 
-  static public class TorahNames
+  static public class TorahHebrewNames
   {
 
-    static public Dictionary<AllBooks, string> BookNames = new Dictionary<AllBooks, string>()
+    static public Dictionary<AllBooks, string> Books = new Dictionary<AllBooks, string>()
     {
       // Torah
       { AllBooks.Bereshit, "ty>arb rpc" },
@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewWords
       { AllBooks.Proverbs, "yl>m rpc" }
     };
 
-    static public Dictionary<string, string> ParashaNames = new Dictionary<string, string>()
+    static public Dictionary<string, string> Parashot = new Dictionary<string, string>()
     {
       { "01.01.1", "ty>arb t>rp" },
       { "09.06.1", "xn t>rp" },

@@ -76,16 +76,61 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      Refresh();
       Program.Settings.Retrieve();
-      CreateDatabaseIfNotExists();
-      // TODO progress
-      BooksTableAdapter.Fill(DataSet.Books);
-      WordsTableAdapter.Fill(DataSet.Words);
-      VersesTableAdapter.Fill(DataSet.Verses);
-      ChaptersTableAdapter.Fill(DataSet.Chapters);
-      CreateData(); // TODO remove
       SetView(Program.Settings.CurrentView, true);
+    }
+
+    private void MainForm_Shown(object sender, EventArgs e)
+    {
+      Refresh();
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        CreateDatabaseIfNotExists();
+        BooksTableAdapter.Fill(DataSet.Books);
+        WordsTableAdapter.Fill(DataSet.Words);
+        VersesTableAdapter.Fill(DataSet.Verses);
+        ChaptersTableAdapter.Fill(DataSet.Chapters);
+        InitBooksCombobox();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
+    }
+
+    private class BookItem
+    {
+      public Data.DataSet.BooksRow Row { get; set; }
+      public override string ToString() { return Row.Name; }
+    }
+
+    private class ChapterItem
+    {
+      public Data.DataSet.ChaptersRow Row { get; set; }
+      public override string ToString() { return Row.Number.ToString(); }
+    }
+
+    private void InitBooksCombobox()
+    {
+      EditBook.Items.Clear();
+      foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+        EditBook.Items.Add(new BookItem() { Row = book });
+      EditBook.SelectedIndex = 0;
+    }
+
+    private void InitChaptersCombobox()
+    {
+      if ( EditBook.SelectedItem == null ) return;
+      EditChapter.Items.Clear();
+      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows() )
+        EditChapter.Items.Add(new ChapterItem() { Row = chapter });
+      EditChapter.SelectedIndex = 0;
+    }
+
+    private void MainForm_ClientSizeChanged(object sender, EventArgs e)
+    {
+      InitChaptersCombobox();
     }
 
     /// <summary>
@@ -255,25 +300,82 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
-    private void BooksBindingSource_CurrentChanged(object sender, EventArgs e)
+    private void EditBook_SelectedIndexChanged(object sender, EventArgs e)
     {
+      InitChaptersCombobox();
+    }
+
+    private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      UpdateView();
+    }
+
+    private void HebrewWordClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = @"c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe";
+          process.StartInfo.Arguments = (sender as LinkLabel).Text;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          DisplayManager.ShowError(ex.Message);
+        }
+    }
+
+    private void UpdateView()
+    {
+      EditELS50.Text = ( (ChapterItem)EditChapter.SelectedItem ).Row.ELS50;
+      EditVerses.SuspendLayout();
       try
       {
-        //var chapters = ( (Data.DataSet.BooksRow)((DataRowView)BooksBindingSource.Current).Row ).GetChaptersRows();
-        //MessageBox.Show(chapters.Count().ToString());
+        EditVerses.Controls.Clear();
+        var control = new WordControl();
+        int dx = control.Width;
+        int dy = control.Height;
+        int marginX = 50 + 10;
+        int marginY = 50;
+        int x = EditVerses.Size.Width - dx - marginX;
+        int y = 10;
+        foreach ( var verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
+        {
+          var label = new Label();
+          label.AutoSize = false;
+          label.Width = 40;
+          label.Font = new Font("Calibri", 12f, FontStyle.Bold);
+          label.Location = new Point(x + dx + 0, y);
+          label.Text = verse.Number.ToString();
+          EditVerses.Controls.Add(label);
+          bool emptyline = false;
+          foreach ( var word in verse.GetWordsRows() )
+          {
+            emptyline = false;
+            control = new WordControl();
+            control.HebrewClicked += HebrewWordClicked;
+            control.Word = word;
+            control.Location = new Point(x, y);
+            EditVerses.Controls.Add(control);
+            x -= dx;
+            if ( x < 10 )
+            {
+              x = EditVerses.Size.Width - dx - marginX;
+              y += dy;
+              emptyline = true;
+            }
+          }
+          if (emptyline) y -= dy;
+          x = EditVerses.Size.Width - dx - marginX;
+          y = y + dy + marginY;
+        }
       }
-      catch
+      finally
       {
+        EditVerses.ResumeLayout();
       }
     }
 
-    private void booksBindingNavigatorSaveItem1_Click(object sender, EventArgs e)
-    {
-      this.Validate();
-      this.BooksBindingSource.EndEdit();
-      this.TableAdapterManager.UpdateAll(this.DataSet);
-
-    }
   }
 
 }

@@ -37,29 +37,24 @@
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageText = new System.Windows.Forms.TabPage();
       this.PanelViewSearch = new System.Windows.Forms.Panel();
-      this.wordsDataGridView = new System.Windows.Forms.DataGridView();
-      this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.versesDataGridView = new System.Windows.Forms.DataGridView();
-      this.booksBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-      this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
-      this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
-      this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-      this.booksBindingNavigatorSaveItem1 = new System.Windows.Forms.ToolStripButton();
-      this.chaptersDataGridView = new System.Windows.Forms.DataGridView();
-      this.booksDataGridView = new System.Windows.Forms.DataGridView();
+      this.EditELS50 = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
+      this.EditVerses = new System.Windows.Forms.Panel();
+      this.label3 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.EditChapter = new System.Windows.Forms.ComboBox();
+      this.EditBook = new System.Windows.Forms.ComboBox();
+      this.PanelSepBottom = new System.Windows.Forms.Panel();
+      this.PanelProgress = new System.Windows.Forms.Panel();
+      this.BarProgress = new System.Windows.Forms.ProgressBar();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
+      this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -97,34 +92,11 @@
       this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
       this.booksBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-      this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
-      this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.PanelProgress = new System.Windows.Forms.Panel();
-      this.BarProgress = new System.Windows.Forms.ProgressBar();
-      this.PanelSepBottom = new System.Windows.Forms.Panel();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -132,21 +104,15 @@
       this.TabControl.SuspendLayout();
       this.TabPageText.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
+      this.PanelProgress.SuspendLayout();
+      this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.versesDataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.booksBindingNavigator)).BeginInit();
-      this.booksBindingNavigator.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.chaptersDataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).BeginInit();
-      this.PanelTitle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
-      this.ToolStrip.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-      this.PanelProgress.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
+      this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -198,175 +164,74 @@
       // 
       resources.ApplyResources(this.PanelViewSearch, "PanelViewSearch");
       this.PanelViewSearch.BackColor = System.Drawing.SystemColors.Control;
-      this.PanelViewSearch.Controls.Add(this.wordsDataGridView);
-      this.PanelViewSearch.Controls.Add(this.versesDataGridView);
-      this.PanelViewSearch.Controls.Add(this.booksBindingNavigator);
-      this.PanelViewSearch.Controls.Add(this.chaptersDataGridView);
-      this.PanelViewSearch.Controls.Add(this.booksDataGridView);
+      this.PanelViewSearch.Controls.Add(this.EditELS50);
+      this.PanelViewSearch.Controls.Add(this.label4);
+      this.PanelViewSearch.Controls.Add(this.EditVerses);
+      this.PanelViewSearch.Controls.Add(this.label3);
+      this.PanelViewSearch.Controls.Add(this.label2);
+      this.PanelViewSearch.Controls.Add(this.EditChapter);
+      this.PanelViewSearch.Controls.Add(this.EditBook);
       this.PanelViewSearch.Name = "PanelViewSearch";
       // 
-      // wordsDataGridView
+      // EditELS50
       // 
-      this.wordsDataGridView.AutoGenerateColumns = false;
-      this.wordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.wordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36});
-      this.wordsDataGridView.DataSource = this.WordsBindingSource;
-      resources.ApplyResources(this.wordsDataGridView, "wordsDataGridView");
-      this.wordsDataGridView.Name = "wordsDataGridView";
+      resources.ApplyResources(this.EditELS50, "EditELS50");
+      this.EditELS50.Name = "EditELS50";
       // 
-      // WordsBindingSource
+      // label4
       // 
-      this.WordsBindingSource.DataMember = "Verses_Words";
-      this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      resources.ApplyResources(this.label4, "label4");
+      this.label4.Name = "label4";
       // 
-      // VersesBindingSource
+      // EditVerses
       // 
-      this.VersesBindingSource.DataMember = "Chapters_Verses";
-      this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
+      resources.ApplyResources(this.EditVerses, "EditVerses");
+      this.EditVerses.BackColor = System.Drawing.Color.Transparent;
+      this.EditVerses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditVerses.Name = "EditVerses";
       // 
-      // ChaptersBindingSource
+      // label3
       // 
-      this.ChaptersBindingSource.DataMember = "Books_Chapters";
-      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      resources.ApplyResources(this.label3, "label3");
+      this.label3.Name = "label3";
       // 
-      // versesDataGridView
+      // label2
       // 
-      this.versesDataGridView.AutoGenerateColumns = false;
-      this.versesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.versesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30});
-      this.versesDataGridView.DataSource = this.VersesBindingSource;
-      resources.ApplyResources(this.versesDataGridView, "versesDataGridView");
-      this.versesDataGridView.Name = "versesDataGridView";
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
       // 
-      // booksBindingNavigator
+      // EditChapter
       // 
-      this.booksBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
-      this.booksBindingNavigator.BindingSource = this.BooksBindingSource;
-      this.booksBindingNavigator.CountItem = this.bindingNavigatorCountItem1;
-      this.booksBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem1;
-      this.booksBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem1,
-            this.bindingNavigatorMovePreviousItem1,
-            this.bindingNavigatorSeparator3,
-            this.bindingNavigatorPositionItem1,
-            this.bindingNavigatorCountItem1,
-            this.bindingNavigatorSeparator4,
-            this.bindingNavigatorMoveNextItem1,
-            this.bindingNavigatorMoveLastItem1,
-            this.bindingNavigatorSeparator5,
-            this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1,
-            this.booksBindingNavigatorSaveItem1});
-      resources.ApplyResources(this.booksBindingNavigator, "booksBindingNavigator");
-      this.booksBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
-      this.booksBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem1;
-      this.booksBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem1;
-      this.booksBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
-      this.booksBindingNavigator.Name = "booksBindingNavigator";
-      this.booksBindingNavigator.PositionItem = this.bindingNavigatorPositionItem1;
+      this.EditChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditChapter.FormattingEnabled = true;
+      resources.ApplyResources(this.EditChapter, "EditChapter");
+      this.EditChapter.Name = "EditChapter";
+      this.EditChapter.SelectedIndexChanged += new System.EventHandler(this.EditChapter_SelectedIndexChanged);
       // 
-      // bindingNavigatorAddNewItem1
+      // EditBook
       // 
-      this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorAddNewItem1, "bindingNavigatorAddNewItem1");
-      this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
+      this.EditBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditBook.FormattingEnabled = true;
+      resources.ApplyResources(this.EditBook, "EditBook");
+      this.EditBook.Name = "EditBook";
+      this.EditBook.SelectedIndexChanged += new System.EventHandler(this.EditBook_SelectedIndexChanged);
       // 
-      // bindingNavigatorCountItem1
+      // PanelSepBottom
       // 
-      this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-      resources.ApplyResources(this.bindingNavigatorCountItem1, "bindingNavigatorCountItem1");
+      resources.ApplyResources(this.PanelSepBottom, "PanelSepBottom");
+      this.PanelSepBottom.Name = "PanelSepBottom";
       // 
-      // bindingNavigatorDeleteItem1
+      // PanelProgress
       // 
-      this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorDeleteItem1, "bindingNavigatorDeleteItem1");
-      this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+      this.PanelProgress.Controls.Add(this.BarProgress);
+      resources.ApplyResources(this.PanelProgress, "PanelProgress");
+      this.PanelProgress.Name = "PanelProgress";
       // 
-      // bindingNavigatorMoveFirstItem1
+      // BarProgress
       // 
-      this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveFirstItem1, "bindingNavigatorMoveFirstItem1");
-      this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
-      // 
-      // bindingNavigatorMovePreviousItem1
-      // 
-      this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMovePreviousItem1, "bindingNavigatorMovePreviousItem1");
-      this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
-      // 
-      // bindingNavigatorSeparator3
-      // 
-      this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
-      resources.ApplyResources(this.bindingNavigatorSeparator3, "bindingNavigatorSeparator3");
-      // 
-      // bindingNavigatorPositionItem1
-      // 
-      resources.ApplyResources(this.bindingNavigatorPositionItem1, "bindingNavigatorPositionItem1");
-      this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
-      // 
-      // bindingNavigatorSeparator4
-      // 
-      this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
-      resources.ApplyResources(this.bindingNavigatorSeparator4, "bindingNavigatorSeparator4");
-      // 
-      // bindingNavigatorMoveNextItem1
-      // 
-      this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveNextItem1, "bindingNavigatorMoveNextItem1");
-      this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
-      // 
-      // bindingNavigatorMoveLastItem1
-      // 
-      this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveLastItem1, "bindingNavigatorMoveLastItem1");
-      this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
-      // 
-      // bindingNavigatorSeparator5
-      // 
-      this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
-      resources.ApplyResources(this.bindingNavigatorSeparator5, "bindingNavigatorSeparator5");
-      // 
-      // booksBindingNavigatorSaveItem1
-      // 
-      this.booksBindingNavigatorSaveItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.booksBindingNavigatorSaveItem1, "booksBindingNavigatorSaveItem1");
-      this.booksBindingNavigatorSaveItem1.Name = "booksBindingNavigatorSaveItem1";
-      // 
-      // chaptersDataGridView
-      // 
-      this.chaptersDataGridView.AutoGenerateColumns = false;
-      this.chaptersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.chaptersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26});
-      this.chaptersDataGridView.DataSource = this.ChaptersBindingSource;
-      resources.ApplyResources(this.chaptersDataGridView, "chaptersDataGridView");
-      this.chaptersDataGridView.Name = "chaptersDataGridView";
-      // 
-      // booksDataGridView
-      // 
-      this.booksDataGridView.AutoGenerateColumns = false;
-      this.booksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.booksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22});
-      this.booksDataGridView.DataSource = this.BooksBindingSource;
-      resources.ApplyResources(this.booksDataGridView, "booksDataGridView");
-      this.booksDataGridView.Name = "booksDataGridView";
+      resources.ApplyResources(this.BarProgress, "BarProgress");
+      this.BarProgress.Name = "BarProgress";
+      this.BarProgress.Step = 1;
       // 
       // PanelSepTop
       // 
@@ -385,6 +250,31 @@
       this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
+      // 
+      // WordsBindingSource
+      // 
+      this.WordsBindingSource.DataMember = "Verses_Words";
+      this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // VersesBindingSource
+      // 
+      this.VersesBindingSource.DataMember = "Chapters_Verses";
+      this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
+      // 
+      // ChaptersBindingSource
+      // 
+      this.ChaptersBindingSource.DataMember = "Books_Chapters";
+      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // moonPhaseImagePictureBox
       // 
@@ -659,124 +549,6 @@
       this.booksBindingNavigatorSaveItem.Name = "booksBindingNavigatorSaveItem";
       resources.ApplyResources(this.booksBindingNavigatorSaveItem, "booksBindingNavigatorSaveItem");
       // 
-      // dataGridViewTextBoxColumn31
-      // 
-      this.dataGridViewTextBoxColumn31.DataPropertyName = "ID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn31, "dataGridViewTextBoxColumn31");
-      this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-      // 
-      // dataGridViewTextBoxColumn32
-      // 
-      this.dataGridViewTextBoxColumn32.DataPropertyName = "VerseID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn32, "dataGridViewTextBoxColumn32");
-      this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-      // 
-      // dataGridViewTextBoxColumn33
-      // 
-      this.dataGridViewTextBoxColumn33.DataPropertyName = "Number";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn33, "dataGridViewTextBoxColumn33");
-      this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-      // 
-      // dataGridViewTextBoxColumn34
-      // 
-      this.dataGridViewTextBoxColumn34.DataPropertyName = "Hebrew";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn34, "dataGridViewTextBoxColumn34");
-      this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-      // 
-      // dataGridViewTextBoxColumn35
-      // 
-      this.dataGridViewTextBoxColumn35.DataPropertyName = "Translation";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn35, "dataGridViewTextBoxColumn35");
-      this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-      // 
-      // dataGridViewTextBoxColumn36
-      // 
-      this.dataGridViewTextBoxColumn36.DataPropertyName = "Comment";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn36, "dataGridViewTextBoxColumn36");
-      this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // dataGridViewTextBoxColumn27
-      // 
-      this.dataGridViewTextBoxColumn27.DataPropertyName = "ID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn27, "dataGridViewTextBoxColumn27");
-      this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-      // 
-      // dataGridViewTextBoxColumn28
-      // 
-      this.dataGridViewTextBoxColumn28.DataPropertyName = "ChapterID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn28, "dataGridViewTextBoxColumn28");
-      this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-      // 
-      // dataGridViewTextBoxColumn29
-      // 
-      this.dataGridViewTextBoxColumn29.DataPropertyName = "Number";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn29, "dataGridViewTextBoxColumn29");
-      this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-      // 
-      // dataGridViewTextBoxColumn30
-      // 
-      this.dataGridViewTextBoxColumn30.DataPropertyName = "Translation";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn30, "dataGridViewTextBoxColumn30");
-      this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-      // 
-      // dataGridViewTextBoxColumn23
-      // 
-      this.dataGridViewTextBoxColumn23.DataPropertyName = "ID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn23, "dataGridViewTextBoxColumn23");
-      this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-      // 
-      // dataGridViewTextBoxColumn24
-      // 
-      this.dataGridViewTextBoxColumn24.DataPropertyName = "BookID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn24, "dataGridViewTextBoxColumn24");
-      this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-      // 
-      // dataGridViewTextBoxColumn25
-      // 
-      this.dataGridViewTextBoxColumn25.DataPropertyName = "Number";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn25, "dataGridViewTextBoxColumn25");
-      this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-      // 
-      // dataGridViewTextBoxColumn26
-      // 
-      this.dataGridViewTextBoxColumn26.DataPropertyName = "ELS50";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn26, "dataGridViewTextBoxColumn26");
-      this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-      // 
-      // dataGridViewTextBoxColumn19
-      // 
-      this.dataGridViewTextBoxColumn19.DataPropertyName = "ID";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn19, "dataGridViewTextBoxColumn19");
-      this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-      // 
-      // dataGridViewTextBoxColumn20
-      // 
-      this.dataGridViewTextBoxColumn20.DataPropertyName = "Number";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn20, "dataGridViewTextBoxColumn20");
-      this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-      // 
-      // dataGridViewTextBoxColumn21
-      // 
-      this.dataGridViewTextBoxColumn21.DataPropertyName = "Hebrew";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn21, "dataGridViewTextBoxColumn21");
-      this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-      // 
-      // dataGridViewTextBoxColumn22
-      // 
-      this.dataGridViewTextBoxColumn22.DataPropertyName = "Name";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn22, "dataGridViewTextBoxColumn22");
-      this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -802,36 +574,18 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // PanelProgress
-      // 
-      this.PanelProgress.Controls.Add(this.BarProgress);
-      resources.ApplyResources(this.PanelProgress, "PanelProgress");
-      this.PanelProgress.Name = "PanelProgress";
-      // 
-      // BarProgress
-      // 
-      resources.ApplyResources(this.BarProgress, "BarProgress");
-      this.BarProgress.Name = "BarProgress";
-      this.BarProgress.Step = 1;
-      // 
-      // PanelSepBottom
-      // 
-      resources.ApplyResources(this.PanelSepBottom, "PanelSepBottom");
-      this.PanelSepBottom.Name = "PanelSepBottom";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.ToolStrip);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "MainForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
       this.Load += new System.EventHandler(this.MainForm_Load);
+      this.Shown += new System.EventHandler(this.MainForm_Shown);
+      this.ClientSizeChanged += new System.EventHandler(this.MainForm_ClientSizeChanged);
       this.PanelMain.ResumeLayout(false);
       this.PanelMainOuter.ResumeLayout(false);
       this.PanelMainInner.ResumeLayout(false);
@@ -840,23 +594,16 @@
       this.TabPageText.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
       this.PanelViewSearch.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).EndInit();
+      this.PanelProgress.ResumeLayout(false);
+      this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.versesDataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.booksBindingNavigator)).EndInit();
-      this.booksBindingNavigator.ResumeLayout(false);
-      this.booksBindingNavigator.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.chaptersDataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).EndInit();
-      this.PanelTitle.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-      this.PanelProgress.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -932,50 +679,22 @@
     private System.Windows.Forms.BindingSource BooksBindingSource;
     private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
     private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
-    private System.Windows.Forms.DataGridView booksDataGridView;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
     private Data.DataSetTableAdapters.ChaptersTableAdapter ChaptersTableAdapter;
     private System.Windows.Forms.BindingSource ChaptersBindingSource;
-    private System.Windows.Forms.BindingNavigator booksBindingNavigator;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
-    private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
-    private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
-    private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem1;
-    private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
-    private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
-    private System.Windows.Forms.ToolStripButton booksBindingNavigatorSaveItem1;
-    private System.Windows.Forms.DataGridView chaptersDataGridView;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
     private Data.DataSetTableAdapters.VersesTableAdapter VersesTableAdapter;
     private System.Windows.Forms.BindingSource VersesBindingSource;
-    private System.Windows.Forms.DataGridView versesDataGridView;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
     private Data.DataSetTableAdapters.WordsTableAdapter WordsTableAdapter;
     private System.Windows.Forms.BindingSource WordsBindingSource;
-    private System.Windows.Forms.DataGridView wordsDataGridView;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
     private System.Windows.Forms.Panel PanelSepBottom;
     private System.Windows.Forms.Panel PanelProgress;
     private System.Windows.Forms.ProgressBar BarProgress;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.ComboBox EditChapter;
+    private System.Windows.Forms.ComboBox EditBook;
+    private System.Windows.Forms.Panel EditVerses;
+    private System.Windows.Forms.TextBox EditELS50;
+    private System.Windows.Forms.Label label4;
   }
 }
 

@@ -37,7 +37,6 @@ namespace Ordisoftware.HebrewWords
         _Word = value;
         LabelHebrew.Text = value.Hebrew;
         EditTranslation.Text = value.Translation;
-        EditComment.Text = value.Comment;
       }
     }
 
@@ -55,7 +54,6 @@ namespace Ordisoftware.HebrewWords
 
     private void EditComment_TextChanged(object sender, System.EventArgs e)
     {
-      _Word.Comment = EditComment.Text;
     }
   }
 
