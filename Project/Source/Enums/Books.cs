@@ -22,12 +22,14 @@ namespace Ordisoftware.HebrewWords
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Neviim
-    Zecharia, Joshua, Judges, Ezekiel,
-    /* Samuel, Kings,*/ Isaiah, //Jeremiah, Hosea, Joel, Amos, Obadiah,
-    // Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Malachi,
+    Yehoshoua, Shoftim, Shemouel, Melakhim,
+    Isayah, Yirmyah, Yehezkel,
+    Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
+    Habaquq, Zefaniah, Hagai, Zakarya, Malaki,
     // Ketouvim
-    /* Chronicles,*/ Tehilim, /*Job, */Proverbs //, Ruth, Song of Songs, Ecclesiastes, 
-    // Lamentations, Esther, Daniel, Ezra, Nehemiah
+    Tehilim, Mishlei, Iyyov,
+    ChirHaChirim, Ruth, Eikha, Qohelet, Esther,
+    Daniel, Ezra, Nehemiah, DivreiHaYamim
   };
 
   public enum TorahBooks
@@ -41,17 +43,17 @@ namespace Ordisoftware.HebrewWords
 
   public enum NeviimBooks
   {
-    Zecharia = AllBooks.Zecharia,
-    Joshua = AllBooks.Joshua,
-    Judges = AllBooks.Judges,
-    Ezekiel = AllBooks.Ezekiel,
-    Isaiah = AllBooks.Isaiah
+    Joshua = AllBooks.Yehoshoua,
+    Judges = AllBooks.Shoftim,
+    Isaiah = AllBooks.Isayah,
+    Ezekiel = AllBooks.Yehezkel,
+    Zekaria = AllBooks.Zakarya
   };
 
   public enum KetouvimBooks
   {
     Tehilim = AllBooks.Tehilim,
-    Proverbs = AllBooks.Proverbs,
+    Mishlei = AllBooks.Mishlei,
   };
 
   static public class TorahHebrewNames
@@ -66,22 +68,14 @@ namespace Ordisoftware.HebrewWords
       { AllBooks.Bamidbar, "rbdmb rpc" },
       { AllBooks.Devarim, "myrbd rpc" },
       // Nevi'im
-      { AllBooks.Zecharia, "hyrkz rpc" },
-      { AllBooks.Joshua, "i>vhy rpc" },
-      { AllBooks.Judges, "mytpv> rpc" },
-      { AllBooks.Ezekiel, "laqzxy rpc" },
-      { AllBooks.Isaiah, "hyi>y rpc" },
+      { AllBooks.Zakarya, "hyrkz rpc" },
+      { AllBooks.Yehoshoua, "i>vhy rpc" },
+      { AllBooks.Shoftim, "mytpv> rpc" },
+      { AllBooks.Yehezkel, "laqzxy rpc" },
+      { AllBooks.Isayah, "hyi>y rpc" },
       // Ketouvim
       { AllBooks.Tehilim, "mylht rpc" },
-      { AllBooks.Proverbs, "yl>m rpc" }
-    };
-
-    static public Dictionary<string, string> Parashot = new Dictionary<string, string>()
-    {
-      { "01.01.1", "ty>arb t>rp" },
-      { "09.06.1", "xn t>rp" },
-      { "01.12.1", "kl kl t>rp" },
-      { "01.18.1", "aryv t>rp" }
+      { AllBooks.Mishlei, "yl>m rpc" }
     };
 
   }
