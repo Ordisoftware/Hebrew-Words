@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Text view mode to display the analyse panel.
     /// </summary>
-    Analyse,
+    Verses,
 
     /// <summary>
     /// Grid view mode to display the settings panel.

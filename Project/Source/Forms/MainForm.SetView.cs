@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewWords
       var ViewPanels = new Dictionary<ViewModeType, ViewConnector>()
       {
         {
-          ViewModeType.Analyse,
+          ViewModeType.Verses,
           new ViewConnector
           {
             MenuItem = ActionViewSearch,

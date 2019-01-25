@@ -48,6 +48,13 @@ namespace Ordisoftware.HebrewWords
       + "index.htm";
 
     /// <summary>
+    /// Indicate documents folder path.
+    /// </summary>
+    static public readonly string DocumentsPath
+      = RootPath
+      + "DOcuments" + Path.DirectorySeparatorChar;
+
+    /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings = Properties.Settings.Default;

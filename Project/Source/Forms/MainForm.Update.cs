@@ -27,6 +27,18 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
+    /// Update progress bar.
+    /// </summary>
+    private void UpdateProgress(int index, int count)
+    {
+      if ( index == 0 ) BarProgress.Maximum = count;
+      BarProgress.Value = index > count ? count : index;
+      BarProgress.Update();
+      Refresh();
+      Application.DoEvents();
+    }
+
+    /// <summary>
     /// Center the form to the screen.
     /// </summary>
     protected internal new void CenterToScreen()

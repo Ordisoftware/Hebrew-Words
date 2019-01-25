@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Analyse")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Verses")]
         public global::Ordisoftware.HebrewWords.ViewModeType CurrentView {
             get {
                 return ((global::Ordisoftware.HebrewWords.ViewModeType)(this["CurrentView"]));

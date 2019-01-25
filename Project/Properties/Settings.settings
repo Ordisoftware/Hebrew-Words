@@ -27,7 +27,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentView" Type="Ordisoftware.HebrewWords.ViewModeType" Scope="User">
-      <Value Profile="(Default)">Analyse</Value>
+      <Value Profile="(Default)">Verses</Value>
     </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

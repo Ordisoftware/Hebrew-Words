@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditScreenCenter.Checked = true;
       MainForm.EditConfirmClosing.Checked = true;
       MainForm.EditShowTips.Checked = true;
-      MainForm.SetView(ViewModeType.Analyse);
+      MainForm.SetView(ViewModeType.Verses);
       settings.Store();
     }
 
@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewWords
         MainForm.Width = settings.MainFormWidth;
       if ( settings.MainFormHeight > MainForm.MinimumSize.Height && settings.MainFormHeight < area.Height )
         MainForm.Height = settings.MainFormHeight;
-      /*MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
+      MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
       MainForm.EditScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
       MainForm.EditScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
       MainForm.EditScreenBottomLeft.Checked = settings.MainFormPosition == ControlLocation.BottomLeft;
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
-      MainForm.EditShowTips.Checked = settings.ShowTips;*/
+      MainForm.EditShowTips.Checked = settings.ShowTips;
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewWords
     static internal void Store(this Settings settings)
     {
       var winState = MainForm.WindowState;
-      //if ( winState != FormWindowState.Minimized ) settings.MainFormState = winState;
+      if ( winState != FormWindowState.Minimized ) settings.MainFormState = winState;
       if ( winState == FormWindowState.Normal )
       {
         settings.MainFormLeft = MainForm.Left;
@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewWords
         settings.MainFormWidth = MainForm.Width;
         settings.MainFormHeight = MainForm.Height;
       }
-      /*if ( MainForm.EditScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
+      if ( MainForm.EditScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
       if ( MainForm.EditScreenTopLeft.Checked ) settings.MainFormPosition = ControlLocation.TopLeft;
       if ( MainForm.EditScreenTopRight.Checked ) settings.MainFormPosition = ControlLocation.TopRight;
       if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewWords
       if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
-      settings.Save();*/
+      settings.Save();
     }
 
   }

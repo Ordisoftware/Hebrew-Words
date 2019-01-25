@@ -15,6 +15,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -75,10 +76,15 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      CreateDatabaseIfNotExists();
-      CreateDataIfNotExists(false);
-      //MeaningsTableAdapter.Fill(DataSet.Meanings);
+      Refresh();
       Program.Settings.Retrieve();
+      CreateDatabaseIfNotExists();
+      // TODO progress
+      BooksTableAdapter.Fill(DataSet.Books);
+      WordsTableAdapter.Fill(DataSet.Words);
+      VersesTableAdapter.Fill(DataSet.Verses);
+      ChaptersTableAdapter.Fill(DataSet.Chapters);
+      CreateData(); // TODO remove
       SetView(Program.Settings.CurrentView, true);
     }
 
@@ -89,7 +95,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      //if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
         {
@@ -162,19 +168,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
-      //if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
-      SetView(ViewModeType.Analyse);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewSettings for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewSettings_Click(object sender, EventArgs e)
-    {
-      //if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
-      SetView(ViewModeType.Settings);
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      SetView(ViewModeType.Verses);
     }
 
     /// <summary>
@@ -260,6 +255,25 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
+    private void BooksBindingSource_CurrentChanged(object sender, EventArgs e)
+    {
+      try
+      {
+        //var chapters = ( (Data.DataSet.BooksRow)((DataRowView)BooksBindingSource.Current).Row ).GetChaptersRows();
+        //MessageBox.Show(chapters.Count().ToString());
+      }
+      catch
+      {
+      }
+    }
+
+    private void booksBindingNavigatorSaveItem1_Click(object sender, EventArgs e)
+    {
+      this.Validate();
+      this.BooksBindingSource.EndEdit();
+      this.TableAdapterManager.UpdateAll(this.DataSet);
+
+    }
   }
 
 }

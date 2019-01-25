@@ -40,6 +40,81 @@ namespace Ordisoftware.HebrewWords
       "l", "m", "n", "c", "i", "p", "j", "q", "r", ">", "t"
     };
 
+    /// <summary>
+    /// Indicate finale letters enabled keys values.
+    /// </summary>
+    static internal Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
+    {
+      { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
+    };
+
+    /// <summary>
+    /// Indicate finale letters disabled keys values.
+    /// </summary>
+    static internal Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
+    {
+      { 'k', '!' }, { 'm', ',' }, { 'n', ']' }, { 'p', '[' }, { 'j', '/' }
+    };
+
+    /// <summary>
+    // Convert finale letters from www.fourmilab.ch/etexts/www/hebrew/Bible.
+    /// </summary>
+    static public string SetFinale(string str, bool enable)
+    {
+      var array = new Dictionary<char, char>(enable ? FinaleEnable : FinaleDisable);
+      str = str.Trim();
+      if ( str.Length == 0 ) return str;
+      char c = str[0];
+      foreach ( var v in array )
+        if ( c == v.Key )
+        {
+          c = v.Value;
+          break;
+        }
+      str = c + str.Remove(0, 1);
+      return str;
+    }
+
+    /// <summary>
+    // Convert letters from www.fourmilab.ch/etexts/www/hebrew/Bible to font codes.
+    /// </summary>
+    static public char ConvertToKey(char c)
+    {
+      switch ( c )
+      {
+        case 'א': return 'a';
+        case 'ב': return 'b';
+        case 'ג': return 'g';
+        case 'ד': return 'd';
+        case 'ה': return 'h';
+        case 'ו': return 'v';
+        case 'ז': return 'z';
+        case 'ח': return 'x';
+        case 'ט': return 'u';
+        case 'י': return 'y';
+        case 'כ': return 'k';
+        case 'ך': return '!';
+        case 'ל': return 'l';
+        case 'מ': return 'm';
+        case 'ם': return ',';
+        case 'נ': return 'n';
+        case 'ן': return ']';
+        case 'ס': return 'c';
+        case 'ע': return 'i';
+        case 'פ': return 'p';
+        case 'ף': return '[';
+        case 'צ': return 'j';
+        case 'ץ': return '/';
+        case 'ק': return 'q';
+        case 'ר': return 'r';
+        case 'ש': return '>';
+        case 'ת': return 't';
+        case ':': return '.';
+        case '-': return ' ';
+        default: return c;
+      }
+    }
+
   }
 
 }
