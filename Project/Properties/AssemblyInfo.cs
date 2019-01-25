@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Hebrew Words")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A tool that helps for the translation of the Bible's hebrew words")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Organization")]
-[assembly: AssemblyProduct("Hebrew Words")]
-[assembly: AssemblyCopyright("Copyright © Organization 2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Ordisoftware")]
+[assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-words")]
+[assembly: AssemblyCopyright("Copyright 2012-2019 Olivier Rogier")]
+[assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly

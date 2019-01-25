@@ -86,6 +86,9 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Shown(object sender, EventArgs e)
     {
       Refresh();
+      var form = new LoadingForm();
+      form.Show();
+      form.Refresh();
       Cursor = Cursors.WaitCursor;
       try
       {
@@ -98,6 +101,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        form.Hide();
         Cursor = Cursors.Default;
       }
     }
@@ -360,7 +364,9 @@ namespace Ordisoftware.HebrewWords
         try
         {
           process.StartInfo.FileName = @"c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe";
-          process.StartInfo.Arguments = (sender as LinkLabel).Text;
+          string str = ( sender as LinkLabel ).Text;
+          foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+          process.StartInfo.Arguments = str;
           process.Start();
         }
         catch ( Exception ex )

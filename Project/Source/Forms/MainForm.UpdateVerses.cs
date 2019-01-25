@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewWords
           label.AutoSize = false;
           label.Width = 40;
           label.Font = new Font("Calibri", 12f, FontStyle.Bold);
-          label.Location = new Point(x + dx + 0, y);
+          label.Location = new Point(x + dx + 0, y + 5);
           label.Text = verse.Number.ToString();
           PanelViewVerses.Controls.Add(label);
           bool emptyline = false;

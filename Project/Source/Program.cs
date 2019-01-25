@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public readonly string DocumentsPath
       = RootPath
-      + "DOcuments" + Path.DirectorySeparatorChar;
+      + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the default Settings instance.

@@ -10,6 +10,10 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 
 ## Functionalities
 
+- Translate verses words by words.
+- Original and translation views.
+- Determine the equidistant letter sequence of 50 for Tav.
+
 ## Requirements
 
 - Windows Vista x32/x64 or superior

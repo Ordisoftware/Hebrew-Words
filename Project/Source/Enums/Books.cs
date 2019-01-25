@@ -11,13 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2015-06 </edited>
+/// <edited> 2019-01 </edited>
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  public enum AllBooks
+  public enum Book
   {
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
@@ -32,52 +32,33 @@ namespace Ordisoftware.HebrewWords
     Daniel, Ezra, Nehemiah, DivreiHaYamim
   };
 
-  public enum TorahBooks
-  {
-    Bereshit = AllBooks.Bereshit,
-    Shemot = AllBooks.Shemot,
-    Vayiqra = AllBooks.Vayiqra,
-    Bamidbar = AllBooks.Bamidbar,
-    Devarim = AllBooks.Devarim
-  };
-
-  public enum NeviimBooks
-  {
-    Joshua = AllBooks.Yehoshoua,
-    Judges = AllBooks.Shoftim,
-    Isaiah = AllBooks.Isayah,
-    Ezekiel = AllBooks.Yehezkel,
-    Zekaria = AllBooks.Zakarya
-  };
-
-  public enum KetouvimBooks
-  {
-    Tehilim = AllBooks.Tehilim,
-    Mishlei = AllBooks.Mishlei,
-  };
-
   static public class TorahHebrewNames
   {
 
-    static public Dictionary<AllBooks, string> Books = new Dictionary<AllBooks, string>()
+    static public Dictionary<Book, string> Books = new Dictionary<Book, string>()
     {
       // Torah
-      { AllBooks.Bereshit, "ty>arb rpc" },
-      { AllBooks.Shemot, "tvm> rpc" },
-      { AllBooks.Vayiqra, "arqyv rpc" },
-      { AllBooks.Bamidbar, "rbdmb rpc" },
-      { AllBooks.Devarim, "myrbd rpc" },
+      { Book.Bereshit, "ty>arb rpc" },
+      { Book.Shemot, "tvm> rpc" },
+      { Book.Vayiqra, "arqyv rpc" },
+      { Book.Bamidbar, "rbdmb rpc" },
+      { Book.Devarim, "myrbd rpc" },
       // Nevi'im
-      { AllBooks.Zakarya, "hyrkz rpc" },
-      { AllBooks.Yehoshoua, "i>vhy rpc" },
-      { AllBooks.Shoftim, "mytpv> rpc" },
-      { AllBooks.Yehezkel, "laqzxy rpc" },
-      { AllBooks.Isayah, "hyi>y rpc" },
+      { Book.Yehoshoua, "i>vhy rpc" },
+      { Book.Shoftim, "mytpv> rpc" },
+      { Book.Shemouel, "" },
+      { Book.Melakhim, "" },
+      { Book.Isayah, "hyi>y rpc" },
+      { Book.Yirmyah, "" },
+      { Book.Yehezkel, "laqzxy rpc" },
+
+      { Book.Zakarya, "hyrkz rpc" },
       // Ketouvim
-      { AllBooks.Tehilim, "mylht rpc" },
-      { AllBooks.Mishlei, "yl>m rpc" }
+      { Book.Tehilim, "mylht rpc" },
+      { Book.Mishlei, "yl>m rpc" },
+      { Book.Iyyov, "" },
     };
 
   }
-
+  
 }

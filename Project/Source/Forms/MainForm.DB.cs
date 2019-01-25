@@ -121,9 +121,10 @@ namespace Ordisoftware.HebrewWords
         Data.DataSet.WordsRow word = null;
         string path = Program.DocumentsPath;
         string strELS50 = "";
-        foreach ( AllBooks bookid in Enum.GetValues(typeof(AllBooks)) )
+        foreach ( Book bookid in Enum.GetValues(typeof(Book)) )
         {
           string filename = path + bookid.ToString() + ".txt";
+          if ( !File.Exists(filename) ) continue;
           string[] filecontent = File.ReadAllLines(filename);
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
