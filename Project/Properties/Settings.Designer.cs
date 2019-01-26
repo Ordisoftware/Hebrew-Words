@@ -152,5 +152,29 @@ namespace Ordisoftware.HebrewWords.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        public string HebrewLettersExe {
+            get {
+                return ((string)(this["HebrewLettersExe"]));
+            }
+            set {
+                this["HebrewLettersExe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=strong+hebrew+")]
+        public string SearchOnline {
+            get {
+                return ((string)(this["SearchOnline"]));
+            }
+            set {
+                this["SearchOnline"] = value;
+            }
+        }
     }
 }

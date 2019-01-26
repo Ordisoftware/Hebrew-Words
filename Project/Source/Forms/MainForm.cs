@@ -264,6 +264,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionPreferences for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      new PreferencesForm().ShowDialog();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionResetWinSettings for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -369,17 +379,18 @@ namespace Ordisoftware.HebrewWords
       using ( var process = new Process() )
         try
         {
+          if ( e.Button == MouseButtons.Left )
+            process.StartInfo.FileName = Program.Settings.SearchOnline + (string)( sender as LinkLabel ).Tag;
+          else
           if ( e.Button == MouseButtons.Right )
           {
-            process.StartInfo.FileName = @"c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe";
+            process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
             string str = ( sender as LinkLabel ).Text;
             foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
             process.StartInfo.Arguments = str;
           }
           else
-          {
-            process.StartInfo.FileName = "https://www.google.com/search?q=strong's+hebrew+" + (string)( sender as LinkLabel ).Tag;
-          }
+            return;
           process.Start();
         }
         catch ( Exception ex )

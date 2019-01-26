@@ -40,5 +40,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Dsn=Hebrew-Words</Value>
     </Setting>
+    <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+    </Setting>
+    <Setting Name="SearchOnline" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.google.com/search?q=strong+hebrew+</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
