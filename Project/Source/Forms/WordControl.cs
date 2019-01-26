@@ -56,11 +56,13 @@ namespace Ordisoftware.HebrewWords
     private void LabelHebrew_MouseEnter(object sender, System.EventArgs e)
     {
       LabelHebrew.Cursor = Cursors.Hand;
+      LabelHebrew.ForeColor = System.Drawing.Color.Blue;
     }
 
     private void LabelHebrew_MouseLeave(object sender, System.EventArgs e)
     {
       LabelHebrew.Cursor = Cursors.Default;
+      LabelHebrew.ForeColor = System.Drawing.SystemColors.ControlText;
     }
   }
 
