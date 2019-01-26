@@ -54,6 +54,6 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### Year.Month.Day - Version 1.0
+#### 2019.01.26 - Version 1.0
 
 - Initial release.
