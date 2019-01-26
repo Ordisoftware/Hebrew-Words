@@ -279,9 +279,6 @@
   <data name="EditRawText.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="EditRawText.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;EditRawText.Name" xml:space="preserve">
     <value>EditRawText</value>
   </data>
@@ -1535,6 +1532,63 @@
   <data name="ActionViewELS50.ToolTipText" xml:space="preserve">
     <value>View ELS50 list</value>
   </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="ActionViewStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionViewStatistics.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionViewStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
+  </data>
+  <data name="ActionViewStatistics.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="ActionViewStatistics.ToolTipText" xml:space="preserve">
+    <value>Preferences (F8)</value>
+  </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1724,6 +1778,12 @@
   <data name="&gt;&gt;Sep6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
+    <value>ActionPreferences</value>
+  </data>
+  <data name="&gt;&gt;ActionPreferences.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MenuSettings.Name" xml:space="preserve">
     <value>MenuSettings</value>
   </data>
@@ -1812,6 +1872,18 @@
     <value>ActionViewELS50</value>
   </data>
   <data name="&gt;&gt;ActionViewELS50.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStatistics.Name" xml:space="preserve">
+    <value>ActionViewStatistics</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStatistics.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
@@ -1915,12 +1987,6 @@
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
-    <value>ActionPreferences</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

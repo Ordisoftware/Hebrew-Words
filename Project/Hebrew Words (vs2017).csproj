@@ -109,6 +109,12 @@
     <Compile Include="Source\Forms\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\StatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\StatControl.Designer.cs">
+      <DependentUpon>StatControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\WordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,12 @@
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\Forms\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -150,11 +162,24 @@
     <EmbeddedResource Include="Source\Forms\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\StatControl.fr.resx">
+      <DependentUpon>StatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\StatisticsForm.fr.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\StatControl.resx">
+      <DependentUpon>StatControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\WordControl.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Data\DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
@@ -169,7 +194,6 @@
     <None Include="Dependencies\Core Library\Ordisoftware Code Library.url" />
     <None Include="Dependencies\Fatcow\Fatcow.com Free Icons Pack.url" />
     <None Include="License\MPL 2.0.rtf" />
-    <None Include="Properties\DataSources\Ordisoftware.HebrewWords.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

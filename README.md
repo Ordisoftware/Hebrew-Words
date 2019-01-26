@@ -15,6 +15,8 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 - Right mouse click on a word to open Hebrew Letters.
 - Original and translation views.
 - Determine the equidistant letter sequence of 50 for Tav.
+- Show statistics.
+- English, French.
 
 ## Requirements
 
@@ -28,6 +30,8 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 ![verses Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-verses.png)
 
 ![Translations Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-translations.png)
+
+![Stats Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-stats.png)
 
 ## Videos
 

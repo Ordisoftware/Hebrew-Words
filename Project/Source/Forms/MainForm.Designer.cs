@@ -75,6 +75,7 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +91,8 @@
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
       this.ActionViewText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -107,7 +110,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -387,7 +389,9 @@
             this.MenuSettings,
             this.ActionViewTranslations,
             this.ActionViewText,
-            this.ActionViewELS50});
+            this.ActionViewELS50,
+            this.toolStripSeparator1,
+            this.ActionViewStatistics});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
@@ -473,6 +477,15 @@
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
+      // 
+      // ActionPreferences
+      // 
+      this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
+      this.ActionPreferences.Name = "ActionPreferences";
+      this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
       // MenuSettings
       // 
@@ -584,7 +597,7 @@
       resources.ApplyResources(this.ActionViewText, "ActionViewText");
       this.ActionViewText.Name = "ActionViewText";
       this.ActionViewText.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewText.Click += new System.EventHandler(this.ActionViewText_Click);
+      this.ActionViewText.Click += new System.EventHandler(this.ActionViewRawText_Click);
       this.ActionViewText.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewText.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
@@ -597,6 +610,19 @@
       this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
       this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionViewStatistics
+      // 
+      this.ActionViewStatistics.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewStatistics, "ActionViewStatistics");
+      this.ActionViewStatistics.Name = "ActionViewStatistics";
+      this.ActionViewStatistics.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
       // 
       // bindingNavigatorMoveFirstItem
       // 
@@ -682,15 +708,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // ActionPreferences
-      // 
-      this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
-      this.ActionPreferences.Name = "ActionPreferences";
-      this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
       // MainForm
       // 
@@ -797,7 +814,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private Data.DataSet DataSet;
     private System.Windows.Forms.BindingSource BooksBindingSource;
     private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
     private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
@@ -829,6 +845,9 @@
     private System.Windows.Forms.RichTextBox EditELS50All;
     private System.Windows.Forms.RichTextBox EditTranslations;
     internal System.Windows.Forms.ToolStripButton ActionPreferences;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    internal System.Windows.Forms.ToolStripButton ActionViewStatistics;
+    internal Data.DataSet DataSet;
   }
 }
 
