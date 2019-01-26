@@ -89,13 +89,15 @@ namespace Ordisoftware.HebrewWords
       {
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
-        int width = Width - 50;
+        int margin = 50;
+        int delta = 10;
+        int width = Width - margin;
         int dx = control.Width;
         int dy = control.Height;
-        int marginX = 50 + 10;
-        int marginY = 50;
+        int marginX = margin + delta;
+        int marginY = margin;
         int x = width - dx - marginX;
-        int y = 10;
+        int y = delta;
         foreach ( var verse in item.Row.GetVersesRows() )
         {
           var label = new Label();
@@ -115,7 +117,7 @@ namespace Ordisoftware.HebrewWords
             control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);
             x -= dx;
-            if ( x < 10 )
+            if ( x < delta )
             {
               x = width - dx - marginX;
               y += dy;

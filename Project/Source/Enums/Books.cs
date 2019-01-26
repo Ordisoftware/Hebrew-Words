@@ -22,14 +22,14 @@ namespace Ordisoftware.HebrewWords
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Neviim
-    Yehoshoua, Shoftim, Shemouel, Melakhim,
+    Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakhim_1, Melakhim_2,
     Isayah, Yirmyah, Yehezkel,
     Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
     Habaquq, Zefaniah, Hagai, Zakarya, Malaki,
     // Ketouvim
     Tehilim, Mishlei, Iyyov,
-    ChirHaChirim, Ruth, Eikha, Qohelet, Esther,
-    Daniel, Ezra, Nehemiah, DivreiHaYamim
+    Chir_HaChirim, Ruth, Eikha, Qohelet, Esther,
+    Daniel, Ezra, Nehemiah, Divrei_HaYamim_1, Divrei_HaYamim_2
   };
 
   static public class TorahHebrewNames
@@ -38,25 +38,47 @@ namespace Ordisoftware.HebrewWords
     static public Dictionary<Book, string> Books = new Dictionary<Book, string>()
     {
       // Torah
-      { Book.Bereshit, "ty>arb rpc" },
-      { Book.Shemot, "tvm> rpc" },
-      { Book.Vayiqra, "arqyv rpc" },
-      { Book.Bamidbar, "rbdmb rpc" },
-      { Book.Devarim, "myrbd rpc" },
+      { Book.Bereshit, "ty>arb" },
+      { Book.Shemot, "tvm>" },
+      { Book.Vayiqra, "arqyv" },
+      { Book.Bamidbar, "rbdmb" },
+      { Book.Devarim, "myrbd" },
       // Nevi'im
-      { Book.Yehoshoua, "i>vhy rpc" },
-      { Book.Shoftim, "mytpv> rpc" },
-      { Book.Shemouel, "" },
-      { Book.Melakhim, "" },
-      { Book.Isayah, "hyi>y rpc" },
+      { Book.Yehoshoua, "i>vhy" },
+      { Book.Shoftim, "mytpv>" },
+      { Book.Shemouel_1, "" },
+      { Book.Shemouel_2, "" },
+      { Book.Melakhim_1, "" },
+      { Book.Melakhim_2, "" },
+      { Book.Isayah, "hyi>y" },
       { Book.Yirmyah, "" },
-      { Book.Yehezkel, "laqzxy rpc" },
-
-      { Book.Zakarya, "hyrkz rpc" },
+      { Book.Yehezkel, "laqzxy" },
+      { Book.Hosea, "" },
+      { Book.Yoel, "" },
+      { Book.Amos, "" },
+      { Book.Obadyah, "" },
+      { Book.Yonah, "" },
+      { Book.Mikah, "" },
+      { Book.Nahoum, "" },
+      { Book.Habaquq, "" },
+      { Book.Zefaniah, "" },
+      { Book.Hagai, "" },
+      { Book.Zakarya, "hyrkz" },
+      { Book.Malaki, "" },
       // Ketouvim
-      { Book.Tehilim, "mylht rpc" },
-      { Book.Mishlei, "yl>m rpc" },
+      { Book.Tehilim, "mylht" },
+      { Book.Mishlei, "yl>m" },
       { Book.Iyyov, "" },
+      { Book.Chir_HaChirim, "" },
+      { Book.Ruth, "" },
+      { Book.Eikha, "" },
+      { Book.Qohelet, "" },
+      { Book.Esther, "" },
+      { Book.Daniel, "" },
+      { Book.Ezra, "" },
+      { Book.Nehemiah, "" },
+      { Book.Divrei_HaYamim_1, "" },
+      { Book.Divrei_HaYamim_2, "" }
     };
 
   }

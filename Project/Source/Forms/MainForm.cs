@@ -85,16 +85,23 @@ namespace Ordisoftware.HebrewWords
     {
       Refresh();
       var form = new LoadingForm();
+      form.ProgressBar.Maximum = 6;
       form.Show();
       form.Refresh();
       Cursor = Cursors.WaitCursor;
       try
       {
+        form.ProgressBar.Value = 1;
         CreateDatabaseIfNotExists();
+        form.ProgressBar.Value = 2;
         BooksTableAdapter.Fill(DataSet.Books);
+        form.ProgressBar.Value = 3;
         WordsTableAdapter.Fill(DataSet.Words);
+        form.ProgressBar.Value = 4;
         VersesTableAdapter.Fill(DataSet.Verses);
+        form.ProgressBar.Value = 5;
         ChaptersTableAdapter.Fill(DataSet.Chapters);
+        form.ProgressBar.Value = 6;
         InitBooksCombobox();
       }
       finally
@@ -107,7 +114,7 @@ namespace Ordisoftware.HebrewWords
     private class BookItem
     {
       public Data.DataSet.BooksRow Row { get; set; }
-      public override string ToString() { return Row.Name; }
+      public override string ToString() { return Row.Name.Replace("_", " "); }
     }
 
     private class ChapterItem

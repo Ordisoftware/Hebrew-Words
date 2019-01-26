@@ -572,7 +572,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCopyToClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 14</value>
+    <value>273, 14</value>
   </data>
   <data name="ActionCopyToClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -599,7 +599,7 @@
     <value>0, 21</value>
   </data>
   <data name="EditBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 28</value>
+    <value>172, 28</value>
   </data>
   <data name="EditBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -623,10 +623,10 @@
     <value>Hebrew, 12pt</value>
   </data>
   <data name="EditELS50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 21</value>
+    <value>317, 21</value>
   </data>
   <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 30</value>
+    <value>515, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -647,7 +647,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="EditChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 21</value>
+    <value>193, 21</value>
   </data>
   <data name="EditChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 28</value>
@@ -674,7 +674,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 3</value>
+    <value>314, 3</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -734,7 +734,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 3</value>
+    <value>190, 3</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -1579,6 +1579,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>852, 666</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>860, 700</value>
   </data>
@@ -1605,18 +1608,6 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -1839,6 +1830,18 @@
   </data>
   <data name="&gt;&gt;booksBindingNavigatorSaveItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

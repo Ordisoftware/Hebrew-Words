@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewWords
         }
         foreach ( Book bookid in Enum.GetValues(typeof(Book)) )
         {
-          string filename = path + bookid.ToString() + ".txt";
+          string filename = path + bookid.ToString().Replace("_", " ") + ".txt";
           if ( !File.Exists(filename) ) continue;
           string[] filecontent = File.ReadAllLines(filename);
           book = DataSet.Books.NewBooksRow();
