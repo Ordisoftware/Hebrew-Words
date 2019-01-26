@@ -31,6 +31,8 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 
 ## Videos
 
+[![Showing video](https://img.youtube.com/vi/rs7l-wvVt-I/0.jpg)](https://www.youtube.com/watch?v=dYFQS4PP0ws)
+
 ## Frequently asked questions
 
 #### How to install SQlite ODBC Driver?
