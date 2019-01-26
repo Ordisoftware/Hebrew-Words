@@ -61,8 +61,8 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditPath
@@ -72,14 +72,14 @@
       // 
       // ActionSelect
       // 
-      resources.ApplyResources(this.ActionSelect, "ActionSelect");
       this.ActionSelect.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelect, "ActionSelect");
       this.ActionSelect.Name = "ActionSelect";
       this.ActionSelect.UseVisualStyleBackColor = true;
+      this.ActionSelect.Click += new System.EventHandler(this.ActionSelect_Click);
       // 
       // OpenFileDialog
       // 
-      this.OpenFileDialog.FileName = "openFileDialog1";
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
       // 
       // EditSearch

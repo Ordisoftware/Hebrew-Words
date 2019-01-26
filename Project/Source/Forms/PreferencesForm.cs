@@ -58,6 +58,12 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Save();
     }
 
+    private void ActionSelect_Click(object sender, EventArgs e)
+    {
+      OpenFileDialog.FileName = EditPath.Text;
+      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+        EditPath.Text = OpenFileDialog.FileName;
+    }
   }
 
 }
