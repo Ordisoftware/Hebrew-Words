@@ -51,6 +51,7 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_TextChanged(object sender, System.EventArgs e)
     {
       _Word.Translation = EditTranslation.Text;
+      MainForm.Instance.ActionSave.Enabled = true;
     }
 
     private void LabelHebrew_MouseEnter(object sender, System.EventArgs e)
