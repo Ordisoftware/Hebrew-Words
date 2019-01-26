@@ -111,18 +111,6 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private class BookItem
-    {
-      public Data.DataSet.BooksRow Row { get; set; }
-      public override string ToString() { return Row.Name.Replace("_", " "); }
-    }
-
-    private class ChapterItem
-    {
-      public Data.DataSet.ChaptersRow Row { get; set; }
-      public override string ToString() { return Row.Number.ToString(); }
-    }
-
     private void InitBooksCombobox()
     {
       EditBook.Items.Clear();
@@ -254,13 +242,23 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewText for click events.
+    /// Event handler. Called by ActionViewRawText for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewText_Click(object sender, EventArgs e)
+    private void ActionViewRawText_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Text);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewStatistics for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewStatistics_Click(object sender, EventArgs e)
+    {
+      new StatisticsForm().ShowDialog();
     }
 
     /// <summary>
@@ -399,6 +397,18 @@ namespace Ordisoftware.HebrewWords
         }
     }
 
+  }
+
+  internal class BookItem
+  {
+    public Data.DataSet.BooksRow Row { get; set; }
+    public override string ToString() { return Row.Name.Replace("_", " "); }
+  }
+
+  internal class ChapterItem
+  {
+    public Data.DataSet.ChaptersRow Row { get; set; }
+    public override string ToString() { return Row.Number.ToString(); }
   }
 
 }

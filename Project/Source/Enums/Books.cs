@@ -17,7 +17,7 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewWords
 {
 
-  public enum Book
+  public enum Books
   {
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
@@ -25,60 +25,69 @@ namespace Ordisoftware.HebrewWords
     Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakhim_1, Melakhim_2,
     Isayah, Yirmyah, Yehezkel,
     Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
-    Habaquq, Zefaniah, Hagai, Zakarya, Malaki,
+    Habaquq, Zefaniah, Hagai, Zakaria, Malaki,
     // Ketouvim
     Tehilim, Mishlei, Iyyov,
     Chir_HaChirim, Ruth, Eikha, Qohelet, Esther,
     Daniel, Ezra, Nehemiah, Divrei_HaYamim_1, Divrei_HaYamim_2
   };
 
+  public enum TorahBooks
+  {
+    Bereshit = Books.Bereshit,
+    Shemot = Books.Shemot,
+    Vayiqra = Books.Vayiqra,
+    Bamidbar = Books.Bamidbar,
+    Devarim = Books.Devarim
+  };
+
   static public class TorahHebrewNames
   {
 
-    static public Dictionary<Book, string> Books = new Dictionary<Book, string>()
+    static public Dictionary<Books, string> Books = new Dictionary<Books, string>()
     {
       // Torah
-      { Book.Bereshit, "ty>arb" },
-      { Book.Shemot, "tvm>" },
-      { Book.Vayiqra, "arqyv" },
-      { Book.Bamidbar, "rbdmb" },
-      { Book.Devarim, "myrbd" },
+      { HebrewWords.Books.Bereshit, "ty>arb" },
+      { HebrewWords.Books.Shemot, "tvm>" },
+      { HebrewWords.Books.Vayiqra, "arqyv" },
+      { HebrewWords.Books.Bamidbar, "rbdmb" },
+      { HebrewWords.Books.Devarim, "myrbd" },
       // Nevi'im
-      { Book.Yehoshoua, "i>vhy" },
-      { Book.Shoftim, "mytpv>" },
-      { Book.Shemouel_1, "" },
-      { Book.Shemouel_2, "" },
-      { Book.Melakhim_1, "" },
-      { Book.Melakhim_2, "" },
-      { Book.Isayah, "hyi>y" },
-      { Book.Yirmyah, "" },
-      { Book.Yehezkel, "laqzxy" },
-      { Book.Hosea, "" },
-      { Book.Yoel, "" },
-      { Book.Amos, "" },
-      { Book.Obadyah, "" },
-      { Book.Yonah, "" },
-      { Book.Mikah, "" },
-      { Book.Nahoum, "" },
-      { Book.Habaquq, "" },
-      { Book.Zefaniah, "" },
-      { Book.Hagai, "" },
-      { Book.Zakarya, "hyrkz" },
-      { Book.Malaki, "" },
+      { HebrewWords.Books.Yehoshoua, "i>vhy" },
+      { HebrewWords.Books.Shoftim, "mytpv>" },
+      { HebrewWords.Books.Shemouel_1, "" },
+      { HebrewWords.Books.Shemouel_2, "" },
+      { HebrewWords.Books.Melakhim_1, "" },
+      { HebrewWords.Books.Melakhim_2, "" },
+      { HebrewWords.Books.Isayah, "hyi>y" },
+      { HebrewWords.Books.Yirmyah, "" },
+      { HebrewWords.Books.Yehezkel, "laqzxy" },
+      { HebrewWords.Books.Hosea, "" },
+      { HebrewWords.Books.Yoel, "" },
+      { HebrewWords.Books.Amos, "" },
+      { HebrewWords.Books.Obadyah, "" },
+      { HebrewWords.Books.Yonah, "" },
+      { HebrewWords.Books.Mikah, "" },
+      { HebrewWords.Books.Nahoum, "" },
+      { HebrewWords.Books.Habaquq, "" },
+      { HebrewWords.Books.Zefaniah, "" },
+      { HebrewWords.Books.Hagai, "" },
+      { HebrewWords.Books.Zakaria, "hyrkz" },
+      { HebrewWords.Books.Malaki, "" },
       // Ketouvim
-      { Book.Tehilim, "mylht" },
-      { Book.Mishlei, "yl>m" },
-      { Book.Iyyov, "" },
-      { Book.Chir_HaChirim, "" },
-      { Book.Ruth, "" },
-      { Book.Eikha, "" },
-      { Book.Qohelet, "" },
-      { Book.Esther, "" },
-      { Book.Daniel, "" },
-      { Book.Ezra, "" },
-      { Book.Nehemiah, "" },
-      { Book.Divrei_HaYamim_1, "" },
-      { Book.Divrei_HaYamim_2, "" }
+      { HebrewWords.Books.Tehilim, "mylht" },
+      { HebrewWords.Books.Mishlei, "yl>m" },
+      { HebrewWords.Books.Iyyov, "" },
+      { HebrewWords.Books.Chir_HaChirim, "" },
+      { HebrewWords.Books.Ruth, "" },
+      { HebrewWords.Books.Eikha, "" },
+      { HebrewWords.Books.Qohelet, "" },
+      { HebrewWords.Books.Esther, "" },
+      { HebrewWords.Books.Daniel, "" },
+      { HebrewWords.Books.Ezra, "" },
+      { HebrewWords.Books.Nehemiah, "" },
+      { HebrewWords.Books.Divrei_HaYamim_1, "" },
+      { HebrewWords.Books.Divrei_HaYamim_2, "" }
     };
 
   }

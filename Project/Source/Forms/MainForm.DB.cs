@@ -68,6 +68,7 @@ namespace Ordisoftware.HebrewWords
                             ID text NOT NULL,
                             ChapterID text NOT NULL,
                             Number integer NOT NULL,
+                            Comment text NOT NULL,
                             CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                             FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                           )");
@@ -135,7 +136,7 @@ namespace Ordisoftware.HebrewWords
           chapter.ELS50 = res;
           strELS50 = "";
         }
-        foreach ( Book bookid in Enum.GetValues(typeof(Book)) )
+        foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
         {
           string filename = path + bookid.ToString().Replace("_", " ") + ".txt";
           if ( !File.Exists(filename) ) continue;
@@ -174,6 +175,7 @@ namespace Ordisoftware.HebrewWords
                 verse.Number = ++countVerses;
                 verse.ID = Guid.NewGuid().ToString();
                 verse.ChapterID = chapter.ID;
+                verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
                 listWordsHebrew = convert(list[0]).Split(' ').Reverse().ToArray();
                 DataSet.Verses.AddVersesRow(verse);
