@@ -354,6 +354,11 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionCopyToClipboard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionCopyToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(EditELS50.Text);

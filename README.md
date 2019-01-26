@@ -31,6 +31,8 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 
 ![Translations Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-translations.png)
 
+![Stats Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-stats.png)
+
 ## Videos
 
 [![Showing video](https://img.youtube.com/vi/dYFQS4PP0ws/0.jpg)](https://www.youtube.com/watch?v=dYFQS4PP0ws)

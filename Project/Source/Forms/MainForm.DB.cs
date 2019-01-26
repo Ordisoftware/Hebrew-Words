@@ -15,7 +15,6 @@
 using System;
 using System.Linq;
 using System.IO;
-using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
