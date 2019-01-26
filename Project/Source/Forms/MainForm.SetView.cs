@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           {
             MenuItem = ActionViewVerses,
             Panel = PanelViewVerses,
-            Focused = PanelViewVerses
+            Focused = null
           }
         },
         {
@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewWords
       ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
       ViewPanels[view].MenuItem.Checked = true;
       ViewPanels[view].Panel.Parent = PanelMainCenter;
-      ViewPanels[view].Focused.Focus();
+      if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
     }
 

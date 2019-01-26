@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Neviim
-    Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakhim_1, Melakhim_2,
+    Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakim_1, Melakim_2,
     Isayah, Yirmyah, Yehezkel,
     Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
     Habaquq, Zefaniah, Hagai, Zakaria, Malaki,
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewWords
     Devarim = Books.Devarim
   };
 
-  static public class TorahHebrewNames
+  static public class HebrewNames
   {
 
     static public Dictionary<Books, string> Books = new Dictionary<Books, string>()
@@ -55,25 +55,25 @@ namespace Ordisoftware.HebrewWords
       // Nevi'im
       { HebrewWords.Books.Yehoshoua, "i>vhy" },
       { HebrewWords.Books.Shoftim, "mytpv>" },
-      { HebrewWords.Books.Shemouel_1, "" },
-      { HebrewWords.Books.Shemouel_2, "" },
-      { HebrewWords.Books.Melakhim_1, "" },
-      { HebrewWords.Books.Melakhim_2, "" },
+      { HebrewWords.Books.Shemouel_1, "a lavm>" },
+      { HebrewWords.Books.Shemouel_2, "b lavm>" },
+      { HebrewWords.Books.Melakim_1, "a myklm" },
+      { HebrewWords.Books.Melakim_2, "b myklm" },
       { HebrewWords.Books.Isayah, "hyi>y" },
-      { HebrewWords.Books.Yirmyah, "" },
+      { HebrewWords.Books.Yirmyah, "hymry" },
       { HebrewWords.Books.Yehezkel, "laqzxy" },
-      { HebrewWords.Books.Hosea, "" },
-      { HebrewWords.Books.Yoel, "" },
-      { HebrewWords.Books.Amos, "" },
-      { HebrewWords.Books.Obadyah, "" },
-      { HebrewWords.Books.Yonah, "" },
-      { HebrewWords.Books.Mikah, "" },
-      { HebrewWords.Books.Nahoum, "" },
-      { HebrewWords.Books.Habaquq, "" },
-      { HebrewWords.Books.Zefaniah, "" },
-      { HebrewWords.Books.Hagai, "" },
+      { HebrewWords.Books.Hosea, "i>vh" },
+      { HebrewWords.Books.Yoel, "lavy" },
+      { HebrewWords.Books.Amos, "cvmi" },
+      { HebrewWords.Books.Obadyah, "hydbvi" },
+      { HebrewWords.Books.Yonah, "hnvy" },
+      { HebrewWords.Books.Mikah, "hkym" },
+      { HebrewWords.Books.Nahoum, "mvxn" },
+      { HebrewWords.Books.Habaquq, "qvqbx" },
+      { HebrewWords.Books.Zefaniah, "hynpj" },
+      { HebrewWords.Books.Hagai, "ygx" },
       { HebrewWords.Books.Zakaria, "hyrkz" },
-      { HebrewWords.Books.Malaki, "" },
+      { HebrewWords.Books.Malaki, "ykalm" },
       // Ketouvim
       { HebrewWords.Books.Tehilim, "mylht" },
       { HebrewWords.Books.Mishlei, "yl>m" },

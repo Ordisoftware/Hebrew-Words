@@ -252,14 +252,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSave for click events.
+    /// Event handler. Called by ActionViewBooksTranslation for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionSave_Click(object sender, EventArgs e)
+    private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
-      ActionSave.Enabled = false;
+      new EditBooksForm().ShowDialog();
+      BooksTableAdapter.Fill(DataSet.Books);
+      InitBooksCombobox();
     }
 
     /// <summary>
@@ -270,6 +272,17 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewStatistics_Click(object sender, EventArgs e)
     {
       new StatisticsForm().ShowDialog();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSave for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.Enabled = false;
     }
 
     /// <summary>
@@ -418,7 +431,7 @@ namespace Ordisoftware.HebrewWords
   internal class BookItem
   {
     public Data.DataSet.BooksRow Row { get; set; }
-    public override string ToString() { return Row.Name.Replace("_", " "); }
+    public override string ToString() { return Row.Name.Replace("_", " ") + " (" + Row.Translation + ")"; }
   }
 
   internal class ChapterItem
