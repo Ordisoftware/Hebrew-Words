@@ -100,12 +100,10 @@ namespace Ordisoftware.HebrewWords
       var command = new OdbcCommand("select count(*) FROM Books", connection);
       if ( (int)command.ExecuteScalar() > 0 )
       {
-        // BEGIN Added for v1.1 TODO remove in v1.2
         BooksTableAdapter.Fill(DataSet.Books);
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
           book.Hebrew = HebrewNames.Books[(Books)(book.Number - 1)];
         TableAdapterManager.UpdateAll(DataSet);
-        // END
         return;
       }
       connection.Close();

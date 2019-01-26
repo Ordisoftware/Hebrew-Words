@@ -92,8 +92,9 @@
       this.ActionViewText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSave = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
+      this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -111,7 +112,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -395,6 +396,7 @@
             this.toolStripSeparator1,
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
+            this.toolStripSeparator2,
             this.ActionSave});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -620,13 +622,13 @@
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
-      // ActionSave
+      // ActionViewBooksTranslation
       // 
-      this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionSave, "ActionSave");
-      this.ActionSave.Name = "ActionSave";
-      this.ActionSave.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
+      this.ActionViewBooksTranslation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
+      this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
+      this.ActionViewBooksTranslation.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
       // 
       // ActionViewStatistics
       // 
@@ -635,6 +637,14 @@
       this.ActionViewStatistics.Name = "ActionViewStatistics";
       this.ActionViewStatistics.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
+      // 
+      // ActionSave
+      // 
+      this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSave, "ActionSave");
+      this.ActionSave.Name = "ActionSave";
+      this.ActionSave.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
       // 
       // bindingNavigatorMoveFirstItem
       // 
@@ -721,13 +731,10 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // ActionViewBooksTranslation
+      // toolStripSeparator2
       // 
-      this.ActionViewBooksTranslation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
-      this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
-      this.ActionViewBooksTranslation.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // MainForm
       // 
@@ -870,6 +877,7 @@
     internal Data.DataSet DataSet;
     internal System.Windows.Forms.ToolStripButton ActionSave;
     internal System.Windows.Forms.ToolStripButton ActionViewBooksTranslation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
   }
 }
 

@@ -54,6 +54,11 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### 2019.__.__ - Version 1.1
+
+- Add books name translation edit form.
+- Some improvments.
+
 #### 2019.01.26 - Version 1.0
 
 - Initial release.
