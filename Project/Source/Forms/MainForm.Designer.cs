@@ -92,6 +92,7 @@
       this.ActionViewText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -391,6 +392,7 @@
             this.ActionViewText,
             this.ActionViewELS50,
             this.toolStripSeparator1,
+            this.ActionSave,
             this.ActionViewStatistics});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -615,6 +617,14 @@
       // 
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      // 
+      // ActionSave
+      // 
+      resources.ApplyResources(this.ActionSave, "ActionSave");
+      this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionSave.Name = "ActionSave";
+      this.ActionSave.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
       // 
       // ActionViewStatistics
       // 
@@ -848,6 +858,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripButton ActionViewStatistics;
     internal Data.DataSet DataSet;
+    internal System.Windows.Forms.ToolStripButton ActionSave;
   }
 }
 
