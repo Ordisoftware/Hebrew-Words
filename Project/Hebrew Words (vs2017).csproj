@@ -169,7 +169,6 @@
     <None Include="Dependencies\Core Library\Ordisoftware Code Library.url" />
     <None Include="Dependencies\Fatcow\Fatcow.com Free Icons Pack.url" />
     <None Include="License\MPL 2.0.rtf" />
-    <None Include="Properties\DataSources\Ordisoftware.HebrewWords.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
