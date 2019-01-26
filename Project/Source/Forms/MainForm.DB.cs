@@ -51,8 +51,9 @@ namespace Ordisoftware.HebrewWords
         check("Books", @"CREATE TABLE 'Books' ( 
                            ID text NOT NULL,
                            Number integer NOT NULL,
-                           Hebrew varchar(20) NOT NULL,
-                           Name varchar(20) NOT NULL,
+                           Hebrew text NOT NULL,
+                           Name text NOT NULL,
+                           Translation text NOT NULL,
                            CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                          )");
         check("Chapters", @"CREATE TABLE Chapters ( 
@@ -145,6 +146,7 @@ namespace Ordisoftware.HebrewWords
           book.Number = (int)bookid + 1;
           book.Hebrew = TorahHebrewNames.Books[bookid];
           book.Name = bookid.ToString();
+          book.Translation = "";
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;
           int countVerses = 0;
