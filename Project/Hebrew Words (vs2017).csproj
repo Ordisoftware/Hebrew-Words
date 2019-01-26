@@ -165,6 +165,9 @@
     <EmbeddedResource Include="Source\Forms\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\StatisticsForm.fr.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
