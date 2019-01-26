@@ -259,6 +259,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionSave_Click(object sender, EventArgs e)
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.Enabled = false;
     }
 
     /// <summary>
