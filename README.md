@@ -6,9 +6,15 @@
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-words)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool written in C# that helps for the translation of the Bible's hebrew words.
+A tool for Windows written in C# that helps for the translation of the Bible's hebrew words.
 
 ## Functionalities
+
+- Translate verses words by words.
+- Left mouse click on a word to open online strong's definition.
+- Right mouse click on a word to open Hebrew Letters.
+- Original and translation views.
+- Determine the equidistant letter sequence of 50 for Tav.
 
 ## Requirements
 
@@ -19,7 +25,13 @@ A tool written in C# that helps for the translation of the Bible's hebrew words.
 
 ## Screenshots
 
+![verses Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-verses.png)
+
+![Translations Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-translations.png)
+
 ## Videos
+
+[![Showing video](https://img.youtube.com/vi/rs7l-wvVt-I/0.jpg)](https://www.youtube.com/watch?v=dYFQS4PP0ws)
 
 ## Frequently asked questions
 
