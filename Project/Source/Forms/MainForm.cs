@@ -380,12 +380,12 @@ namespace Ordisoftware.HebrewWords
         try
         {
           if ( e.Button == MouseButtons.Left )
-            process.StartInfo.FileName = Program.Settings.SearchOnline + (string)( sender as LinkLabel ).Tag;
+            process.StartInfo.FileName = Program.Settings.SearchOnline + (string)( sender as Label ).Tag;
           else
           if ( e.Button == MouseButtons.Right )
           {
             process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
-            string str = ( sender as LinkLabel ).Text;
+            string str = ( sender as Label ).Text;
             foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
             process.StartInfo.Arguments = str;
           }

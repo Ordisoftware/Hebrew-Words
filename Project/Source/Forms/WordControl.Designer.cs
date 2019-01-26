@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-      this.LabelHebrew = new System.Windows.Forms.LinkLabel();
+      this.LabelHebrew = new System.Windows.Forms.Label();
       this.EditTranslation = new System.Windows.Forms.TextBox();
       this.FlowLayoutPanel.SuspendLayout();
       this.SuspendLayout();
@@ -42,7 +42,7 @@
       this.FlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
       this.FlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-      this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 62);
+      this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 60);
       this.FlowLayoutPanel.TabIndex = 0;
       // 
       // LabelHebrew
@@ -56,6 +56,8 @@
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Text = "ty>arb";
       this.LabelHebrew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
+      this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 
       // EditTranslation
       // 
@@ -76,7 +78,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.FlowLayoutPanel);
       this.Name = "WordControl";
-      this.Size = new System.Drawing.Size(180, 62);
+      this.Size = new System.Drawing.Size(180, 60);
       this.FlowLayoutPanel.ResumeLayout(false);
       this.FlowLayoutPanel.PerformLayout();
       this.ResumeLayout(false);
@@ -86,7 +88,7 @@
     #endregion
 
     private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
-    private System.Windows.Forms.LinkLabel LabelHebrew;
+    private System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.TextBox EditTranslation;
 
   }

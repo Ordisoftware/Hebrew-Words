@@ -53,6 +53,15 @@ namespace Ordisoftware.HebrewWords
       _Word.Translation = EditTranslation.Text;
     }
 
+    private void LabelHebrew_MouseEnter(object sender, System.EventArgs e)
+    {
+      LabelHebrew.Cursor = Cursors.Hand;
+    }
+
+    private void LabelHebrew_MouseLeave(object sender, System.EventArgs e)
+    {
+      LabelHebrew.Cursor = Cursors.Default;
+    }
   }
 
 }
