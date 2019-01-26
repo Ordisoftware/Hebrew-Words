@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewWords
           {
             emptyline = false;
             control = new WordControl();
-            control.HebrewClicked += HebrewWordClicked;
+            control.HebrewMouseClick += HebrewWordMouseClick;
             control.Word = word;
             control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);

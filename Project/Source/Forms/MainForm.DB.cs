@@ -75,6 +75,7 @@ namespace Ordisoftware.HebrewWords
                            ID text NOT NULL,
                            VerseID text NOT NULL,
                            Number integer NOT NULL,
+                           Original text NOT NULL,
                            Hebrew text NOT NULL,
                            Translation text NOT NULL,
                            CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
@@ -164,7 +165,8 @@ namespace Ordisoftware.HebrewWords
             {
               line = line.Replace(":", "");
               var list = line.Split('\t');
-              string[] listWords;
+              string[] listWordsOriginal;
+              string[] listWordsHebrew;
               if ( list.Length == 2 )
               {
                 countWords = 0;
@@ -172,24 +174,27 @@ namespace Ordisoftware.HebrewWords
                 verse.Number = ++countVerses;
                 verse.ID = Guid.NewGuid().ToString();
                 verse.ChapterID = chapter.ID;
-                listWords = convert(list[0]).Split(' ').Reverse().ToArray();
+                listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
+                listWordsHebrew = convert(list[0]).Split(' ').Reverse().ToArray();
                 DataSet.Verses.AddVersesRow(verse);
               }
               else
               {
-                listWords = convert(line).Split(' ').Reverse().ToArray();
+                listWordsOriginal = line.Replace("-", " ").Split(' ').Reverse().ToArray();
+                listWordsHebrew = convert(line).Split(' ').Reverse().ToArray();
               }
-              foreach ( string s in listWords )
-                if ( s != "" )
+              for ( int i = 0; i < listWordsHebrew.Length; i++ )
+                if ( listWordsHebrew[i] != "" )
                 {
                   word = DataSet.Words.NewWordsRow();
                   word.Number = ++countWords;
                   word.ID = Guid.NewGuid().ToString();
                   word.VerseID = verse.ID;
-                  word.Hebrew = s;
+                  word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
+                  word.Hebrew = listWordsHebrew[i];
                   word.Translation = "";
                   DataSet.Words.AddWordsRow(word);
-                  strELS50 = s + strELS50;
+                  strELS50 = listWordsHebrew[i] + strELS50;
                 }
             }
           }

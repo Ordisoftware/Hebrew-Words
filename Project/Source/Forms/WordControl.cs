@@ -20,10 +20,10 @@ namespace Ordisoftware.HebrewWords
   public partial class WordControl : UserControl
   {
 
-    public event LinkLabelLinkClickedEventHandler HebrewClicked
+    public event MouseEventHandler HebrewMouseClick
     {
-      add { LabelHebrew.LinkClicked += value; }
-      remove { LabelHebrew.LinkClicked -= value; }
+      add { LabelHebrew.MouseClick += value; }
+      remove { LabelHebrew.MouseClick -= value; }
     }
 
     public Data.DataSet.WordsRow Word
@@ -37,6 +37,7 @@ namespace Ordisoftware.HebrewWords
         _Word = value;
         LabelHebrew.Text = value.Hebrew;
         EditTranslation.Text = value.Translation;
+        LabelHebrew.Tag = value.Original;
       }
     }
 

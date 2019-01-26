@@ -364,15 +364,22 @@ namespace Ordisoftware.HebrewWords
       UpdateViewELS50();
     }
 
-    private void HebrewWordClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void HebrewWordMouseClick(object sender, MouseEventArgs e)
     {
       using ( var process = new Process() )
         try
         {
-          process.StartInfo.FileName = @"c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe";
-          string str = ( sender as LinkLabel ).Text;
-          foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-          process.StartInfo.Arguments = str;
+          if ( e.Button == MouseButtons.Right )
+          {
+            process.StartInfo.FileName = @"c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe";
+            string str = ( sender as LinkLabel ).Text;
+            foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+            process.StartInfo.Arguments = str;
+          }
+          else
+          {
+            process.StartInfo.FileName = "https://www.google.com/search?q=strong's+hebrew+" + (string)( sender as LinkLabel ).Tag;
+          }
           process.Start();
         }
         catch ( Exception ex )
