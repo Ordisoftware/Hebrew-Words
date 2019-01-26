@@ -22,7 +22,65 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void UpdateVerses()
+    private void UpdateTranslations()
+    {
+      EditTranslations.Clear();
+      var list = ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows();
+      foreach ( Data.DataSet.VersesRow verse in list )
+      {
+        string str = verse.Number + ". ";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = str + word.Translation + " ";
+        str = str.Remove(str.Length - 1, 1);
+        EditTranslations.SelectedText = str + Environment.NewLine;
+      }
+      EditTranslations.SelectionStart = 0;
+    }
+
+    private void UpdateViewELS50()
+    {
+      void add(Font font, string str)
+      {
+        EditELS50All.SelectionFont = font;
+        EditELS50All.SelectedText = str;
+      }
+      EditELS50All.Clear();
+      var list = ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows();
+      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      {
+        add(HebrewFont, chapter.ELS50);
+        add(LatinFont, " :" + chapter.Number);
+        EditELS50All.AppendText(Environment.NewLine);
+      }
+      EditELS50All.SelectAll();
+      EditELS50All.SelectionAlignment = HorizontalAlignment.Right;
+      EditELS50All.SelectionLength = 0;
+    }
+
+    private void UpdateViewRawText()
+    {
+      void add(Font font, string str)
+      {
+        EditRawText.SelectionFont = font;
+        EditRawText.SelectedText = str;
+      }
+      EditRawText.Clear();
+      var list = ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows();
+      foreach ( Data.DataSet.VersesRow verse in list )
+      {
+        string str = "";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = word.Hebrew + " " + str;
+        add(HebrewFont, str);
+        add(LatinFont, ":" + verse.Number);
+        EditRawText.AppendText(Environment.NewLine);
+      }
+      EditRawText.SelectAll();
+      EditRawText.SelectionAlignment = HorizontalAlignment.Right;
+      EditRawText.SelectionLength = 0;
+    }
+
+    private void UpdateViewVerses()
     {
       var item = (ChapterItem)EditChapter.SelectedItem;
       EditELS50.Text = item.Row.ELS50;

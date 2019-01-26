@@ -34,8 +34,6 @@
       this.labelTrademark = new System.Windows.Forms.LinkLabel();
       this.buttonClose = new System.Windows.Forms.Button();
       this.editLicense = new System.Windows.Forms.RichTextBox();
-      this.labelIcons = new System.Windows.Forms.Label();
-      this.linkProvider1 = new System.Windows.Forms.LinkLabel();
       this.labelDescription = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel1.SuspendLayout();
@@ -77,18 +75,6 @@
       this.editLicense.ReadOnly = true;
       this.editLicense.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.editLicense_LinkClicked);
       // 
-      // labelIcons
-      // 
-      resources.ApplyResources(this.labelIcons, "labelIcons");
-      this.labelIcons.Name = "labelIcons";
-      // 
-      // linkProvider1
-      // 
-      resources.ApplyResources(this.linkProvider1, "linkProvider1");
-      this.linkProvider1.Name = "linkProvider1";
-      this.linkProvider1.TabStop = true;
-      this.linkProvider1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
-      // 
       // labelDescription
       // 
       resources.ApplyResources(this.labelDescription, "labelDescription");
@@ -108,8 +94,6 @@
       this.CancelButton = this.buttonClose;
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.labelDescription);
-      this.Controls.Add(this.linkProvider1);
-      this.Controls.Add(this.labelIcons);
       this.Controls.Add(this.editLicense);
       this.Controls.Add(this.labelTrademark);
       this.Controls.Add(this.labelCopyright);
@@ -135,8 +119,6 @@
     private System.Windows.Forms.LinkLabel labelTrademark;
     private System.Windows.Forms.Button buttonClose;
     private System.Windows.Forms.RichTextBox editLicense;
-    private System.Windows.Forms.Label labelIcons;
-    private System.Windows.Forms.LinkLabel linkProvider1;
     private System.Windows.Forms.Label labelDescription;
     private System.Windows.Forms.Panel panel1;
   }

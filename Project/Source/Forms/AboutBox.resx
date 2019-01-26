@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="labelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="labelCopyright.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -226,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelCopyright.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="labelTrademark.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -262,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTrademark.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -316,60 +316,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;editLicense.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="labelIcons.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelIcons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 340</value>
-  </data>
-  <data name="labelIcons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
-  </data>
-  <data name="labelIcons.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="labelIcons.Text" xml:space="preserve">
-    <value>Unmodified buttons icons (CC BY 3.0) :</value>
-  </data>
-  <data name="&gt;&gt;labelIcons.Name" xml:space="preserve">
-    <value>labelIcons</value>
-  </data>
-  <data name="&gt;&gt;labelIcons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelIcons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelIcons.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="linkProvider1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkProvider1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 340</value>
-  </data>
-  <data name="linkProvider1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="linkProvider1.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="linkProvider1.Text" xml:space="preserve">
-    <value>www.fatcow.com/free-icons</value>
-  </data>
-  <data name="&gt;&gt;linkProvider1.Name" xml:space="preserve">
-    <value>linkProvider1</value>
-  </data>
-  <data name="&gt;&gt;linkProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkProvider1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkProvider1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="labelDescription.AutoSize" type="System.Boolean, mscorlib">
@@ -406,7 +352,7 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 370</value>
+    <value>10, 345</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>494, 28</value>
@@ -433,7 +379,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 408</value>
+    <value>514, 383</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

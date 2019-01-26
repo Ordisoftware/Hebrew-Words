@@ -121,6 +121,19 @@ namespace Ordisoftware.HebrewWords
         Data.DataSet.WordsRow word = null;
         string path = Program.DocumentsPath;
         string strELS50 = "";
+        void nextChapter()
+        {
+          chapter.ELS50 = "";
+          DataSet.Chapters.AddChaptersRow(chapter);
+          foreach ( var v in Letters.FinaleDisable )
+            strELS50 = strELS50.Replace(v.Key, v.Value);
+          int i = strELS50.Length - 1;
+          while ( i >= 0 && strELS50[i] != 't' ) i--;
+          string res = "";
+          for ( int p = i; p >= 0; p -= 50 ) res = strELS50[p] + res;
+          chapter.ELS50 = res;
+          strELS50 = "";
+        }
         foreach ( Book bookid in Enum.GetValues(typeof(Book)) )
         {
           string filename = path + bookid.ToString() + ".txt";
@@ -140,18 +153,7 @@ namespace Ordisoftware.HebrewWords
             string line = item;
             if ( line.Contains("    ") )
             {
-              if ( chapter != null )
-              {
-                chapter.ELS50 = "";
-                DataSet.Chapters.AddChaptersRow(chapter);
-                foreach ( var v in Letters.FinaleDisable ) strELS50 = strELS50.Replace(v.Key, v.Value);
-                int i = strELS50.Length - 1;
-                while ( i >= 0 && strELS50[i] != 't' ) i--;
-                string res = "";
-                for ( int p = i; p >= 0; p -= 50 ) res = strELS50[p] + res;
-                chapter.ELS50 = res;
-                strELS50 = "";
-              }
+              if ( chapter != null ) nextChapter();
               countVerses = 0;
               chapter = DataSet.Chapters.NewChaptersRow();
               chapter.Number = ++countChapters;
@@ -192,18 +194,7 @@ namespace Ordisoftware.HebrewWords
             }
           }
         }
-        if ( chapter != null )
-        {
-          chapter.ELS50 = "";
-          DataSet.Chapters.AddChaptersRow(chapter);
-          foreach ( var v in Letters.FinaleDisable ) strELS50 = strELS50.Replace(v.Key, v.Value);
-          int i = strELS50.Length - 1;
-          while ( i >= 0 && strELS50[i] != 't' ) i--;
-          string res = "";
-          for ( int p = i; p >= 0; p -= 50 ) res = strELS50[p] + res;
-          chapter.ELS50 = res;
-          strELS50 = "";
-        }
+        if ( chapter != null ) nextChapter();
         TableAdapterManager.UpdateAll(DataSet);
       }
       catch ( Exception ex )

@@ -15,8 +15,6 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
-using System.Linq;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -130,7 +128,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( EditBook.SelectedItem == null ) return;
       EditChapter.Items.Clear();
-      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows() )
+      var list = ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows();
+      foreach ( Data.DataSet.ChaptersRow chapter in list )
         EditChapter.Items.Add(new ChapterItem() { Row = chapter });
       EditChapter.SelectedIndex = 0;
     }
@@ -352,10 +351,10 @@ namespace Ordisoftware.HebrewWords
 
     private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      UpdateVerses();
+      UpdateViewVerses();
       UpdateTranslations();
-      UpdateRawText();
-      UpdateELS50All();
+      UpdateViewRawText();
+      UpdateViewELS50();
     }
 
     private void HebrewWordClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -373,60 +372,6 @@ namespace Ordisoftware.HebrewWords
         {
           ex.Manage();
         }
-    }
-
-    private void UpdateTranslations()
-    {
-      EditTranslations.Clear();
-      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
-      {
-        string str = verse.Number + ". ";
-        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-          str = str + word.Translation + " ";
-        str = str.Remove(str.Length - 1, 1);
-        EditTranslations.AppendText(str + Environment.NewLine);
-      }
-    }
-
-    private void UpdateELS50All()
-    {
-      void add(Font font, string str)
-      {
-        EditELS50All.SelectionFont = font;
-        EditELS50All.SelectedText = str;
-      }
-      EditELS50All.Clear();
-      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows() )
-      {
-        add(HebrewFont, chapter.ELS50);
-        add(LatinFont, " :" + chapter.Number);
-        EditELS50All.AppendText(Environment.NewLine);
-      }
-      EditELS50All.SelectAll();
-      EditELS50All.SelectionAlignment = HorizontalAlignment.Right;
-      EditELS50All.SelectionLength = 0;
-    }
-
-    private void UpdateRawText()
-    {
-      void add(Font font, string str)
-      {
-        EditRawText.SelectionFont = font;
-        EditRawText.SelectedText = str;
-      }
-      EditRawText.Clear();
-      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows() )
-      {
-        string str = "";
-        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-          str = word.Hebrew + " " + str;
-        add(HebrewFont, str);
-        add(LatinFont, ":" + verse.Number);
-        EditRawText.AppendText(Environment.NewLine);
-      }
-      EditRawText.SelectAll();
-      EditRawText.SelectionAlignment = HorizontalAlignment.Right;
-      EditRawText.SelectionLength = 0;
     }
 
   }

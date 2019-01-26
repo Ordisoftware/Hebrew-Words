@@ -186,23 +186,23 @@
   <data name="EditTranslations.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="EditTranslations.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTranslations.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
   <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>798, 440</value>
+    <value>796, 438</value>
   </data>
   <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="EditTranslations.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditTranslations.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditTranslations.Name" xml:space="preserve">
     <value>EditTranslations</value>
   </data>
   <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -220,7 +220,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>818, 460</value>
+    <value>816, 458</value>
   </data>
   <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -244,7 +244,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>824, 466</value>
+    <value>822, 464</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -271,7 +271,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>798, 440</value>
+    <value>796, 438</value>
   </data>
   <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -304,7 +304,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>818, 460</value>
+    <value>816, 458</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -328,7 +328,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>824, 466</value>
+    <value>822, 464</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -355,7 +355,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>798, 440</value>
+    <value>796, 438</value>
   </data>
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -388,7 +388,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>818, 460</value>
+    <value>816, 458</value>
   </data>
   <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -412,7 +412,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>824, 466</value>
+    <value>822, 464</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -824,7 +824,7 @@
     <value>0</value>
   </data>
   <data name="LabelTitle.Text" xml:space="preserve">
-    <value>WORDS OF TORAH</value>
+    <value>TANAK</value>
   </data>
   <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -896,16 +896,16 @@
     <value>0</value>
   </data>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>697, 56</value>
+    <value>551, 58</value>
   </metadata>
   <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>368, 56</value>
+    <value>375, 56</value>
   </metadata>
   <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>846, 16</value>
+    <value>203, 54</value>
   </metadata>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>329, 17</value>
+    <value>35, 51</value>
   </metadata>
   <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>236, 17</value>
@@ -1553,19 +1553,19 @@
     <value>23, 23</value>
   </data>
   <metadata name="BooksTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>493, 17</value>
+    <value>490, 16</value>
   </metadata>
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>651, 17</value>
+    <value>325, 17</value>
   </metadata>
   <metadata name="ChaptersTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>650, 18</value>
   </metadata>
   <metadata name="VersesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>539, 56</value>
+    <value>840, 22</value>
   </metadata>
   <metadata name="WordsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>867, 56</value>
+    <value>1016, 18</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

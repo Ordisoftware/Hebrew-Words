@@ -91,7 +91,7 @@
     <Compile Include="Source\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateVerses.cs">
+    <Compile Include="Source\Forms\MainForm.UpdateView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Keys.cs">
@@ -100,7 +100,7 @@
     <Compile Include="Source\Forms\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Update.cs">
+    <Compile Include="Source\Forms\MainForm.Screen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\WordControl.cs">

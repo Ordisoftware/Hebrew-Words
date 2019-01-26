@@ -39,7 +39,7 @@
       this.PanelViewVerses = new System.Windows.Forms.Panel();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
-      this.EditTranslations = new System.Windows.Forms.TextBox();
+      this.EditTranslations = new System.Windows.Forms.RichTextBox();
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.PanelViewRawText = new System.Windows.Forms.Panel();
       this.EditRawText = new System.Windows.Forms.RichTextBox();
@@ -701,7 +701,6 @@
       this.TabPageText.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
       this.PanelViewTranslations.ResumeLayout(false);
-      this.PanelViewTranslations.PerformLayout();
       this.tabPage3.ResumeLayout(false);
       this.PanelViewRawText.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
@@ -809,7 +808,6 @@
     private System.Windows.Forms.Panel PanelViewVerses;
     private System.Windows.Forms.TabPage tabPage1;
     private System.Windows.Forms.Panel PanelViewTranslations;
-    private System.Windows.Forms.TextBox EditTranslations;
     private System.Windows.Forms.TabPage tabPage2;
     private System.Windows.Forms.Panel PanelViewELS50;
     private System.Windows.Forms.ToolStripButton ActionViewELS50;
@@ -818,6 +816,7 @@
     private System.Windows.Forms.Panel PanelViewRawText;
     private System.Windows.Forms.RichTextBox EditRawText;
     private System.Windows.Forms.RichTextBox EditELS50All;
+    private System.Windows.Forms.RichTextBox EditTranslations;
   }
 }
 

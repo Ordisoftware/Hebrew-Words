@@ -162,7 +162,7 @@
     <value>Chapitre</value>
   </data>
   <data name="LabelTitle.Text" xml:space="preserve">
-    <value>MOTS DE TORAH</value>
+    <value>TANAK</value>
   </data>
   <data name="ActionViewVerses.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -553,6 +553,6 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
 </root>
