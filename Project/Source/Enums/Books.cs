@@ -77,17 +77,17 @@ namespace Ordisoftware.HebrewWords
       // Ketouvim
       { HebrewWords.Books.Tehilim, "mylht" },
       { HebrewWords.Books.Mishlei, "yl>m" },
-      { HebrewWords.Books.Iyyov, "" },
-      { HebrewWords.Books.Chir_HaChirim, "" },
-      { HebrewWords.Books.Ruth, "" },
-      { HebrewWords.Books.Eikha, "" },
-      { HebrewWords.Books.Qohelet, "" },
-      { HebrewWords.Books.Esther, "" },
-      { HebrewWords.Books.Daniel, "" },
-      { HebrewWords.Books.Ezra, "" },
-      { HebrewWords.Books.Nehemiah, "" },
-      { HebrewWords.Books.Divrei_HaYamim_1, "" },
-      { HebrewWords.Books.Divrei_HaYamim_2, "" }
+      { HebrewWords.Books.Iyyov, "bvya" },
+      { HebrewWords.Books.Chir_HaChirim, "myry>h ry>" },
+      { HebrewWords.Books.Ruth, "tvr" },
+      { HebrewWords.Books.Eikha, "hkya" },
+      { HebrewWords.Books.Qohelet, "tlhq" },
+      { HebrewWords.Books.Esther, "rtsa" },
+      { HebrewWords.Books.Daniel, "lanyd" },
+      { HebrewWords.Books.Ezra, "arzi" },
+      { HebrewWords.Books.Nehemiah, "hymxn" },
+      { HebrewWords.Books.Divrei_HaYamim_1, "a mymyh yrbd" },
+      { HebrewWords.Books.Divrei_HaYamim_2, "b mymyh yrbd" }
     };
 
   }

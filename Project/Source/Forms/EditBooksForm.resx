@@ -132,7 +132,7 @@
     <value>Hebrew</value>
   </data>
   <data name="dataGridViewTextBoxColumn3.Width" type="System.Int32, mscorlib">
-    <value>115</value>
+    <value>130</value>
   </data>
   <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value>Name</value>
@@ -148,13 +148,19 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCopyHebrewName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>185, 22</value>
   </data>
   <data name="ActionCopyHebrewName.Text" xml:space="preserve">
     <value>Copy hebrew name</value>
   </data>
+  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Open Hebrew Letters</value>
+  </data>
   <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 26</value>
+    <value>186, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
     <value>ContextMenuStrip</value>
@@ -258,9 +264,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>533, 530</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
@@ -274,6 +277,12 @@
     <value>ActionCopyHebrewName</value>
   </data>
   <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
+    <value>ActionOpenHebrewLetters</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">

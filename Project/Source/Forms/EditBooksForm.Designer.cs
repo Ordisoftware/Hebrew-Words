@@ -36,6 +36,7 @@
       this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.buttonClose = new System.Windows.Forms.Button();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,12 +70,14 @@
       this.BooksDataGridView.MultiSelect = false;
       this.BooksDataGridView.Name = "BooksDataGridView";
       this.BooksDataGridView.RowHeadersVisible = false;
+      this.BooksDataGridView.ShowCellToolTips = false;
       this.BooksDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
       // 
       // ContextMenuStrip
       // 
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionCopyHebrewName});
+            this.ActionCopyHebrewName,
+            this.ActionOpenHebrewLetters});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
@@ -96,6 +99,12 @@
       this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.buttonClose.Name = "buttonClose";
       this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // dataGridViewTextBoxColumn2
       // 
@@ -187,5 +196,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
   }
 }
