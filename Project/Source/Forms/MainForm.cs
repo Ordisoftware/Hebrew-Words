@@ -252,6 +252,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionSave for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewStatistics for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
