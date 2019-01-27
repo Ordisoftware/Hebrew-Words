@@ -65,9 +65,9 @@ namespace Ordisoftware.HebrewWords
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ButtonCancel);
       this.panel1.Controls.Add(this.ButtonOK);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // label

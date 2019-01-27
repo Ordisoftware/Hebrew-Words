@@ -532,7 +532,9 @@ namespace Ordisoftware.HebrewWords
     public Data.DataSet.BooksRow Row { get; set; }
     public override string ToString()
     {
-      return Row.Number + ". " + Row.Name + " (" + Row.Translation + ")";
+      string str = Row.Number + ". " + Row.Name;
+      if ( Row.Translation  != "" ) str += " (" + Row.Translation + ")";
+      return str;
     }
   }
 
