@@ -184,7 +184,7 @@ namespace Ordisoftware.HebrewWords
     private void LabelVerseNumberMouseEnter(object sender, EventArgs e)
     {
       ( sender as Label ).Cursor = Cursors.Hand;
-      ( sender as Label ).ForeColor = Color.DarkGreen;
+      ( sender as Label ).ForeColor = Color.Blue;
     }
 
     private void LabelVerseNumberMouseLeave(object sender, EventArgs e)

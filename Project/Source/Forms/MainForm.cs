@@ -475,6 +475,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by PanelViewVerses click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
+    {
+      PanelViewVerses.Focus();
+    }
+
+    /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
     /// <param name="book"></param>
