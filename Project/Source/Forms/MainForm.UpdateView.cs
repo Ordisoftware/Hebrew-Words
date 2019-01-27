@@ -130,6 +130,8 @@ namespace Ordisoftware.HebrewWords
       PanelViewVerses.SuspendLayout();
       try
       {
+        if (PanelViewVerses.Controls.Count > 0)
+          PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
         int margin = 50;
@@ -146,8 +148,9 @@ namespace Ordisoftware.HebrewWords
           var label = new Label();
           label.AutoSize = false;
           label.Width = 40;
-          label.Font = new Font("Calibri", 12f, FontStyle.Bold);
-          label.Location = new Point(x + dx + 0, y + 5);
+          label.ForeColor = Color.DarkBlue;
+          label.Font = new Font("Calibri", 13f, FontStyle.Bold);
+          label.Location = new Point(x + dx + 0, y + 2);
           label.Text = verse.Number.ToString();
           label.MouseEnter += LabelVerseNumberMouseEnter;
           label.MouseLeave += LabelVerseNumberMouseLeave;
@@ -190,7 +193,7 @@ namespace Ordisoftware.HebrewWords
     private void LabelVerseNumberMouseLeave(object sender, EventArgs e)
     {
       ( sender as Label ).Cursor = Cursors.Default;
-      ( sender as Label ).ForeColor = SystemColors.ControlText;
+      ( sender as Label ).ForeColor = Color.DarkBlue;
     }
 
     private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)

@@ -55,7 +55,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.1
+#### 2019.01.29 - Version 1.1
 
 - Add books name translation form.
 - Add search a word.
