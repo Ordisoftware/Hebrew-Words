@@ -48,9 +48,9 @@
       this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionCopyToClipboard = new System.Windows.Forms.Button();
-      this.EditBook = new System.Windows.Forms.ComboBox();
+      this.SelectBook = new System.Windows.Forms.ComboBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
-      this.EditChapter = new System.Windows.Forms.ComboBox();
+      this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -112,7 +113,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -258,9 +258,9 @@
       // panel1
       // 
       this.panel1.Controls.Add(this.ActionCopyToClipboard);
-      this.panel1.Controls.Add(this.EditBook);
+      this.panel1.Controls.Add(this.SelectBook);
       this.panel1.Controls.Add(this.EditELS50);
-      this.panel1.Controls.Add(this.EditChapter);
+      this.panel1.Controls.Add(this.SelectChapter);
       this.panel1.Controls.Add(this.label4);
       this.panel1.Controls.Add(this.label2);
       this.panel1.Controls.Add(this.label3);
@@ -275,13 +275,13 @@
       this.ActionCopyToClipboard.UseVisualStyleBackColor = true;
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
       // 
-      // EditBook
+      // SelectBook
       // 
-      this.EditBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.EditBook, "EditBook");
-      this.EditBook.FormattingEnabled = true;
-      this.EditBook.Name = "EditBook";
-      this.EditBook.SelectedIndexChanged += new System.EventHandler(this.EditBook_SelectedIndexChanged);
+      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.FormattingEnabled = true;
+      this.SelectBook.Name = "SelectBook";
+      this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // EditELS50
       // 
@@ -290,13 +290,13 @@
       this.EditELS50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditELS50.Name = "EditELS50";
       // 
-      // EditChapter
+      // SelectChapter
       // 
-      this.EditChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.EditChapter, "EditChapter");
-      this.EditChapter.FormattingEnabled = true;
-      this.EditChapter.Name = "EditChapter";
-      this.EditChapter.SelectedIndexChanged += new System.EventHandler(this.EditChapter_SelectedIndexChanged);
+      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.FormattingEnabled = true;
+      this.SelectChapter.Name = "SelectChapter";
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
       // label4
       // 
@@ -638,6 +638,11 @@
       this.ActionViewStatistics.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
       // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
       // ActionSave
       // 
       this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -730,11 +735,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // MainForm
       // 
@@ -852,8 +852,8 @@
     private System.Windows.Forms.BindingSource WordsBindingSource;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.ComboBox EditChapter;
-    private System.Windows.Forms.ComboBox EditBook;
+    private System.Windows.Forms.ComboBox SelectChapter;
+    private System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.TextBox EditELS50;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Button ActionCopyToClipboard;

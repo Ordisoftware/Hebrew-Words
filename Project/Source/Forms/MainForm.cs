@@ -121,10 +121,10 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void InitBooksCombobox()
     {
-      EditBook.Items.Clear();
+      SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        EditBook.Items.Add(new BookItem() { Row = book });
-      EditBook.SelectedIndex = 0;
+        SelectBook.Items.Add(new BookItem() { Row = book });
+      SelectBook.SelectedIndex = 0;
     }
 
     /// <summary>
@@ -132,12 +132,12 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void InitChaptersCombobox()
     {
-      if ( EditBook.SelectedItem == null ) return;
-      EditChapter.Items.Clear();
-      var list = ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows();
+      if ( SelectBook.SelectedItem == null ) return;
+      SelectChapter.Items.Clear();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
-        EditChapter.Items.Add(new ChapterItem() { Row = chapter });
-      EditChapter.SelectedIndex = 0;
+        SelectChapter.Items.Add(new ChapterItem() { Row = chapter });
+      SelectChapter.SelectedIndex = 0;
     }
 
     /// <summary>
@@ -404,17 +404,19 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(EditELS50.Text);
     }
 
-    private void EditBook_SelectedIndexChanged(object sender, EventArgs e)
+    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
+      SetView(Program.Settings.CurrentView, true);
     }
 
-    private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
+    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
       UpdateViewVerses();
       UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
+      ActionSave.PerformClick();
     }
 
     private void HebrewWordMouseClick(object sender, MouseEventArgs e)
@@ -447,13 +449,19 @@ namespace Ordisoftware.HebrewWords
   internal class BookItem
   {
     public Data.DataSet.BooksRow Row { get; set; }
-    public override string ToString() { return Row.Name.Replace("_", " ") + " (" + Row.Translation + ")"; }
+    public override string ToString()
+    {
+      return Row.Number + ". " + Row.Name.Replace("_", " ") + " (" + Row.Translation + ")";
+    }
   }
 
   internal class ChapterItem
   {
     public Data.DataSet.ChaptersRow Row { get; set; }
-    public override string ToString() { return Row.Number.ToString(); }
+    public override string ToString()
+    {
+      return Row.Number.ToString();
+    }
   }
 
 }

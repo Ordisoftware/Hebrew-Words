@@ -25,14 +25,14 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewTranslations()
     {
       EditTranslations.Clear();
-      var list = ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
       foreach ( Data.DataSet.VersesRow verse in list )
       {
         string str = verse.Number + ". ";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = str + word.Translation + " ";
         str = str.Remove(str.Length - 1, 1);
-        EditTranslations.SelectedText = str + Environment.NewLine;
+        EditTranslations.SelectedText = str + Environment.NewLine + Environment.NewLine;
       }
       EditTranslations.SelectionStart = 0;
     }
@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
         EditELS50All.SelectedText = str;
       }
       EditELS50All.Clear();
-      var list = ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
         add(HebrewFont, chapter.ELS50);
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewWords
         EditRawText.SelectedText = str;
       }
       EditRawText.Clear();
-      var list = ( (ChapterItem)EditChapter.SelectedItem ).Row.GetVersesRows();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
       foreach ( Data.DataSet.VersesRow verse in list )
       {
         string str = "";
@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           str = word.Hebrew + " " + str;
         add(HebrewFont, str);
         add(LatinFont, ":" + verse.Number);
-        EditRawText.AppendText(Environment.NewLine);
+        EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectAll();
       EditRawText.SelectionAlignment = HorizontalAlignment.Right;
@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViewVerses()
     {
-      var item = (ChapterItem)EditChapter.SelectedItem;
+      var item = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = item.Row.ELS50;
       PanelViewVerses.SuspendLayout();
       try

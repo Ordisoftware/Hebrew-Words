@@ -34,22 +34,22 @@
       this.BooksDataGridView = new System.Windows.Forms.DataGridView();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.dataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
       this.buttonClose = new System.Windows.Forms.Button();
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.dataSet = new Ordisoftware.HebrewWords.Data.DataSet();
-      this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).BeginInit();
       this.ContextMenuStrip.SuspendLayout();
-      this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+      this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // BooksDataGridView
@@ -87,6 +87,22 @@
       resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
       this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
       // 
+      // ActionOpenHebrewLetters
+      // 
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.dataSet;
+      // 
+      // dataSet
+      // 
+      this.dataSet.DataSetName = "DataSet";
+      this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
       // panel1
       // 
       this.panel1.Controls.Add(this.buttonClose);
@@ -100,11 +116,18 @@
       this.buttonClose.Name = "buttonClose";
       this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
-      // ActionOpenHebrewLetters
+      // BooksTableAdapter
       // 
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      this.BooksTableAdapter.ClearBeforeFill = true;
+      // 
+      // TableAdapterManager
+      // 
+      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
+      this.TableAdapterManager.BooksTableAdapter = this.BooksTableAdapter;
+      this.TableAdapterManager.ChaptersTableAdapter = null;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+      this.TableAdapterManager.VersesTableAdapter = null;
+      this.TableAdapterManager.WordsTableAdapter = null;
       // 
       // dataGridViewTextBoxColumn2
       // 
@@ -116,6 +139,7 @@
       // dataGridViewTextBoxColumn3
       // 
       this.dataGridViewTextBoxColumn3.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
       dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
       resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
@@ -136,29 +160,6 @@
       resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.dataSet;
-      // 
-      // dataSet
-      // 
-      this.dataSet.DataSetName = "DataSet";
-      this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // BooksTableAdapter
-      // 
-      this.BooksTableAdapter.ClearBeforeFill = true;
-      // 
-      // TableAdapterManager
-      // 
-      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
-      this.TableAdapterManager.BooksTableAdapter = this.BooksTableAdapter;
-      this.TableAdapterManager.ChaptersTableAdapter = null;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-      this.TableAdapterManager.VersesTableAdapter = null;
-      this.TableAdapterManager.WordsTableAdapter = null;
-      // 
       // EditBooksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -174,9 +175,9 @@
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).EndInit();
       this.ContextMenuStrip.ResumeLayout(false);
-      this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+      this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -192,10 +193,10 @@
     private System.Windows.Forms.Button buttonClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewName;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
   }
 }

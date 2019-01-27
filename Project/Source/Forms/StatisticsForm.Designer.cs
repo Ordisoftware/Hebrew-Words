@@ -36,7 +36,7 @@
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
       this.StatTorah = new Ordisoftware.HebrewWords.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
-      this.EditBook = new System.Windows.Forms.ComboBox();
+      this.SelectBook = new System.Windows.Forms.ComboBox();
       this.StatBook = new Ordisoftware.HebrewWords.StatControl();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -46,8 +46,8 @@
       // 
       // GroupBoxAllBooks
       // 
-      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Controls.Add(this.StatAllBooks);
+      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
       // 
@@ -58,8 +58,8 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // buttonClose
@@ -71,8 +71,8 @@
       // 
       // GroupBoxTorah
       // 
-      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Controls.Add(this.StatTorah);
+      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
@@ -83,19 +83,19 @@
       // 
       // GroupBoxBook
       // 
-      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
-      this.GroupBoxBook.Controls.Add(this.EditBook);
+      this.GroupBoxBook.Controls.Add(this.SelectBook);
       this.GroupBoxBook.Controls.Add(this.StatBook);
+      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Name = "GroupBoxBook";
       this.GroupBoxBook.TabStop = false;
       // 
-      // EditBook
+      // SelectBook
       // 
-      resources.ApplyResources(this.EditBook, "EditBook");
-      this.EditBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditBook.FormattingEnabled = true;
-      this.EditBook.Name = "EditBook";
-      this.EditBook.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.Name = "SelectBook";
+      this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // StatBook
       // 
@@ -129,7 +129,7 @@
     private System.Windows.Forms.GroupBox GroupBoxTorah;
     private StatControl StatTorah;
     private System.Windows.Forms.GroupBox GroupBoxBook;
-    private System.Windows.Forms.ComboBox EditBook;
+    private System.Windows.Forms.ComboBox SelectBook;
     private StatControl StatBook;
   }
 }

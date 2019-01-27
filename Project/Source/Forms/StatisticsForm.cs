@@ -45,8 +45,8 @@ namespace Ordisoftware.HebrewWords
     {
       Initialize();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        EditBook.Items.Add(new BookItem() { Row = book });
-      EditBook.SelectedIndex = 0;
+        SelectBook.Items.Add(new BookItem() { Row = book });
+      SelectBook.SelectedIndex = 0;
     }
 
     private Dictionary<Books, BookStatistic> CountersBooks = new Dictionary<Books, BookStatistic>();
@@ -103,11 +103,11 @@ namespace Ordisoftware.HebrewWords
       control.LabelLetters.Text = stat.CountLetters.ToString();
     }
 
-    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       try
       {
-        Books book = (Books)( ( (BookItem)EditBook.SelectedItem ).Row.Number - 1 );
+        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Row.Number - 1 );
         CountersSelected = new BookStatistic();
         CountersSelected.CountChapters += CountersBooks[book].CountChapters;
         CountersSelected.CountVerses += CountersBooks[book].CountVerses;
