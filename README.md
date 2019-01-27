@@ -13,6 +13,7 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 - Translate verses words by words.
 - Left mouse click on a word to open online strong's concordance.
 - Right mouse click on a word to open Hebrew Letters.
+- Click on a verse number to open online text with contextual strong's concordances.
 - Determine the equidistant letter sequence of 50 for Tav.
 - Search a word.
 - Show statistics.
@@ -58,6 +59,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 - Add books name translation form.
 - Add search a word.
+- Add open verse online.
 - Some improvments.
 
 #### 2019.01.26 - Version 1.0
