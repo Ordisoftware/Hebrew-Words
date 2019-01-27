@@ -404,12 +404,22 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(EditELS50.Text);
     }
 
+    /// <summary>
+    /// Event handler. Called by SelectBook for selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
       SetView(Program.Settings.CurrentView, true);
     }
 
+    /// <summary>
+    /// Event handler. Called by SelectChapter for selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
       UpdateViewVerses();
@@ -419,6 +429,11 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
     }
 
+    /// <summary>
+    /// Event handler. Called by WordControl for hebrew word mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void HebrewWordMouseClick(object sender, MouseEventArgs e)
     {
       using ( var process = new Process() )
@@ -446,6 +461,9 @@ namespace Ordisoftware.HebrewWords
 
   }
 
+  /// <summary>
+  /// Provide book combobox item
+  /// </summary>
   internal class BookItem
   {
     public Data.DataSet.BooksRow Row { get; set; }
@@ -455,6 +473,9 @@ namespace Ordisoftware.HebrewWords
     }
   }
 
+  /// <summary>
+  /// Provide chapter combobox item
+  /// </summary>
   internal class ChapterItem
   {
     public Data.DataSet.ChaptersRow Row { get; set; }
