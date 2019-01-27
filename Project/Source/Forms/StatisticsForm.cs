@@ -56,10 +56,8 @@ namespace Ordisoftware.HebrewWords
 
     private void Initialize()
     {
-      int countBooks = 0;
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books )
       {
-        countBooks++;
         var stat = new BookStatistic() { Book = book };
         CountersBooks.Add(((Books)book.Number) - 1, stat);
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )

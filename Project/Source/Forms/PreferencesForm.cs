@@ -56,6 +56,11 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Save();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSelect for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSelect_Click(object sender, EventArgs e)
     {
       OpenFileDialog.FileName = EditPath.Text;

@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// INdicate last showned tooltip.
+    /// Indicate last showned tooltip.
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
@@ -81,6 +81,11 @@ namespace Ordisoftware.HebrewWords
       SetView(Program.Settings.CurrentView, true);
     }
 
+    /// <summary>
+    /// Event handler. Called by MainForm for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
       Refresh();
@@ -111,6 +116,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Initialize books combobox.
+    /// </summary>
     private void InitBooksCombobox()
     {
       EditBook.Items.Clear();
@@ -119,6 +127,9 @@ namespace Ordisoftware.HebrewWords
       EditBook.SelectedIndex = 0;
     }
 
+    /// <summary>
+    /// Initialize chapter combobox.
+    /// </summary>
     private void InitChaptersCombobox()
     {
       if ( EditBook.SelectedItem == null ) return;
@@ -129,6 +140,11 @@ namespace Ordisoftware.HebrewWords
       EditChapter.SelectedIndex = 0;
     }
 
+    /// <summary>
+    /// Event handler. Called by MainForm for form client size changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Form closing event information.</param>
     private void MainForm_ClientSizeChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
@@ -227,7 +243,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
       SetView(ViewModeType.Translations);
-      UpdateTranslations();
+      UpdateViewTranslations();
     }
 
     /// <summary>
@@ -396,7 +412,7 @@ namespace Ordisoftware.HebrewWords
     private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
       UpdateViewVerses();
-      UpdateTranslations();
+      UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
     }

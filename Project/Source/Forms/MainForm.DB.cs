@@ -35,19 +35,19 @@ namespace Ordisoftware.HebrewWords
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
-      void check(string table, string sql)
-      {
-        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = '" + table + "'", connection);
-        int result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
-        {
-          var cmdCreateTable = new OdbcCommand(sql, connection);
-          cmdCreateTable.ExecuteNonQuery();
-        }
-      }
       try
       {
+        void check(string table, string sql)
+        {
+          var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                              "WHERE type = 'table' AND name = '" + table + "'", connection);
+          int result = (int)cmdCheckTable.ExecuteScalar();
+          if ( result == 0 )
+          {
+            var cmdCreateTable = new OdbcCommand(sql, connection);
+            cmdCreateTable.ExecuteNonQuery();
+          }
+        }
         check("Books", @"CREATE TABLE 'Books' ( 
                            ID text NOT NULL,
                            Number integer NOT NULL,

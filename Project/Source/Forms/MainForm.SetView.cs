@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           {
             MenuItem = ActionViewVerses,
             Panel = PanelViewVerses,
-            Focused = null
+            Focused = PanelViewVerses
           }
         },
         {
