@@ -127,6 +127,23 @@ namespace Ordisoftware.HebrewWords
         }
     }
 
+    static public void OpenOnlineVerse(Books book, int chapter, int verse)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          
+          process.StartInfo.FileName = "https://studybible.info/IHOT/" 
+                                     + BooksNames.English[book] 
+                                     + " " + chapter + ":" + verse;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
   }
 
 }

@@ -149,6 +149,9 @@ namespace Ordisoftware.HebrewWords
           label.Font = new Font("Calibri", 12f, FontStyle.Bold);
           label.Location = new Point(x + dx + 0, y + 5);
           label.Text = verse.Number.ToString();
+          label.MouseEnter += LabelVerseNumberMouseEnter;
+          label.MouseLeave += LabelVerseNumberMouseLeave;
+          label.MouseClick += LabelVerseNumberMouseClick;
           PanelViewVerses.Controls.Add(label);
           bool emptyline = false;
           foreach ( var word in verse.GetWordsRows() )
@@ -176,6 +179,25 @@ namespace Ordisoftware.HebrewWords
       {
         PanelViewVerses.ResumeLayout();
       }
+    }
+
+    private void LabelVerseNumberMouseEnter(object sender, EventArgs e)
+    {
+      ( sender as Label ).Cursor = Cursors.Hand;
+      ( sender as Label ).ForeColor = Color.DarkGreen;
+    }
+
+    private void LabelVerseNumberMouseLeave(object sender, EventArgs e)
+    {
+      ( sender as Label ).Cursor = Cursors.Default;
+      ( sender as Label ).ForeColor = SystemColors.ControlText;
+    }
+
+    private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)
+    {
+      Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, 
+                              SelectChapter.SelectedIndex + 1, 
+                              Convert.ToInt32(( sender as Label ).Text));
     }
 
   }

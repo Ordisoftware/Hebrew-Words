@@ -157,18 +157,18 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleValue_MouseEnter(object sender, EventArgs e)
     {
+      ( sender as Label ).Cursor = Cursors.Hand;
       ( sender as Label ).ForeColor = System.Drawing.Color.DarkRed;
     }
 
     private void LabelMiddleValue_MouseLeave(object sender, EventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Hand;
+      ( sender as Label ).Cursor = Cursors.Default;
       ( sender as Label ).ForeColor = System.Drawing.SystemColors.ControlText;
     }
 
     private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Default;
       Program.OpenHebrewLetters(( sender as Label ).Text);
     }
 
