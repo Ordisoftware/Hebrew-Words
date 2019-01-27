@@ -32,14 +32,6 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
-    /// INdicate filename of the help file.
-    /// </summary>
-    static public readonly string HelpFilename
-      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Debug\\", "\\").Replace("\\Release\\", "\\"))).FullName + Path.DirectorySeparatorChar
-      + "Help" + Path.DirectorySeparatorChar
-      + "index.htm";
-
-    /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
     static public readonly MainForm Instance;
@@ -355,7 +347,7 @@ namespace Ordisoftware.HebrewWords
       using ( var process = new Process() )
         try
         {
-          process.StartInfo.FileName = HelpFilename;
+          process.StartInfo.FileName = Program.HelpFilename;
           process.Start();
         }
         catch ( Exception ex )
