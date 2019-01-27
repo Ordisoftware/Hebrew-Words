@@ -18,7 +18,6 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -259,6 +258,11 @@ namespace Ordisoftware.HebrewWords
       SetView(ViewModeType.Text);
     }
 
+    private void ActionViewSearch_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Search);
+    }
+
     /// <summary>
     /// Event handler. Called by ActionViewBooksTranslation for click events.
     /// </summary>
@@ -449,6 +453,22 @@ namespace Ordisoftware.HebrewWords
         {
           ex.Manage();
         }
+    }
+
+    private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      if ( e.KeyChar == '\r' ) ActionSearchWord.PerformClick();
+    }
+
+    private void ActionClearWord_Click(object sender, EventArgs e)
+    {
+      EditLetters.Input.Text = "";
+      ActionSearchWord.PerformClick();
+    }
+
+    private void ActionSearchWord_Click(object sender, EventArgs e)
+    {
+      UpdateViewSearch();
     }
 
   }

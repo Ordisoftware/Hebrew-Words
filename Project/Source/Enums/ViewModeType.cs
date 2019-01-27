@@ -41,7 +41,12 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// ELS50 view mode.
     /// </summary>
-    ELS50
+    ELS50,
+
+    /// <summary>
+    /// Search view mode.
+    /// </summary>
+    Search
 
   }
 

@@ -102,6 +102,15 @@ namespace Ordisoftware.HebrewWords
             Panel = PanelViewELS50,
             Focused = EditELS50All
           }
+        },
+        {
+          ViewModeType.Search,
+          new ViewConnector
+          {
+            MenuItem = ActionViewSearch,
+            Panel = PanelViewSearch2,
+            Focused = EditLetters
+          }
         }
       };
       if ( Program.Settings.CurrentView == view && !first ) return;

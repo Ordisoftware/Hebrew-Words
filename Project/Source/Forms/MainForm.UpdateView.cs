@@ -37,26 +37,6 @@ namespace Ordisoftware.HebrewWords
       EditTranslations.SelectionStart = 0;
     }
 
-    private void UpdateViewELS50()
-    {
-      void add(Font font, string str)
-      {
-        EditELS50All.SelectionFont = font;
-        EditELS50All.SelectedText = str;
-      }
-      EditELS50All.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
-      foreach ( Data.DataSet.ChaptersRow chapter in list )
-      {
-        add(HebrewFont, chapter.ELS50);
-        add(LatinFont, " :" + chapter.Number);
-        EditELS50All.AppendText(Environment.NewLine);
-      }
-      EditELS50All.SelectAll();
-      EditELS50All.SelectionAlignment = HorizontalAlignment.Right;
-      EditELS50All.SelectionLength = 0;
-    }
-
     private void UpdateViewRawText()
     {
       void add(Font font, string str)
@@ -78,6 +58,55 @@ namespace Ordisoftware.HebrewWords
       EditRawText.SelectAll();
       EditRawText.SelectionAlignment = HorizontalAlignment.Right;
       EditRawText.SelectionLength = 0;
+    }
+
+    private void UpdateViewSearch()
+    {
+      void add(Font font, string str)
+      {
+        EditSearchResults.SelectionFont = font;
+        EditSearchResults.SelectedText = str;
+      }
+      string str1 = EditLetters.Input.Text;
+      string str2 = Letters.SetFinale(str1, true);
+      EditSearchResults.Clear();
+      foreach ( Data.DataSet.BooksRow book in DataSet.Books )
+        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+              if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
+              {
+                string str = "";
+                foreach ( Data.DataSet.WordsRow word2 in verse.GetWordsRows() )
+                  str = word2.Hebrew + " " + str;
+                add(HebrewFont, str);
+                add(LatinFont, ":" + verse.Number + "." + chapter.Number + "." + book.Name);
+                EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
+                break;
+              }
+      EditSearchResults.SelectAll();
+      EditSearchResults.SelectionAlignment = HorizontalAlignment.Right;
+      EditSearchResults.SelectionLength = 0;
+    }
+
+    private void UpdateViewELS50()
+    {
+      void add(Font font, string str)
+      {
+        EditELS50All.SelectionFont = font;
+        EditELS50All.SelectedText = str;
+      }
+      EditELS50All.Clear();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
+      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      {
+        add(HebrewFont, chapter.ELS50);
+        add(LatinFont, " :" + chapter.Number);
+        EditELS50All.AppendText(Environment.NewLine);
+      }
+      EditELS50All.SelectAll();
+      EditELS50All.SelectionAlignment = HorizontalAlignment.Right;
+      EditELS50All.SelectionLength = 0;
     }
 
     private void UpdateViewVerses()

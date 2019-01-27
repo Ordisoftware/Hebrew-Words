@@ -56,7 +56,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### 2019.__.__ - Version 1.1
 
-- Add books name translation edit form.
+- Add books name translation form.
 - Some improvments.
 
 #### 2019.01.26 - Version 1.0
