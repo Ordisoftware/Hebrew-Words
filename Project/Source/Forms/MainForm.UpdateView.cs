@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -75,7 +76,13 @@ namespace Ordisoftware.HebrewWords
         string str1 = EditLetters.Input.Text;
         if ( str1 == "" ) return;
         string str2 = Letters.SetFinale(str1, true);
-        foreach ( Data.DataSet.BooksRow book in DataSet.Books )
+        var books = !EditSearchOnlyTorah.Checked
+                  ? DataSet.Books.ToList()
+                  : ( from book in DataSet.Books
+                      where book.Number <= 5
+                      orderby book.Number
+                      select book ).ToList();
+        foreach ( Data.DataSet.BooksRow book in books )
           foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
