@@ -267,7 +267,7 @@
   <data name="ActionSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
         QrqRuvAiUDEo5WS2CgkWUttxL9WFgTeWjLyoLipBoVIbO3sx0ulebEqrxphrUbaz7ek5x1PrMBc98Nwc
         fs/n+33Ot+a35u8ey4TcRxF0HUHQYUBguAkBsQF+e9nKt5DLnNEieoVcJjUQ8ZxD2icin3wBFMJAnv65
         sGk5rEK0iF4BsRHAZ+SWxrA2eRlBtxlB8QBWHrUgNXka8vxZYENSN9Eievlth1UA1h8DPyROXoKceo0v
@@ -336,30 +336,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>494, 168</value>
-  </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADMAAAAzAAAAMwAAADMAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhrcP9sbW7/bW1u/2xtbv9oa3D/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAHBQE1AAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAM2dpbv8AAAAzAAAAMwAA
-        ADMAAAAzAAAAMwAAADMAAAAzypY2/9+sSP/bpkH/26ZA/9umP//fqD//5aw+/+6yP/9bYGj/7rI//+Ws
-        Pv/fqD//26Y//9umQf/cqEb/1KE7/6lxF///////////////////////////////////////U1VZ////
-        /////////////////////////////9unRf+qcRT//////////////////////////////////////1BR
-        Uv/////////////////////////////////apUD/qnEU///////QlTD/0Zg4/9KZOv/RmDj/0ZUv////
-        //9QUVL/////////////////////////////////2qQ//6pyFf//////0po6/9SfRf/VoUj/1Z9F/9Sb
-        Ov//////UlNU///////5+fj/9vb1//b29f/29/f//////9qlP/+qchX//////9KXM//Umzz/1Z0+/9Sc
-        PP/VmTT/+Pv//1RVVv/29fT/7ezr/+vq6f/q6un/6enq///////apT//q3MW///////f4+3/4OXw/+Hm
-        8f/h5fD/4ubu/+nq7v9VV1n/6ejq/+Dg4v/e3uD/3t7g/93d4P//////26dB/612G//27+X/8+rc//Tq
-        2//06tv/9Orb//Xs2//98d7/WFxj//3x3v/169r/8+nZ//Pp2f/y6dn/8uvh/96rSf+weyT/rXYc/6x0
-        GP+sdBj/rHQY/610F/+vdRb/tHgV/11lcv+0eBX/r3UW/610F/+sdBj/rHQY/6pzGv/KlTb/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADNja3f/AAAAMwAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZsdv9pbXT/am1y/2ltdP9mbHb/AAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
-        AAD8HwAA//8AAA==
-</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

@@ -31,6 +31,7 @@ namespace Ordisoftware.HebrewWords
     public PreferencesForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     /// <summary>

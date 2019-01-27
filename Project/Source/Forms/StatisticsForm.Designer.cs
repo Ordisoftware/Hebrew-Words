@@ -54,8 +54,8 @@
       // 
       // GroupBoxAllBooks
       // 
-      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Controls.Add(this.StatAllBooks);
+      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
       // 
@@ -66,8 +66,8 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // buttonClose
@@ -79,8 +79,8 @@
       // 
       // GroupBoxTorah
       // 
-      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Controls.Add(this.StatTorah);
+      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
@@ -91,17 +91,17 @@
       // 
       // GroupBoxBook
       // 
-      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Controls.Add(this.SelectBook);
       this.GroupBoxBook.Controls.Add(this.StatBook);
+      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Name = "GroupBoxBook";
       this.GroupBoxBook.TabStop = false;
       // 
       // SelectBook
       // 
-      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
@@ -112,13 +112,13 @@
       // 
       // groupBox1
       // 
-      resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Controls.Add(this.LabelMiddleReferenceValue);
       this.groupBox1.Controls.Add(this.LabelMiddleLetter);
       this.groupBox1.Controls.Add(this.LabelMiddleLetterValue);
       this.groupBox1.Controls.Add(this.LabelMiddleWordValue);
       this.groupBox1.Controls.Add(this.LabelMiddleWord);
       this.groupBox1.Controls.Add(this.LabelMiddleReference);
+      resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
       // 
@@ -170,6 +170,7 @@
       this.Controls.Add(this.GroupBoxTorah);
       this.Controls.Add(this.GroupBoxAllBooks);
       this.Name = "StatisticsForm";
+      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.StatisticsForm_Load);
       this.GroupBoxAllBooks.ResumeLayout(false);
       this.panel1.ResumeLayout(false);

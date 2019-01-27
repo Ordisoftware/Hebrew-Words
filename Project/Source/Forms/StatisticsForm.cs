@@ -35,6 +35,7 @@ namespace Ordisoftware.HebrewWords
     public StatisticsForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void buttonClose_Click(object sender, EventArgs e)
