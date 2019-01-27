@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -43,7 +44,8 @@ namespace Ordisoftware.HebrewWords
 
     private void StatisticsForm_Load(object sender, EventArgs e)
     {
-      Initialize();
+      InitializeCounters();
+      InitializeMiddle();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem() { Row = book });
       SelectBook.SelectedIndex = 0;
@@ -54,12 +56,12 @@ namespace Ordisoftware.HebrewWords
     private BookStatistic CountersTorah = new BookStatistic();
     private BookStatistic CountersSelected = new BookStatistic();
 
-    private void Initialize()
+    private void InitializeCounters()
     {
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books )
       {
         var stat = new BookStatistic() { Book = book };
-        CountersBooks.Add(((Books)book.Number) - 1, stat);
+        CountersBooks.Add(( (Books)book.Number ) - 1, stat);
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
         {
           stat.CountChapters++;
@@ -120,49 +122,61 @@ namespace Ordisoftware.HebrewWords
       SetCounters(StatBook, CountersSelected);
     }
 
-  }
-
-}
-
-
-      /*int i = 0;
-      foreach ( AllBooks b in Enum.GetValues(typeof(TorahBooks)) )
+    private void InitializeMiddle()
+    {
+      int lcount = CountersTorah.CountLetters / 2;
+      int index = 0;
+      var books = from book in MainForm.Instance.DataSet.Books
+                  where book.Number <= 5
+                  orderby book.Number
+                  select book;
+      foreach ( Data.DataSet.BooksRow book in books )
       {
-        ccount = 0;
-        foreach ( var c in Books.Instance[b] )
-        {
-          ccount++;
-          vcount = 0;
-          foreach ( var v in c )
-          {
-            vcount++;
-            wcount = 0;
-            foreach ( var w in v )
+        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
             {
-              wcount++;
-              string s = w.Hebrew.Replace(' ', '\0');
-              foreach ( var l in Letters.FinaleDisable )
-                s = s.Replace(l.Key, l.Value);
-              foreach ( char l in s )
+              string str = word.Hebrew;
+              foreach ( var letter in Letters.FinaleDisable )
+                str = str.Replace(letter.Key, letter.Value);
+              foreach ( char letter in str )
               {
-                i++;
-                if ( i >= lcount / 2 )
+                index++;
+                if ( index == lcount )
                 {
-                  AddText(panelVerses.LatinFont, GetRefText(true, vcount - 1, ccount - 1, b));
-                  AddLine();
-                  AddText(panelVerses.LatinFont, "Milieu de la Torah - Verse : ");
-                  AddText(panelVerses.HebrewFont, v.ToString());
-                  AddLine();
-                  AddText(panelVerses.LatinFont, "Milieu de la Torah - Word : ");
-                  AddText(panelVerses.HebrewFont, w.Hebrew);
-                  AddLine();
-                  AddText(panelVerses.LatinFont, "Milieu de la Torah - Letter : ");
-                  AddText(panelVerses.HebrewFont, l.ToString());
-                  AddLine();
+                  LabelMiddleReferenceValue.Text = book.Number + "." + chapter.Number + "." + verse.Number;
+                  LabelMiddleWordValue.Text = word.Hebrew;
+                  LabelMiddleLetterValue.Text = letter.ToString(); ;
                   return;
                 }
               }
             }
-          }
-        }
-        }*/
+      }
+    }
+
+    private void LabelMiddleValue_MouseEnter(object sender, EventArgs e)
+    {
+      ( sender as Label ).ForeColor = System.Drawing.Color.DarkRed;
+    }
+
+    private void LabelMiddleValue_MouseLeave(object sender, EventArgs e)
+    {
+      ( sender as Label ).Cursor = Cursors.Hand;
+      ( sender as Label ).ForeColor = System.Drawing.SystemColors.ControlText;
+    }
+
+    private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
+    {
+      ( sender as Label ).Cursor = Cursors.Default;
+      Program.OpenHebrewLetters(( sender as Label ).Text);
+    }
+
+    private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      var list = LabelMiddleReferenceValue.Text.Split('.');
+      MainForm.Instance.GoTo(Convert.ToInt32(list[0]), Convert.ToInt32(list[1]), Convert.ToInt32(list[2]));
+      Close();
+    }
+  }
+
+}

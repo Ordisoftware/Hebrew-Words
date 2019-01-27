@@ -432,43 +432,69 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void HebrewWordMouseClick(object sender, MouseEventArgs e)
     {
-      using ( var process = new Process() )
-        try
-        {
-          if ( e.Button == MouseButtons.Left )
-            process.StartInfo.FileName = Program.Settings.SearchOnline + (string)( sender as Label ).Tag;
-          else
-          if ( e.Button == MouseButtons.Right )
-          {
-            process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
-            string str = ( sender as Label ).Text;
-            foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-            process.StartInfo.Arguments = str;
-          }
-          else
-            return;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      if ( e.Button == MouseButtons.Left )
+        Program.OpenOnlineSearch((string)( sender as Label ).Tag);
+      else
+      if ( e.Button == MouseButtons.Right )
+      {
+        string str = ( sender as Label ).Text;
+        foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+        Program.OpenHebrewLetters(str);
+      }
     }
 
+    /// <summary>
+    /// Event handler. Called by PanelLetterSearch key press events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       if ( e.KeyChar == '\r' ) ActionSearchWord.PerformClick();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionClearWord click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionClearWord_Click(object sender, EventArgs e)
     {
       EditLetters.Input.Text = "";
       ActionSearchWord.PerformClick();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSearchWord click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSearchWord_Click(object sender, EventArgs e)
     {
       UpdateViewSearch();
+    }
+
+    /// <summary>
+    /// Go to book / chapter / verse into view verses panel.
+    /// </summary>
+    /// <param name="book"></param>
+    /// <param name="chapter"></param>
+    /// <param name="verse"></param>
+    public void GoTo(int book, int chapter, int verse)
+    {
+      SetView(ViewModeType.Verses);
+      SelectBook.SelectedIndex = book - 1;
+      SelectChapter.SelectedIndex = chapter - 1;
+      foreach ( var control in PanelViewVerses.Controls )
+        if (control is Label)
+        {
+          var label = control as Label;
+          if ( label.Text == verse.ToString() )
+          {
+            PanelViewVerses.ScrollControlIntoView(label);
+            return;
+          }
+        }
     }
 
   }

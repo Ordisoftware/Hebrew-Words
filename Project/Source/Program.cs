@@ -14,7 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.IO;
-using System.Linq;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -96,6 +96,35 @@ namespace Ordisoftware.HebrewWords
       {
         ex.Manage();
       }
+    }
+
+    static public void OpenHebrewLetters(string hebrew)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = Settings.HebrewLettersExe;
+          process.StartInfo.Arguments = hebrew;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
+    static public void OpenOnlineSearch(string hebrew)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = Settings.SearchOnline + hebrew;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
   }

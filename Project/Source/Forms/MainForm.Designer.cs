@@ -952,8 +952,6 @@
     private System.Windows.Forms.BindingSource WordsBindingSource;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.ComboBox SelectChapter;
-    private System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.TextBox EditELS50;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Button ActionCopyToClipboard;
@@ -987,6 +985,8 @@
     private LettersControl EditLetters;
     private System.Windows.Forms.Panel PanelSearchResults;
     private System.Windows.Forms.RichTextBox EditSearchResults;
+    internal System.Windows.Forms.ComboBox SelectChapter;
+    internal System.Windows.Forms.ComboBox SelectBook;
   }
 }
 
