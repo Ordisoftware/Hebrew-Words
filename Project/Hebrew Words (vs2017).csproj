@@ -63,6 +63,12 @@
     <Compile Include="Source\Forms\EditBooksForm.Designer.cs">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\SelectVerseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\SelectVerseForm.designer.cs">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\EditBooksForm.resx">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\SelectVerseForm.fr.resx">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\SelectVerseForm.resx">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\LoadingForm.fr.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>

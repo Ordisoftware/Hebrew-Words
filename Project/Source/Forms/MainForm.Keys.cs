@@ -29,6 +29,9 @@ namespace Ordisoftware.HebrewWords
     {
       switch ( keyData )
       {
+        case Keys.Control | Keys.F:
+          ActionFindVerse.PerformClick();
+          return true;
         case Keys.Control | Keys.S:
           ActionSave.PerformClick();
           return true;

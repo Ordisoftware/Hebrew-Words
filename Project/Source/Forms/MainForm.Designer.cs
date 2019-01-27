@@ -57,6 +57,7 @@
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionCopyToClipboard = new System.Windows.Forms.Button();
+      this.ActionFindVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
@@ -346,6 +347,7 @@
       // panel1
       // 
       this.panel1.Controls.Add(this.ActionCopyToClipboard);
+      this.panel1.Controls.Add(this.ActionFindVerse);
       this.panel1.Controls.Add(this.SelectBook);
       this.panel1.Controls.Add(this.EditELS50);
       this.panel1.Controls.Add(this.SelectChapter);
@@ -357,11 +359,19 @@
       // 
       // ActionCopyToClipboard
       // 
-      this.ActionCopyToClipboard.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.FlatAppearance.BorderSize = 0;
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.UseVisualStyleBackColor = true;
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      // 
+      // ActionFindVerse
+      // 
+      this.ActionFindVerse.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionFindVerse, "ActionFindVerse");
+      this.ActionFindVerse.Name = "ActionFindVerse";
+      this.ActionFindVerse.UseVisualStyleBackColor = true;
+      this.ActionFindVerse.Click += new System.EventHandler(this.ActionFindVerse_Click);
       // 
       // SelectBook
       // 
@@ -1000,6 +1010,7 @@
     internal System.Windows.Forms.ComboBox SelectChapter;
     internal System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
+    private System.Windows.Forms.Button ActionFindVerse;
   }
 }
 

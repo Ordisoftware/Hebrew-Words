@@ -18,6 +18,7 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -391,6 +392,19 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionFindVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionFindVerse_Click(object sender, EventArgs e)
+    {
+      var form = new SelectVerseForm();
+      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
+      if (form.ShowDialog() == DialogResult.OK)
+        GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, (int)form.EditVerseNumber.Value);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionCopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -502,6 +516,7 @@ namespace Ordisoftware.HebrewWords
           if ( label.Text == verse.ToString() )
           {
             PanelViewVerses.ScrollControlIntoView(label);
+            PanelViewVerses.Focus();
             return;
           }
         }
