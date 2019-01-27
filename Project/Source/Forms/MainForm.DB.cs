@@ -102,7 +102,10 @@ namespace Ordisoftware.HebrewWords
       {
         BooksTableAdapter.Fill(DataSet.Books);
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-          book.Hebrew = HebrewNames.Books[(Books)(book.Number - 1)];
+        {
+          book.Hebrew = HebrewNames.Books[(Books)( book.Number - 1 )];
+          book.Name = book.Name.Replace("_", " ");
+        }
         TableAdapterManager.UpdateAll(DataSet);
         return;
       }
@@ -152,7 +155,7 @@ namespace Ordisoftware.HebrewWords
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
           book.Hebrew = HebrewNames.Books[bookid];
-          book.Name = bookid.ToString();
+          book.Name = bookid.ToString().Replace("_", " ");
           book.Translation = "";
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;

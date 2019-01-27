@@ -57,7 +57,7 @@ namespace Ordisoftware.HebrewWords
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if ( e.ColumnIndex == 2 )
-        e.Value = ( (string)e.Value ).Replace("_", " ");
+        e.Value = (string)e.Value;
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -68,7 +68,8 @@ namespace Ordisoftware.HebrewWords
           process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
           var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
           string str = book.Hebrew;
-          foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+          foreach ( var v in Letters.FinaleDisable )
+            str = str.Replace(v.Key, v.Value);
           process.StartInfo.Arguments = str;
           process.Start();
         }

@@ -24,15 +24,15 @@ namespace Ordisoftware.HebrewWords
 
     private void AddText(RichTextBox control, Font font, string str)
     {
-      control.SelectionFont = font;
-      control.SelectedText = str;
+      AddTextRightAligned(control, font, str, SystemColors.ControlText);
     }
 
-    private void AlignRight(RichTextBox control)
+    private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
     {
-      EditRawText.SelectAll();
-      EditRawText.SelectionAlignment = HorizontalAlignment.Right;
-      EditRawText.SelectionLength = 0;
+      control.SelectionFont = font;
+      control.SelectionColor = color;
+      control.SelectedText = str;
+      control.SelectionAlignment = HorizontalAlignment.Right;
     }
 
     private void UpdateViewTranslations()
@@ -63,29 +63,44 @@ namespace Ordisoftware.HebrewWords
         AddText(EditRawText, LatinFont, ":" + verse.Number);
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
-      AlignRight(EditRawText);
+      EditRawText.SelectionStart = 0;
     }
 
     private void UpdateViewSearch()
     {
-      string str1 = EditLetters.Input.Text;
-      string str2 = Letters.SetFinale(str1, true);
-      EditSearchResults.Clear();
-      foreach ( Data.DataSet.BooksRow book in DataSet.Books )
-        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-              if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
-              {
-                string str = "";
-                foreach ( Data.DataSet.WordsRow word2 in verse.GetWordsRows() )
-                  str = word2.Hebrew + " " + str;
-                AddText(EditSearchResults, HebrewFont, str);
-                AddText(EditSearchResults, LatinFont, ":" + verse.Number + "." + chapter.Number + "." + book.Name);
-                EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
-                break;
-              }
-      AlignRight(EditSearchResults);
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        EditSearchResults.Clear();
+        string str1 = EditLetters.Input.Text;
+        if ( str1 == "" ) return;
+        string str2 = Letters.SetFinale(str1, true);
+        foreach ( Data.DataSet.BooksRow book in DataSet.Books )
+          foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+            foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+              foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+                if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
+                {
+                  string str = "";
+                  foreach ( Data.DataSet.WordsRow w in verse.GetWordsRows() )
+                  {
+                    var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
+                              ? Color.DarkRed
+                              : SystemColors.ControlText;
+                    AddText(EditSearchResults, HebrewFont, " ");
+                    AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
+                  }
+                  string strRef = " :" + verse.Number + "." + chapter.Number + "." + book.Name;
+                  AddText(EditSearchResults, LatinFont, strRef);
+                  EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
+                  break;
+                }
+        EditSearchResults.SelectionStart = 0;
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
     }
 
     private void UpdateViewELS50()
@@ -98,7 +113,7 @@ namespace Ordisoftware.HebrewWords
         AddText(EditELS50All, LatinFont, " :" + chapter.Number);
         EditELS50All.AppendText(Environment.NewLine);
       }
-      AlignRight(EditELS50All);
+      EditELS50All.SelectionStart = 0;
     }
 
     private void UpdateViewVerses()
