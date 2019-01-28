@@ -60,8 +60,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Export\ExportDocX.cs" />
-    <Compile Include="Source\Export\ExportInterop.cs" />
+    <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Source\Forms\EditBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>

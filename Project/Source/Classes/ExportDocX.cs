@@ -14,7 +14,6 @@
 /// <edited> 2015-06 </edited>
 using System;
 using System.Drawing;
-using System.Collections.Generic;
 using System.Linq;
 using Ordisoftware.Core;
 using Novacode;
@@ -25,14 +24,6 @@ namespace Ordisoftware.HebrewWords
   static public class ExportBooksDocX
   {
 
-    static public Dictionary<string, string> ParashaNames = new Dictionary<string, string>()
-    {
-      { "01.01.1", "ty>arb t>rp" },
-      { "09.06.1", "xn t>rp" },
-      { "01.12.1", "kl kl t>rp" },
-      { "01.18.1", "aryv t>rp" }
-    };
-
     /// <summary>
     /// The document.
     /// </summary>
@@ -41,19 +32,10 @@ namespace Ordisoftware.HebrewWords
     /// </remarks>
     static private DocX Document = null;
 
-    /// <summary>
-    /// The font verdana.
-    /// </summary>
     static private FontFamily FontVerdana = new FontFamily("Verdana");
 
-    /// <summary>
-    /// The font hebrew.
-    /// </summary>
     static private FontFamily FontHebrew = new FontFamily("Hebrew");
 
-    /// <summary>
-    /// The font calibri.
-    /// </summary>
     static private FontFamily FontCalibri = new FontFamily("Calibri");
 
     static int ColumnsCount = 4;
@@ -62,24 +44,8 @@ namespace Ordisoftware.HebrewWords
     static float ColumnTitleWidth;
     static float ColumnVerseWidth;
 
-    /*static int CentimeterToPixels(double Centimeter)
-    {
-      double pixel = -1;
-      using ( Graphics g = new System.Drawing.Graphics() )
-      {
-        pixel = Centimeter * g.DpiY / 2.54d;
-      }
-      return (int)pixel;
-    }*/
-
-    /// <summary>
-    /// Export to word.
-    /// </summary>
-    /// <param name="includeTranslation">true to include, false to exclude the translation.</param>
-    /// <param name="showProgress">The show progress action.</param>
     static public void DoExport(Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
     {
-      //foreach ( AllBooks book in Enum.GetValues(typeof(TorahBooks)) )
       {
         string filename = @"d:\\" + book.Name + ".docx";
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -97,13 +63,9 @@ namespace Ordisoftware.HebrewWords
                 if ( showProgress() )
                   break;
               foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-              {
-                AddVerse(book, chapter, verse, includeTranslation);
-              }
-              //break;
+                AddVerse(verse, includeTranslation);
             }
             Document.Save();
-            //break;
           }
           catch ( Exception ex )
           {
@@ -112,31 +74,12 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    /// <summary>
-    /// Adds a book title.
-    /// </summary>
-    /// <param name="book">The book.</param>
     static private void AddBookTitle(Data.DataSet.BooksRow book)
     {
       Document.InsertSectionPageBreak(false);
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
     }
 
-    /// <summary>
-    /// Adds a parasha title.
-    /// </summary>
-    /// <param name="strVerseRef">The verse reference.</param>
-    static private void AddParashaTitle(string strVerseRef)
-    {
-      AddTitle(ParashaNames[strVerseRef], FontHebrew, 24, "Heading2");
-    }
-
-    /// <summary>
-    /// Adds a title.
-    /// </summary>
-    /// <param name="str">The string.</param>
-    /// <param name="font">The font.</param>
-    /// <param name="size">The size.</param>
     static private void AddTitle(string str, FontFamily font, int size, string styleName)
     {
       Table table = Document.InsertTable(1, 2);
@@ -153,6 +96,22 @@ namespace Ordisoftware.HebrewWords
       Document.InsertParagraph().AppendLine();
     }
 
+    static private void AddComment(string str, FontFamily font, int size)
+    {
+      Document.InsertParagraph("").FontSize(8);
+      Table table = Document.InsertTable(1, 2);
+      table.Alignment = Alignment.right;
+      table.Design = TableDesign.None;
+      table.Rows[0].Cells[0].Width = 555;
+      table.Rows[0].Cells[1].Width = 55;
+      var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+      paragraph.Append(str);
+      paragraph.Direction = Direction.LeftToRight;
+      paragraph.Font(font);
+      paragraph.FontSize(size);
+      paragraph.Italic();
+    }
+
     static private void SetCellSize(Cell cell, int width, int marginTop, int marginBottom, int MarginLeft, int MarginRight)
     {
       cell.Width = width;
@@ -162,17 +121,9 @@ namespace Ordisoftware.HebrewWords
       cell.MarginRight = MarginRight;
     }
 
-    /// <summary>
-    /// Adds a verse.
-    /// </summary>
-    /// <param name="book">The book.</param>
-    /// <param name="chapter">The chapter.</param>
-    /// <param name="verse">The verse.</param>
-    /// <param name="includeTranslation">true to include, false to exclude the translation.</param>
-    static private void AddVerse(Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, Data.DataSet.VersesRow verse, bool includeTranslation)
+    static private void AddVerse(Data.DataSet.VersesRow verse, bool includeTranslation)
     {
       string strVerseRef = verse.Number.ToString();
-      if ( ParashaNames.Keys.Contains(strVerseRef) ) AddParashaTitle(strVerseRef);
       int rowFactor = Convert.ToInt32(includeTranslation) + 1;
       int countWords = verse.GetWordsRows().Count();
       int CountColumns = 4;
@@ -195,7 +146,6 @@ namespace Ordisoftware.HebrewWords
           var pVerseRef = cellVerse.Paragraphs.First().Append(strVerseRef);
           pVerseRef.Direction = Direction.RightToLeft;
           pVerseRef.Font(FontCalibri);
-          //pVerseRef.Color(System.Drawing.Color.FromArgb(16, 16, 16));
           pVerseRef.FontSize(12);
           pVerseRef.Bold();
           cellVerse.VerticalAlignment = VerticalAlignment.Center;
@@ -224,7 +174,8 @@ namespace Ordisoftware.HebrewWords
           }
         }
       }
-      Document.InsertParagraph("").FontSize(8);
+      if ( verse.Comment != "") AddComment(verse.Comment, FontCalibri, 10);
+      Document.InsertParagraph().AppendLine();
     }
 
   }
