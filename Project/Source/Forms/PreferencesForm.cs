@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Words.
+/// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -10,11 +10,9 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -33,6 +31,7 @@ namespace Ordisoftware.HebrewWords
     public PreferencesForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     /// <summary>
@@ -58,6 +57,11 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Save();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSelect for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSelect_Click(object sender, EventArgs e)
     {
       OpenFileDialog.FileName = EditPath.Text;

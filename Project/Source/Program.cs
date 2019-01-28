@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -14,8 +14,10 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.IO;
-using System.Linq;
+using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -75,6 +77,12 @@ namespace Ordisoftware.HebrewWords
       //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
       try
       {
+        var assembly = typeof(Program).Assembly;
+        var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+        string id = "Hebrew Words " + attribute.Value;
+        bool created;
+        var mutex = new Mutex(true, id, out created);
+        if ( !created ) return;
         if ( Settings.UpgradeRequired )
         {
           Settings.Upgrade();
@@ -96,6 +104,52 @@ namespace Ordisoftware.HebrewWords
       {
         ex.Manage();
       }
+    }
+
+    static public void OpenHebrewLetters(string hebrew)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = Settings.HebrewLettersExe;
+          process.StartInfo.Arguments = hebrew;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
+    static public void OpenOnlineSearch(string hebrew)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = Settings.SearchOnline + hebrew;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
+    static public void OpenOnlineVerse(Books book, int chapter, int verse)
+    {
+      using ( var process = new Process() )
+        try
+        {
+          
+          process.StartInfo.FileName = "https://studybible.info/IHOT/" 
+                                     + BooksNames.English[book] 
+                                     + " " + chapter + ":" + verse;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
   }

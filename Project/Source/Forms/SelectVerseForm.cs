@@ -1,4 +1,4 @@
-﻿/// <license>
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -13,40 +13,19 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  /// <summary>
-  /// Provide view mode type.
-  /// </summary>
-  public enum ViewModeType
+  public partial class SelectVerseForm : Form
   {
 
-    /// <summary>
-    /// Verses panels view mode.
-    /// </summary>
-    Verses,
-
-    /// <summary>
-    /// Translations panel view mode.
-    /// </summary>
-    Translations,
-
-    /// <summary>
-    /// Text view mode.
-    /// </summary>
-    Text,
-
-    /// <summary>
-    /// ELS50 view mode.
-    /// </summary>
-    ELS50,
-
-    /// <summary>
-    /// Search view mode.
-    /// </summary>
-    Search
+    public SelectVerseForm()
+    {
+      InitializeComponent();
+      Text = AboutBox.Instance.AssemblyTitle;
+    }
 
   }
 

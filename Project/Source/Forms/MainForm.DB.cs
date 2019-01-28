@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -35,19 +35,19 @@ namespace Ordisoftware.HebrewWords
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
-      void check(string table, string sql)
-      {
-        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = '" + table + "'", connection);
-        int result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
-        {
-          var cmdCreateTable = new OdbcCommand(sql, connection);
-          cmdCreateTable.ExecuteNonQuery();
-        }
-      }
       try
       {
+        void check(string table, string sql)
+        {
+          var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                              "WHERE type = 'table' AND name = '" + table + "'", connection);
+          int result = (int)cmdCheckTable.ExecuteScalar();
+          if ( result == 0 )
+          {
+            var cmdCreateTable = new OdbcCommand(sql, connection);
+            cmdCreateTable.ExecuteNonQuery();
+          }
+        }
         check("Books", @"CREATE TABLE 'Books' ( 
                            ID text NOT NULL,
                            Number integer NOT NULL,
@@ -98,7 +98,17 @@ namespace Ordisoftware.HebrewWords
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
       var command = new OdbcCommand("select count(*) FROM Books", connection);
-      if ( (int)command.ExecuteScalar() > 0 ) return;
+      if ( (int)command.ExecuteScalar() > 0 )
+      {
+        BooksTableAdapter.Fill(DataSet.Books);
+        foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+        {
+          book.Hebrew = BooksNames.Hebrew[(Books)( book.Number - 1 )];
+          book.Name = book.Name.Replace("_", " ");
+        }
+        TableAdapterManager.UpdateAll(DataSet);
+        return;
+      }
       connection.Close();
       LoadFromFiles();
       TableAdapterManager.UpdateAll(DataSet);
@@ -144,8 +154,8 @@ namespace Ordisoftware.HebrewWords
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
-          book.Hebrew = TorahHebrewNames.Books[bookid];
-          book.Name = bookid.ToString();
+          book.Hebrew = BooksNames.Hebrew[bookid];
+          book.Name = bookid.ToString().Replace("_", " ");
           book.Translation = "";
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;

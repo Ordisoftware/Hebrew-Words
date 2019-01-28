@@ -102,6 +102,15 @@ namespace Ordisoftware.HebrewWords
             Panel = PanelViewELS50,
             Focused = EditELS50All
           }
+        },
+        {
+          ViewModeType.Search,
+          new ViewConnector
+          {
+            MenuItem = ActionViewSearch,
+            Panel = PanelViewSearch2,
+            Focused = EditLetters
+          }
         }
       };
       if ( Program.Settings.CurrentView == view && !first ) return;
@@ -109,7 +118,7 @@ namespace Ordisoftware.HebrewWords
       ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
       ViewPanels[view].MenuItem.Checked = true;
       ViewPanels[view].Panel.Parent = PanelMainCenter;
-      ViewPanels[view].Focused.Focus();
+      if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
     }
 

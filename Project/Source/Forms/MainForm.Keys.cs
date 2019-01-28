@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -29,11 +29,23 @@ namespace Ordisoftware.HebrewWords
     {
       switch ( keyData )
       {
+        case Keys.Control | Keys.F:
+          ActionFindVerse.PerformClick();
+          return true;
         case Keys.Control | Keys.S:
           ActionSave.PerformClick();
           return true;
+        case Keys.F2:
+          ActionViewVerses.PerformClick();
+          return true;
+        case Keys.F3:
+          ActionViewTranslations.PerformClick();
+          return true;
         case Keys.F1:
           ActionHelp.PerformClick();
+          return true;
+        case Keys.F8:
+          ActionPreferences.PerformClick();
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();

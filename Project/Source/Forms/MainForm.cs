@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -18,7 +18,7 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -30,14 +30,6 @@ namespace Ordisoftware.HebrewWords
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
-
-    /// <summary>
-    /// INdicate filename of the help file.
-    /// </summary>
-    static public readonly string HelpFilename
-      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Debug\\", "\\").Replace("\\Release\\", "\\"))).FullName + Path.DirectorySeparatorChar
-      + "Help" + Path.DirectorySeparatorChar
-      + "index.htm";
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -53,7 +45,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// INdicate last showned tooltip.
+    /// Indicate last showned tooltip.
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
@@ -81,6 +73,11 @@ namespace Ordisoftware.HebrewWords
       SetView(Program.Settings.CurrentView, true);
     }
 
+    /// <summary>
+    /// Event handler. Called by MainForm for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
       Refresh();
@@ -111,24 +108,35 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Initialize books combobox.
+    /// </summary>
     private void InitBooksCombobox()
     {
-      EditBook.Items.Clear();
+      SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        EditBook.Items.Add(new BookItem() { Row = book });
-      EditBook.SelectedIndex = 0;
+        SelectBook.Items.Add(new BookItem() { Row = book });
+      SelectBook.SelectedIndex = 0;
     }
 
+    /// <summary>
+    /// Initialize chapter combobox.
+    /// </summary>
     private void InitChaptersCombobox()
     {
-      if ( EditBook.SelectedItem == null ) return;
-      EditChapter.Items.Clear();
-      var list = ( (BookItem)EditBook.SelectedItem ).Row.GetChaptersRows();
+      if ( SelectBook.SelectedItem == null ) return;
+      SelectChapter.Items.Clear();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
-        EditChapter.Items.Add(new ChapterItem() { Row = chapter });
-      EditChapter.SelectedIndex = 0;
+        SelectChapter.Items.Add(new ChapterItem() { Row = chapter });
+      SelectChapter.SelectedIndex = 0;
     }
 
+    /// <summary>
+    /// Event handler. Called by MainForm for form client size changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Form closing event information.</param>
     private void MainForm_ClientSizeChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
@@ -227,7 +235,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
       SetView(ViewModeType.Translations);
-      UpdateTranslations();
+      UpdateViewTranslations();
     }
 
     /// <summary>
@@ -251,15 +259,22 @@ namespace Ordisoftware.HebrewWords
       SetView(ViewModeType.Text);
     }
 
+    private void ActionViewSearch_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Search);
+    }
+
     /// <summary>
-    /// Event handler. Called by ActionSave for click events.
+    /// Event handler. Called by ActionViewBooksTranslation for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionSave_Click(object sender, EventArgs e)
+    private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
-      ActionSave.Enabled = false;
+      new EditBooksForm().ShowDialog();
+      BooksTableAdapter.Fill(DataSet.Books);
+      InitBooksCombobox();
     }
 
     /// <summary>
@@ -270,6 +285,17 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewStatistics_Click(object sender, EventArgs e)
     {
       new StatisticsForm().ShowDialog();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSave for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.Enabled = false;
     }
 
     /// <summary>
@@ -326,7 +352,7 @@ namespace Ordisoftware.HebrewWords
       using ( var process = new Process() )
         try
         {
-          process.StartInfo.FileName = HelpFilename;
+          process.StartInfo.FileName = Program.HelpFilename;
           process.Start();
         }
         catch ( Exception ex )
@@ -366,6 +392,42 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionFindVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionFindVerse_Click(object sender, EventArgs e)
+    {
+      var form = new SelectVerseForm();
+      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
+      if ( form.ShowDialog() == DialogResult.OK )
+      {
+        int value = (int)form.EditVerseNumber.Value;
+        if ( value > 0 )
+          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
+        else
+        {
+          Data.DataSet.VersesRow found = null;
+          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+          foreach ( Data.DataSet.VersesRow verse in list )
+          {
+            string str = "";
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() ) str += word.Translation;
+              if ( str == "" )
+              {
+                found = verse;
+                break;
+              }
+          }
+          if (found != null)
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
+          else
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
+        }
+      }
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionCopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -375,56 +437,140 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(EditELS50.Text);
     }
 
-    private void EditBook_SelectedIndexChanged(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by SelectBook for selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       InitChaptersCombobox();
+      SetView(Program.Settings.CurrentView, true);
     }
 
-    private void EditChapter_SelectedIndexChanged(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by SelectChapter for selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
       UpdateViewVerses();
-      UpdateTranslations();
+      UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
+      ActionSave.PerformClick();
     }
 
+    /// <summary>
+    /// Event handler. Called by WordControl for hebrew word mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void HebrewWordMouseClick(object sender, MouseEventArgs e)
     {
-      using ( var process = new Process() )
-        try
+      if ( e.Button == MouseButtons.Left )
+        Program.OpenOnlineSearch((string)( sender as Label ).Tag);
+      else
+      if ( e.Button == MouseButtons.Right )
+      {
+        string str = ( sender as Label ).Text;
+        foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+        Program.OpenHebrewLetters(str);
+      }
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelLetterSearch key press events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      if ( e.KeyChar == '\r' ) ActionSearchWord.PerformClick();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionClearWord click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionClearWord_Click(object sender, EventArgs e)
+    {
+      EditLetters.Input.Text = "";
+      ActionSearchWord.PerformClick();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSearchWord click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchWord_Click(object sender, EventArgs e)
+    {
+      UpdateViewSearch();
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelViewVerses click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
+    {
+      PanelViewVerses.Focus();
+    }
+
+    /// <summary>
+    /// Go to book / chapter / verse into view verses panel.
+    /// </summary>
+    /// <param name="book"></param>
+    /// <param name="chapter"></param>
+    /// <param name="verse"></param>
+    public void GoTo(int book, int chapter, int verse)
+    {
+      SetView(ViewModeType.Verses);
+      SelectBook.SelectedIndex = book - 1;
+      SelectChapter.SelectedIndex = chapter - 1;
+      foreach ( var control in PanelViewVerses.Controls )
+        if (control is Label)
         {
-          if ( e.Button == MouseButtons.Left )
-            process.StartInfo.FileName = Program.Settings.SearchOnline + (string)( sender as Label ).Tag;
-          else
-          if ( e.Button == MouseButtons.Right )
+          var label = control as Label;
+          if ( label.Text == verse.ToString() )
           {
-            process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
-            string str = ( sender as Label ).Text;
-            foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-            process.StartInfo.Arguments = str;
-          }
-          else
+            PanelViewVerses.Focus();
+            PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
             return;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
+          }
         }
     }
 
   }
 
+  /// <summary>
+  /// Provide book combobox item
+  /// </summary>
   internal class BookItem
   {
     public Data.DataSet.BooksRow Row { get; set; }
-    public override string ToString() { return Row.Name.Replace("_", " "); }
+    public override string ToString()
+    {
+      string str = Row.Number + ". " + Row.Name;
+      if ( Row.Translation  != "" ) str += " (" + Row.Translation + ")";
+      return str;
+    }
   }
 
+  /// <summary>
+  /// Provide chapter combobox item
+  /// </summary>
   internal class ChapterItem
   {
     public Data.DataSet.ChaptersRow Row { get; set; }
-    public override string ToString() { return Row.Number.ToString(); }
+    public override string ToString()
+    {
+      return Row.Number.ToString();
+    }
   }
 
 }

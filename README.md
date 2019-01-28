@@ -11,10 +11,11 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 ## Functionalities
 
 - Translate verses words by words.
-- Left mouse click on a word to open online strong's definition.
+- Left mouse click on a word to open online strong's concordance.
 - Right mouse click on a word to open Hebrew Letters.
-- Original and translation views.
+- Click on a verse number to open online text with contextual strong's concordances.
 - Determine the equidistant letter sequence of 50 for Tav.
+- Search a word.
 - Show statistics.
 - English, French.
 
@@ -53,6 +54,14 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
+
+#### 2019.01.28 - Version 1.1
+
+- Add books names translation form.
+- Add search a word.
+- Add open verse online.
+- Add verse comment edition.
+- Some improvments.
 
 #### 2019.01.26 - Version 1.0
 
