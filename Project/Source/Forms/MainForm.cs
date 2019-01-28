@@ -530,7 +530,6 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(int book, int chapter, int verse)
     {
       SetView(ViewModeType.Verses);
-      PanelViewVerses.Focus();
       SelectBook.SelectedIndex = book - 1;
       SelectChapter.SelectedIndex = chapter - 1;
       foreach ( var control in PanelViewVerses.Controls )
@@ -539,8 +538,8 @@ namespace Ordisoftware.HebrewWords
           var label = control as Label;
           if ( label.Text == verse.ToString() )
           {
-            PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
             PanelViewVerses.Focus();
+            PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
             return;
           }
         }

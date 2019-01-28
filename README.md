@@ -55,9 +55,9 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.01.29 - Version 1.1
+#### 2019.01.28 - Version 1.1
 
-- Add books name translation form.
+- Add books names translation form.
 - Add search a word.
 - Add open verse online.
 - Add verse comment edition.
