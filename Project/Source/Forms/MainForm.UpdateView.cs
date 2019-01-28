@@ -46,7 +46,10 @@ namespace Ordisoftware.HebrewWords
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = str + word.Translation + " ";
         str = str.Remove(str.Length - 1, 1);
-        EditTranslations.SelectedText = str + Environment.NewLine + Environment.NewLine;
+        EditTranslations.SelectedText = str;
+        if ( verse.Comment != "" )
+          EditTranslations.SelectedText = " {" + verse.Comment + "}";
+        EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
       }
       EditTranslations.SelectionStart = 0;
     }
@@ -143,6 +146,7 @@ namespace Ordisoftware.HebrewWords
         int marginY = margin;
         int x = width - dx - marginX;
         int y = delta;
+        int minx = x;
         foreach ( var verse in item.Row.GetVersesRows() )
         {
           var label = new Label();
@@ -150,7 +154,7 @@ namespace Ordisoftware.HebrewWords
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
           label.Font = new Font("Calibri", 13f, FontStyle.Bold);
-          label.Location = new Point(x + dx + 0, y + 2);
+          label.Location = new Point(x + dx + delta, y + 2);
           label.Text = verse.Number.ToString();
           label.MouseEnter += LabelVerseNumberMouseEnter;
           label.MouseLeave += LabelVerseNumberMouseLeave;
@@ -168,20 +172,37 @@ namespace Ordisoftware.HebrewWords
             x -= dx;
             if ( x < delta )
             {
+              if ( x < minx + dx + delta ) minx = x;
               x = width - dx - marginX;
               y += dy;
               emptyline = true;
             }
           }
           if ( emptyline ) y -= dy;
-          x = width - dx - marginX;
-          y = y + dy + marginY;
+          var edit = new TextBox();
+          label.Tag = edit;
+          edit.Location = new Point(minx + dx, y + dy + delta);
+          x = width - dx - marginX - 2;
+          edit.Width = x - minx;
+          edit.Tag = verse;
+          edit.BackColor = Color.Honeydew;
+          edit.Text = verse.Comment;
+          edit.TextChanged += VerseCommentTextChanged;
+          PanelViewVerses.Controls.Add(edit);
+          y = y + dy + marginY + edit.Height;
         }
       }
       finally
       {
         PanelViewVerses.ResumeLayout();
       }
+    }
+
+    private void VerseCommentTextChanged(object sender, EventArgs e)
+    {
+      var textbox = (TextBox)sender;
+      ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
+      ActionSave.Enabled = true;
     }
 
     private void LabelVerseNumberMouseEnter(object sender, EventArgs e)

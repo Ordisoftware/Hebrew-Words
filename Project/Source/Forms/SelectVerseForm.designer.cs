@@ -78,17 +78,7 @@ namespace Ordisoftware.HebrewWords
       // EditVerseNumber
       // 
       resources.ApplyResources(this.EditVerseNumber, "EditVerseNumber");
-      this.EditVerseNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       this.EditVerseNumber.Name = "EditVerseNumber";
-      this.EditVerseNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       // 
       // SelectVerseForm
       // 

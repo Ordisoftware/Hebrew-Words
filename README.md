@@ -60,6 +60,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add books name translation form.
 - Add search a word.
 - Add open verse online.
+- Add verse comment edition.
 - Some improvments.
 
 #### 2019.01.26 - Version 1.0

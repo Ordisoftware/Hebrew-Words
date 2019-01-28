@@ -187,7 +187,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 438</value>
+    <value>876, 438</value>
   </data>
   <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +217,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>937, 458</value>
+    <value>896, 458</value>
   </data>
   <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -241,7 +241,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 464</value>
+    <value>902, 464</value>
   </data>
   <data name="TabPageTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -268,7 +268,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 438</value>
+    <value>876, 438</value>
   </data>
   <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -298,7 +298,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>937, 458</value>
+    <value>896, 458</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -322,7 +322,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 464</value>
+    <value>902, 464</value>
   </data>
   <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -349,7 +349,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 438</value>
+    <value>876, 438</value>
   </data>
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -379,7 +379,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>937, 458</value>
+    <value>896, 458</value>
   </data>
   <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -403,7 +403,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 464</value>
+    <value>902, 464</value>
   </data>
   <data name="TabPageELS50.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -430,7 +430,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>895, 195</value>
+    <value>854, 195</value>
   </data>
   <data name="EditSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -460,7 +460,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 217</value>
+    <value>876, 217</value>
   </data>
   <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -490,7 +490,7 @@
     <value>89, 17</value>
   </data>
   <data name="EditSearchOnlyTorah.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>1</value>
   </data>
   <data name="EditSearchOnlyTorah.Text" xml:space="preserve">
     <value>Only in Torah</value>
@@ -549,7 +549,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionSearchWord.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionSearchWord.Name" xml:space="preserve">
     <value>ActionSearchWord</value>
@@ -602,7 +602,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionClearWord.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionClearWord.Name" xml:space="preserve">
     <value>ActionClearWord</value>
@@ -644,7 +644,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 221</value>
+    <value>876, 221</value>
   </data>
   <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -671,7 +671,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewSearch2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>937, 458</value>
+    <value>896, 458</value>
   </data>
   <data name="PanelViewSearch2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -695,7 +695,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 464</value>
+    <value>902, 464</value>
   </data>
   <data name="TabPageSearch.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -864,7 +864,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionCopyToClipboard.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
     <value>ActionCopyToClipboard</value>
@@ -884,7 +884,7 @@
   <data name="ActionFindVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAUdSURBVFhHrVdJT5tnEEYi6o1DosAxtyiHXvIPeugll1I1
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAUdSURBVFhHrVdJT5tnEEYi6o1DosAxtyiHXvIPeugll1I1
         ImDAYIyxWQ0Ymz1saRv2PZAoBAhroIDZhAGDCQHCbrZULSSVCuRSSP/D05nX/iwgn20MHWkEyM8Mzzvv
         zDOv/dzYN9m5+TBkZCJZnwZdQhLitAlQx2oRrdYgKloNxjigwnzFe7Wbmdm5mJmdw8amHcsrK7BabRge
         HkVvzxsoo2I44U0HVJiveK8WlJWTh8cFxWh+0YKaumfIe1yI+KQUhIaFSycKckCF+Yr3arcTk/Q2LmkC
@@ -919,7 +919,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionFindVerse.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionFindVerse.Name" xml:space="preserve">
     <value>ActionFindVerse</value>
@@ -970,7 +970,7 @@
     <value>451, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditELS50.Name" xml:space="preserve">
     <value>EditELS50</value>
@@ -1933,35 +1933,35 @@
   <data name="ActionViewBooksTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionViewBooksTranslation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2201,18 +2201,6 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -2477,6 +2465,18 @@
   </data>
   <data name="&gt;&gt;booksBindingNavigatorSaveItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

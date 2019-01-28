@@ -400,8 +400,31 @@ namespace Ordisoftware.HebrewWords
     {
       var form = new SelectVerseForm();
       form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
-      if (form.ShowDialog() == DialogResult.OK)
-        GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, (int)form.EditVerseNumber.Value);
+      if ( form.ShowDialog() == DialogResult.OK )
+      {
+        int value = (int)form.EditVerseNumber.Value;
+        if ( value > 0 )
+          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
+        else
+        {
+          Data.DataSet.VersesRow found = null;
+          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+          foreach ( Data.DataSet.VersesRow verse in list )
+          {
+            string str = "";
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() ) str += word.Translation;
+              if ( str == "" )
+              {
+                found = verse;
+                break;
+              }
+          }
+          if (found != null)
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
+          else
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
+        }
+      }
     }
 
     /// <summary>
@@ -507,6 +530,7 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(int book, int chapter, int verse)
     {
       SetView(ViewModeType.Verses);
+      PanelViewVerses.Focus();
       SelectBook.SelectedIndex = book - 1;
       SelectChapter.SelectedIndex = chapter - 1;
       foreach ( var control in PanelViewVerses.Controls )
@@ -515,7 +539,7 @@ namespace Ordisoftware.HebrewWords
           var label = control as Label;
           if ( label.Text == verse.ToString() )
           {
-            PanelViewVerses.ScrollControlIntoView(label);
+            PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
             PanelViewVerses.Focus();
             return;
           }
