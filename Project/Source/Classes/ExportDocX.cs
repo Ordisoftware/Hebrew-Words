@@ -21,7 +21,7 @@ using Novacode;
 namespace Ordisoftware.HebrewWords
 {
 
-  static public class ExportBooksDocX
+  static public class ExportDocX
   {
 
     /// <summary>
@@ -44,10 +44,9 @@ namespace Ordisoftware.HebrewWords
     static float ColumnTitleWidth;
     static float ColumnVerseWidth;
 
-    static public void DoExport(Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
+    static public void Run(string filename, Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
     {
       {
-        string filename = @"d:\\" + book.Name + ".docx";
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
           try
           {

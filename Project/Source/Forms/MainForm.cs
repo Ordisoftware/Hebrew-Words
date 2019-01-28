@@ -434,6 +434,9 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSaveWord_Click(object sender, EventArgs e)
     {
+      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      SaveFileDialog.FileName = book.Name + ".docx"; ;
+      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
       Cursor = Cursors.WaitCursor;
       var form = new ExportForm();
       try
@@ -449,7 +452,7 @@ namespace Ordisoftware.HebrewWords
           Application.DoEvents();
           return form.CancelRequired;
         };
-        ExportBooksDocX.DoExport(( (BookItem)SelectBook.SelectedItem ).Row, true, showProgress);
+        ExportDocX.Run(SaveFileDialog.FileName, book, true, showProgress);
       }
       finally
       {
