@@ -428,6 +428,39 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionSaveWord for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSaveWord_Click(object sender, EventArgs e)
+    {
+      Cursor = Cursors.WaitCursor;
+      var form = new ExportForm();
+      try
+      {
+        form.ProgressBar.Value = 0;
+        form.ProgressBar.Maximum = SelectChapter.Items.Count;
+        form.Show();
+        form.Refresh();
+        Enabled = false;
+        Func<bool> showProgress = () =>
+        {
+          form.ProgressBar.PerformStep();
+          Application.DoEvents();
+          return form.CancelRequired;
+        };
+        ExportBooksDocX.DoExport(( (BookItem)SelectBook.SelectedItem ).Row, true, showProgress);
+      }
+      finally
+      {
+        form.Close();
+        Cursor = Cursors.Default;
+        Enabled = true;
+        BringToFront();
+      }
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionCopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

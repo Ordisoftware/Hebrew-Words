@@ -56,6 +56,7 @@
       this.ActionClearWord = new System.Windows.Forms.Button();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionCopyToClipboard = new System.Windows.Forms.Button();
+      this.ActionSaveWord = new System.Windows.Forms.Button();
       this.ActionFindVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
@@ -339,6 +340,7 @@
       // panel1
       // 
       this.panel1.Controls.Add(this.ActionCopyToClipboard);
+      this.panel1.Controls.Add(this.ActionSaveWord);
       this.panel1.Controls.Add(this.ActionFindVerse);
       this.panel1.Controls.Add(this.SelectBook);
       this.panel1.Controls.Add(this.EditELS50);
@@ -356,6 +358,14 @@
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.UseVisualStyleBackColor = true;
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      // 
+      // ActionSaveWord
+      // 
+      this.ActionSaveWord.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveWord, "ActionSaveWord");
+      this.ActionSaveWord.Name = "ActionSaveWord";
+      this.ActionSaveWord.UseVisualStyleBackColor = true;
+      this.ActionSaveWord.Click += new System.EventHandler(this.ActionSaveWord_Click);
       // 
       // ActionFindVerse
       // 
@@ -1011,6 +1021,7 @@
     internal System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
     private System.Windows.Forms.Button ActionFindVerse;
+    private System.Windows.Forms.Button ActionSaveWord;
   }
 }
 

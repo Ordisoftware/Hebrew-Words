@@ -17,6 +17,7 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 - Determine the equidistant letter sequence of 50 for Tav.
 - Search a word.
 - Show statistics.
+- Export Word.
 - English, French.
 
 ## Requirements
@@ -54,6 +55,10 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
+
+#### 2019.__.__ - Version 1.2
+
+- Add word docx export.
 
 #### 2019.01.28 - Version 1.1
 

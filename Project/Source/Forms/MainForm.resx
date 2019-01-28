@@ -629,7 +629,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -878,6 +878,65 @@
   <data name="&gt;&gt;ActionCopyToClipboard.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ActionSaveWord.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSaveWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        5v0Lx20okmmzEVoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSaveWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSaveWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 15</value>
+  </data>
+  <data name="ActionSaveWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ActionSaveWord.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionSaveWord.Name" xml:space="preserve">
+    <value>ActionSaveWord</value>
+  </data>
+  <data name="&gt;&gt;ActionSaveWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSaveWord.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ActionSaveWord.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="ActionFindVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -913,7 +972,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionFindVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 15</value>
+    <value>402, 15</value>
   </data>
   <data name="ActionFindVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -931,7 +990,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionFindVerse.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="SelectBook.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -955,7 +1014,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditELS50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -964,10 +1023,10 @@
     <value>Hebrew, 12pt</value>
   </data>
   <data name="EditELS50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 21</value>
+    <value>470, 21</value>
   </data>
   <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 30</value>
+    <value>392, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -982,13 +1041,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;EditELS50.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 21</value>
+    <value>337, 21</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 28</value>
@@ -1006,7 +1065,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1015,7 +1074,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 3</value>
+    <value>467, 3</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -1036,7 +1095,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1066,7 +1125,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1075,7 +1134,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 3</value>
+    <value>334, 3</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -1096,7 +1155,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1933,35 +1992,35 @@
   <data name="ActionViewBooksTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAaESURBVFhHtZYLVM53GMe1s6Nt6BwjjYMzLA62ELkNc92G
-        bUL1tvUWqxBrTBllqGjK5Zj7ZYku1kURvS6vMk296foqqXS/qN56W6nkznz3PP9/Urx443jO+Zzn/7t9
-        v7//7/f+n/O20yLeneh2KnKChxzj3M9inBtBeXwb4LWswVqipPbxzhhnPzOHQ4mIL6yBoqAGcfk1iC+o
-        RUKRlhTW4hLBGqzFmqK0dqE7zuVo5NYz2fCJLYJreAYuXFPDxjcRPx5Kamb+Mzw7dkhRDNZgLdYUpbUL
-        vQkeZxGuLMPaiKvYFpULPxIThH2TIPVJhNWfCRrhMZ5jdzgZ7iczBQ3WYk1R+tWhM2LxHsn8/fEIU5bD
-        noQOxxfB+3Q25pFwnvomXhV56kZhsw4BKQi/XA7WYk3WFi1eHrpjXUNl645n4A96c4fAVAQll+Lnv5Sw
-        PpgIi32XYLpbge92xWmEx3gOXxefwvboXLiRFmuytmjx8tD7Yr0c+/8phMuxDLiEZcDnYqFwrPnVjU3v
-        +OoooLm2h5PgShqsxZqsLVq8OHRGOe6RWO2Nw96YQiz0T8EGWSa86Pjt/ZKFY7WhU5D68F2/GJ7Dc3m9
-        Q0CqoMWarM0eopXm0B2/OlTmFKSEhyxLMN0qz8GvR9OxiO5zEYkJmYRfStNcNudn1mJN1mYP0Upz6E2i
-        o/I8RQtC0+B4RAmvM9ew5AiJ0W9h8WvAm3A+miZosjZ7iFbPh3D85jsvwj0ykwxTsDwkDWvoM+S30CSu
-        NfQC7nSVrP2ya9CduDpctvBQMpzDrghvvCIsHU60CRZZQqfxuvB61mRt9mAv0bJ16E3bdAFO9KtfFnoF
-        jsFpwvPSEH5Of2NY04k28aXXeY3XoDNsjpPkY7sgdLcOQDcrf+hLA6BvHfgUKcH9zA9thzV72ASgn10g
-        b6CraPs0dIdLPWWO28Nxp+AEGgojUV8mR53qPOoqCcpCuyASdTkRxPE205AbgfrMsDvkNYroLLi2CD2j
-        +btQnBWFG0VR+Lc8FjGGBrgxfQwqe+oKmdvV1F+VF4WqXHmbqc2Xw3+ny1ry6kW0F1ybQsdpen9JF9sI
-        oD4BN1UK1Nen4fzgXmhYYg2VUQ8hc7uO+mvL4lBTcrFN3Ci9iLuqWPSy8P6F/D4QbZ+Grof5p7Kudidw
-        PkGBxw1pePAwTzCsX/w9qsYaCpnb9x/k4U6NErerk9vEXQL1KVgWFHGX/DqItk9Db4vUGJOW7sTKg9FU
-        xfMJFWI+ow0sMIN6spGQuc39+C8HeJDVNh4Sj7ORkJGK4cv8FpFn858THcdvjCS+S0fC2c0JfW0Pwzb4
-        GizDSnDJuDca7eeg5tvRQua2xdFiSP0zYO2XrjU2xDz/dNgGUjk/kg5LN8Uj8n1ftKfjdzEbGRm+ZgQO
-        eM6EwYJzMLCPRKdFZ5Bs0hd37E1x03KqkJNM+qADjXWxDkFXaZBW6BMGNiHoaRuKvvZB6L8gEAMXCp/h
-        h6I9Hb+n9HNEew/EOc/ukLu9B7mHLlSXVyBx5ABUmU/BlanDUUk5YYQhbl3fhXt5W3Evd7NWPMzfivu5
-        W7BdYsimXxNTCGNC+Ax1fpppZOlhaYI1c4yx2nQofiNWmxphldkQJBkbYt/Iflgwuo+Qk4Z9gpWzB2PV
-        zAFYNaO/VrjMGIA1swZjo8SINzCA6NZkLnyG7Z1mDdkR7L0Q6qIYqPKiocqNEnJlSQyiLaYhOGQbQoO3
-        CTlaMg2q4hhUUB2oyDmnFSqaq8qUv7D4dHSdbZRdnnka1YUXUMnmRCUt4vY52QH8fdoHFwjO3K7MkNF4
-        00ZfAeuxju9ud43Fh6PzurlDcL/hKurK41sVjjoqNlcSwpCZdKwZbteVKVBDRaXl3BdRez0OjepkmBl3
-        11h8OPTdzIciO+4I7tVl4FZ1Ki1IwS11KhWPVKiL41BdqmhGXRIn9PN4oxbcrlbiYWMWQjc7aCw+HN1c
-        zY3VJ3c5U4GpBO4VA3eLmqBnbguUtHgmeOwJLfufg9Y9ViErNgiOXw1qVXyexIfLZw09ttZk0KPanB2o
-        St+CirRNqLjMeKNC6Y1ypZdIihfKUjaiLLmJpN9xnUncIFB6iVmP0njGA8UKD5QQ16m/JN4Tx92krYrP
-        k+hkM3ngMk+r0XC3GIF1ZsZYO7cF1Oa+N8J8ONwlJthAHh917Kjf5Nsc/LeoNzGG4ALxNmkuPi2D74SP
-        hcsiF4i3SXPxEaNdu/8BIXOYJy7uunYAAAAASUVORK5CYII=
+        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
 </value>
   </data>
   <data name="ActionViewBooksTranslation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2174,6 +2233,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>932, 666</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>940, 700</value>
@@ -2476,37 +2538,37 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
