@@ -25,6 +25,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
+      EditVerseNumber.Select(0, 1);
     }
 
   }

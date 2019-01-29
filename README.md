@@ -17,13 +17,14 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 - Determine the equidistant letter sequence of 50 for Tav.
 - Search a word.
 - Show statistics.
+- MS Word export.
 - English, French.
 
 ## Requirements
 
 - Windows Vista x32/x64 or superior
 - Screen 1024x768 or superior
-- Framework .NET 3.5 or superior
+- Framework .NET 4.5 or superior
 - [SQLite ODBC Driver](http://www.ch-werner.de/sqliteodbc/)
 
 ## Screenshots
@@ -54,6 +55,10 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
+
+#### 2019.01.29 - Version 1.2
+
+- Add word docx export.
 
 #### 2019.01.28 - Version 1.1
 

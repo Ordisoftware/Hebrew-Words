@@ -49,9 +49,6 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
-    private Font HebrewFont = new Font("Hebrew", 12F);
-    private Font LatinFont = new Font("Verdana", 10F);
-
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -389,6 +386,67 @@ namespace Ordisoftware.HebrewWords
     private void ActionExit_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionExportBook for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionExportBook_Click(object sender, EventArgs e)
+    {
+      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      SaveFileDialog.FileName = book.Name + ".docx"; ;
+      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
+      Cursor = Cursors.WaitCursor;
+      var form = new ExportForm();
+      try
+      {
+        form.ProgressBar.Value = 0;
+        form.ProgressBar.Maximum = SelectChapter.Items.Count;
+        form.Show();
+        form.Refresh();
+        Enabled = false;
+        Func<bool> showProgress = () =>
+        {
+          form.ProgressBar.PerformStep();
+          Application.DoEvents();
+          return form.CancelRequired;
+        };
+        ExportDocX.Run(SaveFileDialog.FileName, book, true, showProgress);
+      }
+      finally
+      {
+        form.Close();
+        Cursor = Cursors.Default;
+        Enabled = true;
+        BringToFront();
+      }
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionExportChapter for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionExportChapter_Click(object sender, EventArgs e)
+    {
+      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+      SaveFileDialog.FileName = book.Name + " " + chapter.Number + ".docx"; ;
+      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        Enabled = false;
+        ExportDocX.Run(SaveFileDialog.FileName, book, chapter, true);
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+        Enabled = true;
+        BringToFront();
+      }
     }
 
     /// <summary>

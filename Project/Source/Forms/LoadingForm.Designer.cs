@@ -50,6 +50,7 @@
       // 
       resources.ApplyResources(this.ProgressBar, "ProgressBar");
       this.ProgressBar.Name = "ProgressBar";
+      this.ProgressBar.Step = 1;
       // 
       // label2
       // 

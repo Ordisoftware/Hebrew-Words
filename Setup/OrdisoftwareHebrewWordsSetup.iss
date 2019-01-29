@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Words"
 #define MyAppNameNoSpace "HebrewWords"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "http://www.ordisoftware.com/projects/hebrew-words"
 #define MyAppExeName "Ordisoftware.HebrewWords.exe"
@@ -50,10 +50,10 @@ Name: french; MessagesFile: compiler:Languages\French.isl
 [CustomMessages]
 english.RunSettings_msg=Modify application settings
 french.RunSettings_msg=Modifier les paramètres de l'application
-english.DotNetRequired_msg=Install .NET Framework 3.5
-french.DotNetRequired_msg=Installer .NET Framework 3.5
-english.DotNetInstalling_msg=Microsoft Framework 3.5 is being installed. Please wait...
-french.DotNetInstalling_msg=Microsoft Framework 3.5 est en cours d'installation. Veuillez patienter...
+english.DotNetRequired_msg=Install .NET Framework 4.5
+french.DotNetRequired_msg=Installer .NET Framework 4.5
+english.DotNetInstalling_msg=Microsoft Framework 4.5 is being installed. Please wait...
+french.DotNetInstalling_msg=Microsoft Framework 4.5 est en cours d'installation. Veuillez patienter...
 english.HelpFile_msg=Documentation of %1
 french.HelpFile_msg=Documentation de %1
 english.LicenseFile_msg=License of %1
@@ -100,7 +100,7 @@ Name: {group}\{#MyAppName}\{cm:UninstallProgram,{#MyAppName}}; Filename: {uninst
 
 [Run]
 ;Parameters: /passive /norestart;
-Filename: {app}\Setup\dotnetfx35setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
+Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
 
@@ -161,7 +161,7 @@ end;
 
 function CheckForFramework(): Boolean;
 begin
-    result := not IsDotNetDetected('v3.5', 0);
+    result := not IsDotNetDetected('v4.5', 0);
 end;
 
 function UpdateReadyMemo(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;
