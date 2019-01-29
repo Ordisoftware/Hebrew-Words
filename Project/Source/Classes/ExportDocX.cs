@@ -81,10 +81,10 @@ namespace Ordisoftware.HebrewWords
 
     static private void SetPageMargins()
     {
-      Document.MarginTop = 118.0f;
-      Document.MarginBottom = 118.0f;
-      Document.MarginLeft = 118.0f;
-      Document.MarginRight = 118.0f;
+      Document.MarginTop = 100.0f;
+      Document.MarginBottom = 100.0f;
+      Document.MarginLeft = 100.0f;
+      Document.MarginRight = 100.0f;
       Document.DifferentOddAndEvenPages = true;
     }
 
