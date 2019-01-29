@@ -91,6 +91,20 @@ namespace Ordisoftware.HebrewWords
     static private void AddBookTitle(Data.DataSet.BooksRow book)
     {
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
+      if ( book.Translation != "" )
+      {
+        Table table = Document.InsertTable(1, 2);
+        table.Alignment = Alignment.right;
+        table.Design = TableDesign.None;
+        table.Rows[0].Cells[0].Width = 555;
+        table.Rows[0].Cells[1].Width = 55;
+        var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+        paragraph.Append(book.Translation);
+        paragraph.Direction = Direction.RightToLeft;
+        paragraph.Font(FontCalibri);
+        paragraph.FontSize(16);
+        Document.InsertParagraph().AppendLine();
+      }
     }
 
     static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
