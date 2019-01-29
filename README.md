@@ -56,7 +56,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.2
+#### 2019.01.29 - Version 1.2
 
 - Add word docx export.
 
