@@ -148,25 +148,19 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCopyHebrewName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 22</value>
+    <value>185, 22</value>
   </data>
   <data name="ActionCopyHebrewName.Text" xml:space="preserve">
     <value>Copy hebrew name</value>
   </data>
-  <data name="ActionOpenStrong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 22</value>
-  </data>
-  <data name="ActionOpenStrong.Text" xml:space="preserve">
-    <value>Open online strong's concordance</value>
-  </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 22</value>
+    <value>185, 22</value>
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Open Hebrew Letters</value>
   </data>
   <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 92</value>
+    <value>186, 70</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
     <value>ContextMenuStrip</value>
@@ -303,6 +297,12 @@
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
+    <value>ActionCopyHebrewName</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
     <value>ActionOpenHebrewLetters</value>
   </data>
@@ -332,18 +332,6 @@
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenStrong.Name" xml:space="preserve">
-    <value>ActionOpenStrong</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenStrong.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
-    <value>ActionCopyHebrewName</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>
