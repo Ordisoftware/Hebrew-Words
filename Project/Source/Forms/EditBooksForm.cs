@@ -12,7 +12,6 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
-using Ordisoftware.Core;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -58,12 +57,6 @@ namespace Ordisoftware.HebrewWords
     {
       var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
       Clipboard.SetText(book.Name);
-    }
-
-    private void ActionOpenStrong_Click(object sender, EventArgs e)
-    {
-      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
-      Program.OpenOnlineConcordance(book.Name);
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)

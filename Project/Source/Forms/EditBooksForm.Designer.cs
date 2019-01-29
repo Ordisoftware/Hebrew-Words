@@ -37,6 +37,7 @@
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dataSet = new Ordisoftware.HebrewWords.Data.DataSet();
@@ -44,8 +45,6 @@
       this.buttonClose = new System.Windows.Forms.Button();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ActionOpenStrong = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).BeginInit();
       this.ContextMenuStrip.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
@@ -109,10 +108,15 @@
       // 
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionCopyHebrewName,
-            this.ActionOpenStrong,
             this.ActionOpenHebrewLetters});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      // 
+      // ActionCopyHebrewName
+      // 
+      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
+      resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
+      this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
       // 
       // ActionOpenHebrewLetters
       // 
@@ -156,18 +160,6 @@
       this.TableAdapterManager.VersesTableAdapter = null;
       this.TableAdapterManager.WordsTableAdapter = null;
       // 
-      // ActionOpenStrong
-      // 
-      this.ActionOpenStrong.Name = "ActionOpenStrong";
-      resources.ApplyResources(this.ActionOpenStrong, "ActionOpenStrong");
-      this.ActionOpenStrong.Click += new System.EventHandler(this.ActionOpenStrong_Click);
-      // 
-      // ActionCopyHebrewName
-      // 
-      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
-      resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
-      this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
-      // 
       // EditBooksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -206,6 +198,5 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewName;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenStrong;
   }
 }
