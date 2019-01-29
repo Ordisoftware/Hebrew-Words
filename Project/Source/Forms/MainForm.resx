@@ -864,7 +864,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionCopyToClipboard.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
     <value>ActionCopyToClipboard</value>
@@ -917,13 +917,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionExportChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 15</value>
+    <value>448, 15</value>
   </data>
   <data name="ActionExportChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
   </data>
   <data name="ActionExportChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionExportChapter.Name" xml:space="preserve">
     <value>ActionExportChapter</value>
@@ -982,7 +982,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionExportBook.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionExportBook.Name" xml:space="preserve">
     <value>ActionExportBook</value>
@@ -1031,13 +1031,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionFindVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 15</value>
+    <value>405, 15</value>
   </data>
   <data name="ActionFindVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
   </data>
   <data name="ActionFindVerse.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionFindVerse.Name" xml:space="preserve">
     <value>ActionFindVerse</value>
@@ -1088,7 +1088,7 @@
     <value>349, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditELS50.Name" xml:space="preserve">
     <value>EditELS50</value>
@@ -1106,13 +1106,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 21</value>
+    <value>340, 21</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 28</value>
   </data>
   <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
     <value>SelectChapter</value>
@@ -1193,7 +1193,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 3</value>
+    <value>337, 3</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -2299,9 +2299,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>932, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>940, 700</value>
   </data>
@@ -2328,6 +2325,18 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -2598,18 +2607,6 @@
   </data>
   <data name="&gt;&gt;SaveFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
