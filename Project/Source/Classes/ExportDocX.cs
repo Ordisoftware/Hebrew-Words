@@ -33,16 +33,8 @@ namespace Ordisoftware.HebrewWords
     static private DocX Document = null;
 
     static private FontFamily FontVerdana = new FontFamily("Verdana");
-
     static private FontFamily FontHebrew = new FontFamily("Hebrew");
-
     static private FontFamily FontCalibri = new FontFamily("Calibri");
-
-    static int ColumnsCount = 4;
-    static float TableWidth;
-    static float ColumnVerseRefWidth;
-    static float ColumnTitleWidth;
-    static float ColumnVerseWidth;
 
     static public void Run(string filename, Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
     {
@@ -58,12 +50,35 @@ namespace Ordisoftware.HebrewWords
             AddBookTitle(book);
             foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
             {
-              if ( showProgress != null )
-                if ( showProgress() )
-                  break;
+              if ( showProgress != null && showProgress() ) break;
+              AddChapterTitle(chapter);
               foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
                 AddVerse(verse, includeTranslation);
             }
+            Document.Save();
+          }
+          catch ( Exception ex )
+          {
+            ex.Manage();
+          }
+      }
+    }
+
+    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation)
+    {
+      {
+        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+          try
+          {
+            Document.MarginTop = 113.5f;
+            Document.MarginBottom = 113.5f;
+            Document.MarginLeft = 94.5f;
+            Document.MarginRight = 94.5f;
+            Document.DifferentOddAndEvenPages = true;
+            AddBookTitle(book);
+            AddChapterTitle(chapter);
+            foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+              AddVerse(verse, includeTranslation);
             Document.Save();
           }
           catch ( Exception ex )
@@ -77,6 +92,12 @@ namespace Ordisoftware.HebrewWords
     {
       Document.InsertSectionPageBreak(false);
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
+    }
+
+    static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
+    {
+      Document.InsertSectionPageBreak(false);
+      AddTitle("CHAPTER " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 
     static private void AddTitle(string str, FontFamily font, int size, string styleName)
@@ -93,22 +114,6 @@ namespace Ordisoftware.HebrewWords
       paragraph.Font(font);
       paragraph.FontSize(size);
       Document.InsertParagraph().AppendLine();
-    }
-
-    static private void AddComment(string str, FontFamily font, int size)
-    {
-      Document.InsertParagraph("").FontSize(8);
-      Table table = Document.InsertTable(1, 2);
-      table.Alignment = Alignment.right;
-      table.Design = TableDesign.None;
-      table.Rows[0].Cells[0].Width = 555;
-      table.Rows[0].Cells[1].Width = 55;
-      var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
-      paragraph.Append(str);
-      paragraph.Direction = Direction.LeftToRight;
-      paragraph.Font(font);
-      paragraph.FontSize(size);
-      paragraph.Italic();
     }
 
     static private void SetCellSize(Cell cell, int width, int marginTop, int marginBottom, int MarginLeft, int MarginRight)
@@ -134,11 +139,11 @@ namespace Ordisoftware.HebrewWords
       for ( int row = 0; row < countRows; row += rowFactor )
       {
         var cellVerse = table.Rows[row].Cells[CountColumns];
-        SetCellSize(cellVerse, 55, 5, 0, 0, 0);
+        SetCellSize(cellVerse, 55, 0, includeTranslation ? 0 : 5, 0, 0);
         if ( includeTranslation )
         {
           var cellTranslation = table.Rows[row + 1].Cells[CountColumns];
-          SetCellSize(cellTranslation, 55, 5, 0, 0, 0);
+          SetCellSize(cellTranslation, 55, 0, 5, 0, 0);
         }
         if ( row == 0 )
         {
@@ -164,7 +169,6 @@ namespace Ordisoftware.HebrewWords
           pVerse.Spacing(1);
           if ( includeTranslation )
           {
-            table.Rows[row + 1].Cells[i].MarginTop = 0;
             var pTranslation = table.Rows[row + 1].Cells[i].Paragraphs.First().Append(strTranslation);
             pTranslation.Direction = Direction.LeftToRight;
             pTranslation.Alignment = Alignment.right;
@@ -173,7 +177,21 @@ namespace Ordisoftware.HebrewWords
           }
         }
       }
-      if ( verse.Comment != "") AddComment(verse.Comment, FontCalibri, 10);
+      if ( verse.Comment != "" )
+      {
+        Document.InsertParagraph("").FontSize(8);
+        table = Document.InsertTable(1, 2);
+        table.Alignment = Alignment.right;
+        table.Design = TableDesign.None;
+        table.Rows[0].Cells[0].Width = 555;
+        table.Rows[0].Cells[1].Width = 55;
+        var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+        paragraph.Append(verse.Comment);
+        paragraph.Direction = Direction.LeftToRight;
+        paragraph.Font(FontCalibri);
+        paragraph.FontSize(10);
+        paragraph.Italic();
+      }
       Document.InsertParagraph().AppendLine();
     }
 

@@ -17,7 +17,7 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 - Determine the equidistant letter sequence of 50 for Tav.
 - Search a word.
 - Show statistics.
-- Export Word.
+- Word export.
 - English, French.
 
 ## Requirements

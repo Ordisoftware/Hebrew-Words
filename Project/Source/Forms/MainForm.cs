@@ -428,11 +428,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSaveWord for click events.
+    /// Event handler. Called by ActionExportBook for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionSaveWord_Click(object sender, EventArgs e)
+    private void ActionExportBook_Click(object sender, EventArgs e)
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
       SaveFileDialog.FileName = book.Name + ".docx"; ;
@@ -457,6 +457,26 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         form.Close();
+        Cursor = Cursors.Default;
+        Enabled = true;
+        BringToFront();
+      }
+    }
+
+    private void ActionExportChapter_Click(object sender, EventArgs e)
+    {
+      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+      SaveFileDialog.FileName = book.Name + " " + chapter.Number +  ".docx"; ;
+      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        Enabled = false;
+        ExportDocX.Run(SaveFileDialog.FileName, book, chapter, true);
+      }
+      finally
+      {
         Cursor = Cursors.Default;
         Enabled = true;
         BringToFront();
