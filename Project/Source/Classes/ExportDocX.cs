@@ -46,7 +46,6 @@ namespace Ordisoftware.HebrewWords
             foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
             {
               if ( showProgress != null && showProgress() ) break;
-              Document.InsertSectionPageBreak(false);
               AddChapterTitle(chapter);
               foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
                 AddVerse(verse, includeTranslation);
@@ -66,8 +65,8 @@ namespace Ordisoftware.HebrewWords
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
           try
           {
+            SetPageMargins();
             AddBookTitle(book);
-            Document.InsertSectionPageBreak(false);
             AddChapterTitle(chapter);
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               AddVerse(verse, includeTranslation);
@@ -92,12 +91,11 @@ namespace Ordisoftware.HebrewWords
     static private void AddBookTitle(Data.DataSet.BooksRow book)
     {
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
-      Document.InsertSectionPageBreak(false);
     }
 
     static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
     {
-      AddTitle("CHAPTER " + chapter.Number, FontCalibri, 20, "Heading2");
+      AddTitle(Localizer.BookChapterText.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 
     static private void AddTitle(string str, Font font, int size, string styleName)

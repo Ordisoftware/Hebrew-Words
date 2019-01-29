@@ -109,6 +109,13 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> BookChapterText
+      = new Dictionary<string, string>()
+      {
+        { "en", "CHAPTER" },
+        { "fr", "CHAPITRE" }
+      };
+
   }
 
 }
