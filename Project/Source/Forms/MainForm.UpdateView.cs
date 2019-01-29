@@ -96,7 +96,7 @@ namespace Ordisoftware.HebrewWords
                 if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
                 {
                   string str = "";
-                  foreach ( Data.DataSet.WordsRow w in verse.GetWordsRows() )
+                  foreach ( Data.DataSet.WordsRow w in verse.GetWordsRows().Reverse() )
                   {
                     var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
                               ? Color.DarkRed
@@ -134,6 +134,7 @@ namespace Ordisoftware.HebrewWords
     {
       var item = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = item.Row.ELS50;
+      EditELS50.SelectionStart = EditELS50.TextLength;
       PanelViewVerses.SuspendLayout();
       try
       {

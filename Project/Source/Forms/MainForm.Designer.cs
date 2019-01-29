@@ -408,6 +408,7 @@
       this.EditELS50.BackColor = System.Drawing.Color.LightYellow;
       this.EditELS50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditELS50.Name = "EditELS50";
+      this.EditELS50.ReadOnly = true;
       // 
       // SelectChapter
       // 
