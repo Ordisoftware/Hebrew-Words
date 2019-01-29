@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewWords
     /// The document.
     /// </summary>
     /// <remarks>
-    /// Measures in float or double are in inch: 100f = 1 inch = 2.65cm.
+    /// Measures in float or double are in inch: 100f = 1 inch.
     /// </remarks>
     static private DocX Document = null;
 
@@ -41,15 +41,12 @@ namespace Ordisoftware.HebrewWords
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
           try
           {
-            Document.MarginTop = 113.5f;
-            Document.MarginBottom = 113.5f;
-            Document.MarginLeft = 94.5f;
-            Document.MarginRight = 94.5f;
-            Document.DifferentOddAndEvenPages = true;
+            SetPageMargins();
             AddBookTitle(book);
             foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
             {
               if ( showProgress != null && showProgress() ) break;
+              Document.InsertSectionPageBreak(false);
               AddChapterTitle(chapter);
               foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
                 AddVerse(verse, includeTranslation);
@@ -69,12 +66,8 @@ namespace Ordisoftware.HebrewWords
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
           try
           {
-            Document.MarginTop = 113.5f;
-            Document.MarginBottom = 113.5f;
-            Document.MarginLeft = 94.5f;
-            Document.MarginRight = 94.5f;
-            Document.DifferentOddAndEvenPages = true;
             AddBookTitle(book);
+            Document.InsertSectionPageBreak(false);
             AddChapterTitle(chapter);
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               AddVerse(verse, includeTranslation);
@@ -87,15 +80,23 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    static private void SetPageMargins()
+    {
+      Document.MarginTop = 118.0f;
+      Document.MarginBottom = 118.0f;
+      Document.MarginLeft = 118.0f;
+      Document.MarginRight = 118.0f;
+      Document.DifferentOddAndEvenPages = true;
+    }
+
     static private void AddBookTitle(Data.DataSet.BooksRow book)
     {
-      Document.InsertSectionPageBreak(false);
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
+      Document.InsertSectionPageBreak(false);
     }
 
     static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
     {
-      Document.InsertSectionPageBreak(false);
       AddTitle("CHAPTER " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 

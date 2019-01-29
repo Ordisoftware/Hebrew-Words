@@ -49,9 +49,6 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
-    private Font HebrewFont = new Font("Hebrew", 12F);
-    private Font LatinFont = new Font("Verdana", 10F);
-
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -392,42 +389,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionFindVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionFindVerse_Click(object sender, EventArgs e)
-    {
-      var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
-      if ( form.ShowDialog() == DialogResult.OK )
-      {
-        int value = (int)form.EditVerseNumber.Value;
-        if ( value > 0 )
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
-        else
-        {
-          Data.DataSet.VersesRow found = null;
-          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
-          foreach ( Data.DataSet.VersesRow verse in list )
-          {
-            string str = "";
-            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() ) str += word.Translation;
-              if ( str == "" )
-              {
-                found = verse;
-                break;
-              }
-          }
-          if (found != null)
-            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
-          else
-            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
-        }
-      }
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionExportBook for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -463,11 +424,16 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionExportChapter for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionExportChapter_Click(object sender, EventArgs e)
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
       var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
-      SaveFileDialog.FileName = book.Name + " " + chapter.Number +  ".docx"; ;
+      SaveFileDialog.FileName = book.Name + " " + chapter.Number + ".docx"; ;
       if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
       Cursor = Cursors.WaitCursor;
       try
@@ -480,6 +446,42 @@ namespace Ordisoftware.HebrewWords
         Cursor = Cursors.Default;
         Enabled = true;
         BringToFront();
+      }
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionFindVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionFindVerse_Click(object sender, EventArgs e)
+    {
+      var form = new SelectVerseForm();
+      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
+      if ( form.ShowDialog() == DialogResult.OK )
+      {
+        int value = (int)form.EditVerseNumber.Value;
+        if ( value > 0 )
+          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
+        else
+        {
+          Data.DataSet.VersesRow found = null;
+          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+          foreach ( Data.DataSet.VersesRow verse in list )
+          {
+            string str = "";
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() ) str += word.Translation;
+              if ( str == "" )
+              {
+                found = verse;
+                break;
+              }
+          }
+          if (found != null)
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
+          else
+            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
+        }
       }
     }
 

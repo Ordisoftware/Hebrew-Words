@@ -23,6 +23,10 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private Font HebrewFont = new Font("Hebrew", 12f);
+
+    private Font LatinFont = new Font("Verdana", 10f);
+
     private void AddText(RichTextBox control, Font font, string str)
     {
       AddTextRightAligned(control, font, str, SystemColors.ControlText);
