@@ -48,37 +48,30 @@ namespace Ordisoftware.HebrewWords
       TableAdapterManager.UpdateAll(dataSet);
     }
 
-    private void ActionCopyHebrewName_Click(object sender, EventArgs e)
-    {
-      var book = (Data.DataSet.BooksRow)((DataRowView)BooksBindingSource.Current).Row;
-      MessageBox.Show(book.Name);
-    }
-
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if ( e.ColumnIndex == 2 )
         e.Value = (string)e.Value;
     }
 
+    private void ActionCopyHebrewName_Click(object sender, EventArgs e)
+    {
+      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
+      Clipboard.SetText(book.Name);
+    }
+
+    private void ActionOpenStrong_Click(object sender, EventArgs e)
+    {
+      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
+      Program.OpenOnlineConcordance(book.Name);
+    }
+
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      using ( var process = new System.Diagnostics.Process() )
-        try
-        {
-          process.StartInfo.FileName = Program.Settings.HebrewLettersExe;
-          var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
-          string str = book.Hebrew;
-          foreach ( var v in Letters.FinaleDisable )
-            str = str.Replace(v.Key, v.Value);
-          process.StartInfo.Arguments = str;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
-
+      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
+      Program.OpenHebrewLetters(book.Hebrew);
     }
+
   }
 
 }

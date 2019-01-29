@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewWords
         }
     }
 
-    static public void OpenOnlineSearch(string hebrew)
+    static public void OpenOnlineConcordance(string hebrew)
     {
       using ( var process = new Process() )
         try

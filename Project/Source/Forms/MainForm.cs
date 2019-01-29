@@ -528,7 +528,7 @@ namespace Ordisoftware.HebrewWords
     private void HebrewWordMouseClick(object sender, MouseEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
-        Program.OpenOnlineSearch((string)( sender as Label ).Tag);
+        Program.OpenOnlineConcordance((string)( sender as Label ).Tag);
       else
       if ( e.Button == MouseButtons.Right )
       {
