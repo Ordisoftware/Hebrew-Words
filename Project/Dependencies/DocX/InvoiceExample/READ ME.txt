@@ -1,3 +1,0 @@
-The first time you execute InvoiceExample.exe the document InvoiceTemplate.docx will be created.
-The second time you execute InvoiceExample.exe the document Invoice_The_Happy_Builder.docx will be created using InvoiceTemplate.docx as a template.
-

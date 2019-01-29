@@ -13,10 +13,9 @@
 /// <created> 2015-06 </created>
 /// <edited> 2015-06 </edited>
 using System;
-using System.Drawing;
 using System.Linq;
 using Ordisoftware.Core;
-using Novacode;
+using Xceed.Words.NET;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -32,9 +31,9 @@ namespace Ordisoftware.HebrewWords
     /// </remarks>
     static private DocX Document = null;
 
-    static private FontFamily FontVerdana = new FontFamily("Verdana");
-    static private FontFamily FontHebrew = new FontFamily("Hebrew");
-    static private FontFamily FontCalibri = new FontFamily("Calibri");
+    static private Font FontVerdana = new Font("Verdana");
+    static private Font FontHebrew = new Font("Hebrew");
+    static private Font FontCalibri = new Font("Calibri");
 
     static public void Run(string filename, Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
     {
@@ -100,7 +99,7 @@ namespace Ordisoftware.HebrewWords
       AddTitle("CHAPTER " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 
-    static private void AddTitle(string str, FontFamily font, int size, string styleName)
+    static private void AddTitle(string str, Font font, int size, string styleName)
     {
       Table table = Document.InsertTable(1, 2);
       table.Alignment = Alignment.right;
