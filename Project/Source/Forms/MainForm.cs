@@ -15,6 +15,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.IO;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -285,6 +286,23 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionBackup for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionBackup_Click(object sender, EventArgs e)
+    {
+      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      string filename = "Hebrew-Words.sqlite";
+      SaveFileDialogDB.FileName = filename;
+      if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+      string pathSource = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
+                        + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar 
+                        + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
+      File.Copy(pathSource + filename, SaveFileDialogDB.FileName);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionSave for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -396,8 +414,8 @@ namespace Ordisoftware.HebrewWords
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
-      SaveFileDialog.FileName = book.Name + ".docx"; ;
-      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
+      SaveFileDialogWord.FileName = book.Name + ".docx"; ;
+      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
       Cursor = Cursors.WaitCursor;
       var form = new ExportForm();
       try
@@ -413,7 +431,7 @@ namespace Ordisoftware.HebrewWords
           Application.DoEvents();
           return form.CancelRequired;
         };
-        ExportDocX.Run(SaveFileDialog.FileName, book, true, showProgress);
+        ExportDocX.Run(SaveFileDialogWord.FileName, book, true, showProgress);
       }
       finally
       {
@@ -433,13 +451,13 @@ namespace Ordisoftware.HebrewWords
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
       var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
-      SaveFileDialog.FileName = book.Name + " " + chapter.Number + ".docx"; ;
-      if ( SaveFileDialog.ShowDialog() == DialogResult.Cancel ) return;
+      SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx"; ;
+      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
       Cursor = Cursors.WaitCursor;
       try
       {
         Enabled = false;
-        ExportDocX.Run(SaveFileDialog.FileName, book, chapter, true);
+        ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
       }
       finally
       {

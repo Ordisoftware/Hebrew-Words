@@ -54,7 +54,6 @@
       this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
       this.ActionSearchWord = new System.Windows.Forms.Button();
       this.ActionClearWord = new System.Windows.Forms.Button();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionCopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
@@ -72,8 +71,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -108,6 +105,7 @@
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionBackup = new System.Windows.Forms.ToolStripButton();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -121,7 +119,11 @@
       this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
       this.booksBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-      this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveFileDialogWord = new System.Windows.Forms.SaveFileDialog();
+      this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
+      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -148,10 +150,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
       this.ToolStrip.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -339,14 +341,6 @@
       this.ActionClearWord.UseVisualStyleBackColor = true;
       this.ActionClearWord.Click += new System.EventHandler(this.ActionClearWord_Click);
       // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
       // panel1
       // 
       this.panel1.Controls.Add(this.ActionCopyToClipboard);
@@ -466,16 +460,6 @@
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
       // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // moonPhaseImagePictureBox
       // 
       this.moonPhaseImagePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -518,6 +502,7 @@
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
             this.toolStripSeparator2,
+            this.ActionBackup,
             this.ActionSave});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -780,6 +765,16 @@
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
+      // ActionBackup
+      // 
+      this.ActionBackup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionBackup, "ActionBackup");
+      this.ActionBackup.Name = "ActionBackup";
+      this.ActionBackup.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionBackup.Click += new System.EventHandler(this.ActionBackup_Click);
+      this.ActionBackup.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionBackup.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionSave
       // 
       this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -850,9 +845,31 @@
       this.booksBindingNavigatorSaveItem.Name = "booksBindingNavigatorSaveItem";
       resources.ApplyResources(this.booksBindingNavigatorSaveItem, "booksBindingNavigatorSaveItem");
       // 
-      // SaveFileDialog
+      // SaveFileDialogWord
       // 
-      resources.ApplyResources(this.SaveFileDialog, "SaveFileDialog");
+      resources.ApplyResources(this.SaveFileDialogWord, "SaveFileDialogWord");
+      // 
+      // SaveFileDialogDB
+      // 
+      resources.ApplyResources(this.SaveFileDialogDB, "SaveFileDialogDB");
+      // 
+      // EditLetters
+      // 
+      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // BooksTableAdapter
       // 
@@ -914,11 +931,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1038,8 +1055,10 @@
     private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
     private System.Windows.Forms.Button ActionFindVerse;
     private System.Windows.Forms.Button ActionExportBook;
-    private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialogWord;
     private System.Windows.Forms.Button ActionExportChapter;
+    internal System.Windows.Forms.ToolStripButton ActionBackup;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialogDB;
   }
 }
 

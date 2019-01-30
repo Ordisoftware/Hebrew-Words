@@ -37,26 +37,37 @@ namespace Ordisoftware.HebrewWords
       connection.Open();
       try
       {
-        void check(string table, string sql)
+        void checkTable(string table, string sql)
         {
-          var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                              "WHERE type = 'table' AND name = '" + table + "'", connection);
-          int result = (int)cmdCheckTable.ExecuteScalar();
+          var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                        "WHERE type = 'table' AND name = '" + table + "'", connection);
+          int result = (int)command.ExecuteScalar();
           if ( result == 0 )
           {
             var cmdCreateTable = new OdbcCommand(sql, connection);
             cmdCreateTable.ExecuteNonQuery();
           }
         }
-        check("Books", @"CREATE TABLE 'Books' ( 
+        bool checkColumn(string table, string column)
+        {
+          var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
+          var reader = command.ExecuteReader();
+          int nameIndex = reader.GetOrdinal("Name");
+          while ( reader.Read() )
+            if ( reader.GetString(nameIndex).Equals(column) )
+              return true;
+        return false;
+        }
+        checkTable("Books", @"CREATE TABLE 'Books' ( 
                            ID text NOT NULL,
                            Number integer NOT NULL,
+                           Original text NOT NULL,
                            Hebrew text NOT NULL,
                            Name text NOT NULL,
                            Translation text NOT NULL,
                            CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                          )");
-        check("Chapters", @"CREATE TABLE Chapters ( 
+        checkTable("Chapters", @"CREATE TABLE Chapters ( 
                               ID text NOT NULL,
                               BookID text NOT NULL,
                               Number integer NOT NULL,
@@ -64,7 +75,7 @@ namespace Ordisoftware.HebrewWords
                               CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
                               FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
                             )");
-        check("Verses", @"CREATE TABLE Verses ( 
+        checkTable("Verses", @"CREATE TABLE Verses ( 
                             ID text NOT NULL,
                             ChapterID text NOT NULL,
                             Number integer NOT NULL,
@@ -72,7 +83,7 @@ namespace Ordisoftware.HebrewWords
                             CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                             FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                           )");
-        check("Words", @"CREATE TABLE Words ( 
+        checkTable("Words", @"CREATE TABLE Words ( 
                            ID text NOT NULL,
                            VerseID text NOT NULL,
                            Number integer NOT NULL,
