@@ -56,9 +56,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.3
+#### 2019.05.22 - Version 1.3
 
 - Add backup database.
+- Add check update.
 
 #### 2019.01.29 - Version 1.2
 

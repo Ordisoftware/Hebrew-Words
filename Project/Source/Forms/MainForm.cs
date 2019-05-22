@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-05 </edited>
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
@@ -20,6 +20,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -104,6 +105,7 @@ namespace Ordisoftware.HebrewWords
         form.Hide();
         Cursor = Cursors.Default;
       }
+      CheckUpdate(true);
     }
 
     /// <summary>
@@ -174,6 +176,36 @@ namespace Ordisoftware.HebrewWords
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       Close();
+    }
+
+    /// <summary>
+    /// Check if a newer version is available.
+    /// </summary>
+    private void CheckUpdate(bool auto)
+    {
+      try
+      {
+        string title = AboutBox.Instance.AssemblyTitle;
+        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
+        using ( WebClient client = new WebClient() )
+        {
+
+          string version = client.DownloadString(url);
+          if ( version == AboutBox.Instance.AssemblyVersion )
+          {
+            if ( !auto )
+              DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
+          }
+          else
+            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+                                           Environment.NewLine +
+                                           Localizer.CheckUpdateAskDownloadText.GetLang()) )
+            AboutBox.Instance.OpenApplicationHome();
+        }
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
@@ -394,6 +426,16 @@ namespace Ordisoftware.HebrewWords
     private void ActionContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCheckUpdate for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCheckUpdate_Click(object sender, EventArgs e)
+    {
+      CheckUpdate(false);
     }
 
     /// <summary>
