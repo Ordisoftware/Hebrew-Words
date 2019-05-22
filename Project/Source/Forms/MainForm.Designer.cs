@@ -82,6 +82,7 @@
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionContact = new System.Windows.Forms.ToolStripButton();
+      this.ActionCheckUpdate = new System.Windows.Forms.ToolStripButton();
       this.ActionWebsite = new System.Windows.Forms.ToolStripButton();
       this.Sep5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
@@ -108,6 +109,7 @@
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionBackup = new System.Windows.Forms.ToolStripButton();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -121,7 +123,8 @@
       this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
       this.booksBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-      this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveFileDialogWord = new System.Windows.Forms.SaveFileDialog();
+      this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -503,6 +506,7 @@
             this.ActionExit,
             this.Sep4,
             this.ActionContact,
+            this.ActionCheckUpdate,
             this.ActionWebsite,
             this.Sep5,
             this.ActionHelp,
@@ -518,6 +522,7 @@
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
             this.toolStripSeparator2,
+            this.ActionBackup,
             this.ActionSave});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -559,6 +564,17 @@
       this.ActionContact.Click += new System.EventHandler(this.ActionContact_Click);
       this.ActionContact.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionContact.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionCheckUpdate
+      // 
+      this.ActionCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionCheckUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCheckUpdate, "ActionCheckUpdate");
+      this.ActionCheckUpdate.Name = "ActionCheckUpdate";
+      this.ActionCheckUpdate.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      this.ActionCheckUpdate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCheckUpdate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionWebsite
       // 
@@ -780,6 +796,16 @@
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
+      // ActionBackup
+      // 
+      this.ActionBackup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionBackup, "ActionBackup");
+      this.ActionBackup.Name = "ActionBackup";
+      this.ActionBackup.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionBackup.Click += new System.EventHandler(this.ActionBackup_Click);
+      this.ActionBackup.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionBackup.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionSave
       // 
       this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -850,9 +876,13 @@
       this.booksBindingNavigatorSaveItem.Name = "booksBindingNavigatorSaveItem";
       resources.ApplyResources(this.booksBindingNavigatorSaveItem, "booksBindingNavigatorSaveItem");
       // 
-      // SaveFileDialog
+      // SaveFileDialogWord
       // 
-      resources.ApplyResources(this.SaveFileDialog, "SaveFileDialog");
+      resources.ApplyResources(this.SaveFileDialogWord, "SaveFileDialogWord");
+      // 
+      // SaveFileDialogDB
+      // 
+      resources.ApplyResources(this.SaveFileDialogDB, "SaveFileDialogDB");
       // 
       // BooksTableAdapter
       // 
@@ -1038,8 +1068,11 @@
     private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
     private System.Windows.Forms.Button ActionFindVerse;
     private System.Windows.Forms.Button ActionExportBook;
-    private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialogWord;
     private System.Windows.Forms.Button ActionExportChapter;
+    internal System.Windows.Forms.ToolStripButton ActionBackup;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialogDB;
+    private System.Windows.Forms.ToolStripButton ActionCheckUpdate;
   }
 }
 
