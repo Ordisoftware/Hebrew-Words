@@ -6,7 +6,7 @@
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-words)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that helps for the literal translation of the verses of the Hebrew Bible.
+A tool for Windows written in C# that helps for the literal translation of the Hebrew Bible.
 
 ## Functionalities
 
