@@ -10,7 +10,7 @@ A tool for Windows written in C# that helps for the translation of the Bible's h
 
 ## Functionalities
 
-- Translate verses word by word.
+- Translate verses word-for-word.
 - Left mouse click on a word to open online strong's concordance.
 - Right mouse click on a word to open Hebrew Letters.
 - Click on a verse number to open online text with contextual strong's concordances.
