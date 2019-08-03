@@ -6,11 +6,11 @@
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-words)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that helps for the translation of the Bible's hebrew words.
+A tool for Windows written in C# that helps for the literal translation of the verses of the Bible in Hebrew.
 
 ## Functionalities
 
-- Translate verses word by word.
+- Translate verses word-for-word.
 - Left mouse click on a word to open online strong's concordance.
 - Right mouse click on a word to open Hebrew Letters.
 - Click on a verse number to open online text with contextual strong's concordances.
