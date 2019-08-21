@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-05 </edited>
+/// <edited> 2019-08 </edited>
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
@@ -191,7 +191,7 @@ namespace Ordisoftware.HebrewWords
         {
 
           string version = client.DownloadString(url);
-          if ( version == AboutBox.Instance.AssemblyVersion )
+          if ( version.CompareTo(AboutBox.Instance.AssemblyVersion) < 0 )
           {
             if ( !auto )
               DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());

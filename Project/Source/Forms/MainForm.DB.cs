@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -33,6 +33,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     public void CreateDatabaseIfNotExists()
     {
+      bool upgraded = false;
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
       try
@@ -48,51 +49,64 @@ namespace Ordisoftware.HebrewWords
             cmdCreateTable.ExecuteNonQuery();
           }
         }
-        bool checkColumn(string table, string column)
+        void checkColumn(string table, string column, string sql)
         {
           var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
           var reader = command.ExecuteReader();
           int nameIndex = reader.GetOrdinal("Name");
+          bool b = false;
           while ( reader.Read() )
             if ( reader.GetString(nameIndex).Equals(column) )
-              return true;
-        return false;
+            {
+              b = true;
+              break;
+            }
+          if ( !b )
+          {
+            var cmdCreateColumn = new OdbcCommand(sql, connection);
+            cmdCreateColumn.ExecuteNonQuery();
+            upgraded = true;
+          }
         }
-        checkTable("Books", @"CREATE TABLE 'Books' ( 
-                           ID text NOT NULL,
-                           Number integer NOT NULL,
-                           Original text NOT NULL,
-                           Hebrew text NOT NULL,
-                           Name text NOT NULL,
-                           Translation text NOT NULL,
-                           CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
-                         )");
-        checkTable("Chapters", @"CREATE TABLE Chapters ( 
-                              ID text NOT NULL,
-                              BookID text NOT NULL,
-                              Number integer NOT NULL,
-                              ELS50 text NOT NULL,
-                              CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
-                              FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
-                            )");
-        checkTable("Verses", @"CREATE TABLE Verses ( 
-                            ID text NOT NULL,
-                            ChapterID text NOT NULL,
-                            Number integer NOT NULL,
-                            Comment text NOT NULL,
-                            CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
-                            FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
-                          )");
-        checkTable("Words", @"CREATE TABLE Words ( 
-                           ID text NOT NULL,
-                           VerseID text NOT NULL,
-                           Number integer NOT NULL,
-                           Original text NOT NULL,
-                           Hebrew text NOT NULL,
-                           Translation text NOT NULL,
-                           CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
-                           FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
-                         )");
+        checkTable("Books", @"CREATE TABLE 'Books' 
+                              ( 
+                                ID text NOT NULL,
+                                Number integer NOT NULL,
+                                Original text NOT NULL,
+                                Hebrew text NOT NULL,
+                                Name text NOT NULL,
+                                Translation text NOT NULL,
+                                CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
+                              )");
+        checkTable("Chapters", @"CREATE TABLE Chapters 
+                                 ( 
+                                   ID text NOT NULL,
+                                   BookID text NOT NULL,
+                                   Number integer NOT NULL,
+                                   ELS50 text NOT NULL,
+                                   CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
+                                   FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
+                                 )");
+        checkTable("Verses", @"CREATE TABLE Verses 
+                               ( 
+                                 ID text NOT NULL,
+                                 ChapterID text NOT NULL,
+                                 Number integer NOT NULL,
+                                 Comment text NOT NULL,
+                                 CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
+                                 FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
+                               )");
+        checkTable("Words", @"CREATE TABLE Words 
+                              ( 
+                                ID text NOT NULL,
+                                VerseID text NOT NULL,
+                                Number integer NOT NULL,
+                                Original text NOT NULL,
+                                Hebrew text NOT NULL,
+                                Translation text NOT NULL,
+                                CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
+                                FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
+                              )");
         CreateData();
       }
       finally
