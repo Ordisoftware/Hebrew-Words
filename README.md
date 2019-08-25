@@ -57,10 +57,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### __________ - Version 1.4
+#### 2019.08.25 - Version 1.4
 
-- Add restore database.
-- Add shortcut for original text view.
+- Add shortcut for hebrew raw text view.
+- Improve check update.
 
 #### 2019.05.22 - Version 1.3
 

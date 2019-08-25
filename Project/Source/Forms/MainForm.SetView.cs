@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewWords
           ViewModeType.Text,
           new ViewConnector
           {
-            MenuItem = ActionViewText,
+            MenuItem = ActionViewRawText,
             Panel = PanelViewRawText,
             Focused = EditRawText
           }
