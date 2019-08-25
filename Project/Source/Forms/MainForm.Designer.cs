@@ -102,7 +102,7 @@
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewText = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -515,7 +515,7 @@
             this.ActionPreferences,
             this.MenuSettings,
             this.ActionViewTranslations,
-            this.ActionViewText,
+            this.ActionViewRawText,
             this.ActionViewELS50,
             this.ActionViewSearch,
             this.toolStripSeparator1,
@@ -736,15 +736,15 @@
       this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // ActionViewText
+      // ActionViewRawText
       // 
-      this.ActionViewText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewText, "ActionViewText");
-      this.ActionViewText.Name = "ActionViewText";
-      this.ActionViewText.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewText.Click += new System.EventHandler(this.ActionViewRawText_Click);
-      this.ActionViewText.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewText.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewRawText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewRawText, "ActionViewRawText");
+      this.ActionViewRawText.Name = "ActionViewRawText";
+      this.ActionViewRawText.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewRawText.Click += new System.EventHandler(this.ActionViewRawText_Click);
+      this.ActionViewRawText.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewRawText.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionViewELS50
       // 
@@ -1041,7 +1041,7 @@
     private System.Windows.Forms.TabPage TabPageELS50;
     private System.Windows.Forms.Panel PanelViewELS50;
     private System.Windows.Forms.ToolStripButton ActionViewELS50;
-    private System.Windows.Forms.ToolStripButton ActionViewText;
+    private System.Windows.Forms.ToolStripButton ActionViewRawText;
     private System.Windows.Forms.TabPage TabPageText;
     private System.Windows.Forms.Panel PanelViewRawText;
     private System.Windows.Forms.RichTextBox EditRawText;

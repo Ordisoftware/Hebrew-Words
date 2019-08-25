@@ -18,6 +18,7 @@ A tool for Windows written in C# that helps for the literal translation of the H
 - Search a word.
 - Show statistics.
 - MS Word export.
+- Grammatical guide.
 - English, French.
 
 ## Requirements
@@ -55,6 +56,11 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
+
+#### 2019.08.25 - Version 1.4
+
+- Add shortcut for hebrew raw text view.
+- Improve check update.
 
 #### 2019.05.22 - Version 1.3
 

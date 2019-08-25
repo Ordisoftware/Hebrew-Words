@@ -117,26 +117,281 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelViewVerses.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;PanelMainOuter.Name" xml:space="preserve">
+    <value>PanelMainOuter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelSepTop.Name" xml:space="preserve">
+    <value>PanelSepTop</value>
+  </data>
+  <data name="&gt;&gt;PanelSepTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSepTop.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelSepTop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelTitle.Name" xml:space="preserve">
+    <value>PanelTitle</value>
+  </data>
+  <data name="&gt;&gt;PanelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTitle.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelViewVerses.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelViewVerses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 54</value>
   </data>
-  <data name="PanelViewVerses.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelViewVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 458</value>
+  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>932, 612</value>
   </data>
-  <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Name" xml:space="preserve">
+    <value>PanelMainInner</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Parent" xml:space="preserve">
+    <value>PanelMainOuter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelMainOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMainOuter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 110</value>
+  </data>
+  <data name="PanelMainOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="PanelMainOuter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>912, 492</value>
+  </data>
+  <data name="PanelMainOuter.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.Name" xml:space="preserve">
+    <value>PanelMainOuter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Name" xml:space="preserve">
+    <value>PanelMainCenter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
+    <value>PanelMainInner</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelMainInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMainInner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="PanelMainInner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 490</value>
+  </data>
+  <data name="PanelMainInner.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Name" xml:space="preserve">
+    <value>PanelMainInner</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.Parent" xml:space="preserve">
+    <value>PanelMainOuter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainInner.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
+    <value>PanelMainCenter</value>
+  </data>
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelMainCenter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMainCenter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PanelMainCenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 490</value>
+  </data>
+  <data name="PanelMainCenter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Name" xml:space="preserve">
+    <value>PanelMainCenter</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
+    <value>PanelMainInner</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabPageVerses.Name" xml:space="preserve">
+    <value>TabPageVerses</value>
+  </data>
+  <data name="&gt;&gt;TabPageVerses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageVerses.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageVerses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabPageTranslations.Name" xml:space="preserve">
+    <value>TabPageTranslations</value>
+  </data>
+  <data name="&gt;&gt;TabPageTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageTranslations.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageTranslations.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TabPageText.Name" xml:space="preserve">
+    <value>TabPageText</value>
+  </data>
+  <data name="&gt;&gt;TabPageText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageText.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TabPageELS50.Name" xml:space="preserve">
+    <value>TabPageELS50</value>
+  </data>
+  <data name="&gt;&gt;TabPageELS50.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageELS50.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageELS50.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Name" xml:space="preserve">
+    <value>TabPageSearch</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 490</value>
+  </data>
+  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TabControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
+    <value>PanelMainCenter</value>
+  </data>
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewVerses.Name" xml:space="preserve">
     <value>PanelViewVerses</value>
@@ -177,49 +432,34 @@
   <data name="&gt;&gt;TabPageVerses.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewVerses.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PanelViewVerses.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditTranslations.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="EditTranslations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 438</value>
-  </data>
-  <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditTranslations.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;EditTranslations.Name" xml:space="preserve">
-    <value>EditTranslations</value>
-  </data>
-  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditTranslations.Parent" xml:space="preserve">
-    <value>PanelViewTranslations</value>
-  </data>
-  <data name="&gt;&gt;EditTranslations.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelViewTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelViewTranslations.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewVerses.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="PanelViewTranslations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelViewVerses.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewVerses.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 458</value>
   </data>
-  <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;PanelViewVerses.Name" xml:space="preserve">
+    <value>PanelViewVerses</value>
+  </data>
+  <data name="&gt;&gt;PanelViewVerses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewVerses.Parent" xml:space="preserve">
+    <value>TabPageVerses</value>
+  </data>
+  <data name="&gt;&gt;PanelViewVerses.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewTranslations.Name" xml:space="preserve">
@@ -261,47 +501,74 @@
   <data name="&gt;&gt;TabPageTranslations.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;EditTranslations.Name" xml:space="preserve">
+    <value>EditTranslations</value>
   </data>
-  <data name="EditRawText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 438</value>
-  </data>
-  <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditRawText.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;EditRawText.Name" xml:space="preserve">
-    <value>EditRawText</value>
-  </data>
-  <data name="&gt;&gt;EditRawText.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRawText.Parent" xml:space="preserve">
-    <value>PanelViewRawText</value>
+  <data name="&gt;&gt;EditTranslations.Parent" xml:space="preserve">
+    <value>PanelViewTranslations</value>
   </data>
-  <data name="&gt;&gt;EditRawText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTranslations.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelViewRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelViewRawText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewTranslations.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="PanelViewRawText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelViewTranslations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 458</value>
   </data>
-  <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelViewTranslations.Name" xml:space="preserve">
+    <value>PanelViewTranslations</value>
+  </data>
+  <data name="&gt;&gt;PanelViewTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewTranslations.Parent" xml:space="preserve">
+    <value>TabPageTranslations</value>
+  </data>
+  <data name="&gt;&gt;PanelViewTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditTranslations.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EditTranslations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 438</value>
+  </data>
+  <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditTranslations.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;EditTranslations.Name" xml:space="preserve">
+    <value>EditTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTranslations.Parent" xml:space="preserve">
+    <value>PanelViewTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewRawText.Name" xml:space="preserve">
     <value>PanelViewRawText</value>
@@ -342,47 +609,71 @@
   <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditELS50All.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;EditRawText.Name" xml:space="preserve">
+    <value>EditRawText</value>
   </data>
-  <data name="EditELS50All.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 438</value>
-  </data>
-  <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditELS50All.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;EditELS50All.Name" xml:space="preserve">
-    <value>EditELS50All</value>
-  </data>
-  <data name="&gt;&gt;EditELS50All.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditRawText.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditELS50All.Parent" xml:space="preserve">
-    <value>PanelViewELS50</value>
+  <data name="&gt;&gt;EditRawText.Parent" xml:space="preserve">
+    <value>PanelViewRawText</value>
   </data>
-  <data name="&gt;&gt;EditELS50All.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditRawText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelViewELS50.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelViewELS50.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewRawText.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="PanelViewELS50.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelViewRawText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 458</value>
   </data>
-  <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelViewRawText.Name" xml:space="preserve">
+    <value>PanelViewRawText</value>
+  </data>
+  <data name="&gt;&gt;PanelViewRawText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewRawText.Parent" xml:space="preserve">
+    <value>TabPageText</value>
+  </data>
+  <data name="&gt;&gt;PanelViewRawText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditRawText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 438</value>
+  </data>
+  <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditRawText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;EditRawText.Name" xml:space="preserve">
+    <value>EditRawText</value>
+  </data>
+  <data name="&gt;&gt;EditRawText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRawText.Parent" xml:space="preserve">
+    <value>PanelViewRawText</value>
+  </data>
+  <data name="&gt;&gt;EditRawText.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewELS50.Name" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -423,20 +714,161 @@
   <data name="&gt;&gt;TabPageELS50.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;EditELS50All.Name" xml:space="preserve">
+    <value>EditELS50All</value>
   </data>
-  <data name="EditSearchResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+  <data name="&gt;&gt;EditELS50All.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 195</value>
+  <data name="&gt;&gt;EditELS50All.Parent" xml:space="preserve">
+    <value>PanelViewELS50</value>
   </data>
-  <data name="EditSearchResults.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;EditELS50All.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditSearchResults.Text" xml:space="preserve">
+  <data name="PanelViewELS50.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelViewELS50.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="PanelViewELS50.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 458</value>
+  </data>
+  <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelViewELS50.Name" xml:space="preserve">
+    <value>PanelViewELS50</value>
+  </data>
+  <data name="&gt;&gt;PanelViewELS50.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewELS50.Parent" xml:space="preserve">
+    <value>TabPageELS50</value>
+  </data>
+  <data name="&gt;&gt;PanelViewELS50.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditELS50All.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditELS50All.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 438</value>
+  </data>
+  <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditELS50All.Text" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;EditELS50All.Name" xml:space="preserve">
+    <value>EditELS50All</value>
+  </data>
+  <data name="&gt;&gt;EditELS50All.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditELS50All.Parent" xml:space="preserve">
+    <value>PanelViewELS50</value>
+  </data>
+  <data name="&gt;&gt;EditELS50All.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Name" xml:space="preserve">
+    <value>PanelViewSearch2</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Parent" xml:space="preserve">
+    <value>TabPageSearch</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageSearch.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>902, 464</value>
+  </data>
+  <data name="TabPageSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TabPageSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Name" xml:space="preserve">
+    <value>TabPageSearch</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageSearch.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResults.Name" xml:space="preserve">
+    <value>PanelSearchResults</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResults.Parent" xml:space="preserve">
+    <value>PanelViewSearch2</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Name" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Parent" xml:space="preserve">
+    <value>PanelViewSearch2</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PanelViewSearch2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelViewSearch2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="PanelViewSearch2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="PanelViewSearch2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 458</value>
+  </data>
+  <data name="PanelViewSearch2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Name" xml:space="preserve">
+    <value>PanelViewSearch2</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.Parent" xml:space="preserve">
+    <value>TabPageSearch</value>
+  </data>
+  <data name="&gt;&gt;PanelViewSearch2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
     <value>EditSearchResults</value>
@@ -476,6 +908,105 @@
   </data>
   <data name="&gt;&gt;PanelSearchResults.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="EditSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditSearchResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="EditSearchResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 195</value>
+  </data>
+  <data name="EditSearchResults.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditSearchResults.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
+    <value>EditSearchResults</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Parent" xml:space="preserve">
+    <value>PanelSearchResults</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditSearchOnlyTorah.Name" xml:space="preserve">
+    <value>EditSearchOnlyTorah</value>
+  </data>
+  <data name="&gt;&gt;EditSearchOnlyTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearchOnlyTorah.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;EditSearchOnlyTorah.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWord.Name" xml:space="preserve">
+    <value>ActionSearchWord</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWord.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWord.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionClearWord.Name" xml:space="preserve">
+    <value>ActionClearWord</value>
+  </data>
+  <data name="&gt;&gt;ActionClearWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearWord.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;ActionClearWord.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Name" xml:space="preserve">
+    <value>EditLetters</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelSearchTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PanelSearchTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 221</value>
+  </data>
+  <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Name" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.Parent" xml:space="preserve">
+    <value>PanelViewSearch2</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchTop.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditSearchOnlyTorah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -629,7 +1160,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -637,185 +1168,149 @@
   <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelSearchTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
+    <value>ActionCopyToClipboard</value>
   </data>
-  <data name="PanelSearchTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+  <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 221</value>
+  <data name="&gt;&gt;ActionCopyToClipboard.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;ActionCopyToClipboard.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelSearchTop.Name" xml:space="preserve">
-    <value>PanelSearchTop</value>
+  <data name="&gt;&gt;ActionExportChapter.Name" xml:space="preserve">
+    <value>ActionExportChapter</value>
   </data>
-  <data name="&gt;&gt;PanelSearchTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionExportChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelSearchTop.Parent" xml:space="preserve">
-    <value>PanelViewSearch2</value>
+  <data name="&gt;&gt;ActionExportChapter.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;PanelSearchTop.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionExportChapter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PanelViewSearch2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;ActionExportBook.Name" xml:space="preserve">
+    <value>ActionExportBook</value>
   </data>
-  <data name="PanelViewSearch2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;ActionExportBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PanelViewSearch2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
+  <data name="&gt;&gt;ActionExportBook.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="PanelViewSearch2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 458</value>
-  </data>
-  <data name="PanelViewSearch2.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;ActionExportBook.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;PanelViewSearch2.Name" xml:space="preserve">
-    <value>PanelViewSearch2</value>
+  <data name="&gt;&gt;ActionFindVerse.Name" xml:space="preserve">
+    <value>ActionFindVerse</value>
   </data>
-  <data name="&gt;&gt;PanelViewSearch2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionFindVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelViewSearch2.Parent" xml:space="preserve">
-    <value>TabPageSearch</value>
+  <data name="&gt;&gt;ActionFindVerse.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;PanelViewSearch2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ActionFindVerse.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="TabPageSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
+    <value>SelectBook</value>
   </data>
-  <data name="TabPageSearch.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TabPageSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>902, 464</value>
+  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="TabPageSearch.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="TabPageSearch.Text" xml:space="preserve">
-    <value>Search</value>
+  <data name="&gt;&gt;EditELS50.Name" xml:space="preserve">
+    <value>EditELS50</value>
   </data>
-  <data name="&gt;&gt;TabPageSearch.Name" xml:space="preserve">
-    <value>TabPageSearch</value>
+  <data name="&gt;&gt;EditELS50.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPageSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;EditELS50.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;TabPageSearch.Parent" xml:space="preserve">
-    <value>TabControl</value>
+  <data name="&gt;&gt;EditELS50.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;TabPageSearch.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
+    <value>SelectChapter</value>
   </data>
-  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 490</value>
+  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="TabControl.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
-  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
-    <value>TabControl</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
-    <value>PanelMainCenter</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="PanelMainCenter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 44</value>
   </data>
-  <data name="PanelMainCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>912, 66</value>
   </data>
-  <data name="PanelMainCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 490</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="PanelMainCenter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;PanelMainCenter.Name" xml:space="preserve">
-    <value>PanelMainCenter</value>
-  </data>
-  <data name="&gt;&gt;PanelMainCenter.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
-    <value>PanelMainInner</value>
-  </data>
-  <data name="&gt;&gt;PanelMainCenter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelMainInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelMainInner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
-  </data>
-  <data name="PanelMainInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 490</value>
-  </data>
-  <data name="PanelMainInner.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelMainInner.Name" xml:space="preserve">
-    <value>PanelMainInner</value>
-  </data>
-  <data name="&gt;&gt;PanelMainInner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelMainInner.Parent" xml:space="preserve">
-    <value>PanelMainOuter</value>
-  </data>
-  <data name="&gt;&gt;PanelMainInner.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelMainOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelMainOuter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 110</value>
-  </data>
-  <data name="PanelMainOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
-  </data>
-  <data name="PanelMainOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>912, 492</value>
-  </data>
-  <data name="PanelMainOuter.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;PanelMainOuter.Name" xml:space="preserve">
-    <value>PanelMainOuter</value>
-  </data>
-  <data name="&gt;&gt;PanelMainOuter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelMainOuter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
-  <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ActionCopyToClipboard.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1219,30 +1714,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 44</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>912, 66</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="PanelSepTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -1266,30 +1737,6 @@
   </data>
   <data name="&gt;&gt;PanelSepTop.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="LabelTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
-  </data>
-  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 22</value>
-  </data>
-  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
-    <value>TANAK</value>
-  </data>
-  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
     <value>LabelTitle</value>
@@ -1330,31 +1777,40 @@
   <data name="&gt;&gt;PanelTitle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="LabelTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 54</value>
+  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
+  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>932, 612</value>
+  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
   </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 22</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>TANAK</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
+    <value>LabelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+    <value>PanelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1363,11 +1819,23 @@
   <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>375, 56</value>
   </metadata>
+  <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>375, 56</value>
+  </metadata>
+  <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>203, 54</value>
+  </metadata>
   <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 54</value>
   </metadata>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>35, 51</value>
+  </metadata>
+  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>35, 51</value>
+  </metadata>
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
   </metadata>
   <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>236, 17</value>
@@ -1764,120 +2232,6 @@
   <data name="ActionPreferences.ToolTipText" xml:space="preserve">
     <value>Preferences (F8)</value>
   </data>
-  <data name="EditScreenNone.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenNone.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+0</value>
-  </data>
-  <data name="EditScreenNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenNone.Text" xml:space="preserve">
-    <value>Loose</value>
-  </data>
-  <data name="EditScreenTopLeft.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenTopLeft.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+1</value>
-  </data>
-  <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenTopLeft.Text" xml:space="preserve">
-    <value>Top left</value>
-  </data>
-  <data name="EditScreenTopRight.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenTopRight.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+2</value>
-  </data>
-  <data name="EditScreenTopRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenTopRight.Text" xml:space="preserve">
-    <value>Top right</value>
-  </data>
-  <data name="EditScreenBottomLeft.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenBottomLeft.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+3</value>
-  </data>
-  <data name="EditScreenBottomLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenBottomLeft.Text" xml:space="preserve">
-    <value>Bottom left</value>
-  </data>
-  <data name="EditScreenBottomRight.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenBottomRight.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+4</value>
-  </data>
-  <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenBottomRight.Text" xml:space="preserve">
-    <value>Bottom right</value>
-  </data>
-  <data name="EditScreenCenter.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditScreenCenter.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+5</value>
-  </data>
-  <data name="EditScreenCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="EditScreenCenter.Text" xml:space="preserve">
-    <value>Center</value>
-  </data>
-  <data name="MenuitemScreenPosition.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
-    <value>Screen position</value>
-  </data>
-  <data name="ActionResetWinSettings.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="ActionResetWinSettings.Text" xml:space="preserve">
-    <value>Reset window settings</value>
-  </data>
-  <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="EditShowTips.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="EditShowTips.Text" xml:space="preserve">
-    <value>Show menu tips</value>
-  </data>
-  <data name="EditConfirmClosing.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="EditConfirmClosing.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="EditConfirmClosing.Text" xml:space="preserve">
-    <value>Confirm application closing</value>
-  </data>
   <data name="MenuSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1964,7 +2318,7 @@
   <data name="ActionViewTranslations.ToolTipText" xml:space="preserve">
     <value>View translations (F3)</value>
   </data>
-  <data name="ActionViewText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewRawText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARkSURBVFhHxZdpU1t1GMV5oS+d8Y39Hn4F/WpWpf0KLjiO
@@ -1989,17 +2343,17 @@
         PqTIJPv/nIGBfwFvYvX+sE3q9QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionViewText.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionViewRawText.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionViewText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionViewRawText.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
-  <data name="ActionViewText.Text" xml:space="preserve">
+  <data name="ActionViewRawText.Text" xml:space="preserve">
     <value>View original text</value>
   </data>
-  <data name="ActionViewText.ToolTipText" xml:space="preserve">
-    <value>View original text</value>
+  <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
+    <value>View original text (F4)</value>
   </data>
   <data name="ActionViewELS50.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2198,34 +2552,34 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionBackup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2318,6 +2672,120 @@
   </data>
   <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="MenuitemScreenPosition.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
+    <value>Screen position</value>
+  </data>
+  <data name="EditScreenNone.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenNone.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+0</value>
+  </data>
+  <data name="EditScreenNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenNone.Text" xml:space="preserve">
+    <value>Loose</value>
+  </data>
+  <data name="EditScreenTopLeft.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenTopLeft.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+1</value>
+  </data>
+  <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenTopLeft.Text" xml:space="preserve">
+    <value>Top left</value>
+  </data>
+  <data name="EditScreenTopRight.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenTopRight.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+2</value>
+  </data>
+  <data name="EditScreenTopRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenTopRight.Text" xml:space="preserve">
+    <value>Top right</value>
+  </data>
+  <data name="EditScreenBottomLeft.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenBottomLeft.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+3</value>
+  </data>
+  <data name="EditScreenBottomLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenBottomLeft.Text" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="EditScreenBottomRight.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenBottomRight.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+4</value>
+  </data>
+  <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenBottomRight.Text" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
+  <data name="EditScreenCenter.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditScreenCenter.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+5</value>
+  </data>
+  <data name="EditScreenCenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="EditScreenCenter.Text" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="ActionResetWinSettings.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="ActionResetWinSettings.Text" xml:space="preserve">
+    <value>Reset window settings</value>
+  </data>
+  <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 6</value>
+  </data>
+  <data name="EditShowTips.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="EditShowTips.Text" xml:space="preserve">
+    <value>Show menu tips</value>
+  </data>
+  <data name="EditConfirmClosing.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditConfirmClosing.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="EditConfirmClosing.Text" xml:space="preserve">
+    <value>Confirm application closing</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
@@ -2431,7 +2899,7 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -2583,10 +3051,10 @@
   <data name="&gt;&gt;ActionViewTranslations.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewText.Name" xml:space="preserve">
-    <value>ActionViewText</value>
+  <data name="&gt;&gt;ActionViewRawText.Name" xml:space="preserve">
+    <value>ActionViewRawText</value>
   </data>
-  <data name="&gt;&gt;ActionViewText.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionViewRawText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewELS50.Name" xml:space="preserve">
@@ -2725,31 +3193,31 @@
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
