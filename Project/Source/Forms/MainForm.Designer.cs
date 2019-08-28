@@ -109,7 +109,10 @@
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionNew = new System.Windows.Forms.ToolStripButton();
+      this.ActionRestore = new System.Windows.Forms.ToolStripButton();
       this.ActionBackup = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -125,6 +128,7 @@
       this.booksBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
       this.SaveFileDialogWord = new System.Windows.Forms.SaveFileDialog();
       this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
+      this.OpenFileDialogDB = new System.Windows.Forms.OpenFileDialog();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -522,7 +526,10 @@
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
             this.toolStripSeparator2,
+            this.ActionNew,
+            this.ActionRestore,
             this.ActionBackup,
+            this.toolStripSeparator3,
             this.ActionSave});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -796,6 +803,24 @@
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
+      // ActionNew
+      // 
+      this.ActionNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionNew, "ActionNew");
+      this.ActionNew.Name = "ActionNew";
+      this.ActionNew.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionNew.Click += new System.EventHandler(this.ActionNew_Click);
+      // 
+      // ActionRestore
+      // 
+      this.ActionRestore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionRestore, "ActionRestore");
+      this.ActionRestore.Name = "ActionRestore";
+      this.ActionRestore.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRestore.Click += new System.EventHandler(this.ActionRestore_Click);
+      this.ActionRestore.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionRestore.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionBackup
       // 
       this.ActionBackup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -805,6 +830,11 @@
       this.ActionBackup.Click += new System.EventHandler(this.ActionBackup_Click);
       this.ActionBackup.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionBackup.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionSave
       // 
@@ -883,6 +913,10 @@
       // SaveFileDialogDB
       // 
       resources.ApplyResources(this.SaveFileDialogDB, "SaveFileDialogDB");
+      // 
+      // OpenFileDialogDB
+      // 
+      resources.ApplyResources(this.OpenFileDialogDB, "OpenFileDialogDB");
       // 
       // BooksTableAdapter
       // 
@@ -1073,6 +1107,10 @@
     internal System.Windows.Forms.ToolStripButton ActionBackup;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogDB;
     private System.Windows.Forms.ToolStripButton ActionCheckUpdate;
+    internal System.Windows.Forms.ToolStripButton ActionRestore;
+    private System.Windows.Forms.OpenFileDialog OpenFileDialogDB;
+    internal System.Windows.Forms.ToolStripButton ActionNew;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
   }
 }
 

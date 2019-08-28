@@ -57,6 +57,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### 2019.08.28 - Version 1.5
+
+- Add create new and restore database.
+
 #### 2019.08.25 - Version 1.4
 
 - Add shortcut for hebrew raw text view.

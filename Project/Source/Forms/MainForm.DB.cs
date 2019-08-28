@@ -72,7 +72,6 @@ namespace Ordisoftware.HebrewWords
                               ( 
                                 ID text NOT NULL,
                                 Number integer NOT NULL,
-                                Original text NOT NULL,
                                 Hebrew text NOT NULL,
                                 Name text NOT NULL,
                                 Translation text NOT NULL,

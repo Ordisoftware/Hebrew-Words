@@ -121,6 +121,13 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> BackupBeforeRestoreText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to backup database before replace it?" },
+        { "fr", "Voulez-vous archiver la base de données avant de la remplacer ?" }
+      };
+
     static public readonly Dictionary<string, string> RestoreLettersDefaultText
       = new Dictionary<string, string>()
       {
