@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewWords
     {
       Program.Settings.HebrewLettersExe = EditPath.Text;
       Program.Settings.SearchOnline = EditSearch.Text;
-      Program.Settings.Save();
+      Program.Settings.Store();
     }
 
     /// <summary>

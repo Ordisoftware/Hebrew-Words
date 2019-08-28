@@ -79,6 +79,15 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      LoadData();
+      CheckUpdate(true);
+    }
+
+    /// <summary>
+    /// Show a splash screen chile loading data.
+    /// </summary>
+    private void LoadData()
+    {
       Refresh();
       var form = new LoadingForm();
       form.ProgressBar.Maximum = 6;
@@ -105,7 +114,6 @@ namespace Ordisoftware.HebrewWords
         form.Hide();
         Cursor = Cursors.Default;
       }
-      CheckUpdate(true);
     }
 
     /// <summary>
@@ -319,13 +327,53 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionNew for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionNew_Click(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
+        if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
+          ActionBackup.PerformClick();
+      string filename = "Hebrew-Words.sqlite";
+      string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
+                      + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
+                      + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
+      File.Delete(pathDest + filename);
+      LoadData();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionRestore for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionRestore_Click(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
+        if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
+          ActionBackup.PerformClick();
+      string filename = "Hebrew-Words.sqlite";
+      if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+      string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
+                      + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
+                      + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
+      File.Delete(pathDest + filename);
+      File.Copy(SaveFileDialogDB.FileName, pathDest + filename);
+      LoadData();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionBackup for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void ActionBackup_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       string filename = "Hebrew-Words.sqlite";
       SaveFileDialogDB.FileName = filename;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
