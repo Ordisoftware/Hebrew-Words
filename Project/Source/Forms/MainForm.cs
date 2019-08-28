@@ -626,6 +626,7 @@ namespace Ordisoftware.HebrewWords
       UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
+      SetView(Program.Settings.CurrentView, true);
       ActionSave.PerformClick();
     }
 
