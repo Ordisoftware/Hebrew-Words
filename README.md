@@ -57,6 +57,13 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### __________ - Version 1.6
+
+- Add default backup location.
+- Add auto backup.
+- Add copy to clipboard.
+- Add export to RTF.
+
 #### 2019.08.28 - Version 1.5
 
 - Add create new and restore database.

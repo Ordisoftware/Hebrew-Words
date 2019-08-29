@@ -42,6 +42,11 @@ namespace Ordisoftware.HebrewWords
     static public readonly string IconFilename = RootPath + "Application.ico";
 
     /// <summary>
+    /// Indicate the extension of database file.
+    /// </summary>
+    static public readonly string DBFileExtension = ".sqlite";
+
+    /// <summary>
     /// Indicate filename of the help file.
     /// </summary>
     static public readonly string HelpFilename

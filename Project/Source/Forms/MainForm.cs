@@ -19,6 +19,7 @@ using System.IO;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
@@ -79,8 +80,9 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      LoadData();
       CheckUpdate(true);
+      DoBackupDB();
+      LoadData();
     }
 
     /// <summary>
@@ -199,7 +201,6 @@ namespace Ordisoftware.HebrewWords
         {
           string[] partsVersion = client.DownloadString(url).Split('.');
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          string[] partsAssemblyVersion = AboutBox.Instance.AssemblyVersion.Split('.');
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
@@ -303,6 +304,22 @@ namespace Ordisoftware.HebrewWords
       SetView(ViewModeType.Search);
     }
 
+    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+    {
+      switch ( Program.Settings.CurrentView )
+      {
+        case ViewModeType.Translations:
+          Clipboard.SetText(EditTranslations.Text);
+          break;
+        case ViewModeType.Text:
+          Clipboard.SetText(EditRawText.Text);
+          break;
+        case ViewModeType.ELS50:
+          Clipboard.SetText(EditELS50All.Text);
+          break;
+      }
+    }
+
     /// <summary>
     /// Event handler. Called by ActionViewBooksTranslation for click events.
     /// </summary>
@@ -341,7 +358,7 @@ namespace Ordisoftware.HebrewWords
           ActionBackup.PerformClick();
         else
           return;
-      string filename = "Hebrew-Words.sqlite";
+      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
                       + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
@@ -360,7 +377,7 @@ namespace Ordisoftware.HebrewWords
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
           ActionBackup.PerformClick();
-      string filename = "Hebrew-Words.sqlite";
+      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
@@ -378,8 +395,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionBackup_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      string filename = "Hebrew-Words.sqlite";
-      SaveFileDialogDB.FileName = filename;
+      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       string pathSource = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
                         + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar 
@@ -509,31 +525,36 @@ namespace Ordisoftware.HebrewWords
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
-      SaveFileDialogWord.FileName = book.Name + ".docx"; ;
-      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-      Cursor = Cursors.WaitCursor;
-      var form = new ExportForm();
-      try
+      switch ( Program.Settings.CurrentView )
       {
-        form.ProgressBar.Value = 0;
-        form.ProgressBar.Maximum = SelectChapter.Items.Count;
-        form.Show();
-        form.Refresh();
-        Enabled = false;
-        Func<bool> showProgress = () =>
-        {
-          form.ProgressBar.PerformStep();
-          Application.DoEvents();
-          return form.CancelRequired;
-        };
-        ExportDocX.Run(SaveFileDialogWord.FileName, book, true, showProgress);
-      }
-      finally
-      {
-        form.Close();
-        Cursor = Cursors.Default;
-        Enabled = true;
-        BringToFront();
+        case ViewModeType.Verses:
+          SaveFileDialogWord.FileName = book.Name + ".docx";
+          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+          Cursor = Cursors.WaitCursor;
+          var form = new ExportForm();
+          try
+          {
+            form.ProgressBar.Value = 0;
+            form.ProgressBar.Maximum = SelectChapter.Items.Count;
+            form.Show();
+            form.Refresh();
+            Enabled = false;
+            Func<bool> showProgress = () =>
+            {
+              form.ProgressBar.PerformStep();
+              Application.DoEvents();
+              return form.CancelRequired;
+            };
+            ExportDocX.Run(SaveFileDialogWord.FileName, book, true, showProgress);
+          }
+          finally
+          {
+            form.Close();
+            Cursor = Cursors.Default;
+            Enabled = true;
+            BringToFront();
+          }
+          break;
       }
     }
 
@@ -546,19 +567,39 @@ namespace Ordisoftware.HebrewWords
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Row;
       var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
-      SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx"; ;
-      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-      Cursor = Cursors.WaitCursor;
-      try
+      switch ( Program.Settings.CurrentView )
       {
-        Enabled = false;
-        ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
-      }
-      finally
-      {
-        Cursor = Cursors.Default;
-        Enabled = true;
-        BringToFront();
+        case ViewModeType.Verses:
+          SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
+          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+          Cursor = Cursors.WaitCursor;
+          try
+          {
+            Enabled = false;
+            ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
+          }
+          finally
+          {
+            Cursor = Cursors.Default;
+            Enabled = true;
+            BringToFront();
+          }
+          break;
+        case ViewModeType.Translations:
+          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
+          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+          EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
+          break;
+        case ViewModeType.Text:
+          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
+          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+          EditRawText.SaveFile(SaveFileDialogRTF.FileName);
+          break;
+        case ViewModeType.ELS50:
+          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " ELS50.rtf";
+          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+          EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
+          break;
       }
     }
 
@@ -599,11 +640,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionCopyToClipboard for click events.
+    /// Event handler. Called by ActionELS50CopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+    private void ActionELS50CopyToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(EditELS50.Text);
     }

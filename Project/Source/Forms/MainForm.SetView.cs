@@ -120,6 +120,11 @@ namespace Ordisoftware.HebrewWords
       ViewPanels[view].Panel.Parent = PanelMainCenter;
       if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
+      ActionCopyToClipboard.Enabled = view == ViewModeType.Translations
+                                   || view == ViewModeType.Text
+                                   || view == ViewModeType.ELS50;
+      ActionExportBook.Enabled = !ActionCopyToClipboard.Enabled;
+      ActionExportChapter.Enabled = true;
     }
 
   }

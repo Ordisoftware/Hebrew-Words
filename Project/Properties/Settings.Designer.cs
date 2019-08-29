@@ -176,5 +176,29 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchOnline"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BackupPath {
+            get {
+                return ((string)(this["BackupPath"]));
+            }
+            set {
+                this["BackupPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int BackupCount {
+            get {
+                return ((int)(this["BackupCount"]));
+            }
+            set {
+                this["BackupCount"] = value;
+            }
+        }
     }
 }

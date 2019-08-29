@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
 using System;
+using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Properties;
 
@@ -77,6 +78,15 @@ namespace Ordisoftware.HebrewWords
       MainForm.WindowState = settings.MainFormState;
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
       MainForm.EditShowTips.Checked = settings.ShowTips;
+      if ( settings.BackupPath == "" )
+      {
+        var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                 + Path.DirectorySeparatorChar + AboutBox.Instance.CompanyName
+                 + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
+                 + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        settings.BackupPath = path;
+      }
     }
 
     /// <summary>
