@@ -57,7 +57,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### __________ - Version 1.6
+#### 2019.08.29 - Version 1.6
 
 - Add default backup location.
 - Add auto backup.
