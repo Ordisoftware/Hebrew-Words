@@ -63,6 +63,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add auto backup.
 - Add copy to clipboard.
 - Add export to RTF.
+- Fix backup operations.
 
 #### 2019.08.28 - Version 1.5
 
