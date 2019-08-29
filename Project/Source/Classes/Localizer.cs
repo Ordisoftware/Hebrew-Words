@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-05 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -119,6 +119,13 @@ namespace Ordisoftware.HebrewWords
                 "Do you want to continue?" },
         { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> NewDatabaseAdvertText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to create a new database wich will replace the actual?" },
+        { "fr", "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
       };
 
     static public readonly Dictionary<string, string> BackupBeforeRestoreText

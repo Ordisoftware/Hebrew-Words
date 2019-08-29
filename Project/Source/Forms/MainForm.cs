@@ -334,9 +334,13 @@ namespace Ordisoftware.HebrewWords
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( !DisplayManager.QueryYesNo(Localizer.NewDatabaseAdvertText.GetLang()) )
+        return;
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
           ActionBackup.PerformClick();
+        else
+          return;
       string filename = "Hebrew-Words.sqlite";
       string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
