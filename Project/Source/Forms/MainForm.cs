@@ -96,6 +96,7 @@ namespace Ordisoftware.HebrewWords
       form.Show();
       form.Refresh();
       Cursor = Cursors.WaitCursor;
+      Enabled = false;
       try
       {
         form.ProgressBar.Value = 1;
@@ -114,7 +115,10 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         form.Hide();
+        Enabled = true;
         Cursor = Cursors.Default;
+        ActionSave.Enabled = false;
+        BringToFront();
       }
     }
 

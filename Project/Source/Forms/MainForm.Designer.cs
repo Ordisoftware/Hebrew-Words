@@ -788,6 +788,8 @@
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionViewBooksTranslation
       // 
@@ -821,6 +823,8 @@
       this.ActionNew.Name = "ActionNew";
       this.ActionNew.Padding = new System.Windows.Forms.Padding(5);
       this.ActionNew.Click += new System.EventHandler(this.ActionNew_Click);
+      this.ActionNew.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionNew.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionRestore
       // 
