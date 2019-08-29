@@ -42,6 +42,11 @@ namespace Ordisoftware.HebrewWords
     static public readonly string IconFilename = RootPath + "Application.ico";
 
     /// <summary>
+    /// Indicate the extension of database file.
+    /// </summary>
+    static public readonly string DBFileExtension = ".sqlite";
+
+    /// <summary>
     /// Indicate filename of the help file.
     /// </summary>
     static public readonly string HelpFilename
@@ -56,15 +61,14 @@ namespace Ordisoftware.HebrewWords
       = RootPath
       + "Documents" + Path.DirectorySeparatorChar;
 
+    static public string UserDataFolder { get; private set; }
+
+    static public string UserDocumentsFolder { get; private set; }
+
     /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings = Properties.Settings.Default;
-
-    /// <summary>
-    /// Indicate user data folder in roaming.
-    /// </summary>
-    static public string UserDataFolder { get; private set; }
 
     /// <summary>
     /// Main entry-point for this application.
@@ -93,10 +97,12 @@ namespace Ordisoftware.HebrewWords
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                       + Path.DirectorySeparatorChar + AboutBox.Instance.CompanyName
-                       + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
-                       + Path.DirectorySeparatorChar;
+        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
+                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
+                       + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
+        UserDocumentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Path.DirectorySeparatorChar
+                            + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
+                            + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(UserDataFolder);
         Application.Run(MainForm.Instance);
       }

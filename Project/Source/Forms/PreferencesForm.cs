@@ -41,8 +41,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
-      EditPath.Text = Program.Settings.HebrewLettersExe;
-      EditSearch.Text = Program.Settings.SearchOnline;
+      EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
+      EditOnlineSearch.Text = Program.Settings.SearchOnline;
+      EditBackupPath.Text = Program.Settings.BackupPath;
+      numericUpDown1.Value = Program.Settings.BackupCount;
     }
 
     /// <summary>
@@ -52,8 +54,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      Program.Settings.HebrewLettersExe = EditPath.Text;
-      Program.Settings.SearchOnline = EditSearch.Text;
+      Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
+      Program.Settings.SearchOnline = EditOnlineSearch.Text;
+      Program.Settings.BackupPath = EditBackupPath.Text;
+      Program.Settings.BackupCount = (int)numericUpDown1.Value;
       Program.Settings.Store();
     }
 
@@ -64,9 +68,9 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSelect_Click(object sender, EventArgs e)
     {
-      OpenFileDialog.FileName = EditPath.Text;
+      OpenFileDialog.FileName = EditHebrewLettersPath.Text;
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
-        EditPath.Text = OpenFileDialog.FileName;
+        EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }
   }
 

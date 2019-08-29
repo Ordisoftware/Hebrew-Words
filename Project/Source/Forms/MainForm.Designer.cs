@@ -56,7 +56,7 @@
       this.ActionClearWord = new System.Windows.Forms.Button();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.ActionCopyToClipboard = new System.Windows.Forms.Button();
+      this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionFindVerse = new System.Windows.Forms.Button();
@@ -106,6 +106,7 @@
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -134,6 +135,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -356,7 +358,7 @@
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.ActionCopyToClipboard);
+      this.panel1.Controls.Add(this.ActionELS50CopyToClipboard);
       this.panel1.Controls.Add(this.ActionExportChapter);
       this.panel1.Controls.Add(this.ActionExportBook);
       this.panel1.Controls.Add(this.ActionFindVerse);
@@ -369,13 +371,13 @@
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
-      // ActionCopyToClipboard
+      // ActionELS50CopyToClipboard
       // 
-      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
-      this.ActionCopyToClipboard.FlatAppearance.BorderSize = 0;
-      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
-      this.ActionCopyToClipboard.UseVisualStyleBackColor = true;
-      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      resources.ApplyResources(this.ActionELS50CopyToClipboard, "ActionELS50CopyToClipboard");
+      this.ActionELS50CopyToClipboard.FlatAppearance.BorderSize = 0;
+      this.ActionELS50CopyToClipboard.Name = "ActionELS50CopyToClipboard";
+      this.ActionELS50CopyToClipboard.UseVisualStyleBackColor = true;
+      this.ActionELS50CopyToClipboard.Click += new System.EventHandler(this.ActionELS50CopyToClipboard_Click);
       // 
       // ActionExportChapter
       // 
@@ -523,6 +525,7 @@
             this.ActionViewELS50,
             this.ActionViewSearch,
             this.toolStripSeparator1,
+            this.ActionCopyToClipboard,
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
             this.toolStripSeparator2,
@@ -778,6 +781,16 @@
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
+      // ActionCopyToClipboard
+      // 
+      this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
+      this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionViewBooksTranslation
       // 
       this.ActionViewBooksTranslation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -810,6 +823,8 @@
       this.ActionNew.Name = "ActionNew";
       this.ActionNew.Padding = new System.Windows.Forms.Padding(5);
       this.ActionNew.Click += new System.EventHandler(this.ActionNew_Click);
+      this.ActionNew.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionNew.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionRestore
       // 
@@ -943,6 +958,10 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // SaveFileDialogRTF
+      // 
+      resources.ApplyResources(this.SaveFileDialogRTF, "SaveFileDialogRTF");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1066,7 +1085,7 @@
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.TextBox EditELS50;
     private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.Button ActionCopyToClipboard;
+    private System.Windows.Forms.Button ActionELS50CopyToClipboard;
     private System.Windows.Forms.ToolStripButton ActionViewVerses;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel PanelViewVerses;
@@ -1111,6 +1130,8 @@
     private System.Windows.Forms.OpenFileDialog OpenFileDialogDB;
     internal System.Windows.Forms.ToolStripButton ActionNew;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialogRTF;
   }
 }
 

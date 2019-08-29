@@ -46,5 +46,11 @@
     <Setting Name="SearchOnline" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.google.com/search?q=strong+hebrew+</Value>
     </Setting>
+    <Setting Name="BackupPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BackupCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
