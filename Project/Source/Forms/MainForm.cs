@@ -19,7 +19,6 @@ using System.IO;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
@@ -358,15 +357,10 @@ namespace Ordisoftware.HebrewWords
       if ( !DisplayManager.QueryYesNo(Localizer.NewDatabaseAdvertText.GetLang()) )
         return;
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
-        if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
-          ActionBackup.PerformClick();
-        else
-          return;
+        ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
-                      + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                      + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-      File.Delete(pathDest + filename);
+      DataSet.Clear();
+      File.Delete(Program.UserDataFolder + filename);
       LoadData();
     }
 
@@ -382,12 +376,11 @@ namespace Ordisoftware.HebrewWords
         if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
           ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
-      string pathDest = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
-                      + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                      + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-      File.Delete(pathDest + filename);
-      File.Copy(SaveFileDialogDB.FileName, pathDest + filename);
+      OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
+      if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+      DataSet.Clear();
+      File.Delete(Program.UserDataFolder + filename);
+      File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolder + filename);
       LoadData();
     }
 
@@ -400,11 +393,9 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
-      string pathSource = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
-                        + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar 
-                        + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-      File.Copy(pathSource + filename, SaveFileDialogDB.FileName);
+      File.Copy(Program.UserDataFolder + filename, SaveFileDialogDB.FileName);
     }
 
     /// <summary>

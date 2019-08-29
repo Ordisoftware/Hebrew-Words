@@ -80,12 +80,8 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditShowTips.Checked = settings.ShowTips;
       if ( settings.BackupPath == "" )
       {
-        var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                 + Path.DirectorySeparatorChar + AboutBox.Instance.CompanyName
-                 + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
-                 + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(path);
-        settings.BackupPath = path;
+        Directory.CreateDirectory(Program.UserDocumentsFolder);
+        settings.BackupPath = Program.UserDocumentsFolder;
       }
     }
 

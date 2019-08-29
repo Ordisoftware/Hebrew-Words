@@ -123,8 +123,8 @@ namespace Ordisoftware.HebrewWords
       ActionCopyToClipboard.Enabled = view == ViewModeType.Translations
                                    || view == ViewModeType.Text
                                    || view == ViewModeType.ELS50;
-      ActionExportBook.Enabled = !ActionCopyToClipboard.Enabled;
-      ActionExportChapter.Enabled = true;
+      ActionExportBook.Enabled = view == ViewModeType.Verses;
+      ActionExportChapter.Enabled = view != ViewModeType.Search;
     }
 
   }
