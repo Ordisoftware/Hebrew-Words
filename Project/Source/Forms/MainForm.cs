@@ -79,6 +79,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
+      SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
+      SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolder;
+      SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolder;
       CheckUpdate(true);
       DoBackupDB();
       LoadData();
@@ -376,7 +380,6 @@ namespace Ordisoftware.HebrewWords
         if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
           ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       DataSet.Clear();
       File.Delete(Program.UserDataFolder + filename);
@@ -393,7 +396,6 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       File.Copy(Program.UserDataFolder + filename, SaveFileDialogDB.FileName);
     }

@@ -57,6 +57,11 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### __________ - Version 1.7
+
+- Add MSWord export for one verse with right click on verse number.
+- Auto save option.
+
 #### 2019.08.29 - Version 1.6
 
 - Add default backup location.

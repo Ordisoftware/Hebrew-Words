@@ -138,7 +138,7 @@ namespace Ordisoftware.HebrewWords
       PanelViewVerses.SuspendLayout();
       try
       {
-        if (PanelViewVerses.Controls.Count > 0)
+        if ( PanelViewVerses.Controls.Count > 0 )
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
@@ -224,9 +224,20 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)
     {
-      Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, 
-                              SelectChapter.SelectedIndex + 1, 
-                              Convert.ToInt32(( sender as Label ).Text));
+      if ( e.Button == MouseButtons.Left )
+        Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex,
+                                SelectChapter.SelectedIndex + 1,
+                                Convert.ToInt32(( sender as Label ).Text));
+      else
+      if ( e.Button == MouseButtons.Right )
+      {
+        var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+        var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+        int verse = Convert.ToInt32(((Label)sender).Text);
+        SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
+        if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+        ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
+      }
     }
 
   }
