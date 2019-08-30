@@ -92,6 +92,17 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Set form disabled or enabled.
+    /// </summary>
+    private void SetFormDisabled(bool disabled)
+    {
+      Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
+      ToolStrip.Enabled = !disabled;
+      PanelNavigation.Enabled = !disabled;
+      PanelMainCenter.Enabled = !disabled;
+    }
+
+    /// <summary>
     /// Show a splash screen chile loading data.
     /// </summary>
     private void LoadData()
@@ -101,8 +112,7 @@ namespace Ordisoftware.HebrewWords
       form.ProgressBar.Maximum = 6;
       form.Show();
       form.Refresh();
-      Cursor = Cursors.WaitCursor;
-      Enabled = false;
+      SetFormDisabled(true);
       try
       {
         form.ProgressBar.Value = 1;
@@ -121,10 +131,8 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         form.Hide();
-        Enabled = true;
-        Cursor = Cursors.Default;
+        SetFormDisabled(false);
         ActionSave.Enabled = false;
-        BringToFront();
       }
     }
 
@@ -309,11 +317,21 @@ namespace Ordisoftware.HebrewWords
       SetView(ViewModeType.Text);
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionView for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Search);
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionCopyToClipboard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionCopyToClipboard_Click(object sender, EventArgs e)
     {
       switch ( Program.Settings.CurrentView )
@@ -380,8 +398,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
-        if ( OpenFileDialogDB.ShowDialog() == DialogResult.OK )
-          ActionBackup.PerformClick();
+        ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       DataSet.Clear();
@@ -543,13 +560,13 @@ namespace Ordisoftware.HebrewWords
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
           Cursor = Cursors.WaitCursor;
           var form = new ExportForm();
+          SetFormDisabled(true);
           try
           {
             form.ProgressBar.Value = 0;
             form.ProgressBar.Maximum = SelectChapter.Items.Count;
             form.Show();
             form.Refresh();
-            Enabled = false;
             Func<bool> showProgress = () =>
             {
               form.ProgressBar.PerformStep();
@@ -561,9 +578,7 @@ namespace Ordisoftware.HebrewWords
           finally
           {
             form.Close();
-            Cursor = Cursors.Default;
-            Enabled = true;
-            BringToFront();
+            SetFormDisabled(false);
           }
           break;
       }
@@ -583,17 +598,14 @@ namespace Ordisoftware.HebrewWords
         case ViewModeType.Verses:
           SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          Cursor = Cursors.WaitCursor;
+          SetFormDisabled(true);
           try
           {
-            Enabled = false;
             ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
           }
           finally
           {
-            Cursor = Cursors.Default;
-            Enabled = true;
-            BringToFront();
+            SetFormDisabled(false);
           }
           break;
         case ViewModeType.Translations:
