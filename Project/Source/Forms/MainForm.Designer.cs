@@ -55,7 +55,7 @@
       this.ActionSearchWord = new System.Windows.Forms.Button();
       this.ActionClearWord = new System.Windows.Forms.Button();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.PanelNavigation = new System.Windows.Forms.Panel();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
@@ -136,6 +136,7 @@
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
+      this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -152,7 +153,7 @@
       this.PanelViewSearch2.SuspendLayout();
       this.PanelSearchResults.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
-      this.panel1.SuspendLayout();
+      this.PanelNavigation.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
@@ -166,7 +167,7 @@
       // PanelMain
       // 
       this.PanelMain.Controls.Add(this.PanelMainOuter);
-      this.PanelMain.Controls.Add(this.panel1);
+      this.PanelMain.Controls.Add(this.PanelNavigation);
       this.PanelMain.Controls.Add(this.PanelSepTop);
       this.PanelMain.Controls.Add(this.PanelTitle);
       resources.ApplyResources(this.PanelMain, "PanelMain");
@@ -356,20 +357,20 @@
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
-      // panel1
+      // PanelNavigation
       // 
-      this.panel1.Controls.Add(this.ActionELS50CopyToClipboard);
-      this.panel1.Controls.Add(this.ActionExportChapter);
-      this.panel1.Controls.Add(this.ActionExportBook);
-      this.panel1.Controls.Add(this.ActionFindVerse);
-      this.panel1.Controls.Add(this.SelectBook);
-      this.panel1.Controls.Add(this.EditELS50);
-      this.panel1.Controls.Add(this.SelectChapter);
-      this.panel1.Controls.Add(this.label4);
-      this.panel1.Controls.Add(this.label2);
-      this.panel1.Controls.Add(this.label3);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      this.PanelNavigation.Controls.Add(this.ActionELS50CopyToClipboard);
+      this.PanelNavigation.Controls.Add(this.ActionExportChapter);
+      this.PanelNavigation.Controls.Add(this.ActionExportBook);
+      this.PanelNavigation.Controls.Add(this.ActionFindVerse);
+      this.PanelNavigation.Controls.Add(this.SelectBook);
+      this.PanelNavigation.Controls.Add(this.EditELS50);
+      this.PanelNavigation.Controls.Add(this.SelectChapter);
+      this.PanelNavigation.Controls.Add(this.label4);
+      this.PanelNavigation.Controls.Add(this.label2);
+      this.PanelNavigation.Controls.Add(this.label3);
+      resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
+      this.PanelNavigation.Name = "PanelNavigation";
       // 
       // ActionELS50CopyToClipboard
       // 
@@ -962,6 +963,10 @@
       // 
       resources.ApplyResources(this.SaveFileDialogRTF, "SaveFileDialogRTF");
       // 
+      // TimerAutoSave
+      // 
+      this.TimerAutoSave.Tick += new System.EventHandler(this.TimerAutoSave_Tick);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -991,8 +996,8 @@
       this.PanelSearchResults.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
       this.PanelSearchTop.PerformLayout();
-      this.panel1.ResumeLayout(false);
-      this.panel1.PerformLayout();
+      this.PanelNavigation.ResumeLayout(false);
+      this.PanelNavigation.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
@@ -1087,7 +1092,7 @@
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Button ActionELS50CopyToClipboard;
     private System.Windows.Forms.ToolStripButton ActionViewVerses;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelNavigation;
     private System.Windows.Forms.Panel PanelViewVerses;
     private System.Windows.Forms.TabPage TabPageTranslations;
     private System.Windows.Forms.Panel PanelViewTranslations;
@@ -1132,6 +1137,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogRTF;
+    internal System.Windows.Forms.Timer TimerAutoSave;
   }
 }
 

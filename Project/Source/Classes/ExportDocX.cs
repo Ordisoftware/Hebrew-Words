@@ -59,6 +59,25 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation, int verse)
+    {
+      {
+        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+          try
+          {
+            SetPageMargins();
+            AddBookTitle(book);
+            AddChapterTitle(chapter);
+            AddVerse(chapter.GetVersesRows()[verse], includeTranslation);
+            Document.Save();
+          }
+          catch ( Exception ex )
+          {
+            ex.Manage();
+          }
+      }
+    }
+
     static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation)
     {
       {
