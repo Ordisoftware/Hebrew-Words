@@ -59,7 +59,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### 2019.08.30 - Version 1.7
 
-- Add MSWord export for one verse with right click on verse number.
+- Add MSWord export for one verse.
 - Auto save option.
 - Some fixes.
 
