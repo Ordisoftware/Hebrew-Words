@@ -629,7 +629,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -2337,34 +2337,34 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionBackup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2536,6 +2536,9 @@
   <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
     <value>Rich Text Format files (*.rtf)|*.rtf</value>
   </data>
+  <metadata name="TimerAutoSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>184, 89</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2585,7 +2588,7 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -2909,37 +2912,43 @@
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SaveFileDialogRTF.Name" xml:space="preserve">
     <value>SaveFileDialogRTF</value>
   </data>
   <data name="&gt;&gt;SaveFileDialogRTF.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimerAutoSave.Name" xml:space="preserve">
+    <value>TimerAutoSave</value>
+  </data>
+  <data name="&gt;&gt;TimerAutoSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -136,6 +136,7 @@
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
+      this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -962,6 +963,10 @@
       // 
       resources.ApplyResources(this.SaveFileDialogRTF, "SaveFileDialogRTF");
       // 
+      // TimerAutoSave
+      // 
+      this.TimerAutoSave.Tick += new System.EventHandler(this.TimerAutoSave_Tick);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1132,6 +1137,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogRTF;
+    internal System.Windows.Forms.Timer TimerAutoSave;
   }
 }
 

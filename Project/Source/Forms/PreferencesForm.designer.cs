@@ -33,6 +33,7 @@
       System.Windows.Forms.Label LabelOnlineSearch;
       System.Windows.Forms.Label LabelBackupPath;
       System.Windows.Forms.Label backupCountLabel;
+      System.Windows.Forms.Label LabelAutoSaveDelay;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -41,13 +42,16 @@
       this.EditOnlineSearch = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
       this.EditBackupPath = new System.Windows.Forms.TextBox();
-      this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+      this.EditBackupCount = new System.Windows.Forms.NumericUpDown();
+      this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
       backupCountLabel = new System.Windows.Forms.Label();
+      LabelAutoSaveDelay = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -70,6 +74,11 @@
       resources.ApplyResources(backupCountLabel, "backupCountLabel");
       backupCountLabel.Name = "backupCountLabel";
       // 
+      // LabelAutoSaveDelay
+      // 
+      resources.ApplyResources(LabelAutoSaveDelay, "LabelAutoSaveDelay");
+      LabelAutoSaveDelay.Name = "LabelAutoSaveDelay";
+      // 
       // ButtonClose
       // 
       resources.ApplyResources(this.ButtonClose, "ButtonClose");
@@ -79,8 +88,8 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ButtonClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Controls.Add(this.ButtonClose);
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -90,8 +99,8 @@
       // 
       // ActionSelect
       // 
-      this.ActionSelect.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelect, "ActionSelect");
+      this.ActionSelect.FlatAppearance.BorderSize = 0;
       this.ActionSelect.Name = "ActionSelect";
       this.ActionSelect.UseVisualStyleBackColor = true;
       this.ActionSelect.Click += new System.EventHandler(this.ActionSelect_Click);
@@ -107,8 +116,8 @@
       // 
       // button1
       // 
-      this.button1.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.button1, "button1");
+      this.button1.FlatAppearance.BorderSize = 0;
       this.button1.Name = "button1";
       this.button1.UseVisualStyleBackColor = true;
       // 
@@ -117,15 +126,25 @@
       resources.ApplyResources(this.EditBackupPath, "EditBackupPath");
       this.EditBackupPath.Name = "EditBackupPath";
       // 
-      // numericUpDown1
+      // EditBackupCount
       // 
-      resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
-      this.numericUpDown1.Maximum = new decimal(new int[] {
+      resources.ApplyResources(this.EditBackupCount, "EditBackupCount");
+      this.EditBackupCount.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-      this.numericUpDown1.Name = "numericUpDown1";
+      this.EditBackupCount.Name = "EditBackupCount";
+      // 
+      // EditAutoSaveDelay
+      // 
+      resources.ApplyResources(this.EditAutoSaveDelay, "EditAutoSaveDelay");
+      this.EditAutoSaveDelay.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+      this.EditAutoSaveDelay.Name = "EditAutoSaveDelay";
       // 
       // PreferencesForm
       // 
@@ -133,7 +152,9 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
-      this.Controls.Add(this.numericUpDown1);
+      this.Controls.Add(this.EditAutoSaveDelay);
+      this.Controls.Add(LabelAutoSaveDelay);
+      this.Controls.Add(this.EditBackupCount);
       this.Controls.Add(backupCountLabel);
       this.Controls.Add(this.button1);
       this.Controls.Add(LabelBackupPath);
@@ -152,7 +173,8 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -167,6 +189,7 @@
     private System.Windows.Forms.TextBox EditOnlineSearch;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.TextBox EditBackupPath;
-    private System.Windows.Forms.NumericUpDown numericUpDown1;
+    private System.Windows.Forms.NumericUpDown EditBackupCount;
+    private System.Windows.Forms.NumericUpDown EditAutoSaveDelay;
   }
 }

@@ -44,7 +44,8 @@ namespace Ordisoftware.HebrewWords
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditOnlineSearch.Text = Program.Settings.SearchOnline;
       EditBackupPath.Text = Program.Settings.BackupPath;
-      numericUpDown1.Value = Program.Settings.BackupCount;
+      EditBackupCount.Value = Program.Settings.BackupCount;
+      EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
     }
 
     /// <summary>
@@ -57,7 +58,11 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Program.Settings.SearchOnline = EditOnlineSearch.Text;
       Program.Settings.BackupPath = EditBackupPath.Text;
-      Program.Settings.BackupCount = (int)numericUpDown1.Value;
+      Program.Settings.BackupCount = (int)EditBackupCount.Value;
+      Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
+      MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+      if ( MainForm.Instance.TimerAutoSave.Enabled )
+        MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
     }
 

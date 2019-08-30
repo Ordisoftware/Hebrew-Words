@@ -86,6 +86,9 @@ namespace Ordisoftware.HebrewWords
       CheckUpdate(true);
       DoBackupDB();
       LoadData();
+      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+      if ( TimerAutoSave.Enabled )
+        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
     }
 
     /// <summary>
@@ -166,7 +169,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
         {
@@ -269,7 +272,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewVerses_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       SetView(ViewModeType.Verses);
     }
 
@@ -280,7 +283,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewTranslations_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       SetView(ViewModeType.Translations);
       UpdateViewTranslations();
     }
@@ -292,7 +295,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewELS50_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       SetView(ViewModeType.ELS50);
     }
 
@@ -334,7 +337,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      ActionSave.PerformClick();
       new EditBooksForm().ShowDialog();
       BooksTableAdapter.Fill(DataSet.Books);
       InitBooksCombobox();
@@ -397,6 +400,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+      if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
       File.Copy(Program.UserDataFolder + filename, SaveFileDialogDB.FileName);
     }
 
@@ -409,6 +413,16 @@ namespace Ordisoftware.HebrewWords
     {
       if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
       ActionSave.Enabled = false;
+    }
+
+    /// <summary>
+    /// Event handler. Called by TimerAutoSave for tick events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void TimerAutoSave_Tick(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
     }
 
     /// <summary>

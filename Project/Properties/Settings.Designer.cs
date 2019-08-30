@@ -200,5 +200,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["BackupCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int AutoSaveDelay {
+            get {
+                return ((int)(this["AutoSaveDelay"]));
+            }
+            set {
+                this["AutoSaveDelay"] = value;
+            }
+        }
     }
 }
