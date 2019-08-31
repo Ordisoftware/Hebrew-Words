@@ -57,6 +57,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### 2019.08.30 - Version 1.8
+
+- Improve verses view.
+
 #### 2019.08.30 - Version 1.7
 
 - Add MSWord export for one verse.

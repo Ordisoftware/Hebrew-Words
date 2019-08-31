@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewWords
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
-        int margin = 50;
+        int margin = 40;
         int delta = 10;
         int width = Width - margin;
         int dx = control.Width;
@@ -156,7 +156,7 @@ namespace Ordisoftware.HebrewWords
         {
           var label = new Label();
           label.AutoSize = false;
-          label.Width = 40;
+          label.Width = 35;
           label.ForeColor = Color.DarkBlue;
           label.Font = new Font("Calibri", 13f, FontStyle.Bold);
           label.Location = new Point(x + dx + delta, y + 2);
@@ -184,17 +184,19 @@ namespace Ordisoftware.HebrewWords
             }
           }
           if ( emptyline ) y -= dy;
-          var edit = new TextBox();
-          label.Tag = edit;
-          edit.Location = new Point(minx + dx, y + dy + delta);
+          var editComment = new TextBox();
+          label.Tag = editComment;
+          editComment.Multiline = true;
+          editComment.Location = new Point(minx + dx, y + dy + delta);
           x = width - dx - marginX - 2;
-          edit.Width = x - minx;
-          edit.Tag = verse;
-          edit.BackColor = Color.Honeydew;
-          edit.Text = verse.Comment;
-          edit.TextChanged += VerseCommentTextChanged;
-          PanelViewVerses.Controls.Add(edit);
-          y = y + dy + marginY + edit.Height;
+          editComment.Width = x - minx;
+          editComment.Height = editComment.Height * 2 - 3;
+          editComment.Tag = verse;
+          editComment.BackColor = Color.Honeydew;
+          editComment.Text = verse.Comment;
+          editComment.TextChanged += VerseCommentTextChanged;
+          PanelViewVerses.Controls.Add(editComment);
+          y = y + dy + marginY + editComment.Height;
         }
       }
       finally
