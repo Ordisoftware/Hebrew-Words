@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewWords
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
-        int margin = 40;
+        int margin = 45;
         int delta = 10;
         int width = Width - margin;
         int dx = control.Width;
@@ -156,7 +156,7 @@ namespace Ordisoftware.HebrewWords
         {
           var label = new Label();
           label.AutoSize = false;
-          label.Width = 35;
+          label.Width = 40;
           label.ForeColor = Color.DarkBlue;
           label.Font = new Font("Calibri", 13f, FontStyle.Bold);
           label.Location = new Point(x + dx + delta, y + 2);
