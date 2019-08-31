@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -123,8 +123,13 @@ namespace Ordisoftware.HebrewWords
       ActionCopyToClipboard.Enabled = view == ViewModeType.Translations
                                    || view == ViewModeType.Text
                                    || view == ViewModeType.ELS50;
-      ActionExportBook.Enabled = view == ViewModeType.Verses;
-      ActionExportChapter.Enabled = view != ViewModeType.Search;
+      ActionExportChapter.Enabled = view == ViewModeType.Verses
+                                 || view == ViewModeType.Translations;
+      SelectChapter.Enabled = ActionExportChapter.Enabled && view == ViewModeType.Search;
+      SelectBook.Enabled = view != ViewModeType.Search;
+      ActionExportBook.Enabled = view != ViewModeType.Search;
+      LabelSelectBook.Enabled = ActionExportBook.Enabled;
+      LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
     }
 
   }

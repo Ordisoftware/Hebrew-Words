@@ -66,6 +66,7 @@ namespace Ordisoftware.HebrewWords
       LabelHebrew.Cursor = Cursors.Default;
       LabelHebrew.ForeColor = System.Drawing.SystemColors.ControlText;
     }
+
   }
 
 }

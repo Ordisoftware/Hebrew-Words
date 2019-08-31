@@ -581,6 +581,16 @@ namespace Ordisoftware.HebrewWords
             SetFormDisabled(false);
           }
           break;
+        case ViewModeType.Text:
+          SaveFileDialogRTF.FileName = book.Name + " Hebrew.rtf";
+          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+          EditRawText.SaveFile(SaveFileDialogRTF.FileName);
+          break;
+        case ViewModeType.ELS50:
+          SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
+          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+          EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
+          break;
       }
     }
 
@@ -612,16 +622,6 @@ namespace Ordisoftware.HebrewWords
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
-          break;
-        case ViewModeType.Text:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditRawText.SaveFile(SaveFileDialogRTF.FileName);
-          break;
-        case ViewModeType.ELS50:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " ELS50.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
           break;
       }
     }
