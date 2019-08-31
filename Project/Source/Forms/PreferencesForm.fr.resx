@@ -137,16 +137,16 @@
     <value>Chemin par défaut des archives</value>
   </data>
   <data name="backupCountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
+    <value>220, 13</value>
   </data>
   <data name="backupCountLabel.Text" xml:space="preserve">
-    <value>Nombre d'archives</value>
+    <value>Nombre d'archives automatiques à conserver</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 13</value>
+    <value>211, 13</value>
   </data>
   <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
-    <value>Délai pour la sauvegarde automatique</value>
+    <value>Délai pour la sauvegarde automatique (min)</value>
   </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
@@ -154,7 +154,7 @@
   <data name="ActionSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
         QrqRuvAiUDEo5WS2CgkWUttxL9WFgTeWjLyoLipBoVIbO3sx0ulebEqrxphrUbaz7ek5x1PrMBc98Nwc
         fs/n+33Ot+a35u8ey4TcRxF0HUHQYUBguAkBsQF+e9nKt5DLnNEieoVcJjUQ8ZxD2icin3wBFMJAnv65
         sGk5rEK0iF4BsRHAZ+SWxrA2eRlBtxlB8QBWHrUgNXka8vxZYENSN9Eievlth1UA1h8DPyROXoKceo0v
