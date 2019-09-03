@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewWords
                                    || view == ViewModeType.ELS50;
       ActionExportChapter.Enabled = view == ViewModeType.Verses
                                  || view == ViewModeType.Translations;
-      SelectChapter.Enabled = ActionExportChapter.Enabled && view == ViewModeType.Search;
+      SelectChapter.Enabled = ActionExportChapter.Enabled;
       SelectBook.Enabled = view != ViewModeType.Search;
       ActionExportBook.Enabled = view != ViewModeType.Search;
       LabelSelectBook.Enabled = ActionExportBook.Enabled;
