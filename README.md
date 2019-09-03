@@ -57,10 +57,11 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### __________ - Version 1.8
+#### 2019.09.03 - Version 1.8
 
 - Improve verses view.
 - Improve export UI.
+- Fix select chapter combobox.
 
 #### 2019.08.30 - Version 1.7
 
