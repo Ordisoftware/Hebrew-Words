@@ -88,8 +88,8 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -99,8 +99,8 @@
       // 
       // ActionSelect
       // 
-      resources.ApplyResources(this.ActionSelect, "ActionSelect");
       this.ActionSelect.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelect, "ActionSelect");
       this.ActionSelect.Name = "ActionSelect";
       this.ActionSelect.UseVisualStyleBackColor = true;
       this.ActionSelect.Click += new System.EventHandler(this.ActionSelect_Click);
@@ -116,8 +116,8 @@
       // 
       // button1
       // 
-      resources.ApplyResources(this.button1, "button1");
       this.button1.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button1, "button1");
       this.button1.Name = "button1";
       this.button1.UseVisualStyleBackColor = true;
       // 

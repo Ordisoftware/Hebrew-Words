@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewWords
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
-        int margin = 50;
+        int margin = 45;
         int delta = 10;
         int width = Width - margin;
         int dx = control.Width;
@@ -184,17 +184,19 @@ namespace Ordisoftware.HebrewWords
             }
           }
           if ( emptyline ) y -= dy;
-          var edit = new TextBox();
-          label.Tag = edit;
-          edit.Location = new Point(minx + dx, y + dy + delta);
+          var editComment = new TextBox();
+          label.Tag = editComment;
+          editComment.Multiline = true;
+          editComment.Location = new Point(minx + dx, y + dy + delta);
           x = width - dx - marginX - 2;
-          edit.Width = x - minx;
-          edit.Tag = verse;
-          edit.BackColor = Color.Honeydew;
-          edit.Text = verse.Comment;
-          edit.TextChanged += VerseCommentTextChanged;
-          PanelViewVerses.Controls.Add(edit);
-          y = y + dy + marginY + edit.Height;
+          editComment.Width = x - minx;
+          editComment.Height = editComment.Height * 2 - 3;
+          editComment.Tag = verse;
+          editComment.BackColor = Color.Honeydew;
+          editComment.Text = verse.Comment;
+          editComment.TextChanged += VerseCommentTextChanged;
+          PanelViewVerses.Controls.Add(editComment);
+          y = y + dy + marginY + editComment.Height;
         }
       }
       finally
