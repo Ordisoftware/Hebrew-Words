@@ -346,7 +346,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -416,7 +416,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
     <value>EditOnlineSearch</value>
@@ -480,7 +480,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditBackupPath.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditBackupPath.Name" xml:space="preserve">
     <value>EditBackupPath</value>
@@ -501,7 +501,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditBackupCount.Name" xml:space="preserve">
     <value>EditBackupCount</value>
@@ -522,7 +522,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
     <value>EditAutoSaveDelay</value>
@@ -585,7 +585,7 @@
     <value>97, 17</value>
   </data>
   <data name="SelectOpenHebrewLetters.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SelectOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -612,7 +612,7 @@
     <value>210, 88</value>
   </data>
   <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
     <value>Hebrew word click opens</value>

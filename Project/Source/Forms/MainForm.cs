@@ -792,16 +792,6 @@ namespace Ordisoftware.HebrewWords
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
     }
 
-    private void ActionCopyVerse_Click(object sender, EventArgs e)
-    {
-      // todo
-    }
-
-    private void ActionCopyTranslation_Click(object sender, EventArgs e)
-    {
-      // todo
-    }
-
   }
 
   /// <summary>

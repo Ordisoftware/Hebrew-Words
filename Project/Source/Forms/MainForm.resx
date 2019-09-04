@@ -2530,15 +2530,18 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAG3SURBVDhPnZM5a0JBFIXf73D5E1aaIoULaVxAsdTKSgtF
-        sNJStLC3EbfC5acIlomRoCli88SlUXHXE8/gezgaCMnAZZjDvd+7c888xeFwPMXj8WEikXj/S6RSqb7L
-        5bIrmUzmFf9cF8iHQtr1jGAwCJvNhuPxiNPpdFWBdrsNRVEedNbqAC2JUS6XcTgcRAGXpns8Huz3e5zP
-        Z6FLgNFopCcyarWaADCsVquue71eHRKNRgc6gEKj0ZAg9XpdAAqFgqRrHYbDYVUCMDmfz0vJuVwOJpMJ
-        1WoVBoMBFosF3W4Xq9VKBnDxGoFAANlsVoL4fD6Mx2P0ej2oqorpdIrdbvcIMJvNaDabmM/nqFQqEqRU
-        KmG9XotCtk83IpHIlw7QXDAajej3+9hsNmIGtxAOlsW/usC7DgYD8bV7iDZYhtTBvQvshC3TslsI4cvl
-        UlzhRxc4cS2Rg9MeVCwW03UO8sFGXiGZTMLv98PtdqPT6UiAVqsluioWizKAf9VtB4vFQrgwm82w3W71
-        t8+d3k8mE7HzfPmLPxW73f6cTqff2MnlaQ5JDYVCKneeqWvBoVFnsMbpdL58AzPytXzF41XeAAAAAElF
-        TkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ3SURBVDhPlZFJTFNBGMfn5NEbxmhiYuSgFy4uEBU3NHLw
+        pB5EKItFqNCYSJADHBRrDQa4uIBasA9KAQlUcEkXhCgBuhG2aiFQobgQJF3c40Ly95thTKMJJn7JLzNv
+        3vf7z5t5jNdBvT2695INyRet2E3wMbncij3lNolck/DeFL29Qsi8+MLgTBgDgRD6CedMBO5gFJ65Zfjc
+        PRuh9TCcL4nZsAiROmN8B8eLBaQbnOidWETaHSc25Zmx+litID7fDFW9C2rFg+y7bjj8C+KrpM4DbOgc
+        m0dmvRsPRueRcLYV02+i+F2Bt1FsO9eG0w1eEdJFvdyROh2BHlq9r5BFAY3OIPzBEL78WMK1ninB159L
+        mH4dEbvnUsA96uWO1BnbR+cxDgSRTQE3e6fFrlW2Sfpst6Ca5rwyDC4RoFAvd6S+HFDzNIAc2qHSNiGa
+        C2/3IfVqNw5XOFBwq0+sZdS5xDFqnwX+DNhPD9WOKaiNHuge+bH48RsWwp+QWeWAqtKOuXcfRMCqI9fp
+        DryilztSZ+yAzg79Y79Iv9D1XIzhz9+F9Hfxi9ZRL3ekzljKZTvKOn3QmIZQahmnc3rFhanq3PRrXThe
+        MyB1iIsuve8Dd6TO2KEr3Sjp8EHbMoKi9nEUNo8ICogz5hHkmYaRowwJNOZhFLf7wB2pM7ar7CE2ZClY
+        m65gzUkjwccYcbQWl7YMf79OpWBjthIL2Kwxo6fPDrzvBcJPgNA/iPRgctBg1LaOxwK2aJqwvajNn9/i
+        Q27TGNSmlTnVOIqjN5xI1Vv9Umcs/kRlQ4K2GUklFiQWd2DHCvB3icUWJJ23YCf1Sl3UemLr/8PYL9wy
+        YhhtcP3/AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
@@ -2550,18 +2553,18 @@
   <data name="ActionExportVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJ0SURBVDhPlZFJTFNRFIa7cukOYzQxMWqiGzYaICrORk1c
-        qRuEQhGECo2JBFnAQrFCMMDGAVTAPoZCJVDBIR2wjRLwtZQwtFqUVigOBAltneNA8nvObdNqDCae5M+9
-        79z//+7wFAAU+yqs4Z0XzEg9b8J2Eo+p5SbsKDdHFe1FxV7KVHFWALjxZCqIQf8CBkjyVAjOQBhDMxHx
-        3Dkdon4Q8kvSdFBAYgDewfpsDukNMuwT80i7KWNdnh7Lj9YLrc/XQ9nkQI40BNUtJ6zeOXGq3wBm9IzP
-        IrPJibtjs0g8bYDvTZgNovxvw9hyphMnm10C0ktezlBFr0AfBtcrZBGgRQ7AG1jAlx+LuGybFPr6cxG+
-        1yGxey4BbpOXMzHALrqPbjAAFQGu2X28gBrzczq2U6iW5lwZDQ4BkMjLGao4oO6RH9m0Q7V5ghdQeKMf
-        By/14UCVFQXX+0Uvo9EhrlH/2P8nYDd91FonkaMbgva+F/Mfv2Eu+AmZNVYoqy2YefeBzVh2+Aq9gUt4
-        OcNZAdijtaDigVfQz/U+FWPw83c2/FX80FrycoYqAth70YKyHg/UrcMoNbrpni7xYMpGJ/1aB47VDbJZ
-        FD906R0POEMVAeyv7ENJtweajlEUdblR2D4qVEA6pR9FXusIsqVhIbV+BMVdHnAmBthWdg9rsiSsTJew
-        4riOxGNcCdRLSIuI11cpJaxVSXHARrUetn460ns7EHwILPxDIRteyA06jcEdB2xStyGpqNOb3+FBbts4
-        clqX1omWMRy5KuNQpckbA2xIq2lO1LQjpcSI5OJuJC0hXksuNiLlrBFbyRsDUK0mbf5fAVD8AmUCwcN1
-        Zh5rAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ7SURBVDhPfZJdSNNRGMZPUaFSFAXVTTd1X4EEETjNKKJZ
+        S81ZW2GlW/NbrCi7mDqhycqRbO7vBzYtL9Jtuqmb7UPLJm6uoZVaUFk3hWRBMQPp6umcsxUYaw/8eP/v
+        c97znP+BQ/6VurYOarUarMasxHpYc8z+4OYR9NxIQ01dI1wuN5zOEV5Zz3y2zuZiW1bLfD0TkVcDWH7R
+        C61eQDA0jcngc15Zz3y2zuZiW1ars1qElcU5zHZIYeqyobWrD4K5l1fWM39lcRb3q9PiB7RXpeHHh0mE
+        hXzMtMvwsv1clI5onRakWP44ge6qg/8JqBRhad6NgDEfQUGOqdbzCLXKEW6jYW15mDNJ8OuNHdbKvfED
+        2ipE+BSyYrxZCr9BBr9RjgmjDOGWPIhvmUCKPCCXnCCFw1inGESScgAplM0lduyoGvpOhHIRFsbNGNXn
+        4klzPuUsDwsbJCBXRpFI28ocIEKZCPOuZnju5MB7Nw/eJinGms5gSi8GUXlx4l4A5EIfDL532HXViYWl
+        n7TvxfaKoVhAaTrCFg2cjafh0uVQcvFYlw2/7jiI0sNPWnvZisD7b9hQZIP/7VeQAgv32TVICw3wd1+D
+        47YEg9pszrBWgjHtURCFmw+uL7ThgMaHraUO7Kv1oKxnhvspyn4aUJIOr1GB/oYsyimOg357GujDiQWw
+        P0it92ELPZGFzX+OcD9JYQMx0gC7TgqLJotykmPTiOGsP/z3CkT2CGOvv4BctCBT94x7TDxAW3DoqUGV
+        AYMqncJqBlpUInQqU7Gm2Bcbja9NqgH+NvZQUuORrLC5NxYPIpne9Q9JDEU/37yz3BGhcwm1mxI3PArZ
+        /xu91BTawVPD6gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
@@ -2570,38 +2573,8 @@
   <data name="ActionExportVerse.Text" xml:space="preserve">
     <value>Export to MS Word</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 6</value>
-  </data>
-  <data name="ActionCopyVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAH0SURBVDhPlZLPSxRhHMb3v+gaSOEpD/0ci4gu/RmRIBYW
-        BYGFF28hdMm12Sk3smRBJXJbt1lzZnVXzaylmXeNCjwletjWtMuyXYyevs+7Nm9DXnrgme/7fd7PPMxh
-        EgAS+ynlOLBtG5x7UUx8T7/LR6b/wovM7fPI3DqL8b5O9A/cgeu+Qj7v6smdOe81J3ysYKzvHFRlGdmZ
-        InIzPgbv3sPK2wrerLzTkztz3pMjHyt4cvMMpgpFhlpJ+yHsB+nI3P+IHHmRKRi9cRrPX3oMsbmxia+1
-        Gr7V65G5M6fIkReZgsfXOzHlzjLE93oNje06mttbaO6IZXJnTpEjLzIFj65ZyLqtLzjghDj09BMOj33G
-        wbTSkztzihx5kSlIX7WkuVXwMajgV7MB/GhgrfpeT+7MKXLkRaZgpPdUVLBYLkOFAari5aVFPbkzp8iR
-        F5kC58rJqCAIAuzu/tRWSkVn5hQ58iJTkLp8IioolUoaVmGI1/IFq1WFVRViaWFB35MjLzIFdrcp+Ftr
-        H9TeyZyzBR/kRfGC3Ow8w5jaJ7+g49k6jojbJ9d1Nu2V/i2432MhN5HSJdmCp52XX9fzi5gvzml7/hxc
-        v4zpCQfkYwWDF61ystvCUNdxDF06pp0UD3fFnZT7YeHIxwpEbeKj/+G2VgESvwElRM+K3+uALQAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionCopyVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="ActionCopyVerse.Text" xml:space="preserve">
-    <value>Copy verse</value>
-  </data>
-  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="ActionCopyTranslation.Text" xml:space="preserve">
-    <value>Copy translation</value>
-  </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 98</value>
+    <value>174, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
@@ -2636,9 +2609,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -2665,6 +2635,18 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -2882,17 +2864,17 @@
   <data name="&gt;&gt;ActionBackup.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
     <value>ActionSave</value>
   </data>
   <data name="&gt;&gt;ActionSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveFirstItem</value>
@@ -3007,36 +2989,6 @@
   </data>
   <data name="&gt;&gt;ActionExportVerse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyVerse.Name" xml:space="preserve">
-    <value>ActionCopyVerse</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyVerse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyTranslation.Name" xml:space="preserve">
-    <value>ActionCopyTranslation</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

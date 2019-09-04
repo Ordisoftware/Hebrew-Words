@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewWords
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
+      ActiveControl = EditHebrewLettersPath;
     }
 
     /// <summary>
