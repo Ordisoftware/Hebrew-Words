@@ -28,57 +28,92 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordControl));
       this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
       this.LabelHebrew = new System.Windows.Forms.Label();
+      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
       this.FlowLayoutPanel.SuspendLayout();
+      this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // FlowLayoutPanel
       // 
       this.FlowLayoutPanel.Controls.Add(this.LabelHebrew);
       this.FlowLayoutPanel.Controls.Add(this.EditTranslation);
-      this.FlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.FlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-      this.FlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-      this.FlowLayoutPanel.Size = new System.Drawing.Size(220, 60);
-      this.FlowLayoutPanel.TabIndex = 0;
       // 
       // LabelHebrew
       // 
-      this.LabelHebrew.Dock = System.Windows.Forms.DockStyle.Top;
-      this.LabelHebrew.Font = new System.Drawing.Font("Hebrew", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LabelHebrew.Location = new System.Drawing.Point(3, 0);
+      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
+      resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
       this.LabelHebrew.Name = "LabelHebrew";
-      this.LabelHebrew.Size = new System.Drawing.Size(214, 30);
-      this.LabelHebrew.TabIndex = 0;
       this.LabelHebrew.TabStop = true;
-      this.LabelHebrew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 
+      // ContextMenuStrip
+      // 
+      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionOpenHebrewLetters,
+            this.ActionOnlineSearch,
+            this.toolStripMenuItem1,
+            this.ActionCopy,
+            this.ActionSearch});
+      this.ContextMenuStrip.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // ActionOnlineSearch
+      // 
+      resources.ApplyResources(this.ActionOnlineSearch, "ActionOnlineSearch");
+      this.ActionOnlineSearch.Name = "ActionOnlineSearch";
+      this.ActionOnlineSearch.Click += new System.EventHandler(this.ActionOnlineSearch_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionCopy
+      // 
+      resources.ApplyResources(this.ActionCopy, "ActionCopy");
+      this.ActionCopy.Name = "ActionCopy";
+      this.ActionCopy.Click += new System.EventHandler(this.ActionCopy_Click);
+      // 
+      // ActionSearch
+      // 
+      resources.ApplyResources(this.ActionSearch, "ActionSearch");
+      this.ActionSearch.Name = "ActionSearch";
+      this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
+      // 
       // EditTranslation
       // 
-      this.EditTranslation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.EditTranslation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.EditTranslation.Location = new System.Drawing.Point(3, 33);
+      resources.ApplyResources(this.EditTranslation, "EditTranslation");
       this.EditTranslation.Name = "EditTranslation";
-      this.EditTranslation.Size = new System.Drawing.Size(214, 22);
-      this.EditTranslation.TabIndex = 1;
-      this.EditTranslation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
       // 
       // WordControl
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.FlowLayoutPanel);
       this.Name = "WordControl";
-      this.Size = new System.Drawing.Size(220, 60);
       this.FlowLayoutPanel.ResumeLayout(false);
       this.FlowLayoutPanel.PerformLayout();
+      this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -88,6 +123,11 @@
     private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
     private System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.TextBox EditTranslation;
-
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
+    private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopy;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearch;
   }
 }

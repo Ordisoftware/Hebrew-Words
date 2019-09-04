@@ -67,6 +67,28 @@ namespace Ordisoftware.HebrewWords
       LabelHebrew.ForeColor = System.Drawing.SystemColors.ControlText;
     }
 
+    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+    {
+      string str = ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text;
+      foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+      Program.OpenHebrewLetters(str);
+    }
+
+    private void ActionOnlineSearch_Click(object sender, EventArgs e)
+    {
+      Program.OpenOnlineConcordance((string)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Tag);
+    }
+
+    private void ActionCopy_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+    }
+
+    private void ActionSearch_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.SearchWord(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+    }
+
   }
 
 }

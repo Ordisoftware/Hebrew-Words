@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -46,6 +46,8 @@ namespace Ordisoftware.HebrewWords
       EditBackupPath.Text = Program.Settings.BackupPath;
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
+      SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
+      SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
     }
 
     /// <summary>
@@ -60,6 +62,10 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BackupPath = EditBackupPath.Text;
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
+      if ( SelectOpenHebrewLetters.Checked )
+        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
+      if ( SelectOpenOnlineSearch.Checked )
+        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
       MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( MainForm.Instance.TimerAutoSave.Enabled )
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;

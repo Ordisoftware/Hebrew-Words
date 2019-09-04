@@ -212,5 +212,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["AutoSaveDelay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("OnlineSearch")]
+        public global::Ordisoftware.HebrewWords.HebrewWordClickOpen HebrewWordClickOpen {
+            get {
+                return ((global::Ordisoftware.HebrewWords.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));
+            }
+            set {
+                this["HebrewWordClickOpen"] = value;
+            }
+        }
     }
 }

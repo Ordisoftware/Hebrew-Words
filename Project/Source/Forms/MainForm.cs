@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-09 </edited>
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
@@ -699,24 +699,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by WordControl for hebrew word mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void HebrewWordMouseClick(object sender, MouseEventArgs e)
-    {
-      if ( e.Button == MouseButtons.Left )
-        Program.OpenOnlineConcordance((string)( sender as Label ).Tag);
-      else
-      if ( e.Button == MouseButtons.Right )
-      {
-        string str = ( sender as Label ).Text;
-        foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-        Program.OpenHebrewLetters(str);
-      }
-    }
-
-    /// <summary>
     /// Event handler. Called by PanelLetterSearch key press events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -779,6 +761,45 @@ namespace Ordisoftware.HebrewWords
             return;
           }
         }
+    }
+
+    public void SearchWord(string word)
+    {
+      ActionViewSearch.PerformClick();
+      EditLetters.Input.Text = word;
+    }
+      
+    private void ActionOpenVerseOnline_Click(object sender, EventArgs e)
+    {
+      int verse;
+      if ( sender is Label )
+        verse = Convert.ToInt32(( (Label)sender ).Text);
+      else
+      if ( sender is ToolStripMenuItem )
+        verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      else
+        throw new Exception("Code error in ActionOpenVerseOnline_Click.");
+      Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, SelectChapter.SelectedIndex + 1, verse);
+    }
+
+    private void ActionExportVerse_Click(object sender, EventArgs e)
+    {
+      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+      int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
+      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+      ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
+    }
+
+    private void ActionCopyVerse_Click(object sender, EventArgs e)
+    {
+      // todo
+    }
+
+    private void ActionCopyTranslation_Click(object sender, EventArgs e)
+    {
+      // todo
     }
 
   }

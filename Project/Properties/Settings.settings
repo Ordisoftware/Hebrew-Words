@@ -55,5 +55,8 @@
     <Setting Name="AutoSaveDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
+      <Value Profile="(Default)">OnlineSearch</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

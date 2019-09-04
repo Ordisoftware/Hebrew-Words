@@ -44,6 +44,9 @@
       this.EditBackupPath = new System.Windows.Forms.TextBox();
       this.EditBackupCount = new System.Windows.Forms.NumericUpDown();
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
+      this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
+      this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
+      this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -52,6 +55,7 @@
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
+      this.GroupBoxHebrewWordClick.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -146,12 +150,35 @@
             0});
       this.EditAutoSaveDelay.Name = "EditAutoSaveDelay";
       // 
+      // GroupBoxHebrewWordClick
+      // 
+      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
+      this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
+      this.GroupBoxHebrewWordClick.TabStop = false;
+      // 
+      // SelectOpenOnlineSearch
+      // 
+      resources.ApplyResources(this.SelectOpenOnlineSearch, "SelectOpenOnlineSearch");
+      this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
+      this.SelectOpenOnlineSearch.TabStop = true;
+      this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.SelectOpenHebrewLetters, "SelectOpenHebrewLetters");
+      this.SelectOpenHebrewLetters.Name = "SelectOpenHebrewLetters";
+      this.SelectOpenHebrewLetters.TabStop = true;
+      this.SelectOpenHebrewLetters.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.GroupBoxHebrewWordClick);
       this.Controls.Add(this.EditAutoSaveDelay);
       this.Controls.Add(LabelAutoSaveDelay);
       this.Controls.Add(this.EditBackupCount);
@@ -175,6 +202,8 @@
       this.PanelButtons.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
+      this.GroupBoxHebrewWordClick.ResumeLayout(false);
+      this.GroupBoxHebrewWordClick.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -191,5 +220,8 @@
     private System.Windows.Forms.TextBox EditBackupPath;
     private System.Windows.Forms.NumericUpDown EditBackupCount;
     private System.Windows.Forms.NumericUpDown EditAutoSaveDelay;
+    private System.Windows.Forms.GroupBox GroupBoxHebrewWordClick;
+    private System.Windows.Forms.RadioButton SelectOpenOnlineSearch;
+    private System.Windows.Forms.RadioButton SelectOpenHebrewLetters;
   }
 }

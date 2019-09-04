@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -164,6 +164,7 @@ namespace Ordisoftware.HebrewWords
           label.MouseEnter += LabelVerseNumberMouseEnter;
           label.MouseLeave += LabelVerseNumberMouseLeave;
           label.MouseClick += LabelVerseNumberMouseClick;
+          label.ContextMenuStrip = ContextMenuStripVerse;
           PanelViewVerses.Controls.Add(label);
           bool emptyline = false;
           foreach ( var word in verse.GetWordsRows() )
@@ -227,18 +228,22 @@ namespace Ordisoftware.HebrewWords
     private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
-        Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex,
-                                SelectChapter.SelectedIndex + 1,
-                                Convert.ToInt32(( sender as Label ).Text));
-      else
-      if ( e.Button == MouseButtons.Right )
+        ActionOpenVerseOnline_Click(sender, null);
+    }
+
+    private void HebrewWordMouseClick(object sender, MouseEventArgs e)
+    {
+      if ( e.Button != MouseButtons.Left ) return;
+      switch (Program.Settings.HebrewWordClickOpen)
       {
-        var book = ( (BookItem)SelectBook.SelectedItem ).Row;
-        var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
-        int verse = Convert.ToInt32(((Label)sender).Text);
-        SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
-        if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-        ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
+        case HebrewWordClickOpen.HebrewLetters:
+          string str = ( sender as Label ).Text;
+          foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
+          Program.OpenHebrewLetters(str);
+          break;
+        case HebrewWordClickOpen.OnlineSearch:
+          Program.OpenOnlineConcordance((string)( sender as Label ).Tag);
+          break;
       }
     }
 
