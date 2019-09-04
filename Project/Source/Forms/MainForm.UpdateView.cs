@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewWords
 
     private Font LatinFont = new Font("Verdana", 10f);
 
-    private void AddText(RichTextBox control, Font font, string str)
+    private void AddTextRightAligned(RichTextBox control, Font font, string str)
     {
       AddTextRightAligned(control, font, str, SystemColors.ControlText);
     }
@@ -67,8 +67,8 @@ namespace Ordisoftware.HebrewWords
         string str = "";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = word.Hebrew + " " + str;
-        AddText(EditRawText, HebrewFont, str);
-        AddText(EditRawText, LatinFont, ":" + verse.Number);
+        AddTextRightAligned(EditRawText, HebrewFont, str);
+        AddTextRightAligned(EditRawText, LatinFont, ":" + verse.Number);
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectionStart = 0;
@@ -92,23 +92,28 @@ namespace Ordisoftware.HebrewWords
         foreach ( Data.DataSet.BooksRow book in books )
           foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            {
+              string strTranslation = "";
               foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
                 if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
                 {
-                  string str = "";
                   foreach ( Data.DataSet.WordsRow w in verse.GetWordsRows().Reverse() )
                   {
                     var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
                               ? Color.DarkRed
                               : SystemColors.ControlText;
-                    AddText(EditSearchResults, HebrewFont, " ");
+                    AddTextRightAligned(EditSearchResults, HebrewFont, " ");
                     AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
+                    strTranslation = w.Translation + " " + strTranslation;
                   }
                   string strRef = " :" + verse.Number + "." + chapter.Number + "." + book.Name;
-                  AddText(EditSearchResults, LatinFont, strRef);
+                  AddTextRightAligned(EditSearchResults, LatinFont, strRef);
+                  EditSearchResults.AppendText(Environment.NewLine);
+                  EditSearchResults.AppendText(strTranslation);
                   EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
                   break;
                 }
+            }
         EditSearchResults.SelectionStart = 0;
       }
       finally
@@ -123,8 +128,8 @@ namespace Ordisoftware.HebrewWords
       var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
-        AddText(EditELS50All, HebrewFont, chapter.ELS50);
-        AddText(EditELS50All, LatinFont, " :" + chapter.Number);
+        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
         EditELS50All.AppendText(Environment.NewLine);
       }
       EditELS50All.SelectionStart = 0;
