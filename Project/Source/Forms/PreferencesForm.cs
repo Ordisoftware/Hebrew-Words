@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -43,6 +44,7 @@ namespace Ordisoftware.HebrewWords
     {
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditOnlineSearch.Text = Program.Settings.SearchOnline;
+      EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnline;
       EditBackupPath.Text = Program.Settings.BackupPath;
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
@@ -60,6 +62,7 @@ namespace Ordisoftware.HebrewWords
     {
       Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Program.Settings.SearchOnline = EditOnlineSearch.Text;
+      Program.Settings.OpenVerseOnline = EditOnlineVerseURL.Text;
       Program.Settings.BackupPath = EditBackupPath.Text;
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
@@ -74,15 +77,28 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSelect for click events.
+    /// Event handler. Called by ActionSelectHebrewLettersPath for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionSelect_Click(object sender, EventArgs e)
+    private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
-      OpenFileDialog.FileName = EditHebrewLettersPath.Text;
+      OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
+      OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSelectBackupPath for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSelectBackupPath_Click(object sender, EventArgs e)
+    {
+      FolderBrowserDialog.SelectedPath = EditBackupPath.Text;
+      if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
+        EditBackupPath.Text = FolderBrowserDialog.SelectedPath;
     }
   }
 

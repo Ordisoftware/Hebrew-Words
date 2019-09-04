@@ -58,5 +58,8 @@
     <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
       <Value Profile="(Default)">OnlineSearch</Value>
     </Setting>
+    <Setting Name="OpenVerseOnline" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://studybible.info/IHOT/%BOOK% %CHAPTER%:%VERSE%</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

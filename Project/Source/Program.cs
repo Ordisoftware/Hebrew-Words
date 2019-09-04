@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -114,6 +114,8 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenHebrewLetters(string hebrew)
     {
+      foreach ( var v in Letters.FinaleDisable )
+        hebrew = hebrew.Replace(v.Key, v.Value);
       using ( var process = new Process() )
         try
         {
@@ -147,9 +149,10 @@ namespace Ordisoftware.HebrewWords
         try
         {
           
-          process.StartInfo.FileName = "https://studybible.info/IHOT/" 
-                                     + BooksNames.English[book] 
-                                     + " " + chapter + ":" + verse;
+          process.StartInfo.FileName = Settings.OpenVerseOnline
+                                       .Replace("%BOOK%", BooksNames.English[book])
+                                       .Replace("%CHAPTER%", chapter.ToString())
+                                       .Replace("%VERSE%", verse.ToString());
           process.Start();
         }
         catch ( Exception ex )
@@ -161,3 +164,5 @@ namespace Ordisoftware.HebrewWords
   }
 
 }
+
+

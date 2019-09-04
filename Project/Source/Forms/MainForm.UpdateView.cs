@@ -237,9 +237,7 @@ namespace Ordisoftware.HebrewWords
       switch (Program.Settings.HebrewWordClickOpen)
       {
         case HebrewWordClickOpen.HebrewLetters:
-          string str = ( sender as Label ).Text;
-          foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-          Program.OpenHebrewLetters(str);
+          Program.OpenHebrewLetters(( sender as Label ).Text);
           break;
         case HebrewWordClickOpen.OnlineSearch:
           Program.OpenOnlineConcordance((string)( sender as Label ).Tag);

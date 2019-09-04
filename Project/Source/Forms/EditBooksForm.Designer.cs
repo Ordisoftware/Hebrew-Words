@@ -107,21 +107,21 @@
       // ContextMenuStrip
       // 
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionCopyHebrewName,
-            this.ActionOpenHebrewLetters});
+            this.ActionOpenHebrewLetters,
+            this.ActionCopyHebrewName});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
       // ActionCopyHebrewName
       // 
-      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
       resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
+      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
       this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
       // 
       // ActionOpenHebrewLetters
       // 
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // BooksBindingSource

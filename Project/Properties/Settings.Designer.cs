@@ -224,5 +224,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["HebrewWordClickOpen"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOK% %CHAPTER%:%VERSE%")]
+        public string OpenVerseOnline {
+            get {
+                return ((string)(this["OpenVerseOnline"]));
+            }
+            set {
+                this["OpenVerseOnline"] = value;
+            }
+        }
     }
 }

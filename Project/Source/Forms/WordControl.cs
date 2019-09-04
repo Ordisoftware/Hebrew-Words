@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2015-06 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -49,29 +50,27 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
     }
     
-    private void EditTranslation_TextChanged(object sender, System.EventArgs e)
+    private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       _Word.Translation = EditTranslation.Text;
       MainForm.Instance.ActionSave.Enabled = true;
     }
 
-    private void LabelHebrew_MouseEnter(object sender, System.EventArgs e)
+    private void LabelHebrew_MouseEnter(object sender, EventArgs e)
     {
       LabelHebrew.Cursor = Cursors.Hand;
-      LabelHebrew.ForeColor = System.Drawing.Color.DarkRed;
+      LabelHebrew.ForeColor = Color.DarkRed;
     }
 
-    private void LabelHebrew_MouseLeave(object sender, System.EventArgs e)
+    private void LabelHebrew_MouseLeave(object sender, EventArgs e)
     {
       LabelHebrew.Cursor = Cursors.Default;
-      LabelHebrew.ForeColor = System.Drawing.SystemColors.ControlText;
+      LabelHebrew.ForeColor = SystemColors.ControlText;
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      string str = ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text;
-      foreach ( var v in Letters.FinaleDisable ) str = str.Replace(v.Key, v.Value);
-      Program.OpenHebrewLetters(str);
+      Program.OpenHebrewLetters(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
     }
 
     private void ActionOnlineSearch_Click(object sender, EventArgs e)
