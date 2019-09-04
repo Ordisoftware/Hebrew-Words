@@ -60,6 +60,8 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 #### __________ - Version 1.9
 
 - Add context menu on hebrew words and verses numbers.
+- Add option to define url of open online verse.
+- Fix select backup path icon.
 
 #### 2019.09.03 - Version 1.8
 
