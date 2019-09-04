@@ -150,9 +150,10 @@ namespace Ordisoftware.HebrewWords
         {
           
           process.StartInfo.FileName = Settings.OpenVerseOnline
-                                       .Replace("%BOOK%", BooksNames.English[book])
-                                       .Replace("%CHAPTER%", chapter.ToString())
-                                       .Replace("%VERSE%", verse.ToString());
+                                       .Replace("%BOOKNAME%", BooksNames.English[book])
+                                       .Replace("%BOOKNUM%", book.ToString())
+                                       .Replace("%CHAPTERNUM%", chapter.ToString())
+                                       .Replace("%VERSENUM%", verse.ToString());
           process.Start();
         }
         catch ( Exception ex )

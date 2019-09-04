@@ -102,8 +102,8 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -113,8 +113,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -130,8 +130,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -163,9 +163,9 @@
       // 
       // GroupBoxHebrewWordClick
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -187,10 +187,6 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      // 
-      // FolderBrowserDialog
-      // 
-      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // label1
       // 
