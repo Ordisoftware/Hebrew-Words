@@ -88,6 +88,11 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.SearchWord(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
     }
 
+    private void ActionSearchTranslated_Click(object sender, EventArgs e)
+    {
+      // todo
+      Core.DisplayManager.ShowAdvert("Not implemented yet.");
+    }
   }
 
 }

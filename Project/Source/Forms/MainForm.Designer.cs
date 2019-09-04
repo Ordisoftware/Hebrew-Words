@@ -59,7 +59,7 @@
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
-      this.ActionFindVerse = new System.Windows.Forms.Button();
+      this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
@@ -366,7 +366,7 @@
       this.PanelNavigation.Controls.Add(this.ActionELS50CopyToClipboard);
       this.PanelNavigation.Controls.Add(this.ActionExportChapter);
       this.PanelNavigation.Controls.Add(this.ActionExportBook);
-      this.PanelNavigation.Controls.Add(this.ActionFindVerse);
+      this.PanelNavigation.Controls.Add(this.ActionSearchVerse);
       this.PanelNavigation.Controls.Add(this.SelectBook);
       this.PanelNavigation.Controls.Add(this.EditELS50);
       this.PanelNavigation.Controls.Add(this.SelectChapter);
@@ -400,13 +400,13 @@
       this.ActionExportBook.UseVisualStyleBackColor = true;
       this.ActionExportBook.Click += new System.EventHandler(this.ActionExportBook_Click);
       // 
-      // ActionFindVerse
+      // ActionSearchVerse
       // 
-      this.ActionFindVerse.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionFindVerse, "ActionFindVerse");
-      this.ActionFindVerse.Name = "ActionFindVerse";
-      this.ActionFindVerse.UseVisualStyleBackColor = true;
-      this.ActionFindVerse.Click += new System.EventHandler(this.ActionFindVerse_Click);
+      this.ActionSearchVerse.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchVerse, "ActionFindVerse");
+      this.ActionSearchVerse.Name = "ActionFindVerse";
+      this.ActionSearchVerse.UseVisualStyleBackColor = true;
+      this.ActionSearchVerse.Click += new System.EventHandler(this.ActionSearchVerse_Click);
       // 
       // SelectBook
       // 
@@ -1149,7 +1149,7 @@
     internal System.Windows.Forms.ComboBox SelectChapter;
     internal System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
-    private System.Windows.Forms.Button ActionFindVerse;
+    private System.Windows.Forms.Button ActionSearchVerse;
     private System.Windows.Forms.Button ActionExportBook;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogWord;
     private System.Windows.Forms.Button ActionExportChapter;

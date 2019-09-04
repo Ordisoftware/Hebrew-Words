@@ -52,7 +52,10 @@ namespace Ordisoftware.HebrewWords
         str = str.Remove(str.Length - 1, 1);
         EditTranslations.SelectedText = str;
         if ( verse.Comment != "" )
-          EditTranslations.SelectedText = " {" + verse.Comment + "}";
+        {
+          EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
+          EditTranslations.SelectedText = verse.Comment;
+        }
         EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
       }
       EditTranslations.SelectionStart = 0;
@@ -192,11 +195,16 @@ namespace Ordisoftware.HebrewWords
           if ( emptyline ) y -= dy;
           var editComment = new TextBox();
           label.Tag = editComment;
-          editComment.Multiline = true;
+          if ( Program.Settings.CommentaryLinesCount > 1 )
+          {
+            editComment.Multiline = true;
+            editComment.WordWrap = true;
+            editComment.ScrollBars = ScrollBars.Vertical;
+          }
           editComment.Location = new Point(minx + dx, y + dy + delta);
           x = width - dx - marginX - 2;
           editComment.Width = x - minx;
-          editComment.Height = editComment.Height * 2 - 3;
+          editComment.Height = editComment.Height * Program.Settings.CommentaryLinesCount - 3;
           editComment.Tag = verse;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = verse.Comment;

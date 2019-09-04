@@ -39,6 +39,8 @@
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
+      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.FlowLayoutPanel.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -66,7 +68,9 @@
             this.ActionOnlineSearch,
             this.toolStripMenuItem1,
             this.ActionCopy,
-            this.ActionSearch});
+            this.ActionSearch,
+            this.toolStripMenuItem2,
+            this.ActionSearchTranslated});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
@@ -105,6 +109,17 @@
       this.EditTranslation.Name = "EditTranslation";
       this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
       // 
+      // ActionSearchTranslated
+      // 
+      resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
+      this.ActionSearchTranslated.Name = "ActionSearchTranslated";
+      this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      // 
       // WordControl
       // 
       resources.ApplyResources(this, "$this");
@@ -129,5 +144,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionCopy;
     private System.Windows.Forms.ToolStripMenuItem ActionSearch;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
   }
 }

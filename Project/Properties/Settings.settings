@@ -61,5 +61,8 @@
     <Setting Name="OpenVerseOnline" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://studybible.info/IHOT/%BOOK% %CHAPTER%:%VERSE%</Value>
     </Setting>
+    <Setting Name="CommentaryLinesCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

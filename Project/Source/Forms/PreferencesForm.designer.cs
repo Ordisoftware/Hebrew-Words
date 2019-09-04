@@ -35,6 +35,7 @@
       System.Windows.Forms.Label backupCountLabel;
       System.Windows.Forms.Label LabelAutoSaveDelay;
       System.Windows.Forms.Label labelOnlineVerseURL;
+      System.Windows.Forms.Label LabelCommentaryLinesCount;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -51,16 +52,19 @@
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.label1 = new System.Windows.Forms.Label();
+      this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
       backupCountLabel = new System.Windows.Forms.Label();
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
       labelOnlineVerseURL = new System.Windows.Forms.Label();
+      LabelCommentaryLinesCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
       this.GroupBoxHebrewWordClick.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -92,6 +96,11 @@
       // 
       resources.ApplyResources(labelOnlineVerseURL, "labelOnlineVerseURL");
       labelOnlineVerseURL.Name = "labelOnlineVerseURL";
+      // 
+      // LabelCommentaryLinesCount
+      // 
+      resources.ApplyResources(LabelCommentaryLinesCount, "LabelCommentaryLinesCount");
+      LabelCommentaryLinesCount.Name = "LabelCommentaryLinesCount";
       // 
       // ButtonClose
       // 
@@ -193,12 +202,34 @@
       resources.ApplyResources(this.label1, "label1");
       this.label1.Name = "label1";
       // 
+      // EditCommentaryLinesCount
+      // 
+      resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
+      this.EditCommentaryLinesCount.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+      this.EditCommentaryLinesCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.EditCommentaryLinesCount.Name = "EditCommentaryLinesCount";
+      this.EditCommentaryLinesCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditCommentaryLinesCount);
+      this.Controls.Add(LabelCommentaryLinesCount);
       this.Controls.Add(this.label1);
       this.Controls.Add(labelOnlineVerseURL);
       this.Controls.Add(this.EditOnlineVerseURL);
@@ -228,6 +259,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
       this.GroupBoxHebrewWordClick.ResumeLayout(false);
       this.GroupBoxHebrewWordClick.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -250,5 +282,6 @@
     private System.Windows.Forms.TextBox EditOnlineVerseURL;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
     private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
   }
 }

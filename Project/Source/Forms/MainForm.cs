@@ -69,7 +69,6 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Load(object sender, EventArgs e)
     {
       Program.Settings.Retrieve();
-      SetView(Program.Settings.CurrentView, true);
     }
 
     /// <summary>
@@ -132,6 +131,7 @@ namespace Ordisoftware.HebrewWords
       {
         form.Hide();
         SetFormDisabled(false);
+        SetView(Program.Settings.CurrentView, true);
         ActionSave.Enabled = false;
       }
     }
@@ -450,6 +450,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       new PreferencesForm().ShowDialog();
+      InitBooksCombobox();
     }
 
     /// <summary>
@@ -627,11 +628,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionFindVerse for click events.
+    /// Event handler. Called by ActionSearchVerse for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionFindVerse_Click(object sender, EventArgs e)
+    private void ActionSearchVerse_Click(object sender, EventArgs e)
     {
       var form = new SelectVerseForm();
       form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();

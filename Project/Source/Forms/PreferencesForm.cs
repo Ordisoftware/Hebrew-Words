@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewWords
       EditBackupPath.Text = Program.Settings.BackupPath;
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
+      EditCommentaryLinesCount.Value = Program.Settings.CommentaryLinesCount;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
@@ -66,6 +67,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BackupPath = EditBackupPath.Text;
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
+      Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )
