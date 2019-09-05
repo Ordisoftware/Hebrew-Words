@@ -819,18 +819,34 @@ namespace Ordisoftware.HebrewWords
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
     }
 
-    private void setAsBookmarkMasterToolStripMenuItem_Click(object sender, EventArgs e)
+    private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
       Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
       Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
       int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
       Program.Settings.BookmarkMasterVerse = verse;
       Program.Settings.Store();
+      UpdateBookmarks();
     }
 
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
-      // todo
+      var item = new ReferenceItem();
+      item.Book = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
+      item.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
+      item.Verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      Bookmarks.Add(item);
+      UpdateBookmarks();
+    }
+
+    private void ActionClearBookmarks_Click(object sender, EventArgs e)
+    {
+      Program.Settings.BookmarkMasterBook = 1;
+      Program.Settings.BookmarkMasterChapter = 1;
+      Program.Settings.BookmarkMasterVerse = 1;
+      Bookmarks.Clear();
+      Program.Settings.Store();
+      UpdateBookmarks();
     }
 
   }

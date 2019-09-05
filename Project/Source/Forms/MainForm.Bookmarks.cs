@@ -26,7 +26,8 @@ namespace Ordisoftware.HebrewWords
 
     internal void UpdateBookmarks()
     {
-      MenuBookmarks.DropDownItems.Clear();
+      while ( MenuBookmarks.DropDownItems.Count > 2 )
+        MenuBookmarks.DropDownItems.RemoveAt(2);
       var bookmarkMaster = new ReferenceItem();
       bookmarkMaster.Book = Program.Settings.BookmarkMasterBook;
       bookmarkMaster.Chapter = Program.Settings.BookmarkMasterChapter;
@@ -34,19 +35,22 @@ namespace Ordisoftware.HebrewWords
       ToolStripItem item = MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
       item.Tag = bookmarkMaster;
       item.Click += Item_Click;
+      item.ImageScaling = ToolStripItemImageScaling.None;
+      item.Image = ActionSetAsBookmarkMaster.Image;
       MenuBookmarks.DropDownItems.Add("-");
       foreach ( var reference in Bookmarks )
       {
         item = MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
         item.Click += Item_Click;
-
+        item.ImageScaling = ToolStripItemImageScaling.None;
+        item.Image = ActionAddToBookmarks.Image;
       }
     }
 
     private void Item_Click(object sender, EventArgs e)
     {
-      //GoTo(
+      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
     internal void AddBookmark(ReferenceItem reference)
