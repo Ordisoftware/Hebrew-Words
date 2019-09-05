@@ -122,6 +122,7 @@ namespace Ordisoftware.HebrewWords
         paragraph.Direction = Direction.RightToLeft;
         paragraph.Font(FontCalibri);
         paragraph.FontSize(16);
+        paragraph.Bold();
         Document.InsertParagraph().AppendLine();
       }
     }
@@ -221,7 +222,6 @@ namespace Ordisoftware.HebrewWords
         paragraph.Direction = Direction.LeftToRight;
         paragraph.Font(FontCalibri);
         paragraph.FontSize(10);
-        paragraph.Italic();
       }
       Document.InsertParagraph().AppendLine();
     }
