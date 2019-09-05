@@ -851,18 +851,4 @@ namespace Ordisoftware.HebrewWords
 
   }
 
-  /// <summary>
-  /// Provide book combobox item
-  /// </summary>
-  public class BookItem
-  {
-    public Data.DataSet.BooksRow Row { get; set; }
-    public override string ToString()
-    {
-      string str = Row.Number + ". " + Row.Name;
-      if ( Row.Translation  != "" ) str += " (" + Row.Translation + ")";
-      return str;
-    }
-  }
-
 }

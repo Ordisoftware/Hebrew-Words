@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewWords
                  from word in verse.GetWordsRows()
                  where word.Hebrew == wordHebrew
                     && word.Translation != ""
-                 select new WordReferenceItem
+                 select new WordReferencedItem
                         {
                           Book = book.Number,
                           Chapter = chapter.Number,

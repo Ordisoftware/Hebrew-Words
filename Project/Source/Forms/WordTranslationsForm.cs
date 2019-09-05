@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
   public partial class WordTranslationsForm : Form
   {
 
-    static public void Run(ReferenceItem reference, WordControl sender, List<WordReferenceItem> items)
+    static public void Run(ReferenceItem reference, WordControl sender, List<WordReferencedItem> items)
     {
       var form = new WordTranslationsForm();
       form.Reference = reference;
@@ -92,14 +92,14 @@ namespace Ordisoftware.HebrewWords
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       Clipboard.SetText(str);
     }
 
     private void ActionUseTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       WordControl.EditTranslation.Text = str;
     }
 

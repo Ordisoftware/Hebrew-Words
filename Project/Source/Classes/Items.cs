@@ -18,6 +18,20 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
+  /// Provide book combobox item
+  /// </summary>
+  public class BookItem
+  {
+    public Data.DataSet.BooksRow Row { get; set; }
+    public override string ToString()
+    {
+      string str = Row.Number + ". " + Row.Name;
+      if ( Row.Translation != "" ) str += " (" + Row.Translation + ")";
+      return str;
+    }
+  }
+
+  /// <summary>
   /// Provide chapter combobox item
   /// </summary>
   public class ChapterItem
@@ -46,7 +60,7 @@ namespace Ordisoftware.HebrewWords
   /// <summary>
   /// Provide reference item with word
   /// </summary>
-  public class WordReferenceItem : ReferenceItem
+  public class WordReferencedItem : ReferenceItem
   {
     public Data.DataSet.WordsRow Word { get; set; }
   }
