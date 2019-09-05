@@ -28,14 +28,21 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordTranslationsForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ButtonClose = new System.Windows.Forms.Button();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.panel1.SuspendLayout();
+      this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -58,6 +65,7 @@
       this.ButtonClose.TabIndex = 0;
       this.ButtonClose.Text = "Close";
       this.ButtonClose.UseVisualStyleBackColor = true;
+      this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
       // 
       // panel1
       // 
@@ -74,15 +82,19 @@
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+      this.ListView.ContextMenuStrip = this.ContextMenuStrip;
       this.ListView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.ListView.FullRowSelect = true;
+      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.ListView.HideSelection = false;
       this.ListView.Location = new System.Drawing.Point(0, 0);
+      this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
       this.ListView.Size = new System.Drawing.Size(372, 308);
       this.ListView.TabIndex = 0;
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
-      this.ListView.ItemMouseHover += new System.Windows.Forms.ListViewItemMouseHoverEventHandler(this.ListView_ItemMouseHover);
+      this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
       // 
       // columnHeader1
       // 
@@ -94,6 +106,39 @@
       this.columnHeader2.Text = "Translation";
       this.columnHeader2.Width = 220;
       // 
+      // ContextMenuStrip
+      // 
+      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionReachReference,
+            this.ActionCopyTranslation,
+            this.ActionUseTranslation});
+      this.ContextMenuStrip.Name = "ContextMenuStrip";
+      this.ContextMenuStrip.Size = new System.Drawing.Size(162, 70);
+      // 
+      // ActionReachReference
+      // 
+      this.ActionReachReference.Image = ((System.Drawing.Image)(resources.GetObject("ActionReachReference.Image")));
+      this.ActionReachReference.Name = "ActionReachReference";
+      this.ActionReachReference.Size = new System.Drawing.Size(161, 22);
+      this.ActionReachReference.Text = "Reach reference";
+      this.ActionReachReference.Click += new System.EventHandler(this.ActionReachReference_Click);
+      // 
+      // ActionCopyTranslation
+      // 
+      this.ActionCopyTranslation.Image = ((System.Drawing.Image)(resources.GetObject("ActionCopyTranslation.Image")));
+      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
+      this.ActionCopyTranslation.Size = new System.Drawing.Size(180, 22);
+      this.ActionCopyTranslation.Text = "Copy translation";
+      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
+      // 
+      // ActionUseTranslation
+      // 
+      this.ActionUseTranslation.Image = ((System.Drawing.Image)(resources.GetObject("ActionUseTranslation.Image")));
+      this.ActionUseTranslation.Name = "ActionUseTranslation";
+      this.ActionUseTranslation.Size = new System.Drawing.Size(180, 22);
+      this.ActionUseTranslation.Text = "Use translation";
+      this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
+      // 
       // WordTranslationsForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,10 +148,13 @@
       this.Controls.Add(this.PanelButtons);
       this.Name = "WordTranslationsForm";
       this.Padding = new System.Windows.Forms.Padding(10);
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "WordTranslationsForm";
+      this.TopMost = true;
+      this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
+      this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -118,5 +166,9 @@
     private System.Windows.Forms.ListView ListView;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ToolStripMenuItem ActionReachReference;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
+    private System.Windows.Forms.ToolStripMenuItem ActionUseTranslation;
   }
 }

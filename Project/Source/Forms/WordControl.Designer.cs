@@ -47,15 +47,15 @@
       // 
       // FlowLayoutPanel
       // 
-      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Controls.Add(this.LabelHebrew);
       this.FlowLayoutPanel.Controls.Add(this.EditTranslation);
+      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
       // 
       // LabelHebrew
       // 
-      resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
       this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
+      resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
@@ -64,7 +64,6 @@
       // 
       // ContextMenuStrip
       // 
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOnlineSearch,
             this.ActionOpenHebrewLetters,
@@ -74,6 +73,7 @@
             this.toolStripMenuItem2,
             this.ActionCopy});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
       // ActionOnlineSearch
       // 
@@ -89,8 +89,8 @@
       // 
       // toolStripMenuItem1
       // 
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       // 
       // ActionSearch
       // 
@@ -106,8 +106,8 @@
       // 
       // toolStripMenuItem2
       // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       // 
       // ActionCopy
       // 
@@ -138,7 +138,6 @@
 
     private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
     private System.Windows.Forms.Label LabelHebrew;
-    private System.Windows.Forms.TextBox EditTranslation;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
@@ -147,5 +146,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionSearch;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
+    internal System.Windows.Forms.TextBox EditTranslation;
   }
 }

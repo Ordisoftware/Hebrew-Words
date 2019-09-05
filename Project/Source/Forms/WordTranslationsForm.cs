@@ -14,9 +14,10 @@ namespace Ordisoftware.HebrewWords
   public partial class WordTranslationsForm : Form
   {
 
-    static public void Run(List<ReferenceItem> items)
+    static public void Run(WordControl sender, List<ReferenceItem> items)
     {
       var form = new WordTranslationsForm();
+      form.WordControl = sender;
       foreach ( var item in items )
       {
         var itemList = new ListViewItem(item.ToString());
@@ -24,18 +25,65 @@ namespace Ordisoftware.HebrewWords
         itemList.SubItems.Add(item.Word.Translation);
         form.ListView.Items.Add(itemList);
       }
-      form.ShowDialog();
+      form.Show();
     }
+
+    private WordControl WordControl;
 
     public WordTranslationsForm()
     {
       InitializeComponent();
+      Text = MainForm.Instance.Text;
       Icon = MainForm.Instance.Icon;
     }
 
-    private void ListView_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+    private void WordTranslationsForm_Shown(object sender, EventArgs e)
     {
-      if ( e.Item.Tag != null ) Cursor = Cursors.Hand;
+      ActiveControl = ListView;
+    }
+
+    private void ButtonClose_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void ListView_DoubleClick(object sender, EventArgs e)
+    {
+      ActionReachReference.PerformClick();
+    }
+
+    private void ActionReachReference_Click(object sender, EventArgs e)
+    {
+      if ( ListView.SelectedItems.Count < 1 ) return;
+      var item = (ReferenceItem)ListView.SelectedItems[0].Tag;
+      // todo add current verse to bookmarks list
+      MainForm.Instance.GoTo(item.Book.Number, item.Chapter.Number, item.Verse.Number);
+    }
+
+    private void ActionCopyTranslation_Click(object sender, EventArgs e)
+    {
+      if ( ListView.SelectedItems.Count < 1 ) return;
+      var str = ( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation
+                .Replace(".", "")
+                .Replace(",", "")
+                .Replace(" ;", "")
+                .Replace(";", "")
+                .Replace(" :", "")
+                .Replace(":", "");
+      Clipboard.SetText(str);
+    }
+
+    private void ActionUseTranslation_Click(object sender, EventArgs e)
+    {
+      if ( ListView.SelectedItems.Count < 1 ) return;
+      var str = ( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation
+                .Replace(".", "")
+                .Replace(",", "")
+                .Replace(" ;", "")
+                .Replace(";", "")
+                .Replace(" :", "")
+                .Replace(":", "");
+      WordControl.EditTranslation.Text = str;
     }
 
   }

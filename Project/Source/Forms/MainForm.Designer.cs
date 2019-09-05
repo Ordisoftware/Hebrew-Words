@@ -116,6 +116,9 @@
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -141,9 +144,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -867,6 +867,27 @@
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
+      // toolStripDropDownButton1
+      // 
+      this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+      resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
+      this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+      // 
+      // toolStripMenuItem1
+      // 
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(5);
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(5);
+      // 
       // bindingNavigatorMoveFirstItem
       // 
       this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
@@ -991,27 +1012,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripDropDownButton1
-      // 
-      this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-      resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-      this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-      // 
-      // toolStripMenuItem1
-      // 
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(5);
-      // 
-      // toolStripMenuItem2
-      // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(5);
       // 
       // MainForm
       // 

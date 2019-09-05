@@ -116,7 +116,7 @@ namespace Ordisoftware.HebrewWords
       string result = "";
       foreach ( var item in list )
         result += item.Word.Translation + Environment.NewLine;
-      WordTranslationsForm.Run(list.ToList());
+      WordTranslationsForm.Run(this, list.ToList());
     }
 
   }
