@@ -49,6 +49,7 @@ namespace Ordisoftware.HebrewWords
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
       EditCommentaryLinesCount.Value = Program.Settings.CommentaryLinesCount;
+      EditBookmarksCount.Value = Program.Settings.BookmarksCount;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
@@ -68,6 +69,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
       Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )
@@ -76,6 +78,7 @@ namespace Ordisoftware.HebrewWords
       if ( MainForm.Instance.TimerAutoSave.Enabled )
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
+      MainForm.Instance.UpdateBookmarks();
     }
 
     /// <summary>

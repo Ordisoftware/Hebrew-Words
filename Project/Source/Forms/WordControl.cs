@@ -29,6 +29,8 @@ namespace Ordisoftware.HebrewWords
       remove { LabelHebrew.MouseClick -= value; }
     }
 
+    public ReferenceItem Reference { get; private set; }
+
     public Data.DataSet.WordsRow Word
     {
       get
@@ -50,7 +52,12 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
     }
-    
+
+    public WordControl(ReferenceItem reference) : this()
+    {
+      Reference = reference;
+    }
+
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoading ) return;
@@ -112,11 +119,17 @@ namespace Ordisoftware.HebrewWords
                  from word in verse.GetWordsRows()
                  where word.Hebrew == wordHebrew
                     && word.Translation != ""
-                 select new ReferenceItem { Book = book, Chapter = chapter, Verse = verse, Word = word };
+                 select new WordReferenceItem
+                        {
+                          Book = book.Number,
+                          Chapter = chapter.Number,
+                          Verse = verse.Number,
+                          Word = word
+                        };
       string result = "";
       foreach ( var item in list )
         result += item.Word.Translation + Environment.NewLine;
-      WordTranslationsForm.Run(this, list.ToList());
+      WordTranslationsForm.Run(Reference, this, list.ToList());
     }
 
   }

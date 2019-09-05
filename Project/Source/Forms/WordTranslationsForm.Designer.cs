@@ -31,6 +31,7 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordTranslationsForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
+      this.LabelReference = new System.Windows.Forms.LinkLabel();
       this.ButtonClose = new System.Windows.Forms.Button();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
@@ -47,12 +48,25 @@
       // 
       // PanelButtons
       // 
+      this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ButtonClose);
       this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.PanelButtons.Location = new System.Drawing.Point(10, 328);
       this.PanelButtons.Name = "PanelButtons";
       this.PanelButtons.Size = new System.Drawing.Size(372, 28);
       this.PanelButtons.TabIndex = 58;
+      // 
+      // LabelReference
+      // 
+      this.LabelReference.Dock = System.Windows.Forms.DockStyle.Left;
+      this.LabelReference.Location = new System.Drawing.Point(0, 0);
+      this.LabelReference.Name = "LabelReference";
+      this.LabelReference.Size = new System.Drawing.Size(288, 28);
+      this.LabelReference.TabIndex = 1;
+      this.LabelReference.TabStop = true;
+      this.LabelReference.Text = "Reference";
+      this.LabelReference.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.LabelReference.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReference_LinkClicked);
       // 
       // ButtonClose
       // 
@@ -127,7 +141,7 @@
       // 
       this.ActionCopyTranslation.Image = ((System.Drawing.Image)(resources.GetObject("ActionCopyTranslation.Image")));
       this.ActionCopyTranslation.Name = "ActionCopyTranslation";
-      this.ActionCopyTranslation.Size = new System.Drawing.Size(180, 22);
+      this.ActionCopyTranslation.Size = new System.Drawing.Size(161, 22);
       this.ActionCopyTranslation.Text = "Copy translation";
       this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
       // 
@@ -135,7 +149,7 @@
       // 
       this.ActionUseTranslation.Image = ((System.Drawing.Image)(resources.GetObject("ActionUseTranslation.Image")));
       this.ActionUseTranslation.Name = "ActionUseTranslation";
-      this.ActionUseTranslation.Size = new System.Drawing.Size(180, 22);
+      this.ActionUseTranslation.Size = new System.Drawing.Size(161, 22);
       this.ActionUseTranslation.Text = "Use translation";
       this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
       // 
@@ -151,6 +165,7 @@
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "WordTranslationsForm";
       this.TopMost = true;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
       this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
@@ -170,5 +185,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionReachReference;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
     private System.Windows.Forms.ToolStripMenuItem ActionUseTranslation;
+    private System.Windows.Forms.LinkLabel LabelReference;
   }
 }

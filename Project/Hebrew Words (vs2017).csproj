@@ -65,6 +65,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Classes\ExportDocX.cs" />
+    <Compile Include="Source\Classes\Items.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\EditBooksForm.cs">
       <SubType>Form</SubType>
@@ -79,6 +80,9 @@
       <DependentUpon>ExportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm.BackupDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\SelectVerseForm.cs">

@@ -92,6 +92,8 @@ namespace Ordisoftware.HebrewWords
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       IsLoading = false;
+      UpdateBookmarks();
+      GoTo(Program.Settings.BookmarkMasterBook, Program.Settings.BookmarkMasterChapter, Program.Settings.BookmarkMasterVerse);
     }
 
     /// <summary>
@@ -695,10 +697,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      UpdateViewVerses();
-      UpdateViewTranslations();
-      UpdateViewRawText();
-      UpdateViewELS50();
+      if ( !IsGotoRunning ) UpdateViews();
       SetView(Program.Settings.CurrentView, true);
       ActionSave.PerformClick();
     }
@@ -744,6 +743,16 @@ namespace Ordisoftware.HebrewWords
       PanelViewVerses.Focus();
     }
 
+    private bool IsGotoRunning = false;
+
+    /// <summary>
+    /// Go to reference item.
+    /// </summary>
+    public void GoTo(ReferenceItem reference)
+    {
+      GoTo(reference.Book, reference.Chapter, reference.Verse);
+    }
+
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
@@ -753,8 +762,20 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(int book, int chapter, int verse)
     {
       SetView(ViewModeType.Verses);
-      SelectBook.SelectedIndex = book - 1;
-      SelectChapter.SelectedIndex = chapter - 1;
+      if ( SelectBook.SelectedIndex != book - 1 && SelectChapter.SelectedIndex != chapter - 1 )
+      {
+        IsGotoRunning = true;
+        try
+        {
+          SelectBook.SelectedIndex = book - 1;
+          SelectChapter.SelectedIndex = chapter - 1;
+        }
+        finally
+        {
+          IsGotoRunning = false;
+        }
+        UpdateViews();
+      }
       foreach ( var control in PanelViewVerses.Controls )
         if (control is Label)
         {
@@ -762,6 +783,7 @@ namespace Ordisoftware.HebrewWords
           if ( label.Text == verse.ToString() )
           {
             PanelViewVerses.Focus();
+            PanelViewVerses.ScrollControlIntoView(label);
             PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
             return;
           }
@@ -797,6 +819,20 @@ namespace Ordisoftware.HebrewWords
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
     }
 
+    private void setAsBookmarkMasterToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
+      Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
+      int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      Program.Settings.BookmarkMasterVerse = verse;
+      Program.Settings.Store();
+    }
+
+    private void ActionAddToBookmarks_Click(object sender, EventArgs e)
+    {
+      // todo
+    }
+
   }
 
   /// <summary>
@@ -812,35 +848,5 @@ namespace Ordisoftware.HebrewWords
       return str;
     }
   }
-
-  /// <summary>
-  /// Provide chapter combobox item
-  /// </summary>
-  public class ChapterItem
-  {
-    public Data.DataSet.ChaptersRow Row { get; set; }
-    public override string ToString()
-    {
-      return Row.Number.ToString();
-    }
-  }
-
-  /// <summary>
-  /// Provide reference item
-  /// </summary>
-  public class ReferenceItem
-  {
-    public Data.DataSet.BooksRow Book { get; set; }
-    public Data.DataSet.ChaptersRow Chapter { get; set; }
-    public Data.DataSet.VersesRow Verse { get; set; }
-    public Data.DataSet.WordsRow Word { get; set; }
-    public override string ToString()
-    {
-      return Book.Name.ToString() + "." + Chapter.Number.ToString() + "." + Verse.Number.ToString();
-    }
-  }
-
-
-
 
 }

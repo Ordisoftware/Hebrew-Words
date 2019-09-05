@@ -116,9 +116,7 @@
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -139,6 +137,9 @@
       this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.setAsBookmarkMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -541,7 +542,7 @@
             this.MenuDatabase,
             this.ActionSave,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton1});
+            this.MenuBookmarks});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
@@ -867,26 +868,11 @@
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
-      // toolStripDropDownButton1
+      // MenuBookmarks
       // 
-      this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-      resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-      this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-      // 
-      // toolStripMenuItem1
-      // 
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(5);
-      // 
-      // toolStripMenuItem2
-      // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(5);
+      this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      this.MenuBookmarks.Name = "MenuBookmarks";
       // 
       // bindingNavigatorMoveFirstItem
       // 
@@ -972,7 +958,10 @@
       // 
       this.ContextMenuStripVerse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenVerseOnline,
-            this.ActionExportVerse});
+            this.ActionExportVerse,
+            this.toolStripMenuItem1,
+            this.setAsBookmarkMasterToolStripMenuItem,
+            this.ActionAddToBookmarks});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       // 
@@ -987,6 +976,23 @@
       resources.ApplyResources(this.ActionExportVerse, "ActionExportVerse");
       this.ActionExportVerse.Name = "ActionExportVerse";
       this.ActionExportVerse.Click += new System.EventHandler(this.ActionExportVerse_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // setAsBookmarkMasterToolStripMenuItem
+      // 
+      resources.ApplyResources(this.setAsBookmarkMasterToolStripMenuItem, "setAsBookmarkMasterToolStripMenuItem");
+      this.setAsBookmarkMasterToolStripMenuItem.Name = "setAsBookmarkMasterToolStripMenuItem";
+      this.setAsBookmarkMasterToolStripMenuItem.Click += new System.EventHandler(this.setAsBookmarkMasterToolStripMenuItem_Click);
+      // 
+      // ActionAddToBookmarks
+      // 
+      resources.ApplyResources(this.ActionAddToBookmarks, "ActionAddToBookmarks");
+      this.ActionAddToBookmarks.Name = "ActionAddToBookmarks";
+      this.ActionAddToBookmarks.Click += new System.EventHandler(this.ActionAddToBookmarks_Click);
       // 
       // BooksTableAdapter
       // 
@@ -1189,9 +1195,10 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionNew;
     internal System.Windows.Forms.ToolStripMenuItem ActionRestore;
     internal System.Windows.Forms.ToolStripMenuItem ActionBackup;
-    private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-    internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-    internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripDropDownButton MenuBookmarks;
+    private System.Windows.Forms.ToolStripMenuItem ActionAddToBookmarks;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem setAsBookmarkMasterToolStripMenuItem;
   }
 }
 

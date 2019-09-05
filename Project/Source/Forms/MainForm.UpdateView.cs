@@ -40,6 +40,14 @@ namespace Ordisoftware.HebrewWords
       control.SelectionAlignment = HorizontalAlignment.Right;
     }
 
+    private void UpdateViews()
+    {
+      UpdateViewVerses();
+      UpdateViewTranslations();
+      UpdateViewRawText();
+      UpdateViewELS50();
+    }
+
     private void UpdateViewTranslations()
     {
       EditTranslations.Clear();
@@ -178,7 +186,11 @@ namespace Ordisoftware.HebrewWords
           foreach ( var word in verse.GetWordsRows() )
           {
             emptyline = false;
-            control = new WordControl();
+            var reference = new ReferenceItem();
+            reference.Book = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
+            reference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
+            reference.Verse = verse.Number;
+            control = new WordControl(reference);
             control.Word = word;
             control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);

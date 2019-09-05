@@ -36,6 +36,7 @@
       System.Windows.Forms.Label LabelAutoSaveDelay;
       System.Windows.Forms.Label labelOnlineVerseURL;
       System.Windows.Forms.Label LabelCommentaryLinesCount;
+      System.Windows.Forms.Label LabelBookmarksCount;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -53,6 +54,7 @@
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.label1 = new System.Windows.Forms.Label();
       this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
+      this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -60,11 +62,13 @@
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
       labelOnlineVerseURL = new System.Windows.Forms.Label();
       LabelCommentaryLinesCount = new System.Windows.Forms.Label();
+      LabelBookmarksCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
       this.GroupBoxHebrewWordClick.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -101,6 +105,11 @@
       // 
       resources.ApplyResources(LabelCommentaryLinesCount, "LabelCommentaryLinesCount");
       LabelCommentaryLinesCount.Name = "LabelCommentaryLinesCount";
+      // 
+      // LabelBookmarksCount
+      // 
+      resources.ApplyResources(LabelBookmarksCount, "LabelBookmarksCount");
+      LabelBookmarksCount.Name = "LabelBookmarksCount";
       // 
       // ButtonClose
       // 
@@ -222,12 +231,34 @@
             0,
             0});
       // 
+      // EditBookmarksCount
+      // 
+      resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
+      this.EditBookmarksCount.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditBookmarksCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.EditBookmarksCount.Name = "EditBookmarksCount";
+      this.EditBookmarksCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditBookmarksCount);
+      this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
       this.Controls.Add(LabelCommentaryLinesCount);
       this.Controls.Add(this.label1);
@@ -260,6 +291,7 @@
       this.GroupBoxHebrewWordClick.ResumeLayout(false);
       this.GroupBoxHebrewWordClick.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -283,5 +315,6 @@
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
+    private System.Windows.Forms.NumericUpDown EditBookmarksCount;
   }
 }

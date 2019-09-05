@@ -120,9 +120,7 @@ namespace Ordisoftware.HebrewWords
       ViewPanels[view].Panel.Parent = PanelMainCenter;
       if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
-      ActionCopyToClipboard.Enabled = view == ViewModeType.Translations
-                                   || view == ViewModeType.Text
-                                   || view == ViewModeType.ELS50;
+      ActionCopyToClipboard.Enabled = view == ViewModeType.Translations;
       ActionExportBook.Enabled = view != ViewModeType.Search;
       ActionExportChapter.Enabled = view == ViewModeType.Verses
                                  || view == ViewModeType.Translations;
@@ -130,7 +128,7 @@ namespace Ordisoftware.HebrewWords
       LabelSelectBook.Enabled = ActionExportBook.Enabled;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
-      ActionSearchVerse.Enabled = ActionExportChapter.Enabled;
+      ActionSearchVerse.Enabled = view == ViewModeType.Verses;
     }
 
   }

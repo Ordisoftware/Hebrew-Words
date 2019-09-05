@@ -248,5 +248,53 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["CommentaryLinesCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int BookmarksCount {
+            get {
+                return ((int)(this["BookmarksCount"]));
+            }
+            set {
+                this["BookmarksCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterBook {
+            get {
+                return ((int)(this["BookmarkMasterBook"]));
+            }
+            set {
+                this["BookmarkMasterBook"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterChapter {
+            get {
+                return ((int)(this["BookmarkMasterChapter"]));
+            }
+            set {
+                this["BookmarkMasterChapter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterVerse {
+            get {
+                return ((int)(this["BookmarkMasterVerse"]));
+            }
+            set {
+                this["BookmarkMasterVerse"] = value;
+            }
+        }
     }
 }
