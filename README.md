@@ -63,6 +63,8 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
 - Add bookmarks of verses reference.
+- Add master bookmark.
+- Add go to verse shortcut.
 - Improve translation view rendering.
 - Improve search results rendering.
 - Fix select backup path icon.
