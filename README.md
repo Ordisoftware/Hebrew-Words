@@ -57,7 +57,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### __________ - Version 1.9
+#### __________ - Version 2.0
 
 - Add context menu on hebrew words and verses numbers.
 - Add option to define url to open verse online.
