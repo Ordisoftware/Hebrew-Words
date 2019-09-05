@@ -46,6 +46,8 @@ namespace Ordisoftware.HebrewWords
       Instance = new MainForm();
     }
 
+    public bool IsLoading { get; private set; }
+
     /// <summary>
     /// Indicate last showned tooltip.
     /// </summary>
@@ -78,6 +80,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      IsLoading = true;
       OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
       SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
       SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolder;
@@ -88,6 +91,7 @@ namespace Ordisoftware.HebrewWords
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+      IsLoading = false;
     }
 
     /// <summary>

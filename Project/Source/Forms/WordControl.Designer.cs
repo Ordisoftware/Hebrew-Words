@@ -33,13 +33,13 @@
       this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
       this.FlowLayoutPanel.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
@@ -47,15 +47,15 @@
       // 
       // FlowLayoutPanel
       // 
+      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Controls.Add(this.LabelHebrew);
       this.FlowLayoutPanel.Controls.Add(this.EditTranslation);
-      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
       // 
       // LabelHebrew
       // 
-      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
       resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
+      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
@@ -64,22 +64,16 @@
       // 
       // ContextMenuStrip
       // 
-      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionOpenHebrewLetters,
-            this.ActionOnlineSearch,
-            this.toolStripMenuItem1,
-            this.ActionCopy,
-            this.ActionSearch,
-            this.toolStripMenuItem2,
-            this.ActionSearchTranslated});
-      this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
-      // 
-      // ActionOpenHebrewLetters
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionOnlineSearch,
+            this.ActionOpenHebrewLetters,
+            this.toolStripMenuItem1,
+            this.ActionSearch,
+            this.ActionSearchTranslated,
+            this.toolStripMenuItem2,
+            this.ActionCopy});
+      this.ContextMenuStrip.Name = "ContextMenuStrip";
       // 
       // ActionOnlineSearch
       // 
@@ -87,16 +81,16 @@
       this.ActionOnlineSearch.Name = "ActionOnlineSearch";
       this.ActionOnlineSearch.Click += new System.EventHandler(this.ActionOnlineSearch_Click);
       // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
       // toolStripMenuItem1
       // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      // 
-      // ActionCopy
-      // 
-      resources.ApplyResources(this.ActionCopy, "ActionCopy");
-      this.ActionCopy.Name = "ActionCopy";
-      this.ActionCopy.Click += new System.EventHandler(this.ActionCopy_Click);
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       // 
       // ActionSearch
       // 
@@ -104,16 +98,22 @@
       this.ActionSearch.Name = "ActionSearch";
       this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
       // 
-      // toolStripMenuItem2
-      // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      // 
       // ActionSearchTranslated
       // 
       resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
       this.ActionSearchTranslated.Name = "ActionSearchTranslated";
       this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      // 
+      // ActionCopy
+      // 
+      resources.ApplyResources(this.ActionCopy, "ActionCopy");
+      this.ActionCopy.Name = "ActionCopy";
+      this.ActionCopy.Click += new System.EventHandler(this.ActionCopy_Click);
       // 
       // EditTranslation
       // 

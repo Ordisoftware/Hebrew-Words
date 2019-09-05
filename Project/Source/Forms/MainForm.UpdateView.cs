@@ -220,6 +220,7 @@ namespace Ordisoftware.HebrewWords
 
     private void VerseCommentTextChanged(object sender, EventArgs e)
     {
+      if ( IsLoading ) return;
       var textbox = (TextBox)sender;
       ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
       ActionSave.Enabled = true;
