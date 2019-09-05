@@ -13,6 +13,7 @@
 /// <created> 2012-10 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -104,8 +105,18 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      // todo
-      Core.DisplayManager.ShowAdvert("Not implemented yet.");
+      string wordHebrew = ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text;
+      var list = from book in MainForm.Instance.DataSet.Books
+                 from chapter in book.GetChaptersRows()
+                 from verse in chapter.GetVersesRows()
+                 from word in verse.GetWordsRows()
+                 where word.Hebrew == wordHebrew
+                    && word.Translation != ""
+                 select new ReferenceItem { Book = book, Chapter = chapter, Verse = verse, Word = word };
+      string result = "";
+      foreach ( var item in list )
+        result += item.Word.Translation + Environment.NewLine;
+      WordTranslationsForm.Run(list.ToList());
     }
 
   }

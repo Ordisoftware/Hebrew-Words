@@ -802,7 +802,7 @@ namespace Ordisoftware.HebrewWords
   /// <summary>
   /// Provide book combobox item
   /// </summary>
-  internal class BookItem
+  public class BookItem
   {
     public Data.DataSet.BooksRow Row { get; set; }
     public override string ToString()
@@ -816,7 +816,7 @@ namespace Ordisoftware.HebrewWords
   /// <summary>
   /// Provide chapter combobox item
   /// </summary>
-  internal class ChapterItem
+  public class ChapterItem
   {
     public Data.DataSet.ChaptersRow Row { get; set; }
     public override string ToString()
@@ -824,5 +824,23 @@ namespace Ordisoftware.HebrewWords
       return Row.Number.ToString();
     }
   }
+
+  /// <summary>
+  /// Provide reference item
+  /// </summary>
+  public class ReferenceItem
+  {
+    public Data.DataSet.BooksRow Book { get; set; }
+    public Data.DataSet.ChaptersRow Chapter { get; set; }
+    public Data.DataSet.VersesRow Verse { get; set; }
+    public Data.DataSet.WordsRow Word { get; set; }
+    public override string ToString()
+    {
+      return Book.Name.ToString() + "." + Chapter.Number.ToString() + "." + Verse.Number.ToString();
+    }
+  }
+
+
+
 
 }
