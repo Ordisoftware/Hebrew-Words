@@ -60,10 +60,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 #### __________ - Version 1.9
 
 - Add context menu on hebrew words and verses numbers.
-- Add option to define url of open online verse.
+- Add option to define url to open verse online.
 - Add option to set commentary lines count.
-- Improve rendering translation view.
-- Improve rendering search results.
+- Improve translation view rendering.
+- Improve search results rendering.
 - Fix select backup path icon.
 
 #### 2019.09.03 - Version 1.8
