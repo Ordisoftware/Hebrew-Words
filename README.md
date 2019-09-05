@@ -62,6 +62,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add context menu on hebrew words and verses numbers.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
+- Add bookmarks of verses reference.
 - Improve translation view rendering.
 - Improve search results rendering.
 - Fix select backup path icon.
