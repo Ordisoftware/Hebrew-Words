@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     public int Verse { get; set; }
     public override string ToString()
     {
-      return BooksNames.English[(Books)Book - 1] + " " + Chapter + "." + Verse;
+      return BooksNames.Hebrew[(Books)Book - 1] + " " + Chapter + "." + Verse;
     }
   }
 
