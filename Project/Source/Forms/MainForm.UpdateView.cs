@@ -179,7 +179,6 @@ namespace Ordisoftware.HebrewWords
           {
             emptyline = false;
             control = new WordControl();
-            control.HebrewMouseClick += HebrewWordMouseClick;
             control.Word = word;
             control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);
@@ -242,20 +241,6 @@ namespace Ordisoftware.HebrewWords
     {
       if ( e.Button == MouseButtons.Left )
         ActionOpenVerseOnline_Click(sender, null);
-    }
-
-    private void HebrewWordMouseClick(object sender, MouseEventArgs e)
-    {
-      if ( e.Button != MouseButtons.Left ) return;
-      switch (Program.Settings.HebrewWordClickOpen)
-      {
-        case HebrewWordClickOpen.HebrewLetters:
-          Program.OpenHebrewLetters(( sender as Label ).Text);
-          break;
-        case HebrewWordClickOpen.OnlineSearch:
-          Program.OpenOnlineConcordance((string)( sender as Label ).Tag);
-          break;
-      }
     }
 
   }

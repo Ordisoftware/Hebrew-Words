@@ -68,6 +68,19 @@ namespace Ordisoftware.HebrewWords
       LabelHebrew.ForeColor = SystemColors.ControlText;
     }
 
+    private void LabelHebrew_Click(object sender, EventArgs e)
+    {
+      switch ( Program.Settings.HebrewWordClickOpen )
+      {
+        case HebrewWordClickOpen.HebrewLetters:
+          Program.OpenHebrewLetters(LabelHebrew.Text);
+          break;
+        case HebrewWordClickOpen.OnlineSearch:
+          Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
+          break;
+      }
+    }
+
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       Program.OpenHebrewLetters(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
@@ -93,6 +106,7 @@ namespace Ordisoftware.HebrewWords
       // todo
       Core.DisplayManager.ShowAdvert("Not implemented yet.");
     }
+
   }
 
 }

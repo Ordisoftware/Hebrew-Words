@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          ex.Manage();
+          DisplayManager.ShowError(ex.Message + Environment.NewLine + process.StartInfo.FileName);
         }
     }
 
@@ -158,7 +158,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          ex.Manage();
+          DisplayManager.ShowError(ex.Message + Environment.NewLine + process.StartInfo.FileName);
         }
     }
 

@@ -38,9 +38,9 @@
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditTranslation = new System.Windows.Forms.TextBox();
-      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditTranslation = new System.Windows.Forms.TextBox();
       this.FlowLayoutPanel.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -58,6 +58,7 @@
       resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
+      this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 
@@ -103,11 +104,10 @@
       this.ActionSearch.Name = "ActionSearch";
       this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
       // 
-      // EditTranslation
+      // toolStripMenuItem2
       // 
-      resources.ApplyResources(this.EditTranslation, "EditTranslation");
-      this.EditTranslation.Name = "EditTranslation";
-      this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       // 
       // ActionSearchTranslated
       // 
@@ -115,10 +115,11 @@
       this.ActionSearchTranslated.Name = "ActionSearchTranslated";
       this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
       // 
-      // toolStripMenuItem2
+      // EditTranslation
       // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      resources.ApplyResources(this.EditTranslation, "EditTranslation");
+      this.EditTranslation.Name = "EditTranslation";
+      this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
       // 
       // WordControl
       // 
