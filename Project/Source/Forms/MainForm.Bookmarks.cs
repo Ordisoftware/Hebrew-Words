@@ -29,9 +29,9 @@ namespace Ordisoftware.HebrewWords
       while ( MenuBookmarks.DropDownItems.Count > 2 )
         MenuBookmarks.DropDownItems.RemoveAt(2);
       var bookmarkMaster = new ReferenceItem();
-      bookmarkMaster.Book = Program.Settings.BookmarkMasterBook;
-      bookmarkMaster.Chapter = Program.Settings.BookmarkMasterChapter;
-      bookmarkMaster.Verse = Program.Settings.BookmarkMasterVerse;
+      bookmarkMaster.Book = DataSet.Books[Program.Settings.BookmarkMasterBook - 1];
+      bookmarkMaster.Chapter = DataSet.Chapters[Program.Settings.BookmarkMasterChapter - 1];
+      bookmarkMaster.Verse = DataSet.Verses[Program.Settings.BookmarkMasterVerse - 1];
       ToolStripItem item = MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
       item.Tag = bookmarkMaster;
       item.Click += Item_Click;

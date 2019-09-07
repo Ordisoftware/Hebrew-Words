@@ -22,11 +22,11 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class BookItem
   {
-    public Data.DataSet.BooksRow Row { get; set; }
+    public Data.DataSet.BooksRow Book { get; set; }
     public override string ToString()
     {
-      string str = Row.Number + ". " + Row.Name;
-      if ( Row.Translation != "" ) str += " (" + Row.Translation + ")";
+      string str = Book.Number + ". " + Book.Name;
+      if ( Book.Translation != "" ) str += " (" + Book.Translation + ")";
       return str;
     }
   }
@@ -36,10 +36,10 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class ChapterItem
   {
-    public Data.DataSet.ChaptersRow Row { get; set; }
+    public Data.DataSet.ChaptersRow Chapter { get; set; }
     public override string ToString()
     {
-      return Row.Number.ToString();
+      return Chapter.Number.ToString();
     }
   }
 
@@ -48,12 +48,12 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class ReferenceItem
   {
-    public int Book { get; set; }
-    public int Chapter { get; set; }
-    public int Verse { get; set; }
+    public Data.DataSet.BooksRow Book { get; set; }
+    public Data.DataSet.ChaptersRow Chapter { get; set; }
+    public Data.DataSet.VersesRow Verse { get; set; }
     public override string ToString()
     {
-      return BooksNames.Hebrew[(Books)Book - 1] + " " + Chapter + "." + Verse;
+      return Book.Name + " " + Chapter.Number + "." + Verse.Number;
     }
   }
 

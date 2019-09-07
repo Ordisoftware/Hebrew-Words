@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewWords
       InitializeCounters();
       InitializeMiddle();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem() { Row = book });
+        SelectBook.Items.Add(new BookItem() { Book = book });
       SelectBook.SelectedIndex = 0;
     }
 
@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Row.Number - 1 );
+        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
         CountersSelected = new BookStatistic();
         CountersSelected.CountChapters += CountersBooks[book].CountChapters;
         CountersSelected.CountVerses += CountersBooks[book].CountVerses;

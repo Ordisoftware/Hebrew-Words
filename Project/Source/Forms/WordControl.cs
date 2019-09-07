@@ -121,9 +121,9 @@ namespace Ordisoftware.HebrewWords
                     && word.Translation != ""
                  select new WordReferencedItem
                         {
-                          Book = book.Number,
-                          Chapter = chapter.Number,
-                          Verse = verse.Number,
+                          Book = book,
+                          Chapter = chapter,
+                          Verse = verse,
                           Word = word
                         };
       string result = "";

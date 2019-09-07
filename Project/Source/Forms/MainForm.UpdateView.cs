@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewTranslations()
     {
       EditTranslations.Clear();
-      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
       foreach ( Data.DataSet.VersesRow verse in list )
       {
         string str = verse.Number + ". ";
@@ -72,7 +72,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewRawText()
     {
       EditRawText.Clear();
-      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
       foreach ( Data.DataSet.VersesRow verse in list )
       {
         string str = "";
@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewELS50()
     {
       EditELS50All.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
         AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewVerses()
     {
       var item = (ChapterItem)SelectChapter.SelectedItem;
-      EditELS50.Text = item.Row.ELS50;
+      EditELS50.Text = item.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
       PanelViewVerses.SuspendLayout();
       try
@@ -168,7 +168,7 @@ namespace Ordisoftware.HebrewWords
         int x = width - dx - marginX;
         int y = delta;
         int minx = x;
-        foreach ( var verse in item.Row.GetVersesRows() )
+        foreach ( var verse in item.Chapter.GetVersesRows() )
         {
           var label = new Label();
           label.AutoSize = false;
@@ -187,9 +187,9 @@ namespace Ordisoftware.HebrewWords
           {
             emptyline = false;
             var reference = new ReferenceItem();
-            reference.Book = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
-            reference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
-            reference.Verse = verse.Number;
+            reference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
+            reference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+            reference.Verse = verse;
             control = new WordControl(reference);
             control.Word = word;
             control.Location = new Point(x, y);

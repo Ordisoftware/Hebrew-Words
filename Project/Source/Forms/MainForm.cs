@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
     {
       SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem() { Row = book });
+        SelectBook.Items.Add(new BookItem() { Book = book });
       SelectBook.SelectedIndex = 0;
     }
 
@@ -160,9 +160,9 @@ namespace Ordisoftware.HebrewWords
     {
       if ( SelectBook.SelectedItem == null ) return;
       SelectChapter.Items.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Row.GetChaptersRows();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
-        SelectChapter.Items.Add(new ChapterItem() { Row = chapter });
+        SelectChapter.Items.Add(new ChapterItem() { Chapter = chapter });
       SelectChapter.SelectedIndex = 0;
     }
 
@@ -559,7 +559,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
+      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -608,8 +608,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportChapter_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
-      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -641,7 +641,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionSearchVerse_Click(object sender, EventArgs e)
     {
       var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows().Count();
+      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
       if ( form.ShowDialog() == DialogResult.OK )
       {
         int value = (int)form.EditVerseNumber.Value;
@@ -650,7 +650,7 @@ namespace Ordisoftware.HebrewWords
         else
         {
           Data.DataSet.VersesRow found = null;
-          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Row.GetVersesRows();
+          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
           foreach ( Data.DataSet.VersesRow verse in list )
           {
             string str = "";
@@ -750,7 +750,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     public void GoTo(ReferenceItem reference)
     {
-      GoTo(reference.Book, reference.Chapter, reference.Verse);
+      GoTo(reference.Book.Number, reference.Chapter.Number, reference.Verse.Number);
     }
 
     /// <summary>
@@ -811,8 +811,8 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionExportVerse_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Row;
-      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row;
+      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
       int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
       SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
       if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
@@ -821,8 +821,8 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
-      Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
-      Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
+      Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
+      Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
       int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
       Program.Settings.BookmarkMasterVerse = verse;
       Program.Settings.Store();
@@ -832,9 +832,9 @@ namespace Ordisoftware.HebrewWords
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
       var item = new ReferenceItem();
-      item.Book = ( (BookItem)SelectBook.SelectedItem ).Row.Number;
-      item.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Row.Number;
-      item.Verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      item.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      item.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+      item.Verse = DataSet.Verses[Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text) - 1];
       Bookmarks.Add(item);
       UpdateBookmarks();
     }
