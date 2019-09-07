@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewWords
           new ViewConnector
           {
             MenuItem = ActionViewSearch,
-            Panel = PanelViewSearch2,
+            Panel = PanelViewSearch,
             Focused = EditLetters
           }
         }

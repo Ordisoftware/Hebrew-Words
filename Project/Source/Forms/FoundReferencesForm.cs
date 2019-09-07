@@ -19,12 +19,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
-  public partial class WordTranslationsForm : Form
+  public partial class FoundReferencesForm : Form
   {
 
     static public void Run(ReferenceItem reference, WordControl sender, List<WordReferencedItem> items)
     {
-      var form = new WordTranslationsForm();
+      var form = new FoundReferencesForm();
       form.Reference = reference;
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
@@ -41,10 +41,9 @@ namespace Ordisoftware.HebrewWords
     private ReferenceItem Reference;
     private WordControl WordControl;
 
-    public WordTranslationsForm()
+    public FoundReferencesForm()
     {
       InitializeComponent();
-      Text = MainForm.Instance.Text;
       Icon = MainForm.Instance.Icon;
     }
 

@@ -129,7 +129,7 @@ namespace Ordisoftware.HebrewWords
       string result = "";
       foreach ( var item in list )
         result += item.Word.Translation + Environment.NewLine;
-      WordTranslationsForm.Run(Reference, this, list.ToList());
+      FoundReferencesForm.Run(Reference, this, list.ToList());
     }
 
   }

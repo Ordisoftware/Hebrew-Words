@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -85,6 +86,19 @@ namespace Ordisoftware.HebrewWords
       EditRawText.SelectionStart = 0;
     }
 
+    private void UpdateViewELS50()
+    {
+      EditELS50All.Clear();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
+      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      {
+        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
+        EditELS50All.AppendText(Environment.NewLine);
+      }
+      EditELS50All.SelectionStart = 0;
+    }
+
     private void UpdateViewSearch()
     {
       Cursor = Cursors.WaitCursor;
@@ -133,19 +147,6 @@ namespace Ordisoftware.HebrewWords
         EditSearchResults.ResumeLayout();
         Cursor = Cursors.Default;
       }
-    }
-
-    private void UpdateViewELS50()
-    {
-      EditELS50All.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
-      foreach ( Data.DataSet.ChaptersRow chapter in list )
-      {
-        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
-        EditELS50All.AppendText(Environment.NewLine);
-      }
-      EditELS50All.SelectionStart = 0;
     }
 
     private void UpdateViewVerses()

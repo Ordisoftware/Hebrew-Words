@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="ButtonClose.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionReachReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAEXSURBVDhP3ZBPSwJRFMXPV1HctGrhFxBNx42EW1eBH6B9
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAEXSURBVDhP3ZBPSwJRFMXPV1HctGrhFxBNx42EW1eBH6B9
         JKaUWm0DNQRrkxC1cSdU0B80glApa3TVYpBxIfgNTvfNPNuMQm79weHxLueee9/DmmOU0Dy6BmPHmOjS
         akgATWuPWRVSQleXl6MmyjRuFcFwAVQBX1aeL6MUs7fOJg1tXYxqtmZVDibb/LST7I8TNO0zlp/Bzs8O
         c00wfoobbfcSlYk9e5fVV/yp3AErcp6/ge/jNI0TUNu9GLLBkx3hxTcc1Qdgreeq/gHmWmAkg3tt9xLK
@@ -135,7 +135,7 @@
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
         GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
         sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
         eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
@@ -150,7 +150,7 @@
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAIwSURBVDhPjZJvSBNhHMfXC3sZGdGL3lUv6oWVu2zTSbdh
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAIwSURBVDhPjZJvSBNhHMfXC3sZGdGL3lUv6oWVu2zTSbdh
         TSx80auE3kQUFtSyP1CULzJDYhSRqc3b1kUvDMZG9GJQGtaL0qCwaJnn7m6n2aZlJZvbbbd/fXu2GyQ4
         5z7wg+d5fp/vPdzvTrMUgWk08Pb98NuM8D+g1bLR4BkTBKcZItuEglqczz30rV8jZ4EUh2x8DNnoG0Dx
         IR0ZBW83obu1ylJQizPeW++L8reRnPcg/MGI8JgZ6fBLzA1Z8Om+wU+Udaq5Ary9HukFD+RAJyIfmxGf
@@ -162,5 +162,8 @@
         Q+S4Qu2WAcdo30oPKUz07/5JtrmZrM03ykViKQiO6ghZlv5tS5C7tVpdloNG8w+24EzQP6t53AAAAABJ
         RU5ErkJggg==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Références trouvées</value>
   </data>
 </root>
