@@ -314,8 +314,6 @@
     <Content Include="License\MPL 2.0.htm" />
     <Content Include="License\MPL 2.0.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

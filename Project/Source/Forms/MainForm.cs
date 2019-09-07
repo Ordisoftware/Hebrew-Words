@@ -762,20 +762,26 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(int book, int chapter, int verse)
     {
       SetView(ViewModeType.Verses);
-      if ( SelectBook.SelectedIndex != book - 1 && SelectChapter.SelectedIndex != chapter - 1 )
+      IsGotoRunning = true;
+      bool updated = false;
+      try
       {
-        IsGotoRunning = true;
-        try
+        if ( SelectBook.SelectedIndex != book - 1 )
         {
           SelectBook.SelectedIndex = book - 1;
-          SelectChapter.SelectedIndex = chapter - 1;
+          updated = true;
         }
-        finally
+        if ( SelectChapter.SelectedIndex != chapter - 1 )
         {
-          IsGotoRunning = false;
+          SelectChapter.SelectedIndex = chapter - 1;
+          updated = true;
         }
-        UpdateViews();
       }
+      finally
+      {
+        IsGotoRunning = false;
+      }
+      if (updated) UpdateViews();
       foreach ( var control in PanelViewVerses.Controls )
         if (control is Label)
         {
