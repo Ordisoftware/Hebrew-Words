@@ -80,7 +80,7 @@
     <Compile Include="Source\Forms\ExportForm.Designer.cs">
       <DependentUpon>ExportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.BackupDB.cs">
+    <Compile Include="Source\Forms\MainForm.Backup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Bookmarks.cs">
@@ -111,10 +111,10 @@
     <Compile Include="Source\Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\LettersControl.cs">
+    <Compile Include="Source\Components\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Forms\LettersControl.designer.cs">
+    <Compile Include="Source\Components\LettersControl.designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm.cs">
@@ -126,7 +126,7 @@
     <Compile Include="Source\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateView.cs">
+    <Compile Include="Source\Forms\MainForm.UpdateViews.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Keys.cs">
@@ -144,16 +144,16 @@
     <Compile Include="Source\Forms\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\StatControl.cs">
+    <Compile Include="Source\Components\StatControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Forms\StatControl.Designer.cs">
+    <Compile Include="Source\Components\StatControl.Designer.cs">
       <DependentUpon>StatControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\WordControl.cs">
+    <Compile Include="Source\Components\WordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Forms\WordControl.Designer.cs">
+    <Compile Include="Source\Components\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Program.cs" />
@@ -222,7 +222,7 @@
     <EmbeddedResource Include="Source\Forms\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\StatControl.fr.resx">
+    <EmbeddedResource Include="Source\Components\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\StatisticsForm.fr.resx">
@@ -231,14 +231,14 @@
     <EmbeddedResource Include="Source\Forms\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\StatControl.resx">
+    <EmbeddedResource Include="Source\Components\StatControl.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\WordControl.fr.resx">
+    <EmbeddedResource Include="Source\Components\WordControl.fr.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\WordControl.resx">
+    <EmbeddedResource Include="Source\Components\WordControl.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
