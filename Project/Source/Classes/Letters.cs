@@ -25,13 +25,6 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
-    /// Provide letter meaning translation
-    /// </summary>
-    public class MeaningTranslation : Dictionary<string, List<string>>
-    {
-    }
-
-    /// <summary>
     /// Indicate letters keyboard codes.
     /// </summary>
     static public readonly string[] Codes = 
@@ -61,7 +54,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string SetFinale(string str, bool enable)
     {
-      var array = new Dictionary<char, char>(enable ? FinaleEnable : FinaleDisable);
+      var array = enable ? FinaleEnable : FinaleDisable;
       str = str.Trim();
       if ( str.Length == 0 ) return str;
       char c = str[0];

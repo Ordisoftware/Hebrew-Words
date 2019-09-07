@@ -65,7 +65,8 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Classes\ExportDocX.cs" />
-    <Compile Include="Source\Classes\Items.cs" />
+    <Compile Include="Source\Classes\DataItems.cs" />
+    <Compile Include="Source\Classes\BooksNames.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\EditBooksForm.cs">
       <SubType>Form</SubType>

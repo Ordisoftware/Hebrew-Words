@@ -30,51 +30,11 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     /// <param name="values">The dictionary containing langs>translations.</param>
     /// <returns></returns>
-    static public string GetLang(this Dictionary<string, string> values)
+    static public T GetLang<T>(this Dictionary<string, T> values)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
       if ( !values.ContainsKey(lang) ) lang = "en";
       return values[lang];
-    }
-
-    /// <summary>
-    /// Get the string list translation.
-    /// </summary>
-    /// <param name="values">The dictionary containing langs>translations.</param>
-    /// <returns></returns>
-    static public string[] GetLang(this Dictionary<string, string[]> values)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values.ContainsKey(lang) ) lang = "en";
-      return values[lang];
-    }
-
-    /// <summary>
-    /// Get the string translation of an enum value.
-    /// </summary>
-    /// <typeparam name="T">The type that is an enum.</typeparam>
-    /// <param name="values">The dictionary containing values>langs>translations.</param>
-    /// <param name="value">The value to translate.</param>
-    /// <returns></returns>
-    static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[value].ContainsKey(lang) ) lang = "en";
-      return values[value][lang];
-    }
-
-    /// <summary>
-    /// Return the string list translation of a Dico list.
-    /// </summary>
-    /// <param name="index">The index.</param>
-    /// <returns></returns>
-    static public List<string> GetLang(this List<Letters.MeaningTranslation> values, int index)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[index].ContainsKey(lang) ) lang = "en";
-      List<string> value;
-      values[index].TryGetValue(lang, out value);
-      return value;
     }
 
     static public readonly Dictionary<string, string> ApplicationDescriptionText
