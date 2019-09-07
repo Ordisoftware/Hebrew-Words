@@ -88,6 +88,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewSearch()
     {
       Cursor = Cursors.WaitCursor;
+      EditSearchResults.SuspendLayout();
       try
       {
         EditSearchResults.Clear();
@@ -129,6 +130,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        EditSearchResults.ResumeLayout();
         Cursor = Cursors.Default;
       }
     }
@@ -151,6 +153,7 @@ namespace Ordisoftware.HebrewWords
       var item = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = item.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
+      Cursor = Cursors.WaitCursor;
       PanelViewVerses.SuspendLayout();
       try
       {
@@ -227,9 +230,10 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         PanelViewVerses.ResumeLayout();
+        Cursor = Cursors.Default;
       }
     }
-
+    
     private void VerseCommentTextChanged(object sender, EventArgs e)
     {
       if ( IsLoading ) return;

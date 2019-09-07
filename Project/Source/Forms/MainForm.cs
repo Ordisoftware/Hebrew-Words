@@ -53,6 +53,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
+    private BookChapterItem CurrentReference = new BookChapterItem();
+
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -151,6 +153,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem() { Book = book });
       SelectBook.SelectedIndex = 0;
+      CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
     }
 
     /// <summary>
@@ -164,6 +167,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.ChaptersRow chapter in list )
         SelectChapter.Items.Add(new ChapterItem() { Chapter = chapter });
       SelectChapter.SelectedIndex = 0;
+      CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
     }
 
     /// <summary>
@@ -320,6 +324,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewRawText_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       SetView(ViewModeType.Text);
     }
 
@@ -330,6 +335,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       SetView(ViewModeType.Search);
     }
 
@@ -654,14 +660,15 @@ namespace Ordisoftware.HebrewWords
           foreach ( Data.DataSet.VersesRow verse in list )
           {
             string str = "";
-            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() ) str += word.Translation;
-              if ( str == "" )
-              {
-                found = verse;
-                break;
-              }
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+              str += word.Translation;
+            if ( str == "" )
+            {
+              found = verse;
+              break;
+            }
           }
-          if (found != null)
+          if ( found != null )
             GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
           else
             GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
@@ -745,13 +752,6 @@ namespace Ordisoftware.HebrewWords
 
     private bool IsGotoRunning = false;
 
-    /// <summary>
-    /// Go to reference item.
-    /// </summary>
-    public void GoTo(ReferenceItem reference)
-    {
-      GoTo(reference.Book.Number, reference.Chapter.Number, reference.Verse.Number);
-    }
 
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
@@ -761,19 +761,32 @@ namespace Ordisoftware.HebrewWords
     /// <param name="verse"></param>
     public void GoTo(int book, int chapter, int verse)
     {
+      var reference = new ReferenceItem();
+      reference.Book = DataSet.Books[book - 1];
+      reference.Chapter = reference.Book.GetChaptersRows()[chapter - 1];
+      reference.Verse = reference.Chapter.GetVersesRows()[verse - 1];
+      GoTo(reference);
+    }
+
+    /// <summary>
+    /// Go to book / chapter / verse into view verses panel.
+    /// </summary>
+    /// <param name="reference">ReferenceItem instance.</param>
+    public void GoTo(ReferenceItem reference)
+    {
       SetView(ViewModeType.Verses);
       IsGotoRunning = true;
       bool updated = false;
       try
       {
-        if ( SelectBook.SelectedIndex != book - 1 )
+        if ( SelectBook.SelectedIndex != reference.Book.Number - 1 )
         {
-          SelectBook.SelectedIndex = book - 1;
+          SelectBook.SelectedIndex = reference.Book.Number - 1;
           updated = true;
         }
-        if ( SelectChapter.SelectedIndex != chapter - 1 )
+        if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
         {
-          SelectChapter.SelectedIndex = chapter - 1;
+          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
           updated = true;
         }
       }
@@ -781,12 +794,16 @@ namespace Ordisoftware.HebrewWords
       {
         IsGotoRunning = false;
       }
-      if (updated) UpdateViews();
+      if ( updated )
+      {
+        CurrentReference = reference;
+        UpdateViews();
+      }
       foreach ( var control in PanelViewVerses.Controls )
         if (control is Label)
         {
           var label = control as Label;
-          if ( label.Text == verse.ToString() )
+          if ( label.Text == reference.Verse.Number.ToString() )
           {
             PanelViewVerses.Focus();
             PanelViewVerses.ScrollControlIntoView(label);
@@ -838,9 +855,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
       var item = new ReferenceItem();
-      item.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
-      item.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-      item.Verse = DataSet.Verses[Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text) - 1];
+      item.Book = CurrentReference.Book;
+      item.Chapter = CurrentReference.Chapter;
+      int index = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text) - 1;
+      item.Verse = CurrentReference.Chapter.GetVersesRows()[index];
       Bookmarks.Add(item);
       UpdateBookmarks();
     }
