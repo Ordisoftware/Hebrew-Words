@@ -161,8 +161,7 @@ namespace Ordisoftware.HebrewWords
         {
           chapter.ELS50 = "";
           DataSet.Chapters.AddChaptersRow(chapter);
-          foreach ( var v in Letters.FinaleDisable )
-            strELS50 = strELS50.Replace(v.Key, v.Value);
+          strELS50 = Letters.UnFinaleAll(strELS50);
           int i = strELS50.Length - 1;
           while ( i >= 0 && strELS50[i] != 't' ) i--;
           string res = "";

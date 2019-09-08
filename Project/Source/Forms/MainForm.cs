@@ -818,7 +818,13 @@ namespace Ordisoftware.HebrewWords
       ActionViewSearch.PerformClick();
       EditLetters.Input.Text = word;
     }
-      
+
+    private Control GetMenuItemSourceControl(object sender)
+    {
+      if ( !( sender is ToolStripMenuItem ) ) throw new Exception("Wrong sender type: ToolStripMenuItem expected.");
+      return ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
+    }
+
     private void ActionOpenVerseOnline_Click(object sender, EventArgs e)
     {
       int verse;
@@ -826,9 +832,9 @@ namespace Ordisoftware.HebrewWords
         verse = Convert.ToInt32(( (Label)sender ).Text);
       else
       if ( sender is ToolStripMenuItem )
-        verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+        verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       else
-        throw new Exception("Code error in ActionOpenVerseOnline_Click.");
+        throw new Exception("Wrong sender type: Label or ToolStripMenuItem expected.");
       Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, SelectChapter.SelectedIndex + 1, verse);
     }
 
@@ -836,7 +842,7 @@ namespace Ordisoftware.HebrewWords
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Book;
       var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-      int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
       if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
@@ -846,7 +852,7 @@ namespace Ordisoftware.HebrewWords
     {
       Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
       Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
-      int verse = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       Program.Settings.BookmarkMasterVerse = verse;
       Program.Settings.Store();
       UpdateBookmarks();
@@ -857,7 +863,7 @@ namespace Ordisoftware.HebrewWords
       var item = new ReferenceItem();
       item.Book = CurrentReference.Book;
       item.Chapter = CurrentReference.Chapter;
-      int index = Convert.ToInt32(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text) - 1;
+      int index = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
       item.Verse = CurrentReference.Chapter.GetVersesRows()[index];
       Bookmarks.Add(item);
       UpdateBookmarks();

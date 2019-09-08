@@ -35,7 +35,10 @@ namespace Ordisoftware.HebrewWords
     static private Font FontHebrew = new Font("Hebrew");
     static private Font FontCalibri = new Font("Calibri");
 
-    static public void Run(string filename, Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
+    static public void Run(string filename,
+                           Data.DataSet.BooksRow book,
+                           bool includeTranslation,
+                           Func<bool> showProgress)
     {
       {
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -59,7 +62,10 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation)
+    static public void Run(string filename, 
+                           Data.DataSet.BooksRow book, 
+                           Data.DataSet.ChaptersRow chapter, 
+                           bool includeTranslation)
     {
       {
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -79,7 +85,11 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation, int verse)
+    static public void Run(string filename, 
+                           Data.DataSet.BooksRow book, 
+                           Data.DataSet.ChaptersRow chapter, 
+                           bool includeTranslation, 
+                           int verse)
     {
       {
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -148,7 +158,12 @@ namespace Ordisoftware.HebrewWords
       Document.InsertParagraph().AppendLine();
     }
 
-    static private void SetCellSize(Cell cell, int width, int marginTop, int marginBottom, int MarginLeft, int MarginRight)
+    static private void SetCellSize(Cell cell, 
+                                    int width, 
+                                    int marginTop, 
+                                    int marginBottom, 
+                                    int MarginLeft, 
+                                    int MarginRight)
     {
       cell.Width = width;
       cell.MarginTop = marginTop;

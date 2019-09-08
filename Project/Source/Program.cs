@@ -39,27 +39,26 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate filename of the application's icon.
     /// </summary>
-    static public readonly string IconFilename = RootPath + "Application.ico";
+    static public readonly string IconFilename 
+      = RootPath + "Application.ico";
 
     /// <summary>
     /// Indicate the extension of database file.
     /// </summary>
-    static public readonly string DBFileExtension = ".sqlite";
+    static public readonly string DBFileExtension 
+      = ".sqlite";
 
     /// <summary>
     /// Indicate filename of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootPath
-      + "Help" + Path.DirectorySeparatorChar
-      + "index.htm";
+      = RootPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
 
     /// <summary>
     /// Indicate documents folder path.
     /// </summary>
     static public readonly string DocumentsPath
-      = RootPath
-      + "Documents" + Path.DirectorySeparatorChar;
+      = RootPath + "Documents" + Path.DirectorySeparatorChar;
 
     static public string UserDataFolder { get; private set; }
 
@@ -114,8 +113,7 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenHebrewLetters(string hebrew)
     {
-      foreach ( var v in Letters.FinaleDisable )
-        hebrew = hebrew.Replace(v.Key, v.Value);
+      hebrew = Letters.UnFinaleAll(hebrew);
       using ( var process = new Process() )
         try
         {
@@ -165,5 +163,3 @@ namespace Ordisoftware.HebrewWords
   }
 
 }
-
-

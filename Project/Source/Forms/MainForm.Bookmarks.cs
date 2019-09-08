@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    List<ReferenceItem> Bookmarks = new List<ReferenceItem>();
+    private List<ReferenceItem> Bookmarks = new List<ReferenceItem>();
 
     internal void UpdateBookmarks()
     {

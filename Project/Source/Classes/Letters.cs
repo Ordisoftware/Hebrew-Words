@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate finale letters enabled keys values.
     /// </summary>
-    static internal Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
+    static private Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
     {
       { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
     };
@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate finale letters disabled keys values.
     /// </summary>
-    static internal Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
+    static private Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
     {
       { 'k', '!' }, { 'm', ',' }, { 'n', ']' }, { 'p', '[' }, { 'j', '/' }
     };
@@ -65,6 +65,16 @@ namespace Ordisoftware.HebrewWords
           break;
         }
       str = c + str.Remove(0, 1);
+      return str;
+    }
+
+    /// <summary>
+    // Convert all finale letters to non finale.
+    /// </summary>
+    static public string UnFinaleAll(string str)
+    {
+      foreach ( var v in FinaleDisable )
+        str = str.Replace(v.Key, v.Value);
       return str;
     }
 

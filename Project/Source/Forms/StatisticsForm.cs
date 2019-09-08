@@ -132,15 +132,10 @@ namespace Ordisoftware.HebrewWords
                   orderby book.Number
                   select book;
       foreach ( Data.DataSet.BooksRow book in books )
-      {
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
           foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
             foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-            {
-              string str = word.Hebrew;
-              foreach ( var letter in Letters.FinaleDisable )
-                str = str.Replace(letter.Key, letter.Value);
-              foreach ( char letter in str )
+              foreach ( char letter in Letters.UnFinaleAll(word.Hebrew) )
               {
                 index++;
                 if ( index == lcount )
@@ -151,25 +146,28 @@ namespace Ordisoftware.HebrewWords
                   return;
                 }
               }
-            }
-      }
     }
-
+  
     private void LabelMiddleValue_MouseEnter(object sender, EventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Hand;
-      ( sender as Label ).ForeColor = System.Drawing.Color.DarkRed;
+      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
+      var label = (Label)sender;
+      label.Cursor = Cursors.Hand;
+      label.ForeColor = System.Drawing.Color.DarkRed;
     }
 
     private void LabelMiddleValue_MouseLeave(object sender, EventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Default;
-      ( sender as Label ).ForeColor = System.Drawing.SystemColors.ControlText;
+      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
+      var label = (Label)sender;
+      label.Cursor = Cursors.Hand;
+      label.ForeColor = System.Drawing.SystemColors.ControlText;
     }
 
     private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
     {
-      Program.OpenHebrewLetters(( sender as Label ).Text);
+      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
+      Program.OpenHebrewLetters(((Label)sender).Text);
     }
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

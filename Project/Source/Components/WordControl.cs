@@ -39,6 +39,7 @@ namespace Ordisoftware.HebrewWords
       }
       set
       {
+        if ( _Word == value ) return;
         _Word = value;
         LabelHebrew.Text = value.Hebrew;
         EditTranslation.Text = value.Translation;
@@ -90,46 +91,48 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    private Control GetMenuItemSourceControl(object sender)
+    {
+      return ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
+    }
+
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.OpenHebrewLetters(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      Program.OpenHebrewLetters(GetMenuItemSourceControl(sender).Text);
     }
 
     private void ActionOnlineSearch_Click(object sender, EventArgs e)
     {
-      Program.OpenOnlineConcordance((string)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Tag);
+      Program.OpenOnlineConcordance((string)GetMenuItemSourceControl(sender).Tag);
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      Clipboard.SetText(GetMenuItemSourceControl(sender).Text);
     }
 
     private void ActionSearch_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SearchWord(( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text);
+      MainForm.Instance.SearchWord(GetMenuItemSourceControl(sender).Text);
     }
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      string wordHebrew = ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl.Text;
-      var list = from book in MainForm.Instance.DataSet.Books
-                 from chapter in book.GetChaptersRows()
-                 from verse in chapter.GetVersesRows()
-                 from word in verse.GetWordsRows()
-                 where word.Hebrew == wordHebrew
-                    && word.Translation != ""
-                 select new WordReferencedItem
-                        {
-                          Book = book,
-                          Chapter = chapter,
-                          Verse = verse,
-                          Word = word
-                        };
-      string result = "";
-      foreach ( var item in list )
-        result += item.Word.Translation + Environment.NewLine;
-      FoundReferencesForm.Run(Reference, this, list.ToList());
+      string wordHebrew = GetMenuItemSourceControl(sender).Text;
+      var query = from book in MainForm.Instance.DataSet.Books
+                  from chapter in book.GetChaptersRows()
+                  from verse in chapter.GetVersesRows()
+                  from word in verse.GetWordsRows()
+                  where word.Hebrew == wordHebrew
+                     && word.Translation != ""
+                  select new WordReferencedItem
+                         {
+                           Book = book,
+                           Chapter = chapter,
+                           Verse = verse,
+                           Word = word
+                         };
+      FoundReferencesForm.Run(Reference, this, query.ToList());
     }
 
   }

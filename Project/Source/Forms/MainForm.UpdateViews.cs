@@ -16,7 +16,6 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -238,6 +237,7 @@ namespace Ordisoftware.HebrewWords
     private void VerseCommentTextChanged(object sender, EventArgs e)
     {
       if ( IsLoading ) return;
+      if ( !( sender is TextBox ) ) throw new Exception("Wrong sender type: TextBox expected.");
       var textbox = (TextBox)sender;
       ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
       ActionSave.Enabled = true;
@@ -245,14 +245,18 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumberMouseEnter(object sender, EventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Hand;
-      ( sender as Label ).ForeColor = Color.Blue;
+      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
+      var label = (Label)sender;
+      label.Cursor = Cursors.Hand;
+      label.ForeColor = Color.Blue;
     }
 
     private void LabelVerseNumberMouseLeave(object sender, EventArgs e)
     {
-      ( sender as Label ).Cursor = Cursors.Default;
-      ( sender as Label ).ForeColor = Color.DarkBlue;
+      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
+      var label = (Label)sender;
+      label.Cursor = Cursors.Default;
+      label.ForeColor = Color.DarkBlue;
     }
 
     private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)
