@@ -65,6 +65,7 @@ namespace Ordisoftware.HebrewWords
     private void LabelReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       MainForm.Instance.GoTo(Reference);
+      WordControl.Focus();
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)
