@@ -96,7 +96,9 @@ namespace Ordisoftware.HebrewWords
       LoadBookmarks();
       UpdateBookmarks();
       IsLoading = false;
-      GoTo(Program.Settings.BookmarkMasterBook, Program.Settings.BookmarkMasterChapter, Program.Settings.BookmarkMasterVerse);
+      GoTo(Program.Settings.BookmarkMasterBook, 
+           Program.Settings.BookmarkMasterChapter, 
+           Program.Settings.BookmarkMasterVerse);
     }
 
     /// <summary>
@@ -413,7 +415,8 @@ namespace Ordisoftware.HebrewWords
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+      if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
+        return;
       DataSet.Clear();
       File.Delete(Program.UserDataFolder + filename);
       File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolder + filename);
