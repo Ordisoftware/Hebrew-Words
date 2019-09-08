@@ -51,9 +51,9 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate last showned tooltip.
     /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
+    private ToolTip _LastToolTip = new ToolTip();
 
-    private BookChapterItem CurrentReference = new BookChapterItem();
+    private BookChapterItem _CurrentReference = new BookChapterItem();
 
     /// <summary>
     /// Default constructor.
@@ -93,8 +93,9 @@ namespace Ordisoftware.HebrewWords
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-      IsLoading = false;
+      LoadBookmarks();
       UpdateBookmarks();
+      IsLoading = false;
       GoTo(Program.Settings.BookmarkMasterBook, Program.Settings.BookmarkMasterChapter, Program.Settings.BookmarkMasterVerse);
     }
 
@@ -153,7 +154,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem() { Book = book });
       SelectBook.SelectedIndex = 0;
-      CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      _CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
     }
 
     /// <summary>
@@ -167,7 +168,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.ChaptersRow chapter in list )
         SelectChapter.Items.Add(new ChapterItem() { Chapter = chapter });
       SelectChapter.SelectedIndex = 0;
-      CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+      _CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
     }
 
     /// <summary>
@@ -252,10 +253,10 @@ namespace Ordisoftware.HebrewWords
     private void TimerTooltip_Tick(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
-      var item = (ToolStripItem)LastToolTip.Tag;
+      var item = (ToolStripItem)_LastToolTip.Tag;
       var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
-      LastToolTip.Tag = sender;
-      LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+      _LastToolTip.Tag = sender;
+      _LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
       TimerTooltip.Enabled = false;
     }
 
@@ -266,8 +267,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !EditShowTips.Checked ) return;
       if ( !( sender is ToolStripItem ) ) return;
-      if ( LastToolTip.Tag == sender ) return;
-      LastToolTip.Tag = sender;
+      if ( _LastToolTip.Tag == sender ) return;
+      _LastToolTip.Tag = sender;
       if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
       TimerTooltip.Enabled = true;
     }
@@ -279,8 +280,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !EditShowTips.Checked ) return;
       TimerTooltip.Enabled = false;
-      LastToolTip.Tag = null;
-      LastToolTip.Hide(ToolStrip);
+      _LastToolTip.Tag = null;
+      _LastToolTip.Hide(ToolStrip);
     }
 
     /// <summary>
@@ -796,7 +797,7 @@ namespace Ordisoftware.HebrewWords
       }
       if ( updated )
       {
-        CurrentReference = reference;
+        _CurrentReference = reference;
         UpdateViews();
       }
       foreach ( var control in PanelViewVerses.Controls )
@@ -861,11 +862,11 @@ namespace Ordisoftware.HebrewWords
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
       var item = new ReferenceItem();
-      item.Book = CurrentReference.Book;
-      item.Chapter = CurrentReference.Chapter;
+      item.Book = _CurrentReference.Book;
+      item.Chapter = _CurrentReference.Chapter;
       int index = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
-      item.Verse = CurrentReference.Chapter.GetVersesRows()[index];
-      Bookmarks.Add(item);
+      item.Verse = _CurrentReference.Chapter.GetVersesRows()[index];
+      AddBookmark(item);
       UpdateBookmarks();
     }
 
@@ -874,8 +875,9 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;
-      Bookmarks.Clear();
+      _Bookmarks.Clear();
       Program.Settings.Store();
+      SaveBookmarks();
       UpdateBookmarks();
     }
 

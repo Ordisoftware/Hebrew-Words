@@ -23,9 +23,9 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font HebrewFont = new Font("Hebrew", 12f);
+    private Font _HebrewFont = new Font("Hebrew", 12f);
 
-    private Font LatinFont = new Font("Verdana", 10f);
+    private Font _LatinFont = new Font("Verdana", 10f);
 
     private void AddTextRightAligned(RichTextBox control, Font font, string str)
     {
@@ -78,8 +78,8 @@ namespace Ordisoftware.HebrewWords
         string str = "";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = word.Hebrew + " " + str;
-        AddTextRightAligned(EditRawText, HebrewFont, str);
-        AddTextRightAligned(EditRawText, LatinFont, ":" + verse.Number);
+        AddTextRightAligned(EditRawText, _HebrewFont, str);
+        AddTextRightAligned(EditRawText, _LatinFont, ":" + verse.Number);
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectionStart = 0;
@@ -91,8 +91,8 @@ namespace Ordisoftware.HebrewWords
       var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
-        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
+        AddTextRightAligned(EditELS50All, _HebrewFont, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, _LatinFont, " :" + chapter.Number);
         EditELS50All.AppendText(Environment.NewLine);
       }
       EditELS50All.SelectionStart = 0;
@@ -127,12 +127,12 @@ namespace Ordisoftware.HebrewWords
                     var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
                               ? Color.DarkRed
                               : SystemColors.ControlText;
-                    AddTextRightAligned(EditSearchResults, HebrewFont, " ");
-                    AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
+                    AddTextRightAligned(EditSearchResults, _HebrewFont, " ");
+                    AddTextRightAligned(EditSearchResults, _HebrewFont, w.Hebrew, color);
                     strTranslation = w.Translation + " " + strTranslation;
                   }
                   string strRef = " :" + verse.Number + "." + chapter.Number + "." + book.Name;
-                  AddTextRightAligned(EditSearchResults, LatinFont, strRef);
+                  AddTextRightAligned(EditSearchResults, _LatinFont, strRef);
                   EditSearchResults.AppendText(Environment.NewLine);
                   EditSearchResults.AppendText(strTranslation);
                   EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
