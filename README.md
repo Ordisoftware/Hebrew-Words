@@ -59,15 +59,15 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### __________ - Version 2.0
 
-- Add context menu on hebrew words and verses numbers.
+- Add context menu on hebrew words and on verses numbers.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
-- Add bookmarks of verses reference.
-- Add master bookmark.
-- Add go to verse shortcut.
-- Improve translation view rendering.
+- Add bookmarks of verses' references.
+- Add master bookmark kept at startup.
+- Add Go To verse button.
+- Improve translations rendering.
 - Improve search results rendering.
-- Fix select backup path icon.
+- Fix select backup path icon not implemented.
 
 #### 2019.09.03 - Version 1.8
 
