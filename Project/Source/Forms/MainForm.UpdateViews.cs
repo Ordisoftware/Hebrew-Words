@@ -42,6 +42,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViews()
     {
+      if ( IsLoading ) return;
       UpdateViewVerses();
       UpdateViewTranslations();
       UpdateViewRawText();

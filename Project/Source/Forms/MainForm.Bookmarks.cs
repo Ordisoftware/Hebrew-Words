@@ -34,6 +34,7 @@ namespace Ordisoftware.HebrewWords
       if ( File.Exists(_BookmarksFilename) )
         try
         {
+          _Bookmarks.Clear();
           var list = File.ReadLines(_BookmarksFilename);
           for (int index = list.Count() - 1; index >= 0; index-- )
           {

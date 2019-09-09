@@ -84,21 +84,28 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Shown(object sender, EventArgs e)
     {
       IsLoading = true;
-      OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
-      SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
-      SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolder;
-      SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolder;
-      CheckUpdate(true);
-      DoBackupDB();
-      LoadData();
-      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
-      if ( TimerAutoSave.Enabled )
-        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-      LoadBookmarks();
-      UpdateBookmarks();
-      IsLoading = false;
-      GoTo(Program.Settings.BookmarkMasterBook, 
-           Program.Settings.BookmarkMasterChapter, 
+      try
+      {
+        OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
+        SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
+        SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolder;
+        SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolder;
+        CheckUpdate(true);
+        DoBackupDB();
+        LoadData();
+        TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+        if ( TimerAutoSave.Enabled )
+          TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+        LoadBookmarks();
+        UpdateBookmarks();
+      }
+      finally
+      {
+        IsLoading = false;
+      }
+      UpdateViews();
+      GoTo(Program.Settings.BookmarkMasterBook,
+           Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse);
     }
 
@@ -370,9 +377,23 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      new EditBooksForm().ShowDialog();
-      BooksTableAdapter.Fill(DataSet.Books);
-      InitBooksCombobox();
+      int book = CurrentReference.Book.Number;
+      int chapter = CurrentReference.Chapter.Number;
+      int verse = CurrentReference.Verse.Number;
+      IsLoading = true;
+      try
+      {
+        new EditBooksForm().ShowDialog();
+        BooksTableAdapter.Fill(DataSet.Books);
+        InitBooksCombobox();
+        LoadBookmarks();
+        UpdateBookmarks();
+      }
+      finally
+      {
+        IsLoading = false;
+      }
+      GoTo(book, chapter, verse);
     }
 
     /// <summary>
@@ -811,6 +832,8 @@ namespace Ordisoftware.HebrewWords
               PanelViewVerses.Focus();
               PanelViewVerses.ScrollControlIntoView(label);
               PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+              int index = PanelViewVerses.Controls.IndexOf(label);
+              ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation.Focus();
               break;
             }
           }

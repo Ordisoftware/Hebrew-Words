@@ -160,6 +160,12 @@
   <data name="LabelCommentaryLinesCount.Text" xml:space="preserve">
     <value>Nombre de lignes pour un commentaire</value>
   </data>
+  <data name="LabelBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="LabelBookmarksCount.Text" xml:space="preserve">
+    <value>Nombre de signets</value>
+  </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -195,14 +201,14 @@
         qfkFIaj3TySvysIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Clic sur mot hébreu ouvre</value>
+  </data>
   <data name="SelectOpenOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 17</value>
   </data>
   <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
     <value>Requête de recherche en ligne</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Clic sur mot hébreu ouvre</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 12</value>
