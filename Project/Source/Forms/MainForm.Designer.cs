@@ -842,18 +842,21 @@
       resources.ApplyResources(this.ActionNew, "ActionNew");
       this.ActionNew.Name = "ActionNew";
       this.ActionNew.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionNew.Click += new System.EventHandler(this.ActionNew_Click);
       // 
       // ActionRestore
       // 
       resources.ApplyResources(this.ActionRestore, "ActionRestore");
       this.ActionRestore.Name = "ActionRestore";
       this.ActionRestore.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRestore.Click += new System.EventHandler(this.ActionRestore_Click);
       // 
       // ActionBackup
       // 
       resources.ApplyResources(this.ActionBackup, "ActionBackup");
       this.ActionBackup.Name = "ActionBackup";
       this.ActionBackup.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionBackup.Click += new System.EventHandler(this.ActionBackup_Click);
       // 
       // ActionSave
       // 
