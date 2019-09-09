@@ -1208,15 +1208,15 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionExportVerse;
     private System.Windows.Forms.ToolStripDropDownButton MenuDatabase;
-    internal System.Windows.Forms.ToolStripMenuItem ActionNew;
-    internal System.Windows.Forms.ToolStripMenuItem ActionRestore;
-    internal System.Windows.Forms.ToolStripMenuItem ActionBackup;
     private System.Windows.Forms.ToolStripDropDownButton MenuBookmarks;
     private System.Windows.Forms.ToolStripMenuItem ActionAddToBookmarks;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionSetAsBookmarkMaster;
     private System.Windows.Forms.ToolStripMenuItem ActionClearBookmarks;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripMenuItem ActionNew;
+    private System.Windows.Forms.ToolStripMenuItem ActionRestore;
+    private System.Windows.Forms.ToolStripMenuItem ActionBackup;
   }
 }
 

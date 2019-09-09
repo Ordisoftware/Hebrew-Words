@@ -2281,7 +2281,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 46</value>
+    <value>206, 46</value>
   </data>
   <data name="ActionNew.Text" xml:space="preserve">
     <value>New</value>
@@ -2331,7 +2331,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 46</value>
+    <value>206, 46</value>
   </data>
   <data name="ActionRestore.Text" xml:space="preserve">
     <value>Restore</value>
@@ -2342,35 +2342,35 @@
   <data name="ActionBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionBackup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2380,7 +2380,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 46</value>
+    <value>206, 46</value>
   </data>
   <data name="ActionBackup.Text" xml:space="preserve">
     <value>Backup</value>
