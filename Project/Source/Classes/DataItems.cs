@@ -44,22 +44,9 @@ namespace Ordisoftware.HebrewWords
   }
 
   /// <summary>
-  /// Provide book and chapter reference item
-  /// </summary>
-  public class BookChapterItem
-  {
-    public Data.DataSet.BooksRow Book { get; set; }
-    public Data.DataSet.ChaptersRow Chapter { get; set; }
-    public override string ToString()
-    {
-      return Book.Name + " " + Chapter.Number;
-    }
-  }
-
-  /// <summary>
   /// Provide reference item
   /// </summary>
-  public class ReferenceItem : BookChapterItem
+  public class ReferenceItem
   {
     public Data.DataSet.BooksRow Book { get; set; }
     public Data.DataSet.ChaptersRow Chapter { get; set; }

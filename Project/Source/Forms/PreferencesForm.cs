@@ -26,6 +26,8 @@ namespace Ordisoftware.HebrewWords
   public partial class PreferencesForm : Form
   {
 
+    private int CommentaryLinesCount;
+
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -53,6 +55,7 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
+      CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
     }
 
     /// <summary>
@@ -79,6 +82,13 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
+      if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value )
+      {
+        var reference = MainForm.Instance.CurrentReference;
+        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+        MainForm.Instance.UpdateViewVerses();
+        MainForm.Instance.GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+      }
     }
 
     /// <summary>

@@ -148,8 +148,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private void UpdateViewVerses()
+    internal void UpdateViewVerses()
     {
+      CurrentReference.Verse = null;
       var item = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = item.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;

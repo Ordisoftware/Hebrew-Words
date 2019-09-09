@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private ToolTip _LastToolTip = new ToolTip();
 
-    private BookChapterItem _CurrentReference = new BookChapterItem();
+    public ReferenceItem CurrentReference { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -63,6 +63,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      CurrentReference = new ReferenceItem();
     }
 
     /// <summary>
@@ -150,13 +151,12 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Initialize books combobox.
     /// </summary>
-    private void InitBooksCombobox()
+    internal void InitBooksCombobox()
     {
       SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem() { Book = book });
       SelectBook.SelectedIndex = 0;
-      _CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
     }
 
     /// <summary>
@@ -170,7 +170,6 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.ChaptersRow chapter in list )
         SelectChapter.Items.Add(new ChapterItem() { Chapter = chapter });
       SelectChapter.SelectedIndex = 0;
-      _CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
     }
 
     /// <summary>
@@ -466,7 +465,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       new PreferencesForm().ShowDialog();
-      InitBooksCombobox();
+      
     }
 
     /// <summary>
@@ -697,8 +696,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
+      CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
       InitChaptersCombobox();
-      SetView(Program.Settings.CurrentView, true);
     }
 
     /// <summary>
@@ -708,6 +707,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
+      CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
       if ( !IsGotoRunning ) UpdateViews();
       SetView(Program.Settings.CurrentView, true);
       ActionSave.PerformClick();
@@ -778,6 +778,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="reference">ReferenceItem instance.</param>
     public void GoTo(ReferenceItem reference)
     {
+      if ( reference == null ) return;
       SetView(ViewModeType.Verses);
       IsGotoRunning = true;
       bool updated = false;
@@ -799,22 +800,21 @@ namespace Ordisoftware.HebrewWords
         IsGotoRunning = false;
       }
       if ( updated )
-      {
-        _CurrentReference = reference;
         UpdateViews();
-      }
-      foreach ( var control in PanelViewVerses.Controls )
-        if (control is Label)
-        {
-          var label = control as Label;
-          if ( label.Text == reference.Verse.Number.ToString() )
+      if ( reference.Verse != null )
+        foreach ( var control in PanelViewVerses.Controls )
+          if ( control is Label )
           {
-            PanelViewVerses.Focus();
-            PanelViewVerses.ScrollControlIntoView(label);
-            PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-            return;
+            var label = control as Label;
+            if ( label.Text == reference.Verse.Number.ToString() )
+            {
+              PanelViewVerses.Focus();
+              PanelViewVerses.ScrollControlIntoView(label);
+              PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+              break;
+            }
           }
-        }
+      CurrentReference = reference;
     }
 
     public void SearchWord(string word)
@@ -865,10 +865,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
       var item = new ReferenceItem();
-      item.Book = _CurrentReference.Book;
-      item.Chapter = _CurrentReference.Chapter;
+      item.Book = CurrentReference.Book;
+      item.Chapter = CurrentReference.Chapter;
       int index = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
-      item.Verse = _CurrentReference.Chapter.GetVersesRows()[index];
+      item.Verse = CurrentReference.Chapter.GetVersesRows()[index];
       AddBookmark(item);
       UpdateBookmarks();
     }
