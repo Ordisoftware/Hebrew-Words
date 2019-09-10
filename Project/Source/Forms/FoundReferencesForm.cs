@@ -101,6 +101,7 @@ namespace Ordisoftware.HebrewWords
       if ( ListView.SelectedItems.Count < 1 ) return;
       var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       WordControl.EditTranslation.Text = str;
+      Close();
     }
 
   }

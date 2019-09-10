@@ -121,10 +121,13 @@
     <value>Fermer</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 70</value>
+  </data>
   <data name="ActionReachReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAEXSURBVDhP3ZBPSwJRFMXPV1HctGrhFxBNx42EW1eBH6B9
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAEXSURBVDhP3ZBPSwJRFMXPV1HctGrhFxBNx42EW1eBH6B9
         JKaUWm0DNQRrkxC1cSdU0B80glApa3TVYpBxIfgNTvfNPNuMQm79weHxLueee9/DmmOU0Dy6BmPHmOjS
         akgATWuPWRVSQleXl6MmyjRuFcFwAVQBX1aeL6MUs7fOJg1tXYxqtmZVDibb/LST7I8TNO0zlp/Bzs8O
         c00wfoobbfcSlYk9e5fVV/yp3AErcp6/ge/jNI0TUNu9GLLBkx3hxTcc1Qdgreeq/gHmWmAkg3tt9xLK
@@ -132,10 +135,16 @@
         07mtI8Av7YSLTz/D1/EAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="ActionReachReference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionReachReference.Text" xml:space="preserve">
+    <value>Atteindre référence</value>
+  </data>
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
         GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
         sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
         eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
@@ -147,10 +156,16 @@
         rkJggg==
 </value>
   </data>
+  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionCopyTranslation.Text" xml:space="preserve">
+    <value>Copier la traduction</value>
+  </data>
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAIwSURBVDhPjZJvSBNhHMfXC3sZGdGL3lUv6oWVu2zTSbdh
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAIwSURBVDhPjZJvSBNhHMfXC3sZGdGL3lUv6oWVu2zTSbdh
         TSx80auE3kQUFtSyP1CULzJDYhSRqc3b1kUvDMZG9GJQGtaL0qCwaJnn7m6n2aZlJZvbbbd/fXu2GyQ4
         5z7wg+d5fp/vPdzvTrMUgWk08Pb98NuM8D+g1bLR4BkTBKcZItuEglqczz30rV8jZ4EUh2x8DNnoG0Dx
         IR0ZBW83obu1ylJQizPeW++L8reRnPcg/MGI8JgZ6fBLzA1Z8Om+wU+Udaq5Ary9HukFD+RAJyIfmxGf
@@ -162,6 +177,12 @@
         Q+S4Qu2WAcdo30oPKUz07/5JtrmZrM03ykViKQiO6ghZlv5tS5C7tVpdloNG8w+24EzQP6t53AAAAABJ
         RU5ErkJggg==
 </value>
+  </data>
+  <data name="ActionUseTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionUseTranslation.Text" xml:space="preserve">
+    <value>Utiliser la traduction</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Références trouvées</value>

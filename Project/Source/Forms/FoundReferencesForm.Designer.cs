@@ -48,9 +48,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ButtonClose);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // LabelReference
@@ -70,17 +70,17 @@
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.ListView);
       resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Controls.Add(this.ListView);
       this.panel1.Name = "panel1";
       // 
       // ListView
       // 
+      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.ContextMenuStrip = this.ContextMenuStrip;
-      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
       this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.ListView.HideSelection = false;
@@ -100,12 +100,12 @@
       // 
       // ContextMenuStrip
       // 
+      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionReachReference,
             this.ActionCopyTranslation,
             this.ActionUseTranslation});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
       // ActionReachReference
       // 
