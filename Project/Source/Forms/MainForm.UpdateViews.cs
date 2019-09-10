@@ -231,6 +231,7 @@ namespace Ordisoftware.HebrewWords
           editComment.BackColor = Color.Honeydew;
           editComment.Text = verse.Comment;
           editComment.TextChanged += VerseCommentTextChanged;
+          editComment.KeyDown += EditComment_KeyDown;
           PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
@@ -241,11 +242,21 @@ namespace Ordisoftware.HebrewWords
         Cursor = Cursors.Default;
       }
     }
-    
+
+    private void EditComment_KeyDown(object sender, KeyEventArgs e)
+    {
+      var textbox = (TextBox)sender;
+      var index = ( (Panel)textbox.Parent ).Controls.IndexOf(textbox) - 1;
+      var control = (WordControl)( (Panel)textbox.Parent ).Controls[index];
+      control.Focus();
+      control.EditTranslation.SelectionStart = 0;
+      control.EditTranslation.SelectionLength = 0;
+      textbox.Focus();
+    }
+
     private void VerseCommentTextChanged(object sender, EventArgs e)
     {
       if ( IsLoading ) return;
-      if ( !( sender is TextBox ) ) throw new Exception("Wrong sender type: TextBox expected.");
       var textbox = (TextBox)sender;
       ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
       ActionSave.Enabled = true;
@@ -253,7 +264,6 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumberMouseEnter(object sender, EventArgs e)
     {
-      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       var label = (Label)sender;
       label.Cursor = Cursors.Hand;
       label.ForeColor = Color.SteelBlue;
@@ -261,7 +271,6 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumberMouseLeave(object sender, EventArgs e)
     {
-      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       var label = (Label)sender;
       label.Cursor = Cursors.Default;
       label.ForeColor = Color.DarkBlue;

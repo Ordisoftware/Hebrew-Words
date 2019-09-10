@@ -64,10 +64,16 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.CurrentReference.Verse = Reference.Verse;
     }
 
+    private void EditTranslation_KeyDown(object sender, KeyEventArgs e)
+    {
+      Focus();
+    }
+
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoading ) return;
       _Word.Translation = EditTranslation.Text;
+      Focus();
       MainForm.Instance.ActionSave.Enabled = true;
     }
 

@@ -121,6 +121,7 @@
       this.EditTranslation.Name = "EditTranslation";
       this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
       this.EditTranslation.Enter += new System.EventHandler(this.EditTranslation_Enter);
+      this.EditTranslation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditTranslation_KeyDown);
       // 
       // WordControl
       // 

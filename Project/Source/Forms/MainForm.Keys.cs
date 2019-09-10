@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -76,6 +77,34 @@ namespace Ordisoftware.HebrewWords
             case ViewModeType.Verses:
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              break;
+          }
+          return true;
+        case Keys.Home:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              if ( ActiveControl is WordControl )
+                if ( ( (WordControl)ActiveControl ).EditTranslation.Focused )
+                  return false;
+              if ( ActiveControl is TextBox )
+                if ( ( (TextBox)ActiveControl ).Focused )
+                  return false;
+              PanelViewVerses.Controls[0].Focus();
+              break;
+          }
+          return true;
+        case Keys.End:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              if ( ActiveControl is WordControl )
+                if ( ( (WordControl)ActiveControl ).EditTranslation.Focused )
+                  return false;
+              if ( ActiveControl is TextBox )
+                if ( ((TextBox)ActiveControl).Focused )
+                  return false;
+              PanelViewVerses.Controls[PanelViewVerses.Controls.Count - 1].Focus();
               break;
           }
           return true;
