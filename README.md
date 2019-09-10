@@ -64,6 +64,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add option to set commentary lines count.
 - Add master bookmark used at startup.
 - Add bookmarks.
+- Improve UI.
 - Improve verses rendering.
 - Improve translations rendering.
 - Improve search results rendering.
