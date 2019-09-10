@@ -80,34 +80,6 @@ namespace Ordisoftware.HebrewWords
               break;
           }
           return true;
-        case Keys.Home:
-          switch ( Program.Settings.CurrentView )
-          {
-            case ViewModeType.Verses:
-              if ( ActiveControl is WordControl )
-                if ( ( (WordControl)ActiveControl ).EditTranslation.Focused )
-                  return false;
-              if ( ActiveControl is TextBox )
-                if ( ( (TextBox)ActiveControl ).Focused )
-                  return false;
-              PanelViewVerses.Controls[0].Focus();
-              break;
-          }
-          return true;
-        case Keys.End:
-          switch ( Program.Settings.CurrentView )
-          {
-            case ViewModeType.Verses:
-              if ( ActiveControl is WordControl )
-                if ( ( (WordControl)ActiveControl ).EditTranslation.Focused )
-                  return false;
-              if ( ActiveControl is TextBox )
-                if ( ((TextBox)ActiveControl).Focused )
-                  return false;
-              PanelViewVerses.Controls[PanelViewVerses.Controls.Count - 1].Focus();
-              break;
-          }
-          return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);
     }

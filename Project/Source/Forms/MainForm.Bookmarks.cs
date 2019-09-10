@@ -120,9 +120,9 @@ namespace Ordisoftware.HebrewWords
         item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
         item.Click += gotoBookmark;
+        item.MouseDown += bookmarkClicked;
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
-        item.MouseDown += bookmarkClicked;
       }
       SaveBookmarks();
     }

@@ -96,8 +96,6 @@ namespace Ordisoftware.HebrewWords
         TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
         if ( TimerAutoSave.Enabled )
           TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-        LoadBookmarks();
-        UpdateBookmarks();
       }
       finally
       {
@@ -146,6 +144,8 @@ namespace Ordisoftware.HebrewWords
         ChaptersTableAdapter.Fill(DataSet.Chapters);
         form.ProgressBar.Value = 6;
         InitBooksCombobox();
+        LoadBookmarks();
+        UpdateBookmarks();
       }
       finally
       {
@@ -380,7 +380,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       int book = CurrentReference.Book.Number;
       int chapter = CurrentReference.Chapter.Number;
-      int verse = CurrentReference.Verse.Number;
+      int verse = CurrentReference.Verse?.Number ?? 1;
       IsLoading = true;
       try
       {
@@ -837,7 +837,9 @@ namespace Ordisoftware.HebrewWords
               break;
             }
           }
-      CurrentReference = reference;
+      CurrentReference.Book = reference.Book;
+      CurrentReference.Chapter = reference.Chapter;
+      CurrentReference.Verse = reference.Verse;
     }
 
     public void SearchWord(string word)
