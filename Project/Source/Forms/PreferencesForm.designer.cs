@@ -37,6 +37,7 @@
       System.Windows.Forms.Label labelOnlineVerseURL;
       System.Windows.Forms.Label LabelCommentaryLinesCount;
       System.Windows.Forms.Label LabelBookmarksCount;
+      System.Windows.Forms.Label LabelWordControlWidth;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
       this.label1 = new System.Windows.Forms.Label();
       this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
+      this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -63,12 +65,14 @@
       labelOnlineVerseURL = new System.Windows.Forms.Label();
       LabelCommentaryLinesCount = new System.Windows.Forms.Label();
       LabelBookmarksCount = new System.Windows.Forms.Label();
+      LabelWordControlWidth = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
       this.GroupBoxHebrewWordClick.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -110,6 +114,11 @@
       // 
       resources.ApplyResources(LabelBookmarksCount, "LabelBookmarksCount");
       LabelBookmarksCount.Name = "LabelBookmarksCount";
+      // 
+      // LabelWordControlWidth
+      // 
+      resources.ApplyResources(LabelWordControlWidth, "LabelWordControlWidth");
+      LabelWordControlWidth.Name = "LabelWordControlWidth";
       // 
       // ButtonClose
       // 
@@ -243,14 +252,24 @@
             0,
             0,
             0});
-      this.EditBookmarksCount.Minimum = new decimal(new int[] {
-            1,
+      this.EditBookmarksCount.Name = "EditBookmarksCount";
+      // 
+      // EditWordControlWidth
+      // 
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
+      this.EditWordControlWidth.Maximum = new decimal(new int[] {
+            300,
             0,
             0,
             0});
-      this.EditBookmarksCount.Name = "EditBookmarksCount";
-      this.EditBookmarksCount.Value = new decimal(new int[] {
-            1,
+      this.EditWordControlWidth.Minimum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+      this.EditWordControlWidth.Name = "EditWordControlWidth";
+      this.EditWordControlWidth.Value = new decimal(new int[] {
+            150,
             0,
             0,
             0});
@@ -261,6 +280,8 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditWordControlWidth);
+      this.Controls.Add(LabelWordControlWidth);
       this.Controls.Add(this.EditBookmarksCount);
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
@@ -296,6 +317,7 @@
       this.GroupBoxHebrewWordClick.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -320,5 +342,6 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
     private System.Windows.Forms.NumericUpDown EditBookmarksCount;
+    private System.Windows.Forms.NumericUpDown EditWordControlWidth;
   }
 }

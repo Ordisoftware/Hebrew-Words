@@ -107,6 +107,7 @@ namespace Ordisoftware.HebrewWords
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse);
+      ActionSave.PerformClick();
     }
 
     /// <summary>
@@ -151,7 +152,6 @@ namespace Ordisoftware.HebrewWords
         form.Hide();
         SetFormDisabled(false);
         SetView(Program.Settings.CurrentView, true);
-        ActionSave.Enabled = false;
       }
     }
 
@@ -301,6 +301,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       SetView(ViewModeType.Verses);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -486,7 +487,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       new PreferencesForm().ShowDialog();
-      
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -717,7 +718,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      CurrentReference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
       InitChaptersCombobox();
     }
 
@@ -728,10 +729,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
       if ( !IsGotoRunning ) UpdateViews();
       SetView(Program.Settings.CurrentView, true);
-      ActionSave.PerformClick();
     }
 
     /// <summary>
@@ -786,11 +787,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="verse"></param>
     public void GoTo(int book, int chapter, int verse)
     {
-      var reference = new ReferenceItem();
-      reference.Book = DataSet.Books[book - 1];
-      reference.Chapter = reference.Book.GetChaptersRows()[chapter - 1];
-      reference.Verse = reference.Chapter.GetVersesRows()[verse - 1];
-      GoTo(reference);
+      GoTo(new ReferenceItem(book, chapter, verse));
     }
 
     /// <summary>
@@ -833,7 +830,10 @@ namespace Ordisoftware.HebrewWords
               PanelViewVerses.ScrollControlIntoView(label);
               PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
               int index = PanelViewVerses.Controls.IndexOf(label);
-              ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation.Focus();
+              var wordcontrol = ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation;
+              wordcontrol.Focus();
+              wordcontrol.SelectionStart = 0;
+              wordcontrol.SelectionLength = 0;
               break;
             }
           }

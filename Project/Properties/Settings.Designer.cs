@@ -308,5 +308,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["FoundReferencesLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("215")]
+        public int WordControlWidth {
+            get {
+                return ((int)(this["WordControlWidth"]));
+            }
+            set {
+                this["WordControlWidth"] = value;
+            }
+        }
     }
 }

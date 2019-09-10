@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordControl));
-      this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+      this.FlowLayoutPanel = new System.Windows.Forms.Panel();
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,8 @@
       // 
       // LabelHebrew
       // 
-      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
       resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
+      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
@@ -120,6 +120,7 @@
       resources.ApplyResources(this.EditTranslation, "EditTranslation");
       this.EditTranslation.Name = "EditTranslation";
       this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
+      this.EditTranslation.Enter += new System.EventHandler(this.EditTranslation_Enter);
       // 
       // WordControl
       // 
@@ -136,7 +137,7 @@
 
     #endregion
 
-    private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
+    private System.Windows.Forms.Panel FlowLayoutPanel;
     private System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;

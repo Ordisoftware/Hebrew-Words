@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -27,6 +28,7 @@ namespace Ordisoftware.HebrewWords
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
+      int y;
       switch ( keyData )
       {
         case Keys.Control | Keys.F:
@@ -58,6 +60,24 @@ namespace Ordisoftware.HebrewWords
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();
+          return true;
+        case Keys.PageUp:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - PanelViewVerses.Height;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              break;
+          }
+          return true;
+        case Keys.PageDown:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              break;
+          }
           return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);

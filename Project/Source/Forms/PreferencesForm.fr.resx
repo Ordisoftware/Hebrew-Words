@@ -166,6 +166,12 @@
   <data name="LabelBookmarksCount.Text" xml:space="preserve">
     <value>Nombre de signets</value>
   </data>
+  <data name="LabelWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 13</value>
+  </data>
+  <data name="LabelWordControlWidth.Text" xml:space="preserve">
+    <value>Largeur d'un WordControl</value>
+  </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>

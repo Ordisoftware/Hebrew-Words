@@ -141,6 +141,7 @@ namespace Ordisoftware.HebrewWords
                 }
             }
         EditSearchResults.SelectionStart = 0;
+        EditSearchResults.Focus();
       }
       finally
       {
@@ -152,8 +153,9 @@ namespace Ordisoftware.HebrewWords
     internal void UpdateViewVerses()
     {
       CurrentReference.Verse = null;
-      var item = (ChapterItem)SelectChapter.SelectedItem;
-      EditELS50.Text = item.Chapter.ELS50;
+      var itemBook = (BookItem)SelectBook.SelectedItem;
+      var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
+      EditELS50.Text = itemChapter.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
       Cursor = Cursors.WaitCursor;
       PanelViewVerses.SuspendLayout();
@@ -163,9 +165,10 @@ namespace Ordisoftware.HebrewWords
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
         var control = new WordControl();
-        int margin = 45;
+        control.Width = Program.Settings.WordControlWidth;
+        int margin = 50;
         int delta = 10;
-        int width = Width - margin;
+        int width = PanelViewVerses.Width - delta;
         int dx = control.Width;
         int dy = control.Height;
         int marginX = margin + delta;
@@ -173,14 +176,16 @@ namespace Ordisoftware.HebrewWords
         int x = width - dx - marginX;
         int y = delta;
         int minx = x;
-        foreach ( var verse in item.Chapter.GetVersesRows() )
+        int wordsCount = (width - marginX) / dx;
+        int wordsWidth = wordsCount * dx;
+        foreach ( var verse in itemChapter.Chapter.GetVersesRows() )
         {
           var label = new Label();
           label.AutoSize = false;
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
           label.Font = new Font("Calibri", 13f, FontStyle.Bold);
-          label.Location = new Point(x + dx + delta, y + 2);
+          label.Location = new Point(x + dx + delta, y + delta / 2);
           label.Text = verse.Number.ToString();
           label.MouseEnter += LabelVerseNumberMouseEnter;
           label.MouseLeave += LabelVerseNumberMouseLeave;
@@ -192,10 +197,11 @@ namespace Ordisoftware.HebrewWords
           {
             emptyline = false;
             var reference = new ReferenceItem();
-            reference.Book = ( (BookItem)SelectBook.SelectedItem ).Book;
-            reference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+            reference.Book = itemBook.Book;
+            reference.Chapter = itemChapter.Chapter;
             reference.Verse = verse;
             control = new WordControl(reference);
+            control.Width = Program.Settings.WordControlWidth;
             control.Word = word;
             control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);
@@ -217,9 +223,9 @@ namespace Ordisoftware.HebrewWords
             editComment.WordWrap = true;
             editComment.ScrollBars = ScrollBars.Vertical;
           }
-          editComment.Location = new Point(minx + dx, y + dy + delta);
+          editComment.Location = new Point(width - wordsWidth - label.Width - delta - delta, y + dy + delta);
           x = width - dx - marginX - 2;
-          editComment.Width = x - minx;
+          editComment.Width = wordsWidth;
           editComment.Height = editComment.Height * Program.Settings.CommentaryLinesCount - 3;
           editComment.Tag = verse;
           editComment.BackColor = Color.Honeydew;
@@ -250,7 +256,7 @@ namespace Ordisoftware.HebrewWords
       if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       var label = (Label)sender;
       label.Cursor = Cursors.Hand;
-      label.ForeColor = Color.Blue;
+      label.ForeColor = Color.SteelBlue;
     }
 
     private void LabelVerseNumberMouseLeave(object sender, EventArgs e)

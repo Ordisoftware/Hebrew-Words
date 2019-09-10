@@ -24,7 +24,6 @@ namespace Ordisoftware.HebrewWords
 
   public partial class MainForm
   {
-
     private List<ReferenceItem> _Bookmarks = new List<ReferenceItem>();
 
     private string _BookmarksFilename { get { return Program.UserDataFolder + "Bookmarks.txt"; } }
@@ -41,11 +40,9 @@ namespace Ordisoftware.HebrewWords
             string item = list.ElementAt(index);
             if ( item == "" || item.Count(c => c == '.') != 2 ) continue;
             var parts = item.Split('.');
-            var reference = new ReferenceItem();
-            reference.Book = DataSet.Books[Convert.ToInt32(parts[0]) - 1];
-            reference.Chapter = reference.Book.GetChaptersRows()[Convert.ToInt32(parts[1]) - 1];
-            reference.Verse = reference.Chapter.GetVersesRows()[Convert.ToInt32(parts[2]) - 1];
-            AddBookmark(reference);
+            AddBookmark(new ReferenceItem(Convert.ToInt32(parts[0]),
+                                          Convert.ToInt32(parts[1]),
+                                          Convert.ToInt32(parts[2])));
           }
         }
         catch ( Exception ex )
@@ -72,6 +69,7 @@ namespace Ordisoftware.HebrewWords
 
     private void AddBookmark(ReferenceItem reference)
     {
+      if ( Program.Settings.BookmarksCount < 1 ) return;
       foreach ( var value in _Bookmarks )
         if ( value.ToString() == reference.ToString() )
           return;
@@ -84,30 +82,49 @@ namespace Ordisoftware.HebrewWords
         MenuBookmarks.DropDownItems.RemoveAt(2);
       while ( _Bookmarks.Count > Program.Settings.BookmarksCount )
         _Bookmarks.RemoveAt(_Bookmarks.Count - 1);
-      var bookmarkMaster = new ReferenceItem();
-      bookmarkMaster.Book = DataSet.Books[Program.Settings.BookmarkMasterBook - 1];
-      bookmarkMaster.Chapter = DataSet.Chapters[Program.Settings.BookmarkMasterChapter - 1];
-      bookmarkMaster.Verse = DataSet.Verses[Program.Settings.BookmarkMasterVerse - 1];
-      ToolStripItem item = MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
+      var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
+                                             Program.Settings.BookmarkMasterChapter,
+                                             Program.Settings.BookmarkMasterVerse);
+      EventHandler gotoBookmark = (sender, e) =>
+      {
+        GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+      };
+      MouseEventHandler bookmarkClicked = (sender, e) =>
+      {
+        if ( e.Button != MouseButtons.Right ) return;
+        var menuitem = (ToolStripMenuItem)sender;
+        if ( menuitem.Tag == bookmarkMaster )
+        {
+          Program.Settings.BookmarkMasterBook = 1;
+          Program.Settings.BookmarkMasterChapter = 1;
+          Program.Settings.BookmarkMasterVerse = 1;
+          SaveBookmarks();
+          UpdateBookmarks();
+        }
+        else
+        {
+          _Bookmarks.Remove((ReferenceItem)menuitem.Tag);
+          SaveBookmarks();
+          UpdateBookmarks();
+        }
+      };
+      ToolStripMenuItem item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
       item.Tag = bookmarkMaster;
-      item.Click += Item_Click;
+      item.Click += gotoBookmark;
+      item.MouseDown += bookmarkClicked;
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Image = ActionSetAsBookmarkMaster.Image;
       MenuBookmarks.DropDownItems.Add("-");
       foreach ( var reference in _Bookmarks )
       {
-        item = MenuBookmarks.DropDownItems.Add(reference.ToString());
+        item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
-        item.Click += Item_Click;
+        item.Click += gotoBookmark;
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
+        item.MouseDown += bookmarkClicked;
       }
       SaveBookmarks();
-    }
-
-    private void Item_Click(object sender, EventArgs e)
-    {
-      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
   }

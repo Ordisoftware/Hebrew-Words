@@ -59,6 +59,11 @@ namespace Ordisoftware.HebrewWords
       Reference = reference;
     }
 
+    private void EditTranslation_Enter(object sender, EventArgs e)
+    {
+      MainForm.Instance.CurrentReference.Verse = Reference.Verse;
+    }
+
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoading ) return;

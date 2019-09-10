@@ -55,6 +55,15 @@ namespace Ordisoftware.HebrewWords
     {
       return Book.Name + " " + Chapter.Number + "." + Verse.Number;
     }
+    public ReferenceItem()
+    {
+    }
+    public ReferenceItem(int book, int chapter, int verse)
+    {
+      Book = MainForm.Instance.DataSet.Books[book - 1];
+      Chapter = Book.GetChaptersRows()[chapter - 1];
+      Verse = Chapter.GetVersesRows()[verse - 1];
+    }
   }
 
   /// <summary>
@@ -63,6 +72,14 @@ namespace Ordisoftware.HebrewWords
   public class WordReferencedItem : ReferenceItem
   {
     public Data.DataSet.WordsRow Word { get; set; }
+    public WordReferencedItem()
+      : base()
+    {
+    }
+    public WordReferencedItem(int book, int chapter, int verse)
+      : base(book, chapter, verse)
+    {
+    }
   }
 
 }

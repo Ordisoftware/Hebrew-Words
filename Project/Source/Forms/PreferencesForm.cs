@@ -26,7 +26,8 @@ namespace Ordisoftware.HebrewWords
   public partial class PreferencesForm : Form
   {
 
-    private int CommentaryLinesCount;
+    private int _CommentaryLinesCount;
+    private int _WordControlWidth;
 
     /// <summary>
     /// Default constructor.
@@ -51,11 +52,13 @@ namespace Ordisoftware.HebrewWords
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
       EditCommentaryLinesCount.Value = Program.Settings.CommentaryLinesCount;
+      EditWordControlWidth.Value = Program.Settings.WordControlWidth;
       EditBookmarksCount.Value = Program.Settings.BookmarksCount;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
-      CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      _CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      _WordControlWidth = (int)EditWordControlWidth.Value;
     }
 
     /// <summary>
@@ -72,6 +75,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
       Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
       Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
@@ -82,7 +86,8 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
-      if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value )
+      if ( _CommentaryLinesCount != (int)EditCommentaryLinesCount.Value 
+        || _WordControlWidth != (int)EditWordControlWidth.Value )
       {
         var reference = MainForm.Instance.CurrentReference;
         int verse = reference.Verse == null ? 1 : reference.Verse.Number;
