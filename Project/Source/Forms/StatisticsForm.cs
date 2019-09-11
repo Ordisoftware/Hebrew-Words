@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewWords
 
     private void InitializeMiddle()
     {
-      int lcount = CountersTorah.CountLetters / 2;
+      int lcount = (int)Math.Truncate((double)CountersTorah.CountLetters / 2.0);
       int index = 0;
       var books = from book in MainForm.Instance.DataSet.Books
                   where book.Number <= 5
