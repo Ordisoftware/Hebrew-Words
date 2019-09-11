@@ -69,6 +69,8 @@ namespace Ordisoftware.HebrewWords
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
               break;
+            default:
+              return false;
           }
           return true;
         case Keys.PageDown:
@@ -78,6 +80,30 @@ namespace Ordisoftware.HebrewWords
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
               break;
+            default:
+              return false;
+          }
+          return true;
+        case Keys.Control | Keys.Home:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = 0;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              break;
+            default:
+              return false;
+          }
+          return true;
+        case Keys.Control | Keys.End:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = PanelViewVerses.DisplayRectangle.Height;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              break;
+            default:
+              return false;
           }
           return true;
       }

@@ -467,6 +467,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      SaveFileDialogDB.FileName = filename;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
       File.Copy(Program.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
@@ -893,7 +894,7 @@ namespace Ordisoftware.HebrewWords
     public void SearchWord(string word)
     {
       ActionViewSearch.PerformClick();
-      EditLetters.Input.Text = word;
+      EditLetters.Input.Text = Letters.SetFinale(word, false);
     }
 
     private Control GetMenuItemSourceControl(object sender)
@@ -926,7 +927,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
-      var verse = ((ReferenceItem)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag).Verse;
+      var verse = (Data.DataSet.VersesRow)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag;
       Clipboard.SetText(DataSet.GetTranslation(verse));
     }
 
