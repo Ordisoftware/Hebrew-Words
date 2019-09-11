@@ -314,17 +314,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       SetView(ViewModeType.Translations);
       UpdateViewTranslations();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewELS50 for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewELS50_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      SetView(ViewModeType.ELS50);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -336,6 +326,18 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       SetView(ViewModeType.Text);
+      GoTo(CurrentReference);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewELS50 for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewELS50_Click(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      SetView(ViewModeType.ELS50);
     }
 
     /// <summary>
@@ -673,31 +675,29 @@ namespace Ordisoftware.HebrewWords
     {
       var form = new SelectVerseForm();
       form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
-      if ( form.ShowDialog() == DialogResult.OK )
+      if ( form.ShowDialog() != DialogResult.OK ) return;
+      int value = (int)form.EditVerseNumber.Value;
+      if ( value > 0 )
+        GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
+      else
       {
-        int value = (int)form.EditVerseNumber.Value;
-        if ( value > 0 )
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
-        else
+        Data.DataSet.VersesRow found = null;
+        var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+        foreach ( Data.DataSet.VersesRow verse in list )
         {
-          Data.DataSet.VersesRow found = null;
-          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-          foreach ( Data.DataSet.VersesRow verse in list )
+          string str = "";
+          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+            str += word.Translation;
+          if ( str == "" )
           {
-            string str = "";
-            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-              str += word.Translation;
-            if ( str == "" )
-            {
-              found = verse;
-              break;
-            }
+            found = verse;
+            break;
           }
-          if ( found != null )
-            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
-          else
-            GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
         }
+        if ( found != null )
+          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
+        else
+          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
       }
     }
 
@@ -797,7 +797,7 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(ReferenceItem reference)
     {
       if ( reference == null ) return;
-      SetView(ViewModeType.Verses);
+      //SetView(ViewModeType.Verses);
       IsGotoRunning = true;
       bool updated = false;
       try
@@ -820,23 +820,55 @@ namespace Ordisoftware.HebrewWords
       if ( updated )
         UpdateViews();
       if ( reference.Verse != null )
-        foreach ( var control in PanelViewVerses.Controls )
-          if ( control is Label )
-          {
-            var label = control as Label;
-            if ( label.Text == reference.Verse.Number.ToString() )
+        switch ( Program.Settings.CurrentView )
+        {
+          case ViewModeType.Verses:
+            foreach ( var control in PanelViewVerses.Controls )
+              if ( control is Label )
+              {
+                var label = control as Label;
+                if ( label.Text == reference.Verse.Number.ToString() )
+                {
+                  PanelViewVerses.Focus();
+                  PanelViewVerses.ScrollControlIntoView(label);
+                  PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+                  int index = PanelViewVerses.Controls.IndexOf(label);
+                  var wordcontrol = ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation;
+                  wordcontrol.Focus();
+                  wordcontrol.SelectionStart = 0;
+                  wordcontrol.SelectionLength = 0;
+                  break;
+                }
+              }
+            break;
+          case ViewModeType.Translations:
+            foreach ( string line in EditTranslations.Lines )
             {
-              PanelViewVerses.Focus();
-              PanelViewVerses.ScrollControlIntoView(label);
-              PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-              int index = PanelViewVerses.Controls.IndexOf(label);
-              var wordcontrol = ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation;
-              wordcontrol.Focus();
-              wordcontrol.SelectionStart = 0;
-              wordcontrol.SelectionLength = 0;
-              break;
+              string s = reference.Verse.Number + ". ";
+              if ( line.StartsWith(s) )
+              {
+                EditTranslations.SelectionStart = EditTranslations.Find(s);
+                EditTranslations.SelectionLength = 0;
+                EditTranslations.ScrollToCaret();
+                EditTranslations.Focus();
+              }
             }
-          }
+            break;
+          case ViewModeType.Text:
+            foreach ( string line in EditRawText.Lines )
+            {
+              string s = ":" + reference.Verse.Number;
+              if ( line.EndsWith(s) )
+              {
+                EditRawText.SelectionStart = EditRawText.Find(s);
+                EditRawText.SelectionLength = 0;
+                EditRawText.ScrollToCaret();
+                EditRawText.Focus();
+              }
+            }
+            break;
+        }
+
       CurrentReference.Book = reference.Book;
       CurrentReference.Chapter = reference.Chapter;
       CurrentReference.Verse = reference.Verse;

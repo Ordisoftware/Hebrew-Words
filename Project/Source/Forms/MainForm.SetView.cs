@@ -128,7 +128,9 @@ namespace Ordisoftware.HebrewWords
       LabelSelectBook.Enabled = ActionExportBook.Enabled;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
-      ActionSearchVerse.Enabled = view == ViewModeType.Verses;
+      ActionSearchVerse.Enabled = view == ViewModeType.Verses
+                               || view == ViewModeType.Translations
+                               || view == ViewModeType.Text;
     }
 
   }

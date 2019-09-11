@@ -27,6 +27,9 @@ namespace Ordisoftware.HebrewWords
 
     private Font _LatinFont = new Font("Verdana", 10f);
 
+    private Font _VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
+
+
     private void AddTextRightAligned(RichTextBox control, Font font, string str)
     {
       AddTextRightAligned(control, font, str, SystemColors.ControlText);
@@ -178,18 +181,24 @@ namespace Ordisoftware.HebrewWords
         int minx = x;
         int wordsCount = (width - marginX) / dx;
         int wordsWidth = wordsCount * dx;
+        int textHeight;
+        var textboxTemp = new TextBox();
+        using ( Graphics g = textboxTemp.CreateGraphics() )
+        {
+          textHeight = TextRenderer.MeasureText(g, "Text", textboxTemp.Font).Height;
+        }
         foreach ( var verse in itemChapter.Chapter.GetVersesRows() )
         {
           var label = new Label();
+          label.Location = new Point(x + dx + delta, y + delta / 2);
           label.AutoSize = false;
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
-          label.Font = new Font("Calibri", 13f, FontStyle.Bold);
-          label.Location = new Point(x + dx + delta, y + delta / 2);
+          label.Font = _VerseNumberFont;
           label.Text = verse.Number.ToString();
-          label.MouseEnter += LabelVerseNumberMouseEnter;
-          label.MouseLeave += LabelVerseNumberMouseLeave;
-          label.MouseClick += LabelVerseNumberMouseClick;
+          label.MouseEnter += LabelVerseNumber_MouseEnter;
+          label.MouseLeave += LabelVerseNumber_MouseLeave;
+          label.MouseClick += LabelVerseNumber_MouseClick;
           label.ContextMenuStrip = ContextMenuStripVerse;
           PanelViewVerses.Controls.Add(label);
           bool emptyline = false;
@@ -201,9 +210,9 @@ namespace Ordisoftware.HebrewWords
             reference.Chapter = itemChapter.Chapter;
             reference.Verse = verse;
             control = new WordControl(reference);
+            control.Location = new Point(x, y);
             control.Width = Program.Settings.WordControlWidth;
             control.Word = word;
-            control.Location = new Point(x, y);
             PanelViewVerses.Controls.Add(control);
             x -= dx;
             if ( x < delta )
@@ -226,12 +235,12 @@ namespace Ordisoftware.HebrewWords
           editComment.Location = new Point(width - wordsWidth - label.Width - delta - delta, y + dy + delta);
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth;
-          editComment.Height = editComment.Height * Program.Settings.CommentaryLinesCount - 3;
+          editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1) - 2;
           editComment.Tag = verse;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = verse.Comment;
-          editComment.TextChanged += VerseCommentTextChanged;
-          editComment.KeyDown += EditComment_KeyDown;
+          editComment.TextChanged += EditVerseComment_TextChanged;
+          editComment.KeyDown += EditVerseComment_KeyDown;
           PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
@@ -243,7 +252,7 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private void EditComment_KeyDown(object sender, KeyEventArgs e)
+    private void EditVerseComment_KeyDown(object sender, KeyEventArgs e)
     {
       var textbox = (TextBox)sender;
       var index = ( (Panel)textbox.Parent ).Controls.IndexOf(textbox) - 1;
@@ -254,7 +263,7 @@ namespace Ordisoftware.HebrewWords
       textbox.Focus();
     }
 
-    private void VerseCommentTextChanged(object sender, EventArgs e)
+    private void EditVerseComment_TextChanged(object sender, EventArgs e)
     {
       if ( IsLoading ) return;
       var textbox = (TextBox)sender;
@@ -262,21 +271,21 @@ namespace Ordisoftware.HebrewWords
       ActionSave.Enabled = true;
     }
 
-    private void LabelVerseNumberMouseEnter(object sender, EventArgs e)
+    private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)
     {
       var label = (Label)sender;
       label.Cursor = Cursors.Hand;
       label.ForeColor = Color.SteelBlue;
     }
 
-    private void LabelVerseNumberMouseLeave(object sender, EventArgs e)
+    private void LabelVerseNumber_MouseLeave(object sender, EventArgs e)
     {
       var label = (Label)sender;
       label.Cursor = Cursors.Default;
       label.ForeColor = Color.DarkBlue;
     }
 
-    private void LabelVerseNumberMouseClick(object sender, MouseEventArgs e)
+    private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
         ActionOpenVerseOnline_Click(sender, null);
