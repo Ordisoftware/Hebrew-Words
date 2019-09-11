@@ -39,6 +39,20 @@ namespace Ordisoftware.HebrewWords
       return values[lang];
     }
 
+    /// <summary>
+    /// Get the string translation of an enum value.
+    /// </summary>
+    /// <typeparam name="T">The type that is an enum.</typeparam>
+    /// <param name="values">The dictionary containing values>langs>translations.</param>
+    /// <param name="value">The value to translate.</param>
+    /// <returns></returns>
+    static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
+    {
+      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+      if ( !values[value].ContainsKey(lang) ) lang = "en";
+      return values[value][lang];
+    }
+
     static public readonly Dictionary<string, string> ApplicationDescriptionText
       = new Dictionary<string, string>()
       {
@@ -111,6 +125,46 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "CHAPTER" },
         { "fr", "CHAPITRE" }
+      };
+
+    static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelText
+      = new Dictionary<ViewModeType, Dictionary<string, string>>()
+      {
+        {
+          ViewModeType.Verses, new Dictionary<string, string>
+          {
+            { "en", "Tanak Verses" },
+            { "fr", "Versets du Tanak" }
+          }
+        },
+        {
+          ViewModeType.Translations, new Dictionary<string, string>
+          {
+            { "en", "Tanak Translation" },
+            { "fr", "Traduction du Tanak" }
+          }
+        },
+        {
+          ViewModeType.Text, new Dictionary<string, string>
+          {
+            { "en", "Tanak Hebrew Text" },
+            { "fr", "Texte Hébreu du Tanak" }
+          }
+        },
+        {
+          ViewModeType.ELS50, new Dictionary<string, string>
+          {
+            { "en", "Tanak ELS50 Verses" },
+            { "fr", "Versets ELS50 du Tanak" }
+          }
+        },
+        {
+          ViewModeType.Search, new Dictionary<string, string>
+          {
+            { "en", "Tanak Search" },
+            { "fr", "Recherche dans le Tanak" }
+          }
+        }
       };
 
   }
