@@ -66,6 +66,8 @@ namespace Ordisoftware.HebrewWords
     {
       MainForm.Instance.GoTo(Reference);
       WordControl.Focus();
+      WordControl.EditTranslation.SelectionStart = 0;
+      WordControl.EditTranslation.SelectionLength = 0;
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)

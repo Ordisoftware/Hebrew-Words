@@ -36,8 +36,8 @@
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
@@ -68,8 +68,8 @@
             this.ActionOnlineSearch,
             this.ActionOpenHebrewLetters,
             this.toolStripMenuItem1,
-            this.ActionSearch,
             this.ActionSearchTranslated,
+            this.ActionSearch,
             this.toolStripMenuItem2,
             this.ActionCopy});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
@@ -92,17 +92,17 @@
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       // 
-      // ActionSearch
-      // 
-      resources.ApplyResources(this.ActionSearch, "ActionSearch");
-      this.ActionSearch.Name = "ActionSearch";
-      this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
-      // 
       // ActionSearchTranslated
       // 
       resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
       this.ActionSearchTranslated.Name = "ActionSearchTranslated";
       this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
+      // 
+      // ActionSearch
+      // 
+      resources.ApplyResources(this.ActionSearch, "ActionSearch");
+      this.ActionSearch.Name = "ActionSearch";
+      this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
       // 
       // toolStripMenuItem2
       // 

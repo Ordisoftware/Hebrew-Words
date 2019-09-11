@@ -171,6 +171,24 @@
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 6</value>
   </data>
+  <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
+        GRKFwsLEtTGRJoiGi1wUKdG2UGopFPydKW4aWLHTk3zTk9Pp30tK/kGFUzk1lMghGBecYgICsexCQSqU
+        EHCazKcJa0rVFh4rLXp8tRUrTYjPLyiUaguJTzUUyw07hLA71dsyUukcNrY4rFPJyyzqko7KW49S51Tb
+        PZQbXftpCFsk9Qtuzz7eFcPm8vDoKCZaXQ2NTm8OmzclFSfnGRC29A0L25wX8mAMWbewwx9CNaY0mAZ+
+        DuZIio4PVYc/eg3ij2ZgTgAhfwOOPwDvPcIet4u7+wI0GqxoQ8h9w0Gls4Fp4ThCA9jCimZganfAgyjC
+        7dqE9Q0MRxMYI8thOJ6AnpoFsFdYtuxvEIhnNdb4Ilfwnc2wZMbH/M4c6F52jTd8ccv+pVVqbUkr1N8u
+        Qn4AjqDsaU1wLo8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="ActionSearchTranslated.Text" xml:space="preserve">
+    <value>Search translated</value>
+  </data>
   <data name="ActionSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -191,25 +209,7 @@
     <value>164, 22</value>
   </data>
   <data name="ActionSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
-        GRKFwsLEtTGRJoiGi1wUKdG2UGopFPydKW4aWLHTk3zTk9Pp30tK/kGFUzk1lMghGBecYgICsexCQSqU
-        EHCazKcJa0rVFh4rLXp8tRUrTYjPLyiUaguJTzUUyw07hLA71dsyUukcNrY4rFPJyyzqko7KW49S51Tb
-        PZQbXftpCFsk9Qtuzz7eFcPm8vDoKCZaXQ2NTm8OmzclFSfnGRC29A0L25wX8mAMWbewwx9CNaY0mAZ+
-        DuZIio4PVYc/eg3ij2ZgTgAhfwOOPwDvPcIet4u7+wI0GqxoQ8h9w0Gls4Fp4ThCA9jCimZganfAgyjC
-        7dqE9Q0MRxMYI8thOJ6AnpoFsFdYtuxvEIhnNdb4Ilfwnc2wZMbH/M4c6F52jTd8ccv+pVVqbUkr1N8u
-        Qn4AjqDsaU1wLo8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="ActionSearchTranslated.Text" xml:space="preserve">
-    <value>Search translated</value>
+    <value>Search word</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 6</value>
@@ -365,16 +365,16 @@
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionSearch.Name" xml:space="preserve">
-    <value>ActionSearch</value>
-  </data>
-  <data name="&gt;&gt;ActionSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionSearchTranslated.Name" xml:space="preserve">
     <value>ActionSearchTranslated</value>
   </data>
   <data name="&gt;&gt;ActionSearchTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSearch.Name" xml:space="preserve">
+    <value>ActionSearch</value>
+  </data>
+  <data name="&gt;&gt;ActionSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">

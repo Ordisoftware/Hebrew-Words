@@ -41,6 +41,7 @@
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelButtons.SuspendLayout();
       this.panel1.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
@@ -48,9 +49,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // LabelReference
@@ -70,17 +71,17 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ListView);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // ListView
       // 
-      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.ContextMenuStrip = this.ContextMenuStrip;
+      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
       this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.ListView.HideSelection = false;
@@ -100,12 +101,13 @@
       // 
       // ContextMenuStrip
       // 
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionReachReference,
+            this.ActionUseTranslation,
             this.ActionCopyTranslation,
-            this.ActionUseTranslation});
+            this.toolStripSeparator1,
+            this.ActionReachReference});
       this.ContextMenuStrip.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
       // ActionReachReference
       // 
@@ -124,6 +126,11 @@
       resources.ApplyResources(this.ActionUseTranslation, "ActionUseTranslation");
       this.ActionUseTranslation.Name = "ActionUseTranslation";
       this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // FoundReferencesForm
       // 
@@ -157,5 +164,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
     private System.Windows.Forms.ToolStripMenuItem ActionUseTranslation;
     private System.Windows.Forms.LinkLabel LabelReference;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
