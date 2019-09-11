@@ -74,8 +74,9 @@ namespace Ordisoftware.HebrewWords
           EditSearchResults.AppendText(strTranslation);
           EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
         }
-      
+
         EditSearchResults.SelectionStart = 0;
+        EditSearchResults.SelectionLength = 0;
         EditSearchResults.Focus();
       }
       finally
