@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -29,22 +31,40 @@ namespace Ordisoftware.HebrewWords
       var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = itemChapter.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
+      var query = from book in DataSet.Books
+                  from chapter in book.GetChaptersRows()
+                  from verse in chapter.GetVersesRows()
+                  where book.Number == itemBook.Book.Number 
+                     && chapter.Number == itemChapter.Chapter.Number
+                  select new ReferenceItem
+                  {
+                    Book = book,
+                    Chapter = chapter,
+                    Verse = verse
+                  };
+      var list = query.Distinct(new ReferenceItemComparer());
+      UpdateViewVerses(PanelViewVerses, list);
+    }
+
+    private void UpdateViewVerses(Panel panel, IEnumerable<ReferenceItem> references)
+    {
       Cursor = Cursors.WaitCursor;
-      PanelViewVerses.SuspendLayout();
+      panel.SuspendLayout();
       try
       {
-        if ( PanelViewVerses.Controls.Count > 0 )
-          PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
-        PanelViewVerses.Controls.Clear();
+        if ( panel.Controls.Count > 0 )
+          panel.ScrollControlIntoView(panel.Controls[0]);
+        panel.Controls.Clear();
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
-        int margin = 50;
+        int mX = 50;
+        int mY = 50;
         int delta = 10;
-        int width = PanelViewVerses.Width - delta;
+        int width = panel.Width - delta;
         int dx = control.Width;
         int dy = control.Height;
-        int marginX = margin + delta;
-        int marginY = margin;
+        int marginX = mX + delta;
+        int marginY = mY;
         int x = width - dx - marginX;
         int y = delta;
         int minx = x;
@@ -56,34 +76,30 @@ namespace Ordisoftware.HebrewWords
         {
           textHeight = TextRenderer.MeasureText(g, "Text", textboxTemp.Font).Height;
         }
-        foreach ( var verse in itemChapter.Chapter.GetVersesRows() )
+        foreach ( var reference in references )
         {
           var label = new Label();
-          label.Tag = verse;
+          label.Tag = reference;
           label.Location = new Point(x + dx + delta, y + delta / 2);
           label.AutoSize = false;
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
           label.Font = VerseNumberFont;
-          label.Text = verse.Number.ToString();
-          label.MouseEnter += LabelVerseNumber_MouseEnter;
-          label.MouseLeave += LabelVerseNumber_MouseLeave;
-          label.MouseClick += LabelVerseNumber_MouseClick;
+          label.Text = reference.Verse.Number.ToString();
+            label.MouseEnter += LabelVerseNumber_MouseEnter;
+            label.MouseLeave += LabelVerseNumber_MouseLeave;
+            label.MouseClick += LabelVerseNumber_MouseClick;
           label.ContextMenuStrip = ContextMenuStripVerse;
-          PanelViewVerses.Controls.Add(label);
+          panel.Controls.Add(label);
           bool emptyline = false;
-          foreach ( var word in verse.GetWordsRows() )
+          foreach ( var word in reference.Verse.GetWordsRows() )
           {
             emptyline = false;
-            var reference = new ReferenceItem();
-            reference.Book = itemBook.Book;
-            reference.Chapter = itemChapter.Chapter;
-            reference.Verse = verse;
             control = new WordControl(reference);
+            control.Word = word;
             control.Location = new Point(x, y);
             control.Width = Program.Settings.WordControlWidth;
-            control.Word = word;
-            PanelViewVerses.Controls.Add(control);
+            panel.Controls.Add(control);
             x -= dx;
             if ( x < delta )
             {
@@ -106,18 +122,18 @@ namespace Ordisoftware.HebrewWords
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth;
           editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1) - 3;
-          editComment.Tag = verse;
+          editComment.Tag = reference.Verse;
           editComment.BackColor = Color.Honeydew;
-          editComment.Text = verse.Comment;
+          editComment.Text = reference.Verse.Comment;
           editComment.TextChanged += EditVerseComment_TextChanged;
           editComment.KeyDown += EditVerseComment_KeyDown;
-          PanelViewVerses.Controls.Add(editComment);
+          panel.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
       }
       finally
       {
-        PanelViewVerses.ResumeLayout();
+        panel.ResumeLayout();
         Cursor = Cursors.Default;
       }
     }
@@ -128,8 +144,6 @@ namespace Ordisoftware.HebrewWords
       var index = ( (Panel)textbox.Parent ).Controls.IndexOf(textbox) - 1;
       var control = (WordControl)( (Panel)textbox.Parent ).Controls[index];
       control.Focus();
-      control.EditTranslation.SelectionStart = 0;
-      control.EditTranslation.SelectionLength = 0;
       textbox.Focus();
     }
 

@@ -49,6 +49,7 @@ namespace Ordisoftware.HebrewWords
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       LabelReference_LinkClicked(null, null);
+      WordControl.Focus();
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)

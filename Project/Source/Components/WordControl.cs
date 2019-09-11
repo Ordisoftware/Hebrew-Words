@@ -59,6 +59,13 @@ namespace Ordisoftware.HebrewWords
       Reference = reference;
     }
 
+    public new bool Focus()
+    {
+      EditTranslation.SelectionStart = 0;
+      EditTranslation.Focus();
+      return true;
+    }
+
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
       MainForm.Instance.CurrentReference.Verse = Reference.Verse;

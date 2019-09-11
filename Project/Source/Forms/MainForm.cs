@@ -852,10 +852,7 @@ namespace Ordisoftware.HebrewWords
                   PanelViewVerses.ScrollControlIntoView(label);
                   PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
                   int index = PanelViewVerses.Controls.IndexOf(label);
-                  var wordcontrol = ( (WordControl)PanelViewVerses.Controls[index + 1] ).EditTranslation;
-                  wordcontrol.Focus();
-                  wordcontrol.SelectionStart = 0;
-                  wordcontrol.SelectionLength = 0;
+                  ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
                   break;
                 }
               }
@@ -929,7 +926,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
-      var verse = (Data.DataSet.VersesRow)( (TextBox)GetMenuItemSourceControl(sender).Tag ).Tag;
+      var verse = ((ReferenceItem)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag).Verse;
       Clipboard.SetText(DataSet.GetTranslation(verse));
     }
 

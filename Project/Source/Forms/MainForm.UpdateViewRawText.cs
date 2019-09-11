@@ -34,6 +34,7 @@ namespace Ordisoftware.HebrewWords
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectionStart = 0;
+      EditRawText.Focus();
     }
 
   }

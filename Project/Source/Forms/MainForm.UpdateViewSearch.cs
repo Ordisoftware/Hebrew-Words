@@ -48,14 +48,15 @@ namespace Ordisoftware.HebrewWords
                     {
                       Book = book,
                       Chapter = chapter,
-                      Verse = verse,
+                      Verse = verse
                     };
         var list = query.Distinct(new ReferenceItemComparer());
         int count = list.Count();
-        if ( count > 250 )
+        if ( count > 500 )
           if ( !DisplayManager.QueryYesNo(Localizer.SearchResultsText.GetLang(count.ToString())) )
             return;
         LabelFindRefCount.Text = count.ToString();
+
         foreach ( var item in list )
         {
           string strTranslation = "";
@@ -71,12 +72,11 @@ namespace Ordisoftware.HebrewWords
           string strRef = " :" + item.Verse.Number + "." + item.Chapter.Number + "." + item.Book.Name;
           AddTextRightAligned(EditSearchResults, LatinFont, strRef);
           EditSearchResults.AppendText(Environment.NewLine);
-          EditSearchResults.AppendText(strTranslation);
+          EditSearchResults.AppendText(strTranslation.Trim());
           EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
         }
 
         EditSearchResults.SelectionStart = 0;
-        EditSearchResults.SelectionLength = 0;
         EditSearchResults.Focus();
       }
       finally

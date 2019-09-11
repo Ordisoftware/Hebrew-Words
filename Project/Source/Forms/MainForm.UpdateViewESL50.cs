@@ -31,6 +31,7 @@ namespace Ordisoftware.HebrewWords
         EditELS50All.AppendText(Environment.NewLine);
       }
       EditELS50All.SelectionStart = 0;
+      EditELS50All.Focus();
     }
 
   }

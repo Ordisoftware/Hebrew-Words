@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewWords
         EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
       }
       EditTranslations.SelectionStart = 0;
+      EditTranslations.Focus();
     }
 
   }
