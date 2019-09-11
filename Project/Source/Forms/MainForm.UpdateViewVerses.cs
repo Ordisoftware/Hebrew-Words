@@ -60,6 +60,7 @@ namespace Ordisoftware.HebrewWords
         foreach ( var verse in itemChapter.Chapter.GetVersesRows() )
         {
           var label = new Label();
+          label.Tag = verse;
           label.Location = new Point(x + dx + delta, y + delta / 2);
           label.AutoSize = false;
           label.Width = 40;

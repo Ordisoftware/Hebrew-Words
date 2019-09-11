@@ -927,12 +927,21 @@ namespace Ordisoftware.HebrewWords
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
     }
 
+    private void ActionCopyTranslation_Click(object sender, EventArgs e)
+    {
+      var verse = (Data.DataSet.VersesRow)( (TextBox)GetMenuItemSourceControl(sender).Tag ).Tag;
+      string str = ""; 
+      foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+        str = str + word.Translation + " ";
+      str = str.Remove(str.Length - 1, 1);
+      Clipboard.SetText(str);
+    }
+
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
       Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
       Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
-      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
-      Program.Settings.BookmarkMasterVerse = verse;
+      Program.Settings.BookmarkMasterVerse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       Program.Settings.Store();
       UpdateBookmarks();
     }
