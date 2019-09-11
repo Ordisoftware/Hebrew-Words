@@ -26,6 +26,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViewSearch()
     {
+      InProcess = true;
       Cursor = Cursors.WaitCursor;
       EditSearchResults.SuspendLayout();
       try
@@ -59,6 +60,8 @@ namespace Ordisoftware.HebrewWords
 
         foreach ( var item in list )
         {
+          Application.DoEvents();
+          if ( CancelRequired ) { CancelRequired = false; break; }
           string strTranslation = "";
           foreach ( Data.DataSet.WordsRow w in item.Verse.GetWordsRows().Reverse() )
           {
@@ -82,6 +85,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         EditSearchResults.ResumeLayout();
+        InProcess = false;
         Cursor = Cursors.Default;
       }
     }

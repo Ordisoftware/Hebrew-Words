@@ -49,8 +49,8 @@
       this.TabPageSearch = new System.Windows.Forms.TabPage();
       this.PanelViewSearch = new System.Windows.Forms.Panel();
       this.PanelSearchResults = new System.Windows.Forms.Panel();
-      this.PanelSearchTop = new System.Windows.Forms.Panel();
       this.EditSearchResults = new System.Windows.Forms.RichTextBox();
+      this.PanelSearchTop = new System.Windows.Forms.Panel();
       this.LabelFindRefCount = new System.Windows.Forms.Label();
       this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
       this.ActionSearchWord = new System.Windows.Forms.Button();
@@ -320,6 +320,14 @@
       resources.ApplyResources(this.PanelSearchResults, "PanelSearchResults");
       this.PanelSearchResults.Name = "PanelSearchResults";
       // 
+      // EditSearchResults
+      // 
+      this.EditSearchResults.BackColor = System.Drawing.SystemColors.Window;
+      this.EditSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditSearchResults, "EditSearchResults");
+      this.EditSearchResults.Name = "EditSearchResults";
+      this.EditSearchResults.ReadOnly = true;
+      // 
       // PanelSearchTop
       // 
       this.PanelSearchTop.Controls.Add(this.LabelFindRefCount);
@@ -329,14 +337,6 @@
       this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
-      // 
-      // EditSearchResults
-      // 
-      this.EditSearchResults.BackColor = System.Drawing.SystemColors.Window;
-      this.EditSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditSearchResults, "EditSearchResults");
-      this.EditSearchResults.Name = "EditSearchResults";
-      this.EditSearchResults.ReadOnly = true;
       // 
       // LabelFindRefCount
       // 

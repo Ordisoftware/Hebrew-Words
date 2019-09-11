@@ -133,9 +133,11 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> SearchResultsText
       = new Dictionary<string, string>()
       {
-        { "en", "There is {0} results." + Environment.NewLine + Environment.NewLine +
+        { "en", "There is {0} results." + Environment.NewLine + 
+                "You will be able to cancel the process by pressing Escape." + Environment.NewLine + Environment.NewLine +
                 "Do you want to continue?" },
-        { "fr", "Il y a {0} résultats." + Environment.NewLine + Environment.NewLine +
+        { "fr", "Il y a {0} résultats." + Environment.NewLine +
+                "Vous pourrez annuler le processus en appuyant sur Echap." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous continuer ?" }
       };
 

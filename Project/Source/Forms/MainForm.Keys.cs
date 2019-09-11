@@ -23,6 +23,9 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private bool InProcess;
+    private bool CancelRequired;
+
     /// <summary>
     /// Process the command key.
     /// </summary>
@@ -32,6 +35,9 @@ namespace Ordisoftware.HebrewWords
       int y;
       switch ( keyData )
       {
+        case Keys.Escape:
+          if (InProcess) CancelRequired = true;
+          break;
         case Keys.Control | Keys.F:
           ActionSearchVerse.PerformClick();
           return true;
