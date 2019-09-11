@@ -30,10 +30,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Data.DataSet.VersesRow verse in list )
       {
         string str = verse.Number + ". ";
-        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-          str = str + word.Translation + " ";
-        str = str.Remove(str.Length - 1, 1);
-        EditTranslations.SelectedText = str;
+        EditTranslations.SelectedText = str + DataSet.GetTranslation(verse);
         if ( verse.Comment != "" )
         {
           EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;

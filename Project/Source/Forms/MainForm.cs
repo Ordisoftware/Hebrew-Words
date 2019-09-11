@@ -930,11 +930,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       var verse = (Data.DataSet.VersesRow)( (TextBox)GetMenuItemSourceControl(sender).Tag ).Tag;
-      string str = ""; 
-      foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-        str = str + word.Translation + " ";
-      str = str.Remove(str.Length - 1, 1);
-      Clipboard.SetText(str);
+      Clipboard.SetText(DataSet.GetTranslation(verse));
     }
 
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
