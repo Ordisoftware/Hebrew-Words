@@ -80,8 +80,8 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditShowTips.Checked = settings.ShowTips;
       if ( settings.BackupPath == "" )
       {
-        Directory.CreateDirectory(Program.UserDocumentsFolder);
-        settings.BackupPath = Program.UserDocumentsFolder;
+        Directory.CreateDirectory(Program.UserDocumentsFolderPath);
+        settings.BackupPath = Program.UserDocumentsFolderPath;
       }
     }
 
@@ -92,7 +92,8 @@ namespace Ordisoftware.HebrewWords
     static internal void Store(this Settings settings)
     {
       var winState = MainForm.WindowState;
-      if ( winState != FormWindowState.Minimized ) settings.MainFormState = winState;
+      if ( winState != FormWindowState.Minimized )
+        settings.MainFormState = winState;
       if ( winState == FormWindowState.Normal )
       {
         settings.MainFormLeft = MainForm.Left;

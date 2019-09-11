@@ -46,13 +46,19 @@ namespace Ordisoftware.HebrewWords
       Instance = new MainForm();
     }
 
-    public bool IsLoading { get; private set; }
+    /// <summary>
+    /// Indicate if is in loading data stage.
+    /// </summary>
+    public bool IsLoadingData { get; private set; }
 
     /// <summary>
     /// Indicate last showned tooltip.
     /// </summary>
-    private ToolTip _LastToolTip = new ToolTip();
+    private ToolTip LastToolTip = new ToolTip();
 
+    /// <summary>
+    /// Indicate current bible reference.
+    /// </summary>
     public ReferenceItem CurrentReference { get; private set; }
 
     /// <summary>
@@ -83,24 +89,26 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      IsLoading = true;
+      Refresh();
+      IsLoadingData = true;
       try
       {
-        OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
-        SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolder;
-        SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolder;
-        SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolder;
+        OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolderPath;
+        SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolderPath;
+        SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolderPath;
+        SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolderPath;
         CheckUpdate(true);
         DoBackupDB();
-        LoadData();
+        PopulateData();
         TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
         if ( TimerAutoSave.Enabled )
           TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       }
       finally
       {
-        IsLoading = false;
+        IsLoadingData = false;
       }
+      SetView(Program.Settings.CurrentView, true);
       UpdateViews();
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
@@ -122,9 +130,8 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Show a splash screen chile loading data.
     /// </summary>
-    private void LoadData()
+    private void PopulateData()
     {
-      Refresh();
       var form = new LoadingForm();
       form.ProgressBar.Maximum = 6;
       form.Show();
@@ -151,7 +158,6 @@ namespace Ordisoftware.HebrewWords
       {
         form.Hide();
         SetFormDisabled(false);
-        SetView(Program.Settings.CurrentView, true);
       }
     }
 
@@ -261,10 +267,10 @@ namespace Ordisoftware.HebrewWords
     private void TimerTooltip_Tick(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
-      var item = (ToolStripItem)_LastToolTip.Tag;
+      var item = (ToolStripItem)LastToolTip.Tag;
       var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
-      _LastToolTip.Tag = sender;
-      _LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+      LastToolTip.Tag = sender;
+      LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
       TimerTooltip.Enabled = false;
     }
 
@@ -275,8 +281,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !EditShowTips.Checked ) return;
       if ( !( sender is ToolStripItem ) ) return;
-      if ( _LastToolTip.Tag == sender ) return;
-      _LastToolTip.Tag = sender;
+      if ( LastToolTip.Tag == sender ) return;
+      LastToolTip.Tag = sender;
       if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
       TimerTooltip.Enabled = true;
     }
@@ -288,8 +294,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !EditShowTips.Checked ) return;
       TimerTooltip.Enabled = false;
-      _LastToolTip.Tag = null;
-      _LastToolTip.Hide(ToolStrip);
+      LastToolTip.Tag = null;
+      LastToolTip.Hide(ToolStrip);
     }
 
     /// <summary>
@@ -380,23 +386,24 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      int book = CurrentReference.Book.Number;
-      int chapter = CurrentReference.Chapter.Number;
-      int verse = CurrentReference.Verse?.Number ?? 1;
-      IsLoading = true;
+      if ( !EditBooksForm.Run() ) return;
+      IsLoadingData = true;
       try
       {
-        new EditBooksForm().ShowDialog();
+        int book = CurrentReference.Book.Number;
+        int chapter = CurrentReference.Chapter.Number;
+        int verse = CurrentReference.Verse?.Number ?? 1;
+        Refresh();
         BooksTableAdapter.Fill(DataSet.Books);
         InitBooksCombobox();
         LoadBookmarks();
         UpdateBookmarks();
+        GoTo(book, chapter, verse);
       }
       finally
       {
-        IsLoading = false;
+        IsLoadingData = false;
       }
-      GoTo(book, chapter, verse);
     }
 
     /// <summary>
@@ -423,8 +430,8 @@ namespace Ordisoftware.HebrewWords
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       DataSet.Clear();
-      File.Delete(Program.UserDataFolder + filename);
-      LoadData();
+      File.Delete(Program.UserDataFolderPath + filename);
+      PopulateData();
     }
 
     /// <summary>
@@ -441,9 +448,9 @@ namespace Ordisoftware.HebrewWords
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
       DataSet.Clear();
-      File.Delete(Program.UserDataFolder + filename);
-      File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolder + filename);
-      LoadData();
+      File.Delete(Program.UserDataFolderPath + filename);
+      File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
+      PopulateData();
     }
 
     /// <summary>
@@ -457,7 +464,7 @@ namespace Ordisoftware.HebrewWords
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Program.UserDataFolder + filename, SaveFileDialogDB.FileName);
+      File.Copy(Program.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
     }
 
     /// <summary>
@@ -467,7 +474,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSave_Click(object sender, EventArgs e)
     {
-      if ( DataSet.HasChanges() ) TableAdapterManager.UpdateAll(DataSet);
+      if ( DataSet.HasChanges() )
+        TableAdapterManager.UpdateAll(DataSet);
       ActionSave.Enabled = false;
     }
 
@@ -488,8 +496,12 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      new PreferencesForm().ShowDialog();
-      GoTo(CurrentReference);
+      if ( !PreferencesForm.Run() ) return;
+      Refresh();
+      UpdateViewVerses();
+      var reference = Instance.CurrentReference;
+      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
     }
 
     /// <summary>
@@ -598,8 +610,8 @@ namespace Ordisoftware.HebrewWords
         case ViewModeType.Verses:
           SaveFileDialogWord.FileName = book.Name + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          Cursor = Cursors.WaitCursor;
           var form = new ExportForm();
+          Cursor = Cursors.WaitCursor;
           SetFormDisabled(true);
           try
           {
@@ -617,8 +629,9 @@ namespace Ordisoftware.HebrewWords
           }
           finally
           {
-            form.Close();
+            Cursor = Cursors.Default;
             SetFormDisabled(false);
+            form.Close();
           }
           break;
         case ViewModeType.Text:
@@ -648,6 +661,7 @@ namespace Ordisoftware.HebrewWords
         case ViewModeType.Verses:
           SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+          Cursor = Cursors.WaitCursor;
           SetFormDisabled(true);
           try
           {
@@ -655,6 +669,7 @@ namespace Ordisoftware.HebrewWords
           }
           finally
           {
+            Cursor = Cursors.Default;
             SetFormDisabled(false);
           }
           break;
@@ -797,7 +812,6 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(ReferenceItem reference)
     {
       if ( reference == null ) return;
-      //SetView(ViewModeType.Verses);
       IsGotoRunning = true;
       bool updated = false;
       try
@@ -882,7 +896,6 @@ namespace Ordisoftware.HebrewWords
 
     private Control GetMenuItemSourceControl(object sender)
     {
-      if ( !( sender is ToolStripMenuItem ) ) throw new Exception("Wrong sender type: ToolStripMenuItem expected.");
       return ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
     }
 
@@ -935,7 +948,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;
-      _Bookmarks.Clear();
+      Bookmarks.Clear();
       Program.Settings.Store();
       SaveBookmarks();
       UpdateBookmarks();

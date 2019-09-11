@@ -31,16 +31,22 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
-    /// Indicate filepath of application.
+    /// Indicate root folder path of the application.
     /// </summary>
-    static public readonly string RootPath
-      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Bin\\Debug\\", "\\Bin\\").Replace("\\Bin\\Release\\", "\\Bin\\"))).FullName + Path.DirectorySeparatorChar;
+    static public readonly string RootFolderPath
+      = Directory.GetParent
+        (
+          Path.GetDirectoryName(Application.ExecutablePath
+                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
+                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
+        ).FullName
+      + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the application's icon.
     /// </summary>
     static public readonly string IconFilename 
-      = RootPath + "Application.ico";
+      = RootFolderPath + "Application.ico";
 
     /// <summary>
     /// Indicate the extension of database file.
@@ -49,20 +55,26 @@ namespace Ordisoftware.HebrewWords
       = ".sqlite";
 
     /// <summary>
-    /// Indicate filename of the help file.
+    /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
 
     /// <summary>
-    /// Indicate documents folder path.
+    /// Indicate application documents folder.
     /// </summary>
-    static public readonly string DocumentsPath
-      = RootPath + "Documents" + Path.DirectorySeparatorChar;
+    static public readonly string DocumentsFolderPath
+      = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
-    static public string UserDataFolder { get; private set; }
+    /// <summary>
+    /// Indicate user data folder path.
+    /// </summary>
+    static public string UserDataFolderPath { get; private set; }
 
-    static public string UserDocumentsFolder { get; private set; }
+    /// <summary>
+    /// Indicate user documents folder path.
+    /// </summary>
+    static public string UserDocumentsFolderPath { get; private set; }
 
     /// <summary>
     /// Indicate the default Settings instance.
@@ -96,13 +108,19 @@ namespace Ordisoftware.HebrewWords
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-        UserDocumentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(UserDataFolder);
+        UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) 
+                       + Path.DirectorySeparatorChar
+                       + AboutBox.Instance.AssemblyCompany 
+                       + Path.DirectorySeparatorChar
+                       + AboutBox.Instance.AssemblyTitle 
+                       + Path.DirectorySeparatorChar;
+        UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 
+                            + Path.DirectorySeparatorChar
+                            + AboutBox.Instance.AssemblyCompany 
+                            + Path.DirectorySeparatorChar
+                            + AboutBox.Instance.AssemblyTitle 
+                            + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(UserDataFolderPath);
         Application.Run(MainForm.Instance);
       }
       catch ( Exception ex )

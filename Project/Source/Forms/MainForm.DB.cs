@@ -155,7 +155,7 @@ namespace Ordisoftware.HebrewWords
         Data.DataSet.ChaptersRow chapter = null;
         Data.DataSet.VersesRow verse = null;
         Data.DataSet.WordsRow word = null;
-        string path = Program.DocumentsPath;
+        string path = Program.DocumentsFolderPath;
         string strELS50 = "";
         void nextChapter()
         {

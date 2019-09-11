@@ -26,13 +26,21 @@ namespace Ordisoftware.HebrewWords
   public partial class PreferencesForm : Form
   {
 
-    private int _CommentaryLinesCount;
-    private int _WordControlWidth;
+    static public bool Run()
+    {
+      var form = new PreferencesForm();
+      form.ShowDialog();
+      return form.UpdateViewRequired;
+    }
+
+    private bool UpdateViewRequired;
+    private int CommentaryLinesCount;
+    private int WordControlWidth;
 
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public PreferencesForm()
+    private PreferencesForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -57,16 +65,16 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
-      _CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
-      _WordControlWidth = (int)EditWordControlWidth.Value;
+      CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      WordControlWidth = (int)EditWordControlWidth.Value;
     }
 
     /// <summary>
-    /// Event handler. Called by PreferencesForm for closing events.
+    /// Event handler. Called by PreferencesForm for closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void PreferencesForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Program.Settings.SearchOnline = EditOnlineSearch.Text;
@@ -86,14 +94,9 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
-      if ( _CommentaryLinesCount != (int)EditCommentaryLinesCount.Value 
-        || _WordControlWidth != (int)EditWordControlWidth.Value )
-      {
-        var reference = MainForm.Instance.CurrentReference;
-        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-        MainForm.Instance.UpdateViewVerses();
-        MainForm.Instance.GoTo(reference.Book.Number, reference.Chapter.Number, verse);
-      }
+      if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value
+        || WordControlWidth != (int)EditWordControlWidth.Value )
+        UpdateViewRequired = true;
     }
 
     /// <summary>
@@ -120,6 +123,7 @@ namespace Ordisoftware.HebrewWords
       if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
         EditBackupPath.Text = FolderBrowserDialog.SelectedPath;
     }
+
   }
 
 }

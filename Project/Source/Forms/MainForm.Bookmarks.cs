@@ -24,17 +24,17 @@ namespace Ordisoftware.HebrewWords
 
   public partial class MainForm
   {
-    private List<ReferenceItem> _Bookmarks = new List<ReferenceItem>();
+    private List<ReferenceItem> Bookmarks = new List<ReferenceItem>();
 
-    private string _BookmarksFilename { get { return Program.UserDataFolder + "Bookmarks.txt"; } }
+    private string BookmarksFilename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
 
     private void LoadBookmarks()
     {
-      if ( File.Exists(_BookmarksFilename) )
+      Bookmarks.Clear();
+      if ( File.Exists(BookmarksFilename) )
         try
         {
-          _Bookmarks.Clear();
-          var list = File.ReadLines(_BookmarksFilename);
+          var list = File.ReadLines(BookmarksFilename);
           for (int index = list.Count() - 1; index >= 0; index-- )
           {
             string item = list.ElementAt(index);
@@ -55,11 +55,11 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        if ( IsLoading ) return;
+        if ( IsLoadingData ) return;
         var items = new List<string>();
-        foreach ( var reference in _Bookmarks )
-          items.Add(reference.Book.Number + "." + reference.Chapter.Number + "." + reference.Verse.Number);
-        File.WriteAllLines(_BookmarksFilename, items);
+        foreach ( var reference in Bookmarks )
+          items.Add(reference.ToStringNumbers());
+        File.WriteAllLines(BookmarksFilename, items);
       }
       catch ( Exception ex )
       {
@@ -70,18 +70,18 @@ namespace Ordisoftware.HebrewWords
     private void AddBookmark(ReferenceItem reference)
     {
       if ( Program.Settings.BookmarksCount < 1 ) return;
-      foreach ( var value in _Bookmarks )
-        if ( value.ToString() == reference.ToString() )
+      foreach ( var value in Bookmarks )
+        if ( value.ToStringNumbers() == reference.ToStringNumbers() )
           return;
-      _Bookmarks.Insert(0, reference);
+      Bookmarks.Insert(0, reference);
     }
 
     internal void UpdateBookmarks()
     {
       while ( MenuBookmarks.DropDownItems.Count > 2 )
         MenuBookmarks.DropDownItems.RemoveAt(2);
-      while ( _Bookmarks.Count > Program.Settings.BookmarksCount )
-        _Bookmarks.RemoveAt(_Bookmarks.Count - 1);
+      while ( Bookmarks.Count > Program.Settings.BookmarksCount )
+        Bookmarks.RemoveAt(Bookmarks.Count - 1);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -103,7 +103,7 @@ namespace Ordisoftware.HebrewWords
         }
         else
         {
-          _Bookmarks.Remove((ReferenceItem)menuitem.Tag);
+          Bookmarks.Remove((ReferenceItem)menuitem.Tag);
           SaveBookmarks();
           UpdateBookmarks();
         }
@@ -115,7 +115,7 @@ namespace Ordisoftware.HebrewWords
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Image = ActionSetAsBookmarkMaster.Image;
       MenuBookmarks.DropDownItems.Add("-");
-      foreach ( var reference in _Bookmarks )
+      foreach ( var reference in Bookmarks )
       {
         item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;

@@ -55,6 +55,10 @@ namespace Ordisoftware.HebrewWords
     {
       return Book.Name + " " + Chapter.Number + "." + Verse.Number;
     }
+    public string ToStringNumbers()
+    {
+      return Book.Number + "." + Chapter.Number + "." + Verse.Number;
+    }
     public ReferenceItem()
     {
     }

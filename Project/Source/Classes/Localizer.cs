@@ -25,6 +25,8 @@ namespace Ordisoftware.HebrewWords
   static public class Localizer
   {
 
+    static public readonly string NewLine = Environment.NewLine;
+
     /// <summary>
     /// Get the string translation.
     /// </summary>
@@ -75,9 +77,9 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> RestoreWinPosText
       = new Dictionary<string, string>()
       {
-        { "en", "This action will restore windows position." + Environment.NewLine + Environment.NewLine +
+        { "en", "This action will restore windows position." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + Environment.NewLine +
+        { "fr", "Cette action va restaurer la position de la fenêtre"  + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 
@@ -98,9 +100,9 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> RestoreLettersDefaultText
       = new Dictionary<string, string>()
       {
-        { "en", "This will restore all letters to default values." + Environment.NewLine + Environment.NewLine +
+        { "en", "This will restore all letters to default values." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Cela va restaurer les lettres à leurs valeurs par défaut." + Environment.NewLine + Environment.NewLine +
+        { "fr", "Cela va restaurer les lettres à leurs valeurs par défaut." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 

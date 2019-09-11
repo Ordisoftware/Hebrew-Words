@@ -23,11 +23,11 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font _HebrewFont = new Font("Hebrew", 12f);
+    private Font HebrewFont = new Font("Hebrew", 12f);
 
-    private Font _LatinFont = new Font("Verdana", 10f);
+    private Font LatinFont = new Font("Verdana", 10f);
 
-    private Font _VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
+    private Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
 
 
     private void AddTextRightAligned(RichTextBox control, Font font, string str)
@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViews()
     {
-      if ( IsLoading ) return;
+      if ( IsLoadingData ) return;
       UpdateViewVerses();
       UpdateViewTranslations();
       UpdateViewRawText();
@@ -82,8 +82,8 @@ namespace Ordisoftware.HebrewWords
         string str = "";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = word.Hebrew + " " + str;
-        AddTextRightAligned(EditRawText, _HebrewFont, str);
-        AddTextRightAligned(EditRawText, _LatinFont, ":" + verse.Number);
+        AddTextRightAligned(EditRawText, HebrewFont, str);
+        AddTextRightAligned(EditRawText, LatinFont, ":" + verse.Number);
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectionStart = 0;
@@ -95,8 +95,8 @@ namespace Ordisoftware.HebrewWords
       var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
-        AddTextRightAligned(EditELS50All, _HebrewFont, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, _LatinFont, " :" + chapter.Number);
+        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
         EditELS50All.AppendText(Environment.NewLine);
       }
       EditELS50All.SelectionStart = 0;
@@ -131,12 +131,12 @@ namespace Ordisoftware.HebrewWords
                     var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
                               ? Color.DarkRed
                               : SystemColors.ControlText;
-                    AddTextRightAligned(EditSearchResults, _HebrewFont, " ");
-                    AddTextRightAligned(EditSearchResults, _HebrewFont, w.Hebrew, color);
+                    AddTextRightAligned(EditSearchResults, HebrewFont, " ");
+                    AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
                     strTranslation = w.Translation + " " + strTranslation;
                   }
                   string strRef = " :" + verse.Number + "." + chapter.Number + "." + book.Name;
-                  AddTextRightAligned(EditSearchResults, _LatinFont, strRef);
+                  AddTextRightAligned(EditSearchResults, LatinFont, strRef);
                   EditSearchResults.AppendText(Environment.NewLine);
                   EditSearchResults.AppendText(strTranslation);
                   EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
@@ -194,7 +194,7 @@ namespace Ordisoftware.HebrewWords
           label.AutoSize = false;
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
-          label.Font = _VerseNumberFont;
+          label.Font = VerseNumberFont;
           label.Text = verse.Number.ToString();
           label.MouseEnter += LabelVerseNumber_MouseEnter;
           label.MouseLeave += LabelVerseNumber_MouseLeave;
@@ -265,7 +265,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditVerseComment_TextChanged(object sender, EventArgs e)
     {
-      if ( IsLoading ) return;
+      if ( IsLoadingData ) return;
       var textbox = (TextBox)sender;
       ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
       ActionSave.Enabled = true;

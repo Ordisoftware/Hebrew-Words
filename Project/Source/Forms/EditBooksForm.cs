@@ -22,7 +22,16 @@ namespace Ordisoftware.HebrewWords
   public partial class EditBooksForm : Form
   {
 
-    public EditBooksForm()
+    static public bool Run()
+    {
+      var form = new EditBooksForm();
+      form.ShowDialog();
+      return form.UpdateViewRequired;
+    }
+
+    private bool UpdateViewRequired;
+
+    private EditBooksForm()
     {
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
@@ -43,6 +52,7 @@ namespace Ordisoftware.HebrewWords
     {
       Validate();
       BooksBindingSource.EndEdit();
+      UpdateViewRequired = dataSet.HasChanges();
       TableAdapterManager.UpdateAll(dataSet);
     }
 

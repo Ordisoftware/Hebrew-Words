@@ -150,7 +150,6 @@ namespace Ordisoftware.HebrewWords
   
     private void LabelMiddleValue_MouseEnter(object sender, EventArgs e)
     {
-      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       var label = (Label)sender;
       label.Cursor = Cursors.Hand;
       label.ForeColor = System.Drawing.Color.DarkRed;
@@ -158,7 +157,6 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleValue_MouseLeave(object sender, EventArgs e)
     {
-      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       var label = (Label)sender;
       label.Cursor = Cursors.Hand;
       label.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -166,13 +164,13 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( !( sender is Label ) ) throw new Exception("Wrong sender type: Label expected.");
       Program.OpenHebrewLetters(((Label)sender).Text);
     }
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       var list = LabelMiddleReferenceValue.Text.Split('.');
+      Hide();
       MainForm.Instance.GoTo(Convert.ToInt32(list[0]), Convert.ToInt32(list[1]), Convert.ToInt32(list[2]));
       Close();
     }

@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewWords
       string strDate = String.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
                                      date.Year, date.Month, date.Day,
                                      date.Hour, date.Minute, date.Second);
-      string fileSource = Program.UserDataFolder + partFilename + Program.DBFileExtension;
+      string fileSource = Program.UserDataFolderPath + partFilename + Program.DBFileExtension;
       string fileDest = partPath + partFilename + " " + strDate + Program.DBFileExtension;
       if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
     }
