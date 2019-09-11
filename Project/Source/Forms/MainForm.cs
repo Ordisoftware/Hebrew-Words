@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewWords
       IsLoadingData = true;
       try
       {
-        SetDialogsDirtectory();
+        SetDialogsDirectory();
         CheckUpdate(true);
         DoBackupDB();
         PopulateData();
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
     }
 
-    internal void SetDialogsDirtectory()
+    internal void SetDialogsDirectory()
     {
       OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
       SaveFileDialogDB.InitialDirectory = Program.Settings.BackupPath;

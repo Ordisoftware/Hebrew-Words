@@ -96,7 +96,7 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
-      MainForm.Instance.SetDialogsDirtectory();
+      MainForm.Instance.SetDialogsDirectory();
       if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value
         || WordControlWidth != (int)EditWordControlWidth.Value )
         UpdateViewRequired = true;
