@@ -161,7 +161,7 @@ namespace Ordisoftware.HebrewWords
         {
           ViewModeType.Search, new Dictionary<string, string>
           {
-            { "en", "Tanak Search" },
+            { "en", "Search in the Tanak" },
             { "fr", "Recherche dans le Tanak" }
           }
         }
