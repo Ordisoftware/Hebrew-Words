@@ -135,7 +135,7 @@ namespace Ordisoftware.HebrewWords
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
           foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
             foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-              foreach ( char letter in Letters.UnFinaleAll(word.Hebrew) )
+              foreach ( char letter in word.Hebrew )
               {
                 index++;
                 if ( index == lcount )

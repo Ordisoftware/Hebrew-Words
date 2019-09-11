@@ -14,7 +14,6 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords

@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
