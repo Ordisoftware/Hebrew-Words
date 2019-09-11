@@ -916,8 +916,8 @@ namespace Ordisoftware.HebrewWords
     {
       var book = ( (BookItem)SelectBook.SelectedItem ).Book;
       var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
-      SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + "." + verse-- + ".docx";
+      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
+      SaveFileDialogWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
       if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
       ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
     }

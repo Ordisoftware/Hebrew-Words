@@ -2318,35 +2318,35 @@
   <data name="ActionBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionBackup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2471,13 +2471,13 @@
     <value>None</value>
   </data>
   <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionClearBookmarks.Text" xml:space="preserve">
     <value>Empty</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>105, 6</value>
   </data>
   <data name="MenuBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2733,9 +2733,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -2762,6 +2759,18 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -3146,18 +3155,6 @@
   </data>
   <data name="&gt;&gt;ActionAddToBookmarks.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

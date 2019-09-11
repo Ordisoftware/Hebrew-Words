@@ -140,7 +140,7 @@ namespace Ordisoftware.HebrewWords
                 index++;
                 if ( index == lcount )
                 {
-                  LabelMiddleReferenceValue.Text = book.Number + "." + chapter.Number + "." + verse.Number;
+                  LabelMiddleReferenceValue.Text = new ReferenceItem(book.Number, chapter.Number, verse.Number).ToString();
                   LabelMiddleWordValue.Text = word.Hebrew;
                   LabelMiddleLetterValue.Text = letter.ToString(); ;
                   return;
