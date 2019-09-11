@@ -13,6 +13,7 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -22,19 +23,13 @@ namespace Ordisoftware.HebrewWords
   public partial class FoundReferencesForm : Form
   {
 
-    static public void Run(ReferenceItem reference, WordControl sender, List<WordReferencedItem> items)
+    static public void Run(ReferenceItem reference, WordControl sender)
     {
       var form = new FoundReferencesForm();
       form.Reference = reference;
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
-      foreach ( var item in items )
-      {
-        var itemList = new ListViewItem(item.ToString());
-        itemList.Tag = item;
-        itemList.SubItems.Add(item.Word.Translation);
-        form.ListView.Items.Add(itemList);
-      }
+      form.EditHebrew.Text = sender.LabelHebrew.Text;
       form.Show();
     }
 
@@ -49,7 +44,7 @@ namespace Ordisoftware.HebrewWords
 
     private void WordTranslationsForm_Shown(object sender, EventArgs e)
     {
-      ActiveControl = ListView;
+      ActionUpdate.PerformClick();
     }
 
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,12 +57,36 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
+    private void ActionUpdate_Click(object sender, EventArgs e)
+    {
+      ListView.Items.Clear();
+      string wordHebrew = EditHebrew.Text;
+      var query = from book in MainForm.Instance.DataSet.Books
+                  from chapter in book.GetChaptersRows()
+                  from verse in chapter.GetVersesRows()
+                  from word in verse.GetWordsRows()
+                  where word.Hebrew == wordHebrew
+                     && word.Translation != ""
+                  select new WordReferencedItem
+                  {
+                    Book = book,
+                    Chapter = chapter,
+                    Verse = verse,
+                    Word = word
+                  };
+      foreach ( var item in query.ToList() )
+      {
+        var itemList = new ListViewItem(item.ToString());
+        itemList.Tag = item;
+        itemList.SubItems.Add(item.Word.Translation);
+        ListView.Items.Add(itemList);
+      }
+      ActiveControl = ListView;
+    }
+
     private void LabelReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       MainForm.Instance.GoTo(Reference);
-      WordControl.Focus();
-      WordControl.EditTranslation.SelectionStart = 0;
-      WordControl.EditTranslation.SelectionLength = 0;
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)

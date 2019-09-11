@@ -102,48 +102,29 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private Control GetMenuItemSourceControl(object sender)
-    {
-      return ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
-    }
-
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.OpenHebrewLetters(GetMenuItemSourceControl(sender).Text);
+      Program.OpenHebrewLetters(LabelHebrew.Text);
     }
 
     private void ActionOnlineSearch_Click(object sender, EventArgs e)
     {
-      Program.OpenOnlineConcordance((string)GetMenuItemSourceControl(sender).Tag);
+      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(GetMenuItemSourceControl(sender).Text);
+      Clipboard.SetText(LabelHebrew.Text);
     }
 
     private void ActionSearch_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SearchWord(GetMenuItemSourceControl(sender).Text);
+      MainForm.Instance.SearchWord(LabelHebrew.Text);
     }
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      string wordHebrew = GetMenuItemSourceControl(sender).Text;
-      var query = from book in MainForm.Instance.DataSet.Books
-                  from chapter in book.GetChaptersRows()
-                  from verse in chapter.GetVersesRows()
-                  from word in verse.GetWordsRows()
-                  where word.Hebrew == wordHebrew
-                     && word.Translation != ""
-                  select new WordReferencedItem
-                         {
-                           Book = book,
-                           Chapter = chapter,
-                           Verse = verse,
-                           Word = word
-                         };
-      FoundReferencesForm.Run(Reference, this, query.ToList());
+      FoundReferencesForm.Run(Reference, this);
     }
 
   }

@@ -33,18 +33,22 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.LabelReference = new System.Windows.Forms.LinkLabel();
       this.ButtonClose = new System.Windows.Forms.Button();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.PanelMain = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
+      this.PanelTop = new System.Windows.Forms.Panel();
+      this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.ActionUpdate = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
-      this.panel1.SuspendLayout();
+      this.PanelMain.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
+      this.PanelTop.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -69,11 +73,11 @@
       this.ButtonClose.UseVisualStyleBackColor = true;
       this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
       // 
-      // panel1
+      // PanelMain
       // 
-      this.panel1.Controls.Add(this.ListView);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      this.PanelMain.Controls.Add(this.ListView);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.Name = "PanelMain";
       // 
       // ListView
       // 
@@ -109,11 +113,11 @@
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
-      // ActionReachReference
+      // ActionUseTranslation
       // 
-      resources.ApplyResources(this.ActionReachReference, "ActionReachReference");
-      this.ActionReachReference.Name = "ActionReachReference";
-      this.ActionReachReference.Click += new System.EventHandler(this.ActionReachReference_Click);
+      resources.ApplyResources(this.ActionUseTranslation, "ActionUseTranslation");
+      this.ActionUseTranslation.Name = "ActionUseTranslation";
+      this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
       // 
       // ActionCopyTranslation
       // 
@@ -121,22 +125,43 @@
       this.ActionCopyTranslation.Name = "ActionCopyTranslation";
       this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
       // 
-      // ActionUseTranslation
-      // 
-      resources.ApplyResources(this.ActionUseTranslation, "ActionUseTranslation");
-      this.ActionUseTranslation.Name = "ActionUseTranslation";
-      this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
-      // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
+      // ActionReachReference
+      // 
+      resources.ApplyResources(this.ActionReachReference, "ActionReachReference");
+      this.ActionReachReference.Name = "ActionReachReference";
+      this.ActionReachReference.Click += new System.EventHandler(this.ActionReachReference_Click);
+      // 
+      // PanelTop
+      // 
+      this.PanelTop.Controls.Add(this.ActionUpdate);
+      this.PanelTop.Controls.Add(this.EditHebrew);
+      resources.ApplyResources(this.PanelTop, "PanelTop");
+      this.PanelTop.Name = "PanelTop";
+      // 
+      // EditHebrew
+      // 
+      resources.ApplyResources(this.EditHebrew, "EditHebrew");
+      this.EditHebrew.Name = "EditHebrew";
+      // 
+      // ActionUpdate
+      // 
+      this.ActionUpdate.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionUpdate, "ActionUpdate");
+      this.ActionUpdate.Name = "ActionUpdate";
+      this.ActionUpdate.UseVisualStyleBackColor = true;
+      this.ActionUpdate.Click += new System.EventHandler(this.ActionUpdate_Click);
+      // 
       // FoundReferencesForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.PanelTop);
       this.Controls.Add(this.PanelButtons);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "FoundReferencesLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesLocation;
@@ -146,8 +171,10 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
       this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
-      this.panel1.ResumeLayout(false);
+      this.PanelMain.ResumeLayout(false);
       this.ContextMenuStrip.ResumeLayout(false);
+      this.PanelTop.ResumeLayout(false);
+      this.PanelTop.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -155,7 +182,7 @@
     #endregion
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ButtonClose;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.ListView ListView;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -165,5 +192,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionUseTranslation;
     private System.Windows.Forms.LinkLabel LabelReference;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Panel PanelTop;
+    private System.Windows.Forms.TextBox EditHebrew;
+    private System.Windows.Forms.Button ActionUpdate;
   }
 }

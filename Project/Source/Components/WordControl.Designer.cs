@@ -139,7 +139,6 @@
     #endregion
 
     private System.Windows.Forms.Panel FlowLayoutPanel;
-    private System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
@@ -149,5 +148,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     internal System.Windows.Forms.TextBox EditTranslation;
+    internal System.Windows.Forms.Label LabelHebrew;
   }
 }
