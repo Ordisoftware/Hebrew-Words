@@ -93,10 +93,7 @@ namespace Ordisoftware.HebrewWords
       IsLoadingData = true;
       try
       {
-        OpenFileDialogDB.InitialDirectory = Program.UserDocumentsFolderPath;
-        SaveFileDialogDB.InitialDirectory = Program.UserDocumentsFolderPath;
-        SaveFileDialogWord.InitialDirectory = Program.UserDocumentsFolderPath;
-        SaveFileDialogRTF.InitialDirectory = Program.UserDocumentsFolderPath;
+        SetDialogsDirtectory();
         CheckUpdate(true);
         DoBackupDB();
         PopulateData();
@@ -114,6 +111,14 @@ namespace Ordisoftware.HebrewWords
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse);
       ActionSave.PerformClick();
+    }
+
+    internal void SetDialogsDirtectory()
+    {
+      OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
+      SaveFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
+      SaveFileDialogWord.InitialDirectory = Program.Settings.BackupPath;
+      SaveFileDialogRTF.InitialDirectory = Program.Settings.BackupPath;
     }
 
     /// <summary>

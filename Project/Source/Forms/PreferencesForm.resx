@@ -668,57 +668,6 @@
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;SelectOpenOnlineSearch.Name" xml:space="preserve">
-    <value>SelectOpenOnlineSearch</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenOnlineSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenOnlineSearch.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenOnlineSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenHebrewLetters.Name" xml:space="preserve">
-    <value>SelectOpenHebrewLetters</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenHebrewLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenHebrewLetters.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenHebrewLetters.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 345</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 88</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Click on a hebrew word opens</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="SelectOpenOnlineSearch.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -784,6 +733,33 @@
   </data>
   <data name="&gt;&gt;SelectOpenHebrewLetters.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 345</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 88</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Click on a hebrew word opens</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 139</value>

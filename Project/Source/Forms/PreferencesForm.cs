@@ -79,7 +79,9 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Program.Settings.SearchOnline = EditOnlineSearch.Text;
       Program.Settings.OpenVerseOnline = EditOnlineVerseURL.Text;
-      Program.Settings.BackupPath = EditBackupPath.Text;
+      Program.Settings.BackupPath = EditBackupPath.Text.EndsWith(Path.DirectorySeparatorChar.ToString())
+                                  ? EditBackupPath.Text
+                                  : EditBackupPath.Text + Path.DirectorySeparatorChar;
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
       Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
@@ -94,6 +96,7 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
+      MainForm.Instance.SetDialogsDirtectory();
       if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value
         || WordControlWidth != (int)EditWordControlWidth.Value )
         UpdateViewRequired = true;
