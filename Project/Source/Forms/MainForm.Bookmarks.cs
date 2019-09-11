@@ -88,6 +88,7 @@ namespace Ordisoftware.HebrewWords
       EventHandler gotoBookmark = (sender, e) =>
       {
         GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+        ActionSave.PerformClick();
       };
       MouseEventHandler bookmarkClicked = (sender, e) =>
       {

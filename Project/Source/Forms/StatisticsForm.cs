@@ -140,7 +140,8 @@ namespace Ordisoftware.HebrewWords
                 index++;
                 if ( index == lcount )
                 {
-                  LabelMiddleReferenceValue.Text = new ReferenceItem(book.Number, chapter.Number, verse.Number).ToString();
+                  LabelMiddleReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
+                  LabelMiddleReferenceValue.Text = LabelMiddleReferenceValue.Tag.ToString();
                   LabelMiddleWordValue.Text = word.Hebrew;
                   LabelMiddleLetterValue.Text = letter.ToString(); ;
                   return;
@@ -169,9 +170,8 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var list = LabelMiddleReferenceValue.Text.Split('.');
-      Hide();
-      MainForm.Instance.GoTo(Convert.ToInt32(list[0]), Convert.ToInt32(list[1]), Convert.ToInt32(list[2]));
+      var reference = (ReferenceItem)LabelMiddleReferenceValue.Tag;
+      MainForm.Instance.GoTo(reference);
       Close();
     }
   }
