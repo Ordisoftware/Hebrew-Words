@@ -60,12 +60,14 @@ namespace Ordisoftware.HebrewWords
     {
       ListView.Items.Clear();
       string wordHebrew = EditHebrew.Text;
+      Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
+      Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
+      Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
       var query = from book in MainForm.Instance.DataSet.Books
                   from chapter in book.GetChaptersRows()
                   from verse in chapter.GetVersesRows()
                   from word in verse.GetWordsRows()
-                  where word.Hebrew == wordHebrew
-                     && word.Translation != ""
+                  where check(word.Hebrew) && word.Translation != ""
                   select new WordReferencedItem
                   {
                     Book = book,
@@ -73,7 +75,7 @@ namespace Ordisoftware.HebrewWords
                     Verse = verse,
                     Word = word
                   };
-      foreach ( var item in query.ToList() )
+      foreach ( var item in query )
       {
         var itemList = new ListViewItem(item.ToString());
         itemList.Tag = item;

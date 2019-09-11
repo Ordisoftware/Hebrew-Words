@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelReference.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="LabelReference.Text" xml:space="preserve">
     <value>Reference</value>
@@ -163,7 +163,7 @@
     <value>75, 23</value>
   </data>
   <data name="ButtonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -298,7 +298,7 @@
     <value>0, 0</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 308</value>
+    <value>372, 288</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -319,13 +319,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 60</value>
+    <value>10, 80</value>
   </data>
   <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 318</value>
+    <value>372, 298</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -340,6 +340,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditWholeWord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWholeWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 48</value>
+  </data>
+  <data name="EditWholeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 17</value>
+  </data>
+  <data name="EditWholeWord.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditWholeWord.Text" xml:space="preserve">
+    <value>Whole word</value>
+  </data>
+  <data name="&gt;&gt;EditWholeWord.Name" xml:space="preserve">
+    <value>EditWholeWord</value>
+  </data>
+  <data name="&gt;&gt;EditWholeWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWholeWord.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;EditWholeWord.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ActionUpdate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -384,7 +411,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionUpdate.Name" xml:space="preserve">
     <value>ActionUpdate</value>
@@ -396,7 +423,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;ActionUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditHebrew.Font" type="System.Drawing.Font, System.Drawing">
     <value>Hebrew, 14.249999pt</value>
@@ -408,7 +435,7 @@
     <value>318, 35</value>
   </data>
   <data name="EditHebrew.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="EditHebrew.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
@@ -423,7 +450,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditHebrew.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -432,7 +459,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 50</value>
+    <value>372, 70</value>
   </data>
   <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -447,7 +474,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

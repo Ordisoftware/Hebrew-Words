@@ -43,8 +43,9 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop = new System.Windows.Forms.Panel();
-      this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.ActionUpdate = new System.Windows.Forms.Button();
+      this.EditHebrew = new System.Windows.Forms.TextBox();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
@@ -138,15 +139,19 @@
       // 
       // PanelTop
       // 
+      this.PanelTop.Controls.Add(this.EditWholeWord);
       this.PanelTop.Controls.Add(this.ActionUpdate);
       this.PanelTop.Controls.Add(this.EditHebrew);
       resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
       // 
-      // EditHebrew
+      // EditWholeWord
       // 
-      resources.ApplyResources(this.EditHebrew, "EditHebrew");
-      this.EditHebrew.Name = "EditHebrew";
+      resources.ApplyResources(this.EditWholeWord, "EditWholeWord");
+      this.EditWholeWord.Checked = true;
+      this.EditWholeWord.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditWholeWord.Name = "EditWholeWord";
+      this.EditWholeWord.UseVisualStyleBackColor = true;
       // 
       // ActionUpdate
       // 
@@ -155,6 +160,12 @@
       this.ActionUpdate.Name = "ActionUpdate";
       this.ActionUpdate.UseVisualStyleBackColor = true;
       this.ActionUpdate.Click += new System.EventHandler(this.ActionUpdate_Click);
+      // 
+      // EditHebrew
+      // 
+      this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditHebrew, "EditHebrew");
+      this.EditHebrew.Name = "EditHebrew";
       // 
       // FoundReferencesForm
       // 
@@ -195,5 +206,6 @@
     private System.Windows.Forms.Panel PanelTop;
     private System.Windows.Forms.TextBox EditHebrew;
     private System.Windows.Forms.Button ActionUpdate;
+    private System.Windows.Forms.CheckBox EditWholeWord;
   }
 }
