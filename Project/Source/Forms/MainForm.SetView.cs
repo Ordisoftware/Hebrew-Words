@@ -121,12 +121,13 @@ namespace Ordisoftware.HebrewWords
       if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
       ActionCopyToClipboard.Enabled = view == ViewModeType.Translations;
-      ActionExportBook.Enabled = view != ViewModeType.Search;
+      ActionExportBook.Enabled = view == ViewModeType.Verses
+                              || view == ViewModeType.ELS50;
       ActionExportChapter.Enabled = view == ViewModeType.Verses
                                  || view == ViewModeType.Translations
                                  || view == ViewModeType.Text;
-      SelectBook.Enabled = ActionExportBook.Enabled;
-      LabelSelectBook.Enabled = ActionExportBook.Enabled;
+      SelectBook.Enabled = view != ViewModeType.Search;
+      LabelSelectBook.Enabled = SelectBook.Enabled;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
       ActionSearchVerse.Enabled = view == ViewModeType.Verses
