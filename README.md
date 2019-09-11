@@ -60,6 +60,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 #### __________ - Version 2.0
 
 - Add context menu on hebrew words and on verses numbers.
+- Add find translations of a word.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
 - Add master bookmark used at startup.
@@ -67,7 +68,6 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Improve UI.
 - Improve verses rendering.
 - Improve translations rendering.
-- Improve search results rendering.
 - Fix select backup path icon not implemented.
 
 #### 2019.09.03 - Version 1.8
