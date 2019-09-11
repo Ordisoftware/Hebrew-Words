@@ -86,6 +86,21 @@
     <Compile Include="Source\Forms\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm.UpdateViewTranslation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.UpdateViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.UpdateViewVerses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.UpdateViewESL50.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.UpdateViewRawText.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\SelectVerseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +141,7 @@
     <Compile Include="Source\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViews.cs">
+    <Compile Include="Source\Forms\MainForm.UpdateViewSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Keys.cs">

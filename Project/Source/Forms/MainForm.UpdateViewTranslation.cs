@@ -23,33 +23,25 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font HebrewFont = new Font("Hebrew", 12f);
-
-    private Font LatinFont = new Font("Verdana", 10f);
-
-    private Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
-
-
-    private void AddTextRightAligned(RichTextBox control, Font font, string str)
+    private void UpdateViewTranslations()
     {
-      AddTextRightAligned(control, font, str, SystemColors.ControlText);
-    }
-
-    private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
-    {
-      control.SelectionFont = font;
-      control.SelectionColor = color;
-      control.SelectedText = str;
-      control.SelectionAlignment = HorizontalAlignment.Right;
-    }
-
-    private void UpdateViews()
-    {
-      if ( IsLoadingData ) return;
-      UpdateViewVerses();
-      UpdateViewTranslations();
-      UpdateViewRawText();
-      UpdateViewELS50();
+      EditTranslations.Clear();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+      foreach ( Data.DataSet.VersesRow verse in list )
+      {
+        string str = verse.Number + ". ";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = str + word.Translation + " ";
+        str = str.Remove(str.Length - 1, 1);
+        EditTranslations.SelectedText = str;
+        if ( verse.Comment != "" )
+        {
+          EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
+          EditTranslations.SelectedText = verse.Comment;
+        }
+        EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
+      }
+      EditTranslations.SelectionStart = 0;
     }
 
   }

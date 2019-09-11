@@ -23,33 +23,17 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font HebrewFont = new Font("Hebrew", 12f);
-
-    private Font LatinFont = new Font("Verdana", 10f);
-
-    private Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
-
-
-    private void AddTextRightAligned(RichTextBox control, Font font, string str)
+    private void UpdateViewELS50()
     {
-      AddTextRightAligned(control, font, str, SystemColors.ControlText);
-    }
-
-    private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
-    {
-      control.SelectionFont = font;
-      control.SelectionColor = color;
-      control.SelectedText = str;
-      control.SelectionAlignment = HorizontalAlignment.Right;
-    }
-
-    private void UpdateViews()
-    {
-      if ( IsLoadingData ) return;
-      UpdateViewVerses();
-      UpdateViewTranslations();
-      UpdateViewRawText();
-      UpdateViewELS50();
+      EditELS50All.Clear();
+      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
+      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      {
+        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
+        EditELS50All.AppendText(Environment.NewLine);
+      }
+      EditELS50All.SelectionStart = 0;
     }
 
   }
