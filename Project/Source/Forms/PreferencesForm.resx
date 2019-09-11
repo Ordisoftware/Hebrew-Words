@@ -521,7 +521,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -548,7 +548,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
     <value>EditOnlineSearch</value>
@@ -591,7 +591,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectBackupPath.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionSelectBackupPath.Name" xml:space="preserve">
     <value>ActionSelectBackupPath</value>
@@ -612,7 +612,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditBackupPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditBackupPath.Name" xml:space="preserve">
     <value>EditBackupPath</value>
@@ -633,7 +633,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditBackupCount.Name" xml:space="preserve">
     <value>EditBackupCount</value>
@@ -654,7 +654,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
     <value>EditAutoSaveDelay</value>
@@ -744,7 +744,7 @@
     <value>210, 88</value>
   </data>
   <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
     <value>Click on a hebrew word opens</value>
@@ -768,7 +768,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Name" xml:space="preserve">
     <value>EditOnlineVerseURL</value>
@@ -822,7 +822,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditCommentaryLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.Name" xml:space="preserve">
     <value>EditCommentaryLinesCount</value>
@@ -843,7 +843,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.Name" xml:space="preserve">
     <value>EditBookmarksCount</value>
@@ -864,7 +864,7 @@
     <value>42, 20</value>
   </data>
   <data name="EditWordControlWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.Name" xml:space="preserve">
     <value>EditWordControlWidth</value>
