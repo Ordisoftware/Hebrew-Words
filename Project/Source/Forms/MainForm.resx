@@ -137,6 +137,9 @@
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
   </data>
+  <data name="&gt;&gt;SaveFileDialogRTF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;TimerTooltip.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -179,11 +182,11 @@
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
     <value>956, 458</value>
   </data>
-  <data name="ActionViewSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 46</value>
-  </data>
   <data name="EditTranslations.Text" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="&gt;&gt;PanelNavigation.Name" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -191,8 +194,8 @@
   <data name="TabPageText.Text" xml:space="preserve">
     <value>Text</value>
   </data>
-  <data name="ActionSearchWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 163</value>
+  <data name="ActionNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="&gt;&gt;TimerAutoSave.Name" xml:space="preserve">
     <value>TimerAutoSave</value>
@@ -206,8 +209,8 @@
   <data name="ActionViewStatistics.ToolTipText" xml:space="preserve">
     <value>View statistics</value>
   </data>
-  <data name="LabelSelectBook.Text" xml:space="preserve">
-    <value>Book</value>
+  <data name="&gt;&gt;ActionExportChapter.Name" xml:space="preserve">
+    <value>ActionExportChapter</value>
   </data>
   <data name="EditScreenBottomLeft.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -218,6 +221,9 @@
   </data>
   <data name="TabPageELS50.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ActionRestore.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -230,6 +236,9 @@
   </data>
   <data name="Sep6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelSepTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -246,7 +255,7 @@
   <data name="ActionContact.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAANLSURBVFhH7ZbbThNRGIV7oZcm3uh7+Ar6EF6aiMH3MHLw
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAANLSURBVFhH7ZbbThNRGIV7oZcm3uh7+Ar6EF6aiMH3MHLw
         wK13AvFCE2MwUQxQOStoW+SMbYAWFMqh5SAC9Qi/65vpkKEziQiFG5lkhZm9//9ba/bebYmcXqeXrjM3
         G/ubKxsH7EZD3CrqXd0os/a48sALT7wJcI6BgpnN/zKb++FqXsqWSbD2uPLAC0+8CXChQqnWf5tVdWSt
         sGP2LG3WJD3PlEewYMLGAy888SbARZZmTcma0rt2pzNr2yp8OWvWLL36dDTBgAUTNh544Yn3XoCVn2Yt
@@ -272,8 +281,8 @@
   <data name="&gt;&gt;TabPageELS50.Name" xml:space="preserve">
     <value>TabPageELS50</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
-    <value>bindingNavigatorMoveFirstItem</value>
+  <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 6</value>
@@ -314,7 +323,7 @@
   <data name="ActionViewELS50.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAQlSURBVFhHtVfbbuNUFK0E8zAtI/FC/4NfgB8BMS/zD1CQ
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAQlSURBVFhHtVfbbuNUFK0E8zAtI/FC/4NfgB8BMS/zD1CQ
         +BNE47RpLg+8TRIn6VSCAfEHlGkniS+xaztxnDhpZ7PXPnHjXNocoemSlryPzzlrr73tyCd7a/i0VK3+
         Vq7V6KxSodL/Ylmu5WqVTs7OatBU0np4gY0fC47j0LFhVFj3EyW/G1+gcuDy3yu6vOrRZc+jSytkDjUY
         0j9dV/b/cnwsV8uyqGAYLdbW6sQh2ge8u+7SO8unfvFbcn86YL7YzR8PqFf4Rvb/ahQpCEKJ+/0+FYvF
@@ -344,8 +353,14 @@
   <data name="&gt;&gt;PanelViewVerses.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
   <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
+    <value>PanelMainInner</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -410,9 +425,6 @@
   <data name="&gt;&gt;TabPageVerses.Name" xml:space="preserve">
     <value>TabPageVerses</value>
   </data>
-  <data name="&gt;&gt;PanelViewELS50.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ActionAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -426,14 +438,14 @@
         lyXpaPE6Ynt3ucT1dRzicl0BpJoDob51A+YAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionCheckUpdate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
     <value>View original text (F4)</value>
   </data>
   <data name="&gt;&gt;WordsBindingSource.Name" xml:space="preserve">
     <value>WordsBindingSource</value>
+  </data>
+  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>ELS50</value>
@@ -444,8 +456,8 @@
   <data name="ActionViewBooksTranslation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="EditScreenCenter.Text" xml:space="preserve">
-    <value>Center</value>
+  <data name="LabelSelectBook.Text" xml:space="preserve">
+    <value>Book</value>
   </data>
   <data name="ActionCopyToClipboard.ToolTipText" xml:space="preserve">
     <value>Copy to clipboard</value>
@@ -467,9 +479,6 @@
   </data>
   <data name="&gt;&gt;ActionViewTranslations.Name" xml:space="preserve">
     <value>ActionViewTranslations</value>
-  </data>
-  <data name="&gt;&gt;MenuDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ActionViewRawText.Text" xml:space="preserve">
     <value>View original text</value>
@@ -507,7 +516,7 @@
   <data name="ActionRestore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAa/SURBVFhHzVdZbJRlFMWoMdGYiMs8+eCDGhOjxuDGIgVr
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAa/SURBVFhHzVdZbJRlFMWoMdGYiMs8+eCDGhOjxuDGIgVr
         5E1NJMqDidFEHkzQiBGwiKCA2DalttOWtii0UyilpSzadSjQvZ1OZ+90mXZm2umUMtMWuiDWTtvjuf9f
         QPSfFjAx3uS8zNzvnvPde8/8/yz6P8cdyZmGl/UH83dn5B5xpuQeDWQYCnEzUHJ5Rs5KDamllry5uDPt
         wJH4jLxC5B0vR8m5ZjQ6utDi9sIfGoPvwui8kBzJlTNyVmqIKKkptVWK6HGX/uf8X3KLS2F2+9DRF4Lb
@@ -565,9 +574,6 @@
   </data>
   <data name="&gt;&gt;SaveFileDialogRTF.Name" xml:space="preserve">
     <value>SaveFileDialogRTF</value>
-  </data>
-  <data name="&gt;&gt;ActionClearBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ActionViewTranslations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -672,9 +678,6 @@
   <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="&gt;&gt;ActionContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="PanelMainOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
@@ -701,6 +704,9 @@
   </data>
   <data name="&gt;&gt;ActionNew.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -729,7 +735,7 @@
   <data name="ActionNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAc7SURBVFhHrVdrUJzVGT4dbX9U26Yt4g/tTH90HNtO7R87
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAc7SURBVFhHrVdrUJzVGT4dbX9U26Yt4g/tTH90HNtO7R87
         NjpGLZlorH/qWOuMOv7QcbQziVUzGi+VKLkBBgJskEAa2SVAEjBXYC8hBNhddpfdZdkbhF2uC4SwYEIA
         MzFeHt/n+4po3CyR9p15Zs6c8573ec573ve7qCvsB4VlprtKPqzZUmqsDRUZDyRKTQdxLdB8ZQ/3MgZj
         6SGvza4z7K3NLa06iKpDZjSccqMj2IfO6ACGJi9g8OxMWtCHvtzDvYxBUYzJ2DrF1e36kv/UHDN+1Ahv
@@ -805,7 +811,7 @@
   <data name="MenuDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAV4SURBVFhHzVfbT9NnGHbZdrUs0Ux7vftlu93dlsVkf8ou
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAV4SURBVFhHzVfbT9NnGHbZdrUs0Ux7vftlu93dlsVkf8ou
         lixLtmTJYowX6lwhSBjIAKezBYtSFA+UloqcSik9UeiBQ6EFegBaUDlpmFOfvc/3qcPtR4tRl73Jc9O+
         7/O83/u9z6/97fs/x1vVDdZPa3+3nay3tEZrLJcz9dY27AUqV2pYSw5yacq9xdt151vN9c1taL7qRGff
         CIbHpxFIpDBXWEd6ea0kmMNc1rCWHGyKnOTWErvHO7XnbDcsVxwIJtKYXCggMbeEeHoRsVReITqbK4ln
@@ -832,8 +838,8 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 49</value>
+  <data name="&gt;&gt;PanelSearchResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelNavigation.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 44</value>
@@ -859,7 +865,7 @@
   <data name="ActionSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAcsSURBVFhHpVdbTJvnGSbpoqnr2tCVeJN2s4tpN9M2qTdV
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAcsSURBVFhHpVdbTJvnGSbpoqnr2tCVeJN2s4tpN9M2qTdV
         d9GqjTat0u52s+td7GLSNGmb2hyW0JBTA0qAmNBAmjQGwsk0BeITDjmAOfqAjQ8YjG3w7xM+hIMNDgmB
         Z+/7/ZBC5JgkfaVHsr7vPTz/+73P9/svesb2VF5ueE/5dfPpWlWLs1rVJtU2tONFIHwphmM5B+eSU76Y
         vVZzreVcbWM7Gm/qobk3gqHxKZg9AcwklhCcWywI9mFfjuFYzsGkOCfnlks8336gvNrcrfpGC4snCG8o
@@ -899,8 +905,8 @@
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelSelectChapter.Name" xml:space="preserve">
     <value>LabelSelectChapter</value>
@@ -919,9 +925,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionClearWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -970,6 +973,9 @@
   </data>
   <data name="ActionResetWinSettings.Text" xml:space="preserve">
     <value>Reset window settings</value>
+  </data>
+  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelViewSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>956, 458</value>
@@ -1051,6 +1057,9 @@
   <data name="&gt;&gt;TimerAutoSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ActionViewVerses.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
   <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
     <value>ChaptersBindingSource</value>
   </data>
@@ -1059,9 +1068,6 @@
   </data>
   <data name="MenuSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;ActionBackup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageText.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1084,8 +1090,8 @@
   <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 30</value>
   </data>
-  <data name="&gt;&gt;PanelSearchResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="ActionExportChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1098,9 +1104,6 @@
   </data>
   <data name="&gt;&gt;ActionClearWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
-  </data>
-  <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1318,9 +1321,6 @@
   <data name="&gt;&gt;PanelMainInner.Name" xml:space="preserve">
     <value>PanelMainInner</value>
   </data>
-  <data name="ActionNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="EditRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1342,8 +1342,8 @@
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="EditRawText.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;PanelViewSearch.Name" xml:space="preserve">
+    <value>PanelViewSearch</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.Name" xml:space="preserve">
     <value>PanelSepTop</value>
@@ -1366,8 +1366,8 @@
   <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
     <value>ActionCopyToClipboard</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogRTF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
+    <value>bindingNavigatorCountItem</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -1380,9 +1380,6 @@
   </data>
   <data name="EditTranslations.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="&gt;&gt;PanelViewSearch.Name" xml:space="preserve">
-    <value>PanelViewSearch</value>
   </data>
   <data name="&gt;&gt;ActionSetAsBookmarkMaster.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1417,8 +1414,8 @@
   <data name="EditSearchOnlyTorah.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ActionViewRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 46</value>
+  <data name="EditRawText.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;LabelSelectBook.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -1491,7 +1488,7 @@
   <data name="MenuBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAWcSURBVFhHtddrTJNXGAdwP7js05ZlGaBZTPbBRB2oM5nZ
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAWcSURBVFhHtddrTJNXGAdwP7js05ZlGaBZTPbBRB2oM5nZ
         GA4EL5lzi0uYt81ETbbpJl5AGJZyLSDK0OFlxDin0cllypRJgVIplFJ6oVxE5g0RL4ilQC8otEqB/57z
         tkg7LH1H5kn+eTiHvuf59bxtoVP+w5iqXTijUBE4C/IPZ4NVNmfrjl//P2NqmKhEHCKSIDhFgsVUQ1Ml
         WCQqx4IMJeremw573gnYck9wVUdztv5RMj0msWTiJJXQnqUISyoRsz6OduPHa6y55q4J8psGyP7WIzCh
@@ -1533,7 +1530,7 @@
   <data name="ActionViewRawText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAARkSURBVFhHxZdpU1t1GMV5oS+d8Y39Hn4F/WpWpf0KLjiO
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAARkSURBVFhHxZdpU1t1GMV5oS+d8Y39Hn4F/WpWpf0KLjiO
         7IW0MhRoR6pYBAstSxHKko3s282eEBKOz+8mBFqSkClYn5kzwOU5v3P+915gGLD5aGJ6esbz0KMpz7Sr
         6f9I53yyyCSbAp9wIVs5k1M6VfZc5VtWi+tmWBaZZFPgM1rxjZ+X3mj4OdrX8PKBflk+bOnoPdX0w3KZ
         xiaDLDLJpsAdvqDd6PK+JlcONbnq1dTcoh5MjmtiYuxGggELJmwyyGoVuPNWARY8L47kWfNr6sG4bmtg
@@ -1621,6 +1618,9 @@
   <data name="&gt;&gt;EditScreenNone.Name" xml:space="preserve">
     <value>EditScreenNone</value>
   </data>
+  <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
+    <value>Sep6</value>
+  </data>
   <data name="&gt;&gt;TabPageSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1636,6 +1636,9 @@
   <data name="&gt;&gt;ActionELS50CopyToClipboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ActionViewRawText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
+  </data>
   <data name="&gt;&gt;ActionViewRawText.Name" xml:space="preserve">
     <value>ActionViewRawText</value>
   </data>
@@ -1645,8 +1648,14 @@
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
   </data>
+  <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
+    <value>ActionSave</value>
+  </data>
   <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 54</value>
+  </data>
+  <data name="EditScreenCenter.Text" xml:space="preserve">
+    <value>Center</value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1657,11 +1666,8 @@
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 6</value>
   </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;PanelViewELS50.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewTranslations.Name" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -1677,9 +1683,6 @@
   </data>
   <data name="ActionBackup.Text" xml:space="preserve">
     <value>Backup</value>
-  </data>
-  <data name="ActionViewTranslations.ToolTipText" xml:space="preserve">
-    <value>View translations (F3)</value>
   </data>
   <data name="&gt;&gt;PanelViewELS50.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1702,7 +1705,7 @@
   <data name="ActionExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAajSURBVFhHvZdpbFT1GsYPAblRQ+JNABPjFzUGY+41N+Si
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAajSURBVFhHvZdpbFT1GsYPAblRQ+JNABPjFzUGY+41N+Si
         ItB2ZjpLZzmzz5k5czob0yndhJCgAtUu0FZaKF2AbnBroQgttFBaaelCKYVKK6VA2Qo1LgRQXGI0yheT
         575nRmaugdGT3OCb/DKZmX/O8zvvf5kzzF9cM6bPdOkuXTr3a+OaBND72ZGPH33NGOvb+/w3lwcvfHdl
         APfuTGL3W0miwN8jXz/amnlrovvA9zdO4suT9Thfz+PnmxPY87ZMFJgfGRK/ZjXnarraC7U4vEGHDokc
@@ -1737,9 +1740,6 @@
   <data name="ActionBackup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
-    <value>bindingNavigatorCountItem</value>
-  </data>
   <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -1752,8 +1752,8 @@
   <data name="ToolStrip.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+  <data name="&gt;&gt;MenuDatabase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewELS50.Name" xml:space="preserve">
     <value>ActionViewELS50</value>
@@ -1818,8 +1818,8 @@
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>970, 22</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -1827,7 +1827,7 @@
   <data name="ActionWebsite.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAYfSURBVFhH1Zd7TJV1GMd/G6zlFmttctbqj5ab09V0laI2
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAYfSURBVFhH1Zd7TJV1GMd/G6zlFmttctbqj5ab09V0laI2
         WzTJdCtNl63WTVt3DdZMu8zSRFDucjlwuCkCmgpegIgQRNS4nwPncDgcbudwE1TwhhckBvnt933fcxic
         6MzItfm47/bseb7P5/m9L+/7IuJ+Ds8cf1FAMVdL/194HvxMHM9ZL0AxZ01tCU9dcnp+cmo6KF3y3nzW
         1Na9CY8DH4ljRz4ROBy4RBFz1tiT8tKlZOLSlUa02E4hMXkvWOPgvQiPDLno0IcC+79fBFNLqyLmrGWs
@@ -1900,8 +1900,8 @@
   <data name="&gt;&gt;ActionAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditSearchOnlyTorah.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
   </data>
   <data name="&gt;&gt;EditELS50.Name" xml:space="preserve">
     <value>EditELS50</value>
@@ -1930,6 +1930,9 @@
   <data name="bindingNavigatorSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 6</value>
   </data>
+  <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionViewBooksTranslation.Text" xml:space="preserve">
     <value>Edit books names</value>
   </data>
@@ -1939,7 +1942,7 @@
   <data name="ActionCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAXdSURBVFhH7ZV3UBRXAIdPVEQEGSxgQVBUUC6o0QNFIyix
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAXdSURBVFhH7ZV3UBRXAIdPVEQEGSxgQVBUUC6o0QNFIyix
         xF5AsEXNqFGMiJgBSwyIscQyGmNPArFgBBtVDoUTu6JyCFgxjo6jckFpx0EMZvzyDu7OME5ikOgfmfxm
         vrndnZv3+/bte7uS//M3qRfR3iZxV9uWhLexeg3N2d26OfutWyMJliAJEMwTBNYVmCRqx6oasmYx15aj
         PAnpqXBJ8ddcTIFzx1EdO0Fu+QkePj/BowoFRZxGMl9IiLGqhqxZmofbWsHZZCpGuFAxxo2Ksb1fZbQb
@@ -2008,7 +2011,7 @@
   <data name="ActionViewTranslations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAUBSURBVFhHzZfZbltVGIV7gQRU0EpVmgrBGyAegBuoxBMg
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAUBSURBVFhHzZfZbltVGIV7gQRU0EpVmgrBGyAegBuoxBMg
         8QIIIYS4hLaZEzt2PMV2BmemFdwgVXBHk6YCChVFAiFaQTM1juN4HuN4jOcs/rWdmAyHggQO/NInnZyz
         915rr3/7ROfM/6GeekE/f+vS4CLa9bfRrmsxokEtalKbBp6/pF/E3MMUpn9JYvZBa6EGtahJbRq42KZb
         wM2VDC7ZfsWLjt/wUovg2tSgFjWpTQPtFwYWsOgp4NUbj/HaJ+u4/Glr4NrUoBY1qa0MnO+bxz1fCW/e
@@ -2036,6 +2039,9 @@
   <data name="PanelViewRawText.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
+    <value>EditSearchResults</value>
+  </data>
   <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -2053,21 +2059,6 @@
   </data>
   <data name="&gt;&gt;PanelSearchResults.Parent" xml:space="preserve">
     <value>PanelViewSearch</value>
-  </data>
-  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAITSURBVDhPhZNvT1JRHMfPa/EF+IQX1YNqrlqMNWYbMJgQ
-        60EpmzIqDBMzllvO3KICCQqM/+rKbDThwsXrvV7kjxeLr+cc9A4l9bd9d+45O5/POffcc4nb7R6K87GL
-        hIw+8trk5Qkap8ncHc98YGwKrGV9Nr5kfk6uFbDJ/ttPAamBnqjwlvWD96evF7BJHJabqD8LQ6Sp+z5Q
-        ySH8t57g7QPf5YLFe94+fNCGNBuBFFjj2XsRgVaWgD0Vb4wz4f8KJh45ydzNSUDtQH0VhxJMQFmgoc9d
-        UUbFs8x38XJsEkOwy+UiVpsVaruFnaUvaC6uQ2VZSEKjZyB430MORIFDDVM3JlaHYasVnXYHn6IxhGMx
-        7K6sox3K6LAyH0P3XQ5+tjohIzrsdDqJxWLBkaYh/jWJxLcU4skUoskkutUDCDMrfXg5h9m7HgYb2Fc6
-        Bx8f/0U6k0WGJZtD6nsa+4qCQihM37+/8iDMBWzbDP7X66G4sYmNzS2efKEIWZbx8XME6XwBpUoZ7CIN
-        wlxgt9uLoLX9a0fPj5/b2D+FM9kCdisCLA7rEMwFD8fHpbok0UkV/CmX8btUgqycwXmUKWyz2Tg8eL11
-        Aa1Rk8kEtdFATRTPrTwIX/w/dEG1VmMSg9lsRkc7wlo8Qc9iCxWhqsP8oC8TVASBNFstLqGA6HA4wEKF
-        q2fwlYILNUpjOM0IG7i6CDkBSMJUKKPdVzQAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="EditScreenNone.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -2126,7 +2117,7 @@
   <data name="ActionPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAZ6SURBVFhHtVZ5TNN3FGeK/5joxKn7Y1n2x5bFhEUH05gt
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAZ6SURBVFhHtVZ5TNN3FGeK/5joxKn7Y1n2x5bFhEUH05gt
         ixqzzA3HHJKZxTkm1JVWSgHRAi2llEPuQocaJyoi9+kVBETU4XBmE1RgKvdZCkUOGcI2F9/e51swiyd4
         vOTl9Z2/7/G+n1ebx5BtfELSqQOHDpPBYBhkfZbVbDMLOuzws25rNb94mhOXkER3xsbo0OF02hEQ4Mq2
         mZDQYYcfcSL6JdD8oCBtedWvl6i6+grpwsLPsG0uJHTY4UeciH4JNHfVqjVf7d2XQv0DgxQVE0f68Cgh
@@ -2160,7 +2151,7 @@
   <data name="ActionAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAUeSURBVFhHtVb5U9R1GGZG+a2mXzqmf6Jm6oeQUo6mybHQ
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAUeSURBVFhHtVb5U9R1GGZG+a2mXzqmf6Jm6oeQUo6mybHQ
         ThxCmeQQxDUI1EbiUhEVFEjjLpZTPBCIjEMQ2QUBsZlqamwyTZOBkPtalvvpfT67X9iNSkH2nXmGd97j
         eZ7P5/vdXZxWGGs8Iwpz3CKKQXhGFFVKba2l5fhwdoss7k4p64AWzNeH5ZVLb41lxHHh7BZe0JV8vt0q
         vRisrdc51oQST7IR9z1apaAFe466CSV+/NyiuH9KNV7fX6rAXAvOrLYJq3ibVQIITK3Bxqhz2BxXpsCc
@@ -2203,9 +2194,6 @@
   <data name="&gt;&gt;PanelViewTranslations.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ActionExportChapter.Name" xml:space="preserve">
-    <value>ActionExportChapter</value>
-  </data>
   <data name="bindingNavigatorMoveNextItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
   </data>
@@ -2220,6 +2208,9 @@
   </data>
   <data name="ActionSetAsBookmarkMaster.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+    <value>Open online</value>
   </data>
   <data name="ActionExportBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 15</value>
@@ -2245,8 +2236,8 @@
   <data name="PanelViewELS50.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="EditConfirmClosing.Text" xml:space="preserve">
-    <value>Confirm application closing</value>
+  <data name="EditSearchOnlyTorah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 28</value>
@@ -2298,6 +2289,9 @@
   <data name="ActionViewELS50.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
+  <data name="&gt;&gt;SaveFileDialogWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;TabPageELS50.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -2331,11 +2325,11 @@
   <data name="&gt;&gt;bindingNavigatorAddNewItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ActionViewVerses.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="TabPageTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="EditConfirmClosing.Text" xml:space="preserve">
+    <value>Confirm application closing</value>
   </data>
   <data name="&gt;&gt;ActionExportChapter.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2373,11 +2367,8 @@
   <data name="ActionHelp.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 46</value>
+  <data name="ActionPreferences.ToolTipText" xml:space="preserve">
+    <value>Preferences (F8)</value>
   </data>
   <data name="ActionWebsite.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2385,8 +2376,8 @@
   <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ActionPreferences.ToolTipText" xml:space="preserve">
-    <value>Preferences (F8)</value>
+  <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
+    <value>bindingNavigatorMoveFirstItem</value>
   </data>
   <data name="ActionWebsite.Text" xml:space="preserve">
     <value>Website</value>
@@ -2445,8 +2436,8 @@
   <data name="&gt;&gt;MenuSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
-    <value>Sep6</value>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
   </data>
   <data name="ActionContact.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2502,7 +2493,7 @@
   <data name="ActionViewBooksTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAaESURBVFhHtZYLVM53GMe1s6Nt6BwjxsEZFgdbCLkMc92G
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAaESURBVFhHtZYLVM53GMe1s6Nt6BwjxsEZFgdbCLkMc92G
         bW7V2+YtlhBrmjKqoaIpdMz9sly6WBdF9Lq8yjR60/XVRaX7RfXW20old+a75/n/k+JNbxzPOZ/z/H+3
         7/f3//3e/3PedlrEu5NczoRPdJNjvOt5jHchKE9oA7yWNVhLlNQ+3hnr4GNicyQOMflVUORVITq3CjF5
         1Ygt0JL8alwlWIO1WFOU1i50xzseD/c6lwnvKwVwCk3DpRtqWB6Ow49H4htZ9AIvjh1RFII1WIs1RWnt
@@ -2554,7 +2545,7 @@
   <data name="ActionCopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAXpSURBVFhHtZfrbxRVGMb3A1/9yPwT/gVCaQsCicao0aiJ
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAXpSURBVFhHtZfrbxRVGMb3A1/9yPwT/gVCaQsCicao0aiJ
         MSEmCCoKKKCFhEuAoHJraQkgF6GUXncptIWWtttdShvbpdsLQrjIReh1ewVatu3O7vL4PufszrbmRJMG
         n+TJmTnznt/zztnZya5rDppXVFhYVVJSguLiYmUeF8ocr+mS/1evSRiGh4cxODioPDw0hOrqavCaLpm7
         5uVnLbt0bstyFGxeqp1FL0HBxgUo9VSg6+YtdHTeQFuwA9fb2hG4HkRrWxABOW4Ldqoa1qo1XJvgkEk2
@@ -2597,6 +2588,9 @@
   <data name="SaveFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
+  <data name="ActionSearchVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="EditScreenBottomLeft.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
   </data>
@@ -2606,7 +2600,7 @@
   <data name="ActionViewSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAenSURBVFhHtVdrTJvXGbZWkpRKmbpJQ5tUbT82rdq6H2ur
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAenSURBVFhHtVdrTJvXGbZWkpRKmbpJQ5tUbT82rdq6H2ur
         rtqPttqmrlOWKGm1ZVOTNlWktmmWNBQKZAkBAkkIMZcYO+HWQgqBhFzBNhDSEBuMcSiQcLNNINyNbYyN
         MWCMncKz9z0maVmRi6rmlR6d7zs+7/M85/3OOZ8/CUXYTxOr1D9MqEZ4fDXWHfwKjwtUifa79jMnc7MG
         a7Hg/8d6HvCogzVYKyi5PH7CLkXoNgL6fwBNWwn/BAybcbB6nNotBOoz/Gup3fIt/ZuD+czFnBSswVpB
@@ -2705,8 +2699,8 @@
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
   </data>
-  <data name="EditTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="TabPageELS50.Size" type="System.Drawing.Size, System.Drawing">
+    <value>962, 464</value>
   </data>
   <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2720,8 +2714,8 @@
   <data name="PanelViewVerses.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;SaveFileDialogDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2740,40 +2734,6 @@
   </data>
   <data name="ActionViewVerses.ToolTipText" xml:space="preserve">
     <value>View verses (F2)</value>
-  </data>
-  <data name="ActionBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
   </data>
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -2817,7 +2777,7 @@
   <data name="ActionHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAhiSURBVFhHpVcJVJTXFTbHY0/tOREBR43VJjVW1BhZqtES
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAhiSURBVFhHpVcJVJTXFTbHY0/tOREBR43VJjVW1BhZqtES
         lyqoVAE9LsMSIO5aNRopdSUqLnEhKFFAUHaQXRyQuCFV9kUQhmWAYZlxAaJIcUUE9Ou9//yjIHC07T3n
         O/P+++693333rdPnQ0XP4ucBujZnnXWXRst1bOIwQBr7Bvw90DYOenbR8kE2kc5sK7r93/KRZKHv53q2
         MSWDHc9j4fEiuJy7B9/8VgTK23HmVhv88l/AJ68F7qmPsS60BnN/zMNgJxkG2cWUsC/H0IT676Wvnm2U
@@ -2859,7 +2819,7 @@
   <data name="ActionViewStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAhsSURBVFhHrVcJVJTnFZ2EqsCsDDhaNSpxKyogCiLDKqAI
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAhsSURBVFhHrVcJVJTnFZ2EqsCsDDhaNSpxKyogCiLDKqAI
         xCUgS6yKGyNuwSUxtWLTpiZdUhFTpEfcUAgiVrTE2hz1RAMIEtcQdxEXVEYQAUdkQOD2fgxoXQia5p1z
         zzD83//u/e573/v/kbxqXF6nVtSkqKcb09VHGrbb3ESGDV6GB1/KauvTbb4xpFkvO/axWtF6+0+ON/TJ
         6lH16VbfIMMayCTJfjVwxAo4qSCULyJXBRzgGrGW94h79cnyUSKXKeUrxtYoiXntNukW7OkPZJPsBBNe
@@ -2928,8 +2888,8 @@
   <data name="&gt;&gt;ActionSearchWord.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;ActionBackup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelMainInner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2952,8 +2912,20 @@
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 6</value>
   </data>
-  <data name="ActionSearchVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAITSURBVDhPhZNvT1JRHMfPa/EF+IQX1YNqrlqMNWYbMJgQ
+        60EpmzIqDBMzllvO3KICCQqM/+rKbDThwsXrvV7kjxeLr+cc9A4l9bd9d+45O5/POffcc4nb7R6K87GL
+        hIw+8trk5Qkap8ncHc98YGwKrGV9Nr5kfk6uFbDJ/ttPAamBnqjwlvWD96evF7BJHJabqD8LQ6Sp+z5Q
+        ySH8t57g7QPf5YLFe94+fNCGNBuBFFjj2XsRgVaWgD0Vb4wz4f8KJh45ydzNSUDtQH0VhxJMQFmgoc9d
+        UUbFs8x38XJsEkOwy+UiVpsVaruFnaUvaC6uQ2VZSEKjZyB430MORIFDDVM3JlaHYasVnXYHn6IxhGMx
+        7K6sox3K6LAyH0P3XQ5+tjohIzrsdDqJxWLBkaYh/jWJxLcU4skUoskkutUDCDMrfXg5h9m7HgYb2Fc6
+        Bx8f/0U6k0WGJZtD6nsa+4qCQihM37+/8iDMBWzbDP7X66G4sYmNzS2efKEIWZbx8XME6XwBpUoZ7CIN
+        wlxgt9uLoLX9a0fPj5/b2D+FM9kCdisCLA7rEMwFD8fHpbok0UkV/CmX8btUgqycwXmUKWyz2Tg8eL11
+        Aa1Rk8kEtdFATRTPrTwIX/w/dEG1VmMSg9lsRkc7wlo8Qc9iCxWhqsP8oC8TVASBNFstLqGA6HA4wEKF
+        q2fwlYILNUpjOM0IG7i6CDkBSMJUKKPdVzQAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="MenuDatabase.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2962,9 +2934,6 @@
     <value>139, 46</value>
   </data>
   <data name="&gt;&gt;EditScreenBottomLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditScreenBottomRight.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="EditSearchResults.Location" type="System.Drawing.Point, System.Drawing">
@@ -2979,11 +2948,11 @@
   <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ActionViewSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
   </data>
-  <data name="TabPageELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 464</value>
+  <data name="&gt;&gt;EditScreenBottomRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TabPageText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2991,22 +2960,22 @@
   <data name="&gt;&gt;ActionViewStatistics.Name" xml:space="preserve">
     <value>ActionViewStatistics</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
-    <value>EditSearchResults</value>
+  <data name="&gt;&gt;ActionClearBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;OpenFileDialogDB.Name" xml:space="preserve">
     <value>OpenFileDialogDB</value>
   </data>
-  <data name="ActionRestore.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionCheckUpdate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="MenuSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAf/SURBVFhHvZd5bNPnGcetjals0qjESlqmddOmTdPUbWhV
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAf/SURBVFhHvZd5bNPnGcetjals0qjESlqmddOmTdPUbWhV
         tXXTtKll0EpTJ+34Z1I7lImto9ACLWsHASeYJNxlUI6GJBzlCOFISElC4hwkIZAQ5/YVXz/fV3zFiR2b
         HHz3PK8dh1COqUx7pI/ex8/78/v9vodf2zKKeYsVNdXPbKtDluLqg9l6fxYJah/BVTytqAPrsB6L3h1f
         5c6S/jCK+0Io7U9DeYkgiOLeFEfTFDE9QXyc5kh3QHB4BlUAh4iDd1HUGxYmWC8lOxuL2OVF/ShkG25A
@@ -3055,8 +3024,8 @@
   <data name="&gt;&gt;EditScreenCenter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
-    <value>PanelMainInner</value>
+  <data name="ActionSearchWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 163</value>
   </data>
   <data name="TabPageText.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3067,11 +3036,42 @@
   <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
-    <value>Open online</value>
+  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
-    <value>ActionSave</value>
+  <data name="ActionBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="&gt;&gt;ActionELS50CopyToClipboard.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3091,7 +3091,7 @@
   <data name="ActionViewVerses.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAPPSURBVFhHzZfvaxt1HMf7QHCKdqhri+h/IP4BPtGBf4Hg
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAPPSURBVFhHzZfvaxt1HMf7QHCKdqhri+h/IP4BPtGBf4Hg
         fyAiik+GbLpu7do0W9fVtXOsrGwi+mQw9OFaI27ipshAOnUmtWt+NJfkcpdccsnl7pLcj/S9z+ebrlhz
         wnYj0Te84cu97/t5ve97cHBD/wc98WJk5drYTAyjkW8xOt1nE4NZzGQ2F3h2LBLD5d90LK9VcOlOf80M
         ZjGT2Vxg5MD0Kq6uGxib/wMvLdzFy30yz2YGs5jJbC4w+vzUKmJpG699cQ+vf7mJg1/1xzybGcxiJrNF
@@ -3123,8 +3123,8 @@
   <data name="&gt;&gt;MenuitemScreenPosition.Name" xml:space="preserve">
     <value>MenuitemScreenPosition</value>
   </data>
-  <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="ActionViewTranslations.ToolTipText" xml:space="preserve">
+    <value>View translations (F3)</value>
   </data>
   <data name="&gt;&gt;ActionClearBookmarks.Name" xml:space="preserve">
     <value>ActionClearBookmarks</value>
@@ -3162,8 +3162,8 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>139</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr</value>
+  <metadata name="WordsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1016, 18</value>
   </metadata>
   <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>115, 17</value>
@@ -3171,17 +3171,14 @@
   <metadata name="ContextMenuStripVerse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 89</value>
   </metadata>
-  <metadata name="SaveFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>867, 58</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="VersesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>840, 22</value>
   </metadata>
-  <metadata name="WordsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1016, 18</value>
+  <metadata name="SaveFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>867, 58</value>
   </metadata>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>551, 58</value>

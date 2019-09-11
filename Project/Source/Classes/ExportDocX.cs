@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewWords
             SetPageMargins();
             AddBookTitle(book);
             AddChapterTitle(chapter);
-            AddVerse(chapter.GetVersesRows()[verse], includeTranslation);
+            AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
             Document.Save();
           }
           catch ( Exception ex )
