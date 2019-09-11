@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -83,6 +84,27 @@ namespace Ordisoftware.HebrewWords
     public WordReferencedItem(int book, int chapter, int verse)
       : base(book, chapter, verse)
     {
+    }
+  }
+
+  class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
+  {
+    public bool Equals(ReferenceItem x, ReferenceItem y)
+    {
+      if ( Object.ReferenceEquals(x, y) ) return true;
+      if ( Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null) )
+        return false;
+      return x.Book.Number == y.Book.Number
+          && x.Chapter.Number == y.Chapter.Number
+          && x.Verse.Number == y.Verse.Number;
+    }
+    public int GetHashCode(ReferenceItem value)
+    {
+      if ( Object.ReferenceEquals(value, null) ) return 0;
+      int hashBook = value.Book.Number.GetHashCode();
+      int hashChapter = value.Book.Number.GetHashCode();
+      int hashVerse = value.Book.Number.GetHashCode();
+      return hashBook ^ hashChapter ^ hashVerse;
     }
   }
 

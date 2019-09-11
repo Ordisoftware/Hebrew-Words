@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -32,11 +32,21 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     /// <param name="values">The dictionary containing langs>translations.</param>
     /// <returns></returns>
-    static public T GetLang<T>(this Dictionary<string, T> values)
+    static public string GetLang(this Dictionary<string, string> values)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
       if ( !values.ContainsKey(lang) ) lang = "en";
       return values[lang];
+    }
+
+    /// <summary>
+    /// Get the string translation.
+    /// </summary>
+    /// <param name="values">The dictionary containing langs>translations.</param>
+    /// <returns></returns>
+    static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
+    {
+      return String.Format(values.GetLang(), parameters);
     }
 
     /// <summary>
@@ -117,6 +127,15 @@ namespace Ordisoftware.HebrewWords
         { "en", "This will restore all letters to default values." + NewLine + NewLine +
                 "Do you want to continue?" },
         { "fr", "Cela va restaurer les lettres à leurs valeurs par défaut." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> SearchResultsText
+      = new Dictionary<string, string>()
+      {
+        { "en", "There is {0} results." + Environment.NewLine + Environment.NewLine +
+                "Do you want to continue?" },
+        { "fr", "Il y a {0} résultats." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous continuer ?" }
       };
 

@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -30,40 +31,50 @@ namespace Ordisoftware.HebrewWords
       try
       {
         EditSearchResults.Clear();
+        LabelFindRefCount.Text = "0";
         string str1 = EditLetters.Input.Text;
         if ( str1 == "" ) return;
+        if ( str1.Length < 2 ) return;
         string str2 = Letters.SetFinale(str1, true);
-        var books = !EditSearchOnlyTorah.Checked
-                  ? DataSet.Books.ToList()
-                  : ( from book in DataSet.Books
-                      where book.Number <= 5
-                      orderby book.Number
-                      select book ).ToList();
-        foreach ( Data.DataSet.BooksRow book in books )
-          foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-            foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-            {
-              string strTranslation = "";
-              foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-                if ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
-                {
-                  foreach ( Data.DataSet.WordsRow w in verse.GetWordsRows().Reverse() )
-                  {
-                    var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
-                              ? Color.DarkRed
-                              : SystemColors.ControlText;
-                    AddTextRightAligned(EditSearchResults, HebrewFont, " ");
-                    AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
-                    strTranslation = w.Translation + " " + strTranslation;
-                  }
-                  string strRef = " :" + verse.Number + "." + chapter.Number + "." + book.Name;
-                  AddTextRightAligned(EditSearchResults, LatinFont, strRef);
-                  EditSearchResults.AppendText(Environment.NewLine);
-                  EditSearchResults.AppendText(strTranslation);
-                  EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
-                  break;
-                }
-            }
+        int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
+        var query = from book in DataSet.Books
+                    from chapter in book.GetChaptersRows()
+                    from verse in chapter.GetVersesRows()
+                    from word in verse.GetWordsRows()
+                    where book.Number <= limit
+                       && ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
+                    orderby book.Number, chapter.Number, verse.Number
+                    select new ReferenceItem
+                    {
+                      Book = book,
+                      Chapter = chapter,
+                      Verse = verse,
+                    };
+        var list = query.Distinct(new ReferenceItemComparer());
+        int count = list.Count();
+        if ( count > 250 )
+          if ( !DisplayManager.QueryYesNo(Localizer.SearchResultsText.GetLang(count.ToString())) )
+            return;
+        LabelFindRefCount.Text = count.ToString();
+        foreach ( var item in list )
+        {
+          string strTranslation = "";
+          foreach ( Data.DataSet.WordsRow w in item.Verse.GetWordsRows().Reverse() )
+          {
+            var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
+                      ? Color.DarkRed
+                      : SystemColors.ControlText;
+            AddTextRightAligned(EditSearchResults, HebrewFont, " ");
+            AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
+            strTranslation = w.Translation + " " + strTranslation;
+          }
+          string strRef = " :" + item.Verse.Number + "." + item.Chapter.Number + "." + item.Book.Name;
+          AddTextRightAligned(EditSearchResults, LatinFont, strRef);
+          EditSearchResults.AppendText(Environment.NewLine);
+          EditSearchResults.AppendText(strTranslation);
+          EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
+        }
+      
         EditSearchResults.SelectionStart = 0;
         EditSearchResults.Focus();
       }
