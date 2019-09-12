@@ -106,9 +106,11 @@
       this.SelectBooks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+      this.SelectBooks.FullRowSelect = true;
       this.SelectBooks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.SelectBooks.HideSelection = false;
       resources.ApplyResources(this.SelectBooks, "SelectBooks");
+      this.SelectBooks.MultiSelect = false;
       this.SelectBooks.Name = "SelectBooks";
       this.SelectBooks.UseCompatibleStateImageBehavior = false;
       this.SelectBooks.View = System.Windows.Forms.View.Details;

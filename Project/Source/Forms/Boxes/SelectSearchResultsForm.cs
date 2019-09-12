@@ -53,16 +53,6 @@ namespace Ordisoftware.HebrewWords
         LabelFirst.Visible = false;
     }
 
-    private void SelectBooks_ItemChecked(object sender, ItemCheckedEventArgs e)
-    {
-      if ( e.Item.Checked )
-        Count += Convert.ToInt32(e.Item.SubItems[1].Text);
-      else
-        Count -= Convert.ToInt32(e.Item.SubItems[1].Text);
-      LabelCount.Text = Count.ToString();
-      ActionSelect.Enabled = Count > 0;
-    }
-
     private void ActionSelect_Click(object sender, EventArgs e)
     {
       var list = new List<int>();
@@ -78,6 +68,15 @@ namespace Ordisoftware.HebrewWords
       DialogResult = DialogResult.No;
     }
 
+    private void SelectBooks_ItemChecked(object sender, ItemCheckedEventArgs e)
+    {
+      if ( e.Item.Checked )
+        Count += Convert.ToInt32(e.Item.SubItems[1].Text);
+      else
+        Count -= Convert.ToInt32(e.Item.SubItems[1].Text);
+      LabelCount.Text = Count.ToString();
+      ActionSelect.Enabled = Count > 0;
+    }
   }
   
 }

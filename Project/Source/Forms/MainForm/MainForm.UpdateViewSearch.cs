@@ -147,13 +147,17 @@ namespace Ordisoftware.HebrewWords
             PanelSearchResults.Controls.Add(label);
           }
           y += label.PreferredHeight + marginY;
-          label = new Label();
-          label.AutoSize = true;
-          label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
-          label.Text = reference.Translation;
-          label.Location = new Point(xx - label.PreferredSize.Width, y);
-          PanelSearchResults.Controls.Add(label);
-          y += label.PreferredHeight + marginY;
+          string translation = reference.Translation;
+          if ( translation != "" )
+          {
+            label = new Label();
+            label.AutoSize = true;
+            label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
+            label.Text = translation;
+            label.Location = new Point(xx - label.PreferredSize.Width, y);
+            PanelSearchResults.Controls.Add(label);
+            y += label.PreferredHeight + marginY;
+          }
           if ( index >= Program.Settings.MaxRefCount ) break;
         }
         LabelFindRefCount.Text = index.ToString();
