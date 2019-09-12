@@ -166,10 +166,7 @@ namespace Ordisoftware.HebrewWords
       {
         InProcess = false;
         SetFormDisabled(false);
-        EditSearchResults.ResumeLayout();
         PanelSearchResults.ResumeLayout();
-        EditSearchResults.SelectionStart = 0;
-        EditSearchResults.Focus();
         PanelSearchResults.Focus();
       }
     }
@@ -177,78 +174,3 @@ namespace Ordisoftware.HebrewWords
   }
 
 }
-
-/*
-    private void UpdateViewSearchOld()
-    {
-      InProcess = true;
-      SetFormDisabled(true);
-      EditSearchResults.SuspendLayout();
-      try
-      {
-        EditSearchResults.Clear();
-        LabelFindRefCount.Text = "0";
-        string str1 = EditLetters.Input.Text;
-        if ( str1 == "" ) return;
-        if ( str1.Length < 2 ) return;
-        string str2 = Letters.SetFinale(str1, true);
-        int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
-        var query = from book in DataSet.Books
-                    from chapter in book.GetChaptersRows()
-                    from verse in chapter.GetVersesRows()
-                    from word in verse.GetWordsRows()
-                    where book.Number <= limit
-                       && ( word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2) )
-                    orderby book.Number, chapter.Number, verse.Number
-                    select new ReferenceItem
-                    {
-                      Book = book,
-                      Chapter = chapter,
-                      Verse = verse
-                    };
-        var references = query.Distinct(new ReferenceItemComparer()).ToList();
-        int count = references.Count();
-        if ( count > AdvertSearchResults )
-          if ( !DisplayManager.QueryYesNo(Localizer.SearchResultsText.GetLang(count.ToString())) )
-            return;
-        int index = 0;
-        foreach ( var reference in references )
-        {
-          index++;
-          Application.DoEvents();
-          if ( CancelRequired ) { CancelRequired = false; break; }
-          Label label = null;
-          foreach ( Data.DataSet.WordsRow word in reference.Verse.GetWordsRows().Reverse() )
-          {
-            var color = word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2)
-                      ? Color.DarkRed
-                      : SystemColors.ControlText;
-            AddTextRightAligned(EditSearchResults, HebrewFont12, " ");
-            AddTextRightAligned(EditSearchResults, HebrewFont12, word.Hebrew, color);
-            PanelSearchResults.Controls.Add(label);
-          }
-          string strRef = " :" + reference.Verse.Number + "." + reference.Chapter.Number + "." + reference.Book.Name;
-          AddTextRightAligned(EditSearchResults, LatinFont10, strRef);
-          EditSearchResults.AppendText(Environment.NewLine);
-          EditSearchResults.AppendText(DataSet.GetTranslation(reference.Verse));
-          EditSearchResults.AppendText(Environment.NewLine + Environment.NewLine);
-
-        }
-        LabelFindRefCount.Text = index.ToString();
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-      }
-      finally
-      {
-        InProcess = false;
-        SetFormDisabled(false);
-        EditSearchResults.ResumeLayout();
-        PanelSearchResults.ResumeLayout();
-        EditSearchResults.SelectionStart = 0;
-        EditSearchResults.Focus();
-        PanelSearchResults.Focus();
-      }
-    }
-*/
