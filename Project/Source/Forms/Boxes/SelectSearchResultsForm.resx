@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelFound.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LabelFirst.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelFirst.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LabelEscape.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelEscape.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="LabelSelect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelSelect.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -349,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="LabelCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -379,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SelectBooks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -403,7 +403,7 @@
     <value>13, 100</value>
   </data>
   <data name="SelectBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 370</value>
+    <value>307, 325</value>
   </data>
   <data name="SelectBooks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -418,6 +418,69 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectBooks.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditOnlyWithTranslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditOnlyWithTranslation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditOnlyWithTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 435</value>
+  </data>
+  <data name="EditOnlyWithTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="EditOnlyWithTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="EditOnlyWithTranslation.Text" xml:space="preserve">
+    <value>Only with translation</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithTranslation.Name" xml:space="preserve">
+    <value>EditOnlyWithTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithTranslation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithTranslation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 458</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="EditOnlyWithoutTranslation.Text" xml:space="preserve">
+    <value>Only without translation</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithoutTranslation.Name" xml:space="preserve">
+    <value>EditOnlyWithoutTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithoutTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithoutTranslation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyWithoutTranslation.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -436,7 +499,7 @@
     <value>340, 550</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>340, 300</value>
+    <value>340, 350</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

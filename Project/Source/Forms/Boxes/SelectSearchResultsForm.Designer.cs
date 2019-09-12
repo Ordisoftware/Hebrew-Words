@@ -41,6 +41,8 @@
       this.SelectBooks = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.EditOnlyWithTranslation = new System.Windows.Forms.CheckBox();
+      this.EditOnlyWithoutTranslation = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -124,11 +126,27 @@
       // 
       resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
+      // EditOnlyWithTranslation
+      // 
+      resources.ApplyResources(this.EditOnlyWithTranslation, "EditOnlyWithTranslation");
+      this.EditOnlyWithTranslation.Name = "EditOnlyWithTranslation";
+      this.EditOnlyWithTranslation.UseVisualStyleBackColor = true;
+      this.EditOnlyWithTranslation.CheckedChanged += new System.EventHandler(this.EditOnlyWithTranslation_CheckedChanged);
+      // 
+      // EditOnlyWithoutTranslation
+      // 
+      resources.ApplyResources(this.EditOnlyWithoutTranslation, "EditOnlyWithoutTranslation");
+      this.EditOnlyWithoutTranslation.Name = "EditOnlyWithoutTranslation";
+      this.EditOnlyWithoutTranslation.UseVisualStyleBackColor = true;
+      this.EditOnlyWithoutTranslation.CheckedChanged += new System.EventHandler(this.EditOnlyWithoutTranslation_CheckedChanged);
+      // 
       // SelectSearchResultsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.EditOnlyWithoutTranslation);
+      this.Controls.Add(this.EditOnlyWithTranslation);
       this.Controls.Add(this.SelectBooks);
       this.Controls.Add(this.LabelCount);
       this.Controls.Add(this.PanelButtons);
@@ -161,5 +179,7 @@
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
     private System.Windows.Forms.Button ActionSelect;
+    private System.Windows.Forms.CheckBox EditOnlyWithTranslation;
+    private System.Windows.Forms.CheckBox EditOnlyWithoutTranslation;
   }
 }

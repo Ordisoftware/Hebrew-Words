@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -23,7 +24,7 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class BookItem
   {
-    public Data.DataSet.BooksRow Book { get; set; }
+    public DataSet.BooksRow Book { get; set; }
     public override string ToString()
     {
       string str = Book.Number + ". " + Book.Name;
@@ -37,7 +38,7 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class ChapterItem
   {
-    public Data.DataSet.ChaptersRow Chapter { get; set; }
+    public DataSet.ChaptersRow Chapter { get; set; }
     public override string ToString()
     {
       return Chapter.Number.ToString();
@@ -49,10 +50,10 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class ReferenceItem
   {
-    public Data.DataSet.BooksRow Book { get; set; }
-    public Data.DataSet.ChaptersRow Chapter { get; set; }
-    public Data.DataSet.VersesRow Verse { get; set; }
-    public string Translation { get { return MainForm.Instance.DataSet.GetTranslation(Verse); } }
+    public DataSet.BooksRow Book { get; set; }
+    public DataSet.ChaptersRow Chapter { get; set; }
+    public DataSet.VersesRow Verse { get; set; }
+    public string Translation { get { return Verse.GetTranslation(); } }
     public string Text { get { return ToString(); } }
     public override string ToString()
     {
@@ -78,12 +79,12 @@ namespace Ordisoftware.HebrewWords
   /// </summary>
   public class WordReferencedItem : ReferenceItem
   {
-    public Data.DataSet.WordsRow Word { get; set; }
+    public DataSet.WordsRow Word { get; set; }
     public WordReferencedItem()
       : base()
     {
     }
-    public WordReferencedItem(ReferenceItem reference, Data.DataSet.WordsRow word)
+    public WordReferencedItem(ReferenceItem reference, DataSet.WordsRow word)
       : base()
     {
       Book = reference.Book;

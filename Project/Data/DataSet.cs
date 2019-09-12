@@ -4,10 +4,15 @@
   partial class DataSet
   {
 
-    public string GetTranslation(VersesRow verse)
+  }
+
+  static public class DataSetHelper
+  {
+
+    static public string GetTranslation(this DataSet.VersesRow verse)
     {
       string result = "";
-      foreach ( WordsRow word in verse.GetWordsRows() )
+      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
         result = result + word.Translation + " ";
       return result.Trim();
     }

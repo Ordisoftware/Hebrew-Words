@@ -22,6 +22,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -984,7 +985,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       var verse = (Data.DataSet.VersesRow)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag;
-      Clipboard.SetText(DataSet.GetTranslation(verse));
+      Clipboard.SetText(verse.GetTranslation());
     }
 
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)

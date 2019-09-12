@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -24,10 +25,10 @@ namespace Ordisoftware.HebrewWords
     {
       EditTranslations.Clear();
       var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-      foreach ( Data.DataSet.VersesRow verse in list )
+      foreach ( DataSet.VersesRow verse in list )
       {
         string str = verse.Number + ". ";
-        EditTranslations.SelectedText = str + DataSet.GetTranslation(verse);
+        EditTranslations.SelectedText = str + verse.GetTranslation();
         if ( verse.Comment != "" )
         {
           EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
