@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
       if ( Object.ReferenceEquals(value, null) ) return 0;
       int hashBook = value.Book.Number.GetHashCode();
       int hashChapter = value.Book.Number.GetHashCode();
-      int hashVerse = value.Book.Number.GetHashCode();
+      int hashVerse = value.Book?.Number.GetHashCode() ?? 1;
       return hashBook ^ hashChapter ^ hashVerse;
     }
   }
