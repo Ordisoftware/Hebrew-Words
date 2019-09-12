@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewWords
       EditELS50.SelectionStart = EditELS50.TextLength;
       var references = from book in DataSet.Books
                        from chapter in book.GetChaptersRows()
-                        from verse in chapter.GetVersesRows()
+                       from verse in chapter.GetVersesRows()
                        where book.Number == itemBook.Book.Number 
                           && chapter.Number == itemChapter.Chapter.Number
                        select new ReferenceItem
