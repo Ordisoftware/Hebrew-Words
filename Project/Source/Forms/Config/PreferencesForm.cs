@@ -66,6 +66,7 @@ namespace Ordisoftware.HebrewWords
       EditMaxRefCount.Value = Program.Settings.MaxRefCount;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
+      SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
       ActiveControl = EditHebrewLettersPath;
       CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
@@ -94,6 +95,8 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
+      if ( SelectOpenTranslated.Checked )
+        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Translated;
       MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( MainForm.Instance.TimerAutoSave.Enabled )
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;

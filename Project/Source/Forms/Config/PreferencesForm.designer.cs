@@ -60,6 +60,7 @@
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
       this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
+      this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -139,8 +140,8 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -150,8 +151,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -167,8 +168,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -200,9 +201,10 @@
       // 
       // GroupBoxHebrewWordClick
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -224,10 +226,6 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      // 
-      // FolderBrowserDialog
-      // 
-      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // label1
       // 
@@ -266,12 +264,12 @@
       // 
       // EditWordControlWidth
       // 
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -291,12 +289,12 @@
       // 
       // EditMaxRefCount
       // 
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             50,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -323,6 +321,13 @@
     "512548cce56/increasing-user-handle-and-gdi-handle-limits?forum=windowscompatibil" +
     "ity";
       this.LabelSystemHandles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelSystemHandles_LinkClicked);
+      // 
+      // SelectOpenTranslated
+      // 
+      resources.ApplyResources(this.SelectOpenTranslated, "SelectOpenTranslated");
+      this.SelectOpenTranslated.Name = "SelectOpenTranslated";
+      this.SelectOpenTranslated.TabStop = true;
+      this.SelectOpenTranslated.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
@@ -399,5 +404,6 @@
     private System.Windows.Forms.NumericUpDown EditWordControlWidth;
     private System.Windows.Forms.NumericUpDown EditMaxRefCount;
     private System.Windows.Forms.LinkLabel LabelSystemHandles;
+    private System.Windows.Forms.RadioButton SelectOpenTranslated;
   }
 }

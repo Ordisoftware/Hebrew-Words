@@ -20,7 +20,8 @@ namespace Ordisoftware.HebrewWords
   public enum HebrewWordClickOpen
   {
     OnlineSearch,
-    HebrewLetters
+    HebrewLetters,
+    Translated
   }
 
 }

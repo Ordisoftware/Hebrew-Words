@@ -112,6 +112,9 @@ namespace Ordisoftware.HebrewWords
         case HebrewWordClickOpen.OnlineSearch:
           Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
           break;
+        case HebrewWordClickOpen.Translated:
+          ActionSearchTranslated.PerformClick();
+          break;
       }
     }
 
