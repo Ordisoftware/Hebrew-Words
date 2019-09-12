@@ -19,12 +19,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
-  public partial class SearchTranslationsForm : Form
+  public partial class SearchTranslatedForm : Form
   {
 
     static public void Run(WordControl sender, ReferenceItem reference)
     {
-      var form = new SearchTranslationsForm();
+      var form = new SearchTranslatedForm();
       form.Reference = reference;
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
     private ReferenceItem Reference;
     private WordControl WordControl;
 
-    private SearchTranslationsForm()
+    private SearchTranslatedForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ListView_DoubleClick(object sender, EventArgs e)
     {
-      ActionReachReference.PerformClick();
+      ActionUseTranslation.PerformClick();
     }
 
     private void ReachReferencedWord(WordReferencedItem reference)

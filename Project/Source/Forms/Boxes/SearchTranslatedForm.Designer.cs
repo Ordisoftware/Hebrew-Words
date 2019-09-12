@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewWords
 {
-  partial class SearchTranslationsForm
+  partial class SearchTranslatedForm
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchTranslationsForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchTranslatedForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.LabelReference = new System.Windows.Forms.LinkLabel();
       this.ButtonClose = new System.Windows.Forms.Button();

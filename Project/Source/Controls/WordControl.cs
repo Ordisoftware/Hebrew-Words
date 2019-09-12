@@ -140,7 +140,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      SearchTranslationsForm.Run(this, Reference);
+      SearchTranslatedForm.Run(this, Reference);
     }
 
   }
