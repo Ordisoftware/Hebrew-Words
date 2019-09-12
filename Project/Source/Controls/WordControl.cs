@@ -127,7 +127,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(LabelHebrew.Text);
+      Clipboard.SetText(Word.Original);
     }
 
     private void ActionSearch_Click(object sender, EventArgs e)
