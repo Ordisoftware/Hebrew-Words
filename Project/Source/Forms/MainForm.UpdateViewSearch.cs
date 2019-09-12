@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    public const int AdvertSearchResults = 100;
+    public const int AdvertSearchResults = 200;
     public const int MaxSearchResults = 300;
 
     static private string SearchWord1;
@@ -118,8 +118,7 @@ namespace Ordisoftware.HebrewWords
           linklabel.Tag = reference;
           linklabel.Text = reference.ToString();
           linklabel.Font = LatinFont8;
-          linklabel.MouseEnter += LabelVerseNumber_MouseEnter;
-          linklabel.MouseLeave += LabelVerseNumber_MouseLeave;
+          linklabel.LinkColor = Color.DarkBlue;
           linklabel.LinkClicked += (sender, e) => 
           {
             SetView(ViewModeType.Verses);

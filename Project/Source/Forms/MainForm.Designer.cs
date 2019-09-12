@@ -317,6 +317,7 @@
       this.PanelSearchResults.BackColor = System.Drawing.SystemColors.Window;
       this.PanelSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.PanelSearchResults.Name = "PanelSearchResults";
+      this.PanelSearchResults.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelSearchResults_MouseClick);
       // 
       // PanelSearchTop
       // 

@@ -66,6 +66,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     public ReferenceItem CurrentReference { get; private set; }
 
+    private bool IsGotoRunning = false;
+
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -207,8 +209,8 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_ClientSizeChanged(object sender, EventArgs e)
     {
       if ( !IsAppReady ) return;
-      ActionClearWord.PerformClick();
-      UpdateViews();
+      //ActionClearWord.PerformClick();
+      //UpdateViews();
     }
 
     /// <summary>
@@ -516,6 +518,8 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !PreferencesForm.Run() ) return;
       Refresh();
+      UpdateBookmarks();
+      SetDialogsDirectory();
       UpdateViewVerses();
       var reference = Instance.CurrentReference;
       int verse = reference.Verse == null ? 1 : reference.Verse.Number;
@@ -806,7 +810,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelViewVerses click events.
+    /// Event handler. Called by PanelViewVerses mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -815,8 +819,15 @@ namespace Ordisoftware.HebrewWords
       PanelViewVerses.Focus();
     }
 
-    private bool IsGotoRunning = false;
-
+    /// <summary>
+    /// Event handler. Called by PanelSearchResults mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelSearchResults_MouseClick(object sender, MouseEventArgs e)
+    {
+      PanelSearchResults.Focus();
+    }
 
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.

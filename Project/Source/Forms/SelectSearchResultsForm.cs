@@ -49,6 +49,8 @@ namespace Ordisoftware.HebrewWords
       }
       ActiveControl = SelectBooks;
       SelectBooks.Focus();
+      if ( References.Count() <= MainForm.MaxSearchResults )
+        LabelFirst.Visible = false;
     }
 
     private void SelectBooks_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -58,9 +60,10 @@ namespace Ordisoftware.HebrewWords
       else
         Count -= Convert.ToInt32(e.Item.SubItems[1].Text);
       LabelCount.Text = Count.ToString();
+      ActionSelect.Enabled = Count > 0;
     }
 
-    private void ActionYes_Click(object sender, EventArgs e)
+    private void ActionSelect_Click(object sender, EventArgs e)
     {
       var list = new List<int>();
       foreach ( ListViewItem item in SelectBooks.Items )
@@ -70,7 +73,7 @@ namespace Ordisoftware.HebrewWords
       DialogResult = DialogResult.Yes;
     }
 
-    private void ActionNo_Click(object sender, EventArgs e)
+    private void ActionAll_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.No;
     }

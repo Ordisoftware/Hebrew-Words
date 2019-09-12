@@ -34,8 +34,8 @@
       this.LabelEscape = new System.Windows.Forms.Label();
       this.LabelSelect = new System.Windows.Forms.Label();
       this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ActionYes = new System.Windows.Forms.Button();
-      this.ActionNo = new System.Windows.Forms.Button();
+      this.ActionSelect = new System.Windows.Forms.Button();
+      this.ActionAll = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.LabelCount = new System.Windows.Forms.Label();
       this.SelectBooks = new System.Windows.Forms.ListView();
@@ -66,27 +66,27 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ActionYes);
-      this.PanelButtons.Controls.Add(this.ActionNo);
+      this.PanelButtons.Controls.Add(this.ActionSelect);
+      this.PanelButtons.Controls.Add(this.ActionAll);
       this.PanelButtons.Controls.Add(this.ActionCancel);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
-      // ActionYes
+      // ActionSelect
       // 
-      resources.ApplyResources(this.ActionYes, "ActionYes");
-      this.ActionYes.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionYes.Name = "ActionYes";
-      this.ActionYes.UseVisualStyleBackColor = true;
-      this.ActionYes.Click += new System.EventHandler(this.ActionYes_Click);
+      resources.ApplyResources(this.ActionSelect, "ActionSelect");
+      this.ActionSelect.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionSelect.Name = "ActionSelect";
+      this.ActionSelect.UseVisualStyleBackColor = true;
+      this.ActionSelect.Click += new System.EventHandler(this.ActionSelect_Click);
       // 
-      // ActionNo
+      // ActionAll
       // 
-      resources.ApplyResources(this.ActionNo, "ActionNo");
-      this.ActionNo.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionNo.Name = "ActionNo";
-      this.ActionNo.UseVisualStyleBackColor = true;
-      this.ActionNo.Click += new System.EventHandler(this.ActionNo_Click);
+      resources.ApplyResources(this.ActionAll, "ActionAll");
+      this.ActionAll.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionAll.Name = "ActionAll";
+      this.ActionAll.UseVisualStyleBackColor = true;
+      this.ActionAll.Click += new System.EventHandler(this.ActionAll_Click);
       // 
       // ActionCancel
       // 
@@ -153,11 +153,11 @@
     private System.Windows.Forms.Label LabelSelect;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionNo;
+    private System.Windows.Forms.Button ActionAll;
     private System.Windows.Forms.Label LabelCount;
     private System.Windows.Forms.ListView SelectBooks;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.Button ActionYes;
+    private System.Windows.Forms.Button ActionSelect;
   }
 }

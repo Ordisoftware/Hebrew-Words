@@ -142,11 +142,11 @@
   <data name="LabelSelect.Text" xml:space="preserve">
     <value>Vous pouvez sélectionner les livres dans lesquels rechercher.</value>
   </data>
-  <data name="ActionYes.Text" xml:space="preserve">
-    <value>Oui</value>
+  <data name="ActionSelect.Text" xml:space="preserve">
+    <value>Sélectionner</value>
   </data>
-  <data name="ActionNo.Text" xml:space="preserve">
-    <value>Non</value>
+  <data name="ActionAll.Text" xml:space="preserve">
+    <value>Tous</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>

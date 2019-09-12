@@ -181,7 +181,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEscape.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 46</value>
+    <value>10, 64</value>
   </data>
   <data name="LabelEscape.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 64</value>
+    <value>10, 46</value>
   </data>
   <data name="LabelSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -234,64 +234,67 @@
   <data name="&gt;&gt;LabelSelect.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionYes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionYes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionSelect.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSelect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionYes.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionSelect.Location" type="System.Drawing.Point, System.Drawing">
     <value>74, 3</value>
   </data>
-  <data name="ActionYes.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="ActionYes.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionSelect.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ActionYes.Text" xml:space="preserve">
-    <value>Yes</value>
+  <data name="ActionSelect.Text" xml:space="preserve">
+    <value>Select</value>
   </data>
-  <data name="&gt;&gt;ActionYes.Name" xml:space="preserve">
-    <value>ActionYes</value>
+  <data name="&gt;&gt;ActionSelect.Name" xml:space="preserve">
+    <value>ActionSelect</value>
   </data>
-  <data name="&gt;&gt;ActionYes.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSelect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionYes.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionSelect.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ActionYes.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionSelect.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionNo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionNo.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 3</value>
   </data>
-  <data name="ActionNo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="ActionNo.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionAll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ActionNo.Text" xml:space="preserve">
-    <value>No</value>
+  <data name="ActionAll.Text" xml:space="preserve">
+    <value>All</value>
   </data>
-  <data name="&gt;&gt;ActionNo.Name" xml:space="preserve">
-    <value>ActionNo</value>
+  <data name="&gt;&gt;ActionAll.Name" xml:space="preserve">
+    <value>ActionAll</value>
   </data>
-  <data name="&gt;&gt;ActionNo.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionNo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionAll.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ActionNo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionAll.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

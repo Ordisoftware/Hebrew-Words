@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewWords
       UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
-      DrawViewSearch();
+      //DrawViewSearch();
     }
 
   }
