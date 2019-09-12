@@ -18,12 +18,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
-  public partial class ExportForm : Form
+  public partial class ExportingForm : Form
   {
 
     public bool CancelRequired { get; private set; }
 
-    public ExportForm()
+    public ExportingForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

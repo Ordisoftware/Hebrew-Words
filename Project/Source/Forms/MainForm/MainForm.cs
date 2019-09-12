@@ -652,7 +652,7 @@ namespace Ordisoftware.HebrewWords
         case ViewModeType.Verses:
           SaveFileDialogWord.FileName = book.Name + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          var form = new ExportForm();
+          var form = new ExportingForm();
           SetFormDisabled(true);
           try
           {

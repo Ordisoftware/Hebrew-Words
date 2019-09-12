@@ -64,59 +64,59 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Forms\SelectSearchResultsForm.cs">
+    <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\SelectSearchResultsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Source\Classes\DataItems.cs" />
     <Compile Include="Source\Classes\BooksNames.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
-    <Compile Include="Source\Forms\EditBooksForm.cs">
+    <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\EditBooksForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\EditBooksForm.Designer.cs">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\ExportForm.cs">
+    <Compile Include="Source\Forms\Config\ExportingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\ExportForm.Designer.cs">
-      <DependentUpon>ExportForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Config\ExportingForm.Designer.cs">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Backup.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Bookmarks.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViewTranslation.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewTranslation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViews.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViews.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViewVerses.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewVerses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViewESL50.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewESL50.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViewRawText.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewRawText.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\SelectVerseForm.cs">
+    <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\SelectVerseForm.designer.cs">
+    <Compile Include="Source\Forms\Boxes\SelectVerseForm.designer.cs">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\LoadingForm.cs">
+    <Compile Include="Source\Forms\Config\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\LoadingForm.Designer.cs">
+    <Compile Include="Source\Forms\Config\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,10 +126,10 @@
     <Compile Include="Source\Classes\SettingsHelper.cs" />
     <Compile Include="Source\Enums\ControlLocation.cs" />
     <Compile Include="Source\Enums\ViewModeType.cs" />
-    <Compile Include="Source\Forms\AboutBox.cs">
+    <Compile Include="Source\Forms\Config\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\AboutBox.Designer.cs">
+    <Compile Include="Source\Forms\Config\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Components\LettersControl.cs">
@@ -138,31 +138,31 @@
     <Compile Include="Source\Components\LettersControl.designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.DB.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Designer.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.UpdateViewSearch.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Keys.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.SetView.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Screen.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Screen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\PreferencesForm.cs">
+    <Compile Include="Source\Forms\Config\PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\PreferencesForm.designer.cs">
+    <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Components\StatControl.cs">
@@ -178,16 +178,16 @@
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Program.cs" />
-    <Compile Include="Source\Forms\StatisticsForm.cs">
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\StatisticsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\SearchTranslationsForm.cs">
+    <Compile Include="Source\Forms\Boxes\SearchTranslationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\SearchTranslationsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\SearchTranslationsForm.Designer.cs">
       <DependentUpon>SearchTranslationsForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -200,62 +200,62 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Source\Forms\AboutBox.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\AboutBox.resx">
+    <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\EditBooksForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.fr.resx">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\EditBooksForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.resx">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ExportForm.fr.resx">
-      <DependentUpon>ExportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Config\ExportingForm.fr.resx">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ExportForm.resx">
-      <DependentUpon>ExportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Config\ExportingForm.resx">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SelectSearchResultsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSearchResultsForm.fr.resx">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SelectSearchResultsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSearchResultsForm.resx">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SelectVerseForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.fr.resx">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SelectVerseForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.resx">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\LoadingForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\LoadingForm.fr.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\LoadingForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\MainForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\MainForm.resx">
+    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\PreferencesForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\PreferencesForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Components\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\StatisticsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\StatisticsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Components\StatControl.resx">
@@ -269,10 +269,10 @@
       <DependentUpon>WordControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SearchTranslationsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchTranslationsForm.fr.resx">
       <DependentUpon>SearchTranslationsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\SearchTranslationsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchTranslationsForm.resx">
       <DependentUpon>SearchTranslationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
