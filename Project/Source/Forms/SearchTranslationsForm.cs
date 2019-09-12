@@ -19,12 +19,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
-  public partial class FoundReferencesForm : Form
+  public partial class SearchTranslationsForm : Form
   {
 
     static public void Run(ReferenceItem reference, WordControl sender)
     {
-      var form = new FoundReferencesForm();
+      var form = new SearchTranslationsForm();
       form.Reference = reference;
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
     private ReferenceItem Reference;
     private WordControl WordControl;
 
-    public FoundReferencesForm()
+    public SearchTranslationsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -64,19 +64,19 @@ namespace Ordisoftware.HebrewWords
       Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
       Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
       Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
-      var query = from book in MainForm.Instance.DataSet.Books
-                  from chapter in book.GetChaptersRows()
-                  from verse in chapter.GetVersesRows()
-                  from word in verse.GetWordsRows()
-                  where check(word.Hebrew) && word.Translation != ""
-                  select new WordReferencedItem
-                  {
-                    Book = book,
-                    Chapter = chapter,
-                    Verse = verse,
-                    Word = word
-                  };
-      foreach ( var item in query )
+      var references = from book in MainForm.Instance.DataSet.Books
+                       from chapter in book.GetChaptersRows()
+                       from verse in chapter.GetVersesRows()
+                       from word in verse.GetWordsRows()
+                       where check(word.Hebrew) && word.Translation != ""
+                       select new WordReferencedItem
+                       {
+                         Book = book,
+                         Chapter = chapter,
+                         Verse = verse,
+                         Word = word
+                       };
+      foreach ( var item in references )
       {
         var itemList = new ListViewItem(item.ToString());
         itemList.Tag = item;

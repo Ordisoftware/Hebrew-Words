@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      FoundReferencesForm.Run(Reference, this);
+      SearchTranslationsForm.Run(Reference, this);
     }
 
   }

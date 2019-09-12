@@ -51,14 +51,13 @@ namespace Ordisoftware.HebrewWords
                       Chapter = chapter,
                       Verse = verse
                     };
-        var list = query.Distinct(new ReferenceItemComparer());
-        int count = list.Count();
+        var references = query.Distinct(new ReferenceItemComparer());
+        int count = references.Count();
         if ( count > 500 )
           if ( !DisplayManager.QueryYesNo(Localizer.SearchResultsText.GetLang(count.ToString())) )
             return;
         LabelFindRefCount.Text = count.ToString();
-
-        foreach ( var item in list )
+        foreach ( var item in references )
         {
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }

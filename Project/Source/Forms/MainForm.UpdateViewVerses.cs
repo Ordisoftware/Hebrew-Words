@@ -31,19 +31,18 @@ namespace Ordisoftware.HebrewWords
       var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
       EditELS50.Text = itemChapter.Chapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
-      var query = from book in DataSet.Books
-                  from chapter in book.GetChaptersRows()
-                  from verse in chapter.GetVersesRows()
-                  where book.Number == itemBook.Book.Number 
-                     && chapter.Number == itemChapter.Chapter.Number
-                  select new ReferenceItem
-                  {
-                    Book = book,
-                    Chapter = chapter,
-                    Verse = verse
-                  };
-      var list = query.Distinct(new ReferenceItemComparer());
-      UpdateViewVerses(PanelViewVerses, list);
+      var references = from book in DataSet.Books
+                       from chapter in book.GetChaptersRows()
+                        from verse in chapter.GetVersesRows()
+                       where book.Number == itemBook.Book.Number 
+                          && chapter.Number == itemChapter.Chapter.Number
+                       select new ReferenceItem
+                        {
+                         Book = book,
+                         Chapter = chapter,
+                         Verse = verse
+                       };
+      UpdateViewVerses(PanelViewVerses, references);
     }
 
     private void UpdateViewVerses(Panel panel, IEnumerable<ReferenceItem> references)
