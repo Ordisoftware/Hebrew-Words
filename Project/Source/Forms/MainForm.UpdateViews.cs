@@ -47,11 +47,12 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViews()
     {
       if ( IsLoadingData ) return;
+      Refresh();
       UpdateViewVerses();
       UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
-      if ( PanelSearchResults.Controls.Count > 0 ) UpdateViewSearch();
+      DrawViewSearch();
     }
 
   }

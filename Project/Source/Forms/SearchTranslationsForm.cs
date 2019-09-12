@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
     private ReferenceItem Reference;
     private WordControl WordControl;
 
-    public SearchTranslationsForm()
+    private SearchTranslationsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

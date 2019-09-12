@@ -55,6 +55,7 @@
       this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
       this.ActionSearchWord = new System.Windows.Forms.Button();
       this.ActionClearWord = new System.Windows.Forms.Button();
+      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.PanelNavigation = new System.Windows.Forms.Panel();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
@@ -72,6 +73,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -141,9 +144,6 @@
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSetAsBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -169,10 +169,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      this.ToolStrip.SuspendLayout();
-      this.ContextMenuStripVerse.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ToolStrip.SuspendLayout();
+      this.ContextMenuStripVerse.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -366,6 +366,14 @@
       this.ActionClearWord.UseVisualStyleBackColor = true;
       this.ActionClearWord.Click += new System.EventHandler(this.ActionClearWord_Click);
       // 
+      // EditLetters
+      // 
+      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
       // PanelNavigation
       // 
       this.PanelNavigation.Controls.Add(this.ActionELS50CopyToClipboard);
@@ -484,6 +492,16 @@
       // 
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // label1
       // 
@@ -1007,24 +1025,6 @@
       this.ActionAddToBookmarks.Name = "ActionAddToBookmarks";
       this.ActionAddToBookmarks.Click += new System.EventHandler(this.ActionAddToBookmarks_Click);
       // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1084,11 +1084,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
 
     }

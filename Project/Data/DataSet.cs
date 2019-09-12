@@ -9,7 +9,7 @@
       string result = "";
       foreach ( WordsRow word in verse.GetWordsRows() )
         result = result + word.Translation + " ";
-      return result.Remove(result.Length - 1, 1);
+      return result.Trim();
     }
 
   }

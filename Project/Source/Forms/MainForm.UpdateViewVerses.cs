@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViewVerses(Panel panel, IEnumerable<ReferenceItem> references)
     {
-      Cursor = Cursors.WaitCursor;
+      SetFormDisabled(true);
       panel.SuspendLayout();
       try
       {
@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewWords
         int mX = 50;
         int mY = 50;
         int delta = 10;
-        int width = panel.Width - delta;
+        int width = ClientSize.Width - delta * 4;
         int dx = control.Width;
         int dy = control.Height;
         int marginX = mX + delta;
@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         panel.ResumeLayout();
-        Cursor = Cursors.Default;
+        SetFormDisabled(false);
       }
     }
 

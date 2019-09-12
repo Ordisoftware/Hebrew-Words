@@ -47,6 +47,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Indicate if application is ready.
+    /// </summary>
+    public bool IsAppReady { get; private set; }
+
+    /// <summary>
     /// Indicate if is in loading data stage.
     /// </summary>
     public bool IsLoadingData { get; private set; }
@@ -89,10 +94,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      Refresh();
       IsLoadingData = true;
       try
       {
+        Refresh();
         SetDialogsDirectory();
         CheckUpdate(true);
         DoBackupDB();
@@ -104,6 +109,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         IsLoadingData = false;
+        IsAppReady = true;
       }
       SetView(Program.Settings.CurrentView, true);
       UpdateViews();
@@ -200,6 +206,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_ClientSizeChanged(object sender, EventArgs e)
     {
+      if ( !IsAppReady ) return;
+      ActionClearWord.PerformClick();
       UpdateViews();
     }
 

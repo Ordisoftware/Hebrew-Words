@@ -64,6 +64,12 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
+    <Compile Include="Source\Forms\SelectSearchResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\SelectSearchResultsForm.Designer.cs">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Source\Classes\DataItems.cs" />
     <Compile Include="Source\Classes\BooksNames.cs" />
@@ -211,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\ExportForm.resx">
       <DependentUpon>ExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\SelectSearchResultsForm.fr.resx">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\SelectSearchResultsForm.resx">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\SelectVerseForm.fr.resx">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>

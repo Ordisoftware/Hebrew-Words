@@ -130,17 +130,6 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
-    static public readonly Dictionary<string, string> SearchResultsText
-      = new Dictionary<string, string>()
-      {
-        { "en", "There is {0} results." + NewLine + 
-                "You will be able to cancel the process by pressing Escape." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Il y a {0} résultats." + NewLine +
-                "Vous pourrez annuler le processus en appuyant sur Echap." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
     static public readonly Dictionary<string, string> BookChapterText
       = new Dictionary<string, string>()
       {

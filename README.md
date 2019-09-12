@@ -66,8 +66,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add master bookmark used at startup.
 - Add bookmarks.
 - Improve UI.
+- Improve search.
 - Improve verses rendering.
 - Improve translations rendering.
+- Improve search rendering.
 - Fix select backup path icon not implemented.
 - Some fixes.
 

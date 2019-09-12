@@ -75,6 +75,10 @@ namespace Ordisoftware.HebrewWords
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
               return true;
+            case ViewModeType.Search:
+              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) - PanelSearchResults.Height;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
+              return true;
           }
           break;
         case Keys.PageDown:
@@ -83,6 +87,10 @@ namespace Ordisoftware.HebrewWords
             case ViewModeType.Verses:
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              return true;
+            case ViewModeType.Search:
+              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) + PanelSearchResults.Height;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
               return true;
           }
           break;
@@ -93,6 +101,10 @@ namespace Ordisoftware.HebrewWords
               y = 0;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
               return true;
+            case ViewModeType.Search:
+              y = 0;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
+              return true;
           }
           break;
         case Keys.Control | Keys.End:
@@ -101,6 +113,10 @@ namespace Ordisoftware.HebrewWords
             case ViewModeType.Verses:
               y = PanelViewVerses.DisplayRectangle.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              return true;
+            case ViewModeType.Search:
+              y = PanelSearchResults.DisplayRectangle.Height;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
               return true;
           }
           break;
