@@ -57,7 +57,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### __________ - Version 2.0
+#### 2019.______ - Version 2.0
 
 - Add context menu on hebrew words and on verses numbers.
 - Add search translations of a word.
