@@ -17,6 +17,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -54,6 +55,7 @@ namespace Ordisoftware.HebrewWords
         if ( panel.Controls.Count > 0 )
           panel.ScrollControlIntoView(panel.Controls[0]);
         panel.Controls.Clear();
+        GC.Collect();
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
         int mX = 50;
@@ -67,7 +69,7 @@ namespace Ordisoftware.HebrewWords
         int x = width - dx - marginX;
         int y = delta;
         int minx = x;
-        int wordsCount = (width - marginX) / dx;
+        int wordsCount = ( width - marginX ) / dx;
         int wordsWidth = wordsCount * dx;
         int textHeight;
         var textboxTemp = new TextBox();
@@ -120,7 +122,7 @@ namespace Ordisoftware.HebrewWords
           editComment.Location = new Point(width - wordsWidth - label.Width - delta - delta, y + dy + delta);
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth;
-          editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1) - 3;
+          editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1 ) - 3;
           editComment.Tag = reference.Verse;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = reference.Verse.Comment;
@@ -129,6 +131,10 @@ namespace Ordisoftware.HebrewWords
           panel.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message);
       }
       finally
       {
