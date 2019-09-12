@@ -150,7 +150,7 @@
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG3SURBVDhPnZM5a0JBFIXf73D5E1aaImBQ0riAYqeVlQgq
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAG3SURBVDhPnZM5a0JBFIXf73D5E1aaImBQ0riAYqeVlQgq
         go1Yihb2NuJWuPwUwTIxEkyK2DxxaVTc9cQz+B6OBkIycBnmcO/37twzT7Hb7Q/xePwjkUi8/SVSqVTf
         6XQ+KZlM5gX/XGfIu0La5YxAIACbzYbD4YDj8XhRgXa7DUVR7nTW6gAtiVEul7Hf70UBl6a73W7sdjuc
         TiehS4DhcKgnMmq1mgAwrFarrns8Hh0SiUQGOoBCo9GQIPV6XQAKhYKkax2GQiFVAjA5n89LyblcDiaT
@@ -170,7 +170,7 @@
   <data name="ActionCopyHebrewName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
         GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
         sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
         eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
@@ -189,7 +189,7 @@
     <value>Copy hebrew name</value>
   </data>
   <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 70</value>
+    <value>186, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
     <value>ContextMenuStrip</value>
@@ -300,7 +300,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>EditBooksForm</value>
+    <value>Tanak</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn2</value>
@@ -326,16 +326,16 @@
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
-    <value>ActionCopyHebrewName</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
     <value>ActionOpenHebrewLetters</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
+    <value>ActionCopyHebrewName</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
@@ -348,19 +348,19 @@
     <value>dataSet</value>
   </data>
   <data name="&gt;&gt;dataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>

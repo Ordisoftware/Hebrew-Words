@@ -34,7 +34,6 @@ namespace Ordisoftware.HebrewWords
     private EditBooksForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
     }
 

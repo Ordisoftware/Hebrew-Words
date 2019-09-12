@@ -37,8 +37,8 @@
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
@@ -112,17 +112,17 @@
       this.ContextMenuStrip.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
       // 
-      // ActionCopyHebrewName
-      // 
-      resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
-      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
-      this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
-      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // ActionCopyHebrewName
+      // 
+      resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
+      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
+      this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
       // 
       // BooksBindingSource
       // 
