@@ -85,5 +85,11 @@
     <Setting Name="MaxRefCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">300</Value>
     </Setting>
+    <Setting Name="SearchTranslatedSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">392, 416</Value>
+    </Setting>
+    <Setting Name="SearchTranslatedLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

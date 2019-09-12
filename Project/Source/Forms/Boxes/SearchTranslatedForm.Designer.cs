@@ -171,11 +171,13 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
       this.Controls.Add(this.PanelButtons);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "FoundReferencesLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesLocation;
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedLocation;
       this.MaximizeBox = false;
       this.Name = "SearchTranslatedForm";
       this.TopMost = true;

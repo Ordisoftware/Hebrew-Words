@@ -332,5 +332,29 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["MaxRefCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("392, 416")]
+        public global::System.Drawing.Size SearchTranslatedSize {
+            get {
+                return ((global::System.Drawing.Size)(this["SearchTranslatedSize"]));
+            }
+            set {
+                this["SearchTranslatedSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point SearchTranslatedLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchTranslatedLocation"]));
+            }
+            set {
+                this["SearchTranslatedLocation"] = value;
+            }
+        }
     }
 }
