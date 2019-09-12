@@ -29,8 +29,8 @@ namespace Ordisoftware.HebrewWords
         string str = "";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
           str = word.Hebrew + " " + str;
-        AddTextRightAligned(EditRawText, HebrewFont, str);
-        AddTextRightAligned(EditRawText, LatinFont, ":" + verse.Number);
+        AddTextRightAligned(EditRawText, HebrewFont12, str);
+        AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);
         EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
       EditRawText.SelectionStart = 0;

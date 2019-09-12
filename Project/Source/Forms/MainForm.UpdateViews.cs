@@ -22,9 +22,11 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font HebrewFont = new Font("Hebrew", 12f);
+    private Font HebrewFont12 = new Font("Hebrew", 12f);
 
-    private Font LatinFont = new Font("Verdana", 10f);
+    private Font LatinFont10 = new Font("Verdana", 10f);
+
+    private Font LatinFont8 = new Font("Verdana", 8f);
 
     private Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
 
@@ -49,6 +51,7 @@ namespace Ordisoftware.HebrewWords
       UpdateViewTranslations();
       UpdateViewRawText();
       UpdateViewELS50();
+      if ( PanelSearchResults.Controls.Count > 0 ) UpdateViewSearch();
     }
 
   }

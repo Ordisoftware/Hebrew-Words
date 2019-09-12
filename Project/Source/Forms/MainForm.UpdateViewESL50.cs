@@ -26,8 +26,8 @@ namespace Ordisoftware.HebrewWords
       var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
-        AddTextRightAligned(EditELS50All, HebrewFont, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, LatinFont, " :" + chapter.Number);
+        AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
+        AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);
         EditELS50All.AppendText(Environment.NewLine);
       }
       EditELS50All.SelectionStart = 0;
