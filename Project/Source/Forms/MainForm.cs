@@ -324,6 +324,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewVerses_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.Verses ) return;
       SetView(ViewModeType.Verses);
       GoTo(CurrentReference);
     }
@@ -336,6 +337,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewTranslations_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.Translations ) return;
       SetView(ViewModeType.Translations);
       UpdateViewTranslations();
       GoTo(CurrentReference);
@@ -349,6 +351,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewRawText_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.Text ) return;
       SetView(ViewModeType.Text);
       GoTo(CurrentReference);
     }
@@ -361,6 +364,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewELS50_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.ELS50 ) return;
       SetView(ViewModeType.ELS50);
     }
 
@@ -372,6 +376,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.Search ) return;
       SetView(ViewModeType.Search);
     }
 

@@ -173,10 +173,10 @@
     <value>Largeur d'un WordControl</value>
   </data>
   <data name="LabelMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 13</value>
+    <value>220, 13</value>
   </data>
   <data name="LabelMaxRefCount.Text" xml:space="preserve">
-    <value>Nombre maximal de références rechercheables</value>
+    <value>Nombre max de références pour la recherche</value>
   </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
@@ -228,8 +228,8 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Utiliser %BOOKNAME%, %BOOKNUM%, %CHAPTERNUM et %VERSENUM%</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>La limite des handles système doit être changée pour utiliser plus de 300</value>
+  <data name="LabelSystemHandles.Text" xml:space="preserve">
+    <value>La limite des handles système doit être changée pour plus de 300.</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -126,6 +127,10 @@ namespace Ordisoftware.HebrewWords
         EditBackupPath.Text = FolderBrowserDialog.SelectedPath;
     }
 
+    private void LabelSystemHandles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      SystemManager.OpenWebLink((string)LabelSystemHandles.Tag);
+    }
   }
 
 }
