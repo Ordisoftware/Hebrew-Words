@@ -101,10 +101,11 @@
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
-      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
@@ -141,7 +142,6 @@
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSetAsBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
@@ -513,8 +513,8 @@
             this.toolStripSeparator4,
             this.MenuBookmarks,
             this.ActionRefresh,
-            this.toolStripSeparator1,
             this.ActionCopyToClipboard,
+            this.toolStripSeparator1,
             this.ActionViewBooksTranslation,
             this.ActionViewStatistics,
             this.toolStripSeparator2,
@@ -763,15 +763,10 @@
       this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // ActionRefresh
+      // toolStripSeparator4
       // 
-      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
-      this.ActionRefresh.Name = "ActionRefresh";
-      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
-      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // MenuBookmarks
       // 
@@ -792,6 +787,16 @@
       // 
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
       resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      // 
+      // ActionRefresh
+      // 
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.Name = "ActionRefresh";
+      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // toolStripSeparator1
       // 
@@ -1011,11 +1016,6 @@
       resources.ApplyResources(this.ActionAddToBookmarks, "ActionAddToBookmarks");
       this.ActionAddToBookmarks.Name = "ActionAddToBookmarks";
       this.ActionAddToBookmarks.Click += new System.EventHandler(this.ActionAddToBookmarks_Click);
-      // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // EditLetters
       // 

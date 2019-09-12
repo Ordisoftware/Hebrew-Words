@@ -382,8 +382,12 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionRefresh_Click(object sender, EventArgs e)
     {
+      int book = CurrentReference.Book.Number;
+      int chapter = CurrentReference.Chapter.Number;
+      int verse = CurrentReference.Verse?.Number ?? 1;
       UpdateViews();
       DrawViewSearch();
+      GoTo(book, chapter, verse);
     }
 
     /// <summary>
