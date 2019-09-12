@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewWords
       Func<Panel, int, bool, bool> scroll = (panel, y, abs) =>
       {
         panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, 
-                                             (abs ? Math.Abs(PanelViewVerses.AutoScrollPosition.Y) : 0) + y);
+                                             (abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0) + y);
         return true;
       };
       switch ( keyData )
