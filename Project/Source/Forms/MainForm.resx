@@ -423,32 +423,8 @@
   <data name="&gt;&gt;TabPageELS50.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EditSearchResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="EditSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 195</value>
-  </data>
-  <data name="EditSearchResults.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditSearchResults.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
-    <value>EditSearchResults</value>
-  </data>
-  <data name="&gt;&gt;EditSearchResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSearchResults.Parent" xml:space="preserve">
-    <value>PanelSearchResults</value>
-  </data>
-  <data name="&gt;&gt;EditSearchResults.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="PanelSearchResults.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="PanelSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -477,17 +453,47 @@
   <data name="&gt;&gt;PanelSearchResults.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="EditSearchResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>615, 3</value>
+  </data>
+  <data name="EditSearchResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 197</value>
+  </data>
+  <data name="EditSearchResults.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditSearchResults.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditSearchResults.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Name" xml:space="preserve">
+    <value>EditSearchResults</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;EditSearchResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="LabelFindRefCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="LabelFindRefCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="LabelFindRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>833, 203</value>
+    <value>795, 203</value>
   </data>
   <data name="LabelFindRefCount.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
   <data name="LabelFindRefCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>138, 15</value>
   </data>
   <data name="LabelFindRefCount.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -505,7 +511,7 @@
     <value>PanelSearchTop</value>
   </data>
   <data name="&gt;&gt;LabelFindRefCount.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditSearchOnlyTorah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +541,7 @@
     <value>PanelSearchTop</value>
   </data>
   <data name="&gt;&gt;EditSearchOnlyTorah.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionSearchWord.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -591,7 +597,7 @@
     <value>PanelSearchTop</value>
   </data>
   <data name="&gt;&gt;ActionSearchWord.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionClearWord.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -644,7 +650,7 @@
     <value>PanelSearchTop</value>
   </data>
   <data name="&gt;&gt;ActionClearWord.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditLetters.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -665,7 +671,7 @@
     <value>PanelSearchTop</value>
   </data>
   <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="PanelSearchTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2796,6 +2802,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -2822,18 +2831,6 @@
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -3230,6 +3227,18 @@
   </data>
   <data name="&gt;&gt;ActionAddToBookmarks.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

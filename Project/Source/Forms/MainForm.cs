@@ -200,7 +200,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_ClientSizeChanged(object sender, EventArgs e)
     {
-      InitChaptersCombobox();
+      UpdateViews();
     }
 
     /// <summary>
