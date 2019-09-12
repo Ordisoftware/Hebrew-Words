@@ -26,6 +26,8 @@ namespace Ordisoftware.HebrewWords
     private bool InProcess;
     private bool CancelRequired;
 
+    private int ScrollIncrement = 25;
+
     /// <summary>
     /// Process the command key.
     /// </summary>
@@ -68,6 +70,32 @@ namespace Ordisoftware.HebrewWords
         case Keys.F12:
           ActionAbout.PerformClick();
           return true;
+        case Keys.Control | Keys.Up:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - ScrollIncrement;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              return true;
+            case ViewModeType.Search:
+              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) - ScrollIncrement;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
+              return true;
+          }
+          break;
+        case Keys.Control | Keys.Down:
+          switch ( Program.Settings.CurrentView )
+          {
+            case ViewModeType.Verses:
+              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + ScrollIncrement;
+              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
+              return true;
+            case ViewModeType.Search:
+              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) + ScrollIncrement;
+              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
+              return true;
+          }
+          break;
         case Keys.PageUp:
           switch ( Program.Settings.CurrentView )
           {
