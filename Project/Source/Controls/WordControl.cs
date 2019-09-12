@@ -67,9 +67,11 @@ namespace Ordisoftware.HebrewWords
 
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
-      MainForm.Instance.CurrentReference.Verse = Reference.Verse;
       EditTranslation.BackColor = Color.AliceBlue;
       EditTranslation.SelectionStart = 0;
+      MainForm.Instance.CurrentReference = new ReferenceItem(Reference);
+      MainForm.Instance.CurrentReference.Verse = Reference.Verse;
+      MainForm.Instance.AddCurrentToHistory();
     }
 
     private void EditTranslation_Leave(object sender, EventArgs e)

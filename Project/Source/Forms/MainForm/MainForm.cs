@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate current bible reference.
     /// </summary>
-    public ReferenceItem CurrentReference { get; private set; }
+    public ReferenceItem CurrentReference { get; set; }
 
     private bool IsGotoRunning = false;
 
@@ -943,9 +943,11 @@ namespace Ordisoftware.HebrewWords
             }
             break;
         }
+      CurrentReference = new ReferenceItem();
       CurrentReference.Book = reference.Book;
       CurrentReference.Chapter = reference.Chapter;
       CurrentReference.Verse = reference.Verse;
+      AddCurrentToHistory();
     }
 
     public void SearchWord(string word)

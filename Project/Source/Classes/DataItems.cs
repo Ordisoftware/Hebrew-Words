@@ -66,11 +66,36 @@ namespace Ordisoftware.HebrewWords
     public ReferenceItem()
     {
     }
+    public ReferenceItem(ReferenceItem item)
+      : this(item.Book.Number, item.Chapter.Number, item.Verse.Number)
+    {
+    }
     public ReferenceItem(int book, int chapter, int verse)
     {
       Book = MainForm.Instance.DataSet.Books[book - 1];
       Chapter = Book.GetChaptersRows()[chapter - 1];
       Verse = Chapter.GetVersesRows()[verse - 1];
+    }
+    static public bool Equals(ReferenceItem x, ReferenceItem y)
+    {
+      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
+        return false;
+      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
+        return false;
+      return x.Book.Number == y.Book.Number
+          && x.Chapter.Number == y.Chapter.Number
+          && x.Verse.Number == y.Verse.Number;
+    }
+    public bool Equals(ReferenceItem y)
+    {
+      return Equals(this, y);
+    }
+    public int GetHashCode()
+    {
+      int hashBook = Book.Number.GetHashCode();
+      int hashChapter = Book.Number.GetHashCode();
+      int hashVerse = Book?.Number.GetHashCode() ?? 1;
+      return hashBook ^ hashChapter ^ hashVerse;
     }
   }
 
@@ -102,8 +127,9 @@ namespace Ordisoftware.HebrewWords
   {
     public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      if ( Object.ReferenceEquals(x, y) ) return true;
-      if ( Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null) )
+      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
+        return false;
+      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
         return false;
       return x.Book.Number == y.Book.Number
           && x.Chapter.Number == y.Chapter.Number

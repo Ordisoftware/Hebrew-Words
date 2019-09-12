@@ -24,6 +24,9 @@ namespace Ordisoftware.HebrewWords
 
   public partial class MainForm
   {
+
+    private List<ReferenceItem> History = new List<ReferenceItem>();
+
     private List<ReferenceItem> Bookmarks = new List<ReferenceItem>();
 
     private string BookmarksFilename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
@@ -78,9 +81,9 @@ namespace Ordisoftware.HebrewWords
 
     internal void UpdateBookmarks()
     {
-      while ( MenuBookmarks.DropDownItems.Count > 2 )
-        MenuBookmarks.DropDownItems.RemoveAt(2);
-      while ( Bookmarks.Count > Program.Settings.BookmarksCount )
+      while ( MenuBookmarks.DropDownItems.Count > 4 )
+        MenuBookmarks.DropDownItems.RemoveAt(4);
+      while ( Bookmarks.Count >= Program.Settings.BookmarksCount )
         Bookmarks.RemoveAt(Bookmarks.Count - 1);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
@@ -126,6 +129,28 @@ namespace Ordisoftware.HebrewWords
         item.Image = ActionAddToBookmarks.Image;
       }
       SaveBookmarks();
+    }
+
+    internal void AddCurrentToHistory()
+    {
+      MenuHistory.DropDownItems.Clear();
+      while ( History.Count >= 20 )
+        History.RemoveAt(History.Count - 1);
+      if ( History.Where(r => r.Equals(CurrentReference)).Count() == 0 )
+        History.Insert(0, new ReferenceItem(CurrentReference));
+      EventHandler gotoBookmark = (sender, e) =>
+      {
+        GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+        ActionSave.PerformClick();
+      };
+      foreach ( var reference in History )
+      {
+        ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToString());
+        item.Tag = reference;
+        item.Click += gotoBookmark;
+        item.ImageScaling = ToolStripItemImageScaling.None;
+        item.Image = ActionAddToBookmarks.Image;
+      }
     }
 
   }
