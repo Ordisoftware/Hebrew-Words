@@ -477,6 +477,10 @@ namespace Ordisoftware.HebrewWords
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      PanelViewVerses.Controls.Clear();
+      PanelSearchResults.Controls.Clear();
+      SearchResults = null;
+      Refresh();
       DataSet.Clear();
       File.Delete(Program.UserDataFolderPath + filename);
       PopulateData();
@@ -495,6 +499,10 @@ namespace Ordisoftware.HebrewWords
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
+      PanelViewVerses.Controls.Clear();
+      PanelSearchResults.Controls.Clear();
+      SearchResults = null;
+      Refresh();
       DataSet.Clear();
       File.Delete(Program.UserDataFolderPath + filename);
       File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);

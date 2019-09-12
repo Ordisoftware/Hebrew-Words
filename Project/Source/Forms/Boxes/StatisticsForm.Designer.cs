@@ -169,6 +169,9 @@
       this.Controls.Add(this.GroupBoxBook);
       this.Controls.Add(this.GroupBoxTorah);
       this.Controls.Add(this.GroupBoxAllBooks);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "StatisticsForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.StatisticsForm_Load);
