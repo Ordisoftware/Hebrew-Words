@@ -43,18 +43,13 @@ namespace Ordisoftware.HebrewWords
                          Chapter = chapter,
                          Verse = verse
                        };
-      UpdateViewVerses(PanelViewVerses, references);
-    }
-
-    private void UpdateViewVerses(Panel panel, IEnumerable<ReferenceItem> references)
-    {
       SetFormDisabled(true);
-      panel.SuspendLayout();
+      PanelViewVerses.SuspendLayout();
       try
       {
-        if ( panel.Controls.Count > 0 )
-          panel.ScrollControlIntoView(panel.Controls[0]);
-        panel.Controls.Clear();
+        if ( PanelViewVerses.Controls.Count > 0 )
+          PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
+        PanelViewVerses.Controls.Clear();
         GC.Collect();
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
@@ -91,7 +86,7 @@ namespace Ordisoftware.HebrewWords
           label.MouseLeave += LabelVerseNumber_MouseLeave;
           label.MouseClick += LabelVerseNumber_MouseClick;
           label.ContextMenuStrip = ContextMenuStripVerse;
-          panel.Controls.Add(label);
+          PanelViewVerses.Controls.Add(label);
           bool emptyline = false;
           foreach ( var word in reference.Verse.GetWordsRows() )
           {
@@ -100,7 +95,7 @@ namespace Ordisoftware.HebrewWords
             control.Word = word;
             control.Location = new Point(x, y);
             control.Width = Program.Settings.WordControlWidth;
-            panel.Controls.Add(control);
+            PanelViewVerses.Controls.Add(control);
             x -= dx;
             if ( x < delta )
             {
@@ -128,7 +123,7 @@ namespace Ordisoftware.HebrewWords
           editComment.Text = reference.Verse.Comment;
           editComment.TextChanged += EditVerseComment_TextChanged;
           editComment.KeyDown += EditVerseComment_KeyDown;
-          panel.Controls.Add(editComment);
+          PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
       }
@@ -138,7 +133,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        panel.ResumeLayout();
+        PanelViewVerses.ResumeLayout();
         SetFormDisabled(false);
       }
     }
