@@ -126,7 +126,7 @@
     <value>0, 0</value>
   </data>
   <data name="LabelReference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 28</value>
+    <value>182, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelReference.TabIndex" type="System.Int32, mscorlib">

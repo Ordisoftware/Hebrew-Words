@@ -34,8 +34,10 @@ namespace Ordisoftware.HebrewWords
       return form.References;
     }
 
-    private IEnumerable<ReferenceItem> References;
+    private bool Initializing;
+    private bool Mutex;
 
+    private IEnumerable<ReferenceItem> References;
     private int Count;
 
     private SelectSearchResultsForm()
@@ -54,21 +56,29 @@ namespace Ordisoftware.HebrewWords
 
     private void CreateReferences(IEnumerable<ReferenceItem> references)
     {
-      var query = from r in references
-                  group r by r.Book into books
-                  select new { Key = books.Key.Number, Count = books.Count() };
-      SelectBooks.Items.Clear();
-      foreach ( var item in query )
+      Initializing = true;
+      try
       {
-        var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books[item.Key - 1].Name);
-        row.Tag = item.Key;
-        row.SubItems.Add(item.Count.ToString());
+        var query = from r in references
+                    group r by r.Book into books
+                    select new { Key = books.Key.Number, Count = books.Count() };
+        SelectBooks.Items.Clear();
+        foreach ( var item in query )
+        {
+          var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books[item.Key - 1].Name);
+          row.Tag = item.Key;
+          row.SubItems.Add(item.Count.ToString());
+        }
+        Height = 50 + SelectBooks.Location.Y + SelectBooks.Items.Count * 15 + 75;
+        ActiveControl = SelectBooks;
+        SelectBooks.Focus();
+        if ( References.Count() <= Program.Settings.MaxRefCount )
+          LabelFirst.Visible = false;
       }
-      Height = 50 + SelectBooks.Location.Y + SelectBooks.Items.Count * 15 + 75;
-      ActiveControl = SelectBooks;
-      SelectBooks.Focus();
-      if ( References.Count() <= Program.Settings.MaxRefCount )
-        LabelFirst.Visible = false;
+      finally
+      {
+        Initializing = false;
+      }
     }
 
     private void ActionSelect_Click(object sender, EventArgs e)
@@ -92,6 +102,8 @@ namespace Ordisoftware.HebrewWords
 
     private void SelectBooks_ItemChecked(object sender, ItemCheckedEventArgs e)
     {
+      if ( Initializing ) return;
+      if ( e.Item.SubItems.Count == 0 ) return;
       if ( e.Item.Checked )
         Count += Convert.ToInt32(e.Item.SubItems[1].Text);
       else
@@ -100,14 +112,12 @@ namespace Ordisoftware.HebrewWords
       ActionSelect.Enabled = Count > 0;
     }
 
-    private bool mutex;
-
     private void EditOnlyWithTranslation_CheckedChanged(object sender, EventArgs e)
     {
-      if ( mutex ) return;
-      mutex = true;
+      if ( Initializing || Mutex ) return;
+      Mutex = true;
       EditOnlyWithoutTranslation.Checked = false;
-      mutex = false;
+      Mutex = false;
       if ( EditOnlyWithTranslation.Checked )
         CreateReferences(References.Where(r => r.Verse.GetTranslation() != ""));
       else
@@ -116,10 +126,10 @@ namespace Ordisoftware.HebrewWords
 
     private void EditOnlyWithoutTranslation_CheckedChanged(object sender, EventArgs e)
     {
-      if ( mutex ) return;
-      mutex = true;
+      if ( Initializing || Mutex ) return;
+      Mutex = true;
       EditOnlyWithTranslation.Checked = false;
-      mutex = false;
+      Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
         CreateReferences(References.Where(r => r.Verse.GetTranslation() == ""));
       else
