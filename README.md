@@ -57,7 +57,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.______ - Version 2.0
+#### 2019.09.__ - Version 2.0
 
 - Add context menu on hebrew words and on verses numbers.
 - Add search translations of a word.
@@ -65,6 +65,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add option to set commentary lines count.
 - Add master bookmark used at startup.
 - Add bookmarks.
+- Add novigation history.
 - Improve UI.
 - Improve search.
 - Improve verses rendering.
