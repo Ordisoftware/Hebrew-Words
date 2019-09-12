@@ -47,6 +47,7 @@ namespace Ordisoftware.HebrewWords
         row.Tag = item.Key;
         row.SubItems.Add(item.Count.ToString());
       }
+      Height = 50 + SelectBooks.Location.Y + SelectBooks.Items.Count * 15;
       ActiveControl = SelectBooks;
       SelectBooks.Focus();
       if ( References.Count() <= Program.Settings.MaxRefCount )
