@@ -1158,7 +1158,6 @@
     private System.Windows.Forms.Button ActionELS50CopyToClipboard;
     private System.Windows.Forms.ToolStripButton ActionViewVerses;
     private System.Windows.Forms.Panel PanelNavigation;
-    private System.Windows.Forms.Panel PanelViewVerses;
     private System.Windows.Forms.TabPage TabPageTranslations;
     private System.Windows.Forms.Panel PanelViewTranslations;
     private System.Windows.Forms.TabPage TabPageELS50;
@@ -1216,6 +1215,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.Label LabelFindRefCount;
+    internal System.Windows.Forms.Panel PanelViewVerses;
   }
 }
 

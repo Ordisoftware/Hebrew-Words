@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      MainForm.Instance.GoTo(Reference);
+      ReachReferencedWord(new WordReferencedItem(Reference, WordControl.Word));
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)
@@ -96,10 +96,21 @@ namespace Ordisoftware.HebrewWords
       ActionReachReference.PerformClick();
     }
 
+    private void ReachReferencedWord(WordReferencedItem reference)
+    {
+      MainForm.Instance.GoTo(reference);
+      foreach ( Control control in MainForm.Instance.PanelViewVerses.Controls )
+        if ( control is WordControl )
+          if ( ( (WordControl)control ).Word == reference.Word )
+            ( (WordControl)control ).Focus();
+      Focus();
+      BringToFront();
+    }
+
     private void ActionReachReference_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      MainForm.Instance.GoTo((ReferenceItem)ListView.SelectedItems[0].Tag);
+      ReachReferencedWord((WordReferencedItem)ListView.SelectedItems[0].Tag);
     }
 
     private string CleanTranslation(string str)

@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewWords
     /// Indicates if a key is being processed.
     /// </summary>
     [ThreadStatic]
-    private bool NewKeyPressed = false;
+    private bool KeyProcessed = false;
 
     /// <summary>
     /// Indicate the background color of letters panel
@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewWords
       if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
       else
-        NewKeyPressed = true;
+        KeyProcessed = true;
     }
 
     /// <summary>
@@ -132,9 +132,9 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void Input_KeyUp(object sender, KeyEventArgs e)
     {
-      if ( NewKeyPressed )
+      if ( KeyProcessed )
       {
-        NewKeyPressed = false;
+        KeyProcessed = false;
         if ( Input.SelectionStart != 0 ) 
           Input.SelectionStart = Input.SelectionStart - 1;
       }

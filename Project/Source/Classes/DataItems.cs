@@ -81,6 +81,14 @@ namespace Ordisoftware.HebrewWords
       : base()
     {
     }
+    public WordReferencedItem(ReferenceItem reference, Data.DataSet.WordsRow word)
+      : base()
+    {
+      Book = reference.Book;
+      Chapter = reference.Chapter;
+      Verse = reference.Verse;
+      Word = word;
+    }
     public WordReferencedItem(int book, int chapter, int verse)
       : base(book, chapter, verse)
     {
