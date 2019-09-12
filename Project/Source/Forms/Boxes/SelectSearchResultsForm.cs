@@ -100,9 +100,14 @@ namespace Ordisoftware.HebrewWords
       ActionSelect.Enabled = Count > 0;
     }
 
+    private bool mutex;
+
     private void EditOnlyWithTranslation_CheckedChanged(object sender, EventArgs e)
     {
+      if ( mutex ) return;
+      mutex = true;
       EditOnlyWithoutTranslation.Checked = false;
+      mutex = false;
       if ( EditOnlyWithTranslation.Checked )
         CreateReferences(References.Where(r => r.Verse.GetTranslation() != ""));
       else
@@ -111,7 +116,10 @@ namespace Ordisoftware.HebrewWords
 
     private void EditOnlyWithoutTranslation_CheckedChanged(object sender, EventArgs e)
     {
+      if ( mutex ) return;
+      mutex = true;
       EditOnlyWithTranslation.Checked = false;
+      mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
         CreateReferences(References.Where(r => r.Verse.GetTranslation() == ""));
       else
