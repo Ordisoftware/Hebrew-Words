@@ -34,7 +34,12 @@ namespace Ordisoftware.HebrewWords
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      int y;
+      Func<Panel, int, bool, bool> scroll = (panel, y, abs) =>
+      {
+        panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, 
+                                             (abs ? Math.Abs(PanelViewVerses.AutoScrollPosition.Y) : 0) + y);
+        return true;
+      };
       switch ( keyData )
       {
         case Keys.Escape:
@@ -74,78 +79,54 @@ namespace Ordisoftware.HebrewWords
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - ScrollIncrement;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, -ScrollIncrement, true);
             case ViewModeType.Search:
-              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) - ScrollIncrement;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, -ScrollIncrement, true);
           }
           break;
         case Keys.Control | Keys.Down:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + ScrollIncrement;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, ScrollIncrement, true);
             case ViewModeType.Search:
-              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) + ScrollIncrement;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, ScrollIncrement, true);
           }
           break;
         case Keys.PageUp:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - PanelViewVerses.Height;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, -PanelViewVerses.Height, true);
             case ViewModeType.Search:
-              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) - PanelSearchResults.Height;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, -PanelViewVerses.Height, true);
           }
           break;
         case Keys.PageDown:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, PanelViewVerses.Height, true);
             case ViewModeType.Search:
-              y = Math.Abs(PanelSearchResults.AutoScrollPosition.Y) + PanelSearchResults.Height;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, PanelViewVerses.Height, true);
           }
           break;
         case Keys.Control | Keys.Home:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = 0;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, 0, false);
             case ViewModeType.Search:
-              y = 0;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, 0, false);
           }
           break;
         case Keys.Control | Keys.End:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
-              y = PanelViewVerses.DisplayRectangle.Height;
-              PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
             case ViewModeType.Search:
-              y = PanelSearchResults.DisplayRectangle.Height;
-              PanelSearchResults.AutoScrollPosition = new Point(PanelSearchResults.AutoScrollPosition.X, y);
-              return true;
+              return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
           }
           break;
       }
