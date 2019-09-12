@@ -105,6 +105,10 @@
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
+      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
+      this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
@@ -116,9 +120,6 @@
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -149,6 +150,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -536,6 +538,9 @@
             this.ActionViewRawText,
             this.ActionViewELS50,
             this.ActionViewSearch,
+            this.toolStripSeparator4,
+            this.MenuBookmarks,
+            this.ActionRefresh,
             this.toolStripSeparator1,
             this.ActionCopyToClipboard,
             this.ActionViewBooksTranslation,
@@ -543,8 +548,7 @@
             this.toolStripSeparator2,
             this.MenuDatabase,
             this.ActionSave,
-            this.toolStripSeparator3,
-            this.MenuBookmarks});
+            this.toolStripSeparator3});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
@@ -787,6 +791,36 @@
       this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // ActionRefresh
+      // 
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.Name = "ActionRefresh";
+      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // MenuBookmarks
+      // 
+      this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionClearBookmarks,
+            this.toolStripMenuItem2});
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      this.MenuBookmarks.Name = "MenuBookmarks";
+      // 
+      // ActionClearBookmarks
+      // 
+      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
+      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
+      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -872,26 +906,6 @@
       // 
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-      // 
-      // MenuBookmarks
-      // 
-      this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionClearBookmarks,
-            this.toolStripMenuItem2});
-      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      this.MenuBookmarks.Name = "MenuBookmarks";
-      // 
-      // ActionClearBookmarks
-      // 
-      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
-      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
-      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
-      // 
-      // toolStripMenuItem2
-      // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       // 
       // bindingNavigatorMoveFirstItem
       // 
@@ -1050,6 +1064,11 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // MainForm
       // 
@@ -1215,6 +1234,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.Label LabelFindRefCount;
     internal System.Windows.Forms.Panel PanelViewVerses;
+    private System.Windows.Forms.ToolStripButton ActionRefresh;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
   }
 }
 

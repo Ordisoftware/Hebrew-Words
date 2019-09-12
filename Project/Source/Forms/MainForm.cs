@@ -376,6 +376,17 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionRefresh for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionRefresh_Click(object sender, EventArgs e)
+    {
+      UpdateViews();
+      DrawViewSearch();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionCopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

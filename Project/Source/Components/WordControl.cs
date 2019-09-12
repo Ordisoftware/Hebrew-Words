@@ -61,7 +61,6 @@ namespace Ordisoftware.HebrewWords
 
     public new bool Focus()
     {
-      EditTranslation.SelectionStart = 0;
       EditTranslation.Focus();
       return true;
     }
@@ -69,6 +68,13 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
       MainForm.Instance.CurrentReference.Verse = Reference.Verse;
+      EditTranslation.BackColor = Color.AliceBlue;
+      EditTranslation.SelectionStart = 0;
+    }
+
+    private void EditTranslation_Leave(object sender, EventArgs e)
+    {
+      EditTranslation.BackColor = SystemColors.Window;
     }
 
     private void EditTranslation_KeyDown(object sender, KeyEventArgs e)
