@@ -122,7 +122,7 @@ namespace Ordisoftware.HebrewWords
           editComment.Text = reference.Verse.Comment;
           editComment.TextChanged += EditVerseComment_TextChanged;
           editComment.KeyDown += EditVerseComment_KeyDown;
-          editComment.Enter += (sender, e) => { ( (TextBox)sender ).SelectionStart = 0; };
+          //editComment.Enter += (sender, e) => { ( (TextBox)sender ).SelectionStart = 0; };
           PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
