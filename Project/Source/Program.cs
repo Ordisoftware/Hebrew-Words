@@ -88,8 +88,16 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-      //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+      if ( args.Length == 2 && args[0] == "/lang" )
+        try
+        {
+          // args[1] is like "en-US"
+          Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(args[1]);
+          Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(args[1]);
+        }
+        catch
+        {
+        }
       try
       {
         var assembly = typeof(Program).Assembly;
