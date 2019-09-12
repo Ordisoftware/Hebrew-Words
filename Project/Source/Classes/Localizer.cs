@@ -130,6 +130,13 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> NotYetAvailableText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Not yet available." },
+        { "fr", "Pas encore disponible." }
+      };
+
     static public readonly Dictionary<string, string> BookChapterText
       = new Dictionary<string, string>()
       {

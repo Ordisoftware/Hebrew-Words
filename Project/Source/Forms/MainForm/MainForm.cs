@@ -1018,6 +1018,11 @@ namespace Ordisoftware.HebrewWords
       UpdateBookmarks();
     }
 
+    private void ActionImportConsole_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
+    }
+
   }
 
 }

@@ -145,6 +145,8 @@
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSetAsBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -992,7 +994,9 @@
             this.ActionCopyTranslation,
             this.toolStripMenuItem3,
             this.ActionSetAsBookmarkMaster,
-            this.ActionAddToBookmarks});
+            this.ActionAddToBookmarks,
+            this.toolStripMenuItem4,
+            this.ActionImportConsole});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       // 
       // ActionOpenVerseOnline
@@ -1034,6 +1038,17 @@
       resources.ApplyResources(this.ActionAddToBookmarks, "ActionAddToBookmarks");
       this.ActionAddToBookmarks.Name = "ActionAddToBookmarks";
       this.ActionAddToBookmarks.Click += new System.EventHandler(this.ActionAddToBookmarks_Click);
+      // 
+      // toolStripMenuItem4
+      // 
+      resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+      // 
+      // ActionImportConsole
+      // 
+      resources.ApplyResources(this.ActionImportConsole, "ActionImportConsole");
+      this.ActionImportConsole.Name = "ActionImportConsole";
+      this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
       // BooksTableAdapter
       // 
@@ -1225,6 +1240,8 @@
     internal System.Windows.Forms.Panel PanelViewVerses;
     private System.Windows.Forms.ToolStripButton ActionRefresh;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+    private System.Windows.Forms.ToolStripMenuItem ActionImportConsole;
   }
 }
 

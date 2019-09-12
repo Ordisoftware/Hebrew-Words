@@ -149,6 +149,9 @@
   <data name="&gt;&gt;EditRawText.Parent" xml:space="preserve">
     <value>PanelViewRawText</value>
   </data>
+  <data name="&gt;&gt;ActionImportConsole.Name" xml:space="preserve">
+    <value>ActionImportConsole</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -182,8 +185,11 @@
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
     <value>956, 458</value>
   </data>
-  <data name="EditTranslations.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;PanelNavigation.Name" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -374,8 +380,14 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
   <data name="ActionCopyToClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
+  </data>
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="LabelSelectChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -431,9 +443,6 @@
   </data>
   <data name="ActionCheckUpdate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
-    <value>View original text (F3)</value>
   </data>
   <data name="&gt;&gt;WordsBindingSource.Name" xml:space="preserve">
     <value>WordsBindingSource</value>
@@ -492,8 +501,8 @@
   <data name="EditSearchOnlyTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 17</value>
   </data>
-  <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditTranslations.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -566,9 +575,6 @@
   <data name="&gt;&gt;SaveFileDialogRTF.Name" xml:space="preserve">
     <value>SaveFileDialogRTF</value>
   </data>
-  <data name="ActionViewTranslations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="ActionViewELS50.Text" xml:space="preserve">
     <value>View ELS50 list</value>
   </data>
@@ -620,6 +626,9 @@
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator2.Name" xml:space="preserve">
     <value>bindingNavigatorSeparator2</value>
+  </data>
+  <data name="&gt;&gt;PanelViewTranslations.Name" xml:space="preserve">
+    <value>PanelViewTranslations</value>
   </data>
   <data name="PanelSepTop.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 34</value>
@@ -686,9 +695,6 @@
   </data>
   <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="&gt;&gt;ActionContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelMainOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -914,8 +920,8 @@
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelSelectChapter.Name" xml:space="preserve">
     <value>LabelSelectChapter</value>
@@ -1001,6 +1007,9 @@
   <data name="ActionNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="PanelMainInner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
   <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1051,9 +1060,6 @@
   <data name="&gt;&gt;EditSearchOnlyTorah.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditScreenNone.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+0</value>
-  </data>
   <data name="PanelViewVerses.Size" type="System.Drawing.Size, System.Drawing">
     <value>956, 458</value>
   </data>
@@ -1081,9 +1087,6 @@
   <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
     <value>ChaptersBindingSource</value>
   </data>
-  <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 15</value>
-  </data>
   <data name="MenuSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -1095,6 +1098,9 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionImportConsole.Text" xml:space="preserve">
+    <value>Import console</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator1.Name" xml:space="preserve">
     <value>bindingNavigatorSeparator1</value>
@@ -1483,6 +1489,9 @@
   <data name="PanelMainCenter.Size" type="System.Drawing.Size, System.Drawing">
     <value>970, 490</value>
   </data>
+  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1675,6 +1684,9 @@
   <data name="&gt;&gt;ActionELS50CopyToClipboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
   <data name="&gt;&gt;ActionViewRawText.Name" xml:space="preserve">
     <value>ActionViewRawText</value>
   </data>
@@ -1683,9 +1695,6 @@
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;LabelFindRefCount.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;TimerAutoSave.Name" xml:space="preserve">
     <value>TimerAutoSave</value>
@@ -1708,8 +1717,8 @@
   <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelViewTranslations.Name" xml:space="preserve">
-    <value>PanelViewTranslations</value>
+  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 0</value>
   </data>
   <data name="TabPageTranslations.Text" xml:space="preserve">
     <value>Translations</value>
@@ -1791,6 +1800,9 @@
   <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1847,6 +1859,21 @@
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAIHSURBVDhPhZPLaxNRFMbnP/CPcCcuxLbjA4oo1pqH4sKN
+        i26KC10rRkWtYmKJFEQhuypYbCpkZjIxtYpKWytVMJRSxYUIWu0jmbQ2L6edJk0/7zmdSTPV6A8+zsfl
+        nO/eOw/JIZFM5lRdh6JpiNWkclXjcWi6nrVb/w41/QvDMKCoatRu/xPamfj6bVrou61pXuvr7+eaSaeh
+        xOMD9ogbOirxY2YWM7NzLPLEo2gU5UqFPZ1EXFWxxzaJqSo3zItd0pkMay49z2vvUykOcU5C17XHNnEC
+        DCOLbHahJtNc5vV6dP1J44CFxSUs/lxCLleAWVrBqrmGslmtiXj5dLhxQC6fR75QgLVcxvWBq5ADuyFf
+        bBa1ibX3UgsOdrXCG2p/bI9u4AQUiyX8KpmAeGY0/OrTHQxNhZGcvIXByW48/9CDsc8RCnCfwgmgO1sr
+        q+zlQDP0iS729QxNdcNzs0GAZVmolDdemRxowcPxM+yJ3rGz6Ly/DbHUBXiCR7cE2N/BWrWK9XW22BOQ
+        ERk9xb7v3TmuysQNPHh7Gt6gxx1A/8FW9l/eh7uvT7A/r+3E4Mce9pE3J0WA1x2gJRJF+kCcn+dZ8oV4
+        2gdwb/w4wiNtuD3SjvBwm9Bh9KY6cCzkcwcIdgk11evQtdYv/pAX/qBPyM/VJ0TDnitHRkXPf9kh5Aqt
+        03ZJkqTf2zJBCjlXYpQAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="ActionELS50CopyToClipboard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2094,7 +2121,7 @@
     <value>4</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 126</value>
+    <value>201, 154</value>
   </data>
   <data name="&gt;&gt;LabelSelectBook.Name" xml:space="preserve">
     <value>LabelSelectBook</value>
@@ -2135,8 +2162,8 @@
   <data name="ActionViewSearch.Text" xml:space="preserve">
     <value>Search a word</value>
   </data>
-  <data name="ActionAbout.ToolTipText" xml:space="preserve">
-    <value>About (F12)</value>
+  <data name="&gt;&gt;LabelFindRefCount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ActionSetAsBookmarkMaster.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2376,6 +2403,9 @@
   <data name="EditScreenBottomRight.Text" xml:space="preserve">
     <value>Bottom right</value>
   </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 6</value>
+  </data>
   <data name="&gt;&gt;bindingNavigatorAddNewItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2406,8 +2436,8 @@
   <data name="ActionExportBook.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 15</value>
   </data>
   <data name="ActionRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2543,8 +2573,8 @@
   <data name="ActionContact.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="EditScreenNone.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+0</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -2815,17 +2845,20 @@
   <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
+    <value>View original text (F3)</value>
   </data>
-  <data name="PanelMainInner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+  <data name="ActionViewTranslations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="PanelViewVerses.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;SaveFileDialogDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionImportConsole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2860,11 +2893,17 @@
   <data name="OpenFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
+  <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="EditScreenBottomRight.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="&gt;&gt;PanelViewTranslations.Parent" xml:space="preserve">
     <value>TabPageTranslations</value>
+  </data>
+  <data name="ActionAbout.ToolTipText" xml:space="preserve">
+    <value>About (F12)</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3010,6 +3049,9 @@
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;PanelMainInner.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -3051,9 +3093,6 @@
   </data>
   <data name="LabelSelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 0</value>
   </data>
   <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -3260,20 +3299,20 @@
   <metadata name="BooksTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>490, 16</value>
   </metadata>
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
+  </metadata>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>22, 17</value>
   </metadata>
-  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 17</value>
+  <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1013, 58</value>
   </metadata>
   <metadata name="SaveFileDialogWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>717, 58</value>
   </metadata>
   <metadata name="TimerAutoSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 89</value>
-  </metadata>
-  <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1013, 58</value>
   </metadata>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>35, 51</value>
