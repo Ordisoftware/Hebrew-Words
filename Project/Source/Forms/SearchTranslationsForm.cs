@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
   public partial class SearchTranslationsForm : Form
   {
 
-    static public void Run(ReferenceItem reference, WordControl sender)
+    static public void Run(WordControl sender, ReferenceItem reference)
     {
       var form = new SearchTranslationsForm();
       form.Reference = reference;

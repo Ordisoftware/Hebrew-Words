@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewSearch()
     {
       InProcess = true;
-      Cursor = Cursors.WaitCursor;
+      SetFormDisabled(false);
       EditSearchResults.SuspendLayout();
       try
       {
@@ -62,14 +62,14 @@ namespace Ordisoftware.HebrewWords
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }
           string strTranslation = "";
-          foreach ( Data.DataSet.WordsRow w in item.Verse.GetWordsRows().Reverse() )
+          foreach ( Data.DataSet.WordsRow word in item.Verse.GetWordsRows().Reverse() )
           {
-            var color = w.Hebrew.Contains(str1) || w.Hebrew.Contains(str2)
+            var color = word.Hebrew.Contains(str1) || word.Hebrew.Contains(str2)
                       ? Color.DarkRed
                       : SystemColors.ControlText;
             AddTextRightAligned(EditSearchResults, HebrewFont, " ");
-            AddTextRightAligned(EditSearchResults, HebrewFont, w.Hebrew, color);
-            strTranslation = w.Translation + " " + strTranslation;
+            AddTextRightAligned(EditSearchResults, HebrewFont, word.Hebrew, color);
+            strTranslation = word.Translation + " " + strTranslation;
           }
           string strRef = " :" + item.Verse.Number + "." + item.Chapter.Number + "." + item.Book.Name;
           AddTextRightAligned(EditSearchResults, LatinFont, strRef);
@@ -83,9 +83,9 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        EditSearchResults.ResumeLayout();
         InProcess = false;
-        Cursor = Cursors.Default;
+        SetFormDisabled(true);
+        EditSearchResults.ResumeLayout();
       }
     }
 

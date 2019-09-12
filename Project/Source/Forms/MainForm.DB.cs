@@ -106,7 +106,7 @@ namespace Ordisoftware.HebrewWords
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                               )");
-        CreateData();
+        CreateDataIfNotExists();
       }
       finally
       {
@@ -115,14 +115,20 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Create database content.
+    /// Create database content if not exists.
     /// </summary>
-    public void CreateData()
+    public void CreateDataIfNotExists()
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
       var command = new OdbcCommand("select count(*) FROM Books", connection);
-      if ( (int)command.ExecuteScalar() > 0 )
+      if ( (int)command.ExecuteScalar() == 0 )
+      {
+        connection.Close();
+        LoadFromFiles();
+        TableAdapterManager.UpdateAll(DataSet);
+      }
+      else
       {
         BooksTableAdapter.Fill(DataSet.Books);
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
@@ -131,11 +137,7 @@ namespace Ordisoftware.HebrewWords
           book.Name = book.Name.Replace("_", " ");
         }
         TableAdapterManager.UpdateAll(DataSet);
-        return;
       }
-      connection.Close();
-      LoadFromFiles();
-      TableAdapterManager.UpdateAll(DataSet);
     }
 
     /// <summary>

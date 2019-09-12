@@ -34,8 +34,8 @@ namespace Ordisoftware.HebrewWords
     }
 
     private bool UpdateViewRequired;
-    private int CommentaryLinesCount;
-    private int WordControlWidth;
+    private int CommentaryLinesCountPrevious;
+    private int WordControlWidthPrevious;
 
     /// <summary>
     /// Default constructor.
@@ -65,8 +65,8 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
-      CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
-      WordControlWidth = (int)EditWordControlWidth.Value;
+      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
+      WordControlWidthPrevious = (int)EditWordControlWidth.Value;
     }
 
     /// <summary>
@@ -97,8 +97,8 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Store();
       MainForm.Instance.UpdateBookmarks();
       MainForm.Instance.SetDialogsDirectory();
-      if ( CommentaryLinesCount != (int)EditCommentaryLinesCount.Value
-        || WordControlWidth != (int)EditWordControlWidth.Value )
+      if ( CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
+        || WordControlWidthPrevious != (int)EditWordControlWidth.Value )
         UpdateViewRequired = true;
     }
 

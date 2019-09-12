@@ -113,6 +113,9 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
     }
 
+    /// <summary>
+    /// Set the initial directories of dialog boxes.
+    /// </summary>
     internal void SetDialogsDirectory()
     {
       OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
@@ -255,9 +258,9 @@ namespace Ordisoftware.HebrewWords
               DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
           }
           else
-            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
-                                           Environment.NewLine +
-                                           Localizer.CheckUpdateAskDownloadText.GetLang()) )
+          if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+                                         Environment.NewLine +
+                                         Localizer.CheckUpdateAskDownloadText.GetLang()) )
             AboutBox.Instance.OpenApplicationHome();
         }
       }
@@ -392,6 +395,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       if ( !EditBooksForm.Run() ) return;
+      Refresh();
       IsLoadingData = true;
       try
       {
@@ -617,7 +621,6 @@ namespace Ordisoftware.HebrewWords
           SaveFileDialogWord.FileName = book.Name + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
           var form = new ExportForm();
-          Cursor = Cursors.WaitCursor;
           SetFormDisabled(true);
           try
           {
@@ -635,7 +638,6 @@ namespace Ordisoftware.HebrewWords
           }
           finally
           {
-            Cursor = Cursors.Default;
             SetFormDisabled(false);
             form.Close();
           }
@@ -644,6 +646,9 @@ namespace Ordisoftware.HebrewWords
           SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
+          break;
+        default:
+          DisplayManager.ShowAdvert("Not implemented.");
           break;
       }
     }
@@ -662,7 +667,6 @@ namespace Ordisoftware.HebrewWords
         case ViewModeType.Verses:
           SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
           if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          Cursor = Cursors.WaitCursor;
           SetFormDisabled(true);
           try
           {
@@ -670,7 +674,6 @@ namespace Ordisoftware.HebrewWords
           }
           finally
           {
-            Cursor = Cursors.Default;
             SetFormDisabled(false);
           }
           break;
@@ -683,6 +686,9 @@ namespace Ordisoftware.HebrewWords
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditRawText.SaveFile(SaveFileDialogRTF.FileName);
+          break;
+        default:
+          DisplayManager.ShowAdvert("Not implemented.");
           break;
       }
     }
@@ -706,10 +712,14 @@ namespace Ordisoftware.HebrewWords
         var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
         foreach ( Data.DataSet.VersesRow verse in list )
         {
-          string str = "";
+          bool isempty = true;
           foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-            str += word.Translation;
-          if ( str == "" )
+            if ( word.Translation != "" )
+            {
+              isempty = false;
+              break;
+            }
+          if ( isempty )
           {
             found = verse;
             break;
@@ -739,8 +749,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
       InitChaptersCombobox();
+      CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
     }
 
     /// <summary>
@@ -885,7 +895,6 @@ namespace Ordisoftware.HebrewWords
             }
             break;
         }
-
       CurrentReference.Book = reference.Book;
       CurrentReference.Chapter = reference.Chapter;
       CurrentReference.Verse = reference.Verse;

@@ -85,9 +85,9 @@ namespace Ordisoftware.HebrewWords
           label.ForeColor = Color.DarkBlue;
           label.Font = VerseNumberFont;
           label.Text = reference.Verse.Number.ToString();
-            label.MouseEnter += LabelVerseNumber_MouseEnter;
-            label.MouseLeave += LabelVerseNumber_MouseLeave;
-            label.MouseClick += LabelVerseNumber_MouseClick;
+          label.MouseEnter += LabelVerseNumber_MouseEnter;
+          label.MouseLeave += LabelVerseNumber_MouseLeave;
+          label.MouseClick += LabelVerseNumber_MouseClick;
           label.ContextMenuStrip = ContextMenuStripVerse;
           panel.Controls.Add(label);
           bool emptyline = false;

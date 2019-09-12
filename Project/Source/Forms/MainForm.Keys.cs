@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewWords
       switch ( keyData )
       {
         case Keys.Escape:
-          if (InProcess) CancelRequired = true;
+          if ( InProcess ) CancelRequired = true;
           break;
         case Keys.Control | Keys.F:
           ActionSearchVerse.PerformClick();
@@ -74,44 +74,36 @@ namespace Ordisoftware.HebrewWords
             case ViewModeType.Verses:
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) - PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              break;
-            default:
-              return false;
+              return true;
           }
-          return true;
+          break;
         case Keys.PageDown:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
               y = Math.Abs(PanelViewVerses.AutoScrollPosition.Y) + PanelViewVerses.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              break;
-            default:
-              return false;
+              return true;
           }
-          return true;
+          break;
         case Keys.Control | Keys.Home:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
               y = 0;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              break;
-            default:
-              return false;
+              return true;
           }
-          return true;
+          break;
         case Keys.Control | Keys.End:
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
               y = PanelViewVerses.DisplayRectangle.Height;
               PanelViewVerses.AutoScrollPosition = new Point(PanelViewVerses.AutoScrollPosition.X, y);
-              break;
-            default:
-              return false;
+              return true;
           }
-          return true;
+          break;
       }
       return base.ProcessCmdKey(ref msg, keyData);
     }
