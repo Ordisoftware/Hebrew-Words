@@ -62,6 +62,7 @@ namespace Ordisoftware.HebrewWords
       EditCommentaryLinesCount.Value = Program.Settings.CommentaryLinesCount;
       EditWordControlWidth.Value = Program.Settings.WordControlWidth;
       EditBookmarksCount.Value = Program.Settings.BookmarksCount;
+      EditMaxRefCount.Value = Program.Settings.MaxRefCount;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       ActiveControl = EditHebrewLettersPath;
@@ -87,6 +88,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
       Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
       Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
+      Program.Settings.MaxRefCount = (int)EditMaxRefCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )

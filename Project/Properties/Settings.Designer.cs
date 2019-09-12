@@ -320,5 +320,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["WordControlWidth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public int MaxRefCount {
+            get {
+                return ((int)(this["MaxRefCount"]));
+            }
+            set {
+                this["MaxRefCount"] = value;
+            }
+        }
     }
 }

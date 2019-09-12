@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewWords
       Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
       LabelFound.Text = String.Format(LabelFound.Text, MainForm.SearchResultsCount);
-      LabelFirst.Text = String.Format(LabelFirst.Text, MainForm.MaxSearchResults);
+      LabelFirst.Text = String.Format(LabelFirst.Text, Program.Settings.MaxRefCount);
     }
 
     private void SelectSearchResultsForm_Load(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewWords
       }
       ActiveControl = SelectBooks;
       SelectBooks.Focus();
-      if ( References.Count() <= MainForm.MaxSearchResults )
+      if ( References.Count() <= Program.Settings.MaxRefCount )
         LabelFirst.Visible = false;
     }
 

@@ -26,7 +26,6 @@ namespace Ordisoftware.HebrewWords
   {
 
     public const int AdvertSearchResults = 200;
-    public const int MaxSearchResults = 300;
 
     static private string SearchWord1;
     static private string SearchWord2;
@@ -155,7 +154,7 @@ namespace Ordisoftware.HebrewWords
           label.Location = new Point(xx - label.PreferredSize.Width, y);
           PanelSearchResults.Controls.Add(label);
           y += label.PreferredHeight + marginY;
-          if ( index >= MaxSearchResults ) break;
+          if ( index >= Program.Settings.MaxRefCount ) break;
         }
         LabelFindRefCount.Text = index.ToString();
       }

@@ -82,5 +82,8 @@
     <Setting Name="WordControlWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">215</Value>
     </Setting>
+    <Setting Name="MaxRefCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

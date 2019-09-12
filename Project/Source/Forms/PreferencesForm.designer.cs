@@ -38,6 +38,7 @@
       System.Windows.Forms.Label LabelCommentaryLinesCount;
       System.Windows.Forms.Label LabelBookmarksCount;
       System.Windows.Forms.Label LabelWordControlWidth;
+      System.Windows.Forms.Label LabelMaxRefCount;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -57,6 +58,8 @@
       this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
+      this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
+      this.label2 = new System.Windows.Forms.Label();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -66,6 +69,7 @@
       LabelCommentaryLinesCount = new System.Windows.Forms.Label();
       LabelBookmarksCount = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
+      LabelMaxRefCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
@@ -73,6 +77,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -120,6 +125,11 @@
       resources.ApplyResources(LabelWordControlWidth, "LabelWordControlWidth");
       LabelWordControlWidth.Name = "LabelWordControlWidth";
       // 
+      // LabelMaxRefCount
+      // 
+      resources.ApplyResources(LabelMaxRefCount, "LabelMaxRefCount");
+      LabelMaxRefCount.Name = "LabelMaxRefCount";
+      // 
       // ButtonClose
       // 
       resources.ApplyResources(this.ButtonClose, "ButtonClose");
@@ -129,8 +139,8 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ButtonClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Controls.Add(this.ButtonClose);
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -140,8 +150,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -157,8 +167,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
+      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -190,9 +200,9 @@
       // 
       // GroupBoxHebrewWordClick
       // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -214,6 +224,10 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
+      // 
+      // FolderBrowserDialog
+      // 
+      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // label1
       // 
@@ -253,6 +267,11 @@
       // EditWordControlWidth
       // 
       resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
+      this.EditWordControlWidth.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -270,14 +289,47 @@
             0,
             0});
       // 
+      // EditMaxRefCount
+      // 
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
+      this.EditMaxRefCount.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+      this.EditMaxRefCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+      this.EditMaxRefCount.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+      this.EditMaxRefCount.Name = "EditMaxRefCount";
+      this.EditMaxRefCount.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+      // 
+      // label2
+      // 
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.label2);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
+      this.Controls.Add(this.EditMaxRefCount);
+      this.Controls.Add(LabelMaxRefCount);
       this.Controls.Add(this.EditBookmarksCount);
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
@@ -314,6 +366,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -339,5 +392,7 @@
     private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
     private System.Windows.Forms.NumericUpDown EditBookmarksCount;
     private System.Windows.Forms.NumericUpDown EditWordControlWidth;
+    private System.Windows.Forms.NumericUpDown EditMaxRefCount;
+    private System.Windows.Forms.Label label2;
   }
 }
