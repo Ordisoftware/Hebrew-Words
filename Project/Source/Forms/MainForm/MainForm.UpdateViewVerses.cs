@@ -50,7 +50,6 @@ namespace Ordisoftware.HebrewWords
         if ( PanelViewVerses.Controls.Count > 0 )
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
-        GC.Collect();
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
         int mX = 50;
