@@ -52,6 +52,8 @@ namespace Ordisoftware.HebrewWords
     public Data.DataSet.BooksRow Book { get; set; }
     public Data.DataSet.ChaptersRow Chapter { get; set; }
     public Data.DataSet.VersesRow Verse { get; set; }
+    public string Translation { get { return MainForm.Instance.DataSet.GetTranslation(Verse); } }
+    public string Text { get { return ToString(); } }
     public override string ToString()
     {
       return Book.Name + " " + Chapter.Number + "." + Verse.Number;
