@@ -149,26 +149,34 @@ namespace Ordisoftware.HebrewWords
     private void PopulateData()
     {
       var form = new LoadingForm();
-      form.ProgressBar.Maximum = 6;
+      form.ProgressBar.Maximum = 7;
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
       try
       {
         form.ProgressBar.Value = 1;
+        Refresh();
         CreateDatabaseIfNotExists();
         form.ProgressBar.Value = 2;
+        Refresh();
         BooksTableAdapter.Fill(DataSet.Books);
         form.ProgressBar.Value = 3;
+        Refresh();
         WordsTableAdapter.Fill(DataSet.Words);
         form.ProgressBar.Value = 4;
+        Refresh();
         VersesTableAdapter.Fill(DataSet.Verses);
         form.ProgressBar.Value = 5;
+        Refresh();
         ChaptersTableAdapter.Fill(DataSet.Chapters);
         form.ProgressBar.Value = 6;
+        Refresh();
         InitBooksCombobox();
         LoadBookmarks();
         UpdateBookmarks();
+        form.ProgressBar.Value = 7;
+        Refresh();
       }
       finally
       {

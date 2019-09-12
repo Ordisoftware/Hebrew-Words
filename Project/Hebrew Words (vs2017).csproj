@@ -132,10 +132,10 @@
     <Compile Include="Source\Forms\Config\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Components\LettersControl.cs">
+    <Compile Include="Source\Controls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Components\LettersControl.designer.cs">
+    <Compile Include="Source\Controls\LettersControl.designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
@@ -165,16 +165,16 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Components\StatControl.cs">
+    <Compile Include="Source\Controls\StatControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Components\StatControl.Designer.cs">
+    <Compile Include="Source\Controls\StatControl.Designer.cs">
       <DependentUpon>StatControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Components\WordControl.cs">
+    <Compile Include="Source\Controls\WordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Components\WordControl.Designer.cs">
+    <Compile Include="Source\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Program.cs" />
@@ -249,7 +249,7 @@
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Components\StatControl.fr.resx">
+    <EmbeddedResource Include="Source\Controls\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
@@ -258,14 +258,14 @@
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Components\StatControl.resx">
+    <EmbeddedResource Include="Source\Controls\StatControl.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Components\WordControl.fr.resx">
+    <EmbeddedResource Include="Source\Controls\WordControl.fr.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Components\WordControl.resx">
+    <EmbeddedResource Include="Source\Controls\WordControl.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
