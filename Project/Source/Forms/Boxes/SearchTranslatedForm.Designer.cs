@@ -167,7 +167,7 @@
       resources.ApplyResources(this.EditHebrew, "EditHebrew");
       this.EditHebrew.Name = "EditHebrew";
       // 
-      // SearchTranslationsForm
+      // SearchTranslatedForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "FoundReferencesLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesLocation;
       this.MaximizeBox = false;
-      this.Name = "SearchTranslationsForm";
+      this.Name = "SearchTranslatedForm";
       this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
       this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);

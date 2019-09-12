@@ -104,6 +104,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelHebrew_Click(object sender, EventArgs e)
     {
+      EditTranslation.Focus();
       switch ( Program.Settings.HebrewWordClickOpen )
       {
         case HebrewWordClickOpen.HebrewLetters:
