@@ -73,6 +73,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Improve search rendering.
 - Fix select backup path icon not implemented.
 - Some fixes.
+- Update help.
 
 #### 2019.09.03 - Version 1.8
 
