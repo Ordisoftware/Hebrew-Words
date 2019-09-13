@@ -187,6 +187,12 @@
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="ActionReset.Text" xml:space="preserve">
+    <value>Restaurer les valeurs par défaut</value>
+  </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -227,6 +233,12 @@
   </data>
   <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
     <value>Requête de recherche en ligne</value>
+  </data>
+  <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 17</value>
+  </data>
+  <data name="SelectOpenTranslated.Text" xml:space="preserve">
+    <value>Recherche des traductions</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 12</value>
