@@ -59,6 +59,7 @@
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
+      this.LabelHebrew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseDown);
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 

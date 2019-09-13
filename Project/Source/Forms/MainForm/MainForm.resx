@@ -1091,10 +1091,10 @@
     <value>Hebrew, 12pt</value>
   </data>
   <data name="EditELS50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 21</value>
+    <value>528, 21</value>
   </data>
   <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 30</value>
+    <value>394, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1148,7 +1148,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 0</value>
+    <value>525, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 15</value>
@@ -2121,7 +2121,7 @@
   <data name="MenuHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAK1SURBVDhPhZHvS1NhFMdvL+o/6H0vpMAfm+Z+uuYPpLAw
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAK1SURBVDhPhZHvS1NhFMdvL+o/6H0vpMAfm+Z+uuYPpLAw
         JCmKMKxeZBQRZDDdnBCoFVG9ECm36+bMlOayNLarmSG4mqSpRZqUmHrn1OucbtPc3PTbc7e9aJj0hS/P
         PYd7Puc856HE2u4PaZoupKoZCMpsSFZZd7WwnIGoomuF+lt84XcfkP3IgRH3Fj5zYQxzoR3m8189iEBi
         pVGlkK6D3BZkd+2wswFc7HDhcudOXyJ5hyuElDJrPIAfu3cmBGmNHczkBs5bXDjbNoczL+Zwmpg/+ZjP
@@ -2831,7 +2831,7 @@
   <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAIHSURBVDhPhZPLaxNRFMbnP/CPcCcuxLbjA4oo1pqH4sKN
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAIHSURBVDhPhZPLaxNRFMbnP/CPcCcuxLbjA4oo1pqH4sKN
         i26KC10rRkWtYmKJFEQhuypYbCpkZjIxtYpKWytVMJRSxYUIWu0jmbQ2L6edJk0/7zmdSTPV6A8+zsfl
         nO/eOw/JIZFM5lRdh6JpiNWkclXjcWi6nrVb/w41/QvDMKCoatRu/xPamfj6bVrou61pXuvr7+eaSaeh
         xOMD9ogbOirxY2YWM7NzLPLEo2gU5UqFPZ1EXFWxxzaJqSo3zItd0pkMay49z2vvUykOcU5C17XHNnEC
@@ -3128,16 +3128,16 @@
   <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionRefresh.Name" xml:space="preserve">
-    <value>ActionRefresh</value>
-  </data>
-  <data name="&gt;&gt;ActionRefresh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
     <value>ActionCopyToClipboard</value>
   </data>
   <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionRefresh.Name" xml:space="preserve">
+    <value>ActionRefresh</value>
+  </data>
+  <data name="&gt;&gt;ActionRefresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">

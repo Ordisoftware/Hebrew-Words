@@ -79,6 +79,13 @@ namespace Ordisoftware.HebrewWords
       Bookmarks.Insert(0, reference);
     }
 
+    private void GoToBookmark(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      SetView(ViewModeType.Verses);
+      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+    }
+
     internal void UpdateBookmarks()
     {
       while ( MenuBookmarks.DropDownItems.Count > 4 )
@@ -88,11 +95,6 @@ namespace Ordisoftware.HebrewWords
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
-      EventHandler gotoBookmark = (sender, e) =>
-      {
-        GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
-        ActionSave.PerformClick();
-      };
       MouseEventHandler bookmarkClicked = (sender, e) =>
       {
         if ( e.Button != MouseButtons.Right ) return;
@@ -114,7 +116,7 @@ namespace Ordisoftware.HebrewWords
       };
       ToolStripMenuItem item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
       item.Tag = bookmarkMaster;
-      item.Click += gotoBookmark;
+      item.Click += GoToBookmark;
       item.MouseDown += bookmarkClicked;
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Image = ActionSetAsBookmarkMaster.Image;
@@ -123,7 +125,7 @@ namespace Ordisoftware.HebrewWords
       {
         item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
-        item.Click += gotoBookmark;
+        item.Click += GoToBookmark;
         item.MouseDown += bookmarkClicked;
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
@@ -147,16 +149,11 @@ namespace Ordisoftware.HebrewWords
       MenuHistory.DropDownItems.Clear();
       while ( History.Count > Program.Settings.HistoryCount )
         History.RemoveAt(History.Count - 1);
-      EventHandler gotoBookmark = (sender, e) =>
-      {
-        GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
-        ActionSave.PerformClick();
-      };
       foreach ( var reference in History )
       {
         ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
-        item.Click += gotoBookmark;
+        item.Click += GoToBookmark;
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
       }

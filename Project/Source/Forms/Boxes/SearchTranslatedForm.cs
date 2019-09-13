@@ -79,13 +79,7 @@ namespace Ordisoftware.HebrewWords
                        from verse in chapter.GetVersesRows()
                        from word in verse.GetWordsRows()
                        where check(word.Hebrew) && word.Translation != ""
-                       select new WordReferencedItem
-                       {
-                         Book = book,
-                         Chapter = chapter,
-                         Verse = verse,
-                         Word = word
-                       };
+                       select new WordReferencedItem(book, chapter, verse, word);
       foreach ( var item in references )
       {
         var itemList = new ListViewItem(item.ToString());

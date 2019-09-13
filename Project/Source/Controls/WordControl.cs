@@ -13,7 +13,6 @@
 /// <created> 2012-10 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -146,6 +145,11 @@ namespace Ordisoftware.HebrewWords
       SearchTranslatedForm.Run(this, Reference);
     }
 
+    private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
+    {
+      EditTranslation.Focus();
+      //EditTranslation_Enter(null, null);
+    }
   }
 
 }

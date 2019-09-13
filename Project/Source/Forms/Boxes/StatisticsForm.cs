@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewWords
       InitializeCounters();
       InitializeMiddle();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem() { Book = book });
+        SelectBook.Items.Add(new BookItem(book));
       SelectBook.SelectedIndex = 0;
     }
 

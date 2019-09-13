@@ -110,8 +110,8 @@
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripButton();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripButton();
@@ -822,16 +822,6 @@
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
       resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       // 
-      // ActionRefresh
-      // 
-      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
-      this.ActionRefresh.Name = "ActionRefresh";
-      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
-      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
       // ActionCopyToClipboard
       // 
       this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -841,6 +831,16 @@
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
       this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionRefresh
+      // 
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.Name = "ActionRefresh";
+      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // toolStripSeparator1
       // 

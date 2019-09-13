@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewWords
       EditOnlyWithTranslation.Checked = false;
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
-        CreateReferences(References.Where(r => r.Verse.GetTranslation() == ""));
+        CreateReferences(References.Where(r => r.Verse?.GetTranslation() == ""));
       else
         CreateReferences(References);
     }

@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    public const int AdvertSearchResults = 150;
+    public const int AdvertSearchResults = 100;
 
     static private string SearchWord1;
     static private string SearchWord2;
@@ -56,12 +56,7 @@ namespace Ordisoftware.HebrewWords
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
                         where book.Number <= limit && CheckSearchedWord(word.Hebrew)
-                        select new ReferenceItem
-                        {
-                          Book = book,
-                          Chapter = chapter,
-                          Verse = verse
-                        };
+                        select new ReferenceItem(book, chapter, verse);
         SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
         SearchResultsCount = SearchResults.Count();
         if ( SearchResultsCount > AdvertSearchResults )

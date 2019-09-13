@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      CurrentReference = new ReferenceItem();
+      CurrentReference = new ReferenceItem(null, null, null);
     }
 
     /// <summary>
@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewWords
     {
       SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem() { Book = book });
+        SelectBook.Items.Add(new BookItem(book));
       SelectBook.SelectedIndex = 0;
     }
 
@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewWords
       SelectChapter.Items.Clear();
       var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
-        SelectChapter.Items.Add(new ChapterItem() { Chapter = chapter });
+        SelectChapter.Items.Add(new ChapterItem(chapter));
       SelectChapter.SelectedIndex = 0;
     }
 
@@ -909,56 +909,54 @@ namespace Ordisoftware.HebrewWords
       }
       if ( updated )
         UpdateViews();
-      if ( reference.Verse != null )
-        switch ( Program.Settings.CurrentView )
-        {
-          case ViewModeType.Verses:
-            foreach ( var control in PanelViewVerses.Controls )
-              if ( control is Label )
-              {
-                var label = control as Label;
-                if ( label.Text == reference.Verse.Number.ToString() )
-                {
-                  PanelViewVerses.Focus();
-                  PanelViewVerses.ScrollControlIntoView(label);
-                  PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-                  int index = PanelViewVerses.Controls.IndexOf(label);
-                  ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
-                  break;
-                }
-              }
-            break;
-          case ViewModeType.Translations:
-            foreach ( string line in EditTranslations.Lines )
+      if ( reference.Verse == null )
+        reference.Verse = reference.Chapter.GetVersesRows()[0];
+      switch ( Program.Settings.CurrentView )
+      {
+        case ViewModeType.Verses:
+          foreach ( var control in PanelViewVerses.Controls )
+            if ( control is Label )
             {
-              string s = reference.Verse.Number + ". ";
-              if ( line.StartsWith(s) )
+              var label = control as Label;
+              if ( label.Text == reference.Verse.Number.ToString() )
               {
-                EditTranslations.SelectionStart = EditTranslations.Find(s);
-                EditTranslations.SelectionLength = 0;
-                EditTranslations.ScrollToCaret();
-                EditTranslations.Focus();
+                PanelViewVerses.Focus();
+                PanelViewVerses.ScrollControlIntoView(label);
+                PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+                int index = PanelViewVerses.Controls.IndexOf(label);
+                ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
+                break;
               }
             }
-            break;
-          case ViewModeType.Text:
-            foreach ( string line in EditRawText.Lines )
+          break;
+        case ViewModeType.Translations:
+          foreach ( string line in EditTranslations.Lines )
+          {
+            string s = reference.Verse.Number + ". ";
+            if ( line.StartsWith(s) )
             {
-              string s = ":" + reference.Verse.Number;
-              if ( line.EndsWith(s) )
-              {
-                EditRawText.SelectionStart = EditRawText.Find(s);
-                EditRawText.SelectionLength = 0;
-                EditRawText.ScrollToCaret();
-                EditRawText.Focus();
-              }
+              EditTranslations.SelectionStart = EditTranslations.Find(s);
+              EditTranslations.SelectionLength = 0;
+              EditTranslations.ScrollToCaret();
+              EditTranslations.Focus();
             }
-            break;
-        }
-      CurrentReference = new ReferenceItem();
-      CurrentReference.Book = reference.Book;
-      CurrentReference.Chapter = reference.Chapter;
-      CurrentReference.Verse = reference.Verse;
+          }
+          break;
+        case ViewModeType.Text:
+          foreach ( string line in EditRawText.Lines )
+          {
+            string s = ":" + reference.Verse.Number;
+            if ( line.EndsWith(s) )
+            {
+              EditRawText.SelectionStart = EditRawText.Find(s);
+              EditRawText.SelectionLength = 0;
+              EditRawText.ScrollToCaret();
+              EditRawText.Focus();
+            }
+          }
+          break;
+      }
+      CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
     }
 
@@ -1013,11 +1011,10 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
-      var item = new ReferenceItem();
-      item.Book = CurrentReference.Book;
-      item.Chapter = CurrentReference.Chapter;
       int index = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
-      item.Verse = CurrentReference.Chapter.GetVersesRows()[index];
+      var item = new ReferenceItem(CurrentReference.Book.Number,
+                                   CurrentReference.Chapter.Number,
+                                   CurrentReference.Chapter.GetVersesRows()[index].Number);
       AddBookmark(item);
       UpdateBookmarks();
     }

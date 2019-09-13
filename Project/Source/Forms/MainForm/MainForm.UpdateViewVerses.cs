@@ -14,7 +14,6 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -27,6 +26,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViewVerses()
     {
+      if ( CurrentReference.Book == null || CurrentReference.Chapter == null ) return;
       CurrentReference.Verse = null;
       var itemBook = (BookItem)SelectBook.SelectedItem;
       var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
@@ -37,12 +37,7 @@ namespace Ordisoftware.HebrewWords
                        from verse in chapter.GetVersesRows()
                        where book.Number == itemBook.Book.Number 
                           && chapter.Number == itemChapter.Chapter.Number
-                       select new ReferenceItem
-                        {
-                         Book = book,
-                         Chapter = chapter,
-                         Verse = verse
-                       };
+                       select new ReferenceItem(book, chapter, verse);
       SetFormDisabled(true);
       PanelViewVerses.SuspendLayout();
       try

@@ -27,9 +27,14 @@ namespace Ordisoftware.HebrewWords
     public DataSet.BooksRow Book { get; set; }
     public override string ToString()
     {
+      if ( Book == null ) return "";
       string str = Book.Number + ". " + Book.Name;
       if ( Book.Translation != "" ) str += " (" + Book.Translation + ")";
       return str;
+    }
+    public BookItem(DataSet.BooksRow book)
+    {
+      Book = book;
     }
   }
 
@@ -41,7 +46,11 @@ namespace Ordisoftware.HebrewWords
     public DataSet.ChaptersRow Chapter { get; set; }
     public override string ToString()
     {
-      return Chapter.Number.ToString();
+      return Chapter?.Number.ToString() ?? "";
+    }
+    public ChapterItem(DataSet.ChaptersRow chapter)
+    {
+      Chapter = chapter;
     }
   }
 
@@ -57,17 +66,27 @@ namespace Ordisoftware.HebrewWords
     public string Text { get { return ToString(); } }
     public override string ToString()
     {
-      return Book.Name + " " + Chapter.Number + "." + Verse.Number;
+      return ( Book?.Name ?? "(null)" ) + " " +
+             ( Chapter?.Number.ToString() ?? "(null)" ) + "." +
+             ( Verse?.Number.ToString() ?? "(null)" );
     }
     public string ToStringNumbers()
     {
-      return Book.Number + "." + Chapter.Number + "." + Verse.Number;
+      return ( Book?.Number.ToString() ?? "(null)" ) + " " +
+             ( Chapter?.Number.ToString() ?? "(null)" ) + "." +
+             ( Verse?.Number.ToString() ?? "(null)" );
     }
-    public ReferenceItem()
+    private ReferenceItem()
     {
     }
+    public ReferenceItem(DataSet.BooksRow book, DataSet.ChaptersRow chapter, DataSet.VersesRow verse)
+    {
+      Book = book;
+      Chapter = chapter;
+      Verse = verse;
+    }
     public ReferenceItem(ReferenceItem item)
-      : this(item.Book.Number, item.Chapter.Number, item.Verse.Number)
+      : this(item.Book.Number, item.Chapter.Number, item.Verse?.Number ?? 1)
     {
     }
     public ReferenceItem(int book, int chapter, int verse)
@@ -84,7 +103,7 @@ namespace Ordisoftware.HebrewWords
         return false;
       return x.Book.Number == y.Book.Number
           && x.Chapter.Number == y.Chapter.Number
-          && x.Verse.Number == y.Verse.Number;
+          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
     }
     public bool Equals(ReferenceItem y)
     {
@@ -105,21 +124,23 @@ namespace Ordisoftware.HebrewWords
   public class WordReferencedItem : ReferenceItem
   {
     public DataSet.WordsRow Word { get; set; }
-    public WordReferencedItem()
-      : base()
-    {
-    }
-    public WordReferencedItem(ReferenceItem reference, DataSet.WordsRow word)
-      : base()
-    {
-      Book = reference.Book;
-      Chapter = reference.Chapter;
-      Verse = reference.Verse;
-      Word = word;
-    }
-    public WordReferencedItem(int book, int chapter, int verse)
+    public WordReferencedItem(DataSet.BooksRow book, 
+                              DataSet.ChaptersRow chapter, 
+                              DataSet.VersesRow verse, 
+                              DataSet.WordsRow word)
       : base(book, chapter, verse)
     {
+      Word = word;
+    }
+    public WordReferencedItem(int book, int chapter, int verse, int word)
+      : base(book, chapter, verse)
+    {
+      Word = Verse.GetWordsRows()[word - 1];
+    }
+    public WordReferencedItem(ReferenceItem reference, DataSet.WordsRow word)
+      : base(reference)
+    {
+      Word = word;
     }
   }
 
@@ -133,7 +154,7 @@ namespace Ordisoftware.HebrewWords
         return false;
       return x.Book.Number == y.Book.Number
           && x.Chapter.Number == y.Chapter.Number
-          && x.Verse.Number == y.Verse.Number;
+          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
     }
     public int GetHashCode(ReferenceItem value)
     {
