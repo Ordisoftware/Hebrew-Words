@@ -28,7 +28,11 @@ namespace Ordisoftware.HebrewWords
       remove { LabelHebrew.MouseClick -= value; }
     }
 
-    public ReferenceItem Reference { get; private set; }
+    public ReferenceItem Reference
+    {
+      get;
+      private set;
+    }
 
     public Data.DataSet.WordsRow Word
     {
@@ -64,11 +68,16 @@ namespace Ordisoftware.HebrewWords
       return true;
     }
 
+    private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
+    {
+      EditTranslation.Focus();
+    }
+
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
       EditTranslation.BackColor = Color.AliceBlue;
       EditTranslation.SelectionStart = 0;
-      if ( MainForm.Instance.Mutex ) return;
+      if ( MainForm.Instance.ComboBoxMutex ) return;
       MainForm.Instance.CurrentReference = new ReferenceItem(Reference);
       MainForm.Instance.CurrentReference.Verse = Reference.Verse;
       MainForm.Instance.AddCurrentToHistory();
@@ -87,7 +96,8 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoadingData ) return;
-      _Word.Translation = EditTranslation.Text;
+      if ( _Word != null ) 
+        _Word.Translation = EditTranslation.Text;
       Focus();
       MainForm.Instance.ActionSave.Enabled = true;
     }
@@ -146,11 +156,6 @@ namespace Ordisoftware.HebrewWords
       SearchTranslatedForm.Run(this, Reference);
     }
 
-    private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
-    {
-      EditTranslation.Focus();
-      //EditTranslation_Enter(null, null);
-    }
   }
 
 }

@@ -31,7 +31,6 @@ namespace Ordisoftware.HebrewWords
     private IEnumerable<ReferenceItem> SearchResults;
     static public int SearchResultsCount { get; private set; }
 
-
     private bool CheckSearchedWord(string str)
     {
       return str.Contains(SearchWord1) || str.Contains(SearchWord2);

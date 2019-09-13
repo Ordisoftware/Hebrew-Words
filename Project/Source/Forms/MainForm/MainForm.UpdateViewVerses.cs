@@ -26,7 +26,6 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViewVerses()
     {
-      if ( CurrentReference.Book == null || CurrentReference.Chapter == null ) return;
       CurrentReference.Verse = null;
       var itemBook = (BookItem)SelectBook.SelectedItem;
       var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
@@ -119,7 +118,7 @@ namespace Ordisoftware.HebrewWords
           editComment.KeyDown += EditVerseComment_KeyDown;
           editComment.Enter += (sender, e) => 
           {
-            if ( Mutex ) return;
+            if ( ComboBoxMutex ) return;
             CurrentReference = new ReferenceItem((ReferenceItem)((Control)sender).Tag);
             AddCurrentToHistory();
           };

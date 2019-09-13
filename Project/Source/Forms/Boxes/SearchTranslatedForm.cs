@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -22,18 +23,34 @@ namespace Ordisoftware.HebrewWords
   public partial class SearchTranslatedForm : Form
   {
 
+    static public readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();
+
     static public void Run(WordControl sender, ReferenceItem reference)
     {
+      if ( sender == null || reference == null ) return;
+      var wordref = new WordReferencedItem(reference, sender.Word);
+      foreach ( SearchTranslatedForm f in Forms.ToList() )
+        if ( f.WordReferenced.Equals(wordref) )
+        {
+          f.Show();
+          f.BringToFront();
+          return;
+        }
       var form = new SearchTranslatedForm();
+      Forms.Add(form);
       form.Reference = reference;
+      form.WordReferenced = new WordReferencedItem(reference, sender.Word);
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
       form.EditHebrew.Text = sender.LabelHebrew.Text;
+      form.Text = reference.ToString();
       form.Show();
     }
 
     private ReferenceItem Reference;
+    private WordReferencedItem WordReferenced;
     private WordControl WordControl;
+    private bool IsDestroying;
 
     private SearchTranslatedForm()
     {
@@ -48,8 +65,14 @@ namespace Ordisoftware.HebrewWords
 
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( IsDestroying ) return;
       LabelReference_LinkClicked(null, null);
       WordControl.Focus();
+    }
+
+    private void SearchTranslatedForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Forms.Remove(this);
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)
@@ -87,7 +110,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ListView_DoubleClick(object sender, EventArgs e)
     {
-      ActionUseTranslation.PerformClick();
+      ActionReachReference.PerformClick();
     }
 
     private void ReachReferencedWord(WordReferencedItem reference)
@@ -128,8 +151,9 @@ namespace Ordisoftware.HebrewWords
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
       var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      WordControl.Word.Translation = str;
       WordControl.EditTranslation.Text = str;
-      Close();
+     Close();
     }
 
   }

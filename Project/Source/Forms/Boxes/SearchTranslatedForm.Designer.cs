@@ -183,6 +183,7 @@
       this.Name = "SearchTranslatedForm";
       this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchTranslatedForm_FormClosed);
       this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelMain.ResumeLayout(false);

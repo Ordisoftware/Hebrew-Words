@@ -27,6 +27,7 @@ namespace Ordisoftware.HebrewWords
 
     static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
     {
+      if ( references == null ) return null;
       var form = new SelectSearchResultsForm();
       form.References = references;
       if ( form.ShowDialog() == DialogResult.Cancel )

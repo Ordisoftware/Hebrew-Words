@@ -71,7 +71,7 @@
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
-    <Compile Include="Source\Classes\DataItems.cs" />
+    <Compile Include="Data\ReferenceItem.cs" />
     <Compile Include="Source\Classes\BooksNames.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">

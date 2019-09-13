@@ -48,26 +48,23 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Indicate if application is ready.
-    /// </summary>
-    public bool IsAppReady { get; private set; }
-
-    /// <summary>
     /// Indicate if is in loading data stage.
     /// </summary>
     public bool IsLoadingData { get; private set; }
-
-    /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
 
     /// <summary>
     /// Indicate current bible reference.
     /// </summary>
     public ReferenceItem CurrentReference { get; set; }
 
+    /// <summary>
+    /// Indicate last showned tooltip.
+    /// </summary>
+    private ToolTip LastToolTip = new ToolTip();
+
     private bool IsGotoRunning = false;
+
+    private bool IsSessionEnding;
 
     /// <summary>
     /// Default constructor.
@@ -97,24 +94,15 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      IsLoadingData = true;
-      try
-      {
         Refresh();
-        SetDialogsDirectory();
+        InitializeDialogsDirectory();
         CheckUpdate(true);
         DoBackupDB();
         PopulateData();
+        SetView(Program.Settings.CurrentView, true);
         TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
         if ( TimerAutoSave.Enabled )
           TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-        SetView(Program.Settings.CurrentView, true);
-      }
-      finally
-      {
-        IsLoadingData = false;
-        IsAppReady = true;
-      }
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse,
@@ -125,7 +113,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
-    internal void SetDialogsDirectory()
+    internal void InitializeDialogsDirectory()
     {
       OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
       SaveFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
@@ -145,7 +133,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Show a splash screen chile loading data.
+    /// Show a splash screen while loading data.
     /// </summary>
     private void PopulateData()
     {
@@ -154,6 +142,7 @@ namespace Ordisoftware.HebrewWords
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
+      IsLoadingData = true;
       try
       {
         form.ProgressBar.Value = 1;
@@ -181,6 +170,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        IsLoadingData = false;
         form.Hide();
         SetFormDisabled(false);
       }
@@ -218,16 +208,13 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       ActionSave.PerformClick();
-      if ( EditConfirmClosing.Checked )
+      if ( EditConfirmClosing.Checked && ! IsSessionEnding)
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
-        {
           e.Cancel = true;
-          return;
-        }
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm_Form for form closed events.
+    /// Event handler. Called by MainForm for form closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Form closing event information.</param>
@@ -237,12 +224,13 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Session ending.
+    /// Session ending event.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      IsSessionEnding = true;
       Close();
     }
 
@@ -366,7 +354,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionView for click events.
+    /// Event handler. Called by ActionViewSearch for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -429,7 +417,6 @@ namespace Ordisoftware.HebrewWords
         int book = CurrentReference.Book.Number;
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
-        Refresh();
         BooksTableAdapter.Fill(DataSet.Books);
         InitBooksCombobox();
         LoadBookmarks();
@@ -543,7 +530,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       bool refresh = PreferencesForm.Run();
-      SetDialogsDirectory();
+      InitializeDialogsDirectory();
       UpdateBookmarks();
       UpdateHistory();
       if ( refresh )
@@ -656,7 +643,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      var book = CurrentReference.Book;
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -702,8 +689,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportChapter_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
-      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+      var book = CurrentReference.Book;
+      var chapter = CurrentReference.Chapter;
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -784,7 +771,7 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(EditELS50.Text);
     }
 
-    internal bool Mutex { get; private set; }
+    internal bool ComboBoxMutex { get; private set; }
 
     /// <summary>
     /// Event handler. Called by SelectBook for selected index changed events.
@@ -804,8 +791,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if ( Mutex ) return;
-      Mutex = true;
+      if ( ComboBoxMutex ) return;
+      ComboBoxMutex = true;
       try
       {
         ActionSave.PerformClick();
@@ -817,7 +804,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        Mutex = false;
+        ComboBoxMutex = false;
       }
     }
 
@@ -910,59 +897,57 @@ namespace Ordisoftware.HebrewWords
       {
         IsGotoRunning = false;
       }
-      if ( !IsLoadingData )
+      if ( IsLoadingData ) return;
+      if ( updated || forceUpdateView )
+        UpdateViews();
+      if ( reference.Verse == null )
+        reference.Verse = reference.Chapter.GetVersesRows()[0];
+      CurrentReference = new ReferenceItem(reference);
+      AddCurrentToHistory();
+      switch ( Program.Settings.CurrentView )
       {
-        if ( updated || forceUpdateView)
-          UpdateViews();
-        if ( reference.Verse == null )
-          reference.Verse = reference.Chapter.GetVersesRows()[0];
-        CurrentReference = new ReferenceItem(reference);
-        AddCurrentToHistory();
-        switch ( Program.Settings.CurrentView )
-        {
-          case ViewModeType.Verses:
-            foreach ( var control in PanelViewVerses.Controls )
-              if ( control is Label )
-              {
-                var label = control as Label;
-                if ( label.Text == reference.Verse.Number.ToString() )
-                {
-                  PanelViewVerses.Focus();
-                  PanelViewVerses.ScrollControlIntoView(label);
-                  PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-                  int index = PanelViewVerses.Controls.IndexOf(label);
-                  ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
-                  break;
-                }
-              }
-            break;
-          case ViewModeType.Translations:
-            foreach ( string line in EditTranslations.Lines )
+        case ViewModeType.Verses:
+          foreach ( var control in PanelViewVerses.Controls )
+            if ( control is Label )
             {
-              string s = reference.Verse.Number + ". ";
-              if ( line.StartsWith(s) )
+              var label = control as Label;
+              if ( label.Text == reference.Verse.Number.ToString() )
               {
-                EditTranslations.SelectionStart = EditTranslations.Find(s);
-                EditTranslations.SelectionLength = 0;
-                EditTranslations.ScrollToCaret();
-                EditTranslations.Focus();
+                PanelViewVerses.Focus();
+                PanelViewVerses.ScrollControlIntoView(label);
+                PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+                int index = PanelViewVerses.Controls.IndexOf(label);
+                ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
+                break;
               }
             }
-            break;
-          case ViewModeType.Text:
-            foreach ( string line in EditRawText.Lines )
+          break;
+        case ViewModeType.Translations:
+          foreach ( string line in EditTranslations.Lines )
+          {
+            string s = reference.Verse.Number + ". ";
+            if ( line.StartsWith(s) )
             {
-              string s = ":" + reference.Verse.Number;
-              if ( line.EndsWith(s) )
-              {
-                EditRawText.SelectionStart = EditRawText.Find(s);
-                EditRawText.SelectionLength = 0;
-                EditRawText.ScrollToCaret();
-                EditRawText.Focus();
-              }
+              EditTranslations.SelectionStart = EditTranslations.Find(s);
+              EditTranslations.SelectionLength = 0;
+              EditTranslations.ScrollToCaret();
+              EditTranslations.Focus();
             }
-            break;
-        }
+          }
+          break;
+        case ViewModeType.Text:
+          foreach ( string line in EditRawText.Lines )
+          {
+            string s = ":" + reference.Verse.Number;
+            if ( line.EndsWith(s) )
+            {
+              EditRawText.SelectionStart = EditRawText.Find(s);
+              EditRawText.SelectionLength = 0;
+              EditRawText.ScrollToCaret();
+              EditRawText.Focus();
+            }
+          }
+          break;
       }
     }
 
@@ -986,14 +971,14 @@ namespace Ordisoftware.HebrewWords
       if ( sender is ToolStripMenuItem )
         verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       else
-        throw new Exception("Wrong sender type: Label or ToolStripMenuItem expected.");
+        return;
       Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, SelectChapter.SelectedIndex + 1, verse);
     }
 
     private void ActionExportVerse_Click(object sender, EventArgs e)
     {
-      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
-      var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+      var book = CurrentReference.Book;
+      var chapter = CurrentReference.Chapter;
       int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       SaveFileDialogWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
       if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
@@ -1008,8 +993,8 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
-      Program.Settings.BookmarkMasterBook = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
-      Program.Settings.BookmarkMasterChapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
+      Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
+      Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
       Program.Settings.BookmarkMasterVerse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
       Program.Settings.Store();
       UpdateBookmarks();
