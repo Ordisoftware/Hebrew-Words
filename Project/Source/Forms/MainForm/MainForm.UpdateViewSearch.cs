@@ -25,8 +25,6 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    public const int AdvertSearchResults = 100;
-
     static private string SearchWord1;
     static private string SearchWord2;
 
@@ -59,7 +57,7 @@ namespace Ordisoftware.HebrewWords
                         select new ReferenceItem(book, chapter, verse);
         SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
         SearchResultsCount = SearchResults.Count();
-        if ( SearchResultsCount > AdvertSearchResults )
+        if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
         RenderSearchResults();
       }

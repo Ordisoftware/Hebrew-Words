@@ -211,18 +211,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm for form client size changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
-    private void MainForm_ClientSizeChanged(object sender, EventArgs e)
-    {
-      if ( !IsAppReady ) return;
-      //ActionClearWord.PerformClick();
-      //UpdateViews();
-    }
-
-    /// <summary>
     /// Event handler. Called by MainForm for form closing events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
