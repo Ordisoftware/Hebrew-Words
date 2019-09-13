@@ -117,11 +117,16 @@ namespace Ordisoftware.HebrewWords
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth;
           editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1 ) - 3;
-          editComment.Tag = reference.Verse;
+          editComment.Tag = reference;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = reference.Verse.Comment;
           editComment.TextChanged += EditVerseComment_TextChanged;
           editComment.KeyDown += EditVerseComment_KeyDown;
+          editComment.Enter += (sender, e) => 
+          {
+            CurrentReference = new ReferenceItem((ReferenceItem)((Control)sender).Tag);
+            AddCurrentToHistory();
+          };
           PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
@@ -150,7 +155,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( IsLoadingData ) return;
       var textbox = (TextBox)sender;
-      ( (Data.DataSet.VersesRow)textbox.Tag ).Comment = textbox.Text;
+      ( (ReferenceItem)textbox.Tag ).Verse.Comment = textbox.Text;
       ActionSave.Enabled = true;
     }
 

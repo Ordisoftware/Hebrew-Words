@@ -136,8 +136,12 @@ namespace Ordisoftware.HebrewWords
       MenuHistory.DropDownItems.Clear();
       while ( History.Count >= 20 )
         History.RemoveAt(History.Count - 1);
-      if ( History.Where(r => r.Equals(CurrentReference)).Count() == 0 )
-        History.Insert(0, new ReferenceItem(CurrentReference));
+      for ( int index = 0; index < History.Count; )
+        if ( History[index].Equals(CurrentReference) )
+          History.RemoveAt(index);
+        else
+          index++;
+      History.Insert(0, new ReferenceItem(CurrentReference));
       EventHandler gotoBookmark = (sender, e) =>
       {
         GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
