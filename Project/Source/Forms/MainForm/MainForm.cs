@@ -400,7 +400,7 @@ namespace Ordisoftware.HebrewWords
       int chapter = CurrentReference.Chapter.Number;
       int verse = CurrentReference.Verse?.Number ?? 1;
       UpdateViews();
-      DrawViewSearch();
+      RenderSearchResults();
       GoTo(book, chapter, verse);
     }
 

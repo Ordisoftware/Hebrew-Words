@@ -25,19 +25,19 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    public const int AdvertSearchResults = 200;
+    public const int AdvertSearchResults = 150;
 
     static private string SearchWord1;
     static private string SearchWord2;
-    static public int SearchResultsCount { get; private set; }
 
     private IEnumerable<ReferenceItem> SearchResults;
+    static public int SearchResultsCount { get; private set; }
 
 
-    Func<string, bool> CheckSearchWord = str =>
+    private bool CheckSearchedWord(string str)
     {
       return str.Contains(SearchWord1) || str.Contains(SearchWord2);
-    };
+    }
 
     private void UpdateViewSearch()
     {
@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewWords
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
-                        where book.Number <= limit && CheckSearchWord(word.Hebrew)
+                        where book.Number <= limit && CheckSearchedWord(word.Hebrew)
                         orderby book.Number, chapter.Number, verse.Number
                         select new ReferenceItem
                         {
@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewWords
         SearchResultsCount = SearchResults.Count();
         if ( SearchResultsCount > AdvertSearchResults )
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-        DrawViewSearch();
+        RenderSearchResults();
       }
       finally
       {
@@ -75,7 +75,7 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private void DrawViewSearch()
+    private void RenderSearchResults()
     {
       if ( InProcess ) return;
       InProcess = true;
@@ -134,7 +134,7 @@ namespace Ordisoftware.HebrewWords
             label.Text = word.Hebrew;
             label.AutoSize = true;
             label.Font = HebrewFont12;
-            label.ForeColor = CheckSearchWord(word.Hebrew)
+            label.ForeColor = CheckSearchedWord(word.Hebrew)
                             ? Color.DarkRed
                             : SystemColors.ControlText;
             x -= label.PreferredSize.Width;
