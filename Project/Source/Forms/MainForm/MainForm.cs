@@ -553,14 +553,18 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      if ( !PreferencesForm.Run() ) return;
-      Refresh();
-      UpdateBookmarks();
+      bool refresh = PreferencesForm.Run();
       SetDialogsDirectory();
-      UpdateViewVerses();
-      var reference = Instance.CurrentReference;
-      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+      UpdateBookmarks();
+      UpdateHistory();
+      if ( refresh )
+      {
+        Refresh();
+        UpdateViewVerses();
+        var reference = Instance.CurrentReference;
+        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+        GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+      }
     }
 
     /// <summary>

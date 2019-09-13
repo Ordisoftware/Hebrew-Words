@@ -39,6 +39,7 @@
       System.Windows.Forms.Label LabelBookmarksCount;
       System.Windows.Forms.Label LabelWordControlWidth;
       System.Windows.Forms.Label LabelMaxRefCount;
+      System.Windows.Forms.Label LabelHistoryCount;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
       this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
+      this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
       this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -60,7 +62,7 @@
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
       this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
-      this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
+      this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -71,6 +73,7 @@
       LabelBookmarksCount = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
+      LabelHistoryCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
@@ -79,6 +82,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -130,6 +134,11 @@
       // 
       resources.ApplyResources(LabelMaxRefCount, "LabelMaxRefCount");
       LabelMaxRefCount.Name = "LabelMaxRefCount";
+      // 
+      // LabelHistoryCount
+      // 
+      resources.ApplyResources(LabelHistoryCount, "LabelHistoryCount");
+      LabelHistoryCount.Name = "LabelHistoryCount";
       // 
       // ButtonClose
       // 
@@ -214,6 +223,13 @@
       this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
       this.SelectOpenOnlineSearch.TabStop = true;
       this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenTranslated
+      // 
+      resources.ApplyResources(this.SelectOpenTranslated, "SelectOpenTranslated");
+      this.SelectOpenTranslated.Name = "SelectOpenTranslated";
+      this.SelectOpenTranslated.TabStop = true;
+      this.SelectOpenTranslated.UseVisualStyleBackColor = true;
       // 
       // SelectOpenHebrewLetters
       // 
@@ -322,12 +338,15 @@
     "ity";
       this.LabelSystemHandles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelSystemHandles_LinkClicked);
       // 
-      // SelectOpenTranslated
+      // EditHistoryCount
       // 
-      resources.ApplyResources(this.SelectOpenTranslated, "SelectOpenTranslated");
-      this.SelectOpenTranslated.Name = "SelectOpenTranslated";
-      this.SelectOpenTranslated.TabStop = true;
-      this.SelectOpenTranslated.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditHistoryCount, "EditHistoryCount");
+      this.EditHistoryCount.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+      this.EditHistoryCount.Name = "EditHistoryCount";
       // 
       // PreferencesForm
       // 
@@ -340,6 +359,8 @@
       this.Controls.Add(LabelWordControlWidth);
       this.Controls.Add(this.EditMaxRefCount);
       this.Controls.Add(LabelMaxRefCount);
+      this.Controls.Add(this.EditHistoryCount);
+      this.Controls.Add(LabelHistoryCount);
       this.Controls.Add(this.EditBookmarksCount);
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
@@ -377,6 +398,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -405,5 +427,6 @@
     private System.Windows.Forms.NumericUpDown EditMaxRefCount;
     private System.Windows.Forms.LinkLabel LabelSystemHandles;
     private System.Windows.Forms.RadioButton SelectOpenTranslated;
+    private System.Windows.Forms.NumericUpDown EditHistoryCount;
   }
 }

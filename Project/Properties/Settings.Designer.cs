@@ -356,5 +356,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchTranslatedLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int HistoryCount {
+            get {
+                return ((int)(this["HistoryCount"]));
+            }
+            set {
+                this["HistoryCount"] = value;
+            }
+        }
     }
 }

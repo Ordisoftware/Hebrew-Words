@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewWords
         try
         {
           var list = File.ReadLines(BookmarksFilename);
-          for (int index = list.Count() - 1; index >= 0; index-- )
+          for ( int index = list.Count() - 1; index >= 0; index-- )
           {
             string item = list.ElementAt(index);
             if ( item == "" || item.Count(c => c == '.') != 2 ) continue;
@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewWords
     {
       while ( MenuBookmarks.DropDownItems.Count > 4 )
         MenuBookmarks.DropDownItems.RemoveAt(4);
-      while ( Bookmarks.Count >= Program.Settings.BookmarksCount )
+      while ( Bookmarks.Count > Program.Settings.BookmarksCount )
         Bookmarks.RemoveAt(Bookmarks.Count - 1);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
@@ -133,15 +133,20 @@ namespace Ordisoftware.HebrewWords
 
     internal void AddCurrentToHistory()
     {
-      MenuHistory.DropDownItems.Clear();
-      while ( History.Count >= 20 )
-        History.RemoveAt(History.Count - 1);
       for ( int index = 0; index < History.Count; )
         if ( History[index].Equals(CurrentReference) )
           History.RemoveAt(index);
         else
           index++;
       History.Insert(0, new ReferenceItem(CurrentReference));
+      UpdateHistory();
+    }
+
+    private void UpdateHistory()
+    {
+      MenuHistory.DropDownItems.Clear();
+      while ( History.Count > Program.Settings.HistoryCount )
+        History.RemoveAt(History.Count - 1);
       EventHandler gotoBookmark = (sender, e) =>
       {
         GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
