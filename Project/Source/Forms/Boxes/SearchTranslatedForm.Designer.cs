@@ -171,6 +171,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.ButtonClose;
       this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
