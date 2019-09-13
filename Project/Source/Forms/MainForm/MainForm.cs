@@ -108,17 +108,17 @@ namespace Ordisoftware.HebrewWords
         TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
         if ( TimerAutoSave.Enabled )
           TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+        SetView(Program.Settings.CurrentView, true);
       }
       finally
       {
         IsLoadingData = false;
         IsAppReady = true;
       }
-      SetView(Program.Settings.CurrentView, true);
-      UpdateViews();
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse);
+           Program.Settings.BookmarkMasterVerse,
+           true);
       ActionSave.PerformClick();
     }
 
@@ -783,6 +783,8 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(EditELS50.Text);
     }
 
+    internal bool Mutex { get; private set; }
+
     /// <summary>
     /// Event handler. Called by SelectBook for selected index changed events.
     /// </summary>
@@ -790,8 +792,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      InitChaptersCombobox();
       CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
+      InitChaptersCombobox();
     }
 
     /// <summary>
@@ -801,10 +803,21 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      ActionSave.PerformClick();
-      CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-      if ( !IsGotoRunning ) UpdateViews();
-      SetView(Program.Settings.CurrentView, true);
+      if ( Mutex ) return;
+      Mutex = true;
+      try
+      {
+        ActionSave.PerformClick();
+        CurrentReference = new ReferenceItem(CurrentReference);
+        CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+        CurrentReference.Verse = null;
+        UpdateViews();
+        GoTo(CurrentReference);
+      }
+      finally
+      {
+        Mutex = false;
+      }
     }
 
     /// <summary>
@@ -864,18 +877,19 @@ namespace Ordisoftware.HebrewWords
     /// <param name="book"></param>
     /// <param name="chapter"></param>
     /// <param name="verse"></param>
-    public void GoTo(int book, int chapter, int verse)
+    public void GoTo(int book, int chapter, int verse, bool forceUpdate = false)
     {
-      GoTo(new ReferenceItem(book, chapter, verse));
+      GoTo(new ReferenceItem(book, chapter, verse), forceUpdate);
     }
 
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
     /// <param name="reference">ReferenceItem instance.</param>
-    public void GoTo(ReferenceItem reference)
+    public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
     {
       if ( reference == null ) return;
+      if ( IsGotoRunning ) return;
       IsGotoRunning = true;
       bool updated = false;
       try
@@ -895,57 +909,60 @@ namespace Ordisoftware.HebrewWords
       {
         IsGotoRunning = false;
       }
-      if ( updated )
-        UpdateViews();
-      if ( reference.Verse == null )
-        reference.Verse = reference.Chapter.GetVersesRows()[0];
-      switch ( Program.Settings.CurrentView )
+      if ( !IsLoadingData )
       {
-        case ViewModeType.Verses:
-          foreach ( var control in PanelViewVerses.Controls )
-            if ( control is Label )
-            {
-              var label = control as Label;
-              if ( label.Text == reference.Verse.Number.ToString() )
+        if ( updated || forceUpdateView)
+          UpdateViews();
+        if ( reference.Verse == null )
+          reference.Verse = reference.Chapter.GetVersesRows()[0];
+        CurrentReference = new ReferenceItem(reference);
+        AddCurrentToHistory();
+        switch ( Program.Settings.CurrentView )
+        {
+          case ViewModeType.Verses:
+            foreach ( var control in PanelViewVerses.Controls )
+              if ( control is Label )
               {
-                PanelViewVerses.Focus();
-                PanelViewVerses.ScrollControlIntoView(label);
-                PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-                int index = PanelViewVerses.Controls.IndexOf(label);
-                ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
-                break;
+                var label = control as Label;
+                if ( label.Text == reference.Verse.Number.ToString() )
+                {
+                  PanelViewVerses.Focus();
+                  PanelViewVerses.ScrollControlIntoView(label);
+                  PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+                  int index = PanelViewVerses.Controls.IndexOf(label);
+                  ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
+                  break;
+                }
+              }
+            break;
+          case ViewModeType.Translations:
+            foreach ( string line in EditTranslations.Lines )
+            {
+              string s = reference.Verse.Number + ". ";
+              if ( line.StartsWith(s) )
+              {
+                EditTranslations.SelectionStart = EditTranslations.Find(s);
+                EditTranslations.SelectionLength = 0;
+                EditTranslations.ScrollToCaret();
+                EditTranslations.Focus();
               }
             }
-          break;
-        case ViewModeType.Translations:
-          foreach ( string line in EditTranslations.Lines )
-          {
-            string s = reference.Verse.Number + ". ";
-            if ( line.StartsWith(s) )
+            break;
+          case ViewModeType.Text:
+            foreach ( string line in EditRawText.Lines )
             {
-              EditTranslations.SelectionStart = EditTranslations.Find(s);
-              EditTranslations.SelectionLength = 0;
-              EditTranslations.ScrollToCaret();
-              EditTranslations.Focus();
+              string s = ":" + reference.Verse.Number;
+              if ( line.EndsWith(s) )
+              {
+                EditRawText.SelectionStart = EditRawText.Find(s);
+                EditRawText.SelectionLength = 0;
+                EditRawText.ScrollToCaret();
+                EditRawText.Focus();
+              }
             }
-          }
-          break;
-        case ViewModeType.Text:
-          foreach ( string line in EditRawText.Lines )
-          {
-            string s = ":" + reference.Verse.Number;
-            if ( line.EndsWith(s) )
-            {
-              EditRawText.SelectionStart = EditRawText.Find(s);
-              EditRawText.SelectionLength = 0;
-              EditRawText.ScrollToCaret();
-              EditRawText.Focus();
-            }
-          }
-          break;
+            break;
+        }
       }
-      CurrentReference = new ReferenceItem(reference);
-      AddCurrentToHistory();
     }
 
     public void SearchWord(string word)

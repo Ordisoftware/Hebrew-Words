@@ -119,6 +119,7 @@ namespace Ordisoftware.HebrewWords
           editComment.KeyDown += EditVerseComment_KeyDown;
           editComment.Enter += (sender, e) => 
           {
+            if ( Mutex ) return;
             CurrentReference = new ReferenceItem((ReferenceItem)((Control)sender).Tag);
             AddCurrentToHistory();
           };

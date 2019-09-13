@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateViews()
     {
-      if ( IsLoadingData ) return;
+      if ( IsLoadingData || IsGotoRunning ) return;
       Refresh();
       UpdateViewVerses();
       UpdateViewTranslations();

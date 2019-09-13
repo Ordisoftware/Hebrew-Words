@@ -169,8 +169,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var reference = (ReferenceItem)LabelMiddleReferenceValue.Tag;
-      MainForm.Instance.GoTo(reference);
+      MainForm.Instance.GoTo((ReferenceItem)LabelMiddleReferenceValue.Tag);
       Close();
     }
   }
