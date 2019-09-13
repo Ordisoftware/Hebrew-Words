@@ -178,6 +178,12 @@
   <data name="LabelMaxRefCount.Text" xml:space="preserve">
     <value>Nombre max de références pour la recherche</value>
   </data>
+  <data name="LabelHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="LabelHistoryCount.Text" xml:space="preserve">
+    <value>Nombre d'historique</value>
+  </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
