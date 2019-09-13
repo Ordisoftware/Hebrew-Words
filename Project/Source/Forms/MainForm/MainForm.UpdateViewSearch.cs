@@ -56,7 +56,6 @@ namespace Ordisoftware.HebrewWords
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
                         where book.Number <= limit && CheckSearchedWord(word.Hebrew)
-                        orderby book.Number, chapter.Number, verse.Number
                         select new ReferenceItem
                         {
                           Book = book,

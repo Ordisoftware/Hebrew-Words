@@ -129,7 +129,6 @@ namespace Ordisoftware.HebrewWords
       int index = 0;
       var books = from book in MainForm.Instance.DataSet.Books
                   where book.Number <= 5
-                  orderby book.Number
                   select book;
       foreach ( Data.DataSet.BooksRow book in books )
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
