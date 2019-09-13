@@ -47,6 +47,15 @@ namespace Ordisoftware.HebrewWords
       Icon = MainForm.Instance.Icon;
     }
 
+    private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Program.Settings.Reset();
+      Program.Settings.Reload();
+      Directory.CreateDirectory(Program.UserDocumentsFolderPath);
+      Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
+      PreferencesForm_Shown(null, null);
+    }
+
     /// <summary>
     /// Event handler. Called by PreferencesForm for shown events.
     /// </summary>
@@ -136,6 +145,7 @@ namespace Ordisoftware.HebrewWords
     {
       SystemManager.OpenWebLink((string)LabelSystemHandles.Tag);
     }
+
   }
 
 }

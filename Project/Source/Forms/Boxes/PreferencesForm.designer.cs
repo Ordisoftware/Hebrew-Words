@@ -63,6 +63,7 @@
       this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
       this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
+      this.ActionReset = new System.Windows.Forms.LinkLabel();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -149,8 +150,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Controls.Add(this.ActionReset);
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditHebrewLettersPath
@@ -160,8 +162,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -177,8 +179,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -210,10 +212,10 @@
       // 
       // GroupBoxHebrewWordClick
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -242,10 +244,6 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      // 
-      // FolderBrowserDialog
-      // 
-      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // label1
       // 
@@ -284,12 +282,12 @@
       // 
       // EditWordControlWidth
       // 
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -309,12 +307,12 @@
       // 
       // EditMaxRefCount
       // 
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             50,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -351,6 +349,13 @@
             0,
             0});
       this.EditHistoryCount.Name = "EditHistoryCount";
+      // 
+      // ActionReset
+      // 
+      resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.Name = "ActionReset";
+      this.ActionReset.TabStop = true;
+      this.ActionReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReset_LinkClicked);
       // 
       // PreferencesForm
       // 
@@ -394,6 +399,7 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PreferencesForm_FormClosed);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
+      this.PanelButtons.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
       this.GroupBoxHebrewWordClick.ResumeLayout(false);
@@ -432,5 +438,6 @@
     private System.Windows.Forms.LinkLabel LabelSystemHandles;
     private System.Windows.Forms.RadioButton SelectOpenTranslated;
     private System.Windows.Forms.NumericUpDown EditHistoryCount;
+    private System.Windows.Forms.LinkLabel ActionReset;
   }
 }

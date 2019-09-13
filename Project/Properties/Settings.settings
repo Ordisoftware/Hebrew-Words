@@ -59,7 +59,7 @@
       <Value Profile="(Default)">OnlineSearch</Value>
     </Setting>
     <Setting Name="OpenVerseOnline" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://studybible.info/IHOT/%BOOK% %CHAPTER%:%VERSE%</Value>
+      <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKNAME% %CHAPTERNUM%:%VERSENUM%</Value>
     </Setting>
     <Setting Name="CommentaryLinesCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
