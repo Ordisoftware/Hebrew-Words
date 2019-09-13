@@ -987,7 +987,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
-      var verse = (Data.DataSet.VersesRow)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag;
+      var verse = ( (ReferenceItem)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag ).Verse;
       Clipboard.SetText(verse.GetTranslation());
     }
 
