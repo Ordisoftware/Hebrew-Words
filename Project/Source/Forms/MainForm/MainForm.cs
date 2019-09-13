@@ -449,7 +449,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewStatistics_Click(object sender, EventArgs e)
     {
-      new StatisticsForm().ShowDialog();
+      var reference = StatisticsForm.Run();
+      if ( reference != null ) GoTo(reference);
     }
 
     /// <summary>

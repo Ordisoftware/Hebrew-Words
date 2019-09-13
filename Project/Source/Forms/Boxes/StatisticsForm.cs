@@ -32,7 +32,16 @@ namespace Ordisoftware.HebrewWords
       public int CountLetters;
     }
 
-    public StatisticsForm()
+    static public ReferenceItem Run()
+    {
+      var form = new StatisticsForm();
+      form.ShowDialog();
+      return form.Reference;
+    }
+
+    private ReferenceItem Reference;
+
+    private StatisticsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -169,7 +178,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      MainForm.Instance.GoTo((ReferenceItem)LabelMiddleReferenceValue.Tag);
+      Reference = (ReferenceItem)LabelMiddleReferenceValue.Tag;
       Close();
     }
   }
