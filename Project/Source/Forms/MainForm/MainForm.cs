@@ -100,15 +100,15 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-        Refresh();
-        InitializeDialogsDirectory();
-        CheckUpdate(true);
-        DoBackupDB();
-        PopulateData();
-        SetView(Program.Settings.CurrentView, true);
-        TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
-        if ( TimerAutoSave.Enabled )
-          TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+      Refresh();
+      InitializeDialogsDirectory();
+      CheckUpdate(true);
+      DoBackupDB();
+      PopulateData();
+      SetView(Program.Settings.CurrentView, true);
+      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+      if ( TimerAutoSave.Enabled )
+        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse,
@@ -214,7 +214,7 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       ActionSave.PerformClick();
-      if ( EditConfirmClosing.Checked && ! IsSessionEnding)
+      if ( EditConfirmClosing.Checked && !IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
           e.Cancel = true;
     }
@@ -370,6 +370,20 @@ namespace Ordisoftware.HebrewWords
       if ( Program.Settings.CurrentView == ViewModeType.Search ) return;
       SetView(ViewModeType.Search);
       SelectSearchType_Selected(null, null);
+    }
+
+    /// <summary>
+    /// Event handler. Called by SelectSearchType for selected events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
+    {
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+        EditLetters.Input.Focus();
+      else
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+        EditSearchTranslation.Focus();
     }
 
     /// <summary>
@@ -964,6 +978,7 @@ namespace Ordisoftware.HebrewWords
       ActionViewSearch.PerformClick();
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = Letters.SetFinale(word, false);
+      EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
     }
 
     private Control GetMenuItemSourceControl(object sender)
@@ -1035,20 +1050,6 @@ namespace Ordisoftware.HebrewWords
       DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
-    private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
-    {
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
-      {
-        EditLetters.Focus();
-        ActiveControl = EditLetters.Input;
-        EditLetters.Input.Focus();
-      }
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
-      {
-        ActiveControl = EditSearchTranslation;
-        EditSearchTranslation.Focus();
-      }
-    }
   }
 
 }

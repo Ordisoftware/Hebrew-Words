@@ -63,7 +63,16 @@ namespace Ordisoftware.HebrewWords
           ActionViewELS50.PerformClick();
           return true;
         case Keys.F5:
-          ActionViewSearch.PerformClick();
+          if ( Program.Settings.CurrentView != ViewModeType.Search )
+            ActionViewSearch.PerformClick();
+          else
+          {
+            if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+              SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
+            else
+            if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+              SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
+          }
           return true;
         case Keys.F8:
           ActionPreferences.PerformClick();

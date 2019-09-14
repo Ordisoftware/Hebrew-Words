@@ -153,6 +153,7 @@ namespace Ordisoftware.HebrewWords
               y += label.PreferredHeight;
             }
             label.Location = new Point(x, y);
+            label.Click += (sender, e) => PanelSearchResults.Focus();
             PanelSearchResults.Controls.Add(label);
           }
           y += label.PreferredHeight + marginY;
@@ -164,6 +165,7 @@ namespace Ordisoftware.HebrewWords
             label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
             label.Text = translation;
             label.Location = new Point(xx - label.PreferredSize.Width, y);
+            label.Click += (sender, e) => PanelSearchResults.Focus();
             PanelSearchResults.Controls.Add(label);
             y += label.PreferredHeight + marginY;
           }
