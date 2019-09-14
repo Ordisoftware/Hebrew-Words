@@ -100,7 +100,9 @@
       // LabelCount
       // 
       resources.ApplyResources(this.LabelCount, "LabelCount");
+      this.LabelCount.ForeColor = System.Drawing.Color.DarkRed;
       this.LabelCount.Name = "LabelCount";
+      this.LabelCount.TextChanged += new System.EventHandler(this.LabelCount_TextChanged);
       // 
       // SelectBooks
       // 

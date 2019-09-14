@@ -979,6 +979,7 @@ namespace Ordisoftware.HebrewWords
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = Letters.SetFinale(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
+      PanelSearchResults.Controls.Clear();
     }
 
     private Control GetMenuItemSourceControl(object sender)

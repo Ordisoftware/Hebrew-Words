@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -60,6 +61,7 @@ namespace Ordisoftware.HebrewWords
       Initializing = true;
       try
       {
+        LabelCount.Text = "0";
         var query = from r in references
                     group r by r.Book into books
                     select new { Key = books.Key.Number, Count = books.Count() };
@@ -137,6 +139,10 @@ namespace Ordisoftware.HebrewWords
         CreateReferences(References);
     }
 
+    private void LabelCount_TextChanged(object sender, EventArgs e)
+    {
+      LabelCount.ForeColor = LabelCount.Text == "0" ? Color.DarkRed : Color.DarkGreen;
+    }
   }
   
 }
