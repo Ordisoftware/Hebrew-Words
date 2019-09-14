@@ -53,8 +53,9 @@ namespace Ordisoftware.HebrewWords
           {
             var list = SearchWord1.Split(',');
             foreach ( string item in list )
-              if ( item.Length >= 3 && str.Contains(item) )
-                return true;
+              if ( item.Length >= 2 )
+                if ( str.Contains(item) )
+                  return true;
             return false;
           }
         };
