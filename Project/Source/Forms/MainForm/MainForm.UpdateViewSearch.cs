@@ -31,33 +31,48 @@ namespace Ordisoftware.HebrewWords
     static private IEnumerable<ReferenceItem> SearchResults;
     static public int SearchResultsCount { get; private set; }
 
-    private bool CheckSearchedWord(string str)
-    {
-      return str.Contains(SearchWord1) || str.Contains(SearchWord2);
-    }
+    static private Func<Data.DataSet.WordsRow, bool> CheckSearch;
 
-    private void UpdateViewSearch()
+    private void CreateSearchResults()
     {
       SetFormDisabled(true);
       try
       {
         SearchResults = null;
-        PanelSearchResults.Controls.Clear();
-        SearchWord1 = EditLetters.Input.Text;
-        if ( SearchWord1 == "" ) return;
-        if ( SearchWord1.Length < 2 ) return;
-        SearchWord2 = Letters.SetFinale(SearchWord1, true);
         int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
-        SearchResults = from book in DataSet.Books
-                        from chapter in book.GetChaptersRows()
-                        from verse in chapter.GetVersesRows()
-                        from word in verse.GetWordsRows()
-                        where book.Number <= limit && CheckSearchedWord(word.Hebrew)
-                        select new ReferenceItem(book, chapter, verse);
-        SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
-        SearchResultsCount = SearchResults.Count();
-        if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
-          SearchResults = SelectSearchResultsForm.Run(SearchResults);
+        Func<Data.DataSet.WordsRow, bool> checkWordHebrew = row =>
+        {
+          return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
+        };
+        Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row => 
+        {
+          return row.Translation.ToLower().Contains(SearchWord1);
+        };
+        if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+        {
+          SearchWord1 = EditLetters.Input.Text;
+          SearchWord2 = Letters.SetFinale(SearchWord1, true);
+          CheckSearch = checkWordHebrew;
+        }
+        if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+        {
+          SearchWord1 = EditSearchTranslation.Text.ToLower(); ;
+          SearchWord2 = "";
+          CheckSearch = checkWordTranslation;
+        }
+        if ( SearchWord1 != "" && SearchWord1.Length >= 2 )
+        {
+          SearchResults = from book in DataSet.Books
+                          from chapter in book.GetChaptersRows()
+                          from verse in chapter.GetVersesRows()
+                          from word in verse.GetWordsRows()
+                          where book.Number <= limit && CheckSearch(word)
+                          select new ReferenceItem(book, chapter, verse);
+          SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
+          SearchResultsCount = SearchResults.Count();
+          if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
+            SearchResults = SelectSearchResultsForm.Run(SearchResults);
+        }
         RenderSearchResults();
       }
       finally
@@ -74,9 +89,10 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.SuspendLayout();
       try
       {
+        PanelViewVerses.AutoScrollPosition = new Point(0, 0);
         PanelSearchResults.Controls.Clear();
         PanelSearchResults.Refresh();
-        PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+        Refresh();
         GC.Collect();
         LabelFindRefCount.Text = "0";
         if ( SearchResults == null ) return;
@@ -127,7 +143,7 @@ namespace Ordisoftware.HebrewWords
             label.Text = word.Hebrew;
             label.AutoSize = true;
             label.Font = HebrewFont12;
-            label.ForeColor = CheckSearchedWord(word.Hebrew)
+            label.ForeColor = CheckSearch(word)
                             ? Color.DarkRed
                             : SystemColors.ControlText;
             x -= label.PreferredSize.Width;

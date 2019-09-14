@@ -83,7 +83,7 @@
       <Value Profile="(Default)">215</Value>
     </Setting>
     <Setting Name="MaxRefCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">300</Value>
+      <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="SearchTranslatedSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">392, 416</Value>

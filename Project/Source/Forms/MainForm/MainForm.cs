@@ -369,6 +369,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( Program.Settings.CurrentView == ViewModeType.Search ) return;
       SetView(ViewModeType.Search);
+      SelectSearchType_Selected(null, null);
     }
 
     /// <summary>
@@ -832,6 +833,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionClearWord_Click(object sender, EventArgs e)
     {
       EditLetters.Input.Text = "";
+      EditSearchTranslation.Text = "";
       ActionSearchWord.PerformClick();
     }
 
@@ -842,7 +844,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchWord_Click(object sender, EventArgs e)
     {
-      UpdateViewSearch();
+      CreateSearchResults();
     }
 
     /// <summary>
@@ -960,6 +962,7 @@ namespace Ordisoftware.HebrewWords
     public void SearchWord(string word)
     {
       ActionViewSearch.PerformClick();
+      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = Letters.SetFinale(word, false);
     }
 
@@ -1032,6 +1035,20 @@ namespace Ordisoftware.HebrewWords
       DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
+    private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
+    {
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+      {
+        EditLetters.Focus();
+        ActiveControl = EditLetters.Input;
+        EditLetters.Input.Focus();
+      }
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+      {
+        ActiveControl = EditSearchTranslation;
+        EditSearchTranslation.Focus();
+      }
+    }
   }
 
 }
