@@ -50,7 +50,6 @@ namespace Ordisoftware.HebrewWords
     private ReferenceItem Reference;
     private WordReferencedItem WordReferenced;
     private WordControl WordControl;
-    private bool IsDestroying;
 
     private SearchTranslatedForm()
     {
@@ -65,7 +64,6 @@ namespace Ordisoftware.HebrewWords
 
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( IsDestroying ) return;
       LabelReference_LinkClicked(null, null);
       WordControl.Focus();
     }

@@ -25,13 +25,14 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    static private string SearchWord1;
-    static private string SearchWord2;
+    private string SearchWord1;
+    private string SearchWord2;
 
-    static private IEnumerable<ReferenceItem> SearchResults;
-    static public int SearchResultsCount { get; private set; }
+    private IEnumerable<ReferenceItem> SearchResults;
 
-    static private Func<Data.DataSet.WordsRow, bool> CheckSearch;
+    public int SearchResultsCount { get; private set; }
+
+    private Func<Data.DataSet.WordsRow, bool> CheckSearch;
 
     private void CreateSearchResults()
     {

@@ -23,6 +23,7 @@ namespace Ordisoftware.HebrewWords
   {
 
     private bool InProcess;
+
     private bool CancelRequired;
 
     private int ScrollIncrement = 25;

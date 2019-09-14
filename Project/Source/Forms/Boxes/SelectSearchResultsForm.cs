@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
-      LabelFound.Text = String.Format(LabelFound.Text, MainForm.SearchResultsCount);
+      LabelFound.Text = String.Format(LabelFound.Text, MainForm.Instance.SearchResultsCount);
       LabelFirst.Text = String.Format(LabelFirst.Text, Program.Settings.MaxRefCount);
     }
 

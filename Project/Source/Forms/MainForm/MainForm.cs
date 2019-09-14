@@ -72,6 +72,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private bool IsSessionEnding;
 
+    internal bool ComboBoxMutex { get; private set; }
+
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -797,8 +799,6 @@ namespace Ordisoftware.HebrewWords
     {
       Clipboard.SetText(EditELS50.Text);
     }
-
-    internal bool ComboBoxMutex { get; private set; }
 
     /// <summary>
     /// Event handler. Called by SelectBook for selected index changed events.

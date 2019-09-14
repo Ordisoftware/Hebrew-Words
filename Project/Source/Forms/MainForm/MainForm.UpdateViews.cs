@@ -22,13 +22,13 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private Font HebrewFont12 = new Font("Hebrew", 12f);
+    private readonly Font HebrewFont12 = new Font("Hebrew", 12f);
 
-    private Font LatinFont10 = new Font("Verdana", 10f);
+    private readonly Font LatinFont10 = new Font("Verdana", 10f);
 
-    private Font LatinFont8 = new Font("Verdana", 8f);
+    private readonly Font LatinFont8 = new Font("Verdana", 8f);
 
-    private Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
+    private readonly Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
 
 
     private void AddTextRightAligned(RichTextBox control, Font font, string str)

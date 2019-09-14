@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewWords
 
     private readonly BookmarkList Bookmarks = new BookmarkList();
 
-    private List<ReferenceItem> History = new List<ReferenceItem>();
+    private readonly List<ReferenceItem> History = new List<ReferenceItem>();
 
     private void GoToBookmark(object sender, EventArgs e)
     {
