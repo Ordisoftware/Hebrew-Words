@@ -99,6 +99,12 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.GoTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Translation.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,8 +13,9 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-08 </edited>
 using System;
-using System.Linq;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -243,6 +244,81 @@ namespace Ordisoftware.HebrewWords
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+    }
+
+    /// <summary>
+    /// Load data from database fro the first time.
+    /// </summary>
+    private void LoadData()
+    {
+      PopulateData();
+      SetView(Program.Settings.CurrentView, true);
+      GoTo(Program.Settings.BookmarkMasterBook,
+           Program.Settings.BookmarkMasterChapter,
+           Program.Settings.BookmarkMasterVerse,
+           true);
+      ActionSave.PerformClick();
+    }
+
+    /// <summary>
+    /// Reload data from database.
+    /// </summary>
+    private void ReLoadData(Action action)
+    {
+      PanelViewVerses.Controls.Clear();
+      PanelSearchResults.Controls.Clear();
+      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+      SearchResults = null;
+      Refresh();
+      DataSet.Clear();
+      action();
+      History.Clear();
+      LoadData();
+    }
+
+    /// <summary>
+    /// Show a splash screen while loading data.
+    /// </summary>
+    private void PopulateData()
+    {
+      var form = new LoadingForm();
+      form.ProgressBar.Maximum = 7;
+      form.Show();
+      form.Refresh();
+      SetFormDisabled(true);
+      IsLoadingData = true;
+      try
+      {
+        form.ProgressBar.Value = 1;
+        Refresh();
+        CreateDatabaseIfNotExists();
+        form.ProgressBar.Value = 2;
+        Refresh();
+        BooksTableAdapter.Fill(DataSet.Books);
+        form.ProgressBar.Value = 3;
+        Refresh();
+        ChaptersTableAdapter.Fill(DataSet.Chapters);
+        form.ProgressBar.Value = 4;
+        Refresh();
+        VersesTableAdapter.Fill(DataSet.Verses);
+        form.ProgressBar.Value = 5;
+        Refresh();
+        WordsTableAdapter.Fill(DataSet.Words);
+        form.ProgressBar.Value = 6;
+        Refresh();
+        InitBooksCombobox();
+        Bookmarks.Load();
+        UpdateBookmarks();
+        form.ProgressBar.Value = 7;
+        Refresh();
+      }
+      finally
+      {
+        IsLoadingData = false;
+        form.Hide();
+        SetFormDisabled(false);
       }
     }
 

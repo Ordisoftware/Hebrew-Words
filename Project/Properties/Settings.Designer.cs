@@ -335,7 +335,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("392, 416")]
+        [global::System.Configuration.DefaultSettingValueAttribute("300, 400")]
         public global::System.Drawing.Size SearchTranslatedSize {
             get {
                 return ((global::System.Drawing.Size)(this["SearchTranslatedSize"]));

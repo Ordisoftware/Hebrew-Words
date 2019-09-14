@@ -86,7 +86,7 @@
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="SearchTranslatedSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">392, 416</Value>
+      <Value Profile="(Default)">300, 400</Value>
     </Setting>
     <Setting Name="SearchTranslatedLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>

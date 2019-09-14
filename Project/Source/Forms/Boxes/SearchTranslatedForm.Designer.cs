@@ -88,13 +88,14 @@
       this.ListView.ContextMenuStrip = this.ContextMenuStrip;
       resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
-      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListView.HideSelection = false;
       this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
+      this.ListView.Resize += new System.EventHandler(this.ListView_Resize);
       // 
       // columnHeader1
       // 
@@ -155,16 +156,16 @@
       // 
       // ActionUpdate
       // 
-      this.ActionUpdate.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionUpdate, "ActionUpdate");
+      this.ActionUpdate.FlatAppearance.BorderSize = 0;
       this.ActionUpdate.Name = "ActionUpdate";
       this.ActionUpdate.UseVisualStyleBackColor = true;
       this.ActionUpdate.Click += new System.EventHandler(this.ActionUpdate_Click);
       // 
       // EditHebrew
       // 
-      this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditHebrew, "EditHebrew");
+      this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditHebrew.Name = "EditHebrew";
       // 
       // SearchTranslatedForm

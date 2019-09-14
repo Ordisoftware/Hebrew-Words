@@ -58,6 +58,11 @@ namespace Ordisoftware.HebrewWords
     private ToolTip LastToolTip = new ToolTip();
 
     /// <summary>
+    /// Indicate if the application is ready for the user.
+    /// </summary>
+    public bool IsReady { get; private set; }
+
+    /// <summary>
     /// Indicate if is in loading data stage.
     /// </summary>
     public bool IsLoadingData { get; private set; }
@@ -106,16 +111,11 @@ namespace Ordisoftware.HebrewWords
       InitializeDialogsDirectory();
       CheckUpdate(true);
       DoBackupDB();
-      PopulateData();
-      SetView(Program.Settings.CurrentView, true);
-      GoTo(Program.Settings.BookmarkMasterBook,
-           Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse,
-           true);
-      ActionSave.PerformClick();
+      LoadData();
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+      IsReady = true;
     }
 
     /// <summary>
@@ -138,50 +138,6 @@ namespace Ordisoftware.HebrewWords
       ToolStrip.Enabled = !disabled;
       PanelNavigation.Enabled = !disabled;
       PanelMainCenter.Enabled = !disabled;
-    }
-
-    /// <summary>
-    /// Show a splash screen while loading data.
-    /// </summary>
-    private void PopulateData()
-    {
-      var form = new LoadingForm();
-      form.ProgressBar.Maximum = 7;
-      form.Show();
-      form.Refresh();
-      SetFormDisabled(true);
-      IsLoadingData = true;
-      try
-      {
-        form.ProgressBar.Value = 1;
-        Refresh();
-        CreateDatabaseIfNotExists();
-        form.ProgressBar.Value = 2;
-        Refresh();
-        BooksTableAdapter.Fill(DataSet.Books);
-        form.ProgressBar.Value = 3;
-        Refresh();
-        ChaptersTableAdapter.Fill(DataSet.Chapters);
-        form.ProgressBar.Value = 4;
-        Refresh();
-        VersesTableAdapter.Fill(DataSet.Verses);
-        form.ProgressBar.Value = 5;
-        Refresh();
-        WordsTableAdapter.Fill(DataSet.Words);
-        form.ProgressBar.Value = 6;
-        Refresh();
-        InitBooksCombobox();
-        Bookmarks.Load();
-        UpdateBookmarks();
-        form.ProgressBar.Value = 7;
-        Refresh();
-      }
-      finally
-      {
-        IsLoadingData = false;
-        form.Hide();
-        SetFormDisabled(false);
-      }
     }
 
     /// <summary>
@@ -307,6 +263,17 @@ namespace Ordisoftware.HebrewWords
       TimerTooltip.Enabled = false;
       LastToolTip.Tag = null;
       LastToolTip.Hide(ToolStrip);
+    }
+
+    /// <summary>
+    /// Event handler. Called by MainForm for client size and location changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void MainForm_WindowsChanged(object sender, EventArgs e)
+    {
+      if ( IsReady ) return;
+      Program.Settings.MainFormPosition = ControlLocation.Loose;
     }
 
     /// <summary>
@@ -482,22 +449,10 @@ namespace Ordisoftware.HebrewWords
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
-      PanelViewVerses.Controls.Clear();
-      PanelSearchResults.Controls.Clear();
-      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      SearchResults = null;
-      Refresh();
-      DataSet.Clear();
-      File.Delete(Program.UserDataFolderPath + filename);
-      History.Clear();
-      PopulateData();
-      SetView(Program.Settings.CurrentView, true);
-      GoTo(Program.Settings.BookmarkMasterBook,
-           Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse,
-           true);
-      ActionSave.PerformClick();
+      ReLoadData(() =>
+      {
+        File.Delete(Program.UserDataFolderPath + filename);
+      });
     }
 
     /// <summary>
@@ -513,24 +468,13 @@ namespace Ordisoftware.HebrewWords
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
-      PanelViewVerses.Controls.Clear();
-      PanelSearchResults.Controls.Clear();
-      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      SearchResults = null;
-      Refresh();
-      DataSet.Clear();
-      File.Delete(Program.UserDataFolderPath + filename);
-      File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
-      History.Clear();
-      PopulateData();
-      SetView(Program.Settings.CurrentView, true);
-      GoTo(Program.Settings.BookmarkMasterBook,
-           Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse,
-           true);
-      ActionSave.PerformClick();
+      ReLoadData(() =>
+      {
+        File.Delete(Program.UserDataFolderPath + filename);
+        File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
+      });
     }
+
 
     /// <summary>
     /// Event handler. Called by ActionBackup for click events.
@@ -693,43 +637,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
-      var book = CurrentReference.Book;
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewModeType.Verses:
-          SaveFileDialogWord.FileName = book.Name + ".docx";
-          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          var form = new ExportingForm();
-          SetFormDisabled(true);
-          try
-          {
-            form.ProgressBar.Value = 0;
-            form.ProgressBar.Maximum = SelectChapter.Items.Count;
-            form.Show();
-            form.Refresh();
-            Func<bool> showProgress = () =>
-            {
-              form.ProgressBar.PerformStep();
-              Application.DoEvents();
-              return form.CancelRequired;
-            };
-            ExportDocX.Run(SaveFileDialogWord.FileName, book, true, showProgress);
-          }
-          finally
-          {
-            SetFormDisabled(false);
-            form.Close();
-          }
-          break;
-        case ViewModeType.ELS50:
-          SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
-          break;
-        default:
-          DisplayManager.ShowAdvert("Not implemented.");
-          break;
-      }
+      DoExportBook();
     }
 
     /// <summary>
@@ -739,37 +647,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportChapter_Click(object sender, EventArgs e)
     {
-      var book = CurrentReference.Book;
-      var chapter = CurrentReference.Chapter;
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewModeType.Verses:
-          SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
-          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-          SetFormDisabled(true);
-          try
-          {
-            ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
-          }
-          finally
-          {
-            SetFormDisabled(false);
-          }
-          break;
-        case ViewModeType.Translations:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
-          break;
-        case ViewModeType.Text:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditRawText.SaveFile(SaveFileDialogRTF.FileName);
-          break;
-        default:
-          DisplayManager.ShowAdvert("Not implemented.");
-          break;
-      }
+      DoExportChapter();
     }
 
     /// <summary>
@@ -779,36 +657,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchVerse_Click(object sender, EventArgs e)
     {
-      var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
-      if ( form.ShowDialog() != DialogResult.OK ) return;
-      int value = (int)form.EditVerseNumber.Value;
-      if ( value > 0 )
-        GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
-      else
-      {
-        Data.DataSet.VersesRow found = null;
-        var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-        foreach ( Data.DataSet.VersesRow verse in list )
-        {
-          bool isempty = true;
-          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-            if ( word.Translation != "" )
-            {
-              isempty = false;
-              break;
-            }
-          if ( isempty )
-          {
-            found = verse;
-            break;
-          }
-        }
-        if ( found != null )
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
-        else
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
-      }
+      GoToVerse();
     }
 
     /// <summary>
@@ -908,98 +757,6 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.Focus();
     }
 
-    /// <summary>
-    /// Go to book / chapter / verse into view verses panel.
-    /// </summary>
-    /// <param name="book"></param>
-    /// <param name="chapter"></param>
-    /// <param name="verse"></param>
-    public void GoTo(int book, int chapter, int verse, bool forceUpdate = false)
-    {
-      GoTo(new ReferenceItem(book, chapter, verse), forceUpdate);
-    }
-
-    /// <summary>
-    /// Go to book / chapter / verse into view verses panel.
-    /// </summary>
-    /// <param name="reference">ReferenceItem instance.</param>
-    public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
-    {
-      if ( reference == null ) return;
-      if ( IsGoToRunning ) return;
-      IsGoToRunning = true;
-      bool updated = false;
-      try
-      {
-        if ( SelectBook.SelectedIndex != reference.Book.Number - 1 )
-        {
-          SelectBook.SelectedIndex = reference.Book.Number - 1;
-          updated = true;
-        }
-        if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
-        {
-          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
-          updated = true;
-        }
-      }
-      finally
-      {
-        IsGoToRunning = false;
-      }
-      if ( IsLoadingData ) return;
-      if ( updated || forceUpdateView )
-        UpdateViews();
-      if ( reference.Verse == null )
-        reference.Verse = reference.Chapter.GetVersesRows()[0];
-      CurrentReference = new ReferenceItem(reference);
-      AddCurrentToHistory();
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewModeType.Verses:
-          foreach ( var control in PanelViewVerses.Controls )
-            if ( control is Label )
-            {
-              var label = control as Label;
-              if ( label.Text == reference.Verse.Number.ToString() )
-              {
-                PanelViewVerses.Focus();
-                PanelViewVerses.ScrollControlIntoView(label);
-                PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
-                int index = PanelViewVerses.Controls.IndexOf(label);
-                ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
-                break;
-              }
-            }
-          break;
-        case ViewModeType.Translations:
-          foreach ( string line in EditTranslations.Lines )
-          {
-            string s = reference.Verse.Number + ". ";
-            if ( line.StartsWith(s) )
-            {
-              EditTranslations.SelectionStart = EditTranslations.Find(s);
-              EditTranslations.SelectionLength = 0;
-              EditTranslations.ScrollToCaret();
-              EditTranslations.Focus();
-            }
-          }
-          break;
-        case ViewModeType.Text:
-          foreach ( string line in EditRawText.Lines )
-          {
-            string s = ":" + reference.Verse.Number;
-            if ( line.EndsWith(s) )
-            {
-              EditRawText.SelectionStart = EditRawText.Find(s);
-              EditRawText.SelectionLength = 0;
-              EditRawText.ScrollToCaret();
-              EditRawText.Focus();
-            }
-          }
-          break;
-      }
-    }
-
     public void SearchWord(string word)
     {
       ActionViewSearch.PerformClick();
@@ -1031,12 +788,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionExportVerse_Click(object sender, EventArgs e)
     {
-      var book = CurrentReference.Book;
-      var chapter = CurrentReference.Chapter;
-      int verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
-      SaveFileDialogWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
-      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
+      DoExportVerse(sender);
     }
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)

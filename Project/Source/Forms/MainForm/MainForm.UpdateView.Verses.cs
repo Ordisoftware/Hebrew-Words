@@ -46,7 +46,6 @@ namespace Ordisoftware.HebrewWords
         PanelViewVerses.Controls.Clear();
         PanelViewVerses.AutoScrollPosition = new Point(0, 0);
         PanelViewVerses.Refresh();
-        Refresh();
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
         int mX = 50;

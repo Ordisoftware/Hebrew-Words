@@ -55,6 +55,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      MaximumSize = new System.Drawing.Size(MaximumSize.Width, Screen.PrimaryScreen.WorkingArea.Height);
     }
 
     private void WordTranslationsForm_Shown(object sender, EventArgs e)
@@ -76,6 +77,11 @@ namespace Ordisoftware.HebrewWords
     private void ButtonClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void ListView_Resize(object sender, EventArgs e)
+    {
+      ListView.Columns[1].Width = -2;
     }
 
     private void ActionUpdate_Click(object sender, EventArgs e)

@@ -36,76 +36,67 @@ namespace Ordisoftware.HebrewWords
 
     private void CreateSearchResults()
     {
-      SetFormDisabled(true);
-      try
+      SearchResults = null;
+      int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
+      Func<Data.DataSet.WordsRow, bool> checkWordHebrew = row =>
       {
-        SearchResults = null;
-        int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
-        Func<Data.DataSet.WordsRow, bool> checkWordHebrew = row =>
+        return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
+      };
+      Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row =>
+      {
+        var str = row.Translation.ToLower();
+        if ( !SearchWord1.Contains(",") )
+          return str.Contains(SearchWord1);
+        else
         {
-          return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
-        };
-        Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row =>
-        {
-          var str = row.Translation.ToLower();
-          if ( !SearchWord1.Contains(",") )
-            return str.Contains(SearchWord1);
-          else
+          var list = SearchWord1.Split(',');
+          foreach ( string item in list )
           {
-            var list = SearchWord1.Split(',');
-            foreach ( string item in list )
-            {
-              var exp = item.Trim();
-              if ( exp.Length >= 2 )
-                if ( str.Contains(exp) )
-                  return true;
-            }
-            return false;
+            var exp = item.Trim();
+            if ( exp.Length >= 2 )
+              if ( str.Contains(exp) )
+                return true;
           }
-        };
-        if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
-        {
-          SearchWord1 = EditLetters.Input.Text;
-          SearchWord2 = Letters.SetFinale(SearchWord1, true);
-          CheckSearch = checkWordHebrew;
+          return false;
         }
-        if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
-        {
-          SearchWord1 = EditSearchTranslation.Text.ToLower(); ;
-          SearchWord2 = "";
-          CheckSearch = checkWordTranslation;
-        }
-        if ( SearchWord1 != "" && SearchWord1.Length >= 2 )
-        {
-          SearchResults = from book in DataSet.Books
-                          from chapter in book.GetChaptersRows()
-                          from verse in chapter.GetVersesRows()
-                          from word in verse.GetWordsRows()
-                          where book.Number <= limit && CheckSearch(word)
-                          select new ReferenceItem(book, chapter, verse);
-          SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
-          SearchResultsCount = SearchResults.Count();
-          if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
-            SearchResults = SelectSearchResultsForm.Run(SearchResults);
-        }
-        RenderSearchResults();
-      }
-      finally
+      };
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
-        SetFormDisabled(false);
+        SearchWord1 = EditLetters.Input.Text;
+        SearchWord2 = Letters.SetFinale(SearchWord1, true);
+        CheckSearch = checkWordHebrew;
+      }
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+      {
+        SearchWord1 = EditSearchTranslation.Text.ToLower(); ;
+        SearchWord2 = "";
+        CheckSearch = checkWordTranslation;
+      }
+      if ( SearchWord1 != "" && SearchWord1.Length >= 2 )
+      {
+        SearchResults = from book in DataSet.Books
+                        from chapter in book.GetChaptersRows()
+                        from verse in chapter.GetVersesRows()
+                        from word in verse.GetWordsRows()
+                        where book.Number <= limit && CheckSearch(word)
+                        select new ReferenceItem(book, chapter, verse);
+        SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
+        SearchResultsCount = SearchResults.Count();
+        if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
+          SearchResults = SelectSearchResultsForm.Run(SearchResults);
+        RenderSearchResults();
       }
     }
 
     private void RenderSearchResults()
     {
+      if ( SearchResults == null ) return;
       if ( InProcess ) return;
       PanelSearchResults.Controls.Clear();
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Refresh();
-      Refresh();
       GC.Collect();
       LabelFindRefCount.Text = "0";
-      if ( SearchResults == null ) return;
       InProcess = true;
       SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();
