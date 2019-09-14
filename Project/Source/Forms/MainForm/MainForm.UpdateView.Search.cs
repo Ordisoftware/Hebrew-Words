@@ -99,8 +99,8 @@ namespace Ordisoftware.HebrewWords
     private void RenderSearchResults()
     {
       if ( InProcess ) return;
-      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Controls.Clear();
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Refresh();
       Refresh();
       GC.Collect();

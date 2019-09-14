@@ -484,6 +484,8 @@ namespace Ordisoftware.HebrewWords
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       PanelViewVerses.Controls.Clear();
       PanelSearchResults.Controls.Clear();
+      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       SearchResults = null;
       Refresh();
       DataSet.Clear();
@@ -513,6 +515,8 @@ namespace Ordisoftware.HebrewWords
         return;
       PanelViewVerses.Controls.Clear();
       PanelSearchResults.Controls.Clear();
+      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       SearchResults = null;
       Refresh();
       DataSet.Clear();
@@ -1003,6 +1007,8 @@ namespace Ordisoftware.HebrewWords
       EditLetters.Input.Text = Letters.SetFinale(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
       PanelSearchResults.Controls.Clear();
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+      PanelSearchResults.Refresh();
     }
 
     private Control GetMenuItemSourceControl(object sender)
