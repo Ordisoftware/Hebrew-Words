@@ -61,6 +61,7 @@ namespace Ordisoftware.HebrewWords
       Initializing = true;
       try
       {
+        Count = 0;
         LabelCount.Text = "0";
         var query = from r in references
                     group r by r.Book into books
@@ -122,7 +123,10 @@ namespace Ordisoftware.HebrewWords
       EditOnlyWithoutTranslation.Checked = false;
       Mutex = false;
       if ( EditOnlyWithTranslation.Checked )
+      {
         CreateReferences(References.Where(r => r.Verse.GetTranslation() != ""));
+        ActionAddAll.PerformClick();
+      }
       else
         CreateReferences(References);
     }
@@ -134,7 +138,10 @@ namespace Ordisoftware.HebrewWords
       EditOnlyWithTranslation.Checked = false;
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
+      {
         CreateReferences(References.Where(r => r.Verse?.GetTranslation() == ""));
+        ActionAddAll.PerformClick();
+      }
       else
         CreateReferences(References);
     }

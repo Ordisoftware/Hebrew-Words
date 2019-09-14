@@ -496,7 +496,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 458</value>
+    <value>13, 454</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -526,10 +526,10 @@
     <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
   </data>
   <data name="ActionAddAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 80</value>
+    <value>13, 79</value>
   </data>
   <data name="ActionAddAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>18, 18</value>
   </data>
   <data name="ActionAddAll.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -559,10 +559,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 80</value>
+    <value>32, 79</value>
   </data>
   <data name="ActionRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>18, 18</value>
   </data>
   <data name="ActionRemoveAll.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
