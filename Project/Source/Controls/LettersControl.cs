@@ -16,7 +16,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core.Diagnostics;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -111,7 +111,7 @@ namespace Ordisoftware.HebrewWords
       }
       catch ( Exception ex )
       {
-        Debugger.ManageException(this, ex);
+        ex.Manage(this);
       }
     }
 

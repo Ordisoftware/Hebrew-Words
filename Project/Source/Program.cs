@@ -163,7 +163,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(ex.Message + Environment.NewLine + process.StartInfo.FileName);
+          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
         }
     }
 
@@ -182,7 +182,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(ex.Message + Environment.NewLine + process.StartInfo.FileName);
+          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
         }
     }
 

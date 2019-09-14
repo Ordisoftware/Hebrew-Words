@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewWords
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(ex.Message);
+        ex.Manage();
       }
       finally
       {

@@ -59,10 +59,18 @@ namespace Ordisoftware.HebrewWords
         return false;
       if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
         return false;
-      return ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 )
-          && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
+      try
+      {
+        bool result = ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+                   && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+                   && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 )
+                   && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
+        return result;
+      }
+      catch
+      {
+        return false;
+      }
     }
 
     public bool Equals(WordReferencedItem y)

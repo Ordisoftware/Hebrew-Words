@@ -108,14 +108,14 @@ namespace Ordisoftware.HebrewWords
       DoBackupDB();
       PopulateData();
       SetView(Program.Settings.CurrentView, true);
-      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
-      if ( TimerAutoSave.Enabled )
-        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse,
            true);
       ActionSave.PerformClick();
+      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+      if ( TimerAutoSave.Enabled )
+        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
     }
 
     /// <summary>
@@ -161,13 +161,13 @@ namespace Ordisoftware.HebrewWords
         BooksTableAdapter.Fill(DataSet.Books);
         form.ProgressBar.Value = 3;
         Refresh();
-        WordsTableAdapter.Fill(DataSet.Words);
+        ChaptersTableAdapter.Fill(DataSet.Chapters);
         form.ProgressBar.Value = 4;
         Refresh();
         VersesTableAdapter.Fill(DataSet.Verses);
         form.ProgressBar.Value = 5;
         Refresh();
-        ChaptersTableAdapter.Fill(DataSet.Chapters);
+        WordsTableAdapter.Fill(DataSet.Words);
         form.ProgressBar.Value = 6;
         Refresh();
         InitBooksCombobox();
@@ -488,7 +488,14 @@ namespace Ordisoftware.HebrewWords
       Refresh();
       DataSet.Clear();
       File.Delete(Program.UserDataFolderPath + filename);
+      History.Clear();
       PopulateData();
+      SetView(Program.Settings.CurrentView, true);
+      GoTo(Program.Settings.BookmarkMasterBook,
+           Program.Settings.BookmarkMasterChapter,
+           Program.Settings.BookmarkMasterVerse,
+           true);
+      ActionSave.PerformClick();
     }
 
     /// <summary>
@@ -511,7 +518,14 @@ namespace Ordisoftware.HebrewWords
       DataSet.Clear();
       File.Delete(Program.UserDataFolderPath + filename);
       File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
+      History.Clear();
       PopulateData();
+      SetView(Program.Settings.CurrentView, true);
+      GoTo(Program.Settings.BookmarkMasterBook,
+           Program.Settings.BookmarkMasterChapter,
+           Program.Settings.BookmarkMasterVerse,
+           true);
+      ActionSave.PerformClick();
     }
 
     /// <summary>
@@ -621,7 +635,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(ex.Message);
+          ex.Manage();
         }
     }
 

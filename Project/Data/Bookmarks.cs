@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(ex.Message);
+          ex.Manage();
         }
     }
 
@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewWords
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(ex.Message);
+        ex.Manage();
       }
     }
 
