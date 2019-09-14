@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewWords
       {
         var assembly = typeof(Program).Assembly;
         var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-        string id = "Hebrew Words " + attribute.Value;
+        string id = assembly.FullName + attribute.Value;
         bool created;
         var mutex = new Mutex(true, id, out created);
         if ( !created ) return;
