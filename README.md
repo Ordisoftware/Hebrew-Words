@@ -65,13 +65,13 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add option to set commentary lines count.
 - Add master bookmark used at startup.
 - Add bookmarks.
-- Add novigation history.
+- Add navigation history.
+- Add grammar guide (french).
 - Improve UI.
 - Improve search.
 - Improve verses rendering.
 - Improve translations rendering.
 - Improve search rendering.
-- Fix select backup path icon not implemented.
 - Some fixes.
 - Update help.
 
