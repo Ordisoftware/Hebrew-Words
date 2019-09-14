@@ -299,18 +299,6 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point FoundReferencesLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["FoundReferencesLocation"]));
-            }
-            set {
-                this["FoundReferencesLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("215")]
         public int WordControlWidth {
             get {
@@ -335,7 +323,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300, 400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("292, 366")]
         public global::System.Drawing.Size SearchTranslatedSize {
             get {
                 return ((global::System.Drawing.Size)(this["SearchTranslatedSize"]));
@@ -378,6 +366,30 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
             set {
                 this["MinimalFoundToOpenDialog"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point GrammarGuideFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["GrammarGuideFormLocation"]));
+            }
+            set {
+                this["GrammarGuideFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("392, 466")]
+        public global::System.Drawing.Size GrammarGuideFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["GrammarGuideFormSize"]));
+            }
+            set {
+                this["GrammarGuideFormSize"] = value;
             }
         }
     }

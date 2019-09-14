@@ -70,8 +70,13 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
-    <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
+    <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\GrammarGuideForm.Designer.cs">
+      <DependentUpon>GrammarGuideForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +219,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.resx">
+      <DependentUpon>GrammarGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>

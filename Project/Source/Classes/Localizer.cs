@@ -27,6 +27,24 @@ namespace Ordisoftware.HebrewWords
 
     static public readonly string NewLine = Environment.NewLine;
 
+    static public readonly string[] AvailableLanguages = { "en", "fr" };
+
+    static public readonly string DefaultLanguage = "en";
+
+    static public string GetSupported()
+    {
+      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+      bool b = false;
+      foreach ( string item in AvailableLanguages )
+        if ( item == lang )
+        {
+          b = true;
+          break;
+        }
+      if (!b ) lang = DefaultLanguage;
+      return lang;
+    }
+
     /// <summary>
     /// Get the string translation.
     /// </summary>
@@ -35,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     static public string GetLang(this Dictionary<string, string> values)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values.ContainsKey(lang) ) lang = "en";
+      if ( !values.ContainsKey(lang) ) lang = DefaultLanguage;
       return values[lang];
     }
 
@@ -59,7 +77,7 @@ namespace Ordisoftware.HebrewWords
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[value].ContainsKey(lang) ) lang = "en";
+      if ( !values[value].ContainsKey(lang) ) lang = DefaultLanguage;
       return values[value][lang];
     }
 

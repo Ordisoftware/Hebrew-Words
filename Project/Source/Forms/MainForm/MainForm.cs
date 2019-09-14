@@ -403,7 +403,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
+      GrammarGuideForm.Instance.Show();
     }
 
     /// <summary>

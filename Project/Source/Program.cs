@@ -61,6 +61,12 @@ namespace Ordisoftware.HebrewWords
       = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
 
     /// <summary>
+    /// Indicate name of the help file.
+    /// </summary>
+    static public readonly string GrammarGuideFilename
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-%lang%.htm";
+
+    /// <summary>
     /// Indicate application documents folder.
     /// </summary>
     static public readonly string DocumentsFolderPath
