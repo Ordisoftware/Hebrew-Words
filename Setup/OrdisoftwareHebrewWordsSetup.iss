@@ -71,20 +71,15 @@ Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: *; DestDir: {app}\Setup; Excludes: *.---, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
+Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: ..\Bin\Release\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
 Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Help\*; DestDir: {app}\Help; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Project\License\*; DestDir: {app}\Project\License; Flags: ignoreversion recursesubdirs
-Source: ..\Project\Dependencies\*; DestDir: {app}\Project\Dependencies\; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Project\Properties\*; DestDir: {app}\Project\Properties\; Flags: ignoreversion recursesubdirs
-Source: ..\Project\Source\*; DestDir: {app}\Project\Source\; Flags: ignoreversion recursesubdirs; Excludes: *.lnk
-Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion; Excludes: *.suo, *.user
-Source: ..\Register ODBC.reg; DestDir: {app}
-Source: ..\*; DestDir: {app}; Flags: ignoreversion
-Source: *; DestDir: {app}\Setup; Excludes: *.---, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
+Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.suo, *.user, obj
 Source: ..\Project\Dependencies\Font\Hebrew.ttf; DestDir: {fonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall
 
 [Icons]
@@ -179,3 +174,5 @@ begin
   end;
 	Result := s
 end;
+[InstallDelete]
+Name: {app}\Project\*; Type: filesandordirs
