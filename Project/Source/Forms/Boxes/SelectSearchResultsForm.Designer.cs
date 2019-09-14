@@ -148,6 +148,7 @@
       // 
       this.ActionAddAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionAddAll, "ActionAddAll");
+      this.ActionAddAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionAddAll.Name = "ActionAddAll";
       this.ActionAddAll.UseVisualStyleBackColor = true;
       this.ActionAddAll.Click += new System.EventHandler(this.ActionAddAll_Click);
@@ -156,6 +157,7 @@
       // 
       this.ActionRemoveAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionRemoveAll, "ActionRemoveAll");
+      this.ActionRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionRemoveAll.Name = "ActionRemoveAll";
       this.ActionRemoveAll.UseVisualStyleBackColor = true;
       this.ActionRemoveAll.Click += new System.EventHandler(this.ActionRemoveAll_Click);

@@ -594,7 +594,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(Localizer.RestoreWinPosText.GetLang()) )
+      {
         Program.Settings.RestoreMainForm();
+        ActionRefresh.PerformClick();
+      }
     }
 
     /// <summary>

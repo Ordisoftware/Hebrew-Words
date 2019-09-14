@@ -74,6 +74,7 @@ namespace Ordisoftware.HebrewWords
       EditBookmarksCount.Value = Program.Settings.BookmarksCount;
       EditHistoryCount.Value = Program.Settings.HistoryCount;
       EditMaxRefCount.Value = Program.Settings.MaxRefCount;
+      EditMinRefCount.Value = Program.Settings.MinimalFoundToOpenDialog;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
@@ -102,6 +103,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
       Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
       Program.Settings.MaxRefCount = (int)EditMaxRefCount.Value;
+      Program.Settings.MinimalFoundToOpenDialog = (int)EditMinRefCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )
@@ -146,6 +148,10 @@ namespace Ordisoftware.HebrewWords
       SystemManager.OpenWebLink((string)LabelSystemHandles.Tag);
     }
 
+    private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
+    {
+      EditMinRefCount.Maximum = EditMaxRefCount.Value / 2;
+    }
   }
 
 }

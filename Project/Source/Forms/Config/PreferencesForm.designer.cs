@@ -40,6 +40,7 @@
       System.Windows.Forms.Label LabelWordControlWidth;
       System.Windows.Forms.Label LabelMaxRefCount;
       System.Windows.Forms.Label LabelHistoryCount;
+      System.Windows.Forms.Label LabelMinRefCount;
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionReset = new System.Windows.Forms.LinkLabel();
@@ -64,6 +65,7 @@
       this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
       this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
+      this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
       LabelHistoryCount = new System.Windows.Forms.Label();
+      LabelMinRefCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
@@ -84,6 +87,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -332,10 +336,11 @@
             0});
       this.EditMaxRefCount.Name = "EditMaxRefCount";
       this.EditMaxRefCount.Value = new decimal(new int[] {
-            150,
+            100,
             0,
             0,
             0});
+      this.EditMaxRefCount.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
       // 
       // LabelSystemHandles
       // 
@@ -357,6 +362,21 @@
             0});
       this.EditHistoryCount.Name = "EditHistoryCount";
       // 
+      // LabelMinRefCount
+      // 
+      resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
+      LabelMinRefCount.Name = "LabelMinRefCount";
+      // 
+      // EditMinRefCount
+      // 
+      this.EditMinRefCount.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
+      this.EditMinRefCount.Name = "EditMinRefCount";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -366,6 +386,8 @@
       this.Controls.Add(this.LabelSystemHandles);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
+      this.Controls.Add(this.EditMinRefCount);
+      this.Controls.Add(LabelMinRefCount);
       this.Controls.Add(this.EditMaxRefCount);
       this.Controls.Add(LabelMaxRefCount);
       this.Controls.Add(this.EditHistoryCount);
@@ -409,6 +431,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -439,5 +462,6 @@
     private System.Windows.Forms.RadioButton SelectOpenTranslated;
     private System.Windows.Forms.NumericUpDown EditHistoryCount;
     private System.Windows.Forms.LinkLabel ActionReset;
+    private System.Windows.Forms.NumericUpDown EditMinRefCount;
   }
 }

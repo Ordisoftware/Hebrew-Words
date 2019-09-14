@@ -234,66 +234,6 @@
   <data name="&gt;&gt;LabelSelect.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;ActionSelect.Name" xml:space="preserve">
-    <value>ActionSelect</value>
-  </data>
-  <data name="&gt;&gt;ActionSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelect.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionSelect.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionAll.Name" xml:space="preserve">
-    <value>ActionAll</value>
-  </data>
-  <data name="&gt;&gt;ActionAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionAll.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionAll.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 478</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="ActionSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -387,6 +327,30 @@
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 478</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="LabelCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -420,6 +384,21 @@
   <data name="SelectBooks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="columnHeader2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
   <data name="SelectBooks.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 100</value>
   </data>
@@ -441,21 +420,6 @@
   <data name="&gt;&gt;SelectBooks.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Books</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Found</value>
-  </data>
-  <data name="columnHeader2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
   <data name="EditOnlyWithTranslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -463,7 +427,7 @@
     <value>True</value>
   </data>
   <data name="EditOnlyWithTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 435</value>
+    <value>13, 433</value>
   </data>
   <data name="EditOnlyWithTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
@@ -496,7 +460,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 454</value>
+    <value>13, 452</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
