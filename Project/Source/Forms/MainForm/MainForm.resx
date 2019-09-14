@@ -200,9 +200,6 @@
   <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;PanelNavigation.Name" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
@@ -403,6 +400,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 17</value>
+  </data>
+  <data name="ActionSearchWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 199</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -745,8 +745,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="PanelViewRawText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 46</value>
+  <data name="menusep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 6</value>
   </data>
   <data name="ActionExportBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1167,9 +1167,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
     <value>ChaptersBindingSource</value>
-  </data>
-  <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 15</value>
   </data>
   <data name="MenuSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1848,9 +1845,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCopyToClipboard.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
   </data>
-  <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
-    <value>Sep6</value>
-  </data>
   <data name="&gt;&gt;TabPageSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1880,6 +1874,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;LabelFindRefCount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="SelectSearchType.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1929,8 +1926,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;PanelViewELS50.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menusep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 6</value>
+  <data name="TabPageVerses.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelViewRawText.Parent" xml:space="preserve">
     <value>TabPageText</value>
@@ -1990,6 +1987,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2422,8 +2422,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionViewSearch.Text" xml:space="preserve">
     <value>Search a word</value>
   </data>
-  <data name="&gt;&gt;LabelFindRefCount.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ActionAbout.ToolTipText" xml:space="preserve">
+    <value>About (F12)</value>
   </data>
   <data name="ActionSetAsBookmarkMaster.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2702,8 +2702,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionExportBook.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 15</value>
   </data>
   <data name="ActionRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2833,8 +2833,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;menusep.Name" xml:space="preserve">
     <value>menusep</value>
   </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 49</value>
+  <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
+    <value>Sep6</value>
   </data>
   <data name="TabPageELS50.Text" xml:space="preserve">
     <value>ELS50</value>
@@ -2985,8 +2985,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
     <value>Rich Text Format files (*.rtf)|*.rtf</value>
   </data>
-  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
-    <value>PanelMainInner</value>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
   </data>
   <data name="SaveFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
@@ -3105,6 +3105,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionELS50CopyToClipboard.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
+  </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3195,14 +3198,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;PanelViewTranslations.Parent" xml:space="preserve">
     <value>TabPageTranslations</value>
   </data>
-  <data name="ActionAbout.ToolTipText" xml:space="preserve">
-    <value>About (F12)</value>
-  </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="TabPageVerses.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;TabPageTranslations.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3454,8 +3451,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;EditScreenCenter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ActionSearchWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 199</value>
+  <data name="&gt;&gt;PanelMainCenter.Parent" xml:space="preserve">
+    <value>PanelMainInner</value>
   </data>
   <data name="TabPageText.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3563,20 +3560,20 @@ A verse is founded if the translation of one of its words contains an expression
   <metadata name="BooksTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>490, 16</value>
   </metadata>
-  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 17</value>
-  </metadata>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>22, 17</value>
   </metadata>
-  <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1013, 58</value>
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
   </metadata>
   <metadata name="SaveFileDialogWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>717, 58</value>
   </metadata>
   <metadata name="TimerAutoSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 89</value>
+  </metadata>
+  <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1013, 58</value>
   </metadata>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>35, 51</value>
