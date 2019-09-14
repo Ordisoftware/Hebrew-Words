@@ -13,11 +13,8 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.IO;
-using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -25,59 +22,9 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private readonly BookmarkList Bookmarks = new BookmarkList();
+
     private List<ReferenceItem> History = new List<ReferenceItem>();
-
-    private List<ReferenceItem> Bookmarks = new List<ReferenceItem>();
-
-    private string BookmarksFilename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
-
-    private void LoadBookmarks()
-    {
-      Bookmarks.Clear();
-      if ( File.Exists(BookmarksFilename) )
-        try
-        {
-          var list = File.ReadLines(BookmarksFilename);
-          for ( int index = list.Count() - 1; index >= 0; index-- )
-          {
-            string item = list.ElementAt(index);
-            if ( item == "" || item.Count(c => c == '.') != 2 ) continue;
-            var parts = item.Split('.');
-            AddBookmark(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                          Convert.ToInt32(parts[1]),
-                                          Convert.ToInt32(parts[2])));
-          }
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError(ex.Message);
-        }
-    }
-
-    private void SaveBookmarks()
-    {
-      try
-      {
-        if ( IsLoadingData ) return;
-        var items = new List<string>();
-        foreach ( var reference in Bookmarks )
-          items.Add(reference.ToStringNumbers());
-        File.WriteAllLines(BookmarksFilename, items);
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-      }
-    }
-
-    private void AddBookmark(ReferenceItem reference)
-    {
-      if ( Program.Settings.BookmarksCount < 1 ) return;
-      foreach ( var value in Bookmarks )
-        if ( value.ToStringNumbers() == reference.ToStringNumbers() )
-          return;
-      Bookmarks.Insert(0, reference);
-    }
 
     private void GoToBookmark(object sender, EventArgs e)
     {
@@ -92,6 +39,7 @@ namespace Ordisoftware.HebrewWords
         MenuBookmarks.DropDownItems.RemoveAt(4);
       while ( Bookmarks.Count > Program.Settings.BookmarksCount )
         Bookmarks.RemoveAt(Bookmarks.Count - 1);
+      Bookmarks.Save();
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -104,13 +52,13 @@ namespace Ordisoftware.HebrewWords
           Program.Settings.BookmarkMasterBook = 1;
           Program.Settings.BookmarkMasterChapter = 1;
           Program.Settings.BookmarkMasterVerse = 1;
-          SaveBookmarks();
+          Bookmarks.Save();
           UpdateBookmarks();
         }
         else
         {
           Bookmarks.Remove((ReferenceItem)menuitem.Tag);
-          SaveBookmarks();
+          Bookmarks.Save();
           UpdateBookmarks();
         }
       };
@@ -130,7 +78,6 @@ namespace Ordisoftware.HebrewWords
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
       }
-      SaveBookmarks();
     }
 
     internal void AddCurrentToHistory()

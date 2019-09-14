@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2015-06 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;

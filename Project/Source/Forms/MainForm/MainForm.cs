@@ -169,7 +169,7 @@ namespace Ordisoftware.HebrewWords
         form.ProgressBar.Value = 6;
         Refresh();
         InitBooksCombobox();
-        LoadBookmarks();
+        Bookmarks.Load();
         UpdateBookmarks();
         form.ProgressBar.Value = 7;
         Refresh();
@@ -440,7 +440,7 @@ namespace Ordisoftware.HebrewWords
         int verse = CurrentReference.Verse?.Number ?? 1;
         BooksTableAdapter.Fill(DataSet.Books);
         InitBooksCombobox();
-        LoadBookmarks();
+        Bookmarks.Load();
         UpdateBookmarks();
         GoTo(book, chapter, verse);
       }
@@ -1030,7 +1030,7 @@ namespace Ordisoftware.HebrewWords
       var item = new ReferenceItem(CurrentReference.Book.Number,
                                    CurrentReference.Chapter.Number,
                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
-      AddBookmark(item);
+      Bookmarks.Add(item);
       UpdateBookmarks();
     }
 
@@ -1041,7 +1041,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BookmarkMasterVerse = 1;
       Bookmarks.Clear();
       Program.Settings.Store();
-      SaveBookmarks();
+      Bookmarks.Save();
       UpdateBookmarks();
     }
 

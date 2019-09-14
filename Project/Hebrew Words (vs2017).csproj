@@ -61,6 +61,10 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\Bookmarks.cs" />
+    <Compile Include="Data\BookItem.cs" />
+    <Compile Include="Data\ChapterItem.cs" />
+    <Compile Include="Data\ReferenceItemComparer.cs" />
+    <Compile Include="Data\WordReferencedItem.cs" />
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
@@ -75,7 +79,7 @@
     </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Data\ReferenceItem.cs" />
-    <Compile Include="Source\Classes\BooksNames.cs" />
+    <Compile Include="Source\Enums\BooksNames.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
