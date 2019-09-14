@@ -112,165 +112,165 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ButtonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 2</value>
+  </data>
+  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="ButtonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
+    <value>ButtonCancel</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 80</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 28</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 43</value>
+  </data>
+  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 16</value>
+  </data>
+  <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
+    <value>ProgressBar</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 17</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 18</value>
+  </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Generating docx...</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 43</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 28</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 118</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ExportForm</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 17</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>267, 118</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ButtonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
-    <value>ButtonCancel</value>
-  </data>
-  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 2</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ButtonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 18</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 16</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
-    <value>ProgressBar</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ExportForm</value>
-  </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 118</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>267, 118</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ExportForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExportingForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

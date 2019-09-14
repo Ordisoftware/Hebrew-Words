@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -24,6 +25,8 @@ namespace Ordisoftware.HebrewWords
     public LoadingForm()
     {
       InitializeComponent();
+      Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - Width / 2,
+                           MainForm.Instance.Top + MainForm.Instance.Height / 2 - Height / 2);
     }
 
   }

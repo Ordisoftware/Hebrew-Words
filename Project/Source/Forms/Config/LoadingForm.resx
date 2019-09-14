@@ -112,19 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 70</value>
   </data>
   <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 12</value>
+    <value>200, 12</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -132,7 +132,7 @@
     <value>ProgressBar</value>
   </data>
   <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -162,7 +162,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -192,7 +192,7 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -200,7 +200,7 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 110</value>
+    <value>280, 110</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -217,7 +217,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -225,17 +225,17 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>190, 110</value>
+    <value>280, 110</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>LoadingForm</value>
@@ -244,6 +244,6 @@
     <value>LoadingForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

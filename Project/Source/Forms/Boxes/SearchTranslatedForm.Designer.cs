@@ -167,6 +167,7 @@
       resources.ApplyResources(this.EditHebrew, "EditHebrew");
       this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditHebrew.Name = "EditHebrew";
+      this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
       // 
       // SearchTranslatedForm
       // 

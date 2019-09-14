@@ -19,7 +19,6 @@ using System.IO;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Data;
@@ -395,6 +394,16 @@ namespace Ordisoftware.HebrewWords
           Clipboard.SetText(EditELS50All.Text);
           break;
       }
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowGrammarGuide for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
     /// <summary>

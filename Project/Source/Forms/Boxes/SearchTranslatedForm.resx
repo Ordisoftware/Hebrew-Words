@@ -117,66 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;LabelReference.Name" xml:space="preserve">
-    <value>LabelReference</value>
-  </data>
-  <data name="&gt;&gt;LabelReference.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelReference.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;LabelReference.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ButtonClose.Name" xml:space="preserve">
-    <value>ButtonClose</value>
-  </data>
-  <data name="&gt;&gt;ButtonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonClose.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ButtonClose.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 378</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 28</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="LabelReference.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelReference.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="LabelReference.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 28</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelReference.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -205,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 3</value>
+    <value>202, 3</value>
   </data>
   <data name="ButtonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -228,44 +180,29 @@
   <data name="&gt;&gt;ButtonClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ListView.Name" xml:space="preserve">
-    <value>ListView</value>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;ListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 378</value>
   </data>
-  <data name="&gt;&gt;ListView.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 28</value>
   </data>
-  <data name="&gt;&gt;ListView.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
   </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
   </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
-  </data>
-  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 10</value>
-  </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 298</value>
-  </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Reference</value>
@@ -282,39 +219,6 @@
   <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 76</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
-    <value>ContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 288</value>
-  </data>
-  <data name="ListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ListView.Name" xml:space="preserve">
-    <value>ListView</value>
-  </data>
-  <data name="&gt;&gt;ListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListView.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;ListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -378,65 +282,65 @@
   <data name="ActionReachReference.Text" xml:space="preserve">
     <value>Reach reference</value>
   </data>
-  <data name="&gt;&gt;EditWholeWord.Name" xml:space="preserve">
-    <value>EditWholeWord</value>
+  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 76</value>
   </data>
-  <data name="&gt;&gt;EditWholeWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
+    <value>ContextMenuStrip</value>
   </data>
-  <data name="&gt;&gt;EditWholeWord.Parent" xml:space="preserve">
-    <value>PanelTop</value>
+  <data name="&gt;&gt;ContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditWholeWord.ZOrder" xml:space="preserve">
+  <data name="ListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 288</value>
+  </data>
+  <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ActionUpdate.Name" xml:space="preserve">
-    <value>ActionUpdate</value>
+  <data name="&gt;&gt;ListView.Name" xml:space="preserve">
+    <value>ListView</value>
   </data>
-  <data name="&gt;&gt;ActionUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionUpdate.Parent" xml:space="preserve">
-    <value>PanelTop</value>
+  <data name="&gt;&gt;ListView.Parent" xml:space="preserve">
+    <value>PanelMain</value>
   </data>
-  <data name="&gt;&gt;ActionUpdate.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;ListView.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;EditHebrew.Name" xml:space="preserve">
-    <value>EditHebrew</value>
+  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;EditHebrew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 80</value>
   </data>
-  <data name="&gt;&gt;EditHebrew.Parent" xml:space="preserve">
-    <value>PanelTop</value>
+  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
   </data>
-  <data name="&gt;&gt;EditHebrew.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 298</value>
   </data>
-  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
   </data>
-  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
   </data>
-  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 70</value>
-  </data>
-  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditWholeWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -504,7 +408,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 3</value>
+    <value>235, 3</value>
   </data>
   <data name="ActionUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -534,7 +438,7 @@
     <value>3, 7</value>
   </data>
   <data name="EditHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
+    <value>226, 35</value>
   </data>
   <data name="EditHebrew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -554,14 +458,35 @@
   <data name="&gt;&gt;EditHebrew.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 70</value>
+  </data>
+  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 1000</value>

@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-08 </edited>
 using System;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -278,41 +279,78 @@ namespace Ordisoftware.HebrewWords
       LoadData();
     }
 
+    private int GetRowsCount(string tableName)
+    {
+      int count = 0;
+      var connection = new OdbcConnection(Program.Settings.ConnectionString);
+      connection.Open();
+      try
+      {
+        var command = new OdbcCommand("SELECT COUNT(ID) FROM [" + tableName + "]", connection);
+        var reader = command.ExecuteReader();
+        reader.Read();
+        count = (int)reader[0];
+      }
+      finally
+      {
+        connection.Close();
+      }
+      return count;
+    }
+
     /// <summary>
     /// Show a splash screen while loading data.
     /// </summary>
     private void PopulateData()
     {
+      DataRowChangeEventHandler progress = null;
+      const int Paging = 50000;
       var form = new LoadingForm();
-      form.ProgressBar.Maximum = 7;
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
       IsLoadingData = true;
       try
       {
-        form.ProgressBar.Value = 1;
-        Refresh();
-        CreateDatabaseIfNotExists();
-        form.ProgressBar.Value = 2;
-        Refresh();
-        BooksTableAdapter.Fill(DataSet.Books);
-        form.ProgressBar.Value = 3;
-        Refresh();
-        ChaptersTableAdapter.Fill(DataSet.Chapters);
-        form.ProgressBar.Value = 4;
-        Refresh();
-        VersesTableAdapter.Fill(DataSet.Verses);
-        form.ProgressBar.Value = 5;
-        Refresh();
-        WordsTableAdapter.Fill(DataSet.Words);
-        form.ProgressBar.Value = 6;
-        Refresh();
-        InitBooksCombobox();
-        Bookmarks.Load();
-        UpdateBookmarks();
-        form.ProgressBar.Value = 7;
-        Refresh();
+        int rowsCount = GetRowsCount("Books")
+                      + GetRowsCount("Chapters")
+                      + GetRowsCount("Verses")
+                      + GetRowsCount("Words");
+        int step = 0;
+        int total = 0;
+        form.ProgressBar.Maximum = rowsCount / Paging * 2;
+        progress = (sender, e) =>
+        {
+          total++;
+          step++;
+          if ( step < Paging ) return;
+          form.ProgressBar.PerformStep();
+          step = 0;
+          Refresh();
+          Application.DoEvents();
+        };
+        DataSet.Books.RowChanged += progress;
+        DataSet.Chapters.RowChanged += progress;
+        DataSet.Verses.RowChanged += progress;
+        DataSet.Words.RowChanged += progress;
+        try
+        {
+          CreateDatabaseIfNotExists();
+          BooksTableAdapter.Fill(DataSet.Books);
+          ChaptersTableAdapter.Fill(DataSet.Chapters);
+          VersesTableAdapter.Fill(DataSet.Verses);
+          WordsTableAdapter.Fill(DataSet.Words);
+          InitBooksCombobox();
+          Bookmarks.Load();
+          UpdateBookmarks();
+        }
+        finally
+        {
+          DataSet.Books.RowChanged -= progress;
+          DataSet.Chapters.RowChanged -= progress;
+          DataSet.Verses.RowChanged -= progress;
+          DataSet.Words.RowChanged -= progress;
+        }
       }
       finally
       {

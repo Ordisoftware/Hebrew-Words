@@ -158,6 +158,10 @@ namespace Ordisoftware.HebrewWords
      Close();
     }
 
+    private void EditHebrew_TextChanged(object sender, EventArgs e)
+    {
+      EditWholeWord.Checked = false;
+    }
   }
 
 }
