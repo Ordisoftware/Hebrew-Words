@@ -48,11 +48,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Indicate if is in loading data stage.
-    /// </summary>
-    public bool IsLoadingData { get; private set; }
-
-    /// <summary>
     /// Indicate current bible reference.
     /// </summary>
     public ReferenceItem CurrentReference { get; set; }
@@ -62,8 +57,19 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
-    private bool IsGotoRunning = false;
+    /// <summary>
+    /// Indicate if is in loading data stage.
+    /// </summary>
+    public bool IsLoadingData { get; private set; }
 
+    /// <summary>
+    /// Indicate if GoTo is running.
+    /// </summary>
+    private bool IsGoToRunning = false;
+
+    /// <summary>
+    /// Indicate if windows session is ending.
+    /// </summary>
     private bool IsSessionEnding;
 
     /// <summary>
@@ -877,8 +883,8 @@ namespace Ordisoftware.HebrewWords
     public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
     {
       if ( reference == null ) return;
-      if ( IsGotoRunning ) return;
-      IsGotoRunning = true;
+      if ( IsGoToRunning ) return;
+      IsGoToRunning = true;
       bool updated = false;
       try
       {
@@ -895,7 +901,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        IsGotoRunning = false;
+        IsGoToRunning = false;
       }
       if ( IsLoadingData ) return;
       if ( updated || forceUpdateView )

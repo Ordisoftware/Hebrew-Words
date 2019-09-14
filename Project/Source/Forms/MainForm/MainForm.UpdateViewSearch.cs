@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewWords
     static private string SearchWord1;
     static private string SearchWord2;
 
-    private IEnumerable<ReferenceItem> SearchResults;
+    static private IEnumerable<ReferenceItem> SearchResults;
     static public int SearchResultsCount { get; private set; }
 
     private bool CheckSearchedWord(string str)
