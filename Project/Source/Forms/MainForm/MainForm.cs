@@ -837,9 +837,9 @@ namespace Ordisoftware.HebrewWords
       try
       {
         ActionSave.PerformClick();
-        CurrentReference = new ReferenceItem(CurrentReference);
-        CurrentReference.Chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-        CurrentReference.Verse = null;
+        CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
+                                             ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
+                                             1);
         UpdateViews();
         GoTo(CurrentReference);
       }

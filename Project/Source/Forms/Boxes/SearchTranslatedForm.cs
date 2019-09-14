@@ -118,8 +118,6 @@ namespace Ordisoftware.HebrewWords
         if ( control is WordControl )
           if ( ( (WordControl)control ).Word == reference.Word )
             ( (WordControl)control ).Focus();
-      Focus();
-      BringToFront();
     }
 
     private void ActionReachReference_Click(object sender, EventArgs e)
