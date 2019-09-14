@@ -84,18 +84,18 @@ namespace Ordisoftware.HebrewWords
     private void RenderSearchResults()
     {
       if ( InProcess ) return;
+      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+      PanelSearchResults.Controls.Clear();
+      PanelSearchResults.Refresh();
+      Refresh();
+      GC.Collect();
+      LabelFindRefCount.Text = "0";
+      if ( SearchResults == null ) return;
       InProcess = true;
       SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();
       try
       {
-        PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-        PanelSearchResults.Controls.Clear();
-        PanelSearchResults.Refresh();
-        Refresh();
-        GC.Collect();
-        LabelFindRefCount.Text = "0";
-        if ( SearchResults == null ) return;
         int index = 0;
         int indexDelta = 0;
         int indexDeltaMax = 10;
