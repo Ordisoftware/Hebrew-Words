@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewWords
       form.WordControl = sender;
       form.LabelReference.Text = reference.ToString();
       form.EditHebrew.Text = sender.LabelHebrew.Text;
-      form.Text = reference.ToString();
+      form.Text = reference.ToString() + " {" + sender.Word.Number + "}";
       form.Show();
     }
 
