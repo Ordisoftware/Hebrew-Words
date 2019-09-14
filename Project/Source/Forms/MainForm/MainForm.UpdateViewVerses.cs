@@ -27,15 +27,15 @@ namespace Ordisoftware.HebrewWords
     private void UpdateViewVerses()
     {
       CurrentReference.Verse = null;
-      var itemBook = (BookItem)SelectBook.SelectedItem;
-      var itemChapter = (ChapterItem)SelectChapter.SelectedItem;
-      EditELS50.Text = itemChapter.Chapter.ELS50;
+      var itemBook = CurrentReference.Book;
+      var itemChapter = CurrentReference.Chapter;
+      EditELS50.Text = itemChapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
       var references = from book in DataSet.Books
                        from chapter in book.GetChaptersRows()
                        from verse in chapter.GetVersesRows()
-                       where book.Number == itemBook.Book.Number 
-                          && chapter.Number == itemChapter.Chapter.Number
+                       where book.Number == itemBook.Number 
+                          && chapter.Number == itemChapter.Number
                        select new ReferenceItem(book, chapter, verse);
       SetFormDisabled(true);
       PanelViewVerses.SuspendLayout();
@@ -44,6 +44,8 @@ namespace Ordisoftware.HebrewWords
         if ( PanelViewVerses.Controls.Count > 0 )
           PanelViewVerses.ScrollControlIntoView(PanelViewVerses.Controls[0]);
         PanelViewVerses.Controls.Clear();
+        PanelViewVerses.Refresh();
+        PanelViewVerses.AutoScrollPosition = new Point(0, 0);
         var control = new WordControl();
         control.Width = Program.Settings.WordControlWidth;
         int mX = 50;

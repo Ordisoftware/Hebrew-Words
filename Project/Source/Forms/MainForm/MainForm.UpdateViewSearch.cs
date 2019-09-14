@@ -75,6 +75,8 @@ namespace Ordisoftware.HebrewWords
       try
       {
         PanelSearchResults.Controls.Clear();
+        PanelSearchResults.Refresh();
+        PanelViewVerses.AutoScrollPosition = new Point(0, 0);
         GC.Collect();
         LabelFindRefCount.Text = "0";
         if ( SearchResults == null ) return;
