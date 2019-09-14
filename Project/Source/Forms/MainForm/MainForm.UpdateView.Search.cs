@@ -44,9 +44,19 @@ namespace Ordisoftware.HebrewWords
         {
           return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
         };
-        Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row => 
+        Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row =>
         {
-          return row.Translation.ToLower().Contains(SearchWord1);
+          var str = row.Translation.ToLower();
+          if ( !SearchWord1.Contains(",") )
+            return str.Contains(SearchWord1);
+          else
+          {
+            var list = SearchWord1.Split(',');
+            foreach ( string item in list )
+              if ( item.Length >= 3 && str.Contains(item) )
+                return true;
+            return false;
+          }
         };
         if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
         {

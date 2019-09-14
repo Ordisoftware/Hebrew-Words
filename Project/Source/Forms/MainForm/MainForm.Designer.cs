@@ -61,6 +61,7 @@
       this.PanelSearchTop = new System.Windows.Forms.Panel();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
+      this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
       this.PanelNavigation = new System.Windows.Forms.Panel();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
@@ -419,10 +420,16 @@
       // 
       // SelectSearchTypeTranslation
       // 
+      this.SelectSearchTypeTranslation.Controls.Add(this.label2);
       this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
       resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
       this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
       this.SelectSearchTypeTranslation.UseVisualStyleBackColor = true;
+      // 
+      // label2
+      // 
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
       // 
       // EditSearchTranslation
       // 
@@ -430,6 +437,7 @@
       this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.Name = "EditSearchTranslation";
+      this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // PanelNavigation
       // 
@@ -1330,6 +1338,7 @@
     private System.Windows.Forms.Label LabelFindRefCount;
     public System.Windows.Forms.TextBox EditSearchTranslation;
     private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Label label2;
   }
 }
 
