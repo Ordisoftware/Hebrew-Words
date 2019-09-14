@@ -99,19 +99,19 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewTranslation.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Translation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.UpdateViews.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewVerses.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Verses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewESL50.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.ESL50.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewRawText.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.RawText.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
@@ -154,7 +154,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViewSearch.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
