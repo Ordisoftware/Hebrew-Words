@@ -143,6 +143,19 @@ namespace Ordisoftware.HebrewWords
     {
       LabelCount.ForeColor = LabelCount.Text == "0" ? Color.DarkRed : Color.DarkGreen;
     }
+
+    private void ActionAddAll_Click(object sender, EventArgs e)
+    {
+      foreach ( ListViewItem item in SelectBooks.Items )
+        item.Checked = true;
+    }
+
+    private void ActionRemoveAll_Click(object sender, EventArgs e)
+    {
+      foreach ( ListViewItem item in SelectBooks.Items )
+        item.Checked = false;
+    }
+
   }
   
 }

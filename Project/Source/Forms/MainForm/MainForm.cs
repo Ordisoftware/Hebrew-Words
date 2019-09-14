@@ -380,10 +380,16 @@ namespace Ordisoftware.HebrewWords
     private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
     {
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+      {
+        ActiveControl = EditLetters;
         EditLetters.Input.Focus();
+      }
       else
       if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+      {
+        ActiveControl = EditSearchTranslation;
         EditSearchTranslation.Focus();
+      }
     }
 
     /// <summary>

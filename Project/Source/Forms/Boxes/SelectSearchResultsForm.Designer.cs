@@ -43,6 +43,8 @@
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.EditOnlyWithTranslation = new System.Windows.Forms.CheckBox();
       this.EditOnlyWithoutTranslation = new System.Windows.Forms.CheckBox();
+      this.ActionAddAll = new System.Windows.Forms.Button();
+      this.ActionRemoveAll = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -142,11 +144,29 @@
       this.EditOnlyWithoutTranslation.UseVisualStyleBackColor = true;
       this.EditOnlyWithoutTranslation.CheckedChanged += new System.EventHandler(this.EditOnlyWithoutTranslation_CheckedChanged);
       // 
+      // ActionAddAll
+      // 
+      this.ActionAddAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAddAll, "ActionAddAll");
+      this.ActionAddAll.Name = "ActionAddAll";
+      this.ActionAddAll.UseVisualStyleBackColor = true;
+      this.ActionAddAll.Click += new System.EventHandler(this.ActionAddAll_Click);
+      // 
+      // ActionRemoveAll
+      // 
+      this.ActionRemoveAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemoveAll, "ActionRemoveAll");
+      this.ActionRemoveAll.Name = "ActionRemoveAll";
+      this.ActionRemoveAll.UseVisualStyleBackColor = true;
+      this.ActionRemoveAll.Click += new System.EventHandler(this.ActionRemoveAll_Click);
+      // 
       // SelectSearchResultsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionRemoveAll);
+      this.Controls.Add(this.ActionAddAll);
       this.Controls.Add(this.EditOnlyWithoutTranslation);
       this.Controls.Add(this.EditOnlyWithTranslation);
       this.Controls.Add(this.SelectBooks);
@@ -183,5 +203,7 @@
     private System.Windows.Forms.Button ActionSelect;
     private System.Windows.Forms.CheckBox EditOnlyWithTranslation;
     private System.Windows.Forms.CheckBox EditOnlyWithoutTranslation;
+    private System.Windows.Forms.Button ActionAddAll;
+    private System.Windows.Forms.Button ActionRemoveAll;
   }
 }

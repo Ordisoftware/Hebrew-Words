@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewWords
           {
             MenuItem = ActionViewSearch,
             Panel = PanelViewSearch,
-            Focused = null
+            Focused = SelectSearchType
           }
         }
       };
