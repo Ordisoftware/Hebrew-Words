@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -152,6 +153,17 @@ namespace Ordisoftware.HebrewWords
     {
       EditMinRefCount.Maximum = EditMaxRefCount.Value / 2;
     }
+
+    private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
+    {
+      MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
+    }
+
+    private void ActionSelectStudyBible_Click(object sender, EventArgs e)
+    {
+      EditOnlineVerseURL.Text = "https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%";
+    }
+
   }
 
 }

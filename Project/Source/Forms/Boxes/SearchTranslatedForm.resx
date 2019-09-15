@@ -298,7 +298,7 @@
     <value>0, 0</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 288</value>
+    <value>272, 270</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -319,13 +319,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
+    <value>10, 98</value>
   </data>
   <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 298</value>
+    <value>272, 280</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -341,6 +341,129 @@
   </data>
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="SelectDistinct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectDistinct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 66</value>
+  </data>
+  <data name="SelectDistinct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="SelectDistinct.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SelectDistinct.Text" xml:space="preserve">
+    <value>Distinct</value>
+  </data>
+  <data name="&gt;&gt;SelectDistinct.Name" xml:space="preserve">
+    <value>SelectDistinct</value>
+  </data>
+  <data name="&gt;&gt;SelectDistinct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectDistinct.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;SelectDistinct.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 44</value>
+  </data>
+  <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 22</value>
+  </data>
+  <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ActionReset.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
+    <value>ActionReset</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionDelLast.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionDelLast.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionDelLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionDelLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 44</value>
+  </data>
+  <data name="ActionDelLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="ActionDelLast.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ActionDelLast.Text" xml:space="preserve">
+    <value>- &lt;</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Name" xml:space="preserve">
+    <value>ActionDelLast</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionDelFirst.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionDelFirst.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionDelFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 44</value>
+  </data>
+  <data name="ActionDelFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="ActionDelFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ActionDelFirst.Text" xml:space="preserve">
+    <value>- &gt;</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Name" xml:space="preserve">
+    <value>ActionDelFirst</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="EditWholeWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +490,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditWholeWord.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="ActionUpdate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -426,7 +549,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;ActionUpdate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="EditHebrew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -456,7 +579,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditHebrew.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -465,7 +588,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 70</value>
+    <value>272, 88</value>
   </data>
   <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>

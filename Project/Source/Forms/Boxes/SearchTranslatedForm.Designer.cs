@@ -43,9 +43,13 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop = new System.Windows.Forms.Panel();
+      this.ActionReset = new System.Windows.Forms.Button();
+      this.ActionDelLast = new System.Windows.Forms.Button();
+      this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.ActionUpdate = new System.Windows.Forms.Button();
       this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.SelectDistinct = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
@@ -140,11 +144,39 @@
       // 
       // PanelTop
       // 
+      this.PanelTop.Controls.Add(this.SelectDistinct);
+      this.PanelTop.Controls.Add(this.ActionReset);
+      this.PanelTop.Controls.Add(this.ActionDelLast);
+      this.PanelTop.Controls.Add(this.ActionDelFirst);
       this.PanelTop.Controls.Add(this.EditWholeWord);
       this.PanelTop.Controls.Add(this.ActionUpdate);
       this.PanelTop.Controls.Add(this.EditHebrew);
       resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
+      // 
+      // ActionReset
+      // 
+      this.ActionReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.Name = "ActionReset";
+      this.ActionReset.UseVisualStyleBackColor = true;
+      this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
+      // 
+      // ActionDelLast
+      // 
+      this.ActionDelLast.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionDelLast, "ActionDelLast");
+      this.ActionDelLast.Name = "ActionDelLast";
+      this.ActionDelLast.UseVisualStyleBackColor = true;
+      this.ActionDelLast.Click += new System.EventHandler(this.ActionDelLast_Click);
+      // 
+      // ActionDelFirst
+      // 
+      this.ActionDelFirst.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionDelFirst, "ActionDelFirst");
+      this.ActionDelFirst.Name = "ActionDelFirst";
+      this.ActionDelFirst.UseVisualStyleBackColor = true;
+      this.ActionDelFirst.Click += new System.EventHandler(this.ActionDelFirst_Click);
       // 
       // EditWholeWord
       // 
@@ -168,6 +200,14 @@
       this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditHebrew.Name = "EditHebrew";
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
+      // 
+      // SelectDistinct
+      // 
+      resources.ApplyResources(this.SelectDistinct, "SelectDistinct");
+      this.SelectDistinct.Checked = true;
+      this.SelectDistinct.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.SelectDistinct.Name = "SelectDistinct";
+      this.SelectDistinct.UseVisualStyleBackColor = true;
       // 
       // SearchTranslatedForm
       // 
@@ -213,5 +253,9 @@
     private System.Windows.Forms.TextBox EditHebrew;
     private System.Windows.Forms.Button ActionUpdate;
     private System.Windows.Forms.CheckBox EditWholeWord;
+    private System.Windows.Forms.Button ActionDelLast;
+    private System.Windows.Forms.Button ActionDelFirst;
+    private System.Windows.Forms.Button ActionReset;
+    private System.Windows.Forms.CheckBox SelectDistinct;
   }
 }

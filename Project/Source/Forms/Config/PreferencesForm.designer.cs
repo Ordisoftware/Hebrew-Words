@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label LabelHebrewLettersPath;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelOnlineSearch;
@@ -66,6 +67,9 @@
       this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
+      this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
+      this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionSelectStudyBible = new System.Windows.Forms.ToolStripMenuItem();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -88,6 +92,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).BeginInit();
+      this.MenuSelectOnlineVerseURL.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -145,6 +150,11 @@
       resources.ApplyResources(LabelHistoryCount, "LabelHistoryCount");
       LabelHistoryCount.Name = "LabelHistoryCount";
       // 
+      // LabelMinRefCount
+      // 
+      resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
+      LabelMinRefCount.Name = "LabelMinRefCount";
+      // 
       // ButtonClose
       // 
       resources.ApplyResources(this.ButtonClose, "ButtonClose");
@@ -154,9 +164,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionReset);
       this.PanelButtons.Controls.Add(this.ButtonClose);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionReset
@@ -173,8 +183,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -190,8 +200,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
+      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -223,10 +233,10 @@
       // 
       // GroupBoxHebrewWordClick
       // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -255,6 +265,10 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
+      // 
+      // FolderBrowserDialog
+      // 
+      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // label1
       // 
@@ -293,12 +307,12 @@
       // 
       // EditWordControlWidth
       // 
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -318,12 +332,12 @@
       // 
       // EditMaxRefCount
       // 
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             50,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -362,20 +376,38 @@
             0});
       this.EditHistoryCount.Name = "EditHistoryCount";
       // 
-      // LabelMinRefCount
-      // 
-      resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
-      LabelMinRefCount.Name = "LabelMinRefCount";
-      // 
       // EditMinRefCount
       // 
+      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Name = "EditMinRefCount";
+      // 
+      // ActionSelectOnlineVerseURL
+      // 
+      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
+      this.ActionSelectOnlineVerseURL.AllowDrop = true;
+      this.ActionSelectOnlineVerseURL.ContextMenuStrip = this.MenuSelectOnlineVerseURL;
+      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
+      this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
+      this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
+      this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
+      // 
+      // MenuSelectOnlineVerseURL
+      // 
+      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
+      this.MenuSelectOnlineVerseURL.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionSelectStudyBible});
+      this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
+      // 
+      // ActionSelectStudyBible
+      // 
+      resources.ApplyResources(this.ActionSelectStudyBible, "ActionSelectStudyBible");
+      this.ActionSelectStudyBible.Name = "ActionSelectStudyBible";
+      this.ActionSelectStudyBible.Click += new System.EventHandler(this.ActionSelectStudyBible_Click);
       // 
       // PreferencesForm
       // 
@@ -383,6 +415,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.ActionSelectOnlineVerseURL);
       this.Controls.Add(this.LabelSystemHandles);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
@@ -432,6 +465,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).EndInit();
+      this.MenuSelectOnlineVerseURL.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -463,5 +497,8 @@
     private System.Windows.Forms.NumericUpDown EditHistoryCount;
     private System.Windows.Forms.LinkLabel ActionReset;
     private System.Windows.Forms.NumericUpDown EditMinRefCount;
+    private System.Windows.Forms.Button ActionSelectOnlineVerseURL;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
+    private System.Windows.Forms.ToolStripMenuItem ActionSelectStudyBible;
   }
 }

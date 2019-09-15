@@ -601,31 +601,42 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionApplicationHome for click events.
+    /// Event handler. Called by ActionWebHome for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionApplicationHome_Click(object sender, EventArgs e)
+    private void ActionWebHome_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenApplicationHome();
     }
 
     /// <summary>
-    /// Event handler. Called by ActionContact for click events.
+    /// Event handler. Called by ActionWebContact for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionContact_Click(object sender, EventArgs e)
+    private void ActionWebContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
     }
 
     /// <summary>
-    /// Event handler. Called by ActionCheckUpdate for click events.
+    /// Event handler. Called by ActionOpenWebsiteURL for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionCheckUpdate_Click(object sender, EventArgs e)
+    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
+    {
+      string url = (string)( (ToolStripItem)sender ).Tag;
+      SystemManager.OpenWebLink(url);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionWebCheckUpdate for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       CheckUpdate(false);
     }

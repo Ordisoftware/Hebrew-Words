@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Divrei_HaYamim_2, "b mymyh yrbd" }
     };
 
-    static public Dictionary<Books, string> English = new Dictionary<Books, string>()
+    static public Dictionary<Books, string> StudyBible = new Dictionary<Books, string>()
     {
       // Torah
       { Books.Bereshit, "Genesis" },

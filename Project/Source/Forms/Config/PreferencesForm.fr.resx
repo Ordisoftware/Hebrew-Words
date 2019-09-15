@@ -241,13 +241,31 @@
     <value>Recherche des traductions</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 12</value>
+    <value>324, 12</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Utiliser %BOOKNAME%, %BOOKNUM%, %CHAPTERNUM et %VERSENUM%</value>
+    <value>Utiliser %BOOKSB%, %BOOKNUM%, %CHAPTERNUM et %VERSENUM%</value>
   </data>
   <data name="LabelSystemHandles.Text" xml:space="preserve">
     <value>La limite des handles système doit être changée pour plus de 300.</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
+        lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
+        rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
+        mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
+        Q3A7lzvPcLwlhzdT2ZwW3cTrHJmxaFQb1Y9/ip+neegDz/hP3i5k45rbw4PJbZiDKznhFEmqmePAsws8
+        8pezUuX8EYtGtUn9lOKeBRxjcH8EjMVVVJaL1FTbuH3Thmitp772HmKNiFgrctdai8VcjcVSkxxpsFnT
+        zDnPAgZp5xKDAf+gH5fbi6vjFe4OLx1hXniidETPYX+AEmMFkQZbBAeFgbMobjUz9T1EKBgkGAz9k4mJ
+        CUrLK+tlidrWuaMtTVQUFTPQP4C52oqp0kLFMoRrVZLna/9gdIrES1ZL4o0PlBkK6e3ppcHWxEhglMAy
+        hGsNtka6unspLTNF1kiKF+zBUn0+n7q78bz0MjTkw+lsx9nmwtHm/o3ThW9oiJeS52NXD+Wmqug7SNp5
+        UXt9rFAnoBc0FGjU5Gm0KNX55Kr0ZKsKkauvoRQKUAv5aLT5CLoC5HKlI5aPaMeq8zf1a/Jc/tV6Lyuu
+        vpF2zGLYfAif+Qjegn11kif8dX+yVSIqpUKBSi5HI8+VzlyyspT4TXthRojQb9pPZraWHIWKXIVykVhc
+        JktLTSM9RmpKOoePnqLPuIv3RckR+oy7OXjsNCkpGaSlpi8Si0f093j/gSz5F3LjOUKOXwa4AAAAAElF
+        TkSuQmCC
+</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

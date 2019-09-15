@@ -180,7 +180,7 @@ namespace Ordisoftware.HebrewWords
         {
           
           process.StartInfo.FileName = Settings.OpenVerseOnline
-                                       .Replace("%BOOKNAME%", BooksNames.English[book])
+                                       .Replace("%BOOKSB%", BooksNames.StudyBible[book])
                                        .Replace("%BOOKNUM%", book.ToString())
                                        .Replace("%CHAPTERNUM%", chapter.ToString())
                                        .Replace("%VERSENUM%", verse.ToString());
