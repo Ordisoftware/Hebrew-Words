@@ -68,6 +68,11 @@ namespace Ordisoftware.HebrewWords
       return true;
     }
 
+    private void FlowLayoutPanel_Click(object sender, EventArgs e)
+    {
+      Focus();
+    }
+
     private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
     {
       EditTranslation.Focus();

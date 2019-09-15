@@ -51,6 +51,7 @@
       this.FlowLayoutPanel.Controls.Add(this.EditTranslation);
       resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
       this.FlowLayoutPanel.Name = "FlowLayoutPanel";
+      this.FlowLayoutPanel.Click += new System.EventHandler(this.FlowLayoutPanel_Click);
       // 
       // LabelHebrew
       // 
