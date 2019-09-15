@@ -28,6 +28,18 @@ namespace Ordisoftware.HebrewWords
 
     private int ScrollIncrement = 25;
 
+    private void RotateSearchTab()
+    {
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+        SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
+      else
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+        SelectSearchType.SelectedTab = SelectSearchTypeRequest;
+      else
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeRequest )
+        SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
+    }
+
     /// <summary>
     /// Process the command key.
     /// </summary>
@@ -70,16 +82,7 @@ namespace Ordisoftware.HebrewWords
           if ( Program.Settings.CurrentView != ViewModeType.Search )
             ActionViewSearch.PerformClick();
           else
-          {
-            if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
-              SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
-            else
-            if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
-              SelectSearchType.SelectedTab = SelectSearchTypeRequest;
-            else
-            if ( SelectSearchType.SelectedTab == SelectSearchTypeRequest )
-              SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-          }
+            RotateSearchTab();
           return true;
         case Keys.F8:
           ActionPreferences.PerformClick();

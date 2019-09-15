@@ -336,8 +336,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.Search ) return;
-      SetView(ViewModeType.Search);
+      if ( Program.Settings.CurrentView == ViewModeType.Search )
+        RotateSearchTab();
+      else
+        SetView(ViewModeType.Search);
       SelectSearchType_Selected(null, null);
     }
 
@@ -620,16 +622,6 @@ namespace Ordisoftware.HebrewWords
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionCreateGitHubIssue for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink("https://github.com/Ordisoftware/Hebrew-Words/issues");
     }
 
     /// <summary>
