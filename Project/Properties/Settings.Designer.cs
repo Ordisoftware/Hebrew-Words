@@ -404,5 +404,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchTranslatedFilterDistinct"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchHebrewOnlyInTorah {
+            get {
+                return ((bool)(this["SearchHebrewOnlyInTorah"]));
+            }
+            set {
+                this["SearchHebrewOnlyInTorah"] = value;
+            }
+        }
     }
 }
