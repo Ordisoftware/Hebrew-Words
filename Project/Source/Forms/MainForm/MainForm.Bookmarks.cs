@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private readonly BookmarkList Bookmarks = new BookmarkList();
+    private readonly Bookmarks Bookmarks = new Bookmarks();
 
     private readonly List<ReferenceItem> History = new List<ReferenceItem>();
 

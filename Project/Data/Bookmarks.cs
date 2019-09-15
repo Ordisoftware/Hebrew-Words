@@ -21,43 +21,48 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewWords
 {
 
-  public class BookmarkList : List<ReferenceItem>
+  public class Bookmarks
   {
 
-    private string BookmarksFilename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
+    private string Filename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
+
+    private List<ReferenceItem> Items = new List<ReferenceItem>();
 
     public void Load()
     {
-      Clear();
-      if ( File.Exists(BookmarksFilename) )
-        try
+      Items.Clear();
+      if ( !File.Exists(Filename) )
+        return;
+      try
+      {
+        var list = File.ReadLines(Filename);
+        for ( int index = list.Count() - 1; index >= 0; index-- )
         {
-          var list = File.ReadLines(BookmarksFilename);
-          for ( int index = list.Count() - 1; index >= 0; index-- )
-          {
-            string item = list.ElementAt(index);
-            if ( item == "" || item.Count(c => c == '.') != 2 ) continue;
-            var parts = item.Split('.');
-            Add(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                          Convert.ToInt32(parts[1]),
-                                          Convert.ToInt32(parts[2])));
-          }
+          string item = list.ElementAt(index);
+          if ( item == "" || item.Count(c => c == '.') != 2 )
+            continue;
+          var parts = item.Split('.');
+          Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
+                                      Convert.ToInt32(parts[1]),
+                                      Convert.ToInt32(parts[2])));
         }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     public void Save()
     {
       try
       {
-        if ( MainForm.Instance.IsLoadingData ) return;
+        if ( MainForm.Instance.IsLoadingData )
+          return;
         var items = new List<string>();
-        foreach ( var reference in this )
+        foreach ( var reference in Items )
           items.Add(reference.ToStringNumbers());
-        File.WriteAllLines(BookmarksFilename, items);
+        File.WriteAllLines(Filename, items);
       }
       catch ( Exception ex )
       {
@@ -67,11 +72,12 @@ namespace Ordisoftware.HebrewWords
 
     public void Add(ReferenceItem reference)
     {
-      if ( Program.Settings.BookmarksCount < 1 ) return;
-      foreach ( var value in this )
-        if ( value.ToStringNumbers() == reference.ToStringNumbers() )
+      if ( Program.Settings.BookmarksCount < 1 )
+        return;
+      foreach ( var value in Items )
+        if ( value.Equals(reference) )
           return;
-      Insert(0, reference);
+      Items.Insert(0, reference);
     }
 
   }
