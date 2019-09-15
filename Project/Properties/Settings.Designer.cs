@@ -227,7 +227,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOK_SB% %CHAPTER_NUM%:%VERSE_NUM%")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%")]
         public string OpenVerseOnline {
             get {
                 return ((string)(this["OpenVerseOnline"]));
