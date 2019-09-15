@@ -304,7 +304,7 @@ namespace Ordisoftware.HebrewWords
     private void PopulateData()
     {
       DataRowChangeEventHandler progress = null;
-      const int Paging = 50000;
+      const int Paging = 10000;
       var form = new LoadingForm();
       form.Show();
       form.Refresh();
@@ -317,11 +317,9 @@ namespace Ordisoftware.HebrewWords
                       + GetRowsCount("Verses")
                       + GetRowsCount("Words");
         int step = 0;
-        int total = 0;
         form.ProgressBar.Maximum = rowsCount / Paging * 2;
         progress = (sender, e) =>
         {
-          total++;
           step++;
           if ( step < Paging ) return;
           form.ProgressBar.PerformStep();
