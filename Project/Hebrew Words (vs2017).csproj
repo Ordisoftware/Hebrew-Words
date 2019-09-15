@@ -63,7 +63,7 @@
     <Compile Include="Data\Bookmarks.cs" />
     <Compile Include="Data\BookItem.cs" />
     <Compile Include="Data\ChapterItem.cs" />
-    <Compile Include="Data\WordReferencedItemComparer.cs" />
+    <Compile Include="Data\SearchTranslatedComparer.cs" />
     <Compile Include="Data\ReferenceItemComparer.cs" />
     <Compile Include="Data\WordReferencedItem.cs" />
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
