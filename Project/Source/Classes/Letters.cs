@@ -19,7 +19,7 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Provide Hebrew Words default values.
+  /// Provide hebreu letters class.
   /// </summary>
   static public class Letters
   {
