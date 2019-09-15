@@ -66,7 +66,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add master bookmark used at startup.
 - Add bookmarks.
 - Add navigation history.
-- Add grammar guide (french).
+- Add grammar guide.
 - Improve UI.
 - Improve search.
 - Improve verses rendering.
