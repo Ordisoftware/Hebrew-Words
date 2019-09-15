@@ -63,12 +63,13 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add search translations of a word.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
+- Add option to disable startup check update.
 - Add master bookmark used at startup.
 - Add bookmarks.
 - Add navigation history.
 - Add grammar guide.
 - Improve UI.
-- Improve search.
+- Improve search functionnnalities.
 - Improve verses rendering.
 - Improve translations rendering.
 - Improve search rendering.
