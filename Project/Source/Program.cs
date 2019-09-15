@@ -45,13 +45,13 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate filename of the application's icon.
     /// </summary>
-    static public readonly string IconFilename 
+    static public readonly string IconFilename
       = RootFolderPath + "Application.ico";
 
     /// <summary>
     /// Indicate the extension of database file.
     /// </summary>
-    static public readonly string DBFileExtension 
+    static public readonly string DBFileExtension
       = ".sqlite";
 
     /// <summary>
@@ -104,43 +104,36 @@ namespace Ordisoftware.HebrewWords
         catch
         {
         }
-      try
+      var assembly = typeof(Program).Assembly;
+      var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+      string id = assembly.FullName + attribute.Value;
+      bool created;
+      var mutex = new Mutex(true, id, out created);
+      if ( !created ) return;
+      if ( Settings.UpgradeRequired )
       {
-        var assembly = typeof(Program).Assembly;
-        var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-        string id = assembly.FullName + attribute.Value;
-        bool created;
-        var mutex = new Mutex(true, id, out created);
-        if ( !created ) return;
-        if ( Settings.UpgradeRequired )
-        {
-          Settings.Upgrade();
-          Settings.UpgradeRequired = false;
-          Settings.Save();
-        }
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
-        AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) 
-                       + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyCompany 
-                       + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyTitle 
-                       + Path.DirectorySeparatorChar;
-        UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 
-                            + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyCompany 
-                            + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyTitle 
-                            + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(UserDataFolderPath);
-        Application.Run(MainForm.Instance);
+        Settings.Upgrade();
+        Settings.UpgradeRequired = false;
+        Settings.Save();
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
+      AboutBox.Instance.Icon = MainForm.Instance.Icon;
+      UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                     + Path.DirectorySeparatorChar
+                     + AboutBox.Instance.AssemblyCompany
+                     + Path.DirectorySeparatorChar
+                     + AboutBox.Instance.AssemblyTitle
+                     + Path.DirectorySeparatorChar;
+      UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                          + Path.DirectorySeparatorChar
+                          + AboutBox.Instance.AssemblyCompany
+                          + Path.DirectorySeparatorChar
+                          + AboutBox.Instance.AssemblyTitle
+                          + Path.DirectorySeparatorChar;
+      Directory.CreateDirectory(UserDataFolderPath);
+      Application.Run(MainForm.Instance);
     }
 
     static public void OpenHebrewLetters(string hebrew)
@@ -178,7 +171,7 @@ namespace Ordisoftware.HebrewWords
       using ( var process = new Process() )
         try
         {
-          
+
           process.StartInfo.FileName = Settings.OpenVerseOnline
                                        .Replace("%BOOKSB%", BooksNames.StudyBible[book])
                                        .Replace("%BOOKNUM%", book.ToString())

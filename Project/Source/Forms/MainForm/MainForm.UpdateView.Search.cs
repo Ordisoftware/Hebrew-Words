@@ -18,6 +18,7 @@ using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -32,19 +33,24 @@ namespace Ordisoftware.HebrewWords
 
     public int SearchResultsCount { get; private set; }
 
-    private Func<Data.DataSet.WordsRow, bool> CheckSearch;
+    private Func<DataSet.WordsRow, bool> CheckWord;
+    private Func<DataSet.VersesRow, bool> CheckVerse;
 
     private void CreateSearchResults()
     {
       SearchResults = null;
+      CheckWord = null;
+      CheckVerse = null;
+      SearchWord1 = "";
+      SearchWord2 = "";
       int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
-      Func<Data.DataSet.WordsRow, bool> checkWordHebrew = row =>
+      Func<DataSet.WordsRow, bool> checkWordHebrew = row =>
       {
         return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
       };
-      Func<Data.DataSet.WordsRow, bool> checkWordTranslation = row =>
+      Func<DataSet.WordsRow, bool> checkWordTranslation = row =>
       {
-        var str = row.Translation.ToLower();
+        var str = row.Translation.ToLower().RemoveDiacritics();
         if ( !SearchWord1.Contains(",") )
           return str.Contains(SearchWord1);
         else
@@ -60,26 +66,63 @@ namespace Ordisoftware.HebrewWords
           return false;
         }
       };
+      Func<DataSet.VersesRow, bool> checkTranslatedAll = verse =>
+      {
+        return verse.IsTranslated();
+      };
+      Func<DataSet.VersesRow, bool> checkTranslatedAllFully = verse =>
+      {
+        return verse.IsFullyTranslated();
+      };
+      Func<DataSet.VersesRow, bool> checkTranslatedAllPartially = verse =>
+      {
+        return verse.IsPartiallyTranslated();
+      };
+      Func<DataSet.VersesRow, bool> checkTranslatedAllUntranslated = verse =>
+      {
+        return verse.IsUntranslated();
+      };
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
         SearchWord1 = EditLetters.Input.Text;
         SearchWord2 = Letters.SetFinale(SearchWord1, true);
-        CheckSearch = checkWordHebrew;
+        CheckWord = checkWordHebrew;
       }
       if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
       {
-        SearchWord1 = EditSearchTranslation.Text.ToLower(); ;
-        SearchWord2 = "";
-        CheckSearch = checkWordTranslation;
+        SearchWord1 = EditSearchTranslation.Text.ToLower().RemoveDiacritics();
+        CheckWord = checkWordTranslation;
       }
-      if ( SearchWord1 != "" && SearchWord1.Length >= 2 )
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeRequest )
+      {
+        if ( SelectSearchRequestAllTranslated.Checked )
+          CheckVerse = checkTranslatedAll;
+        if ( SelectSearchRequestAllFullyTranslated.Checked )
+          CheckVerse = checkTranslatedAllFully;
+        if ( SelectSearchRequestAllPartiallyTranslated.Checked )
+          CheckVerse = checkTranslatedAllPartially;
+        if ( SelectSearchRequestAllUntranslated.Checked )
+          CheckVerse = checkTranslatedAllUntranslated;
+      }
+      if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null)
       {
         SearchResults = from book in DataSet.Books
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
-                        where book.Number <= limit && CheckSearch(word)
+                        where book.Number <= limit && CheckWord(word)
                         select new ReferenceItem(book, chapter, verse);
+      }
+      if ( CheckVerse != null )
+      {
+        SearchResults = from book in DataSet.Books
+                        from chapter in book.GetChaptersRows()
+                        from verse in chapter.GetVersesRows()
+                        where book.Number <= limit && CheckVerse(verse)
+                        select new ReferenceItem(book, chapter, verse);
+      }
+      if ( SearchResults != null )
+      {
         SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
         SearchResultsCount = SearchResults.Count();
         if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
@@ -143,15 +186,16 @@ namespace Ordisoftware.HebrewWords
           x -= marginX;
           xx = x;
           Label label = null;
-          foreach ( Data.DataSet.WordsRow word in reference.Verse.GetWordsRows() )
+          foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
           {
             label = new Label();
-            label.Text = word.Hebrew;
+            label.Text = word.Hebrew.Trim();
             label.AutoSize = true;
             label.Font = HebrewFont12;
-            label.ForeColor = CheckSearch(word)
-                            ? Color.DarkRed
-                            : SystemColors.ControlText;
+            if ( CheckWord != null )
+              label.ForeColor = CheckWord(word)
+                              ? Color.DarkRed
+                              : SystemColors.ControlText;
             x -= label.PreferredSize.Width;
             if ( x < minX )
             {
@@ -163,13 +207,12 @@ namespace Ordisoftware.HebrewWords
             PanelSearchResults.Controls.Add(label);
           }
           y += label.PreferredHeight + marginY;
-          string translation = reference.Translation;
-          if ( translation != "" )
+          if ( reference.Verse.IsTranslated() )
           {
             label = new Label();
             label.AutoSize = true;
             label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
-            label.Text = translation;
+            label.Text = reference.Verse.GetTranslation();
             label.Location = new Point(xx - label.PreferredSize.Width, y);
             label.Click += (sender, e) => PanelSearchResults.Focus();
             PanelSearchResults.Controls.Add(label);

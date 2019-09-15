@@ -416,5 +416,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchHebrewOnlyInTorah"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentSearchType {
+            get {
+                return ((int)(this["CurrentSearchType"]));
+            }
+            set {
+                this["CurrentSearchType"] = value;
+            }
+        }
     }
 }

@@ -93,9 +93,9 @@ namespace Ordisoftware.HebrewWords
           list.Add((int)item.Tag);
       References = References.Where(r => list.Contains(r.Book.Number));
       if ( EditOnlyWithTranslation.Checked )
-        References = References.Where(r => r.Verse.GetTranslation() != "");
+        References = References.Where(r => r.Verse.IsPartiallyTranslated());
       if ( EditOnlyWithoutTranslation.Checked )
-        References = References.Where(r => r.Verse.GetTranslation() == "");
+        References = References.Where(r => r.Verse.IsUntranslated());
       DialogResult = DialogResult.Yes;
     }
 
@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewWords
       Mutex = false;
       if ( EditOnlyWithTranslation.Checked )
       {
-        CreateReferences(References.Where(r => r.Verse.GetTranslation() != ""));
+        CreateReferences(References.Where(r => r.Verse.IsTranslated()));
         ActionAddAll.PerformClick();
       }
       else
@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewWords
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
       {
-        CreateReferences(References.Where(r => r.Verse?.GetTranslation() == ""));
+        CreateReferences(References.Where(r => r.Verse.IsUntranslated()));
         ActionAddAll.PerformClick();
       }
       else

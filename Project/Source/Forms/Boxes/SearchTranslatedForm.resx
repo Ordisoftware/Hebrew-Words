@@ -133,7 +133,7 @@
     <value>0</value>
   </data>
   <data name="LabelReference.Text" xml:space="preserve">
-    <value>Divrei_HaYamim_1 20.5</value>
+    <value>Reference</value>
   </data>
   <data name="LabelReference.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

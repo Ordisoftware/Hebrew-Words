@@ -28,8 +28,6 @@ namespace Ordisoftware.HebrewWords
     public DataSet.ChaptersRow Chapter { get; set; }
     public DataSet.VersesRow Verse { get; set; }
 
-    public string Translation { get { return Verse.GetTranslation(); } }
-
     public override string ToString()
     {
       return ( Book?.Name ?? "(null)" ) + " " +

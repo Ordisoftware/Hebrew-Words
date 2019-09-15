@@ -745,7 +745,8 @@ namespace Ordisoftware.HebrewWords
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
-      ActionSearchWord.PerformClick();
+      SearchResults = null;
+      RenderSearchResults();
     }
 
     /// <summary>

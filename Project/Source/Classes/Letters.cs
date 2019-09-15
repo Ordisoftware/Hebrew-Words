@@ -13,6 +13,7 @@
 /// <created> 2012-10 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewWords
@@ -24,9 +25,16 @@ namespace Ordisoftware.HebrewWords
   static public class Letters
   {
 
+    public static string RemoveDiacritics(this string text)
+    {
+      if ( string.IsNullOrEmpty(text) )
+        return string.Empty;
+      return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
+    }
+    
     /// <summary>
-    /// Indicate letters keyboard codes.
-    /// </summary>
+         /// Indicate letters keyboard codes.
+         /// </summary>
     static public readonly string[] Codes = 
     {
       "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",
