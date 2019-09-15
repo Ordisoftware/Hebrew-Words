@@ -95,6 +95,7 @@ namespace Ordisoftware.HebrewWords
       {
         ListView.Items.Clear();
         string wordHebrew = EditHebrew.Text;
+        if ( wordHebrew.Length < 2 ) return;
         Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
         Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
         Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
@@ -104,7 +105,7 @@ namespace Ordisoftware.HebrewWords
                          from word in verse.GetWordsRows()
                          where check(word.Hebrew) && word.Translation != ""
                          select new WordReferencedItem(book, chapter, verse, word);
-        if ( SelectDistinct.Checked )
+        if ( EditDistinct.Checked )
           references = references.Distinct(new SearchTranslatedComparer());
         foreach ( var item in references )
         {
@@ -179,19 +180,30 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionDelLast_Click(object sender, EventArgs e)
     {
+      if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(0, 1);
+      ActionUpdate.PerformClick();
     }
 
     private void ActionDelFirst_Click(object sender, EventArgs e)
     {
+      if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(EditHebrew.Text.Length - 1, 1);
+      ActionUpdate.PerformClick();
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       EditHebrew.Text = WordControl.Word.Hebrew;
       EditWholeWord.Checked = true;
+      ActionUpdate.PerformClick();
     }
+
+    private void EditFilter_CheckedChanged(object sender, EventArgs e)
+    {
+      ActionUpdate.PerformClick();
+    }
+
   }
 
 }

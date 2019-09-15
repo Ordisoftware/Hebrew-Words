@@ -392,5 +392,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["GrammarGuideFormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchTranslatedFilterDistinct {
+            get {
+                return ((bool)(this["SearchTranslatedFilterDistinct"]));
+            }
+            set {
+                this["SearchTranslatedFilterDistinct"] = value;
+            }
+        }
     }
 }

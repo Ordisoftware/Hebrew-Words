@@ -29,8 +29,7 @@ namespace Ordisoftware.HebrewWords
         return false;
       try
       {
-        bool result = ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
-        return result;
+        return ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
       }
       catch
       {

@@ -84,19 +84,19 @@ namespace Ordisoftware.HebrewWords
         SearchResultsCount = SearchResults.Count();
         if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-        RenderSearchResults();
       }
+      RenderSearchResults();
     }
 
     private void RenderSearchResults()
     {
-      if ( SearchResults == null ) return;
       if ( InProcess ) return;
       PanelSearchResults.Controls.Clear();
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Refresh();
       GC.Collect();
       LabelFindRefCount.Text = "0";
+      if ( SearchResults == null ) return;
       InProcess = true;
       SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();

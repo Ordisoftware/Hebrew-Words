@@ -43,13 +43,13 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop = new System.Windows.Forms.Panel();
+      this.EditDistinct = new System.Windows.Forms.CheckBox();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionDelLast = new System.Windows.Forms.Button();
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.ActionUpdate = new System.Windows.Forms.Button();
       this.EditHebrew = new System.Windows.Forms.TextBox();
-      this.SelectDistinct = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
@@ -144,7 +144,7 @@
       // 
       // PanelTop
       // 
-      this.PanelTop.Controls.Add(this.SelectDistinct);
+      this.PanelTop.Controls.Add(this.EditDistinct);
       this.PanelTop.Controls.Add(this.ActionReset);
       this.PanelTop.Controls.Add(this.ActionDelLast);
       this.PanelTop.Controls.Add(this.ActionDelFirst);
@@ -153,6 +153,16 @@
       this.PanelTop.Controls.Add(this.EditHebrew);
       resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
+      // 
+      // EditDistinct
+      // 
+      resources.ApplyResources(this.EditDistinct, "EditDistinct");
+      this.EditDistinct.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFilterDistinct;
+      this.EditDistinct.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditDistinct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFilterDistinct", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditDistinct.Name = "EditDistinct";
+      this.EditDistinct.UseVisualStyleBackColor = true;
+      this.EditDistinct.CheckedChanged += new System.EventHandler(this.EditFilter_CheckedChanged);
       // 
       // ActionReset
       // 
@@ -185,6 +195,7 @@
       this.EditWholeWord.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditWholeWord.Name = "EditWholeWord";
       this.EditWholeWord.UseVisualStyleBackColor = true;
+      this.EditWholeWord.CheckedChanged += new System.EventHandler(this.EditFilter_CheckedChanged);
       // 
       // ActionUpdate
       // 
@@ -200,14 +211,6 @@
       this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditHebrew.Name = "EditHebrew";
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
-      // 
-      // SelectDistinct
-      // 
-      resources.ApplyResources(this.SelectDistinct, "SelectDistinct");
-      this.SelectDistinct.Checked = true;
-      this.SelectDistinct.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.SelectDistinct.Name = "SelectDistinct";
-      this.SelectDistinct.UseVisualStyleBackColor = true;
       // 
       // SearchTranslatedForm
       // 
@@ -256,6 +259,6 @@
     private System.Windows.Forms.Button ActionDelLast;
     private System.Windows.Forms.Button ActionDelFirst;
     private System.Windows.Forms.Button ActionReset;
-    private System.Windows.Forms.CheckBox SelectDistinct;
+    private System.Windows.Forms.CheckBox EditDistinct;
   }
 }

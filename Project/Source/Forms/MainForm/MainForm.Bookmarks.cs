@@ -28,9 +28,9 @@ namespace Ordisoftware.HebrewWords
 
     private void GoToBookmark(object sender, EventArgs e)
     {
-      ActionSave.PerformClick();
       SetView(ViewModeType.Verses);
       GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+      ActionSave.PerformClick();
     }
 
     internal void UpdateBookmarks()

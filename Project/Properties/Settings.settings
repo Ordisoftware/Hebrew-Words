@@ -100,5 +100,8 @@
     <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">392, 466</Value>
     </Setting>
+    <Setting Name="SearchTranslatedFilterDistinct" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -342,31 +342,31 @@
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SelectDistinct.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditDistinct.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="SelectDistinct.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditDistinct.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 66</value>
   </data>
-  <data name="SelectDistinct.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditDistinct.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 17</value>
   </data>
-  <data name="SelectDistinct.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditDistinct.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="SelectDistinct.Text" xml:space="preserve">
+  <data name="EditDistinct.Text" xml:space="preserve">
     <value>Distinct</value>
   </data>
-  <data name="&gt;&gt;SelectDistinct.Name" xml:space="preserve">
-    <value>SelectDistinct</value>
+  <data name="&gt;&gt;EditDistinct.Name" xml:space="preserve">
+    <value>EditDistinct</value>
   </data>
-  <data name="&gt;&gt;SelectDistinct.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditDistinct.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectDistinct.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditDistinct.Parent" xml:space="preserve">
     <value>PanelTop</value>
   </data>
-  <data name="&gt;&gt;SelectDistinct.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditDistinct.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
