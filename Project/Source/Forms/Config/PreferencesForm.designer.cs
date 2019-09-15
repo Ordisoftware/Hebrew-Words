@@ -70,6 +70,7 @@
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSelectStudyBible = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -409,12 +410,22 @@
       this.ActionSelectStudyBible.Name = "ActionSelectStudyBible";
       this.ActionSelectStudyBible.Click += new System.EventHandler(this.ActionSelectStudyBible_Click);
       // 
+      // EditCheckUpdateAtStartup
+      // 
+      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
+      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
+      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionSelectOnlineVerseURL);
       this.Controls.Add(this.LabelSystemHandles);
       this.Controls.Add(this.EditWordControlWidth);
@@ -500,5 +511,6 @@
     private System.Windows.Forms.Button ActionSelectOnlineVerseURL;
     private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
     private System.Windows.Forms.ToolStripMenuItem ActionSelectStudyBible;
+    private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
   }
 }

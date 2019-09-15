@@ -202,6 +202,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void CheckUpdate(bool auto)
     {
+      if ( auto && !Program.Settings.CheckUpdateAtStartup ) return;
       try
       {
         string title = AboutBox.Instance.AssemblyTitle;
