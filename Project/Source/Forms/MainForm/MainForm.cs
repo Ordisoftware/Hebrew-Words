@@ -271,7 +271,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( IsReady ) return;
+      if ( !IsReady ) return;
       Program.Settings.MainFormPosition = ControlLocation.Loose;
     }
 
