@@ -24,9 +24,16 @@ namespace Ordisoftware.HebrewWords
   public class Bookmarks
   {
 
-    private string Filename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
+    private string Filename
+    {
+      get
+      {
+        return Program.UserDataFolderPath + "Bookmarks.txt";
+      }
+    }
 
-    private List<ReferenceItem> Items = new List<ReferenceItem>();
+    private readonly List<ReferenceItem> Items 
+      = new List<ReferenceItem>();
 
     public void Load()
     {
