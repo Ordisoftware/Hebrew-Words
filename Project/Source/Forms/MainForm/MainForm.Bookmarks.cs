@@ -37,8 +37,6 @@ namespace Ordisoftware.HebrewWords
     {
       while ( MenuBookmarks.DropDownItems.Count > 4 )
         MenuBookmarks.DropDownItems.RemoveAt(4);
-      while ( Bookmarks.Count > Program.Settings.BookmarksCount )
-        Bookmarks.RemoveAt(Bookmarks.Count - 1);
       Bookmarks.Save();
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,

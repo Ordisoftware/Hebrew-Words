@@ -17,12 +17,16 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using Ordisoftware.Core;
+using System.Collections;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  public class Bookmarks
+  public class Bookmarks : IEnumerable<ReferenceItem>
   {
+
+    private readonly List<ReferenceItem> Items
+      = new List<ReferenceItem>();
 
     private string Filename
     {
@@ -32,8 +36,36 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private readonly List<ReferenceItem> Items 
-      = new List<ReferenceItem>();
+    public int Count
+    {
+      get
+      {
+        return Items.Count;
+      }
+    }
+
+    public ReferenceItem this[int index]
+    {
+      get
+      {
+        return Items[index];
+      }
+    }
+
+    IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
+    {
+      return Items.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return Items.GetEnumerator();
+    }
+
+    public void Clear()
+    {
+      Items.Clear();
+    }
 
     public void Load()
     {
@@ -66,6 +98,8 @@ namespace Ordisoftware.HebrewWords
       {
         if ( MainForm.Instance.IsLoadingData )
           return;
+        while ( Items.Count > Program.Settings.BookmarksCount )
+          Items.RemoveAt(Items.Count - 1);
         var items = new List<string>();
         foreach ( var reference in Items )
           items.Add(reference.ToStringNumbers());
@@ -85,6 +119,11 @@ namespace Ordisoftware.HebrewWords
         if ( value.Equals(reference) )
           return;
       Items.Insert(0, reference);
+    }
+
+    public void Remove(ReferenceItem reference)
+    {
+      Items.Remove(reference);
     }
 
   }
