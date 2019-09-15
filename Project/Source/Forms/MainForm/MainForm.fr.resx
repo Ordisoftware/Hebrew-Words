@@ -511,39 +511,39 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="MenuWeb.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionWebHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -563,7 +563,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="ActionWebHome.Text" xml:space="preserve">
     <value>Site web</value>
@@ -581,10 +581,33 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
+  </data>
+  <data name="ActionCreateGitHubIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ4SURBVDhPjVNNaxRBEG2j+zGTmWSme3o+NoouHoSgS/wF
+        KyiEyGYFZcFrEK/ePS2C4scv8OZB8KL+AcFDDsGjN0FBAgZF1qMG4mbj+F7tTJxgBAsqU/3q1duu6oqq
+        2Ezhqt1ud84uLj7qdDob55eWNumMiTFHDmyfX7USsLOO80QH4diEOsf3gBfYmBxypyV/xI7yT61WOxdb
+        +6mVZnkaJ5M4sjs4/0Q8pjMmxhw55LJGFAoN1VTqRGzjLZByY8wmCrYzxDzzW42ZI4dn1rBWRGhBELxg
+        wppou9FonAZ0Us+HT4E/n/f9u3TGxJgjh1zWsFZEAF4C8CuxcZ6Y+DugTBJKHSm+VSuxFoR+sIa11FAh
+        foXKBNH3FkhmylXH4Oyd32pMM+QWQjk1VIR+CbB/z/NuF8Sy4DCTHLmsYS01FIIxfI/K9Xp9RajlKxxu
+        kiO36GSPGhTifCZUdxznmlD/Q4jc4kYTaigMbYRAesXr3Bcq3gD+r2Ezp8B9UM4WGt+UCYJXBNIpMMIL
+        nCIR9tf6wwQDp129ADWU67prWZLmRpuNWNsPWLjPuPZV8CN4nYWFMU6bzeZ1Dre4zS7bg8YNIdjIvuO2
+        +r6/ksTJe/kXiOwIuXKnlIPdQeGXLE7LAe/KbbR+izQWHIarXmCxCcOXft0/o4PgMURvSXI6F5lXFJg3
+        LEZbOxRjJ6i9yBxNXgGFa8dbC7nW+hmuehl70pXsVERmg5u/5g9CYLKQtbh3N4nD9l+5DJa9pvM18OfY
+        93qBUUSEXMddn/P8fNZxP+K4TAx2cFUGg4EAvV7PvbK6egcuqzAcDmfojPv9/kP4vW636/Fc1iil1G/w
+        tL0oDRm0hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 24</value>
+  </data>
+  <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
+    <value>Envoyer une requête</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 6</value>
+    <value>293, 6</value>
   </data>
   <data name="ActionWebCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -602,13 +625,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="ActionWebCheckUpdate.Text" xml:space="preserve">
     <value>Vérifier mise à jour</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 6</value>
+    <value>293, 6</value>
   </data>
   <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -629,7 +652,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
     <value>Tanak Hébreu MP3</value>
@@ -653,7 +676,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -674,7 +697,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
     <value>Bible interlinéaire @ biblehub.com</value>
@@ -698,7 +721,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Tanak interlinéaire @ studybible.info</value>
@@ -722,7 +745,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Euangélion interlinéaire @ studybible.info</value>
@@ -746,13 +769,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Text" xml:space="preserve">
     <value>Quran interlinéaire @ corpus.quran.com</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 6</value>
+    <value>293, 6</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -773,7 +796,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Text" xml:space="preserve">
     <value>Le lexique Shorashon</value>
@@ -797,7 +820,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Text" xml:space="preserve">
     <value>Le dictionnaire Sanskrit Héritage</value>
@@ -821,7 +844,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 22</value>
+    <value>296, 24</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Un dictionnaire Akkadien</value>
@@ -1169,57 +1192,57 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionViewBooksTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPjZBfSFNxFMfvU0hEJPRHIvKhP06boKZEUa2s
-        lDQMH5ze2cyGQsyHkCgrEu/slhUl9ZKVRk2XlHuQcOYfXCmRpRkjXPbP3BLTa/6pzGVZ8O38dq+bK4q+
-        8OHcc873nHvv4X5XwqnGlfFiEzSmRmwSGv6A1Vmf+ZSRQG0RbGUHKjvR8kJC+9sxPOwd9cFyVmd95lNG
-        AqUxNXguNr9CKaG7+gjpl9uhJVhkOauzPvMpI37Fn27dkXTGjvIHfTBanuK1NIHZYjmrs34y+baLzYnK
-        qKyNot1irOyCaHuOXPMTGK53IutaB/QVj72R5azO+nnmTmw12azewbNZG1ac49dgW0kLCmp7kG99hrxq
-        hxfjLGZqrH+k1okE8nsXFKfHltkv5SHEYEWIvhKLMs0Ei4SOnnU3fCxU4lK9GatyquQFgjbCI3WVY8Ge
-        W8D7u5gaaMTk8D1MSnZ4+hvgcdng6avzMeWqAwbr2fBaTuTjEs/naoDhO5ibQQvQQ/RhfNkceDZH0HMv
-        MO0EvnfLTBM/CTgRmlPFc4XaWGub5RC+vKlAtliOIJ0V3D4bPqmC8S0pFlx2HYJ4Ky2/jXm6GgTra7Bk
-        bzWWGyxQ7b8JzpQRh9GXVzDWfQHjjpP46BAw1H0C4+GL8TV5PfrbD2LQboREDDUZUZoeJn/6DMV8HI6l
-        qHF452qZpDDk747AaOh8TMbHID8lHAW7VDhKFKaqUcJHy4ebkaCNwWepAyPuNnxw3SdaIb1rw0C/jORu
-        9dZGqDZBPhphb/ZL0EbTQSQ6jBv44fo7rE8+IS2KV0ZlFWVETxSlReF4aiSh/geRYD4xc13gL5CiCP9R
-        /g9FHPcLNdglrXRbrgIAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPjZB7SFNxFMfvXyERkdBDIvKPHj5SmLYRRbWy
+        UtIw/MPNO5uZKMT8I0aUFYl3dsuKkvonK42aLin3h4Qzp7jaiCzNkNDsZc6G6TUflbksC76d3+71VRR9
+        4cO555zvOffew/2u+FPOlXFiPbQWJzYJdX/A6qzPfMrIbG0RHCUHylvQ+EJC09thPOwamoLlrM76zKeM
+        zJbWUue/2PAKxYTh6iPoLzdBR7DIclZnfeZTRqYVd9q9I/GMC6UPumGyPcVraRQzxXJWZ/0k8m0XGxKU
+        UVkbRZfNVN4K0fEcOdYnyLregoxrzTCWPQ5ElrM66+daW7DV4rAHBs9mbFhxjl+DbUWNyKvuhNn+DLmV
+        bQFMM5issf6R6g7Ekz+woFCvLnFdykVIlh0hxnIsSrcSLBIGejbcmGKhEpcarViVXSEvEHQRfqm1FAv2
+        3ALe38V4rxNjA/cwJrng99XB73XA310zxbi3BuirZcNrOZHXJJzP0QIDdzA3jRagk+jGyLI58G+OpOcu
+        YKID+N4uM0H8JNCB0OwKnsvXqe0e2yF8eVOGTLEUQQY7uH0OfAoPxrdENbjMGgTxdlp+G/MMVQg2VmHJ
+        3kosz7IhfP9NcJY0DYZeXsFw+wWMtJ3ExzYB/e0nMBKxGF+T1sPXdBB9LhMkor/ehGJ9mPzpkxTyGhxL
+        jsLhnatlEsNg3h2JodD5GIuLhTk5Anm7wnGUyE+JQhEfIx9uUoIuFp+lZgz2ePDBe59wQ3rnQa9PRupx
+        B2qDVBslH42wN09L0MXQQSQ6TA/ww/t3WJ98QqqKV0ZlFaTFjBakqnA8JZqI+gfRYD4xfd3sXyCpiOmj
+        /B+KOO4XM5YlrAsP3XYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionViewBooksTranslation.Size" type="System.Drawing.Size, System.Drawing">
@@ -1234,20 +1257,20 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionViewStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALfSURBVDhPdZF7TM1hGMfP1spMzikVJaOWS5YTXSg6HI5L
-        FydCuaXCEaGl+QfD+Icz00UoxFzKapOtyGw2nJnbhKhY5ZZWLoUuLuXUjo/31/nNcZnv9t3eve/z/ex9
-        nkfxuzjnrLIUq3K7Tyq7KHeGi4OsFufuM8ou6Y1SlZNc/q+oWgePJ8BLEXoxWNhd9hDr3aMAeLoTudwm
-        zeZivV9qqQGTF3wtgw9J0DBSeKzsUdCyGHpLBMD3T4B2U7HX9G2lTNtzm8NZiVhMamgXkE9p0BxidVs6
-        WMrouDmGhq2BmBQDpstxhWJy2pnquCMPic1/QkRONSl7jHy8LL7aeha+HIKuTKCUjstTqAmPxJxgoEmr
-        465K5dUHSMm7TklVO0WVnyis7ODYnTaOXrjK80uz4d0BET5PU5GW6rBwepbEwxoDpKdy09XtXh9Au7Oc
-        2NN16AteEFn4ioizjegKmgk23oAn42jO0FOvCccStwQSE8GwCtI2cN9/vHUWUdm32L77OG88PXg90kfM
-        zJdX/mqeBUykJngqzzSzYJEY4PJlApAAq1dC6noqAwOtAJ94476GHTtgyjQIDQPRH7PnQORciJ4PCxbB
-        4r8A6RupjZn7axturw2r+SGGR3AoTJUA4TJgngAstAESVsDKJMx7d1GjCbOts9bLG0zXRH/JEKKBGTNB
-        TBx9NMQsgLg4WCpmEB9P75bNtOdnUuHhYQNcsu9X0bNWhMvLsGRnwcJY0IktREgQ6ReijeQ1dGca6TyR
-        w0s/T8r6O16R4wpFqouL7oGrG71Rc+jdvgXzyaOYS4rpyTuIOTeHb0Wn6MzeS+uyKBq9B1KhciTU3l4t
-        x/vUL8bOQW9SOpnf+vvxXTuJz6FqOoJG81E9gpax7rwf7UL9UBUmpbM5xsFBLzJ21qhNDsKB+QMc95uc
-        nFsqh7hT7zOcOu9hPHBzRbo74ajMkGrk2v9qsLD0vaC/LN1Jb79JofgJ7pn/aGlzgnsAAAAASUVORK5C
-        YII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALeSURBVDhPdZF7TM1hGMfPZmUm55RKJaNWkuVEiaLDSaTb
+        QegiKZcjQkvzD4bxD81IQklCLqtNtiKz2XBmuUwSFSOX0solt3I7nNrx8f46vzku892+27v3fb6fvc/z
+        KH4Xpx1U5nJVgfGI0ki1A5wbbLE4G0uVRumNSpW9XP6vaFgJ98bBMxF6OkTYVbaL5e5uADzYglxulWZd
+        uc4vs1KPwQO+VMHbxdDqLTxa9kjoTITeCgHw/ROgXVvuEbaxkqnbr3NgTxpmgxq6BOR9FnQEW/whG8xV
+        dNeMonVDIAbFwDA5rlBMyjremHDwDvHF94nKbyRjew7vLoivvjkFn/eDMReopPvCZJoiozGl6mnXhnNT
+        pfLoA2QUXqGioYuy+vecrO/m0I0PFJ29xJPzEfBqrwifob1MS2NoJD1JKbBcD9mZ1Dg53+oDaLdUE1/6
+        CN2Jp0SfbCHqVBvhJzoIyrkK98fQsVtHsyYSc0ISpKWBfilkrea2/1jLLGLyrrFp22FeuLvx3NtLzMyX
+        Fn81jwMm0BQ0hceaGTBfDHBhsgCkwrIlkLmK+sBAC8ArJWdn6+bNMHkqhISC6I+ImRAdC7PmwNz5kPgX
+        IHsND+Nif23D+bl+GT/E8AgKgSkSIFIGzBaAeVZA6iJYshjTjq00aUKt63zo4QmGy6K/dAjWwLTpICaO
+        bhbEzYWEBFggZpCSQu/6dXQV51Lr5mYFnLfpX9uzQoSrqzDn7YF58RAuthAlQaRfiDbSl/MtN4ePJfk8
+        83OnaoDdRTmuUGQ6OobXOTnTGzOT3k3rMR0twlRRTk/hPkwF+XwtO8bHvB28SY6hzXMQtSo7Qmxs1HK8
+        T/3j+tnqDEp700t/P75rJ/IpRE33eB/eqUfQOdqV1z6ONA9VYVA6mOJsbXUi088StcpWOLB4oN0ug71D
+        Z72LK81ew3nkOYw6ZyekuxI75W6pRq79r4YIS98b/5elO+ntNykUPwHe1/9kgvewQwAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ActionViewStatistics.Size" type="System.Drawing.Size, System.Drawing">
@@ -1419,19 +1442,19 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionRestore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">

@@ -622,6 +622,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionCreateGitHubIssue for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink("https://github.com/Ordisoftware/Hebrew-Words/issues");
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionOpenWebsiteURL for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

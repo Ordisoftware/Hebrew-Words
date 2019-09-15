@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( references == null ) return null;
       var form = new SelectSearchResultsForm();
-      form.References = references;
+      form.OriginalReferences = references.ToList();
       if ( form.ShowDialog() == DialogResult.Cancel )
         form.References = null;
       return form.References;
@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewWords
     private bool Mutex;
 
     private IEnumerable<ReferenceItem> References;
+    private IEnumerable<ReferenceItem> OriginalReferences;
     private int Count;
 
     private SelectSearchResultsForm()
@@ -53,7 +54,7 @@ namespace Ordisoftware.HebrewWords
 
     private void SelectSearchResultsForm_Load(object sender, EventArgs e)
     {
-      CreateReferences(References);
+      CreateReferences(OriginalReferences);
     }
 
     private void CreateReferences(IEnumerable<ReferenceItem> references)
@@ -61,6 +62,7 @@ namespace Ordisoftware.HebrewWords
       Initializing = true;
       try
       {
+        References = references.ToList();
         Count = 0;
         LabelCount.Text = "0";
         var query = from r in references
@@ -91,9 +93,9 @@ namespace Ordisoftware.HebrewWords
       foreach ( ListViewItem item in SelectBooks.Items )
         if ( item.Checked )
           list.Add((int)item.Tag);
-      References = References.Where(r => list.Contains(r.Book.Number));
+      References = OriginalReferences.ToList().Where(r => list.Contains(r.Book.Number));
       if ( EditOnlyWithTranslation.Checked )
-        References = References.Where(r => r.Verse.IsPartiallyTranslated());
+        References = References.Where(r => r.Verse.IsTranslated());
       if ( EditOnlyWithoutTranslation.Checked )
         References = References.Where(r => r.Verse.IsUntranslated());
       DialogResult = DialogResult.Yes;
@@ -124,11 +126,11 @@ namespace Ordisoftware.HebrewWords
       Mutex = false;
       if ( EditOnlyWithTranslation.Checked )
       {
-        CreateReferences(References.Where(r => r.Verse.IsTranslated()));
+        CreateReferences(OriginalReferences.ToList().Where(r => r.Verse.IsTranslated()));
         ActionAddAll.PerformClick();
       }
       else
-        CreateReferences(References);
+        CreateReferences(OriginalReferences.ToList());
     }
 
     private void EditOnlyWithoutTranslation_CheckedChanged(object sender, EventArgs e)
@@ -139,11 +141,11 @@ namespace Ordisoftware.HebrewWords
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
       {
-        CreateReferences(References.Where(r => r.Verse.IsUntranslated()));
+        CreateReferences(OriginalReferences.ToList().Where(r => r.Verse.IsUntranslated()));
         ActionAddAll.PerformClick();
       }
       else
-        CreateReferences(References);
+        CreateReferences(OriginalReferences.ToList());
     }
 
     private void LabelCount_TextChanged(object sender, EventArgs e)
