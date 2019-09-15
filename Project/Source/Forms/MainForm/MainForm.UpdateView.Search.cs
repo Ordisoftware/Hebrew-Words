@@ -124,7 +124,15 @@ namespace Ordisoftware.HebrewWords
       if ( SearchResults != null )
       {
         SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
-        SearchResultsCount = SearchResults.Count();
+        Cursor = Cursors.WaitCursor;
+        try
+        {
+          SearchResultsCount = SearchResults.Count();
+        }
+        finally
+        {
+          Cursor = Cursors.Default;
+        }
         if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
       }
