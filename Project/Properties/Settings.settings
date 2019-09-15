@@ -86,7 +86,7 @@
       <Value Profile="(Default)">292, 366</Value>
     </Setting>
     <Setting Name="SearchTranslatedLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">50, 50</Value>
     </Setting>
     <Setting Name="HistoryCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
@@ -95,7 +95,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">50, 50</Value>
     </Setting>
     <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">392, 466</Value>

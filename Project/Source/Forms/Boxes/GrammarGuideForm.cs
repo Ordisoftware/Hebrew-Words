@@ -21,11 +21,7 @@ namespace Ordisoftware.HebrewWords
   public partial class GrammarGuideForm : Form
   {
 
-    static internal GrammarGuideForm Instance
-    {
-      get;
-      private set;
-    }
+    static internal GrammarGuideForm Instance;
 
     static GrammarGuideForm()
     {
@@ -47,6 +43,17 @@ namespace Ordisoftware.HebrewWords
     {
       e.Cancel = true;
       Hide();
+    }
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+      switch ( keyData )
+      {
+        case Keys.Escape:
+          Close();
+          break;
+      }
+      return base.ProcessCmdKey(ref msg, keyData);
     }
 
   }

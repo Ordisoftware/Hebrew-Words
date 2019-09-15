@@ -404,6 +404,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
     {
       GrammarGuideForm.Instance.Show();
+      GrammarGuideForm.Instance.BringToFront();
     }
 
     /// <summary>
