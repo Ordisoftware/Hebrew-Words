@@ -72,42 +72,48 @@ namespace Ordisoftware.HebrewWords
         }
         checkTable("Books", @"CREATE TABLE 'Books' 
                               ( 
-                                ID text NOT NULL,
-                                Number integer NOT NULL,
-                                Hebrew text NOT NULL,
-                                Name text NOT NULL,
-                                Translation text NOT NULL,
+                                ID TEXT DEFAULT '' NOT NULL,
+                                Number INTEGER NOT NULL,
+                                Hebrew TEXT DEFAULT '' NOT NULL,
+                                Name TEXT DEFAULT '' NOT NULL,
+                                Translation TEXT DEFAULT '' NOT NULL,
+                                Memo TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                               )");
         checkTable("Chapters", @"CREATE TABLE Chapters 
                                  ( 
-                                   ID text NOT NULL,
-                                   BookID text NOT NULL,
-                                   Number integer NOT NULL,
-                                   ELS50 text NOT NULL,
+                                   ID TEXT DEFAULT '' NOT NULL,
+                                   BookID TEXT DEFAULT '' NOT NULL,
+                                   Number INTEGER NOT NULL,
+                                   ELS50 TEXT DEFAULT '' NOT NULL,
+                                   Memo TEXT DEFAULT '' NOT NULL,
                                    CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
                                    FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
                                  )");
         checkTable("Verses", @"CREATE TABLE Verses 
                                ( 
-                                 ID text NOT NULL,
-                                 ChapterID text NOT NULL,
-                                 Number integer NOT NULL,
-                                 Comment text NOT NULL,
+                                 ID TEXT DEFAULT '' NOT NULL,
+                                 ChapterID TEXT DEFAULT '' NOT NULL,
+                                 Number INTEGER NOT NULL,
+                                 Comment TEXT DEFAULT '' NOT NULL,
+                                 Memo TEXT DEFAULT '' NOT NULL,
                                  CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                                  FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                                )");
         checkTable("Words", @"CREATE TABLE Words 
                               ( 
-                                ID text NOT NULL,
-                                VerseID text NOT NULL,
-                                Number integer NOT NULL,
-                                Original text NOT NULL,
-                                Hebrew text NOT NULL,
-                                Translation text NOT NULL,
+                                ID TEXT DEFAULT '' NOT NULL,
+                                VerseID TEXT DEFAULT '' NOT NULL,
+                                Number INTEGER NOT NULL,
+                                Original TEXT DEFAULT '' NOT NULL,
+                                Hebrew TEXT DEFAULT '' NOT NULL,
+                                Translation TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                               )");
+        checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+        checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+        checkColumn("Verses", "Memo", "ALTER TABLE Verses ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
         CreateDataIfNotExists();
       }
       finally
@@ -312,6 +318,7 @@ namespace Ordisoftware.HebrewWords
       IsLoadingData = true;
       try
       {
+        CreateDatabaseIfNotExists();
         int rowsCount = GetRowsCount("Books")
                       + GetRowsCount("Chapters")
                       + GetRowsCount("Verses")
@@ -333,7 +340,6 @@ namespace Ordisoftware.HebrewWords
         DataSet.Words.RowChanged += progress;
         try
         {
-          CreateDatabaseIfNotExists();
           BooksTableAdapter.Fill(DataSet.Books);
           ChaptersTableAdapter.Fill(DataSet.Chapters);
           VersesTableAdapter.Fill(DataSet.Verses);
