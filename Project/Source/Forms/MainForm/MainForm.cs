@@ -455,10 +455,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( !DisplayManager.QueryYesNo(Localizer.NewDatabaseAdvertText.GetLang()) )
-        return;
       if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
+      if ( !DisplayManager.QueryYesNo(Localizer.NewDatabaseAdvertText.GetLang()) )
+        return;
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       ReLoadData(() =>
       {
@@ -500,6 +500,16 @@ namespace Ordisoftware.HebrewWords
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
       File.Copy(Program.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionOpenBackupPath for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOpenBackupPath_Click(object sender, EventArgs e)
+    {
+      Program.RunShell(Program.Settings.BackupPath);
     }
 
     /// <summary>
@@ -589,16 +599,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = Program.HelpFilename;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      Program.RunShell(Program.HelpFilename);
     }
 
     /// <summary>

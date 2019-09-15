@@ -136,53 +136,39 @@ namespace Ordisoftware.HebrewWords
       Application.Run(MainForm.Instance);
     }
 
-    static public void OpenHebrewLetters(string hebrew)
+    static public void RunShell(string filename, string arguments = "")
     {
-      hebrew = Letters.UnFinaleAll(hebrew);
       using ( var process = new Process() )
         try
         {
-          process.StartInfo.FileName = Settings.HebrewLettersExe;
-          process.StartInfo.Arguments = hebrew;
+          process.StartInfo.FileName = filename;
+          process.StartInfo.Arguments = arguments;
           process.Start();
         }
         catch ( Exception ex )
         {
-          ex.Manage();
+          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
         }
+    }
+
+    static public void OpenHebrewLetters(string hebrew)
+    {
+      hebrew = Letters.UnFinaleAll(hebrew);
+      RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
     static public void OpenOnlineConcordance(string hebrew)
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = Settings.SearchOnline + hebrew;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
-        }
+      RunShell(Settings.SearchOnline + hebrew);
     }
 
     static public void OpenOnlineVerse(Books book, int chapter, int verse)
     {
-      using ( var process = new Process() )
-        try
-        {
-
-          process.StartInfo.FileName = Settings.OpenVerseOnline
-                                       .Replace("%BOOKSB%", BooksNames.StudyBible[book])
-                                       .Replace("%BOOKNUM%", book.ToString())
-                                       .Replace("%CHAPTERNUM%", chapter.ToString())
-                                       .Replace("%VERSENUM%", verse.ToString());
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
-        }
+      RunShell(Settings.OpenVerseOnline
+               .Replace("%BOOKSB%", BooksNames.StudyBible[book])
+               .Replace("%BOOKNUM%", book.ToString())
+               .Replace("%CHAPTERNUM%", chapter.ToString())
+               .Replace("%VERSENUM%", verse.ToString()));
     }
 
   }

@@ -91,6 +91,7 @@ namespace Ordisoftware.HebrewWords
           ActionAbout.PerformClick();
           return true;
         case Keys.Control | Keys.Up:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
@@ -100,6 +101,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         case Keys.Control | Keys.Down:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
@@ -109,6 +111,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         case Keys.PageUp:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
@@ -118,6 +121,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         case Keys.PageDown:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
@@ -127,6 +131,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         case Keys.Control | Keys.Home:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
@@ -136,6 +141,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         case Keys.Control | Keys.End:
+          if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
             case ViewModeType.Verses:
