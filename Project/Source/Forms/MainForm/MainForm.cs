@@ -573,6 +573,8 @@ namespace Ordisoftware.HebrewWords
       {
         Refresh();
         UpdateViewVerses();
+        PagingCurrent = 0;
+        RenderSearchResults();
         var reference = Instance.CurrentReference;
         int verse = reference.Verse == null ? 1 : reference.Verse.Number;
         GoTo(reference.Book.Number, reference.Chapter.Number, verse);
@@ -880,9 +882,36 @@ namespace Ordisoftware.HebrewWords
       DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
-    private void PanelViewVerses_Paint(object sender, PaintEventArgs e)
+    private void ActionNavigateFirst_Click(object sender, EventArgs e)
     {
+      if ( InProcess ) return;
+      PagingCurrent = 0;
+      ActionNavigateFirst.Enabled = PagingCurrent != 0;
+      ActionNavigatePrevious.Enabled = PagingCurrent > 0;
+      ActionNavigateNext.Enabled = PagingCurrent < PagingCount - 1;
+      ActionNavigateLast.Enabled = PagingCurrent != PagingCount - 1;
+      RenderSearchResults();
+    }
 
+    private void ActionNavigatePrevious_Click(object sender, EventArgs e)
+    {
+      if ( InProcess ) return;
+      PagingCurrent--;
+      RenderSearchResults();
+    }
+
+    private void ActionNavigateNext_Click(object sender, EventArgs e)
+    {
+      if ( InProcess ) return;
+      PagingCurrent++;
+      RenderSearchResults();
+    }
+
+    private void ActionNavigateLast_Click(object sender, EventArgs e)
+    {
+      if ( InProcess ) return;
+      PagingCurrent = PagingCount - 1;
+      RenderSearchResults();
     }
   }
 

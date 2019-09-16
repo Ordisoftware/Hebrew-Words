@@ -26,7 +26,9 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private int PagingWaiter = 100;
     private int PagingCurrent = 0;
+    private int PagingCount = 0;
 
     private IEnumerable<ReferenceItem> SearchResults;
 
@@ -37,6 +39,14 @@ namespace Ordisoftware.HebrewWords
 
     private string SearchWord1;
     private string SearchWord2;
+
+    private void UpdateSearchButtons()
+    {
+      ActionNavigateFirst.Enabled = PagingCurrent != 0;
+      ActionNavigatePrevious.Enabled = PagingCurrent > 0;
+      ActionNavigateNext.Enabled = PagingCurrent < PagingCount - 1;
+      ActionNavigateLast.Enabled = PagingCurrent != PagingCount - 1;
+    }
 
     private void CreateSearchResults()
     {
@@ -151,6 +161,7 @@ namespace Ordisoftware.HebrewWords
             }
         }
       }
+      PagingCurrent = 0;
       RenderSearchResults();
     }
 
@@ -161,19 +172,20 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Refresh();
       GC.Collect();
-      LabelFindRefCount.Text = "0";
+      EditSearchPaging.Text = "0/0";
       if ( SearchResults == null ) return;
       InProcess = true;
-      SetFormDisabled(true);
+      if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();
       try
       {
+        PagingCount = (int)Math.Round((double)SearchResultsCount / Program.Settings.FoundReferencesViewable,
+                                      MidpointRounding.ToEven);
         var results = SearchResults.ToList()
-                      .Skip(PagingCurrent * Program.Settings.FoundReferencesToOpenDialog)
+                      .Skip(PagingCurrent * Program.Settings.FoundReferencesViewable)
                       .Take(Program.Settings.FoundReferencesViewable);
-        int index = 0;
-        int indexPaging = 0;
-        int indexPagingMax = 10;
+        EditSearchPaging.Text = (PagingCurrent + 1) + "/" + PagingCount;
+        UpdateSearchButtons();
         int referenceSize = 160;
         int marginX = 10;
         int marginY = 10;
@@ -186,14 +198,6 @@ namespace Ordisoftware.HebrewWords
         {
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }
-          ++index;
-          ++indexPaging;
-          if ( indexPaging >= indexPagingMax )
-          {
-            indexPaging = 0;
-            LabelFindRefCount.Text = index + "/" + SearchResultsCount;
-            LabelFindRefCount.Refresh();
-          }
           x = maxX;
           y += marginY;
           var linklabel = new LinkLabel();
@@ -269,7 +273,6 @@ namespace Ordisoftware.HebrewWords
             y += label.PreferredHeight + marginY;
           }
         }
-        LabelFindRefCount.Text = index.ToString();
       }
       catch ( Exception ex )
       {
@@ -278,7 +281,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         InProcess = false;
-        SetFormDisabled(false);
+        if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(false);
         PanelSearchResults.ResumeLayout();
         PanelSearchResults.Focus();
       }

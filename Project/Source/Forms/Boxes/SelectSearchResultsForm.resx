@@ -144,33 +144,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelFound.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="LabelFirst.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 28</value>
-  </data>
-  <data name="LabelFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 13</value>
-  </data>
-  <data name="LabelFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelFirst.Text" xml:space="preserve">
-    <value>Only the first {0} can be shown.</value>
-  </data>
-  <data name="&gt;&gt;LabelFirst.Name" xml:space="preserve">
-    <value>LabelFirst</value>
-  </data>
-  <data name="&gt;&gt;LabelFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelFirst.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LabelFirst.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="LabelEscape.AutoSize" type="System.Boolean, mscorlib">
@@ -181,7 +154,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEscape.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 64</value>
+    <value>10, 46</value>
   </data>
   <data name="LabelEscape.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -211,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 46</value>
+    <value>10, 28</value>
   </data>
   <data name="LabelSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -331,7 +304,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 478</value>
+    <value>10, 470</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 28</value>
@@ -355,7 +328,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="LabelCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 79</value>
+    <value>260, 65</value>
   </data>
   <data name="LabelCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 18</value>
@@ -400,10 +373,10 @@
     <value>75</value>
   </data>
   <data name="SelectBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 100</value>
+    <value>13, 87</value>
   </data>
   <data name="SelectBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 325</value>
+    <value>307, 330</value>
   </data>
   <data name="SelectBooks.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -427,7 +400,7 @@
     <value>True</value>
   </data>
   <data name="EditOnlyWithTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 433</value>
+    <value>13, 425</value>
   </data>
   <data name="EditOnlyWithTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
@@ -460,7 +433,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 452</value>
+    <value>13, 444</value>
   </data>
   <data name="EditOnlyWithoutTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -490,7 +463,7 @@
     <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
   </data>
   <data name="ActionAddAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 79</value>
+    <value>13, 65</value>
   </data>
   <data name="ActionAddAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -523,7 +496,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 79</value>
+    <value>32, 65</value>
   </data>
   <data name="ActionRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -553,7 +526,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 516</value>
+    <value>334, 508</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>340, 550</value>

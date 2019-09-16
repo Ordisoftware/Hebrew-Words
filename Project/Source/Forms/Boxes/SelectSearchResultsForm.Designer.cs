@@ -30,7 +30,6 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectSearchResultsForm));
       this.LabelFound = new System.Windows.Forms.Label();
-      this.LabelFirst = new System.Windows.Forms.Label();
       this.LabelEscape = new System.Windows.Forms.Label();
       this.LabelSelect = new System.Windows.Forms.Label();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -52,11 +51,6 @@
       // 
       resources.ApplyResources(this.LabelFound, "LabelFound");
       this.LabelFound.Name = "LabelFound";
-      // 
-      // LabelFirst
-      // 
-      resources.ApplyResources(this.LabelFirst, "LabelFirst");
-      this.LabelFirst.Name = "LabelFirst";
       // 
       // LabelEscape
       // 
@@ -176,7 +170,6 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.LabelSelect);
       this.Controls.Add(this.LabelEscape);
-      this.Controls.Add(this.LabelFirst);
       this.Controls.Add(this.LabelFound);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -192,7 +185,6 @@
     #endregion
 
     private System.Windows.Forms.Label LabelFound;
-    private System.Windows.Forms.Label LabelFirst;
     private System.Windows.Forms.Label LabelEscape;
     private System.Windows.Forms.Label LabelSelect;
     private System.Windows.Forms.Panel PanelButtons;

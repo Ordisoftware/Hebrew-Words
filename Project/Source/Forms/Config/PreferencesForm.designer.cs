@@ -64,7 +64,6 @@
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
-      this.LabelSystemHandles = new System.Windows.Forms.LinkLabel();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
@@ -330,38 +329,23 @@
       // EditMaxRefCount
       // 
       this.EditMaxRefCount.Increment = new decimal(new int[] {
-            50,
+            5,
             0,
             0,
             0});
       resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
-      this.EditMaxRefCount.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
       this.EditMaxRefCount.Minimum = new decimal(new int[] {
-            100,
+            10,
             0,
             0,
             0});
       this.EditMaxRefCount.Name = "EditMaxRefCount";
       this.EditMaxRefCount.Value = new decimal(new int[] {
-            100,
+            20,
             0,
             0,
             0});
       this.EditMaxRefCount.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
-      // 
-      // LabelSystemHandles
-      // 
-      resources.ApplyResources(this.LabelSystemHandles, "LabelSystemHandles");
-      this.LabelSystemHandles.Name = "LabelSystemHandles";
-      this.LabelSystemHandles.TabStop = true;
-      this.LabelSystemHandles.Tag = "https://social.msdn.microsoft.com/Forums/security/en-US/93fcf517-047f-4fa1-ad05-b" +
-    "512548cce56/increasing-user-handle-and-gdi-handle-limits?forum=windowscompatibil" +
-    "ity";
-      this.LabelSystemHandles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelSystemHandles_LinkClicked);
       // 
       // EditHistoryCount
       // 
@@ -423,7 +407,6 @@
       this.CancelButton = this.ButtonClose;
       this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionSelectOnlineVerseURL);
-      this.Controls.Add(this.LabelSystemHandles);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
       this.Controls.Add(this.EditMinRefCount);
@@ -499,7 +482,6 @@
     private System.Windows.Forms.NumericUpDown EditBookmarksCount;
     private System.Windows.Forms.NumericUpDown EditWordControlWidth;
     private System.Windows.Forms.NumericUpDown EditMaxRefCount;
-    private System.Windows.Forms.LinkLabel LabelSystemHandles;
     private System.Windows.Forms.RadioButton SelectOpenTranslated;
     private System.Windows.Forms.NumericUpDown EditHistoryCount;
     private System.Windows.Forms.LinkLabel ActionReset;

@@ -80,7 +80,7 @@
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="FoundReferencesViewable" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">200</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">292, 366</Value>

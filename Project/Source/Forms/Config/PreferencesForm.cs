@@ -38,6 +38,7 @@ namespace Ordisoftware.HebrewWords
     private bool UpdateViewRequired;
     private int CommentaryLinesCountPrevious;
     private int WordControlWidthPrevious;
+    private int MaxrefCountPrevious;
 
     /// <summary>
     /// Default constructor.
@@ -46,21 +47,6 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionReset for link clicked events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Program.Settings.Reset();
-      Program.Settings.Reload();
-      Directory.CreateDirectory(Program.UserDocumentsFolderPath);
-      Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
-      PreferencesForm_Shown(null, null);
-      GrammarGuideForm.Instance.CenterToMainForm();
     }
 
     /// <summary>
@@ -85,8 +71,12 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
-      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
-      WordControlWidthPrevious = (int)EditWordControlWidth.Value;
+      if ( sender != null )
+      {
+        CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
+        WordControlWidthPrevious = (int)EditWordControlWidth.Value;
+        MaxrefCountPrevious = (int)EditMaxRefCount.Value;
+      }
     }
 
     /// <summary>
@@ -121,7 +111,23 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       Program.Settings.Store();
       UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
-                        || WordControlWidthPrevious != (int)EditWordControlWidth.Value;
+                        || WordControlWidthPrevious != (int)EditWordControlWidth.Value
+                        || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionReset for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Program.Settings.Reset();
+      Program.Settings.Reload();
+      Directory.CreateDirectory(Program.UserDocumentsFolderPath);
+      Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
+      PreferencesForm_Shown(null, null);
+      GrammarGuideForm.Instance.CenterToMainForm();
     }
 
     /// <summary>
@@ -149,14 +155,9 @@ namespace Ordisoftware.HebrewWords
         EditBackupPath.Text = FolderBrowserDialog.SelectedPath;
     }
 
-    private void LabelSystemHandles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      SystemManager.OpenWebLink((string)LabelSystemHandles.Tag);
-    }
-
     private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
     {
-      EditMinRefCount.Maximum = EditMaxRefCount.Value / 2;
+      EditMinRefCount.Maximum = EditMaxRefCount.Value;
     }
 
     private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
