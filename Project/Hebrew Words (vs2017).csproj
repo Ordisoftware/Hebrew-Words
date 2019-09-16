@@ -107,6 +107,15 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateSchema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadFromFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.GoTo.cs">
       <SubType>Form</SubType>
     </Compile>
