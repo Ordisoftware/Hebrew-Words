@@ -426,6 +426,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
     {
+      if ( GrammarGuideForm.Instance.WindowState == FormWindowState.Minimized )
+        GrammarGuideForm.Instance.WindowState = FormWindowState.Normal;
       GrammarGuideForm.Instance.Show();
       GrammarGuideForm.Instance.BringToFront();
     }

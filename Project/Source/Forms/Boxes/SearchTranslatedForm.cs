@@ -33,21 +33,22 @@ namespace Ordisoftware.HebrewWords
       foreach ( SearchTranslatedForm f in Forms.ToList() )
         if ( f.WordReferenced.Equals(wordref) )
         {
+          if ( f.WindowState == FormWindowState.Minimized )
+            f.WindowState = FormWindowState.Normal;
           f.Show();
           f.BringToFront();
           return;
         }
-      var form = new SearchTranslatedForm();
-      Forms.Add(form);
-      form.Reference = reference;
-      form.WordReferenced = new WordReferencedItem(reference, sender.Word);
-      form.WordControl = sender;
-      form.LabelReference.Text = reference.ToString();
-      form.Mutex = true;
-      form.EditHebrew.Text = sender.LabelHebrew.Text;
-      form.Mutex = false;
-      form.Text = reference.ToString() + " {" + sender.Word.Number + "}";
+      var form = new SearchTranslatedForm(sender, reference);
       form.Show();
+      form.Location = new Point(Program.Settings.SearchTranslatedFormLocation.X,
+                                Program.Settings.SearchTranslatedFormLocation.Y);
+      if ( form.Location.X == -1 && form.Location.Y == -1 )
+      {
+        form.CenterToMainForm();
+        Program.Settings.SearchTranslatedFormLocation = new Point(form.Location.X, form.Location.Y);
+        Program.Settings.Save();
+      }
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
 
@@ -61,22 +62,26 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       MaximumSize = new Size(MaximumSize.Width, Screen.PrimaryScreen.WorkingArea.Height);
+      EditDistinct.Checked = Program.Settings.SearchTranslatedFormFilterDistinct;
     }
 
-    private void SearchTranslatedForm_Load(object sender, EventArgs e)
+    private SearchTranslatedForm(WordControl sender, ReferenceItem reference)
+      : this()
     {
-      if ( Location.X == -1 && Location.Y == -1 )
-        Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - Width / 2,
-                             MainForm.Instance.Top + MainForm.Instance.Height / 2 - Height / 2);
-    }
-
-    private void WordTranslationsForm_Shown(object sender, EventArgs e)
-    {
+      Forms.Add(this);
+      Reference = reference;
+      WordReferenced = new WordReferencedItem(reference, sender.Word);
+      WordControl = sender;
+      LabelReference.Text = reference.ToString();
+      Mutex = true;
+      EditHebrew.Text = sender.LabelHebrew.Text;
+      Mutex = false;
+      Text = reference.ToString() + " {" + sender.Word.Number + "}";
       Update();
       ActiveControl = ListView;
     }
 
-    private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void SearchTranslatedForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( EditReturn.Checked )
       {
@@ -89,6 +94,9 @@ namespace Ordisoftware.HebrewWords
     {
       Forms.Remove(this);
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
+      Program.Settings.SearchTranslatedFormLocation = new Point(Location.X, Location.Y);
+      Program.Settings.SearchTranslatedFormFilterDistinct = EditDistinct.Checked;
+      Program.Settings.Save();
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)

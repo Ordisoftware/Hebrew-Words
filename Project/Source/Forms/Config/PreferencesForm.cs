@@ -48,6 +48,11 @@ namespace Ordisoftware.HebrewWords
       Icon = MainForm.Instance.Icon;
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionReset for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Program.Settings.Reset();
@@ -55,6 +60,7 @@ namespace Ordisoftware.HebrewWords
       Directory.CreateDirectory(Program.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);
+      GrammarGuideForm.Instance.CenterToMainForm();
     }
 
     /// <summary>
@@ -79,7 +85,6 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
-      ActiveControl = EditHebrewLettersPath;
       CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
     }

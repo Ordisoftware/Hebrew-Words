@@ -136,6 +136,12 @@ namespace Ordisoftware.HebrewWords
       Application.Run(MainForm.Instance);
     }
 
+    static public void CenterToMainForm(this Form form)
+    {
+      form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
+                                MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
+    }
+
     static public void RunShell(string filename, string arguments = "")
     {
       using ( var process = new Process() )

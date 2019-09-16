@@ -69,7 +69,7 @@
       resources.ApplyResources(this.EditReturn, "EditReturn");
       this.EditReturn.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CloseSearchTranslatedFormReturnToReference;
       this.EditReturn.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CloseSearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditReturn.Name = "EditReturn";
       this.EditReturn.UseVisualStyleBackColor = true;
       // 
@@ -167,9 +167,8 @@
       // EditDistinct
       // 
       resources.ApplyResources(this.EditDistinct, "EditDistinct");
-      this.EditDistinct.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormFilterDistinct;
+      this.EditDistinct.Checked = true;
       this.EditDistinct.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditDistinct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFilterDistinct", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDistinct.Name = "EditDistinct";
       this.EditDistinct.UseVisualStyleBackColor = true;
       this.EditDistinct.CheckedChanged += new System.EventHandler(this.EditFilter_CheckedChanged);
@@ -225,15 +224,11 @@
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
       this.Controls.Add(this.PanelButtons);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormLocation;
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "SearchTranslatedForm";
-      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchTranslatedForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchTranslatedForm_FormClosed);
-      this.Load += new System.EventHandler(this.SearchTranslatedForm_Load);
-      this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
       this.PanelMain.ResumeLayout(false);
