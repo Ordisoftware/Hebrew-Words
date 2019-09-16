@@ -188,6 +188,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.TrackBarSearchPaging = new System.Windows.Forms.TrackBar();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -218,6 +219,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarSearchPaging)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -379,6 +381,7 @@
       // 
       // PanelSearchFiltersRight
       // 
+      this.PanelSearchFiltersRight.Controls.Add(this.TrackBarSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchOnlyTorah);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchWord);
@@ -1371,6 +1374,18 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // TrackBarSearchPaging
+      // 
+      resources.ApplyResources(this.TrackBarSearchPaging, "TrackBarSearchPaging");
+      this.TrackBarSearchPaging.Maximum = 1;
+      this.TrackBarSearchPaging.Minimum = 1;
+      this.TrackBarSearchPaging.Name = "TrackBarSearchPaging";
+      this.TrackBarSearchPaging.TickStyle = System.Windows.Forms.TickStyle.None;
+      this.TrackBarSearchPaging.Value = 1;
+      this.TrackBarSearchPaging.ValueChanged += new System.EventHandler(this.TrackBarSearchPaging_ValueChanged);
+      this.TrackBarSearchPaging.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TrackBarSearchPaging_MouseDown);
+      this.TrackBarSearchPaging.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBarSearchPaging_MouseUp);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1419,6 +1434,7 @@
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarSearchPaging)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1583,6 +1599,7 @@
     private System.Windows.Forms.Button ActionNavigateNext;
     private System.Windows.Forms.Button ActionNavigateLast;
     private System.Windows.Forms.TextBox EditSearchPaging;
+    private System.Windows.Forms.TrackBar TrackBarSearchPaging;
   }
 }
 

@@ -175,7 +175,9 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.Refresh();
       GC.Collect();
       EditSearchPaging.Text = "0";
-      if ( SearchResults == null ) return;
+      TrackBarSearchPaging.Maximum = 1;
+      TrackBarSearchPaging.Enabled = false;
+      if ( SearchResults == null || SearchResultsCount == 0 ) return;
       InProcess = true;
       if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();
@@ -185,6 +187,9 @@ namespace Ordisoftware.HebrewWords
         PagingCount = (int)Math.Round((double)SearchResultsCount / Program.Settings.FoundReferencesViewable,
                                       MidpointRounding.ToEven);
         if ( modulo > 0 ) PagingCount++;
+        TrackBarSearchPaging.Enabled = true;
+        TrackBarSearchPaging.Maximum = PagingCount;
+        TrackBarSearchPaging.Value = PagingCurrent + 1;
         var results = SearchResults.ToList()
                       .Skip(PagingCurrent * Program.Settings.FoundReferencesViewable)
                       .Take(Program.Settings.FoundReferencesViewable);

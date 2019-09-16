@@ -913,6 +913,26 @@ namespace Ordisoftware.HebrewWords
       PagingCurrent = PagingCount - 1;
       RenderSearchResults();
     }
+
+    private void TrackBarSearchPaging_ValueChanged(object sender, EventArgs e)
+    {
+      PagingCurrent = TrackBarSearchPaging.Value - 1;
+      EditSearchPaging.Text = ( PagingCurrent + 1 ) + "/" + PagingCount;
+    }
+
+    private int OldTrackBarSreachPagingValue;
+
+    private void TrackBarSearchPaging_MouseDown(object sender, MouseEventArgs e)
+    {
+      OldTrackBarSreachPagingValue = TrackBarSearchPaging.Value;
+    }
+
+    private void TrackBarSearchPaging_MouseUp(object sender, MouseEventArgs e)
+    {
+      InProcess = false;
+      if (OldTrackBarSreachPagingValue != TrackBarSearchPaging.Value)
+        RenderSearchResults();
+    }
   }
 
 }
