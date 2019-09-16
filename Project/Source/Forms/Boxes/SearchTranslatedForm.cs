@@ -13,6 +13,7 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -57,7 +58,14 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      MaximumSize = new System.Drawing.Size(MaximumSize.Width, Screen.PrimaryScreen.WorkingArea.Height);
+      MaximumSize = new Size(MaximumSize.Width, Screen.PrimaryScreen.WorkingArea.Height);
+    }
+
+    private void SearchTranslatedForm_Load(object sender, EventArgs e)
+    {
+      if ( Location.X == -1 && Location.Y == -1 )
+        Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - Width / 2,
+                             MainForm.Instance.Top + MainForm.Instance.Height / 2 - Height / 2);
     }
 
     private void WordTranslationsForm_Shown(object sender, EventArgs e)

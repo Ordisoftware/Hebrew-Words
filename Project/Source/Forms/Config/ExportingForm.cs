@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -28,6 +29,8 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       Text = AboutBox.Instance.AssemblyTitle;
+      Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - Width / 2,
+                           MainForm.Instance.Top + MainForm.Instance.Height / 2 - Height / 2);
     }
 
     private void ButtonCancel_Click(object sender, EventArgs e)

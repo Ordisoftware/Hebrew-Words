@@ -299,7 +299,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("215")]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
         public int WordControlWidth {
             get {
                 return ((int)(this["WordControlWidth"]));
@@ -335,7 +335,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50, 50")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Point SearchTranslatedLocation {
             get {
                 return ((global::System.Drawing.Point)(this["SearchTranslatedLocation"]));
@@ -371,7 +371,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50, 50")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Point GrammarGuideFormLocation {
             get {
                 return ((global::System.Drawing.Point)(this["GrammarGuideFormLocation"]));

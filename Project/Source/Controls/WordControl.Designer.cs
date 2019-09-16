@@ -30,7 +30,6 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordControl));
-      this.FlowLayoutPanel = new System.Windows.Forms.Panel();
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,17 +40,8 @@
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
-      this.FlowLayoutPanel.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // FlowLayoutPanel
-      // 
-      this.FlowLayoutPanel.Controls.Add(this.LabelHebrew);
-      this.FlowLayoutPanel.Controls.Add(this.EditTranslation);
-      resources.ApplyResources(this.FlowLayoutPanel, "FlowLayoutPanel");
-      this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-      this.FlowLayoutPanel.Click += new System.EventHandler(this.FlowLayoutPanel_Click);
       // 
       // LabelHebrew
       // 
@@ -130,18 +120,16 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.FlowLayoutPanel);
+      this.Controls.Add(this.LabelHebrew);
+      this.Controls.Add(this.EditTranslation);
       this.Name = "WordControl";
-      this.FlowLayoutPanel.ResumeLayout(false);
-      this.FlowLayoutPanel.PerformLayout();
       this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
     #endregion
-
-    private System.Windows.Forms.Panel FlowLayoutPanel;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;

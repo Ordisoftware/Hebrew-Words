@@ -252,7 +252,7 @@
     <value>Hebrew, 15.75pt</value>
   </data>
   <data name="LabelHebrew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 3</value>
+    <value>200, 0</value>
   </data>
   <data name="LabelHebrew.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 30</value>
@@ -270,7 +270,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelHebrew.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHebrew.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -282,10 +282,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 35</value>
+    <value>0, 38</value>
   </data>
   <data name="EditTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
+    <value>200, 22</value>
   </data>
   <data name="EditTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -300,36 +300,9 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditTranslation.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;EditTranslation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="FlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="FlowLayoutPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="FlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 60</value>
-  </data>
-  <data name="FlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel.Name" xml:space="preserve">
-    <value>FlowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;FlowLayoutPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTranslation.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -339,10 +312,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 60</value>
+    <value>500, 55</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>150, 60</value>
+    <value>150, 55</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 60</value>

@@ -51,10 +51,10 @@ namespace Ordisoftware.HebrewWords
         int mX = 50;
         int mY = 50;
         int delta = 10;
-        int width = ClientSize.Width - delta * 4;
-        int dx = control.Width;
-        int dy = control.Height;
-        int marginX = mX + delta;
+        int width = ClientSize.Width - mX;
+        int dx = control.Width + delta;
+        int dy = control.Height + delta;
+        int marginX = mX;
         int marginY = mY;
         int x = width - dx - marginX;
         int y = delta;
@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewWords
         {
           var label = new Label();
           label.Tag = reference;
-          label.Location = new Point(x + dx + delta, y + delta / 2);
+          label.Location = new Point(x + dx + delta, y + delta / 4);
           label.AutoSize = false;
           label.Width = 40;
           label.ForeColor = Color.DarkBlue;
@@ -109,9 +109,9 @@ namespace Ordisoftware.HebrewWords
             editComment.WordWrap = true;
             editComment.ScrollBars = ScrollBars.Vertical;
           }
-          editComment.Location = new Point(width - wordsWidth - label.Width - delta - delta, y + dy + delta);
+          editComment.Location = new Point(width - wordsWidth - label.Width - delta, y + dy + delta);
           x = width - dx - marginX - 2;
-          editComment.Width = wordsWidth;
+          editComment.Width = wordsWidth - delta;
           editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1 ) - 3;
           editComment.Tag = reference;
           editComment.BackColor = Color.Honeydew;
