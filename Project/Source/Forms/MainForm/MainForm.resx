@@ -2178,7 +2178,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="ActionWebHome.Text" xml:space="preserve">
     <value>Website</value>
@@ -2202,7 +2202,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="ActionWebContact.Text" xml:space="preserve">
     <value>Contact</value>
@@ -2231,13 +2231,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
     <value>Send a request</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 6</value>
+    <value>301, 6</value>
   </data>
   <data name="ActionWebCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2261,13 +2261,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="ActionWebCheckUpdate.Text" xml:space="preserve">
     <value>Check update</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 6</value>
+    <value>301, 6</value>
   </data>
   <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2291,10 +2291,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
-    <value>Tanak Hebrew MP3</value>
+    <value>Tanak Hebrew MP3 @ mechon-mamre.org</value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2318,10 +2318,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bible @ fourmilab.ch</value>
+    <value>Tanak @ fourmilab.ch</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2345,7 +2345,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Bible @ biblehub.com</value>
@@ -2372,7 +2372,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Tanak @ studybible.info</value>
@@ -2399,7 +2399,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Euangélion @ studybible.info</value>
@@ -2426,13 +2426,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Quran @ corpus.quran.com</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 6</value>
+    <value>301, 6</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2456,7 +2456,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Text" xml:space="preserve">
     <value>The Shorashon Lexicon</value>
@@ -2483,7 +2483,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Text" xml:space="preserve">
     <value>The Sanskrit Heritage Dictionary</value>
@@ -2510,7 +2510,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 24</value>
+    <value>304, 24</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Text" xml:space="preserve">
     <value>An Akkadian Dictionary</value>
@@ -3622,6 +3622,18 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
   </data>
@@ -4155,18 +4167,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
