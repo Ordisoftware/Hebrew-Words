@@ -169,24 +169,23 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderSearchResults()
     {
-      if ( InProcess ) return;
-      PanelSearchResults.Controls.Clear();
-      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      PanelSearchResults.Refresh();
-      GC.Collect();
-      EditSearchPaging.Text = "0";
-      TrackBarSearchPaging.Maximum = 1;
-      TrackBarSearchPaging.Enabled = false;
-      if ( SearchResults == null || SearchResultsCount == 0 ) return;
-      InProcess = true;
-      if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
-      PanelSearchResults.SuspendLayout();
+      if ( RenderSearchResultsInProcess ) return;
+      RenderSearchResultsInProcess = true;
       try
       {
-        int modulo = SearchResultsCount % Program.Settings.FoundReferencesViewable;
-        PagingCount = (int)Math.Round((double)SearchResultsCount / Program.Settings.FoundReferencesViewable,
-                                      MidpointRounding.ToEven);
-        if ( modulo > 0 ) PagingCount++;
+        PanelSearchResults.SuspendLayout();
+        PanelSearchResults.Controls.Clear();
+        PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+        PanelSearchResults.Refresh();
+        GC.Collect();
+        EditSearchPaging.Text = "0";
+        TrackBarSearchPaging.Maximum = 1;
+        TrackBarSearchPaging.Enabled = false;
+        if ( SearchResults == null || SearchResultsCount == 0 ) return;
+        if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
+        PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
+        if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
+          PagingCount++;
         TrackBarSearchPaging.Enabled = true;
         TrackBarSearchPaging.Maximum = PagingCount;
         TrackBarSearchPaging.Value = PagingCurrent + 1;
@@ -289,7 +288,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        InProcess = false;
+        RenderSearchResultsInProcess = false;
         if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(false);
         PanelSearchResults.ResumeLayout();
         PanelSearchResults.Focus();
