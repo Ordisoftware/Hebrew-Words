@@ -90,6 +90,14 @@
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
+      this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.menusep = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
+      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
@@ -130,14 +138,9 @@
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
-      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
-      this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-      this.menusep = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
@@ -644,6 +647,10 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuBookmarks,
+            this.ActionCloseWindows,
+            this.ActionRefresh,
+            this.toolStripSeparator4,
             this.ActionViewVerses,
             this.ActionExit,
             this.Sep4,
@@ -657,16 +664,72 @@
             this.ActionViewRawText,
             this.ActionViewELS50,
             this.ActionViewSearch,
-            this.ActionRefresh,
-            this.toolStripSeparator4,
+            this.toolStripSeparator6,
             this.ActionCopyToClipboard,
-            this.MenuBookmarks,
+            this.toolStripSeparator7,
             this.MenuTools,
             this.MenuDatabase,
             this.toolStripSeparator1,
             this.ActionSave});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
+      // 
+      // MenuBookmarks
+      // 
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionClearBookmarks,
+            this.menusep,
+            this.MenuHistory,
+            this.toolStripMenuItem2});
+      this.MenuBookmarks.Name = "MenuBookmarks";
+      // 
+      // ActionClearBookmarks
+      // 
+      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
+      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
+      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
+      // 
+      // menusep
+      // 
+      resources.ApplyResources(this.menusep, "menusep");
+      this.menusep.Name = "menusep";
+      // 
+      // MenuHistory
+      // 
+      resources.ApplyResources(this.MenuHistory, "MenuHistory");
+      this.MenuHistory.Name = "MenuHistory";
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      // 
+      // ActionCloseWindows
+      // 
+      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
+      this.ActionCloseWindows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionCloseWindows.Name = "ActionCloseWindows";
+      this.ActionCloseWindows.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
+      this.ActionCloseWindows.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCloseWindows.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionRefresh
+      // 
+      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionRefresh.Name = "ActionRefresh";
+      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator4
+      // 
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
       // 
       // ActionViewVerses
       // 
@@ -999,20 +1062,10 @@
       this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // ActionRefresh
+      // toolStripSeparator6
       // 
-      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
-      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.ActionRefresh.Name = "ActionRefresh";
-      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
-      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // toolStripSeparator4
-      // 
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
       // 
       // ActionCopyToClipboard
       // 
@@ -1024,37 +1077,10 @@
       this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // MenuBookmarks
+      // toolStripSeparator7
       // 
-      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionClearBookmarks,
-            this.menusep,
-            this.MenuHistory,
-            this.toolStripMenuItem2});
-      this.MenuBookmarks.Name = "MenuBookmarks";
-      // 
-      // ActionClearBookmarks
-      // 
-      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
-      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
-      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
-      // 
-      // menusep
-      // 
-      resources.ApplyResources(this.menusep, "menusep");
-      this.menusep.Name = "menusep";
-      // 
-      // MenuHistory
-      // 
-      resources.ApplyResources(this.MenuHistory, "MenuHistory");
-      this.MenuHistory.Name = "MenuHistory";
-      // 
-      // toolStripMenuItem2
-      // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
       // 
       // MenuTools
       // 
@@ -1517,6 +1543,9 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssue;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+    private System.Windows.Forms.ToolStripButton ActionCloseWindows;
   }
 }
 

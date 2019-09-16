@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewWords
   public partial class SearchTranslatedForm : Form
   {
 
-    static public readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();
+    static internal readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();
 
     static public void Run(WordControl sender, ReferenceItem reference)
     {

@@ -143,7 +143,7 @@
 </value>
   </data>
   <data name="ActionOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOnlineSearch.Text" xml:space="preserve">
     <value>Search online</value>
@@ -163,13 +163,13 @@
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -184,7 +184,7 @@
 </value>
   </data>
   <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -206,13 +206,13 @@
 </value>
   </data>
   <data name="ActionSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionSearch.Text" xml:space="preserve">
     <value>Search word</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -230,13 +230,13 @@
 </value>
   </data>
   <data name="ActionCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionCopy.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
   <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 126</value>
+    <value>181, 148</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
     <value>ContextMenuStrip</value>
@@ -273,7 +273,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHebrew.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditTranslation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -282,7 +282,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 38</value>
+    <value>0, 33</value>
   </data>
   <data name="EditTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -303,7 +303,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditTranslation.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -318,7 +318,7 @@
     <value>150, 55</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 60</value>
+    <value>200, 55</value>
   </data>
   <data name="&gt;&gt;ActionOnlineSearch.Name" xml:space="preserve">
     <value>ActionOnlineSearch</value>

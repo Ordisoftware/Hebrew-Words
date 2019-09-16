@@ -15,6 +15,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.Linq;
 using System.IO;
 using System.Data;
 using System.Drawing;
@@ -375,6 +376,25 @@ namespace Ordisoftware.HebrewWords
       UpdateViews();
       RenderSearchResults();
       GoTo(book, chapter, verse);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCloseWindows for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCloseWindows_Click(object sender, EventArgs e)
+    {
+      bool value = Program.Settings.SearchTranslatedFormReturnToReference;
+      try
+      {
+        foreach ( var form in SearchTranslatedForm.Forms.ToList() )
+          form.Close();
+      }
+      finally
+      {
+        Program.Settings.SearchTranslatedFormReturnToReference = value;
+      }
     }
 
     /// <summary>
