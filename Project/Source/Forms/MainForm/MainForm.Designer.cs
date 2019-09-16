@@ -52,12 +52,26 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.PanelSearchFilters = new System.Windows.Forms.Panel();
       this.PanelSearchFiltersRight = new System.Windows.Forms.Panel();
+      this.EditSearchPaging = new System.Windows.Forms.TextBox();
+      this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
       this.ActionSearchWord = new System.Windows.Forms.Button();
       this.ActionNavigateFirst = new System.Windows.Forms.Button();
       this.ActionNavigatePrevious = new System.Windows.Forms.Button();
       this.ActionNavigateNext = new System.Windows.Forms.Button();
       this.ActionNavigateLast = new System.Windows.Forms.Button();
       this.ActionClearWord = new System.Windows.Forms.Button();
+      this.SelectSearchType = new System.Windows.Forms.TabControl();
+      this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
+      this.PanelSearchTop = new System.Windows.Forms.Panel();
+      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
+      this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
+      this.label2 = new System.Windows.Forms.Label();
+      this.EditSearchTranslation = new System.Windows.Forms.TextBox();
+      this.SelectSearchTypeRequest = new System.Windows.Forms.TabPage();
+      this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
       this.PanelNavigation = new System.Windows.Forms.Panel();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
@@ -75,6 +89,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -167,27 +183,11 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
-      this.SelectSearchType = new System.Windows.Forms.TabControl();
-      this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
-      this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
-      this.label2 = new System.Windows.Forms.Label();
-      this.EditSearchTranslation = new System.Windows.Forms.TextBox();
-      this.SelectSearchTypeRequest = new System.Windows.Forms.TabPage();
-      this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
-      this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
-      this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
-      this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.EditSearchPaging = new System.Windows.Forms.TextBox();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -204,20 +204,20 @@
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      this.PanelNavigation.SuspendLayout();
-      this.PanelTitle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      this.ToolStrip.SuspendLayout();
-      this.ContextMenuStripVerse.SuspendLayout();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
       this.SelectSearchTypeTranslation.SuspendLayout();
       this.SelectSearchTypeRequest.SuspendLayout();
+      this.PanelNavigation.SuspendLayout();
+      this.PanelTitle.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ToolStrip.SuspendLayout();
+      this.ContextMenuStripVerse.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -390,6 +390,21 @@
       resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
       // 
+      // EditSearchPaging
+      // 
+      resources.ApplyResources(this.EditSearchPaging, "EditSearchPaging");
+      this.EditSearchPaging.Name = "EditSearchPaging";
+      this.EditSearchPaging.ReadOnly = true;
+      // 
+      // EditSearchOnlyTorah
+      // 
+      resources.ApplyResources(this.EditSearchOnlyTorah, "EditSearchOnlyTorah");
+      this.EditSearchOnlyTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchOnlyInTorah;
+      this.EditSearchOnlyTorah.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditSearchOnlyTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchOnlyInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchOnlyTorah.Name = "EditSearchOnlyTorah";
+      this.EditSearchOnlyTorah.UseVisualStyleBackColor = true;
+      // 
       // ActionSearchWord
       // 
       resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
@@ -437,6 +452,95 @@
       this.ActionClearWord.Name = "ActionClearWord";
       this.ActionClearWord.UseVisualStyleBackColor = true;
       this.ActionClearWord.Click += new System.EventHandler(this.ActionClearWord_Click);
+      // 
+      // SelectSearchType
+      // 
+      this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
+      this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
+      this.SelectSearchType.Controls.Add(this.SelectSearchTypeRequest);
+      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
+      this.SelectSearchType.Name = "SelectSearchType";
+      this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchTypeTab;
+      this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
+      // 
+      // SelectSearchTypeHebrew
+      // 
+      this.SelectSearchTypeHebrew.Controls.Add(this.PanelSearchTop);
+      resources.ApplyResources(this.SelectSearchTypeHebrew, "SelectSearchTypeHebrew");
+      this.SelectSearchTypeHebrew.Name = "SelectSearchTypeHebrew";
+      this.SelectSearchTypeHebrew.UseVisualStyleBackColor = true;
+      // 
+      // PanelSearchTop
+      // 
+      this.PanelSearchTop.Controls.Add(this.EditLetters);
+      resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
+      this.PanelSearchTop.Name = "PanelSearchTop";
+      // 
+      // EditLetters
+      // 
+      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // SelectSearchTypeTranslation
+      // 
+      this.SelectSearchTypeTranslation.Controls.Add(this.label2);
+      this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
+      resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
+      this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
+      this.SelectSearchTypeTranslation.UseVisualStyleBackColor = true;
+      // 
+      // label2
+      // 
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
+      // 
+      // EditSearchTranslation
+      // 
+      this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
+      this.EditSearchTranslation.Name = "EditSearchTranslation";
+      this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // SelectSearchTypeRequest
+      // 
+      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllUntranslated);
+      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
+      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
+      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllTranslated);
+      resources.ApplyResources(this.SelectSearchTypeRequest, "SelectSearchTypeRequest");
+      this.SelectSearchTypeRequest.Name = "SelectSearchTypeRequest";
+      this.SelectSearchTypeRequest.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchRequestAllUntranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllUntranslated, "SelectSearchRequestAllUntranslated");
+      this.SelectSearchRequestAllUntranslated.Name = "SelectSearchRequestAllUntranslated";
+      this.SelectSearchRequestAllUntranslated.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchRequestAllPartiallyTranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllPartiallyTranslated, "SelectSearchRequestAllPartiallyTranslated");
+      this.SelectSearchRequestAllPartiallyTranslated.Name = "SelectSearchRequestAllPartiallyTranslated";
+      this.SelectSearchRequestAllPartiallyTranslated.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchRequestAllFullyTranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllFullyTranslated, "SelectSearchRequestAllFullyTranslated");
+      this.SelectSearchRequestAllFullyTranslated.Name = "SelectSearchRequestAllFullyTranslated";
+      this.SelectSearchRequestAllFullyTranslated.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchRequestAllTranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllTranslated, "SelectSearchRequestAllTranslated");
+      this.SelectSearchRequestAllTranslated.Checked = true;
+      this.SelectSearchRequestAllTranslated.Name = "SelectSearchRequestAllTranslated";
+      this.SelectSearchRequestAllTranslated.TabStop = true;
+      this.SelectSearchRequestAllTranslated.UseVisualStyleBackColor = true;
       // 
       // PanelNavigation
       // 
@@ -556,6 +660,16 @@
       // 
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // label1
       // 
@@ -1232,114 +1346,6 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
-      // EditSearchOnlyTorah
-      // 
-      resources.ApplyResources(this.EditSearchOnlyTorah, "EditSearchOnlyTorah");
-      this.EditSearchOnlyTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchOnlyInTorah;
-      this.EditSearchOnlyTorah.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSearchOnlyTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchOnlyInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditSearchOnlyTorah.Name = "EditSearchOnlyTorah";
-      this.EditSearchOnlyTorah.UseVisualStyleBackColor = true;
-      // 
-      // SelectSearchType
-      // 
-      this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
-      this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
-      this.SelectSearchType.Controls.Add(this.SelectSearchTypeRequest);
-      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
-      this.SelectSearchType.Name = "SelectSearchType";
-      this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchTypeTab;
-      this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
-      // 
-      // SelectSearchTypeHebrew
-      // 
-      this.SelectSearchTypeHebrew.Controls.Add(this.PanelSearchTop);
-      resources.ApplyResources(this.SelectSearchTypeHebrew, "SelectSearchTypeHebrew");
-      this.SelectSearchTypeHebrew.Name = "SelectSearchTypeHebrew";
-      this.SelectSearchTypeHebrew.UseVisualStyleBackColor = true;
-      // 
-      // PanelSearchTop
-      // 
-      this.PanelSearchTop.Controls.Add(this.EditLetters);
-      resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
-      this.PanelSearchTop.Name = "PanelSearchTop";
-      // 
-      // SelectSearchTypeTranslation
-      // 
-      this.SelectSearchTypeTranslation.Controls.Add(this.label2);
-      this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
-      resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
-      this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
-      this.SelectSearchTypeTranslation.UseVisualStyleBackColor = true;
-      // 
-      // label2
-      // 
-      resources.ApplyResources(this.label2, "label2");
-      this.label2.Name = "label2";
-      // 
-      // EditSearchTranslation
-      // 
-      this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
-      this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
-      this.EditSearchTranslation.Name = "EditSearchTranslation";
-      this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
-      // SelectSearchTypeRequest
-      // 
-      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllUntranslated);
-      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
-      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
-      this.SelectSearchTypeRequest.Controls.Add(this.SelectSearchRequestAllTranslated);
-      resources.ApplyResources(this.SelectSearchTypeRequest, "SelectSearchTypeRequest");
-      this.SelectSearchTypeRequest.Name = "SelectSearchTypeRequest";
-      this.SelectSearchTypeRequest.UseVisualStyleBackColor = true;
-      // 
-      // SelectSearchRequestAllUntranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllUntranslated, "SelectSearchRequestAllUntranslated");
-      this.SelectSearchRequestAllUntranslated.Name = "SelectSearchRequestAllUntranslated";
-      this.SelectSearchRequestAllUntranslated.UseVisualStyleBackColor = true;
-      // 
-      // SelectSearchRequestAllPartiallyTranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllPartiallyTranslated, "SelectSearchRequestAllPartiallyTranslated");
-      this.SelectSearchRequestAllPartiallyTranslated.Name = "SelectSearchRequestAllPartiallyTranslated";
-      this.SelectSearchRequestAllPartiallyTranslated.UseVisualStyleBackColor = true;
-      // 
-      // SelectSearchRequestAllFullyTranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllFullyTranslated, "SelectSearchRequestAllFullyTranslated");
-      this.SelectSearchRequestAllFullyTranslated.Name = "SelectSearchRequestAllFullyTranslated";
-      this.SelectSearchRequestAllFullyTranslated.UseVisualStyleBackColor = true;
-      // 
-      // SelectSearchRequestAllTranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllTranslated, "SelectSearchRequestAllTranslated");
-      this.SelectSearchRequestAllTranslated.Checked = true;
-      this.SelectSearchRequestAllTranslated.Name = "SelectSearchRequestAllTranslated";
-      this.SelectSearchRequestAllTranslated.TabStop = true;
-      this.SelectSearchRequestAllTranslated.UseVisualStyleBackColor = true;
-      // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1364,11 +1370,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // EditSearchPaging
-      // 
-      resources.ApplyResources(this.EditSearchPaging, "EditSearchPaging");
-      this.EditSearchPaging.Name = "EditSearchPaging";
       // 
       // MainForm
       // 
@@ -1400,15 +1401,6 @@
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      this.PanelNavigation.ResumeLayout(false);
-      this.PanelNavigation.PerformLayout();
-      this.PanelTitle.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      this.ToolStrip.ResumeLayout(false);
-      this.ToolStrip.PerformLayout();
-      this.ContextMenuStripVerse.ResumeLayout(false);
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -1416,8 +1408,17 @@
       this.SelectSearchTypeTranslation.PerformLayout();
       this.SelectSearchTypeRequest.ResumeLayout(false);
       this.SelectSearchTypeRequest.PerformLayout();
+      this.PanelNavigation.ResumeLayout(false);
+      this.PanelNavigation.PerformLayout();
+      this.PanelTitle.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
+      this.ToolStrip.ResumeLayout(false);
+      this.ToolStrip.PerformLayout();
+      this.ContextMenuStripVerse.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }

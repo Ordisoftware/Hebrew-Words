@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private int PagingWaiter = 100;
+    private int PagingWaiter = 50;
     private int PagingCurrent = 0;
     private int PagingCount = 0;
 
@@ -46,11 +46,13 @@ namespace Ordisoftware.HebrewWords
       ActionNavigatePrevious.Enabled = PagingCurrent > 0;
       ActionNavigateNext.Enabled = PagingCurrent < PagingCount - 1;
       ActionNavigateLast.Enabled = PagingCurrent != PagingCount - 1;
+      EditSearchPaging.Enabled = SearchResultsCount > 0;
     }
 
     private void CreateSearchResults()
     {
       SearchResults = null;
+      SearchResultsCount = 0;
       CheckWord = null;
       CheckVerse = null;
       SearchWord1 = "";
@@ -172,15 +174,17 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.Refresh();
       GC.Collect();
-      EditSearchPaging.Text = "0/0";
+      EditSearchPaging.Text = "0";
       if ( SearchResults == null ) return;
       InProcess = true;
       if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
       PanelSearchResults.SuspendLayout();
       try
       {
+        int modulo = SearchResultsCount % Program.Settings.FoundReferencesViewable;
         PagingCount = (int)Math.Round((double)SearchResultsCount / Program.Settings.FoundReferencesViewable,
                                       MidpointRounding.ToEven);
+        if ( modulo > 0 ) PagingCount++;
         var results = SearchResults.ToList()
                       .Skip(PagingCurrent * Program.Settings.FoundReferencesViewable)
                       .Take(Program.Settings.FoundReferencesViewable);
