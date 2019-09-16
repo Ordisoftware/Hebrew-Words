@@ -106,6 +106,7 @@
       this.ListView.HideSelection = false;
       this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
+      this.ListView.ShowItemToolTips = true;
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
@@ -229,7 +230,6 @@
       this.Location = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedLocation;
       this.MaximizeBox = false;
       this.Name = "SearchTranslatedForm";
-      this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WordTranslationsForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchTranslatedForm_FormClosed);
       this.Load += new System.EventHandler(this.SearchTranslatedForm_Load);
