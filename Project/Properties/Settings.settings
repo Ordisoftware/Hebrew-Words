@@ -112,5 +112,8 @@
     <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="SearchTranslatedFormReturnToReference" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

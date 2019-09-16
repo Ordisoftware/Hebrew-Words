@@ -31,6 +31,7 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchTranslatedForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
+      this.EditReturn = new System.Windows.Forms.CheckBox();
       this.LabelReference = new System.Windows.Forms.LinkLabel();
       this.ButtonClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
@@ -58,10 +59,20 @@
       // 
       // PanelButtons
       // 
+      this.PanelButtons.Controls.Add(this.EditReturn);
       this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ButtonClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
+      // 
+      // EditReturn
+      // 
+      resources.ApplyResources(this.EditReturn, "EditReturn");
+      this.EditReturn.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormReturnToReference;
+      this.EditReturn.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditReturn.Name = "EditReturn";
+      this.EditReturn.UseVisualStyleBackColor = true;
       // 
       // LabelReference
       // 
@@ -232,6 +243,7 @@
       this.Load += new System.EventHandler(this.SearchTranslatedForm_Load);
       this.Shown += new System.EventHandler(this.WordTranslationsForm_Shown);
       this.PanelButtons.ResumeLayout(false);
+      this.PanelButtons.PerformLayout();
       this.PanelMain.ResumeLayout(false);
       this.ContextMenuStrip.ResumeLayout(false);
       this.PanelTop.ResumeLayout(false);
@@ -261,5 +273,6 @@
     private System.Windows.Forms.Button ActionDelFirst;
     private System.Windows.Forms.Button ActionReset;
     private System.Windows.Forms.CheckBox EditDistinct;
+    private System.Windows.Forms.CheckBox EditReturn;
   }
 }

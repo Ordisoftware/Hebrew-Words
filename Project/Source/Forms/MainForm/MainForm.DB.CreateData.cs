@@ -75,7 +75,6 @@ namespace Ordisoftware.HebrewWords
           var taskLoad = new Task(() =>
           {
             LoadBooksFromFiles();
-            TableAdapterManager.UpdateAll(DataSet);
           });
           taskLoad.Start();
           while ( inprogress )

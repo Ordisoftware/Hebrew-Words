@@ -75,8 +75,11 @@ namespace Ordisoftware.HebrewWords
 
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      LabelReference_LinkClicked(null, null);
-      WordControl.Focus();
+      if ( EditReturn.Checked )
+      {
+        LabelReference_LinkClicked(null, null);
+        WordControl.Focus();
+      }
     }
 
     private void SearchTranslatedForm_FormClosed(object sender, FormClosedEventArgs e)

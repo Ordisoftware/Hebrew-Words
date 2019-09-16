@@ -440,5 +440,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["CheckUpdateAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchTranslatedFormReturnToReference {
+            get {
+                return ((bool)(this["SearchTranslatedFormReturnToReference"]));
+            }
+            set {
+                this["SearchTranslatedFormReturnToReference"] = value;
+            }
+        }
     }
 }
