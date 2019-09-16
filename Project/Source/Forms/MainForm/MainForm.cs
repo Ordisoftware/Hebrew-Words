@@ -388,6 +388,7 @@ namespace Ordisoftware.HebrewWords
       bool value = Program.Settings.SearchTranslatedFormReturnToReference;
       try
       {
+        Program.Settings.SearchTranslatedFormReturnToReference = false;
         foreach ( var form in SearchTranslatedForm.Forms.ToList() )
           form.Close();
       }
