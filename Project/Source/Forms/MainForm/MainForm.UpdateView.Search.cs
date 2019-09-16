@@ -171,8 +171,8 @@ namespace Ordisoftware.HebrewWords
                       .Skip(PagingCurrent * Program.Settings.FoundReferencesToOpenDialog)
                       .Take(Program.Settings.FoundReferencesViewable);
         int index = 0;
-        int indexStep = 0;
-        int indexStepMax = 10;
+        int indexPaging = 0;
+        int indexPagingMax = 10;
         int referenceSize = 160;
         int marginX = 10;
         int marginY = 10;
@@ -186,10 +186,10 @@ namespace Ordisoftware.HebrewWords
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }
           ++index;
-          ++indexStep;
-          if ( indexStep >= indexStepMax )
+          ++indexPaging;
+          if ( indexPaging >= indexPagingMax )
           {
-            indexStep = 0;
+            indexPaging = 0;
             LabelFindRefCount.Text = index + "/" + SearchResultsCount;
             LabelFindRefCount.Refresh();
           }
