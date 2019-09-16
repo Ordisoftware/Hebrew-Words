@@ -665,39 +665,39 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="MenuWeb.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionWebHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -717,7 +717,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="ActionWebHome.Text" xml:space="preserve">
     <value>Site web</value>
@@ -735,33 +735,33 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="ActionCreateGitHubIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ3SURBVDhPjVPPaxNBFB6ru8ludprdncz+SBUNPQhFQ/0L
-        IiiUShpBCXgt4tW7pyBU/PEX9OZB8KL+A4KHHopHb4KCFCyK6FELNU1dv28yW7dYwQcv8+Z73/t23syL
-        qNiMddHpdLrnFhYedbvdzQuLi1t0xsSYIwd2wK9aCeiG5z2Ow2isorjAesgtNiaH3GnJH7Hj/HEc57zW
-        +mM7y4ssSSdxHO9i/xPxmM6YGHPkkMsao2A1RF2IU4lOtkEqlFJbs4HcyRFzz7UaM0cO96xhrRGhhWH4
-        nAkZBDu1Wm0e0Om4GT0B/qwp5RqdMTHmyCGXNaw1IgAvA/iV6qRIG8l3QLlJCHHMrlUrsbZsBD9Yw1pq
-        iAhfoTLBROttkNSUK07A2TvXakxT5FqhghqC/RJg/0EQ3LHEsuAoMzlyWcNaaggEY/g+lV3XXTbU8hWO
-        NpMj13ayTw0K8X4mVPc877qh/ocQufZEE2oIzMZXBKZXvM59Q8UbwP912cwJcB+Ud4vWvgkVhi8JZAAo
-        ihc4QyLsr/GHGQycTvUA1BC+76/maVaoWG0mkX6ftPQnHPsa+C24y0JrjLN6vX6jHEgI7bE9aNw0BN3S
-        b5mUUi6nSfqOfwF+EblypoSH2UHh5zzJygveoxh4b5DGgMNw1IssVlH0QrrybByG6xC9bZLTezH31Wqq
-        17Z4l2LsBLWXmKOZV0Dh6sn2HElPcdQrmJOeyU5FzN3g5K/4QQhM5vI25+4WcdjBK5fBUuA4X0I5y743
-        LEYRI+R7/gb+tEXD8z9gu0QMdnhUhsOhAfr9vn91ZeUu3IzCaDSaoTMeDAYP4fd6vV7AfVkjhBC/AVyS
-        vGPCkbZxAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJySURBVDhPjVNNaxRBEG2jM7vzlZ2Z3u6Z2Si6eBCCLvEX
+        rKAQIpsVlAWvQbx697QIih+/wJsHwYv6BwQPOQSP3gQFCRgU0aMKcbNxfK+3J04wggW1Xf3q1Zuu7lpR
+        sznrotvt9k4vLj7o9XobZ5eWNumMiTFHDmyPX7cKUIHnPUrjZCKTtMS6zy02IYfcWckfscP8cRznjFLq
+        Qycvylxn0zRNt7H/iXhCZ0yMOXLIZY1RsBqiKcQxrfQWSKWUcjMMwx8FYu651mPmyOGeNaw1IrQ4jp8x
+        QVKj0TgJ6HjaSh4Df9qKott0xsSYI4dc1rDWiAC8AOBXpnSZ+foboMIkhDhk17pVWCcIgu+sYS01RIKv
+        UJmgVmoLJDnjiiNw9s61HtMkuVaopIZgvwRs/zctsSo4yEyOXNawlhoCwQS+S2XXdVcMtXqFg83kyLWd
+        7FKDQryfKdU9z7tiqP8hRK490ZQaArPxBYHpFa9z11DxBvB/XTZzAtx71d2ita9CxvELAjkAiuIFTpAI
+        +2v8YQYDp1s/ADWE7/trRZaXMpUbOlHvdFt9xLEvg9+Guyy0xjhvNptXq4GE0A7bg8Y1Q1Bt9YbJKIpW
+        Mp295V+AX0SuminhYXZQ+KnQeXXBOxQD7zXSGHAYjnqOxTJJnkdudCqN44cQvWGSs3sx99VuyVe2eJti
+        7AS155mjmVdA4drRzgJJT3DUi5iTvsnORMzd4OQv+UEITBeKDufuOnHY3itXwXLoOJ/jaJ59r1uMIkbI
+        9/z1+TAqA89/j+0yMdj+URmNRgYYDAb+pdXVW3AzCuPxeI7OeDgc3off6ff7IfdVjRBC/AYt77xXNBBs
+        ewAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
     <value>Envoyer une requête</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 6</value>
+    <value>299, 6</value>
   </data>
   <data name="ActionWebCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -779,13 +779,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="ActionWebCheckUpdate.Text" xml:space="preserve">
     <value>Vérifier mise à jour</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 6</value>
+    <value>299, 6</value>
   </data>
   <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -806,10 +806,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
-    <value>Tanak Hébreu MP3</value>
+    <value>Tanak Hébreu MP3 @ mechon-mamre.org</value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -830,7 +830,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
+  </data>
+  <data name="bibleFourmilabToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tanak Hébreu Texte @ fourmilab.ch</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -851,10 +854,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bible interlinéaire @ biblehub.com</value>
+    <value>Bible Interlinéaire @ biblehub.com</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -875,10 +878,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tanak interlinéaire @ studybible.info</value>
+    <value>Tanak Interlinéaire @ studybible.info</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -899,10 +902,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Euangélion interlinéaire @ studybible.info</value>
+    <value>Euangélion Interlinéaire @ studybible.info</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -923,13 +926,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Text" xml:space="preserve">
-    <value>Quran interlinéaire @ corpus.quran.com</value>
+    <value>Quran Interlinéaire @ corpus.quran.com</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 6</value>
+    <value>299, 6</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -950,7 +953,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Text" xml:space="preserve">
     <value>Le lexique Shorashon</value>
@@ -974,7 +977,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Text" xml:space="preserve">
     <value>Le dictionnaire Sanskrit Héritage</value>
@@ -998,7 +1001,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 24</value>
+    <value>302, 24</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Un dictionnaire Akkadien</value>
@@ -1089,38 +1092,20 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="MenuitemScreenPosition.Text" xml:space="preserve">
     <value>Position de l'écran</value>
   </data>
-  <data name="EditScreenNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
   <data name="EditScreenNone.Text" xml:space="preserve">
     <value>Libre</value>
-  </data>
-  <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
   </data>
   <data name="EditScreenTopLeft.Text" xml:space="preserve">
     <value>Haut gauche</value>
   </data>
-  <data name="EditScreenTopRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
   <data name="EditScreenTopRight.Text" xml:space="preserve">
     <value>Haut droit</value>
-  </data>
-  <data name="EditScreenBottomLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
   </data>
   <data name="EditScreenBottomLeft.Text" xml:space="preserve">
     <value>Bas gauche</value>
   </data>
-  <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
   <data name="EditScreenBottomRight.Text" xml:space="preserve">
     <value>Bas droit</value>
-  </data>
-  <data name="EditScreenCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
   </data>
   <data name="EditScreenCenter.Text" xml:space="preserve">
     <value>Centrer</value>
@@ -1286,43 +1271,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
     <value>Chercher un mot (F5)</value>
   </data>
-  <data name="ActionCopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionCopyToClipboard.Text" xml:space="preserve">
-    <value>Copier dans le presse-papier</value>
-  </data>
-  <data name="ActionCopyToClipboard.ToolTipText" xml:space="preserve">
-    <value>Copier dans le presse-papier</value>
-  </data>
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1486,18 +1434,18 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
@@ -1555,6 +1503,43 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionOpenBackupPath.Text" xml:space="preserve">
     <value>Parcourir le dossier d'archivage</value>
+  </data>
+  <data name="ActionCopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionCopyToClipboard.Text" xml:space="preserve">
+    <value>Copier dans le presse-papier</value>
+  </data>
+  <data name="ActionCopyToClipboard.ToolTipText" xml:space="preserve">
+    <value>Copier dans le presse-papier</value>
   </data>
   <data name="ActionSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

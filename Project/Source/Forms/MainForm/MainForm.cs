@@ -878,6 +878,10 @@ namespace Ordisoftware.HebrewWords
       DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
+    private void PanelViewVerses_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
   }
 
 }
