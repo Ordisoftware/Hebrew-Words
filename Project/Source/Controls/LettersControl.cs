@@ -30,7 +30,6 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicates if a key is being processed.
     /// </summary>
-    [ThreadStatic]
     private bool KeyProcessed = false;
 
     /// <summary>

@@ -48,11 +48,13 @@ namespace Ordisoftware.HebrewWords
       form.Mutex = false;
       form.Text = reference.ToString() + " {" + sender.Word.Number + "}";
       form.Show();
+      MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
 
     private ReferenceItem Reference;
     private WordReferencedItem WordReferenced;
     private WordControl WordControl;
+    private bool Mutex;
 
     private SearchTranslatedForm()
     {
@@ -70,7 +72,8 @@ namespace Ordisoftware.HebrewWords
 
     private void WordTranslationsForm_Shown(object sender, EventArgs e)
     {
-      ActionUpdate.PerformClick();
+      Update();
+      ActiveControl = ListView;
     }
 
     private void WordTranslationsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -85,6 +88,7 @@ namespace Ordisoftware.HebrewWords
     private void SearchTranslatedForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Forms.Remove(this);
+      MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)
@@ -97,39 +101,26 @@ namespace Ordisoftware.HebrewWords
       ListView.Columns[1].Width = -2;
     }
 
-    private bool Mutex;
+    private bool KeyProcessed = false;
 
-    private void ActionUpdate_Click(object sender, EventArgs e)
+    private void EditHebrew_KeyPress(object sender, KeyPressEventArgs e)
     {
-      Mutex = true;
-      try
+      if ( e.KeyChar == '\r' )
+        Update();
+      else
+      if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
+        e.KeyChar = '\x0';
+      else
+        KeyProcessed = true;
+    }
+
+    private void EditHebrew_KeyUp(object sender, KeyEventArgs e)
+    {
+      if ( KeyProcessed )
       {
-        ListView.Items.Clear();
-        string wordHebrew = EditHebrew.Text;
-        if ( wordHebrew.Length < 2 ) return;
-        Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
-        Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
-        Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
-        var references = from book in MainForm.Instance.DataSet.Books
-                         from chapter in book.GetChaptersRows()
-                         from verse in chapter.GetVersesRows()
-                         from word in verse.GetWordsRows()
-                         where check(word.Hebrew) && word.Translation != ""
-                         select new WordReferencedItem(book, chapter, verse, word);
-        if ( EditDistinct.Checked )
-          references = references.Distinct(new SearchTranslatedComparer());
-        foreach ( var item in references )
-        {
-          var itemList = new ListViewItem(item.ToString());
-          itemList.Tag = item;
-          itemList.SubItems.Add(item.Word.Translation);
-          ListView.Items.Add(itemList);
-        }
-        ActiveControl = ListView;
-      }
-      finally
-      {
-        Mutex = false;
+        KeyProcessed = false;
+        if ( EditHebrew.SelectionStart != 0 )
+          EditHebrew.SelectionStart = EditHebrew.SelectionStart - 1;
       }
     }
 
@@ -181,38 +172,76 @@ namespace Ordisoftware.HebrewWords
       var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       WordControl.Word.Translation = str;
       WordControl.EditTranslation.Text = str;
-     Close();
+      Close();
     }
 
     private void EditHebrew_TextChanged(object sender, EventArgs e)
     {
-      if ( !Mutex ) EditWholeWord.Checked = false;
+      if ( Mutex ) return;
+      if (EditWholeWord.Checked)
+        EditWholeWord.Checked = false;
+      else
+        Update();
     }
 
     private void ActionDelLast_Click(object sender, EventArgs e)
     {
       if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(0, 1);
-      ActionUpdate.PerformClick();
+      Update();
     }
 
     private void ActionDelFirst_Click(object sender, EventArgs e)
     {
       if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(EditHebrew.Text.Length - 1, 1);
-      ActionUpdate.PerformClick();
+      Update();
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       EditHebrew.Text = WordControl.Word.Hebrew;
       EditWholeWord.Checked = true;
-      ActionUpdate.PerformClick();
+      Update();
     }
 
     private void EditFilter_CheckedChanged(object sender, EventArgs e)
     {
-      ActionUpdate.PerformClick();
+      Update();
+    }
+
+    private void Update()
+    {
+      if ( Mutex ) return;
+      Mutex = true;
+      try
+      {
+        ListView.Items.Clear();
+        string wordHebrew = EditHebrew.Text;
+        if ( wordHebrew.Length < 2 ) return;
+        Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
+        Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
+        Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
+        var references = from book in MainForm.Instance.DataSet.Books
+                         from chapter in book.GetChaptersRows()
+                         from verse in chapter.GetVersesRows()
+                         from word in verse.GetWordsRows()
+                         where check(word.Hebrew) && word.Translation != ""
+                         select new WordReferencedItem(book, chapter, verse, word);
+        if ( EditDistinct.Checked )
+          references = references.Distinct(new SearchTranslatedComparer());
+        foreach ( var item in references )
+        {
+          var itemList = new ListViewItem(item.ToString());
+          itemList.Tag = item;
+          itemList.SubItems.Add(item.Word.Translation);
+          ListView.Items.Add(itemList);
+        }
+      }
+      finally
+      {
+        Mutex = false;
+      }
     }
 
   }

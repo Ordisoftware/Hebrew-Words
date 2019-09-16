@@ -49,7 +49,6 @@
       this.ActionDelLast = new System.Windows.Forms.Button();
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
-      this.ActionUpdate = new System.Windows.Forms.Button();
       this.EditHebrew = new System.Windows.Forms.TextBox();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
@@ -160,7 +159,6 @@
       this.PanelTop.Controls.Add(this.ActionDelLast);
       this.PanelTop.Controls.Add(this.ActionDelFirst);
       this.PanelTop.Controls.Add(this.EditWholeWord);
-      this.PanelTop.Controls.Add(this.ActionUpdate);
       this.PanelTop.Controls.Add(this.EditHebrew);
       resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
@@ -208,20 +206,14 @@
       this.EditWholeWord.UseVisualStyleBackColor = true;
       this.EditWholeWord.CheckedChanged += new System.EventHandler(this.EditFilter_CheckedChanged);
       // 
-      // ActionUpdate
-      // 
-      resources.ApplyResources(this.ActionUpdate, "ActionUpdate");
-      this.ActionUpdate.FlatAppearance.BorderSize = 0;
-      this.ActionUpdate.Name = "ActionUpdate";
-      this.ActionUpdate.UseVisualStyleBackColor = true;
-      this.ActionUpdate.Click += new System.EventHandler(this.ActionUpdate_Click);
-      // 
       // EditHebrew
       // 
       resources.ApplyResources(this.EditHebrew, "EditHebrew");
       this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditHebrew.Name = "EditHebrew";
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
+      this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
+      this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
       // 
       // SearchTranslatedForm
       // 
@@ -267,7 +259,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Panel PanelTop;
     private System.Windows.Forms.TextBox EditHebrew;
-    private System.Windows.Forms.Button ActionUpdate;
     private System.Windows.Forms.CheckBox EditWholeWord;
     private System.Windows.Forms.Button ActionDelLast;
     private System.Windows.Forms.Button ActionDelFirst;

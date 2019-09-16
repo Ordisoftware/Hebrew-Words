@@ -1885,6 +1885,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 46</value>
   </data>
+  <data name="ActionCloseWindows.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionCloseWindows.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3222,6 +3225,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
+  <data name="ActionCopyToClipboard.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionCopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3589,9 +3595,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -3913,12 +3916,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionViewSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
-    <value>ActionCopyToClipboard</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
     <value>toolStripSeparator7</value>
   </data>
@@ -3990,6 +3987,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
+    <value>ActionCopyToClipboard</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
     <value>ActionSave</value>
