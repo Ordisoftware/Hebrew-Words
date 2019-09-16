@@ -218,9 +218,33 @@ namespace Ordisoftware.HebrewWords
             label.AutoSize = true;
             label.Font = HebrewFont12;
             if ( CheckWord != null )
-              label.ForeColor = CheckWord(word)
-                              ? Color.DarkRed
-                              : SystemColors.ControlText;
+            {
+              if ( CheckWord(word) )
+              {
+                label.Tag = new WordReferencedItem(reference, word);
+                label.ForeColor = Color.DarkRed;
+                label.MouseEnter += (sender, e) =>
+                {
+                  ( (Control)sender ).Cursor = Cursors.Hand;
+                };
+                label.MouseLeave += (sender, e) =>
+                {
+                  ( (Control)sender ).Cursor = Cursors.Default;
+                };
+                label.MouseClick += (sender, e) =>
+                {
+                  SetView(ViewModeType.Verses);
+                  var item = (WordReferencedItem)( (Control)sender ).Tag;
+                  GoTo(item);
+                  foreach ( Control control in PanelViewVerses.Controls )
+                    if ( control is WordControl )
+                      if ( ( (WordControl)control ).Word == item.Word )
+                        control.Focus();
+                };
+              }
+              else
+                label.ForeColor = SystemColors.ControlText;
+            }
             x -= label.PreferredSize.Width;
             if ( x < minX )
             {
