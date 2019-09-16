@@ -65,17 +65,17 @@ namespace Ordisoftware.HebrewWords
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
-      EditOnlineSearch.Text = Program.Settings.SearchOnline;
-      EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnline;
+      EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
+      EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL;
       EditBackupPath.Text = Program.Settings.BackupPath;
       EditBackupCount.Value = Program.Settings.BackupCount;
       EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
-      EditCommentaryLinesCount.Value = Program.Settings.CommentaryLinesCount;
+      EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount;
       EditWordControlWidth.Value = Program.Settings.WordControlWidth;
       EditBookmarksCount.Value = Program.Settings.BookmarksCount;
       EditHistoryCount.Value = Program.Settings.HistoryCount;
-      EditMaxRefCount.Value = Program.Settings.MaxRefCount;
-      EditMinRefCount.Value = Program.Settings.MinimalFoundToOpenDialog;
+      EditMaxRefCount.Value = Program.Settings.MaximumFoundReferencesViewable;
+      EditMinRefCount.Value = Program.Settings.MinimalFoundReferencesToOpenDialog;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
@@ -92,19 +92,19 @@ namespace Ordisoftware.HebrewWords
     private void PreferencesForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
-      Program.Settings.SearchOnline = EditOnlineSearch.Text;
-      Program.Settings.OpenVerseOnline = EditOnlineVerseURL.Text;
+      Program.Settings.SearchOnlineURL = EditOnlineSearch.Text;
+      Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
       Program.Settings.BackupPath = EditBackupPath.Text.EndsWith(Path.DirectorySeparatorChar.ToString())
                                   ? EditBackupPath.Text
                                   : EditBackupPath.Text + Path.DirectorySeparatorChar;
       Program.Settings.BackupCount = (int)EditBackupCount.Value;
       Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
-      Program.Settings.CommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+      Program.Settings.VerseCommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
       Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
       Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
       Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
-      Program.Settings.MaxRefCount = (int)EditMaxRefCount.Value;
-      Program.Settings.MinimalFoundToOpenDialog = (int)EditMinRefCount.Value;
+      Program.Settings.MaximumFoundReferencesViewable = (int)EditMaxRefCount.Value;
+      Program.Settings.MinimalFoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )

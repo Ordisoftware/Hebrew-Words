@@ -159,12 +159,12 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenOnlineConcordance(string hebrew)
     {
-      RunShell(Settings.SearchOnline + hebrew);
+      RunShell(Settings.SearchOnlineURL + hebrew);
     }
 
     static public void OpenOnlineVerse(Books book, int chapter, int verse)
     {
-      RunShell(Settings.OpenVerseOnline
+      RunShell(Settings.OpenVerseOnlineURL
                .Replace("%BOOKSB%", BooksNames.StudyBible[book])
                .Replace("%BOOKNUM%", book.ToString())
                .Replace("%CHAPTERNUM%", chapter.ToString())

@@ -168,12 +168,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=strong+hebrew+")]
-        public string SearchOnline {
+        public string SearchOnlineURL {
             get {
-                return ((string)(this["SearchOnline"]));
+                return ((string)(this["SearchOnlineURL"]));
             }
             set {
-                this["SearchOnline"] = value;
+                this["SearchOnlineURL"] = value;
             }
         }
         
@@ -228,24 +228,24 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%")]
-        public string OpenVerseOnline {
+        public string OpenVerseOnlineURL {
             get {
-                return ((string)(this["OpenVerseOnline"]));
+                return ((string)(this["OpenVerseOnlineURL"]));
             }
             set {
-                this["OpenVerseOnline"] = value;
+                this["OpenVerseOnlineURL"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int CommentaryLinesCount {
+        public int VerseCommentaryLinesCount {
             get {
-                return ((int)(this["CommentaryLinesCount"]));
+                return ((int)(this["VerseCommentaryLinesCount"]));
             }
             set {
-                this["CommentaryLinesCount"] = value;
+                this["VerseCommentaryLinesCount"] = value;
             }
         }
         
@@ -312,36 +312,36 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int MaxRefCount {
+        public int MaximumFoundReferencesViewable {
             get {
-                return ((int)(this["MaxRefCount"]));
+                return ((int)(this["MaximumFoundReferencesViewable"]));
             }
             set {
-                this["MaxRefCount"] = value;
+                this["MaximumFoundReferencesViewable"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("292, 366")]
-        public global::System.Drawing.Size SearchTranslatedSize {
+        public global::System.Drawing.Size SearchTranslatedFormSize {
             get {
-                return ((global::System.Drawing.Size)(this["SearchTranslatedSize"]));
+                return ((global::System.Drawing.Size)(this["SearchTranslatedFormSize"]));
             }
             set {
-                this["SearchTranslatedSize"] = value;
+                this["SearchTranslatedFormSize"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point SearchTranslatedLocation {
+        public global::System.Drawing.Point SearchTranslatedFormLocation {
             get {
-                return ((global::System.Drawing.Point)(this["SearchTranslatedLocation"]));
+                return ((global::System.Drawing.Point)(this["SearchTranslatedFormLocation"]));
             }
             set {
-                this["SearchTranslatedLocation"] = value;
+                this["SearchTranslatedFormLocation"] = value;
             }
         }
         
@@ -359,13 +359,13 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int MinimalFoundToOpenDialog {
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int MinimalFoundReferencesToOpenDialog {
             get {
-                return ((int)(this["MinimalFoundToOpenDialog"]));
+                return ((int)(this["MinimalFoundReferencesToOpenDialog"]));
             }
             set {
-                this["MinimalFoundToOpenDialog"] = value;
+                this["MinimalFoundReferencesToOpenDialog"] = value;
             }
         }
         
@@ -396,36 +396,36 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SearchTranslatedFilterDistinct {
+        public bool SearchTranslatedFormFilterDistinct {
             get {
-                return ((bool)(this["SearchTranslatedFilterDistinct"]));
+                return ((bool)(this["SearchTranslatedFormFilterDistinct"]));
             }
             set {
-                this["SearchTranslatedFilterDistinct"] = value;
+                this["SearchTranslatedFormFilterDistinct"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SearchHebrewOnlyInTorah {
+        public bool SearchOnlyInTorah {
             get {
-                return ((bool)(this["SearchHebrewOnlyInTorah"]));
+                return ((bool)(this["SearchOnlyInTorah"]));
             }
             set {
-                this["SearchHebrewOnlyInTorah"] = value;
+                this["SearchOnlyInTorah"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int CurrentSearchType {
+        public int CurrentSearchTypeTab {
             get {
-                return ((int)(this["CurrentSearchType"]));
+                return ((int)(this["CurrentSearchTypeTab"]));
             }
             set {
-                this["CurrentSearchType"] = value;
+                this["CurrentSearchTypeTab"] = value;
             }
         }
         
@@ -444,12 +444,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SearchTranslatedFormReturnToReference {
+        public bool CloseSearchTranslatedFormReturnToReference {
             get {
-                return ((bool)(this["SearchTranslatedFormReturnToReference"]));
+                return ((bool)(this["CloseSearchTranslatedFormReturnToReference"]));
             }
             set {
-                this["SearchTranslatedFormReturnToReference"] = value;
+                this["CloseSearchTranslatedFormReturnToReference"] = value;
             }
         }
     }

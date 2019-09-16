@@ -103,7 +103,7 @@ namespace Ordisoftware.HebrewWords
           if ( emptyline ) y -= dy;
           var editComment = new TextBox();
           label.Tag = editComment;
-          if ( Program.Settings.CommentaryLinesCount > 1 )
+          if ( Program.Settings.VerseCommentaryLinesCount > 1 )
           {
             editComment.Multiline = true;
             editComment.WordWrap = true;
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewWords
           editComment.Location = new Point(width - wordsWidth - label.Width - delta, y + dy + delta);
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth - delta;
-          editComment.Height = textHeight * ( Program.Settings.CommentaryLinesCount + 1 ) - 3;
+          editComment.Height = textHeight * ( Program.Settings.VerseCommentaryLinesCount + 1 ) - 3;
           editComment.Tag = reference;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = reference.Verse.Comment;

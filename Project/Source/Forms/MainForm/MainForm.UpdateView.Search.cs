@@ -26,15 +26,17 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private string SearchWord1;
-    private string SearchWord2;
+    private int PagingCurrent = 0;
 
     private IEnumerable<ReferenceItem> SearchResults;
 
-    public int SearchResultsCount { get; private set; }
+    internal int SearchResultsCount { get; private set; }
 
     private Func<DataSet.WordsRow, bool> CheckWord;
     private Func<DataSet.VersesRow, bool> CheckVerse;
+
+    private string SearchWord1;
+    private string SearchWord2;
 
     private void CreateSearchResults()
     {
@@ -133,8 +135,13 @@ namespace Ordisoftware.HebrewWords
         {
           Cursor = Cursors.Default;
         }
-        if ( SearchResultsCount > Program.Settings.MinimalFoundToOpenDialog )
+        if ( SearchResultsCount > Program.Settings.MinimalFoundReferencesToOpenDialog )
+        {
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
+          if ( SearchResults != null)
+            SearchResults = SearchResults.Skip(PagingCurrent * Program.Settings.MinimalFoundReferencesToOpenDialog)
+                            .Take(Program.Settings.MaximumFoundReferencesViewable);
+        }
       }
       RenderSearchResults();
     }
@@ -154,8 +161,8 @@ namespace Ordisoftware.HebrewWords
       try
       {
         int index = 0;
-        int indexDelta = 0;
-        int indexDeltaMax = 10;
+        int indexStep = 0;
+        int indexStepMax = 10;
         int referenceSize = 160;
         int marginX = 10;
         int marginY = 10;
@@ -169,10 +176,10 @@ namespace Ordisoftware.HebrewWords
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }
           ++index;
-          ++indexDelta;
-          if ( indexDelta >= indexDeltaMax )
+          ++indexStep;
+          if ( indexStep >= indexStepMax )
           {
-            indexDelta = 0;
+            indexStep = 0;
             LabelFindRefCount.Text = index + "/" + SearchResultsCount;
             LabelFindRefCount.Refresh();
           }
@@ -226,7 +233,6 @@ namespace Ordisoftware.HebrewWords
             PanelSearchResults.Controls.Add(label);
             y += label.PreferredHeight + marginY;
           }
-          if ( index >= Program.Settings.MaxRefCount ) break;
         }
         LabelFindRefCount.Text = index.ToString();
       }

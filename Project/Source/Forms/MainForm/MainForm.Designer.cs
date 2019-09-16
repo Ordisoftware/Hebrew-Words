@@ -391,9 +391,9 @@
       // EditSearchOnlyTorah
       // 
       resources.ApplyResources(this.EditSearchOnlyTorah, "EditSearchOnlyTorah");
-      this.EditSearchOnlyTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchHebrewOnlyInTorah;
+      this.EditSearchOnlyTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchOnlyInTorah;
       this.EditSearchOnlyTorah.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSearchOnlyTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchHebrewOnlyInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchOnlyTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchOnlyInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditSearchOnlyTorah.Name = "EditSearchOnlyTorah";
       this.EditSearchOnlyTorah.UseVisualStyleBackColor = true;
       // 
@@ -419,9 +419,9 @@
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeRequest);
-      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchType", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.SelectSearchType.Name = "SelectSearchType";
-      this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchType;
+      this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchTypeTab;
       this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
       // 
       // SelectSearchTypeHebrew

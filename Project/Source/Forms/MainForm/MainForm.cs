@@ -385,16 +385,16 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCloseWindows_Click(object sender, EventArgs e)
     {
-      bool value = Program.Settings.SearchTranslatedFormReturnToReference;
+      bool value = Program.Settings.CloseSearchTranslatedFormReturnToReference;
       try
       {
-        Program.Settings.SearchTranslatedFormReturnToReference = false;
+        Program.Settings.CloseSearchTranslatedFormReturnToReference = false;
         foreach ( var form in SearchTranslatedForm.Forms.ToList() )
           form.Close();
       }
       finally
       {
-        Program.Settings.SearchTranslatedFormReturnToReference = value;
+        Program.Settings.CloseSearchTranslatedFormReturnToReference = value;
       }
     }
 

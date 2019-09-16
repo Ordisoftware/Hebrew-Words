@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewWords
       Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
       LabelFound.Text = String.Format(LabelFound.Text, MainForm.Instance.SearchResultsCount);
-      LabelFirst.Text = String.Format(LabelFirst.Text, Program.Settings.MaxRefCount);
+      LabelFirst.Text = String.Format(LabelFirst.Text, Program.Settings.MaximumFoundReferencesViewable);
     }
 
     private void SelectSearchResultsForm_Load(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewWords
         Height = 50 + SelectBooks.Location.Y + SelectBooks.Items.Count * 15 + 75;
         ActiveControl = SelectBooks;
         SelectBooks.Focus();
-        if ( References.Count() <= Program.Settings.MaxRefCount )
+        if ( References.Count() <= Program.Settings.MaximumFoundReferencesViewable )
           LabelFirst.Visible = false;
       }
       finally
