@@ -29,22 +29,22 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.PanelMain = new System.Windows.Forms.Panel();
       this.ProgressBar = new System.Windows.Forms.ProgressBar();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label1 = new System.Windows.Forms.Label();
-      this.panel1.SuspendLayout();
+      this.LabelApplicationName = new System.Windows.Forms.Label();
+      this.LabelOperation = new System.Windows.Forms.Label();
+      this.PanelMain.SuspendLayout();
       this.SuspendLayout();
       // 
-      // panel1
+      // PanelMain
       // 
-      this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panel1.Controls.Add(this.ProgressBar);
-      this.panel1.Controls.Add(this.label2);
-      this.panel1.Controls.Add(this.label1);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.BackColor = System.Drawing.Color.LemonChiffon;
+      this.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelMain.Controls.Add(this.ProgressBar);
+      this.PanelMain.Controls.Add(this.LabelApplicationName);
+      this.PanelMain.Controls.Add(this.LabelOperation);
+      this.PanelMain.Name = "PanelMain";
       // 
       // ProgressBar
       // 
@@ -52,36 +52,37 @@
       this.ProgressBar.Name = "ProgressBar";
       this.ProgressBar.Step = 1;
       // 
-      // label2
+      // LabelApplicationName
       // 
-      resources.ApplyResources(this.label2, "label2");
-      this.label2.Name = "label2";
+      resources.ApplyResources(this.LabelApplicationName, "LabelApplicationName");
+      this.LabelApplicationName.Name = "LabelApplicationName";
       // 
-      // label1
+      // LabelOperation
       // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
+      resources.ApplyResources(this.LabelOperation, "LabelOperation");
+      this.LabelOperation.Name = "LabelOperation";
       // 
       // LoadingForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelMain);
+      this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "LoadingForm";
       this.ShowInTaskbar = false;
       this.TopMost = true;
-      this.panel1.ResumeLayout(false);
-      this.panel1.PerformLayout();
+      this.PanelMain.ResumeLayout(false);
+      this.PanelMain.PerformLayout();
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.Label LabelApplicationName;
     internal System.Windows.Forms.ProgressBar ProgressBar;
+    internal System.Windows.Forms.Label LabelOperation;
   }
 }

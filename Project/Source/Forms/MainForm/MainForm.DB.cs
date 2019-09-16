@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-08 </edited>
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -130,13 +132,9 @@ namespace Ordisoftware.HebrewWords
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
       var command = new OdbcCommand("select count(*) FROM Books", connection);
-      if ( (int)command.ExecuteScalar() == 0 )
-      {
-        connection.Close();
-        LoadFromFiles();
-        TableAdapterManager.UpdateAll(DataSet);
-      }
-      else
+      int count = (int)command.ExecuteScalar();
+      connection.Close();
+      if ( count != 0 )
       {
         BooksTableAdapter.Fill(DataSet.Books);
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
@@ -145,6 +143,52 @@ namespace Ordisoftware.HebrewWords
           book.Name = book.Name.Replace("_", " ");
         }
         TableAdapterManager.UpdateAll(DataSet);
+      }
+      else
+      {
+        bool inprogress = true;
+        int index = 0;
+        int delta = 1;
+        var form = new LoadingForm();
+        form.LabelOperation.Text = Localizer.CreatingDataText.GetLang();
+        form.ProgressBar.Maximum = 50;
+        form.Show();
+        try
+        {
+          var taskProgress = new Task(() =>
+          {
+            while ( inprogress )
+            {
+              Application.DoEvents();
+              index += delta;
+              if ( index == form.ProgressBar.Maximum ) delta = -1;
+              if ( index == 0 ) delta = +1;
+              form.ProgressBar.SyncUI(() => form.ProgressBar.Value = index);
+              this.SyncUI(Refresh);
+              form.SyncUI(form.Refresh);
+              Thread.Sleep(200);
+            }
+          });
+          taskProgress.Start();
+          var taskLoad = new Task(() =>
+          {
+            LoadFromFiles();
+            TableAdapterManager.UpdateAll(DataSet);
+          });
+          taskLoad.Start();
+          while ( inprogress )
+          {
+            Application.DoEvents();
+            if ( taskLoad.IsCompleted ) inprogress = false;
+            Thread.Sleep(200);
+          }
+          form.ProgressBar.Value = form.ProgressBar.Maximum;
+        }
+        finally
+        {
+          inprogress = false;
+          form.Close();
+        }
       }
     }
 
@@ -319,6 +363,7 @@ namespace Ordisoftware.HebrewWords
       try
       {
         CreateDatabaseIfNotExists();
+        form.Refresh();
         int rowsCount = GetRowsCount("Books")
                       + GetRowsCount("Chapters")
                       + GetRowsCount("Verses")
@@ -359,7 +404,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         IsLoadingData = false;
-        form.Hide();
+        form.Close();
         SetFormDisabled(false);
       }
     }

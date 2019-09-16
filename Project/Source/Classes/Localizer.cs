@@ -148,6 +148,13 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> CreatingDataText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Creating data..." },
+        { "fr", "Création des données..." }
+      };
+
     static public readonly Dictionary<string, string> NotYetAvailableText
       = new Dictionary<string, string>()
       {

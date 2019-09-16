@@ -17,7 +17,6 @@ using Ordisoftware.Core;
 using System;
 using System.IO;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
