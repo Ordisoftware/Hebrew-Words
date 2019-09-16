@@ -139,15 +139,16 @@ namespace Ordisoftware.HebrewWords
         if ( SearchResultsCount > Program.Settings.FoundReferencesToOpenDialog )
         {
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-          Cursor = Cursors.WaitCursor;
-          try
-          {
-            SearchResultsCount = SearchResults.Count();
-          }
-          finally
-          {
-            Cursor = Cursors.Default;
-          }
+          if ( SearchResults != null )
+            try
+            {
+              Cursor = Cursors.WaitCursor;
+              SearchResultsCount = SearchResults.Count();
+            }
+            finally
+            {
+              Cursor = Cursors.Default;
+            }
         }
       }
       RenderSearchResults();
