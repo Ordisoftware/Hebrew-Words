@@ -41,8 +41,9 @@ namespace Ordisoftware.HebrewWords
         BooksTableAdapter.Fill(DataSet.Books);
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
         {
-          book.Hebrew = BooksNames.Hebrew[(Books)( book.Number - 1 )];
-          book.Name = book.Name.Replace("_", " ");
+          Books enumBook = (Books)( book.Number - 1 );
+          book.Hebrew = BooksNames.Hebrew[enumBook];
+          book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
         }
         TableAdapterManager.UpdateAll(DataSet);
       }

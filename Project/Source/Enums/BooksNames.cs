@@ -32,10 +32,10 @@ namespace Ordisoftware.HebrewWords
       // Nevi'im
       { Books.Yehoshoua, "i>vhy" },
       { Books.Shoftim, "mytpv>" },
-      { Books.Shemouel_1, "a lavm>" },
-      { Books.Shemouel_2, "b lavm>" },
-      { Books.Melakim_1, "a myklm" },
-      { Books.Melakim_2, "b myklm" },
+      { Books.Shemouel_I, "a lavm>" },
+      { Books.Shemouel_II, "b lavm>" },
+      { Books.Melakim_I, "a myklm" },
+      { Books.Melakim_II, "b myklm" },
       { Books.Isayah, "hyi>y" },
       { Books.Yirmyah, "hymry" },
       { Books.Yehezkel, "laqzxy" },
@@ -63,8 +63,8 @@ namespace Ordisoftware.HebrewWords
       { Books.Daniel, "lanyd" },
       { Books.Ezra, "arzi" },
       { Books.Nehemiah, "hymxn" },
-      { Books.Divrei_HaYamim_1, "a mymyh yrbd" },
-      { Books.Divrei_HaYamim_2, "b mymyh yrbd" }
+      { Books.Divrei_HaYamim_I, "a mymyh yrbd" },
+      { Books.Divrei_HaYamim_II, "b mymyh yrbd" }
     };
 
     static public Dictionary<Books, string> StudyBible = new Dictionary<Books, string>()
@@ -78,10 +78,10 @@ namespace Ordisoftware.HebrewWords
       // Nevi'im
       { Books.Yehoshoua, "Joshua" },
       { Books.Shoftim, "Judges" },
-      { Books.Shemouel_1, "1 Samuel" },
-      { Books.Shemouel_2, "2 Samuel" },
-      { Books.Melakim_1, "1 Kings" },
-      { Books.Melakim_2, "2 Kings" },
+      { Books.Shemouel_I, "1 Samuel" },
+      { Books.Shemouel_II, "2 Samuel" },
+      { Books.Melakim_I, "1 Kings" },
+      { Books.Melakim_II, "2 Kings" },
       { Books.Isayah, "Isaiah" },
       { Books.Yirmyah, "Jeremiah" },
       { Books.Yehezkel, "Ezekiel" },
@@ -109,8 +109,8 @@ namespace Ordisoftware.HebrewWords
       { Books.Daniel, "Daniel" },
       { Books.Ezra, "Ezra" },
       { Books.Nehemiah, "Nehemiah" },
-      { Books.Divrei_HaYamim_1, "1 Chronicles" },
-      { Books.Divrei_HaYamim_2, "2 Chronicles" }
+      { Books.Divrei_HaYamim_I, "1 Chronicles" },
+      { Books.Divrei_HaYamim_II, "2 Chronicles" }
     };
 
   }

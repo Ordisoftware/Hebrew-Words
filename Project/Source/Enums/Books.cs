@@ -22,14 +22,14 @@ namespace Ordisoftware.HebrewWords
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Nevi'im
-    Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakim_1, Melakim_2,
+    Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
     Isayah, Yirmyah, Yehezkel,
     Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
     Habaquq, Zefaniah, Hagai, Zakaria, Malaki,
     // Ketouvim
     Tehilim, Mishlei, Iyyov,
     Chir_HaChirim, Ruth, Eikha, Qohelet, Esther,
-    Daniel, Ezra, Nehemiah, Divrei_HaYamim_1, Divrei_HaYamim_2
+    Daniel, Ezra, Nehemiah, Divrei_HaYamim_I, Divrei_HaYamim_II
   };
 
   public enum TorahBooks
