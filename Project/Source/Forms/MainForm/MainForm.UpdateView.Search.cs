@@ -115,6 +115,7 @@ namespace Ordisoftware.HebrewWords
                         where book.Number <= limit && CheckWord(word)
                         select new ReferenceItem(book, chapter, verse);
       }
+      else
       if ( CheckVerse != null )
       {
         SearchResults = from book in DataSet.Books
@@ -135,12 +136,18 @@ namespace Ordisoftware.HebrewWords
         {
           Cursor = Cursors.Default;
         }
-        if ( SearchResultsCount > Program.Settings.MinimalFoundReferencesToOpenDialog )
+        if ( SearchResultsCount > Program.Settings.FoundReferencesToOpenDialog )
         {
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-          if ( SearchResults != null)
-            SearchResults = SearchResults.Skip(PagingCurrent * Program.Settings.MinimalFoundReferencesToOpenDialog)
-                            .Take(Program.Settings.MaximumFoundReferencesViewable);
+          Cursor = Cursors.WaitCursor;
+          try
+          {
+            SearchResultsCount = SearchResults.Count();
+          }
+          finally
+          {
+            Cursor = Cursors.Default;
+          }
         }
       }
       RenderSearchResults();
@@ -160,6 +167,9 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.SuspendLayout();
       try
       {
+        var results = SearchResults.ToList()
+                      .Skip(PagingCurrent * Program.Settings.FoundReferencesToOpenDialog)
+                      .Take(Program.Settings.FoundReferencesViewable);
         int index = 0;
         int indexStep = 0;
         int indexStepMax = 10;
@@ -171,7 +181,7 @@ namespace Ordisoftware.HebrewWords
         int x = 0;
         int y = 0;
         int xx;
-        foreach ( var reference in SearchResults )
+        foreach ( var reference in results )
         {
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }

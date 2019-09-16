@@ -79,7 +79,7 @@
     <Setting Name="WordControlWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="MaximumFoundReferencesViewable" Type="System.Int32" Scope="User">
+    <Setting Name="FoundReferencesViewable" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormSize" Type="System.Drawing.Size" Scope="User">
@@ -91,7 +91,7 @@
     <Setting Name="HistoryCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="MinimalFoundReferencesToOpenDialog" Type="System.Int32" Scope="User">
+    <Setting Name="FoundReferencesToOpenDialog" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">

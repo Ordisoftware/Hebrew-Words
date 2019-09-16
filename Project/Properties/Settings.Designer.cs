@@ -312,12 +312,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int MaximumFoundReferencesViewable {
+        public int FoundReferencesViewable {
             get {
-                return ((int)(this["MaximumFoundReferencesViewable"]));
+                return ((int)(this["FoundReferencesViewable"]));
             }
             set {
-                this["MaximumFoundReferencesViewable"] = value;
+                this["FoundReferencesViewable"] = value;
             }
         }
         
@@ -360,12 +360,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int MinimalFoundReferencesToOpenDialog {
+        public int FoundReferencesToOpenDialog {
             get {
-                return ((int)(this["MinimalFoundReferencesToOpenDialog"]));
+                return ((int)(this["FoundReferencesToOpenDialog"]));
             }
             set {
-                this["MinimalFoundReferencesToOpenDialog"] = value;
+                this["FoundReferencesToOpenDialog"] = value;
             }
         }
         

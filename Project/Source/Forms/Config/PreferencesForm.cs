@@ -74,8 +74,8 @@ namespace Ordisoftware.HebrewWords
       EditWordControlWidth.Value = Program.Settings.WordControlWidth;
       EditBookmarksCount.Value = Program.Settings.BookmarksCount;
       EditHistoryCount.Value = Program.Settings.HistoryCount;
-      EditMaxRefCount.Value = Program.Settings.MaximumFoundReferencesViewable;
-      EditMinRefCount.Value = Program.Settings.MinimalFoundReferencesToOpenDialog;
+      EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable;
+      EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog;
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Translated;
@@ -103,8 +103,8 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
       Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
       Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
-      Program.Settings.MaximumFoundReferencesViewable = (int)EditMaxRefCount.Value;
-      Program.Settings.MinimalFoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
+      Program.Settings.FoundReferencesViewable = (int)EditMaxRefCount.Value;
+      Program.Settings.FoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
       if ( SelectOpenHebrewLetters.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
       if ( SelectOpenOnlineSearch.Checked )
