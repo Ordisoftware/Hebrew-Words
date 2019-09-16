@@ -84,8 +84,8 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> ApplicationDescriptionText
       = new Dictionary<string, string>()
       {
-        { "en", "A tool that helps for the translation of the Bible's hebrew words" },
-        { "fr", "Un utilitaire qui aide à la traduction des mots hébreux de la Bible" }
+        { "en", "A tool for the literal translation of the Hebrew Bible" },
+        { "fr", "Un utilitaire pour la traduction littérale de la Bible hébraïque" }
       };
 
     static public readonly Dictionary<string, string> ExitApplicationText
