@@ -87,6 +87,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    // Convert standard hebrew letters of a word to hebrew font key codes.
+    /// </summary>
+    static public string ConvertToHebrewFont(string str)
+    {
+      string result = "";
+      foreach ( char c in str ) result += ConvertToKey(c);
+      return result;
+    }
+
+    /// <summary>
     // Convert letters from www.fourmilab.ch/etexts/www/hebrew/Bible to font codes.
     /// </summary>
     static public char ConvertToKey(char c)

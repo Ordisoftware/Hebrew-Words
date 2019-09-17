@@ -141,6 +141,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// TextChanged event.
+    /// </summary>
     private void Input_TextChanged(object sender, EventArgs e)
     {
       InputTextChanged(sender, e);

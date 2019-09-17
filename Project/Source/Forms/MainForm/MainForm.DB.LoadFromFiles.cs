@@ -30,12 +30,6 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void LoadBooksFromFiles()
     {
-      Func<string, string> convert = (str) =>
-      {
-        string result = "";
-        foreach ( char c in str ) result += Letters.ConvertToKey(c);
-        return result;
-      };
       try
       {
         Data.DataSet.BooksRow book = null;
@@ -98,13 +92,13 @@ namespace Ordisoftware.HebrewWords
                 verse.ChapterID = chapter.ID;
                 verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = convert(list[0]).Split(' ').Reverse().ToArray();
+                listWordsHebrew = Letters.ConvertToHebrewFont(list[0]).Split(' ').Reverse().ToArray();
                 DataSet.Verses.AddVersesRow(verse);
               }
               else
               {
                 listWordsOriginal = line.Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = convert(line).Split(' ').Reverse().ToArray();
+                listWordsHebrew = Letters.ConvertToHebrewFont(line).Split(' ').Reverse().ToArray();
               }
               for ( int i = 0; i < listWordsHebrew.Length; i++ )
                 if ( listWordsHebrew[i] != "" )
