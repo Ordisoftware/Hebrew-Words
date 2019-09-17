@@ -73,6 +73,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Improve verses rendering.
 - Improve translations rendering.
 - Improve search rendering.
+- Improve statistics.
 - Some fixes.
 - Update help.
 
