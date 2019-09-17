@@ -69,6 +69,10 @@ Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription
 
 [Dirs]
 
+[InstallDelete]
+Name: {app}\Project\*; Type: filesandordirs
+Name: {app}\Documents\*; Type: filesandordirs
+
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: *; DestDir: {app}\Setup; Excludes: *.---, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
@@ -174,5 +178,3 @@ begin
   end;
 	Result := s
 end;
-[InstallDelete]
-Name: {app}\Project\*; Type: filesandordirs
