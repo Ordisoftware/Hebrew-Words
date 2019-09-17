@@ -252,13 +252,10 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Utiliser %BOOKSB%, %BOOKNUM%, %CHAPTERNUM et %VERSENUM%</value>
   </data>
-  <data name="LabelSystemHandles.Text" xml:space="preserve">
-    <value>La limite des handles système doit être changée pour plus de 300.</value>
-  </data>
   <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
         lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
         rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
         mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
@@ -278,6 +275,12 @@
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier la mise à jour au démarrage</value>
+  </data>
+  <data name="EditOpenLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 17</value>
+  </data>
+  <data name="EditOpenLastViewAtStartup.Text" xml:space="preserve">
+    <value>Ouvrir la dernière vue au démarrage</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

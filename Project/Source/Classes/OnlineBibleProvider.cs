@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewWords
       item.URL = "https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%";
       Items.Add(item);
       item = new OnlineBibleProvider();
-      item.Name = "Mechon-mamre.org";
+      item.Name = "Mechon-Mamre.org";
       switch ( Localizer.Language )
       {
         case "fr":

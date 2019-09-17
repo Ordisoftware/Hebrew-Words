@@ -59,7 +59,6 @@
       this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-      this.label1 = new System.Windows.Forms.Label();
       this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
@@ -69,6 +68,7 @@
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -264,11 +264,6 @@
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
       // 
-      // label1
-      // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
-      // 
       // EditCommentaryLinesCount
       // 
       resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
@@ -389,12 +384,22 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
+      // EditOpenLastViewAtStartup
+      // 
+      resources.ApplyResources(this.EditOpenLastViewAtStartup, "EditOpenLastViewAtStartup");
+      this.EditOpenLastViewAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenLastViewAtStartup;
+      this.EditOpenLastViewAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditOpenLastViewAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenLastViewAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
+      this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionSelectOnlineVerseURL);
       this.Controls.Add(this.EditWordControlWidth);
@@ -409,7 +414,6 @@
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
       this.Controls.Add(LabelCommentaryLinesCount);
-      this.Controls.Add(this.label1);
       this.Controls.Add(labelOnlineVerseURL);
       this.Controls.Add(this.EditOnlineVerseURL);
       this.Controls.Add(this.GroupBoxHebrewWordClick);
@@ -466,7 +470,6 @@
     private System.Windows.Forms.RadioButton SelectOpenHebrewLetters;
     private System.Windows.Forms.TextBox EditOnlineVerseURL;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
-    private System.Windows.Forms.Label label1;
     private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
     private System.Windows.Forms.NumericUpDown EditBookmarksCount;
     private System.Windows.Forms.NumericUpDown EditWordControlWidth;
@@ -478,5 +481,6 @@
     private System.Windows.Forms.Button ActionSelectOnlineVerseURL;
     private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
+    private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
   }
 }

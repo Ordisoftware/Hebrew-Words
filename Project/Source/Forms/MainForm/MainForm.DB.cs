@@ -30,7 +30,13 @@ namespace Ordisoftware.HebrewWords
     private void LoadData()
     {
       PopulateData();
-      SetView(Program.Settings.CurrentView, true);
+      if ( Program.Settings.OpenLastViewAtStartup )
+        SetView(Program.Settings.CurrentView, true);
+      else
+      {
+        SetView(ViewModeType.Verses);
+        Program.Settings.CurrentSearchTypeTab = 0;
+      }
       GoTo(Program.Settings.BookmarkMasterBook,
            Program.Settings.BookmarkMasterChapter,
            Program.Settings.BookmarkMasterVerse,

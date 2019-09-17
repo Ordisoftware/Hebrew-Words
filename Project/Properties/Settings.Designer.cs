@@ -452,5 +452,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["CloseSearchTranslatedFormReturnToReference"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenLastViewAtStartup {
+            get {
+                return ((bool)(this["OpenLastViewAtStartup"]));
+            }
+            set {
+                this["OpenLastViewAtStartup"] = value;
+            }
+        }
     }
 }

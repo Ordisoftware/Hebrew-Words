@@ -61,6 +61,8 @@ namespace Ordisoftware.HebrewWords
         int minx = x;
         int wordsCount = ( width - marginX ) / dx;
         int wordsWidth = wordsCount * dx;
+        int widthWord = Program.Settings.WordControlWidth;
+        int verseLineCount = Program.Settings.VerseCommentaryLinesCount;
         int textHeight;
         var textboxTemp = new TextBox();
         using ( Graphics g = textboxTemp.CreateGraphics() )
@@ -89,7 +91,7 @@ namespace Ordisoftware.HebrewWords
             control = new WordControl(reference);
             control.Word = word;
             control.Location = new Point(x, y);
-            control.Width = Program.Settings.WordControlWidth;
+            control.Width = widthWord;
             PanelViewVerses.Controls.Add(control);
             x -= dx;
             if ( x < delta )
@@ -103,7 +105,7 @@ namespace Ordisoftware.HebrewWords
           if ( emptyline ) y -= dy;
           var editComment = new TextBox();
           label.Tag = editComment;
-          if ( Program.Settings.VerseCommentaryLinesCount > 1 )
+          if ( verseLineCount > 1 )
           {
             editComment.Multiline = true;
             editComment.WordWrap = true;
@@ -112,7 +114,7 @@ namespace Ordisoftware.HebrewWords
           editComment.Location = new Point(width - wordsWidth - label.Width - delta, y + dy + delta);
           x = width - dx - marginX - 2;
           editComment.Width = wordsWidth - delta;
-          editComment.Height = textHeight * ( Program.Settings.VerseCommentaryLinesCount + 1 ) - 3;
+          editComment.Height = textHeight * ( verseLineCount + 1 ) - 3;
           editComment.Tag = reference;
           editComment.BackColor = Color.Honeydew;
           editComment.Text = reference.Verse.Comment;
