@@ -37,8 +37,10 @@ namespace Ordisoftware.HebrewWords
         PanelSearchResults.Refresh();
         GC.Collect();
         UpdateSearchButtons();
-        if ( SearchResults == null || SearchResultsCount == 0 ) return;
-        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm ) SetFormDisabled(true);
+        if ( SearchResults == null || SearchResultsCount == 0 )
+          return;
+        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+          SetFormDisabled(true);
         var results = SearchResults.ToList()
                       .Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
                       .Take(Program.Settings.FoundReferencesViewable);
@@ -79,7 +81,6 @@ namespace Ordisoftware.HebrewWords
             label.AutoSize = true;
             label.Font = HebrewFont12;
             if ( CheckWord != null )
-            {
               if ( CheckWord(word) )
               {
                 label.Tag = new WordReferencedItem(reference, word);
@@ -105,7 +106,6 @@ namespace Ordisoftware.HebrewWords
               }
               else
                 label.ForeColor = SystemColors.ControlText;
-            }
             x -= label.PreferredSize.Width;
             if ( x < minX )
             {
@@ -137,7 +137,8 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         RenderSearchResultsInProcess = false;
-        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm ) SetFormDisabled(false);
+        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+          SetFormDisabled(false);
         PanelSearchResults.ResumeLayout();
         PanelSearchResults.Focus();
       }

@@ -56,6 +56,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeCounters();
       InitializeMiddle();
+      InitializeOccurences();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem(book));
       SelectBook.SelectedIndex = 0;
@@ -115,23 +116,6 @@ namespace Ordisoftware.HebrewWords
       control.LabelLetters.Text = stat.CountLetters.ToString();
     }
 
-    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      try
-      {
-        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
-        CountersSelected = new BookStatistic();
-        CountersSelected.CountChapters += CountersBooks[book].CountChapters;
-        CountersSelected.CountVerses += CountersBooks[book].CountVerses;
-        CountersSelected.CountWords += CountersBooks[book].CountWords;
-        CountersSelected.CountLetters += CountersBooks[book].CountLetters;
-      }
-      catch
-      {
-      }
-      SetCounters(StatBook, CountersSelected);
-    }
-
     private void InitializeMiddle()
     {
       int lcount = (int)Math.Truncate((double)CountersTorah.CountLetters / 2.0);
@@ -156,7 +140,43 @@ namespace Ordisoftware.HebrewWords
                 }
               }
     }
-  
+
+    private void InitializeOccurences()
+    {
+      Func<Func<string, bool>, string> getCount = check =>
+      {
+        var query = from book in MainForm.Instance.DataSet.Books
+                    from chapter in book.GetChaptersRows()
+                    from verse in chapter.GetVersesRows()
+                    from word in verse.GetWordsRows()
+                    where check(word.Hebrew) && book.Number <= 5
+                    select word;
+        return query.Count().ToString();
+      };
+      LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
+      LabelCountElohimValue.Text = getCount(s => Letters.SetFinale(s, false).Contains("myhla"));
+      LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));
+      LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m"));
+      LabelCountMitsvahValue.Text = getCount(s => s.Contains("hvjm") || s.Contains("tvjm"));
+    }
+
+    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      try
+      {
+        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
+        CountersSelected = new BookStatistic();
+        CountersSelected.CountChapters += CountersBooks[book].CountChapters;
+        CountersSelected.CountVerses += CountersBooks[book].CountVerses;
+        CountersSelected.CountWords += CountersBooks[book].CountWords;
+        CountersSelected.CountLetters += CountersBooks[book].CountLetters;
+      }
+      catch
+      {
+      }
+      SetCounters(StatBook, CountersSelected);
+    }
+
     private void LabelMiddleValue_MouseEnter(object sender, EventArgs e)
     {
       var label = (Label)sender;

@@ -25,13 +25,13 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private int PagingCountDisableForm = 50;
-    private int PagingCurrent = 0;
-    private int PagingCount = 0;
-
     private IEnumerable<ReferenceItem> SearchResults;
 
     internal int SearchResultsCount { get; private set; }
+
+    private int PagingCountDisableForm = 50;
+    private int PagingCurrent = 0;
+    private int PagingCount = 0;
 
     private Func<DataSet.WordsRow, bool> CheckWord;
     private Func<DataSet.VersesRow, bool> CheckVerse;

@@ -38,24 +38,36 @@
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.StatBook = new Ordisoftware.HebrewWords.StatControl();
-      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();
       this.LabelMiddleLetterValue = new System.Windows.Forms.Label();
       this.LabelMiddleWordValue = new System.Windows.Forms.Label();
       this.LabelMiddleWord = new System.Windows.Forms.Label();
       this.LabelMiddleReference = new System.Windows.Forms.Label();
+      this.GroupBoxOccurences = new System.Windows.Forms.GroupBox();
+      this.LabelCountTorahValue = new System.Windows.Forms.Label();
+      this.LabelCountMitsvahValue = new System.Windows.Forms.Label();
+      this.LabelCountMoshehValue = new System.Windows.Forms.Label();
+      this.LabelCountYHVHValue = new System.Windows.Forms.Label();
+      this.LabelCountElohimValue = new System.Windows.Forms.Label();
+      this.LabelCountTorah = new System.Windows.Forms.Label();
+      this.LabelCountMitsvah = new System.Windows.Forms.Label();
+      this.LabelCountMosheh = new System.Windows.Forms.Label();
+      this.LabelCountYHVH = new System.Windows.Forms.Label();
+      this.LabelCountElohim = new System.Windows.Forms.Label();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
       this.GroupBoxBook.SuspendLayout();
-      this.groupBox1.SuspendLayout();
+      this.GroupBoxMiddle.SuspendLayout();
+      this.GroupBoxOccurences.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
       // 
-      this.GroupBoxAllBooks.Controls.Add(this.StatAllBooks);
       resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
+      this.GroupBoxAllBooks.Controls.Add(this.StatAllBooks);
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
       // 
@@ -66,8 +78,8 @@
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.buttonClose);
       resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Controls.Add(this.buttonClose);
       this.panel1.Name = "panel1";
       // 
       // buttonClose
@@ -79,8 +91,8 @@
       // 
       // GroupBoxTorah
       // 
-      this.GroupBoxTorah.Controls.Add(this.StatTorah);
       resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
+      this.GroupBoxTorah.Controls.Add(this.StatTorah);
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
@@ -91,17 +103,17 @@
       // 
       // GroupBoxBook
       // 
+      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Controls.Add(this.SelectBook);
       this.GroupBoxBook.Controls.Add(this.StatBook);
-      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Name = "GroupBoxBook";
       this.GroupBoxBook.TabStop = false;
       // 
       // SelectBook
       // 
+      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectBook.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
@@ -110,17 +122,17 @@
       resources.ApplyResources(this.StatBook, "StatBook");
       this.StatBook.Name = "StatBook";
       // 
-      // groupBox1
+      // GroupBoxMiddle
       // 
-      this.groupBox1.Controls.Add(this.LabelMiddleReferenceValue);
-      this.groupBox1.Controls.Add(this.LabelMiddleLetter);
-      this.groupBox1.Controls.Add(this.LabelMiddleLetterValue);
-      this.groupBox1.Controls.Add(this.LabelMiddleWordValue);
-      this.groupBox1.Controls.Add(this.LabelMiddleWord);
-      this.groupBox1.Controls.Add(this.LabelMiddleReference);
-      resources.ApplyResources(this.groupBox1, "groupBox1");
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.TabStop = false;
+      resources.ApplyResources(this.GroupBoxMiddle, "GroupBoxMiddle");
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleReferenceValue);
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleLetter);
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleLetterValue);
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleWordValue);
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleWord);
+      this.GroupBoxMiddle.Controls.Add(this.LabelMiddleReference);
+      this.GroupBoxMiddle.Name = "GroupBoxMiddle";
+      this.GroupBoxMiddle.TabStop = false;
       // 
       // LabelMiddleReferenceValue
       // 
@@ -160,12 +172,79 @@
       resources.ApplyResources(this.LabelMiddleReference, "LabelMiddleReference");
       this.LabelMiddleReference.Name = "LabelMiddleReference";
       // 
+      // GroupBoxOccurences
+      // 
+      resources.ApplyResources(this.GroupBoxOccurences, "GroupBoxOccurences");
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountTorahValue);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountMitsvahValue);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountMoshehValue);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountYHVHValue);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountElohimValue);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountTorah);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountMitsvah);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountMosheh);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountYHVH);
+      this.GroupBoxOccurences.Controls.Add(this.LabelCountElohim);
+      this.GroupBoxOccurences.Name = "GroupBoxOccurences";
+      this.GroupBoxOccurences.TabStop = false;
+      // 
+      // LabelCountTorahValue
+      // 
+      resources.ApplyResources(this.LabelCountTorahValue, "LabelCountTorahValue");
+      this.LabelCountTorahValue.Name = "LabelCountTorahValue";
+      // 
+      // LabelCountMitsvahValue
+      // 
+      resources.ApplyResources(this.LabelCountMitsvahValue, "LabelCountMitsvahValue");
+      this.LabelCountMitsvahValue.Name = "LabelCountMitsvahValue";
+      // 
+      // LabelCountMoshehValue
+      // 
+      resources.ApplyResources(this.LabelCountMoshehValue, "LabelCountMoshehValue");
+      this.LabelCountMoshehValue.Name = "LabelCountMoshehValue";
+      // 
+      // LabelCountYHVHValue
+      // 
+      resources.ApplyResources(this.LabelCountYHVHValue, "LabelCountYHVHValue");
+      this.LabelCountYHVHValue.Name = "LabelCountYHVHValue";
+      // 
+      // LabelCountElohimValue
+      // 
+      resources.ApplyResources(this.LabelCountElohimValue, "LabelCountElohimValue");
+      this.LabelCountElohimValue.Name = "LabelCountElohimValue";
+      // 
+      // LabelCountTorah
+      // 
+      resources.ApplyResources(this.LabelCountTorah, "LabelCountTorah");
+      this.LabelCountTorah.Name = "LabelCountTorah";
+      // 
+      // LabelCountMitsvah
+      // 
+      resources.ApplyResources(this.LabelCountMitsvah, "LabelCountMitsvah");
+      this.LabelCountMitsvah.Name = "LabelCountMitsvah";
+      // 
+      // LabelCountMosheh
+      // 
+      resources.ApplyResources(this.LabelCountMosheh, "LabelCountMosheh");
+      this.LabelCountMosheh.Name = "LabelCountMosheh";
+      // 
+      // LabelCountYHVH
+      // 
+      resources.ApplyResources(this.LabelCountYHVH, "LabelCountYHVH");
+      this.LabelCountYHVH.Name = "LabelCountYHVH";
+      // 
+      // LabelCountElohim
+      // 
+      resources.ApplyResources(this.LabelCountElohim, "LabelCountElohim");
+      this.LabelCountElohim.Name = "LabelCountElohim";
+      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonClose;
-      this.Controls.Add(this.groupBox1);
+      this.Controls.Add(this.GroupBoxOccurences);
+      this.Controls.Add(this.GroupBoxMiddle);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.GroupBoxBook);
       this.Controls.Add(this.GroupBoxTorah);
@@ -180,8 +259,10 @@
       this.panel1.ResumeLayout(false);
       this.GroupBoxTorah.ResumeLayout(false);
       this.GroupBoxBook.ResumeLayout(false);
-      this.groupBox1.ResumeLayout(false);
-      this.groupBox1.PerformLayout();
+      this.GroupBoxMiddle.ResumeLayout(false);
+      this.GroupBoxMiddle.PerformLayout();
+      this.GroupBoxOccurences.ResumeLayout(false);
+      this.GroupBoxOccurences.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -197,12 +278,23 @@
     private System.Windows.Forms.GroupBox GroupBoxBook;
     private System.Windows.Forms.ComboBox SelectBook;
     private StatControl StatBook;
-    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.GroupBox GroupBoxMiddle;
     private System.Windows.Forms.Label LabelMiddleLetter;
     private System.Windows.Forms.Label LabelMiddleWord;
     private System.Windows.Forms.Label LabelMiddleReference;
     private System.Windows.Forms.LinkLabel LabelMiddleReferenceValue;
     private System.Windows.Forms.Label LabelMiddleLetterValue;
     private System.Windows.Forms.Label LabelMiddleWordValue;
+    private System.Windows.Forms.GroupBox GroupBoxOccurences;
+    private System.Windows.Forms.Label LabelCountYHVHValue;
+    private System.Windows.Forms.Label LabelCountElohimValue;
+    private System.Windows.Forms.Label LabelCountYHVH;
+    private System.Windows.Forms.Label LabelCountElohim;
+    private System.Windows.Forms.Label LabelCountTorahValue;
+    private System.Windows.Forms.Label LabelCountTorah;
+    private System.Windows.Forms.Label LabelCountMoshehValue;
+    private System.Windows.Forms.Label LabelCountMosheh;
+    private System.Windows.Forms.Label LabelCountMitsvahValue;
+    private System.Windows.Forms.Label LabelCountMitsvah;
   }
 }
