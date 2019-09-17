@@ -767,7 +767,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelLetterSearch key press events.
+    /// Event handler. Called by PanelLetterSearch for key press events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -777,7 +777,17 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionClearWord click events.
+    /// Event handler. Called by EditSearchTranslation for text changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditSearchTranslation_TextChanged(object sender, EventArgs e)
+    {
+      UpdateSearchButtons();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionClearWord for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -937,15 +947,6 @@ namespace Ordisoftware.HebrewWords
       Program.RunShell(Program.Settings.HebrewLettersExe);
     }
 
-    private void ActionStartCalc_Click(object sender, EventArgs e)
-    {
-      Program.RunShell("calc.exe");
-    }
-
-    private void EditSearchTranslation_TextChanged(object sender, EventArgs e)
-    {
-      UpdateSearchButtons();
-    }
   }
 
 }
