@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewWords
     private void GrammarGuideForm_Load(object sender, EventArgs e)
     {
       if ( Location.X == -1 && Location.Y == -1 ) this.CenterToMainForm();
-      WebBrowser.Navigate(Program.GrammarGuideFilename.Replace("%lang%", Localizer.GetSupported()));
+      WebBrowser.Navigate(Program.GrammarGuideFilename.Replace("%lang%", Localizer.Language));
     }
 
     private void GrammarGuideForm_FormClosing(object sender, FormClosingEventArgs e)

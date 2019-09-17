@@ -159,7 +159,7 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenHebrewLetters(string hebrew)
     {
-      hebrew = Letters.UnFinaleAll(hebrew);
+      hebrew = Letters.SetFinale(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
@@ -168,13 +168,15 @@ namespace Ordisoftware.HebrewWords
       RunShell(Settings.SearchOnlineURL + hebrew);
     }
 
-    static public void OpenOnlineVerse(Books book, int chapter, int verse)
+    static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
-      RunShell(Settings.OpenVerseOnlineURL
-               .Replace("%BOOKSB%", BooksNames.StudyBible[book])
-               .Replace("%BOOKNUM%", book.ToString())
-               .Replace("%CHAPTERNUM%", chapter.ToString())
-               .Replace("%VERSENUM%", verse.ToString()));
+      RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)(book - 1)])
+                  .Replace("%BOOKNUM%", book.ToString())
+                  .Replace("%CHAPTERNUM%", chapter.ToString())
+                  .Replace("%VERSENUM%", verse.ToString())
+                  .Replace("%BOOKNUM#2%", book.ToString("00"))
+                  .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
+                  .Replace("%VERSENUM#2%", verse.ToString("00")));
     }
 
   }

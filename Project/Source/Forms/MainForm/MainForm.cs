@@ -87,6 +87,16 @@ namespace Ordisoftware.HebrewWords
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       CurrentReference = new ReferenceItem(null, null, null);
+      int index = 1;
+      EventHandler action = (sender, e) =>
+      {
+        Program.OpenOnlineVerse((string)( (ToolStripMenuItem)sender ).Tag,
+                                SelectBook.SelectedIndex + 1,
+                                SelectChapter.SelectedIndex + 1,
+                                Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text));
+      };
+      foreach ( var item in OnlineBibleProviders.Items )
+        ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
     }
 
     /// <summary>
@@ -362,6 +372,7 @@ namespace Ordisoftware.HebrewWords
         ActiveControl = EditSearchTranslation;
         EditSearchTranslation.Focus();
       }
+      UpdateSearchButtons();
     }
 
     /// <summary>
@@ -772,6 +783,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearWord_Click(object sender, EventArgs e)
     {
+      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
       CreateSearchResults();
@@ -813,28 +825,6 @@ namespace Ordisoftware.HebrewWords
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = Letters.SetFinale(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
-      //PanelSearchResults.Controls.Clear();
-      //PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      //PanelSearchResults.Refresh();
-      //UpdateSearchButtons();
-    }
-
-    private Control GetMenuItemSourceControl(object sender)
-    {
-      return ( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
-    }
-
-    private void ActionOpenVerseOnline_Click(object sender, EventArgs e)
-    {
-      int verse;
-      if ( sender is Label )
-        verse = Convert.ToInt32(( (Label)sender ).Text);
-      else
-      if ( sender is ToolStripMenuItem )
-        verse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
-      else
-        return;
-      Program.OpenOnlineVerse((Books)SelectBook.SelectedIndex, SelectChapter.SelectedIndex + 1, verse);
     }
 
     private void ActionExportVerse_Click(object sender, EventArgs e)
@@ -844,7 +834,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
-      var verse = ( (ReferenceItem)( (Control)GetMenuItemSourceControl(sender).Tag ).Tag ).Verse;
+      var verse = ( (ReferenceItem)( (Control)ContextMenuStripVerse.SourceControl.Tag ).Tag ).Verse;
       Clipboard.SetText(verse.GetTranslation());
     }
 
@@ -852,14 +842,14 @@ namespace Ordisoftware.HebrewWords
     {
       Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
       Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-      Program.Settings.BookmarkMasterVerse = Convert.ToInt32(GetMenuItemSourceControl(sender).Text);
+      Program.Settings.BookmarkMasterVerse = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text);
       Program.Settings.Store();
       UpdateBookmarks();
     }
 
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
-      int index = Convert.ToInt32(GetMenuItemSourceControl(sender).Text) - 1;
+      int index = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text) - 1;
       var item = new ReferenceItem(CurrentReference.Book.Number,
                                    CurrentReference.Chapter.Number,
                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
@@ -938,6 +928,21 @@ namespace Ordisoftware.HebrewWords
     }
 
     private void EditLetters_InputTextChanged(object sender, EventArgs e)
+    {
+      UpdateSearchButtons();
+    }
+
+    private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
+    {
+      Program.RunShell(Program.Settings.HebrewLettersExe);
+    }
+
+    private void ActionStartCalc_Click(object sender, EventArgs e)
+    {
+      Program.RunShell("calc.exe");
+    }
+
+    private void EditSearchTranslation_TextChanged(object sender, EventArgs e)
     {
       UpdateSearchButtons();
     }

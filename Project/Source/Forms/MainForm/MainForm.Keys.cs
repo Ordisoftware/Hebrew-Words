@@ -34,9 +34,9 @@ namespace Ordisoftware.HebrewWords
         SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
       else
       if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
-        SelectSearchType.SelectedTab = SelectSearchTypeRequest;
+        SelectSearchType.SelectedTab = SelectSearchTypeVerses;
       else
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeRequest )
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeVerses )
         SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
     }
 

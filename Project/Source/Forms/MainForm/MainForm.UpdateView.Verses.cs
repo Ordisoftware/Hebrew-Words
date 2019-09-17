@@ -172,8 +172,11 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( e.Button == MouseButtons.Left )
-        ActionOpenVerseOnline_Click(sender, null);
+      if ( e.Button != MouseButtons.Left ) return;
+      Program.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL, 
+                              SelectBook.SelectedIndex + 1, 
+                              SelectChapter.SelectedIndex + 1,
+                              Convert.ToInt32(( (Label)sender ).Text));
     }
 
   }

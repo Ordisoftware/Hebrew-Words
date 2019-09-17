@@ -51,8 +51,14 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        ActionSearchWord.Enabled = EditLetters.Input.Text.Length >= 2;
-        ActionClearWord.Enabled = SearchResultsCount > 0 || EditLetters.Input.Text != "";
+        ActionSearchWord.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew 
+                                     && EditLetters.Input.Text.Length >= 2 )
+                                || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation 
+                                     && EditSearchTranslation.Text.Length >= 2 )
+                                || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );
+        ActionClearWord.Enabled = SearchResultsCount > 0 
+                               || EditLetters.Input.Text != "" 
+                               || EditSearchTranslation.Text != "";
         ActionNavigateFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
         ActionNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
         ActionNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
@@ -131,7 +137,7 @@ namespace Ordisoftware.HebrewWords
         SearchWord1 = EditSearchTranslation.Text.ToLower().RemoveDiacritics();
         CheckWord = checkWordTranslation;
       }
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeRequest )
+      if ( SelectSearchType.SelectedTab == SelectSearchTypeVerses )
       {
         if ( SelectSearchRequestAllTranslated.Checked )
           CheckVerse = checkTranslatedAll;

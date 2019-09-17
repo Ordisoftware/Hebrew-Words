@@ -1109,14 +1109,8 @@
   <metadata name="MenuSelectOnlineVerseURL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>317, 17</value>
   </metadata>
-  <data name="ActionSelectStudyBible.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="ActionSelectStudyBible.Text" xml:space="preserve">
-    <value>Studybible.org</value>
-  </data>
   <data name="MenuSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 26</value>
+    <value>61, 4</value>
   </data>
   <data name="&gt;&gt;MenuSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>MenuSelectOnlineVerseURL</value>
@@ -1228,12 +1222,6 @@
   </data>
   <data name="&gt;&gt;FolderBrowserDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectStudyBible.Name" xml:space="preserve">
-    <value>ActionSelectStudyBible</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectStudyBible.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

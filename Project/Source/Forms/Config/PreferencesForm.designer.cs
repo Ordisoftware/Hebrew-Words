@@ -68,7 +68,6 @@
       this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionSelectStudyBible = new System.Windows.Forms.ToolStripMenuItem();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
@@ -92,7 +91,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).BeginInit();
-      this.MenuSelectOnlineVerseURL.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -379,16 +377,8 @@
       // 
       // MenuSelectOnlineVerseURL
       // 
-      this.MenuSelectOnlineVerseURL.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionSelectStudyBible});
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
-      // 
-      // ActionSelectStudyBible
-      // 
-      this.ActionSelectStudyBible.Name = "ActionSelectStudyBible";
-      resources.ApplyResources(this.ActionSelectStudyBible, "ActionSelectStudyBible");
-      this.ActionSelectStudyBible.Click += new System.EventHandler(this.ActionSelectStudyBible_Click);
       // 
       // EditCheckUpdateAtStartup
       // 
@@ -455,7 +445,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).EndInit();
-      this.MenuSelectOnlineVerseURL.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -488,7 +477,6 @@
     private System.Windows.Forms.NumericUpDown EditMinRefCount;
     private System.Windows.Forms.Button ActionSelectOnlineVerseURL;
     private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
-    private System.Windows.Forms.ToolStripMenuItem ActionSelectStudyBible;
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
   }
 }

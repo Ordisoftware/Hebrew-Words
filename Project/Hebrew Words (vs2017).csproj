@@ -73,6 +73,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
+    <Compile Include="Source\Classes\OnlineBibleProvider.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
       <SubType>Form</SubType>
     </Compile>

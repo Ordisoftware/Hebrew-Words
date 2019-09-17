@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -31,18 +32,15 @@ namespace Ordisoftware.HebrewWords
 
     static public readonly string DefaultLanguage = "en";
 
-    static public string GetSupported()
+    static public string Language
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      bool b = false;
-      foreach ( string item in AvailableLanguages )
-        if ( item == lang )
-        {
-          b = true;
-          break;
-        }
-      if (!b ) lang = DefaultLanguage;
-      return lang;
+      get
+      {
+        string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        if ( !AvailableLanguages.Contains(lang) )
+          lang = DefaultLanguage;
+        return lang;
+      }
     }
 
     /// <summary>
@@ -52,9 +50,7 @@ namespace Ordisoftware.HebrewWords
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values)
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values.ContainsKey(lang) ) lang = DefaultLanguage;
-      return values[lang];
+      return values[Language];
     }
 
     /// <summary>
@@ -76,9 +72,7 @@ namespace Ordisoftware.HebrewWords
     /// <returns></returns>
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[value].ContainsKey(lang) ) lang = DefaultLanguage;
-      return values[value][lang];
+      return values[value][Language];
     }
 
     static public readonly Dictionary<string, string> ApplicationDescriptionText
