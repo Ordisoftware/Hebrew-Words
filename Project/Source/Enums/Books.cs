@@ -23,12 +23,12 @@ namespace Ordisoftware.HebrewWords
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Nevi'im
     Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
-    Isayah, Yirmyah, Yehezkel,
-    Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
-    Habaquq, Zefaniah, Hagai, Zakaria, Malaki,
+    Isayah, Yirmyah, Yehezqel,
+    Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
+    Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
-    Tehilim, Mishlei, Iyyov,
-    Chir_HaChirim, Ruth, Eikha, Qohelet, Esther,
+    Tehilim, Mishlei, Iyov,
+    Shir_HaShirim, Routh, Eikah, Qohelet, Esther,
     Daniel, Ezra, Nehemiah, Divrei_HaYamim_I, Divrei_HaYamim_II
   };
 
