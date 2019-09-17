@@ -53,9 +53,9 @@ namespace Ordisoftware.HebrewWords
         EditSearchPaging.Enabled = SearchResultsCount > 0;
         LabelSearchCount.Visible = SearchResultsCount > 0;
         LabelSearchCount.Text = SearchResultsCount.ToString();
-        TrackBarSearchPaging.Visible = SearchResultsCount > 0 && PagingCount > 1;
         LabelSearchCount.Visible = SearchResultsCount > 0;
         TrackBarSearchPaging.Visible = PagingCount > 1;
+        TrackBarSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
         TrackBarSearchPaging.Maximum = PagingCount;
         TrackBarSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
         EditSearchPaging.Text = SearchResultsCount == 0 ? "0" : PagingCurrent + "/" + PagingCount;
@@ -168,7 +168,9 @@ namespace Ordisoftware.HebrewWords
         if ( SearchResultsCount > Program.Settings.FoundReferencesToOpenDialog )
         {
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-          if ( SearchResults != null )
+          if ( SearchResults == null )
+            SearchResultsCount = 0;
+          else
             try
             {
               Cursor = Cursors.WaitCursor;
@@ -180,11 +182,16 @@ namespace Ordisoftware.HebrewWords
             }
         }
       }
+      UpdatePagingCount();
+      RenderSearchResults();
+    }
+
+    private void UpdatePagingCount()
+    {
       PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
       if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
         PagingCount++;
       PagingCurrent = PagingCount == 0 ? 0 : 1;
-      RenderSearchResults();
     }
 
     private void RenderSearchResults()

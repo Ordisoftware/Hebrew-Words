@@ -574,7 +574,7 @@ namespace Ordisoftware.HebrewWords
       {
         Refresh();
         UpdateViewVerses();
-        PagingCurrent = 0;
+        UpdatePagingCount();
         RenderSearchResults();
         var reference = Instance.CurrentReference;
         int verse = reference.Verse == null ? 1 : reference.Verse.Number;
@@ -813,9 +813,10 @@ namespace Ordisoftware.HebrewWords
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = Letters.SetFinale(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
-      PanelSearchResults.Controls.Clear();
-      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      PanelSearchResults.Refresh();
+      //PanelSearchResults.Controls.Clear();
+      //PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+      //PanelSearchResults.Refresh();
+      //UpdateSearchButtons();
     }
 
     private Control GetMenuItemSourceControl(object sender)
