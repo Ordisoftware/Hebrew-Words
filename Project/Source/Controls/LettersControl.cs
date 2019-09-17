@@ -50,6 +50,8 @@ namespace Ordisoftware.HebrewWords
       set { Input.BackColor = value; }
     }
 
+    public event EventHandler InputTextChanged;
+
     /// <summary>
     /// Constructor
     /// </summary>
@@ -137,6 +139,11 @@ namespace Ordisoftware.HebrewWords
         if ( Input.SelectionStart != 0 ) 
           Input.SelectionStart = Input.SelectionStart - 1;
       }
+    }
+
+    private void Input_TextChanged(object sender, EventArgs e)
+    {
+      InputTextChanged(sender, e);
     }
 
   }

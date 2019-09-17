@@ -42,11 +42,17 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateSearchButtons()
     {
-      ActionNavigateFirst.Enabled = PagingCurrent != 0;
-      ActionNavigatePrevious.Enabled = PagingCurrent > 0;
-      ActionNavigateNext.Enabled = PagingCurrent < PagingCount - 1;
-      ActionNavigateLast.Enabled = PagingCurrent != PagingCount - 1;
+      ActionSearchWord.Enabled = EditLetters.Input.Text.Length >= 2;
+      ActionClearWord.Enabled = SearchResultsCount > 0 || EditLetters.Input.Text != ""; ;
+      ActionNavigateFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 0;
+      ActionNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 0;
+      ActionNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount - 1;
+      ActionNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount - 1;
       EditSearchPaging.Enabled = SearchResultsCount > 0;
+      LabelSearchCount.Visible = SearchResultsCount > 0;
+      LabelSearchCount.Text = SearchResultsCount.ToString();
+      TrackBarSearchPaging.Visible = SearchResultsCount > 0 && PagingCount > 1;
+      LabelSearchCount.Visible = SearchResultsCount > 0;
     }
 
     private void CreateSearchResults()
@@ -164,6 +170,9 @@ namespace Ordisoftware.HebrewWords
         }
       }
       PagingCurrent = 0;
+      EditSearchPaging.Text = "0";
+      TrackBarSearchPaging.Maximum = 1;
+      UpdateSearchButtons();
       RenderSearchResults();
     }
 
@@ -178,15 +187,12 @@ namespace Ordisoftware.HebrewWords
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
         PanelSearchResults.Refresh();
         GC.Collect();
-        EditSearchPaging.Text = "0";
-        TrackBarSearchPaging.Maximum = 1;
-        TrackBarSearchPaging.Enabled = false;
         if ( SearchResults == null || SearchResultsCount == 0 ) return;
         if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
         PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
         if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
           PagingCount++;
-        TrackBarSearchPaging.Enabled = true;
+        TrackBarSearchPaging.Visible = PagingCount > 1;
         TrackBarSearchPaging.Maximum = PagingCount;
         TrackBarSearchPaging.Value = PagingCurrent + 1;
         var results = SearchResults.ToList()

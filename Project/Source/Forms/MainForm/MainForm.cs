@@ -97,6 +97,7 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Load(object sender, EventArgs e)
     {
       Program.Settings.Retrieve();
+      UpdateSearchButtons();
     }
 
     /// <summary>
@@ -773,8 +774,7 @@ namespace Ordisoftware.HebrewWords
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
-      SearchResults = null;
-      RenderSearchResults();
+      CreateSearchResults();
     }
 
     /// <summary>
@@ -914,13 +914,18 @@ namespace Ordisoftware.HebrewWords
       RenderSearchResults();
     }
 
+    private int OldTrackBarSreachPagingValue = -1;
+
     private void TrackBarSearchPaging_ValueChanged(object sender, EventArgs e)
     {
-      PagingCurrent = TrackBarSearchPaging.Value - 1;
-      EditSearchPaging.Text = ( PagingCurrent + 1 ) + "/" + PagingCount;
+      if ( PagingCurrent != TrackBarSearchPaging.Value - 1 )
+      {
+        PagingCurrent = TrackBarSearchPaging.Value - 1;
+        EditSearchPaging.Text = ( PagingCurrent + 1 ) + "/" + PagingCount;
+        if ( OldTrackBarSreachPagingValue == -1 )
+          RenderSearchResults();
+      }
     }
-
-    private int OldTrackBarSreachPagingValue;
 
     private void TrackBarSearchPaging_MouseDown(object sender, MouseEventArgs e)
     {
@@ -931,6 +936,12 @@ namespace Ordisoftware.HebrewWords
     {
       if ( OldTrackBarSreachPagingValue != TrackBarSearchPaging.Value)
         RenderSearchResults();
+      OldTrackBarSreachPagingValue = -1;
+    }
+
+    private void EditLetters_InputTextChanged(object sender, EventArgs e)
+    {
+      UpdateSearchButtons();
     }
   }
 

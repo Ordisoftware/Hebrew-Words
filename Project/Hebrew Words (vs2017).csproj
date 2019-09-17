@@ -230,6 +230,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Source\Controls\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.fr.resx">
       <DependentUpon>GrammarGuideForm.cs</DependentUpon>
     </EmbeddedResource>
