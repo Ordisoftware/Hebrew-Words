@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.HebrewWords.Data;
@@ -26,7 +25,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private int PagingWaiter = 50;
+    private int PagingCountDisableForm = 50;
     private int PagingCurrent = 0;
     private int PagingCount = 0;
 
@@ -39,6 +38,14 @@ namespace Ordisoftware.HebrewWords
 
     private string SearchWord1;
     private string SearchWord2;
+
+    private void UpdatePagingCount()
+    {
+      PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
+      if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
+        PagingCount++;
+      PagingCurrent = PagingCount == 0 ? 0 : 1;
+    }
 
     private void UpdateSearchButtons()
     {
@@ -60,7 +67,7 @@ namespace Ordisoftware.HebrewWords
         TrackBarSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
         EditSearchPaging.Text = SearchResultsCount == 0 ? "0" : PagingCurrent + "/" + PagingCount;
       }
-      catch (Exception ex)
+      catch ( Exception ex )
       {
         ex.Manage();
       }
@@ -135,7 +142,7 @@ namespace Ordisoftware.HebrewWords
         if ( SelectSearchRequestAllUntranslated.Checked )
           CheckVerse = checkTranslatedAllUntranslated;
       }
-      if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null)
+      if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null )
       {
         SearchResults = from book in DataSet.Books
                         from chapter in book.GetChaptersRows()
@@ -184,132 +191,6 @@ namespace Ordisoftware.HebrewWords
       }
       UpdatePagingCount();
       RenderSearchResults();
-    }
-
-    private void UpdatePagingCount()
-    {
-      PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
-      if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
-        PagingCount++;
-      PagingCurrent = PagingCount == 0 ? 0 : 1;
-    }
-
-    private void RenderSearchResults()
-    {
-      if ( RenderSearchResultsInProcess ) return;
-      RenderSearchResultsInProcess = true;
-      try
-      {
-        PanelSearchResults.SuspendLayout();
-        PanelSearchResults.Controls.Clear();
-        PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-        PanelSearchResults.Refresh();
-        GC.Collect();
-        UpdateSearchButtons();
-        if ( SearchResults == null || SearchResultsCount == 0 ) return;
-        if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
-        var results = SearchResults.ToList()
-                      .Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
-                      .Take(Program.Settings.FoundReferencesViewable);
-        int referenceSize = 160;
-        int marginX = 10;
-        int marginY = 10;
-        int minX = marginX;
-        int maxX = PanelSearchResults.ClientSize.Width - marginX;
-        int x = 0;
-        int y = 0;
-        int xx;
-        foreach ( var reference in results )
-        {
-          Application.DoEvents();
-          if ( CancelRequired ) { CancelRequired = false; break; }
-          x = maxX;
-          y += marginY;
-          var linklabel = new LinkLabel();
-          linklabel.AutoSize = true;
-          linklabel.Tag = reference;
-          linklabel.Text = reference.ToString();
-          linklabel.Font = LatinFont8;
-          linklabel.LinkColor = Color.DarkBlue;
-          linklabel.LinkClicked += (sender, e) => 
-          {
-            SetView(ViewModeType.Verses);
-            GoTo((ReferenceItem)( (Control)sender ).Tag);
-          };
-          linklabel.Location = new Point(x = x - referenceSize, y);
-          PanelSearchResults.Controls.Add(linklabel);
-          x -= marginX;
-          xx = x;
-          Label label = null;
-          foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
-          {
-            label = new Label();
-            label.Text = word.Hebrew.Trim();
-            label.AutoSize = true;
-            label.Font = HebrewFont12;
-            if ( CheckWord != null )
-            {
-              if ( CheckWord(word) )
-              {
-                label.Tag = new WordReferencedItem(reference, word);
-                label.ForeColor = Color.DarkRed;
-                label.MouseEnter += (sender, e) =>
-                {
-                  ( (Control)sender ).Cursor = Cursors.Hand;
-                };
-                label.MouseLeave += (sender, e) =>
-                {
-                  ( (Control)sender ).Cursor = Cursors.Default;
-                };
-                label.MouseClick += (sender, e) =>
-                {
-                  SetView(ViewModeType.Verses);
-                  var item = (WordReferencedItem)( (Control)sender ).Tag;
-                  GoTo(item);
-                  foreach ( Control control in PanelViewVerses.Controls )
-                    if ( control is WordControl )
-                      if ( ( (WordControl)control ).Word == item.Word )
-                        control.Focus();
-                };
-              }
-              else
-                label.ForeColor = SystemColors.ControlText;
-            }
-            x -= label.PreferredSize.Width;
-            if ( x < minX )
-            {
-              x = xx - label.PreferredWidth;
-              y += label.PreferredHeight;
-            }
-            label.Location = new Point(x, y);
-            label.Click += (sender, e) => PanelSearchResults.Focus();
-            PanelSearchResults.Controls.Add(label);
-          }
-          y += label.PreferredHeight + marginY;
-          if ( reference.Verse.IsTranslated() )
-          {
-            label = new Label();
-            label.AutoSize = true;
-            label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
-            label.Text = reference.Verse.GetTranslation();
-            label.Location = new Point(xx - label.PreferredSize.Width, y);
-            label.Click += (sender, e) => PanelSearchResults.Focus();
-            PanelSearchResults.Controls.Add(label);
-            y += label.PreferredHeight + marginY;
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        RenderSearchResultsInProcess = false;
-        if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(false);
-        PanelSearchResults.ResumeLayout();
-        PanelSearchResults.Focus();
-      }
     }
 
   }
