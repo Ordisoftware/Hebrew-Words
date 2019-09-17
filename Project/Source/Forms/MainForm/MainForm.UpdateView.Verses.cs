@@ -118,12 +118,8 @@ namespace Ordisoftware.HebrewWords
           editComment.Text = reference.Verse.Comment;
           editComment.TextChanged += EditVerseComment_TextChanged;
           editComment.KeyDown += EditVerseComment_KeyDown;
-          editComment.Enter += (sender, e) => 
-          {
-            if ( ComboBoxMutex ) return;
-            CurrentReference = new ReferenceItem((ReferenceItem)((Control)sender).Tag);
-            AddCurrentToHistory();
-          };
+          editComment.Enter += EditVerseComment_Enter;
+          editComment.Leave += EditVerseComment_Leave;
           PanelViewVerses.Controls.Add(editComment);
           y = y + dy + marginY + editComment.Height;
         }
@@ -151,23 +147,38 @@ namespace Ordisoftware.HebrewWords
     private void EditVerseComment_TextChanged(object sender, EventArgs e)
     {
       if ( IsLoadingData ) return;
-      var textbox = (TextBox)sender;
-      ( (ReferenceItem)textbox.Tag ).Verse.Comment = textbox.Text;
+      var control = (Control)sender;
+      ( (ReferenceItem)control.Tag ).Verse.Comment = control.Text;
       ActionSave.Enabled = true;
+    }
+
+    private void EditVerseComment_Enter(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.Cursor = Cursors.Hand;
+      control.BackColor = Color.AliceBlue;
+      if ( ComboBoxMutex ) return;
+      CurrentReference = new ReferenceItem((ReferenceItem)( (Control)sender ).Tag);
+      AddCurrentToHistory();
+    }
+
+    private void EditVerseComment_Leave(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.BackColor = Color.Honeydew;
     }
 
     private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)
     {
-      var label = (Label)sender;
-      label.Cursor = Cursors.Hand;
-      label.ForeColor = Color.SteelBlue;
+      var control = (Control)sender;
+      control.ForeColor = Color.SteelBlue;
     }
 
     private void LabelVerseNumber_MouseLeave(object sender, EventArgs e)
     {
-      var label = (Label)sender;
-      label.Cursor = Cursors.Default;
-      label.ForeColor = Color.DarkBlue;
+      var control = (Control)sender;
+      control.Cursor = Cursors.Default;
+      control.ForeColor = Color.DarkBlue;
     }
 
     private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
