@@ -885,11 +885,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionNavigateFirst_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
-      PagingCurrent = 0;
-      ActionNavigateFirst.Enabled = PagingCurrent != 0;
-      ActionNavigatePrevious.Enabled = PagingCurrent > 0;
-      ActionNavigateNext.Enabled = PagingCurrent < PagingCount - 1;
-      ActionNavigateLast.Enabled = PagingCurrent != PagingCount - 1;
+      PagingCurrent = 1;
       RenderSearchResults();
     }
 
@@ -910,7 +906,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionNavigateLast_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
-      PagingCurrent = PagingCount - 1;
+      PagingCurrent = PagingCount;
       RenderSearchResults();
     }
 
@@ -918,12 +914,13 @@ namespace Ordisoftware.HebrewWords
 
     private void TrackBarSearchPaging_ValueChanged(object sender, EventArgs e)
     {
-      if ( PagingCurrent != TrackBarSearchPaging.Value - 1 )
+      if ( PagingCurrent != TrackBarSearchPaging.Value )
       {
-        PagingCurrent = TrackBarSearchPaging.Value - 1;
-        EditSearchPaging.Text = ( PagingCurrent + 1 ) + "/" + PagingCount;
+        PagingCurrent = TrackBarSearchPaging.Value;
         if ( OldTrackBarSreachPagingValue == -1 )
           RenderSearchResults();
+        else
+          EditSearchPaging.Text = TrackBarSearchPaging.Value + "/" + PagingCount;
       }
     }
 

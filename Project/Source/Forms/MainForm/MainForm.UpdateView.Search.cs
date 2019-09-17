@@ -42,17 +42,28 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateSearchButtons()
     {
-      ActionSearchWord.Enabled = EditLetters.Input.Text.Length >= 2;
-      ActionClearWord.Enabled = SearchResultsCount > 0 || EditLetters.Input.Text != ""; ;
-      ActionNavigateFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 0;
-      ActionNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 0;
-      ActionNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount - 1;
-      ActionNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount - 1;
-      EditSearchPaging.Enabled = SearchResultsCount > 0;
-      LabelSearchCount.Visible = SearchResultsCount > 0;
-      LabelSearchCount.Text = SearchResultsCount.ToString();
-      TrackBarSearchPaging.Visible = SearchResultsCount > 0 && PagingCount > 1;
-      LabelSearchCount.Visible = SearchResultsCount > 0;
+      try
+      {
+        ActionSearchWord.Enabled = EditLetters.Input.Text.Length >= 2;
+        ActionClearWord.Enabled = SearchResultsCount > 0 || EditLetters.Input.Text != "";
+        ActionNavigateFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
+        ActionNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
+        ActionNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
+        ActionNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount;
+        EditSearchPaging.Enabled = SearchResultsCount > 0;
+        LabelSearchCount.Visible = SearchResultsCount > 0;
+        LabelSearchCount.Text = SearchResultsCount.ToString();
+        TrackBarSearchPaging.Visible = SearchResultsCount > 0 && PagingCount > 1;
+        LabelSearchCount.Visible = SearchResultsCount > 0;
+        TrackBarSearchPaging.Visible = PagingCount > 1;
+        TrackBarSearchPaging.Maximum = PagingCount;
+        TrackBarSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
+        EditSearchPaging.Text = SearchResultsCount == 0 ? "0" : PagingCurrent + "/" + PagingCount;
+      }
+      catch (Exception ex)
+      {
+        ex.Manage();
+      }
     }
 
     private void CreateSearchResults()
@@ -169,10 +180,10 @@ namespace Ordisoftware.HebrewWords
             }
         }
       }
-      PagingCurrent = 0;
-      EditSearchPaging.Text = "0";
-      TrackBarSearchPaging.Maximum = 1;
-      UpdateSearchButtons();
+      PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
+      if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
+        PagingCount++;
+      PagingCurrent = PagingCount == 0 ? 0 : 1;
       RenderSearchResults();
     }
 
@@ -187,19 +198,12 @@ namespace Ordisoftware.HebrewWords
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
         PanelSearchResults.Refresh();
         GC.Collect();
+        UpdateSearchButtons();
         if ( SearchResults == null || SearchResultsCount == 0 ) return;
         if ( Program.Settings.FoundReferencesViewable > PagingWaiter ) SetFormDisabled(true);
-        PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
-        if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
-          PagingCount++;
-        TrackBarSearchPaging.Visible = PagingCount > 1;
-        TrackBarSearchPaging.Maximum = PagingCount;
-        TrackBarSearchPaging.Value = PagingCurrent + 1;
         var results = SearchResults.ToList()
-                      .Skip(PagingCurrent * Program.Settings.FoundReferencesViewable)
+                      .Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
                       .Take(Program.Settings.FoundReferencesViewable);
-        EditSearchPaging.Text = (PagingCurrent + 1) + "/" + PagingCount;
-        UpdateSearchButtons();
         int referenceSize = 160;
         int marginX = 10;
         int marginY = 10;
