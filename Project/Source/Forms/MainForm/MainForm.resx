@@ -2416,7 +2416,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 6</value>
   </data>
-  <data name="toolStripMenuItem6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenHebrewAlphabet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
@@ -2434,13 +2434,13 @@ A verse is founded if the translation of one of its words contains an expression
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripMenuItem6.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionOpenHebrewAlphabet.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenHebrewAlphabet.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 24</value>
   </data>
-  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+  <data name="ActionOpenHebrewAlphabet.Text" xml:space="preserve">
     <value>Livre "L'alphabet hébreu"</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
@@ -4601,10 +4601,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
-    <value>toolStripMenuItem6</value>
+  <data name="&gt;&gt;ActionOpenHebrewAlphabet.Name" xml:space="preserve">
+    <value>ActionOpenHebrewAlphabet</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenHebrewAlphabet.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
