@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewWords
   {
     OnlineSearch,
     HebrewLetters,
-    Translated
+    SearchTranslated
   }
 
 }

@@ -26,7 +26,12 @@ namespace Ordisoftware.HebrewWords
     private void CreateSearchResults()
     {
       InitSearchResults();
-      int limit = EditSearchOnlyTorah.Checked ? 5 : DataSet.Books.Count();
+      int limitMin = EditSearchOnlyTorah.Checked 
+                   ? Enum.GetValues(typeof(TorahBooks)).Cast<int>().Min() 
+                   : 1;
+      int limitMax = EditSearchOnlyTorah.Checked 
+                   ? Enum.GetValues(typeof(TorahBooks)).Cast<int>().Max() 
+                   : DataSet.Books.Count();
       Func<DataSet.WordsRow, bool> checkWordHebrew = row =>
       {
         return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
@@ -93,7 +98,7 @@ namespace Ordisoftware.HebrewWords
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
-                        where book.Number <= limit && CheckWord(word)
+                        where book.Number <= limitMax && CheckWord(word)
                         select new ReferenceItem(book, chapter, verse);
       }
       else
@@ -102,7 +107,7 @@ namespace Ordisoftware.HebrewWords
         SearchResults = from book in DataSet.Books
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
-                        where book.Number <= limit && CheckVerse(verse)
+                        where book.Number <= limitMax && CheckVerse(verse)
                         select new ReferenceItem(book, chapter, verse);
       }
       if ( SearchResults != null )
