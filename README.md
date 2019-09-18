@@ -69,10 +69,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Add navigation history.
 - Add grammar guide.
 - Improve UI.
-- Improve search functionnnalities.
 - Improve verses rendering.
 - Improve translations rendering.
 - Improve search rendering.
+- Improve search filters.
 - Improve statistics.
 - Some fixes.
 - Update help.
