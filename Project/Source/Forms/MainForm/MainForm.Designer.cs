@@ -504,7 +504,7 @@
       // EditLetters
       // 
       resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.InputBackground = System.Drawing.Color.AliceBlue;
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
       this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);

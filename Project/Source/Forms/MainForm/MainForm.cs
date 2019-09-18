@@ -47,14 +47,19 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Indicate last showned tooltip.
+    /// </summary>
+    private ToolTip LastToolTip = new ToolTip();
+
+    /// <summary>
     /// Indicate current bible reference.
     /// </summary>
     public ReferenceItem CurrentReference { get; set; }
 
     /// <summary>
-    /// Indicate last showned tooltip.
+    /// Indicate combobox mutex.
     /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
+    public bool ComboBoxMutex { get; private set; }
 
     /// <summary>
     /// Indicate if the application is ready for the user.
@@ -69,14 +74,12 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate if GoTo is running.
     /// </summary>
-    private bool IsGoToRunning = false;
+    private bool IsGoToRunning;
 
     /// <summary>
     /// Indicate if windows session is ending.
     /// </summary>
     private bool IsSessionEnding;
-
-    internal bool ComboBoxMutex { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -793,10 +796,11 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearWord_Click(object sender, EventArgs e)
     {
-      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
-      CreateSearchResults();
+      InitSearchResults();
+      UpdateSearchButtons();
+      RenderSearchResults();
     }
 
     /// <summary>

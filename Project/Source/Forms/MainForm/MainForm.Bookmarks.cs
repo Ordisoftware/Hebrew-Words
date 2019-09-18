@@ -28,7 +28,8 @@ namespace Ordisoftware.HebrewWords
 
     private void GoToBookmark(object sender, EventArgs e)
     {
-      if ( Program.Settings.CurrentView == ViewModeType.ELS50 || Program.Settings.CurrentView == ViewModeType.Search )
+      if ( Program.Settings.CurrentView == ViewModeType.ELS50 
+        || Program.Settings.CurrentView == ViewModeType.Search )
         SetView(ViewModeType.Verses);
       GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
       ActionSave.PerformClick();

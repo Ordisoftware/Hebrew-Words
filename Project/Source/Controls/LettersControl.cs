@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewWords
     private bool KeyProcessed = false;
 
     /// <summary>
-    /// Indicate the background color of letters panel
+    /// Indicate the background color of letters panel.
     /// </summary>
     public Color LettersBackground
     {
@@ -42,15 +42,22 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Indicate the background color of input panel
+    /// Indicate the background color of input textbox.
     /// </summary>
-    public Color InputBackground
+    public Color InputBackColor
     {
       get { return Input.BackColor; }
       set { Input.BackColor = value; }
     }
 
-    public event EventHandler InputTextChanged;
+    /// <summary>
+    /// Input textbox text changed event.
+    /// </summary>
+    public event EventHandler InputTextChanged
+    {
+      add { Input.TextChanged += value; }
+      remove { Input.TextChanged -= value; }
+    }
 
     /// <summary>
     /// Constructor
@@ -139,14 +146,6 @@ namespace Ordisoftware.HebrewWords
         if ( Input.SelectionStart != 0 ) 
           Input.SelectionStart = Input.SelectionStart - 1;
       }
-    }
-
-    /// <summary>
-    /// TextChanged event.
-    /// </summary>
-    private void Input_TextChanged(object sender, EventArgs e)
-    {
-      InputTextChanged(sender, e);
     }
 
   }

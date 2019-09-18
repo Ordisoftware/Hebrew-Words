@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewWords
         SetView(Program.Settings.CurrentView, true);
       else
       {
-        SetView(ViewModeType.Verses);
+        SetView(ViewModeType.Verses, true);
         Program.Settings.CurrentSearchTypeTab = 0;
       }
       GoTo(Program.Settings.BookmarkMasterBook,
