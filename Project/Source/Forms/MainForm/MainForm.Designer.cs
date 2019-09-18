@@ -137,8 +137,6 @@
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
-      this.ActionNavigatePrevious = new System.Windows.Forms.ToolStripButton();
-      this.ActionNavigateNext = new System.Windows.Forms.ToolStripButton();
       this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -733,8 +731,6 @@
             this.ActionCloseWindows,
             this.ActionCopyToClipboard,
             this.toolStripSeparator7,
-            this.ActionNavigatePrevious,
-            this.ActionNavigateNext,
             this.MenuBookmarks,
             this.MenuTools,
             this.MenuDatabase,
@@ -1080,24 +1076,6 @@
       this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
       this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // ActionNavigatePrevious
-      // 
-      this.ActionNavigatePrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionNavigatePrevious, "ActionNavigatePrevious");
-      this.ActionNavigatePrevious.Name = "ActionNavigatePrevious";
-      this.ActionNavigatePrevious.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionNavigatePrevious.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionNavigatePrevious.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // ActionNavigateNext
-      // 
-      this.ActionNavigateNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionNavigateNext, "ActionNavigateNext");
-      this.ActionNavigateNext.Name = "ActionNavigateNext";
-      this.ActionNavigateNext.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionNavigateNext.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionNavigateNext.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionCloseWindows
       // 
@@ -1648,8 +1626,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
-    private System.Windows.Forms.ToolStripButton ActionNavigatePrevious;
-    private System.Windows.Forms.ToolStripButton ActionNavigateNext;
   }
 }
 

@@ -762,6 +762,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by EditLetters for input text changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditLetters_InputTextChanged(object sender, EventArgs e)
+    {
+      UpdateSearchButtons();
+    }
+
+    /// <summary>
     /// Event handler. Called by EditSearchTranslation for text changed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -990,15 +1000,6 @@ namespace Ordisoftware.HebrewWords
       PreviousSeachPagingPosition = -1;
     }
 
-    /// <summary>
-    /// Event handler. Called by EditLetters for input text changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void EditLetters_InputTextChanged(object sender, EventArgs e)
-    {
-      UpdateSearchButtons();
-    }
   }
 
 }
