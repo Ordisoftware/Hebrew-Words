@@ -212,8 +212,8 @@ namespace Ordisoftware.HebrewWords
       if ( control != null ) control.Focus();
       if ( e.Button != MouseButtons.Left ) return;
       Program.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
-                              SelectBook.SelectedIndex + 1,
-                              SelectChapter.SelectedIndex + 1,
+                              CurrentReference.Book.Number,
+                              CurrentReference.Chapter.Number,
                               Convert.ToInt32(( (Label)sender ).Text));
     }
 

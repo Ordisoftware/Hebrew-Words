@@ -68,10 +68,10 @@ namespace Ordisoftware.HebrewWords
                                   reference.Verse.Number);
         }
         else
-              if ( control is Label )
+        if ( control is Label )
           Program.OpenOnlineVerse((string)menuitem.Tag,
-                                  SelectBook.SelectedIndex + 1,
-                                  SelectChapter.SelectedIndex + 1,
+                                  CurrentReference.Book.Number,
+                                  CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       };
       foreach ( var item in OnlineBibleProviders.Items )

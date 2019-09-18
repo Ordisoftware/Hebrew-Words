@@ -117,7 +117,7 @@ namespace Ordisoftware.HebrewWords
       {
         var book = CurrentReference.Book;
         var chapter = CurrentReference.Chapter;
-        int verse = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text);
+        int verse = Convert.ToInt32(control.Text);
         SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
