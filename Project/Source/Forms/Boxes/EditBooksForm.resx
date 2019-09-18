@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BooksDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditBooks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BooksDataGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
+  <data name="EditBooks.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
@@ -206,25 +206,25 @@
   <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="BooksDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditBooks.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 13</value>
   </data>
-  <data name="BooksDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditBooks.Size" type="System.Drawing.Size, System.Drawing">
     <value>518, 606</value>
   </data>
-  <data name="BooksDataGridView.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditBooks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;BooksDataGridView.Name" xml:space="preserve">
-    <value>BooksDataGridView</value>
+  <data name="&gt;&gt;EditBooks.Name" xml:space="preserve">
+    <value>EditBooks</value>
   </data>
-  <data name="&gt;&gt;BooksDataGridView.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditBooks.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BooksDataGridView.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditBooks.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BooksDataGridView.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditBooks.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -296,6 +296,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>544, 668</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
@@ -304,6 +307,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tanak</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
+    <value>ActionOpenHebrewLetters</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
+    <value>ActionCopyHebrewName</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn2</value>
@@ -328,18 +343,6 @@
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
-    <value>ActionOpenHebrewLetters</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Name" xml:space="preserve">
-    <value>ActionCopyHebrewName</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyHebrewName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
     <value>BooksBindingSource</value>

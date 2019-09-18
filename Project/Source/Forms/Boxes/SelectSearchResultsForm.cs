@@ -74,7 +74,15 @@ namespace Ordisoftware.HebrewWords
           row.Tag = item.Key;
           row.SubItems.Add(item.Count.ToString());
         }
-        Height = 50 + SelectBooks.Location.Y + SelectBooks.Items.Count * 15 + 75;
+        int textHeight;
+        using ( Graphics g = SelectBooks.CreateGraphics() )
+        {
+          textHeight = TextRenderer.MeasureText(g, "Text", SelectBooks.Font).Height + 4;
+        }
+        Height = Height - ClientSize.Height
+               + SelectBooks.Location.Y
+               + SelectBooks.Items.Count * textHeight + SelectBooks.Height - SelectBooks.ClientSize.Height
+               + Height - EditOnlyWithTranslation.Location.Y;
         ActiveControl = SelectBooks;
         SelectBooks.Focus();
       }

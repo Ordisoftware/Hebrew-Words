@@ -49,10 +49,10 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void ReLoadData(Action action = null)
     {
-      PanelViewVerses.Controls.Clear();
-      PanelSearchResults.Controls.Clear();
       PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+      PanelViewVerses.Controls.Clear();
+      PanelSearchResults.Controls.Clear();
       SearchResults = null;
       Refresh();
       DataSet.Clear();

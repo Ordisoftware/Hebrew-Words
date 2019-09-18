@@ -22,10 +22,6 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private bool RenderSearchResultsInProcess;
-
-    private bool CancelRequired;
-
     private int ScrollIncrement = 25;
 
     private void RotateSearchTab()
@@ -55,7 +51,7 @@ namespace Ordisoftware.HebrewWords
       switch ( keyData )
       {
         case Keys.Escape:
-          if ( RenderSearchResultsInProcess ) CancelRequired = true;
+          if ( RenderInProcess ) CancelRequired = true;
           break;
         case Keys.Control | Keys.F:
           ActionSearchVerse.PerformClick();

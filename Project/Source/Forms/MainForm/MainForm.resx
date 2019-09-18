@@ -423,6 +423,9 @@
   <data name="&gt;&gt;TabPageELS50.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="PanelSearchResultsOuter.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="PanelSearchResults.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -430,13 +433,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelSearchResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 271</value>
+    <value>10, 10</value>
   </data>
   <data name="PanelSearchResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 177</value>
+    <value>914, 155</value>
   </data>
   <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -448,9 +451,36 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelSearchResults.Parent" xml:space="preserve">
-    <value>PanelViewSearch</value>
+    <value>PanelSearchResultsOuter</value>
   </data>
   <data name="&gt;&gt;PanelSearchResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelSearchResultsOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelSearchResultsOuter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 271</value>
+  </data>
+  <data name="PanelSearchResultsOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="PanelSearchResultsOuter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>936, 177</value>
+  </data>
+  <data name="PanelSearchResultsOuter.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResultsOuter.Name" xml:space="preserve">
+    <value>PanelSearchResultsOuter</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResultsOuter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResultsOuter.Parent" xml:space="preserve">
+    <value>PanelViewSearch</value>
+  </data>
+  <data name="&gt;&gt;PanelSearchResultsOuter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -3989,18 +4019,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
   </data>
@@ -4546,6 +4564,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

@@ -123,6 +123,7 @@
       this.Controls.Add(this.LabelHebrew);
       this.Controls.Add(this.EditTranslation);
       this.Name = "WordControl";
+      this.Click += new System.EventHandler(this.WordControl_Click);
       this.ContextMenuStripWord.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

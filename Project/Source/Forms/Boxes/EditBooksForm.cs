@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditBooksForm_Load(object sender, EventArgs e)
     {
-      BooksTableAdapter.Fill(DataSet.Books);
+      EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
     }
 
     private void buttonClose_Click(object sender, EventArgs e)
@@ -50,9 +50,9 @@ namespace Ordisoftware.HebrewWords
     private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       Validate();
-      BooksBindingSource.EndEdit();
-      UpdateViewRequired = DataSet.HasChanges();
-      TableAdapterManager.UpdateAll(DataSet);
+      MainForm.Instance.BooksBindingSource.EndEdit();
+      UpdateViewRequired = MainForm.Instance.DataSet.HasChanges();
+      MainForm.Instance.TableAdapterManager.UpdateAll(DataSet);
     }
 
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -62,13 +62,13 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
+      var book = (Data.DataSet.BooksRow)( (DataRowView)MainForm.Instance.BooksBindingSource.Current ).Row;
       Program.OpenHebrewLetters(book.Hebrew);
     }
 
     private void ActionCopyHebrewName_Click(object sender, EventArgs e)
     {
-      var book = (Data.DataSet.BooksRow)( (DataRowView)BooksBindingSource.Current ).Row;
+      var book = (Data.DataSet.BooksRow)( (DataRowView)MainForm.Instance.BooksBindingSource.Current ).Row;
       Clipboard.SetText(book.Name);
     }
 

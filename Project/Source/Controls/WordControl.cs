@@ -64,11 +64,12 @@ namespace Ordisoftware.HebrewWords
 
     public new bool Focus()
     {
+      if ( MainForm.Instance.RenderInProcess ) return false;
       EditTranslation.Focus();
       return true;
     }
 
-    private void FlowLayoutPanel_Click(object sender, EventArgs e)
+    private void WordControl_Click(object sender, EventArgs e)
     {
       Focus();
     }
@@ -80,6 +81,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
+      if ( MainForm.Instance.RenderInProcess ) return;
       EditTranslation.BackColor = Color.AliceBlue;
       EditTranslation.SelectionStart = 0;
       if ( MainForm.Instance.ComboBoxMutex ) return;
@@ -101,6 +103,7 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoadingData ) return;
+      if ( MainForm.Instance.RenderInProcess ) return;
       if ( _Word != null ) 
         _Word.Translation = EditTranslation.Text;
       Focus();

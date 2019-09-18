@@ -46,46 +46,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
-
-    /// <summary>
-    /// Indicate previous seach paging position.
-    /// </summary>
-    private int PreviousSeachPagingPosition = -1;
-
-    /// <summary>
-    /// Indicate current bible reference.
-    /// </summary>
-    public ReferenceItem CurrentReference { get; set; }
-
-    /// <summary>
-    /// Indicate combobox mutex.
-    /// </summary>
-    public bool ComboBoxMutex { get; private set; }
-
-    /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    public bool IsReady { get; private set; }
-
-    /// <summary>
-    /// Indicate if is in loading data stage.
-    /// </summary>
-    public bool IsLoadingData { get; private set; }
-
-    /// <summary>
-    /// Indicate if GoTo is running.
-    /// </summary>
-    private bool IsGoToRunning;
-
-    /// <summary>
-    /// Indicate if windows session is ending.
-    /// </summary>
-    private bool IsSessionEnding;
-
-    /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
@@ -437,10 +397,10 @@ namespace Ordisoftware.HebrewWords
         int book = CurrentReference.Book.Number;
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
-        ReLoadData();
+        //ReLoadData();
         InitBooksCombobox();
-        Bookmarks.Load();
-        UpdateBookmarks();
+        //Bookmarks.Load();
+        //UpdateBookmarks();
         GoTo(book, chapter, verse);
       }
       finally
@@ -925,7 +885,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
     {
-      if ( RenderSearchResultsInProcess ) return;
+      if ( RenderInProcess ) return;
       PagingCurrent = 1;
       RenderSearchResults();
     }
@@ -937,7 +897,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
     {
-      if ( RenderSearchResultsInProcess ) return;
+      if ( RenderInProcess ) return;
       PagingCurrent--;
       RenderSearchResults();
     }
@@ -949,7 +909,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
     {
-      if ( RenderSearchResultsInProcess ) return;
+      if ( RenderInProcess ) return;
       PagingCurrent++;
       RenderSearchResults();
     }
@@ -961,7 +921,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
     {
-      if ( RenderSearchResultsInProcess ) return;
+      if ( RenderInProcess ) return;
       PagingCurrent = PagingCount;
       RenderSearchResults();
     }

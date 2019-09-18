@@ -81,9 +81,15 @@ namespace Ordisoftware.HebrewWords
           if ( item == "" || item.Count(c => c == '.') != 2 )
             continue;
           var parts = item.Split('.');
-          Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                      Convert.ToInt32(parts[1]),
-                                      Convert.ToInt32(parts[2])));
+          try
+          {
+            Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
+                                        Convert.ToInt32(parts[1]),
+                                        Convert.ToInt32(parts[2])));
+          }
+          catch
+          {
+          }
         }
       }
       catch ( Exception ex )

@@ -27,14 +27,14 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderSearchResults()
     {
-      if ( RenderSearchResultsInProcess ) return;
-      RenderSearchResultsInProcess = true;
+      if ( RenderInProcess ) return;
+      RenderInProcess = true;
       try
       {
         PanelSearchResults.SuspendLayout();
-        PanelSearchResults.Controls.Clear();
+        PanelSearchResults.Visible = false;
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-        PanelSearchResults.Refresh();
+        PanelSearchResults.Controls.Clear();
         GC.Collect();
         UpdateSearchButtons();
         if ( SearchResults == null || SearchResultsCount == 0 )
@@ -52,60 +52,38 @@ namespace Ordisoftware.HebrewWords
         int x = 0;
         int y = 0;
         int xx;
+        LinkLabel linklabel;
+        int indexControl = 0;
+        int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Count()).Sum();
+        Control[] controls = new Control[capacity];
         foreach ( var reference in results )
         {
           Application.DoEvents();
           if ( CancelRequired ) { CancelRequired = false; break; }
           x = maxX;
           y += marginY;
-          var linklabel = new LinkLabel();
+          linklabel = new LinkLabel();
           linklabel.AutoSize = true;
           linklabel.Tag = reference;
-          linklabel.Text = reference.ToString();
           linklabel.Font = LatinFont8;
+          linklabel.Text = reference.ToString();
+          linklabel.Location = new Point(x = x - referenceSize, y);
           linklabel.LinkColor = Color.DarkBlue;
           linklabel.LinkClicked += (sender, e) =>
           {
             SetView(ViewModeType.Verses);
             GoTo((ReferenceItem)( (Control)sender ).Tag);
           };
-          linklabel.Location = new Point(x = x - referenceSize, y);
-          PanelSearchResults.Controls.Add(linklabel);
+          controls[indexControl++] = linklabel;
           x -= marginX;
           xx = x;
           Label label = null;
           foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
           {
             label = new Label();
-            label.Text = word.Hebrew.Trim();
             label.AutoSize = true;
             label.Font = HebrewFont12;
-            if ( CheckWord != null )
-              if ( CheckWord(word) )
-              {
-                label.Tag = new WordReferencedItem(reference, word);
-                label.ForeColor = Color.DarkRed;
-                label.MouseEnter += (sender, e) =>
-                {
-                  ( (Control)sender ).Cursor = Cursors.Hand;
-                };
-                label.MouseLeave += (sender, e) =>
-                {
-                  ( (Control)sender ).Cursor = Cursors.Default;
-                };
-                label.MouseClick += (sender, e) =>
-                {
-                  SetView(ViewModeType.Verses);
-                  var item = (WordReferencedItem)( (Control)sender ).Tag;
-                  GoTo(item);
-                  foreach ( Control control in PanelViewVerses.Controls )
-                    if ( control is WordControl )
-                      if ( ( (WordControl)control ).Word == item.Word )
-                        control.Focus();
-                };
-              }
-              else
-                label.ForeColor = SystemColors.ControlText;
+            label.Text = word.Hebrew.Trim();
             x -= label.PreferredSize.Width;
             if ( x < minX )
             {
@@ -114,7 +92,18 @@ namespace Ordisoftware.HebrewWords
             }
             label.Location = new Point(x, y);
             label.Click += (sender, e) => PanelSearchResults.Focus();
-            PanelSearchResults.Controls.Add(label);
+            if ( CheckWord != null )
+              if ( CheckWord(word) )
+              {
+                label.Tag = new WordReferencedItem(reference, word);
+                label.ForeColor = Color.DarkRed;
+                label.MouseEnter += LabelMouseEnter;
+                label.MouseLeave += LabelMouseLeave;
+                label.MouseClick += LabelMouseClick;
+              }
+              else
+                label.ForeColor = SystemColors.ControlText;
+            controls[indexControl++] = label;
           }
           y += label.PreferredHeight + marginY;
           if ( reference.Verse.IsTranslated() )
@@ -125,10 +114,11 @@ namespace Ordisoftware.HebrewWords
             label.Text = reference.Verse.GetTranslation();
             label.Location = new Point(xx - label.PreferredSize.Width, y);
             label.Click += (sender, e) => PanelSearchResults.Focus();
-            PanelSearchResults.Controls.Add(label);
+            controls[indexControl++] = label;
             y += label.PreferredHeight + marginY;
           }
         }
+        PanelSearchResults.Controls.AddRange(controls);
       }
       catch ( Exception ex )
       {
@@ -136,12 +126,34 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        RenderSearchResultsInProcess = false;
+        RenderInProcess = false;
         if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
           SetFormDisabled(false);
+        PanelSearchResults.Visible = true;
         PanelSearchResults.ResumeLayout();
         PanelSearchResults.Focus();
       }
+    }
+
+    private void LabelMouseEnter(object sender, EventArgs e)
+    {
+      ( (Control)sender ).Cursor = Cursors.Hand;
+    }
+
+    private void LabelMouseLeave(object sender, EventArgs e)
+    {
+      ( (Control)sender ).Cursor = Cursors.Default;
+    }
+
+    private void LabelMouseClick(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Verses);
+      var item = (WordReferencedItem)( (Control)sender ).Tag;
+      GoTo(item);
+      foreach ( Control control in PanelViewVerses.Controls )
+        if ( control is WordControl )
+          if ( ( (WordControl)control ).Word == item.Word )
+            control.Focus();
     }
 
   }
