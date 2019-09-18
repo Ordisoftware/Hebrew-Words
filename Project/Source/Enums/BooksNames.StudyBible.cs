@@ -18,54 +18,8 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewWords
 {
 
-  static public class BooksNames
+  static public partial class BooksNames
   {
-
-    static public Dictionary<Books, string> Hebrew = new Dictionary<Books, string>()
-    {
-      // Torah
-      { Books.Bereshit, "ty>arb" },
-      { Books.Shemot, "tvm>" },
-      { Books.Vayiqra, "arqyv" },
-      { Books.Bamidbar, "rbdmb" },
-      { Books.Devarim, "myrbd" },
-      // Nevi'im
-      { Books.Yehoshoua, "i>vhy" },
-      { Books.Shoftim, "mytpv>" },
-      { Books.Shemouel_I, "a lavm>" },
-      { Books.Shemouel_II, "b lavm>" },
-      { Books.Melakim_I, "a myklm" },
-      { Books.Melakim_II, "b myklm" },
-      { Books.Isayah, "hyi>y" },
-      { Books.Yirmyah, "hymry" },
-      { Books.Yehezqel, "laqzxy" },
-      { Books.Hoshea, "i>vh" },
-      { Books.Yoel, "lavy" },
-      { Books.Amos, "cvmi" },
-      { Books.Obadyah, "hydbvi" },
-      { Books.Yonah, "hnvy" },
-      { Books.Mikah, "hkym" },
-      { Books.Nahoum, "mvxn" },
-      { Books.Habaqouq, "qvqbx" },
-      { Books.Tsephaniah, "hynpj" },
-      { Books.Hagai, "ygx" },
-      { Books.Zekaria, "hyrkz" },
-      { Books.Malaki, "ykalm" },
-      // Ketouvim
-      { Books.Tehilim, "mylht" },
-      { Books.Mishlei, "yl>m" },
-      { Books.Iyov, "bvya" },
-      { Books.Shir_HaShirim, "myry>h ry>" },
-      { Books.Routh, "tvr" },
-      { Books.Eikah, "hkya" },
-      { Books.Qohelet, "tlhq" },
-      { Books.Esther, "rt>a" },
-      { Books.Daniel, "lanyd" },
-      { Books.Ezra, "arzi" },
-      { Books.Nehemiah, "hymxn" },
-      { Books.Divrei_HaYamim_I, "a mymyh yrbd" },
-      { Books.Divrei_HaYamim_II, "b mymyh yrbd" }
-    };
 
     static public Dictionary<Books, string> StudyBible = new Dictionary<Books, string>()
     {

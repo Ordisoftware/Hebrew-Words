@@ -74,6 +74,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Classes\OnlineBibleProvider.cs" />
+    <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +89,7 @@
     </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Data\ReferenceItem.cs" />
-    <Compile Include="Source\Enums\BooksNames.cs" />
+    <Compile Include="Source\Enums\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
