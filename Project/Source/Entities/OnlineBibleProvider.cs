@@ -45,21 +45,29 @@ namespace Ordisoftware.HebrewWords
     static OnlineBibleProviders()
     {
       Items = new List<OnlineBibleProvider>();
+
       var item = new OnlineBibleProvider();
-      item.Name = "StudyBible.org";
+      item.Name = "StudyBible.org (EN)";
       item.URL = "https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%";
       Items.Add(item);
+
       item = new OnlineBibleProvider();
-      item.Name = "Mechon-Mamre.org";
       switch ( Localizer.Language )
       {
         case "fr":
+          item.Name = "Mechon-Mamre.org (FR)";
           item.URL = "https://www.mechon-mamre.org/f/ft/ft%BOOKNUM#2%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
         default:
+          item.Name = "Mechon-Mamre.org (EN)";
           item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKNUM#2%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
       }
+      Items.Add(item);
+
+      item = new OnlineBibleProvider();
+      item.Name = "Djep.hd.free.fr (FR)";
+      item.URL = "http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKNUM%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%";
       Items.Add(item);
     }
 
