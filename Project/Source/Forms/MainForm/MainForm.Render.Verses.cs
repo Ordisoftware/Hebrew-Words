@@ -93,6 +93,7 @@ namespace Ordisoftware.HebrewWords
           label.Text = reference.Verse.Number.ToString();
           label.MouseEnter += LabelVerseNumber_MouseEnter;
           label.MouseLeave += LabelVerseNumber_MouseLeave;
+          label.MouseDown += LabelVerseNumber_MouseDown;
           label.MouseClick += LabelVerseNumber_MouseClick;
           label.ContextMenuStrip = ContextMenuStripVerse;
           controls[indexControl++] = label;
@@ -199,8 +200,16 @@ namespace Ordisoftware.HebrewWords
       control.ForeColor = Color.DarkBlue;
     }
 
+    private void LabelVerseNumber_MouseDown(object sender, EventArgs e)
+    {
+      var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
+      if ( control != null ) control.Focus();
+    }
+
     private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
     {
+      var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
+      if ( control != null ) control.Focus();
       if ( e.Button != MouseButtons.Left ) return;
       Program.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
                               SelectBook.SelectedIndex + 1,
