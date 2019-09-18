@@ -61,21 +61,24 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      string str = (string)EditBooks.SelectedRows[0].Cells[1].Value;
-      if ( str.StartsWith("a ") ) str = str.Substring(2, str.Length - 2);
+      string strHebrew = (string)EditBooks.SelectedRows[0].Cells[1].Value;
+      if ( strHebrew.StartsWith("a ") ) strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
       else
-      if ( str.StartsWith("b ") ) str = str.Substring(2, str.Length - 2);
-      foreach ( string item in str.Split(' ') )
+      if ( strHebrew.StartsWith("b ") ) strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
+      foreach ( string item in strHebrew.Split(' ') )
         Program.OpenHebrewLetters(item);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      string str = (string)EditBooks.SelectedRows[0].Cells[2].Value;
-      if ( str.StartsWith("a ") ) str = str.Substring(2, str.Length - 2);
+      string strName = (string)EditBooks.SelectedRows[0].Cells[2].Value;
+      if ( strName.StartsWith("a ") ) strName = strName.Substring(2, strName.Length - 2);
       else
-      if ( str.StartsWith("b ") ) str = str.Substring(2, str.Length - 2);
-      Clipboard.SetText(str);
+      if ( strName.StartsWith("b ") ) strName = strName.Substring(2, strName.Length - 2);
+      string strTranlation = (string)EditBooks.SelectedRows[0].Cells[3].Value;
+      if ( strTranlation != "" )
+        strName += " (" + strTranlation + ")";
+      Clipboard.SetText(strName);
     }
 
     private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
