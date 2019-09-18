@@ -59,7 +59,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### 2019.09.__ - Version 2.0
 
-- Add context menu on hebrew words and on verses numbers.
+- Add context menu on hebrew words, on verses numbers and on search reference found.
 - Add search translations of a word.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
