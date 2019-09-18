@@ -149,12 +149,13 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Set form disabled or enabled.
     /// </summary>
-    private void SetFormDisabled(bool disabled)
+    internal void SetFormDisabled(bool disabled)
     {
       Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
       ToolStrip.Enabled = !disabled;
       PanelNavigation.Enabled = !disabled;
       PanelMainCenter.Enabled = !disabled;
+      Refresh();
     }
 
     /// <summary>
@@ -436,7 +437,7 @@ namespace Ordisoftware.HebrewWords
         int book = CurrentReference.Book.Number;
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
-        BooksTableAdapter.Fill(DataSet.Books);
+        ReLoadData();
         InitBooksCombobox();
         Bookmarks.Load();
         UpdateBookmarks();
@@ -456,7 +457,11 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewStatistics_Click(object sender, EventArgs e)
     {
       var reference = StatisticsForm.Run();
-      if ( reference != null ) GoTo(reference);
+      if ( reference != null )
+      {
+        SetView(ViewModeType.Verses);
+        GoTo(reference);
+      }
     }
 
     /// <summary>

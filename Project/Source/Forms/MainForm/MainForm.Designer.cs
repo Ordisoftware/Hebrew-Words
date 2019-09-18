@@ -1527,13 +1527,8 @@
     private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     private System.Windows.Forms.ToolStripButton booksBindingNavigatorSaveItem;
     private System.Windows.Forms.BindingSource BooksBindingSource;
-    private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
-    private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
-    private Data.DataSetTableAdapters.ChaptersTableAdapter ChaptersTableAdapter;
     private System.Windows.Forms.BindingSource ChaptersBindingSource;
-    private Data.DataSetTableAdapters.VersesTableAdapter VersesTableAdapter;
     private System.Windows.Forms.BindingSource VersesBindingSource;
-    private Data.DataSetTableAdapters.WordsTableAdapter WordsTableAdapter;
     private System.Windows.Forms.BindingSource WordsBindingSource;
     private System.Windows.Forms.Label LabelSelectChapter;
     private System.Windows.Forms.Label LabelSelectBook;
@@ -1648,6 +1643,11 @@
     private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
     private System.Windows.Forms.CheckBox EditSearchInKetouvim;
     private System.Windows.Forms.CheckBox EditSearchInNeviim;
+    internal Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
+    internal Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
+    internal Data.DataSetTableAdapters.ChaptersTableAdapter ChaptersTableAdapter;
+    internal Data.DataSetTableAdapters.VersesTableAdapter VersesTableAdapter;
+    internal Data.DataSetTableAdapters.WordsTableAdapter WordsTableAdapter;
   }
 }
 

@@ -1632,7 +1632,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionExportChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 15</value>
+    <value>486, 15</value>
   </data>
   <data name="ActionExportChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1691,7 +1691,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionExportBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 15</value>
+    <value>312, 15</value>
   </data>
   <data name="ActionExportBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1746,7 +1746,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionSearchVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>405, 15</value>
+    <value>443, 15</value>
   </data>
   <data name="ActionSearchVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1773,7 +1773,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>0, 21</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 28</value>
+    <value>306, 28</value>
   </data>
   <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1824,10 +1824,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 21</value>
+    <value>378, 21</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 28</value>
+    <value>59, 28</value>
   </data>
   <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1920,7 +1920,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelSelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 0</value>
+    <value>375, 0</value>
   </data>
   <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 15</value>

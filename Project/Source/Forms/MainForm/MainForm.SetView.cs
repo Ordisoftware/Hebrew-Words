@@ -134,6 +134,7 @@ namespace Ordisoftware.HebrewWords
       ActionSearchVerse.Enabled = view == ViewModeType.Verses
                                || view == ViewModeType.Translations
                                || view == ViewModeType.Text;
+      Refresh();
     }
 
   }

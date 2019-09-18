@@ -32,11 +32,17 @@ namespace Ordisoftware.HebrewWords
       public int CountLetters;
     }
 
+    static private StatisticsForm Instance;
+
+    static public void Prepare()
+    {
+      Instance = new StatisticsForm();
+    }
+
     static public ReferenceItem Run()
     {
-      var form = new StatisticsForm();
-      form.ShowDialog();
-      return form.Reference;
+      Instance.ShowDialog();
+      return Instance.Reference;
     }
 
     private ReferenceItem Reference;
@@ -45,21 +51,23 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      try
+      {
+        InitializeCounters();
+        InitializeMiddle();
+        InitializeOccurences();
+        foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
+          SelectBook.Items.Add(new BookItem(book));
+        SelectBook.SelectedIndex = 0;
+      }
+      finally
+      {
+      }
     }
 
     private void buttonClose_Click(object sender, EventArgs e)
     {
       Close();
-    }
-
-    private void StatisticsForm_Load(object sender, EventArgs e)
-    {
-      InitializeCounters();
-      InitializeMiddle();
-      InitializeOccurences();
-      foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem(book));
-      SelectBook.SelectedIndex = 0;
     }
 
     private Dictionary<Books, BookStatistic> CountersBooks = new Dictionary<Books, BookStatistic>();

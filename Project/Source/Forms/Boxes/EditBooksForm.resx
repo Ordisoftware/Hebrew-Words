@@ -192,7 +192,7 @@
     <value>Copy hebrew name</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 70</value>
+    <value>186, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -203,7 +203,7 @@
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>110, 17</value>
   </metadata>
-  <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="BooksDataGridView.Location" type="System.Drawing.Point, System.Drawing">
@@ -347,10 +347,10 @@
   <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataSet.Name" xml:space="preserve">
-    <value>dataSet</value>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
   </data>
-  <data name="&gt;&gt;dataSet.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">

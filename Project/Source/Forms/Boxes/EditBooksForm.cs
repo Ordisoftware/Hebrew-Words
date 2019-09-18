@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditBooksForm_Load(object sender, EventArgs e)
     {
-      BooksTableAdapter.Fill(dataSet.Books);
+      BooksTableAdapter.Fill(DataSet.Books);
     }
 
     private void buttonClose_Click(object sender, EventArgs e)
@@ -51,8 +51,8 @@ namespace Ordisoftware.HebrewWords
     {
       Validate();
       BooksBindingSource.EndEdit();
-      UpdateViewRequired = dataSet.HasChanges();
-      TableAdapterManager.UpdateAll(dataSet);
+      UpdateViewRequired = DataSet.HasChanges();
+      TableAdapterManager.UpdateAll(DataSet);
     }
 
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

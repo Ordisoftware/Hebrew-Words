@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Reload data from database.
     /// </summary>
-    private void ReLoadData(Action action)
+    private void ReLoadData(Action action = null)
     {
       PanelViewVerses.Controls.Clear();
       PanelSearchResults.Controls.Clear();
@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewWords
       SearchResults = null;
       Refresh();
       DataSet.Clear();
-      action();
+      if (action != null) action();
       History.Clear();
       LoadData();
     }
@@ -126,6 +126,7 @@ namespace Ordisoftware.HebrewWords
           InitBooksCombobox();
           Bookmarks.Load();
           UpdateBookmarks();
+          StatisticsForm.Prepare();
         }
         finally
         {

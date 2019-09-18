@@ -254,7 +254,6 @@
       this.MinimizeBox = false;
       this.Name = "StatisticsForm";
       this.ShowInTaskbar = false;
-      this.Load += new System.EventHandler(this.StatisticsForm_Load);
       this.GroupBoxAllBooks.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.GroupBoxTorah.ResumeLayout(false);

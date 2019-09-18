@@ -40,7 +40,7 @@
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.dataSet = new Ordisoftware.HebrewWords.Data.DataSet();
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
       this.buttonClose = new System.Windows.Forms.Button();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
@@ -48,7 +48,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -131,12 +131,12 @@
       // BooksBindingSource
       // 
       this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.dataSet;
+      this.BooksBindingSource.DataSource = this.DataSet;
       // 
-      // dataSet
+      // DataSet
       // 
-      this.dataSet.DataSetName = "DataSet";
-      this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // panel1
       // 
@@ -181,7 +181,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).EndInit();
       this.ContextMenuStripResults.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -189,7 +189,7 @@
 
     #endregion
 
-    private Data.DataSet dataSet;
+    private Data.DataSet DataSet;
     private System.Windows.Forms.BindingSource BooksBindingSource;
     private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
     private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
