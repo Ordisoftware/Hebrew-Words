@@ -252,7 +252,7 @@
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>200</value>
   </data>
-  <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ContextMenuStripResults.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -272,7 +272,7 @@
 </value>
   </data>
   <data name="ActionUseTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionUseTranslation.Text" xml:space="preserve">
     <value>Use translation</value>
@@ -293,13 +293,13 @@
 </value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionCopyTranslation.Text" xml:space="preserve">
     <value>Copy translation</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionReachReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -313,18 +313,18 @@
 </value>
   </data>
   <data name="ActionReachReference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionReachReference.Text" xml:space="preserve">
     <value>Reach reference</value>
   </data>
-  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 76</value>
+  <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 98</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
-    <value>ContextMenuStrip</value>
+  <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
+    <value>ContextMenuStripResults</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuStripResults.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

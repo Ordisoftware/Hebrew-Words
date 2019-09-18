@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewWords
       EditHebrew.Text = sender.LabelHebrew.Text;
       Mutex = false;
       Text = reference.ToString() + " {" + sender.Word.Number + "}";
-      Update();
+      UpdateResult();
       ActiveControl = ListView;
     }
 
@@ -114,7 +114,7 @@ namespace Ordisoftware.HebrewWords
     private void EditHebrew_KeyPress(object sender, KeyPressEventArgs e)
     {
       if ( e.KeyChar == '\r' )
-        Update();
+        UpdateResult();
       else
       if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
@@ -189,36 +189,36 @@ namespace Ordisoftware.HebrewWords
       if (EditWholeWord.Checked)
         EditWholeWord.Checked = false;
       else
-        Update();
+        UpdateResult();
     }
 
     private void ActionDelLast_Click(object sender, EventArgs e)
     {
       if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(0, 1);
-      Update();
+      UpdateResult();
     }
 
     private void ActionDelFirst_Click(object sender, EventArgs e)
     {
       if ( EditHebrew.Text.Length <= 2 ) return;
       EditHebrew.Text = EditHebrew.Text.Remove(EditHebrew.Text.Length - 1, 1);
-      Update();
+      UpdateResult();
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       EditHebrew.Text = WordControl.Word.Hebrew;
       EditWholeWord.Checked = true;
-      Update();
+      UpdateResult();
     }
 
     private void EditFilter_CheckedChanged(object sender, EventArgs e)
     {
-      Update();
+      UpdateResult();
     }
 
-    private void Update()
+    private void UpdateResult()
     {
       if ( Mutex ) return;
       Mutex = true;

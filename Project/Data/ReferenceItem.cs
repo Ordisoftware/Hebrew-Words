@@ -95,7 +95,7 @@ namespace Ordisoftware.HebrewWords
       return Equals(this, y);
     }
 
-    public int GetHashCode()
+    public override int GetHashCode()
     {
       int hashBook = Book?.Number.GetHashCode() ?? 0;
       int hashChapter = Chapter?.Number.GetHashCode() ?? 0;

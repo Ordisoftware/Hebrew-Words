@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewWords
       int lcount = (int)Math.Truncate((double)CountersTorah.CountLetters / 2.0);
       int index = 0;
       var books = from book in MainForm.Instance.DataSet.Books
-                  where book.Number <= 5
+                  where book.Number <= BooksMinMax.TorahMax
                   select book;
       foreach ( Data.DataSet.BooksRow book in books )
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
                     from chapter in book.GetChaptersRows()
                     from verse in chapter.GetVersesRows()
                     from word in verse.GetWordsRows()
-                    where check(word.Hebrew) && book.Number <= 5
+                    where check(word.Hebrew) && book.Number <= BooksMinMax.TorahMax
                     select word;
         return query.Count().ToString();
       };

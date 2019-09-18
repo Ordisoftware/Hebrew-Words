@@ -36,7 +36,7 @@
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,7 +46,7 @@
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).BeginInit();
-      this.ContextMenuStrip.SuspendLayout();
+      this.ContextMenuStripResults.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
       this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-      this.BooksDataGridView.ContextMenuStrip = this.ContextMenuStrip;
+      this.BooksDataGridView.ContextMenuStrip = this.ContextMenuStripResults;
       this.BooksDataGridView.DataSource = this.BooksBindingSource;
       this.BooksDataGridView.MultiSelect = false;
       this.BooksDataGridView.Name = "BooksDataGridView";
@@ -108,13 +108,13 @@
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
-      // ContextMenuStrip
+      // ContextMenuStripResults
       // 
-      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenHebrewLetters,
             this.ActionCopyHebrewName});
-      this.ContextMenuStrip.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -179,7 +179,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditBooksForm_FormClosing);
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.BooksDataGridView)).EndInit();
-      this.ContextMenuStrip.ResumeLayout(false);
+      this.ContextMenuStripResults.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
       this.panel1.ResumeLayout(false);
@@ -196,7 +196,7 @@
     private System.Windows.Forms.DataGridView BooksDataGridView;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Button buttonClose;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewName;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

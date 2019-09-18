@@ -55,7 +55,9 @@
       this.LabelSearchCount = new System.Windows.Forms.Label();
       this.SelectSearchPaging = new System.Windows.Forms.TrackBar();
       this.EditSearchPaging = new System.Windows.Forms.TextBox();
-      this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
+      this.EditSearchInKetouvim = new System.Windows.Forms.CheckBox();
+      this.EditSearchInNeviim = new System.Windows.Forms.CheckBox();
+      this.EditSearchInTorah = new System.Windows.Forms.CheckBox();
       this.ActionSearchRun = new System.Windows.Forms.Button();
       this.ActionNavigateSearchFirst = new System.Windows.Forms.Button();
       this.ActionSearchNavigatePrevious = new System.Windows.Forms.Button();
@@ -65,6 +67,7 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
+      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -90,6 +93,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -184,9 +189,6 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -219,10 +221,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      this.ToolStrip.SuspendLayout();
-      this.ContextMenuStripVerse.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ToolStrip.SuspendLayout();
+      this.ContextMenuStripVerse.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -387,7 +389,9 @@
       this.PanelSearchFiltersRight.Controls.Add(this.LabelSearchCount);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchPaging);
-      this.PanelSearchFiltersRight.Controls.Add(this.EditSearchOnlyTorah);
+      this.PanelSearchFiltersRight.Controls.Add(this.EditSearchInKetouvim);
+      this.PanelSearchFiltersRight.Controls.Add(this.EditSearchInNeviim);
+      this.PanelSearchFiltersRight.Controls.Add(this.EditSearchInTorah);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchRun);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigateSearchFirst);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigatePrevious);
@@ -420,14 +424,30 @@
       this.EditSearchPaging.Name = "EditSearchPaging";
       this.EditSearchPaging.ReadOnly = true;
       // 
-      // EditSearchOnlyTorah
+      // EditSearchInKetouvim
       // 
-      resources.ApplyResources(this.EditSearchOnlyTorah, "EditSearchOnlyTorah");
-      this.EditSearchOnlyTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchOnlyInTorah;
-      this.EditSearchOnlyTorah.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSearchOnlyTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchOnlyInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditSearchOnlyTorah.Name = "EditSearchOnlyTorah";
-      this.EditSearchOnlyTorah.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditSearchInKetouvim, "EditSearchInKetouvim");
+      this.EditSearchInKetouvim.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInKetouvim;
+      this.EditSearchInKetouvim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInKetouvim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInKetouvim.Name = "EditSearchInKetouvim";
+      this.EditSearchInKetouvim.UseVisualStyleBackColor = true;
+      // 
+      // EditSearchInNeviim
+      // 
+      resources.ApplyResources(this.EditSearchInNeviim, "EditSearchInNeviim");
+      this.EditSearchInNeviim.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInNeviim;
+      this.EditSearchInNeviim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInNeviim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInNeviim.Name = "EditSearchInNeviim";
+      this.EditSearchInNeviim.UseVisualStyleBackColor = true;
+      // 
+      // EditSearchInTorah
+      // 
+      resources.ApplyResources(this.EditSearchInTorah, "EditSearchInTorah");
+      this.EditSearchInTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInTorah;
+      this.EditSearchInTorah.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditSearchInTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInTorah.Name = "EditSearchInTorah";
+      this.EditSearchInTorah.UseVisualStyleBackColor = true;
       // 
       // ActionSearchRun
       // 
@@ -500,6 +520,15 @@
       this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
+      // 
+      // EditLetters
+      // 
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
@@ -677,6 +706,16 @@
       // 
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // label1
       // 
@@ -1365,25 +1404,6 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1453,11 +1473,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1547,7 +1567,7 @@
     private System.Windows.Forms.Panel PanelSearchResults;
     internal System.Windows.Forms.ComboBox SelectChapter;
     internal System.Windows.Forms.ComboBox SelectBook;
-    private System.Windows.Forms.CheckBox EditSearchOnlyTorah;
+    private System.Windows.Forms.CheckBox EditSearchInTorah;
     private System.Windows.Forms.Button ActionSearchVerse;
     private System.Windows.Forms.Button ActionExportBook;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogWord;
@@ -1626,6 +1646,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
+    private System.Windows.Forms.CheckBox EditSearchInKetouvim;
+    private System.Windows.Forms.CheckBox EditSearchInNeviim;
   }
 }
 

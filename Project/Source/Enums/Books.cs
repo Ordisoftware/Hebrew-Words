@@ -12,8 +12,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -25,8 +26,8 @@ namespace Ordisoftware.HebrewWords
     // Nevi'im
     Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
     Isayah, Yirmyah, Yehezqel,
-    Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
-    Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
+    Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah,
+    Nahoum, Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
     Tehilim, Mishlei, Iyov,
     Shir_HaShirim, Routh, Eikah, Qohelet, Esther, Daniel, Ezra, Nehemiah,
@@ -83,5 +84,23 @@ namespace Ordisoftware.HebrewWords
     Divrei_HaYamim_I = Books.Divrei_HaYamim_I,
     Divrei_HaYamim_II = Books.Divrei_HaYamim_II
   };
+
+  static public class BooksMinMax
+  {
+    static public readonly int TorahMin = typeof(TorahBooks).Min() + 1;
+    static public readonly int TorahMax = typeof(TorahBooks).Max() + 1;
+    static public readonly int NeviimMin = typeof(NeviimBooks).Min() + 1;
+    static public readonly int NeviimMax = typeof(NeviimBooks).Max() + 1;
+    static public readonly int KetouvimMin = typeof(KetouvimBooks).Min() + 1;
+    static public readonly int KetouvimMax = typeof(KetouvimBooks).Max() + 1;
+    static private int Min(this Type type)
+    {
+      return Enum.GetValues(type).Cast<int>().Min();
+    }
+    static private int Max(this Type type)
+    {
+      return Enum.GetValues(type).Cast<int>().Max();
+    }
+  }
 
 }

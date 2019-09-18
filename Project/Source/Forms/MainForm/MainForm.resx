@@ -576,38 +576,104 @@
   <data name="&gt;&gt;EditSearchPaging.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditSearchOnlyTorah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditSearchInKetouvim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="EditSearchOnlyTorah.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditSearchInKetouvim.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditSearchOnlyTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditSearchInKetouvim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditSearchOnlyTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 159</value>
+  <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 166</value>
   </data>
-  <data name="EditSearchOnlyTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 17</value>
+  <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 17</value>
   </data>
-  <data name="EditSearchOnlyTorah.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditSearchInKetouvim.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="EditSearchOnlyTorah.Text" xml:space="preserve">
-    <value>Only in the Torah</value>
+  <data name="EditSearchInKetouvim.Text" xml:space="preserve">
+    <value>Ketouvim</value>
   </data>
-  <data name="&gt;&gt;EditSearchOnlyTorah.Name" xml:space="preserve">
-    <value>EditSearchOnlyTorah</value>
+  <data name="&gt;&gt;EditSearchInKetouvim.Name" xml:space="preserve">
+    <value>EditSearchInKetouvim</value>
   </data>
-  <data name="&gt;&gt;EditSearchOnlyTorah.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchInKetouvim.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditSearchOnlyTorah.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchInKetouvim.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
   </data>
-  <data name="&gt;&gt;EditSearchOnlyTorah.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchInKetouvim.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="EditSearchInNeviim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditSearchInNeviim.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSearchInNeviim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 143</value>
+  </data>
+  <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="EditSearchInNeviim.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditSearchInNeviim.Text" xml:space="preserve">
+    <value>Nevi'im</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInNeviim.Name" xml:space="preserve">
+    <value>EditSearchInNeviim</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInNeviim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInNeviim.Parent" xml:space="preserve">
+    <value>PanelSearchFiltersRight</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInNeviim.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditSearchInTorah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditSearchInTorah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSearchInTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 120</value>
+  </data>
+  <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="EditSearchInTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditSearchInTorah.Text" xml:space="preserve">
+    <value>Torah</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInTorah.Name" xml:space="preserve">
+    <value>EditSearchInTorah</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInTorah.Parent" xml:space="preserve">
+    <value>PanelSearchFiltersRight</value>
+  </data>
+  <data name="&gt;&gt;EditSearchInTorah.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="ActionSearchRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -666,7 +732,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchRun.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="ActionNavigateSearchFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -721,7 +787,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionNavigateSearchFirst.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -769,7 +835,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigatePrevious.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="ActionSearchNavigateNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -818,7 +884,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigateNext.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="ActionSearchNavigateLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -871,7 +937,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigateLast.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionSearchClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -927,7 +993,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchClear.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="PanelSearchFiltersRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3896,9 +3962,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -3925,6 +3988,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4471,18 +4546,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

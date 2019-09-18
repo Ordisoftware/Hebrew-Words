@@ -146,7 +146,7 @@
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
     <value>Translation</value>
   </data>
-  <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ContextMenuStripResults.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>605, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -191,13 +191,13 @@
   <data name="ActionCopyHebrewName.Text" xml:space="preserve">
     <value>Copy hebrew name</value>
   </data>
-  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 48</value>
+  <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 70</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
-    <value>ContextMenuStrip</value>
+  <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
+    <value>ContextMenuStripResults</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuStripResults.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

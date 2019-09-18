@@ -407,18 +407,6 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SearchOnlyInTorah {
-            get {
-                return ((bool)(this["SearchOnlyInTorah"]));
-            }
-            set {
-                this["SearchOnlyInTorah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int CurrentSearchTypeTab {
             get {
@@ -462,6 +450,42 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
             set {
                 this["OpenLastViewAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchInTorah {
+            get {
+                return ((bool)(this["SearchInTorah"]));
+            }
+            set {
+                this["SearchInTorah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SearchInNeviim {
+            get {
+                return ((bool)(this["SearchInNeviim"]));
+            }
+            set {
+                this["SearchInNeviim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SearchInKetouvim {
+            get {
+                return ((bool)(this["SearchInKetouvim"]));
+            }
+            set {
+                this["SearchInKetouvim"] = value;
             }
         }
     }

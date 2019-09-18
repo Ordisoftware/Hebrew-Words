@@ -38,7 +38,7 @@
       this.ListView = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,7 +52,7 @@
       this.EditHebrew = new System.Windows.Forms.TextBox();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      this.ContextMenuStrip.SuspendLayout();
+      this.ContextMenuStripResults.SuspendLayout();
       this.PanelTop.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -99,7 +99,7 @@
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-      this.ListView.ContextMenuStrip = this.ContextMenuStrip;
+      this.ListView.ContextMenuStrip = this.ContextMenuStripResults;
       resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
       this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -120,15 +120,15 @@
       // 
       resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
-      // ContextMenuStrip
+      // ContextMenuStripResults
       // 
-      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
             this.ActionCopyTranslation,
             this.toolStripSeparator1,
             this.ActionReachReference});
-      this.ContextMenuStrip.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionUseTranslation
       // 
@@ -232,7 +232,7 @@
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
       this.PanelMain.ResumeLayout(false);
-      this.ContextMenuStrip.ResumeLayout(false);
+      this.ContextMenuStripResults.ResumeLayout(false);
       this.PanelTop.ResumeLayout(false);
       this.PanelTop.PerformLayout();
       this.ResumeLayout(false);
@@ -246,7 +246,7 @@
     private System.Windows.Forms.ListView ListView;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionReachReference;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
     private System.Windows.Forms.ToolStripMenuItem ActionUseTranslation;

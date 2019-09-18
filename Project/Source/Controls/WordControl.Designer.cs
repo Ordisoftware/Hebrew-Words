@@ -31,7 +31,7 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordControl));
       this.LabelHebrew = new System.Windows.Forms.Label();
-      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -40,13 +40,13 @@
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
-      this.ContextMenuStrip.SuspendLayout();
+      this.ContextMenuStripWord.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelHebrew
       // 
       resources.ApplyResources(this.LabelHebrew, "LabelHebrew");
-      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStrip;
+      this.LabelHebrew.ContextMenuStrip = this.ContextMenuStripWord;
       this.LabelHebrew.Name = "LabelHebrew";
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
@@ -54,9 +54,9 @@
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 
-      // ContextMenuStrip
+      // ContextMenuStripWord
       // 
-      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOnlineSearch,
             this.ActionOpenHebrewLetters,
             this.toolStripMenuItem1,
@@ -64,8 +64,8 @@
             this.ActionSearch,
             this.toolStripMenuItem2,
             this.ActionCopy});
-      this.ContextMenuStrip.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      this.ContextMenuStripWord.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
       // ActionOnlineSearch
       // 
@@ -123,14 +123,14 @@
       this.Controls.Add(this.LabelHebrew);
       this.Controls.Add(this.EditTranslation);
       this.Name = "WordControl";
-      this.ContextMenuStrip.ResumeLayout(false);
+      this.ContextMenuStripWord.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripWord;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;

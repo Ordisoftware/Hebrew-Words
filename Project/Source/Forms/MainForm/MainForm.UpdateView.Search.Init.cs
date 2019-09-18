@@ -47,6 +47,8 @@ namespace Ordisoftware.HebrewWords
       SearchWord2 = "";
       PagingCount = 0;
       PagingCurrent = 0;
+      if ( !EditSearchInTorah.Checked && !EditSearchInNeviim.Checked && !EditSearchInKetouvim.Checked )
+        EditSearchInTorah.Checked = true;
     }
 
     private void UpdatePagingCount()
