@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewWords
       };
       Func<DataSet.VersesRow, bool> checkTranslatedAllUntranslated = verse =>
       {
-        return verse.IsUntranslated();
+        return !verse.IsTranslated();
       };
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {

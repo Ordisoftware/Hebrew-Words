@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewWords
       if ( EditOnlyWithTranslation.Checked )
         References = References.Where(r => r.Verse.IsTranslated());
       if ( EditOnlyWithoutTranslation.Checked )
-        References = References.Where(r => r.Verse.IsUntranslated());
+        References = References.Where(r => !r.Verse.IsTranslated());
       DialogResult = DialogResult.Yes;
     }
 
@@ -146,7 +146,7 @@ namespace Ordisoftware.HebrewWords
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
       {
-        CreateReferences(OriginalReferences.ToList().Where(r => r.Verse.IsUntranslated()));
+        CreateReferences(OriginalReferences.ToList().Where(r => !r.Verse.IsTranslated()));
         ActionAddAll.PerformClick();
       }
       else

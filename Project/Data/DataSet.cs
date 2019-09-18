@@ -53,14 +53,6 @@
       return false;
     }
 
-    static public bool IsUntranslated(this DataSet.VersesRow verse)
-    {
-      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
-        if ( word.Translation.Trim() != "" )
-          return false;
-      return true;
-    }
-
   }
 
 }

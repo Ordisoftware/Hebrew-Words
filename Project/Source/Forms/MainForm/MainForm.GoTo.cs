@@ -15,6 +15,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -116,30 +117,14 @@ namespace Ordisoftware.HebrewWords
     private void GoToVerse()
     {
       var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
+      form.EditVerseNumber.Maximum = CurrentReference.Chapter.GetVersesRows().Count();
       if ( form.ShowDialog() != DialogResult.OK ) return;
       int value = (int)form.EditVerseNumber.Value;
       if ( value > 0 )
         GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
       else
       {
-        Data.DataSet.VersesRow found = null;
-        var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-        foreach ( Data.DataSet.VersesRow verse in list )
-        {
-          bool isempty = true;
-          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-            if ( word.Translation != "" )
-            {
-              isempty = false;
-              break;
-            }
-          if ( isempty )
-          {
-            found = verse;
-            break;
-          }
-        }
+        var found = CurrentReference.Chapter.GetVersesRows().Where(v => !v.IsTranslated()).FirstOrDefault();
         if ( found != null )
           GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
         else
