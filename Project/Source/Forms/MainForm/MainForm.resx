@@ -3744,35 +3744,35 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="booksBindingNavigatorSaveItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
   </data>
-  <metadata name="SaveFileDialogWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>717, 58</value>
+  <metadata name="SaveFileDialogMSWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>34, 93</value>
   </metadata>
-  <data name="SaveFileDialogWord.Filter" xml:space="preserve">
+  <data name="SaveFileDialogMSWord.Filter" xml:space="preserve">
     <value>Word DOCX files (*.docx)|*.docx</value>
   </data>
   <metadata name="SaveFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>867, 58</value>
+    <value>380, 96</value>
   </metadata>
   <data name="SaveFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
   <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1013, 58</value>
+    <value>526, 96</value>
   </metadata>
   <data name="OpenFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
   <metadata name="SaveFileDialogRTF.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>33, 89</value>
+    <value>224, 94</value>
   </metadata>
   <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
     <value>Rich Text Format files (*.rtf)|*.rtf</value>
   </data>
   <metadata name="TimerAutoSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 89</value>
+    <value>713, 58</value>
   </metadata>
   <metadata name="ContextMenuStripVerse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>318, 89</value>
+    <value>681, 97</value>
   </metadata>
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3921,7 +3921,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>False</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 154</value>
+    <value>201, 176</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
@@ -3939,7 +3939,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>650, 18</value>
   </metadata>
   <metadata name="VersesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>840, 22</value>
+    <value>838, 19</value>
   </metadata>
   <metadata name="WordsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1016, 18</value>
@@ -3955,9 +3955,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
@@ -3985,6 +3982,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4448,10 +4457,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;booksBindingNavigatorSaveItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogWord.Name" xml:space="preserve">
-    <value>SaveFileDialogWord</value>
+  <data name="&gt;&gt;SaveFileDialogMSWord.Name" xml:space="preserve">
+    <value>SaveFileDialogMSWord</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialogWord.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveFileDialogMSWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SaveFileDialogDB.Name" xml:space="preserve">
@@ -4531,18 +4540,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

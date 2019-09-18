@@ -57,10 +57,22 @@ namespace Ordisoftware.HebrewWords
       int index = 1;
       EventHandler action = (sender, e) =>
       {
-        Program.OpenOnlineVerse((string)( (ToolStripMenuItem)sender ).Tag,
-                                SelectBook.SelectedIndex + 1,
-                                SelectChapter.SelectedIndex + 1,
-                                Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text));
+        var menuitem = (ToolStripMenuItem)sender;
+        var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+        if ( control is LinkLabel )
+        {
+          var reference = (ReferenceItem)control.Tag;
+          Program.OpenOnlineVerse((string)menuitem.Tag,
+                                  reference.Book.Number,
+                                  reference.Chapter.Number,
+                                  reference.Verse.Number);
+        }
+        else
+              if ( control is Label )
+          Program.OpenOnlineVerse((string)menuitem.Tag,
+                                  SelectBook.SelectedIndex + 1,
+                                  SelectChapter.SelectedIndex + 1,
+                                  Convert.ToInt32(control.Text));
       };
       foreach ( var item in OnlineBibleProviders.Items )
         ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
@@ -102,7 +114,7 @@ namespace Ordisoftware.HebrewWords
     {
       OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
       SaveFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
-      SaveFileDialogWord.InitialDirectory = Program.Settings.BackupPath;
+      SaveFileDialogMSWord.InitialDirectory = Program.Settings.BackupPath;
       SaveFileDialogRTF.InitialDirectory = Program.Settings.BackupPath;
     }
 
@@ -807,8 +819,20 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
-      var verse = ( (ReferenceItem)( (Control)ContextMenuStripVerse.SourceControl.Tag ).Tag ).Verse;
-      Clipboard.SetText(verse.GetTranslation());
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      if ( control is LinkLabel )
+      {
+        var reference = (ReferenceItem)control.Tag;
+        var verse = reference.Verse;
+        Clipboard.SetText(verse.GetTranslation());
+      }
+      else
+      if ( control is Label )
+      {
+        var verse = ( (ReferenceItem)( (Control)control.Tag ).Tag ).Verse;
+        Clipboard.SetText(verse.GetTranslation());
+      }
     }
 
     /// <summary>
@@ -818,9 +842,22 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
-      Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
-      Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-      Program.Settings.BookmarkMasterVerse = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text);
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      if ( control is LinkLabel )
+      {
+        var reference = (ReferenceItem)control.Tag;
+        Program.Settings.BookmarkMasterBook = reference.Book.Number;
+        Program.Settings.BookmarkMasterChapter = reference.Chapter.Number;
+        Program.Settings.BookmarkMasterVerse = reference.Verse.Number;
+      }
+      else
+      if ( control is Label )
+      {
+        Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
+        Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
+        Program.Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
+      }
       Program.Settings.Store();
       UpdateBookmarks();
     }
@@ -832,10 +869,24 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
-      int index = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text) - 1;
-      var item = new ReferenceItem(CurrentReference.Book.Number,
-                                   CurrentReference.Chapter.Number,
-                                   CurrentReference.Chapter.GetVersesRows()[index].Number);
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      ReferenceItem item = null;
+      if ( control is LinkLabel )
+      {
+        var reference = (ReferenceItem)control.Tag;
+        item = new ReferenceItem(reference.Book.Number,
+                                 reference.Chapter.Number,
+                                 reference.Verse.Number);
+      }
+      else
+      if ( control is Label )
+      {
+        int index = Convert.ToInt32(control.Text) - 1;
+        item = new ReferenceItem(CurrentReference.Book.Number,
+                                 CurrentReference.Chapter.Number,
+                                 CurrentReference.Chapter.GetVersesRows()[index].Number);
+      }
       Bookmarks.Add(item);
       UpdateBookmarks();
     }
@@ -960,7 +1011,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectSearchPaging_MouseUp(object sender, MouseEventArgs e)
     {
-      if ( PreviousSeachPagingPosition != SelectSearchPaging.Value)
+      if ( PreviousSeachPagingPosition != SelectSearchPaging.Value )
         RenderSearch();
       PreviousSeachPagingPosition = -1;
     }

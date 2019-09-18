@@ -67,11 +67,15 @@ namespace Ordisoftware.HebrewWords
           linklabel.Font = LatinFont8;
           linklabel.Text = reference.ToString();
           linklabel.Location = new Point(x = x - referenceSize, y);
+          linklabel.ContextMenuStrip = ContextMenuStripVerse;
           linklabel.LinkColor = Color.DarkBlue;
           linklabel.LinkClicked += (sender, e) =>
           {
-            SetView(ViewModeType.Verses);
-            GoTo((ReferenceItem)( (Control)sender ).Tag);
+            if ( e.Button == MouseButtons.Left )
+            {
+              SetView(ViewModeType.Verses);
+              GoTo((ReferenceItem)( (Control)sender ).Tag);
+            }
           };
           controls[indexControl++] = linklabel;
           x -= marginX;

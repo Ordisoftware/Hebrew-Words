@@ -28,8 +28,8 @@ namespace Ordisoftware.HebrewWords
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
-          SaveFileDialogWord.FileName = book.Name + ".docx";
-          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+          SaveFileDialogMSWord.FileName = book.Name + ".docx";
+          if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
           var form = new ExportingForm();
           SetFormDisabled(true);
           try
@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewWords
               Application.DoEvents();
               return form.CancelRequired;
             };
-            ExportDocX.Run(SaveFileDialogWord.FileName, book, true, showProgress);
+            ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, showProgress);
           }
           finally
           {
@@ -70,12 +70,12 @@ namespace Ordisoftware.HebrewWords
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
-          SaveFileDialogWord.FileName = book.Name + " " + chapter.Number + ".docx";
-          if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
+          SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
+          if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
           SetFormDisabled(true);
           try
           {
-            ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true);
+            ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true);
           }
           finally
           {
@@ -100,12 +100,28 @@ namespace Ordisoftware.HebrewWords
 
     private void DoExportVerse(object sender)
     {
-      var book = CurrentReference.Book;
-      var chapter = CurrentReference.Chapter;
-      int verse = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text);
-      SaveFileDialogWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
-      if ( SaveFileDialogWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogWord.FileName, book, chapter, true, verse);
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      if ( control is LinkLabel )
+      {
+        var reference = (ReferenceItem)control.Tag;
+        var book = reference.Book;
+        var chapter = reference.Chapter;
+        var verse = reference.Verse;
+        SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse).ToString() + ".docx";
+        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+        ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
+      }
+      else
+      if ( control is Label )
+      {
+        var book = CurrentReference.Book;
+        var chapter = CurrentReference.Chapter;
+        int verse = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text);
+        SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
+        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+        ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
+      }
     }
 
   }
