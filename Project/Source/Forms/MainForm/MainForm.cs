@@ -939,7 +939,7 @@ namespace Ordisoftware.HebrewWords
         if ( PreviousSeachPagingPosition == -1 )
           RenderSearch();
         else
-          EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount;
+          EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount + " (" + SearchResultsCount + ")";
       }
     }
 

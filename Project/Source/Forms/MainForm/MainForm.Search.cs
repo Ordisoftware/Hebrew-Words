@@ -60,14 +60,13 @@ namespace Ordisoftware.HebrewWords
         ActionSearchNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
         ActionSearchNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount;
         EditSearchPaging.Enabled = SearchResultsCount > 0;
-        LabelSearchCount.Visible = SearchResultsCount > 0;
-        LabelSearchCount.Text = SearchResultsCount.ToString();
-        LabelSearchCount.Visible = SearchResultsCount > 0;
         SelectSearchPaging.Visible = PagingCount > 1;
         SelectSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
         SelectSearchPaging.Maximum = PagingCount;
         SelectSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
-        EditSearchPaging.Text = SearchResultsCount == 0 ? "0" : PagingCurrent + "/" + PagingCount;
+        EditSearchPaging.Text = SearchResultsCount == 0 
+                              ? "0" 
+                              : PagingCurrent + "/" + PagingCount + " (" + SearchResultsCount + ")";
       }
       catch ( Exception ex )
       {

@@ -48,11 +48,11 @@
       this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.TabPageSearch = new System.Windows.Forms.TabPage();
       this.PanelViewSearch = new System.Windows.Forms.Panel();
+      this.PanelSearchResultsOuter = new System.Windows.Forms.Panel();
       this.PanelSearchResults = new System.Windows.Forms.Panel();
       this.panel1 = new System.Windows.Forms.Panel();
       this.PanelSearchFilters = new System.Windows.Forms.Panel();
       this.PanelSearchFiltersRight = new System.Windows.Forms.Panel();
-      this.LabelSearchCount = new System.Windows.Forms.Label();
       this.SelectSearchPaging = new System.Windows.Forms.TrackBar();
       this.EditSearchPaging = new System.Windows.Forms.TextBox();
       this.EditSearchInKetouvim = new System.Windows.Forms.CheckBox();
@@ -186,7 +186,6 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.PanelSearchResultsOuter = new System.Windows.Forms.Panel();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
@@ -209,6 +208,7 @@
       this.PanelViewELS50.SuspendLayout();
       this.TabPageSearch.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
+      this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
@@ -224,7 +224,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
-      this.PanelSearchResultsOuter.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.SuspendLayout();
@@ -367,6 +366,14 @@
       resources.ApplyResources(this.PanelViewSearch, "PanelViewSearch");
       this.PanelViewSearch.Name = "PanelViewSearch";
       // 
+      // PanelSearchResultsOuter
+      // 
+      resources.ApplyResources(this.PanelSearchResultsOuter, "PanelSearchResultsOuter");
+      this.PanelSearchResultsOuter.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelSearchResultsOuter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelSearchResultsOuter.Controls.Add(this.PanelSearchResults);
+      this.PanelSearchResultsOuter.Name = "PanelSearchResultsOuter";
+      // 
       // PanelSearchResults
       // 
       resources.ApplyResources(this.PanelSearchResults, "PanelSearchResults");
@@ -388,7 +395,6 @@
       // 
       // PanelSearchFiltersRight
       // 
-      this.PanelSearchFiltersRight.Controls.Add(this.LabelSearchCount);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchInKetouvim);
@@ -402,11 +408,6 @@
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchClear);
       resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
-      // 
-      // LabelSearchCount
-      // 
-      resources.ApplyResources(this.LabelSearchCount, "LabelSearchCount");
-      this.LabelSearchCount.Name = "LabelSearchCount";
       // 
       // SelectSearchPaging
       // 
@@ -1387,14 +1388,6 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
-      // PanelSearchResultsOuter
-      // 
-      resources.ApplyResources(this.PanelSearchResultsOuter, "PanelSearchResultsOuter");
-      this.PanelSearchResultsOuter.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelSearchResultsOuter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.PanelSearchResultsOuter.Controls.Add(this.PanelSearchResults);
-      this.PanelSearchResultsOuter.Name = "PanelSearchResultsOuter";
-      // 
       // EditLetters
       // 
       this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
@@ -1466,6 +1459,7 @@
       this.PanelViewELS50.ResumeLayout(false);
       this.TabPageSearch.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
+      this.PanelSearchResultsOuter.ResumeLayout(false);
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
@@ -1486,7 +1480,6 @@
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
-      this.PanelSearchResultsOuter.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
@@ -1644,7 +1637,6 @@
     private System.Windows.Forms.Button ActionSearchNavigateLast;
     private System.Windows.Forms.TextBox EditSearchPaging;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
-    private System.Windows.Forms.Label LabelSearchCount;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
