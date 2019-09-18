@@ -157,7 +157,6 @@ namespace Ordisoftware.HebrewWords
     private void EditVerseComment_Enter(object sender, EventArgs e)
     {
       var control = (Control)sender;
-      control.Cursor = Cursors.Hand;
       control.BackColor = Color.AliceBlue;
       if ( ComboBoxMutex ) return;
       CurrentReference = new ReferenceItem((ReferenceItem)( (Control)sender ).Tag);
@@ -173,6 +172,7 @@ namespace Ordisoftware.HebrewWords
     private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)
     {
       var control = (Control)sender;
+      control.Cursor = Cursors.Hand;
       control.ForeColor = Color.SteelBlue;
     }
 
