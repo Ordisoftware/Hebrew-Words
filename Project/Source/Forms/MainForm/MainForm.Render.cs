@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
       control.SelectionAlignment = HorizontalAlignment.Right;
     }
 
-    private void RenderView()
+    private void RenderAll()
     {
       if ( IsLoadingData || IsGoToRunning ) return;
       Refresh();

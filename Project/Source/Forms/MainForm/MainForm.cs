@@ -322,7 +322,7 @@ namespace Ordisoftware.HebrewWords
       int book = CurrentReference.Book.Number;
       int chapter = CurrentReference.Chapter.Number;
       int verse = CurrentReference.Verse?.Number ?? 1;
-      RenderView();
+      RenderAll();
       RenderSearch();
       GoTo(book, chapter, verse);
     }
@@ -707,7 +707,7 @@ namespace Ordisoftware.HebrewWords
         CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
                                              ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                              1);
-        RenderView();
+        RenderAll();
         GoTo(CurrentReference);
       }
       finally
