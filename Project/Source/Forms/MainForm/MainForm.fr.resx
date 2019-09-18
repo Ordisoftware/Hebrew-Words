@@ -1501,7 +1501,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>205, 22</value>
   </data>
   <data name="shorashonLexicalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Le lexique Shorashon</value>
+    <value>Lexique Shorashon</value>
   </data>
   <data name="ActionStartHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
