@@ -53,18 +53,19 @@
       this.PanelSearchFilters = new System.Windows.Forms.Panel();
       this.PanelSearchFiltersRight = new System.Windows.Forms.Panel();
       this.LabelSearchCount = new System.Windows.Forms.Label();
-      this.TrackBarSearchPaging = new System.Windows.Forms.TrackBar();
+      this.SelectSearchPaging = new System.Windows.Forms.TrackBar();
       this.EditSearchPaging = new System.Windows.Forms.TextBox();
       this.EditSearchOnlyTorah = new System.Windows.Forms.CheckBox();
-      this.ActionSearchWord = new System.Windows.Forms.Button();
-      this.ActionNavigateFirst = new System.Windows.Forms.Button();
-      this.ActionNavigatePrevious = new System.Windows.Forms.Button();
-      this.ActionNavigateNext = new System.Windows.Forms.Button();
-      this.ActionNavigateLast = new System.Windows.Forms.Button();
-      this.ActionClearWord = new System.Windows.Forms.Button();
+      this.ActionSearchRun = new System.Windows.Forms.Button();
+      this.ActionNavigateSearchFirst = new System.Windows.Forms.Button();
+      this.ActionSearchNavigatePrevious = new System.Windows.Forms.Button();
+      this.ActionSearchNavigateNext = new System.Windows.Forms.Button();
+      this.ActionSearchNavigateLast = new System.Windows.Forms.Button();
+      this.ActionSearchClear = new System.Windows.Forms.Button();
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
+      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -90,6 +91,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -134,6 +137,8 @@
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
+      this.ActionNavigatePrevious = new System.Windows.Forms.ToolStripButton();
+      this.ActionNavigateNext = new System.Windows.Forms.ToolStripButton();
       this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -184,9 +189,6 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
@@ -208,7 +210,7 @@
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarSearchPaging)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
@@ -219,10 +221,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      this.ToolStrip.SuspendLayout();
-      this.ContextMenuStripVerse.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ToolStrip.SuspendLayout();
+      this.ContextMenuStripVerse.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -385,15 +387,15 @@
       // PanelSearchFiltersRight
       // 
       this.PanelSearchFiltersRight.Controls.Add(this.LabelSearchCount);
-      this.PanelSearchFiltersRight.Controls.Add(this.TrackBarSearchPaging);
+      this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchOnlyTorah);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchWord);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigateFirst);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigatePrevious);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigateNext);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigateLast);
-      this.PanelSearchFiltersRight.Controls.Add(this.ActionClearWord);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchRun);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionNavigateSearchFirst);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigatePrevious);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigateNext);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigateLast);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchClear);
       resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
       // 
@@ -402,17 +404,17 @@
       resources.ApplyResources(this.LabelSearchCount, "LabelSearchCount");
       this.LabelSearchCount.Name = "LabelSearchCount";
       // 
-      // TrackBarSearchPaging
+      // SelectSearchPaging
       // 
-      resources.ApplyResources(this.TrackBarSearchPaging, "TrackBarSearchPaging");
-      this.TrackBarSearchPaging.Maximum = 1;
-      this.TrackBarSearchPaging.Minimum = 1;
-      this.TrackBarSearchPaging.Name = "TrackBarSearchPaging";
-      this.TrackBarSearchPaging.TickStyle = System.Windows.Forms.TickStyle.None;
-      this.TrackBarSearchPaging.Value = 1;
-      this.TrackBarSearchPaging.ValueChanged += new System.EventHandler(this.TrackBarSearchPaging_ValueChanged);
-      this.TrackBarSearchPaging.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TrackBarSearchPaging_MouseDown);
-      this.TrackBarSearchPaging.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBarSearchPaging_MouseUp);
+      resources.ApplyResources(this.SelectSearchPaging, "SelectSearchPaging");
+      this.SelectSearchPaging.Maximum = 1;
+      this.SelectSearchPaging.Minimum = 1;
+      this.SelectSearchPaging.Name = "SelectSearchPaging";
+      this.SelectSearchPaging.TickStyle = System.Windows.Forms.TickStyle.None;
+      this.SelectSearchPaging.Value = 1;
+      this.SelectSearchPaging.ValueChanged += new System.EventHandler(this.SelectSearchPaging_ValueChanged);
+      this.SelectSearchPaging.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SelectSearchPaging_MouseDown);
+      this.SelectSearchPaging.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SelectSearchPaging_MouseUp);
       // 
       // EditSearchPaging
       // 
@@ -429,53 +431,53 @@
       this.EditSearchOnlyTorah.Name = "EditSearchOnlyTorah";
       this.EditSearchOnlyTorah.UseVisualStyleBackColor = true;
       // 
-      // ActionSearchWord
+      // ActionSearchRun
       // 
-      resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
-      this.ActionSearchWord.FlatAppearance.BorderSize = 0;
-      this.ActionSearchWord.Name = "ActionSearchWord";
-      this.ActionSearchWord.UseVisualStyleBackColor = true;
-      this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWord_Click);
+      resources.ApplyResources(this.ActionSearchRun, "ActionSearchRun");
+      this.ActionSearchRun.FlatAppearance.BorderSize = 0;
+      this.ActionSearchRun.Name = "ActionSearchRun";
+      this.ActionSearchRun.UseVisualStyleBackColor = true;
+      this.ActionSearchRun.Click += new System.EventHandler(this.ActionSearchWord_Click);
       // 
-      // ActionNavigateFirst
+      // ActionNavigateSearchFirst
       // 
-      resources.ApplyResources(this.ActionNavigateFirst, "ActionNavigateFirst");
-      this.ActionNavigateFirst.FlatAppearance.BorderSize = 0;
-      this.ActionNavigateFirst.Name = "ActionNavigateFirst";
-      this.ActionNavigateFirst.UseVisualStyleBackColor = true;
-      this.ActionNavigateFirst.Click += new System.EventHandler(this.ActionNavigateFirst_Click);
+      resources.ApplyResources(this.ActionNavigateSearchFirst, "ActionNavigateSearchFirst");
+      this.ActionNavigateSearchFirst.FlatAppearance.BorderSize = 0;
+      this.ActionNavigateSearchFirst.Name = "ActionNavigateSearchFirst";
+      this.ActionNavigateSearchFirst.UseVisualStyleBackColor = true;
+      this.ActionNavigateSearchFirst.Click += new System.EventHandler(this.ActionSearchNavigateFirst_Click);
       // 
-      // ActionNavigatePrevious
+      // ActionSearchNavigatePrevious
       // 
-      resources.ApplyResources(this.ActionNavigatePrevious, "ActionNavigatePrevious");
-      this.ActionNavigatePrevious.FlatAppearance.BorderSize = 0;
-      this.ActionNavigatePrevious.Name = "ActionNavigatePrevious";
-      this.ActionNavigatePrevious.UseVisualStyleBackColor = true;
-      this.ActionNavigatePrevious.Click += new System.EventHandler(this.ActionNavigatePrevious_Click);
+      resources.ApplyResources(this.ActionSearchNavigatePrevious, "ActionSearchNavigatePrevious");
+      this.ActionSearchNavigatePrevious.FlatAppearance.BorderSize = 0;
+      this.ActionSearchNavigatePrevious.Name = "ActionSearchNavigatePrevious";
+      this.ActionSearchNavigatePrevious.UseVisualStyleBackColor = true;
+      this.ActionSearchNavigatePrevious.Click += new System.EventHandler(this.ActionSearchNavigatePrevious_Click);
       // 
-      // ActionNavigateNext
+      // ActionSearchNavigateNext
       // 
-      resources.ApplyResources(this.ActionNavigateNext, "ActionNavigateNext");
-      this.ActionNavigateNext.FlatAppearance.BorderSize = 0;
-      this.ActionNavigateNext.Name = "ActionNavigateNext";
-      this.ActionNavigateNext.UseVisualStyleBackColor = true;
-      this.ActionNavigateNext.Click += new System.EventHandler(this.ActionNavigateNext_Click);
+      resources.ApplyResources(this.ActionSearchNavigateNext, "ActionSearchNavigateNext");
+      this.ActionSearchNavigateNext.FlatAppearance.BorderSize = 0;
+      this.ActionSearchNavigateNext.Name = "ActionSearchNavigateNext";
+      this.ActionSearchNavigateNext.UseVisualStyleBackColor = true;
+      this.ActionSearchNavigateNext.Click += new System.EventHandler(this.ActionSearchNavigateNext_Click);
       // 
-      // ActionNavigateLast
+      // ActionSearchNavigateLast
       // 
-      resources.ApplyResources(this.ActionNavigateLast, "ActionNavigateLast");
-      this.ActionNavigateLast.FlatAppearance.BorderSize = 0;
-      this.ActionNavigateLast.Name = "ActionNavigateLast";
-      this.ActionNavigateLast.UseVisualStyleBackColor = true;
-      this.ActionNavigateLast.Click += new System.EventHandler(this.ActionNavigateLast_Click);
+      resources.ApplyResources(this.ActionSearchNavigateLast, "ActionSearchNavigateLast");
+      this.ActionSearchNavigateLast.FlatAppearance.BorderSize = 0;
+      this.ActionSearchNavigateLast.Name = "ActionSearchNavigateLast";
+      this.ActionSearchNavigateLast.UseVisualStyleBackColor = true;
+      this.ActionSearchNavigateLast.Click += new System.EventHandler(this.ActionSearchNavigateLast_Click);
       // 
-      // ActionClearWord
+      // ActionSearchClear
       // 
-      resources.ApplyResources(this.ActionClearWord, "ActionClearWord");
-      this.ActionClearWord.FlatAppearance.BorderSize = 0;
-      this.ActionClearWord.Name = "ActionClearWord";
-      this.ActionClearWord.UseVisualStyleBackColor = true;
-      this.ActionClearWord.Click += new System.EventHandler(this.ActionClearWord_Click);
+      resources.ApplyResources(this.ActionSearchClear, "ActionSearchClear");
+      this.ActionSearchClear.FlatAppearance.BorderSize = 0;
+      this.ActionSearchClear.Name = "ActionSearchClear";
+      this.ActionSearchClear.UseVisualStyleBackColor = true;
+      this.ActionSearchClear.Click += new System.EventHandler(this.ActionClearWord_Click);
       // 
       // SelectSearchType
       // 
@@ -500,6 +502,15 @@
       this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
+      // 
+      // EditLetters
+      // 
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
@@ -678,6 +689,16 @@
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
       // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
       // label1
       // 
       resources.ApplyResources(this.label1, "label1");
@@ -712,6 +733,8 @@
             this.ActionCloseWindows,
             this.ActionCopyToClipboard,
             this.toolStripSeparator7,
+            this.ActionNavigatePrevious,
+            this.ActionNavigateNext,
             this.MenuBookmarks,
             this.MenuTools,
             this.MenuDatabase,
@@ -1058,6 +1081,24 @@
       this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // ActionNavigatePrevious
+      // 
+      this.ActionNavigatePrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionNavigatePrevious, "ActionNavigatePrevious");
+      this.ActionNavigatePrevious.Name = "ActionNavigatePrevious";
+      this.ActionNavigatePrevious.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionNavigatePrevious.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionNavigatePrevious.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionNavigateNext
+      // 
+      this.ActionNavigateNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionNavigateNext, "ActionNavigateNext");
+      this.ActionNavigateNext.Name = "ActionNavigateNext";
+      this.ActionNavigateNext.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionNavigateNext.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionNavigateNext.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionCloseWindows
       // 
       this.ActionCloseWindows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1365,25 +1406,6 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1439,7 +1461,7 @@
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarSearchPaging)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -1453,11 +1475,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1541,8 +1563,8 @@
     private System.Windows.Forms.TabPage TabPageSearch;
     private System.Windows.Forms.Panel PanelViewSearch;
     private System.Windows.Forms.Panel PanelSearchTop;
-    private System.Windows.Forms.Button ActionSearchWord;
-    private System.Windows.Forms.Button ActionClearWord;
+    private System.Windows.Forms.Button ActionSearchRun;
+    private System.Windows.Forms.Button ActionSearchClear;
     private LettersControl EditLetters;
     private System.Windows.Forms.Panel PanelSearchResults;
     internal System.Windows.Forms.ComboBox SelectChapter;
@@ -1616,16 +1638,18 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     internal System.Windows.Forms.ToolStripButton ActionCloseWindows;
-    private System.Windows.Forms.Button ActionNavigateFirst;
-    private System.Windows.Forms.Button ActionNavigatePrevious;
-    private System.Windows.Forms.Button ActionNavigateNext;
-    private System.Windows.Forms.Button ActionNavigateLast;
+    private System.Windows.Forms.Button ActionNavigateSearchFirst;
+    private System.Windows.Forms.Button ActionSearchNavigatePrevious;
+    private System.Windows.Forms.Button ActionSearchNavigateNext;
+    private System.Windows.Forms.Button ActionSearchNavigateLast;
     private System.Windows.Forms.TextBox EditSearchPaging;
-    private System.Windows.Forms.TrackBar TrackBarSearchPaging;
+    private System.Windows.Forms.TrackBar SelectSearchPaging;
     private System.Windows.Forms.Label LabelSearchCount;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
+    private System.Windows.Forms.ToolStripButton ActionNavigatePrevious;
+    private System.Windows.Forms.ToolStripButton ActionNavigateNext;
   }
 }
 

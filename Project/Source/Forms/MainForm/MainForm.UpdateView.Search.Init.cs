@@ -61,26 +61,26 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        ActionSearchWord.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew 
+        ActionSearchRun.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew 
                                      && EditLetters.Input.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation 
                                      && EditSearchTranslation.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );
-        ActionClearWord.Enabled = SearchResultsCount > 0 
+        ActionSearchClear.Enabled = SearchResultsCount > 0 
                                || EditLetters.Input.Text != "" 
                                || EditSearchTranslation.Text != "";
-        ActionNavigateFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
-        ActionNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
-        ActionNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
-        ActionNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount;
+        ActionNavigateSearchFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
+        ActionSearchNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
+        ActionSearchNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
+        ActionSearchNavigateLast.Enabled = SearchResultsCount > 0 && PagingCurrent != PagingCount;
         EditSearchPaging.Enabled = SearchResultsCount > 0;
         LabelSearchCount.Visible = SearchResultsCount > 0;
         LabelSearchCount.Text = SearchResultsCount.ToString();
         LabelSearchCount.Visible = SearchResultsCount > 0;
-        TrackBarSearchPaging.Visible = PagingCount > 1;
-        TrackBarSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
-        TrackBarSearchPaging.Maximum = PagingCount;
-        TrackBarSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
+        SelectSearchPaging.Visible = PagingCount > 1;
+        SelectSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
+        SelectSearchPaging.Maximum = PagingCount;
+        SelectSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
         EditSearchPaging.Text = SearchResultsCount == 0 ? "0" : PagingCurrent + "/" + PagingCount;
       }
       catch ( Exception ex )

@@ -52,6 +52,11 @@ namespace Ordisoftware.HebrewWords
     private ToolTip LastToolTip = new ToolTip();
 
     /// <summary>
+    /// Indicate previous seach paging position.
+    /// </summary>
+    private int PreviousSeachPagingPosition = -1;
+
+    /// <summary>
     /// Indicate current bible reference.
     /// </summary>
     public ReferenceItem CurrentReference { get; set; }
@@ -487,6 +492,27 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionStartHebrewLetters for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
+    {
+      Program.RunShell(Program.Settings.HebrewLettersExe);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionOpenWebsiteURL for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
+    {
+      string url = (string)( (ToolStripItem)sender ).Tag;
+      SystemManager.OpenWebLink(url);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionNew for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -524,7 +550,6 @@ namespace Ordisoftware.HebrewWords
         File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
       });
     }
-
 
     /// <summary>
     /// Event handler. Called by ActionBackup for click events.
@@ -664,17 +689,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionOpenWebsiteURL for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
-    {
-      string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionWebCheckUpdate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -776,7 +790,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
-      if ( e.KeyChar == '\r' ) ActionSearchWord.PerformClick();
+      if ( e.KeyChar == '\r' ) ActionSearchRun.PerformClick();
     }
 
     /// <summary>
@@ -833,25 +847,43 @@ namespace Ordisoftware.HebrewWords
       PanelSearchResults.Focus();
     }
 
-    public void SearchWord(string word)
-    {
-      ActionViewSearch.PerformClick();
-      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.Input.Text = Letters.SetFinale(word, false);
-      EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
-    }
 
+
+
+
+
+
+
+
+
+
+
+    /// <summary>
+    /// Event handler. Called by ActionExportVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionExportVerse_Click(object sender, EventArgs e)
     {
       DoExportVerse(sender);
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionCopyTranslation for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       var verse = ( (ReferenceItem)( (Control)ContextMenuStripVerse.SourceControl.Tag ).Tag ).Verse;
       Clipboard.SetText(verse.GetTranslation());
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
     {
       Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
@@ -861,6 +893,11 @@ namespace Ordisoftware.HebrewWords
       UpdateBookmarks();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionAddToBookmarks for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionAddToBookmarks_Click(object sender, EventArgs e)
     {
       int index = Convert.ToInt32(ContextMenuStripVerse.SourceControl.Text) - 1;
@@ -871,6 +908,11 @@ namespace Ordisoftware.HebrewWords
       UpdateBookmarks();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionClearBookmarks for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
       Program.Settings.BookmarkMasterBook = 1;
@@ -882,75 +924,124 @@ namespace Ordisoftware.HebrewWords
       UpdateBookmarks();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionImportConsole for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionImportConsole_Click(object sender, EventArgs e)
     {
       DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
     }
 
-    private void ActionNavigateFirst_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Search a hebrew word.
+    /// </summary>
+    /// <param name="word"></param>
+    public void SearchWord(string word)
+    {
+      ActionViewSearch.PerformClick();
+      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
+      EditLetters.Input.Text = Letters.SetFinale(word, false);
+      EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSearchNavigateFirst for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
       PagingCurrent = 1;
       RenderSearchResults();
     }
 
-    private void ActionNavigatePrevious_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by ActionSearchNavigatePrevious for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
       PagingCurrent--;
       RenderSearchResults();
     }
 
-    private void ActionNavigateNext_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by ActionSearchNavigateNext for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
       PagingCurrent++;
       RenderSearchResults();
     }
 
-    private void ActionNavigateLast_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by ActionSearchNavigateLast for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
     {
       if ( RenderSearchResultsInProcess ) return;
       PagingCurrent = PagingCount;
       RenderSearchResults();
     }
 
-    private int OldTrackBarSreachPagingValue = -1;
-
-    private void TrackBarSearchPaging_ValueChanged(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by SelectSearchPaging for value changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchPaging_ValueChanged(object sender, EventArgs e)
     {
-      if ( PagingCurrent != TrackBarSearchPaging.Value )
+      if ( PagingCurrent != SelectSearchPaging.Value )
       {
-        PagingCurrent = TrackBarSearchPaging.Value;
-        if ( OldTrackBarSreachPagingValue == -1 )
+        PagingCurrent = SelectSearchPaging.Value;
+        if ( PreviousSeachPagingPosition == -1 )
           RenderSearchResults();
         else
-          EditSearchPaging.Text = TrackBarSearchPaging.Value + "/" + PagingCount;
+          EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount;
       }
     }
 
-    private void TrackBarSearchPaging_MouseDown(object sender, MouseEventArgs e)
+    /// <summary>
+    /// Event handler. Called by SelectSearchPaging for mouse down events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchPaging_MouseDown(object sender, MouseEventArgs e)
     {
-      OldTrackBarSreachPagingValue = TrackBarSearchPaging.Value;
+      PreviousSeachPagingPosition = SelectSearchPaging.Value;
     }
 
-    private void TrackBarSearchPaging_MouseUp(object sender, MouseEventArgs e)
+    /// <summary>
+    /// Event handler. Called by SelectSearchPaging for mouse up for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchPaging_MouseUp(object sender, MouseEventArgs e)
     {
-      if ( OldTrackBarSreachPagingValue != TrackBarSearchPaging.Value)
+      if ( PreviousSeachPagingPosition != SelectSearchPaging.Value)
         RenderSearchResults();
-      OldTrackBarSreachPagingValue = -1;
+      PreviousSeachPagingPosition = -1;
     }
 
+    /// <summary>
+    /// Event handler. Called by EditLetters for input text changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void EditLetters_InputTextChanged(object sender, EventArgs e)
     {
       UpdateSearchButtons();
     }
-
-    private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
-    {
-      Program.RunShell(Program.Settings.HebrewLettersExe);
-    }
-
   }
 
 }
