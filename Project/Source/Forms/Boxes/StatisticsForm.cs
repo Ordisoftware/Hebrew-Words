@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewWords
       int lcount = (int)Math.Truncate((double)CountersTorah.CountLetters / 2.0);
       int index = 0;
       var books = from book in MainForm.Instance.DataSet.Books
-                  where book.Number <= BooksMinMax.TorahMax
+                  where book.Number <= BookBounds.Torah.Max
                   select book;
       foreach ( Data.DataSet.BooksRow book in books )
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
                     from chapter in book.GetChaptersRows()
                     from verse in chapter.GetVersesRows()
                     from word in verse.GetWordsRows()
-                    where check(word.Hebrew) && book.Number <= BooksMinMax.TorahMax
+                    where check(word.Hebrew) && book.Number <= BookBounds.Torah.Max
                     select word;
         return query.Count().ToString();
       };

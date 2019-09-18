@@ -85,14 +85,29 @@ namespace Ordisoftware.HebrewWords
     Divrei_HaYamim_II = Books.Divrei_HaYamim_II
   };
 
-  static public class BooksMinMax
+  public struct BookBound
   {
-    static public readonly int TorahMin = typeof(TorahBooks).Min() + 1;
-    static public readonly int TorahMax = typeof(TorahBooks).Max() + 1;
-    static public readonly int NeviimMin = typeof(NeviimBooks).Min() + 1;
-    static public readonly int NeviimMax = typeof(NeviimBooks).Max() + 1;
-    static public readonly int KetouvimMin = typeof(KetouvimBooks).Min() + 1;
-    static public readonly int KetouvimMax = typeof(KetouvimBooks).Max() + 1;
+    public int Min;
+    public int Max;
+  }
+
+  static public class BookBounds
+  {
+    static public readonly BookBound Torah = new BookBound
+    {
+      Min = typeof(TorahBooks).Min() + 1,
+      Max = typeof(TorahBooks).Max() + 1
+    };
+    static public readonly BookBound Neviim = new BookBound
+    {
+      Min = typeof(NeviimBooks).Min() + 1,
+      Max = typeof(NeviimBooks).Max() + 1
+    };
+    static public readonly BookBound Ketouvim = new BookBound
+    {
+      Min = typeof(KetouvimBooks).Min() + 1,
+      Max = typeof(KetouvimBooks).Max() + 1
+    };
     static private int Min(this Type type)
     {
       return Enum.GetValues(type).Cast<int>().Min();

@@ -86,18 +86,19 @@ namespace Ordisoftware.HebrewWords
         if ( SelectSearchRequestAllUntranslated.Checked )
           CheckVerse = checkTranslatedAllUntranslated;
       }
+      Func<int, bool> isBookSelected = index =>
+      {
+        return ( EditSearchInTorah.Checked && index <= BookBounds.Torah.Max )
+            || ( EditSearchInNeviim.Checked && index >= BookBounds.Neviim.Min && index <= BookBounds.Neviim.Max )
+            || ( EditSearchInKetouvim.Checked && index >= BookBounds.Ketouvim.Min );
+      };
       if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null )
       {
         SearchResults = from book in DataSet.Books
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
                         from word in verse.GetWordsRows()
-                        where (
-                                   ( EditSearchInTorah.Checked && book.Number <= BooksMinMax.TorahMax )
-                                || ( EditSearchInNeviim.Checked && book.Number >= BooksMinMax.NeviimMin && book.Number <= BooksMinMax.NeviimMax )
-                                || ( EditSearchInKetouvim.Checked && book.Number >= BooksMinMax.KetouvimMin )
-                              )
-                              && CheckWord(word)
+                        where isBookSelected(book.Number) && CheckWord(word)
                         select new ReferenceItem(book, chapter, verse);
       }
       else
@@ -106,12 +107,7 @@ namespace Ordisoftware.HebrewWords
         SearchResults = from book in DataSet.Books
                         from chapter in book.GetChaptersRows()
                         from verse in chapter.GetVersesRows()
-                        where (
-                                   ( EditSearchInTorah.Checked && book.Number <= BooksMinMax.TorahMax )
-                                || ( EditSearchInNeviim.Checked && book.Number >= BooksMinMax.NeviimMin && book.Number <= BooksMinMax.NeviimMax )
-                                || ( EditSearchInKetouvim.Checked && book.Number >= BooksMinMax.KetouvimMin )
-                              )
-                              && CheckVerse(verse)
+                        where isBookSelected(book.Number) && CheckVerse(verse)
                         select new ReferenceItem(book, chapter, verse);
       }
       if ( SearchResults != null )
