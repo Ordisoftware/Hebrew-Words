@@ -34,7 +34,7 @@
       this.EditBooks = new System.Windows.Forms.DataGridView();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCopyHebrewName = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.buttonClose = new System.Windows.Forms.Button();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,14 +70,16 @@
       this.EditBooks.Name = "EditBooks";
       this.EditBooks.RowHeadersVisible = false;
       this.EditBooks.RowTemplate.Height = 28;
+      this.EditBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.EditBooks.ShowCellToolTips = false;
       this.EditBooks.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
+      this.EditBooks.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditBooks_CellMouseDown);
       // 
       // ContextMenuStripResults
       // 
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenHebrewLetters,
-            this.ActionCopyHebrewName});
+            this.ActionCopyName});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
@@ -87,11 +89,11 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
-      // ActionCopyHebrewName
+      // ActionCopyName
       // 
-      resources.ApplyResources(this.ActionCopyHebrewName, "ActionCopyHebrewName");
-      this.ActionCopyHebrewName.Name = "ActionCopyHebrewName";
-      this.ActionCopyHebrewName.Click += new System.EventHandler(this.ActionCopyHebrewName_Click);
+      resources.ApplyResources(this.ActionCopyName, "ActionCopyName");
+      this.ActionCopyName.Name = "ActionCopyName";
+      this.ActionCopyName.Click += new System.EventHandler(this.ActionCopyName_Click);
       // 
       // panel1
       // 
@@ -198,7 +200,7 @@
     private System.Windows.Forms.Button buttonClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
-    private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewName;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -62,16 +61,35 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      var book = (Data.DataSet.BooksRow)( (DataRowView)MainForm.Instance.BooksBindingSource.Current ).Row;
-      Program.OpenHebrewLetters(book.Hebrew);
+      string str = (string)EditBooks.SelectedRows[0].Cells[1].Value;
+      if ( str.StartsWith("a ") ) str = str.Substring(2, str.Length - 2);
+      else
+      if ( str.StartsWith("b ") ) str = str.Substring(2, str.Length - 2);
+      foreach ( string item in str.Split(' ') )
+        Program.OpenHebrewLetters(item);
     }
 
-    private void ActionCopyHebrewName_Click(object sender, EventArgs e)
+    private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      var book = (Data.DataSet.BooksRow)( (DataRowView)MainForm.Instance.BooksBindingSource.Current ).Row;
-      Clipboard.SetText(book.Name);
+      string str = (string)EditBooks.SelectedRows[0].Cells[2].Value;
+      if ( str.StartsWith("a ") ) str = str.Substring(2, str.Length - 2);
+      else
+      if ( str.StartsWith("b ") ) str = str.Substring(2, str.Length - 2);
+      Clipboard.SetText(str);
     }
 
+    private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      if ( e.Button == MouseButtons.Right )
+      {
+        int rowSelected = e.RowIndex;
+        if ( e.RowIndex != -1 )
+        {
+          EditBooks.ClearSelection();
+          EditBooks.Rows[rowSelected].Selected = true;
+        }
+      }
+    }
   }
 
 }
