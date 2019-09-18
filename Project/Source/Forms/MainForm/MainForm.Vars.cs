@@ -13,7 +13,10 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -21,15 +24,12 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private const int PopulateDataPaging = 10000;
+
     /// <summary>
     /// Indicate last showned tooltip.
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
-
-    /// <summary>
-    /// Indicate previous seach paging position.
-    /// </summary>
-    private int PreviousSeachPagingPosition = -1;
 
     /// <summary>
     /// Indicate current bible reference.
@@ -70,6 +70,37 @@ namespace Ordisoftware.HebrewWords
     /// Indicate if current processing must be cancelled.
     /// </summary>
     private bool CancelRequired;
+
+    /// <summary>
+    /// Indicate previous seach paging position.
+    /// </summary>
+    private int PreviousSeachPagingPosition = -1;
+
+    private readonly Bookmarks Bookmarks = new Bookmarks();
+
+    private readonly List<ReferenceItem> History = new List<ReferenceItem>();
+
+    private IEnumerable<ReferenceItem> SearchResults;
+
+    internal int SearchResultsCount { get; private set; }
+
+    private int PagingCountDisableForm = 50;
+    private int PagingCurrent = 0;
+    private int PagingCount = 0;
+
+    private Func<DataSet.WordsRow, bool> CheckWord;
+    private Func<DataSet.VersesRow, bool> CheckVerse;
+
+    private string SearchWord1;
+    private string SearchWord2;
+
+    private readonly Font HebrewFont12 = new Font("Hebrew", 12f);
+
+    private readonly Font LatinFont10 = new Font("Verdana", 10f);
+
+    private readonly Font LatinFont8 = new Font("Verdana", 8f);
+
+    private readonly Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
 
   }
 

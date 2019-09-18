@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewWords
       }
       if ( IsLoadingData ) return;
       if ( updated || forceUpdateView )
-        UpdateViews();
+        RenderView();
       if ( reference.Verse == null )
         reference.Verse = reference.Chapter.GetVersesRows()[0];
       CurrentReference = new ReferenceItem(reference);

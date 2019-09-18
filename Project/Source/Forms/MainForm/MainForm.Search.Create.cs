@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewWords
 
     private void CreateSearchResults()
     {
-      InitSearchResults();
+      ClearSearch();
       Func<DataSet.WordsRow, bool> checkWordHebrew = row =>
       {
         return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
@@ -88,9 +88,9 @@ namespace Ordisoftware.HebrewWords
       }
       Func<int, bool> isBookSelected = index =>
       {
-        return ( EditSearchInTorah.Checked && index <= BookBounds.Torah.Max )
-            || ( EditSearchInNeviim.Checked && index >= BookBounds.Neviim.Min && index <= BookBounds.Neviim.Max )
-            || ( EditSearchInKetouvim.Checked && index >= BookBounds.Ketouvim.Min );
+        return ( EditSearchInTorah.Checked && index <= BooksBounds.Torah.Max )
+            || ( EditSearchInNeviim.Checked && index >= BooksBounds.Neviim.Min && index <= BooksBounds.Neviim.Max )
+            || ( EditSearchInKetouvim.Checked && index >= BooksBounds.Ketouvim.Min );
       };
       if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null )
       {
@@ -140,7 +140,7 @@ namespace Ordisoftware.HebrewWords
         }
       }
       UpdatePagingCount();
-      RenderSearchResults();
+      RenderSearch();
     }
 
   }

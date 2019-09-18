@@ -14,7 +14,6 @@
 /// <created> 2012-10 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -84,38 +83,5 @@ namespace Ordisoftware.HebrewWords
     Divrei_HaYamim_I = Books.Divrei_HaYamim_I,
     Divrei_HaYamim_II = Books.Divrei_HaYamim_II
   };
-
-  public struct BookBound
-  {
-    public int Min;
-    public int Max;
-  }
-
-  static public class BookBounds
-  {
-    static public readonly BookBound Torah = new BookBound
-    {
-      Min = typeof(TorahBooks).Min() + 1,
-      Max = typeof(TorahBooks).Max() + 1
-    };
-    static public readonly BookBound Neviim = new BookBound
-    {
-      Min = typeof(NeviimBooks).Min() + 1,
-      Max = typeof(NeviimBooks).Max() + 1
-    };
-    static public readonly BookBound Ketouvim = new BookBound
-    {
-      Min = typeof(KetouvimBooks).Min() + 1,
-      Max = typeof(KetouvimBooks).Max() + 1
-    };
-    static private int Min(this Type type)
-    {
-      return Enum.GetValues(type).Cast<int>().Min();
-    }
-    static private int Max(this Type type)
-    {
-      return Enum.GetValues(type).Cast<int>().Max();
-    }
-  }
 
 }

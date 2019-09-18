@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -88,7 +88,6 @@ namespace Ordisoftware.HebrewWords
     private void PopulateData()
     {
       DataRowChangeEventHandler progress = null;
-      const int Paging = 10000;
       var form = new LoadingForm();
       form.Show();
       form.Refresh();
@@ -103,11 +102,11 @@ namespace Ordisoftware.HebrewWords
                       + GetRowsCount(DataSet.Verses.TableName)
                       + GetRowsCount(DataSet.Words.TableName);
         int step = 0;
-        form.ProgressBar.Maximum = rowsCount / Paging * 2;
+        form.ProgressBar.Maximum = rowsCount / PopulateDataPaging * 2;
         progress = (sender, e) =>
         {
           step++;
-          if ( step < Paging ) return;
+          if ( step < PopulateDataPaging ) return;
           form.ProgressBar.PerformStep();
           step = 0;
           Refresh();

@@ -13,9 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.Core;
-using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -23,21 +21,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private IEnumerable<ReferenceItem> SearchResults;
-
-    internal int SearchResultsCount { get; private set; }
-
-    private int PagingCountDisableForm = 50;
-    private int PagingCurrent = 0;
-    private int PagingCount = 0;
-
-    private Func<DataSet.WordsRow, bool> CheckWord;
-    private Func<DataSet.VersesRow, bool> CheckVerse;
-
-    private string SearchWord1;
-    private string SearchWord2;
-
-    private void InitSearchResults()
+    private void ClearSearch()
     {
       SearchResults = null;
       SearchResultsCount = 0;

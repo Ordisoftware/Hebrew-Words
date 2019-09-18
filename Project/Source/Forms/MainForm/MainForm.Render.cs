@@ -22,15 +22,6 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private readonly Font HebrewFont12 = new Font("Hebrew", 12f);
-
-    private readonly Font LatinFont10 = new Font("Verdana", 10f);
-
-    private readonly Font LatinFont8 = new Font("Verdana", 8f);
-
-    private readonly Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
-
-
     private void AddTextRightAligned(RichTextBox control, Font font, string str)
     {
       AddTextRightAligned(control, font, str, SystemColors.ControlText);
@@ -44,14 +35,14 @@ namespace Ordisoftware.HebrewWords
       control.SelectionAlignment = HorizontalAlignment.Right;
     }
 
-    private void UpdateViews()
+    private void RenderView()
     {
       if ( IsLoadingData || IsGoToRunning ) return;
       Refresh();
-      UpdateViewVerses();
-      UpdateViewTranslations();
-      UpdateViewRawText();
-      UpdateViewELS50();
+      RenderVerses();
+      RenderTranslation();
+      RenderRawText();
+      RenderELS50();
     }
 
   }

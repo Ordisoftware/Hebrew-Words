@@ -13,7 +13,6 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -21,10 +20,6 @@ namespace Ordisoftware.HebrewWords
 
   public partial class MainForm
   {
-
-    private readonly Bookmarks Bookmarks = new Bookmarks();
-
-    private readonly List<ReferenceItem> History = new List<ReferenceItem>();
 
     private void GoToBookmark(object sender, EventArgs e)
     {

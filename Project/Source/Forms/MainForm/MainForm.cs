@@ -247,7 +247,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( Program.Settings.CurrentView == ViewModeType.Translations ) return;
       SetView(ViewModeType.Translations);
-      UpdateViewTranslations();
+      RenderTranslation();
       GoTo(CurrentReference);
     }
 
@@ -322,8 +322,8 @@ namespace Ordisoftware.HebrewWords
       int book = CurrentReference.Book.Number;
       int chapter = CurrentReference.Chapter.Number;
       int verse = CurrentReference.Verse?.Number ?? 1;
-      UpdateViews();
-      RenderSearchResults();
+      RenderView();
+      RenderSearch();
       GoTo(book, chapter, verse);
     }
 
@@ -545,9 +545,9 @@ namespace Ordisoftware.HebrewWords
       if ( refresh )
       {
         Refresh();
-        UpdateViewVerses();
+        RenderVerses();
         UpdatePagingCount();
-        RenderSearchResults();
+        RenderSearch();
         var reference = Instance.CurrentReference;
         int verse = reference.Verse == null ? 1 : reference.Verse.Number;
         GoTo(reference.Book.Number, reference.Chapter.Number, verse);
@@ -707,7 +707,7 @@ namespace Ordisoftware.HebrewWords
         CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
                                              ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                              1);
-        UpdateViews();
+        RenderView();
         GoTo(CurrentReference);
       }
       finally
@@ -755,9 +755,9 @@ namespace Ordisoftware.HebrewWords
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
-      InitSearchResults();
+      ClearSearch();
       UpdateSearchButtons();
-      RenderSearchResults();
+      RenderSearch();
     }
 
     /// <summary>
@@ -887,7 +887,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( RenderInProcess ) return;
       PagingCurrent = 1;
-      RenderSearchResults();
+      RenderSearch();
     }
 
     /// <summary>
@@ -899,7 +899,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( RenderInProcess ) return;
       PagingCurrent--;
-      RenderSearchResults();
+      RenderSearch();
     }
 
     /// <summary>
@@ -911,7 +911,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( RenderInProcess ) return;
       PagingCurrent++;
-      RenderSearchResults();
+      RenderSearch();
     }
 
     /// <summary>
@@ -923,7 +923,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( RenderInProcess ) return;
       PagingCurrent = PagingCount;
-      RenderSearchResults();
+      RenderSearch();
     }
 
     /// <summary>
@@ -937,7 +937,7 @@ namespace Ordisoftware.HebrewWords
       {
         PagingCurrent = SelectSearchPaging.Value;
         if ( PreviousSeachPagingPosition == -1 )
-          RenderSearchResults();
+          RenderSearch();
         else
           EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount;
       }
@@ -961,7 +961,7 @@ namespace Ordisoftware.HebrewWords
     private void SelectSearchPaging_MouseUp(object sender, MouseEventArgs e)
     {
       if ( PreviousSeachPagingPosition != SelectSearchPaging.Value)
-        RenderSearchResults();
+        RenderSearch();
       PreviousSeachPagingPosition = -1;
     }
 

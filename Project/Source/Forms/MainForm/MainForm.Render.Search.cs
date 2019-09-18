@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void RenderSearchResults()
+    private void RenderSearch()
     {
       if ( RenderInProcess ) return;
       RenderInProcess = true;

@@ -25,16 +25,19 @@ namespace Ordisoftware.HebrewWords
   static public class Letters
   {
 
+    /// <summary>
+    /// Remove diacritics letters.
+    /// </summary>
     public static string RemoveDiacritics(this string text)
     {
       if ( string.IsNullOrEmpty(text) )
         return string.Empty;
       return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
     }
-    
+
     /// <summary>
-         /// Indicate letters keyboard codes.
-         /// </summary>
+    /// Indicate letters keyboard codes.
+    /// </summary>
     static public readonly string[] Codes = 
     {
       "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",

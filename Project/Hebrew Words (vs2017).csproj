@@ -74,6 +74,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Entities\OnlineBibleProvider.cs" />
+    <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
       <SubType>Form</SubType>
@@ -127,25 +128,25 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Search.Init.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Search.Create.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Search.Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Translation.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.Translation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateViews.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Verses.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.Verses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.ELS50.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.ELS50.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.RawText.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.RawText.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
@@ -188,7 +189,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateView.Search.Render.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Render.Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">

@@ -20,18 +20,21 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void UpdateViewELS50()
+    private void RenderRawText()
     {
-      EditELS50All.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
-      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      EditRawText.Clear();
+      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+      foreach ( Data.DataSet.VersesRow verse in list )
       {
-        AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);
-        EditELS50All.AppendText(Environment.NewLine);
+        string str = "";
+        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          str = word.Hebrew + " " + str;
+        AddTextRightAligned(EditRawText, HebrewFont12, str);
+        AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);
+        EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
       }
-      EditELS50All.SelectionStart = 0;
-      EditELS50All.Focus();
+      EditRawText.SelectionStart = 0;
+      EditRawText.Focus();
     }
 
   }

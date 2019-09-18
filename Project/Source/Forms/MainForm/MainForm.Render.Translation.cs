@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void UpdateViewTranslations()
+    private void RenderTranslation()
     {
       EditTranslations.Clear();
       var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
