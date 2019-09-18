@@ -35,7 +35,8 @@ namespace Ordisoftware.HebrewWords
         PanelViewVerses.Visible = false;
         SetFormDisabled(true);
         PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-        PanelViewVerses.Controls.Clear();
+        while ( PanelViewVerses.Controls.Count > 0 )
+          PanelViewVerses.Controls[0].Dispose();
         CurrentReference.Verse = null;
         var itemBook = CurrentReference.Book;
         var itemChapter = CurrentReference.Chapter;

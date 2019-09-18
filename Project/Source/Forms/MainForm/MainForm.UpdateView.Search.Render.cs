@@ -31,11 +31,12 @@ namespace Ordisoftware.HebrewWords
       RenderInProcess = true;
       try
       {
+        UpdateSearchButtons();
         PanelSearchResults.SuspendLayout();
         PanelSearchResults.Visible = false;
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-        PanelSearchResults.Controls.Clear();
-        UpdateSearchButtons();
+        while ( PanelSearchResults.Controls.Count > 0 )
+          PanelSearchResults.Controls[0].Dispose();
         if ( SearchResults == null || SearchResultsCount == 0 )
           return;
         if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
