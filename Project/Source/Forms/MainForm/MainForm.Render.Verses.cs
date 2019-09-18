@@ -30,7 +30,6 @@ namespace Ordisoftware.HebrewWords
       RenderInProcess = true;
       try
       {
-        PanelViewVerses.SuspendLayout();
         PanelViewVerses.AutoScrollPosition = new Point(0, 0);
         PanelViewVerses.Visible = false;
         SetFormDisabled(true);
@@ -150,8 +149,7 @@ namespace Ordisoftware.HebrewWords
       {
         RenderInProcess = false;
         SetFormDisabled(false);
-        PanelViewVerses.Visible = true;
-        PanelViewVerses.ResumeLayout();
+        PanelViewVerses.Visible = true;        
       }
     }
 

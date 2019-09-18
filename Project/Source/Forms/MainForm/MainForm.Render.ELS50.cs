@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewWords
     private void RenderELS50()
     {
       EditELS50All.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
+      var list = CurrentReference.Book.GetChaptersRows();
       foreach ( Data.DataSet.ChaptersRow chapter in list )
       {
         AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);

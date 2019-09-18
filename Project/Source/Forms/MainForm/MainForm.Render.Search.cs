@@ -32,7 +32,6 @@ namespace Ordisoftware.HebrewWords
       try
       {
         UpdateSearchButtons();
-        PanelSearchResults.SuspendLayout();
         PanelSearchResults.Visible = false;
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
         while ( PanelSearchResults.Controls.Count > 0 )
@@ -130,7 +129,6 @@ namespace Ordisoftware.HebrewWords
         if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
           SetFormDisabled(false);
         PanelSearchResults.Visible = true;
-        PanelSearchResults.ResumeLayout();
         PanelSearchResults.Focus();
       }
     }

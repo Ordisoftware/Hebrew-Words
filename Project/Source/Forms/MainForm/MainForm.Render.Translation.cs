@@ -23,8 +23,9 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderTranslation()
     {
+      EditTranslations.Visible = false;
       EditTranslations.Clear();
-      var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+      var list = CurrentReference.Chapter.GetVersesRows();
       foreach ( DataSet.VersesRow verse in list )
       {
         string str = verse.Number + ". ";
@@ -37,6 +38,7 @@ namespace Ordisoftware.HebrewWords
         EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
       }
       EditTranslations.SelectionStart = 0;
+      EditTranslations.Visible = true;
       EditTranslations.Focus();
     }
 
