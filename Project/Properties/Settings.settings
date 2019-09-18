@@ -77,7 +77,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="WordControlWidth" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">200</Value>
+      <Value Profile="(Default)">205</Value>
     </Setting>
     <Setting Name="FoundReferencesViewable" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
