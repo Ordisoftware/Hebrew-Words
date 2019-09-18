@@ -251,6 +251,9 @@
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 15</value>
+  </data>
   <data name="LabelSelectBook.Text" xml:space="preserve">
     <value>Book</value>
   </data>
@@ -835,8 +838,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 6</value>
   </data>
-  <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 15</value>
+  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
+    <value>Grammar guide</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveNextItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1641,9 +1644,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;MenuHistory.Name" xml:space="preserve">
     <value>MenuHistory</value>
-  </data>
-  <data name="bindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
   </data>
   <data name="&gt;&gt;ActionSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2647,8 +2647,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;PanelNavigation.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
-  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
-    <value>Grammar guide</value>
+  <data name="&gt;&gt;MenuTools.Name" xml:space="preserve">
+    <value>MenuTools</value>
   </data>
   <data name="MenuitemScreenPosition.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -2896,7 +2896,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Text" xml:space="preserve">
-    <value>An Akkadian Dictionary</value>
+    <value>Akkadian Dictionary</value>
   </data>
   <data name="EditScreenNone.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -3820,9 +3820,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
-  <data name="&gt;&gt;MenuTools.Name" xml:space="preserve">
-    <value>MenuTools</value>
-  </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -4301,7 +4298,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>ActionCloseWindows</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Text" xml:space="preserve">
-    <value>The Sanskrit Heritage Dictionary</value>
+    <value>Sanskrit Heritage Dictionary</value>
   </data>
   <data name="ActionCreateGitHubIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
