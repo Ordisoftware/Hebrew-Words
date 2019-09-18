@@ -194,6 +194,8 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -822,6 +824,8 @@
             this.toolStripSeparator2,
             this.ActionWebCheckUpdate,
             this.toolStripMenuItem5,
+            this.toolStripMenuItem6,
+            this.toolStripSeparator8,
             this.ActionOpenTanakMP3,
             this.bibleFourmilabToolStripMenuItem,
             this.bibleBiblehubcomToolStripMenuItem,
@@ -1432,6 +1436,18 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // toolStripMenuItem6
+      // 
+      resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+      this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+      this.toolStripMenuItem6.Tag = "https://sites.google.com/site/asherhaimhalevi/hebrew-alphabet";
+      this.toolStripMenuItem6.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1652,6 +1668,8 @@
     internal System.Windows.Forms.BindingSource VersesBindingSource;
     internal System.Windows.Forms.BindingSource WordsBindingSource;
     private System.Windows.Forms.Panel PanelSearchResultsOuter;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
   }
 }
 
