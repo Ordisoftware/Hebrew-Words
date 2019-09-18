@@ -35,7 +35,6 @@ namespace Ordisoftware.HebrewWords
         PanelSearchResults.Visible = false;
         PanelSearchResults.AutoScrollPosition = new Point(0, 0);
         PanelSearchResults.Controls.Clear();
-        GC.Collect();
         UpdateSearchButtons();
         if ( SearchResults == null || SearchResultsCount == 0 )
           return;
