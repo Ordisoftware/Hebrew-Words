@@ -19,7 +19,6 @@ using System.Linq;
 using System.IO;
 using System.Data;
 using System.Drawing;
-using System.Net;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Data;
 
@@ -127,7 +126,7 @@ namespace Ordisoftware.HebrewWords
     {
       Refresh();
       InitializeDialogsDirectory();
-      CheckUpdate(true);
+      Program.CheckUpdate(true);
       DoBackupDB();
       LoadData();
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
@@ -214,37 +213,6 @@ namespace Ordisoftware.HebrewWords
     {
       IsSessionEnding = true;
       Close();
-    }
-
-    /// <summary>
-    /// Check if a newer version is available.
-    /// </summary>
-    private void CheckUpdate(bool auto)
-    {
-      if ( auto && !Program.Settings.CheckUpdateAtStartup ) return;
-      try
-      {
-        string title = AboutBox.Instance.AssemblyTitle;
-        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
-        using ( WebClient client = new WebClient() )
-        {
-          string[] partsVersion = client.DownloadString(url).Split('.');
-          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
-          {
-            if ( !auto )
-              DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
-          }
-          else
-          if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
-                                         Environment.NewLine +
-                                         Localizer.CheckUpdateAskDownloadText.GetLang()) )
-            AboutBox.Instance.OpenApplicationHome();
-        }
-      }
-      catch
-      {
-      }
     }
 
     /// <summary>
@@ -695,7 +663,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
-      CheckUpdate(false);
+      Program.CheckUpdate(false);
     }
 
     /// <summary>
@@ -846,17 +814,6 @@ namespace Ordisoftware.HebrewWords
     {
       PanelSearchResults.Focus();
     }
-
-
-
-
-
-
-
-
-
-
-
 
     /// <summary>
     /// Event handler. Called by ActionExportVerse for click events.
