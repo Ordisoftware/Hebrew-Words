@@ -63,7 +63,11 @@ namespace Ordisoftware.HebrewWords
     {
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
       string strOriginal = ((Data.DataSet.BooksRow)row).Original;
-      Program.OpenOnlineConcordance(strOriginal);
+      foreach ( string item in strOriginal.Split(' ') )
+      {
+        Program.OpenOnlineConcordance(item);
+        System.Threading.Thread.Sleep(2500);
+      }
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
