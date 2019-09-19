@@ -28,20 +28,26 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionAnalyse = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.SplitContainer();
       this.EditSource = new System.Windows.Forms.TextBox();
-      this.PanelResult = new System.Windows.Forms.Panel();
-      this.TextBoxTest = new System.Windows.Forms.TextBox();
+      this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.importResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.hebrewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.originalTranslationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.newTranslationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      this.PanelResult.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.importResultsBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // panel1
@@ -52,7 +58,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.panel1.Location = new System.Drawing.Point(10, 628);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(972, 28);
+      this.panel1.Size = new System.Drawing.Size(772, 28);
       this.panel1.TabIndex = 37;
       // 
       // ActionAnalyse
@@ -73,7 +79,7 @@
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Enabled = false;
       this.ActionOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionOK.Location = new System.Drawing.Point(813, 2);
+      this.ActionOK.Location = new System.Drawing.Point(613, 2);
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.Size = new System.Drawing.Size(75, 24);
       this.ActionOK.TabIndex = 0;
@@ -85,7 +91,7 @@
       this.ActionCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionCancel.Location = new System.Drawing.Point(894, 2);
+      this.ActionCancel.Location = new System.Drawing.Point(694, 2);
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.Size = new System.Drawing.Size(75, 24);
       this.ActionCancel.TabIndex = 0;
@@ -105,9 +111,9 @@
       // 
       // PanelMain.Panel2
       // 
-      this.PanelMain.Panel2.Controls.Add(this.PanelResult);
+      this.PanelMain.Panel2.Controls.Add(this.DataGridView);
       this.PanelMain.Panel2.Padding = new System.Windows.Forms.Padding(10);
-      this.PanelMain.Size = new System.Drawing.Size(972, 618);
+      this.PanelMain.Size = new System.Drawing.Size(772, 618);
       this.PanelMain.SplitterDistance = 300;
       this.PanelMain.TabIndex = 38;
       // 
@@ -119,49 +125,66 @@
       this.EditSource.Multiline = true;
       this.EditSource.Name = "EditSource";
       this.EditSource.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.EditSource.Size = new System.Drawing.Size(952, 280);
+      this.EditSource.Size = new System.Drawing.Size(752, 280);
       this.EditSource.TabIndex = 0;
       this.EditSource.WordWrap = false;
       this.EditSource.TextChanged += new System.EventHandler(this.EditSource_TextChanged);
       // 
-      // PanelResult
+      // DataGridView
       // 
-      this.PanelResult.AutoScroll = true;
-      this.PanelResult.BackColor = System.Drawing.SystemColors.Control;
-      this.PanelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-      this.PanelResult.Controls.Add(this.TextBoxTest);
-      this.PanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.PanelResult.Location = new System.Drawing.Point(10, 10);
-      this.PanelResult.Name = "PanelResult";
-      this.PanelResult.Padding = new System.Windows.Forms.Padding(10);
-      this.PanelResult.Size = new System.Drawing.Size(952, 294);
-      this.PanelResult.TabIndex = 23;
+      this.DataGridView.AutoGenerateColumns = false;
+      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hebrewDataGridViewTextBoxColumn,
+            this.originalTranslationDataGridViewTextBoxColumn,
+            this.newTranslationDataGridViewTextBoxColumn});
+      this.DataGridView.DataSource = this.importResultsBindingSource;
+      this.DataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.DataGridView.Location = new System.Drawing.Point(10, 10);
+      this.DataGridView.Name = "DataGridView";
+      this.DataGridView.Size = new System.Drawing.Size(752, 294);
+      this.DataGridView.TabIndex = 0;
       // 
-      // TextBoxTest
+      // importResultsBindingSource
       // 
-      this.TextBoxTest.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.TextBoxTest.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TextBoxTest.Location = new System.Drawing.Point(10, 10);
-      this.TextBoxTest.Multiline = true;
-      this.TextBoxTest.Name = "TextBoxTest";
-      this.TextBoxTest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.TextBoxTest.Size = new System.Drawing.Size(928, 270);
-      this.TextBoxTest.TabIndex = 1;
-      this.TextBoxTest.WordWrap = false;
+      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportResults);
+      // 
+      // hebrewDataGridViewTextBoxColumn
+      // 
+      this.hebrewDataGridViewTextBoxColumn.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.hebrewDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+      this.hebrewDataGridViewTextBoxColumn.HeaderText = "Hebrew";
+      this.hebrewDataGridViewTextBoxColumn.Name = "hebrewDataGridViewTextBoxColumn";
+      this.hebrewDataGridViewTextBoxColumn.Width = 150;
+      // 
+      // originalTranslationDataGridViewTextBoxColumn
+      // 
+      this.originalTranslationDataGridViewTextBoxColumn.DataPropertyName = "OriginalTranslation";
+      this.originalTranslationDataGridViewTextBoxColumn.HeaderText = "OriginalTranslation";
+      this.originalTranslationDataGridViewTextBoxColumn.Name = "originalTranslationDataGridViewTextBoxColumn";
+      this.originalTranslationDataGridViewTextBoxColumn.Width = 250;
+      // 
+      // newTranslationDataGridViewTextBoxColumn
+      // 
+      this.newTranslationDataGridViewTextBoxColumn.DataPropertyName = "NewTranslation";
+      this.newTranslationDataGridViewTextBoxColumn.HeaderText = "NewTranslation";
+      this.newTranslationDataGridViewTextBoxColumn.Name = "newTranslationDataGridViewTextBoxColumn";
+      this.newTranslationDataGridViewTextBoxColumn.Width = 250;
       // 
       // ImportVerseForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.ClientSize = new System.Drawing.Size(992, 666);
+      this.ClientSize = new System.Drawing.Size(792, 666);
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.panel1);
       this.MinimumSize = new System.Drawing.Size(800, 600);
       this.Name = "ImportVerseForm";
       this.Padding = new System.Windows.Forms.Padding(10);
       this.Text = "Import console";
-      this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportVerseForm_FormClosed);
       this.panel1.ResumeLayout(false);
       this.PanelMain.Panel1.ResumeLayout(false);
@@ -169,8 +192,8 @@
       this.PanelMain.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).EndInit();
       this.PanelMain.ResumeLayout(false);
-      this.PanelResult.ResumeLayout(false);
-      this.PanelResult.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.importResultsBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -182,8 +205,11 @@
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.TextBox EditSource;
-    internal System.Windows.Forms.Panel PanelResult;
     private System.Windows.Forms.Button ActionAnalyse;
-    private System.Windows.Forms.TextBox TextBoxTest;
+    private System.Windows.Forms.DataGridView DataGridView;
+    private System.Windows.Forms.DataGridViewTextBoxColumn hebrewDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn originalTranslationDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn newTranslationDataGridViewTextBoxColumn;
+    private System.Windows.Forms.BindingSource importResultsBindingSource;
   }
 }

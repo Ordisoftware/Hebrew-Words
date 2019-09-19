@@ -87,9 +87,9 @@ namespace Ordisoftware.HebrewWords
     private void ActionOK_Click(object sender, EventArgs e)
     {
       var wordsReference = Reference.Verse.GetWordsRows();
-      for ( int index = 0; index < FounWords.Count; index++ )
-        if ( FounWords[index] == wordsReference[index].Hebrew )
-          wordsReference[index].Translation = FoundTranslation[index];
+      for ( int index = 0; index < ImportResults.Count; index++ )
+        if ( ImportResults[index].Hebrew == wordsReference[index].Hebrew )
+          wordsReference[index].Translation = ImportResults[index].NewTranslation;
       Close();
     }
 

@@ -26,18 +26,35 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewWords
 {
 
+  public class ImportResult
+  {
+    public string Hebrew { get; set; }
+    public string OriginalTranslation { get; set; }
+    public string NewTranslation { get; set; }
+  }
+
+  public class ImportResults : List<ImportResult>
+  {
+    public ImportResults() { }
+    public ImportResults(int capacity) : base(capacity) { }
+    public ImportResults(IEnumerable<ImportResult> collection) : base(collection) { }
+  }
+
   public partial class ImportVerseForm : Form
   {
 
     private const char ElementsSeparator = '|';
 
-    private List<string> FounWords = new List<string>();
-    private List<string> FoundTranslation = new List<string>();
+    private ImportResults ImportResults = new ImportResults();
 
     private void DoAnalyse()
     {
+      var FounWords = new List<string>();
+      var FoundTranslation = new List<string>();
+      DataGridView.DataSource = null;
       FounWords.Clear();
       FoundTranslation.Clear();
+      ImportResults.Clear();
       var lines = EditSource.Lines.Where(line => line != "").ToList();
       if ( lines.Count % 2 != 0 )
       {
@@ -81,9 +98,13 @@ namespace Ordisoftware.HebrewWords
           DisplayManager.ShowError("Incorrect hebrew words: verse words and imported words does not match.");
           return;
         }
-        TextBoxTest.AppendText(FounWords[index] + " : " + FoundTranslation[index] + " / " + wordsReference[index].Translation);
-        TextBoxTest.AppendText(Environment.NewLine);
+        var item = new ImportResult();
+        item.Hebrew = wordsReference[index].Hebrew;
+        item.OriginalTranslation = wordsReference[index].Translation;
+        item.NewTranslation = FoundTranslation[index];
+        ImportResults.Add(item);
       }
+      DataGridView.DataSource = ImportResults;
       IsResultValid = true;
     }
 
