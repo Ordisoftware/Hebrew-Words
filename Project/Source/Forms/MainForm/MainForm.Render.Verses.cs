@@ -49,6 +49,7 @@ namespace Ordisoftware.HebrewWords
                          select new ReferenceItem(book, chapter, verse);
         var wordcontrol = new WordControl();
         wordcontrol.Width = Program.Settings.WordControlWidth;
+        int widthLabel = 40;
         int mX = 50;
         int mY = 50;
         int delta = 10;
@@ -61,7 +62,7 @@ namespace Ordisoftware.HebrewWords
         int y = delta;
         int minx = x;
         int wordsCount = ( width - marginX ) / dx;
-        int wordsWidth = wordsCount * dx;
+        int widthWords = wordsCount * dx;
         int widthWord = Program.Settings.WordControlWidth;
         int verseLineCount = Program.Settings.VerseCommentaryLinesCount;
         int textHeight;
@@ -75,19 +76,22 @@ namespace Ordisoftware.HebrewWords
         int indexControl = 0;
         int capacity = references.Count() * 2 + references.Select(r => r.Verse.GetWordsRows().Count()).Sum();
         Control[] controls = new Control[capacity];
-        int dx_delta = dx + delta;
         int deltaDIV4 = delta / 4;
-        int minx_dx_delta = minx + dx + delta;
+        int dx_delta = dx + delta;
+        int dy_delta = dy + delta;
         int dx_marginX = dx + marginX;
+        int dx_MarginX_2 = dx + marginX + 2;
+        int minx_dx_delta = minx + dx + delta;
         int heightComment = textHeight * ( verseLineCount + 1 ) - 3;
         int dy_marginY_commentHeight = dy + marginY + heightComment;
+        int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
         foreach ( var reference in references )
         {
           label = new Label();
           label.Tag = reference;
           label.Location = new Point(x + dx_delta, y + deltaDIV4);
           label.AutoSize = false;
-          label.Width = 40;
+          label.Width = widthLabel;
           label.ForeColor = Color.DarkBlue;
           label.Font = VerseNumberFont;
           label.Text = reference.Verse.Number.ToString();
@@ -124,11 +128,9 @@ namespace Ordisoftware.HebrewWords
             editComment.WordWrap = true;
             editComment.ScrollBars = ScrollBars.Vertical;
           }
-          int dy_delta = dy + delta;
-          editComment.Location = new Point(width - wordsWidth - label.Width - delta, y + dy_delta);
-          int dx_MarginX_2 = dx + marginX + 2;
+          editComment.Location = new Point(width - widthWords_widthLabel_delta, y + dy_delta);
           x = width - dx_MarginX_2;
-          editComment.Width = wordsWidth - delta;
+          editComment.Width = widthWords - delta;
           editComment.Height = heightComment;
           editComment.Tag = reference;
           editComment.BackColor = Color.Honeydew;
