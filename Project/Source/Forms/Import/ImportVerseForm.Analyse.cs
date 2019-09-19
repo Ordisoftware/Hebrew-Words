@@ -63,11 +63,9 @@ namespace Ordisoftware.HebrewWords
           DisplayManager.ShowError("Incorrect elements count: hebrew words count and translations count does not match.");
           return;
         }
-        FounWords.AddRange(lineHebrewElements);
-        FoundTranslation.AddRange(lineTranslationElements);
+        FounWords.AddRange(lineHebrewElements.Reverse());
+        FoundTranslation.AddRange(lineTranslationElements.Reverse());
       }
-      FounWords.Reverse();
-      FoundTranslation.Reverse();
       var wordsReference = Reference.Verse.GetWordsRows();
       if ( wordsReference.Count() != FounWords.Count)
       {
@@ -83,7 +81,7 @@ namespace Ordisoftware.HebrewWords
           DisplayManager.ShowError("Incorrect hebrew words: verse words and imported words does not match.");
           return;
         }
-        TextBoxTest.AppendText(FounWords[index] + " : " + FoundTranslation[index]);
+        TextBoxTest.AppendText(FounWords[index] + " : " + FoundTranslation[index] + " / " + wordsReference[index].Translation);
         TextBoxTest.AppendText(Environment.NewLine);
       }
       IsResultValid = true;
