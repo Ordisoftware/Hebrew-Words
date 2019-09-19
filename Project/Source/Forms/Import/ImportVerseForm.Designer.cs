@@ -35,11 +35,13 @@
       this.PanelMain = new System.Windows.Forms.SplitContainer();
       this.EditSource = new System.Windows.Forms.TextBox();
       this.PanelResult = new System.Windows.Forms.Panel();
+      this.TextBoxTest = new System.Windows.Forms.TextBox();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
       this.PanelMain.SuspendLayout();
+      this.PanelResult.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -127,12 +129,25 @@
       this.PanelResult.AutoScroll = true;
       this.PanelResult.BackColor = System.Drawing.SystemColors.Control;
       this.PanelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+      this.PanelResult.Controls.Add(this.TextBoxTest);
       this.PanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
       this.PanelResult.Location = new System.Drawing.Point(10, 10);
       this.PanelResult.Name = "PanelResult";
       this.PanelResult.Padding = new System.Windows.Forms.Padding(10);
       this.PanelResult.Size = new System.Drawing.Size(952, 294);
       this.PanelResult.TabIndex = 23;
+      // 
+      // TextBoxTest
+      // 
+      this.TextBoxTest.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.TextBoxTest.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.TextBoxTest.Location = new System.Drawing.Point(10, 10);
+      this.TextBoxTest.Multiline = true;
+      this.TextBoxTest.Name = "TextBoxTest";
+      this.TextBoxTest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+      this.TextBoxTest.Size = new System.Drawing.Size(928, 270);
+      this.TextBoxTest.TabIndex = 1;
+      this.TextBoxTest.WordWrap = false;
       // 
       // ImportVerseForm
       // 
@@ -154,6 +169,8 @@
       this.PanelMain.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).EndInit();
       this.PanelMain.ResumeLayout(false);
+      this.PanelResult.ResumeLayout(false);
+      this.PanelResult.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -167,5 +184,6 @@
     private System.Windows.Forms.TextBox EditSource;
     internal System.Windows.Forms.Panel PanelResult;
     private System.Windows.Forms.Button ActionAnalyse;
+    private System.Windows.Forms.TextBox TextBoxTest;
   }
 }

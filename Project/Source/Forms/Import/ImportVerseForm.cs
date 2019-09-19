@@ -36,7 +36,12 @@ namespace Ordisoftware.HebrewWords
         form.DataSet.RejectChanges();
       else
       {
-        form.DataSet.AcceptChanges();
+        if ( form.DataSet.HasChanges() )
+        {
+          MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
+          foreach ( WordControl c in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
+            c.EditTranslation.Text = c.Word.Translation;
+        }
         MainForm.Instance.ActionSave.PerformClick();
       }
     }
@@ -69,6 +74,8 @@ namespace Ordisoftware.HebrewWords
     private void EditSource_TextChanged(object sender, EventArgs e)
     {
       ActionAnalyse.Enabled = EditSource.Text != "";
+      IsResultValid = false;
+      ActionOK.Enabled = false;
     }
 
     private void ActionAnalyse_Click(object sender, EventArgs e)
@@ -79,7 +86,10 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
-      DoImport();
+      var wordsReference = Reference.Verse.GetWordsRows();
+      for ( int index = 0; index < FounWords.Count; index++ )
+        if ( FounWords[index] == wordsReference[index].Hebrew )
+          wordsReference[index].Translation = FoundTranslation[index];
       Close();
     }
 

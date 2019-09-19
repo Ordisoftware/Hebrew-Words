@@ -60,9 +60,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Import\ImportVerseForm.Process.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
       <SubType>Form</SubType>
     </Compile>
