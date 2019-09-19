@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewWords
         int index = 0;
         int delta = 1;
         var form = new LoadingForm();
-        form.LabelOperation.Text = Localizer.CreatingDataText.GetLang();
+        form.LabelOperation.Text = Translations.CreatingDataText.GetLang();
         form.ProgressBar.Maximum = 50;
         form.Show();
         try

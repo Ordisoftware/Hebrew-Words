@@ -173,7 +173,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Localizer.OnlineVerseHelpText.GetLang());
+      DisplayManager.Show(Translations.OnlineVerseHelpText.GetLang());
     }
   }
 

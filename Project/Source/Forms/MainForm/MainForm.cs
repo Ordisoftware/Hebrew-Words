@@ -116,7 +116,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Translations.ExitApplicationText.GetLang()) )
           e.Cancel = true;
     }
 
@@ -465,9 +465,9 @@ namespace Ordisoftware.HebrewWords
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
-      if ( !DisplayManager.QueryYesNo(Localizer.NewDatabaseAdvertText.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(Translations.NewDatabaseAdvertText.GetLang()) )
         return;
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       ReLoadData(() =>
@@ -484,7 +484,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionRestore_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Localizer.BackupBeforeRestoreText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.BackupBeforeRestoreText.GetLang()) )
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
@@ -573,7 +573,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Localizer.RestoreWinPosText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.RestoreWinPosText.GetLang()) )
       {
         Program.Settings.RestoreMainForm();
         ActionRefresh.PerformClick();
@@ -914,7 +914,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionImportConsole_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowAdvert(Localizer.NotYetAvailableText.GetLang());
+      DisplayManager.ShowAdvert(Translations.NotYetAvailableText.GetLang());
     }
 
     /// <summary>

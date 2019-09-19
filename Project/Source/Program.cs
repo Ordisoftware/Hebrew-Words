@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing;
@@ -50,16 +51,16 @@ namespace Ordisoftware.HebrewWords
       = RootFolderPath + "Application.ico";
 
     /// <summary>
-    /// Indicate the extension of database file.
-    /// </summary>
-    static public readonly string DBFileExtension
-      = ".sqlite";
-
-    /// <summary>
     /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
       = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
+
+    /// <summary>
+    /// Indicate the extension of database file.
+    /// </summary>
+    static public readonly string DBFileExtension
+      = ".sqlite";
 
     /// <summary>
     /// Indicate name of the help file.
@@ -74,7 +75,7 @@ namespace Ordisoftware.HebrewWords
       = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
-    /// Indicate user data folder path.
+    /// Indicate user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath { get; private set; }
 
@@ -122,17 +123,17 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
       AboutBox.Instance.Icon = MainForm.Instance.Icon;
       UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                     + Path.DirectorySeparatorChar
-                     + AboutBox.Instance.AssemblyCompany
-                     + Path.DirectorySeparatorChar
-                     + AboutBox.Instance.AssemblyTitle
-                     + Path.DirectorySeparatorChar;
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyCompany
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyTitle
+                         + Path.DirectorySeparatorChar;
       UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                          + Path.DirectorySeparatorChar
-                          + AboutBox.Instance.AssemblyCompany
-                          + Path.DirectorySeparatorChar
-                          + AboutBox.Instance.AssemblyTitle
-                          + Path.DirectorySeparatorChar;
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyCompany
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyTitle
+                              + Path.DirectorySeparatorChar;
       Directory.CreateDirectory(UserDataFolderPath);
       Application.Run(MainForm.Instance);
     }
@@ -151,12 +152,12 @@ namespace Ordisoftware.HebrewWords
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
-              DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
+              DisplayManager.Show(Translations.CheckUpdateNoNewText.GetLang());
           }
           else
-          if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+          if ( DisplayManager.QueryYesNo(Translations.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
                                          Environment.NewLine +
-                                         Localizer.CheckUpdateAskDownloadText.GetLang()) )
+                                         Translations.CheckUpdateAskDownloadText.GetLang()) )
             AboutBox.Instance.OpenApplicationHome();
         }
       }
