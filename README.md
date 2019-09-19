@@ -74,6 +74,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 - Improve search rendering.
 - Improve search filters.
 - Improve statistics.
+- Improve tools.
 - Some fixes.
 - Update help.
 
