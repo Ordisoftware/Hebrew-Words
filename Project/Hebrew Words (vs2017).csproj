@@ -60,6 +60,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Ghost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Designer.cs">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
@@ -254,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.resx">
       <DependentUpon>GrammarGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
