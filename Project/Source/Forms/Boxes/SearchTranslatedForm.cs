@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewWords
       Mutex = true;
       EditHebrew.Text = sender.LabelHebrew.Text;
       Mutex = false;
-      Text = reference.ToString() + " {" + sender.Word.Number + "}";
+      Text = reference.ToString() + " #" + sender.Word.Number;
       UpdateResult();
       ActiveControl = ListView;
     }
