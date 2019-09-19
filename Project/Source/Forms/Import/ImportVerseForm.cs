@@ -59,10 +59,6 @@ namespace Ordisoftware.HebrewWords
       DataSet = MainForm.Instance.DataSet;
       Reference = reference;
       CreateGhost();
-      GhostBook = DataSet.Books[0];
-      GhostChapter = GhostBook.GetChaptersRows()[0];
-      GhostVerse = GhostChapter.GetVersesRows()[0];
-      GhostWords = GhostVerse.GetWordsRows();
     }
 
     private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
