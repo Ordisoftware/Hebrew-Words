@@ -59,6 +59,13 @@ namespace Ordisoftware.HebrewWords
       if ( e.ColumnIndex == 2 ) e.Value = (string)e.Value;
     }
 
+    private void ActionOnlineSearch_Click(object sender, EventArgs e)
+    {
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      string strOriginal = ((Data.DataSet.BooksRow)row).Original;
+      Program.OpenOnlineConcordance(strOriginal);
+    }
+
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       string strHebrew = (string)EditBooks.SelectedRows[0].Cells[1].Value;
@@ -90,9 +97,11 @@ namespace Ordisoftware.HebrewWords
         {
           EditBooks.ClearSelection();
           EditBooks.Rows[rowSelected].Selected = true;
+          BooksBindingSource.Position = e.RowIndex;
         }
       }
     }
+
   }
 
 }
