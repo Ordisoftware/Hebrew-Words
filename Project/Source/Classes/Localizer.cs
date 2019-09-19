@@ -156,6 +156,31 @@ namespace Ordisoftware.HebrewWords
         { "fr", "Pas encore disponible." }
       };
 
+    static public readonly Dictionary<string, string> OnlineVerseHelpText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Use the following tags to replace values:" + Environment.NewLine + Environment.NewLine +
+                "%BOOKSB% : StudyBible book name" + Environment.NewLine +
+                "%BOOKMM% : Mechon-Mamre book name" + Environment.NewLine +
+                "%BOOKDJEP% : Djep book name" + Environment.NewLine + Environment.NewLine +
+                "%BOOKNUM% : Book number" + Environment.NewLine +
+                "%CHAPTERNUM% : Chapter number" + Environment.NewLine +
+                "%VERSENUM% : Verse number" + Environment.NewLine + Environment.NewLine +
+                "%BOOKNUM#2% : Book number in two digits" + Environment.NewLine +
+                "%CHAPTERNUM#2% : Chapter number in two digits" + Environment.NewLine +
+                "%VERSENUM#2% : Verse number in two digits" },
+        { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + Environment.NewLine + Environment.NewLine +
+                "%BOOKSB% : Nom du livre StudyBible" + Environment.NewLine +
+                "%BOOKMM% : Nom du livre Mechon-Mamre" + Environment.NewLine +
+                "%BOOKDJEP% : Nom du livre Djep" + Environment.NewLine + Environment.NewLine +
+                "%BOOKNUM% : Numéro du livre" + Environment.NewLine +
+                "%CHAPTERNUM% : Numéro du chaptre" + Environment.NewLine +
+                "%VERSENUM% : Numéro du verset" + Environment.NewLine + Environment.NewLine +
+                "%BOOKNUM#2% : Numéro du livre sur 2 digits" + Environment.NewLine +
+                "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + Environment.NewLine +
+                "%VERSENUM#2% : Numéro du verset sur 2 digits" },
+      };
+
     static public readonly Dictionary<string, string> BookChapterText
       = new Dictionary<string, string>()
       {

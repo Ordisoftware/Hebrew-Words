@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Mishlei, "yl>m" },
       { Books.Iyov, "bvya" },
       { Books.Shir_HaShirim, "myry>h ry>" },
-      { Books.Routh, "tvr" },
+      { Books.Ruth, "tvr" },
       { Books.Eikah, "hkya" },
       { Books.Qohelet, "tlhq" },
       { Books.Esther, "rt>a" },

@@ -75,6 +75,8 @@
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Entities\OnlineBibleProvider.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
+    <Compile Include="Source\Enums\BooksNames.Djep.cs" />
+    <Compile Include="Source\Enums\BooksNames.MechonMamre.cs" />
     <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
       <SubType>Form</SubType>

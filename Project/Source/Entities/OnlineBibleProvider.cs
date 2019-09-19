@@ -56,18 +56,18 @@ namespace Ordisoftware.HebrewWords
       {
         case "fr":
           item.Name = "Mechon-Mamre.org (FR)";
-          item.URL = "https://www.mechon-mamre.org/f/ft/ft%BOOKNUM#2%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
+          item.URL = "https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
         default:
           item.Name = "Mechon-Mamre.org (EN)";
-          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKNUM#2%CHAPTERNUM#2%.htm#%VERSENUM#2%";
+          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
       }
       Items.Add(item);
 
       item = new OnlineBibleProvider();
       item.Name = "Djep.hd.free.fr (FR)";
-      item.URL = "http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKNUM%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%";
+      item.URL = "http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%";
       Items.Add(item);
     }
 

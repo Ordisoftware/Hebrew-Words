@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewWords
     Nahoum, Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
     Tehilim, Mishlei, Iyov,
-    Shir_HaShirim, Routh, Eikah, Qohelet, Esther, Daniel, Ezra, Nehemiah,
+    Shir_HaShirim, Ruth, Eikah, Qohelet, Esther, Daniel, Ezra, Nehemiah,
     Divrei_HaYamim_I, Divrei_HaYamim_II
   };
 
@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
     Mishlei = Books.Mishlei,
     Iyov = Books.Iyov,
     Shir_HaShirim = Books.Shir_HaShirim,
-    Routh = Books.Routh,
+    Routh = Books.Ruth,
     Eikah = Books.Eikah,
     Qohelet = Books.Qohelet,
     Esther = Books.Esther,

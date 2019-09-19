@@ -16,6 +16,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -170,6 +171,10 @@ namespace Ordisoftware.HebrewWords
       MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
     }
 
+    private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.Show(Localizer.OnlineVerseHelpText.GetLang());
+    }
   }
 
 }

@@ -69,6 +69,7 @@
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
+      this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -393,6 +394,15 @@
       this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
       this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
       // 
+      // ActionOnlineVerseHelp
+      // 
+      this.ActionOnlineVerseHelp.AllowDrop = true;
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
+      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
+      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -401,6 +411,7 @@
       this.CancelButton = this.ButtonClose;
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.Controls.Add(this.ActionOnlineVerseHelp);
       this.Controls.Add(this.ActionSelectOnlineVerseURL);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
@@ -482,5 +493,6 @@
     private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
     private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
+    private System.Windows.Forms.Button ActionOnlineVerseHelp;
   }
 }

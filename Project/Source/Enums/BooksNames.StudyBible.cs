@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Mishlei, "Proverbs" },
       { Books.Iyov, "Job" },
       { Books.Shir_HaShirim, "Song of Songs" },
-      { Books.Routh, "Ruth" },
+      { Books.Ruth, "Ruth" },
       { Books.Eikah, "Lamentations" },
       { Books.Qohelet, "Ecclesiastes" },
       { Books.Esther, "Esther" },
