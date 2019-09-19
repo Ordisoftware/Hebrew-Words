@@ -108,6 +108,51 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by MainForm for form closing events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Form closing event information.</param>
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( EditConfirmClosing.Checked && !IsSessionEnding )
+        if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
+          e.Cancel = true;
+    }
+
+    /// <summary>
+    /// Event handler. Called by MainForm for form closed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Form closing event information.</param>
+    private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Program.Settings.Store();
+    }
+
+    /// <summary>
+    /// Event handler. Called by MainForm for client size and location changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void MainForm_WindowsChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      EditScreenNone.PerformClick();
+    }
+
+    /// <summary>
+    /// Session ending event.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
+    private void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      IsSessionEnding = true;
+      Close();
+    }
+
+    /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
     internal void InitializeDialogsDirectory()
@@ -155,40 +200,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm for form closing events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
-    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( EditConfirmClosing.Checked && !IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
-          e.Cancel = true;
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for form closed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
-    private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      Program.Settings.Store();
-    }
-
-    /// <summary>
-    /// Session ending event.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    private void SessionEnding(object sender, SessionEndingEventArgs e)
-    {
-      IsSessionEnding = true;
-      Close();
-    }
-
-    /// <summary>
     /// Timer event for tooltips.
     /// </summary>
     private void TimerTooltip_Tick(object sender, EventArgs e)
@@ -223,17 +234,6 @@ namespace Ordisoftware.HebrewWords
       TimerTooltip.Enabled = false;
       LastToolTip.Tag = null;
       LastToolTip.Hide(ToolStrip);
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for client size and location changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void MainForm_WindowsChanged(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      EditScreenNone.PerformClick();
     }
 
     /// <summary>
