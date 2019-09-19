@@ -66,6 +66,7 @@ namespace Ordisoftware.HebrewWords
                               ( 
                                 ID TEXT DEFAULT '' NOT NULL,
                                 Number INTEGER NOT NULL,
+                                Original TEXT DEFAULT '' NOT NULL,
                                 Hebrew TEXT DEFAULT '' NOT NULL,
                                 Name TEXT DEFAULT '' NOT NULL,
                                 Translation TEXT DEFAULT '' NOT NULL,
@@ -77,8 +78,8 @@ namespace Ordisoftware.HebrewWords
                                    ID TEXT DEFAULT '' NOT NULL,
                                    BookID TEXT DEFAULT '' NOT NULL,
                                    Number INTEGER NOT NULL,
-                                   ELS50 TEXT DEFAULT '' NOT NULL,
                                    Memo TEXT DEFAULT '' NOT NULL,
+                                   ELS50 TEXT DEFAULT '' NOT NULL,
                                    CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
                                    FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
                                  )");
@@ -88,7 +89,6 @@ namespace Ordisoftware.HebrewWords
                                  ChapterID TEXT DEFAULT '' NOT NULL,
                                  Number INTEGER NOT NULL,
                                  Comment TEXT DEFAULT '' NOT NULL,
-                                 Memo TEXT DEFAULT '' NOT NULL,
                                  CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                                  FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                                )");
@@ -103,9 +103,9 @@ namespace Ordisoftware.HebrewWords
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                               )");
+        checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
         checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
         checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
-        checkColumn("Verses", "Memo", "ALTER TABLE Verses ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
         CreateDataIfNotExists();
       }
       finally

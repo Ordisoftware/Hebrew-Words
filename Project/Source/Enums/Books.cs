@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewWords
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Nevi'im
     Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
-    Isayah, Yirmyah, Yehezqel,
+    Yeshayahou , Yrmeyahou , Yehezqel,
     Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah,
     Nahoum, Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
@@ -50,8 +50,8 @@ namespace Ordisoftware.HebrewWords
     Shemouel_II = Books.Shemouel_II,
     Melakim_I = Books.Melakim_I,
     Melakim_II = Books.Melakim_II,
-    Isayah = Books.Isayah,
-    Yirmyah = Books.Yirmyah,
+    Isayah = Books.Yeshayahou ,
+    Yirmyah = Books.Yrmeyahou ,
     Yehezqel = Books.Yehezqel,
     Hoshea = Books.Hoshea,
     Yoel = Books.Yoel,

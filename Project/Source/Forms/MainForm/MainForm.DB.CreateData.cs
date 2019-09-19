@@ -43,6 +43,7 @@ namespace Ordisoftware.HebrewWords
         {
           Books enumBook = (Books)( book.Number - 1 );
           book.Hebrew = BooksNames.Hebrew[enumBook];
+          book.Original = BooksNames.Original[enumBook];
           book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
         }
         TableAdapterManager.UpdateAll(DataSet);

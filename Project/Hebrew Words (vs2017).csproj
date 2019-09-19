@@ -76,6 +76,7 @@
     <Compile Include="Source\Entities\OnlineBibleProvider.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
+    <Compile Include="Source\Enums\BooksNames.Original.cs" />
     <Compile Include="Source\Enums\BooksNames.MechonMamre.cs" />
     <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
