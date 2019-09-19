@@ -11,24 +11,28 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Provide Hebrew Words default values.
+  /// Provide hebreu letters class.
   /// </summary>
   static public class Letters
   {
 
     /// <summary>
-    /// Provide letter meaning translation
+    /// Remove diacritics letters.
     /// </summary>
-    public class MeaningTranslation : Dictionary<string, List<string>>
+    public static string RemoveDiacritics(this string text)
     {
+      if ( string.IsNullOrEmpty(text) )
+        return string.Empty;
+      return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
     }
 
     /// <summary>
@@ -43,7 +47,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate finale letters enabled keys values.
     /// </summary>
-    static internal Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
+    static private Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
     {
       { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
     };
@@ -51,7 +55,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate finale letters disabled keys values.
     /// </summary>
-    static internal Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
+    static private Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
     {
       { 'k', '!' }, { 'm', ',' }, { 'n', ']' }, { 'p', '[' }, { 'j', '/' }
     };
@@ -61,7 +65,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string SetFinale(string str, bool enable)
     {
-      var array = new Dictionary<char, char>(enable ? FinaleEnable : FinaleDisable);
+      var array = enable ? FinaleEnable : FinaleDisable;
       str = str.Trim();
       if ( str.Length == 0 ) return str;
       char c = str[0];
@@ -73,6 +77,26 @@ namespace Ordisoftware.HebrewWords
         }
       str = c + str.Remove(0, 1);
       return str;
+    }
+
+    /// <summary>
+    // Convert all finale letters to non finale.
+    /// </summary>
+    static public string UnFinaleAll(string str)
+    {
+      foreach ( var v in FinaleDisable )
+        str = str.Replace(v.Key, v.Value);
+      return str;
+    }
+
+    /// <summary>
+    // Convert standard hebrew letters of a word to hebrew font key codes.
+    /// </summary>
+    static public string ConvertToHebrewFont(string str)
+    {
+      string result = "";
+      foreach ( char c in str ) result += ConvertToKey(c);
+      return result;
     }
 
     /// <summary>

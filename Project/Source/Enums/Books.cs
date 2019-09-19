@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2019 Olivier Rogier. 
 /// See www.ordisoftware.com for more information.
@@ -11,8 +12,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-01 </edited>
-using System.Collections.Generic;
+/// <edited> 2019-09 </edited>
+using System;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -21,15 +22,15 @@ namespace Ordisoftware.HebrewWords
   {
     // Torah
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
-    // Neviim
-    Yehoshoua, Shoftim, Shemouel_1, Shemouel_2, Melakim_1, Melakim_2,
-    Isayah, Yirmyah, Yehezkel,
-    Hosea, Yoel, Amos, Obadyah, Yonah, Mikah, Nahoum,
-    Habaquq, Zefaniah, Hagai, Zakaria, Malaki,
+    // Nevi'im
+    Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
+    Yeshayahou , Yrmeyahou , Yehezqel,
+    Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah,
+    Nahoum, Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
-    Tehilim, Mishlei, Iyyov,
-    Chir_HaChirim, Ruth, Eikha, Qohelet, Esther,
-    Daniel, Ezra, Nehemiah, Divrei_HaYamim_1, Divrei_HaYamim_2
+    Tehilim, Mishlei, Iyov,
+    Shir_HaShirim, Ruth, Eikah, Qohelet, Esther, Daniel, Ezra, Nehemiah,
+    Divrei_HaYamim_I, Divrei_HaYamim_II
   };
 
   public enum TorahBooks
@@ -41,101 +42,46 @@ namespace Ordisoftware.HebrewWords
     Devarim = Books.Devarim
   };
 
-  static public class BooksNames
+  public enum NeviimBooks
   {
+    Yehoshoua = Books.Yehoshoua,
+    Shoftim = Books.Shoftim,
+    Shemouel_I = Books.Shemouel_I,
+    Shemouel_II = Books.Shemouel_II,
+    Melakim_I = Books.Melakim_I,
+    Melakim_II = Books.Melakim_II,
+    Isayah = Books.Yeshayahou ,
+    Yirmyah = Books.Yrmeyahou ,
+    Yehezqel = Books.Yehezqel,
+    Hoshea = Books.Hoshea,
+    Yoel = Books.Yoel,
+    Amos = Books.Amos,
+    Obadyah = Books.Obadyah,
+    Yonah = Books.Yonah,
+    Mikah = Books.Mikah,
+    Nahoum = Books.Nahoum,
+    Habaqouq = Books.Habaqouq,
+    Tsephaniah = Books.Tsephaniah,
+    Hagai = Books.Hagai,
+    Zekaria = Books.Zekaria,
+    Malaki = Books.Malaki
+  };
 
-    static public Dictionary<Books, string> Hebrew = new Dictionary<Books, string>()
-    {
-      // Torah
-      { Books.Bereshit, "ty>arb" },
-      { Books.Shemot, "tvm>" },
-      { Books.Vayiqra, "arqyv" },
-      { Books.Bamidbar, "rbdmb" },
-      { Books.Devarim, "myrbd" },
-      // Nevi'im
-      { Books.Yehoshoua, "i>vhy" },
-      { Books.Shoftim, "mytpv>" },
-      { Books.Shemouel_1, "a lavm>" },
-      { Books.Shemouel_2, "b lavm>" },
-      { Books.Melakim_1, "a myklm" },
-      { Books.Melakim_2, "b myklm" },
-      { Books.Isayah, "hyi>y" },
-      { Books.Yirmyah, "hymry" },
-      { Books.Yehezkel, "laqzxy" },
-      { Books.Hosea, "i>vh" },
-      { Books.Yoel, "lavy" },
-      { Books.Amos, "cvmi" },
-      { Books.Obadyah, "hydbvi" },
-      { Books.Yonah, "hnvy" },
-      { Books.Mikah, "hkym" },
-      { Books.Nahoum, "mvxn" },
-      { Books.Habaquq, "qvqbx" },
-      { Books.Zefaniah, "hynpj" },
-      { Books.Hagai, "ygx" },
-      { Books.Zakaria, "hyrkz" },
-      { Books.Malaki, "ykalm" },
-      // Ketouvim
-      { Books.Tehilim, "mylht" },
-      { Books.Mishlei, "yl>m" },
-      { Books.Iyyov, "bvya" },
-      { Books.Chir_HaChirim, "myry>h ry>" },
-      { Books.Ruth, "tvr" },
-      { Books.Eikha, "hkya" },
-      { Books.Qohelet, "tlhq" },
-      { Books.Esther, "rtsa" },
-      { Books.Daniel, "lanyd" },
-      { Books.Ezra, "arzi" },
-      { Books.Nehemiah, "hymxn" },
-      { Books.Divrei_HaYamim_1, "a mymyh yrbd" },
-      { Books.Divrei_HaYamim_2, "b mymyh yrbd" }
-    };
-
-    static public Dictionary<Books, string> English = new Dictionary<Books, string>()
-    {
-      // Torah
-      { Books.Bereshit, "Genesis" },
-      { Books.Shemot, "Exodus" },
-      { Books.Vayiqra, "Leviticus" },
-      { Books.Bamidbar, "Numbers" },
-      { Books.Devarim, "Deuteronomy" },
-      // Nevi'im
-      { Books.Yehoshoua, "Joshua" },
-      { Books.Shoftim, "Judges" },
-      { Books.Shemouel_1, "1 Samuel" },
-      { Books.Shemouel_2, "2 Samuel" },
-      { Books.Melakim_1, "1 Kings" },
-      { Books.Melakim_2, "2 Kings" },
-      { Books.Isayah, "Isaiah" },
-      { Books.Yirmyah, "Jeremiah" },
-      { Books.Yehezkel, "Ezekiel" },
-      { Books.Hosea, "Hosea" },
-      { Books.Yoel, "Joel" },
-      { Books.Amos, "Amos" },
-      { Books.Obadyah, "Obadiah" },
-      { Books.Yonah, "Jonah" },
-      { Books.Mikah, "Micah" },
-      { Books.Nahoum, "Nahum" },
-      { Books.Habaquq, "Habakkuk" },
-      { Books.Zefaniah, "Zephaniah" },
-      { Books.Hagai, "Haggai" },
-      { Books.Zakaria, "Zechariah" },
-      { Books.Malaki, "Malachi" },
-      // Ketouvim
-      { Books.Tehilim, "Psalms" },
-      { Books.Mishlei, "Proverbs" },
-      { Books.Iyyov, "Job" },
-      { Books.Chir_HaChirim, "Song of Songs" },
-      { Books.Ruth, "Ruth" },
-      { Books.Eikha, "Lamentations" },
-      { Books.Qohelet, "Ecclesiastes" },
-      { Books.Esther, "Esther" },
-      { Books.Daniel, "Daniel" },
-      { Books.Ezra, "Ezra" },
-      { Books.Nehemiah, "Nehemiah" },
-      { Books.Divrei_HaYamim_1, "1 Chronicles" },
-      { Books.Divrei_HaYamim_2, "2 Chronicles" }
-    };
-
-  }
+  public enum KetouvimBooks
+  {
+    Tehilim = Books.Tehilim,
+    Mishlei = Books.Mishlei,
+    Iyov = Books.Iyov,
+    Shir_HaShirim = Books.Shir_HaShirim,
+    Routh = Books.Ruth,
+    Eikah = Books.Eikah,
+    Qohelet = Books.Qohelet,
+    Esther = Books.Esther,
+    Daniel = Books.Daniel,
+    Ezra = Books.Ezra,
+    Nehemiah = Books.Nehemiah,
+    Divrei_HaYamim_I = Books.Divrei_HaYamim_I,
+    Divrei_HaYamim_II = Books.Divrei_HaYamim_II
+  };
 
 }

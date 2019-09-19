@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2015-06 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -35,7 +35,10 @@ namespace Ordisoftware.HebrewWords
     static private Font FontHebrew = new Font("Hebrew");
     static private Font FontCalibri = new Font("Calibri");
 
-    static public void Run(string filename, Data.DataSet.BooksRow book, bool includeTranslation, Func<bool> showProgress)
+    static public void Run(string filename,
+                           Data.DataSet.BooksRow book,
+                           bool includeTranslation,
+                           Func<bool> showProgress)
     {
       {
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -59,26 +62,10 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation, int verse)
-    {
-      {
-        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
-          try
-          {
-            SetPageMargins();
-            AddBookTitle(book);
-            AddChapterTitle(chapter);
-            AddVerse(chapter.GetVersesRows()[verse], includeTranslation);
-            Document.Save();
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
-      }
-    }
-
-    static public void Run(string filename, Data.DataSet.BooksRow book, Data.DataSet.ChaptersRow chapter, bool includeTranslation)
+    static public void Run(string filename, 
+                           Data.DataSet.BooksRow book, 
+                           Data.DataSet.ChaptersRow chapter, 
+                           bool includeTranslation)
     {
       {
         using ( Document = DocX.Create(filename, DocumentTypes.Document) )
@@ -89,6 +76,29 @@ namespace Ordisoftware.HebrewWords
             AddChapterTitle(chapter);
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               AddVerse(verse, includeTranslation);
+            Document.Save();
+          }
+          catch ( Exception ex )
+          {
+            ex.Manage();
+          }
+      }
+    }
+
+    static public void Run(string filename, 
+                           Data.DataSet.BooksRow book, 
+                           Data.DataSet.ChaptersRow chapter, 
+                           bool includeTranslation, 
+                           int verse)
+    {
+      {
+        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+          try
+          {
+            SetPageMargins();
+            AddBookTitle(book);
+            AddChapterTitle(chapter);
+            AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
             Document.Save();
           }
           catch ( Exception ex )
@@ -122,13 +132,14 @@ namespace Ordisoftware.HebrewWords
         paragraph.Direction = Direction.RightToLeft;
         paragraph.Font(FontCalibri);
         paragraph.FontSize(16);
+        paragraph.Bold();
         Document.InsertParagraph().AppendLine();
       }
     }
 
     static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
     {
-      AddTitle(Localizer.BookChapterText.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
+      AddTitle(Translations.BookChapterText.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 
     static private void AddTitle(string str, Font font, int size, string styleName)
@@ -147,7 +158,12 @@ namespace Ordisoftware.HebrewWords
       Document.InsertParagraph().AppendLine();
     }
 
-    static private void SetCellSize(Cell cell, int width, int marginTop, int marginBottom, int MarginLeft, int MarginRight)
+    static private void SetCellSize(Cell cell, 
+                                    int width, 
+                                    int marginTop, 
+                                    int marginBottom, 
+                                    int MarginLeft, 
+                                    int MarginRight)
     {
       cell.Width = width;
       cell.MarginTop = marginTop;
@@ -221,7 +237,6 @@ namespace Ordisoftware.HebrewWords
         paragraph.Direction = Direction.LeftToRight;
         paragraph.Font(FontCalibri);
         paragraph.FontSize(10);
-        paragraph.Italic();
       }
       Document.InsertParagraph().AppendLine();
     }

@@ -57,6 +57,27 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
+#### 2019.09.__ - Version 2.0
+
+- Add context menu on hebrew words, on verses numbers and on search reference found.
+- Add search translations of a word.
+- Add option to define url to open verse online.
+- Add option to set commentary lines count.
+- Add option to disable startup check update.
+- Add master bookmark used at startup.
+- Add bookmarks.
+- Add navigation history.
+- Add grammar guide.
+- Improve UI.
+- Improve verses rendering.
+- Improve translations rendering.
+- Improve search rendering.
+- Improve search filters.
+- Improve statistics.
+- Improve tools.
+- Some fixes.
+- Update help.
+
 #### 2019.09.03 - Version 1.8
 
 - Improve verses view.

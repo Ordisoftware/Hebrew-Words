@@ -11,11 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -31,39 +33,56 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
-    /// Indicate filepath of application.
+    /// Indicate root folder path of the application.
     /// </summary>
-    static public readonly string RootPath
-      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Bin\\Debug\\", "\\Bin\\").Replace("\\Bin\\Release\\", "\\Bin\\"))).FullName + Path.DirectorySeparatorChar;
+    static public readonly string RootFolderPath
+      = Directory.GetParent
+        (
+          Path.GetDirectoryName(Application.ExecutablePath
+                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
+                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
+        ).FullName
+      + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the application's icon.
     /// </summary>
-    static public readonly string IconFilename = RootPath + "Application.ico";
+    static public readonly string IconFilename
+      = RootFolderPath + "Application.ico";
+
+    /// <summary>
+    /// Indicate name of the help file.
+    /// </summary>
+    static public readonly string HelpFilename
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
 
     /// <summary>
     /// Indicate the extension of database file.
     /// </summary>
-    static public readonly string DBFileExtension = ".sqlite";
+    static public readonly string DBFileExtension
+      = ".sqlite";
 
     /// <summary>
-    /// Indicate filename of the help file.
+    /// Indicate name of the help file.
     /// </summary>
-    static public readonly string HelpFilename
-      = RootPath
-      + "Help" + Path.DirectorySeparatorChar
-      + "index.htm";
+    static public readonly string GrammarGuideFilename
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-%lang%.htm";
 
     /// <summary>
-    /// Indicate documents folder path.
+    /// Indicate application documents folder.
     /// </summary>
-    static public readonly string DocumentsPath
-      = RootPath
-      + "Documents" + Path.DirectorySeparatorChar;
+    static public readonly string DocumentsFolderPath
+      = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
-    static public string UserDataFolder { get; private set; }
+    /// <summary>
+    /// Indicate user data folder in roaming.
+    /// </summary>
+    static public string UserDataFolderPath { get; private set; }
 
-    static public string UserDocumentsFolder { get; private set; }
+    /// <summary>
+    /// Indicate user documents folder path.
+    /// </summary>
+    static public string UserDocumentsFolderPath { get; private set; }
 
     /// <summary>
     /// Indicate the default Settings instance.
@@ -77,85 +96,119 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-      //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+      if ( args.Length == 2 && args[0] == "/lang" )
+        try
+        {
+          // args[1] is like "en-US"
+          Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(args[1]);
+          Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(args[1]);
+        }
+        catch
+        {
+        }
+      var assembly = typeof(Program).Assembly;
+      var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+      string id = assembly.FullName + attribute.Value;
+      bool created;
+      var mutex = new Mutex(true, id, out created);
+      if ( !created ) return;
+      if ( Settings.UpgradeRequired )
+      {
+        Settings.Upgrade();
+        Settings.UpgradeRequired = false;
+        Settings.Save();
+      }
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
+      AboutBox.Instance.Icon = MainForm.Instance.Icon;
+      UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyCompany
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyTitle
+                         + Path.DirectorySeparatorChar;
+      UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyCompany
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyTitle
+                              + Path.DirectorySeparatorChar;
+      Directory.CreateDirectory(UserDataFolderPath);
+      Application.Run(MainForm.Instance);
+    }
+
+    static public void CheckUpdate(bool auto)
+    {
+      if ( auto && !Settings.CheckUpdateAtStartup ) return;
       try
       {
-        var assembly = typeof(Program).Assembly;
-        var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-        string id = "Hebrew Words " + attribute.Value;
-        bool created;
-        var mutex = new Mutex(true, id, out created);
-        if ( !created ) return;
-        if ( Settings.UpgradeRequired )
+        string title = AboutBox.Instance.AssemblyTitle;
+        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
+        using ( WebClient client = new WebClient() )
         {
-          Settings.Upgrade();
-          Settings.UpgradeRequired = false;
-          Settings.Save();
+          string[] partsVersion = client.DownloadString(url).Split('.');
+          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
+          {
+            if ( !auto )
+              DisplayManager.Show(Translations.CheckUpdateNoNewText.GetLang());
+          }
+          else
+          if ( DisplayManager.QueryYesNo(Translations.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+                                         Environment.NewLine +
+                                         Translations.CheckUpdateAskDownloadText.GetLang()) )
+            AboutBox.Instance.OpenApplicationHome();
         }
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
-        AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                       + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-        UserDocumentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyCompany + Path.DirectorySeparatorChar
-                            + AboutBox.Instance.AssemblyTitle + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(UserDataFolder);
-        Application.Run(MainForm.Instance);
       }
-      catch ( Exception ex )
+      catch
       {
-        ex.Manage();
       }
+    }
+
+    static public void CenterToMainForm(this Form form)
+    {
+      form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
+                                MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
+    }
+
+    static public void RunShell(string filename, string arguments = "")
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = filename;
+          process.StartInfo.Arguments = arguments;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage(new Exception(ex.Message + Environment.NewLine + process.StartInfo.FileName));
+        }
     }
 
     static public void OpenHebrewLetters(string hebrew)
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = Settings.HebrewLettersExe;
-          process.StartInfo.Arguments = hebrew;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      hebrew = Letters.SetFinale(hebrew, false);
+      RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
     static public void OpenOnlineConcordance(string hebrew)
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = Settings.SearchOnline + hebrew;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      RunShell(Settings.SearchOnlineURL + hebrew);
     }
 
-    static public void OpenOnlineVerse(Books book, int chapter, int verse)
+    static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
-      using ( var process = new Process() )
-        try
-        {
-          
-          process.StartInfo.FileName = "https://studybible.info/IHOT/" 
-                                     + BooksNames.English[book] 
-                                     + " " + chapter + ":" + verse;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+      RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
+                  .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
+                  .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
+                  .Replace("%BOOKNUM%", book.ToString())
+                  .Replace("%CHAPTERNUM%", chapter.ToString())
+                  .Replace("%VERSENUM%", verse.ToString())
+                  .Replace("%BOOKNUM#2%", book.ToString("00"))
+                  .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
+                  .Replace("%VERSENUM#2%", verse.ToString("00")));
     }
 
   }

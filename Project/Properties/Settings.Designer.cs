@@ -168,12 +168,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=strong+hebrew+")]
-        public string SearchOnline {
+        public string SearchOnlineURL {
             get {
-                return ((string)(this["SearchOnline"]));
+                return ((string)(this["SearchOnlineURL"]));
             }
             set {
-                this["SearchOnline"] = value;
+                this["SearchOnlineURL"] = value;
             }
         }
         
@@ -210,6 +210,282 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
             set {
                 this["AutoSaveDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("OnlineSearch")]
+        public global::Ordisoftware.HebrewWords.HebrewWordClickOpen HebrewWordClickOpen {
+            get {
+                return ((global::Ordisoftware.HebrewWords.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));
+            }
+            set {
+                this["HebrewWordClickOpen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%")]
+        public string OpenVerseOnlineURL {
+            get {
+                return ((string)(this["OpenVerseOnlineURL"]));
+            }
+            set {
+                this["OpenVerseOnlineURL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int VerseCommentaryLinesCount {
+            get {
+                return ((int)(this["VerseCommentaryLinesCount"]));
+            }
+            set {
+                this["VerseCommentaryLinesCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int BookmarksCount {
+            get {
+                return ((int)(this["BookmarksCount"]));
+            }
+            set {
+                this["BookmarksCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterBook {
+            get {
+                return ((int)(this["BookmarkMasterBook"]));
+            }
+            set {
+                this["BookmarkMasterBook"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterChapter {
+            get {
+                return ((int)(this["BookmarkMasterChapter"]));
+            }
+            set {
+                this["BookmarkMasterChapter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int BookmarkMasterVerse {
+            get {
+                return ((int)(this["BookmarkMasterVerse"]));
+            }
+            set {
+                this["BookmarkMasterVerse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("205")]
+        public int WordControlWidth {
+            get {
+                return ((int)(this["WordControlWidth"]));
+            }
+            set {
+                this["WordControlWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int FoundReferencesViewable {
+            get {
+                return ((int)(this["FoundReferencesViewable"]));
+            }
+            set {
+                this["FoundReferencesViewable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("292, 366")]
+        public global::System.Drawing.Size SearchTranslatedFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["SearchTranslatedFormSize"]));
+            }
+            set {
+                this["SearchTranslatedFormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point SearchTranslatedFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchTranslatedFormLocation"]));
+            }
+            set {
+                this["SearchTranslatedFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int HistoryCount {
+            get {
+                return ((int)(this["HistoryCount"]));
+            }
+            set {
+                this["HistoryCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int FoundReferencesToOpenDialog {
+            get {
+                return ((int)(this["FoundReferencesToOpenDialog"]));
+            }
+            set {
+                this["FoundReferencesToOpenDialog"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point GrammarGuideFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["GrammarGuideFormLocation"]));
+            }
+            set {
+                this["GrammarGuideFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("392, 466")]
+        public global::System.Drawing.Size GrammarGuideFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["GrammarGuideFormSize"]));
+            }
+            set {
+                this["GrammarGuideFormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchTranslatedFormFilterDistinct {
+            get {
+                return ((bool)(this["SearchTranslatedFormFilterDistinct"]));
+            }
+            set {
+                this["SearchTranslatedFormFilterDistinct"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentSearchTypeTab {
+            get {
+                return ((int)(this["CurrentSearchTypeTab"]));
+            }
+            set {
+                this["CurrentSearchTypeTab"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdateAtStartup {
+            get {
+                return ((bool)(this["CheckUpdateAtStartup"]));
+            }
+            set {
+                this["CheckUpdateAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CloseSearchTranslatedFormReturnToReference {
+            get {
+                return ((bool)(this["CloseSearchTranslatedFormReturnToReference"]));
+            }
+            set {
+                this["CloseSearchTranslatedFormReturnToReference"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenLastViewAtStartup {
+            get {
+                return ((bool)(this["OpenLastViewAtStartup"]));
+            }
+            set {
+                this["OpenLastViewAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchInTorah {
+            get {
+                return ((bool)(this["SearchInTorah"]));
+            }
+            set {
+                this["SearchInTorah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SearchInNeviim {
+            get {
+                return ((bool)(this["SearchInNeviim"]));
+            }
+            set {
+                this["SearchInNeviim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SearchInKetouvim {
+            get {
+                return ((bool)(this["SearchInKetouvim"]));
+            }
+            set {
+                this["SearchInKetouvim"] = value;
             }
         }
     }

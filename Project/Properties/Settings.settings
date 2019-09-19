@@ -43,7 +43,7 @@
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
-    <Setting Name="SearchOnline" Type="System.String" Scope="User">
+    <Setting Name="SearchOnlineURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.google.com/search?q=strong+hebrew+</Value>
     </Setting>
     <Setting Name="BackupPath" Type="System.String" Scope="User">
@@ -54,6 +54,75 @@
     </Setting>
     <Setting Name="AutoSaveDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
+      <Value Profile="(Default)">OnlineSearch</Value>
+    </Setting>
+    <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>
+    </Setting>
+    <Setting Name="VerseCommentaryLinesCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="BookmarksCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="BookmarkMasterBook" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BookmarkMasterChapter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BookmarkMasterVerse" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="WordControlWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">205</Value>
+    </Setting>
+    <Setting Name="FoundReferencesViewable" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="SearchTranslatedFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">292, 366</Value>
+    </Setting>
+    <Setting Name="SearchTranslatedFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="HistoryCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="FoundReferencesToOpenDialog" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">392, 466</Value>
+    </Setting>
+    <Setting Name="SearchTranslatedFormFilterDistinct" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CurrentSearchTypeTab" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CloseSearchTranslatedFormReturnToReference" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OpenLastViewAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SearchInTorah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SearchInNeviim" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SearchInKetouvim" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

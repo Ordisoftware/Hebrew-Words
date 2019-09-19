@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -25,6 +26,21 @@ namespace Ordisoftware.HebrewWords
   static public class Localizer
   {
 
+    static public readonly string[] AvailableLanguages = { "en", "fr" };
+
+    static public readonly string DefaultLanguage = "en";
+
+    static public string Language
+    {
+      get
+      {
+        string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        if ( !AvailableLanguages.Contains(lang) )
+          lang = DefaultLanguage;
+        return lang;
+      }
+    }
+
     /// <summary>
     /// Get the string translation.
     /// </summary>
@@ -32,9 +48,17 @@ namespace Ordisoftware.HebrewWords
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values)
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values.ContainsKey(lang) ) lang = "en";
-      return values[lang];
+      return values[Language];
+    }
+
+    /// <summary>
+    /// Get the string translation.
+    /// </summary>
+    /// <param name="values">The dictionary containing langs>translations.</param>
+    /// <returns></returns>
+    static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
+    {
+      return String.Format(values.GetLang(), parameters);
     }
 
     /// <summary>
@@ -58,98 +82,8 @@ namespace Ordisoftware.HebrewWords
     /// <returns></returns>
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[value].ContainsKey(lang) ) lang = "en";
-      return values[value][lang];
+      return values[value][Language];
     }
-
-    /// <summary>
-    /// Return the string list translation of a Dico list.
-    /// </summary>
-    /// <param name="index">The index.</param>
-    /// <returns></returns>
-    static public List<string> GetLang(this List<Letters.MeaningTranslation> values, int index)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values[index].ContainsKey(lang) ) lang = "en";
-      List<string> value;
-      values[index].TryGetValue(lang, out value);
-      return value;
-    }
-
-    static public readonly Dictionary<string, string> ApplicationDescriptionText
-      = new Dictionary<string, string>()
-      {
-        { "en", "A tool that helps for the translation of the Bible's hebrew words" },
-        { "fr", "Un utilitaire qui aide à la traduction des mots hébreux de la Bible" }
-      };
-
-    static public readonly Dictionary<string, string> ExitApplicationText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Exit application?" },
-        { "fr", "Quitter l'application ?" }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateNoNewText
-      = new Dictionary<string, string>()
-      {
-        { "en", "There is no new version available." },
-        { "fr", "Il n'y a pas de nouvelle version de disponible." }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateResultText
-      = new Dictionary<string, string>()
-      {
-        { "en", "A newer version is available : " },
-        { "fr", "Une nouvelle version est disponible : " }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateAskDownloadText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to open the download page?" },
-        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
-      };
-
-    static public readonly Dictionary<string, string> RestoreWinPosText
-      = new Dictionary<string, string>()
-      {
-        { "en", "This action will restore windows position." + Environment.NewLine + Environment.NewLine +
-                "Do you want to continue?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + Environment.NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> NewDatabaseAdvertText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to create a new database wich will replace the actual?" },
-        { "fr", "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
-      };
-
-    static public readonly Dictionary<string, string> BackupBeforeRestoreText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to backup database before replace it?" },
-        { "fr", "Voulez-vous archiver la base de données avant de la remplacer ?" }
-      };
-
-    static public readonly Dictionary<string, string> RestoreLettersDefaultText
-      = new Dictionary<string, string>()
-      {
-        { "en", "This will restore all letters to default values." + Environment.NewLine + Environment.NewLine +
-                "Do you want to continue?" },
-        { "fr", "Cela va restaurer les lettres à leurs valeurs par défaut." + Environment.NewLine + Environment.NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> BookChapterText
-      = new Dictionary<string, string>()
-      {
-        { "en", "CHAPTER" },
-        { "fr", "CHAPITRE" }
-      };
 
   }
 
