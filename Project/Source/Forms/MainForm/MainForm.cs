@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewWords
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-        if ( control is LinkLabel )
+        if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
         {
           var reference = (ReferenceItem)control.Tag;
           Program.OpenOnlineVerse((string)menuitem.Tag,
@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewWords
                                   reference.Verse.Number);
         }
         else
-        if ( control is Label )
+        if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
           Program.OpenOnlineVerse((string)menuitem.Tag,
                                   CurrentReference.Book.Number,
                                   CurrentReference.Chapter.Number,
@@ -821,14 +821,14 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         var verse = reference.Verse;
         Clipboard.SetText(verse.GetTranslation());
       }
       else
-      if ( control is Label )
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         var verse = ( (ReferenceItem)( (Control)control.Tag ).Tag ).Verse;
         Clipboard.SetText(verse.GetTranslation());
@@ -844,7 +844,7 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         Program.Settings.BookmarkMasterBook = reference.Book.Number;
@@ -852,7 +852,7 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.BookmarkMasterVerse = reference.Verse.Number;
       }
       else
-      if ( control is Label )
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
         Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
@@ -872,7 +872,7 @@ namespace Ordisoftware.HebrewWords
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem item = null;
-      if ( control is LinkLabel )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         item = new ReferenceItem(reference.Book.Number,
@@ -880,7 +880,7 @@ namespace Ordisoftware.HebrewWords
                                  reference.Verse.Number);
       }
       else
-      if ( control is Label )
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
         item = new ReferenceItem(CurrentReference.Book.Number,

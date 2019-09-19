@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         var book = reference.Book;
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
         ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
       }
       else
-      if ( control is Label )
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         var book = CurrentReference.Book;
         var chapter = CurrentReference.Chapter;
