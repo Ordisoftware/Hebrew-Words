@@ -110,6 +110,8 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewAlphabet = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenTanakMP3 = new System.Windows.Forms.ToolStripMenuItem();
       this.bibleFourmilabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.bibleBiblehubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,8 +196,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.ActionOpenHebrewAlphabet = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -877,6 +877,18 @@
       this.toolStripMenuItem5.Name = "toolStripMenuItem5";
       resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
       // 
+      // ActionOpenHebrewAlphabet
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewAlphabet, "ActionOpenHebrewAlphabet");
+      this.ActionOpenHebrewAlphabet.Name = "ActionOpenHebrewAlphabet";
+      this.ActionOpenHebrewAlphabet.Tag = "https://sites.google.com/site/asherhaimhalevi/hebrew-alphabet";
+      this.ActionOpenHebrewAlphabet.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
       // ActionOpenTanakMP3
       // 
       resources.ApplyResources(this.ActionOpenTanakMP3, "ActionOpenTanakMP3");
@@ -1435,18 +1447,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // ActionOpenHebrewAlphabet
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewAlphabet, "ActionOpenHebrewAlphabet");
-      this.ActionOpenHebrewAlphabet.Name = "ActionOpenHebrewAlphabet";
-      this.ActionOpenHebrewAlphabet.Tag = "https://sites.google.com/site/asherhaimhalevi/hebrew-alphabet";
-      this.ActionOpenHebrewAlphabet.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator8
-      // 
-      this.toolStripSeparator8.Name = "toolStripSeparator8";
-      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
       // MainForm
       // 
