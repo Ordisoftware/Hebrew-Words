@@ -3947,8 +3947,11 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
+  <data name="ActionImportConsole.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 176</value>
+    <value>201, 154</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
