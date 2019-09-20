@@ -34,15 +34,15 @@
       this.PanelMain = new System.Windows.Forms.SplitContainer();
       this.EditSource = new System.Windows.Forms.TextBox();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnCurrentTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnImportedTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.importResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionAnalyse = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnCurrentTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnImportedTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
@@ -86,6 +86,30 @@
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.RowHeadersVisible = false;
       // 
+      // ColumnHebrew
+      // 
+      this.ColumnHebrew.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
+      this.ColumnHebrew.Name = "ColumnHebrew";
+      this.ColumnHebrew.ReadOnly = true;
+      // 
+      // ColumnCurrentTranslation
+      // 
+      this.ColumnCurrentTranslation.DataPropertyName = "CurrentTranslation";
+      resources.ApplyResources(this.ColumnCurrentTranslation, "ColumnCurrentTranslation");
+      this.ColumnCurrentTranslation.Name = "ColumnCurrentTranslation";
+      this.ColumnCurrentTranslation.ReadOnly = true;
+      // 
+      // ColumnImportedTranslation
+      // 
+      this.ColumnImportedTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnImportedTranslation.DataPropertyName = "ImportedTranslation";
+      resources.ApplyResources(this.ColumnImportedTranslation, "ColumnImportedTranslation");
+      this.ColumnImportedTranslation.Name = "ColumnImportedTranslation";
+      // 
       // importResultsBindingSource
       // 
       this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportResults);
@@ -124,30 +148,6 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
-      // 
-      // ColumnHebrew
-      // 
-      this.ColumnHebrew.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
-      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
-      this.ColumnHebrew.Name = "ColumnHebrew";
-      this.ColumnHebrew.ReadOnly = true;
-      // 
-      // ColumnCurrentTranslation
-      // 
-      this.ColumnCurrentTranslation.DataPropertyName = "CurrentTranslation";
-      resources.ApplyResources(this.ColumnCurrentTranslation, "ColumnCurrentTranslation");
-      this.ColumnCurrentTranslation.Name = "ColumnCurrentTranslation";
-      this.ColumnCurrentTranslation.ReadOnly = true;
-      // 
-      // ColumnImportedTranslation
-      // 
-      this.ColumnImportedTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.ColumnImportedTranslation.DataPropertyName = "ImportedTranslation";
-      resources.ApplyResources(this.ColumnImportedTranslation, "ColumnImportedTranslation");
-      this.ColumnImportedTranslation.Name = "ColumnImportedTranslation";
       // 
       // ImportVerseForm
       // 
