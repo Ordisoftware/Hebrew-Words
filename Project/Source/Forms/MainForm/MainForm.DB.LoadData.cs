@@ -118,10 +118,18 @@ namespace Ordisoftware.HebrewWords
         DataSet.Words.RowChanged += progress;
         try
         {
+          DataSet.Books.BeginLoadData();
+          DataSet.Chapters.BeginLoadData();
+          DataSet.Verses.BeginLoadData();
+          DataSet.Words.BeginLoadData();
           BooksTableAdapter.Fill(DataSet.Books);
           ChaptersTableAdapter.Fill(DataSet.Chapters);
           VersesTableAdapter.Fill(DataSet.Verses);
           WordsTableAdapter.Fill(DataSet.Words);
+          DataSet.Books.EndLoadData();
+          DataSet.Chapters.EndLoadData();
+          DataSet.Verses.EndLoadData();
+          DataSet.Words.EndLoadData();
           InitBooksCombobox();
           Bookmarks.Load();
           UpdateBookmarks();

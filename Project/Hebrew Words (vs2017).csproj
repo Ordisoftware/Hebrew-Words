@@ -207,7 +207,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
