@@ -759,6 +759,10 @@ namespace Ordisoftware.HebrewWords
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
+      EditSearchInTorah.Checked = true;
+      EditSearchInNeviim.Checked = true;
+      EditSearchInKetouvim.Checked = true;
+      SelectSearchInBook.SelectedIndex = 0;
       ClearSearchResults();
       UpdateSearchButtons();
       RenderSearch();
