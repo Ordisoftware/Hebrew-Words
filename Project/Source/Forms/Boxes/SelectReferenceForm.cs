@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
       SelectVerse.Value = 0;
       if ( SelectChapter.Value > SelectChapter.Maximum )
         SelectChapter.Value = SelectChapter.Maximum;
-      var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      var book = MainForm.Instance.DataSet.Books[SelectBook.SelectedIndex];
       SelectVerse.Maximum = book.GetChaptersRows()[(int)SelectChapter.Value - 1].GetVersesRows().Count();
     }
 
