@@ -1026,7 +1026,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -3923,9 +3923,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 6</value>
   </data>
-  <data name="toolStripMenuItem4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3947,11 +3944,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
-  <data name="ActionImportConsole.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 154</value>
+    <value>201, 176</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
@@ -4023,7 +4017,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4587,31 +4581,31 @@ A verse is founded if the translation of one of its words contains an expression
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

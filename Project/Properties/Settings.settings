@@ -124,5 +124,8 @@
     <Setting Name="SearchInKetouvim" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ImportVerseFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">792, 666</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

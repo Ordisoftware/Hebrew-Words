@@ -104,6 +104,63 @@ namespace Ordisoftware.HebrewWords
         { "fr", "Pas encore disponible." }
       };
 
+    static public readonly Dictionary<string, string> ImportNonEmptyLinesText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Non empty lines count: {0}" + NewLine + NewLine +
+                "Must be even." },
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de lignes non vides: {0}" + NewLine + NewLine +
+                "Doit être pair." }
+      };
+
+    static public readonly Dictionary<string, string> MatchingLinesCountText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Words count: {0}" + NewLine +
+                "Translations count: {1}" + NewLine +
+                "Must be equal."},
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de mots: {0}" + NewLine +
+                "Nombre de translations: {1}" + NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> WordsCountMatchText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Verse words count: {0}" + NewLine +
+                "Imported words count: {1}" + NewLine + NewLine +
+                "Must be equal." },
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de mots du verset: {0}" + NewLine + 
+                "Nombre de mots importés: {1}" + NewLine +NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> WordMatchText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect hebrew." + NewLine + NewLine +
+                "Verse word: {0}" + NewLine +
+                "Imported word: {1}" + NewLine + NewLine +
+                "Must be equal." },
+        { "fr", "Hébreu incorrect." + NewLine + NewLine +
+                "Mot du verset: {0}" + NewLine +
+                "Mot importé: {1}" + NewLine + NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> BookChapterText
+      = new Dictionary<string, string>()
+      {
+        { "en", "CHAPTER" },
+        { "fr", "CHAPITRE" }
+      };
+
     static public readonly Dictionary<string, string> OnlineVerseHelpText
       = new Dictionary<string, string>()
       {
@@ -127,13 +184,6 @@ namespace Ordisoftware.HebrewWords
                 "%BOOKNUM#2% : Numéro du livre sur 2 digits" + NewLine +
                 "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + NewLine +
                 "%VERSENUM#2% : Numéro du verset sur 2 digits" },
-      };
-
-    static public readonly Dictionary<string, string> BookChapterText
-      = new Dictionary<string, string>()
-      {
-        { "en", "CHAPTER" },
-        { "fr", "CHAPITRE" }
       };
 
     static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelText

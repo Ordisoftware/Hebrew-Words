@@ -488,5 +488,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchInKetouvim"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("792, 666")]
+        public global::System.Drawing.Size ImportVerseFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["ImportVerseFormSize"]));
+            }
+            set {
+                this["ImportVerseFormSize"] = value;
+            }
+        }
     }
 }
