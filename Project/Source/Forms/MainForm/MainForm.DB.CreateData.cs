@@ -13,10 +13,10 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.Odbc;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 

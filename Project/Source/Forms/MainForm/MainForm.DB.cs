@@ -14,8 +14,8 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Data;
-using System.Drawing;
 using System.Data.Odbc;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords

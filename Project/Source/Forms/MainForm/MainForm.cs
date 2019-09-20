@@ -12,14 +12,14 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
-using Microsoft.Win32;
-using Ordisoftware.Core;
 using System;
-using System.Linq;
-using System.IO;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using Ordisoftware.Core;
 using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords

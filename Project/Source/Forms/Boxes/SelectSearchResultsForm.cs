@@ -14,11 +14,10 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {

@@ -13,10 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
-using System.IO;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
