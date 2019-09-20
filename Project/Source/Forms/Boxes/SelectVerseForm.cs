@@ -36,7 +36,6 @@ namespace Ordisoftware.HebrewWords
     private SelectVerseForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
       EditVerseNumber.Select(0, 1);
     }
 
