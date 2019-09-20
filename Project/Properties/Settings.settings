@@ -127,5 +127,8 @@
     <Setting Name="ImportVerseFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">792, 666</Value>
     </Setting>
+    <Setting Name="OpenGeneratedMSWordFiles" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

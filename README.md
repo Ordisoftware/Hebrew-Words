@@ -60,6 +60,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 #### __________ - Version 2.1
 
 - Add import verse console.
+- Add option to open generated MSWord files.
 
 #### 2019.09.19 - Version 2.0
 

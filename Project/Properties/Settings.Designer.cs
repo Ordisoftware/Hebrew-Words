@@ -500,5 +500,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["ImportVerseFormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OpenGeneratedMSWordFiles {
+            get {
+                return ((bool)(this["OpenGeneratedMSWordFiles"]));
+            }
+            set {
+                this["OpenGeneratedMSWordFiles"] = value;
+            }
+        }
     }
 }

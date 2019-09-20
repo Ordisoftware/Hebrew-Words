@@ -67,9 +67,10 @@
       this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
+      this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
+      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -163,9 +164,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionReset);
       this.PanelButtons.Controls.Add(this.ButtonClose);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionReset
@@ -182,8 +183,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -199,8 +200,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
+      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -232,10 +233,10 @@
       // 
       // GroupBoxHebrewWordClick
       // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -264,6 +265,10 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
+      // 
+      // FolderBrowserDialog
+      // 
+      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // EditCommentaryLinesCount
       // 
@@ -297,12 +302,12 @@
       // 
       // EditWordControlWidth
       // 
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -322,12 +327,12 @@
       // 
       // EditMaxRefCount
       // 
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Minimum = new decimal(new int[] {
             10,
             0,
@@ -353,37 +358,46 @@
       // 
       // EditMinRefCount
       // 
+      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Name = "EditMinRefCount";
       // 
       // ActionSelectOnlineVerseURL
       // 
+      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.AllowDrop = true;
       this.ActionSelectOnlineVerseURL.ContextMenuStrip = this.MenuSelectOnlineVerseURL;
       this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
       // 
       // MenuSelectOnlineVerseURL
       // 
-      this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
+      this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       // 
-      // EditCheckUpdateAtStartup
+      // ActionOnlineVerseHelp
       // 
-      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
-      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.AllowDrop = true;
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
+      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
+      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
+      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      // 
+      // EditOpenGeneratedMSWordFiles
+      // 
+      resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
+      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditOpenGeneratedMSWordFiles.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
+      this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
       // 
       // EditOpenLastViewAtStartup
       // 
@@ -394,14 +408,14 @@
       this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
       this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
       // 
-      // ActionOnlineVerseHelp
+      // EditCheckUpdateAtStartup
       // 
-      this.ActionOnlineVerseHelp.AllowDrop = true;
-      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
-      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
-      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
-      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
+      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
+      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
@@ -409,6 +423,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionOnlineVerseHelp);
@@ -494,5 +509,6 @@
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
     private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
     private System.Windows.Forms.Button ActionOnlineVerseHelp;
+    private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
   }
 }
