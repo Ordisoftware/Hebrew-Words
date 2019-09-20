@@ -871,24 +871,52 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      ReferenceItem item = null;
+      ReferenceItem reference = null;
       if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
-        var reference = (ReferenceItem)control.Tag;
-        item = new ReferenceItem(reference.Book.Number,
-                                 reference.Chapter.Number,
-                                 reference.Verse.Number);
+        reference = (ReferenceItem)control.Tag;
+        reference = new ReferenceItem(reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
       }
       else
       if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
-        item = new ReferenceItem(CurrentReference.Book.Number,
-                                 CurrentReference.Chapter.Number,
-                                 CurrentReference.Chapter.GetVersesRows()[index].Number);
+        reference = new ReferenceItem(CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
       }
-      Bookmarks.Add(item);
+      Bookmarks.Add(reference);
       UpdateBookmarks();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionImportConsole for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionImportConsole_Click(object sender, EventArgs e)
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      ReferenceItem reference = null;
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      {
+        reference = (ReferenceItem)control.Tag;
+        reference = new ReferenceItem(reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
+      }
+      else
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      {
+        int index = Convert.ToInt32(control.Text) - 1;
+        reference = new ReferenceItem(CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
+      }
+      ImportVerseForm.Run(reference);
     }
 
     /// <summary>
@@ -905,16 +933,6 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Store();
       Bookmarks.Save();
       UpdateBookmarks();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionImportConsole for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionImportConsole_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowAdvert(Translations.NotYetAvailableText.GetLang());
     }
 
     /// <summary>
