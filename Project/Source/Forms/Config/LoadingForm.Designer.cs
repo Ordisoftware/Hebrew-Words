@@ -38,12 +38,12 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.BackColor = System.Drawing.Color.LemonChiffon;
       this.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.PanelMain.Controls.Add(this.ProgressBar);
       this.PanelMain.Controls.Add(this.LabelApplicationName);
       this.PanelMain.Controls.Add(this.LabelOperation);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // ProgressBar

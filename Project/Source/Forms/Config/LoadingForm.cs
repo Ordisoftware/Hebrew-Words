@@ -26,6 +26,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       this.CenterToMainForm();
+      LabelApplicationName.Text = AboutBox.Instance.AssemblyTitle;
     }
 
   }

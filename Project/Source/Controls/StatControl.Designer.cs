@@ -29,35 +29,15 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatControl));
-      this.label1 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
-      this.label4 = new System.Windows.Forms.Label();
       this.LabelChapters = new System.Windows.Forms.Label();
       this.LabelVerses = new System.Windows.Forms.Label();
       this.LabelWords = new System.Windows.Forms.Label();
       this.LabelLetters = new System.Windows.Forms.Label();
+      this.LabelChaptersValue = new System.Windows.Forms.Label();
+      this.LabelVersesValue = new System.Windows.Forms.Label();
+      this.LabelWordsValue = new System.Windows.Forms.Label();
+      this.LabelLettersValue = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
-      // label1
-      // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
-      // 
-      // label2
-      // 
-      resources.ApplyResources(this.label2, "label2");
-      this.label2.Name = "label2";
-      // 
-      // label3
-      // 
-      resources.ApplyResources(this.label3, "label3");
-      this.label3.Name = "label3";
-      // 
-      // label4
-      // 
-      resources.ApplyResources(this.label4, "label4");
-      this.label4.Name = "label4";
       // 
       // LabelChapters
       // 
@@ -79,18 +59,38 @@
       resources.ApplyResources(this.LabelLetters, "LabelLetters");
       this.LabelLetters.Name = "LabelLetters";
       // 
+      // LabelChaptersValue
+      // 
+      resources.ApplyResources(this.LabelChaptersValue, "LabelChaptersValue");
+      this.LabelChaptersValue.Name = "LabelChaptersValue";
+      // 
+      // LabelVersesValue
+      // 
+      resources.ApplyResources(this.LabelVersesValue, "LabelVersesValue");
+      this.LabelVersesValue.Name = "LabelVersesValue";
+      // 
+      // LabelWordsValue
+      // 
+      resources.ApplyResources(this.LabelWordsValue, "LabelWordsValue");
+      this.LabelWordsValue.Name = "LabelWordsValue";
+      // 
+      // LabelLettersValue
+      // 
+      resources.ApplyResources(this.LabelLettersValue, "LabelLettersValue");
+      this.LabelLettersValue.Name = "LabelLettersValue";
+      // 
       // StatControl
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.label4);
-      this.Controls.Add(this.label3);
-      this.Controls.Add(this.label2);
       this.Controls.Add(this.LabelLetters);
       this.Controls.Add(this.LabelWords);
       this.Controls.Add(this.LabelVerses);
+      this.Controls.Add(this.LabelLettersValue);
+      this.Controls.Add(this.LabelWordsValue);
+      this.Controls.Add(this.LabelVersesValue);
+      this.Controls.Add(this.LabelChaptersValue);
       this.Controls.Add(this.LabelChapters);
-      this.Controls.Add(this.label1);
       this.Name = "StatControl";
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -99,13 +99,13 @@
 
     #endregion
 
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.Label label4;
-    internal System.Windows.Forms.Label LabelChapters;
-    internal System.Windows.Forms.Label LabelVerses;
-    internal System.Windows.Forms.Label LabelWords;
-    internal System.Windows.Forms.Label LabelLetters;
+    private System.Windows.Forms.Label LabelChapters;
+    private System.Windows.Forms.Label LabelVerses;
+    private System.Windows.Forms.Label LabelWords;
+    private System.Windows.Forms.Label LabelLetters;
+    internal System.Windows.Forms.Label LabelChaptersValue;
+    internal System.Windows.Forms.Label LabelVersesValue;
+    internal System.Windows.Forms.Label LabelWordsValue;
+    internal System.Windows.Forms.Label LabelLettersValue;
   }
 }

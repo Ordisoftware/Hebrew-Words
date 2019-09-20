@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.EditBooks = new System.Windows.Forms.DataGridView();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.buttonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
@@ -55,10 +55,10 @@
       // 
       // EditBooks
       // 
-      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.AllowUserToAddRows = false;
       this.EditBooks.AllowUserToDeleteRows = false;
       this.EditBooks.AllowUserToResizeRows = false;
+      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.AutoGenerateColumns = false;
       this.EditBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -87,9 +87,9 @@
       // dataGridViewTextBoxColumn3
       // 
       this.dataGridViewTextBoxColumn3.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
       resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
       this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
       this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -113,12 +113,12 @@
       // 
       // ContextMenuStripResults
       // 
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOnlineSearch,
             this.ActionOpenHebrewLetters,
             this.ActionCopyName});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionOnlineSearch
       // 
@@ -150,16 +150,16 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Controls.Add(this.buttonClose);
       this.panel1.Name = "panel1";
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // BooksTableAdapter
       // 
@@ -179,7 +179,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.EditBooks);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -206,7 +206,7 @@
     private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
     private System.Windows.Forms.DataGridView EditBooks;
     private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;

@@ -34,10 +34,10 @@
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopy = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
       this.ContextMenuStripWord.SuspendLayout();
@@ -59,10 +59,10 @@
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOnlineSearch,
             this.ActionOpenHebrewLetters,
-            this.toolStripMenuItem1,
+            this.MenuSeparator1,
             this.ActionSearchTranslated,
             this.ActionSearch,
-            this.toolStripMenuItem2,
+            this.MenuSeparator2,
             this.ActionCopy});
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
@@ -79,10 +79,10 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
-      // toolStripMenuItem1
+      // MenuSeparator1
       // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.MenuSeparator1.Name = "MenuSeparator1";
+      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       // 
       // ActionSearchTranslated
       // 
@@ -96,10 +96,10 @@
       this.ActionSearch.Name = "ActionSearch";
       this.ActionSearch.Click += new System.EventHandler(this.ActionSearch_Click);
       // 
-      // toolStripMenuItem2
+      // MenuSeparator2
       // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopy
       // 
@@ -134,10 +134,10 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripWord;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionCopy;
     private System.Windows.Forms.ToolStripMenuItem ActionSearch;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     internal System.Windows.Forms.TextBox EditTranslation;
     internal System.Windows.Forms.Label LabelHebrew;

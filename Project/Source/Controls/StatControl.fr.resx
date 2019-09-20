@@ -112,34 +112,34 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Chapitres :</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Versets :</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Mots :</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="LabelChapters.Text" xml:space="preserve">
+    <value>Chapitres :</value>
+  </data>
+  <data name="LabelLetters.Text" xml:space="preserve">
     <value>Lettres :</value>
+  </data>
+  <data name="LabelVerses.Text" xml:space="preserve">
+    <value>Versets :</value>
+  </data>
+  <data name="LabelWords.Text" xml:space="preserve">
+    <value>Mots :</value>
   </data>
 </root>

@@ -34,7 +34,6 @@ namespace Ordisoftware.HebrewWords
     private SelectReferenceForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
         SelectBook.Items.Add(new BookItem(book));
       SelectBook.SelectedIndex = 0;

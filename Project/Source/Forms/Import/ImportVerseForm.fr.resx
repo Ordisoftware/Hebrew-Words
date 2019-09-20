@@ -126,13 +126,13 @@
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="hebrewDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+  <data name="ColumnHebrew.HeaderText" xml:space="preserve">
     <value>Hebreu</value>
   </data>
-  <data name="CurrentTranslation.HeaderText" xml:space="preserve">
+  <data name="ColumnCurrentTranslation.HeaderText" xml:space="preserve">
     <value>Traduction actuelle</value>
   </data>
-  <data name="ImportedTranslation.HeaderText" xml:space="preserve">
+  <data name="ColumnImportedTranslation.HeaderText" xml:space="preserve">
     <value>Traduction importée</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

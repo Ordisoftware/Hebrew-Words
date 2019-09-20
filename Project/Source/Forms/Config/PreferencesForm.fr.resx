@@ -139,7 +139,7 @@
   <data name="backupCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 13</value>
   </data>
-  <data name="backupCountLabel.Text" xml:space="preserve">
+  <data name="LabelBackupCount.Text" xml:space="preserve">
     <value>Nombre d'archives automatiques à conserver</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
@@ -151,7 +151,7 @@
   <data name="labelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
   </data>
-  <data name="labelOnlineVerseURL.Text" xml:space="preserve">
+  <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
     <value>URL du verset en ligne</value>
   </data>
   <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
@@ -190,7 +190,7 @@
   <data name="LabelMinRefCount.Text" xml:space="preserve">
     <value>Ref. min. pour ouvrir la boite de recherche</value>
   </data>
-  <data name="ButtonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
@@ -267,7 +267,7 @@
   <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
         +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
         eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
         e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm

@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewWords
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectReferenceForm));
-      this.ButtonOK = new System.Windows.Forms.Button();
-      this.ButtonCancel = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
+      this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.SelectVerse = new System.Windows.Forms.NumericUpDown();
@@ -54,25 +54,25 @@ namespace Ordisoftware.HebrewWords
       ((System.ComponentModel.ISupportInitialize)(this.SelectChapter)).BeginInit();
       this.SuspendLayout();
       // 
-      // ButtonOK
+      // ActionOK
       // 
-      resources.ApplyResources(this.ButtonOK, "ButtonOK");
-      this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonOK.Name = "ButtonOK";
-      this.ButtonOK.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
-      this.ButtonCancel.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.UseVisualStyleBackColor = true;
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.ButtonCancel);
-      this.PanelBottom.Controls.Add(this.ButtonOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       this.PanelBottom.Name = "PanelBottom";
       // 
       // LabelVerse
@@ -129,10 +129,10 @@ namespace Ordisoftware.HebrewWords
       // 
       // SelectReferenceForm
       // 
-      this.AcceptButton = this.ButtonOK;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.SelectBook);
       this.Controls.Add(this.SelectChapter);
       this.Controls.Add(this.SelectVerse);
@@ -158,12 +158,12 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// The button ok control.
     /// </summary>
-    private System.Windows.Forms.Button ButtonOK;
+    private System.Windows.Forms.Button ActionOK;
 
     /// <summary>
     /// The button cancel control.
     /// </summary>
-    private System.Windows.Forms.Button ButtonCancel;
+    private System.Windows.Forms.Button ActionCancel;
 
     /// <summary>
     /// The first panel.

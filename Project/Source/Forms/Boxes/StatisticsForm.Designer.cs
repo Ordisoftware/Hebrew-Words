@@ -32,7 +32,7 @@
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
       this.StatAllBooks = new Ordisoftware.HebrewWords.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.buttonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
       this.StatTorah = new Ordisoftware.HebrewWords.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
@@ -66,8 +66,8 @@
       // 
       // GroupBoxAllBooks
       // 
-      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Controls.Add(this.StatAllBooks);
+      resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
       // 
@@ -78,21 +78,21 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Controls.Add(this.buttonClose);
       this.panel1.Name = "panel1";
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // GroupBoxTorah
       // 
-      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Controls.Add(this.StatTorah);
+      resources.ApplyResources(this.GroupBoxTorah, "GroupBoxTorah");
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
@@ -103,17 +103,17 @@
       // 
       // GroupBoxBook
       // 
-      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Controls.Add(this.SelectBook);
       this.GroupBoxBook.Controls.Add(this.StatBook);
+      resources.ApplyResources(this.GroupBoxBook, "GroupBoxBook");
       this.GroupBoxBook.Name = "GroupBoxBook";
       this.GroupBoxBook.TabStop = false;
       // 
       // SelectBook
       // 
-      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
@@ -124,13 +124,13 @@
       // 
       // GroupBoxMiddle
       // 
-      resources.ApplyResources(this.GroupBoxMiddle, "GroupBoxMiddle");
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleReferenceValue);
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleLetter);
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleLetterValue);
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleWordValue);
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleWord);
       this.GroupBoxMiddle.Controls.Add(this.LabelMiddleReference);
+      resources.ApplyResources(this.GroupBoxMiddle, "GroupBoxMiddle");
       this.GroupBoxMiddle.Name = "GroupBoxMiddle";
       this.GroupBoxMiddle.TabStop = false;
       // 
@@ -174,7 +174,6 @@
       // 
       // GroupBoxOccurences
       // 
-      resources.ApplyResources(this.GroupBoxOccurences, "GroupBoxOccurences");
       this.GroupBoxOccurences.Controls.Add(this.LabelCountTorahValue);
       this.GroupBoxOccurences.Controls.Add(this.LabelCountMitsvahValue);
       this.GroupBoxOccurences.Controls.Add(this.LabelCountMoshehValue);
@@ -185,6 +184,7 @@
       this.GroupBoxOccurences.Controls.Add(this.LabelCountMosheh);
       this.GroupBoxOccurences.Controls.Add(this.LabelCountYHVH);
       this.GroupBoxOccurences.Controls.Add(this.LabelCountElohim);
+      resources.ApplyResources(this.GroupBoxOccurences, "GroupBoxOccurences");
       this.GroupBoxOccurences.Name = "GroupBoxOccurences";
       this.GroupBoxOccurences.TabStop = false;
       // 
@@ -242,7 +242,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.GroupBoxOccurences);
       this.Controls.Add(this.GroupBoxMiddle);
       this.Controls.Add(this.panel1);
@@ -270,7 +270,7 @@
 
     private System.Windows.Forms.GroupBox GroupBoxAllBooks;
     private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.Button ActionClose;
     private StatControl StatAllBooks;
     private System.Windows.Forms.GroupBox GroupBoxTorah;
     private StatControl StatTorah;

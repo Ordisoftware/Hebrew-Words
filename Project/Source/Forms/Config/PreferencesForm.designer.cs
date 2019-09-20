@@ -33,16 +33,16 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelOnlineSearch;
       System.Windows.Forms.Label LabelBackupPath;
-      System.Windows.Forms.Label backupCountLabel;
+      System.Windows.Forms.Label LabelBackupCount;
       System.Windows.Forms.Label LabelAutoSaveDelay;
-      System.Windows.Forms.Label labelOnlineVerseURL;
+      System.Windows.Forms.Label LabelOnlineVerseURL;
       System.Windows.Forms.Label LabelCommentaryLinesCount;
       System.Windows.Forms.Label LabelBookmarksCount;
       System.Windows.Forms.Label LabelWordControlWidth;
       System.Windows.Forms.Label LabelMaxRefCount;
       System.Windows.Forms.Label LabelHistoryCount;
       System.Windows.Forms.Label LabelMinRefCount;
-      this.ButtonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionReset = new System.Windows.Forms.LinkLabel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -74,9 +74,9 @@
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
-      backupCountLabel = new System.Windows.Forms.Label();
+      LabelBackupCount = new System.Windows.Forms.Label();
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
-      labelOnlineVerseURL = new System.Windows.Forms.Label();
+      LabelOnlineVerseURL = new System.Windows.Forms.Label();
       LabelCommentaryLinesCount = new System.Windows.Forms.Label();
       LabelBookmarksCount = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
@@ -110,20 +110,20 @@
       resources.ApplyResources(LabelBackupPath, "LabelBackupPath");
       LabelBackupPath.Name = "LabelBackupPath";
       // 
-      // backupCountLabel
+      // LabelBackupCount
       // 
-      resources.ApplyResources(backupCountLabel, "backupCountLabel");
-      backupCountLabel.Name = "backupCountLabel";
+      resources.ApplyResources(LabelBackupCount, "LabelBackupCount");
+      LabelBackupCount.Name = "LabelBackupCount";
       // 
       // LabelAutoSaveDelay
       // 
       resources.ApplyResources(LabelAutoSaveDelay, "LabelAutoSaveDelay");
       LabelAutoSaveDelay.Name = "LabelAutoSaveDelay";
       // 
-      // labelOnlineVerseURL
+      // LabelOnlineVerseURL
       // 
-      resources.ApplyResources(labelOnlineVerseURL, "labelOnlineVerseURL");
-      labelOnlineVerseURL.Name = "labelOnlineVerseURL";
+      resources.ApplyResources(LabelOnlineVerseURL, "LabelOnlineVerseURL");
+      LabelOnlineVerseURL.Name = "LabelOnlineVerseURL";
       // 
       // LabelCommentaryLinesCount
       // 
@@ -155,18 +155,18 @@
       resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
       LabelMinRefCount.Name = "LabelMinRefCount";
       // 
-      // ButtonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.ButtonClose, "ButtonClose");
-      this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonClose.Name = "ButtonClose";
-      this.ButtonClose.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionReset);
-      this.PanelButtons.Controls.Add(this.ButtonClose);
+      this.PanelButtons.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionReset
@@ -183,8 +183,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -200,8 +200,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -233,10 +233,10 @@
       // 
       // GroupBoxHebrewWordClick
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -265,10 +265,6 @@
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      // 
-      // FolderBrowserDialog
-      // 
-      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
       // 
       // EditCommentaryLinesCount
       // 
@@ -302,12 +298,12 @@
       // 
       // EditWordControlWidth
       // 
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             300,
             0,
@@ -327,12 +323,12 @@
       // 
       // EditMaxRefCount
       // 
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Minimum = new decimal(new int[] {
             10,
             0,
@@ -358,34 +354,34 @@
       // 
       // EditMinRefCount
       // 
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Name = "EditMinRefCount";
       // 
       // ActionSelectOnlineVerseURL
       // 
-      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.AllowDrop = true;
       this.ActionSelectOnlineVerseURL.ContextMenuStrip = this.MenuSelectOnlineVerseURL;
       this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
       // 
       // MenuSelectOnlineVerseURL
       // 
-      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
+      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
       // ActionOnlineVerseHelp
       // 
-      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
       this.ActionOnlineVerseHelp.AllowDrop = true;
       this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
       this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
       this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
@@ -419,10 +415,10 @@
       // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.ButtonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
@@ -440,13 +436,13 @@
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
       this.Controls.Add(LabelCommentaryLinesCount);
-      this.Controls.Add(labelOnlineVerseURL);
+      this.Controls.Add(LabelOnlineVerseURL);
       this.Controls.Add(this.EditOnlineVerseURL);
       this.Controls.Add(this.GroupBoxHebrewWordClick);
       this.Controls.Add(this.EditAutoSaveDelay);
       this.Controls.Add(LabelAutoSaveDelay);
       this.Controls.Add(this.EditBackupCount);
-      this.Controls.Add(backupCountLabel);
+      this.Controls.Add(LabelBackupCount);
       this.Controls.Add(this.ActionSelectBackupPath);
       this.Controls.Add(LabelBackupPath);
       this.Controls.Add(this.EditBackupPath);
@@ -481,7 +477,7 @@
     }
 
     #endregion
-    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.TextBox EditHebrewLettersPath;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;

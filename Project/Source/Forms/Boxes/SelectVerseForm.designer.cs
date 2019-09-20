@@ -40,40 +40,40 @@ namespace Ordisoftware.HebrewWords
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectVerseForm));
-      this.ButtonOK = new System.Windows.Forms.Button();
-      this.ButtonCancel = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
+      this.ActionCancel = new System.Windows.Forms.Button();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.label = new System.Windows.Forms.Label();
+      this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
       this.SuspendLayout();
       // 
-      // ButtonOK
+      // ActionOK
       // 
-      resources.ApplyResources(this.ButtonOK, "ButtonOK");
-      this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonOK.Name = "ButtonOK";
-      this.ButtonOK.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
-      this.ButtonCancel.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.UseVisualStyleBackColor = true;
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.ButtonCancel);
-      this.panel1.Controls.Add(this.ButtonOK);
       resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Controls.Add(this.ActionCancel);
+      this.panel1.Controls.Add(this.ActionOK);
       this.panel1.Name = "panel1";
       // 
-      // label
+      // LabelVerse
       // 
-      resources.ApplyResources(this.label, "label");
-      this.label.Name = "label";
+      resources.ApplyResources(this.LabelVerse, "LabelVerse");
+      this.LabelVerse.Name = "LabelVerse";
       // 
       // EditVerseNumber
       // 
@@ -82,12 +82,12 @@ namespace Ordisoftware.HebrewWords
       // 
       // SelectVerseForm
       // 
-      this.AcceptButton = this.ButtonOK;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.EditVerseNumber);
-      this.Controls.Add(this.label);
+      this.Controls.Add(this.LabelVerse);
       this.Controls.Add(this.panel1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -106,12 +106,12 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// The button ok control.
     /// </summary>
-    private System.Windows.Forms.Button ButtonOK;
+    private System.Windows.Forms.Button ActionOK;
 
     /// <summary>
     /// The button cancel control.
     /// </summary>
-    private System.Windows.Forms.Button ButtonCancel;
+    private System.Windows.Forms.Button ActionCancel;
 
     /// <summary>
     /// The first panel.
@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// The label.
     /// </summary>
-    private System.Windows.Forms.Label label;
+    private System.Windows.Forms.Label LabelVerse;
     internal NumericUpDown EditVerseNumber;
   }
 

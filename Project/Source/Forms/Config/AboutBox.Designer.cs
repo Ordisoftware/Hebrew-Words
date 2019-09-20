@@ -32,7 +32,7 @@
       this.labelVersion = new System.Windows.Forms.Label();
       this.labelCopyright = new System.Windows.Forms.Label();
       this.labelTrademark = new System.Windows.Forms.LinkLabel();
-      this.buttonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.editLicense = new System.Windows.Forms.RichTextBox();
       this.labelDescription = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
@@ -61,11 +61,11 @@
       this.labelTrademark.TabStop = true;
       this.labelTrademark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelTrademarkName_LinkClicked);
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonClose.Name = "buttonClose";
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
       // 
       // editLicense
       // 
@@ -82,16 +82,16 @@
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.buttonClose);
+      this.panel1.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // AboutBox
       // 
-      this.AcceptButton = this.buttonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.labelDescription);
       this.Controls.Add(this.editLicense);
@@ -117,7 +117,7 @@
     private System.Windows.Forms.Label labelVersion;
     private System.Windows.Forms.Label labelCopyright;
     private System.Windows.Forms.LinkLabel labelTrademark;
-    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.RichTextBox editLicense;
     private System.Windows.Forms.Label labelDescription;
     private System.Windows.Forms.Panel panel1;
