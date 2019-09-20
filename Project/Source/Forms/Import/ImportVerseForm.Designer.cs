@@ -160,6 +160,7 @@
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.panel1);
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.MaximizeBox = false;
       this.Name = "ImportVerseForm";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportVerseForm_FormClosed);
       this.PanelMain.Panel1.ResumeLayout(false);
