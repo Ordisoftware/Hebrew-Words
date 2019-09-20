@@ -524,5 +524,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchInBookSelectedIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ImportVerseFormSplitterDistance {
+            get {
+                return ((int)(this["ImportVerseFormSplitterDistance"]));
+            }
+            set {
+                this["ImportVerseFormSplitterDistance"] = value;
+            }
+        }
     }
 }

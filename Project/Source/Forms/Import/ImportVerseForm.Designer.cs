@@ -54,6 +54,7 @@
       // 
       // PanelMain
       // 
+      this.PanelMain.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSplitterDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
@@ -66,6 +67,7 @@
       // 
       this.PanelMain.Panel2.Controls.Add(this.DataGridView);
       resources.ApplyResources(this.PanelMain.Panel2, "PanelMain.Panel2");
+      this.PanelMain.SplitterDistance = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSplitterDistance;
       // 
       // EditSource
       // 
