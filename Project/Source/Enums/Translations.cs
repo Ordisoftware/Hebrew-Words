@@ -154,6 +154,25 @@ namespace Ordisoftware.HebrewWords
                 "Doit être égal." }
       };
 
+    static public readonly Dictionary<string, string> ImportHelpText
+      = new Dictionary<string, string>()
+      {
+        { "en", "This console allows for example to import an MS Word verse table." + NewLine + NewLine +
+                 "This table must first be converted to text with | as a separator." + NewLine + NewLine +
+                 "The import text must be presented in groups of two lines:" + NewLine +
+                 "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + NewLine +
+                 "- A second containing a list of translations." + NewLine + NewLine +
+                 "There can be as many groups of two lines as necessary" + NewLine +
+                 "Imported translation fields can be edited in the result grid." },
+        { "fr", "Cette console permet par exemple d'importer un tableau de verset MS Word." + NewLine + NewLine +
+                "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + NewLine + NewLine +
+                "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + NewLine +
+                "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + NewLine +
+                "- Une deuxième contenant une liste de traductions." + NewLine + NewLine +
+                "Il peut y avoir autant de groupe de deux lignes que nécessaire" + NewLine +
+                "Les champs de traduction importés peuvent être édités dans la grille du résultat." }
+      };
+
     static public readonly Dictionary<string, string> BookChapterText
       = new Dictionary<string, string>()
       {

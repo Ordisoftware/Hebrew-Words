@@ -15,6 +15,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -89,6 +90,10 @@ namespace Ordisoftware.HebrewWords
       Close();
     }
 
+    private void ActionHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.Show(Translations.ImportHelpText.GetLang());
+    }
   }
 
 }
