@@ -515,7 +515,7 @@
       this.ActionSearchClear.FlatAppearance.BorderSize = 0;
       this.ActionSearchClear.Name = "ActionSearchClear";
       this.ActionSearchClear.UseVisualStyleBackColor = true;
-      this.ActionSearchClear.Click += new System.EventHandler(this.ActionClearWord_Click);
+      this.ActionSearchClear.Click += new System.EventHandler(this.ActionSearchClear_Click);
       // 
       // SelectSearchType
       // 

@@ -28,8 +28,7 @@ namespace Ordisoftware.HebrewWords
     static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
     {
       if ( references == null ) return null;
-      var form = new SelectSearchResultsForm();
-      form.OriginalReferences = references.ToList();
+      var form = new SelectSearchResultsForm(references);
       if ( form.ShowDialog() == DialogResult.Cancel )
         form.References = null;
       return form.References;
@@ -47,7 +46,13 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
-      LabelFound.Text = String.Format(LabelFound.Text, MainForm.Instance.SearchResultsCount);
+    }
+
+    private SelectSearchResultsForm(IEnumerable<ReferenceItem> references)
+      : this()
+    {
+      OriginalReferences = references.ToList();
+      LabelFound.Text = String.Format(LabelFound.Text, OriginalReferences.Count());
     }
 
     private void SelectSearchResultsForm_Load(object sender, EventArgs e)

@@ -751,18 +751,19 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionClearWord for click events.
+    /// Event handler. Called by ActionSearchClear for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionClearWord_Click(object sender, EventArgs e)
+    private void ActionSearchClear_Click(object sender, EventArgs e)
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
       EditSearchInTorah.Checked = true;
-      EditSearchInNeviim.Checked = true;
-      EditSearchInKetouvim.Checked = true;
+      EditSearchInNeviim.Checked = false;
+      EditSearchInKetouvim.Checked = false;
       SelectSearchInBook.SelectedIndex = 0;
+      Program.Settings.Save();
       ClearSearchResults();
       UpdateSearchButtons();
       RenderSearch();
