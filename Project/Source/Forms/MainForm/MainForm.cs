@@ -178,12 +178,17 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Initialize books combobox.
     /// </summary>
-    internal void InitBooksCombobox()
+    private void InitBooksCombobox()
     {
       SelectBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem(book));
+      {
+        var item = new BookItem(book);
+        SelectBook.Items.Add(item);
+        SelectSearchInBook.Items.Add(book.Number + ". " + book.Name);
+      }
       SelectBook.SelectedIndex = 0;
+      SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;
     }
 
     /// <summary>
@@ -754,13 +759,13 @@ namespace Ordisoftware.HebrewWords
     {
       EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
-      ClearSearch();
+      ClearSearchResults();
       UpdateSearchButtons();
       RenderSearch();
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSearchWord click events.
+    /// Event handler. Called by ActionSearchWord for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -770,7 +775,30 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelViewVerses mouse click events.
+    /// Event handler. Called by SelectSearchInBook selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      Program.Settings.SearchInBookSelectedIndex = SelectSearchInBook.SelectedIndex;
+      Program.Settings.Save();
+    }
+
+    /// <summary>
+    /// Event handler. Called by EditSearchInSelectBook for checked changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditSearchInSelectBook_CheckedChanged(object sender, EventArgs e)
+    {
+      SelectSearchInBook.Enabled = !EditSearchInTorah.Checked
+                                && !EditSearchInNeviim.Checked
+                                && !EditSearchInKetouvim.Checked;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelViewVerses for mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -780,7 +808,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelSearchResults mouse click events.
+    /// Event handler. Called by PanelSearchResults for mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>

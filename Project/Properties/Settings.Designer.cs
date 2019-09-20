@@ -512,5 +512,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["OpenGeneratedMSWordFiles"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SearchInBookSelectedIndex {
+            get {
+                return ((int)(this["SearchInBookSelectedIndex"]));
+            }
+            set {
+                this["SearchInBookSelectedIndex"] = value;
+            }
+        }
     }
 }

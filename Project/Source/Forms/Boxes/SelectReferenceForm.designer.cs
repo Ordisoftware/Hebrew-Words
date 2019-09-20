@@ -70,9 +70,9 @@ namespace Ordisoftware.HebrewWords
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // LabelVerse

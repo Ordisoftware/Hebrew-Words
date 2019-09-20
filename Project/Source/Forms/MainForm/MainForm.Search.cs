@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void ClearSearch()
+    private void ClearSearchResults()
     {
       SearchResults = null;
       SearchResultsCount = 0;
@@ -31,8 +31,6 @@ namespace Ordisoftware.HebrewWords
       SearchWord2 = "";
       PagingCount = 0;
       PagingCurrent = 0;
-      if ( !EditSearchInTorah.Checked && !EditSearchInNeviim.Checked && !EditSearchInKetouvim.Checked )
-        EditSearchInTorah.Checked = true;
     }
 
     private void UpdatePagingCount()

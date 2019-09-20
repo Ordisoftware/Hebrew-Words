@@ -117,49 +117,206 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;SelectVerse.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 5</value>
+  </data>
+  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 75</value>
-  </data>
-  <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="LabelVerse.Text" xml:space="preserve">
-    <value>Verse</value>
-  </data>
-  <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LabelChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SelectReferenceForm</value>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 5</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 108</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 35</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 56</value>
+  </data>
+  <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="LabelVerse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelVerse.Text" xml:space="preserve">
+    <value>Verse</value>
+  </data>
   <data name="&gt;&gt;LabelVerse.Name" xml:space="preserve">
     <value>LabelVerse</value>
   </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 35</value>
+  <data name="&gt;&gt;LabelVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelVerse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 75</value>
+  </data>
+  <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="SelectVerse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SelectVerse.Name" xml:space="preserve">
+    <value>SelectVerse</value>
+  </data>
+  <data name="&gt;&gt;SelectVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectVerse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelChapter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelChapter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 56</value>
+  </data>
+  <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="LabelChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelChapter.Text" xml:space="preserve">
+    <value>Chapter</value>
+  </data>
+  <data name="&gt;&gt;LabelChapter.Name" xml:space="preserve">
+    <value>LabelChapter</value>
+  </data>
+  <data name="&gt;&gt;LabelChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelChapter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 75</value>
+  </data>
+  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
+    <value>SelectChapter</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 27</value>
+  </data>
+  <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 21</value>
+  </data>
+  <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
+    <value>SelectBook</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -167,209 +324,52 @@
   <data name="LabelBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SelectBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;SelectVerse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="LabelBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 9</value>
-  </data>
-  <data name="&gt;&gt;LabelChapter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LabelChapter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 56</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>20, 9</value>
   </data>
   <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelChapter.Text" xml:space="preserve">
-    <value>Chapter</value>
-  </data>
-  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 5</value>
-  </data>
   <data name="LabelBook.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
-    <value>SelectChapter</value>
-  </data>
-  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LabelBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 27</value>
-  </data>
-  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="LabelBook.Text" xml:space="preserve">
     <value>Book</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 56</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelBook.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 21</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 75</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Find reference</value>
-  </data>
-  <data name="&gt;&gt;LabelChapter.Name" xml:space="preserve">
-    <value>LabelChapter</value>
+  <data name="&gt;&gt;LabelBook.Name" xml:space="preserve">
+    <value>LabelBook</value>
   </data>
   <data name="&gt;&gt;LabelBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelBook.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
-    <value>SelectBook</value>
-  </data>
-  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 5</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelBook.Name" xml:space="preserve">
-    <value>LabelBook</value>
-  </data>
-  <data name="SelectVerse.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ActionOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>269, 143</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerse.Name" xml:space="preserve">
-    <value>SelectVerse</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LabelChapter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelVerse.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 108</value>
+  <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>178, 143</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Find reference</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectReferenceForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
