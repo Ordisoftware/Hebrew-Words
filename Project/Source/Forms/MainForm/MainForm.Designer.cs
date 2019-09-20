@@ -138,11 +138,12 @@
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
       this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
@@ -190,6 +191,8 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchInRemoveAll = new System.Windows.Forms.Button();
+      this.ActionSearchInAddAll = new System.Windows.Forms.Button();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
@@ -198,7 +201,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -400,6 +402,8 @@
       // 
       // PanelSearchFiltersRight
       // 
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInRemoveAll);
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInAddAll);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchInBook);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchPaging);
       this.PanelSearchFiltersRight.Controls.Add(this.EditSearchPaging);
@@ -1104,6 +1108,16 @@
       this.toolStripSeparator4.Name = "toolStripSeparator4";
       resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
+      // ActionGoToReference
+      // 
+      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
+      this.ActionGoToReference.Name = "ActionGoToReference";
+      this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
+      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // ActionRefresh
       // 
       this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1113,6 +1127,11 @@
       this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
       this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
       // ActionCloseWindows
       // 
@@ -1138,16 +1157,6 @@
       // 
       this.toolStripSeparator7.Name = "toolStripSeparator7";
       resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
-      // 
-      // ActionGoToReference
-      // 
-      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
-      this.ActionGoToReference.Name = "ActionGoToReference";
-      this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
-      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // MenuBookmarks
       // 
@@ -1431,6 +1440,24 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
+      // ActionSearchInRemoveAll
+      // 
+      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchInRemoveAll, "ActionSearchInRemoveAll");
+      this.ActionSearchInRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionSearchInRemoveAll.Name = "ActionSearchInRemoveAll";
+      this.ActionSearchInRemoveAll.UseVisualStyleBackColor = true;
+      this.ActionSearchInRemoveAll.Click += new System.EventHandler(this.ActionSearchInRemoveAll_Click);
+      // 
+      // ActionSearchInAddAll
+      // 
+      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchInAddAll, "ActionSearchInAddAll");
+      this.ActionSearchInAddAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionSearchInAddAll.Name = "ActionSearchInAddAll";
+      this.ActionSearchInAddAll.UseVisualStyleBackColor = true;
+      this.ActionSearchInAddAll.Click += new System.EventHandler(this.ActionSearchInAddAll_Click);
+      // 
       // EditLetters
       // 
       this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
@@ -1474,11 +1501,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator9
-      // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
       // MainForm
       // 
@@ -1705,6 +1727,8 @@
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
     private System.Windows.Forms.ComboBox SelectSearchInBook;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.Button ActionSearchInRemoveAll;
+    private System.Windows.Forms.Button ActionSearchInAddAll;
   }
 }
 

@@ -751,6 +751,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionSearchWord for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchWord_Click(object sender, EventArgs e)
+    {
+      CreateSearchResults();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionSearchClear for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -769,14 +779,18 @@ namespace Ordisoftware.HebrewWords
       RenderSearch();
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchWord for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchWord_Click(object sender, EventArgs e)
+    private void ActionSearchInAddAll_Click(object sender, EventArgs e)
     {
-      CreateSearchResults();
+      EditSearchInTorah.Checked = true;
+      EditSearchInNeviim.Checked = true;
+      EditSearchInKetouvim.Checked = true;
+    }
+
+    private void ActionSearchInRemoveAll_Click(object sender, EventArgs e)
+    {
+      EditSearchInTorah.Checked = false;
+      EditSearchInNeviim.Checked = false;
+      EditSearchInKetouvim.Checked = false;
     }
 
     /// <summary>
