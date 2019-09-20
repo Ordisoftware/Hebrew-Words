@@ -3181,27 +3181,29 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionGoToReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASUSURBVFhHvZbLb1RlGMYbA1EXKjFowr+gxttCJCxMdOHG
-        hQsXJrowuDAsjIKICN6KurNIrS2F6XRm2oEQoQK9gImixrSoDU1Ba8JNpyidzrTTC1R7Q/r4/r45ZzKn
-        PZ1xw7zh6fd+7+15zne+Q6bKbMWanV2dq6tPaNX7xysCuOCEGwF3EDg3Oq+zmZmKAC444UbAPagi8eqx
-        lF5rT+n1jsGbAmbDAReccCPg3rtsc2Z4RtXfDOnDk0P6aDl8O6SPC0gvQj5OTWivgdlwwAUn3AUB/elp
-        1fZk9NmpjOqWQf1PWTX2jipyOqdI35iaPOATI0dNWC9gNhxwBQRwHP3pGe0/k1OyP+fWMHwxMK4NTb1a
-        u6ND694Jghg5asJ6gT8bLu8V5AXc/cEJ/Zad0/d/TOm7RfBjrN1/TetxI4r9eFn7ulOK9Aw64BMjR01x
-        T/EsPwYXnAUBq6u/0opt7araciSIrcdU9ZbFWbce1S1vt2v9u11K/HxF62t69MSuUw74LmY5aqgN9C6a
-        CxecBQF3vndcWOa6NDyfX7P/SjmL7YknNWnr3wYLa509ZaI3rafrT+uZPX0O+MTIUUMtPfQyg1nFszE4
-        CwJu39HpguenDNcWdGFqQRdtSmpO+iTSoqzlHnzzqB6zp1u7vV0tfVk9G/1Fz8V/dcAnRo4aaumhlxnM
-        Yiaz4cDgLAi4bXteQL7ohi4YLpo/OJsfMmK5+984okMDkzo8MKGaH4b0fPKcXjhw3gGfGDlqqKWHXmYw
-        i5lutvkYnEsEXDKlFF8y/G7+n6a+JpLQ8A1pzPIPbG7Ti4cu66XDg9rQltLLHvCJkaOGWnroZQazmOlm
-        m4+FCkj9Y7ACMGj+kL2zXU0Jpe29pW3QVat5aMuXeqVrWBu70trYcSUP84mRo4ZaeuhlBrP8uXBgQQHe
-        HaAYpA3DdnFGLVbbnHRrxvY8mZ2oHrXbvenkpDZ/nXPAJ0aOGmqLe5nFTH8+BucSATV7m/VpJK7ddnS7
-        TX1dLKmGloNuZV9raIi1KpZM6mG7aNu6px3wiZGjJqyXmcyGAwsVMIJyDzm7K3xK9d5nyH7U3mvOwN5O
-        WfdtanPAdzWWczVhvd5cOLCgAO8O2H9Qytg5Avxxi9VFE24t5GzFH7N3fM3iAN/lvZple70cFnoJRyiY
-        WXDAnzDln9vxsRbnXN4wajGAH8iV6MXHQgWMm7rc7ILDmPk8XYM9hXvKolw5lOqFAwsVcNWOcsJuKZg0
-        ny+mMZZwK3s/Vw6leuHAggK8SzhjmPaAT220NenW4lw5lOrFx0K/gsZos/bG4oaE9sUTbkD8wEG3sif+
-        f7B8b9xxYKEC+EJQDOxrchZr3e9W9n6uHEr1el9hUMCt3h2gYNaqwZzdXiyaaHErez9XDqV64cDgXCIA
-        dXMMMMx7Q5q9Iez9XDmU6vVPIFQAfdftD/AL4/b+MPd6vFw5lOq1f85CBWAU+EVYtDl/aTA/Vw6+hfX6
-        FhDg/yKqpAV+Efm/CStpgd+Ea3Z2ThFAFUdzMwEHXHD6AlYZHjE8aXiqQoALTrirVnoOaioJ46xa+R+e
-        n+ROHcrUVQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUCSURBVFhHvZddUNRlFMbfmT6UcWzKDOWi6bKbpsG0Mp3x
+        Qi40P2vKapq68LJ7ayblYxEIM0ctUxA1EKbMZqxRvgVEQ/BrjEH2AwQRBgJNkS8RzeTped7/7rIgrC05
+        nJnfnD1nl/Oc97znD4uhPTnXVVjwTGIRouKLMG3Tw0y3FFo/2bxqS0Na0pRwwGbqjakyaUnTkXbsBXVn
+        rWoVUP0+UPNBCOvIWnxZeN16J44wr5qqTZOWNB1px6I1KmvVq4GzLHLuoxAYn38XSaU3rLdxpHnVVG2a
+        tKTpSDsWHcX7ksUfa0FiQTuSCjuCuIrakVLchvSSVusVR5pXTdWWSUuajrRjbKDAvlnXD1wi7oHRNNwB
+        virwWT+ZvGqqtkxa0nSkHYuevtHfQO8w6noe4FLvCPV9w/DdZsFjbusVR5pXTdWWSUuajrRjwQb04XoW
+        cfeN4OkfRuMgkJ7vtl5xpHnVVG3Z+A34r6CR42pi1838wQBXSOtdYFuhx3rFkeZVU7Vl0pKmI+1YcAfS
+        j9Zja75wB/mmwI3tRV7sLPFZrzjyfL2tLRt/B/wNtHBprpLWodF0/A1sL/ZYP5m8aqq2bNwJBHagheNq
+        4ahaOLIAV5lr5yi3F3msVxxxXjXpZWGXsFWnHxwm8g5tzHXeA3byTuUVR55nTXpZ2Ab0A50cW1cI18jN
+        B8CuUq/1iiPNq6Zqy8ZvwL8DO7gw3xa58R3HF8ruUh8yyxqsn0xeNVVbFnYHbtwnOgF9gG6iR3jPca/1
+        iv9b3oc+1uz5Z+Q9Wdgr+Itjun53eBTKqcjuUo/1gc88Kr+HV6BHn2thvXKysA106/T3hkehXD/vMqPE
+        Y33gM4/K7z3eADrM22jw4Z7n0eOfQNR4fw0DDQxwdGO5Tfg0YV+513rFofn95Y2gJvi4Q4suL63sE85f
+        v7eSDTbmGXycEWPjGQkVEy9hZqkbmcfd7N4TJIscqPAhp7LBesU2X+alSBMOVXXicPVN/Hz6Fumx/FLd
+        gyNnBnD0PLA4xcDdugFf/GiQUfYJZibVTjwBXp89VSjKaZTZFV7rA5/RqWXrM5dgIU+pk4ayiCzebLDQ
+        ZeBpd+H3hnVIOGwQm7b84Qam+RsYosIglyWUO8xppPt5YnnFyg/xCmTz4w3aur9H/bUVZA1ZO4q6rtXw
+        de5CRqVBTfOncP1mELfZ/ErdJxz5kAbu614pEAr3ytoP3AGZYuX9O4XX2IC3KwUZVQaZZO8YlMs8zdfV
+        Blk1Bmda1yM532BZmsmntv12HLyCcJZ3wud/NdoWJBhc6PgMGWcpRPaO5ZxDlt8fvDgNxc2vYPlWo6uw
+        346DS5hT7iFe5PC+AxwkeZU+HDrVaL1i5XNPXMaR6lt4I9HgVMcaZNUa7JuArIsO+/k6+5JBconB0k3m
+        JLVn2QYC3wfC2U8nx5+AGijrjEXuZWPJCyG30SCnweBAPcVJjtdgc5nBks9NJXVfJc4E/s8/Jlnl6/B2
+        usGqrx9mxRYuHB/D3GbSZJBaYbAgbaVGP5/MJs4OxLgK++2/ZpyEFnIs2hFdk3wwx6/XMxJKMSu5CnNS
+        LyAm7Q9SG2RuWh1mp17BSjZy6E+DlJMGb6bFYY6rtpeaL5LgU/AsmUeWkrjHzPJ3thls4TKuSDXXGS8j
+        sUSaQXuKKKFfDo+bl9/bYa+jj68XkZeItKQ5JfYc0XRfJzFkyoQD9jTRiSc4tTH/AjZfOlbLt0WsAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="ActionGoToReference.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">

@@ -53,6 +53,8 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.PanelSearchFilters = new System.Windows.Forms.Panel();
       this.PanelSearchFiltersRight = new System.Windows.Forms.Panel();
+      this.ActionSearchInRemoveAll = new System.Windows.Forms.Button();
+      this.ActionSearchInAddAll = new System.Windows.Forms.Button();
       this.SelectSearchInBook = new System.Windows.Forms.ComboBox();
       this.SelectSearchPaging = new System.Windows.Forms.TrackBar();
       this.EditSearchPaging = new System.Windows.Forms.TextBox();
@@ -191,8 +193,6 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionSearchInRemoveAll = new System.Windows.Forms.Button();
-      this.ActionSearchInAddAll = new System.Windows.Forms.Button();
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
@@ -418,6 +418,24 @@
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchClear);
       resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
+      // 
+      // ActionSearchInRemoveAll
+      // 
+      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchInRemoveAll, "ActionSearchInRemoveAll");
+      this.ActionSearchInRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionSearchInRemoveAll.Name = "ActionSearchInRemoveAll";
+      this.ActionSearchInRemoveAll.UseVisualStyleBackColor = true;
+      this.ActionSearchInRemoveAll.Click += new System.EventHandler(this.ActionSearchInRemoveAll_Click);
+      // 
+      // ActionSearchInAddAll
+      // 
+      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchInAddAll, "ActionSearchInAddAll");
+      this.ActionSearchInAddAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionSearchInAddAll.Name = "ActionSearchInAddAll";
+      this.ActionSearchInAddAll.UseVisualStyleBackColor = true;
+      this.ActionSearchInAddAll.Click += new System.EventHandler(this.ActionSearchInAddAll_Click);
       // 
       // SelectSearchInBook
       // 
@@ -1439,24 +1457,6 @@
       resources.ApplyResources(this.ActionImportConsole, "ActionImportConsole");
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
-      // 
-      // ActionSearchInRemoveAll
-      // 
-      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSearchInRemoveAll, "ActionSearchInRemoveAll");
-      this.ActionSearchInRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionSearchInRemoveAll.Name = "ActionSearchInRemoveAll";
-      this.ActionSearchInRemoveAll.UseVisualStyleBackColor = true;
-      this.ActionSearchInRemoveAll.Click += new System.EventHandler(this.ActionSearchInRemoveAll_Click);
-      // 
-      // ActionSearchInAddAll
-      // 
-      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSearchInAddAll, "ActionSearchInAddAll");
-      this.ActionSearchInAddAll.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionSearchInAddAll.Name = "ActionSearchInAddAll";
-      this.ActionSearchInAddAll.UseVisualStyleBackColor = true;
-      this.ActionSearchInAddAll.Click += new System.EventHandler(this.ActionSearchInAddAll_Click);
       // 
       // EditLetters
       // 
