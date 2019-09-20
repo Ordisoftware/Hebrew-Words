@@ -268,6 +268,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.resx">
       <DependentUpon>GrammarGuideForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.fr.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </EmbeddedResource>

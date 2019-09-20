@@ -33,8 +33,8 @@ namespace Ordisoftware.HebrewWords
         if ( form.DataSet.HasChanges() )
         {
           MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
-          foreach ( WordControl c in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-            c.EditTranslation.Text = c.Word.Translation;
+          foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
+            control.EditTranslation.Text = control.Word.Translation;
         }
         MainForm.Instance.ActionSave.PerformClick();
       }
