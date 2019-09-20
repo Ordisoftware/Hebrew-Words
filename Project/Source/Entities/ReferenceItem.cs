@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewWords
       {
         Book = MainForm.Instance.DataSet.Books[book - 1];
         Chapter = Book.GetChaptersRows()[chapter - 1];
-        Verse = Chapter.GetVersesRows()[verse - 1];
+        Verse = verse == 0 ? null : Chapter.GetVersesRows()[verse - 1];
       }
       catch
       {

@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Import\ImportResults.cs" />
     <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
       <SubType>Form</SubType>
@@ -267,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.resx">
       <DependentUpon>GrammarGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.fr.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.fr.resx">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>

@@ -144,6 +144,7 @@
       this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
@@ -756,6 +757,7 @@
             this.ActionCloseWindows,
             this.ActionCopyToClipboard,
             this.toolStripSeparator7,
+            this.ActionGoToReference,
             this.MenuBookmarks,
             this.MenuTools,
             this.MenuDatabase,
@@ -1140,6 +1142,16 @@
       // 
       this.toolStripSeparator7.Name = "toolStripSeparator7";
       resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      // 
+      // ActionGoToReference
+      // 
+      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
+      this.ActionGoToReference.Name = "ActionGoToReference";
+      this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
+      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // MenuBookmarks
       // 
@@ -1670,6 +1682,7 @@
     private System.Windows.Forms.Panel PanelSearchResultsOuter;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewAlphabet;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+    private System.Windows.Forms.ToolStripButton ActionGoToReference;
   }
 }
 

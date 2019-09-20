@@ -61,7 +61,13 @@ namespace Ordisoftware.HebrewWords
       if ( updated || forceUpdateView )
         RenderAll();
       if ( reference.Verse == null )
-        reference.Verse = reference.Chapter.GetVersesRows()[0];
+      {
+        var found = CurrentReference.Chapter.GetVersesRows().Where(v => !v.IsTranslated()).FirstOrDefault();
+        if ( found != null )
+          reference.Verse = found;
+        else
+          reference.Verse = reference.Chapter.GetVersesRows()[0];
+      }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
       switch ( Program.Settings.CurrentView )
@@ -109,28 +115,6 @@ namespace Ordisoftware.HebrewWords
           }
           break;
       }
-    }
-
-    /// <summary>
-    /// Open the search verse number dialog and GoTo it.
-    /// </summary>
-    private void GoToVerse()
-    {
-      var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = CurrentReference.Chapter.GetVersesRows().Count();
-      if ( form.ShowDialog() != DialogResult.OK ) return;
-      int value = (int)form.EditVerseNumber.Value;
-      if ( value > 0 )
-        GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, value);
-      else
-      {
-        var found = CurrentReference.Chapter.GetVersesRows().Where(v => !v.IsTranslated()).FirstOrDefault();
-        if ( found != null )
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, found.Number);
-        else
-          GoTo(SelectBook.SelectedIndex + 1, SelectChapter.SelectedIndex + 1, 1);
-      }
-
     }
 
   }

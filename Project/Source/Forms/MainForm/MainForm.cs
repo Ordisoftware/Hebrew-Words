@@ -409,10 +409,7 @@ namespace Ordisoftware.HebrewWords
         int book = CurrentReference.Book.Number;
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
-        //ReLoadData();
         InitBooksCombobox();
-        //Bookmarks.Load();
-        //UpdateBookmarks();
         GoTo(book, chapter, verse);
       }
       finally
@@ -674,16 +671,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSearchVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchVerse_Click(object sender, EventArgs e)
-    {
-      GoToVerse();
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionELS50CopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -933,6 +920,26 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Store();
       Bookmarks.Save();
       UpdateBookmarks();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionGoToVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionGoToVerse_Click(object sender, EventArgs e)
+    {
+      GoTo(SelectReferenceForm.Run());
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSearchVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchVerse_Click(object sender, EventArgs e)
+    {
+      GoTo(SelectVerseForm.Run());
     }
 
     /// <summary>
