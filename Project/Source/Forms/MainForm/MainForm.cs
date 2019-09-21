@@ -187,13 +187,18 @@ namespace Ordisoftware.HebrewWords
         SelectBook.Items.Add(item);
         SelectSearchInBook.Items.Add(item);
       }
-      SelectBook.SelectedIndex = 0;
-      foreach (var item in SelectSearchInBook.Items )
-        if (((BookItem)item).Book.Number == Program.Settings.SearchInBookSelectedNumber)
-          SelectSearchInBook.SelectedItem = item;
-      if ( SelectSearchInBook.SelectedIndex == -1 )
-        SelectSearchInBook.SelectedIndex = 0;
-
+      try
+      {
+        SelectBook.SelectedIndex = 0;
+        foreach ( var item in SelectSearchInBook.Items )
+          if ( ( (BookItem)item ).Book.Number == Program.Settings.SearchInBookSelectedNumber )
+            SelectSearchInBook.SelectedItem = item;
+        if ( SelectSearchInBook.SelectedIndex == -1 )
+          SelectSearchInBook.SelectedIndex = 0;
+      }
+      finally
+      {
+      }
     }
 
     /// <summary>
