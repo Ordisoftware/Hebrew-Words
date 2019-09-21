@@ -57,12 +57,13 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 ## Changelog
 
-#### 2019.09.__ - Version 2.1
+#### 2019.09.21 - Version 2.1
 
 - Add find reference menu button.
 - Add search in book filter.
 - Add option to open generated MSWord files.
 - Add import verse console.
+- Fix books file names and indexes.
 
 #### 2019.09.19 - Version 2.0
 
