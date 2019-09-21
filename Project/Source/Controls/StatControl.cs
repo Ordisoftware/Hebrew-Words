@@ -12,6 +12,7 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
+using System;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords

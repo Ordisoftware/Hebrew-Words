@@ -13,10 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
-using System.IO;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -54,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
 
     /// <summary>
     /// Indicate the extension of database file.
@@ -201,6 +200,8 @@ namespace Ordisoftware.HebrewWords
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
       RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
+                  .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
+                  .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
                   .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
                   .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
                   .Replace("%BOOKNUM%", book.ToString())

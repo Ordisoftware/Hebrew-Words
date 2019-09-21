@@ -507,6 +507,99 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionSearchInRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 59</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInRemoveAll.Name" xml:space="preserve">
+    <value>ActionSearchInRemoveAll</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInRemoveAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInRemoveAll.Parent" xml:space="preserve">
+    <value>PanelSearchFiltersRight</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInRemoveAll.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionSearchInAddAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchInAddAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionSearchInAddAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchInAddAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 59</value>
+  </data>
+  <data name="ActionSearchInAddAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionSearchInAddAll.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="ActionSearchInAddAll.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInAddAll.Name" xml:space="preserve">
+    <value>ActionSearchInAddAll</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInAddAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInAddAll.Parent" xml:space="preserve">
+    <value>PanelSearchFiltersRight</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchInAddAll.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectSearchInBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SelectSearchInBook.ItemHeight" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 155</value>
+  </data>
+  <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 21</value>
+  </data>
+  <data name="SelectSearchInBook.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchInBook.Name" xml:space="preserve">
+    <value>SelectSearchInBook</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchInBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchInBook.Parent" xml:space="preserve">
+    <value>PanelSearchFiltersRight</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchInBook.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="SelectSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -535,7 +628,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;SelectSearchPaging.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="EditSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -568,7 +661,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="EditSearchInKetouvim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -580,7 +673,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 166</value>
+    <value>15, 129</value>
   </data>
   <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
@@ -601,7 +694,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;EditSearchInKetouvim.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="EditSearchInNeviim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -613,7 +706,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 143</value>
+    <value>15, 106</value>
   </data>
   <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 17</value>
@@ -634,7 +727,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;EditSearchInNeviim.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="EditSearchInTorah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -646,7 +739,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 120</value>
+    <value>15, 83</value>
   </data>
   <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>
@@ -667,7 +760,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;EditSearchInTorah.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="ActionSearchRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -726,7 +819,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchRun.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="ActionNavigateSearchFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -781,7 +874,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionNavigateSearchFirst.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -829,7 +922,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigatePrevious.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="ActionSearchNavigateNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -878,7 +971,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigateNext.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="ActionSearchNavigateLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -931,7 +1024,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigateLast.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="ActionSearchClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -987,7 +1080,7 @@
     <value>PanelSearchFiltersRight</value>
   </data>
   <data name="&gt;&gt;ActionSearchClear.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="PanelSearchFiltersRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1026,7 +1119,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -3085,6 +3178,46 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
+  <data name="ActionGoToReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionGoToReference.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionGoToReference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
+  </data>
+  <data name="ActionGoToReference.Text" xml:space="preserve">
+    <value>Go to reference</value>
+  </data>
+  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
+    <value>Go to reference (Ctrl+G)</value>
+  </data>
   <data name="ActionRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3133,6 +3266,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionRefresh.ToolTipText" xml:space="preserve">
     <value>Refresh view</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
   </data>
   <data name="ActionCloseWindows.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3923,9 +4059,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 6</value>
   </data>
-  <data name="toolStripMenuItem4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3946,9 +4079,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Import console</value>
-  </data>
-  <data name="ActionImportConsole.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 154</value>
@@ -3986,6 +4116,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -4012,18 +4145,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4283,11 +4404,23 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionGoToReference.Name" xml:space="preserve">
+    <value>ActionGoToReference</value>
+  </data>
+  <data name="&gt;&gt;ActionGoToReference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionRefresh.Name" xml:space="preserve">
     <value>ActionRefresh</value>
   </data>
   <data name="&gt;&gt;ActionRefresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
+    <value>toolStripSeparator9</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCloseWindows.Name" xml:space="preserve">
     <value>ActionCloseWindows</value>
@@ -4583,35 +4716,47 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

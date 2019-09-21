@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Melakim_I, "מלכים" },
       { Books.Melakim_II, "מלכים" },
       { Books.Yeshayahou , "ישעיהו" },
-      { Books.Yrmeyahou , "ירמיהו" },
+      { Books.Yirmeyahou , "ירמיהו" },
       { Books.Yehezqel, "יחזקאל" },
       { Books.Hoshea, "הושע" },
       { Books.Yoel, "יואל" },

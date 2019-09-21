@@ -13,10 +13,10 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.Odbc;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewWords
         int delta = 1;
         var form = new LoadingForm();
         form.LabelOperation.Text = Translations.CreatingDataText.GetLang();
-        form.ProgressBar.Maximum = 50;
+        form.ProgressBar.Maximum = 64;
         form.Show();
         try
         {

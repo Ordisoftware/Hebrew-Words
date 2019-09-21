@@ -60,6 +60,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Source\Entities\DataSetHelper.cs" />
+    <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportResults.cs" />
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Ghost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Designer.cs">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
@@ -187,7 +209,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
@@ -254,6 +276,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.resx">
       <DependentUpon>GrammarGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.fr.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.fr.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -344,6 +378,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="License\MPL 2.0.rtf" />
+    <None Include="Properties\DataSources\ImportResults.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

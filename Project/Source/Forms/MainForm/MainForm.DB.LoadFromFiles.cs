@@ -53,14 +53,20 @@ namespace Ordisoftware.HebrewWords
         foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
         {
           string filename = path + bookid.ToString().Replace("_", " ") + ".txt";
-          if ( !File.Exists(filename) ) continue;
+          if ( !File.Exists(filename) )
+          {
+            DisplayManager.ShowAdvert(filename + " missing.");
+            continue;
+          }
           string[] filecontent = File.ReadAllLines(filename);
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
+          book.Original = BooksNames.Original[bookid];
           book.Hebrew = BooksNames.Hebrew[bookid];
           book.Name = bookid.ToString().Replace("_", " ");
           book.Translation = "";
+          book.Memo = "";
           DataSet.Books.AddBooksRow(book);
           int countChapters = 0;
           int countVerses = 0;
@@ -73,9 +79,10 @@ namespace Ordisoftware.HebrewWords
               if ( chapter != null ) nextChapter();
               countVerses = 0;
               chapter = DataSet.Chapters.NewChaptersRow();
-              chapter.Number = ++countChapters;
-              chapter.ID = Guid.NewGuid().ToString(); ;
+              chapter.ID = Guid.NewGuid().ToString();
               chapter.BookID = book.ID;
+              chapter.Number = ++countChapters;
+              chapter.Memo = "";
             }
             else
             {
@@ -87,9 +94,9 @@ namespace Ordisoftware.HebrewWords
               {
                 countWords = 0;
                 verse = DataSet.Verses.NewVersesRow();
-                verse.Number = ++countVerses;
                 verse.ID = Guid.NewGuid().ToString();
                 verse.ChapterID = chapter.ID;
+                verse.Number = ++countVerses;
                 verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
                 listWordsHebrew = Letters.ConvertToHebrewFont(list[0]).Split(' ').Reverse().ToArray();
@@ -104,9 +111,9 @@ namespace Ordisoftware.HebrewWords
                 if ( listWordsHebrew[i] != "" )
                 {
                   word = DataSet.Words.NewWordsRow();
-                  word.Number = ++countWords;
                   word.ID = Guid.NewGuid().ToString();
                   word.VerseID = verse.ID;
+                  word.Number = ++countWords;
                   word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
                   word.Hebrew = listWordsHebrew[i];
                   word.Translation = "";

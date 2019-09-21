@@ -139,7 +139,7 @@
   <data name="backupCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 13</value>
   </data>
-  <data name="backupCountLabel.Text" xml:space="preserve">
+  <data name="LabelBackupCount.Text" xml:space="preserve">
     <value>Nombre d'archives automatiques à conserver</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
@@ -151,7 +151,7 @@
   <data name="labelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
   </data>
-  <data name="labelOnlineVerseURL.Text" xml:space="preserve">
+  <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
     <value>URL du verset en ligne</value>
   </data>
   <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
@@ -190,7 +190,7 @@
   <data name="LabelMinRefCount.Text" xml:space="preserve">
     <value>Ref. min. pour ouvrir la boite de recherche</value>
   </data>
-  <data name="ButtonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
@@ -246,16 +246,10 @@
   <data name="SelectOpenTranslated.Text" xml:space="preserve">
     <value>Recherche des traductions</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 12</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Utiliser %BOOKSB%, %BOOKNUM%, %CHAPTERNUM et %VERSENUM%</value>
-  </data>
   <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
         lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
         rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
         mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
@@ -270,17 +264,39 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 17</value>
+  <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
+        +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
+        eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
+        e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm
+        vwxN6qvYUj+J8fiqxNub/FKnj/7MP8lWRn50vllC/u0QCsTuvRGUgbJ7s9hxLYCjnXMS72oJSJ0++pmT
+        BRZFQ4N3AUXtMyi+8xaFbWHsbzXKbgYR+fxNFuy7FZIeLv3MyQJruYZzgwmUud9l9mDHHApF2evYVxmu
+        HtBRfHcWh+6ndfqZkwW2ci+UnhiOd0dwrCu99ocRHBAlnMujSZSKb/uDeanRRz9zRoG25vBEUdGrQ3kS
+        k+t4HIO9K4pS9zwOi7KTnvcZjT76mZMFFvuj4YIWP6oGP+LM0wRc/TqcfXGcECEOLzF56vTRz5wsEJPL
+        9zh74qgZ+YSzw0lUCtPp/oQs4CUmT50+4/256bgYc/7FmhyXD5UDCVzyLaJOS+H8iwVUDSXlJSZPnT76
+        jWhmskhaFBUlrUHUqilcebmMxrFleYnJUzfCWenY70Nyt+VI93Oroq5ln1KxvsTkqRu+/w7ftlMszetL
+        vPHmzJhMPwHQ0wXkZ5DOYAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
-    <value>Vérifier la mise à jour au démarrage</value>
+  <data name="EditOpenGeneratedMSWordFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 17</value>
+  </data>
+  <data name="EditOpenGeneratedMSWordFiles.Text" xml:space="preserve">
+    <value>Ouvrir les fichiers MSWord générés</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Text" xml:space="preserve">
     <value>Ouvrir la dernière vue au démarrage</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
+    <value>Vérifier la mise à jour au démarrage</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -305,6 +321,10 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>

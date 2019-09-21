@@ -13,8 +13,8 @@
 /// <created> 2012-10 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Ordisoftware.HebrewWords
 {

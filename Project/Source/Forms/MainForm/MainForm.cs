@@ -12,14 +12,14 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
-using Microsoft.Win32;
-using Ordisoftware.Core;
 using System;
-using System.Linq;
-using System.IO;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using Ordisoftware.Core;
 using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
@@ -178,12 +178,28 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Initialize books combobox.
     /// </summary>
-    internal void InitBooksCombobox()
+    private void InitBooksCombobox()
     {
       SelectBook.Items.Clear();
+      SelectSearchInBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem(book));
-      SelectBook.SelectedIndex = 0;
+      {
+        var item = new BookItem(book);
+        SelectBook.Items.Add(item);
+        SelectSearchInBook.Items.Add(item);
+      }
+      try
+      {
+        SelectBook.SelectedIndex = 0;
+        foreach ( var item in SelectSearchInBook.Items )
+          if ( ( (BookItem)item ).Book.Number == Program.Settings.SearchInBookSelectedNumber )
+            SelectSearchInBook.SelectedItem = item;
+        if ( SelectSearchInBook.SelectedIndex == -1 )
+          SelectSearchInBook.SelectedIndex = 0;
+      }
+      finally
+      {
+      }
     }
 
     /// <summary>
@@ -409,10 +425,7 @@ namespace Ordisoftware.HebrewWords
         int book = CurrentReference.Book.Number;
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
-        //ReLoadData();
         InitBooksCombobox();
-        //Bookmarks.Load();
-        //UpdateBookmarks();
         GoTo(book, chapter, verse);
       }
       finally
@@ -674,16 +687,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSearchVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchVerse_Click(object sender, EventArgs e)
-    {
-      GoToVerse();
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionELS50CopyToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -759,21 +762,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionClearWord for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionClearWord_Click(object sender, EventArgs e)
-    {
-      EditLetters.Input.Text = "";
-      EditSearchTranslation.Text = "";
-      ClearSearch();
-      UpdateSearchButtons();
-      RenderSearch();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSearchWord click events.
+    /// Event handler. Called by ActionSearchWord for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -783,7 +772,63 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelViewVerses mouse click events.
+    /// Event handler. Called by ActionSearchClear for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchClear_Click(object sender, EventArgs e)
+    {
+      EditLetters.Input.Text = "";
+      EditSearchTranslation.Text = "";
+      EditSearchInTorah.Checked = true;
+      EditSearchInNeviim.Checked = false;
+      EditSearchInKetouvim.Checked = false;
+      SelectSearchInBook.SelectedIndex = 0;
+      Program.Settings.Save();
+      ClearSearchResults();
+      UpdateSearchButtons();
+      RenderSearch();
+    }
+
+    private void ActionSearchInAddAll_Click(object sender, EventArgs e)
+    {
+      EditSearchInTorah.Checked = true;
+      EditSearchInNeviim.Checked = true;
+      EditSearchInKetouvim.Checked = true;
+    }
+
+    private void ActionSearchInRemoveAll_Click(object sender, EventArgs e)
+    {
+      EditSearchInTorah.Checked = false;
+      EditSearchInNeviim.Checked = false;
+      EditSearchInKetouvim.Checked = false;
+    }
+
+    /// <summary>
+    /// Event handler. Called by SelectSearchInBook selected index changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      Program.Settings.SearchInBookSelectedNumber = ((BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+      Program.Settings.Save();
+    }
+
+    /// <summary>
+    /// Event handler. Called by EditSearchInSelectBook for checked changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditSearchInSelectBook_CheckedChanged(object sender, EventArgs e)
+    {
+      SelectSearchInBook.Enabled = !EditSearchInTorah.Checked
+                                && !EditSearchInNeviim.Checked
+                                && !EditSearchInKetouvim.Checked;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelViewVerses for mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -793,7 +838,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by PanelSearchResults mouse click events.
+    /// Event handler. Called by PanelSearchResults for mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -871,24 +916,52 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      ReferenceItem item = null;
+      ReferenceItem reference = null;
       if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
       {
-        var reference = (ReferenceItem)control.Tag;
-        item = new ReferenceItem(reference.Book.Number,
-                                 reference.Chapter.Number,
-                                 reference.Verse.Number);
+        reference = (ReferenceItem)control.Tag;
+        reference = new ReferenceItem(reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
       }
       else
       if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
-        item = new ReferenceItem(CurrentReference.Book.Number,
-                                 CurrentReference.Chapter.Number,
-                                 CurrentReference.Chapter.GetVersesRows()[index].Number);
+        reference = new ReferenceItem(CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
       }
-      Bookmarks.Add(item);
+      Bookmarks.Add(reference);
       UpdateBookmarks();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionImportConsole for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionImportConsole_Click(object sender, EventArgs e)
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      ReferenceItem reference = null;
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      {
+        reference = (ReferenceItem)control.Tag;
+        reference = new ReferenceItem(reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
+      }
+      else
+      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      {
+        int index = Convert.ToInt32(control.Text) - 1;
+        reference = new ReferenceItem(CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
+      }
+      ImportVerseForm.Run(reference);
     }
 
     /// <summary>
@@ -908,13 +981,23 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionImportConsole for click events.
+    /// Event handler. Called by ActionGoToVerse for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionImportConsole_Click(object sender, EventArgs e)
+    private void ActionGoToVerse_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowAdvert(Translations.NotYetAvailableText.GetLang());
+      GoTo(SelectReferenceForm.Run());
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSearchVerse for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchVerse_Click(object sender, EventArgs e)
+    {
+      GoTo(SelectVerseForm.Run());
     }
 
     /// <summary>

@@ -104,29 +104,73 @@ namespace Ordisoftware.HebrewWords
         { "fr", "Pas encore disponible." }
       };
 
-    static public readonly Dictionary<string, string> OnlineVerseHelpText
+    static public readonly Dictionary<string, string> ImportNonEmptyLinesText
       = new Dictionary<string, string>()
       {
-        { "en", "Use the following tags to replace values:" + NewLine + NewLine +
-                "%BOOKSB% : StudyBible book name" + NewLine +
-                "%BOOKMM% : Mechon-Mamre book name" + NewLine +
-                "%BOOKDJEP% : Djep book name" + NewLine + NewLine +
-                "%BOOKNUM% : Book number" + NewLine +
-                "%CHAPTERNUM% : Chapter number" + NewLine +
-                "%VERSENUM% : Verse number" + NewLine + NewLine +
-                "%BOOKNUM#2% : Book number in two digits" + NewLine +
-                "%CHAPTERNUM#2% : Chapter number in two digits" + NewLine +
-                "%VERSENUM#2% : Verse number in two digits" },
-        { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
-                "%BOOKSB% : Nom du livre StudyBible" + NewLine +
-                "%BOOKMM% : Nom du livre Mechon-Mamre" + NewLine +
-                "%BOOKDJEP% : Nom du livre Djep" + NewLine + NewLine +
-                "%BOOKNUM% : Numéro du livre" + NewLine +
-                "%CHAPTERNUM% : Numéro du chaptre" + NewLine +
-                "%VERSENUM% : Numéro du verset" + NewLine + NewLine +
-                "%BOOKNUM#2% : Numéro du livre sur 2 digits" + NewLine +
-                "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + NewLine +
-                "%VERSENUM#2% : Numéro du verset sur 2 digits" },
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Non empty lines count: {0}" + NewLine + NewLine +
+                "Must be even." },
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de lignes non vides: {0}" + NewLine + NewLine +
+                "Doit être pair." }
+      };
+
+    static public readonly Dictionary<string, string> MatchingLinesCountText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Words count: {0}" + NewLine +
+                "Translations count: {1}" + NewLine +
+                "Must be equal."},
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de mots: {0}" + NewLine +
+                "Nombre de translations: {1}" + NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> WordsCountMatchText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect elements." + NewLine + NewLine +
+                "Verse words count: {0}" + NewLine +
+                "Imported words count: {1}" + NewLine + NewLine +
+                "Must be equal." },
+        { "fr", "Elements incorrects." + NewLine + NewLine +
+                "Nombre de mots du verset: {0}" + NewLine + 
+                "Nombre de mots importés: {1}" + NewLine +NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> WordMatchText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Incorrect hebrew." + NewLine + NewLine +
+                "Verse word: {0}" + NewLine +
+                "Imported word: {1}" + NewLine + NewLine +
+                "Must be equal." },
+        { "fr", "Hébreu incorrect." + NewLine + NewLine +
+                "Mot du verset: {0}" + NewLine +
+                "Mot importé: {1}" + NewLine + NewLine +
+                "Doit être égal." }
+      };
+
+    static public readonly Dictionary<string, string> ImportHelpText
+      = new Dictionary<string, string>()
+      {
+        { "en", "This console allows for example to import an MS Word verse table." + NewLine + NewLine +
+                 "This table must first be converted to text with | as a separator." + NewLine + NewLine +
+                 "The import text must be presented in groups of two lines:" + NewLine +
+                 "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + NewLine +
+                 "- A second containing a list of translations." + NewLine + NewLine +
+                 "There can be as many groups of two lines as necessary." + NewLine + NewLine +
+                 "Imported translation fields can be edited in the result grid." },
+        { "fr", "Cette console permet par exemple d'importer un tableau de verset MS Word." + NewLine + NewLine +
+                "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + NewLine + NewLine +
+                "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + NewLine +
+                "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + NewLine +
+                "- Une deuxième contenant une liste de traductions." + NewLine + NewLine +
+                "Il peut y avoir autant de groupe de deux lignes que nécessaire." + NewLine + NewLine +
+                "Les champs de traduction importés peuvent être édités dans la grille du résultat." }
       };
 
     static public readonly Dictionary<string, string> BookChapterText
@@ -134,6 +178,33 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "CHAPTER" },
         { "fr", "CHAPITRE" }
+      };
+
+    static public readonly Dictionary<string, string> OnlineVerseHelpText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Use the following tags to replace values:" + NewLine + NewLine +
+                "%BOOKSB% : StudyBible.org book name" + NewLine +
+                "%BOOKCHABAD% : Chabad.org book name" + NewLine +
+                "%BOOKMM% : Mechon-Mamre.org book name" + NewLine +
+                "%BOOKDJEP% : Djep.hd.free.fr book name" + NewLine + NewLine +
+                "%BOOKNUM% : Book number" + NewLine +
+                "%CHAPTERNUM% : Chapter number" + NewLine +
+                "%VERSENUM% : Verse number" + NewLine + NewLine +
+                "%BOOKNUM#2% : Book number in two digits" + NewLine +
+                "%CHAPTERNUM#2% : Chapter number in two digits" + NewLine +
+                "%VERSENUM#2% : Verse number in two digits" },
+        { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
+                "%BOOKSB% : Nom du livre StudyBible.org" + NewLine +
+                "%BOOKCHABAD% : Nom du livre Chabad.org" + NewLine +
+                "%BOOKMM% : Nom du livre Mechon-Mamre.org" + NewLine +
+                "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + NewLine + NewLine +
+                "%BOOKNUM% : Numéro du livre" + NewLine +
+                "%CHAPTERNUM% : Numéro du chaptre" + NewLine +
+                "%VERSENUM% : Numéro du verset" + NewLine + NewLine +
+                "%BOOKNUM#2% : Numéro du livre sur 2 digits" + NewLine +
+                "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + NewLine +
+                "%VERSENUM#2% : Numéro du verset sur 2 digits" },
       };
 
     static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelText

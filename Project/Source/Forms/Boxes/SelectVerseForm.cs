@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -21,10 +22,20 @@ namespace Ordisoftware.HebrewWords
   public partial class SelectVerseForm : Form
   {
 
-    public SelectVerseForm()
+    static public ReferenceItem Run()
+    {
+      var form = new SelectVerseForm();
+      form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.GetVersesRows().Count();
+      if ( form.ShowDialog() != DialogResult.OK ) return null;
+      int value = (int)form.EditVerseNumber.Value;
+      return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
+                               MainForm.Instance.CurrentReference.Chapter.Number,
+                               (int)form.EditVerseNumber.Value);
+    }
+
+    private SelectVerseForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
       EditVerseNumber.Select(0, 1);
     }
 

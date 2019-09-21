@@ -488,5 +488,53 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["SearchInKetouvim"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("792, 666")]
+        public global::System.Drawing.Size ImportVerseFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["ImportVerseFormSize"]));
+            }
+            set {
+                this["ImportVerseFormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OpenGeneratedMSWordFiles {
+            get {
+                return ((bool)(this["OpenGeneratedMSWordFiles"]));
+            }
+            set {
+                this["OpenGeneratedMSWordFiles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SearchInBookSelectedNumber {
+            get {
+                return ((int)(this["SearchInBookSelectedNumber"]));
+            }
+            set {
+                this["SearchInBookSelectedNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ImportVerseFormSplitterDistance {
+            get {
+                return ((int)(this["ImportVerseFormSplitterDistance"]));
+            }
+            set {
+                this["ImportVerseFormSplitterDistance"] = value;
+            }
+        }
     }
 }

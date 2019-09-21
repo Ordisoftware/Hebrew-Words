@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Melakim_I, "a myklm" },
       { Books.Melakim_II, "b myklm" },
       { Books.Yeshayahou , "hyi>y" },
-      { Books.Yrmeyahou , "hymry" },
+      { Books.Yirmeyahou , "hymry" },
       { Books.Yehezqel, "laqzxy" },
       { Books.Hoshea, "i>vh" },
       { Books.Yoel, "lavy" },

@@ -124,5 +124,17 @@
     <Setting Name="SearchInKetouvim" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ImportVerseFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">792, 666</Value>
+    </Setting>
+    <Setting Name="OpenGeneratedMSWordFiles" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SearchInBookSelectedNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

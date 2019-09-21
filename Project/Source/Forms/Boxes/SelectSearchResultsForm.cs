@@ -14,11 +14,10 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -29,8 +28,7 @@ namespace Ordisoftware.HebrewWords
     static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
     {
       if ( references == null ) return null;
-      var form = new SelectSearchResultsForm();
-      form.OriginalReferences = references.ToList();
+      var form = new SelectSearchResultsForm(references);
       if ( form.ShowDialog() == DialogResult.Cancel )
         form.References = null;
       return form.References;
@@ -48,7 +46,13 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
-      LabelFound.Text = String.Format(LabelFound.Text, MainForm.Instance.SearchResultsCount);
+    }
+
+    private SelectSearchResultsForm(IEnumerable<ReferenceItem> references)
+      : this()
+    {
+      OriginalReferences = references.ToList();
+      LabelFound.Text = String.Format(LabelFound.Text, OriginalReferences.Count());
     }
 
     private void SelectSearchResultsForm_Load(object sender, EventArgs e)
@@ -70,7 +74,7 @@ namespace Ordisoftware.HebrewWords
         SelectBooks.Items.Clear();
         foreach ( var item in query )
         {
-          var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books[item.Key - 1].Name);
+          var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books.Where(b => b.Number == item.Key).Single().Name);
           row.Tag = item.Key;
           row.SubItems.Add(item.Count.ToString());
         }

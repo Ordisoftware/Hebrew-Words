@@ -13,8 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -118,10 +118,10 @@ namespace Ordisoftware.HebrewWords
 
     void SetCounters(StatControl control, BookStatistic stat)
     {
-      control.LabelChapters.Text = stat.CountChapters.ToString();
-      control.LabelVerses.Text = stat.CountVerses.ToString();
-      control.LabelWords.Text = stat.CountWords.ToString();
-      control.LabelLetters.Text = stat.CountLetters.ToString();
+      control.LabelChaptersValue.Text = stat.CountChapters.ToString();
+      control.LabelVersesValue.Text = stat.CountVerses.ToString();
+      control.LabelWordsValue.Text = stat.CountWords.ToString();
+      control.LabelLettersValue.Text = stat.CountLetters.ToString();
     }
 
     private void InitializeMiddle()

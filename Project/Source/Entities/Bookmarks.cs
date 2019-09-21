@@ -13,11 +13,11 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Collections.Generic;
 using Ordisoftware.Core;
-using System.Collections;
 
 namespace Ordisoftware.HebrewWords
 {

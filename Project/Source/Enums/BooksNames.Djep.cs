@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Melakim_I, "11" },
       { Books.Melakim_II, "12" },
       { Books.Yeshayahou , "23" },
-      { Books.Yrmeyahou , "24" },
+      { Books.Yirmeyahou , "24" },
       { Books.Yehezqel, "26" },
       { Books.Hoshea, "28" },
       { Books.Yoel, "29" },

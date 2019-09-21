@@ -1,5 +1,4 @@
-﻿
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2019 Olivier Rogier. 
 /// See www.ordisoftware.com for more information.
@@ -24,7 +23,7 @@ namespace Ordisoftware.HebrewWords
     Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
     // Nevi'im
     Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
-    Yeshayahou , Yrmeyahou , Yehezqel,
+    Yeshayahou , Yirmeyahou , Yehezqel,
     Hoshea, Yoel, Amos, Obadyah, Yonah, Mikah,
     Nahoum, Habaqouq, Tsephaniah, Hagai, Zekaria, Malaki,
     // Ketouvim
@@ -50,8 +49,8 @@ namespace Ordisoftware.HebrewWords
     Shemouel_II = Books.Shemouel_II,
     Melakim_I = Books.Melakim_I,
     Melakim_II = Books.Melakim_II,
-    Isayah = Books.Yeshayahou ,
-    Yirmyah = Books.Yrmeyahou ,
+    Yeshayahou = Books.Yeshayahou,
+    Yirmeyahou = Books.Yirmeyahou,
     Yehezqel = Books.Yehezqel,
     Hoshea = Books.Hoshea,
     Yoel = Books.Yoel,
@@ -73,7 +72,7 @@ namespace Ordisoftware.HebrewWords
     Mishlei = Books.Mishlei,
     Iyov = Books.Iyov,
     Shir_HaShirim = Books.Shir_HaShirim,
-    Routh = Books.Ruth,
+    Ruth = Books.Ruth,
     Eikah = Books.Eikah,
     Qohelet = Books.Qohelet,
     Esther = Books.Esther,

@@ -62,6 +62,9 @@ namespace Ordisoftware.HebrewWords
         case Keys.Control | Keys.S:
           ActionSave.PerformClick();
           return true;
+        case Keys.Control | Keys.R:
+          ActionGoToReference.PerformClick();
+          return true;
         case Keys.F1:
           ActionViewVerses.PerformClick();
           return true;

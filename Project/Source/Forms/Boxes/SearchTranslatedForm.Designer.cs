@@ -33,7 +33,7 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.EditReturn = new System.Windows.Forms.CheckBox();
       this.LabelReference = new System.Windows.Forms.LinkLabel();
-      this.ButtonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,7 +60,7 @@
       // 
       this.PanelButtons.Controls.Add(this.EditReturn);
       this.PanelButtons.Controls.Add(this.LabelReference);
-      this.PanelButtons.Controls.Add(this.ButtonClose);
+      this.PanelButtons.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -80,13 +80,13 @@
       this.LabelReference.TabStop = true;
       this.LabelReference.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReference_LinkClicked);
       // 
-      // ButtonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.ButtonClose, "ButtonClose");
-      this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonClose.Name = "ButtonClose";
-      this.ButtonClose.UseVisualStyleBackColor = true;
-      this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
+      this.ActionClose.Click += new System.EventHandler(this.ButtonClose_Click);
       // 
       // PanelMain
       // 
@@ -219,7 +219,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonClose;
+      this.CancelButton = this.ActionClose;
       this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
@@ -241,7 +241,7 @@
 
     #endregion
     private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.ListView ListView;
     private System.Windows.Forms.ColumnHeader columnHeader1;

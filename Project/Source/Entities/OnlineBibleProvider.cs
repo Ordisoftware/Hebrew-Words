@@ -13,8 +13,8 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Drawing;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -52,6 +52,16 @@ namespace Ordisoftware.HebrewWords
       Items.Add(item);
 
       item = new OnlineBibleProvider();
+      item.Name = "BibleHub.com (EN)";
+      item.URL = "https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm";
+      Items.Add(item);
+
+      item = new OnlineBibleProvider();
+      item.Name = "Chabad.org (EN)";
+      item.URL = "https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%";
+      Items.Add(item);
+
+      item = new OnlineBibleProvider();
       switch ( Localizer.Language )
       {
         case "fr":
@@ -60,7 +70,7 @@ namespace Ordisoftware.HebrewWords
           break;
         default:
           item.Name = "Mechon-Mamre.org (EN)";
-          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%CHAPTERNUM#2%.htm#%VERSENUM#2%";
+          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
       }
       Items.Add(item);

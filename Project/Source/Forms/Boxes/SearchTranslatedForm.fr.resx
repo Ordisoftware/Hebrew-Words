@@ -120,7 +120,7 @@
   <data name="EditReturn.Text" xml:space="preserve">
     <value>Retour</value>
   </data>
-  <data name="ButtonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">

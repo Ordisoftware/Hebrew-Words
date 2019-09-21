@@ -120,7 +120,7 @@
   <data name="GroupBoxAllBooks.Text" xml:space="preserve">
     <value>Tous les livres</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="GroupBoxBook.Text" xml:space="preserve">

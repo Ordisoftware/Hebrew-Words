@@ -21,18 +21,16 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void ClearSearch()
+    private void ClearSearchResults()
     {
-      SearchResults = null;
-      SearchResultsCount = 0;
       CheckWord = null;
       CheckVerse = null;
+      SearchResults = null;
+      SearchResultsCount = 0;
       SearchWord1 = "";
       SearchWord2 = "";
       PagingCount = 0;
       PagingCurrent = 0;
-      if ( !EditSearchInTorah.Checked && !EditSearchInNeviim.Checked && !EditSearchInKetouvim.Checked )
-        EditSearchInTorah.Checked = true;
     }
 
     private void UpdatePagingCount()
@@ -52,9 +50,6 @@ namespace Ordisoftware.HebrewWords
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation 
                                      && EditSearchTranslation.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );
-        ActionSearchClear.Enabled = SearchResultsCount > 0 
-                               || EditLetters.Input.Text != "" 
-                               || EditSearchTranslation.Text != "";
         ActionNavigateSearchFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
         ActionSearchNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
         ActionSearchNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;

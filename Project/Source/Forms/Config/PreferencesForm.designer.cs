@@ -33,16 +33,16 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelOnlineSearch;
       System.Windows.Forms.Label LabelBackupPath;
-      System.Windows.Forms.Label backupCountLabel;
+      System.Windows.Forms.Label LabelBackupCount;
       System.Windows.Forms.Label LabelAutoSaveDelay;
-      System.Windows.Forms.Label labelOnlineVerseURL;
+      System.Windows.Forms.Label LabelOnlineVerseURL;
       System.Windows.Forms.Label LabelCommentaryLinesCount;
       System.Windows.Forms.Label LabelBookmarksCount;
       System.Windows.Forms.Label LabelWordControlWidth;
       System.Windows.Forms.Label LabelMaxRefCount;
       System.Windows.Forms.Label LabelHistoryCount;
       System.Windows.Forms.Label LabelMinRefCount;
-      this.ButtonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionReset = new System.Windows.Forms.LinkLabel();
       this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
@@ -67,15 +67,16 @@
       this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
+      this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
+      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
-      backupCountLabel = new System.Windows.Forms.Label();
+      LabelBackupCount = new System.Windows.Forms.Label();
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
-      labelOnlineVerseURL = new System.Windows.Forms.Label();
+      LabelOnlineVerseURL = new System.Windows.Forms.Label();
       LabelCommentaryLinesCount = new System.Windows.Forms.Label();
       LabelBookmarksCount = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
@@ -109,20 +110,20 @@
       resources.ApplyResources(LabelBackupPath, "LabelBackupPath");
       LabelBackupPath.Name = "LabelBackupPath";
       // 
-      // backupCountLabel
+      // LabelBackupCount
       // 
-      resources.ApplyResources(backupCountLabel, "backupCountLabel");
-      backupCountLabel.Name = "backupCountLabel";
+      resources.ApplyResources(LabelBackupCount, "LabelBackupCount");
+      LabelBackupCount.Name = "LabelBackupCount";
       // 
       // LabelAutoSaveDelay
       // 
       resources.ApplyResources(LabelAutoSaveDelay, "LabelAutoSaveDelay");
       LabelAutoSaveDelay.Name = "LabelAutoSaveDelay";
       // 
-      // labelOnlineVerseURL
+      // LabelOnlineVerseURL
       // 
-      resources.ApplyResources(labelOnlineVerseURL, "labelOnlineVerseURL");
-      labelOnlineVerseURL.Name = "labelOnlineVerseURL";
+      resources.ApplyResources(LabelOnlineVerseURL, "LabelOnlineVerseURL");
+      LabelOnlineVerseURL.Name = "LabelOnlineVerseURL";
       // 
       // LabelCommentaryLinesCount
       // 
@@ -154,17 +155,17 @@
       resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
       LabelMinRefCount.Name = "LabelMinRefCount";
       // 
-      // ButtonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.ButtonClose, "ButtonClose");
-      this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonClose.Name = "ButtonClose";
-      this.ButtonClose.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
       // 
       // PanelButtons
       // 
       this.PanelButtons.Controls.Add(this.ActionReset);
-      this.PanelButtons.Controls.Add(this.ButtonClose);
+      this.PanelButtons.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -376,14 +377,23 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
-      // EditCheckUpdateAtStartup
+      // ActionOnlineVerseHelp
       // 
-      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
-      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      this.ActionOnlineVerseHelp.AllowDrop = true;
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
+      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
+      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      // 
+      // EditOpenGeneratedMSWordFiles
+      // 
+      resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
+      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditOpenGeneratedMSWordFiles.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
+      this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
       // 
       // EditOpenLastViewAtStartup
       // 
@@ -394,21 +404,22 @@
       this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
       this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
       // 
-      // ActionOnlineVerseHelp
+      // EditCheckUpdateAtStartup
       // 
-      this.ActionOnlineVerseHelp.AllowDrop = true;
-      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
-      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
-      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
-      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
+      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
+      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.ButtonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonClose;
+      this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionOnlineVerseHelp);
@@ -425,13 +436,13 @@
       this.Controls.Add(LabelBookmarksCount);
       this.Controls.Add(this.EditCommentaryLinesCount);
       this.Controls.Add(LabelCommentaryLinesCount);
-      this.Controls.Add(labelOnlineVerseURL);
+      this.Controls.Add(LabelOnlineVerseURL);
       this.Controls.Add(this.EditOnlineVerseURL);
       this.Controls.Add(this.GroupBoxHebrewWordClick);
       this.Controls.Add(this.EditAutoSaveDelay);
       this.Controls.Add(LabelAutoSaveDelay);
       this.Controls.Add(this.EditBackupCount);
-      this.Controls.Add(backupCountLabel);
+      this.Controls.Add(LabelBackupCount);
       this.Controls.Add(this.ActionSelectBackupPath);
       this.Controls.Add(LabelBackupPath);
       this.Controls.Add(this.EditBackupPath);
@@ -466,7 +477,7 @@
     }
 
     #endregion
-    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.TextBox EditHebrewLettersPath;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
@@ -494,5 +505,6 @@
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
     private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
     private System.Windows.Forms.Button ActionOnlineVerseHelp;
+    private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
   }
 }

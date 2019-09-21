@@ -54,6 +54,8 @@ namespace Ordisoftware.HebrewWords
                 AddVerse(verse, includeTranslation);
             }
             Document.Save();
+            if ( Program.Settings.OpenGeneratedMSWordFiles )
+              Program.RunShell(filename);
           }
           catch ( Exception ex )
           {
@@ -77,6 +79,8 @@ namespace Ordisoftware.HebrewWords
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               AddVerse(verse, includeTranslation);
             Document.Save();
+            if ( Program.Settings.OpenGeneratedMSWordFiles )
+              Program.RunShell(filename);
           }
           catch ( Exception ex )
           {
@@ -100,6 +104,8 @@ namespace Ordisoftware.HebrewWords
             AddChapterTitle(chapter);
             AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
             Document.Save();
+            if ( Program.Settings.OpenGeneratedMSWordFiles )
+              Program.RunShell(filename);
           }
           catch ( Exception ex )
           {

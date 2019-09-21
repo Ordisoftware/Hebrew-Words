@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       { Books.Melakim_I, "1 Kings" },
       { Books.Melakim_II, "2 Kings" },
       { Books.Yeshayahou , "Isaiah" },
-      { Books.Yrmeyahou , "Jeremiah" },
+      { Books.Yirmeyahou , "Jeremiah" },
       { Books.Yehezqel, "Ezekiel" },
       { Books.Hoshea, "Hosea" },
       { Books.Yoel, "Joel" },
