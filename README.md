@@ -87,13 +87,13 @@ Ctrl+G : Open the grammar guide
 
 Ctrl+Home : Reach the beginning of the view
 
-Ctrl+End :Reach the ending of the view
+Ctrl+End : Reach the ending of the view
 
 Ctrl+Up : Scroll the view up (fine)
 
 Ctrl+Down : Scroll the view down (fine)
 
-PageUp :Scroll the view up
+PageUp : Scroll the view up
 
 PageDown : Scroll the view down
 
