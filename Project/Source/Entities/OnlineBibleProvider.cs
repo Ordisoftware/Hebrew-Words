@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewWords
           break;
         default:
           item.Name = "Mechon-Mamre.org (EN)";
-          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%CHAPTERNUM#2%.htm#%VERSENUM#2%";
+          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
           break;
       }
       Items.Add(item);
