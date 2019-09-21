@@ -181,6 +181,7 @@ namespace Ordisoftware.HebrewWords
     private void InitBooksCombobox()
     {
       SelectBook.Items.Clear();
+      SelectSearchInBook.Items.Clear();
       foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
       {
         var item = new BookItem(book);
