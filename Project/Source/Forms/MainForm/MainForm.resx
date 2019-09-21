@@ -573,11 +573,11 @@
   <data name="&gt;&gt;ActionSearchInAddAll.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SelectSearchInBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="SelectSearchInBook.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="SelectSearchInBook.ItemHeight" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 155</value>
@@ -3181,28 +3181,28 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionGoToReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
         AElFTkSuQmCC
 </value>
   </data>
@@ -4116,9 +4116,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 666</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>
   </data>
@@ -4145,6 +4142,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4715,18 +4724,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>

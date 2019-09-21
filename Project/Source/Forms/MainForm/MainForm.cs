@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewWords
       {
         var item = new BookItem(book);
         SelectBook.Items.Add(item);
-        SelectSearchInBook.Items.Add(book.Number + ". " + book.Name);
+        SelectSearchInBook.Items.Add(book.Name);
       }
       SelectBook.SelectedIndex = 0;
       SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;

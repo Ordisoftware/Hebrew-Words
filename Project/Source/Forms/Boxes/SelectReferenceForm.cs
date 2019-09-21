@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        SelectBook.Items.Add(book.Number + ". " + book.Name);
+        SelectBook.Items.Add(book.Name);
       SelectBook.SelectedIndex = 0;
     }
 
