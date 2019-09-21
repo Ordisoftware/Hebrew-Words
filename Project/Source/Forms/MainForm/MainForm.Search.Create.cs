@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewWords
         if ( SelectSearchRequestAllUntranslated.Checked )
           CheckVerse = checkTranslatedAllUntranslated;
       }
-      int bookSelected = SelectSearchInBook.SelectedIndex + 1;
+      int bookSelected = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
       Func<int, bool> isBookSelected = index =>
       {
         return ( EditSearchInTorah.Checked && index <= BooksBounds.Torah.Max )

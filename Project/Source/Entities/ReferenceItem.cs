@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
@@ -62,7 +63,7 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        Book = MainForm.Instance.DataSet.Books[book - 1];
+        Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).Single();
         Chapter = Book.GetChaptersRows()[chapter - 1];
         Verse = verse == 0 ? null : Chapter.GetVersesRows()[verse - 1];
       }

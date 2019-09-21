@@ -41,10 +41,16 @@ namespace Ordisoftware.HebrewWords
       bool updated = false;
       try
       {
-        if ( SelectBook.SelectedIndex != reference.Book.Number - 1 )
+        if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
         {
-          SelectBook.SelectedIndex = reference.Book.Number - 1;
-          updated = true;
+          foreach ( var item in SelectBook.Items )
+            if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
+            {
+              SelectBook.SelectedItem = item;
+              updated = true;
+              break;
+            }
+          if ( !updated ) throw new Exception("Book combobox index error.");
         }
         if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
         {

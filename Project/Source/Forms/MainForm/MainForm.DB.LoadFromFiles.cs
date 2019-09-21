@@ -53,7 +53,11 @@ namespace Ordisoftware.HebrewWords
         foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
         {
           string filename = path + bookid.ToString().Replace("_", " ") + ".txt";
-          if ( !File.Exists(filename) ) continue;
+          if ( !File.Exists(filename) )
+          {
+            DisplayManager.ShowAdvert(filename + " missing.");
+            continue;
+          }
           string[] filecontent = File.ReadAllLines(filename);
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();

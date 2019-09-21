@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewWords
       {
         var item = new BookItem(book);
         SelectBook.Items.Add(item);
-        SelectSearchInBook.Items.Add(book.Name);
+        SelectSearchInBook.Items.Add(item);
       }
       SelectBook.SelectedIndex = 0;
       SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;
@@ -800,7 +800,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Program.Settings.SearchInBookSelectedIndex = SelectSearchInBook.SelectedIndex;
+      Program.Settings.SearchInBookSelectedIndex = ((BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
       Program.Settings.Save();
     }
 

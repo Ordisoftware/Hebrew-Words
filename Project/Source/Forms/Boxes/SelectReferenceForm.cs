@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewWords
     {
       var form = new SelectReferenceForm();
       if ( form.ShowDialog() != DialogResult.OK ) return null;
-      return new ReferenceItem(form.SelectBook.SelectedIndex + 1, 
+      return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number, 
                                (int)form.SelectChapter.Value, 
                                (int)form.SelectVerse.Value);
     }
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewWords
     {
       SelectChapter.Value = 1;
       SelectVerse.Value = 0;
-      var book = MainForm.Instance.DataSet.Books[SelectBook.SelectedIndex];
+      var book = MainForm.Instance.DataSet.Books[( (BookItem)SelectBook.SelectedItem ).Book.Number];
       SelectChapter.Maximum = book.GetChaptersRows().Count();
       SelectVerse.Maximum = book.GetChaptersRows()[(int)SelectChapter.Value - 1].GetVersesRows().Count();
     }
@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
       SelectVerse.Value = 0;
       if ( SelectChapter.Value > SelectChapter.Maximum )
         SelectChapter.Value = SelectChapter.Maximum;
-      var book = MainForm.Instance.DataSet.Books[SelectBook.SelectedIndex];
+      var book = MainForm.Instance.DataSet.Books[( (BookItem)SelectBook.SelectedItem ).Book.Number];
       SelectVerse.Maximum = book.GetChaptersRows()[(int)SelectChapter.Value - 1].GetVersesRows().Count();
     }
 
