@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewWords
         SelectBooks.Items.Clear();
         foreach ( var item in query )
         {
-          var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books[item.Key - 1].Name);
+          var row = SelectBooks.Items.Add(MainForm.Instance.DataSet.Books.Where(b => b.Number == item.Key).Single().Name);
           row.Tag = item.Key;
           row.SubItems.Add(item.Count.ToString());
         }
