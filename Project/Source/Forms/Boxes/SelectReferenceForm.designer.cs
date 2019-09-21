@@ -56,15 +56,15 @@ namespace Ordisoftware.HebrewWords
       // 
       // ActionOK
       // 
-      resources.ApplyResources(this.ActionOK, "ActionOK");
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      resources.ApplyResources(this.ActionOK, "ActionOK");
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
       // 
       // ActionCancel
       // 
-      resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.UseVisualStyleBackColor = true;
       // 

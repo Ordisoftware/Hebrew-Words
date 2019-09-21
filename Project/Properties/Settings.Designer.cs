@@ -516,12 +516,12 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int SearchInBookSelectedIndex {
+        public int SearchInBookSelectedNumber {
             get {
-                return ((int)(this["SearchInBookSelectedIndex"]));
+                return ((int)(this["SearchInBookSelectedNumber"]));
             }
             set {
-                this["SearchInBookSelectedIndex"] = value;
+                this["SearchInBookSelectedNumber"] = value;
             }
         }
         

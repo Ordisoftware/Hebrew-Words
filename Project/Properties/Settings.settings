@@ -130,7 +130,7 @@
     <Setting Name="OpenGeneratedMSWordFiles" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SearchInBookSelectedIndex" Type="System.Int32" Scope="User">
+    <Setting Name="SearchInBookSelectedNumber" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">

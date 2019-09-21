@@ -188,13 +188,12 @@ namespace Ordisoftware.HebrewWords
         SelectSearchInBook.Items.Add(item);
       }
       SelectBook.SelectedIndex = 0;
-      try
-      {
-        SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;
-      }
-      catch
-      {
-      }
+      foreach (var item in SelectSearchInBook.Items )
+        if (((BookItem)item).Book.Number == Program.Settings.SearchInBookSelectedNumber)
+          SelectSearchInBook.SelectedItem = item;
+      if ( SelectSearchInBook.SelectedIndex == -1 )
+        SelectSearchInBook.SelectedIndex = 0;
+
     }
 
     /// <summary>
@@ -806,7 +805,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Program.Settings.SearchInBookSelectedIndex = ((BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+      Program.Settings.SearchInBookSelectedNumber = ((BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
       Program.Settings.Save();
     }
 
