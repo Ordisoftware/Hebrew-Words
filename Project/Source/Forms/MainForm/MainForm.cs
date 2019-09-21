@@ -188,7 +188,13 @@ namespace Ordisoftware.HebrewWords
         SelectSearchInBook.Items.Add(item);
       }
       SelectBook.SelectedIndex = 0;
-      SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;
+      try
+      {
+        SelectSearchInBook.SelectedIndex = Program.Settings.SearchInBookSelectedIndex;
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
