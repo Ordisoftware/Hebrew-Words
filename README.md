@@ -57,6 +57,54 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
+#### What to do if there is a problem with the display
+
+Use the refresh view action of the menu at the top.
+
+#### The software sometimes runs slowly, is this normal?
+
+Yes, because implementing features requires a lot of Windows resources that depend on the performance of the computer.
+
+#### Keyboard shortcuts
+
+F1 : Verses view
+
+F2 : Translation view
+
+F3 : Hebrew text view
+
+F4 : ELS50 verses view
+
+F5 : Search view
+
+Ctrl+S : Save changes
+
+Ctrl+R : Find reference
+
+Ctrl+F : Find verse number in current chapter (0 for first untranslated)
+
+Ctrl+G : Open the grammar guide
+
+Ctrl+Home : Reach the beginning of the view
+
+Ctrl+End :Reach the ending of the view
+
+Ctrl+Up : Scroll the view up (fine)
+
+Ctrl+Down : Scroll the view down (fine)
+
+PageUp :Scroll the view up
+
+PageDown : Scroll the view down
+
+F8 : Preferences
+
+F11 : Help
+
+F12 : About
+
+Escape : Close window or Cancel process 
+
 ## Changelog
 
 #### 2019.09.21 - Version 2.1
