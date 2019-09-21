@@ -32,6 +32,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      ActiveControl = WebBrowser;
     }
 
     private void GrammarGuideForm_Load(object sender, EventArgs e)
