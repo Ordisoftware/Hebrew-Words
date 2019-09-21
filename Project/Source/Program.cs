@@ -200,6 +200,8 @@ namespace Ordisoftware.HebrewWords
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
       RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
+                  .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
+                  .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
                   .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
                   .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
                   .Replace("%BOOKNUM%", book.ToString())

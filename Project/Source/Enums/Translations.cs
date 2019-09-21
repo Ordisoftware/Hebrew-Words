@@ -184,9 +184,10 @@ namespace Ordisoftware.HebrewWords
       = new Dictionary<string, string>()
       {
         { "en", "Use the following tags to replace values:" + NewLine + NewLine +
-                "%BOOKSB% : StudyBible book name" + NewLine +
-                "%BOOKMM% : Mechon-Mamre book name" + NewLine +
-                "%BOOKDJEP% : Djep book name" + NewLine + NewLine +
+                "%BOOKSB% : StudyBible.org book name" + NewLine +
+                "%BOOKCHABAD% : Chabad.org book name" + NewLine +
+                "%BOOKMM% : Mechon-Mamre.org book name" + NewLine +
+                "%BOOKDJEP% : Djep.hd.free.fr book name" + NewLine + NewLine +
                 "%BOOKNUM% : Book number" + NewLine +
                 "%CHAPTERNUM% : Chapter number" + NewLine +
                 "%VERSENUM% : Verse number" + NewLine + NewLine +
@@ -194,9 +195,10 @@ namespace Ordisoftware.HebrewWords
                 "%CHAPTERNUM#2% : Chapter number in two digits" + NewLine +
                 "%VERSENUM#2% : Verse number in two digits" },
         { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
-                "%BOOKSB% : Nom du livre StudyBible" + NewLine +
-                "%BOOKMM% : Nom du livre Mechon-Mamre" + NewLine +
-                "%BOOKDJEP% : Nom du livre Djep" + NewLine + NewLine +
+                "%BOOKSB% : Nom du livre StudyBible.org" + NewLine +
+                "%BOOKCHABAD% : Nom du livre Chabad.org" + NewLine +
+                "%BOOKMM% : Nom du livre Mechon-Mamre.org" + NewLine +
+                "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + NewLine + NewLine +
                 "%BOOKNUM% : Numéro du livre" + NewLine +
                 "%CHAPTERNUM% : Numéro du chaptre" + NewLine +
                 "%VERSENUM% : Numéro du verset" + NewLine + NewLine +

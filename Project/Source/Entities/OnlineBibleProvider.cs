@@ -52,6 +52,16 @@ namespace Ordisoftware.HebrewWords
       Items.Add(item);
 
       item = new OnlineBibleProvider();
+      item.Name = "BibleHub.com (EN)";
+      item.URL = "https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm";
+      Items.Add(item);
+
+      item = new OnlineBibleProvider();
+      item.Name = "Chabad.org (EN)";
+      item.URL = "https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%";
+      Items.Add(item);
+
+      item = new OnlineBibleProvider();
       switch ( Localizer.Language )
       {
         case "fr":
