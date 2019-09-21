@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
 
     /// <summary>
     /// Indicate the extension of database file.
