@@ -11,13 +11,15 @@ A tool for Windows written in C# that helps for the literal translation of the H
 ## Functionalities
 
 - Translate verses word-for-word.
-- Left mouse click on a word to open online strong's concordance.
-- Right mouse click on a word to open Hebrew Letters.
+- Left mouse click on a word to open online strong's concordance or Hebrew Letters or search already translated.
+- Right mouse click on a word to open context menu with more options like search verses having the word.
 - Left mouse click on a verse number to open online text with contextual strong's concordances.
-- Right mouse click on a verse number to export verse to MSWord.
-- MS Word export of a book or a chapter.
-- Determine the equidistant letter sequence of 50 for Tav.
-- Search a word in the Torah or the Tanakh.
+- Right mouse click on a verse number to open context menu with more options like bookmarks.
+- MS Word export of a book or a chapter or a verse.
+- Determine the Equidistant Letter Sequence of 50 for Tav.
+- Search hebrew or translated words with filters.
+- Grammar guide.
+- Links to various online resources.
 - Show some statistics.
 - English, French.
 
