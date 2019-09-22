@@ -107,6 +107,10 @@ Escape : Close window or Cancel process
 
 ## Changelog
 
+#### __________ - Version 2.2
+
+- Add option to choose language.
+
 #### 2019.09.21 - Version 2.1
 
 - Add find reference menu button.
