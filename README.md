@@ -71,43 +71,25 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### Keyboard shortcuts
 
-F1 : Verses view
-
-F2 : Translation view
-
-F3 : Hebrew text view
-
-F4 : ELS50 verses view
-
-F5 : Search view
-
-Ctrl+S : Save changes
-
-Ctrl+R : Find reference
-
-Ctrl+F : Find verse number in current chapter (0 for first untranslated)
-
-Ctrl+G : Open the grammar guide
-
-Ctrl+Home : Reach the beginning of the view
-
-Ctrl+End : Reach the ending of the view
-
-Ctrl+Up : Scroll the view up (fine)
-
-Ctrl+Down : Scroll the view down (fine)
-
-PageUp : Scroll the view up
-
-PageDown : Scroll the view down
-
-F8 : Preferences
-
-F11 : Help
-
-F12 : About
-
-Escape : Close window or Cancel process 
+- F1 : Verses view
+- F2 : Translation view
+- F3 : Hebrew text view
+- F4 : ELS50 verses view
+- F5 : Search view
+- Ctrl+S : Save changes
+- Ctrl+R : Find reference
+- Ctrl+F : Find verse number in current chapter (0 for first untranslated)
+- Ctrl+G : Open the grammar guide
+- Ctrl+Home : Reach the beginning of the view
+- Ctrl+End : Reach the ending of the view
+- Ctrl+Up : Scroll the view up (fine)
+- Ctrl+Down : Scroll the view down (fine)
+- PageUp : Scroll the view up
+- PageDown : Scroll the view down
+- F8 : Preferences
+- F11 : Help
+- F12 : About
+- Escape : Close window or Cancel process 
 
 ## Changelog
 
