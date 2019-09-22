@@ -96,6 +96,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### __________ - Version 2.2
 
 - Add option to choose language.
+- Improve UI.
 - Fix reload data.
 
 #### 2019.09.21 - Version 2.1
@@ -104,7 +105,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add search in book filter.
 - Add option to open generated MSWord files.
 - Add import verse console.
-- Improve import console.
+- Improve reference management.
 - Fix books file names and indexes.
 
 #### 2019.09.19 - Version 2.0
