@@ -14,7 +14,6 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -22,18 +21,8 @@ namespace Ordisoftware.HebrewWords
   /// <summary>
   /// Provide hebreu letters class.
   /// </summary>
-  static public class Letters
+  static public class HebrewLetters
   {
-
-    /// <summary>
-    /// Remove diacritics letters.
-    /// </summary>
-    public static string RemoveDiacritics(this string text)
-    {
-      if ( string.IsNullOrEmpty(text) )
-        return string.Empty;
-      return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
-    }
 
     /// <summary>
     /// Indicate letters keyboard codes.
@@ -47,7 +36,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate finale letters enabled keys values.
     /// </summary>
-    static private Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
+    static private readonly Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
     {
       { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
     };
@@ -102,7 +91,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     // Convert letters from www.fourmilab.ch/etexts/www/hebrew/Bible to font codes.
     /// </summary>
-    static public char ConvertToKey(char c)
+    static private char ConvertToKey(char c)
     {
       switch ( c )
       {

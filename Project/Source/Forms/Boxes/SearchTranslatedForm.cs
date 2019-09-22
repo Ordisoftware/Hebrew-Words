@@ -111,7 +111,7 @@ namespace Ordisoftware.HebrewWords
       if ( e.KeyChar == '\r' )
         UpdateResult();
       else
-      if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
+      if ( !HebrewLetters.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
       else
         KeyProcessed = true;

@@ -216,7 +216,7 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenHebrewLetters(string hebrew)
     {
-      hebrew = Letters.SetFinale(hebrew, false);
+      hebrew = HebrewLetters.SetFinale(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 

@@ -116,7 +116,7 @@
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\ExportDocX.cs" />
+    <Compile Include="Source\Entities\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
     <Compile Include="Source\Enums\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
@@ -191,7 +191,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Enums\Books.cs" />
-    <Compile Include="Source\Classes\Letters.cs" />
+    <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
     <Compile Include="Source\Classes\SettingsHelper.cs" />
     <Compile Include="Source\Enums\ControlLocation.cs" />
