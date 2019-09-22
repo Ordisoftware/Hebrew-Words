@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -47,12 +47,6 @@ namespace Ordisoftware.HebrewWords
     private AboutBox()
     {
       InitializeComponent();
-      Text = Text + " " + AssemblyTitle;
-      labelTitle.Text = AssemblyTitle;
-      labelDescription.Text = Translations.ApplicationDescriptionText.GetLang();
-      labelVersion.Text = labelVersion.Text + AssemblyVersion;
-      labelCopyright.Text = AssemblyCopyright;
-      labelTrademark.Text = AssemblyTrademark;
     }
 
     /// <summary>
@@ -63,6 +57,16 @@ namespace Ordisoftware.HebrewWords
     private void AboutBox_Load(object sender, EventArgs e)
     {
       editLicense.Rtf = Properties.Resources.MPL_2_0;
+    }
+
+    internal void AboutBox_Shown(object sender, EventArgs e)
+    {
+      Text = Translations.AboutBoxTitleText.GetLang() + " " + AssemblyTitle;
+      labelTitle.Text = AssemblyTitle;
+      labelDescription.Text = Translations.ApplicationDescriptionText.GetLang();
+      labelVersion.Text = Translations.AboutBoxVersionText.GetLang() + " " + AssemblyVersion;
+      labelCopyright.Text = AssemblyCopyright;
+      labelTrademark.Text = AssemblyTrademark;
     }
 
     /// <summary>

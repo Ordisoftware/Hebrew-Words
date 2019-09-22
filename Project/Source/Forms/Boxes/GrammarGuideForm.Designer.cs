@@ -34,7 +34,6 @@
       // 
       // WebBrowser
       // 
-      this.WebBrowser.AllowNavigation = false;
       this.WebBrowser.AllowWebBrowserDrop = false;
       resources.ApplyResources(this.WebBrowser, "WebBrowser");
       this.WebBrowser.IsWebBrowserContextMenuEnabled = false;
@@ -55,6 +54,7 @@
       this.Name = "GrammarGuideForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GrammarGuideForm_FormClosing);
       this.Load += new System.EventHandler(this.GrammarGuideForm_Load);
+      this.Shown += new System.EventHandler(this.GrammarGuideForm_Shown);
       this.ResumeLayout(false);
 
     }

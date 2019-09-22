@@ -68,6 +68,8 @@
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
+      this.ActionSelectLangEN = new System.Windows.Forms.Button();
+      this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
@@ -386,6 +388,26 @@
       this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
       // 
+      // ActionSelectLangEN
+      // 
+      this.ActionSelectLangEN.AllowDrop = true;
+      this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.ActionSelectLangEN.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
+      this.ActionSelectLangEN.Name = "ActionSelectLangEN";
+      this.ActionSelectLangEN.UseVisualStyleBackColor = true;
+      this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
+      // 
+      // ActionSelectLangFR
+      // 
+      this.ActionSelectLangFR.AllowDrop = true;
+      this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.ActionSelectLangFR.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
+      this.ActionSelectLangFR.Name = "ActionSelectLangFR";
+      this.ActionSelectLangFR.UseVisualStyleBackColor = true;
+      this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
       // EditOpenGeneratedMSWordFiles
       // 
       resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
@@ -419,6 +441,8 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.ActionSelectLangFR);
+      this.Controls.Add(this.ActionSelectLangEN);
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
@@ -506,5 +530,7 @@
     private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
     private System.Windows.Forms.Button ActionOnlineVerseHelp;
     private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
+    private System.Windows.Forms.Button ActionSelectLangEN;
+    private System.Windows.Forms.Button ActionSelectLangFR;
   }
 }

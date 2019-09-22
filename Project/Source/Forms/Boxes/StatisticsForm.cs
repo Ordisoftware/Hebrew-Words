@@ -32,17 +32,11 @@ namespace Ordisoftware.HebrewWords
       public int CountLetters;
     }
 
-    static private StatisticsForm Instance;
-
-    static public void Prepare()
-    {
-      Instance = new StatisticsForm();
-    }
-
     static public ReferenceItem Run()
     {
-      Instance.ShowDialog();
-      return Instance.Reference;
+      var form = new StatisticsForm();
+      form.ShowDialog();
+      return form.Reference;
     }
 
     private ReferenceItem Reference;
@@ -50,7 +44,6 @@ namespace Ordisoftware.HebrewWords
     private StatisticsForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
       try
       {
         InitializeCounters();

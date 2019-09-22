@@ -136,5 +136,8 @@
     <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

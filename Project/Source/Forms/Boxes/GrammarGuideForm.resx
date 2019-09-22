@@ -129,7 +129,7 @@
     <value>20, 20</value>
   </data>
   <data name="WebBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 566</value>
+    <value>442, 466</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="WebBrowser.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +154,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 600</value>
+    <value>450, 500</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

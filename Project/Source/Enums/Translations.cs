@@ -23,6 +23,20 @@ namespace Ordisoftware.HebrewWords
 
     static public readonly string NewLine = Environment.NewLine;
 
+    static public readonly Dictionary<string, string> AboutBoxTitleText
+      = new Dictionary<string, string>()
+      {
+        { "en", "About" },
+        { "fr", "À propos de" }
+      };
+
+    static public readonly Dictionary<string, string> AboutBoxVersionText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Version" },
+        { "fr", "Version" }
+      };
+
     static public readonly Dictionary<string, string> ApplicationDescriptionText
       = new Dictionary<string, string>()
       {
@@ -185,6 +199,7 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "Use the following tags to replace values:" + NewLine + NewLine +
                 "%BOOKSB% : StudyBible.org book name" + NewLine +
+                "%BOOKBIBLEHUB% : BibleHub.org book name" + NewLine +
                 "%BOOKCHABAD% : Chabad.org book name" + NewLine +
                 "%BOOKMM% : Mechon-Mamre.org book name" + NewLine +
                 "%BOOKDJEP% : Djep.hd.free.fr book name" + NewLine + NewLine +
@@ -196,6 +211,7 @@ namespace Ordisoftware.HebrewWords
                 "%VERSENUM#2% : Verse number in two digits" },
         { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
                 "%BOOKSB% : Nom du livre StudyBible.org" + NewLine +
+                "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + NewLine +
                 "%BOOKCHABAD% : Nom du livre Chabad.org" + NewLine +
                 "%BOOKMM% : Nom du livre Mechon-Mamre.org" + NewLine +
                 "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + NewLine + NewLine +

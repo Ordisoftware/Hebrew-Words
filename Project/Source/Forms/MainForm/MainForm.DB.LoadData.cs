@@ -133,7 +133,6 @@ namespace Ordisoftware.HebrewWords
           InitBooksCombobox();
           Bookmarks.Load();
           UpdateBookmarks();
-          StatisticsForm.Prepare();
         }
         finally
         {

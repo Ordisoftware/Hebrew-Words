@@ -15,6 +15,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -95,16 +96,6 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      if ( args.Length == 2 && args[0] == "/lang" )
-        try
-        {
-          // args[1] is like "en-US"
-          Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(args[1]);
-          Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(args[1]);
-        }
-        catch
-        {
-        }
       var assembly = typeof(Program).Assembly;
       var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
       string id = assembly.FullName + attribute.Value;
@@ -119,8 +110,22 @@ namespace Ordisoftware.HebrewWords
       }
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      try
+      {
+        if ( args.Length == 2 && args[0] == "/lang" )
+          if ( args[1] == "en" || args[1] == "fr" )
+            Settings.Language = args[1];
+        if ( Settings.Language == "" )
+          Settings.Language = Localizer.Language;
+        Settings.Save();
+        ApplyCurrentLanguage();
+      }
+      catch
+      {
+      }
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
       AboutBox.Instance.Icon = MainForm.Instance.Icon;
+      GrammarGuideForm.Instance.Icon = MainForm.Instance.Icon;
       UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
                          + Path.DirectorySeparatorChar
                          + AboutBox.Instance.AssemblyCompany
@@ -135,6 +140,23 @@ namespace Ordisoftware.HebrewWords
                               + Path.DirectorySeparatorChar;
       Directory.CreateDirectory(UserDataFolderPath);
       Application.Run(MainForm.Instance);
+    }
+
+    static public void ApplyCurrentLanguage()
+    {
+      string lang = "en-US";
+      if ( Settings.Language == "fr" )
+        lang = "fr-FR";
+      var culture = new CultureInfo(lang);
+      foreach ( Form form in Application.OpenForms )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      MainForm.Instance.SetView(Settings.CurrentView, true);
+      AboutBox.Instance.AboutBox_Shown(null, null);
+      GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
     }
 
     static public void CheckUpdate(bool auto)
