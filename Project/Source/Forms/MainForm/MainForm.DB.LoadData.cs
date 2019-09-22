@@ -49,6 +49,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void ReLoadData(Action action = null)
     {
+      ActionCloseWindows.PerformClick();
+      ActionSearchClear.PerformClick();
       PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelViewVerses.Controls.Clear();
