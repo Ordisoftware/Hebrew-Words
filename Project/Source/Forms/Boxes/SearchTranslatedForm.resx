@@ -139,7 +139,7 @@
     <value>58, 17</value>
   </data>
   <data name="EditReturn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditReturn.Text" xml:space="preserve">
     <value>Return</value>
@@ -199,7 +199,7 @@
     <value>75, 23</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -226,7 +226,7 @@
     <value>272, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
     <value>PanelButtons</value>
@@ -388,7 +388,7 @@
     <value>61, 17</value>
   </data>
   <data name="EditDistinct.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="EditDistinct.Text" xml:space="preserve">
     <value>Distinct</value>
@@ -421,7 +421,7 @@
     <value>22, 22</value>
   </data>
   <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionReset.Text" xml:space="preserve">
     <value>-</value>
@@ -484,7 +484,7 @@
     <value>30, 22</value>
   </data>
   <data name="ActionDelFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionDelFirst.Text" xml:space="preserve">
     <value>- &gt;</value>

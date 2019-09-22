@@ -52,11 +52,13 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       this.CenterToMainForm();
       Icon = MainForm.Instance.Icon;
+      ActiveControl = EditSource;
     }
 
     private ImportVerseForm(ReferenceItem reference)
       : this()
     {
+      Text += " - " + reference.ToString();
       DataSet = MainForm.Instance.DataSet;
       Reference = reference;
       CreateGhost();
@@ -78,6 +80,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionAnalyse_Click(object sender, EventArgs e)
     {
       DoAnalyse();
+      if ( IsResultValid )
+        DataGridView.Focus();
+      else
+        EditSource.Focus();
       ActionOK.Enabled = IsResultValid;
     }
 

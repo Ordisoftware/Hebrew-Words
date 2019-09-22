@@ -68,6 +68,7 @@
       this.PanelMain.Panel2.Controls.Add(this.DataGridView);
       resources.ApplyResources(this.PanelMain.Panel2, "PanelMain.Panel2");
       this.PanelMain.SplitterDistance = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSplitterDistance;
+      this.PanelMain.TabStop = false;
       // 
       // EditSource
       // 
