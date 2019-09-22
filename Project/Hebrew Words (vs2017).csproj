@@ -89,7 +89,7 @@
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
     <Compile Include="Source\Entities\ChapterItem.cs" />
-    <Compile Include="Source\Entities\SearchTranslatedComparer.cs" />
+    <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Entities\OnlineBibleProvider.cs" />
+    <Compile Include="Source\Entities\OnlineBibleProviders.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
     <Compile Include="Source\Enums\BooksNames.Original.cs" />
@@ -141,7 +141,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateSchema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadFromFiles.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.FillFromFiles.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">

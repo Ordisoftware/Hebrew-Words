@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewWords
           taskProgress.Start();
           var taskLoad = new Task(() =>
           {
-            LoadBooksFromFiles();
+            FillFromFiles();
           });
           taskLoad.Start();
           while ( inprogress )

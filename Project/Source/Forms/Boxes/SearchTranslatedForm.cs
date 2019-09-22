@@ -228,7 +228,7 @@ namespace Ordisoftware.HebrewWords
                          where check(word.Hebrew) && word.Translation != ""
                          select new ReferenceItem(book, chapter, verse, word);
         if ( EditDistinct.Checked )
-          references = references.Distinct(new SearchTranslatedComparer());
+          references = references.Distinct(new WordTranslationComparer());
         foreach ( var item in references )
         {
           var itemList = new ListViewItem(item.ToString());

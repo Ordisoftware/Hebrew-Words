@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewWords
   {
 
     /// <summary>
-    /// Load books content from hebrew text files.
+    /// Fill tables from hebrew text files.
     /// </summary>
-    private void LoadBooksFromFiles()
+    private void FillFromFiles()
     {
       try
       {

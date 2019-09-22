@@ -18,7 +18,7 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewWords
 {
 
-  class SearchTranslatedComparer : IEqualityComparer<ReferenceItem>
+  class WordTranslationComparer : IEqualityComparer<ReferenceItem>
   {
 
     public bool Equals(ReferenceItem x, ReferenceItem y)
