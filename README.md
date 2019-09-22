@@ -32,13 +32,17 @@ A tool for Windows written in C# that helps for the literal translation of the H
 
 ## Screenshots
 
-![verses Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-verses.png)
+![verses Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png)
 
-![Translations Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-translations.png)
+![Translations Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png)
 
-![Stats Tab](http://www.ordisoftware.com/uploads/2019/01/hebrew-words-stats.png)
+![Search Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png)
+
+![Stats Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png)
 
 ## Videos
+
+[![Showing video](https://img.youtube.com/vi/2c5JAdFU1Kk/0.jpg)](https://www.youtube.com/watch?v=2c5JAdFU1Kk)
 
 [![Showing video](https://img.youtube.com/vi/Wc5SdiASvCg/0.jpg)](https://www.youtube.com/watch?v=Wc5SdiASvCg)
 
@@ -118,6 +122,7 @@ Escape : Close window or Cancel process
 - Add search in book filter.
 - Add option to open generated MSWord files.
 - Add import verse console.
+- Improve import console.
 - Fix books file names and indexes.
 
 #### 2019.09.19 - Version 2.0
