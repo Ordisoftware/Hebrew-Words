@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewWords
       EditTranslation.BackColor = Color.AliceBlue;
       EditTranslation.SelectionStart = 0;
       if ( MainForm.Instance.ComboBoxMutex ) return;
-      MainForm.Instance.CurrentReference = new ReferenceItem(Reference);
+      MainForm.Instance.CurrentReference = new ReferenceItem(Reference, Word);
       MainForm.Instance.CurrentReference.Verse = Reference.Verse;
       MainForm.Instance.AddCurrentToHistory();
     }

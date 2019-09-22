@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewWords
     static public void Run(WordControl sender, ReferenceItem reference)
     {
       if ( sender == null || reference == null ) return;
-      var wordref = new WordReferencedItem(reference, sender.Word);
+      var wordref = new ReferenceItem(reference, sender.Word);
       foreach ( SearchTranslatedForm f in Forms.ToList() )
         if ( f.WordReferenced.Equals(wordref) )
         {
@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     private ReferenceItem Reference;
-    private WordReferencedItem WordReferenced;
+    private ReferenceItem WordReferenced;
     private WordControl WordControl;
     private bool Mutex;
 
@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewWords
     {
       Forms.Add(this);
       Reference = reference;
-      WordReferenced = new WordReferencedItem(reference, sender.Word);
+      WordReferenced = new ReferenceItem(reference, sender.Word);
       WordControl = sender;
       LabelReference.Text = reference.ToString();
       Mutex = true;
@@ -134,7 +134,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      ReachReferencedWord(new WordReferencedItem(Reference, WordControl.Word));
+      ReachReferencedWord(new ReferenceItem(Reference, WordControl.Word));
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewWords
       ActionReachReference.PerformClick();
     }
 
-    private void ReachReferencedWord(WordReferencedItem reference)
+    private void ReachReferencedWord(ReferenceItem reference)
     {
       MainForm.Instance.GoTo(reference);
       foreach ( Control control in MainForm.Instance.PanelViewVerses.Controls )
@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionReachReference_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      ReachReferencedWord((WordReferencedItem)ListView.SelectedItems[0].Tag);
+      ReachReferencedWord((ReferenceItem)ListView.SelectedItems[0].Tag);
     }
 
     private string CleanTranslation(string str)
@@ -170,14 +170,14 @@ namespace Ordisoftware.HebrewWords
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       Clipboard.SetText(str);
     }
 
     private void ActionUseTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       WordControl.Word.Translation = str;
       WordControl.EditTranslation.Text = str;
       Close();
@@ -235,7 +235,7 @@ namespace Ordisoftware.HebrewWords
                          from verse in chapter.GetVersesRows()
                          from word in verse.GetWordsRows()
                          where check(word.Hebrew) && word.Translation != ""
-                         select new WordReferencedItem(book, chapter, verse, word);
+                         select new ReferenceItem(book, chapter, verse, word);
         if ( EditDistinct.Checked )
           references = references.Distinct(new SearchTranslatedComparer());
         foreach ( var item in references )

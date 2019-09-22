@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      CurrentReference = new ReferenceItem(null, null, null);
+      CurrentReference = new ReferenceItem(null, null, null, null);
       int index = 1;
       EventHandler action = (sender, e) =>
       {
@@ -835,6 +835,7 @@ namespace Ordisoftware.HebrewWords
     private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
     {
       PanelViewVerses.Focus();
+      GoTo(CurrentReference);
     }
 
     /// <summary>

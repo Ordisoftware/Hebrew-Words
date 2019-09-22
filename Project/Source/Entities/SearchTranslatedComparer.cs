@@ -18,10 +18,10 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewWords
 {
 
-  class SearchTranslatedComparer : IEqualityComparer<WordReferencedItem>
+  class SearchTranslatedComparer : IEqualityComparer<ReferenceItem>
   {
 
-    public bool Equals(WordReferencedItem x, WordReferencedItem y)
+    public bool Equals(ReferenceItem x, ReferenceItem y)
     {
       if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
         return false;
@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    public int GetHashCode(WordReferencedItem value)
+    public int GetHashCode(ReferenceItem value)
     {
       int hash = value.Word?.Translation.GetHashCode() ?? 0;
       return hash;

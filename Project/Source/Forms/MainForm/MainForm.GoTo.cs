@@ -25,9 +25,9 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
-    public void GoTo(int book, int chapter, int verse, bool forceUpdate = false)
+    public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
     {
-      GoTo(new ReferenceItem(book, chapter, verse), forceUpdate);
+      GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
     }
 
     /// <summary>
@@ -73,8 +73,6 @@ namespace Ordisoftware.HebrewWords
         else
           reference.Verse = reference.Chapter.GetVersesRows()[0];
       }
-      CurrentReference = new ReferenceItem(reference);
-      AddCurrentToHistory();
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -92,6 +90,14 @@ namespace Ordisoftware.HebrewWords
                 break;
               }
             }
+          if ( reference.Word != null )
+            foreach ( Control control in PanelViewVerses.Controls )
+              if ( control is WordControl )
+                if ( ( (WordControl)control ).Word == reference.Word )
+                {
+                  control.Focus();
+                  break;
+                }
           break;
         case ViewModeType.Translations:
           foreach ( string line in EditTranslations.Lines )
@@ -120,6 +126,8 @@ namespace Ordisoftware.HebrewWords
           }
           break;
       }
+      CurrentReference = new ReferenceItem(reference);
+      AddCurrentToHistory();
     }
 
   }

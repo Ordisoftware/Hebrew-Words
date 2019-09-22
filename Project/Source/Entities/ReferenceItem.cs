@@ -28,6 +28,7 @@ namespace Ordisoftware.HebrewWords
     public DataSet.BooksRow Book { get; set; }
     public DataSet.ChaptersRow Chapter { get; set; }
     public DataSet.VersesRow Verse { get; set; }
+    public DataSet.WordsRow Word { get; set; }
 
     public override string ToString()
     {
@@ -48,28 +49,46 @@ namespace Ordisoftware.HebrewWords
     }
 
     public ReferenceItem(DataSet.BooksRow book, DataSet.ChaptersRow chapter, DataSet.VersesRow verse)
+      : this(book, chapter, verse, null)
+    {
+    }
+
+    public ReferenceItem(DataSet.BooksRow book, DataSet.ChaptersRow chapter, DataSet.VersesRow verse, DataSet.WordsRow word)
     {
       Book = book;
       Chapter = chapter;
       Verse = verse;
+      Word = word;
     }
 
     public ReferenceItem(ReferenceItem item)
-      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0)
+      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
     {
     }
 
+    public ReferenceItem(ReferenceItem reference, DataSet.WordsRow word)
+      : this(reference)
+    {
+      Word = word;
+    }
+
     public ReferenceItem(int book, int chapter, int verse)
+      : this(book, chapter, verse, 0)
+    {
+    }
+
+    public ReferenceItem(int book, int chapter, int verse, int word)
     {
       try
       {
         Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).Single();
         Chapter = Book.GetChaptersRows()[chapter - 1];
         Verse = verse == 0 ? null : Chapter.GetVersesRows()[verse - 1];
+        Word = word == 0 ? null : Verse.GetWordsRows()[word - 1];
       }
       catch
       {
-        throw new Exception(String.Format("Bad reference: {0}.{1}.{2}", book, chapter, verse));
+        throw new Exception(String.Format("Bad reference: {0}.{1}.{2}.{3}", book, chapter, verse, word));
       }
     }
 
@@ -83,7 +102,8 @@ namespace Ordisoftware.HebrewWords
       {
         return ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
             && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-            && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
+            && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 )
+            && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
       }
       catch
       {
@@ -101,7 +121,8 @@ namespace Ordisoftware.HebrewWords
       int hashBook = Book?.Number.GetHashCode() ?? 0;
       int hashChapter = Chapter?.Number.GetHashCode() ?? 0;
       int hashVerse = Verse?.Number.GetHashCode() ?? 0;
-      return hashBook ^ hashChapter ^ hashVerse;
+      int hashWord = Word?.Number.GetHashCode() ?? 0;
+      return hashBook ^ hashChapter ^ hashVerse ^ hashWord;
     }
 
   }

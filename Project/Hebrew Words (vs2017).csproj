@@ -91,7 +91,6 @@
     <Compile Include="Source\Entities\ChapterItem.cs" />
     <Compile Include="Source\Entities\SearchTranslatedComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
-    <Compile Include="Source\Entities\WordReferencedItem.cs" />
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
