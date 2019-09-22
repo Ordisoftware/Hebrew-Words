@@ -110,6 +110,7 @@ Escape : Close window or Cancel process
 #### __________ - Version 2.2
 
 - Add option to choose language.
+- Fix reload data.
 
 #### 2019.09.21 - Version 2.1
 
