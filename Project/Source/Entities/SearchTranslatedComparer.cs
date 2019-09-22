@@ -23,24 +23,13 @@ namespace Ordisoftware.HebrewWords
 
     public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
-        return false;
-      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
-        return false;
-      try
-      {
-        return ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
-      }
-      catch
-      {
-        return false;
-      }
+      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
+          && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
     }
 
     public int GetHashCode(ReferenceItem value)
     {
-      int hash = value.Word?.Translation.GetHashCode() ?? 0;
-      return hash;
+      return value?.Word?.Translation.GetHashCode() ?? 0;
     }
 
   }

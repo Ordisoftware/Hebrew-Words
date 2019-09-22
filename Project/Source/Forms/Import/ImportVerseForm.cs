@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
         {
           MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
           foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-            control.EditTranslation.Text = control.Word.Translation;
+            control.EditTranslation.Text = control.Reference.Word.Translation;
         }
         MainForm.Instance.ActionSave.PerformClick();
       }

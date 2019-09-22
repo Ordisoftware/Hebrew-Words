@@ -25,32 +25,13 @@ namespace Ordisoftware.HebrewWords
   public class Bookmarks : IEnumerable<ReferenceItem>
   {
 
-    private readonly List<ReferenceItem> Items
-      = new List<ReferenceItem>();
+    private readonly List<ReferenceItem> Items = new List<ReferenceItem>();
 
-    private string Filename
-    {
-      get
-      {
-        return Program.UserDataFolderPath + "Bookmarks.txt";
-      }
-    }
+    private string Filename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
 
-    public int Count
-    {
-      get
-      {
-        return Items.Count;
-      }
-    }
+    public int Count { get { return Items.Count; } }
 
-    public ReferenceItem this[int index]
-    {
-      get
-      {
-        return Items[index];
-      }
-    }
+    public ReferenceItem this[int index] { get { return Items[index]; } }
 
     IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
     {
