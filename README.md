@@ -61,7 +61,7 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
-#### What to do if there is a problem with the display
+#### What to do if there is a problem with the display?
 
 Use the refresh view action of the menu at the top.
 
