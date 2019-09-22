@@ -72,7 +72,7 @@
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
       <DependentUpon>SelectReferenceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Import\ImportResults.cs" />
+    <Compile Include="Source\Forms\Import\ImportVerseResults.cs" />
     <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
       <SubType>Form</SubType>
     </Compile>
