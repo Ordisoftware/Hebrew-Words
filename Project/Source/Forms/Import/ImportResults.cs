@@ -18,18 +18,18 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewWords
 {
 
-  public class ImportResult
+  public class ImportVerseResult
   {
     public string Hebrew { get; set; }
     public string CurrentTranslation { get; set; }
     public string ImportedTranslation { get; set; }
   }
 
-  public class ImportResults : List<ImportResult>
+  public class ImportverseResults : List<ImportVerseResult>
   {
-    public ImportResults() { }
-    public ImportResults(int capacity) : base(capacity) { }
-    public ImportResults(IEnumerable<ImportResult> collection) : base(collection) { }
+    public ImportverseResults() { }
+    public ImportverseResults(int capacity) : base(capacity) { }
+    public ImportverseResults(IEnumerable<ImportVerseResult> collection) : base(collection) { }
   }
 
 }

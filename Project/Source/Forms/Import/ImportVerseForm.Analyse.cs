@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewWords
 
     private const char ElementsSeparator = '|';
 
-    private ImportResults ImportResults = new ImportResults();
+    private ImportverseResults ImportResults = new ImportverseResults();
 
     private void DoAnalyse()
     {
@@ -81,7 +81,7 @@ namespace Ordisoftware.HebrewWords
                                                                       foundWords[index]));
           return;
         }
-        var item = new ImportResult();
+        var item = new ImportVerseResult();
         item.Hebrew = wordsReference[index].Hebrew;
         item.CurrentTranslation = wordsReference[index].Translation;
         item.ImportedTranslation = foundTranslation[index];

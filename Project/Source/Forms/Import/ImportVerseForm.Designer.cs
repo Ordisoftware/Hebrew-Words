@@ -153,7 +153,7 @@
       // 
       // importResultsBindingSource
       // 
-      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportResults);
+      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportverseResults);
       // 
       // ImportVerseForm
       // 
