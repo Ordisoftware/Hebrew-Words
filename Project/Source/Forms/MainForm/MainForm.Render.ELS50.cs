@@ -20,7 +20,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void RenderELS50()
+    internal void RenderELS50()
     {
       EditELS50All.Clear();
       var list = CurrentReference.Book.GetChaptersRows();

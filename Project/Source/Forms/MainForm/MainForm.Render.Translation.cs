@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void RenderTranslation()
+    internal void RenderTranslation()
     {
       EditTranslations.Visible = false;
       EditTranslations.Clear();

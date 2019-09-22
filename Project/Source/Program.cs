@@ -154,9 +154,15 @@ namespace Ordisoftware.HebrewWords
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      MainForm.Instance.SetView(Settings.CurrentView, true);
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
+      if ( MainForm.Instance.IsReady )
+      {
+        MainForm.Instance.RenderTranslation();
+        MainForm.Instance.RenderRawText();
+        MainForm.Instance.RenderELS50();
+        MainForm.Instance.SetView(Settings.CurrentView, true);
+      }
     }
 
     static public void CheckUpdate(bool auto)
