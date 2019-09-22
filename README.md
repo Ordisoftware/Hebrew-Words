@@ -99,6 +99,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve UI.
 - Fix reload data.
 - Some code refactorings.
+- Update help.
 
 #### 2019.09.21 - Version 2.1
 
