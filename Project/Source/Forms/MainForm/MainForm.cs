@@ -98,13 +98,13 @@ namespace Ordisoftware.HebrewWords
     {
       Refresh();
       InitializeDialogsDirectory();
-      Program.CheckUpdate(true);
       DoBackupDB();
       LoadData();
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       IsReady = true;
+      Program.CheckUpdate(true);
     }
 
     /// <summary>
@@ -644,6 +644,16 @@ namespace Ordisoftware.HebrewWords
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCreateGitHubIssue for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
     }
 
     /// <summary>

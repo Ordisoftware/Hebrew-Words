@@ -51,6 +51,18 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Indicate the GitHub repository.
+    /// </summary>
+    static public string GitHubRepositoryURL
+    {
+      get
+      {
+        string title = AboutBox.Instance.AssemblyTitle;
+        return "https://github.com/" + AboutBox.Instance.CompanyName + "/" + title.Replace(" ", "-");
+      }
+    }
+
+    /// <summary>
     /// Indicate root folder path of the application.
     /// </summary>
     static public readonly string AppRootFolderPath

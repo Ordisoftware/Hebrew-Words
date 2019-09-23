@@ -896,8 +896,8 @@
       this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
       this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
-      this.ActionCreateGitHubIssue.Tag = "https://github.com/Ordisoftware/Hebrew-Words/issues";
-      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      this.ActionCreateGitHubIssue.Tag = "";
+      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
       // 
       // toolStripSeparator2
       // 

@@ -1119,7 +1119,7 @@
     <value>EditLetters</value>
   </data>
   <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.LettersControl, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -4153,7 +4153,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
@@ -4729,31 +4729,31 @@ A verse is founded if the translation of one of its words contains an expression
     <value>BooksTableAdapter</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Name" xml:space="preserve">
     <value>ChaptersTableAdapter</value>
   </data>
   <data name="&gt;&gt;ChaptersTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Name" xml:space="preserve">
     <value>VersesTableAdapter</value>
   </data>
   <data name="&gt;&gt;VersesTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Name" xml:space="preserve">
     <value>WordsTableAdapter</value>
   </data>
   <data name="&gt;&gt;WordsTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter, Ordisoftware.HebrewWords, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
