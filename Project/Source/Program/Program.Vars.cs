@@ -30,8 +30,25 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate the check update URL.
     /// </summary>
-    static public readonly string CheckUpdateURL
-      = "http://www.ordisoftware.com/files/%APPTITLE%.update";
+    static public string CheckUpdateURL
+    {
+      get
+      {
+        string title = AboutBox.Instance.AssemblyTitle;
+        return "http://" + AboutBox.Instance.AssemblyTrademark + "/files/" + title.Replace(" ", "") + ".update";
+      }
+    }
+
+    /// <summary>
+    /// Indicate the download application URL.
+    /// </summary>
+    static public string DownloadApplicationURL
+    {
+      get
+      {
+        return AboutBox.Instance.AssemblyProduct;
+      }
+    }
 
     /// <summary>
     /// Indicate root folder path of the application.

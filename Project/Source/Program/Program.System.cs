@@ -30,11 +30,9 @@ namespace Ordisoftware.HebrewWords
       if ( auto && !Settings.CheckUpdateAtStartup ) return;
       try
       {
-        string title = AboutBox.Instance.AssemblyTitle;
-        string url = CheckUpdateURL.Replace("%APPTITLE%", title.Replace(" ", ""));
         using ( WebClient client = new WebClient() )
         {
-          string[] partsVersion = client.DownloadString(url).Split('.');
+          string[] partsVersion = client.DownloadString(CheckUpdateURL).Split('.');
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
@@ -45,7 +43,7 @@ namespace Ordisoftware.HebrewWords
           if ( DisplayManager.QueryYesNo(Translations.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
                                          Translations.AskDownloadNewVersion.GetLang()) )
-            AboutBox.Instance.OpenApplicationHome();
+            SystemManager.OpenWebLink(DownloadApplicationURL);
         }
       }
       catch
