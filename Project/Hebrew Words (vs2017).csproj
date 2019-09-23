@@ -247,11 +247,11 @@
     <Compile Include="Source\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program.System.cs" />
-    <Compile Include="Source\Program.Tools.cs" />
-    <Compile Include="Source\Program.Vars.cs" />
-    <Compile Include="Source\Program.Init.cs" />
-    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\Program\Program.System.cs" />
+    <Compile Include="Source\Program\Program.Tools.cs" />
+    <Compile Include="Source\Program\Program.Vars.cs" />
+    <Compile Include="Source\Program\Program.Init.cs" />
+    <Compile Include="Source\Program\Program.cs" />
     <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
