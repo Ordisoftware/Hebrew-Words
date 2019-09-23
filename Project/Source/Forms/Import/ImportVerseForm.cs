@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
         {
           MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
           foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-            control.EditTranslation.Text = control.Word.Translation;
+            control.EditTranslation.Text = control.Reference.Word.Translation;
         }
         MainForm.Instance.ActionSave.PerformClick();
       }
@@ -52,11 +52,13 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       this.CenterToMainForm();
       Icon = MainForm.Instance.Icon;
+      ActiveControl = EditSource;
     }
 
     private ImportVerseForm(ReferenceItem reference)
       : this()
     {
+      Text += " - " + reference.ToString();
       DataSet = MainForm.Instance.DataSet;
       Reference = reference;
       CreateGhost();
@@ -78,6 +80,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionAnalyse_Click(object sender, EventArgs e)
     {
       DoAnalyse();
+      if ( IsResultValid )
+        DataGridView.Focus();
+      else
+        EditSource.Focus();
       ActionOK.Enabled = IsResultValid;
     }
 
@@ -92,7 +98,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.ImportHelpText.GetLang());
+      DisplayManager.Show(Translations.ImportHelp.GetLang());
     }
   }
 

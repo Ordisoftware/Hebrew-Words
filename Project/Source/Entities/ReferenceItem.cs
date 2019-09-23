@@ -25,70 +25,87 @@ namespace Ordisoftware.HebrewWords
   public class ReferenceItem
   {
 
+    const string NULL = "(null)";
+
     public DataSet.BooksRow Book { get; set; }
     public DataSet.ChaptersRow Chapter { get; set; }
     public DataSet.VersesRow Verse { get; set; }
+    public DataSet.WordsRow Word { get; set; }
 
     public override string ToString()
     {
-      return ( Book?.Name ?? "(null)" ) + " " +
-             ( Chapter?.Number.ToString() ?? "(null)" ) + "." +
-             ( Verse?.Number.ToString() ?? "(null)" );
+      return ( Book?.Name ?? NULL ) + " " +
+             ( Chapter?.Number.ToString() ?? NULL ) + "." +
+             ( Verse?.Number.ToString() ?? NULL );
     }
 
     public string ToStringNumbers()
     {
-      return ( Book?.Number.ToString() ?? "(null)" ) + " " +
-             ( Chapter?.Number.ToString() ?? "(null)" ) + "." +
-             ( Verse?.Number.ToString() ?? "(null)" );
+      return ( Book?.Number.ToString() ?? NULL ) + "." +
+             ( Chapter?.Number.ToString() ?? NULL ) + "." +
+             ( Verse?.Number.ToString() ?? NULL );
     }
 
     private ReferenceItem()
     {
     }
 
-    public ReferenceItem(DataSet.BooksRow book, DataSet.ChaptersRow chapter, DataSet.VersesRow verse)
+    public ReferenceItem(DataSet.BooksRow book, 
+                         DataSet.ChaptersRow chapter, 
+                         DataSet.VersesRow verse)
+      : this(book, chapter, verse, null)
+    {
+    }
+
+    public ReferenceItem(DataSet.BooksRow book, 
+                         DataSet.ChaptersRow chapter, 
+                         DataSet.VersesRow verse, 
+                         DataSet.WordsRow word)
     {
       Book = book;
       Chapter = chapter;
       Verse = verse;
+      Word = word;
+    }
+
+    public ReferenceItem(ReferenceItem reference,
+                         DataSet.WordsRow word)
+      : this(reference)
+    {
+      Word = word;
     }
 
     public ReferenceItem(ReferenceItem item)
-      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0)
+      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
     {
     }
 
     public ReferenceItem(int book, int chapter, int verse)
+      : this(book, chapter, verse, 0)
+    {
+    }
+
+    public ReferenceItem(int book, int chapter, int verse, int word)
     {
       try
       {
-        Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).Single();
-        Chapter = Book.GetChaptersRows()[chapter - 1];
-        Verse = verse == 0 ? null : Chapter.GetVersesRows()[verse - 1];
+        Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).SingleOrDefault();
+        Chapter = Book?.GetChaptersRows()[chapter - 1] ?? null;
+        Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
+        Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
       }
       catch
       {
-        throw new Exception(String.Format("Bad reference: {0}.{1}.{2}", book, chapter, verse));
+        throw new Exception(string.Format("Bad reference: {0}.{1}.{2}:{3}", book, chapter, verse, word));
       }
     }
 
     static public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
-        return false;
-      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
-        return false;
-      try
-      {
-        return ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-            && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-            && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-      }
-      catch
-      {
-        return false;
-      }
+      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
+          && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
     }
 
     public bool Equals(ReferenceItem y)
@@ -96,12 +113,16 @@ namespace Ordisoftware.HebrewWords
       return Equals(this, y);
     }
 
+    internal bool EqualsWord(ReferenceItem y)
+    {
+      return Equals(y) && ( Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
+    }
+
     public override int GetHashCode()
     {
-      int hashBook = Book?.Number.GetHashCode() ?? 0;
-      int hashChapter = Chapter?.Number.GetHashCode() ?? 0;
-      int hashVerse = Verse?.Number.GetHashCode() ?? 0;
-      return hashBook ^ hashChapter ^ hashVerse;
+      return ( Book?.Number.GetHashCode() ?? 0 )
+           ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+           ^ ( Verse?.Number.GetHashCode() ?? 0 );
     }
 
   }

@@ -93,13 +93,21 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
+#### 2019.09.24 - Version 2.2
+
+- Add option to choose language.
+- Improve UI.
+- Update help.
+- Fix reload data.
+- Some code refactorings.
+
 #### 2019.09.21 - Version 2.1
 
 - Add find reference menu button.
 - Add search in book filter.
 - Add option to open generated MSWord files.
 - Add import verse console.
-- Improve import console.
+- Improve reference management.
 - Fix books file names and indexes.
 
 #### 2019.09.19 - Version 2.0

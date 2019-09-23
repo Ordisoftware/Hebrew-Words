@@ -60,6 +60,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dependencies\CultureManager\CultureManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Entities\DataSetHelper.cs" />
     <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
     <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
@@ -69,7 +72,7 @@
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
       <DependentUpon>SelectReferenceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Import\ImportResults.cs" />
+    <Compile Include="Source\Forms\Import\ImportVerseResults.cs" />
     <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +89,8 @@
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
     <Compile Include="Source\Entities\ChapterItem.cs" />
-    <Compile Include="Source\Entities\SearchTranslatedComparer.cs" />
+    <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
-    <Compile Include="Source\Entities\WordReferencedItem.cs" />
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
@@ -96,7 +98,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Entities\OnlineBibleProvider.cs" />
+    <Compile Include="Source\Entities\OnlineBibleProviders.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
     <Compile Include="Source\Enums\BooksNames.Original.cs" />
@@ -114,7 +116,7 @@
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\ExportDocX.cs" />
+    <Compile Include="Source\Entities\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
     <Compile Include="Source\Enums\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
@@ -139,7 +141,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateSchema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadFromFiles.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.FillFromFiles.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">
@@ -189,7 +191,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Enums\Books.cs" />
-    <Compile Include="Source\Classes\Letters.cs" />
+    <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
     <Compile Include="Source\Classes\SettingsHelper.cs" />
     <Compile Include="Source\Enums\ControlLocation.cs" />
@@ -245,7 +247,11 @@
     <Compile Include="Source\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\Program\Program.System.cs" />
+    <Compile Include="Source\Program\Program.Tools.cs" />
+    <Compile Include="Source\Program\Program.Vars.cs" />
+    <Compile Include="Source\Program\Program.Init.cs" />
+    <Compile Include="Source\Program\Program.cs" />
     <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>

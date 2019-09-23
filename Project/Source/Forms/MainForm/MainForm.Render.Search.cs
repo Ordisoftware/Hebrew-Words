@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewWords
             if ( CheckWord != null )
               if ( CheckWord(word) )
               {
-                label.Tag = new WordReferencedItem(reference, word);
+                label.Tag = new ReferenceItem(reference, word);
                 label.ForeColor = Color.DarkRed;
                 label.MouseEnter += LabelMouseEnter;
                 label.MouseLeave += LabelMouseLeave;
@@ -150,12 +150,8 @@ namespace Ordisoftware.HebrewWords
     private void LabelMouseClick(object sender, EventArgs e)
     {
       SetView(ViewModeType.Verses);
-      var item = (WordReferencedItem)( (Control)sender ).Tag;
+      var item = (ReferenceItem)( (Control)sender ).Tag;
       GoTo(item);
-      foreach ( Control control in PanelViewVerses.Controls )
-        if ( control is WordControl )
-          if ( ( (WordControl)control ).Word == item.Word )
-            control.Focus();
     }
 
   }

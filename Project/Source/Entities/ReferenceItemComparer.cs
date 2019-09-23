@@ -23,28 +23,17 @@ namespace Ordisoftware.HebrewWords
 
     public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
-        return false;
-      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
-        return false;
-      try
-      {
-        return ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-            && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-            && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-      }
-      catch
-      {
-        return false;
-      }
+      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
+          && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
     }
 
     public int GetHashCode(ReferenceItem value)
     {
-      int hashBook = value.Book?.Number.GetHashCode() ?? 0;
-      int hashChapter = value.Chapter?.Number.GetHashCode() ?? 0;
-      int hashVerse = value.Verse?.Number.GetHashCode() ?? 0;
-      return hashBook ^ hashChapter ^ hashVerse;
+      return ( value?.Book?.Number.GetHashCode() ?? 0 )
+           ^ ( value?.Chapter?.Number.GetHashCode() ?? 0 )
+           ^ ( value?.Verse?.Number.GetHashCode() ?? 0 );
     }
 
   }

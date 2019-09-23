@@ -32,17 +32,11 @@ namespace Ordisoftware.HebrewWords
       public int CountLetters;
     }
 
-    static private StatisticsForm Instance;
-
-    static public void Prepare()
-    {
-      Instance = new StatisticsForm();
-    }
-
     static public ReferenceItem Run()
     {
-      Instance.ShowDialog();
-      return Instance.Reference;
+      var form = new StatisticsForm();
+      form.ShowDialog();
+      return form.Reference;
     }
 
     private ReferenceItem Reference;
@@ -50,7 +44,7 @@ namespace Ordisoftware.HebrewWords
     private StatisticsForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
+      MainForm.Instance.SetFormDisabled(true);
       try
       {
         InitializeCounters();
@@ -62,6 +56,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        MainForm.Instance.SetFormDisabled(false);
       }
     }
 
@@ -126,7 +121,7 @@ namespace Ordisoftware.HebrewWords
 
     private void InitializeMiddle()
     {
-      int lcount = (int)Math.Truncate((double)CountersTorah.CountLetters / 2.0);
+      int lcount = (int)Math.Truncate(CountersTorah.CountLetters / 2.0);
       int index = 0;
       var books = from book in MainForm.Instance.DataSet.Books
                   where book.Number <= BooksBounds.Torah.Max
@@ -162,7 +157,7 @@ namespace Ordisoftware.HebrewWords
         return query.Count().ToString();
       };
       LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
-      LabelCountElohimValue.Text = getCount(s => Letters.SetFinale(s, false).Contains("myhla"));
+      LabelCountElohimValue.Text = getCount(s => HebrewLetters.SetFinale(s, false).Contains("myhla"));
       LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));
       LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m"));
       LabelCountMitsvahValue.Text = getCount(s => s.Contains("hvjm") || s.Contains("tvjm"));

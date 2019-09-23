@@ -105,6 +105,7 @@
       this.Name = "AboutBox";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
+      this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

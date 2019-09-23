@@ -49,6 +49,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void ReLoadData(Action action = null)
     {
+      ActionCloseWindows.PerformClick();
+      ActionSearchClear.PerformClick();
       PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelViewVerses.Controls.Clear();
@@ -67,17 +69,19 @@ namespace Ordisoftware.HebrewWords
     private int GetRowsCount(string tableName)
     {
       int count = 0;
-      var connection = new OdbcConnection(Program.Settings.ConnectionString);
-      connection.Open();
-      try
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
       {
-        var command = new OdbcCommand("SELECT COUNT(ID) FROM [" + tableName + "]", connection);
-        var reader = command.ExecuteReader();
-        if ( reader.Read() ) count = (int)reader[0];
-      }
-      finally
-      {
-        connection.Close();
+        connection.Open();
+        try
+        {
+          var command = new OdbcCommand("SELECT COUNT(ID) FROM [" + tableName + "]", connection);
+          var reader = command.ExecuteReader();
+          if ( reader.Read() ) count = (int)reader[0];
+        }
+        finally
+        {
+          connection.Close();
+        }
       }
       return count;
     }
@@ -96,6 +100,7 @@ namespace Ordisoftware.HebrewWords
       try
       {
         CreateSchemaIfNotExists();
+        CreateDataIfNotExists();
         form.Refresh();
         int rowsCount = GetRowsCount(DataSet.Books.TableName)
                       + GetRowsCount(DataSet.Chapters.TableName)
@@ -133,7 +138,6 @@ namespace Ordisoftware.HebrewWords
           InitBooksCombobox();
           Bookmarks.Load();
           UpdateBookmarks();
-          StatisticsForm.Prepare();
         }
         finally
         {

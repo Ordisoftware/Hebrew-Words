@@ -270,7 +270,7 @@
   <data name="ActionHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAJXSURBVDhPXY/LTxNhFMXnL0CkrQkm4sadLHzFldYNAUSJ
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJXSURBVDhPXY/LTxNhFMXnL0CkrQkm4sadLHzFldYNAUSJ
         sfgoLTSNIaBiYAELIr6CmigJGMWiYJWHRECdabtCFwqENGlqiyCtfWixIUhkgSsTZXX8ztdpUW5y8809
         53dOMsrmMdZ4XFurtd/5VhVbxPLlTV1HcgNA/xJjqvWWbnf44OwJwT21BO/sKjzhVfnypk6fnB7ZKKBY
         fGkCgzPL6HqbRnl3GDtbp2BqmpQvb+r0yWVLcgWFoln78AMNQzHsapvBdc8X4W0Mb+r0yZFnTliZf25/
@@ -293,7 +293,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
     <value>ActionHelp</value>
@@ -356,7 +356,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionOK.Text" xml:space="preserve">
     <value>Import</value>
@@ -386,7 +386,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -433,6 +433,9 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>
   </data>
@@ -445,12 +448,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
-  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
-    <value>ColumnHebrew</value>
-  </data>
-  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnCurrentTranslation.Name" xml:space="preserve">
     <value>ColumnCurrentTranslation</value>
   </data>
@@ -461,6 +458,12 @@
     <value>ColumnImportedTranslation</value>
   </data>
   <data name="&gt;&gt;ColumnImportedTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
+    <value>ColumnHebrew</value>
+  </data>
+  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;importResultsBindingSource.Name" xml:space="preserve">

@@ -28,17 +28,26 @@ namespace Ordisoftware.HebrewWords
   public partial class PreferencesForm : Form
   {
 
+    static private bool First;
+    static private bool LanguageChanged;
+    static private int CommentaryLinesCountPrevious;
+    static private int WordControlWidthPrevious;
+    static private int MaxrefCountPrevious;
+    static private bool UpdateViewRequired;
+
     static public bool Run()
     {
+      First = true;
       var form = new PreferencesForm();
       form.ShowDialog();
-      return form.UpdateViewRequired;
+      while ( LanguageChanged )
+      {
+        LanguageChanged = false;
+        form = new PreferencesForm();
+        form.ShowDialog();
+      }
+      return UpdateViewRequired;
     }
-
-    private bool UpdateViewRequired;
-    private int CommentaryLinesCountPrevious;
-    private int WordControlWidthPrevious;
-    private int MaxrefCountPrevious;
 
     /// <summary>
     /// Default constructor.
@@ -62,6 +71,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      UpdateLanguagesButtons();
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
       EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL;
@@ -77,11 +87,12 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
-      if ( sender != null )
+      if ( First )
       {
         CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
         WordControlWidthPrevious = (int)EditWordControlWidth.Value;
         MaxrefCountPrevious = (int)EditMaxRefCount.Value;
+        First = false;
       }
     }
 
@@ -119,6 +130,38 @@ namespace Ordisoftware.HebrewWords
       UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
                         || WordControlWidthPrevious != (int)EditWordControlWidth.Value
                         || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
+    }
+
+    private void UpdateLanguagesButtons()
+    {
+      if ( Program.Settings.Language == "en" )
+      {
+        ActionSelectLangEN.FlatAppearance.BorderSize = 1;
+        ActionSelectLangFR.FlatAppearance.BorderSize = 0;
+      }
+      if ( Program.Settings.Language == "fr" )
+      {
+        ActionSelectLangFR.FlatAppearance.BorderSize = 1;
+        ActionSelectLangEN.FlatAppearance.BorderSize = 0;
+      }
+    }
+
+    private void ActionSelectLangEN_Click(object sender, EventArgs e)
+    {
+      Program.Settings.Language = "en";
+      Program.ApplyCurrentLanguage();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
+    }
+
+    private void ActionSelectLangFR_Click(object sender, EventArgs e)
+    {
+      Program.Settings.Language = "fr";
+      Program.ApplyCurrentLanguage();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
     }
 
     /// <summary>
@@ -173,8 +216,9 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.OnlineVerseHelpText.GetLang());
+      DisplayManager.Show(Translations.OpenOnlineVerseHelp.GetLang());
     }
+
   }
 
 }

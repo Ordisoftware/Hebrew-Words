@@ -31,11 +31,14 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     public void CreateDataIfNotExists()
     {
-      var connection = new OdbcConnection(Program.Settings.ConnectionString);
-      connection.Open();
-      var command = new OdbcCommand("select count(*) FROM Books", connection);
-      int count = (int)command.ExecuteScalar();
-      connection.Close();
+      int count = 0;
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+      {
+        connection.Open();
+        var command = new OdbcCommand("select count(*) FROM Books", connection);
+        count = (int)command.ExecuteScalar();
+        connection.Close();
+      }
       if ( count != 0 )
       {
         BooksTableAdapter.Fill(DataSet.Books);
@@ -54,7 +57,7 @@ namespace Ordisoftware.HebrewWords
         int index = 0;
         int delta = 1;
         var form = new LoadingForm();
-        form.LabelOperation.Text = Translations.CreatingDataText.GetLang();
+        form.LabelOperation.Text = Translations.CreatingData.GetLang();
         form.ProgressBar.Maximum = 64;
         form.Show();
         try
@@ -76,7 +79,7 @@ namespace Ordisoftware.HebrewWords
           taskProgress.Start();
           var taskLoad = new Task(() =>
           {
-            LoadBooksFromFiles();
+            FillFromFiles();
           });
           taskLoad.Start();
           while ( inprogress )

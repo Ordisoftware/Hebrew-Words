@@ -31,14 +31,19 @@ namespace Ordisoftware.HebrewWords
     private GrammarGuideForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
       ActiveControl = WebBrowser;
     }
 
     private void GrammarGuideForm_Load(object sender, EventArgs e)
     {
       if ( Location.X == -1 && Location.Y == -1 ) this.CenterToMainForm();
+    }
+
+    internal void GrammarGuideForm_Shown(object sender, EventArgs e)
+    {
+      WebBrowser.AllowNavigation = true;
       WebBrowser.Navigate(Program.GrammarGuideFilename.Replace("%lang%", Localizer.Language));
+      WebBrowser.AllowNavigation = false;
     }
 
     private void GrammarGuideForm_FormClosing(object sender, FormClosingEventArgs e)

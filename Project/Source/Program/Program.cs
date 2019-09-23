@@ -13,34 +13,26 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  class SearchTranslatedComparer : IEqualityComparer<WordReferencedItem>
+  static partial class Program
   {
 
-    public bool Equals(WordReferencedItem x, WordReferencedItem y)
+    [STAThread]
+    static void Main(string[] args)
     {
-      if ( Object.ReferenceEquals(x, null) && !Object.ReferenceEquals(y, null) )
-        return false;
-      if ( !Object.ReferenceEquals(x, null) && Object.ReferenceEquals(y, null) )
-        return false;
-      try
-      {
-        return ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
-      }
-      catch
-      {
-        return false;
-      }
-    }
-
-    public int GetHashCode(WordReferencedItem value)
-    {
-      int hash = value.Word?.Translation.GetHashCode() ?? 0;
-      return hash;
+      if ( !CheckApplicationOnlyOneInstance() ) return;
+      CheckSettingsUpgrade();
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      CheckCommandLineArguments(args);
+      ApplyCurrentLanguage();
+      SetFormsIcon();
+      InitializeUserFolders();
+      Application.Run(MainForm.Instance);
     }
 
   }

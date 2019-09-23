@@ -105,8 +105,7 @@ namespace Ordisoftware.HebrewWords
           foreach ( var word in reference.Verse.GetWordsRows() )
           {
             emptyline = false;
-            wordcontrol = new WordControl(reference);
-            wordcontrol.Word = word;
+            wordcontrol = new WordControl(new ReferenceItem(reference, word));
             wordcontrol.Width = widthWord;
             wordcontrol.Location = new Point(x, y);
             controls[indexControl++] = wordcontrol;

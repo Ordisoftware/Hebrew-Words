@@ -28,41 +28,42 @@ namespace Ordisoftware.HebrewWords
     public void CreateSchemaIfNotExists()
     {
       bool upgraded = false;
-      var connection = new OdbcConnection(Program.Settings.ConnectionString);
-      connection.Open();
-      try
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
       {
-        void checkTable(string table, string sql)
+        connection.Open();
+        try
         {
-          var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                        "WHERE type = 'table' AND name = '" + table + "'", connection);
-          int result = (int)command.ExecuteScalar();
-          if ( result == 0 )
+          void checkTable(string table, string sql)
           {
-            var cmdCreateTable = new OdbcCommand(sql, connection);
-            cmdCreateTable.ExecuteNonQuery();
-          }
-        }
-        void checkColumn(string table, string column, string sql)
-        {
-          var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
-          var reader = command.ExecuteReader();
-          int nameIndex = reader.GetOrdinal("Name");
-          bool b = false;
-          while ( reader.Read() )
-            if ( reader.GetString(nameIndex).Equals(column) )
+            var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                          "WHERE type = 'table' AND name = '" + table + "'", connection);
+            int result = (int)command.ExecuteScalar();
+            if ( result == 0 )
             {
-              b = true;
-              break;
+              var cmdCreateTable = new OdbcCommand(sql, connection);
+              cmdCreateTable.ExecuteNonQuery();
             }
-          if ( !b )
-          {
-            var cmdCreateColumn = new OdbcCommand(sql, connection);
-            cmdCreateColumn.ExecuteNonQuery();
-            upgraded = true;
           }
-        }
-        checkTable("Books", @"CREATE TABLE 'Books' 
+          void checkColumn(string table, string column, string sql)
+          {
+            var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
+            var reader = command.ExecuteReader();
+            int nameIndex = reader.GetOrdinal("Name");
+            bool b = false;
+            while ( reader.Read() )
+              if ( reader.GetString(nameIndex).Equals(column) )
+              {
+                b = true;
+                break;
+              }
+            if ( !b )
+            {
+              var cmdCreateColumn = new OdbcCommand(sql, connection);
+              cmdCreateColumn.ExecuteNonQuery();
+              upgraded = true;
+            }
+          }
+          checkTable("Books", @"CREATE TABLE 'Books' 
                               ( 
                                 ID TEXT DEFAULT '' NOT NULL,
                                 Number INTEGER NOT NULL,
@@ -73,7 +74,7 @@ namespace Ordisoftware.HebrewWords
                                 Memo TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                               )");
-        checkTable("Chapters", @"CREATE TABLE Chapters 
+          checkTable("Chapters", @"CREATE TABLE Chapters 
                                  ( 
                                    ID TEXT DEFAULT '' NOT NULL,
                                    BookID TEXT DEFAULT '' NOT NULL,
@@ -83,7 +84,7 @@ namespace Ordisoftware.HebrewWords
                                    CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
                                    FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
                                  )");
-        checkTable("Verses", @"CREATE TABLE Verses 
+          checkTable("Verses", @"CREATE TABLE Verses 
                                ( 
                                  ID TEXT DEFAULT '' NOT NULL,
                                  ChapterID TEXT DEFAULT '' NOT NULL,
@@ -92,7 +93,7 @@ namespace Ordisoftware.HebrewWords
                                  CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                                  FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                                )");
-        checkTable("Words", @"CREATE TABLE Words 
+          checkTable("Words", @"CREATE TABLE Words 
                               ( 
                                 ID TEXT DEFAULT '' NOT NULL,
                                 VerseID TEXT DEFAULT '' NOT NULL,
@@ -103,14 +104,14 @@ namespace Ordisoftware.HebrewWords
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                               )");
-        checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
-        checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
-        checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
-        CreateDataIfNotExists();
-      }
-      finally
-      {
-        connection.Close();
+          checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+        }
+        finally
+        {
+          connection.Close();
+        }
       }
     }
 

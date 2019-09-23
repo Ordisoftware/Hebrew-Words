@@ -26,12 +26,11 @@ namespace Ordisoftware.HebrewWords
 
     static internal readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();
 
-    static public void Run(WordControl sender, ReferenceItem reference)
+    static public void Run(WordControl sender)
     {
-      if ( sender == null || reference == null ) return;
-      var wordref = new WordReferencedItem(reference, sender.Word);
+      if ( sender == null || sender.Reference == null ) return;
       foreach ( SearchTranslatedForm f in Forms.ToList() )
-        if ( f.WordReferenced.Equals(wordref) )
+        if ( f.WordControl.Reference.EqualsWord(sender.Reference) )
         {
           if ( f.WindowState == FormWindowState.Minimized )
             f.WindowState = FormWindowState.Normal;
@@ -39,7 +38,7 @@ namespace Ordisoftware.HebrewWords
           f.BringToFront();
           return;
         }
-      var form = new SearchTranslatedForm(sender, reference);
+      var form = new SearchTranslatedForm(sender);
       form.Show();
       form.Location = new Point(Program.Settings.SearchTranslatedFormLocation.X,
                                 Program.Settings.SearchTranslatedFormLocation.Y);
@@ -52,8 +51,6 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
 
-    private ReferenceItem Reference;
-    private WordReferencedItem WordReferenced;
     private WordControl WordControl;
     private bool Mutex;
 
@@ -65,18 +62,16 @@ namespace Ordisoftware.HebrewWords
       EditDistinct.Checked = Program.Settings.SearchTranslatedFormFilterDistinct;
     }
 
-    private SearchTranslatedForm(WordControl sender, ReferenceItem reference)
+    private SearchTranslatedForm(WordControl sender)
       : this()
     {
       Forms.Add(this);
-      Reference = reference;
-      WordReferenced = new WordReferencedItem(reference, sender.Word);
       WordControl = sender;
-      LabelReference.Text = reference.ToString();
+      LabelReference.Text = sender.Reference.ToString();
       Mutex = true;
       EditHebrew.Text = sender.LabelHebrew.Text;
       Mutex = false;
-      Text = reference.ToString() + " #" + sender.Word.Number;
+      Text = sender.Reference.ToString() + " #" + sender.Reference.Word.Number;
       UpdateResult();
       ActiveControl = ListView;
     }
@@ -116,7 +111,7 @@ namespace Ordisoftware.HebrewWords
       if ( e.KeyChar == '\r' )
         UpdateResult();
       else
-      if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
+      if ( !HebrewLetters.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
       else
         KeyProcessed = true;
@@ -134,7 +129,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      ReachReferencedWord(new WordReferencedItem(Reference, WordControl.Word));
+      ReachReferencedWord(new ReferenceItem(WordControl.Reference));
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)
@@ -142,19 +137,15 @@ namespace Ordisoftware.HebrewWords
       ActionReachReference.PerformClick();
     }
 
-    private void ReachReferencedWord(WordReferencedItem reference)
+    private void ReachReferencedWord(ReferenceItem reference)
     {
       MainForm.Instance.GoTo(reference);
-      foreach ( Control control in MainForm.Instance.PanelViewVerses.Controls )
-        if ( control is WordControl )
-          if ( ( (WordControl)control ).Word == reference.Word )
-            ( (WordControl)control ).Focus();
     }
 
     private void ActionReachReference_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      ReachReferencedWord((WordReferencedItem)ListView.SelectedItems[0].Tag);
+      ReachReferencedWord((ReferenceItem)ListView.SelectedItems[0].Tag);
     }
 
     private string CleanTranslation(string str)
@@ -170,15 +161,15 @@ namespace Ordisoftware.HebrewWords
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
       Clipboard.SetText(str);
     }
 
     private void ActionUseTranslation_Click(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
-      var str = CleanTranslation(( (WordReferencedItem)ListView.SelectedItems[0].Tag ).Word.Translation);
-      WordControl.Word.Translation = str;
+      var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      WordControl.Reference.Word.Translation = str;
       WordControl.EditTranslation.Text = str;
       Close();
     }
@@ -208,7 +199,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
-      EditHebrew.Text = WordControl.Word.Hebrew;
+      EditHebrew.Text = WordControl.Reference.Word.Hebrew;
       EditWholeWord.Checked = true;
       UpdateResult();
     }
@@ -235,9 +226,9 @@ namespace Ordisoftware.HebrewWords
                          from verse in chapter.GetVersesRows()
                          from word in verse.GetWordsRows()
                          where check(word.Hebrew) && word.Translation != ""
-                         select new WordReferencedItem(book, chapter, verse, word);
+                         select new ReferenceItem(book, chapter, verse, word);
         if ( EditDistinct.Checked )
-          references = references.Distinct(new SearchTranslatedComparer());
+          references = references.Distinct(new WordTranslationComparer());
         foreach ( var item in references )
         {
           var itemList = new ListViewItem(item.ToString());

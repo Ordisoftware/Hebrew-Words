@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewWords
         Button button;
         Size size = new Size(45, 13);
         Font font = new Font("Hebrew", 20.25F, FontStyle.Bold);
-        foreach ( string letter in Letters.Codes )
+        foreach ( string letter in HebrewLetters.Codes )
         {
           label = new Label();
           button = new Button();
@@ -129,7 +129,7 @@ namespace Ordisoftware.HebrewWords
     private void Input_KeyPress(object sender, KeyPressEventArgs e)
     {
       OnKeyPress(e);
-      if ( !Letters.Codes.Contains(Convert.ToString(e.KeyChar)) )
+      if ( !HebrewLetters.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
       else
         KeyProcessed = true;

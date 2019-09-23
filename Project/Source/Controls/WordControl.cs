@@ -34,24 +34,6 @@ namespace Ordisoftware.HebrewWords
       private set;
     }
 
-    public Data.DataSet.WordsRow Word
-    {
-      get
-      {
-        return _Word;
-      }
-      set
-      {
-        if ( _Word == value ) return;
-        _Word = value;
-        LabelHebrew.Text = value.Hebrew;
-        EditTranslation.Text = value.Translation;
-        LabelHebrew.Tag = value.Original;
-      }
-    }
-
-    private Data.DataSet.WordsRow _Word;
-
     public WordControl()
     {
       InitializeComponent();
@@ -60,6 +42,9 @@ namespace Ordisoftware.HebrewWords
     public WordControl(ReferenceItem reference) : this()
     {
       Reference = reference;
+      LabelHebrew.Text = reference.Word.Hebrew;
+      EditTranslation.Text = reference.Word.Translation;
+      LabelHebrew.Tag = reference.Word.Original;
     }
 
     public new bool Focus()
@@ -86,7 +71,6 @@ namespace Ordisoftware.HebrewWords
       EditTranslation.SelectionStart = 0;
       if ( MainForm.Instance.ComboBoxMutex ) return;
       MainForm.Instance.CurrentReference = new ReferenceItem(Reference);
-      MainForm.Instance.CurrentReference.Verse = Reference.Verse;
       MainForm.Instance.AddCurrentToHistory();
     }
 
@@ -104,8 +88,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( MainForm.Instance.IsLoadingData ) return;
       if ( MainForm.Instance.RenderInProcess ) return;
-      if ( _Word != null ) 
-        _Word.Translation = EditTranslation.Text;
+      if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
       Focus();
       MainForm.Instance.ActionSave.Enabled = true;
     }
@@ -151,7 +134,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(Word.Original);
+      Clipboard.SetText(Reference.Word.Original);
     }
 
     private void ActionSearch_Click(object sender, EventArgs e)
@@ -161,7 +144,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      SearchTranslatedForm.Run(this, Reference);
+      SearchTranslatedForm.Run(this);
     }
 
   }

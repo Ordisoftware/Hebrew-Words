@@ -169,13 +169,13 @@
     <value>0, 17</value>
   </data>
   <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>51, 13</value>
   </data>
   <data name="labelVersion.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version </value>
+    <value>-Version -</value>
   </data>
   <data name="labelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
