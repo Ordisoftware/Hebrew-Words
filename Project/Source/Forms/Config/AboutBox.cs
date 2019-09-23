@@ -61,10 +61,10 @@ namespace Ordisoftware.HebrewWords
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Translations.AboutBoxTitleText.GetLang() + " " + AssemblyTitle;
+      Text = Translations.AboutBoxTitle.GetLang(AssemblyTitle);
       labelTitle.Text = AssemblyTitle;
-      labelDescription.Text = Translations.ApplicationDescriptionText.GetLang();
-      labelVersion.Text = Translations.AboutBoxVersionText.GetLang() + " " + AssemblyVersion;
+      labelDescription.Text = Translations.ApplicationDescription.GetLang();
+      labelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
       labelCopyright.Text = AssemblyCopyright;
       labelTrademark.Text = AssemblyTrademark;
     }

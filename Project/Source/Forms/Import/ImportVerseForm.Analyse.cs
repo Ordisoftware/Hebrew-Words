@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewWords
       if ( lines.Count % 2 != 0 )
       {
         IsResultValid = false;
-        DisplayManager.ShowError(Translations.ImportNonEmptyLinesText.GetLang(lines.Count));
+        DisplayManager.ShowError(Translations.ImportLinesCountMismatch.GetLang(lines.Count));
         return;
       }
       for ( int indexLineEven = 0; indexLineEven < lines.Count; indexLineEven += 2 )
@@ -57,8 +57,8 @@ namespace Ordisoftware.HebrewWords
           || lineHebrewElements.Length != lineTranslationElements.Length )
         {
           IsResultValid = false;
-          DisplayManager.ShowError(Translations.MatchingLinesCountText.GetLang(lineHebrewElements.Length, 
-                                                                               lineTranslationElements.Length));
+          DisplayManager.ShowError(Translations.ImportItemsCountMismatch.GetLang(lineHebrewElements.Length, 
+                                                                                 lineTranslationElements.Length));
           return;
         }
         foundWords.AddRange(lineHebrewElements.Reverse());
@@ -68,8 +68,8 @@ namespace Ordisoftware.HebrewWords
       if ( foundWords.Count != wordsReference.Count() )
       {
         IsResultValid = false;
-        DisplayManager.ShowError(Translations.WordsCountMatchText.GetLang(wordsReference.Count(),
-                                                                          foundWords.Count));
+        DisplayManager.ShowError(Translations.ImportWordsCountMismatch.GetLang(wordsReference.Count(),
+                                                                               foundWords.Count));
         return;
       }
       for ( int index = 0; index < foundWords.Count; index++ )
@@ -77,8 +77,8 @@ namespace Ordisoftware.HebrewWords
         if ( foundWords[index] != wordsReference[index].Hebrew )
         {
           IsResultValid = false;
-          DisplayManager.ShowError(Translations.WordMatchText.GetLang(wordsReference[index].Hebrew,
-                                                                      foundWords[index]));
+          DisplayManager.ShowError(Translations.ImportWordMismatch.GetLang(wordsReference[index].Hebrew,
+                                                                           foundWords[index]));
           return;
         }
         var item = new ImportVerseResult();

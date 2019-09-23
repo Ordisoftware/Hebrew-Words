@@ -179,12 +179,12 @@ namespace Ordisoftware.HebrewWords
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
-              DisplayManager.Show(Translations.CheckUpdateNoNewText.GetLang());
+              DisplayManager.Show(Translations.NoNewVersionAvailable.GetLang());
           }
           else
-          if ( DisplayManager.QueryYesNo(Translations.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+          if ( DisplayManager.QueryYesNo(Translations.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
-                                         Translations.CheckUpdateAskDownloadText.GetLang()) )
+                                         Translations.AskDownloadNewVersion.GetLang()) )
             AboutBox.Instance.OpenApplicationHome();
         }
       }

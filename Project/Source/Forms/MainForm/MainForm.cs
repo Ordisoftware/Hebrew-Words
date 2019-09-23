@@ -116,7 +116,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Translations.ExitApplicationText.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
           e.Cancel = true;
     }
 
@@ -478,9 +478,9 @@ namespace Ordisoftware.HebrewWords
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.BackupBeforeRestoreText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.BackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      if ( !DisplayManager.QueryYesNo(Translations.NewDatabaseAdvertText.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(Translations.CreateNewDatabase.GetLang()) )
         return;
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       ReLoadData(() =>
@@ -497,7 +497,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionRestore_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.BackupBeforeRestoreText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.BackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
       string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
@@ -586,7 +586,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.RestoreWinPosText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.RestoreWindowPosition.GetLang()) )
       {
         Program.Settings.RestoreMainForm();
         ActionRefresh.PerformClick();

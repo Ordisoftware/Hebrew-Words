@@ -23,56 +23,56 @@ namespace Ordisoftware.HebrewWords
 
     static public readonly string NewLine = Environment.NewLine;
 
-    static public readonly Dictionary<string, string> AboutBoxTitleText
+    static public readonly Dictionary<string, string> AboutBoxTitle
       = new Dictionary<string, string>()
       {
-        { "en", "About" },
-        { "fr", "À propos de" }
+        { "en", "About {0}" },
+        { "fr", "À propos de {0}" }
       };
 
-    static public readonly Dictionary<string, string> AboutBoxVersionText
+    static public readonly Dictionary<string, string> AboutBoxVersion
       = new Dictionary<string, string>()
       {
-        { "en", "Version" },
-        { "fr", "Version" }
+        { "en", "Version {0}" },
+        { "fr", "Version {0}" }
       };
 
-    static public readonly Dictionary<string, string> ApplicationDescriptionText
+    static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
         { "en", "A tool for the literal translation of the Hebrew Bible" },
         { "fr", "Un utilitaire pour la traduction littérale de la Bible hébraïque" }
       };
 
-    static public readonly Dictionary<string, string> ExitApplicationText
+    static public readonly Dictionary<string, string> ExitApplication
       = new Dictionary<string, string>()
       {
         { "en", "Exit application?" },
         { "fr", "Quitter l'application ?" }
       };
 
-    static public readonly Dictionary<string, string> CheckUpdateNoNewText
+    static public readonly Dictionary<string, string> NoNewVersionAvailable
       = new Dictionary<string, string>()
       {
         { "en", "There is no new version available." },
         { "fr", "Il n'y a pas de nouvelle version de disponible." }
       };
 
-    static public readonly Dictionary<string, string> CheckUpdateResultText
+    static public readonly Dictionary<string, string> NewVersionAvailable
       = new Dictionary<string, string>()
       {
-        { "en", "A newer version is available : " },
-        { "fr", "Une nouvelle version est disponible : " }
+        { "en", "A newer version is available : {0}" },
+        { "fr", "Une nouvelle version est disponible : {0}" }
       };
 
-    static public readonly Dictionary<string, string> CheckUpdateAskDownloadText
+    static public readonly Dictionary<string, string> AskDownloadNewVersion
       = new Dictionary<string, string>()
       {
         { "en", "Do you want to open the download page?" },
         { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
       };
 
-    static public readonly Dictionary<string, string> RestoreWinPosText
+    static public readonly Dictionary<string, string> RestoreWindowPosition
       = new Dictionary<string, string>()
       {
         { "en", "This action will restore windows position." + NewLine + NewLine +
@@ -81,44 +81,42 @@ namespace Ordisoftware.HebrewWords
                 "Voulez-vous continuer ?" }
       };
 
-    static public readonly Dictionary<string, string> NewDatabaseAdvertText
+    static public readonly Dictionary<string, string> CreateNewDatabase
       = new Dictionary<string, string>()
       {
         { "en", "Do you want to create a new database wich will replace the actual?" },
         { "fr", "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
       };
 
-    static public readonly Dictionary<string, string> BackupBeforeRestoreText
+    static public readonly Dictionary<string, string> BackupDatabaseBeforeReplace
       = new Dictionary<string, string>()
       {
         { "en", "Do you want to backup database before replace it?" },
         { "fr", "Voulez-vous archiver la base de données avant de la remplacer ?" }
       };
 
-    static public readonly Dictionary<string, string> RestoreLettersDefaultText
-      = new Dictionary<string, string>()
-      {
-        { "en", "This will restore all letters to default values." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Cela va restaurer les lettres à leurs valeurs par défaut." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> CreatingDataText
+    static public readonly Dictionary<string, string> CreatingData
       = new Dictionary<string, string>()
       {
         { "en", "Creating data..." },
         { "fr", "Création des données..." }
       };
 
-    static public readonly Dictionary<string, string> NotYetAvailableText
+    static public readonly Dictionary<string, string> FileNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "File not found: " + NewLine + NewLine + "{0}" },
+        { "fr", "Fichier non trouvé :" + NewLine + NewLine + "{0}" }
+      };
+
+    static public readonly Dictionary<string, string> NotYetAvailable
       = new Dictionary<string, string>()
       {
         { "en", "Not yet available." },
         { "fr", "Pas encore disponible." }
       };
 
-    static public readonly Dictionary<string, string> ImportNonEmptyLinesText
+    static public readonly Dictionary<string, string> ImportLinesCountMismatch
       = new Dictionary<string, string>()
       {
         { "en", "Incorrect elements." + NewLine + NewLine +
@@ -129,7 +127,7 @@ namespace Ordisoftware.HebrewWords
                 "Doit être pair." }
       };
 
-    static public readonly Dictionary<string, string> MatchingLinesCountText
+    static public readonly Dictionary<string, string> ImportItemsCountMismatch
       = new Dictionary<string, string>()
       {
         { "en", "Incorrect elements." + NewLine + NewLine +
@@ -142,7 +140,7 @@ namespace Ordisoftware.HebrewWords
                 "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> WordsCountMatchText
+    static public readonly Dictionary<string, string> ImportWordsCountMismatch
       = new Dictionary<string, string>()
       {
         { "en", "Incorrect elements." + NewLine + NewLine +
@@ -155,7 +153,7 @@ namespace Ordisoftware.HebrewWords
                 "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> WordMatchText
+    static public readonly Dictionary<string, string> ImportWordMismatch
       = new Dictionary<string, string>()
       {
         { "en", "Incorrect hebrew." + NewLine + NewLine +
@@ -168,7 +166,7 @@ namespace Ordisoftware.HebrewWords
                 "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> ImportHelpText
+    static public readonly Dictionary<string, string> ImportHelp
       = new Dictionary<string, string>()
       {
         { "en", "This console allows for example to import an MS Word verse table." + NewLine + NewLine +
@@ -187,14 +185,14 @@ namespace Ordisoftware.HebrewWords
                 "Les champs de traduction importés peuvent être édités dans la grille du résultat." }
       };
 
-    static public readonly Dictionary<string, string> BookChapterText
+    static public readonly Dictionary<string, string> BookChapterTitle
       = new Dictionary<string, string>()
       {
         { "en", "CHAPTER" },
         { "fr", "CHAPITRE" }
       };
 
-    static public readonly Dictionary<string, string> OnlineVerseHelpText
+    static public readonly Dictionary<string, string> OpenOnlineVerseHelp
       = new Dictionary<string, string>()
       {
         { "en", "Use the following tags to replace values:" + NewLine + NewLine +
@@ -223,7 +221,7 @@ namespace Ordisoftware.HebrewWords
                 "%VERSENUM#2% : Numéro du verset sur 2 digits" },
       };
 
-    static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelText
+    static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelTitle
       = new Dictionary<ViewModeType, Dictionary<string, string>>()
       {
         {
