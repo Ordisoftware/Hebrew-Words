@@ -24,12 +24,19 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
-    static public readonly Properties.Settings Settings = Properties.Settings.Default;
+    static public readonly Properties.Settings Settings 
+      = Properties.Settings.Default;
+
+    /// <summary>
+    /// Indicate the check update URL.
+    /// </summary>
+    static public readonly string CheckUpdateURL
+      = "http://www.ordisoftware.com/files/%APPTITLE%.update";
 
     /// <summary>
     /// Indicate root folder path of the application.
     /// </summary>
-    static public readonly string RootFolderPath
+    static public readonly string AppRootFolderPath
       = Directory.GetParent
         (
           Path.GetDirectoryName(Application.ExecutablePath
@@ -41,18 +48,26 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate application documents folder.
     /// </summary>
-    static public readonly string DocumentsFolderPath
-      = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
+    static public readonly string AppDocumentsFolderPath
+      = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate user data folder in roaming.
     /// </summary>
-    static public string UserDataFolderPath { get; private set; }
+    static public string UserDataFolderPath
+    {
+      get;
+      private set;
+    }
 
     /// <summary>
     /// Indicate user documents folder path.
     /// </summary>
-    static public string UserDocumentsFolderPath { get; private set; }
+    static public string UserDocumentsFolderPath
+    {
+      get;
+      private set;
+    }
 
     /// <summary>
     /// Indicate the extension of database file.
@@ -64,19 +79,19 @@ namespace Ordisoftware.HebrewWords
     /// Indicate filename of the application's icon.
     /// </summary>
     static public readonly string IconFilename
-      = RootFolderPath + "Application.ico";
+      = AppRootFolderPath + "Application.ico";
 
     /// <summary>
     /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
+      = AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
 
     /// <summary>
     /// Indicate name of the help file.
     /// </summary>
     static public readonly string GrammarGuideFilename
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-%lang%.htm";
+      = AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-%lang%.htm";
 
   }
 

@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewWords
       string id = assembly.FullName + attribute.Value;
       bool created;
       var mutex = new Mutex(true, id, out created);
-      return !created;
+      return created;
     }
 
     static private void CheckSettingsUpgrade()

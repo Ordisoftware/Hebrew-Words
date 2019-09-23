@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewWords
       try
       {
         string title = AboutBox.Instance.AssemblyTitle;
-        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
+        string url = CheckUpdateURL.Replace("%APPTITLE%", title.Replace(" ", ""));
         using ( WebClient client = new WebClient() )
         {
           string[] partsVersion = client.DownloadString(url).Split('.');
