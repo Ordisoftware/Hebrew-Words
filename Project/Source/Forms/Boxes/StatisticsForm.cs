@@ -44,6 +44,7 @@ namespace Ordisoftware.HebrewWords
     private StatisticsForm()
     {
       InitializeComponent();
+      MainForm.Instance.SetFormDisabled(true);
       try
       {
         InitializeCounters();
@@ -55,6 +56,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        MainForm.Instance.SetFormDisabled(false);
       }
     }
 

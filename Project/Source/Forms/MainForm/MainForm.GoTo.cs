@@ -73,6 +73,7 @@ namespace Ordisoftware.HebrewWords
         else
           reference.Verse = reference.Chapter.GetVersesRows()[0];
       }
+      Label:
       switch ( Program.Settings.CurrentView )
       {
         case ViewModeType.Verses:
@@ -125,6 +126,9 @@ namespace Ordisoftware.HebrewWords
             }
           }
           break;
+        default:
+          SetView(ViewModeType.Verses);
+          goto Label;
       }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
