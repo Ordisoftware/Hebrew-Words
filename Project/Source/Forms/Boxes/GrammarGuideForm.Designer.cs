@@ -34,6 +34,7 @@
       // 
       // WebBrowser
       // 
+      this.WebBrowser.AllowNavigation = false;
       this.WebBrowser.AllowWebBrowserDrop = false;
       resources.ApplyResources(this.WebBrowser, "WebBrowser");
       this.WebBrowser.IsWebBrowserContextMenuEnabled = false;
