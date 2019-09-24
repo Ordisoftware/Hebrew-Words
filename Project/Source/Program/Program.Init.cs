@@ -68,7 +68,8 @@ namespace Ordisoftware.HebrewWords
       string lang = "en-US";
       if ( Settings.Language == "fr" ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      Thread.CurrentThread.CurrentCulture = culture;
+      Thread.CurrentThread.CurrentUICulture = culture;
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
         {
@@ -78,6 +79,7 @@ namespace Ordisoftware.HebrewWords
         }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
       if ( MainForm.Instance.IsReady )
