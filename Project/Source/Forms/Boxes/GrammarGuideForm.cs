@@ -41,9 +41,7 @@ namespace Ordisoftware.HebrewWords
 
     internal void GrammarGuideForm_Shown(object sender, EventArgs e)
     {
-      WebBrowser.AllowNavigation = true;
       WebBrowser.Navigate(Program.GrammarGuideFilename.Replace("%lang%", Localizer.Language));
-      WebBrowser.AllowNavigation = false;
     }
 
     private void GrammarGuideForm_FormClosing(object sender, FormClosingEventArgs e)
