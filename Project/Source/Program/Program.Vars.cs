@@ -113,14 +113,24 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate name of the help file.
     /// </summary>
-    static public readonly string HelpFilename
-      = AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
+    static public string HelpFilename
+    {
+      get
+      {
+        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
+      }
+    }
 
     /// <summary>
-    /// Indicate name of the help file.
+    /// Indicate name of the grammar guide file.
     /// </summary>
-    static public readonly string GrammarGuideFilename
-      = AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-%lang%.htm";
+    static public string GrammarGuideFilename
+    {
+      get
+      {
+        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-" + Localizer.Language + ".htm";
+      }
+    }
 
   }
 
