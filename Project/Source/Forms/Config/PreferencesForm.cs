@@ -136,13 +136,13 @@ namespace Ordisoftware.HebrewWords
     {
       if ( Program.Settings.Language == "en" )
       {
-        ActionSelectLangEN.FlatAppearance.BorderSize = 1;
-        ActionSelectLangFR.FlatAppearance.BorderSize = 0;
+        ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
+        ActionSelectLangFR.BackColor = SystemColors.Control;
       }
       if ( Program.Settings.Language == "fr" )
       {
-        ActionSelectLangFR.FlatAppearance.BorderSize = 1;
-        ActionSelectLangEN.FlatAppearance.BorderSize = 0;
+        ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
+        ActionSelectLangEN.BackColor = SystemColors.Control;
       }
     }
 

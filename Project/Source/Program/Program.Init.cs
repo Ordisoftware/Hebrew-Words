@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -65,15 +66,18 @@ namespace Ordisoftware.HebrewWords
     static internal void ApplyCurrentLanguage()
     {
       string lang = "en-US";
-      if ( Settings.Language == "fr" )
-        lang = "fr-FR";
+      if ( Settings.Language == "fr" ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
+        {
           new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ApplyResources(resources, form.Controls);
+        }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
       if ( MainForm.Instance.IsReady )
@@ -82,6 +86,15 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.RenderRawText();
         MainForm.Instance.RenderELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
+      }
+    }
+
+    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    {
+      foreach ( Control control in controls )
+      {
+        if ( control is Label ) resources.ApplyResources(control, control.Name);
+        ApplyResources(resources, control.Controls);
       }
     }
 
