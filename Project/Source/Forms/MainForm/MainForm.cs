@@ -594,11 +594,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by EditScreenPosition for click events.
+    /// Event handler. Called by SelectScreenPosition for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void EditScreenPosition_Click(object sender, EventArgs e)
+    internal void SelectScreenPosition_Click(object sender, EventArgs e)
     {
       DoScreenPosition(sender, e);
     }
