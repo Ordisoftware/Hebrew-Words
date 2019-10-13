@@ -548,5 +548,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("130")]
+        public int FoundReferencesColumnRefWidth {
+            get {
+                return ((int)(this["FoundReferencesColumnRefWidth"]));
+            }
+            set {
+                this["FoundReferencesColumnRefWidth"] = value;
+            }
+        }
     }
 }

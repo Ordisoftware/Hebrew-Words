@@ -109,12 +109,14 @@
       this.ListView.ShowItemToolTips = true;
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
+      this.ListView.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.ListView_ColumnWidthChanged);
       this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
       this.ListView.Resize += new System.EventHandler(this.ListView_Resize);
       // 
       // columnHeader1
       // 
       resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      this.columnHeader1.Width = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesColumnRefWidth;
       // 
       // columnHeader2
       // 

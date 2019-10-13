@@ -104,6 +104,12 @@ namespace Ordisoftware.HebrewWords
       ListView.Columns[1].Width = -2;
     }
 
+    private void ListView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+    {
+      ListView.Columns[1].Width = -2;
+      Program.Settings.FoundReferencesColumnRefWidth = ListView.Columns[0].Width;
+    }
+
     private bool KeyProcessed = false;
 
     private void EditHebrew_KeyPress(object sender, KeyPressEventArgs e)
