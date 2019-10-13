@@ -95,8 +95,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### ____.__.__ - Version 2.3
 
-- Improve UI
-- Improve import console
+- Add history persistence.
+- Improve UI.
+- Improve import console.
 
 #### 2019.09.24 - Version 2.2
 
