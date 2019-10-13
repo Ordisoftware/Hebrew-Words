@@ -98,6 +98,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add history persistence.
 - Improve UI.
 - Improve import console.
+- Improve session ending.
 
 #### 2019.09.24 - Version 2.2
 
