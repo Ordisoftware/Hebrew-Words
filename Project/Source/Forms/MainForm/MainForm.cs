@@ -148,6 +148,9 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      foreach ( Form form in Application.OpenForms )
+        if ( form != this && form.Visible )
+          form.Close();
       IsSessionEnding = true;
       Close();
     }
