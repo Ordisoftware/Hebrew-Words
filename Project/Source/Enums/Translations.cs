@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewWords
       = new Dictionary<string, string>()
       {
         { "en", "A tool for the literal translation of the Hebrew Bible" },
-        { "fr", "Un utilitaire pour la traduction littérale de la Bible hébraïque" }
+        { "fr", "Un outil pour la traduction littérale de la Bible hébraïque" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
