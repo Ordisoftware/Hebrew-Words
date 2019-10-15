@@ -642,7 +642,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="ActionWebHome.Text" xml:space="preserve">
     <value>Site web</value>
@@ -660,7 +660,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="ActionCreateGitHubIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -680,13 +680,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
     <value>Demander une résolution de problème</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 6</value>
+    <value>372, 6</value>
   </data>
   <data name="ActionWebCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -704,13 +704,50 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="ActionWebCheckUpdate.Text" xml:space="preserve">
     <value>Vérifier mise à jour</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 6</value>
+    <value>372, 6</value>
+  </data>
+  <data name="toolStripMenuItem7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAENSURBVDhPpZC9SgNBGEW/zh9QC0EbKwn6AD6FoG9jpRJU
+        8AXEImivqcTCRLERX0Asko1YbLbKWpgVJCHFKtc5myVgEyfrhQMzcM9lGJP0L2zl+P56+ehOS4e3E4Hj
+        3FfjcP6cqPL0rjNP6OLg2uJBXVcvn1o9aWjttKH1P6BDFwfXFso1PUQDbV5E2rqMtF0dDx26OLg2u19z
+        f1EsuDa9d5NdgqCpZhAoaLXGknVcl+COBtphqLAdeUGX/BqIO7E68ZsXdMlwYHc48JF01U0SL+gSXJvK
+        Bwb9vno9P+gS3NGAvr+UpqkXdEk2MJP/QZHg2ny5nl8nD67N7VQfObDGk3ygi4NrLiXHRjGs9APGTREO
+        AtWR5QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 24</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Etudier les Mots avec Hebrew Letters</value>
+  </data>
+  <data name="toolStripMenuItem6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAENSURBVDhPpZC9SgNBGEW/zh9QC0EbKwn6AD6FoG9jpRJU
+        8AXEImivqcTCRLERX0Asko1YbLbKWpgVJCHFKtc5myVgEyfrhQMzcM9lGJP0L2zl+P56+ehOS4e3E4Hj
+        3FfjcP6cqPL0rjNP6OLg2uJBXVcvn1o9aWjttKH1P6BDFwfXFso1PUQDbV5E2rqMtF0dDx26OLg2u19z
+        f1EsuDa9d5NdgqCpZhAoaLXGknVcl+COBtphqLAdeUGX/BqIO7E68ZsXdMlwYHc48JF01U0SL+gSXJvK
+        Bwb9vno9P+gS3NGAvr+UpqkXdEk2MJP/QZHg2ny5nl8nD67N7VQfObDGk3ygi4NrLiXHRjGs9APGTREO
+        AtWR5QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 24</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Suivre les évènements de la Torah avec Hebrew Calendar</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 6</value>
   </data>
   <data name="ActionOpenHebrewAlphabet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -731,10 +768,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionOpenHebrewAlphabet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 6</value>
+    <value>372, 6</value>
   </data>
   <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -755,7 +792,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
     <value>Tanak Hébreu MP3 @ mechon-mamre.org</value>
@@ -779,7 +816,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="bibleFourmilabToolStripMenuItem.Text" xml:space="preserve">
     <value>Tanak Hébreu Texte @ fourmilab.ch</value>
@@ -803,7 +840,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
     <value>Bible Interlinéaire @ biblehub.com</value>
@@ -827,7 +864,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Tanak Interlinéaire @ studybible.info</value>
@@ -851,7 +888,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Euangélion Interlinéaire @ studybible.info</value>
@@ -875,13 +912,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Text" xml:space="preserve">
     <value>Quran Interlinéaire @ corpus.quran.com</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 6</value>
+    <value>372, 6</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -902,7 +939,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="dictionnaireHéritageDuSanscritToolStripMenuItem.Text" xml:space="preserve">
     <value>Dictionnaire Sanskrit Héritage</value>
@@ -926,7 +963,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
 </value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 24</value>
+    <value>375, 24</value>
   </data>
   <data name="anAkkadianDictionaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Dictionnaire Akkadien</value>
@@ -1878,5 +1915,9 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Console d'import</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>
