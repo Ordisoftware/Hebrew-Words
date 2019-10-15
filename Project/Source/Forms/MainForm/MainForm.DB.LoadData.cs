@@ -161,6 +161,15 @@ namespace Ordisoftware.HebrewWords
           DataSet.Words.RowChanged -= progress;
         }
       }
+      catch ( OdbcException ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+        Application.Exit();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
       finally
       {
         IsLoadingData = false;
