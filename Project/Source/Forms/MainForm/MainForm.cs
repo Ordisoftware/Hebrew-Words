@@ -114,6 +114,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( !IsReady ) return;
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
