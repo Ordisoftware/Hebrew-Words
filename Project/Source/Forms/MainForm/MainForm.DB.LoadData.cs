@@ -47,6 +47,11 @@ namespace Ordisoftware.HebrewWords
              true);
         ActionSave.PerformClick();
       }
+      catch ( OdbcException ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+        Application.Exit();
+      }
       catch ( Exception ex )
       {
         ex.Manage();
