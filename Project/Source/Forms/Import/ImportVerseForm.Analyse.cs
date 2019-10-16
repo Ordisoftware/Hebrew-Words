@@ -46,8 +46,8 @@ namespace Ordisoftware.HebrewWords
       {
         string lineHebrew = lines[indexLineEven];
         string lineTranslation = lines[indexLineEven + 1];
-        var lineHebrewElements = lineHebrew.Split(ElementsSeparator);
-        var lineTranslationElements = lineTranslation.Split(ElementsSeparator);
+        var lineHebrewElements = lineHebrew.Trim(ElementsSeparator).Split(ElementsSeparator);
+        var lineTranslationElements = lineTranslation.Trim(ElementsSeparator).Split(ElementsSeparator);
         for ( int index = 0; index < lineHebrewElements.Length; index++ )
           lineHebrewElements[index] = lineHebrewElements[index].Trim();
         for ( int index = 0; index < lineTranslationElements.Length; index++ )

@@ -171,8 +171,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
       Program.Settings.Reset();
       Program.Settings.Reload();
+      Program.Settings.Save();
       Directory.CreateDirectory(Program.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);

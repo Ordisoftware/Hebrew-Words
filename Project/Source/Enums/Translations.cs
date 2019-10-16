@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewWords
       = new Dictionary<string, string>()
       {
         { "en", "A tool for the literal translation of the Hebrew Bible" },
-        { "fr", "Un utilitaire pour la traduction littérale de la Bible hébraïque" }
+        { "fr", "Un outil pour la traduction littérale de la Bible hébraïque" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
@@ -93,6 +93,15 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "Do you want to backup database before replace it?" },
         { "fr", "Voulez-vous archiver la base de données avant de la remplacer ?" }
+      };
+
+    static public readonly Dictionary<string, string> ResetPreferences
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to reset the preferences" + NewLine +
+                "to their default values?" },
+        { "fr", "Voulez-vous réinitialiser les préférences" + NewLine +
+                "à leurs valeurs par défaut ?" }
       };
 
     static public readonly Dictionary<string, string> CreatingData

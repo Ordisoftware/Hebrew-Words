@@ -17,6 +17,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -29,19 +30,32 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void LoadData()
     {
-      PopulateData();
-      if ( Program.Settings.OpenLastViewAtStartup )
-        SetView(Program.Settings.CurrentView, true);
-      else
+      try
       {
-        SetView(ViewModeType.Verses, true);
-        Program.Settings.CurrentSearchTypeTab = 0;
+
+        PopulateData();
+        if ( Program.Settings.OpenLastViewAtStartup )
+          SetView(Program.Settings.CurrentView, true);
+        else
+        {
+          SetView(ViewModeType.Verses, true);
+          Program.Settings.CurrentSearchTypeTab = 0;
+        }
+        GoTo(Program.Settings.BookmarkMasterBook,
+             Program.Settings.BookmarkMasterChapter,
+             Program.Settings.BookmarkMasterVerse,
+             true);
+        ActionSave.PerformClick();
       }
-      GoTo(Program.Settings.BookmarkMasterBook,
-           Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse,
-           true);
-      ActionSave.PerformClick();
+      catch ( OdbcException ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+        Application.Exit();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
@@ -146,6 +160,15 @@ namespace Ordisoftware.HebrewWords
           DataSet.Verses.RowChanged -= progress;
           DataSet.Words.RowChanged -= progress;
         }
+      }
+      catch ( OdbcException ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+        Application.Exit();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
       }
       finally
       {
