@@ -93,13 +93,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### ____.__.__ - Version 2.3
-
-- Add history persistence.
-- Improve UI.
-- Improve import console.
-- Improve session ending.
-
 #### 2019.09.24 - Version 2.2
 
 - Add option to choose language.
