@@ -460,7 +460,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.RunShell(Program.Settings.HebrewLettersExe);
+      Program.OpenHebrewLetters("");
     }
 
     /// <summary>

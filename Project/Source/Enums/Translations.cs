@@ -125,6 +125,17 @@ namespace Ordisoftware.HebrewWords
         { "fr", "Pas encore disponible." }
       };
 
+    static public readonly Dictionary<string, string> HebrewLettersNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "Hebrew Letters not found." + NewLine +
+                "Check preferences." + NewLine + NewLine +
+                "Do you want to download it?" },
+        { "fr", "Hebrew Letters n'a pas été trouvé." + NewLine +
+                "Vérifiez les préférences." + NewLine + NewLine +
+                "Voulez-vous le télécharger ?" }
+      };
+
     static public readonly Dictionary<string, string> ImportLinesCountMismatch
       = new Dictionary<string, string>()
       {

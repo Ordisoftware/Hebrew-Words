@@ -11,8 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2019-10 </edited>
 using System;
+using System.IO;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -22,6 +24,12 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenHebrewLetters(string hebrew)
     {
+      if ( !File.Exists(Settings.HebrewLettersExe) )
+      {
+        if ( DisplayManager.QueryYesNo(Translations.HebrewLettersNotFound.GetLang()) )
+          MainForm.Instance.toolStripMenuItem7.PerformClick();
+        return;
+      }
       hebrew = HebrewLetters.SetFinale(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }

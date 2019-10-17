@@ -1754,7 +1754,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.Button ActionSearchInRemoveAll;
     private System.Windows.Forms.Button ActionSearchInAddAll;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+    internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
   }
