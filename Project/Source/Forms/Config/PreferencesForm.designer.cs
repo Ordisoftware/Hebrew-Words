@@ -173,7 +173,9 @@
       // 
       // ActionReset
       // 
+      this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.LinkColor = System.Drawing.Color.Navy;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.TabStop = true;
       this.ActionReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReset_LinkClicked);
