@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
 using System;
-using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Properties;
 
@@ -88,7 +87,7 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditShowTips.Checked = settings.ShowTips;
       if ( settings.BackupPath == "" )
       {
-        Directory.CreateDirectory(Program.UserDocumentsFolderPath);
+        System.IO.Directory.CreateDirectory(Program.UserDocumentsFolderPath);
         settings.BackupPath = Program.UserDocumentsFolderPath;
       }
     }

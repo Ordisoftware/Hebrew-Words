@@ -95,6 +95,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
+#### 2019.10.18 - Version 2.3
+
+- Improve UI.
+- Some fixes.
+- Some code refactorings.
+
 #### 2019.09.24 - Version 2.2
 
 - Add option to choose language.
