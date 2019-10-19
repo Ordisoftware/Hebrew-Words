@@ -177,24 +177,24 @@
       // 
       // ActionReset
       // 
-      this.ActionReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.FlatAppearance.BorderSize = 0;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
       // 
       // ActionDelLast
       // 
-      this.ActionDelLast.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionDelLast, "ActionDelLast");
+      this.ActionDelLast.FlatAppearance.BorderSize = 0;
       this.ActionDelLast.Name = "ActionDelLast";
       this.ActionDelLast.UseVisualStyleBackColor = true;
       this.ActionDelLast.Click += new System.EventHandler(this.ActionDelLast_Click);
       // 
       // ActionDelFirst
       // 
-      this.ActionDelFirst.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionDelFirst, "ActionDelFirst");
+      this.ActionDelFirst.FlatAppearance.BorderSize = 0;
       this.ActionDelFirst.Name = "ActionDelFirst";
       this.ActionDelFirst.UseVisualStyleBackColor = true;
       this.ActionDelFirst.Click += new System.EventHandler(this.ActionDelFirst_Click);
