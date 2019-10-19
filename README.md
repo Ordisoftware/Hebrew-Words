@@ -95,6 +95,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
+#### ____.__.__ - Version 2.4
+
+- Add history persistence.
+- Fix buttons location when resizing SearchTranslatedForm.
+- Change SearchTranslatedForm and GrammarGuideForm min width.
+
 #### 2019.10.18 - Version 2.3
 
 - Improve UI.
