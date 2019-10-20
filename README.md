@@ -107,6 +107,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve UI.
 - Some fixes.
 - Some code refactorings.
+- Setup install SQLite ODBC Driver if not present.
 
 #### 2019.09.24 - Version 2.2
 
