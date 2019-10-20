@@ -100,6 +100,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add history persistence.
 - Fix buttons location when resizing SearchTranslatedForm.
 - Change SearchTranslatedForm and GrammarGuideForm min width.
+- Update help.
 
 #### 2019.10.18 - Version 2.3
 
