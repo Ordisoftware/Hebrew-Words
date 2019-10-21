@@ -25,9 +25,9 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 ## Requirements
 
-- Windows Vista x32/x64 or superior
-- Screen 1024x768 or superior
-- Framework .NET 4.5 or superior
+- Windows Vista x32/x64 or higher
+- Screen 1024x768 or higher
+- Framework .NET 4.5 or higher
 - SQLite ODBC Driver
 
 ## Screenshots
@@ -95,11 +95,19 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
+#### 2019.__.__ - Version 2.4
+
+- Add history persistence.
+- Fix buttons location when resizing SearchTranslatedForm.
+- Change SearchTranslatedForm and GrammarGuideForm min width.
+- Update help.
+
 #### 2019.10.18 - Version 2.3
 
 - Improve UI.
 - Some fixes.
 - Some code refactorings.
+- Setup install SQLite ODBC Driver if not present.
 
 #### 2019.09.24 - Version 2.2
 
