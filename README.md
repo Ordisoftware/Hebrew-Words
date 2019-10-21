@@ -25,9 +25,9 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 ## Requirements
 
-- Windows Vista x32/x64 or superior
-- Screen 1024x768 or superior
-- Framework .NET 4.5 or superior
+- Windows Vista x32/x64 or higher
+- Screen 1024x768 or higher
+- Framework .NET 4.5 or higher
 - SQLite ODBC Driver
 
 ## Screenshots
