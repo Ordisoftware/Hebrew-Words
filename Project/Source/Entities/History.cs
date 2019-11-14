@@ -10,8 +10,8 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <created> 2019-11 </created>
+/// <edited> 2019-11 </edited>
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,12 +22,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewWords
 {
 
-  public class Bookmarks : IEnumerable<ReferenceItem>
+  public class History : IEnumerable<ReferenceItem>
   {
 
     private readonly List<ReferenceItem> Items = new List<ReferenceItem>();
 
-    private string Filename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
+    private string Filename { get { return Program.UserDataFolderPath + "History.txt"; } }
 
     public int Count { get { return Items.Count; } }
 
@@ -98,20 +98,14 @@ namespace Ordisoftware.HebrewWords
 
     public void Add(ReferenceItem reference)
     {
-      if ( Program.Settings.BookmarksCount < 1 )
+      if ( Program.Settings.HistoryCount < 1 )
         return;
-      foreach ( var item in Items )
+      foreach ( var item in Items.ToList() )
         if ( item.Equals(reference) )
-          return;
-      Items.Add(reference);
+          Items.Remove(item);
+      Items.Insert(0, new ReferenceItem(reference));
       while ( Items.Count > Program.Settings.BookmarksCount )
-        Items.RemoveAt(0);
-      Save();
-    }
-
-    public void Remove(ReferenceItem reference)
-    {
-      Items.Remove(reference);
+        Items.RemoveAt(Items.Count - 1);
       Save();
     }
 

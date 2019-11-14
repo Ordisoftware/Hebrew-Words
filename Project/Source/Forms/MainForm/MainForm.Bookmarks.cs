@@ -21,20 +21,10 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
-    private void GoToBookmark(object sender, EventArgs e)
+    private void UpdateBookmarks()
     {
-      if ( Program.Settings.CurrentView == ViewModeType.ELS50 
-        || Program.Settings.CurrentView == ViewModeType.Search )
-        SetView(ViewModeType.Verses);
-      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
-      ActionSave.PerformClick();
-    }
-
-    internal void UpdateBookmarks()
-    {
-      while ( MenuBookmarks.DropDownItems.Count > 4 )
-        MenuBookmarks.DropDownItems.RemoveAt(4);
-      Bookmarks.Save();
+      while ( MenuBookmarks.DropDownItems.Count > 5 )
+        MenuBookmarks.DropDownItems.RemoveAt(5);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -47,55 +37,26 @@ namespace Ordisoftware.HebrewWords
           Program.Settings.BookmarkMasterBook = 1;
           Program.Settings.BookmarkMasterChapter = 1;
           Program.Settings.BookmarkMasterVerse = 1;
-          Bookmarks.Save();
           UpdateBookmarks();
         }
         else
         {
           Bookmarks.Remove((ReferenceItem)menuitem.Tag);
-          Bookmarks.Save();
           UpdateBookmarks();
         }
       };
-      ToolStripMenuItem item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(bookmarkMaster.ToString());
-      item.Tag = bookmarkMaster;
-      item.Click += GoToBookmark;
-      item.MouseDown += bookmarkClicked;
-      item.ImageScaling = ToolStripItemImageScaling.None;
-      item.Image = ActionSetAsBookmarkMaster.Image;
+      ActionGoToBookmarkMaster.Text = bookmarkMaster.ToString();
+      ActionGoToBookmarkMaster.Tag = bookmarkMaster;
+      ActionGoToBookmarkMaster.MouseDown += bookmarkClicked;
+      ActionClearBookmarks.Enabled = Bookmarks.Count > 0;
+      if ( !ActionClearBookmarks.Enabled ) return;
       MenuBookmarks.DropDownItems.Add("-");
       foreach ( var reference in Bookmarks )
       {
-        item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
+        var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
         item.Tag = reference;
         item.Click += GoToBookmark;
         item.MouseDown += bookmarkClicked;
-        item.ImageScaling = ToolStripItemImageScaling.None;
-        item.Image = ActionAddToBookmarks.Image;
-      }
-    }
-
-    internal void AddCurrentToHistory()
-    {
-      for ( int index = 0; index < History.Count; )
-        if ( History[index].Equals(CurrentReference) )
-          History.RemoveAt(index);
-        else
-          index++;
-      History.Insert(0, new ReferenceItem(CurrentReference));
-      UpdateHistory();
-    }
-
-    private void UpdateHistory()
-    {
-      MenuHistory.DropDownItems.Clear();
-      while ( History.Count > Program.Settings.HistoryCount )
-        History.RemoveAt(History.Count - 1);
-      foreach ( var reference in History )
-      {
-        ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToString());
-        item.Tag = reference;
-        item.Click += GoToBookmark;
         item.ImageScaling = ToolStripItemImageScaling.None;
         item.Image = ActionAddToBookmarks.Image;
       }

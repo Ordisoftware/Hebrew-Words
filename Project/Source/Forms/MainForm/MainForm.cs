@@ -987,8 +987,13 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.BookmarkMasterVerse = 1;
       Bookmarks.Clear();
       Program.Settings.Store();
-      Bookmarks.Save();
       UpdateBookmarks();
+    }
+
+    private void ActionClearHistory_Click(object sender, EventArgs e)
+    {
+      History.Clear();
+      UpdateHistory();
     }
 
     /// <summary>
@@ -1110,6 +1115,19 @@ namespace Ordisoftware.HebrewWords
       PreviousSeachPagingPosition = -1;
     }
 
+    private void GoToBookmark(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.ELS50
+        || Program.Settings.CurrentView == ViewModeType.Search )
+        SetView(ViewModeType.Verses);
+      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+    }
+
+    private void PanelViewVerses_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
   }
 
 }

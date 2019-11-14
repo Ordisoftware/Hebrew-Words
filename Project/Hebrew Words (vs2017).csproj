@@ -62,6 +62,7 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Entities\DataSetHelper.cs" />
     <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
     <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
@@ -132,6 +133,9 @@
       <DependentUpon>ExportingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.History.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
@@ -340,9 +344,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Controls\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
