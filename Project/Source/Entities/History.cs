@@ -10,37 +10,32 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-09 </created>
+/// <created> 2019-11 </created>
 /// <edited> 2019-11 </edited>
 using System;
+using System.Linq;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  public class Bookmarks : ReferencesList
+  public class History : ReferencesList
   {
 
-    public Bookmarks()
+    public History()
     {
-      Filename = Program.UserDataFolderPath + "Bookmarks.txt";
+      Filename = Program.UserDataFolderPath + "History.txt";
     }
 
     public override void Add(ReferenceItem reference)
     {
-      if ( Program.Settings.BookmarksCount < 1 )
+      if ( Program.Settings.HistoryCount < 1 )
         return;
-      foreach ( var item in Items )
+      foreach ( var item in Items.ToList() )
         if ( item.Equals(reference) )
-          return;
-      Items.Add(reference);
+          Items.Remove(item);
+      Items.Insert(0, new ReferenceItem(reference));
       while ( Items.Count > Program.Settings.BookmarksCount )
-        Items.RemoveAt(0);
-      Save();
-    }
-
-    public void Remove(ReferenceItem reference)
-    {
-      Items.Remove(reference);
+        Items.RemoveAt(Items.Count - 1);
       Save();
     }
 

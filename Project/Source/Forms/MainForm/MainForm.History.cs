@@ -11,37 +11,37 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  public class Bookmarks : ReferencesList
+  public partial class MainForm
   {
 
-    public Bookmarks()
+    internal void AddCurrentToHistory()
     {
-      Filename = Program.UserDataFolderPath + "Bookmarks.txt";
+      History.Add(CurrentReference);
+      UpdateHistory();
     }
 
-    public override void Add(ReferenceItem reference)
+    private void UpdateHistory()
     {
-      if ( Program.Settings.BookmarksCount < 1 )
-        return;
-      foreach ( var item in Items )
-        if ( item.Equals(reference) )
-          return;
-      Items.Add(reference);
-      while ( Items.Count > Program.Settings.BookmarksCount )
-        Items.RemoveAt(0);
-      Save();
-    }
-
-    public void Remove(ReferenceItem reference)
-    {
-      Items.Remove(reference);
-      Save();
+      while ( MenuHistory.DropDownItems.Count > 1 )
+        MenuHistory.DropDownItems.RemoveAt(1);
+      ActionClearHistory.Enabled = History.Count > 0;
+      if ( !ActionClearHistory.Enabled ) return;
+      MenuHistory.DropDownItems.Add("-");
+      foreach ( var reference in History )
+      {
+        ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToString());
+        item.Tag = reference;
+        item.Click += GoToBookmark;
+        item.ImageScaling = ToolStripItemImageScaling.None;
+        item.Image = ActionAddToBookmarks.Image;
+      }
     }
 
   }

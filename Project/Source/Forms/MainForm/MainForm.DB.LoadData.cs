@@ -152,6 +152,8 @@ namespace Ordisoftware.HebrewWords
           InitBooksCombobox();
           Bookmarks.Load();
           UpdateBookmarks();
+          History.Load();
+          UpdateHistory();
         }
         finally
         {

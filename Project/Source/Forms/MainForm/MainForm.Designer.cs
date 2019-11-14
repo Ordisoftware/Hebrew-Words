@@ -153,10 +153,12 @@
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-      this.menusep = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGoToBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
+      this.menusep = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
@@ -292,6 +294,7 @@
       resources.ApplyResources(this.PanelViewVerses, "PanelViewVerses");
       this.PanelViewVerses.BackColor = System.Drawing.SystemColors.Control;
       this.PanelViewVerses.Name = "PanelViewVerses";
+      this.PanelViewVerses.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelViewVerses_Paint);
       this.PanelViewVerses.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelViewVerses_MouseClick);
       // 
       // TabPageTranslations
@@ -1224,33 +1227,48 @@
       // 
       this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionClearBookmarks,
-            this.menusep,
+            this.ActionGoToBookmarkMaster,
+            this.toolStripSeparator12,
             this.MenuHistory,
-            this.toolStripMenuItem2});
+            this.menusep,
+            this.ActionClearBookmarks});
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.Name = "MenuBookmarks";
       // 
-      // ActionClearBookmarks
+      // ActionGoToBookmarkMaster
       // 
-      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
-      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
-      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
+      resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
+      this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
+      this.ActionGoToBookmarkMaster.Click += new System.EventHandler(this.GoToBookmark);
+      // 
+      // toolStripSeparator12
+      // 
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
+      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+      // 
+      // MenuHistory
+      // 
+      this.MenuHistory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionClearHistory});
+      resources.ApplyResources(this.MenuHistory, "MenuHistory");
+      this.MenuHistory.Name = "MenuHistory";
+      // 
+      // ActionClearHistory
+      // 
+      resources.ApplyResources(this.ActionClearHistory, "ActionClearHistory");
+      this.ActionClearHistory.Name = "ActionClearHistory";
+      this.ActionClearHistory.Click += new System.EventHandler(this.ActionClearHistory_Click);
       // 
       // menusep
       // 
       this.menusep.Name = "menusep";
       resources.ApplyResources(this.menusep, "menusep");
       // 
-      // MenuHistory
+      // ActionClearBookmarks
       // 
-      resources.ApplyResources(this.MenuHistory, "MenuHistory");
-      this.MenuHistory.Name = "MenuHistory";
-      // 
-      // toolStripMenuItem2
-      // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
+      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
+      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
       // 
       // MenuTools
       // 
@@ -1676,7 +1694,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionSetAsBookmarkMaster;
     private System.Windows.Forms.ToolStripMenuItem ActionClearBookmarks;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem ActionNew;
     private System.Windows.Forms.ToolStripMenuItem ActionRestore;
     private System.Windows.Forms.ToolStripMenuItem ActionBackup;
@@ -1757,6 +1774,9 @@
     internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    private System.Windows.Forms.ToolStripMenuItem ActionClearHistory;
+    private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
   }
 }
 

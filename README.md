@@ -95,7 +95,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### 2019.__.__ - Version 2.4
+#### 2019.11.14 - Version 2.4
 
 - Add history persistence.
 - Fix buttons location when resizing SearchTranslatedForm.
