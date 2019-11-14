@@ -11,92 +11,21 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2019-11 </edited>
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
 
-  public class Bookmarks : IEnumerable<ReferenceItem>
+  public class Bookmarks : ReferencesList
   {
 
-    private readonly List<ReferenceItem> Items = new List<ReferenceItem>();
-
-    private string Filename { get { return Program.UserDataFolderPath + "Bookmarks.txt"; } }
-
-    public int Count { get { return Items.Count; } }
-
-    public ReferenceItem this[int index] { get { return Items[index]; } }
-
-    IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
+    public Bookmarks()
     {
-      return Items.GetEnumerator();
+      Filename = Program.UserDataFolderPath + "Bookmarks.txt";
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return Items.GetEnumerator();
-    }
-
-    public void Clear()
-    {
-      Items.Clear();
-      Save();
-    }
-
-    public void Load()
-    {
-      Items.Clear();
-      if ( !File.Exists(Filename) )
-        return;
-      try
-      {
-        var list = File.ReadLines(Filename);
-        foreach ( string item in list )
-        {
-          if ( item == "" || item.Count(c => c == '.') != 2 )
-            continue;
-          var parts = item.Split('.');
-          try
-          {
-            Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                        Convert.ToInt32(parts[1]),
-                                        Convert.ToInt32(parts[2])));
-          }
-          catch
-          {
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-    }
-
-    public void Save()
-    {
-      try
-      {
-        if ( MainForm.Instance.IsLoadingData )
-          return;
-        var items = new List<string>();
-        foreach ( var item in Items )
-          items.Add(item.ToStringNumbers());
-        File.WriteAllLines(Filename, items);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-    }
-
-    public void Add(ReferenceItem reference)
+    public override void Add(ReferenceItem reference)
     {
       if ( Program.Settings.BookmarksCount < 1 )
         return;
