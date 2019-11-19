@@ -95,6 +95,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
+#### ____.__.__ - Version 3.0
+
+- Add strong's concordances to database.
+- Add english classic translation to database.
+- Change contextual click on a hebrew word to use database instead of web search.
+
 #### 2019.11.14 - Version 2.4
 
 - Add history persistence.
