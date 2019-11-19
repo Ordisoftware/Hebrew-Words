@@ -116,7 +116,8 @@ namespace Ordisoftware.HebrewWords
         CreateSchemaIfNotExists();
         CreateDataIfNotExists();
         form.Refresh();
-        int rowsCount = GetRowsCount(DataSet.Books.TableName)
+        int rowsCount = GetRowsCount(DataSet.StrongConcordances.TableName)
+                      + GetRowsCount(DataSet.Books.TableName)
                       + GetRowsCount(DataSet.Chapters.TableName)
                       + GetRowsCount(DataSet.Verses.TableName)
                       + GetRowsCount(DataSet.Words.TableName);
@@ -131,20 +132,24 @@ namespace Ordisoftware.HebrewWords
           Refresh();
           Application.DoEvents();
         };
+        DataSet.StrongConcordances.RowChanged += progress;
         DataSet.Books.RowChanged += progress;
         DataSet.Chapters.RowChanged += progress;
         DataSet.Verses.RowChanged += progress;
         DataSet.Words.RowChanged += progress;
         try
         {
+          DataSet.StrongConcordances.BeginLoadData();
           DataSet.Books.BeginLoadData();
           DataSet.Chapters.BeginLoadData();
           DataSet.Verses.BeginLoadData();
           DataSet.Words.BeginLoadData();
+          StrongConcordancesTableAdapter.Fill(DataSet.StrongConcordances);
           BooksTableAdapter.Fill(DataSet.Books);
           ChaptersTableAdapter.Fill(DataSet.Chapters);
           VersesTableAdapter.Fill(DataSet.Verses);
           WordsTableAdapter.Fill(DataSet.Words);
+          DataSet.StrongConcordances.EndLoadData();
           DataSet.Books.EndLoadData();
           DataSet.Chapters.EndLoadData();
           DataSet.Verses.EndLoadData();
@@ -157,6 +162,7 @@ namespace Ordisoftware.HebrewWords
         }
         finally
         {
+          DataSet.StrongConcordances.RowChanged -= progress;
           DataSet.Books.RowChanged -= progress;
           DataSet.Chapters.RowChanged -= progress;
           DataSet.Verses.RowChanged -= progress;

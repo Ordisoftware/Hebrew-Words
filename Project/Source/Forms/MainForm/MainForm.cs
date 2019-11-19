@@ -1128,6 +1128,11 @@ namespace Ordisoftware.HebrewWords
     {
 
     }
+
+    private void toolStripButton1_Click(object sender, EventArgs e)
+    {
+      new ImportStrongForm().ShowDialog();
+    }
   }
 
 }

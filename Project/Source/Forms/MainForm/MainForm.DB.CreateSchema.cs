@@ -104,6 +104,18 @@ namespace Ordisoftware.HebrewWords
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                               )");
+          checkTable("StrongConcordances", @"CREATE TABLE 'StrongConcordances' 
+                                            ( 
+                                              ID TEXT DEFAULT '' NOT NULL,
+                                              Usage TEXT DEFAULT '' NOT NULL,
+                                              Original TEXT DEFAULT '' NOT NULL,
+                                              Hebrew TEXT DEFAULT '' NOT NULL,
+                                              Transcription TEXT DEFAULT '' NOT NULL,
+                                              Phonetic TEXT DEFAULT '' NOT NULL,
+                                              Translation TEXT DEFAULT '' NOT NULL,
+                                              Memo TEXT DEFAULT '' NOT NULL,
+                                              CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
+                                            )");
           checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");

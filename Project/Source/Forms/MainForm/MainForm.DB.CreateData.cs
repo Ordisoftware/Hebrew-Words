@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.IO;
+using System.Linq;
 using System.Data;
 using System.Data.Odbc;
 using System.Threading;
@@ -30,6 +32,42 @@ namespace Ordisoftware.HebrewWords
     /// Create database content if not exists.
     /// </summary>
     public void CreateDataIfNotExists()
+    {
+      CreateBooks();
+      CreateConcordances();
+    }
+
+    public void CreateConcordances()
+    {
+      int count = 0;
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+      {
+        connection.Open();
+        var command = new OdbcCommand("select count(*) FROM StrongConcordances", connection);
+        count = (int)command.ExecuteScalar();
+        connection.Close();
+      }
+      if ( count != 0 )
+        return;
+      var lines = File.ReadAllLines(Program.AppDocumentsFolderPath + "CSV\\BHS-Strong-no\\" + "brief_info_StrongNo.csv").ToList();
+      foreach ( string line in lines )
+      {
+        var items = line.Split('\t');
+        var concordance = DataSet.StrongConcordances.NewStrongConcordancesRow();
+        concordance.ID = items[0];
+        concordance.Usage = items[1];
+        concordance.Original = items[2];
+        concordance.Hebrew = HebrewLetters.ConvertToHebrewFont(items[2].RemoveDiacritics());
+        concordance.Transcription = items[3];
+        concordance.Phonetic = items[4];
+        concordance.Translation = items[5];
+        concordance.Memo = "";
+        DataSet.StrongConcordances.AddStrongConcordancesRow(concordance);
+      }
+      TableAdapterManager.UpdateAll(DataSet);
+    }
+
+    public void CreateBooks()
     {
       int count = 0;
       using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
