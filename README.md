@@ -98,7 +98,10 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### ____.__.__ - Version 3.0
 
 - Add strong's concordances to database.
-- Add english classic translation to database.
+- Add classic english translation to database.
+- Add form to edit strong's concordances.
+- Add form to edit classis english translation.
+- Add classic english translation between an hebrew word and the working translation.
 - Change contextual click on a hebrew word to use database instead of web search.
 
 #### 2019.11.14 - Version 2.4
