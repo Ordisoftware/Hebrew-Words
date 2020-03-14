@@ -6,7 +6,7 @@
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-words)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that helps for the literal word-for-word translation of the Hebrew Bible verses.
+A tool for Windows written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
 
 ## Functionalities
 
@@ -95,14 +95,21 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### ____.__.__ - Version 3.0
+#### 2020.__.__ - Version 3.0
 
-- Add strong's concordances to database.
-- Add classic english translation to database.
-- Add form to edit strong's concordances.
-- Add form to edit classis english translation.
-- Add classic english translation between an hebrew word and the working translation.
-- Change contextual click on a hebrew word to use database instead of web search.
+- Add letters values in the input panel.
+- Add copy/cut/paste for the input box.
+- Add copy hebrew unicode to clipboard button.
+- Add paste from unicode clipboard content button.
+- Add online search from several providers (Pealim, Google, Bing, Wiktionary, Sefaria, Reverso, Glosbe, Dict.com).
+- Add some links (Shorashon, Hebrew Gematria, Lexilogos). 
+
+- Add Serafia Home and Serafia Sefer Yetsirah and Pirke Avot links.
+- Improve words context menu.
+- Improve UI.
+- Database updated to support internal strong concordance popup menus in the future.
+- Bug to solve in the future : error message when several SearchTranslatedForm are opened - using the refresh button cancels it.
+- Bug to solve in the future : error message when typing too fastly in the comment boxes.
 
 #### 2019.11.14 - Version 2.4
 
