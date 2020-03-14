@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Words"
 #define MyAppNameNoSpace "HebrewWords"
-#define MyAppVersion "2.5"
+#define MyAppVersion "3.0"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "http://www.ordisoftware.com/projects/hebrew-words"
 #define MyAppExeName "Ordisoftware.HebrewWords.exe"
