@@ -309,7 +309,7 @@
             0});
       resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
-            300,
+            400,
             0,
             0,
             0});
