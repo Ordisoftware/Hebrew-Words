@@ -159,6 +159,8 @@ namespace Ordisoftware.HebrewWords
           UpdateBookmarks();
           History.Load();
           UpdateHistory();
+          //todo remove comment if ( NeedUpgradeForConcordances )
+            //ImportWordsConcordances();
         }
         finally
         {

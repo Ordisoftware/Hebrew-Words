@@ -82,6 +82,12 @@ namespace Ordisoftware.HebrewWords
       = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
+    /// Indicate application csv documents folder.
+    /// </summary>
+    static public readonly string AppCSVDocumentsFolderPath
+      = AppDocumentsFolderPath + "CSV" + Path.DirectorySeparatorChar;
+
+    /// <summary>
     /// Indicate user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath

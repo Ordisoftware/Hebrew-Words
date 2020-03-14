@@ -22,6 +22,8 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm : Form
   {
 
+    private bool NeedUpgradeForConcordances;
+
     /// <summary>
     /// Check if tables and columns exists or create them.
     /// </summary>
@@ -42,6 +44,7 @@ namespace Ordisoftware.HebrewWords
             {
               var cmdCreateTable = new OdbcCommand(sql, connection);
               cmdCreateTable.ExecuteNonQuery();
+              upgraded = true;
             }
           }
           void checkColumn(string table, string column, string sql)
@@ -63,6 +66,18 @@ namespace Ordisoftware.HebrewWords
               upgraded = true;
             }
           }
+          checkTable("StrongConcordances", @"CREATE TABLE 'StrongConcordances' 
+                                            ( 
+                                              ID TEXT DEFAULT '' NOT NULL,
+                                              Usage TEXT DEFAULT '' NOT NULL,
+                                              Original TEXT DEFAULT '' NOT NULL,
+                                              Hebrew TEXT DEFAULT '' NOT NULL,
+                                              Transliteration TEXT DEFAULT '' NOT NULL,
+                                              Phonetic TEXT DEFAULT '' NOT NULL,
+                                              Translation TEXT DEFAULT '' NOT NULL,
+                                              Memo TEXT DEFAULT '' NOT NULL,
+                                              CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
+                                            )");
           checkTable("Books", @"CREATE TABLE 'Books' 
                               ( 
                                 ID TEXT DEFAULT '' NOT NULL,
@@ -101,24 +116,21 @@ namespace Ordisoftware.HebrewWords
                                 Original TEXT DEFAULT '' NOT NULL,
                                 Hebrew TEXT DEFAULT '' NOT NULL,
                                 Translation TEXT DEFAULT '' NOT NULL,
+                                ClassicTranslation TEXT DEFAULT '' NOT NULL,
+                                Transliteration TEXT DEFAULT '' NOT NULL,
+                                ConcordanceID TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
+                                FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
                               )");
-          checkTable("StrongConcordances", @"CREATE TABLE 'StrongConcordances' 
-                                            ( 
-                                              ID TEXT DEFAULT '' NOT NULL,
-                                              Usage TEXT DEFAULT '' NOT NULL,
-                                              Original TEXT DEFAULT '' NOT NULL,
-                                              Hebrew TEXT DEFAULT '' NOT NULL,
-                                              Transcription TEXT DEFAULT '' NOT NULL,
-                                              Phonetic TEXT DEFAULT '' NOT NULL,
-                                              Translation TEXT DEFAULT '' NOT NULL,
-                                              Memo TEXT DEFAULT '' NOT NULL,
-                                              CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
-                                            )");
           checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+          upgraded = false;
+          checkColumn("Words", "ClassicTranslation", "ALTER TABLE Words ADD COLUMN ClassicTranslation TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Words", "Transliteration", "ALTER TABLE Words ADD COLUMN Transliteration TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Words", "ConcordanceID", "ALTER TABLE Words ADD COLUMN ConcordanceID TEXT DEFAULT '' NOT NULL;");
+          NeedUpgradeForConcordances = upgraded;
         }
         finally
         {
