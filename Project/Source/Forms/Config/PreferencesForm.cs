@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -87,6 +87,7 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
+      SelectOpenPealim.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.PealimSearch;
       if ( First )
       {
         CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
@@ -123,6 +124,8 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
       if ( SelectOpenTranslated.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
+      if ( SelectOpenPealim.Checked )
+        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.PealimSearch;
       MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( MainForm.Instance.TimerAutoSave.Enabled )
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;

@@ -73,6 +73,7 @@
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.SelectOpenPealim = new System.Windows.Forms.RadioButton();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -238,6 +239,7 @@
       // GroupBoxHebrewWordClick
       // 
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenPealim);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
       resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
@@ -435,6 +437,13 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
+      // SelectOpenPealim
+      // 
+      resources.ApplyResources(this.SelectOpenPealim, "SelectOpenPealim");
+      this.SelectOpenPealim.Name = "SelectOpenPealim";
+      this.SelectOpenPealim.TabStop = true;
+      this.SelectOpenPealim.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -532,5 +541,6 @@
     private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
     private System.Windows.Forms.Button ActionSelectLangEN;
     private System.Windows.Forms.Button ActionSelectLangFR;
+    private System.Windows.Forms.RadioButton SelectOpenPealim;
   }
 }

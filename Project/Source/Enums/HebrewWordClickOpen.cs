@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 
 namespace Ordisoftware.HebrewWords
@@ -21,7 +21,8 @@ namespace Ordisoftware.HebrewWords
   {
     OnlineSearch,
     HebrewLetters,
-    SearchTranslated
+    SearchTranslated,
+    PealimSearch
   }
 
 }

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier. 
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -37,6 +37,20 @@ namespace Ordisoftware.HebrewWords
     public WordControl()
     {
       InitializeComponent();
+      int index = 0;
+      EventHandler action = (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
+        Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
+      };
+      foreach ( var item in OnlineWordProviders.Items )
+      {
+        if ( item.Name == "-" )
+          ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
+        else
+          ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
+      }
     }
 
     public WordControl(ReferenceItem reference) : this()
@@ -119,6 +133,9 @@ namespace Ordisoftware.HebrewWords
         case HebrewWordClickOpen.SearchTranslated:
           ActionSearchTranslated.PerformClick();
           break;
+        case HebrewWordClickOpen.PealimSearch:
+          ActionSearchOnline.DropDownItems[0].PerformClick();
+          break;
       }
     }
 
@@ -127,24 +144,29 @@ namespace Ordisoftware.HebrewWords
       Program.OpenHebrewLetters(LabelHebrew.Text);
     }
 
-    private void ActionOnlineSearch_Click(object sender, EventArgs e)
-    {
-      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
-    }
-
-    private void ActionCopy_Click(object sender, EventArgs e)
+    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(Reference.Word.Original);
     }
 
-    private void ActionSearch_Click(object sender, EventArgs e)
+    private void ActionCopyFontChars_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SearchWord(LabelHebrew.Text);
+      Clipboard.SetText(Reference.Word.Hebrew);
     }
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
       SearchTranslatedForm.Run(this);
+    }
+
+    private void ActionSearchWord_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.SearchWord(LabelHebrew.Text);
+    }
+
+    private void ActionSearchOnline_Click(object sender, EventArgs e)
+    {
+      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
     }
 
   }
