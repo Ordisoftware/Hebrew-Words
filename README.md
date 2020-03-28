@@ -109,7 +109,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add copy hebrew unicode to clipboard button for the hebrew letters input box.
 >>>>- Add paste from unicode clipboard content button for the hebrew letters input box.
 >>>>- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
->>>>- Add options to choose double-click action on a word in the search translated form.
+>>>>- Add popup box to show hebrew source word in the search translated form.
+>>>>- Add option to choose double-click action on a word in the search translated form.
+>>>>- Add option to choose a default search word online action.
 (>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
 - Improve UI.
 (- Database updated to support internal strong concordance popup menus in the future.)
