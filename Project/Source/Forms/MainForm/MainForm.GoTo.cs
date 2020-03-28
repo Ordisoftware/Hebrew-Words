@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -132,6 +132,19 @@ namespace Ordisoftware.HebrewWords
       }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
+      try
+      {
+
+
+
+        ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
+
+
+
+      }
+      catch
+      {
+      }
     }
 
   }

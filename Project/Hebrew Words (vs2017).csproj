@@ -62,10 +62,10 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ImportStrongForm.cs">
+    <Compile Include="Source\Forms\Import\ImportStrongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportStrongForm.Designer.cs">
+    <Compile Include="Source\Forms\Import\ImportStrongForm.Designer.cs">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Entities\OnlineWordProvider.cs" />
@@ -276,7 +276,7 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ImportStrongForm.resx">
+    <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
