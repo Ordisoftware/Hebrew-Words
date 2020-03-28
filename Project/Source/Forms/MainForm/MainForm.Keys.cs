@@ -59,6 +59,12 @@ namespace Ordisoftware.HebrewWords
         case Keys.Control | Keys.G:
           ActionShowGrammarGuide.PerformClick();
           return true;
+        case Keys.Control | Keys.H:
+          ActionStartHebrewLetters.PerformClick();
+          return true;
+        case Keys.Control | Keys.L:
+          shorashonLexicalToolStripMenuItem.PerformClick();
+          return true;
         case Keys.Control | Keys.S:
           ActionSave.PerformClick();
           return true;
