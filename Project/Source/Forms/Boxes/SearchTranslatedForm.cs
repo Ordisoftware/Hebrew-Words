@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -140,7 +140,20 @@ namespace Ordisoftware.HebrewWords
 
     private void ListView_DoubleClick(object sender, EventArgs e)
     {
-      ActionReachReference.PerformClick();
+      switch ( Program.Settings.TranslatedItemDoubleClickOpen )
+      {
+        case TranslatedItemDoubleClickOpen.ReachReference:
+          ActionReachReference.PerformClick();
+          break;
+        case TranslatedItemDoubleClickOpen.UseTranslation:
+          ActionUseTranslation.PerformClick();
+          break;
+        case TranslatedItemDoubleClickOpen.AddTranslation:
+          ActionAddTranslation.PerformClick();
+          break;
+        default:
+          throw new NotImplementedException();
+      }
     }
 
     private void ReachReferencedWord(ReferenceItem reference)
@@ -178,6 +191,14 @@ namespace Ordisoftware.HebrewWords
       WordControl.Reference.Word.Translation = str;
       WordControl.EditTranslation.Text = str;
       Close();
+    }
+
+    private void ActionAddTranslation_Click(object sender, EventArgs e)
+    {
+      if ( ListView.SelectedItems.Count < 1 ) return;
+      var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
+      WordControl.Reference.Word.Translation += " / " + str;
+      WordControl.EditTranslation.Text = WordControl.Reference.Word.Translation;
     }
 
     private void EditHebrew_TextChanged(object sender, EventArgs e)

@@ -50,6 +50,8 @@
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -126,6 +128,8 @@
       // 
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
+            this.ActionAddTranslation,
+            this.toolStripSeparator2,
             this.ActionCopyTranslation,
             this.toolStripSeparator1,
             this.ActionReachReference});
@@ -217,6 +221,17 @@
       this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
       this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
       // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
+      // ActionAddTranslation
+      // 
+      resources.ApplyResources(this.ActionAddTranslation, "ActionAddTranslation");
+      this.ActionAddTranslation.Name = "ActionAddTranslation";
+      this.ActionAddTranslation.Click += new System.EventHandler(this.ActionAddTranslation_Click);
+      // 
       // SearchTranslatedForm
       // 
       resources.ApplyResources(this, "$this");
@@ -262,5 +277,7 @@
     private System.Windows.Forms.Button ActionReset;
     private System.Windows.Forms.CheckBox EditDistinct;
     private System.Windows.Forms.CheckBox EditReturn;
+    private System.Windows.Forms.ToolStripMenuItem ActionAddTranslation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
   }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Source\Entities\DataSetHelper.cs" />
     <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
     <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
     </Compile>

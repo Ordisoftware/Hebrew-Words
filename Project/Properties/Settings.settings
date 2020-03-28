@@ -142,5 +142,8 @@
     <Setting Name="FoundReferencesColumnRefWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">130</Value>
     </Setting>
+    <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen" Scope="User">
+      <Value Profile="(Default)">ReachReference</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

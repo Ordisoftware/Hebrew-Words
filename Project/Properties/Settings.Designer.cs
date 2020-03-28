@@ -560,5 +560,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["FoundReferencesColumnRefWidth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ReachReference")]
+        public global::Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen TranslatedItemDoubleClickOpen {
+            get {
+                return ((global::Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen)(this["TranslatedItemDoubleClickOpen"]));
+            }
+            set {
+                this["TranslatedItemDoubleClickOpen"] = value;
+            }
+        }
     }
 }
