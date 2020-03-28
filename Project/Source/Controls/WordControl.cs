@@ -44,6 +44,7 @@ namespace Ordisoftware.HebrewWords
         var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
       };
+      //( (ToolStripDropDownMenu)ActionSearchOnline.DropDown).ShowImageMargin = false;
       foreach ( var item in OnlineWordProviders.Items )
       {
         if ( item.Name == "-" )

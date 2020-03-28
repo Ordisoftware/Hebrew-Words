@@ -32,12 +32,12 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordControl));
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
@@ -69,28 +69,16 @@
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
-      // ActionOpenHebrewLetters
+      // ActionSearchOnline
       // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
-      // 
-      // MenuSeparator1
-      // 
-      this.MenuSeparator1.Name = "MenuSeparator1";
-      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
+      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
+      this.ActionSearchOnline.Name = "ActionSearchOnline";
       // 
       // ActionSearchTranslated
       // 
       resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
       this.ActionSearchTranslated.Name = "ActionSearchTranslated";
       this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
-      // 
-      // ActionSearchOnline
-      // 
-      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
-      this.ActionSearchOnline.Name = "ActionSearchOnline";
-      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
       // 
       // ActionSearchWord
       // 
@@ -102,6 +90,17 @@
       // 
       this.MenuSeparator2.Name = "MenuSeparator2";
       resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // MenuSeparator1
+      // 
+      this.MenuSeparator1.Name = "MenuSeparator1";
+      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       // 
       // ActionCopyFontChars
       // 
