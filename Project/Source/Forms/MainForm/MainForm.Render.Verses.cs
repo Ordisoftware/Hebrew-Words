@@ -157,11 +157,11 @@ namespace Ordisoftware.HebrewWords
 
     private void EditVerseComment_KeyDown(object sender, KeyEventArgs e)
     {
-      var textbox = (TextBox)sender;
-      var index = ( (Panel)textbox.Parent ).Controls.IndexOf(textbox) - 1;
-      var control = (WordControl)( (Panel)textbox.Parent ).Controls[index];
+      var control = (Control)sender;
+      var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
+      var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
+      wordcontrol.Focus();
       control.Focus();
-      textbox.Focus();
     }
 
     private void EditVerseComment_TextChanged(object sender, EventArgs e)

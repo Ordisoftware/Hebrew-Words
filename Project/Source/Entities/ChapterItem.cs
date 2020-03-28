@@ -28,7 +28,10 @@ namespace Ordisoftware.HebrewWords
 
     public override string ToString()
     {
-      return Chapter?.Number.ToString() ?? "";
+      if ( Chapter == null ) return "";
+      string str = Chapter.Number.ToString();
+      if ( Chapter.Memo != "" ) str += $" - {Chapter.Memo}";
+      return str;
     }
 
     public ChapterItem(DataSet.ChaptersRow chapter)

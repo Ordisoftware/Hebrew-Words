@@ -1133,6 +1133,14 @@ namespace Ordisoftware.HebrewWords
     {
       new ImportStrongForm().ShowDialog();
     }
+
+    private void EditChapterMemo_TextChanged(object sender, EventArgs e)
+    {
+      if ( CurrentReference == null || CurrentReference.Chapter == null ) return;
+      CurrentReference.Chapter.Memo = EditChapterMemo.Text;
+      ActionSave.Enabled = true;
+    }
+
   }
 
 }

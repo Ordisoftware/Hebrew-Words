@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewWords
               {
                 PanelViewVerses.Focus();
                 PanelViewVerses.ScrollControlIntoView(label);
-                PanelViewVerses.ScrollControlIntoView((TextBox)label.Tag);
+                PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
                 int index = PanelViewVerses.Controls.IndexOf(label);
                 ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
                 break;
@@ -132,6 +132,7 @@ namespace Ordisoftware.HebrewWords
       }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
+      EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
       try
       {
 

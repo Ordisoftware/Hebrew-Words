@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( Book == null ) return "";
       string str = Book.Number + ". " + Book.Name;
-      if ( Book.Translation != "" ) str += " (" + Book.Translation + ")";
+      if ( Book.Translation != "" ) str += $" ({Book.Translation})";
       return str;
     }
 
