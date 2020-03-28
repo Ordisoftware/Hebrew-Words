@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2020-03 </edited>
 using System;
+using System.Linq;
 using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
@@ -29,7 +30,7 @@ namespace Ordisoftware.HebrewWords
     public override string ToString()
     {
       if ( Book == null ) return "";
-      string str = Book.Number + ". " + Book.Name;
+      string str = Book.Number.ToString("00") + ". " + Book.Name;
       if ( Book.Translation != "" ) str += $" ({Book.Translation})";
       return str;
     }

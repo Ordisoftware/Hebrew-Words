@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2020-03 </edited>
 using System;
+using System.Linq;
 using Ordisoftware.HebrewWords.Data;
 
 namespace Ordisoftware.HebrewWords
@@ -29,7 +30,13 @@ namespace Ordisoftware.HebrewWords
     public override string ToString()
     {
       if ( Chapter == null ) return "";
-      string str = Chapter.Number.ToString();
+      int nb = MainForm.Instance.CurrentReference.Book.GetChaptersRows().Count();
+      string str = "";
+      if ( nb >= 100 ) str = Chapter.Number.ToString("000");
+      else
+      if ( nb >= 10 ) str = Chapter.Number.ToString("00");
+      else
+      str = Chapter.Number.ToString();
       if ( Chapter.Memo != "" ) str += $" - {Chapter.Memo}";
       return str;
     }
