@@ -82,6 +82,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Ctrl+R : Find reference
 - Ctrl+F : Find verse number in current chapter (0 for first untranslated)
 - Ctrl+G : Open the grammar guide
+- Ctrl+H : Open Hebrew Letters
+- Ctrl+L : Open Shorashon web page
 - Ctrl+Home : Reach the beginning of the view
 - Ctrl+End : Reach the ending of the view
 - Ctrl+Up : Scroll the view up (fine)
@@ -97,19 +99,22 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
-- Add letters values in the input panel.
-- Add copy/cut/paste for the input box.
-- Add copy hebrew unicode to clipboard button.
-- Add paste from unicode clipboard content button.
-- Add online search from several providers (Pealim, Google, Bing, Wiktionary, Sefaria, Reverso, Glosbe, Dict.com).
-- Add some links (Shorashon, Hebrew Gematria, Lexilogos). 
-
-- Add Serafia Home and Serafia Sefer Yetsirah and Pirke Avot links.
-- Improve words context menu.
+- Add keyboard shortcuts to open Hebrew Letters and Shorashon web page.
+- Add links to Lexilogos and Hebrew Gematria web pages.
+- Add online search from several providers (Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe).
+>>>>- Add some links to Serafia website: Sefer Yetsirah and Pirke Avot.
+>>>>- Add chapter memo text box on top of verses panel.
+(>>>>- Add letters values in the input panel.)
+>>>>- Add copy/cut/paste for the hebrew letters input box.
+>>>>- Add copy hebrew unicode to clipboard button for the hebrew letters input box.
+>>>>- Add paste from unicode clipboard content button for the hebrew letters input box.
+>>>>- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
+>>>>- Add options to choose double-click action on a word in the search translated form.
+(>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
 - Improve UI.
-- Database updated to support internal strong concordance popup menus in the future.
-- Bug to solve in the future : error message when several SearchTranslatedForm are opened - using the refresh button cancels it.
-- Bug to solve in the future : error message when typing too fastly in the comment boxes.
+(- Database updated to support internal strong concordance popup menus in the future.)
+- Bug to solve in the future : error message when several SearchTranslatedForm are opened - using the top refresh button cancels that.
+- Bug to solve in the future : error message, sometimes, when typing too fastly in the comment boxes.
 
 #### 2019.11.14 - Version 2.4
 
