@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewWords
 
     public new bool Focus()
     {
-      if ( MainForm.Instance.RenderInProcess ) return false;
+      if ( MainForm.Instance.IsRenderingSearch ) return false;
       EditTranslation.Focus();
       return true;
     }
@@ -81,10 +81,10 @@ namespace Ordisoftware.HebrewWords
 
     private void EditTranslation_Enter(object sender, EventArgs e)
     {
-      if ( MainForm.Instance.RenderInProcess ) return;
+      if ( MainForm.Instance.IsRenderingSearch ) return;
       EditTranslation.BackColor = Color.AliceBlue;
       EditTranslation.SelectionStart = 0;
-      if ( MainForm.Instance.ComboBoxMutex ) return;
+      if ( MainForm.Instance.IsComboBoxChanging ) return;
       MainForm.Instance.CurrentReference = new ReferenceItem(Reference);
       MainForm.Instance.AddCurrentToHistory();
     }
@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( MainForm.Instance.IsLoadingData ) return;
-      if ( MainForm.Instance.RenderInProcess ) return;
+      if ( MainForm.Instance.IsRenderingSearch ) return;
       if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
       Focus();
       MainForm.Instance.ActionSave.Enabled = true;

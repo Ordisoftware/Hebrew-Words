@@ -27,8 +27,8 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderSearch()
     {
-      if ( RenderInProcess ) return;
-      RenderInProcess = true;
+      if ( IsRenderingSearch ) return;
+      IsRenderingSearch = true;
       try
       {
         UpdateSearchButtons();
@@ -129,7 +129,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        RenderInProcess = false;
+        IsRenderingSearch = false;
         if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
           SetFormDisabled(false);
         PanelSearchResults.Visible = true;

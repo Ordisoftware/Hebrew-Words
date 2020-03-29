@@ -1760,7 +1760,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionEditChapterComment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAV8SURBVFhHtZcLTJVlHMbpuuVqK0pWjlZrLV26tpQ7Q7e4
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAV8SURBVFhHtZcLTJVlHMbpuuVqK0pWjlZrLV26tpQ7Q7e4
         lZhiGWlmclNBUC6ROdSUVEQCDnkD70mlJZmbw2qNAkU3xHOOcjsX4ODhNgQRDVRSNp+e//kOdGTn4NTj
         u/12Lt/7/n/P977v+b7vuLA9XqXyKdGqvKDO9XyoiENc4hTxUHtGm+cFdG0AOoSNJNPJSE3WpkNc4lTU
         ShurzpkC9B0D1HzV+DwcpDYd4hKnolaamzpnMnD1qLXzVEA7zblITalNh7jEqaiVpgS48jN6j3ui9zc/
@@ -4594,9 +4594,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>992, 766</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 800</value>
   </data>
@@ -4611,6 +4608,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsBindingSource.Name" xml:space="preserve">
     <value>WordsBindingSource</value>
@@ -5265,18 +5274,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionImportConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.Data.DataSet, Ordisoftware.HebrewWords, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StrongConcordancesBindingSource.Name" xml:space="preserve">
     <value>StrongConcordancesBindingSource</value>

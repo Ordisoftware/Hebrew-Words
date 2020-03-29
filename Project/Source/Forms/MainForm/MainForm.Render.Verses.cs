@@ -26,8 +26,8 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderVerses()
     {
-      if ( RenderInProcess ) return;
-      RenderInProcess = true;
+      if ( IsRenderingSearch ) return;
+      IsRenderingSearch = true;
       try
       {
         PanelViewVerses.AutoScrollPosition = new Point(0, 0);
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        RenderInProcess = false;
+        IsRenderingSearch = false;
         SetFormDisabled(false);
         PanelViewVerses.Visible = true;        
       }
@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewWords
     {
       var control = (Control)sender;
       control.BackColor = Color.AliceBlue;
-      if ( ComboBoxMutex ) return;
+      if ( IsComboBoxChanging ) return;
       CurrentReference = new ReferenceItem((ReferenceItem)( (Control)sender ).Tag);
       AddCurrentToHistory();
     }

@@ -37,9 +37,9 @@ namespace Ordisoftware.HebrewWords
     public ReferenceItem CurrentReference { get; set; }
 
     /// <summary>
-    /// Indicate combobox mutex.
+    /// Indicate if is in loading data stage.
     /// </summary>
-    public bool ComboBoxMutex { get; private set; }
+    public bool IsLoadingData { get; private set; }
 
     /// <summary>
     /// Indicate if the application is ready for the user.
@@ -52,14 +52,14 @@ namespace Ordisoftware.HebrewWords
     private bool IsSessionEnding;
 
     /// <summary>
-    /// Indicate if is in loading data stage.
+    /// Indicate is combobox selection is changing.
     /// </summary>
-    public bool IsLoadingData { get; private set; }
+    public bool IsComboBoxChanging { get; private set; }
 
     /// <summary>
-    /// Indicate if render view is in progress.
+    /// Indicate if rendering view is in running.
     /// </summary>
-    public bool RenderInProcess { get; private set; }
+    public bool IsRenderingSearch { get; private set; }
 
     /// <summary>
     /// Indicate if GoTo is running.

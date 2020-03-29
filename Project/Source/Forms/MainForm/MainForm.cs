@@ -728,10 +728,13 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if ( ComboBoxMutex ) return;
-      ComboBoxMutex = true;
+      if ( IsComboBoxChanging ) return;
+      IsComboBoxChanging = true;
       try
       {
+        EditBookTranslation.Text = "";
+        EditChapterTitle.Text = "";
+        EditChapterMemo.Text = "";
         ActionSave.PerformClick();
         CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
                                              ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
@@ -741,7 +744,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        ComboBoxMutex = false;
+        IsComboBoxChanging = false;
       }
     }
 
@@ -1035,7 +1038,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
     {
-      if ( RenderInProcess ) return;
+      if ( IsRenderingSearch ) return;
       PagingCurrent = 1;
       RenderSearch();
     }
@@ -1047,7 +1050,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
     {
-      if ( RenderInProcess ) return;
+      if ( IsRenderingSearch ) return;
       PagingCurrent--;
       RenderSearch();
     }
@@ -1059,7 +1062,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
     {
-      if ( RenderInProcess ) return;
+      if ( IsRenderingSearch ) return;
       PagingCurrent++;
       RenderSearch();
     }
@@ -1071,7 +1074,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
     {
-      if ( RenderInProcess ) return;
+      if ( IsRenderingSearch ) return;
       PagingCurrent = PagingCount;
       RenderSearch();
     }
@@ -1129,13 +1132,13 @@ namespace Ordisoftware.HebrewWords
       new ImportStrongForm().ShowDialog();
     }
 
-    private void EditChapterTitleMemo_Enter(object sender, EventArgs e)
+    private void EditDbTextBox_Enter(object sender, EventArgs e)
     {
       var control = (Control)sender;
       control.BackColor = Color.Ivory;
     }
 
-    private void EditChapterTitleMemo_Leave(object sender, EventArgs e)
+    private void EditDbTextBox_Leave(object sender, EventArgs e)
     {
       var control = (Control)sender;
       control.BackColor = Color.LightYellow;
@@ -1143,21 +1146,21 @@ namespace Ordisoftware.HebrewWords
 
     private void EditBookTranslation_TextChanged(object sender, EventArgs e)
     {
-      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
+      if ( IsComboBoxChanging ) return;
       CurrentReference.Book.Translation = EditBookTranslation.Text;
       ActionSave.Enabled = true;
     }
 
     private void EditChapterTitle_TextChanged(object sender, EventArgs e)
     {
-      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
+      if ( IsComboBoxChanging ) return;
       CurrentReference.Chapter.Title = EditChapterTitle.Text;
       ActionSave.Enabled = true;
     }
 
     private void EditChapterMemo_TextChanged(object sender, EventArgs e)
     {
-      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
+      if ( IsComboBoxChanging ) return;
       CurrentReference.Chapter.Memo = EditChapterMemo.Text;
       ActionSave.Enabled = true;
     }

@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewWords
       switch ( keyData )
       {
         case Keys.Escape:
-          if ( RenderInProcess ) CancelRequired = true;
+          if ( IsRenderingSearch ) CancelRequired = true;
           break;
         case Keys.Control | Keys.F:
           ActionSearchVerse.PerformClick();
