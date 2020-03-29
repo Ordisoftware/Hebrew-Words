@@ -41,11 +41,6 @@ namespace Ordisoftware.HebrewWords
       EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
     }
 
-    private void buttonClose_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
     private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       Validate();

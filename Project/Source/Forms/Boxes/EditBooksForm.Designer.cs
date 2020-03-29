@@ -157,9 +157,8 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionClose.Name = "ActionClose";
-      this.ActionClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // BooksTableAdapter
       // 
@@ -171,12 +170,14 @@
       this.TableAdapterManager.BooksTableAdapter = null;
       this.TableAdapterManager.ChaptersTableAdapter = null;
       this.TableAdapterManager.Connection = null;
+      this.TableAdapterManager.StrongConcordancesTableAdapter = null;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       this.TableAdapterManager.VersesTableAdapter = null;
       this.TableAdapterManager.WordsTableAdapter = null;
       // 
       // EditBooksForm
       // 
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;

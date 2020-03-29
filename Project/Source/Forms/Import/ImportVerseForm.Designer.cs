@@ -189,7 +189,6 @@
     private System.Windows.Forms.Button ActionAnalyse;
     private System.Windows.Forms.DataGridView DataGridView;
     private System.Windows.Forms.BindingSource importResultsBindingSource;
-    private System.Windows.Forms.DataGridViewTextBoxColumn newTranslationDataGridViewTextBoxColumn;
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCurrentTranslation;
