@@ -103,7 +103,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add links to Lexilogos and Hebrew Gematria web pages.
 - Add online search from several providers (Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe).
 >>>>- Add some links to Serafia website: Sefer Yetsirah and Pirke Avot.
->>>>- Add chapter memo text box on top of verses panel.
+>>>>- Add chapter title and memo text box on top of verses panel.
 (>>>>- Add letters values in the input panel.)
 >>>>- Add copy/cut/paste for the hebrew letters input box.
 >>>>- Add copy hebrew unicode to clipboard button for the hebrew letters input box.
@@ -112,6 +112,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add popup box to show hebrew source word in the search translated form.
 >>>>- Add option to choose double-click action on a word in the search translated form.
 >>>>- Add option to choose a default search word online action.
+(>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
 (>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
 - Improve UI.
 (- Database updated to support internal strong concordance popup menus in the future.)
