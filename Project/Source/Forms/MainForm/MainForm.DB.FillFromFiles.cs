@@ -82,6 +82,7 @@ namespace Ordisoftware.HebrewWords
               chapter.ID = Guid.NewGuid().ToString();
               chapter.BookID = book.ID;
               chapter.Number = ++countChapters;
+              chapter.Title = "";
               chapter.Memo = "";
             }
             else

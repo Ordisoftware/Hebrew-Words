@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       if ( nb >= 10 ) str = Chapter.Number.ToString("00");
       else
       str = Chapter.Number.ToString();
-      if ( Chapter.Memo != "" ) str += $" - {Chapter.Memo}";
+      if ( Chapter.Title != "" ) str += $" - {Chapter.Title}";
       return str;
     }
 

@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewWords
               upgraded = true;
             }
           }
-          checkTable("StrongConcordances", @"CREATE TABLE 'StrongConcordances' 
+          /*checkTable("StrongConcordances", @"CREATE TABLE 'StrongConcordances' 
                                             ( 
                                               ID TEXT DEFAULT '' NOT NULL,
                                               Usage TEXT DEFAULT '' NOT NULL,
@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewWords
                                               Translation TEXT DEFAULT '' NOT NULL,
                                               Memo TEXT DEFAULT '' NOT NULL,
                                               CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
-                                            )");
+                                            )");*/
           checkTable("Books", @"CREATE TABLE 'Books' 
                               ( 
                                 ID TEXT DEFAULT '' NOT NULL,
@@ -94,6 +94,7 @@ namespace Ordisoftware.HebrewWords
                                    ID TEXT DEFAULT '' NOT NULL,
                                    BookID TEXT DEFAULT '' NOT NULL,
                                    Number INTEGER NOT NULL,
+                                   Title TEXT DEFAULT '' NOT NULL,
                                    Memo TEXT DEFAULT '' NOT NULL,
                                    ELS50 TEXT DEFAULT '' NOT NULL,
                                    CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
@@ -125,6 +126,7 @@ namespace Ordisoftware.HebrewWords
                               )");
           checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Chapters", "Title", "ALTER TABLE Chapters ADD COLUMN Title TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           upgraded = false;
           checkColumn("Words", "ClassicTranslation", "ALTER TABLE Words ADD COLUMN ClassicTranslation TEXT DEFAULT '' NOT NULL;");

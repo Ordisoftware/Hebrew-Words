@@ -79,13 +79,15 @@
       this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
       this.PanelNavigation = new System.Windows.Forms.Panel();
+      this.EditChapterMemo = new System.Windows.Forms.TextBox();
+      this.LabelChapterMemo = new System.Windows.Forms.Label();
+      this.LabelChapterTitle = new System.Windows.Forms.Label();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.EditChapterMemo = new System.Windows.Forms.TextBox();
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.EditChapterTitle = new System.Windows.Forms.TextBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
@@ -94,6 +96,7 @@
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.label1 = new System.Windows.Forms.Label();
@@ -216,7 +219,6 @@
       this.StrongConcordancesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.StrongConcordancesTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.label3 = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -241,8 +243,8 @@
       this.SelectSearchTypeTranslation.SuspendLayout();
       this.SelectSearchTypeVerses.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       this.PanelTitle.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.ToolStrip.SuspendLayout();
@@ -641,13 +643,15 @@
       // 
       // PanelNavigation
       // 
-      this.PanelNavigation.Controls.Add(this.label3);
+      this.PanelNavigation.Controls.Add(this.EditChapterMemo);
+      this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
+      this.PanelNavigation.Controls.Add(this.LabelChapterTitle);
       this.PanelNavigation.Controls.Add(this.ActionELS50CopyToClipboard);
       this.PanelNavigation.Controls.Add(this.ActionExportChapter);
       this.PanelNavigation.Controls.Add(this.ActionExportBook);
       this.PanelNavigation.Controls.Add(this.ActionSearchVerse);
       this.PanelNavigation.Controls.Add(this.SelectBook);
-      this.PanelNavigation.Controls.Add(this.EditChapterMemo);
+      this.PanelNavigation.Controls.Add(this.EditChapterTitle);
       this.PanelNavigation.Controls.Add(this.EditELS50);
       this.PanelNavigation.Controls.Add(this.SelectChapter);
       this.PanelNavigation.Controls.Add(this.label4);
@@ -655,6 +659,26 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
+      // 
+      // EditChapterMemo
+      // 
+      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
+      this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
+      this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditChapterMemo.Name = "EditChapterMemo";
+      this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
+      this.EditChapterMemo.Enter += new System.EventHandler(this.EditChapterTitleMemo_Enter);
+      this.EditChapterMemo.Leave += new System.EventHandler(this.EditChapterTitleMemo_Leave);
+      // 
+      // LabelChapterMemo
+      // 
+      resources.ApplyResources(this.LabelChapterMemo, "LabelChapterMemo");
+      this.LabelChapterMemo.Name = "LabelChapterMemo";
+      // 
+      // LabelChapterTitle
+      // 
+      resources.ApplyResources(this.LabelChapterTitle, "LabelChapterTitle");
+      this.LabelChapterTitle.Name = "LabelChapterTitle";
       // 
       // ActionELS50CopyToClipboard
       // 
@@ -696,19 +720,15 @@
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
-      // EditChapterMemo
+      // EditChapterTitle
       // 
-      this.EditChapterMemo.BackColor = System.Drawing.SystemColors.Window;
-      this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditChapterMemo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Memo", true));
-      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
-      this.EditChapterMemo.Name = "EditChapterMemo";
-      this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
-      // 
-      // ChaptersBindingSource
-      // 
-      this.ChaptersBindingSource.DataMember = "Books_Chapters";
-      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
+      this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
+      this.EditChapterTitle.Name = "EditChapterTitle";
+      this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
+      this.EditChapterTitle.Enter += new System.EventHandler(this.EditChapterTitleMemo_Enter);
+      this.EditChapterTitle.Leave += new System.EventHandler(this.EditChapterTitleMemo_Leave);
       // 
       // EditELS50
       // 
@@ -758,6 +778,11 @@
       this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
+      // 
+      // ChaptersBindingSource
+      // 
+      this.ChaptersBindingSource.DataMember = "Books_Chapters";
+      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
       // 
       // WordsBindingSource
       // 
@@ -1630,11 +1655,6 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // label3
-      // 
-      resources.ApplyResources(this.label3, "label3");
-      this.label3.Name = "label3";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1676,8 +1696,8 @@
       this.SelectSearchTypeVerses.PerformLayout();
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
       this.PanelTitle.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ToolStrip.ResumeLayout(false);
@@ -1877,8 +1897,10 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+    private System.Windows.Forms.TextBox EditChapterTitle;
+    private System.Windows.Forms.Label LabelChapterTitle;
     private System.Windows.Forms.TextBox EditChapterMemo;
-    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label LabelChapterMemo;
   }
 }
 

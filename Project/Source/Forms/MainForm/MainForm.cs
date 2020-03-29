@@ -1134,11 +1134,30 @@ namespace Ordisoftware.HebrewWords
       new ImportStrongForm().ShowDialog();
     }
 
+    private void EditChapterTitle_TextChanged(object sender, EventArgs e)
+    {
+      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
+      CurrentReference.Chapter.Title = EditChapterTitle.Text;
+      ActionSave.Enabled = true;
+    }
+
     private void EditChapterMemo_TextChanged(object sender, EventArgs e)
     {
-      if ( CurrentReference == null || CurrentReference.Chapter == null ) return;
+      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
       CurrentReference.Chapter.Memo = EditChapterMemo.Text;
       ActionSave.Enabled = true;
+    }
+
+    private void EditChapterTitleMemo_Enter(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.BackColor = Color.Ivory;
+    }
+
+    private void EditChapterTitleMemo_Leave(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.BackColor = Color.LightYellow;
     }
 
   }
