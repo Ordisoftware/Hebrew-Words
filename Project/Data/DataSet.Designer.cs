@@ -1145,6 +1145,8 @@ namespace Ordisoftware.HebrewWords.Data {
             
             private global::System.Data.DataColumn columnMemo;
             
+            private global::System.Data.DataColumn columnTitle;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ChaptersDataTable() {
@@ -1220,6 +1222,14 @@ namespace Ordisoftware.HebrewWords.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TitleColumn {
+                get {
+                    return this.columnTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1255,14 +1265,15 @@ namespace Ordisoftware.HebrewWords.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ChaptersRow AddChaptersRow(string ID, BooksRow parentBooksRowByBooks_Chapters, int Number, string ELS50, string Memo) {
+            public ChaptersRow AddChaptersRow(string ID, BooksRow parentBooksRowByBooks_Chapters, int Number, string ELS50, string Memo, string Title) {
                 ChaptersRow rowChaptersRow = ((ChaptersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         null,
                         Number,
                         ELS50,
-                        Memo};
+                        Memo,
+                        Title};
                 if ((parentBooksRowByBooks_Chapters != null)) {
                     columnValuesArray[1] = parentBooksRowByBooks_Chapters[0];
                 }
@@ -1300,6 +1311,7 @@ namespace Ordisoftware.HebrewWords.Data {
                 this.columnNumber = base.Columns["Number"];
                 this.columnELS50 = base.Columns["ELS50"];
                 this.columnMemo = base.Columns["Memo"];
+                this.columnTitle = base.Columns["Title"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1315,6 +1327,8 @@ namespace Ordisoftware.HebrewWords.Data {
                 base.Columns.Add(this.columnELS50);
                 this.columnMemo = new global::System.Data.DataColumn("Memo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMemo);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -1327,6 +1341,8 @@ namespace Ordisoftware.HebrewWords.Data {
                 this.columnELS50.MaxLength = 65536;
                 this.columnMemo.AllowDBNull = false;
                 this.columnMemo.MaxLength = 65536;
+                this.columnTitle.AllowDBNull = false;
+                this.columnTitle.MaxLength = 65536;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2394,6 +2410,17 @@ namespace Ordisoftware.HebrewWords.Data {
                 }
                 set {
                     this[this.tableChapters.MemoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Title {
+                get {
+                    return ((string)(this[this.tableChapters.TitleColumn]));
+                }
+                set {
+                    this[this.tableChapters.TitleColumn] = value;
                 }
             }
             
@@ -3807,42 +3834,47 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("ELS50", "ELS50");
             tableMapping.ColumnMappings.Add("Memo", "Memo");
+            tableMapping.ColumnMappings.Add("Title", "Title");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM \"Chapters\" WHERE ((\"ID\" = ?) AND (\"BookID\" = ?) AND (\"Number\" = ?) AN" +
-                "D (\"ELS50\" = ?) AND (\"Memo\" = ?))";
+                "D (\"ELS50\" = ?) AND (\"Title\" = ?) AND (\"Memo\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_BookID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BookID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Number", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ELS50", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ELS50", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Title", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Title", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Memo", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Memo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"Chapters\" (\"ID\", \"BookID\", \"Number\", \"ELS50\", \"Memo\") VALUES (?, ?, " +
-                "?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"Chapters\" (\"ID\", \"BookID\", \"Number\", \"ELS50\", \"Title\", \"Memo\") VALUE" +
+                "S (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("BookID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BookID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Number", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ELS50", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ELS50", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Title", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Title", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Memo", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Memo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"Chapters\" SET \"ID\" = ?, \"BookID\" = ?, \"Number\" = ?, \"ELS50\" = ?, \"Memo\" =" +
-                " ? WHERE ((\"ID\" = ?) AND (\"BookID\" = ?) AND (\"Number\" = ?) AND (\"ELS50\" = ?) AND" +
-                " (\"Memo\" = ?))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"Chapters\" SET \"ID\" = ?, \"BookID\" = ?, \"Number\" = ?, \"ELS50\" = ?, \"Title\" " +
+                "= ?, \"Memo\" = ? WHERE ((\"ID\" = ?) AND (\"BookID\" = ?) AND (\"Number\" = ?) AND (\"EL" +
+                "S50\" = ?) AND (\"Title\" = ?) AND (\"Memo\" = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("BookID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BookID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Number", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ELS50", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ELS50", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Title", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Title", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Memo", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Memo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_BookID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BookID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Number", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ELS50", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ELS50", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Title", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Title", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Memo", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Memo", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -3859,7 +3891,7 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID, BookID, Number, ELS50, Memo\r\nFROM            Chapters";
+            this._commandCollection[0].CommandText = "SELECT        ID, BookID, Number, ELS50, Title, Memo\r\nFROM            Chapters";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3920,7 +3952,7 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Memo) {
+        public virtual int Delete(string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Title, string Original_Memo) {
             if ((Original_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_ID");
             }
@@ -3940,11 +3972,17 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_ELS50));
             }
+            if ((Original_Title == null)) {
+                throw new global::System.ArgumentNullException("Original_Title");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Title));
+            }
             if ((Original_Memo == null)) {
                 throw new global::System.ArgumentNullException("Original_Memo");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Memo));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Memo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3966,7 +4004,7 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ID, string BookID, int Number, string ELS50, string Memo) {
+        public virtual int Insert(string ID, string BookID, int Number, string ELS50, string Title, string Memo) {
             if ((ID == null)) {
                 throw new global::System.ArgumentNullException("ID");
             }
@@ -3986,11 +4024,17 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ELS50));
             }
+            if ((Title == null)) {
+                throw new global::System.ArgumentNullException("Title");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Title));
+            }
             if ((Memo == null)) {
                 throw new global::System.ArgumentNullException("Memo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Memo));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Memo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4012,7 +4056,7 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ID, string BookID, int Number, string ELS50, string Memo, string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Memo) {
+        public virtual int Update(string ID, string BookID, int Number, string ELS50, string Title, string Memo, string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Title, string Original_Memo) {
             if ((ID == null)) {
                 throw new global::System.ArgumentNullException("ID");
             }
@@ -4032,36 +4076,48 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ELS50));
             }
+            if ((Title == null)) {
+                throw new global::System.ArgumentNullException("Title");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Title));
+            }
             if ((Memo == null)) {
                 throw new global::System.ArgumentNullException("Memo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Memo));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Memo));
             }
             if ((Original_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_ID));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ID));
             }
             if ((Original_BookID == null)) {
                 throw new global::System.ArgumentNullException("Original_BookID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_BookID));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_BookID));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Number));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Number));
             if ((Original_ELS50 == null)) {
                 throw new global::System.ArgumentNullException("Original_ELS50");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ELS50));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_ELS50));
+            }
+            if ((Original_Title == null)) {
+                throw new global::System.ArgumentNullException("Original_Title");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Title));
             }
             if ((Original_Memo == null)) {
                 throw new global::System.ArgumentNullException("Original_Memo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Memo));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Memo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4083,8 +4139,8 @@ namespace Ordisoftware.HebrewWords.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string BookID, int Number, string ELS50, string Memo, string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Memo) {
-            return this.Update(Original_ID, BookID, Number, ELS50, Memo, Original_ID, Original_BookID, Original_Number, Original_ELS50, Original_Memo);
+        public virtual int Update(string BookID, int Number, string ELS50, string Title, string Memo, string Original_ID, string Original_BookID, int Original_Number, string Original_ELS50, string Original_Title, string Original_Memo) {
+            return this.Update(Original_ID, BookID, Number, ELS50, Title, Memo, Original_ID, Original_BookID, Original_Number, Original_ELS50, Original_Title, Original_Memo);
         }
     }
     
