@@ -1124,14 +1124,28 @@ namespace Ordisoftware.HebrewWords
       GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
-    private void PanelViewVerses_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
-    private void toolStripButton1_Click(object sender, EventArgs e)
+    private void ActionImportConcordances_Click(object sender, EventArgs e)
     {
       new ImportStrongForm().ShowDialog();
+    }
+
+    private void EditChapterTitleMemo_Enter(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.BackColor = Color.Ivory;
+    }
+
+    private void EditChapterTitleMemo_Leave(object sender, EventArgs e)
+    {
+      var control = (Control)sender;
+      control.BackColor = Color.LightYellow;
+    }
+
+    private void EditBookTranslation_TextChanged(object sender, EventArgs e)
+    {
+      if ( IsLoadingData || CurrentReference == null || CurrentReference.Chapter == null ) return;
+      CurrentReference.Book.Translation = EditBookTranslation.Text;
+      ActionSave.Enabled = true;
     }
 
     private void EditChapterTitle_TextChanged(object sender, EventArgs e)
@@ -1148,16 +1162,13 @@ namespace Ordisoftware.HebrewWords
       ActionSave.Enabled = true;
     }
 
-    private void EditChapterTitleMemo_Enter(object sender, EventArgs e)
+    private void ActionEditChapterMemo_Click(object sender, EventArgs e)
     {
-      var control = (Control)sender;
-      control.BackColor = Color.Ivory;
-    }
-
-    private void EditChapterTitleMemo_Leave(object sender, EventArgs e)
-    {
-      var control = (Control)sender;
-      control.BackColor = Color.LightYellow;
+      var form = new EditChapterMemoForm();
+      form.TextBox.Text = CurrentReference.Chapter.Memo;
+      form.TextBox.SelectionStart = 0;
+      if ( form.ShowDialog() == DialogResult.OK )
+        EditChapterMemo.Text = form.TextBox.Text;
     }
 
   }

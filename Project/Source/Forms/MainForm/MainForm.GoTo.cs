@@ -132,6 +132,7 @@ namespace Ordisoftware.HebrewWords
       }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
+      EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
       EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
       EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
       try

@@ -62,6 +62,12 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\EditChapterMemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\EditChapterMemoForm.Designer.cs">
+      <DependentUpon>EditChapterMemoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Import\ImportStrongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,12 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\EditChapterMemoForm.fr.resx">
+      <DependentUpon>EditChapterMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\EditChapterMemoForm.resx">
+      <DependentUpon>EditChapterMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>
     </EmbeddedResource>
