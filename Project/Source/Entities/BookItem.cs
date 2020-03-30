@@ -30,8 +30,15 @@ namespace Ordisoftware.HebrewWords
     public override string ToString()
     {
       if ( Book == null ) return "";
-      string str = Book.Number.ToString("00") + ". " + Book.Name;
-      if ( Book.Translation != "" ) str += $" ({Book.Translation})";
+      int nb = MainForm.Instance.DataSet.Books.Count();
+      string str = "";
+      if ( nb >= 100 ) str = Book.Number.ToString("000");
+      else
+      if ( nb >= 10 ) str = Book.Number.ToString("00");
+      else
+        str = Book.Number.ToString();
+      str += ". " + Book.Name;
+      if ( Book.Translation != "" ) str += $" - {Book.Translation}";
       return str;
     }
 
