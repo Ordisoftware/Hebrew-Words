@@ -133,7 +133,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 454</value>
+    <value>956, 434</value>
   </data>
   <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -157,7 +157,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 460</value>
+    <value>962, 440</value>
   </data>
   <data name="TabPageVerses.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -187,7 +187,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 434</value>
+    <value>936, 414</value>
   </data>
   <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +217,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 454</value>
+    <value>956, 434</value>
   </data>
   <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -241,7 +241,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 460</value>
+    <value>962, 440</value>
   </data>
   <data name="TabPageTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -268,7 +268,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 434</value>
+    <value>936, 414</value>
   </data>
   <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -298,7 +298,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 454</value>
+    <value>956, 434</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -322,7 +322,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 460</value>
+    <value>962, 440</value>
   </data>
   <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -349,7 +349,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 434</value>
+    <value>936, 414</value>
   </data>
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -379,7 +379,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 454</value>
+    <value>956, 434</value>
   </data>
   <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -403,7 +403,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 460</value>
+    <value>962, 440</value>
   </data>
   <data name="TabPageELS50.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -439,7 +439,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 151</value>
+    <value>914, 131</value>
   </data>
   <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -466,7 +466,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResultsOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 173</value>
+    <value>936, 153</value>
   </data>
   <data name="PanelSearchResultsOuter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1473,7 +1473,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 454</value>
+    <value>956, 434</value>
   </data>
   <data name="PanelViewSearch.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1497,7 +1497,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 460</value>
+    <value>962, 440</value>
   </data>
   <data name="TabPageSearch.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1524,7 +1524,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>0, 0</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 486</value>
+    <value>970, 466</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1551,7 +1551,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>0, 0</value>
   </data>
   <data name="PanelMainCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 486</value>
+    <value>970, 466</value>
   </data>
   <data name="PanelMainCenter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1575,7 +1575,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>1, 1</value>
   </data>
   <data name="PanelMainInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 486</value>
+    <value>970, 466</value>
   </data>
   <data name="PanelMainInner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1596,13 +1596,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Fill</value>
   </data>
   <data name="PanelMainOuter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 214</value>
+    <value>10, 184</value>
   </data>
   <data name="PanelMainOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="PanelMainOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 488</value>
+    <value>972, 468</value>
   </data>
   <data name="PanelMainOuter.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1626,7 +1626,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>558, 72</value>
+    <value>558, 73</value>
   </data>
   <data name="EditChapterMemo.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1635,7 +1635,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Vertical</value>
   </data>
   <data name="EditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 85</value>
+    <value>369, 57</value>
   </data>
   <data name="EditChapterMemo.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1662,7 +1662,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 53</value>
+    <value>555, 54</value>
   </data>
   <data name="LabelChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 15</value>
@@ -1695,7 +1695,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 54</value>
+    <value>-2, 44</value>
   </data>
   <data name="LabelBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 15</value>
@@ -1728,7 +1728,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 140</value>
+    <value>-2, 112</value>
   </data>
   <data name="LabelChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 15</value>
@@ -1751,13 +1751,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;LabelChapterTitle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionEditChapterComment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ActionEditChapterComment.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionEditBookMemo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionEditChapterComment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionEditBookMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAV8SURBVFhHtZcLTJVlHMbpuuVqK0pWjlZrLV26tpQ7Q7e4
@@ -1787,29 +1784,89 @@ A verse is founded if the translation of one of its words contains an expression
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionEditChapterComment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionEditBookMemo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionEditChapterComment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>928, 72</value>
+  <data name="ActionEditBookMemo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>499, 2</value>
   </data>
-  <data name="ActionEditChapterComment.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionEditBookMemo.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
   </data>
-  <data name="ActionEditChapterComment.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionEditBookMemo.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;ActionEditChapterComment.Name" xml:space="preserve">
-    <value>ActionEditChapterComment</value>
+  <data name="&gt;&gt;ActionEditBookMemo.Name" xml:space="preserve">
+    <value>ActionEditBookMemo</value>
   </data>
-  <data name="&gt;&gt;ActionEditChapterComment.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionEditBookMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionEditChapterComment.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionEditBookMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
-  <data name="&gt;&gt;ActionEditChapterComment.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionEditBookMemo.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="ActionEditChapterMemo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionEditChapterMemo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEditChapterMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAV8SURBVFhHtZcLTJVlHMbpuuVqK0pWjlZrLV26tpQ7Q7e4
+        lZhiGWlmclNBUC6ROdSUVEQCDnkD70mlJZmbw2qNAkU3xHOOcjsX4ODhNgQRDVRSNp+e//kOdGTn4NTj
+        u/12Lt/7/n/P977v+b7vuLA9XqXyKdGqvKDO9XyoiENc4hTxUHtGm+cFdG0AOoSNJNPJSE3WpkNc4lTU
+        ShurzpkC9B0D1HzV+DwcpDYd4hKnolaamzpnMnD1qLXzVEA7zblITalNh7jEqaiVpgS48jN6j3ui9zc/
+        9P7u71ykJmuLw3GA3h+B1iygLYfkOhnWlNp0OAjA9bn8g3Wq3uG0BToXqSm16bDuATsBeg5YB7wLnHvP
+        uUhNqX35wCgz0LMfOB9CwsgMJzMdqAniJiyERjXBQYBLe5iWHc/PJLOcCOvVsK5+Gs5maKBdf9pBgK7d
+        QDXTVoeT2U6CtWrfpzwI2rUamI92Q3ewCer0IxLiSUU/HKCQA5i2+gPyoXOoZQBdKLbvP4a8XXvRcKAJ
+        2p3ncVJViark/cMhGMADuLiNU0V5zUck4sGoJfXEEI5t+0pQXW9C+8WLyMjOxJmcKvy54QQqEwolwHM2
+        AbZy8BzyMZn7YNTPo3wuTqWMR1FxKVo6ulF+sgKFu3cjdd0qaOL3iNz7zgCd+UxOeS0H135yf9QR3XzA
+        OB9lyZMA02rgph5b9xVj+87vkJiUhiUrVok8gLgTmyXoVFkLfUoW3B+6zyhfqMibvgJuXADKFgK7xiAx
+        PQexyevQuOMtCfDakFyam9yrLQHqWaSOA+6VeqKPBBqjFHmjVf5XNFDwAlDoioLot3k3VKE6386VUB4U
+        rpxOYJEoFhM4cBh+rrsLevZriKF84gj5WOIGVRTvhBdige4caHI97ATI90FDES8WpngWsCWOhYlxCSWL
+        GIZFbNERw2JO9+LR5ealrMG+HZt5KbYT4Ny3vuivSkZVthfObPZCZRbZ5Ek8yBSYDoZSxED1lNliYLim
+        uLvIEylnPx1PoH2TowB+MB/2Q/sRXwxU+PGnxIcIHS9KDVxXcyoqM3m7bmQhvRQi8mrkWZkSUJb0ph35
+        WEXeksQa7Cf99ZzF9kwG8LS3BH7oPxWM5kP+aC32w7UyhtAGcGfzMsoQMgtoSmYRCcG9YlxG+XI7cm44
+        kUeKPJVj2U/66wQGadvoIIDKF9fPzMLV8iBOtz9aOBv9f/sqITgTshQwsaBxOYvyrJqTR5F78+HjCx5j
+        P4MEsCLv29Zbno7FqaiV5qZR+eBfzTz0nZ6BKzYhLDNRM9WyH2BKozyFrykoT5pAAS8yN5rtyL/kMfYz
+        MIDeBvnc+rWDAHk+uFUTg+uVEfjn1P8hWhlioMKXG5MBzCstIRp+nQ3DH2uAwR6glBeeguctAVSRfLRv
+        S+dS8eyNnC3DCOQ7xwG8cduQiAFtpCWEzIQsh+wJ2ZhV2QzQxjNuWYmKvdxMt69hsPkwBo/zhlPgivwo
+        yjsYysSzb1hBmYQYgXzfmmE/gJZLgNZ0SwiZCVkO2ROyMc2yKSvj0Px9KIyHwtB14nOG+Qm31Cy2JQzb
+        F3Hae/ino30tAzJEC4Oa7SDHOvnHhBc9cSpqpbmpVd59EkJmQpZD9oRsTPl1yE+0eosPDDu8sHpxCNak
+        ReNSaRKKkiaiZNUk1Gzzxbl8GWf/75gtIj9LlzgVtdKeJZPjp7sviwl6KVHBfZio4HEJEQFuS9bF+v8S
+        Eh6JuDkBNxcFvpgVGThuaVSwe0JMiPQbGjc64hCX1TncniCu5GXyigPGx8Undi+Y6fkN38utdCJ51Xrs
+        XhCHuMR5R3uEPEbkwEjkn6wkfp28QWT6xpChYyP7j4Y4xHXPTQY/TZ4ij8oXzmkuLv8BRdCSsgBIIrEA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionEditChapterMemo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>929, 68</value>
+  </data>
+  <data name="ActionEditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ActionEditChapterMemo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ActionEditChapterMemo.Name" xml:space="preserve">
+    <value>ActionEditChapterMemo</value>
+  </data>
+  <data name="&gt;&gt;ActionEditChapterMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEditChapterMemo.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;ActionEditChapterMemo.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1870,7 +1927,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionELS50CopyToClipboard.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionExportChapter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1911,7 +1968,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionExportChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 89</value>
+    <value>454, 71</value>
   </data>
   <data name="ActionExportChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1929,7 +1986,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionExportChapter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ActionExportBook.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1988,7 +2045,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionExportBook.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="ActionSearchVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2025,7 +2082,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionSearchVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 89</value>
+    <value>499, 71</value>
   </data>
   <data name="ActionSearchVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -2043,16 +2100,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionSearchVerse.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="SelectBook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 10</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 26</value>
+    <value>379, 24</value>
   </data>
   <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2067,16 +2124,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditBookTranslation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 47</value>
+    <value>71, 40</value>
   </data>
   <data name="EditBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 24</value>
+    <value>379, 22</value>
   </data>
   <data name="EditBookTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2091,16 +2148,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditChapterTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 133</value>
+    <value>71, 108</value>
   </data>
   <data name="EditChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 24</value>
+    <value>379, 22</value>
   </data>
   <data name="EditChapterTitle.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2115,7 +2172,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditELS50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2145,16 +2202,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditELS50.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 96</value>
+    <value>71, 78</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 26</value>
+    <value>379, 24</value>
   </data>
   <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2169,7 +2226,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2202,7 +2259,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="LabelSelectBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2214,7 +2271,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelSelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 16</value>
+    <value>-2, 15</value>
   </data>
   <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 15</value>
@@ -2235,7 +2292,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelSelectBook.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="LabelSelectChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2247,7 +2304,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="LabelSelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 103</value>
+    <value>-2, 83</value>
   </data>
   <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 15</value>
@@ -2268,7 +2325,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelSelectChapter.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="PanelNavigation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2277,7 +2334,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>10, 44</value>
   </data>
   <data name="PanelNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 170</value>
+    <value>972, 140</value>
   </data>
   <data name="PanelNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -2391,7 +2448,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 712</value>
+    <value>992, 662</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2822,33 +2879,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 6</value>
   </data>
-  <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
-        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
-        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
-        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
-        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
-        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
-        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
-        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
-        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
-        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
-        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
-        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionOpenTanakMP3.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 24</value>
-  </data>
-  <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
-    <value>Tanak Hebrew MP3 @ mechon-mamre.org</value>
-  </data>
   <data name="bibleFourmilabToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2876,7 +2906,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="bibleFourmilabToolStripMenuItem.Text" xml:space="preserve">
     <value>Tanak Hebrew Text @ fourmilab.ch</value>
   </data>
-  <data name="bibleBiblehubcomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenTanakMP3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
@@ -2894,14 +2924,17 @@ A verse is founded if the translation of one of its words contains an expression
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bibleBiblehubcomToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionOpenTanakMP3.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenTanakMP3.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 24</value>
   </data>
-  <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
-    <value>Interlinear Bible @ biblehub.com</value>
+  <data name="ActionOpenTanakMP3.Text" xml:space="preserve">
+    <value>Tanak Hebrew MP3 @ mechon-mamre.org</value>
+  </data>
+  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 6</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2928,7 +2961,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>304, 24</value>
   </data>
   <data name="tanakOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Interlinear Tanak @ studybible.info</value>
+    <value>Interlinear Bible @ studybible.info</value>
   </data>
   <data name="euangélionOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2957,6 +2990,33 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="euangélionOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Euangélion @ studybible.info</value>
   </data>
+  <data name="bibleBiblehubcomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
+        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
+        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
+        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
+        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
+        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
+        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
+        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
+        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
+        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
+        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
+        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bibleBiblehubcomToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="bibleBiblehubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 24</value>
+  </data>
+  <data name="bibleBiblehubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>Interlinear Bible @ biblehub.com</value>
+  </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2983,6 +3043,90 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="quranCorpusqurancomToolStripMenuItem.Text" xml:space="preserve">
     <value>Interlinear Quran @ corpus.quran.com</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 6</value>
+  </data>
+  <data name="toolStripMenuItem8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
+        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
+        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
+        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
+        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
+        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
+        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
+        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
+        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
+        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
+        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
+        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem8.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 24</value>
+  </data>
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
+    <value>Lexilogos - La Bible en hébreu</value>
+  </data>
+  <data name="toolStripMenuItem10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
+        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
+        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
+        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
+        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
+        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
+        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
+        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
+        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
+        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
+        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
+        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem10.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 24</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Lexilogos - Dictionnaire hébreu ancien</value>
+  </data>
+  <data name="toolStripMenuItem9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
+        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
+        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
+        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
+        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
+        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
+        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
+        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
+        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
+        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
+        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
+        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem9.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 24</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Lexilogos - Dictionnaire hébreu moderne</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 6</value>
@@ -3499,7 +3643,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Go to reference</value>
   </data>
   <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
-    <value>Go to reference (Ctrl+G)</value>
+    <value>Go to reference (Ctrl+R)</value>
   </data>
   <data name="ActionRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3805,8 +3949,11 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionViewBooksTranslation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="ActionViewBooksTranslation.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+B</value>
+  </data>
   <data name="ActionViewBooksTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>213, 22</value>
   </data>
   <data name="ActionViewBooksTranslation.Text" xml:space="preserve">
     <value>Edit books names</value>
@@ -3836,13 +3983,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionViewStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>213, 22</value>
   </data>
   <data name="ActionViewStatistics.Text" xml:space="preserve">
     <value>View statistics</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
+    <value>210, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3865,8 +4012,11 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionShowGrammarGuide.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="ActionShowGrammarGuide.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+G</value>
+  </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>213, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
@@ -3888,16 +4038,19 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionStartHebrewLetters.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="ActionStartHebrewLetters.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+H</value>
+  </data>
   <data name="ActionStartHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>213, 22</value>
   </data>
   <data name="ActionStartHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
+    <value>210, 6</value>
   </data>
-  <data name="shorashonLexicalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenShorashon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
@@ -3915,13 +4068,16 @@ A verse is founded if the translation of one of its words contains an expression
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="shorashonLexicalToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionOpenShorashon.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="shorashonLexicalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+  <data name="ActionOpenShorashon.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+L</value>
   </data>
-  <data name="shorashonLexicalToolStripMenuItem.Text" xml:space="preserve">
+  <data name="ActionOpenShorashon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="ActionOpenShorashon.Text" xml:space="preserve">
     <value>Shorashon Lexicon</value>
   </data>
   <data name="toolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3946,94 +4102,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>213, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Hebrew Gematria</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="toolStripMenuItem8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
-        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
-        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
-        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
-        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
-        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
-        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
-        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
-        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
-        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
-        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
-        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripMenuItem8.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItem8.Text" xml:space="preserve">
-    <value>Lexilogos - La Bible en hébreu</value>
-  </data>
-  <data name="toolStripMenuItem10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
-        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
-        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
-        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
-        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
-        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
-        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
-        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
-        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
-        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
-        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
-        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripMenuItem10.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItem10.Text" xml:space="preserve">
-    <value>Lexilogos - Dictionnaire hébreu ancien</value>
-  </data>
-  <data name="toolStripMenuItem9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKrSURBVDhPnZNbSFRRFIZ3vQURQWphEV2ItEKECip8K4Oe
-        wt4jKyr0xQwSNLXMdJKsHEsKM8Q073NmnGlGu6l5S6koKbOwGGc0mxnnjDVeCDS+9tYiiC7QDx/nnLX3
-        +tdam31Eg802plksmMzm36BRr2nU/YKKmWSOyhUq+X+lighVRSk+u5ojhlqOnVfUcFRy6FwVw8NDuFxu
-        Bl0uBgddOBXOwdkc1Ymo18yzHx5fEF2fYDygMxkYlfgJ+n3oPi/6qJeAxC/ffV4PXs/H2RxVXNR9N5jp
-        ioaeaNKeQ9YLMLRbOdMrFyY+cyK/nuumLorqOmEqSIKhBt/YJGaLHOGHAU2RcD8S41u42lnNNW0pNzpy
-        yba/Z2FaOyK5TdLBwtRusmRMyW61qBHmzqBYxsqcUO2GnNJFXKoMY3nmbTYYW+ieSKRvJo0az2HyBgSr
-        8ivYUvAS+x2HPMTvBtYR2YQXHvrB/OYJe08eY72xn3eT4PpahtmtU/shBUP/Hi47BZGFhSQWtyiDuREy
-        LSs5Z1uHwb4e4/0IFhy3c7F3mqcBZAdnafwUwS2vIKGzgJ2mYTJezCc88/FPA6c7yKg+jV+iJJLvkv8K
-        KuVo1kAct3XBzY+ClGfxbKuCpJ4dhKR3qHswZ3Awu4rcikfklLcyNT6JSGokd+Aaad1wxS0NAoLiD4JY
-        0zRby78QU+sgLKOVP97ExenN7G+2ss8xzeHWZ5T55nH2dawcIYXdmo1Npe2szpJnoDU0BH/+CxqafDbZ
-        zBy97mBF3hN2W8bYZRonphppsJ1Sj6BkRLA238KBokZdSEVLNv+OxakO75oL3Wy+NUR0+RhxTSVk94Wz
-        0VhJyKlWn9wTJfmrokITS0rCT99jWeYDwtLbCE3vYklixQ21Nrfl3wqX/NqdikkJ8Q3CrK1Zo/XPeQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripMenuItem9.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Lexilogos - Dictionnaire hébreu moderne</value>
   </data>
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4592,10 +4664,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>992, 766</value>
+    <value>992, 716</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 800</value>
+    <value>1000, 750</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
@@ -4741,23 +4813,23 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenTanakMP3.Name" xml:space="preserve">
-    <value>ActionOpenTanakMP3</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenTanakMP3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;bibleFourmilabToolStripMenuItem.Name" xml:space="preserve">
     <value>bibleFourmilabToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;bibleFourmilabToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bibleBiblehubcomToolStripMenuItem.Name" xml:space="preserve">
-    <value>bibleBiblehubcomToolStripMenuItem</value>
+  <data name="&gt;&gt;ActionOpenTanakMP3.Name" xml:space="preserve">
+    <value>ActionOpenTanakMP3</value>
   </data>
-  <data name="&gt;&gt;bibleBiblehubcomToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenTanakMP3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator14.Name" xml:space="preserve">
+    <value>toolStripSeparator14</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tanakOnlineToolStripMenuItem.Name" xml:space="preserve">
     <value>tanakOnlineToolStripMenuItem</value>
@@ -4771,10 +4843,40 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;euangélionOnlineToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;bibleBiblehubcomToolStripMenuItem.Name" xml:space="preserve">
+    <value>bibleBiblehubcomToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bibleBiblehubcomToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;quranCorpusqurancomToolStripMenuItem.Name" xml:space="preserve">
     <value>quranCorpusqurancomToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;quranCorpusqurancomToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
+    <value>toolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
+    <value>toolStripMenuItem8</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
+    <value>toolStripMenuItem9</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
@@ -5029,40 +5131,16 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;shorashonLexicalToolStripMenuItem.Name" xml:space="preserve">
-    <value>shorashonLexicalToolStripMenuItem</value>
+  <data name="&gt;&gt;ActionOpenShorashon.Name" xml:space="preserve">
+    <value>ActionOpenShorashon</value>
   </data>
-  <data name="&gt;&gt;shorashonLexicalToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenShorashon.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
     <value>toolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
-    <value>toolStripSeparator11</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
-    <value>toolStripMenuItem8</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
-    <value>toolStripMenuItem10</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
-    <value>toolStripMenuItem9</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuDatabase.Name" xml:space="preserve">

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -1167,11 +1167,22 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionEditChapterMemo_Click(object sender, EventArgs e)
     {
-      var form = new EditChapterMemoForm();
+      var form = new EditMemoForm();
+      form.Text += SelectBook.Text + " - " + SelectChapter.Text;
       form.TextBox.Text = CurrentReference.Chapter.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
         EditChapterMemo.Text = form.TextBox.Text;
+    }
+
+    private void ActionEditBookMemo_Click(object sender, EventArgs e)
+    {
+      var form = new EditMemoForm();
+      form.Text += SelectBook.Text;
+      form.TextBox.Text = CurrentReference.Book.Memo;
+      form.TextBox.SelectionStart = 0;
+      if ( form.ShowDialog() == DialogResult.OK )
+        CurrentReference.Book.Memo = form.TextBox.Text;
     }
 
   }

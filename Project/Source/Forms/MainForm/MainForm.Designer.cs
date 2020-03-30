@@ -84,7 +84,8 @@
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
       this.LabelChapterTitle = new System.Windows.Forms.Label();
-      this.ActionEditChapterComment = new System.Windows.Forms.Button();
+      this.ActionEditBookMemo = new System.Windows.Forms.Button();
+      this.ActionEditChapterMemo = new System.Windows.Forms.Button();
       this.ActionELS50CopyToClipboard = new System.Windows.Forms.Button();
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
@@ -125,12 +126,17 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewAlphabet = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenTanakMP3 = new System.Windows.Forms.ToolStripMenuItem();
       this.bibleFourmilabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.bibleBiblehubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenTanakMP3 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.tanakOnlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.euangélionOnlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.bibleBiblehubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.quranCorpusqurancomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.dictionnaireHéritageDuSanscritToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.anAkkadianDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,12 +179,8 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionStartHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-      this.shorashonLexicalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuDatabase = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -658,7 +660,8 @@
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
       this.PanelNavigation.Controls.Add(this.LabelChapterTitle);
-      this.PanelNavigation.Controls.Add(this.ActionEditChapterComment);
+      this.PanelNavigation.Controls.Add(this.ActionEditBookMemo);
+      this.PanelNavigation.Controls.Add(this.ActionEditChapterMemo);
       this.PanelNavigation.Controls.Add(this.ActionELS50CopyToClipboard);
       this.PanelNavigation.Controls.Add(this.ActionExportChapter);
       this.PanelNavigation.Controls.Add(this.ActionExportBook);
@@ -699,13 +702,21 @@
       resources.ApplyResources(this.LabelChapterTitle, "LabelChapterTitle");
       this.LabelChapterTitle.Name = "LabelChapterTitle";
       // 
-      // ActionEditChapterComment
+      // ActionEditBookMemo
       // 
-      resources.ApplyResources(this.ActionEditChapterComment, "ActionEditChapterComment");
-      this.ActionEditChapterComment.FlatAppearance.BorderSize = 0;
-      this.ActionEditChapterComment.Name = "ActionEditChapterComment";
-      this.ActionEditChapterComment.UseVisualStyleBackColor = true;
-      this.ActionEditChapterComment.Click += new System.EventHandler(this.ActionEditChapterMemo_Click);
+      this.ActionEditBookMemo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEditBookMemo, "ActionEditBookMemo");
+      this.ActionEditBookMemo.Name = "ActionEditBookMemo";
+      this.ActionEditBookMemo.UseVisualStyleBackColor = true;
+      this.ActionEditBookMemo.Click += new System.EventHandler(this.ActionEditBookMemo_Click);
+      // 
+      // ActionEditChapterMemo
+      // 
+      resources.ApplyResources(this.ActionEditChapterMemo, "ActionEditChapterMemo");
+      this.ActionEditChapterMemo.FlatAppearance.BorderSize = 0;
+      this.ActionEditChapterMemo.Name = "ActionEditChapterMemo";
+      this.ActionEditChapterMemo.UseVisualStyleBackColor = true;
+      this.ActionEditChapterMemo.Click += new System.EventHandler(this.ActionEditChapterMemo_Click);
       // 
       // ActionELS50CopyToClipboard
       // 
@@ -951,12 +962,17 @@
             this.toolStripSeparator10,
             this.ActionOpenHebrewAlphabet,
             this.toolStripSeparator8,
-            this.ActionOpenTanakMP3,
             this.bibleFourmilabToolStripMenuItem,
-            this.bibleBiblehubcomToolStripMenuItem,
+            this.ActionOpenTanakMP3,
+            this.toolStripSeparator14,
             this.tanakOnlineToolStripMenuItem,
             this.euangélionOnlineToolStripMenuItem,
+            this.bibleBiblehubcomToolStripMenuItem,
             this.quranCorpusqurancomToolStripMenuItem,
+            this.toolStripSeparator11,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem10,
+            this.toolStripMenuItem9,
             this.toolStripSeparator3,
             this.dictionnaireHéritageDuSanscritToolStripMenuItem,
             this.anAkkadianDictionaryToolStripMenuItem});
@@ -1033,13 +1049,6 @@
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
-      // ActionOpenTanakMP3
-      // 
-      resources.ApplyResources(this.ActionOpenTanakMP3, "ActionOpenTanakMP3");
-      this.ActionOpenTanakMP3.Name = "ActionOpenTanakMP3";
-      this.ActionOpenTanakMP3.Tag = "https://www.mechon-mamre.org/p/pt/ptmp3prq.htm";
-      this.ActionOpenTanakMP3.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
       // bibleFourmilabToolStripMenuItem
       // 
       resources.ApplyResources(this.bibleFourmilabToolStripMenuItem, "bibleFourmilabToolStripMenuItem");
@@ -1047,12 +1056,17 @@
       this.bibleFourmilabToolStripMenuItem.Tag = "http://www.fourmilab.ch/etexts/www/hebrew/Bible/";
       this.bibleFourmilabToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
-      // bibleBiblehubcomToolStripMenuItem
+      // ActionOpenTanakMP3
       // 
-      resources.ApplyResources(this.bibleBiblehubcomToolStripMenuItem, "bibleBiblehubcomToolStripMenuItem");
-      this.bibleBiblehubcomToolStripMenuItem.Name = "bibleBiblehubcomToolStripMenuItem";
-      this.bibleBiblehubcomToolStripMenuItem.Tag = "https://biblehub.com/interlinear/";
-      this.bibleBiblehubcomToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      resources.ApplyResources(this.ActionOpenTanakMP3, "ActionOpenTanakMP3");
+      this.ActionOpenTanakMP3.Name = "ActionOpenTanakMP3";
+      this.ActionOpenTanakMP3.Tag = "https://www.mechon-mamre.org/p/pt/ptmp3prq.htm";
+      this.ActionOpenTanakMP3.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator14
+      // 
+      this.toolStripSeparator14.Name = "toolStripSeparator14";
+      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
       // tanakOnlineToolStripMenuItem
       // 
@@ -1068,12 +1082,45 @@
       this.euangélionOnlineToolStripMenuItem.Tag = "https://studybible.info/IGNT";
       this.euangélionOnlineToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // bibleBiblehubcomToolStripMenuItem
+      // 
+      resources.ApplyResources(this.bibleBiblehubcomToolStripMenuItem, "bibleBiblehubcomToolStripMenuItem");
+      this.bibleBiblehubcomToolStripMenuItem.Name = "bibleBiblehubcomToolStripMenuItem";
+      this.bibleBiblehubcomToolStripMenuItem.Tag = "https://biblehub.com/interlinear/";
+      this.bibleBiblehubcomToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // quranCorpusqurancomToolStripMenuItem
       // 
       resources.ApplyResources(this.quranCorpusqurancomToolStripMenuItem, "quranCorpusqurancomToolStripMenuItem");
       this.quranCorpusqurancomToolStripMenuItem.Name = "quranCorpusqurancomToolStripMenuItem";
       this.quranCorpusqurancomToolStripMenuItem.Tag = "http://corpus.quran.com/wordbyword.jsp";
       this.quranCorpusqurancomToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
+      // toolStripMenuItem8
+      // 
+      resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
+      this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+      this.toolStripMenuItem8.Tag = "https://www.lexilogos.com/bible_hebreu.htm";
+      this.toolStripMenuItem8.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem10
+      // 
+      resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
+      this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+      this.toolStripMenuItem10.Tag = "https://www.lexilogos.com/hebreu_ancien_dictionnaire.htm";
+      this.toolStripMenuItem10.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem9
+      // 
+      resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
+      this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+      this.toolStripMenuItem9.Tag = "https://www.lexilogos.com/hebreu_moderne_dictionnaire.htm";
+      this.toolStripMenuItem9.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripSeparator3
       // 
@@ -1357,12 +1404,8 @@
             this.ActionShowGrammarGuide,
             this.ActionStartHebrewLetters,
             this.toolStripSeparator13,
-            this.shorashonLexicalToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.toolStripSeparator11,
-            this.toolStripMenuItem8,
-            this.toolStripMenuItem10,
-            this.toolStripMenuItem9});
+            this.ActionOpenShorashon,
+            this.toolStripMenuItem2});
       resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
       // 
@@ -1400,12 +1443,12 @@
       this.toolStripSeparator13.Name = "toolStripSeparator13";
       resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
       // 
-      // shorashonLexicalToolStripMenuItem
+      // ActionOpenShorashon
       // 
-      resources.ApplyResources(this.shorashonLexicalToolStripMenuItem, "shorashonLexicalToolStripMenuItem");
-      this.shorashonLexicalToolStripMenuItem.Name = "shorashonLexicalToolStripMenuItem";
-      this.shorashonLexicalToolStripMenuItem.Tag = "http://shorashon.free.fr/online/";
-      this.shorashonLexicalToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      resources.ApplyResources(this.ActionOpenShorashon, "ActionOpenShorashon");
+      this.ActionOpenShorashon.Name = "ActionOpenShorashon";
+      this.ActionOpenShorashon.Tag = "http://shorashon.free.fr/online/";
+      this.ActionOpenShorashon.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem2
       // 
@@ -1413,32 +1456,6 @@
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
       this.toolStripMenuItem2.Tag = "http://www.billheidrick.com/works/hgemat.htm";
       this.toolStripMenuItem2.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator11
-      // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
-      // 
-      // toolStripMenuItem8
-      // 
-      resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
-      this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-      this.toolStripMenuItem8.Tag = "https://www.lexilogos.com/bible_hebreu.htm";
-      this.toolStripMenuItem8.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripMenuItem10
-      // 
-      resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
-      this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-      this.toolStripMenuItem10.Tag = "https://www.lexilogos.com/hebreu_ancien_dictionnaire.htm";
-      this.toolStripMenuItem10.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripMenuItem9
-      // 
-      resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
-      this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-      this.toolStripMenuItem9.Tag = "https://www.lexilogos.com/hebreu_moderne_dictionnaire.htm";
-      this.toolStripMenuItem9.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // MenuDatabase
       // 
@@ -1890,7 +1907,7 @@
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
-    private System.Windows.Forms.ToolStripMenuItem shorashonLexicalToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashon;
     private System.Windows.Forms.CheckBox EditSearchInKetouvim;
     private System.Windows.Forms.CheckBox EditSearchInNeviim;
     private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
@@ -1920,10 +1937,6 @@
     private System.Windows.Forms.BindingSource StrongConcordancesBindingSource;
     private Data.DataSetTableAdapters.StrongConcordancesTableAdapter StrongConcordancesTableAdapter;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TextBox EditChapterTitle;
     private System.Windows.Forms.Label LabelChapterTitle;
@@ -1931,7 +1944,13 @@
     private System.Windows.Forms.Label LabelChapterMemo;
     private System.Windows.Forms.Label LabelBookTranslation;
     private System.Windows.Forms.TextBox EditBookTranslation;
-    private System.Windows.Forms.Button ActionEditChapterComment;
+    private System.Windows.Forms.Button ActionEditChapterMemo;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+    private System.Windows.Forms.Button ActionEditBookMemo;
   }
 }
 
