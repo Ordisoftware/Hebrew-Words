@@ -145,5 +145,8 @@
     <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen" Scope="User">
       <Value Profile="(Default)">ReachReference</Value>
     </Setting>
+    <Setting Name="EditMemoFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">492, 266</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

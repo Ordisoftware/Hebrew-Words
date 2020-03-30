@@ -572,5 +572,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["TranslatedItemDoubleClickOpen"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("492, 266")]
+        public global::System.Drawing.Size EditMemoFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["EditMemoFormClientSize"]));
+            }
+            set {
+                this["EditMemoFormClientSize"] = value;
+            }
+        }
     }
 }
