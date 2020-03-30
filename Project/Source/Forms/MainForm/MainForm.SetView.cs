@@ -130,6 +130,7 @@ namespace Ordisoftware.HebrewWords
       SelectBook.Enabled = view != ViewModeType.Search;
       LabelSelectBook.Enabled = SelectBook.Enabled;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
+      EditBookTranslation.Enabled = ActionExportChapter.Enabled;
       EditChapterTitle.Enabled = ActionExportChapter.Enabled;
       EditChapterMemo.Enabled = ActionExportChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
