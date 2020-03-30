@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -53,8 +53,8 @@ namespace Ordisoftware.HebrewWords
         case Keys.Escape:
           if ( IsRenderingSearch ) CancelRequired = true;
           break;
-        case Keys.Control | Keys.F:
-          ActionSearchVerse.PerformClick();
+        case Keys.Control | Keys.B:
+          ActionViewBooksTranslation.PerformClick();
           return true;
         case Keys.Control | Keys.G:
           ActionShowGrammarGuide.PerformClick();
@@ -63,13 +63,16 @@ namespace Ordisoftware.HebrewWords
           ActionStartHebrewLetters.PerformClick();
           return true;
         case Keys.Control | Keys.L:
-          shorashonLexicalToolStripMenuItem.PerformClick();
-          return true;
-        case Keys.Control | Keys.S:
-          ActionSave.PerformClick();
+          ActionOpenShorashon.PerformClick();
           return true;
         case Keys.Control | Keys.R:
           ActionGoToReference.PerformClick();
+          return true;
+        case Keys.Control | Keys.F:
+          ActionSearchVerse.PerformClick();
+          return true;
+        case Keys.Control | Keys.S:
+          ActionSave.PerformClick();
           return true;
         case Keys.F1:
           ActionViewVerses.PerformClick();
