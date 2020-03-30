@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewWords
 {
-  partial class EditChapterMemoForm
+  partial class EditMemoForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditChapterMemoForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMemoForm));
       this.TextBox = new System.Windows.Forms.TextBox();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionOk = new System.Windows.Forms.Button();
@@ -43,9 +43,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionOk);
       this.PanelButtons.Controls.Add(this.ActionCancel);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionOk
@@ -63,15 +63,17 @@
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.UseVisualStyleBackColor = true;
       // 
-      // EditChapterMemoForm
+      // EditMemoForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.EditMemoFormClientSize;
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.TextBox);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "EditMemoFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "EditChapterMemoForm";
+      this.Name = "EditMemoForm";
       this.ShowInTaskbar = false;
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
