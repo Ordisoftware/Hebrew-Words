@@ -78,12 +78,13 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - F3 : Hebrew text view
 - F4 : ELS50 verses view
 - F5 : Search view
-- Ctrl+S : Save changes
-- Ctrl+R : Find reference
-- Ctrl+F : Find verse number in current chapter (0 for first untranslated)
+- Ctrl+B : Open the books names editor
 - Ctrl+G : Open the grammar guide
 - Ctrl+H : Open Hebrew Letters
 - Ctrl+L : Open Shorashon web page
+- Ctrl+R : Find reference
+- Ctrl+F : Find verse number in current chapter (0 for first untranslated)
+- Ctrl+S : Save changes
 - Ctrl+Home : Reach the beginning of the view
 - Ctrl+End : Reach the ending of the view
 - Ctrl+Up : Scroll the view up (fine)
@@ -99,10 +100,13 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
-- Add keyboard shortcuts to open Hebrew Letters and Shorashon web page.
-- Add links to Lexilogos and Hebrew Gematria web pages.
-- Add online search from several providers (Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe).
+- Add online search from several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Add links to Hebrew Gematria and Lexilogos websites.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters app and Shorashon website.
+
+>>>>- Add books common names field in the database and in the books names form editor.
 >>>>- Add some links to Serafia website: Sefer Yetsirah and Pirke Avot.
+>>>>- Add button to edit a book memo.
 >>>>- Add chapter title and memo text box on top of verses panel.
 (>>>>- Add letters values in the input panel.)
 >>>>- Add copy/cut/paste for the hebrew letters input box.
@@ -112,10 +116,15 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add popup box to show hebrew source word in the search translated form.
 >>>>- Add option to choose double-click action on a word in the search translated form.
 >>>>- Add option to choose a default search word online action.
+>>>>- Add option to open the master bookmark else the first verse of the Tanak.
+(>>>>- Add option to change fonts size.)
 (>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
 (>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
+
 - Improve UI.
+
 (- Database updated to support internal strong concordance popup menus in the future.)
+
 - Bug to solve in the future : error message when several SearchTranslatedForm are opened - using the top refresh button cancels that.
 - Bug to solve in the future : error message, sometimes, when typing too fastly in the comment boxes.
 
