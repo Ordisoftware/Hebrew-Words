@@ -584,5 +584,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["EditMemoFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("592, 666")]
+        public global::System.Drawing.Size EditBooksFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["EditBooksFormClientSize"]));
+            }
+            set {
+                this["EditBooksFormClientSize"] = value;
+            }
+        }
     }
 }

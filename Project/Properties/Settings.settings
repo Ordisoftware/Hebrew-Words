@@ -148,5 +148,8 @@
     <Setting Name="EditMemoFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">492, 266</Value>
     </Setting>
+    <Setting Name="EditBooksFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">592, 666</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

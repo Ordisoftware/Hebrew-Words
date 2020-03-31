@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -34,6 +34,25 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      int index = 0;
+      EventHandler action = (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
+        var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+        string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
+        foreach ( string item in strOriginal.Split(' ') )
+        {
+          Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
+        }
+      };
+      foreach ( var item in OnlineWordProviders.Items )
+      {
+        if ( item.Name == "-" )
+          ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
+        else
+          ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
+      }
     }
 
     private void EditBooksForm_Load(object sender, EventArgs e)
@@ -55,25 +74,40 @@ namespace Ordisoftware.HebrewWords
         e.Value = ((string)e.Value).Trim();
     }
 
-    private void ActionOnlineSearch_Click(object sender, EventArgs e)
+    private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
     {
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      string strOriginal = ((Data.DataSet.BooksRow)row).Original;
-      foreach ( string item in strOriginal.Split(' ') )
+      if ( e.Button == MouseButtons.Right )
       {
-        Program.OpenOnlineConcordance(item);
-        System.Threading.Thread.Sleep(2500);
+        int rowSelected = e.RowIndex;
+        if ( e.RowIndex != -1 )
+        {
+          EditBooks.ClearSelection();
+          EditBooks.Rows[rowSelected].Selected = true;
+          BooksBindingSource.Position = e.RowIndex;
+        }
       }
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       string strHebrew = (string)EditBooks.SelectedRows[0].Cells[1].Value;
-      if ( strHebrew.StartsWith("a ") ) strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
+      if ( strHebrew.StartsWith("a ") )
+        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
       else
-      if ( strHebrew.StartsWith("b ") ) strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
+      if ( strHebrew.StartsWith("b ") )
+        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
       foreach ( string item in strHebrew.Split(' ') )
         Program.OpenHebrewLetters(item);
+    }
+
+    private void ActionSearchWord_Click(object sender, EventArgs e)
+    {
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      MainForm.Instance.SearchWord(( (Data.DataSet.BooksRow)row ).Hebrew);
+
+      // todo form to select one word from multiple having more than 1 char
+
+      Close();
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)
@@ -88,18 +122,28 @@ namespace Ordisoftware.HebrewWords
       Clipboard.SetText(strName);
     }
 
-    private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+    private void ActionCopyFontChars_Click(object sender, EventArgs e)
     {
-      if ( e.Button == MouseButtons.Right )
-      {
-        int rowSelected = e.RowIndex;
-        if ( e.RowIndex != -1 )
-        {
-          EditBooks.ClearSelection();
-          EditBooks.Rows[rowSelected].Selected = true;
-          BooksBindingSource.Position = e.RowIndex;
-        }
-      }
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Hebrew);
+    }
+
+    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+    {
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Original);
+    }
+
+    private void ActionEditMemo_Click(object sender, EventArgs e)
+    {
+      var form = new EditMemoForm();
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      var book = (Data.DataSet.BooksRow)row;
+      form.Text += book.Name;
+      form.TextBox.Text = book.Memo;
+      form.TextBox.SelectionStart = 0;
+      if ( form.ShowDialog() == DialogResult.OK )
+        book.Memo = form.TextBox.Text;
     }
 
   }

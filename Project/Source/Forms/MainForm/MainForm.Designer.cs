@@ -126,6 +126,8 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewAlphabet = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.bibleFourmilabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenTanakMP3 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
@@ -133,7 +135,7 @@
       this.euangélionOnlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.bibleBiblehubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.quranCorpusqurancomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,8 +175,8 @@
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionStartHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,8 +226,7 @@
       this.StrongConcordancesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.StrongConcordancesTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1053,6 +1054,18 @@
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
+      // toolStripMenuItem11
+      // 
+      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+      this.toolStripMenuItem11.Tag = "https://www.sefaria.org/texts";
+      this.toolStripMenuItem11.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
       // bibleFourmilabToolStripMenuItem
       // 
       resources.ApplyResources(this.bibleFourmilabToolStripMenuItem, "bibleFourmilabToolStripMenuItem");
@@ -1100,10 +1113,10 @@
       this.quranCorpusqurancomToolStripMenuItem.Tag = "http://corpus.quran.com/wordbyword.jsp";
       this.quranCorpusqurancomToolStripMenuItem.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
-      // toolStripSeparator11
+      // toolStripSeparator15
       // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
+      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
       // 
       // toolStripMenuItem8
       // 
@@ -1403,27 +1416,28 @@
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewBooksTranslation,
-            this.ActionViewStatistics,
             this.toolStripSeparator6,
             this.ActionShowGrammarGuide,
             this.ActionStartHebrewLetters,
             this.toolStripSeparator13,
             this.ActionOpenShorashon,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.toolStripSeparator16,
+            this.ActionViewStatistics});
       resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
-      // 
-      // ActionViewBooksTranslation
-      // 
-      resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
-      this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
-      this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
       // 
       // ActionViewStatistics
       // 
       resources.ApplyResources(this.ActionViewStatistics, "ActionViewStatistics");
       this.ActionViewStatistics.Name = "ActionViewStatistics";
       this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
+      // 
+      // ActionViewBooksTranslation
+      // 
+      resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
+      this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
+      this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
       // 
       // toolStripSeparator6
       // 
@@ -1704,17 +1718,10 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // toolStripMenuItem11
+      // toolStripSeparator16
       // 
-      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
-      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-      this.toolStripMenuItem11.Tag = "https://www.sefaria.org/texts";
-      this.toolStripMenuItem11.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator15
-      // 
-      this.toolStripSeparator15.Name = "toolStripSeparator15";
-      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
+      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
       // MainForm
       // 
@@ -1969,6 +1976,7 @@
     private System.Windows.Forms.Button ActionEditBookMemo;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
   }
 }
 

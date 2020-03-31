@@ -430,6 +430,11 @@ namespace Ordisoftware.HebrewWords
         int chapter = CurrentReference.Chapter.Number;
         int verse = CurrentReference.Verse?.Number ?? 1;
         InitBooksCombobox();
+
+
+        // todo text box book translation, chapter title and memo sont vidés...
+
+
         GoTo(book, chapter, verse);
       }
       finally
