@@ -100,23 +100,28 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
-- Add online search from several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Add links to Hebrew Gematria and Lexilogos websites.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters app and Shorashon website.
+- Add links to Sefaria Jewish Texts, Lexilogos dictionary and Hebrew Gematria Database websites.
+- Add online search a word from several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Add book translation text box in the navigation panel.
+- Add chapter title and memo text box in the navigation panel.
+- Add buttons to edit memo of book and chapter in the navigation panel.
+- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
 
 >>>>- Add books common names field in the database and in the books names form editor.
->>>>- Add some links to Serafia website: Sefer Yetsirah and Pirke Avot.
->>>>- Add button to edit a book memo.
->>>>- Add chapter title and memo text box on top of verses panel.
-(>>>>- Add letters values in the input panel.)
->>>>- Add copy/cut/paste for the hebrew letters input box.
->>>>- Add copy hebrew unicode to clipboard button for the hebrew letters input box.
->>>>- Add paste from unicode clipboard content button for the hebrew letters input box.
->>>>- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
+>>>>- Add some context menu items in the edit books names form to search online, copy to clipboard and edit memo.
+
 >>>>- Add popup box to show hebrew source word in the search translated form.
+
+>>>>- Add copy/cut/paste for the text box in the search view.
+>>>>- Add copy hebrew unicode to clipboard button in the search view.
+>>>>- Add paste from unicode clipboard content button in the search view.
+>>>>- Add letters values in the search view.
+
 >>>>- Add option to choose double-click action on a word in the search translated form.
 >>>>- Add option to choose a default search word online action.
 >>>>- Add option to open the master bookmark else the first verse of the Tanak.
+
 (>>>>- Add option to change fonts size.)
 (>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
 (>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
