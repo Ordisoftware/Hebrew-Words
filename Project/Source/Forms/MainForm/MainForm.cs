@@ -1165,24 +1165,26 @@ namespace Ordisoftware.HebrewWords
       ActionSave.Enabled = true;
     }
 
-    private void ActionEditChapterMemo_Click(object sender, EventArgs e)
-    {
-      var form = new EditMemoForm();
-      form.Text += SelectBook.Text + " - " + SelectChapter.Text;
-      form.TextBox.Text = CurrentReference.Chapter.Memo;
-      form.TextBox.SelectionStart = 0;
-      if ( form.ShowDialog() == DialogResult.OK )
-        EditChapterMemo.Text = form.TextBox.Text;
-    }
-
     private void ActionEditBookMemo_Click(object sender, EventArgs e)
     {
       var form = new EditMemoForm();
-      form.Text += SelectBook.Text;
+      form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name;
       form.TextBox.Text = CurrentReference.Book.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
         CurrentReference.Book.Memo = form.TextBox.Text;
+    }
+
+    private void ActionEditChapterMemo_Click(object sender, EventArgs e)
+    {
+      var form = new EditMemoForm();
+      form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
+                 + " " + Translations.BookChapterTitle.GetLang().ToLower()
+                 + " " + ((ChapterItem)SelectChapter.SelectedItem ).Chapter.Number; 
+      form.TextBox.Text = CurrentReference.Chapter.Memo;
+      form.TextBox.SelectionStart = 0;
+      if ( form.ShowDialog() == DialogResult.OK )
+        EditChapterMemo.Text = form.TextBox.Text;
     }
 
   }
