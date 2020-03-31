@@ -32,25 +32,33 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.EditBooks = new System.Windows.Forms.DataGridView();
+      this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOnlineSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.ActionClose = new System.Windows.Forms.Button();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
+      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
+      this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-      this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // EditBooks
@@ -75,6 +83,47 @@
       this.EditBooks.ShowCellToolTips = false;
       this.EditBooks.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
       this.EditBooks.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditBooks_CellMouseDown);
+      // 
+      // ContextMenuStripResults
+      // 
+      this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionOnlineSearch,
+            this.ActionSearchTranslated,
+            this.ActionSearchWord,
+            this.toolStripSeparator2,
+            this.ActionOpenHebrewLetters,
+            this.toolStripSeparator1,
+            this.toolStripMenuItem3,
+            this.ActionCopyFontChars,
+            this.ActionCopyUnicodeChars,
+            this.toolStripSeparator3,
+            this.toolStripMenuItem1});
+      this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
+      // 
+      // ActionOnlineSearch
+      // 
+      resources.ApplyResources(this.ActionOnlineSearch, "ActionOnlineSearch");
+      this.ActionOnlineSearch.Name = "ActionOnlineSearch";
+      this.ActionOnlineSearch.Click += new System.EventHandler(this.ActionOnlineSearch_Click);
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // ActionClose
+      // 
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
       // 
       // dataGridViewTextBoxColumn2
       // 
@@ -111,33 +160,6 @@
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
-      // ContextMenuStripResults
-      // 
-      this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionOnlineSearch,
-            this.ActionOpenHebrewLetters,
-            this.ActionCopyName});
-      this.ContextMenuStripResults.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
-      // 
-      // ActionOnlineSearch
-      // 
-      resources.ApplyResources(this.ActionOnlineSearch, "ActionOnlineSearch");
-      this.ActionOnlineSearch.Name = "ActionOnlineSearch";
-      this.ActionOnlineSearch.Click += new System.EventHandler(this.ActionOnlineSearch_Click);
-      // 
-      // ActionOpenHebrewLetters
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
-      // 
-      // ActionCopyName
-      // 
-      resources.ApplyResources(this.ActionCopyName, "ActionCopyName");
-      this.ActionCopyName.Name = "ActionCopyName";
-      this.ActionCopyName.Click += new System.EventHandler(this.ActionCopyName_Click);
-      // 
       // BooksBindingSource
       // 
       this.BooksBindingSource.DataMember = "Books";
@@ -147,18 +169,6 @@
       // 
       this.DataSet.DataSetName = "DataSet";
       this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // panel1
-      // 
-      this.panel1.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
-      // 
-      // ActionClose
-      // 
-      resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionClose.Name = "ActionClose";
       // 
       // BooksTableAdapter
       // 
@@ -174,6 +184,51 @@
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       this.TableAdapterManager.VersesTableAdapter = null;
       this.TableAdapterManager.WordsTableAdapter = null;
+      // 
+      // toolStripMenuItem3
+      // 
+      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+      // 
+      // ActionCopyFontChars
+      // 
+      resources.ApplyResources(this.ActionCopyFontChars, "ActionCopyFontChars");
+      this.ActionCopyFontChars.Name = "ActionCopyFontChars";
+      // 
+      // ActionCopyUnicodeChars
+      // 
+      resources.ApplyResources(this.ActionCopyUnicodeChars, "ActionCopyUnicodeChars");
+      this.ActionCopyUnicodeChars.Name = "ActionCopyUnicodeChars";
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionSearchTranslated
+      // 
+      resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
+      this.ActionSearchTranslated.Name = "ActionSearchTranslated";
+      // 
+      // ActionSearchWord
+      // 
+      resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
+      this.ActionSearchWord.Name = "ActionSearchWord";
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // EditBooksForm
       // 
@@ -192,9 +247,9 @@
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
       this.ContextMenuStripResults.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-      this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -210,11 +265,19 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
-    private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineSearch;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchWord;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
   }
 }
