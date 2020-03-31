@@ -120,6 +120,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 >>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
 
+>>>>- Add word occurences calculator button in the statistics form.
+
 >>>>- Add option to choose double-click action on a word in the search translated form.
 >>>>- Add option to choose a default search word online action.
 >>>>- Add option to open the master bookmark else the first verse of the Tanak.
