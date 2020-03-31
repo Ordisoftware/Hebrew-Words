@@ -175,7 +175,6 @@
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,6 +182,8 @@
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuDatabase = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,7 +227,6 @@
       this.StrongConcordancesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.StrongConcordancesTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1427,12 +1427,6 @@
       resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
       // 
-      // ActionViewStatistics
-      // 
-      resources.ApplyResources(this.ActionViewStatistics, "ActionViewStatistics");
-      this.ActionViewStatistics.Name = "ActionViewStatistics";
-      this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
-      // 
       // ActionViewBooksTranslation
       // 
       resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
@@ -1474,6 +1468,17 @@
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
       this.toolStripMenuItem2.Tag = "http://www.billheidrick.com/works/hgemat.htm";
       this.toolStripMenuItem2.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator16
+      // 
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
+      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+      // 
+      // ActionViewStatistics
+      // 
+      resources.ApplyResources(this.ActionViewStatistics, "ActionViewStatistics");
+      this.ActionViewStatistics.Name = "ActionViewStatistics";
+      this.ActionViewStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
       // 
       // MenuDatabase
       // 
@@ -1717,11 +1722,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator16
-      // 
-      this.toolStripSeparator16.Name = "toolStripSeparator16";
-      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
       // MainForm
       // 
