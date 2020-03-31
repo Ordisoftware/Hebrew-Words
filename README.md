@@ -118,6 +118,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add paste from unicode clipboard content button in the search view.
 >>>>- Add letters values in the search view.
 
+>>>>- Add menu to open a batch export form.
+>>>>- Add book memo and chapter title/memo in DOCX export.
 >>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
 
 >>>>- Add word occurences calculator button in the search panel.
