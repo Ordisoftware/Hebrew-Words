@@ -587,7 +587,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("592, 666")]
+        [global::System.Configuration.DefaultSettingValueAttribute("692, 666")]
         public global::System.Drawing.Size EditBooksFormClientSize {
             get {
                 return ((global::System.Drawing.Size)(this["EditBooksFormClientSize"]));
