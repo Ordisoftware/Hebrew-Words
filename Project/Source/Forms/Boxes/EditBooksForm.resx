@@ -139,7 +139,16 @@
   <data name="dataGridViewTextBoxColumn4.Width" type="System.Int32, mscorlib">
     <value>110</value>
   </data>
+  <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
+    <value>Common Name</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn5.Width" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn6.HeaderText" xml:space="preserve">
     <value>Translation</value>
   </data>
   <metadata name="ContextMenuStripResults.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -286,7 +295,7 @@
   <data name="ActionEditMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJfSURBVDhPnZPNS1RRGMbv/xBB69oEGX3YfDVCm+hDhbCi
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJfSURBVDhPnZPNS1RRGMbv/xBB69oEGX3YfDVCm+hDhbCi
         KKhsyMxFi8YJKnTAr/Gj0bmmRkZtWlQWpWFjUJhSSE44dxy1MTFN08Yymilz1aJf77kzkIuU6MKPc+49
         z/Oc95x7jmZcsSeNBisD9RYG/P+A6JRe+TT1qBfmq2BOiPuE6hWQcaUTvfKZAQP+TPjRCWGb4AQja3nU
         uNKJXvnSAVsh2UYiaCPR5STxJGt51HiXVPztrgRsWRLw9RbM+oWAoK+AjMfr4PsNjMD6JUuYvykl7hay
@@ -306,7 +315,7 @@
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 198</value>
+    <value>271, 176</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -328,7 +337,7 @@
     <value>0, 0</value>
   </data>
   <data name="EditBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 608</value>
+    <value>672, 608</value>
   </data>
   <data name="EditBooks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -345,6 +354,36 @@
   <data name="&gt;&gt;EditBooks.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ActionRestoreCommonNames.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionRestoreCommonNames.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionRestoreCommonNames.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="ActionRestoreCommonNames.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 13</value>
+  </data>
+  <data name="ActionRestoreCommonNames.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionRestoreCommonNames.Text" xml:space="preserve">
+    <value>Restore default common names</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCommonNames.Name" xml:space="preserve">
+    <value>ActionRestoreCommonNames</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCommonNames.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCommonNames.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCommonNames.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -352,7 +391,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 2</value>
+    <value>594, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -373,7 +412,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -382,7 +421,7 @@
     <value>10, 628</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 28</value>
+    <value>672, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -415,7 +454,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 618</value>
+    <value>672, 618</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -437,6 +476,9 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>700, 500</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -469,6 +511,12 @@
     <value>dataGridViewTextBoxColumn5</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn6</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchOnline.Name" xml:space="preserve">

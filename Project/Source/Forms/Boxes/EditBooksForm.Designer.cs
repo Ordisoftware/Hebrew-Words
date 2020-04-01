@@ -36,6 +36,7 @@
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,7 @@
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.PanelMain = new System.Windows.Forms.Panel();
+      this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
@@ -73,7 +75,8 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
       this.EditBooks.ContextMenuStrip = this.ContextMenuStripResults;
       this.EditBooks.DataSource = this.BooksBindingSource;
       this.EditBooks.MultiSelect = false;
@@ -114,11 +117,18 @@
       // 
       // dataGridViewTextBoxColumn5
       // 
-      this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.dataGridViewTextBoxColumn5.DataPropertyName = "Translation";
+      this.dataGridViewTextBoxColumn5.DataPropertyName = "CommonName";
       resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn6
+      // 
+      this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.dataGridViewTextBoxColumn6.DataPropertyName = "Translation";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+      this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
       // ContextMenuStripResults
       // 
@@ -204,6 +214,7 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.ActionRestoreCommonNames);
       this.panel1.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
@@ -235,6 +246,15 @@
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
+      // ActionRestoreCommonNames
+      // 
+      this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
+      this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
+      this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
+      this.ActionRestoreCommonNames.TabStop = true;
+      this.ActionRestoreCommonNames.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionRestoreCommonNames_LinkClicked);
+      // 
       // EditBooksForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -256,6 +276,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.PanelMain.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -272,10 +293,6 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
     private System.Windows.Forms.ToolStripMenuItem ActionEditMemo;
@@ -286,5 +303,11 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+    private System.Windows.Forms.LinkLabel ActionRestoreCommonNames;
   }
 }

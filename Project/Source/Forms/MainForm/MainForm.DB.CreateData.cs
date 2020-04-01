@@ -88,6 +88,10 @@ namespace Ordisoftware.HebrewWords
           book.Hebrew = BooksNames.Hebrew[enumBook];
           book.Original = BooksNames.Original[enumBook];
           book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
+          if ( book.CommonName == "" )
+          {
+            // TODO fill from array
+          }
         }
         TableAdapterManager.UpdateAll(DataSet);
       }

@@ -38,6 +38,7 @@ namespace Ordisoftware.HebrewWords
       else
         str = Book.Number.ToString();
       str += ". " + Book.Name;
+      if ( Book.CommonName != "" ) str += $" ({Book.CommonName})";
       if ( Book.Translation != "" ) str += $" - {Book.Translation}";
       return str;
     }

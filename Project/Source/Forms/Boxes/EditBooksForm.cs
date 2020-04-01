@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewWords
       Validate();
       MainForm.Instance.BooksBindingSource.EndEdit();
       UpdateViewRequired = MainForm.Instance.DataSet.HasChanges();
-      MainForm.Instance.TableAdapterManager.UpdateAll(DataSet);
+      MainForm.Instance.TableAdapterManager.UpdateAll(MainForm.Instance.DataSet);
     }
 
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewWords
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
       MainForm.Instance.SearchWord(( (Data.DataSet.BooksRow)row ).Hebrew);
 
-      // todo form to select one word from multiple having more than 1 char
+      // TODO form to select one word from multiple having more than 1 char
 
       Close();
     }
@@ -146,6 +146,10 @@ namespace Ordisoftware.HebrewWords
         book.Memo = form.TextBox.Text;
     }
 
+    private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      // TODO fill from array
+    }
   }
 
 }

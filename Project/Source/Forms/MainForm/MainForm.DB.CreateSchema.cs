@@ -85,6 +85,7 @@ namespace Ordisoftware.HebrewWords
                                 Original TEXT DEFAULT '' NOT NULL,
                                 Hebrew TEXT DEFAULT '' NOT NULL,
                                 Name TEXT DEFAULT '' NOT NULL,
+                                CommonName TEXT DEFAULT '' NOT NULL,
                                 Translation TEXT DEFAULT '' NOT NULL,
                                 Memo TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
@@ -125,6 +126,7 @@ namespace Ordisoftware.HebrewWords
                                 FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
                               )");
           checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Books", "CommonName", "ALTER TABLE Books ADD COLUMN CommonName TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Title", "ALTER TABLE Chapters ADD COLUMN Title TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Memo", "ALTER TABLE Chapters ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
