@@ -1191,6 +1191,7 @@ namespace Ordisoftware.HebrewWords
       if ( form.ShowDialog() == DialogResult.OK )
         EditChapterMemo.Text = form.TextBox.Text;
     }
+
   }
 
 }
