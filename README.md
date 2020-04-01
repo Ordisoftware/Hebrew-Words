@@ -122,12 +122,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add book memo and chapter title/memo in DOCX export.
 >>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
 
->>>>- Add word occurences calculator button in the search panel.
-
 >>>>- Add option to choose double-click action on a word in the search translated form.
 >>>>- Add option to choose a default search word online action.
 >>>>- Add option to open the master bookmark else the first verse of the Tanak.
 
+(>>>>- Add word occurences calculator button in the search panel.)
 (>>>>- Add option to change fonts size.)
 (>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
 (>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
