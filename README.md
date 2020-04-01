@@ -107,9 +107,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add chapter title and memo text box in the navigation panel.
 - Add buttons to edit memo of book and chapter in the navigation panel.
 - Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
-
->>>>- Add books common names field in the database and in the books names form editor.
->>>>- Add some context menu items in the edit books names form to search online, copy to clipboard and edit memo.
+- Add books common names field in the database and in the edit books information form.
+- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Fix edit books information form modifications are not saved since an old version.
 
 >>>>- Add popup box to show hebrew source word in the search translated form.
 
