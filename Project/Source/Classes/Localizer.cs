@@ -84,6 +84,11 @@ namespace Ordisoftware.HebrewWords
       return values[value][Language];
     }
 
+    static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
+    {
+      return values[Language][value];
+    }
+
     /// <summary>
     /// Remove diacritics letters.
     /// </summary>

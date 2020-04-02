@@ -14,6 +14,7 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -71,7 +72,7 @@ namespace Ordisoftware.HebrewWords
     private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if ( e.ColumnIndex == 3 )
-        e.Value = ((string)e.Value).Trim();
+        e.Value = ( (string)e.Value ).Trim();
     }
 
     private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -148,8 +149,11 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      // TODO fill from array
+      if ( DisplayManager.QueryYesNo(Translations.RestoreBooksCommonNames.GetLang()) )
+        foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
+          book.CommonName = BooksNames.Common.GetLang((Books)( book.Number - 1 ));
     }
+
   }
 
 }

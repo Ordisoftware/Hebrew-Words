@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewWords
           book.Original = BooksNames.Original[bookid];
           book.Hebrew = BooksNames.Hebrew[bookid];
           book.Name = bookid.ToString().Replace("_", " ");
-          book.CommonName = ""; // TODO fill from array
+          book.CommonName = BooksNames.Common.GetLang(bookid);
           book.Translation = "";
           book.Memo = "";
           DataSet.Books.AddBooksRow(book);

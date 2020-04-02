@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -123,6 +123,13 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "Not yet available." },
         { "fr", "Pas encore disponible." }
+      };
+
+    static public readonly Dictionary<string, string> RestoreBooksCommonNames
+      = new Dictionary<string, string>()
+      {
+        { "en", "Restore default books common names?" },
+        { "fr", "Restaurer les noms communs par défaut des livres ?" }
       };
 
     static public readonly Dictionary<string, string> HebrewLettersNotFound
