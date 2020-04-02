@@ -110,6 +110,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add books common names field in the database and in the edit books information form.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
 - Fix edit books information form modifications are not saved since an old version.
+- Improve UI.
 
 >>>>- Add sort bookmarks menu.
 
@@ -129,11 +130,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add option to open the master bookmark else the first verse of the Tanak.
 
 (>>>>- Add word occurences calculator button in the search panel.)
-(>>>>- Add option to change fonts size.)
-(>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
-(>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
 
-- Improve UI.
+(>>>>- Add option to change fonts size.)
+
+(>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
+
+(>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
 
 (- Database updated to support internal strong concordance popup menus in the future.)
 
