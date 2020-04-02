@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewWords
       GhostBook.Original = "";
       GhostBook.Hebrew = "";
       GhostBook.Name = "";
+      GhostBook.CommonName = "";
       GhostBook.Translation = "";
       GhostBook.Memo = "";
       DataSet.Books.AddBooksRow(GhostBook);
@@ -44,6 +45,7 @@ namespace Ordisoftware.HebrewWords
       GhostChapter.BookID = GhostBook.ID;
       GhostChapter.Number = 0;
       GhostChapter.ELS50 = "";
+      GhostChapter.Title = "";
       GhostChapter.Memo = "";
       DataSet.Chapters.AddChaptersRow(GhostChapter);
       GhostVerse = DataSet.Verses.NewVersesRow();
