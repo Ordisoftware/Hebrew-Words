@@ -175,7 +175,7 @@
     <value>0, 108</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 35</value>
+    <value>394, 35</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -196,7 +196,7 @@
     <value>True</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 56</value>
+    <value>94, 56</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 56</value>
+    <value>18, 56</value>
   </data>
   <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -298,7 +298,7 @@
     <value>20, 27</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 21</value>
+    <value>357, 21</value>
   </data>
   <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -322,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 9</value>
+    <value>18, 9</value>
   </data>
   <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -352,10 +352,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>269, 143</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>394, 143</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
