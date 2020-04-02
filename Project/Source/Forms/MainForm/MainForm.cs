@@ -431,7 +431,7 @@ namespace Ordisoftware.HebrewWords
         int verse = CurrentReference.Verse?.Number ?? 1;
         InitBooksCombobox();
 
-        // TODO text box book translation, chapter title and memo sont vidés...
+        // TODO fix text box translation/title/memo vidés...
 
         GoTo(book, chapter, verse);
       }
@@ -1004,6 +1004,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionSortBookmarks_Click(object sender, EventArgs e)
     {
       // TODO
+      throw new NotImplementedException();
     }
 
     /// <summary>
