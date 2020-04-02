@@ -69,6 +69,16 @@ namespace Ordisoftware.HebrewWords
       DeleteGhost();
     }
 
+    private void ImportVerseForm_Shown(object sender, EventArgs e)
+    {
+      PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
+    }
+
+    private void PanelMain_SplitterMoving(object sender, SplitterCancelEventArgs e)
+    {
+      Program.Settings.ImportVerseFormSplitterDistance = PanelMain.SplitterDistance;
+    }
+
     private void EditSource_TextChanged(object sender, EventArgs e)
     {
       var lines = EditSource.Lines.Where(line => line != "").ToList();
@@ -101,10 +111,6 @@ namespace Ordisoftware.HebrewWords
       DisplayManager.Show(Translations.ImportHelp.GetLang());
     }
 
-    private void ImportVerseForm_Shown(object sender, EventArgs e)
-    {
-      PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
-    }
   }
 
 }
