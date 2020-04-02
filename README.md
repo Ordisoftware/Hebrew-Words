@@ -111,8 +111,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
 - Fix edit books information form modifications are not saved since an old version.
 
->>>>- Add sort bookmarks menu.
-
 >>>>- Add popup box to show hebrew source word in the search translated form.
 
 >>>>- Add copy/cut/paste for the text box in the search view.

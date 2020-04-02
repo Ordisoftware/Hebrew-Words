@@ -996,21 +996,6 @@ namespace Ordisoftware.HebrewWords
       UpdateBookmarks();
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionSortBookmarks for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSortBookmarks_Click(object sender, EventArgs e)
-    {
-      // TODO
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionClearHistory for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
     private void ActionClearHistory_Click(object sender, EventArgs e)
     {
       History.Clear();

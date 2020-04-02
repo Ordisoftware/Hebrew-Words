@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2019-09 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -99,11 +99,6 @@ namespace Ordisoftware.HebrewWords
     private void ActionHelp_Click(object sender, EventArgs e)
     {
       DisplayManager.Show(Translations.ImportHelp.GetLang());
-    }
-
-    private void ImportVerseForm_Shown(object sender, EventArgs e)
-    {
-      PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
     }
   }
 

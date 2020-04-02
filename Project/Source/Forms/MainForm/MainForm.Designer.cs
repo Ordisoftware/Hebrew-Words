@@ -173,7 +173,6 @@
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSortBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -1373,7 +1372,6 @@
             this.toolStripSeparator12,
             this.MenuHistory,
             this.menusep,
-            this.ActionSortBookmarks,
             this.ActionClearBookmarks});
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.Name = "MenuBookmarks";
@@ -1406,12 +1404,6 @@
       // 
       this.menusep.Name = "menusep";
       resources.ApplyResources(this.menusep, "menusep");
-      // 
-      // ActionSortBookmarks
-      // 
-      resources.ApplyResources(this.ActionSortBookmarks, "ActionSortBookmarks");
-      this.ActionSortBookmarks.Name = "ActionSortBookmarks";
-      this.ActionSortBookmarks.Click += new System.EventHandler(this.ActionSortBookmarks_Click);
       // 
       // ActionClearBookmarks
       // 
@@ -1985,7 +1977,6 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
-    private System.Windows.Forms.ToolStripMenuItem ActionSortBookmarks;
   }
 }
 

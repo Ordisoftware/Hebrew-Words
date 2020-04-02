@@ -23,8 +23,8 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateBookmarks()
     {
-      while ( MenuBookmarks.DropDownItems.Count > 6 )
-        MenuBookmarks.DropDownItems.RemoveAt(6);
+      while ( MenuBookmarks.DropDownItems.Count > 5 )
+        MenuBookmarks.DropDownItems.RemoveAt(5);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -48,7 +48,6 @@ namespace Ordisoftware.HebrewWords
       ActionGoToBookmarkMaster.Text = bookmarkMaster.ToString();
       ActionGoToBookmarkMaster.Tag = bookmarkMaster;
       ActionGoToBookmarkMaster.MouseDown += bookmarkClicked;
-      ActionSortBookmarks.Enabled = Bookmarks.Count > 0;
       ActionClearBookmarks.Enabled = Bookmarks.Count > 0;
       if ( !ActionClearBookmarks.Enabled ) return;
       MenuBookmarks.DropDownItems.Add("-");
