@@ -22,6 +22,15 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    private void GoToBookmark(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewModeType.ELS50
+        || Program.Settings.CurrentView == ViewModeType.Search )
+        SetView(ViewModeType.Verses);
+      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+    }
+
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>

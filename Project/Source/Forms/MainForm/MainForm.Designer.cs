@@ -1366,7 +1366,6 @@
       // 
       resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
       this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
-      this.ActionGoToBookmarkMaster.Click += new System.EventHandler(this.GoToBookmark);
       // 
       // toolStripSeparator12
       // 

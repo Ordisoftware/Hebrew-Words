@@ -51,6 +51,7 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
+      ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       CurrentReference = new ReferenceItem(null, null, null, null);
@@ -1145,15 +1146,6 @@ namespace Ordisoftware.HebrewWords
       if ( PreviousSeachPagingPosition != SelectSearchPaging.Value )
         RenderSearch();
       PreviousSeachPagingPosition = -1;
-    }
-
-    private void GoToBookmark(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.ELS50
-        || Program.Settings.CurrentView == ViewModeType.Search )
-        SetView(ViewModeType.Verses);
-      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
     private void ActionImportConcordances_Click(object sender, EventArgs e)
