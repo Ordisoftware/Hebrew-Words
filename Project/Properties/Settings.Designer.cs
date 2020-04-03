@@ -608,5 +608,29 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["GoToMasterBookmarkAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        public int ImportVerseFormGridColumnWidthHebrew {
+            get {
+                return ((int)(this["ImportVerseFormGridColumnWidthHebrew"]));
+            }
+            set {
+                this["ImportVerseFormGridColumnWidthHebrew"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public int ImportVerseFormGridColumnWidthTranslationCurrent {
+            get {
+                return ((int)(this["ImportVerseFormGridColumnWidthTranslationCurrent"]));
+            }
+            set {
+                this["ImportVerseFormGridColumnWidthTranslationCurrent"] = value;
+            }
+        }
     }
 }

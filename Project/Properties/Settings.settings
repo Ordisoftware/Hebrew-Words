@@ -154,5 +154,11 @@
     <Setting Name="GoToMasterBookmarkAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ImportVerseFormGridColumnWidthHebrew" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="ImportVerseFormGridColumnWidthTranslationCurrent" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

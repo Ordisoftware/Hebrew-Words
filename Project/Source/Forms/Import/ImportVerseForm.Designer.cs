@@ -92,6 +92,7 @@
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DataGridView_ColumnWidthChanged);
       // 
       // ColumnHebrew
       // 

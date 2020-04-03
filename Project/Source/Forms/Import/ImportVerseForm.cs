@@ -67,16 +67,26 @@ namespace Ordisoftware.HebrewWords
     private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       DeleteGhost();
+      Program.Settings.Save();
     }
 
     private void ImportVerseForm_Shown(object sender, EventArgs e)
     {
       PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
+      DataGridView.Columns[0].Width = Program.Settings.ImportVerseFormGridColumnWidthHebrew;
+      DataGridView.Columns[1].Width = Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent;
     }
 
     private void PanelMain_SplitterMoving(object sender, SplitterCancelEventArgs e)
     {
       Program.Settings.ImportVerseFormSplitterDistance = PanelMain.SplitterDistance;
+    }
+
+    private void DataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+    {
+      if ( !Created ) return;
+      Program.Settings.ImportVerseFormGridColumnWidthHebrew = DataGridView.Columns[0].Width;
+      Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent = DataGridView.Columns[1].Width;
     }
 
     private void EditSource_TextChanged(object sender, EventArgs e)
