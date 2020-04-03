@@ -40,6 +40,14 @@ namespace Ordisoftware.HebrewWords
              ( Verse?.Number.ToString() ?? NULL );
     }
 
+    public string ToStringFull()
+    {
+      return ( Book?.Name ?? NULL ) + " (" +
+             ( Book?.CommonName ?? NULL ) + ") " +
+             ( Chapter?.Number.ToString() ?? NULL ) + "." +
+             ( Verse?.Number.ToString() ?? NULL );
+    }
+
     public string ToStringNumbers()
     {
       return ( Book?.Number.ToString() ?? NULL ) + "." +
