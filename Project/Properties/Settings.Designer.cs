@@ -596,5 +596,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["EditBooksFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool GoToMasterBookmarkAtStartup {
+            get {
+                return ((bool)(this["GoToMasterBookmarkAtStartup"]));
+            }
+            set {
+                this["GoToMasterBookmarkAtStartup"] = value;
+            }
+        }
     }
 }

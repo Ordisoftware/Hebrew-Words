@@ -75,6 +75,7 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
+      this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
@@ -455,11 +456,19 @@
       this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
       this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
       // 
+      // EditGoToMasterBookmarkAtStartup
+      // 
+      resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
+      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
+      this.EditGoToMasterBookmarkAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
+      this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
+      // 
       // EditOpenLastViewAtStartup
       // 
       resources.ApplyResources(this.EditOpenLastViewAtStartup, "EditOpenLastViewAtStartup");
       this.EditOpenLastViewAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenLastViewAtStartup;
-      this.EditOpenLastViewAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditOpenLastViewAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenLastViewAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
       this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
@@ -482,6 +491,7 @@
       this.Controls.Add(this.ActionSelectLangFR);
       this.Controls.Add(this.ActionSelectLangEN);
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
+      this.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
       this.Controls.Add(this.ActionOnlineSearchHelp);
@@ -576,5 +586,6 @@
     private System.Windows.Forms.Button ActionSelectOnlineSearch;
     private System.Windows.Forms.ContextMenuStrip MenuSelectSearchRequest;
     private System.Windows.Forms.Button ActionOnlineSearchHelp;
+    private System.Windows.Forms.CheckBox EditGoToMasterBookmarkAtStartup;
   }
 }

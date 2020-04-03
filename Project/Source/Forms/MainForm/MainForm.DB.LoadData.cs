@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Data;
 using System.Data.Odbc;
@@ -41,10 +41,13 @@ namespace Ordisoftware.HebrewWords
           SetView(ViewModeType.Verses, true);
           Program.Settings.CurrentSearchTypeTab = 0;
         }
-        GoTo(Program.Settings.BookmarkMasterBook,
-             Program.Settings.BookmarkMasterChapter,
-             Program.Settings.BookmarkMasterVerse,
-             true);
+        if ( Program.Settings.GoToMasterBookmarkAtStartup )
+          GoTo(Program.Settings.BookmarkMasterBook,
+               Program.Settings.BookmarkMasterChapter,
+               Program.Settings.BookmarkMasterVerse,
+               true);
+        else
+          GoTo(1, 1, 1, true);
         ActionSave.PerformClick();
       }
       catch ( OdbcException ex )
