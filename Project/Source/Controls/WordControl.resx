@@ -256,8 +256,29 @@
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copy unicode chars</value>
   </data>
+  <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
+        sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
+        eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
+        94QefRPVvOhqw5g7rYRftSrqmzU0NjfQ+ClLds7cE3r0TVTz/IaFlKt/wSEnxJHXX3F04BuakkJ1ztwT
+        evRNVJO8bsnL+sCXoIztRh34Xcdy5bPqnLkn9OibqObZtdbowGypBBEGqMian5tVnTP3hB59E9U4V09H
+        B4IgwNbWH1VCiOibe0KPvolqEldORQeKxaKSRRjivfwFixWBRRFibmZGvdOjb6Iau3P3wF6Wl4T52v1O
+        ZX3QN1ENF+npghL20jz8HcdHVnBMVvPwitpNeMX9B55ctpAeSqgjqaynKiP/up6fQyGXV+X5ebh+CRND
+        DuibqObBRasU77TQ29GC3ksnVcVl9XX8W3H53ic9+iYacVjWif8o+pJY7C81a0AShQAVCwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="ActionCopyTranslation.Text" xml:space="preserve">
+    <value>Copy translation</value>
+  </data>
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 170</value>
+    <value>201, 192</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
     <value>ContextMenuStripWord</value>
@@ -376,6 +397,12 @@
   </data>
   <data name="&gt;&gt;MenuSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyTranslation.Name" xml:space="preserve">
+    <value>ActionCopyTranslation</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCopyFontChars.Name" xml:space="preserve">
     <value>ActionCopyFontChars</value>

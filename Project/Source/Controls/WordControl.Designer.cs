@@ -38,6 +38,7 @@
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
@@ -65,7 +66,8 @@
             this.ActionOpenHebrewLetters,
             this.MenuSeparator1,
             this.ActionCopyFontChars,
-            this.ActionCopyUnicodeChars});
+            this.ActionCopyUnicodeChars,
+            this.ActionCopyTranslation});
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
@@ -102,6 +104,12 @@
       // 
       this.MenuSeparator1.Name = "MenuSeparator1";
       resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
+      // 
+      // ActionCopyTranslation
+      // 
+      resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
+      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
+      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
       // 
       // ActionCopyFontChars
       // 
@@ -150,5 +158,6 @@
     internal System.Windows.Forms.TextBox EditTranslation;
     internal System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
   }
 }

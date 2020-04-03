@@ -144,6 +144,11 @@ namespace Ordisoftware.HebrewWords
       Program.OpenHebrewLetters(LabelHebrew.Text);
     }
 
+    private void ActionCopyTranslation_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(Reference.Word.Translation);
+    }
+
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(Reference.Word.Original);
