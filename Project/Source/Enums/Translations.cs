@@ -132,6 +132,20 @@ namespace Ordisoftware.HebrewWords
         { "fr", "Restaurer les noms communs par défaut des livres ?" }
       };
 
+    static public readonly Dictionary<string, string> EmptyHistory
+      = new Dictionary<string, string>()
+      {
+        { "en", "Empty history?" },
+        { "fr", "Vider l'historique ?" }
+      };
+
+    static public readonly Dictionary<string, string> EmptyBookmarks
+      = new Dictionary<string, string>()
+      {
+        { "en", "Empty bookmarks?" },
+        { "fr", "Vider les signets?" }
+      };
+
     static public readonly Dictionary<string, string> HebrewLettersNotFound
       = new Dictionary<string, string>()
       {

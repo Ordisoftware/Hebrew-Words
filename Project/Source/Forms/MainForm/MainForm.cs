@@ -989,12 +989,25 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionClearHistory for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionClearHistory_Click(object sender, EventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo(Translations.EmptyHistory.GetLang()) ) return;
+      History.Clear();
+      UpdateHistory();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionClearBookmarks for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
+      if ( !DisplayManager.QueryYesNo(Translations.EmptyBookmarks.GetLang()) ) return;
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;
@@ -1013,17 +1026,6 @@ namespace Ordisoftware.HebrewWords
       Bookmarks.Sort();
       UpdateBookmarks();
       MenuBookmarks.ShowDropDown();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionClearHistory for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionClearHistory_Click(object sender, EventArgs e)
-    {
-      History.Clear();
-      UpdateHistory();
     }
 
     /// <summary>
