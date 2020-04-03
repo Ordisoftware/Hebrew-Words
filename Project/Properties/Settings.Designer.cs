@@ -323,7 +323,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("292, 366")]
+        [global::System.Configuration.DefaultSettingValueAttribute("292, 466")]
         public global::System.Drawing.Size SearchTranslatedFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["SearchTranslatedFormSize"]));

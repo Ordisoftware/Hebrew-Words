@@ -112,6 +112,11 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.FoundReferencesColumnRefWidth = ListView.Columns[0].Width;
     }
 
+    private void ListView_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      LabelHebrewWordSource.Text = ((ReferenceItem)ListView.SelectedItems[0].Tag).Word.Hebrew;
+    }
+
     private bool KeyProcessed = false;
 
     private void EditHebrew_KeyPress(object sender, KeyPressEventArgs e)

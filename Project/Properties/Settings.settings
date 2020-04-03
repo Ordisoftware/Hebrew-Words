@@ -83,7 +83,7 @@
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">292, 366</Value>
+      <Value Profile="(Default)">292, 466</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>

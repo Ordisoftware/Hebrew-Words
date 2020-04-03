@@ -52,6 +52,7 @@
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.LabelHebrewWordSource = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -77,7 +78,9 @@
       // 
       // LabelReference
       // 
+      this.LabelReference.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelReference, "LabelReference");
+      this.LabelReference.LinkColor = System.Drawing.Color.Navy;
       this.LabelReference.Name = "LabelReference";
       this.LabelReference.TabStop = true;
       this.LabelReference.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReference_LinkClicked);
@@ -112,6 +115,7 @@
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       this.ListView.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.ListView_ColumnWidthChanged);
+      this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
       this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
       this.ListView.Resize += new System.EventHandler(this.ListView_Resize);
       // 
@@ -172,6 +176,7 @@
       // 
       // PanelTop
       // 
+      this.PanelTop.Controls.Add(this.LabelHebrewWordSource);
       this.PanelTop.Controls.Add(this.EditDistinct);
       this.PanelTop.Controls.Add(this.ActionReset);
       this.PanelTop.Controls.Add(this.ActionDelLast);
@@ -232,6 +237,11 @@
       this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
       this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
       // 
+      // LabelHebrewWordSource
+      // 
+      resources.ApplyResources(this.LabelHebrewWordSource, "LabelHebrewWordSource");
+      this.LabelHebrewWordSource.Name = "LabelHebrewWordSource";
+      // 
       // SearchTranslatedForm
       // 
       resources.ApplyResources(this, "$this");
@@ -279,5 +289,6 @@
     private System.Windows.Forms.CheckBox EditReturn;
     private System.Windows.Forms.ToolStripMenuItem ActionAddTranslation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.Label LabelHebrewWordSource;
   }
 }
