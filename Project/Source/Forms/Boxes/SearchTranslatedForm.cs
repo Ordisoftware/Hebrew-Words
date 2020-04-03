@@ -178,10 +178,11 @@ namespace Ordisoftware.HebrewWords
     {
       return str.Replace(".", "")
                 .Replace(",", "")
-                .Replace(" ;", "")
                 .Replace(";", "")
-                .Replace(" :", "")
-                .Replace(":", "");
+                .Replace(":", "")
+                .Replace("!", "")
+                .Replace("?", "")
+                .Trim();
     }
 
     private void ActionCopyTranslation_Click(object sender, EventArgs e)
@@ -204,8 +205,16 @@ namespace Ordisoftware.HebrewWords
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
       var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
-      WordControl.Reference.Word.Translation += " / " + str;
-      WordControl.EditTranslation.Text = WordControl.Reference.Word.Translation;
+      if ( WordControl.Reference.Word.Translation.Trim() == "" )
+      {
+        WordControl.Reference.Word.Translation = str;
+        WordControl.EditTranslation.Text = str;
+      }
+      else
+      {
+        WordControl.Reference.Word.Translation += " / " + str;
+        WordControl.EditTranslation.Text = WordControl.Reference.Word.Translation;
+      }
     }
 
     private void EditHebrew_TextChanged(object sender, EventArgs e)

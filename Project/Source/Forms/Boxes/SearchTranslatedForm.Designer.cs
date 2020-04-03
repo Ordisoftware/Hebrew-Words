@@ -46,13 +46,13 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop = new System.Windows.Forms.Panel();
+      this.LabelHebrewWordSource = new System.Windows.Forms.Label();
       this.EditDistinct = new System.Windows.Forms.CheckBox();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionDelLast = new System.Windows.Forms.Button();
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.EditHebrew = new System.Windows.Forms.TextBox();
-      this.LabelHebrewWordSource = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -61,10 +61,10 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.EditReturn);
       this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditReturn
@@ -78,8 +78,8 @@
       // 
       // LabelReference
       // 
-      this.LabelReference.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelReference, "LabelReference");
+      this.LabelReference.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.LabelReference.LinkColor = System.Drawing.Color.Navy;
       this.LabelReference.Name = "LabelReference";
       this.LabelReference.TabStop = true;
@@ -95,17 +95,17 @@
       // 
       // PanelMain
       // 
-      this.PanelMain.Controls.Add(this.ListView);
       resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.Controls.Add(this.ListView);
       this.PanelMain.Name = "PanelMain";
       // 
       // ListView
       // 
+      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.ContextMenuStrip = this.ContextMenuStripResults;
-      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
       this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListView.HideSelection = false;
@@ -130,6 +130,7 @@
       // 
       // ContextMenuStripResults
       // 
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
             this.ActionAddTranslation,
@@ -138,7 +139,6 @@
             this.toolStripSeparator1,
             this.ActionReachReference});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionUseTranslation
       // 
@@ -154,8 +154,8 @@
       // 
       // toolStripSeparator2
       // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
       // 
       // ActionCopyTranslation
       // 
@@ -165,8 +165,8 @@
       // 
       // toolStripSeparator1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
       // 
       // ActionReachReference
       // 
@@ -176,6 +176,7 @@
       // 
       // PanelTop
       // 
+      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Controls.Add(this.LabelHebrewWordSource);
       this.PanelTop.Controls.Add(this.EditDistinct);
       this.PanelTop.Controls.Add(this.ActionReset);
@@ -183,8 +184,12 @@
       this.PanelTop.Controls.Add(this.ActionDelFirst);
       this.PanelTop.Controls.Add(this.EditWholeWord);
       this.PanelTop.Controls.Add(this.EditHebrew);
-      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
+      // 
+      // LabelHebrewWordSource
+      // 
+      resources.ApplyResources(this.LabelHebrewWordSource, "LabelHebrewWordSource");
+      this.LabelHebrewWordSource.Name = "LabelHebrewWordSource";
       // 
       // EditDistinct
       // 
@@ -236,11 +241,6 @@
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
       this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
       this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
-      // 
-      // LabelHebrewWordSource
-      // 
-      resources.ApplyResources(this.LabelHebrewWordSource, "LabelHebrewWordSource");
-      this.LabelHebrewWordSource.Name = "LabelHebrewWordSource";
       // 
       // SearchTranslatedForm
       // 
