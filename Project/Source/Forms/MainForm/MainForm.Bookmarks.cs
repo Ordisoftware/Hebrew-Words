@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewWords
           UpdateBookmarks();
         }
       };
-      ActionGoToBookmarkMaster.Text = bookmarkMaster.ToString();
+      ActionGoToBookmarkMaster.Text = bookmarkMaster.ToStringFull();
       ActionGoToBookmarkMaster.Tag = bookmarkMaster;
       ActionGoToBookmarkMaster.MouseDown += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
