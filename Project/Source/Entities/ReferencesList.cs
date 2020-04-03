@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,6 +48,13 @@ namespace Ordisoftware.HebrewWords
       Items.Clear();
       Save();
     }
+
+    public void Sort()
+    {
+      Items.Sort();
+    }
+
+    public abstract void Add(ReferenceItem reference);
 
     public void Load()
     {
@@ -95,8 +102,6 @@ namespace Ordisoftware.HebrewWords
         ex.Manage();
       }
     }
-
-    public abstract void Add(ReferenceItem reference);
 
   }
 

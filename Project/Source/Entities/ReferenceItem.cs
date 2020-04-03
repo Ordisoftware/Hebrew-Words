@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.HebrewWords.Data;
@@ -22,7 +22,8 @@ namespace Ordisoftware.HebrewWords
   /// <summary>
   /// Provide reference item
   /// </summary>
-  public class ReferenceItem
+  public class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
+
   {
 
     const string NULL = "(null)";
@@ -50,16 +51,16 @@ namespace Ordisoftware.HebrewWords
     {
     }
 
-    public ReferenceItem(DataSet.BooksRow book, 
-                         DataSet.ChaptersRow chapter, 
+    public ReferenceItem(DataSet.BooksRow book,
+                         DataSet.ChaptersRow chapter,
                          DataSet.VersesRow verse)
       : this(book, chapter, verse, null)
     {
     }
 
-    public ReferenceItem(DataSet.BooksRow book, 
-                         DataSet.ChaptersRow chapter, 
-                         DataSet.VersesRow verse, 
+    public ReferenceItem(DataSet.BooksRow book,
+                         DataSet.ChaptersRow chapter,
+                         DataSet.VersesRow verse,
                          DataSet.WordsRow word)
     {
       Book = book;
@@ -108,6 +109,11 @@ namespace Ordisoftware.HebrewWords
           && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
     }
 
+    public override bool Equals(object obj)
+    {
+      return Equals(this, obj as ReferenceItem);
+    }
+
     public bool Equals(ReferenceItem y)
     {
       return Equals(this, y);
@@ -123,6 +129,34 @@ namespace Ordisoftware.HebrewWords
       return ( Book?.Number.GetHashCode() ?? 0 )
            ^ ( Chapter?.Number.GetHashCode() ?? 0 )
            ^ ( Verse?.Number.GetHashCode() ?? 0 );
+    }
+
+    public int CompareTo(ReferenceItem other)
+    {
+      if ( other == null )
+        return 1;
+      else
+      {
+        if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+          && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
+          && ( Verse?.Number ?? 0 ) == ( other.Verse?.Number ?? 0 ) )
+          return 0;
+        else
+        if ( ( Book?.Number ?? 0 ) < ( other.Book?.Number ?? 0 ) )
+          return -1;
+        else
+        if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+          && ( Chapter?.Number ?? 0 ) < ( other.Chapter?.Number ?? 0 ) )
+          return -1;
+        else
+        if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+          && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
+          && ( Verse?.Number ?? 0 ) < ( other.Verse?.Number ?? 0 ) )
+          return -1;
+        else
+          return 1;
+      }
+
     }
 
   }
