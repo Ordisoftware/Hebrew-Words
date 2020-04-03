@@ -892,13 +892,14 @@ namespace Ordisoftware.HebrewWords
       {
         var reference = (ReferenceItem)control.Tag;
         var verse = reference.Verse;
-        Clipboard.SetText(verse.GetTranslation());
+        Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
       }
       else
       if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
       {
-        var verse = ( (ReferenceItem)( (Control)control.Tag ).Tag ).Verse;
-        Clipboard.SetText(verse.GetTranslation());
+        var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
+        var verse = reference.Verse;
+        Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
       }
     }
 
