@@ -109,9 +109,10 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
 - Add books common names field in the database and in the edit books information form.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Add source hebrew word in the search translated form.
 - Fix edit books information form : modifications are not saved since an old version.
 - Add sort bookmarks menu.
-- Add source hebrew word in the search translated form.
+- Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Improve UI/UX.
 
