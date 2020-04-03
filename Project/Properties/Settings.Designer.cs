@@ -167,7 +167,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=strong+hebrew+")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.pealim.com/search/?q=%WORD%")]
         public string SearchOnlineURL {
             get {
                 return ((string)(this["SearchOnlineURL"]));
@@ -215,7 +215,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("OnlineSearch")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SearchTranslated")]
         public global::Ordisoftware.HebrewWords.HebrewWordClickOpen HebrewWordClickOpen {
             get {
                 return ((global::Ordisoftware.HebrewWords.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));

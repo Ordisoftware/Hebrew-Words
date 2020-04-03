@@ -55,7 +55,7 @@
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
       this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
-      this.SelectOpenPealim = new System.Windows.Forms.RadioButton();
+      this.SelectOpenNothing = new System.Windows.Forms.RadioButton();
       this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
       this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
@@ -71,6 +71,9 @@
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
+      this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
@@ -238,8 +241,8 @@
       // 
       // GroupBoxHebrewWordClick
       // 
+      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenNothing);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
-      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenPealim);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
       resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
@@ -253,12 +256,12 @@
       this.SelectOpenOnlineSearch.TabStop = true;
       this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
       // 
-      // SelectOpenPealim
+      // SelectOpenNothing
       // 
-      resources.ApplyResources(this.SelectOpenPealim, "SelectOpenPealim");
-      this.SelectOpenPealim.Name = "SelectOpenPealim";
-      this.SelectOpenPealim.TabStop = true;
-      this.SelectOpenPealim.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.SelectOpenNothing, "SelectOpenNothing");
+      this.SelectOpenNothing.Name = "SelectOpenNothing";
+      this.SelectOpenNothing.TabStop = true;
+      this.SelectOpenNothing.UseVisualStyleBackColor = true;
       // 
       // SelectOpenTranslated
       // 
@@ -388,6 +391,7 @@
       // MenuSelectOnlineVerseURL
       // 
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
+      this.MenuSelectOnlineVerseURL.ShowImageMargin = false;
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
       // ActionOnlineVerseHelp
@@ -416,6 +420,31 @@
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
+      // ActionSelectOnlineSearch
+      // 
+      this.ActionSelectOnlineSearch.AllowDrop = true;
+      this.ActionSelectOnlineSearch.ContextMenuStrip = this.MenuSelectSearchRequest;
+      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
+      this.ActionSelectOnlineSearch.Name = "ActionSelectOnlineSearch";
+      this.ActionSelectOnlineSearch.UseVisualStyleBackColor = true;
+      this.ActionSelectOnlineSearch.Click += new System.EventHandler(this.ActionSelectOnlineSearch_Click);
+      // 
+      // MenuSelectSearchRequest
+      // 
+      this.MenuSelectSearchRequest.Name = "MenuSelectOnlineVerseURL";
+      this.MenuSelectSearchRequest.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuSelectSearchRequest, "MenuSelectSearchRequest");
+      // 
+      // ActionOnlineSearchHelp
+      // 
+      this.ActionOnlineSearchHelp.AllowDrop = true;
+      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
+      this.ActionOnlineSearchHelp.Name = "ActionOnlineSearchHelp";
+      this.ActionOnlineSearchHelp.UseVisualStyleBackColor = true;
+      this.ActionOnlineSearchHelp.Click += new System.EventHandler(this.ActionOnlineSearchHelp_Click);
       // 
       // EditOpenGeneratedMSWordFiles
       // 
@@ -455,7 +484,9 @@
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.Controls.Add(this.ActionOnlineSearchHelp);
       this.Controls.Add(this.ActionOnlineVerseHelp);
+      this.Controls.Add(this.ActionSelectOnlineSearch);
       this.Controls.Add(this.ActionSelectOnlineVerseURL);
       this.Controls.Add(this.EditWordControlWidth);
       this.Controls.Add(LabelWordControlWidth);
@@ -541,6 +572,9 @@
     private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
     private System.Windows.Forms.Button ActionSelectLangEN;
     private System.Windows.Forms.Button ActionSelectLangFR;
-    private System.Windows.Forms.RadioButton SelectOpenPealim;
+    private System.Windows.Forms.RadioButton SelectOpenNothing;
+    private System.Windows.Forms.Button ActionSelectOnlineSearch;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectSearchRequest;
+    private System.Windows.Forms.Button ActionOnlineSearchHelp;
   }
 }

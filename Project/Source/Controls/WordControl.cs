@@ -134,8 +134,7 @@ namespace Ordisoftware.HebrewWords
         case HebrewWordClickOpen.SearchTranslated:
           ActionSearchTranslated.PerformClick();
           break;
-        case HebrewWordClickOpen.PealimSearch:
-          ActionSearchOnline.DropDownItems[0].PerformClick();
+        case HebrewWordClickOpen.Nothing:
           break;
       }
     }
@@ -166,6 +165,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
+    {
+      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
+    }
+
+    private void ActionSearchOnline_Click_1(object sender, EventArgs e)
     {
       Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
     }

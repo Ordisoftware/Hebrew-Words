@@ -51,11 +51,11 @@
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.PanelMain = new System.Windows.Forms.Panel();
-      this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
@@ -150,6 +150,7 @@
       // 
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
+      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
       // 
       // ActionSearchWord
       // 
@@ -219,6 +220,15 @@
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
+      // ActionRestoreCommonNames
+      // 
+      this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
+      this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
+      this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
+      this.ActionRestoreCommonNames.TabStop = true;
+      this.ActionRestoreCommonNames.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionRestoreCommonNames_LinkClicked);
+      // 
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
@@ -245,15 +255,6 @@
       this.PanelMain.Controls.Add(this.EditBooks);
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
-      // 
-      // ActionRestoreCommonNames
-      // 
-      this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
-      this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
-      this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
-      this.ActionRestoreCommonNames.TabStop = true;
-      this.ActionRestoreCommonNames.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionRestoreCommonNames_LinkClicked);
       // 
       // EditBooksForm
       // 

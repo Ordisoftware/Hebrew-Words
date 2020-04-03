@@ -219,6 +219,13 @@ namespace Ordisoftware.HebrewWords
         { "fr", "CHAPITRE" }
       };
 
+    static public readonly Dictionary<string, string> OpenOnlineSearchHelp
+      = new Dictionary<string, string>()
+      {
+        { "en", "Use the %WORD% tag to replace the value." },
+        { "fr", "Utiliser le tag %WORD% pour remplacer la valeur." },
+      };
+
     static public readonly Dictionary<string, string> OpenOnlineVerseHelp
       = new Dictionary<string, string>()
       {

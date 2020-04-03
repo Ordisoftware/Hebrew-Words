@@ -44,7 +44,7 @@
       <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
     <Setting Name="SearchOnlineURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.google.com/search?q=strong+hebrew+</Value>
+      <Value Profile="(Default)">https://www.pealim.com/search/?q=%WORD%</Value>
     </Setting>
     <Setting Name="BackupPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -56,7 +56,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
-      <Value Profile="(Default)">OnlineSearch</Value>
+      <Value Profile="(Default)">SearchTranslated</Value>
     </Setting>
     <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>

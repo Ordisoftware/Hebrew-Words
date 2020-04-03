@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewWords
 
     static public void OpenOnlineConcordance(string hebrew)
     {
-      RunShell(Settings.SearchOnlineURL + hebrew);
+      RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
     }
 
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)

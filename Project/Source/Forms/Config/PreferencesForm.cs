@@ -56,12 +56,21 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      EventHandler action = (sender, e) =>
+      EventHandler action1 = (sender, e) =>
       {
         EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
       };
+      EventHandler action2 = (sender, e) =>
+      {
+        EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+      };
       foreach ( var item in OnlineBibleProviders.Items )
-        MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action));
+        MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
+      foreach ( var item in OnlineWordProviders.Items )
+        if ( item.Name == "-" )
+          MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
+        else
+          MenuSelectSearchRequest.Items.Add(item.CreateMenuItem(action2));
     }
 
     /// <summary>
@@ -87,7 +96,7 @@ namespace Ordisoftware.HebrewWords
       SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
       SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
       SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
-      SelectOpenPealim.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.PealimSearch;
+      SelectOpenNothing.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Nothing;
       if ( First )
       {
         CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
@@ -124,8 +133,8 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
       if ( SelectOpenTranslated.Checked )
         Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
-      if ( SelectOpenPealim.Checked )
-        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.PealimSearch;
+      if ( SelectOpenNothing.Checked )
+        Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Nothing;
       MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( MainForm.Instance.TimerAutoSave.Enabled )
         MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
@@ -214,6 +223,11 @@ namespace Ordisoftware.HebrewWords
       EditMinRefCount.Maximum = EditMaxRefCount.Value;
     }
 
+    private void ActionSelectOnlineSearch_Click(object sender, EventArgs e)
+    {
+      MenuSelectSearchRequest.Show(ActionSelectOnlineSearch, new Point(0, ActionSelectOnlineSearch.Height));
+    }
+
     private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
     {
       MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
@@ -222,6 +236,11 @@ namespace Ordisoftware.HebrewWords
     private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
     {
       DisplayManager.Show(Translations.OpenOnlineVerseHelp.GetLang());
+    }
+
+    private void ActionOnlineSearchHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.Show(Translations.OpenOnlineSearchHelp.GetLang());
     }
 
   }

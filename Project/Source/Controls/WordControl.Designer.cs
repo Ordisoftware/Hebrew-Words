@@ -73,6 +73,7 @@
       // 
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
+      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click_1);
       // 
       // ActionSearchTranslated
       // 

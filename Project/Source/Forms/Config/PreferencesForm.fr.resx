@@ -128,7 +128,7 @@
     <value>154, 13</value>
   </data>
   <data name="LabelOnlineSearch.Text" xml:space="preserve">
-    <value>Requête de recherche en ligne</value>
+    <value>Requête de recherche en ligne par défaut</value>
   </data>
   <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 13</value>
@@ -235,7 +235,13 @@
     <value>172, 17</value>
   </data>
   <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
-    <value>Requête de recherche en ligne</value>
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="SelectOpenPealim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="SelectOpenPealim.Text" xml:space="preserve">
+    <value>Recherche Pealim</value>
   </data>
   <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 17</value>
@@ -267,7 +273,7 @@
   <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
         +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
         eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
         e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm
@@ -351,10 +357,6 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>

@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewWords
     OnlineSearch,
     HebrewLetters,
     SearchTranslated,
-    PealimSearch
+    Nothing
   }
 
 }

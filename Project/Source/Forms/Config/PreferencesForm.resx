@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>35</value>
   </data>
   <metadata name="LabelOnlineSearch.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -166,13 +166,13 @@
     <value>18, 131</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>145, 13</value>
   </data>
   <data name="LabelOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
   <data name="LabelOnlineSearch.Text" xml:space="preserve">
-    <value>Online search request</value>
+    <value>Default online search request</value>
   </data>
   <data name="&gt;&gt;LabelOnlineSearch.Name" xml:space="preserve">
     <value>LabelOnlineSearch</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelOnlineSearch.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>34</value>
   </data>
   <metadata name="LabelBackupPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBackupPath.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>31</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBackupCount.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>29</value>
   </data>
   <metadata name="LabelAutoSaveDelay.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -283,7 +283,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>27</value>
   </data>
   <metadata name="LabelOnlineVerseURL.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <metadata name="LabelCommentaryLinesCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -349,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
   <metadata name="LabelBookmarksCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -382,7 +382,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBookmarksCount.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <metadata name="LabelWordControlWidth.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -415,7 +415,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelWordControlWidth.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <metadata name="LabelMaxRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -448,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMaxRefCount.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <metadata name="LabelHistoryCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -481,7 +481,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHistoryCount.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <metadata name="LabelMinRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -514,7 +514,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMinRefCount.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -598,7 +598,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>38</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 100</value>
@@ -619,7 +619,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>37</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -662,7 +662,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>33</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -689,7 +689,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>36</value>
   </data>
   <data name="ActionSelectBackupPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -732,7 +732,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectBackupPath.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>30</value>
   </data>
   <data name="EditBackupPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 250</value>
@@ -753,7 +753,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBackupPath.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>32</value>
   </data>
   <data name="EditBackupCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 299</value>
@@ -774,7 +774,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBackupCount.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>28</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 349</value>
@@ -795,7 +795,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>26</value>
+  </data>
+  <data name="SelectOpenNothing.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectOpenNothing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectOpenNothing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectOpenNothing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 89</value>
+  </data>
+  <data name="SelectOpenNothing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="SelectOpenNothing.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectOpenNothing.Text" xml:space="preserve">
+    <value>Nothing</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNothing.Name" xml:space="preserve">
+    <value>SelectOpenNothing</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNothing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNothing.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNothing.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="SelectOpenOnlineSearch.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -810,13 +843,13 @@
     <value>18, 20</value>
   </data>
   <data name="SelectOpenOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
+    <value>125, 17</value>
   </data>
   <data name="SelectOpenOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
-    <value>Online search request</value>
+    <value>Default online search</value>
   </data>
   <data name="&gt;&gt;SelectOpenOnlineSearch.Name" xml:space="preserve">
     <value>SelectOpenOnlineSearch</value>
@@ -828,39 +861,6 @@
     <value>GroupBoxHebrewWordClick</value>
   </data>
   <data name="&gt;&gt;SelectOpenOnlineSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SelectOpenPealim.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectOpenPealim.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectOpenPealim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectOpenPealim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 43</value>
-  </data>
-  <data name="SelectOpenPealim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
-  </data>
-  <data name="SelectOpenPealim.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectOpenPealim.Text" xml:space="preserve">
-    <value>Pealim search</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenPealim.Name" xml:space="preserve">
-    <value>SelectOpenPealim</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenPealim.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenPealim.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenPealim.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="SelectOpenTranslated.AutoSize" type="System.Boolean, mscorlib">
@@ -873,7 +873,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 66</value>
+    <value>18, 43</value>
   </data>
   <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -906,7 +906,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenHebrewLetters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 89</value>
+    <value>18, 66</value>
   </data>
   <data name="SelectOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 17</value>
@@ -954,7 +954,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>25</value>
   </data>
   <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 200</value>
@@ -975,7 +975,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>24</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
@@ -999,7 +999,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="EditBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>263, 399</value>
@@ -1020,7 +1020,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>263, 349</value>
@@ -1041,7 +1041,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="EditMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>263, 449</value>
@@ -1062,7 +1062,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMaxRefCount.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="EditHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>378, 399</value>
@@ -1083,7 +1083,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="EditMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>263, 499</value>
@@ -1104,13 +1104,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMinRefCount.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <metadata name="MenuSelectOnlineVerseURL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>317, 17</value>
   </metadata>
   <data name="MenuSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 4</value>
+    <value>36, 4</value>
   </data>
   <data name="&gt;&gt;MenuSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>MenuSelectOnlineVerseURL</value>
@@ -1161,7 +1161,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="ActionOnlineVerseHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1204,7 +1204,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionOnlineVerseHelp.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1245,7 +1245,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1288,7 +1288,107 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <metadata name="MenuSelectSearchRequest.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>518, 19</value>
+  </metadata>
+  <data name="MenuSelectSearchRequest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 4</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectSearchRequest.Name" xml:space="preserve">
+    <value>MenuSelectSearchRequest</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectSearchRequest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
+        lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
+        rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
+        mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
+        Q3A7lzvPcLwlhzdT2ZwW3cTrHJmxaFQb1Y9/ip+neegDz/hP3i5k45rbw4PJbZiDKznhFEmqmePAsws8
+        8pezUuX8EYtGtUn9lOKeBRxjcH8EjMVVVJaL1FTbuH3Thmitp772HmKNiFgrctdai8VcjcVSkxxpsFnT
+        zDnPAgZp5xKDAf+gH5fbi6vjFe4OLx1hXniidETPYX+AEmMFkQZbBAeFgbMobjUz9T1EKBgkGAz9k4mJ
+        CUrLK+tlidrWuaMtTVQUFTPQP4C52oqp0kLFMoRrVZLna/9gdIrES1ZL4o0PlBkK6e3ppcHWxEhglMAy
+        hGsNtka6unspLTNF1kiKF+zBUn0+n7q78bz0MjTkw+lsx9nmwtHm/o3ThW9oiJeS52NXD+Wmqug7SNp5
+        UXt9rFAnoBc0FGjU5Gm0KNX55Kr0ZKsKkauvoRQKUAv5aLT5CLoC5HKlI5aPaMeq8zf1a/Jc/tV6Lyuu
+        vpF2zGLYfAif+Qjegn11kif8dX+yVSIqpUKBSi5HI8+VzlyyspT4TXthRojQb9pPZraWHIWKXIVykVhc
+        JktLTSM9RmpKOoePnqLPuIv3RckR+oy7OXjsNCkpGaSlpi8Si0f093j/gSz5F3LjOUKOXwa4AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>447, 148</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectOnlineSearch.Name" xml:space="preserve">
+    <value>ActionSelectOnlineSearch</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectOnlineSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectOnlineSearch.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectOnlineSearch.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
+        +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
+        eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
+        e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm
+        vwxN6qvYUj+J8fiqxNub/FKnj/7MP8lWRn50vllC/u0QCsTuvRGUgbJ7s9hxLYCjnXMS72oJSJ0++pmT
+        BRZFQ4N3AUXtMyi+8xaFbWHsbzXKbgYR+fxNFuy7FZIeLv3MyQJruYZzgwmUud9l9mDHHApF2evYVxmu
+        HtBRfHcWh+6ndfqZkwW2ci+UnhiOd0dwrCu99ocRHBAlnMujSZSKb/uDeanRRz9zRoG25vBEUdGrQ3kS
+        k+t4HIO9K4pS9zwOi7KTnvcZjT76mZMFFvuj4YIWP6oGP+LM0wRc/TqcfXGcECEOLzF56vTRz5wsEJPL
+        9zh74qgZ+YSzw0lUCtPp/oQs4CUmT50+4/256bgYc/7FmhyXD5UDCVzyLaJOS+H8iwVUDSXlJSZPnT76
+        jWhmskhaFBUlrUHUqilcebmMxrFleYnJUzfCWenY70Nyt+VI93Oroq5ln1KxvsTkqRu+/w7ftlMszetL
+        vPHmzJhMPwHQ0wXkZ5DOYAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>475, 148</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ActionOnlineSearchHelp.Name" xml:space="preserve">
+    <value>ActionOnlineSearchHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionOnlineSearchHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOnlineSearchHelp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionOnlineSearchHelp.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1318,7 +1418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOpenGeneratedMSWordFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditOpenLastViewAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1348,7 +1448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOpenLastViewAtStartup.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1378,7 +1478,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

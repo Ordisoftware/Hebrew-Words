@@ -132,12 +132,12 @@ namespace Ordisoftware.HebrewWords
 
       item = new OnlineWordProvider();
       item.Name = "Google Search";
-      item.URL = "https://www.google.com/search?q=%WORD%";
+      item.URL = "https://www.google.com/search?q=hebrew+strong+%WORD%";
       Items.Add(item);
 
       item = new OnlineWordProvider();
       item.Name = "Bing Search";
-      item.URL = "http://www.bing.com/search?q=%WORD%";
+      item.URL = "http://www.bing.com/search?q=hebrew+strong+%WORD%";
       Items.Add(item);
 
     }

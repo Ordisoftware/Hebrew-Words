@@ -86,6 +86,11 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Load(object sender, EventArgs e)
     {
       Program.Settings.Retrieve();
+      if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
+      {
+        Program.Settings.SearchOnlineURL = "https://www.google.com/search?q=strong+hebrew+%WORD%";
+        Program.Settings.Save();
+      }
       UpdateSearchButtons();
     }
 

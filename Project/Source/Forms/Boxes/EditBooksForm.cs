@@ -90,6 +90,12 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    private void ActionSearchOnline_Click(object sender, EventArgs e)
+    {
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      Program.OpenOnlineConcordance(( (Data.DataSet.BooksRow)row ).Hebrew);
+    }
+
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       string strHebrew = (string)EditBooks.SelectedRows[0].Cells[1].Value;

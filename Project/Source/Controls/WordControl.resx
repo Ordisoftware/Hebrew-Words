@@ -257,7 +257,7 @@
     <value>Copy unicode chars</value>
   </data>
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 148</value>
+    <value>201, 170</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
     <value>ContextMenuStripWord</value>
