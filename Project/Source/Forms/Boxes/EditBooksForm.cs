@@ -59,6 +59,7 @@ namespace Ordisoftware.HebrewWords
     private void EditBooksForm_Load(object sender, EventArgs e)
     {
       EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
+      ActiveControl = EditBooks;
     }
 
     private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
