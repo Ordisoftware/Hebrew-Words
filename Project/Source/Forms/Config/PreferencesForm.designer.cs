@@ -54,8 +54,8 @@
       this.EditBackupCount = new System.Windows.Forms.NumericUpDown();
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
-      this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
       this.SelectOpenNothing = new System.Windows.Forms.RadioButton();
+      this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
       this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
       this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
@@ -249,19 +249,19 @@
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
-      // SelectOpenOnlineSearch
-      // 
-      resources.ApplyResources(this.SelectOpenOnlineSearch, "SelectOpenOnlineSearch");
-      this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
-      this.SelectOpenOnlineSearch.TabStop = true;
-      this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
-      // 
       // SelectOpenNothing
       // 
       resources.ApplyResources(this.SelectOpenNothing, "SelectOpenNothing");
       this.SelectOpenNothing.Name = "SelectOpenNothing";
       this.SelectOpenNothing.TabStop = true;
       this.SelectOpenNothing.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenOnlineSearch
+      // 
+      resources.ApplyResources(this.SelectOpenOnlineSearch, "SelectOpenOnlineSearch");
+      this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
+      this.SelectOpenOnlineSearch.TabStop = true;
+      this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
       // 
       // SelectOpenTranslated
       // 

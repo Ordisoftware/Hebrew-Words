@@ -144,7 +144,7 @@
   <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
         GRKFwsLEtTGRJoiGi1wUKdG2UGopFPydKW4aWLHTk3zTk9Pp30tK/kGFUzk1lMghGBecYgICsexCQSqU
         EHCazKcJa0rVFh4rLXp8tRUrTYjPLyiUaguJTzUUyw07hLA71dsyUukcNrY4rFPJyyzqko7KW49S51Tb
         PZQbXftpCFsk9Qtuzz7eFcPm8vDoKCZaXQ2NTm8OmzclFSfnGRC29A0L25wX8mAMWbewwx9CNaY0mAZ+
@@ -157,7 +157,7 @@
     <value>285, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
-    <value>Chercher traduction</value>
+    <value>Recherche traduction</value>
   </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -180,7 +180,7 @@
     <value>285, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
-    <value>Chercher en ligne</value>
+    <value>Recherche en ligne</value>
   </data>
   <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -202,7 +202,7 @@
     <value>285, 22</value>
   </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
-    <value>Chercher dans la base de données</value>
+    <value>Recherche dans la base de données</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 6</value>
@@ -210,7 +210,7 @@
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
         GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
         sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
         eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz

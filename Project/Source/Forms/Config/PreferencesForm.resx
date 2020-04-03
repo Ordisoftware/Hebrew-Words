@@ -166,13 +166,13 @@
     <value>18, 131</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>171, 13</value>
   </data>
   <data name="LabelOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
   <data name="LabelOnlineSearch.Text" xml:space="preserve">
-    <value>Default online search request</value>
+    <value>Default online search word request</value>
   </data>
   <data name="&gt;&gt;LabelOnlineSearch.Name" xml:space="preserve">
     <value>LabelOnlineSearch</value>
@@ -298,13 +298,13 @@
     <value>18, 181</value>
   </data>
   <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+    <value>174, 13</value>
   </data>
   <data name="LabelOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
     <value>66</value>
   </data>
   <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
-    <value>Online verse url</value>
+    <value>Default online search verse request</value>
   </data>
   <data name="&gt;&gt;LabelOnlineVerseURL.Name" xml:space="preserve">
     <value>LabelOnlineVerseURL</value>

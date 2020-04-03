@@ -125,10 +125,10 @@
     <value>Chemin de Hebrew Letters</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
+    <value>240, 13</value>
   </data>
   <data name="LabelOnlineSearch.Text" xml:space="preserve">
-    <value>Requête de recherche en ligne par défaut</value>
+    <value>Requête de recherche de mot en ligne par défaut</value>
   </data>
   <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 13</value>
@@ -149,10 +149,10 @@
     <value>Délai pour la sauvegarde automatique (min)</value>
   </data>
   <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
+    <value>252, 13</value>
   </data>
   <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
-    <value>URL du verset en ligne</value>
+    <value>Requête de recherche de verset en ligne par défaut</value>
   </data>
   <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 13</value>
@@ -231,26 +231,26 @@
         qfkFIaj3TySvysIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Clic sur mot hébreu ouvre</value>
+  </data>
+  <data name="SelectOpenNothing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="SelectOpenNothing.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
   <data name="SelectOpenOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 17</value>
+    <value>169, 17</value>
   </data>
   <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
     <value>Recherche en ligne par défaut</value>
-  </data>
-  <data name="SelectOpenPealim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
-  </data>
-  <data name="SelectOpenPealim.Text" xml:space="preserve">
-    <value>Recherche Pealim</value>
   </data>
   <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 17</value>
   </data>
   <data name="SelectOpenTranslated.Text" xml:space="preserve">
     <value>Recherche des traductions</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Clic sur mot hébreu ouvre</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -314,6 +314,40 @@
         2YAmtllCLHqgkNPQhajzyZnTTE3+YnxiQjc1jTxC2LccjmyGY0VQccAIuGBj9dMweY+C5DYGEA3d2tT5
         v8Mr4MQWOFkM5lIjoMKmSmgr0c5DnLageJy4HG+x2+06l4s2fxcBWaAVzeoRQpWPQZRIpf+o5K/XtTCI
         3zwauJ2iBs52AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
+        lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
+        rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
+        mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
+        Q3A7lzvPcLwlhzdT2ZwW3cTrHJmxaFQb1Y9/ip+neegDz/hP3i5k45rbw4PJbZiDKznhFEmqmePAsws8
+        8pezUuX8EYtGtUn9lOKeBRxjcH8EjMVVVJaL1FTbuH3Thmitp772HmKNiFgrctdai8VcjcVSkxxpsFnT
+        zDnPAgZp5xKDAf+gH5fbi6vjFe4OLx1hXniidETPYX+AEmMFkQZbBAeFgbMobjUz9T1EKBgkGAz9k4mJ
+        CUrLK+tlidrWuaMtTVQUFTPQP4C52oqp0kLFMoRrVZLna/9gdIrES1ZL4o0PlBkK6e3ppcHWxEhglMAy
+        hGsNtka6unspLTNF1kiKF+zBUn0+n7q78bz0MjTkw+lsx9nmwtHm/o3ThW9oiJeS52NXD+Wmqug7SNp5
+        UXt9rFAnoBc0FGjU5Gm0KNX55Kr0ZKsKkauvoRQKUAv5aLT5CLoC5HKlI5aPaMeq8zf1a/Jc/tV6Lyuu
+        vpF2zGLYfAif+Qjegn11kif8dX+yVSIqpUKBSi5HI8+VzlyyspT4TXthRojQb9pPZraWHIWKXIVykVhc
+        JktLTSM9RmpKOoePnqLPuIv3RckR+oy7OXjsNCkpGaSlpi8Si0f093j/gSz5F3LjOUKOXwa4AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
+        +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
+        eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
+        e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm
+        vwxN6qvYUj+J8fiqxNub/FKnj/7MP8lWRn50vllC/u0QCsTuvRGUgbJ7s9hxLYCjnXMS72oJSJ0++pmT
+        BRZFQ4N3AUXtMyi+8xaFbWHsbzXKbgYR+fxNFuy7FZIeLv3MyQJruYZzgwmUud9l9mDHHApF2evYVxmu
+        HtBRfHcWh+6ndfqZkwW2ci+UnhiOd0dwrCu99ocRHBAlnMujSZSKb/uDeanRRz9zRoG25vBEUdGrQ3kS
+        k+t4HIO9K4pS9zwOi7KTnvcZjT76mZMFFvuj4YIWP6oGP+LM0wRc/TqcfXGcECEOLzF56vTRz5wsEJPL
+        9zh74qgZ+YSzw0lUCtPp/oQs4CUmT50+4/256bgYc/7FmhyXD5UDCVzyLaJOS+H8iwVUDSXlJSZPnT76
+        jWhmskhaFBUlrUHUqilcebmMxrFleYnJUzfCWenY70Nyt+VI93Oroq5ln1KxvsTkqRu+/w7ftlMszetL
+        vPHmzJhMPwHQ0wXkZ5DOYAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Size" type="System.Drawing.Size, System.Drawing">

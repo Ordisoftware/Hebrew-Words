@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      Program.OpenOnlineConcordance(( (Data.DataSet.BooksRow)row ).Hebrew);
+      Program.OpenOnlineConcordance(( (Data.DataSet.BooksRow)row ).Original);
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -124,9 +124,12 @@ namespace Ordisoftware.HebrewWords
       if ( strName.StartsWith("a ") ) strName = strName.Substring(2, strName.Length - 2);
       else
       if ( strName.StartsWith("b ") ) strName = strName.Substring(2, strName.Length - 2);
-      string strTranlation = (string)EditBooks.SelectedRows[0].Cells[3].Value;
+      string strCommonName = (string)EditBooks.SelectedRows[0].Cells[3].Value;
+      if ( strCommonName != "" )
+        strName += " (" + strCommonName + ")";
+      string strTranlation = (string)EditBooks.SelectedRows[0].Cells[4].Value;
       if ( strTranlation != "" )
-        strName += " (" + strTranlation + ")";
+        strName += " - " + strTranlation;
       Clipboard.SetText(strName);
     }
 

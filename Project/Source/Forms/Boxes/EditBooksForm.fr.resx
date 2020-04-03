@@ -134,7 +134,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 176</value>
+    <value>311, 176</value>
   </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -154,7 +154,10 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
+  </data>
+  <data name="ActionSearchOnline.Text" xml:space="preserve">
+    <value>Recherche en ligne</value>
   </data>
   <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -173,10 +176,13 @@
 </value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
+  </data>
+  <data name="ActionSearchWord.Text" xml:space="preserve">
+    <value>Recherche dans la base de données</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>307, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -193,10 +199,10 @@
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>307, 6</value>
   </data>
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -214,10 +220,10 @@
 </value>
   </data>
   <data name="ActionCopyName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copier</value>
+    <value>Copier le nom phonétique avec la traduction</value>
   </data>
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -235,7 +241,10 @@
 </value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
+  </data>
+  <data name="ActionCopyFontChars.Text" xml:space="preserve">
+    <value>Copier les caractères de la fonte Hebrew</value>
   </data>
   <data name="ActionCopyUnicodeChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -253,10 +262,13 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
+  </data>
+  <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
+    <value>Copier les caractères unicodes</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>307, 6</value>
   </data>
   <data name="ActionEditMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -275,13 +287,18 @@
 </value>
   </data>
   <data name="ActionEditMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>310, 22</value>
+  </data>
+  <data name="ActionEditMemo.Text" xml:space="preserve">
+    <value>Editer le mémo</value>
+  </data>
+  <data name="ActionRestoreCommonNames.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="ActionRestoreCommonNames.Text" xml:space="preserve">
+    <value>Restaurer les noms communs par défaut</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.EditBooks = new System.Windows.Forms.DataGridView();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,11 +66,11 @@
       // 
       // EditBooks
       // 
+      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.AllowUserToAddRows = false;
       this.EditBooks.AllowUserToDeleteRows = false;
       this.EditBooks.AllowUserToResizeRows = false;
       this.EditBooks.AutoGenerateColumns = false;
-      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -99,9 +99,9 @@
       // dataGridViewTextBoxColumn3
       // 
       this.dataGridViewTextBoxColumn3.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
       this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
       this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -132,6 +132,7 @@
       // 
       // ContextMenuStripResults
       // 
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.ActionSearchWord,
@@ -144,7 +145,6 @@
             this.toolStripSeparator3,
             this.ActionEditMemo});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionSearchOnline
       // 
@@ -160,8 +160,8 @@
       // 
       // toolStripSeparator2
       // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
       // 
       // ActionOpenHebrewLetters
       // 
@@ -171,8 +171,8 @@
       // 
       // toolStripSeparator1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
       // 
       // ActionCopyName
       // 
@@ -194,8 +194,8 @@
       // 
       // toolStripSeparator3
       // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
       // 
       // ActionEditMemo
       // 
@@ -215,15 +215,15 @@
       // 
       // panel1
       // 
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionRestoreCommonNames);
       this.panel1.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // ActionRestoreCommonNames
       // 
-      this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
+      this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
       this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
       this.ActionRestoreCommonNames.TabStop = true;
@@ -252,8 +252,8 @@
       // 
       // PanelMain
       // 
-      this.PanelMain.Controls.Add(this.EditBooks);
       resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.Controls.Add(this.EditBooks);
       this.PanelMain.Name = "PanelMain";
       // 
       // EditBooksForm

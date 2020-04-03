@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Retrieve();
       if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
-        Program.Settings.SearchOnlineURL = "https://www.google.com/search?q=strong+hebrew+%WORD%";
+        Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
         Program.Settings.Save();
       }
       UpdateSearchButtons();
