@@ -1003,8 +1003,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSortBookmarks_Click(object sender, EventArgs e)
     {
-      // TODO
-      throw new NotImplementedException();
+      Bookmarks.Sort();
+      UpdateBookmarks();
     }
 
     /// <summary>
