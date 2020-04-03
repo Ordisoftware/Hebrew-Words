@@ -490,6 +490,7 @@
       resources.ApplyResources(this.EditSearchPaging, "EditSearchPaging");
       this.EditSearchPaging.Name = "EditSearchPaging";
       this.EditSearchPaging.ReadOnly = true;
+      this.EditSearchPaging.TabStop = false;
       // 
       // EditSearchInKetouvim
       // 

@@ -445,6 +445,12 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
+  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
+    <value>ColumnHebrew</value>
+  </data>
+  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnCurrentTranslation.Name" xml:space="preserve">
     <value>ColumnCurrentTranslation</value>
   </data>
@@ -455,12 +461,6 @@
     <value>ColumnImportedTranslation</value>
   </data>
   <data name="&gt;&gt;ColumnImportedTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
-    <value>ColumnHebrew</value>
-  </data>
-  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;importResultsBindingSource.Name" xml:space="preserve">

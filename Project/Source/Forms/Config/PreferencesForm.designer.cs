@@ -55,6 +55,7 @@
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
       this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
+      this.SelectOpenPealim = new System.Windows.Forms.RadioButton();
       this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
       this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
       this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.SelectOpenPealim = new System.Windows.Forms.RadioButton();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -252,6 +252,13 @@
       this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
       this.SelectOpenOnlineSearch.TabStop = true;
       this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenPealim
+      // 
+      resources.ApplyResources(this.SelectOpenPealim, "SelectOpenPealim");
+      this.SelectOpenPealim.Name = "SelectOpenPealim";
+      this.SelectOpenPealim.TabStop = true;
+      this.SelectOpenPealim.UseVisualStyleBackColor = true;
       // 
       // SelectOpenTranslated
       // 
@@ -436,13 +443,6 @@
       this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // SelectOpenPealim
-      // 
-      resources.ApplyResources(this.SelectOpenPealim, "SelectOpenPealim");
-      this.SelectOpenPealim.Name = "SelectOpenPealim";
-      this.SelectOpenPealim.TabStop = true;
-      this.SelectOpenPealim.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 

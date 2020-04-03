@@ -546,42 +546,6 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
-    <value>ActionReset</value>
-  </data>
-  <data name="&gt;&gt;ActionReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionReset.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 530</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>35</value>
-  </data>
   <data name="ActionReset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -612,6 +576,30 @@
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 530</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>494, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 100</value>
   </data>
@@ -619,7 +607,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -662,7 +650,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -689,7 +677,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
     <value>EditOnlineSearch</value>
@@ -732,7 +720,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectBackupPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;ActionSelectBackupPath.Name" xml:space="preserve">
     <value>ActionSelectBackupPath</value>
@@ -753,7 +741,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditBackupPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;EditBackupPath.Name" xml:space="preserve">
     <value>EditBackupPath</value>
@@ -774,7 +762,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;EditBackupCount.Name" xml:space="preserve">
     <value>EditBackupCount</value>
@@ -795,7 +783,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
     <value>EditAutoSaveDelay</value>
@@ -891,7 +879,7 @@
     <value>108, 17</value>
   </data>
   <data name="SelectOpenTranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="SelectOpenTranslated.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -924,7 +912,7 @@
     <value>97, 17</value>
   </data>
   <data name="SelectOpenHebrewLetters.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SelectOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -975,7 +963,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Name" xml:space="preserve">
     <value>EditOnlineVerseURL</value>
@@ -999,7 +987,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditCommentaryLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.Name" xml:space="preserve">
     <value>EditCommentaryLinesCount</value>
@@ -1020,7 +1008,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.Name" xml:space="preserve">
     <value>EditBookmarksCount</value>
@@ -1041,7 +1029,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditWordControlWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.Name" xml:space="preserve">
     <value>EditWordControlWidth</value>
@@ -1062,7 +1050,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditMaxRefCount.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;EditMaxRefCount.Name" xml:space="preserve">
     <value>EditMaxRefCount</value>
@@ -1083,7 +1071,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditHistoryCount.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.Name" xml:space="preserve">
     <value>EditHistoryCount</value>
@@ -1104,7 +1092,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditMinRefCount.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;EditMinRefCount.Name" xml:space="preserve">
     <value>EditMinRefCount</value>
@@ -1161,7 +1149,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>ActionSelectOnlineVerseURL</value>
@@ -1204,7 +1192,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionOnlineVerseHelp.Name" xml:space="preserve">
     <value>ActionOnlineVerseHelp</value>
@@ -1245,7 +1233,7 @@
     <value>28, 28</value>
   </data>
   <data name="ActionSelectLangEN.TabIndex" type="System.Int32, mscorlib">
-    <value>74</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.Name" xml:space="preserve">
     <value>ActionSelectLangEN</value>
@@ -1288,7 +1276,7 @@
     <value>28, 28</value>
   </data>
   <data name="ActionSelectLangFR.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
     <value>ActionSelectLangFR</value>
@@ -1315,7 +1303,7 @@
     <value>169, 17</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
+    <value>14</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Text" xml:space="preserve">
     <value>Open generated MSWord files</value>
@@ -1345,7 +1333,7 @@
     <value>143, 17</value>
   </data>
   <data name="EditOpenLastViewAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Text" xml:space="preserve">
     <value>Open last view at startup</value>
@@ -1375,7 +1363,7 @@
     <value>140, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Check update at startup</value>
