@@ -74,6 +74,8 @@ namespace Ordisoftware.HebrewWords
       Text = sender.Reference.ToString() + " #" + sender.Reference.Word.Number;
       UpdateResult();
       ActiveControl = ListView;
+      if ( ListView.Items.Count > 0 )
+        ListView.Items[0].Selected = true;
     }
 
     private void SearchTranslatedForm_FormClosing(object sender, FormClosingEventArgs e)

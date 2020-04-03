@@ -40,6 +40,8 @@
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +52,6 @@
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.EditHebrew = new System.Windows.Forms.TextBox();
-      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -142,6 +142,17 @@
       this.ActionUseTranslation.Name = "ActionUseTranslation";
       this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
       // 
+      // ActionAddTranslation
+      // 
+      resources.ApplyResources(this.ActionAddTranslation, "ActionAddTranslation");
+      this.ActionAddTranslation.Name = "ActionAddTranslation";
+      this.ActionAddTranslation.Click += new System.EventHandler(this.ActionAddTranslation_Click);
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
       // ActionCopyTranslation
       // 
       resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
@@ -220,17 +231,6 @@
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
       this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
       this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
-      // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-      // 
-      // ActionAddTranslation
-      // 
-      resources.ApplyResources(this.ActionAddTranslation, "ActionAddTranslation");
-      this.ActionAddTranslation.Name = "ActionAddTranslation";
-      this.ActionAddTranslation.Click += new System.EventHandler(this.ActionAddTranslation_Click);
       // 
       // SearchTranslatedForm
       // 
