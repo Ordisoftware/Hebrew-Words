@@ -155,7 +155,7 @@
   <data name="ActionAddTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAHGSURBVDhPpZLNSxthEIfn4H9g6YdYT/4HbXI1axGMRqsm
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHGSURBVDhPpZLNSxthEIfn4H9g6YdYT/4HbXI1axGMRqsm
         2yRF7KEHC55MtDmIXgQpVKkgEYyHXmzTmo30nvZgD6V+INieNCZZW1F2tYpJ3c2ulF/3fROpBKMpPvAw
         7+zOzM4uS9emfugD7oYWUDMYx53BBcs4bg8wpUutCc7DHl4G1T6PYy9r4MfxKX7m/kC2YvJAw4b6GxtK
         roxZbO9n4YylQTeDEhh+Tyd6Hvvg83Rhd2cH25kM5HT6YlMp3iNEk6Dq/hhPTNOEz+uFYZg4PDyCqu5D
@@ -217,7 +217,7 @@
     <value>Atteindre référence</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 126</value>
+    <value>184, 104</value>
   </data>
   <data name="EditWholeWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 17</value>
