@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -31,17 +31,19 @@ namespace Ordisoftware.HebrewWords
     {
       while ( MenuHistory.DropDownItems.Count > 1 )
         MenuHistory.DropDownItems.RemoveAt(1);
-      ActionClearHistory.Enabled = History.Count > 0;
-      if ( !ActionClearHistory.Enabled ) return;
-      MenuHistory.DropDownItems.Add("-");
-      foreach ( var reference in History )
+      if ( History.Count > 0 )
       {
-        ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToString());
-        item.Tag = reference;
-        item.Click += GoToBookmark;
-        item.ImageScaling = ToolStripItemImageScaling.None;
-        item.Image = ActionAddToBookmarks.Image;
+        MenuHistory.DropDownItems.Add("-");
+        foreach ( var reference in History )
+        {
+          ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
+          item.Tag = reference;
+          item.Click += GoToBookmark;
+          item.ImageScaling = ToolStripItemImageScaling.None;
+          item.Image = ActionAddToBookmarks.Image;
+        }
       }
+      ActionClearHistory.Enabled = History.Count > 0;
     }
 
   }

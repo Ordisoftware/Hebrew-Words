@@ -632,5 +632,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["ImportVerseFormGridColumnWidthTranslationCurrent"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSortBookmarks {
+            get {
+                return ((bool)(this["AutoSortBookmarks"]));
+            }
+            set {
+                this["AutoSortBookmarks"] = value;
+            }
+        }
     }
 }

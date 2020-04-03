@@ -75,6 +75,7 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
+      this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
       this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
@@ -171,15 +172,15 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionReset);
       this.PanelButtons.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionReset
       // 
-      this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.ActionReset.LinkColor = System.Drawing.Color.Navy;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.TabStop = true;
@@ -192,8 +193,8 @@
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
@@ -209,8 +210,8 @@
       // 
       // ActionSelectBackupPath
       // 
-      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
+      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
       this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
       this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
@@ -242,11 +243,11 @@
       // 
       // GroupBoxHebrewWordClick
       // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenNothing);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
       this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
@@ -283,6 +284,10 @@
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
       // 
+      // FolderBrowserDialog
+      // 
+      resources.ApplyResources(this.FolderBrowserDialog, "FolderBrowserDialog");
+      // 
       // EditCommentaryLinesCount
       // 
       resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
@@ -315,12 +320,12 @@
       // 
       // EditWordControlWidth
       // 
+      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
             400,
             0,
@@ -340,12 +345,12 @@
       // 
       // EditMaxRefCount
       // 
+      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
       this.EditMaxRefCount.Minimum = new decimal(new int[] {
             10,
             0,
@@ -371,78 +376,78 @@
       // 
       // EditMinRefCount
       // 
+      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
       this.EditMinRefCount.Name = "EditMinRefCount";
       // 
       // ActionSelectOnlineVerseURL
       // 
+      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.AllowDrop = true;
       this.ActionSelectOnlineVerseURL.ContextMenuStrip = this.MenuSelectOnlineVerseURL;
       this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
       // 
       // MenuSelectOnlineVerseURL
       // 
+      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       this.MenuSelectOnlineVerseURL.ShowImageMargin = false;
-      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
       // ActionOnlineVerseHelp
       // 
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
       this.ActionOnlineVerseHelp.AllowDrop = true;
       this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
       this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
       this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
       // 
       // ActionSelectLangEN
       // 
+      resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.AllowDrop = true;
       this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-      resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
       this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
       // 
       // ActionSelectLangFR
       // 
+      resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.AllowDrop = true;
       this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-      resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
       // 
       // ActionSelectOnlineSearch
       // 
+      resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
       this.ActionSelectOnlineSearch.AllowDrop = true;
       this.ActionSelectOnlineSearch.ContextMenuStrip = this.MenuSelectSearchRequest;
       this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
       this.ActionSelectOnlineSearch.Name = "ActionSelectOnlineSearch";
       this.ActionSelectOnlineSearch.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineSearch.Click += new System.EventHandler(this.ActionSelectOnlineSearch_Click);
       // 
       // MenuSelectSearchRequest
       // 
+      resources.ApplyResources(this.MenuSelectSearchRequest, "MenuSelectSearchRequest");
       this.MenuSelectSearchRequest.Name = "MenuSelectOnlineVerseURL";
       this.MenuSelectSearchRequest.ShowImageMargin = false;
-      resources.ApplyResources(this.MenuSelectSearchRequest, "MenuSelectSearchRequest");
       // 
       // ActionOnlineSearchHelp
       // 
+      resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
       this.ActionOnlineSearchHelp.AllowDrop = true;
       this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
       this.ActionOnlineSearchHelp.Name = "ActionOnlineSearchHelp";
       this.ActionOnlineSearchHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineSearchHelp.Click += new System.EventHandler(this.ActionOnlineSearchHelp_Click);
@@ -455,6 +460,15 @@
       this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
       this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoSortBookmarks
+      // 
+      resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
+      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.AutoSortBookmarks;
+      this.EditAutoSortBookmarks.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
+      this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
       // 
       // EditGoToMasterBookmarkAtStartup
       // 
@@ -491,6 +505,7 @@
       this.Controls.Add(this.ActionSelectLangFR);
       this.Controls.Add(this.ActionSelectLangEN);
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
+      this.Controls.Add(this.EditAutoSortBookmarks);
       this.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
       this.Controls.Add(this.EditOpenLastViewAtStartup);
       this.Controls.Add(this.EditCheckUpdateAtStartup);
@@ -587,5 +602,6 @@
     private System.Windows.Forms.ContextMenuStrip MenuSelectSearchRequest;
     private System.Windows.Forms.Button ActionOnlineSearchHelp;
     private System.Windows.Forms.CheckBox EditGoToMasterBookmarkAtStartup;
+    private System.Windows.Forms.CheckBox EditAutoSortBookmarks;
   }
 }

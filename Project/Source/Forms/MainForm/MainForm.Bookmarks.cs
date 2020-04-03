@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -23,8 +23,10 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateBookmarks()
     {
-      while ( MenuBookmarks.DropDownItems.Count > 6 )
-        MenuBookmarks.DropDownItems.RemoveAt(6);
+      if ( Program.Settings.AutoSortBookmarks )
+        Bookmarks.Sort();
+      while ( MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
+        MenuBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -48,19 +50,23 @@ namespace Ordisoftware.HebrewWords
       ActionGoToBookmarkMaster.Text = bookmarkMaster.ToString();
       ActionGoToBookmarkMaster.Tag = bookmarkMaster;
       ActionGoToBookmarkMaster.MouseDown += bookmarkClicked;
-      ActionSortBookmarks.Enabled = Bookmarks.Count > 0;
-      ActionClearBookmarks.Enabled = Bookmarks.Count > 0;
-      if ( !ActionClearBookmarks.Enabled ) return;
-      MenuBookmarks.DropDownItems.Add("-");
-      foreach ( var reference in Bookmarks )
+      if ( Bookmarks.Count > 0 )
       {
-        var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToString());
-        item.Tag = reference;
-        item.Click += GoToBookmark;
-        item.MouseDown += bookmarkClicked;
-        item.ImageScaling = ToolStripItemImageScaling.None;
-        item.Image = ActionAddToBookmarks.Image;
+        MenuBookmarks.DropDownItems.Add("-");
+        foreach ( var reference in Bookmarks )
+        {
+          var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());
+          item.Tag = reference;
+          item.Click += GoToBookmark;
+          item.MouseDown += bookmarkClicked;
+          item.ImageScaling = ToolStripItemImageScaling.None;
+          item.Image = ActionAddToBookmarks.Image;
+        }
       }
+      ActionClearBookmarks.Enabled = Bookmarks.Count > 0
+                                  && MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
+      ActionSortBookmarks.Enabled = Bookmarks.Count > 0
+                                 && !Program.Settings.AutoSortBookmarks;
     }
 
   }

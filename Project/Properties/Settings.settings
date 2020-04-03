@@ -160,5 +160,8 @@
     <Setting Name="ImportVerseFormGridColumnWidthTranslationCurrent" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">250</Value>
     </Setting>
+    <Setting Name="AutoSortBookmarks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -76,6 +76,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private int PreviousSeachPagingPosition = -1;
 
+    private int BookmarksMenuFirstIndex;
+
     private readonly Bookmarks Bookmarks = new Bookmarks();
 
     private readonly History History = new History();

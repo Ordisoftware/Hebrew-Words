@@ -92,6 +92,7 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.Save();
       }
       UpdateSearchButtons();
+      BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
     }
 
     /// <summary>
@@ -1011,6 +1012,7 @@ namespace Ordisoftware.HebrewWords
     {
       Bookmarks.Sort();
       UpdateBookmarks();
+      MenuBookmarks.ShowDropDown();
     }
 
     /// <summary>
