@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewWords
 
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SelectVerse.Value = 0;
+      SelectVerse.Value = 1;
       SelectVerse.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
     }
 
