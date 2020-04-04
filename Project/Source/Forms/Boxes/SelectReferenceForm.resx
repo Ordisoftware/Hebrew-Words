@@ -334,7 +334,7 @@
     <value>369, 21</value>
   </data>
   <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
     <value>SelectChapter</value>
