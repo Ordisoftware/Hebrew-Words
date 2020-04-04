@@ -172,7 +172,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 108</value>
+    <value>0, 165</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 35</value>
@@ -196,7 +196,7 @@
     <value>True</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 56</value>
+    <value>13, 110</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -220,10 +220,10 @@
     <value>5</value>
   </data>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 75</value>
+    <value>13, 129</value>
   </data>
   <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>60, 20</value>
   </data>
   <data name="SelectVerse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 56</value>
+    <value>13, 60</value>
   </data>
   <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -270,35 +270,14 @@
   <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 75</value>
-  </data>
-  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
-  </data>
-  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
-    <value>SelectChapter</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="SelectBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 27</value>
+    <value>13, 28</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 21</value>
+    <value>369, 21</value>
   </data>
   <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -313,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -322,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 9</value>
+    <value>13, 10</value>
   </data>
   <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -345,6 +324,30 @@
   <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SelectChapter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 78</value>
+  </data>
+  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 21</value>
+  </data>
+  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
+    <value>SelectChapter</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -352,7 +355,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 143</value>
+    <value>394, 200</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

@@ -26,8 +26,8 @@ namespace Ordisoftware.HebrewWords
     {
       var form = new SelectReferenceForm();
       if ( form.ShowDialog() != DialogResult.OK ) return null;
-      return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number, 
-                               (int)form.SelectChapter.Value, 
+      return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number,
+                               ( (ChapterItem)form.SelectChapter.SelectedItem ).Chapter.Number, 
                                (int)form.SelectVerse.Value);
     }
 
@@ -41,20 +41,16 @@ namespace Ordisoftware.HebrewWords
 
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SelectChapter.Value = 1;
-      SelectVerse.Value = 0;
-      var book = MainForm.Instance.DataSet.Books.Where(b => b.Number == ( (BookItem)SelectBook.SelectedItem ).Book.Number).Single();
-      SelectChapter.Maximum = book.GetChaptersRows().Count();
-      SelectVerse.Maximum = book.GetChaptersRows()[(int)SelectChapter.Value - 1].GetVersesRows().Count();
+      SelectChapter.Items.Clear();
+      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
+        SelectChapter.Items.Add(new ChapterItem(chapter));
+      SelectChapter.SelectedIndex = 0;
     }
 
-    private void SelectChapter_ValueChanged(object sender, EventArgs e)
+    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
       SelectVerse.Value = 0;
-      if ( SelectChapter.Value > SelectChapter.Maximum )
-        SelectChapter.Value = SelectChapter.Maximum;
-      var book = MainForm.Instance.DataSet.Books.Where(b => b.Number == ( (BookItem)SelectBook.SelectedItem ).Book.Number).Single();
-      SelectVerse.Maximum = book.GetChaptersRows()[(int)SelectChapter.Value - 1].GetVersesRows().Count();
+      SelectVerse.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
     }
 
     private void SelectVerse_ValueChanged(object sender, EventArgs e)
