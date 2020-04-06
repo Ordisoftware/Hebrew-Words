@@ -13,7 +13,7 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -27,8 +27,8 @@ namespace Ordisoftware.HebrewWords
       var form = new SelectReferenceForm();
       if ( form.ShowDialog() != DialogResult.OK ) return null;
       return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number,
-                               ( (ChapterItem)form.SelectChapter.SelectedItem ).Chapter.Number, 
-                               (int)form.SelectVerse.Value);
+                               ( (ChapterItem)form.SelectChapter.SelectedItem ).Chapter.Number,
+                               ( (VerseItem)form.SelectVerse.SelectedItem ).Verse.Number);
     }
 
     private SelectReferenceForm()
@@ -49,20 +49,10 @@ namespace Ordisoftware.HebrewWords
 
     private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SelectVerse.Value = 1;
-      SelectVerse.Maximum = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows().Count();
-    }
-
-    private void SelectVerse_ValueChanged(object sender, EventArgs e)
-    {
-      if ( SelectVerse.Value > SelectVerse.Maximum )
-        SelectVerse.Value = SelectVerse.Maximum;
-    }
-
-    private void SelectValue_Enter(object sender, EventArgs e)
-    {
-      var control = (NumericUpDown)sender;
-      control.Select(0, control.Value.ToString().Length);
+      SelectVerse.Items.Clear();
+      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows() )
+        SelectVerse.Items.Add(new VerseItem(verse));
+      SelectVerse.SelectedIndex = 0;
     }
 
   }

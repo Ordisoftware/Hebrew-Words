@@ -44,14 +44,12 @@ namespace Ordisoftware.HebrewWords
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
-      this.SelectVerse = new System.Windows.Forms.NumericUpDown();
       this.LabelChapter = new System.Windows.Forms.Label();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.LabelBook = new System.Windows.Forms.Label();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
-      this.LabelVerseHelp = new System.Windows.Forms.Label();
+      this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectVerse)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -80,18 +78,6 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this.LabelVerse, "LabelVerse");
       this.LabelVerse.Name = "LabelVerse";
       // 
-      // SelectVerse
-      // 
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
-      this.SelectVerse.Name = "SelectVerse";
-      this.SelectVerse.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.SelectVerse.ValueChanged += new System.EventHandler(this.SelectVerse_ValueChanged);
-      this.SelectVerse.Enter += new System.EventHandler(this.SelectValue_Enter);
-      // 
       // LabelChapter
       // 
       resources.ApplyResources(this.LabelChapter, "LabelChapter");
@@ -118,11 +104,12 @@ namespace Ordisoftware.HebrewWords
       this.SelectChapter.Name = "SelectChapter";
       this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
-      // LabelVerseHelp
+      // SelectVerse
       // 
-      resources.ApplyResources(this.LabelVerseHelp, "LabelVerseHelp");
-      this.LabelVerseHelp.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelVerseHelp.Name = "LabelVerseHelp";
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
+      this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectVerse.FormattingEnabled = true;
+      this.SelectVerse.Name = "SelectVerse";
       // 
       // SelectReferenceForm
       // 
@@ -130,10 +117,9 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.LabelVerseHelp);
+      this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
       this.Controls.Add(this.SelectBook);
-      this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.LabelBook);
       this.Controls.Add(this.LabelChapter);
       this.Controls.Add(this.LabelVerse);
@@ -144,7 +130,6 @@ namespace Ordisoftware.HebrewWords
       this.Name = "SelectReferenceForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.SelectVerse)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -171,12 +156,11 @@ namespace Ordisoftware.HebrewWords
     /// The label.
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
-    internal NumericUpDown SelectVerse;
     private Label LabelChapter;
     private ComboBox SelectBook;
     private Label LabelBook;
     private ComboBox SelectChapter;
-    private Label LabelVerseHelp;
+    private ComboBox SelectVerse;
   }
 
 }

@@ -20,30 +20,30 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Provide chapter reference item
+  /// Provide verse reference item
   /// </summary>
-  public class ChapterItem
+  public class VerseItem
   {
 
-    public DataSet.ChaptersRow Chapter { get; set; }
+    public DataSet.VersesRow Verse { get; set; }
 
     public override string ToString()
     {
-      if ( Chapter == null ) return "";
-      int nb = Chapter.BooksRow.GetChaptersRows().Count();
+      if ( Verse == null ) return "";
+      int nb = Verse.ChaptersRow.GetVersesRows().Count();
       string str = "";
-      if ( nb >= 100 ) str = Chapter.Number.ToString("000");
+      if ( nb >= 100 ) str = Verse.Number.ToString("000");
       else
-      if ( nb >= 10 ) str = Chapter.Number.ToString("00");
+      if ( nb >= 10 ) str = Verse.Number.ToString("00");
       else
-      str = Chapter.Number.ToString();
-      if ( Chapter.Title != "" ) str += $" - {Chapter.Title}";
+      str = Verse.Number.ToString();
+      if ( Verse.IsTranslated() ) str += $" - {Verse.GetTranslation()}";
       return str;
     }
 
-    public ChapterItem(DataSet.ChaptersRow chapter)
+    public VerseItem(DataSet.VersesRow verse)
     {
-      Chapter = chapter;
+      Verse = verse;
     }
 
   }
