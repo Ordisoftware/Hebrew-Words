@@ -111,6 +111,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
 - Add source hebrew word in the search translated form.
 - Fix edit books information form : modifications are not saved since an old version.
+- Improve the go to reference form.
 - Add sort bookmarks menu.
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
