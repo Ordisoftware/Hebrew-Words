@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewWords
       {
         char cNew = ConvertToKey(c);
         if ( cNew != '\0' )
-          result += cNew;
+          result = cNew + result;
       }
       return result;
     }

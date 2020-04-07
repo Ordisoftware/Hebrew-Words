@@ -101,13 +101,13 @@ namespace Ordisoftware.HebrewWords
                 verse.Number = ++countVerses;
                 verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(list[0]).Split(' ').Reverse().ToArray();
+                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(list[0]).Split(' ').ToArray();
                 DataSet.Verses.AddVersesRow(verse);
               }
               else
               {
                 listWordsOriginal = line.Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(line).Split(' ').Reverse().ToArray();
+                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(line).Split(' ').ToArray();
               }
               for ( int i = 0; i < listWordsHebrew.Length; i++ )
                 if ( listWordsHebrew[i] != "" )

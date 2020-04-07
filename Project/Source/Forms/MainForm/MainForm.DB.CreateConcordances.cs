@@ -179,7 +179,7 @@ namespace Ordisoftware.HebrewWords
             items[3] = items[3].Trim();
             var item = new WordWithConcordance();
             item.Original = items[3].RemoveDiacritics();
-            item.Hebrew = new string(HebrewLetters.ConvertToHebrewFont(items[3].RemoveDiacritics()).Reverse().ToArray());
+            item.Hebrew = new string(HebrewLetters.ConvertToHebrewFont(items[3].RemoveDiacritics()).ToArray());
             item.Transliteration = items[4];
             item.Concordance = items[6];
             item.Translation = items[7];
