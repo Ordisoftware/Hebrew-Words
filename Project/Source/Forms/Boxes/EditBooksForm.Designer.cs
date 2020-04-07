@@ -245,7 +245,6 @@
       this.TableAdapterManager.BooksTableAdapter = null;
       this.TableAdapterManager.ChaptersTableAdapter = null;
       this.TableAdapterManager.Connection = null;
-      this.TableAdapterManager.StrongConcordancesTableAdapter = null;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       this.TableAdapterManager.VersesTableAdapter = null;
       this.TableAdapterManager.WordsTableAdapter = null;

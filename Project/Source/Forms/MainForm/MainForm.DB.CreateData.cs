@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     public void CreateDataIfNotExists()
     {
-      CreateConcordances();
+      //CreateConcordances();
       CreateBooks();
     }
 

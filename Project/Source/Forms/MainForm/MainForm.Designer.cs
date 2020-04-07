@@ -171,6 +171,7 @@
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.menusep = new System.Windows.Forms.ToolStripSeparator();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSortBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,14 +222,11 @@
       this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
-      this.StrongConcordancesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
-      this.StrongConcordancesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.StrongConcordancesTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -261,7 +259,6 @@
       this.ContextMenuStripVerse.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.StrongConcordancesBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -1396,6 +1393,11 @@
       this.ActionClearBookmarks.Name = "ActionClearBookmarks";
       this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
       // 
+      // toolStripSeparator17
+      // 
+      this.toolStripSeparator17.Name = "toolStripSeparator17";
+      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
+      // 
       // ActionSortBookmarks
       // 
       resources.ApplyResources(this.ActionSortBookmarks, "ActionSortBookmarks");
@@ -1698,11 +1700,6 @@
       this.DataSet.DataSetName = "DataSet";
       this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
-      // StrongConcordancesBindingSource
-      // 
-      this.StrongConcordancesBindingSource.DataMember = "StrongConcordances";
-      this.StrongConcordancesBindingSource.DataSource = this.DataSet;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1712,7 +1709,6 @@
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.BooksTableAdapter = this.BooksTableAdapter;
       this.TableAdapterManager.ChaptersTableAdapter = this.ChaptersTableAdapter;
-      this.TableAdapterManager.StrongConcordancesTableAdapter = this.StrongConcordancesTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       this.TableAdapterManager.VersesTableAdapter = this.VersesTableAdapter;
       this.TableAdapterManager.WordsTableAdapter = this.WordsTableAdapter;
@@ -1721,10 +1717,6 @@
       // 
       this.ChaptersTableAdapter.ClearBeforeFill = true;
       // 
-      // StrongConcordancesTableAdapter
-      // 
-      this.StrongConcordancesTableAdapter.ClearBeforeFill = true;
-      // 
       // VersesTableAdapter
       // 
       this.VersesTableAdapter.ClearBeforeFill = true;
@@ -1732,11 +1724,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator17
-      // 
-      this.toolStripSeparator17.Name = "toolStripSeparator17";
-      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
       // 
       // MainForm
       // 
@@ -1788,7 +1775,6 @@
       this.ContextMenuStripVerse.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.StrongConcordancesBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1972,8 +1958,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
-    private System.Windows.Forms.BindingSource StrongConcordancesBindingSource;
-    private Data.DataSetTableAdapters.StrongConcordancesTableAdapter StrongConcordancesTableAdapter;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TextBox EditChapterTitle;

@@ -120,12 +120,12 @@ namespace Ordisoftware.HebrewWords
                                 Translation TEXT DEFAULT '' NOT NULL,
                                 ClassicTranslation TEXT DEFAULT '' NOT NULL,
                                 Transliteration TEXT DEFAULT '' NOT NULL,
-                                ConcordanceID TEXT DEFAULT '' NOT NULL,
                                 CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                 FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
-                                FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
                               )");
-          checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
+                              //ConcordanceID TEXT DEFAULT '' NOT NULL,
+                              //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
+checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "CommonName", "ALTER TABLE Books ADD COLUMN CommonName TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Title", "ALTER TABLE Chapters ADD COLUMN Title TEXT DEFAULT '' NOT NULL;");
