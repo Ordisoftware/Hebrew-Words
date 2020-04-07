@@ -117,7 +117,7 @@ namespace Ordisoftware.HebrewWords
                   word.VerseID = verse.ID;
                   word.Number = ++countWords;
                   word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
-                  word.Hebrew = listWordsHebrew[i];
+                  word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
                   word.Translation = "";
                   DataSet.Words.AddWordsRow(word);
                   strELS50 = listWordsHebrew[i] + strELS50;
