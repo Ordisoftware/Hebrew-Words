@@ -230,6 +230,9 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -975,8 +978,11 @@
             this.toolStripSeparator10,
             this.ActionOpenHebrewAlphabet,
             this.toolStripSeparator8,
+            this.toolStripMenuItem14,
             this.toolStripMenuItem13,
+            this.toolStripMenuItem15,
             this.toolStripMenuItem12,
+            this.toolStripSeparator19,
             this.toolStripMenuItem11,
             this.toolStripSeparator11,
             this.bibleFourmilabToolStripMenuItem,
@@ -1070,14 +1076,14 @@
       // 
       resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
       this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-      this.toolStripMenuItem13.Tag = "https://en.wikipedia.org/wiki/Hebrew_Bible";
+      this.toolStripMenuItem13.Tag = "https://fr.wikipedia.org/wiki/Tanakh";
       this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem12
       // 
       resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
       this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-      this.toolStripMenuItem12.Tag = "https://en.wikipedia.org/wiki/Weekly_Torah_portion";
+      this.toolStripMenuItem12.Tag = "https://fr.wikipedia.org/wiki/Parasha_de_la_semaine";
       this.toolStripMenuItem12.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem11
@@ -1752,6 +1758,23 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // toolStripMenuItem14
+      // 
+      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+      this.toolStripMenuItem14.Tag = "https://en.wikipedia.org/wiki/Hebrew_Bible";
+      // 
+      // toolStripMenuItem15
+      // 
+      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+      this.toolStripMenuItem15.Tag = "https://en.wikipedia.org/wiki/Weekly_Torah_portion";
+      // 
+      // toolStripSeparator19
+      // 
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2008,6 +2031,9 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
   }
 }
 
