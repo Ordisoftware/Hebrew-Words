@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Data;
 using System.IO;
@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewWords
         Data.DataSet.ChaptersRow chapter = null;
         Data.DataSet.VersesRow verse = null;
         Data.DataSet.WordsRow word = null;
-        string path = Program.AppDocumentsFolderPath;
+        string path = Program.TanakFolderPath;
         string strELS50 = "";
         void nextChapter()
         {

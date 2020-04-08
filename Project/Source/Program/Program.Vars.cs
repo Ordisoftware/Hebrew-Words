@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -82,10 +82,10 @@ namespace Ordisoftware.HebrewWords
       = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
-    /// Indicate application csv documents folder.
+    /// Indicate application documents folder.
     /// </summary>
-    static public readonly string AppCSVDocumentsFolderPath
-      = AppDocumentsFolderPath + "CSV" + Path.DirectorySeparatorChar;
+    static public readonly string TanakFolderPath
+      = AppDocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate user data folder in roaming.
