@@ -100,7 +100,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
+- Move tanak text files in Documents in a dedicated folder.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
+- Add links to tanak and parasha wikipedia pages.
 - Add links to Sefaria, Lexilogos and Hebrew Gematria websites.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add book translation text box in the navigation panel.
@@ -116,6 +118,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Improve UI/UX.
+
+>>>>- Add parasha list form with references links.
 
 >>>>- Add option to choose double-click action on a word in the search translated form.
 
