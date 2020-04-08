@@ -127,8 +127,11 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewAlphabet = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.bibleFourmilabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -230,9 +233,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1072,6 +1072,13 @@
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
+      // toolStripMenuItem14
+      // 
+      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+      this.toolStripMenuItem14.Tag = "https://en.wikipedia.org/wiki/Hebrew_Bible";
+      this.toolStripMenuItem14.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // toolStripMenuItem13
       // 
       resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
@@ -1079,12 +1086,24 @@
       this.toolStripMenuItem13.Tag = "https://fr.wikipedia.org/wiki/Tanakh";
       this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // toolStripMenuItem15
+      // 
+      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+      this.toolStripMenuItem15.Tag = "https://en.wikipedia.org/wiki/Weekly_Torah_portion";
+      this.toolStripMenuItem15.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // toolStripMenuItem12
       // 
       resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
       this.toolStripMenuItem12.Name = "toolStripMenuItem12";
       this.toolStripMenuItem12.Tag = "https://fr.wikipedia.org/wiki/Parasha_de_la_semaine";
       this.toolStripMenuItem12.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator19
+      // 
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
       // toolStripMenuItem11
       // 
@@ -1757,23 +1776,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripMenuItem14
-      // 
-      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
-      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-      this.toolStripMenuItem14.Tag = "https://en.wikipedia.org/wiki/Hebrew_Bible";
-      // 
-      // toolStripMenuItem15
-      // 
-      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
-      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-      this.toolStripMenuItem15.Tag = "https://en.wikipedia.org/wiki/Weekly_Torah_portion";
-      // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
       // MainForm
       // 
