@@ -19,6 +19,9 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
@@ -36,7 +39,7 @@ namespace Ordisoftware.HebrewWords
       get
       {
         string title = AboutBox.Instance.AssemblyTitle;
-        return "http://" + AboutBox.Instance.AssemblyTrademark + "/files/" + title.Replace(" ", "") + ".update";
+        return $"http://{AboutBox.Instance.AssemblyTrademark}/files/{title.Replace(" ", "")}.update";
       }
     }
 
@@ -59,7 +62,7 @@ namespace Ordisoftware.HebrewWords
       get
       {
         string title = AboutBox.Instance.AssemblyTitle;
-        return "https://github.com/" + AboutBox.Instance.CompanyName + "/" + title.Replace(" ", "-");
+        return $"https://github.com/{AboutBox.Instance.CompanyName}/{title.Replace(" ", "-")}";
       }
     }
 
@@ -124,7 +127,7 @@ namespace Ordisoftware.HebrewWords
     {
       get
       {
-        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
+        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
       }
     }
 
@@ -135,9 +138,15 @@ namespace Ordisoftware.HebrewWords
     {
       get
       {
-        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-" + Localizer.Language + ".htm";
+        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}grammar-{Localizer.Language}.htm";
       }
     }
+
+    /// <summary>
+    /// Indicate filename of the online word providers.
+    /// </summary>
+    static public readonly string OnlineWordProvidersFileName
+      = AppDocumentsFolderPath + "OnlineWordProviders.txt";
 
   }
 

@@ -1057,7 +1057,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionViewSearch.PerformClick();
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.Input.Text = HebrewLetters.SetFinale(word, false);
+      EditLetters.Input.Text = HebrewLetters.SetFinal(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
     }
 

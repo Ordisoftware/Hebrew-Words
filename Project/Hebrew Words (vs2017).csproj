@@ -76,7 +76,7 @@
     <Compile Include="Source\Forms\Import\ImportStrongForm.Designer.cs">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Entities\OnlineWordProvider.cs" />
+    <Compile Include="Source\Enums\OnlineWordProviders.cs" />
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Entities\DataSetHelper.cs" />
@@ -115,7 +115,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Entities\OnlineBibleProviders.cs" />
+    <Compile Include="Source\Enums\OnlineBibleProviders.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
     <Compile Include="Source\Enums\BooksNames.Original.cs" />

@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewWords
         {
           chapter.ELS50 = "";
           DataSet.Chapters.AddChaptersRow(chapter);
-          strELS50 = HebrewLetters.UnFinaleAll(strELS50);
+          strELS50 = HebrewLetters.UnFinalAll(strELS50);
           int i = strELS50.Length - 1;
           while ( i >= 0 && strELS50[i] != 't' ) i--;
           string res = "";
