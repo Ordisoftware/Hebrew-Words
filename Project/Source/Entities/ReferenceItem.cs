@@ -23,7 +23,6 @@ namespace Ordisoftware.HebrewWords
   /// Provide reference item
   /// </summary>
   public class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
-
   {
 
     const string NULL = "(null)";

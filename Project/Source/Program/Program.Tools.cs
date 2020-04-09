@@ -19,9 +19,16 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewWords
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
+    /// <summary>
+    /// Start Hebrew Letters process.
+    /// </summary>
+    /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenHebrewLetters(string hebrew)
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
@@ -34,11 +41,18 @@ namespace Ordisoftware.HebrewWords
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
+    /// <summary>
+    /// Open default online concordance search url.
+    /// </summary>
+    /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenOnlineConcordance(string hebrew)
     {
       RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
     }
 
+    /// <summary>
+    /// Open default online verse search url.
+    /// </summary>
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
       RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])

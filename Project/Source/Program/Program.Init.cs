@@ -17,7 +17,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -25,11 +24,20 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewWords
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
+    /// <summary>
+    /// Application mutex to allow only one process instance.
+    /// </summary>
     static private Mutex Mutex;
 
+    /// <summary>
+    /// Check if the process is already running.
+    /// </summary>
     static private bool CheckApplicationOnlyOneInstance()
     {
       var assembly = typeof(Program).Assembly;
@@ -40,6 +48,9 @@ namespace Ordisoftware.HebrewWords
       return created;
     }
 
+    /// <summary>
+    /// Check is application's settings must be upgraded and apply it if necessary.
+    /// </summary>
     static private void CheckSettingsUpgrade()
     {
       if ( Settings.UpgradeRequired )
@@ -50,6 +61,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Check command line arguments and apply them.
+    /// </summary>
     static private void CheckCommandLineArguments(string[] args)
     {
       try
@@ -66,6 +80,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Update localization strings to the whole application.
+    /// </summary>
     static internal void ApplyCurrentLanguage()
     {
       string lang = "en-US";
@@ -73,13 +90,7 @@ namespace Ordisoftware.HebrewWords
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
-        {
-          new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-          ApplyResources(resources, form.Controls);
-        }
+      AboutBox.Instance.Hide();
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
@@ -92,8 +103,18 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.RenderELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
       }
+      foreach ( Form form in Application.OpenForms )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
+        {
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ApplyResources(resources, form.Controls);
+        }
     }
 
+    /// <summary>
+    /// Called by UpdateLocalization().
+    /// </summary>
     static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
     {
       foreach ( Control control in controls )
@@ -103,6 +124,9 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    /// <summary>
+    /// Set forms icon.
+    /// </summary>
     static private void SetFormsIcon()
     {
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
@@ -110,6 +134,9 @@ namespace Ordisoftware.HebrewWords
       GrammarGuideForm.Instance.Icon = MainForm.Instance.Icon;
     }
 
+    /// <summary>
+    /// Initialize default folders.
+    /// </summary>
     static private void InitializeUserFolders()
     {
       UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
