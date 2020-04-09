@@ -154,6 +154,18 @@ namespace Ordisoftware.HebrewWords
     static public readonly string OnlineBibleProvidersFileName
       = AppDocumentsFolderPath + "OnlineBibleProviders.txt";
 
+    /// <summary>
+    /// Indicate online search word providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineWordProviders
+      = new OnlineProviders(OnlineWordProvidersFileName);
+
+    /// <summary>
+    /// Indicate online bible providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineBibleProviders
+      = new OnlineProviders(OnlineBibleProvidersFileName);
+
   }
 
 }

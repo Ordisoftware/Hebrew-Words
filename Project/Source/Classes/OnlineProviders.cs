@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-09 </created>
+/// <created> 2020-03 </created>
 /// <edited> 2020-04 </edited>
 using System;
 using System.IO;
@@ -23,9 +23,9 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Online bible provider item.
+  /// Online provider item.
   /// </summary>
-  public class OnlineBibleProvider
+  public class OnlineProvider
   {
     public string Name { get; set; }
     public string URL { get; set; }
@@ -39,15 +39,15 @@ namespace Ordisoftware.HebrewWords
   }
 
   /// <summary>
-  /// Online bible providers list.
+  /// Online providers list.
   /// </summary>
-  static public class OnlineBibleProviders
+  public class OnlineProviders
   {
 
     /// <summary>
     /// Indicate items.
     /// </summary>
-    static public List<OnlineBibleProvider> Items
+    public List<OnlineProvider> Items
     {
       get;
       private set;
@@ -56,23 +56,21 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Static constructor.
     /// </summary>
-    static OnlineBibleProviders()
+    public OnlineProviders(string filename)
     {
-      Items = new List<OnlineBibleProvider>();
+      Items = new List<OnlineProvider>();
       try
       {
-        var lines = File.ReadAllLines(Program.OnlineBibleProvidersFileName);
+        var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError("Error in " + Program.OnlineWordProvidersFileName + ": " + Environment.NewLine +
-                                     Environment.NewLine +
-                                     "Line n° " + index + Environment.NewLine +
-                                     Environment.NewLine +
+            DisplayManager.ShowError("Error in " + filename + ": " + Environment.NewLine + Environment.NewLine +
+                                     "Line n° " + index + Environment.NewLine + Environment.NewLine +
                                      lines[index]);
           };
-          var item = new OnlineBibleProvider(); ;
+          var item = new OnlineProvider(); ;
           if ( lines[index].Trim() == "" )
             continue;
           if ( lines[index].StartsWith(";") )

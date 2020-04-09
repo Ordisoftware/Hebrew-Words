@@ -75,8 +75,13 @@ namespace Ordisoftware.HebrewWords
                                   CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       };
-      foreach ( var item in OnlineBibleProviders.Items )
-        ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
+      foreach ( var item in Program.OnlineBibleProviders.Items )
+      {
+        if ( item.Name == "-" )
+          ContextMenuStripVerse.Items.Insert(index++, new ToolStripSeparator());
+        else
+          ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
+      }
     }
 
     /// <summary>

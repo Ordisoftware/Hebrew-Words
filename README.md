@@ -104,7 +104,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move default online providers values to a file in the application documents folder.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add links to tanak and parasha wikipedia pages.
-- Add links to Sefaria, Lexilogos and Hebrew Gematria websites.
+- Add links to Sefaria, Halakhah, Lexilogos and Hebrew Gematria websites.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add book translation text box in the navigation panel.
 - Add chapter title and memo text box in the navigation panel.
