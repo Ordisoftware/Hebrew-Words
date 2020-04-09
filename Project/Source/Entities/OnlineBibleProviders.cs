@@ -11,15 +11,20 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-04 </edited>
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
 
+  /// <summary>
+  /// Online bible provider item.
+  /// </summary>
   public class OnlineBibleProvider
   {
     public string Name { get; set; }
@@ -33,52 +38,86 @@ namespace Ordisoftware.HebrewWords
     }
   }
 
+  /// <summary>
+  /// Online bible providers list.
+  /// </summary>
   static public class OnlineBibleProviders
   {
 
+    /// <summary>
+    /// Indicate items.
+    /// </summary>
     static public List<OnlineBibleProvider> Items
     {
       get;
       private set;
     }
 
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
     static OnlineBibleProviders()
     {
       Items = new List<OnlineBibleProvider>();
-
-      var item = new OnlineBibleProvider();
-      item.Name = "StudyBible.org (EN)";
-      item.URL = "https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%";
-      Items.Add(item);
-
-      item = new OnlineBibleProvider();
-      item.Name = "BibleHub.com (EN)";
-      item.URL = "https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm";
-      Items.Add(item);
-
-      item = new OnlineBibleProvider();
-      item.Name = "Chabad.org (EN)";
-      item.URL = "https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%";
-      Items.Add(item);
-
-      item = new OnlineBibleProvider();
-      switch ( Localizer.Language )
+      try
       {
-        case "fr":
-          item.Name = "Mechon-Mamre.org (FR)";
-          item.URL = "https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
-          break;
-        default:
-          item.Name = "Mechon-Mamre.org (EN)";
-          item.URL = "https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%";
-          break;
+        var lines = File.ReadAllLines(Program.OnlineBibleProvidersFileName);
+        for ( int index = 0; index < lines.Length; index++ )
+        {
+          Action showError = () =>
+          {
+            DisplayManager.ShowError("Error in " + Program.OnlineWordProvidersFileName + ": " + Environment.NewLine +
+                                     Environment.NewLine +
+                                     "Line n° " + index + Environment.NewLine +
+                                     Environment.NewLine +
+                                     lines[index]);
+          };
+          var item = new OnlineBibleProvider(); ;
+          if ( lines[index].Trim() == "" )
+            continue;
+          if ( lines[index].StartsWith(";") )
+            continue;
+          if ( lines[index].StartsWith("-") )
+          {
+            item.Name = "-";
+            Items.Add(item);
+          }
+          else
+          if ( lines[index].StartsWith("Name") )
+          {
+            var parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
+            if ( parts.Length == 2 )
+            {
+              item.Name = parts[1].Trim();
+              index++;
+              if ( index >= lines.Length )
+                showError();
+              if ( lines[index].StartsWith("URL") )
+              {
+                parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
+                if ( parts.Length == 2 )
+                {
+                  item.URL = parts[1].Trim();
+                  Items.Add(item);
+                }
+                else
+                  showError();
+              }
+              else
+                showError();
+            }
+            else
+              showError();
+          }
+          else
+            showError();
+        }
       }
-      Items.Add(item);
-
-      item = new OnlineBibleProvider();
-      item.Name = "Djep.hd.free.fr (FR)";
-      item.URL = "http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%";
-      Items.Add(item);
+      catch ( Exception ex )
+      {
+        ex.Manage();
+        return;
+      }
     }
 
   }

@@ -1,0 +1,24 @@
+; --------------------------------------------------------------------------------------------------
+; File format for online providers items to search a bible verse
+; --------------------------------------------------------------------------------------------------
+; Name = title
+; URL = web link
+; --------------------------------------------------------------------------------------------------
+
+Name = StudyBible.org (EN)
+URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
+
+Name = BibleHub.com (EN)
+URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
+
+Name = Chabad.org (EN)
+URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
+
+Name = Mechon-Mamre.org (EN)
+URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
+
+Name = Mechon-Mamre.org (FR)
+URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
+
+Name = Djep.hd.free.fr (FR)
+URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%
