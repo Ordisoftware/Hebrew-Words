@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewWords
           MainForm.Instance.toolStripMenuItem7.PerformClick();
         return;
       }
-      hebrew = HebrewLetters.SetFinale(hebrew, false);
+      hebrew = HebrewLetters.SetFinal(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
