@@ -63,7 +63,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Entities\VerseItem.cs" />
-    <Compile Include="Source\Entities\BooksNames.Common.cs" />
+    <Compile Include="Source\Books\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,8 +80,8 @@
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Classes\DataSetHelper.cs" />
-    <Compile Include="Source\Entities\BooksNames.BibleHub.cs" />
-    <Compile Include="Source\Entities\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Books\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Books\BooksNames.Chabad.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
@@ -116,11 +116,11 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Entities\OnlineBibleProviders.cs" />
-    <Compile Include="Source\Entities\BooksBounds.cs" />
-    <Compile Include="Source\Entities\BooksNames.Djep.cs" />
-    <Compile Include="Source\Entities\BooksNames.Original.cs" />
-    <Compile Include="Source\Entities\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Entities\BooksNames.StudyBible.cs" />
+    <Compile Include="Source\Books\BooksBounds.cs" />
+    <Compile Include="Source\Books\BooksNames.Djep.cs" />
+    <Compile Include="Source\Books\BooksNames.Original.cs" />
+    <Compile Include="Source\Books\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Books\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\GrammarGuideForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,7 +135,7 @@
     </Compile>
     <Compile Include="Source\Classes\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
-    <Compile Include="Source\Entities\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Books\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
@@ -152,9 +152,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateConcordances.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateConcordances.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.History.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,7 +211,7 @@
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Entities\Books.cs" />
+    <Compile Include="Source\Books\Books.cs" />
     <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
     <Compile Include="Source\Classes\SettingsHelper.cs" />
