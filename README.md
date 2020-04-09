@@ -119,8 +119,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Improve UI/UX.
+- Some code refactoring.
+- Update help.
 
 >>>>- Add online providers editor form.
+>>>>- Create online providers database table.
 
 >>>>- Add parasha list form with references links.
 
