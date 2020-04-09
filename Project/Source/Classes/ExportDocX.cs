@@ -14,6 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 using Xceed.Words.NET;
 

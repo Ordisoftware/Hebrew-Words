@@ -14,6 +14,7 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.IO;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
@@ -37,7 +38,7 @@ namespace Ordisoftware.HebrewWords
           MainForm.Instance.toolStripMenuItem7.PerformClick();
         return;
       }
-      hebrew = HebrewLetters.SetFinal(hebrew, false);
+      hebrew = HebrewAlphabet.SetFinal(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 

@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -124,7 +125,7 @@ namespace Ordisoftware.HebrewWords
       if ( e.KeyChar == '\r' )
         UpdateResult();
       else
-      if ( !HebrewLetters.Codes.Contains(Convert.ToString(e.KeyChar)) )
+      if ( !HebrewAlphabet.Codes.Contains(Convert.ToString(e.KeyChar)) )
         e.KeyChar = '\x0';
       else
         KeyProcessed = true;

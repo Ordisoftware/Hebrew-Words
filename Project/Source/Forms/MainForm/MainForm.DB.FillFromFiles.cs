@@ -17,6 +17,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
@@ -42,7 +43,7 @@ namespace Ordisoftware.HebrewWords
         {
           chapter.ELS50 = "";
           DataSet.Chapters.AddChaptersRow(chapter);
-          strELS50 = HebrewLetters.UnFinalAll(strELS50);
+          strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
           int i = strELS50.Length - 1;
           while ( i >= 0 && strELS50[i] != 't' ) i--;
           string res = "";
@@ -101,13 +102,13 @@ namespace Ordisoftware.HebrewWords
                 verse.Number = ++countVerses;
                 verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(list[0]).Split(' ').ToArray();
+                listWordsHebrew = HebrewAlphabet.ConvertToHebrewFont(list[0]).Split(' ').ToArray();
                 DataSet.Verses.AddVersesRow(verse);
               }
               else
               {
                 listWordsOriginal = line.Replace("-", " ").Split(' ').Reverse().ToArray();
-                listWordsHebrew = HebrewLetters.ConvertToHebrewFont(line).Split(' ').ToArray();
+                listWordsHebrew = HebrewAlphabet.ConvertToHebrewFont(line).Split(' ').ToArray();
               }
               for ( int i = 0; i < listWordsHebrew.Length; i++ )
                 if ( listWordsHebrew[i] != "" )

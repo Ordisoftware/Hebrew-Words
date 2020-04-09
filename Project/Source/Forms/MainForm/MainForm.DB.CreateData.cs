@@ -1,5 +1,4 @@
-﻿using Ordisoftware.Core;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -19,6 +18,8 @@ using System.Data.Odbc;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {

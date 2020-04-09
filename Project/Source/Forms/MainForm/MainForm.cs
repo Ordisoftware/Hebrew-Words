@@ -19,8 +19,9 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -617,7 +618,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void SelectScreenPosition_Click(object sender, EventArgs e)
+    internal void EditScreenPosition_Click(object sender, EventArgs e)
     {
       DoScreenPosition(sender, e);
     }
@@ -1062,7 +1063,7 @@ namespace Ordisoftware.HebrewWords
     {
       ActionViewSearch.PerformClick();
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.Input.Text = HebrewLetters.SetFinal(word, false);
+      EditLetters.Input.Text = HebrewAlphabet.SetFinal(word, false);
       EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
     }
 

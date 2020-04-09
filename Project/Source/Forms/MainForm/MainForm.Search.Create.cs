@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -67,7 +68,7 @@ namespace Ordisoftware.HebrewWords
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
         SearchWord1 = EditLetters.Input.Text;
-        SearchWord2 = HebrewLetters.SetFinal(SearchWord1, true);
+        SearchWord2 = HebrewAlphabet.SetFinal(SearchWord1, true);
         CheckWord = checkWordHebrew;
       }
       if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )

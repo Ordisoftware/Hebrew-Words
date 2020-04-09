@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Words.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -19,7 +19,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>

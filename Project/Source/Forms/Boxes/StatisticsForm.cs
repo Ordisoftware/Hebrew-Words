@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -157,7 +158,7 @@ namespace Ordisoftware.HebrewWords
         return query.Count().ToString();
       };
       LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
-      LabelCountElohimValue.Text = getCount(s => HebrewLetters.SetFinal(s, false).Contains("myhla"));
+      LabelCountElohimValue.Text = getCount(s => HebrewAlphabet.SetFinal(s, false).Contains("myhla"));
       LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));
       LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m"));
       LabelCountMitsvahValue.Text = getCount(s => s.Contains("hvjm") || s.Contains("tvjm"));

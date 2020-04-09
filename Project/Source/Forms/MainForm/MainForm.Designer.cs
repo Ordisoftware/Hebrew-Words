@@ -1369,42 +1369,42 @@
       resources.ApplyResources(this.EditScreenNone, "EditScreenNone");
       this.EditScreenNone.CheckOnClick = true;
       this.EditScreenNone.Name = "EditScreenNone";
-      this.EditScreenNone.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenNone.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenTopLeft
       // 
       resources.ApplyResources(this.EditScreenTopLeft, "EditScreenTopLeft");
       this.EditScreenTopLeft.CheckOnClick = true;
       this.EditScreenTopLeft.Name = "EditScreenTopLeft";
-      this.EditScreenTopLeft.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenTopLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenTopRight
       // 
       resources.ApplyResources(this.EditScreenTopRight, "EditScreenTopRight");
       this.EditScreenTopRight.CheckOnClick = true;
       this.EditScreenTopRight.Name = "EditScreenTopRight";
-      this.EditScreenTopRight.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenTopRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenBottomLeft
       // 
       resources.ApplyResources(this.EditScreenBottomLeft, "EditScreenBottomLeft");
       this.EditScreenBottomLeft.CheckOnClick = true;
       this.EditScreenBottomLeft.Name = "EditScreenBottomLeft";
-      this.EditScreenBottomLeft.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenBottomLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenBottomRight
       // 
       resources.ApplyResources(this.EditScreenBottomRight, "EditScreenBottomRight");
       this.EditScreenBottomRight.CheckOnClick = true;
       this.EditScreenBottomRight.Name = "EditScreenBottomRight";
-      this.EditScreenBottomRight.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenBottomRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenCenter
       // 
       resources.ApplyResources(this.EditScreenCenter, "EditScreenCenter");
       this.EditScreenCenter.CheckOnClick = true;
       this.EditScreenCenter.Name = "EditScreenCenter";
-      this.EditScreenCenter.Click += new System.EventHandler(this.SelectScreenPosition_Click);
+      this.EditScreenCenter.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // ActionResetWinSettings
       // 
