@@ -100,8 +100,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
+- Move online providers values from code to files in the application documents folder.
 - Move tanak text files in Documents in a dedicated folder.
-- Move default online providers values to a file in the application documents folder.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add links to tanak and parasha wikipedia pages.
 - Add links to Sefaria, Halakhah, Lexilogos and Hebrew Gematria websites.
@@ -119,11 +119,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Improve UI/UX.
-- Some code refactoring.
+- Code refactoring.
 - Update help.
 
+>>>>- Create online providers database tables.
 >>>>- Add online providers editor form.
->>>>- Create online providers database table.
 
 >>>>- Add parasha list form with references links.
 
