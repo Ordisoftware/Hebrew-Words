@@ -22,7 +22,7 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 UninstallFilesDir={app}\Uninstall
-DefaultDirName={pf}\{#MyAppPublisher}\{#MyAppName}
+DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
 DefaultGroupName={#MyAppPublisher}
 AllowNoIcons=true
 LicenseFile=..\Project\License\MPL 2.0.rtf
@@ -115,6 +115,34 @@ Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
 
 [Code]
+procedure CurStepChanged(CurStep: TSetupStep);
+var
+	filename, sourcepath, destpath : string;
+begin
+	case CurStep of
+		// executed just before installation starts
+    ssInstall:
+    begin
+      sourcepath := ExpandConstant('{app}') + '\Bin\';
+      destpath := ExpandConstant('{userappdata}') + '\{#MyAppPublisher}\{#MyAppName}\';
+      filename := 'Bookmarks.txt';
+			if FileExists(sourcepath + filename) then
+			begin
+				RenameFile(sourcepath + filename, destpath + filename);
+			end;
+      filename := 'History.txt';
+			if FileExists(sourcepath + filename) then
+			begin
+				RenameFile(sourcepath + filename, destpath + filename);
+			end;
+    end;
+		// executed just after the installation finishes
+		ssPostInstall:
+		begin
+		end;
+  end;
+end;
+
 function IsDotNetDetected(version: string; service: cardinal): boolean;
 // Indicates whether the specified version and service pack of the .NET Framework is installed.
 //
@@ -143,7 +171,6 @@ var
     key, versionKey: string;
     install, release, serviceCount, versionRelease: cardinal;
     success: boolean;
-var reqNetVer : string;
 begin
     versionKey := version;
     versionRelease := 0;
