@@ -103,6 +103,10 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    public ReferencesList(string filename)
+    {
+      Filename = filename;
+    }
   }
 
 }

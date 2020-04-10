@@ -20,11 +20,6 @@ namespace Ordisoftware.HebrewWords
   public class Bookmarks : ReferencesList
   {
 
-    public Bookmarks()
-    {
-      Filename = Program.UserDataFolderPath + "Bookmarks.txt";
-    }
-
     public override void Add(ReferenceItem reference)
     {
       if ( Program.Settings.BookmarksCount < 1 )
@@ -42,6 +37,10 @@ namespace Ordisoftware.HebrewWords
     {
       Items.Remove(reference);
       Save();
+    }
+
+    public Bookmarks(string filename) : base(filename)
+    {
     }
 
   }

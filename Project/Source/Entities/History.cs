@@ -21,11 +21,6 @@ namespace Ordisoftware.HebrewWords
   public class History : ReferencesList
   {
 
-    public History()
-    {
-      Filename = Program.UserDataFolderPath + "History.txt";
-    }
-
     public override void Add(ReferenceItem reference)
     {
       if ( Program.Settings.HistoryCount < 1 )
@@ -37,6 +32,10 @@ namespace Ordisoftware.HebrewWords
       while ( Items.Count > Program.Settings.BookmarksCount )
         Items.RemoveAt(Items.Count - 1);
       Save();
+    }
+
+    public History(string filename) : base(filename)
+    {
     }
 
   }

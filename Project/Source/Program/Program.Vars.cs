@@ -167,6 +167,28 @@ namespace Ordisoftware.HebrewWords
     static public readonly OnlineProviders OnlineBibleProviders
       = new OnlineProviders(OnlineBibleProvidersFileName);
 
+    /// <summary>
+    /// Indicate filename of the bookmaks.
+    /// </summary>
+    static public string BookmarksFilename
+    {
+      get
+      {
+        return UserDataFolderPath + "Bookmarks.txt";
+      }
+    }
+
+    /// <summary>
+    /// Indicate filename of the history.
+    /// </summary>
+    static public string HistoryFilename
+    {
+      get
+      {
+        return UserDataFolderPath + "History.txt";
+      }
+    }
+
   }
 
 }

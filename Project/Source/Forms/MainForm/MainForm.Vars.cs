@@ -78,9 +78,8 @@ namespace Ordisoftware.HebrewWords
 
     private int BookmarksMenuFirstIndex;
 
-    private readonly Bookmarks Bookmarks = new Bookmarks();
-
-    private readonly History History = new History();
+    private Bookmarks Bookmarks;
+    private History History;
 
     private IEnumerable<ReferenceItem> SearchResults;
 

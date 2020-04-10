@@ -158,10 +158,6 @@ namespace Ordisoftware.HebrewWords
           DataSet.Verses.EndLoadData();
           DataSet.Words.EndLoadData();
           InitBooksCombobox();
-          Bookmarks.Load();
-          UpdateBookmarks();
-          History.Load();
-          UpdateHistory();
           //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
         }
         finally
@@ -184,6 +180,19 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
+        try
+        {
+          Bookmarks = new Bookmarks(Program.BookmarksFilename);
+          Bookmarks.Load();
+          UpdateBookmarks();
+          History = new History(Program.HistoryFilename);
+          History.Load();
+          UpdateHistory();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
         IsLoadingData = false;
         form.Close();
         SetFormDisabled(false);
