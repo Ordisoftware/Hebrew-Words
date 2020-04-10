@@ -118,6 +118,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add sort bookmarks menu.
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
+- Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
 - Improve UI/UX.
 - Code refactoring.
 - Update help.
