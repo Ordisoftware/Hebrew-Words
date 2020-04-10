@@ -24,6 +24,9 @@ namespace Ordisoftware.HebrewWords
 
     private int ScrollIncrement = 25;
 
+    /// <summary>
+    /// Rotate current search tab.
+    /// </summary>
     private void RotateSearchTab()
     {
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
@@ -44,36 +47,12 @@ namespace Ordisoftware.HebrewWords
     {
       Func<Panel, int, bool, bool> scroll = (panel, y, abs) =>
       {
-        panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, 
-                                             (abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0) + y);
+        int dy = abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0;
+        panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, y + dy);
         return true;
       };
       switch ( keyData )
       {
-        case Keys.Escape:
-          if ( IsRenderingSearch ) CancelRequired = true;
-          break;
-        case Keys.Control | Keys.B:
-          ActionViewBooksTranslation.PerformClick();
-          return true;
-        case Keys.Control | Keys.G:
-          ActionShowGrammarGuide.PerformClick();
-          return true;
-        case Keys.Control | Keys.H:
-          ActionStartHebrewLetters.PerformClick();
-          return true;
-        case Keys.Control | Keys.L:
-          ActionOpenShorashon.PerformClick();
-          return true;
-        case Keys.Control | Keys.R:
-          ActionGoToReference.PerformClick();
-          return true;
-        case Keys.Control | Keys.F:
-          ActionSearchVerse.PerformClick();
-          return true;
-        case Keys.Control | Keys.S:
-          ActionSave.PerformClick();
-          return true;
         case Keys.F1:
           ActionViewVerses.PerformClick();
           return true;
@@ -92,6 +71,27 @@ namespace Ordisoftware.HebrewWords
           else
             RotateSearchTab();
           return true;
+        case Keys.Control | Keys.S:
+          ActionSave.PerformClick();
+          return true;
+        case Keys.Control | Keys.R:
+          ActionGoToReference.PerformClick();
+          return true;
+        case Keys.Control | Keys.F:
+          ActionSearchVerse.PerformClick();
+          return true;
+        case Keys.Control | Keys.B:
+          ActionViewBooksTranslation.PerformClick();
+          return true;
+        case Keys.Control | Keys.G:
+          ActionShowGrammarGuide.PerformClick();
+          return true;
+        case Keys.Control | Keys.H:
+          ActionStartHebrewLetters.PerformClick();
+          return true;
+        case Keys.Control | Keys.L:
+          ActionOpenShorashon.PerformClick();
+          return true;
         case Keys.F8:
           ActionPreferences.PerformClick();
           return true;
@@ -101,6 +101,9 @@ namespace Ordisoftware.HebrewWords
         case Keys.F12:
           ActionAbout.PerformClick();
           return true;
+        case Keys.Escape:
+          if ( IsRenderingSearch ) CancelRequired = true;
+          break;
         case Keys.Control | Keys.Up:
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
