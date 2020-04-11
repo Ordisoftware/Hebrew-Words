@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
     private bool DoScreenPositionMutex;
 
     /// <summary>
-    /// Execute the screen position operation.
+    /// Execute the screen location operation.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
