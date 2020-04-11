@@ -25,7 +25,7 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 ## Requirements
 
-- Windows 7 x32/x64 or higher
+- Windows Vista x32/x64 or higher
 - Screen 1024x768 or higher
 - Framework .NET 4.5
 - SQLite ODBC Driver
@@ -149,8 +149,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 (- Database updated to support internal strong concordance popup menus in the future.)
 
-- Bug to solve in the future : error message when several SearchTranslatedForm are opened - using the top refresh button cancels that.
-- Bug to solve in the future : error message, sometimes, when typing too fastly in the comment boxes.
+- Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
+- Found bug to solve in the future : error message when several SearchTranslatedForm are opened - using the top refresh button cancels that.
+- Found bug to solve in the future : error message, sometimes, when typing too fastly in the comment boxes.
 
 #### 2019.11.14 - Version 2.4
 
