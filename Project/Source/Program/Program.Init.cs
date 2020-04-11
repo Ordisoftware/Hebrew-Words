@@ -120,7 +120,8 @@ namespace Ordisoftware.HebrewWords
     {
       foreach ( Control control in controls )
       {
-        if ( control is Label ) resources.ApplyResources(control, control.Name);
+        if ( control is Label )
+          resources.ApplyResources(control, control.Name);
         ApplyResources(resources, control.Controls);
       }
     }
