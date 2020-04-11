@@ -99,14 +99,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      string strHebrew = (string)EditBooks.SelectedRows[0].Cells[1].Value;
-      if ( strHebrew.StartsWith("a ") )
-        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
-      else
-      if ( strHebrew.StartsWith("b ") )
-        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
-      foreach ( string item in strHebrew.Split(' ') )
-        Program.OpenHebrewLetters(item);
+      Program.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value);
     }
 
     private void ActionSearchWord_Click(object sender, EventArgs e)
