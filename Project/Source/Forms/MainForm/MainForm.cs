@@ -93,6 +93,11 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Load(object sender, EventArgs e)
     {
       Program.Settings.Retrieve();
+      if ( Program.CheckUpdate(true) )
+      {
+        Application.Exit();
+        return;
+      }
       if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
         Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
@@ -109,6 +114,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      if ( Program.IsExiting ) return;
       Refresh();
       InitializeDialogsDirectory();
       DoBackupDB();
@@ -117,7 +123,6 @@ namespace Ordisoftware.HebrewWords
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
       IsReady = true;
-      Program.CheckUpdate(true);
     }
 
     /// <summary>
@@ -127,6 +132,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( Program.IsExiting ) return;
       if ( !IsReady ) return;
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !IsSessionEnding )
