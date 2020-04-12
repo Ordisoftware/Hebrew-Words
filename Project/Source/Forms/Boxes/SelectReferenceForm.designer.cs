@@ -49,6 +49,10 @@ namespace Ordisoftware.HebrewWords
       this.LabelBook = new System.Windows.Forms.Label();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.checkBox2 = new System.Windows.Forms.CheckBox();
+      this.checkBox3 = new System.Windows.Forms.CheckBox();
+      this.checkBox4 = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -85,9 +89,10 @@ namespace Ordisoftware.HebrewWords
       // 
       // SelectBook
       // 
-      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectBook.DropDownWidth = 450;
       this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
@@ -98,18 +103,44 @@ namespace Ordisoftware.HebrewWords
       // 
       // SelectChapter
       // 
-      resources.ApplyResources(this.SelectChapter, "SelectChapter");
       this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectChapter.DropDownWidth = 450;
       this.SelectChapter.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectChapter, "SelectChapter");
       this.SelectChapter.Name = "SelectChapter";
       this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
       // SelectVerse
       // 
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectVerse.DropDownWidth = 450;
       this.SelectVerse.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
+      // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // checkBox2
+      // 
+      resources.ApplyResources(this.checkBox2, "checkBox2");
+      this.checkBox2.Name = "checkBox2";
+      this.checkBox2.UseVisualStyleBackColor = true;
+      // 
+      // checkBox3
+      // 
+      resources.ApplyResources(this.checkBox3, "checkBox3");
+      this.checkBox3.Name = "checkBox3";
+      this.checkBox3.UseVisualStyleBackColor = true;
+      // 
+      // checkBox4
+      // 
+      resources.ApplyResources(this.checkBox4, "checkBox4");
+      this.checkBox4.Name = "checkBox4";
+      this.checkBox4.UseVisualStyleBackColor = true;
       // 
       // SelectReferenceForm
       // 
@@ -117,6 +148,10 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.checkBox4);
+      this.Controls.Add(this.checkBox3);
+      this.Controls.Add(this.checkBox2);
+      this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
       this.Controls.Add(this.SelectBook);
@@ -161,6 +196,10 @@ namespace Ordisoftware.HebrewWords
     private Label LabelBook;
     private ComboBox SelectChapter;
     private ComboBox SelectVerse;
+    private CheckBox checkBox1;
+    private CheckBox checkBox2;
+    private CheckBox checkBox3;
+    private CheckBox checkBox4;
   }
 
 }

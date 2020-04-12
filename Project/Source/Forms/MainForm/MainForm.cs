@@ -371,6 +371,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionRefresh_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       int book = CurrentReference.Book.Number;
       int chapter = CurrentReference.Chapter.Number;
       int verse = CurrentReference.Verse?.Number ?? 1;
@@ -458,6 +459,7 @@ namespace Ordisoftware.HebrewWords
       finally
       {
         Program.IsLoadingData = false;
+        ActionSave.PerformClick();
       }
     }
 
@@ -468,6 +470,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionViewStatistics_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       var reference = StatisticsForm.Run();
       if ( reference != null )
       {
@@ -590,6 +593,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       bool refresh = PreferencesForm.Run();
       InitializeDialogsDirectory();
       UpdateBookmarks();
@@ -710,6 +714,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportBook_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       DoExportBook();
     }
 
@@ -720,6 +725,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportChapter_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       DoExportChapter();
     }
 
@@ -891,6 +897,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionExportVerse_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       DoExportVerse(sender);
     }
 
@@ -981,6 +988,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionImportConsole_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem reference = null;
@@ -1055,6 +1063,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionGoToVerse_Click(object sender, EventArgs e)
     {
+      ActionSave.PerformClick();
       GoTo(SelectReferenceForm.Run());
     }
 
@@ -1212,7 +1221,10 @@ namespace Ordisoftware.HebrewWords
       form.TextBox.Text = CurrentReference.Book.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
+      {
         CurrentReference.Book.Memo = form.TextBox.Text;
+        ActionSave.PerformClick();
+      }
     }
 
     private void ActionEditChapterMemo_Click(object sender, EventArgs e)
@@ -1224,7 +1236,10 @@ namespace Ordisoftware.HebrewWords
       form.TextBox.Text = CurrentReference.Chapter.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
+      {
         EditChapterMemo.Text = form.TextBox.Text;
+        ActionSave.PerformClick();
+      }
     }
 
   }
