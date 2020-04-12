@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderAll()
     {
-      if ( IsLoadingData || IsGoToRunning ) return;
+      if ( Program.IsLoadingData || IsGoToRunning ) return;
       Refresh();
       RenderVerses();
       RenderTranslation();

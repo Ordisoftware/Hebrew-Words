@@ -52,6 +52,7 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
+      Program.AllowClose = true;
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
@@ -122,7 +123,7 @@ namespace Ordisoftware.HebrewWords
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-      IsReady = true;
+      Program.IsReady = true;
     }
 
     /// <summary>
@@ -133,9 +134,9 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( Program.IsExiting ) return;
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       ActionSave.PerformClick();
-      if ( EditConfirmClosing.Checked && !IsSessionEnding )
+      if ( EditConfirmClosing.Checked && !Program.IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
           e.Cancel = true;
     }
@@ -157,7 +158,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -171,7 +172,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
           form.Close();
-      IsSessionEnding = true;
+      Program.IsSessionEnding = true;
       Close();
     }
 
@@ -442,7 +443,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( !EditBooksForm.Run() ) return;
       Refresh();
-      IsLoadingData = true;
+      Program.IsLoadingData = true;
       try
       {
         int book = CurrentReference.Book.Number;
@@ -456,7 +457,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        IsLoadingData = false;
+        Program.IsLoadingData = false;
       }
     }
 

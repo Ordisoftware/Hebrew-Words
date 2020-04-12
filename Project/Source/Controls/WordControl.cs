@@ -101,7 +101,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
-      if ( MainForm.Instance.IsLoadingData ) return;
+      if ( Program.IsLoadingData ) return;
       if ( MainForm.Instance.IsRenderingSearch ) return;
       if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
       Focus();

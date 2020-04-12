@@ -166,7 +166,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditVerseComment_TextChanged(object sender, EventArgs e)
     {
-      if ( IsLoadingData ) return;
+      if ( Program.IsLoadingData ) return;
       var control = (Control)sender;
       ( (ReferenceItem)control.Tag ).Verse.Comment = control.Text;
       ActionSave.Enabled = true;

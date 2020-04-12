@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
-      IsLoadingData = true;
+      Program.IsLoadingData = true;
       try
       {
         CreateSchemaIfNotExists();
@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewWords
         {
           ex.Manage();
         }
-        IsLoadingData = false;
+        Program.IsLoadingData = false;
         form.Close();
         SetFormDisabled(false);
       }

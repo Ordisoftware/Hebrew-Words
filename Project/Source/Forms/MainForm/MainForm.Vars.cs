@@ -24,6 +24,9 @@ namespace Ordisoftware.HebrewWords
   public partial class MainForm
   {
 
+    /// <summary>
+    /// Indicate loading data progress bar divisor.
+    /// </summary>
     private const int PopulateDataPaging = 10000;
 
     /// <summary>
@@ -35,21 +38,6 @@ namespace Ordisoftware.HebrewWords
     /// Indicate current bible reference.
     /// </summary>
     public ReferenceItem CurrentReference { get; set; }
-
-    /// <summary>
-    /// Indicate if is in loading data stage.
-    /// </summary>
-    public bool IsLoadingData { get; private set; }
-
-    /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    public bool IsReady { get; private set; }
-
-    /// <summary>
-    /// Indicate if windows session is ending.
-    /// </summary>
-    private bool IsSessionEnding;
 
     /// <summary>
     /// Indicate is combobox selection is changing.

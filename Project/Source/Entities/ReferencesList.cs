@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        if ( MainForm.Instance.IsLoadingData )
+        if ( Program.IsLoadingData )
           return;
         var items = new List<string>();
         foreach ( var item in Items )

@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewWords
       {
         IsGoToRunning = false;
       }
-      if ( IsLoadingData ) return;
+      if ( Program.IsLoadingData ) return;
       if ( updated || forceUpdateView )
         RenderAll();
       if ( reference.Verse == null )
