@@ -48,6 +48,8 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpen = new System.Windows.Forms.ToolStripMenuItem();
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.panel1 = new System.Windows.Forms.Panel();
@@ -66,11 +68,11 @@
       // 
       // EditBooks
       // 
-      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.AllowUserToAddRows = false;
       this.EditBooks.AllowUserToDeleteRows = false;
       this.EditBooks.AllowUserToResizeRows = false;
       this.EditBooks.AutoGenerateColumns = false;
+      resources.ApplyResources(this.EditBooks, "EditBooks");
       this.EditBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -132,7 +134,6 @@
       // 
       // ContextMenuStripResults
       // 
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.ActionSearchWord,
@@ -143,8 +144,11 @@
             this.ActionCopyFontChars,
             this.ActionCopyUnicodeChars,
             this.toolStripSeparator3,
-            this.ActionEditMemo});
+            this.ActionEditMemo,
+            this.toolStripSeparator4,
+            this.ActionOpen});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionSearchOnline
       // 
@@ -160,8 +164,8 @@
       // 
       // toolStripSeparator2
       // 
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -171,8 +175,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionCopyName
       // 
@@ -194,14 +198,25 @@
       // 
       // toolStripSeparator3
       // 
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionEditMemo
       // 
       resources.ApplyResources(this.ActionEditMemo, "ActionEditMemo");
       this.ActionEditMemo.Name = "ActionEditMemo";
       this.ActionEditMemo.Click += new System.EventHandler(this.ActionEditMemo_Click);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
+      // ActionOpen
+      // 
+      resources.ApplyResources(this.ActionOpen, "ActionOpen");
+      this.ActionOpen.Name = "ActionOpen";
+      this.ActionOpen.Click += new System.EventHandler(this.ActionOpen_Click);
       // 
       // BooksBindingSource
       // 
@@ -215,15 +230,15 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionRestoreCommonNames);
       this.panel1.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // ActionRestoreCommonNames
       // 
-      resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
       this.ActionRestoreCommonNames.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionRestoreCommonNames, "ActionRestoreCommonNames");
       this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
       this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
       this.ActionRestoreCommonNames.TabStop = true;
@@ -251,8 +266,8 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.EditBooks);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // EditBooksForm
@@ -309,5 +324,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     private System.Windows.Forms.LinkLabel ActionRestoreCommonNames;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpen;
   }
 }

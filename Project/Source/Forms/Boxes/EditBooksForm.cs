@@ -158,6 +158,13 @@ namespace Ordisoftware.HebrewWords
           book.CommonName = BooksNames.Common.GetLang((Books)( book.Number - 1 ));
     }
 
+    private void ActionOpen_Click(object sender, EventArgs e)
+    {
+      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+      MainForm.Instance.GoTo(( (Data.DataSet.BooksRow)row ).Number, 1, 1);
+      Close();
+    }
+
   }
 
 }

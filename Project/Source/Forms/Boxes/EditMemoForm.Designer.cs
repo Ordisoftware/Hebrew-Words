@@ -33,6 +33,7 @@
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.TextBox = new System.Windows.Forms.TextBox();
+      this.PanelSep = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -63,12 +64,18 @@
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       // 
+      // PanelSep
+      // 
+      resources.ApplyResources(this.PanelSep, "PanelSep");
+      this.PanelSep.Name = "PanelSep";
+      // 
       // EditMemoForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.EditMemoFormClientSize;
       this.Controls.Add(this.TextBox);
+      this.Controls.Add(this.PanelSep);
       this.Controls.Add(this.PanelButtons);
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "EditMemoFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
@@ -86,5 +93,6 @@
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
     internal System.Windows.Forms.TextBox TextBox;
+    private System.Windows.Forms.Panel PanelSep;
   }
 }
