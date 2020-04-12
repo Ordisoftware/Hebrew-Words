@@ -1042,6 +1042,12 @@ namespace Ordisoftware.HebrewWords
       MenuBookmarks.ShowDropDown();
     }
 
+    private void ActionAddBookmark_Click(object sender, EventArgs e)
+    {
+      Bookmarks.Add(SelectReferenceForm.Run());
+      UpdateBookmarks();
+    }
+
     /// <summary>
     /// Event handler. Called by ActionGoToVerse for click events.
     /// </summary>
