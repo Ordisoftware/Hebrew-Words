@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 
 namespace Ordisoftware.HebrewWords
@@ -22,6 +22,7 @@ namespace Ordisoftware.HebrewWords
 
     public override void Add(ReferenceItem reference)
     {
+      if ( reference == null ) return;
       if ( Program.Settings.BookmarksCount < 1 )
         return;
       foreach ( var item in Items )
