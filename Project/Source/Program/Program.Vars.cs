@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -117,6 +118,18 @@ namespace Ordisoftware.HebrewWords
       = AppDocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
 
     /// <summary>
+    /// Indicate application documents folder.
+    /// </summary>
+    static public readonly string ParashaFolderPath
+      = AppDocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
+
+    /// <summary>
+    /// Indicate application documents folder.
+    /// </summary>
+    static public readonly string LinksFolderPath
+      = AppDocumentsFolderPath + "Links" + Path.DirectorySeparatorChar;
+
+    /// <summary>
     /// Indicate user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
@@ -193,6 +206,12 @@ namespace Ordisoftware.HebrewWords
       = new OnlineProviders(OnlineBibleProvidersFileName);
 
     /// <summary>
+    /// Indicate online links providers.
+    /// </summary>
+    static public readonly List<OnlineProviders> OnlineLinksProviders
+      = new List<OnlineProviders>();
+
+    /// <summary>
     /// Indicate filename of the bookmaks.
     /// </summary>
     static public string BookmarksFilename
@@ -212,6 +231,15 @@ namespace Ordisoftware.HebrewWords
       {
         return UserDataFolderPath + "History.txt";
       }
+    }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static Program()
+    {
+      foreach ( var file in Directory.GetFiles(LinksFolderPath, "*.txt") )
+        OnlineLinksProviders.Add(new OnlineProviders(file));
     }
 
   }
