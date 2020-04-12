@@ -49,10 +49,8 @@ namespace Ordisoftware.HebrewWords
       this.LabelBook = new System.Windows.Forms.Label();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
-      this.checkBox2 = new System.Windows.Forms.CheckBox();
-      this.checkBox3 = new System.Windows.Forms.CheckBox();
-      this.checkBox4 = new System.Windows.Forms.CheckBox();
+      this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
+      this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -108,7 +106,7 @@ namespace Ordisoftware.HebrewWords
       this.SelectChapter.FormattingEnabled = true;
       resources.ApplyResources(this.SelectChapter, "SelectChapter");
       this.SelectChapter.Name = "SelectChapter";
-      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
       // 
       // SelectVerse
       // 
@@ -118,29 +116,19 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
       // 
-      // checkBox1
+      // EditFilterChaptersWithTitle
       // 
-      resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditFilterChaptersWithTitle, "EditFilterChaptersWithTitle");
+      this.EditFilterChaptersWithTitle.Name = "EditFilterChaptersWithTitle";
+      this.EditFilterChaptersWithTitle.UseVisualStyleBackColor = true;
+      this.EditFilterChaptersWithTitle.CheckedChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
       // 
-      // checkBox2
+      // EditFilterVersesTranslated
       // 
-      resources.ApplyResources(this.checkBox2, "checkBox2");
-      this.checkBox2.Name = "checkBox2";
-      this.checkBox2.UseVisualStyleBackColor = true;
-      // 
-      // checkBox3
-      // 
-      resources.ApplyResources(this.checkBox3, "checkBox3");
-      this.checkBox3.Name = "checkBox3";
-      this.checkBox3.UseVisualStyleBackColor = true;
-      // 
-      // checkBox4
-      // 
-      resources.ApplyResources(this.checkBox4, "checkBox4");
-      this.checkBox4.Name = "checkBox4";
-      this.checkBox4.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditFilterVersesTranslated, "EditFilterVersesTranslated");
+      this.EditFilterVersesTranslated.Name = "EditFilterVersesTranslated";
+      this.EditFilterVersesTranslated.UseVisualStyleBackColor = true;
+      this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
       // 
       // SelectReferenceForm
       // 
@@ -148,10 +136,8 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.checkBox4);
-      this.Controls.Add(this.checkBox3);
-      this.Controls.Add(this.checkBox2);
-      this.Controls.Add(this.checkBox1);
+      this.Controls.Add(this.EditFilterVersesTranslated);
+      this.Controls.Add(this.EditFilterChaptersWithTitle);
       this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
       this.Controls.Add(this.SelectBook);
@@ -196,10 +182,8 @@ namespace Ordisoftware.HebrewWords
     private Label LabelBook;
     private ComboBox SelectChapter;
     private ComboBox SelectVerse;
-    private CheckBox checkBox1;
-    private CheckBox checkBox2;
-    private CheckBox checkBox3;
-    private CheckBox checkBox4;
+    private CheckBox EditFilterChaptersWithTitle;
+    private CheckBox EditFilterVersesTranslated;
   }
 
 }

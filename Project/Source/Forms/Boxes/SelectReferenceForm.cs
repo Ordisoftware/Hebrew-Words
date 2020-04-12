@@ -11,9 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2004-04 </edited>
 using System;
-using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewWords
@@ -27,32 +27,105 @@ namespace Ordisoftware.HebrewWords
       var form = new SelectReferenceForm();
       if ( form.ShowDialog() != DialogResult.OK ) return null;
       return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number,
-                               ( (ChapterItem)form.SelectChapter.SelectedItem ).Chapter.Number,
-                               ( (VerseItem)form.SelectVerse.SelectedItem ).Verse.Number);
+                               ( (ChapterItem)form.SelectChapter.SelectedItem )?.Chapter.Number ?? 1,
+                               ( (VerseItem)form.SelectVerse.SelectedItem )?.Verse.Number ?? 1);
     }
+
+    private Data.DataSet DataSet = MainForm.Instance.DataSet;
 
     private SelectReferenceForm()
     {
       InitializeComponent();
-      foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        SelectBook.Items.Add(new BookItem(book));
-      SelectBook.SelectedIndex = 0;
+      RefreshBooks();
+    }
+
+    private void EditFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      RefreshBooks();
     }
 
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SelectChapter.Items.Clear();
-      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
-        SelectChapter.Items.Add(new ChapterItem(chapter));
-      SelectChapter.SelectedIndex = 0;
+      RefreshChapters();
     }
 
-    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
+    private void RefreshBooks()
+    {
+      SelectBook.Items.Clear();
+      foreach ( var book in DataSet.Books )
+      {
+        bool selected = false;
+        foreach ( var chapter in book.GetChaptersRows() )
+          if ( !EditFilterChaptersWithTitle.Checked || chapter.Title != "" )
+            foreach ( var verse in chapter.GetVersesRows() )
+              if ( !EditFilterVersesTranslated.Checked || verse.IsTranslated() )
+                selected = true;
+        if ( selected )
+          SelectBook.Items.Add(new BookItem(book));
+      }
+      if ( SelectBook.Items.Count > 0 )
+      {
+        SelectBook.Enabled = true;
+        SelectBook.SelectedIndex = 0;
+      }
+      else
+      {
+        SelectBook.Enabled = false;
+        RefreshChapters();
+      }
+    }
+
+    private void RefreshChapters()
+    {
+      SelectChapter.Items.Clear();
+      SelectVerse.Items.Clear();
+      if ( SelectBook.SelectedItem != null )
+      {
+        int number = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
+        var list = from chapter in DataSet.Chapters
+                   where chapter.BooksRow.Number == number
+                   select chapter;
+        if ( EditFilterChaptersWithTitle.Checked )
+          list = list.Where(chapter => chapter.Title != "");
+        if ( EditFilterVersesTranslated.Checked )
+          list = list.Where(chapter =>
+          {
+            foreach ( var verse in chapter.GetVersesRows() )
+              if ( verse.IsTranslated() )
+                return true;
+            return false;
+          });
+        foreach ( var chapter in list )
+          SelectChapter.Items.Add(new ChapterItem(chapter));
+      }
+      if ( SelectChapter.Items.Count > 0 )
+      {
+        SelectChapter.Enabled = true;
+        SelectChapter.SelectedIndex = 0;
+      }
+      else
+      {
+        SelectChapter.Enabled = false;
+        RefreshVerses();
+      }
+    }
+
+    private void RefreshVerses()
     {
       SelectVerse.Items.Clear();
-      foreach ( Data.DataSet.VersesRow verse in ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows() )
-        SelectVerse.Items.Add(new VerseItem(verse));
-      SelectVerse.SelectedIndex = 0;
+      if ( SelectChapter.SelectedItem != null )
+      {
+        var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+        foreach ( Data.DataSet.VersesRow verse in list )
+          SelectVerse.Items.Add(new VerseItem(verse));
+      }
+      if ( SelectVerse.Items.Count > 0 )
+      {
+        SelectVerse.Enabled = true;
+        SelectVerse.SelectedIndex = 0;
+      }
+      else
+        SelectVerse.Enabled = false;
     }
 
   }
