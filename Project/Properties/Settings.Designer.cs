@@ -251,7 +251,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int BookmarksCount {
             get {
                 return ((int)(this["BookmarksCount"]));

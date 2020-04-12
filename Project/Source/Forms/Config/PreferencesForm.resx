@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 90</value>
+    <value>18, 185</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 140</value>
+    <value>18, 235</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -196,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 240</value>
+    <value>18, 335</value>
   </data>
   <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -229,7 +229,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBackupCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 290</value>
+    <value>260, 60</value>
   </data>
   <data name="LabelBackupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -262,7 +262,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 340</value>
+    <value>260, 110</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 13</value>
@@ -295,7 +295,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 190</value>
+    <value>18, 285</value>
   </data>
   <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 13</value>
@@ -328,7 +328,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 290</value>
+    <value>260, 385</value>
   </data>
   <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
@@ -361,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 390</value>
+    <value>260, 485</value>
   </data>
   <data name="LabelBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -394,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 340</value>
+    <value>260, 435</value>
   </data>
   <data name="LabelWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 440</value>
+    <value>260, 535</value>
   </data>
   <data name="LabelMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 13</value>
@@ -460,7 +460,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 390</value>
+    <value>375, 485</value>
   </data>
   <data name="LabelHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -493,7 +493,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 490</value>
+    <value>260, 585</value>
   </data>
   <data name="LabelMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 13</value>
@@ -523,7 +523,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 3</value>
+    <value>421, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -580,10 +580,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 535</value>
+    <value>10, 693</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 28</value>
+    <value>499, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -601,7 +601,7 @@
     <value>40</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 109</value>
+    <value>21, 204</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -644,10 +644,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 107</value>
+    <value>445, 202</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -671,7 +671,7 @@
     <value>Exe files (*.exe)|*.exe</value>
   </data>
   <data name="EditOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 159</value>
+    <value>21, 254</value>
   </data>
   <data name="EditOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -714,10 +714,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 257</value>
+    <value>445, 352</value>
   </data>
   <data name="ActionSelectBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionSelectBackupPath.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -735,7 +735,7 @@
     <value>32</value>
   </data>
   <data name="EditBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 259</value>
+    <value>21, 354</value>
   </data>
   <data name="EditBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -756,7 +756,7 @@
     <value>34</value>
   </data>
   <data name="EditBackupCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 308</value>
+    <value>263, 78</value>
   </data>
   <data name="EditBackupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -777,7 +777,7 @@
     <value>30</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 358</value>
+    <value>263, 128</value>
   </data>
   <data name="EditAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -933,10 +933,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 390</value>
+    <value>21, 535</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 112</value>
+    <value>210, 107</value>
   </data>
   <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -957,7 +957,7 @@
     <value>27</value>
   </data>
   <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 209</value>
+    <value>21, 304</value>
   </data>
   <data name="EditOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -981,7 +981,7 @@
     <value>152, 17</value>
   </metadata>
   <data name="EditCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 308</value>
+    <value>263, 403</value>
   </data>
   <data name="EditCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1002,7 +1002,7 @@
     <value>23</value>
   </data>
   <data name="EditBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 408</value>
+    <value>263, 503</value>
   </data>
   <data name="EditBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1023,7 +1023,7 @@
     <value>21</value>
   </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 358</value>
+    <value>263, 453</value>
   </data>
   <data name="EditWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1044,7 +1044,7 @@
     <value>13</value>
   </data>
   <data name="EditMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 458</value>
+    <value>263, 553</value>
   </data>
   <data name="EditMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1065,7 +1065,7 @@
     <value>17</value>
   </data>
   <data name="EditHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 408</value>
+    <value>378, 503</value>
   </data>
   <data name="EditHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1086,7 +1086,7 @@
     <value>19</value>
   </data>
   <data name="EditMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 508</value>
+    <value>263, 603</value>
   </data>
   <data name="EditMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1143,10 +1143,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 207</value>
+    <value>445, 302</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1186,10 +1186,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOnlineVerseHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 207</value>
+    <value>475, 302</value>
   </data>
   <data name="ActionOnlineVerseHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1327,10 +1327,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>447, 157</value>
+    <value>447, 252</value>
   </data>
   <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1370,10 +1370,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOnlineSearchHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 157</value>
+    <value>475, 252</value>
   </data>
   <data name="ActionOnlineSearchHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>24, 19</value>
   </data>
   <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1397,7 +1397,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 510</value>
+    <value>21, 151</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
@@ -1427,7 +1427,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoSortBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 59</value>
+    <value>21, 128</value>
   </data>
   <data name="EditAutoSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 17</value>
@@ -1457,7 +1457,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 36</value>
+    <value>21, 105</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -1487,7 +1487,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 13</value>
+    <value>21, 82</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 17</value>
@@ -1547,7 +1547,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 573</value>
+    <value>519, 731</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

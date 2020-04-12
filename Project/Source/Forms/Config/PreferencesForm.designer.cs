@@ -308,7 +308,7 @@
       // 
       resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
       this.EditBookmarksCount.Maximum = new decimal(new int[] {
-            20,
+            50,
             0,
             0,
             0});
@@ -323,7 +323,7 @@
             0});
       resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Maximum = new decimal(new int[] {
-            400,
+            500,
             0,
             0,
             0});
@@ -364,7 +364,7 @@
       // 
       resources.ApplyResources(this.EditHistoryCount, "EditHistoryCount");
       this.EditHistoryCount.Maximum = new decimal(new int[] {
-            40,
+            50,
             0,
             0,
             0});

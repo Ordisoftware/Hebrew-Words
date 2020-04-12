@@ -65,7 +65,7 @@
       <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="BookmarksCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="BookmarkMasterBook" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
