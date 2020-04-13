@@ -126,7 +126,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate application documents folder.
     /// </summary>
-    static public readonly string LinksFolderPath
+    static public readonly string WebLinksFolderPath
       = AppDocumentsFolderPath + "Links" + Path.DirectorySeparatorChar;
 
     /// <summary>
@@ -256,7 +256,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static Program()
     {
-      foreach ( var file in Directory.GetFiles(LinksFolderPath, "*.txt") )
+      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "*WebLinks.txt") )
         OnlineLinksProviders.Add(new OnlineProviders(file));
     }
 
