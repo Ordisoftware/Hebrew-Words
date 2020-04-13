@@ -11,16 +11,16 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewWords
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
-      if ( Program.IsReady )
+      if ( IsReady )
       {
         MainForm.Instance.RenderTranslation();
         MainForm.Instance.RenderRawText();
@@ -134,6 +134,40 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
       AboutBox.Instance.Icon = MainForm.Instance.Icon;
       GrammarGuideForm.Instance.Icon = MainForm.Instance.Icon;
+    }
+
+    /// <summary>
+    /// Create winforms submenu items for web links from definitions files.
+    /// </summary>
+    static public void CreateWebLinks(ToolStripDropDownButton menuRoot, Image imageFolder, Image imageLink)
+    {
+      foreach ( var items in OnlineLinksProviders )
+        if ( items.Items.Count > 0 )
+        {
+          string title = items.Title.GetLang();
+          ToolStripDropDownItem menu;
+          if ( title != "" )
+          {
+            menu = new ToolStripMenuItem(title);
+            menu.ImageScaling = ToolStripItemImageScaling.None;
+            menu.Image = imageFolder;
+            menuRoot.DropDownItems.Add(menu);
+          }
+          else
+            menu = menuRoot;
+          foreach ( var item in items.Items )
+          {
+            var menuitem = menu.DropDownItems.Add(item.Name);
+            menuitem.ImageScaling = ToolStripItemImageScaling.None;
+            menuitem.Image = imageLink;
+            menuitem.Tag = item.URL;
+            menuitem.Click += (sender, e) =>
+            {
+              string url = (string)( (ToolStripItem)sender ).Tag;
+              SystemManager.OpenWebLink(url);
+            };
+          }
+        }
     }
 
   }

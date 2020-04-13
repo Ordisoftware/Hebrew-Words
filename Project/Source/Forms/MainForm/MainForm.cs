@@ -52,6 +52,7 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
+      Program.CreateWebLinks(MenuWeb, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
       History = new History(Program.HistoryFilename);
       Program.AllowClose = true;
