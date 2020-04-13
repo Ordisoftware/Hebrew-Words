@@ -39,93 +39,123 @@ namespace Ordisoftware.HebrewWords
       RefreshBooks();
     }
 
-    private void EditFilter_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      RefreshBooks();
-    }
-
     private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       RefreshChapters();
     }
 
+    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      RefreshVerses();
+    }
+
+    private void EditFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      RefreshBooks();
+    }
+
     private void RefreshBooks()
     {
-      SelectBook.Items.Clear();
-      foreach ( var book in DataSet.Books )
+      if ( Mutex ) return;
+      Mutex = true;
+      try
       {
-        bool selected = false;
-        foreach ( var chapter in book.GetChaptersRows() )
-          if ( !EditFilterChaptersWithTitle.Checked || chapter.Title != "" )
-            foreach ( var verse in chapter.GetVersesRows() )
-              if ( !EditFilterVersesTranslated.Checked || verse.IsTranslated() )
-                selected = true;
-        if ( selected )
-          SelectBook.Items.Add(new BookItem(book));
+        SelectBook.Items.Clear();
+        foreach ( var book in DataSet.Books )
+        {
+          bool selected = false;
+          foreach ( var chapter in book.GetChaptersRows() )
+            if ( !EditFilterChaptersWithTitle.Checked || chapter.Title != "" )
+              foreach ( var verse in chapter.GetVersesRows() )
+                if ( !EditFilterVersesTranslated.Checked || verse.IsTranslated() )
+                  selected = true;
+          if ( selected )
+            SelectBook.Items.Add(new BookItem(book));
+        }
+        if ( SelectBook.Items.Count > 0 )
+        {
+          SelectBook.Enabled = true;
+          SelectBook.SelectedIndex = 0;
+        }
+        else
+          SelectBook.Enabled = false;
       }
-      if ( SelectBook.Items.Count > 0 )
+      finally
       {
-        SelectBook.Enabled = true;
-        SelectBook.SelectedIndex = 0;
+        Mutex = false;
       }
-      else
-      {
-        SelectBook.Enabled = false;
-        RefreshChapters();
-      }
+      RefreshChapters();
     }
+
+    private bool Mutex;
 
     private void RefreshChapters()
     {
-      SelectChapter.Items.Clear();
-      SelectVerse.Items.Clear();
-      if ( SelectBook.SelectedItem != null )
+      if ( Mutex ) return;
+      Mutex = true;
+      try
       {
-        int number = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
-        var list = from chapter in DataSet.Chapters
-                   where chapter.BooksRow.Number == number
-                   select chapter;
-        if ( EditFilterChaptersWithTitle.Checked )
-          list = list.Where(chapter => chapter.Title != "");
-        if ( EditFilterVersesTranslated.Checked )
-          list = list.Where(chapter =>
-          {
-            foreach ( var verse in chapter.GetVersesRows() )
-              if ( verse.IsTranslated() )
-                return true;
-            return false;
-          });
-        foreach ( var chapter in list )
-          SelectChapter.Items.Add(new ChapterItem(chapter));
+        SelectChapter.Items.Clear();
+        SelectVerse.Items.Clear();
+        if ( SelectBook.SelectedItem != null )
+        {
+          int number = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
+          var list = from chapter in DataSet.Chapters
+                     where chapter.BooksRow.Number == number
+                     select chapter;
+          if ( EditFilterChaptersWithTitle.Checked )
+            list = list.Where(chapter => chapter.Title != "");
+          if ( EditFilterVersesTranslated.Checked )
+            list = list.Where(chapter =>
+            {
+              foreach ( var verse in chapter.GetVersesRows() )
+                if ( verse.IsTranslated() )
+                  return true;
+              return false;
+            });
+          foreach ( var chapter in list )
+            SelectChapter.Items.Add(new ChapterItem(chapter));
+        }
+        if ( SelectChapter.Items.Count > 0 )
+        {
+          SelectChapter.Enabled = true;
+          SelectChapter.SelectedIndex = 0;
+        }
+        else
+          SelectChapter.Enabled = false;
       }
-      if ( SelectChapter.Items.Count > 0 )
+      finally
       {
-        SelectChapter.Enabled = true;
-        SelectChapter.SelectedIndex = 0;
+        Mutex = false;
       }
-      else
-      {
-        SelectChapter.Enabled = false;
-        RefreshVerses();
-      }
+      RefreshVerses();
     }
 
     private void RefreshVerses()
     {
-      SelectVerse.Items.Clear();
-      if ( SelectChapter.SelectedItem != null )
+      if ( Mutex ) return;
+      Mutex = true;
+      try
       {
-        var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-        foreach ( Data.DataSet.VersesRow verse in list )
-          SelectVerse.Items.Add(new VerseItem(verse));
+        SelectVerse.Items.Clear();
+        if ( SelectChapter.SelectedItem != null )
+        {
+          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
+          foreach ( Data.DataSet.VersesRow verse in list )
+            SelectVerse.Items.Add(new VerseItem(verse));
+        }
+        if ( SelectVerse.Items.Count > 0 )
+        {
+          SelectVerse.Enabled = true;
+          SelectVerse.SelectedIndex = 0;
+        }
+        else
+          SelectVerse.Enabled = false;
       }
-      if ( SelectVerse.Items.Count > 0 )
+      finally
       {
-        SelectVerse.Enabled = true;
-        SelectVerse.SelectedIndex = 0;
+        Mutex = false;
       }
-      else
-        SelectVerse.Enabled = false;
     }
 
   }

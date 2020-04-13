@@ -106,7 +106,7 @@ namespace Ordisoftware.HebrewWords
       this.SelectChapter.FormattingEnabled = true;
       resources.ApplyResources(this.SelectChapter, "SelectChapter");
       this.SelectChapter.Name = "SelectChapter";
-      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
       // SelectVerse
       // 
