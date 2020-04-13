@@ -14,6 +14,7 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -29,21 +30,28 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateHistory()
     {
-      while ( MenuHistory.DropDownItems.Count > 1 )
-        MenuHistory.DropDownItems.RemoveAt(1);
-      if ( History.Count > 0 )
+      try
       {
-        MenuHistory.DropDownItems.Add("-");
-        foreach ( var reference in History )
+        while ( MenuHistory.DropDownItems.Count > 1 )
+          MenuHistory.DropDownItems.RemoveAt(1);
+        if ( History.Count > 0 )
         {
-          ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
-          item.Tag = reference;
-          item.Click += GoToBookmark;
-          item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionAddToBookmarks.Image;
+          MenuHistory.DropDownItems.Add("-");
+          foreach ( var reference in History )
+          {
+            ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
+            item.Tag = reference;
+            item.Click += GoToBookmark;
+            item.ImageScaling = ToolStripItemImageScaling.None;
+            item.Image = ActionAddToBookmarks.Image;
+          }
         }
+        ActionClearHistory.Enabled = History.Count > 0;
       }
-      ActionClearHistory.Enabled = History.Count > 0;
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
   }

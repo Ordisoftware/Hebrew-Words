@@ -134,8 +134,17 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string UserDataFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
 
     /// <summary>
@@ -143,8 +152,17 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string UserDocumentsFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
 
     /// <summary>

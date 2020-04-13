@@ -52,6 +52,8 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
+      Bookmarks = new Bookmarks(Program.BookmarksFilename);
+      History = new History(Program.HistoryFilename);
       Program.AllowClose = true;
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       Text = AboutBox.Instance.AssemblyTitle;
@@ -120,6 +122,8 @@ namespace Ordisoftware.HebrewWords
       InitializeDialogsDirectory();
       DoBackupDB();
       LoadData();
+      UpdateBookmarks();
+      UpdateHistory();
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;

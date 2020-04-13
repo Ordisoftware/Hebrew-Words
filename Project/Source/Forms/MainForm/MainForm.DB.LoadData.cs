@@ -32,8 +32,9 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-
         PopulateData();
+        Bookmarks.Load();
+        History.Load();
         if ( Program.Settings.OpenLastViewAtStartup )
           SetView(Program.Settings.CurrentView, true);
         else
@@ -180,19 +181,6 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        try
-        {
-          Bookmarks = new Bookmarks(Program.BookmarksFilename);
-          Bookmarks.Load();
-          UpdateBookmarks();
-          History = new History(Program.HistoryFilename);
-          History.Load();
-          UpdateHistory();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
         Program.IsLoadingData = false;
         form.Close();
         SetFormDisabled(false);

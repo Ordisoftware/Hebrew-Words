@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -23,6 +24,8 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateBookmarks()
     {
+      try
+      {
       if ( Program.Settings.AutoSortBookmarks )
         Bookmarks.Sort();
       while ( MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
@@ -33,6 +36,7 @@ namespace Ordisoftware.HebrewWords
       MouseEventHandler bookmarkClicked = (sender, e) =>
       {
         if ( e.Button != MouseButtons.Right ) return;
+        // bug reentrance (?) if ( !DisplayManager.QueryYesNo(Translations.DeleteBookmark.GetLang()) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         if ( menuitem.Tag == bookmarkMaster )
         {
@@ -49,7 +53,7 @@ namespace Ordisoftware.HebrewWords
       };
       ActionGoToBookmarkMaster.Text = bookmarkMaster.ToStringFull();
       ActionGoToBookmarkMaster.Tag = bookmarkMaster;
-      ActionGoToBookmarkMaster.MouseDown += bookmarkClicked;
+      ActionGoToBookmarkMaster.MouseUp += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
       {
         MenuBookmarks.DropDownItems.Add("-");
@@ -58,7 +62,7 @@ namespace Ordisoftware.HebrewWords
           var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());
           item.Tag = reference;
           item.Click += GoToBookmark;
-          item.MouseDown += bookmarkClicked;
+          item.MouseUp += bookmarkClicked;
           item.ImageScaling = ToolStripItemImageScaling.None;
           item.Image = ActionAddToBookmarks.Image;
         }
@@ -67,6 +71,11 @@ namespace Ordisoftware.HebrewWords
                                   && MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
       ActionSortBookmarks.Enabled = Bookmarks.Count > 0
                                  && !Program.Settings.AutoSortBookmarks;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
   }

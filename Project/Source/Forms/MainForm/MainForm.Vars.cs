@@ -64,10 +64,10 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private int PreviousSeachPagingPosition = -1;
 
-    private int BookmarksMenuFirstIndex;
-
     private Bookmarks Bookmarks;
     private History History;
+
+    private int BookmarksMenuFirstIndex;
 
     private IEnumerable<ReferenceItem> SearchResults;
 
