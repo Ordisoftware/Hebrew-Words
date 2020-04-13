@@ -111,15 +111,19 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add buttons to edit book and chapter memos in the navigation panel.
 - Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
 - Add books common names field in the database and in the edit books information form.
+- Add open book menu item in the edit books information form.
+- Fix edit books information form : modifications are not saved since an old version.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
 - Add source hebrew word in the search translated form.
-- Fix edit books information form : modifications are not saved since an old version.
-- Improve the go to reference form.
-- Add sort bookmarks menu.
+- Change selection controls in the go to reference form.
+- Add options to filter the books in the go to reference form.
+- Add "Add a bookmark" menu item.
+- Add "Sort bookmarks" menu item.
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
 - Improve UI/UX.
+- Exit application at startup if user choose to download the a newer version.
 - Code refactoring.
 - Update help.
 
