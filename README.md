@@ -122,8 +122,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
+- Exit application at startup if the user choose to download a newer version.
+- Update websites links.
 - Improve UI/UX.
-- Exit application at startup if user choose to download the a newer version.
 - Code refactoring.
 - Update help.
 
