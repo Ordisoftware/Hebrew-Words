@@ -1,0 +1,3 @@
+Lang/EN = Bookstores
+Lang/FR = Librairies
+

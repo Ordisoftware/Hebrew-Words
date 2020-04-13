@@ -1,7 +1,0 @@
-Lang/EN = Textes hébreu
-Lang/FR = Hebrew texts
-
-Name = 
-URL = 
-
--
