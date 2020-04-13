@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void ApplyCurrentLanguage()
+    static internal void UpdateLocalization()
     {
       string lang = "en-US";
       if ( Settings.Language == "fr" ) lang = "fr-FR";

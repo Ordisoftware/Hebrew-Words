@@ -112,22 +112,15 @@ namespace Ordisoftware.HebrewWords
       = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
-    /// Indicate application documents folder.
+    /// Indicate filename of the help.
     /// </summary>
-    static public readonly string TanakFolderPath
-      = AppDocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
-
-    /// <summary>
-    /// Indicate application documents folder.
-    /// </summary>
-    static public readonly string ParashaFolderPath
-      = AppDocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
-
-    /// <summary>
-    /// Indicate application documents folder.
-    /// </summary>
-    static public readonly string WebLinksFolderPath
-      = AppDocumentsFolderPath + "Links" + Path.DirectorySeparatorChar;
+    static public string HelpFilename
+    {
+      get
+      {
+        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
+      }
+    }
 
     /// <summary>
     /// Indicate user data folder in roaming.
@@ -178,15 +171,52 @@ namespace Ordisoftware.HebrewWords
       = AppRootFolderPath + "Application.ico";
 
     /// <summary>
-    /// Indicate filename of the help.
+    /// Indicate application documents folder.
     /// </summary>
-    static public string HelpFilename
-    {
-      get
-      {
-        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
-      }
-    }
+    static public readonly string WebLinksFolderPath
+      = AppDocumentsFolderPath + "Links" + Path.DirectorySeparatorChar;
+
+    /// <summary>
+    /// Indicate online links providers.
+    /// </summary>
+    static public readonly List<OnlineProviders> OnlineLinksProviders
+      = new List<OnlineProviders>();
+
+    /// <summary>
+    /// Indicate filename of the online search a word providers.
+    /// </summary>
+    static public readonly string OnlineWordProvidersFileName
+      = AppDocumentsFolderPath + "OnlineWordProviders.txt";
+
+    /// <summary>
+    /// Indicate online search a word providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineWordProviders
+      = new OnlineProviders(OnlineWordProvidersFileName);
+
+    /// <summary>
+    /// Indicate filename of the online bible search a verse providers.
+    /// </summary>
+    static public readonly string OnlineBibleProvidersFileName
+      = AppDocumentsFolderPath + "OnlineBibleProviders.txt";
+
+    /// <summary>
+    /// Indicate online bible search a verse providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineBibleProviders
+      = new OnlineProviders(OnlineBibleProvidersFileName);
+
+    /// <summary>
+    /// Indicate application documents folder.
+    /// </summary>
+    static public readonly string TanakFolderPath
+      = AppDocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
+
+    /// <summary>
+    /// Indicate application documents folder.
+    /// </summary>
+    static public readonly string ParashaFolderPath
+      = AppDocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the grammar guide.
@@ -198,36 +228,6 @@ namespace Ordisoftware.HebrewWords
         return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}grammar-{Localizer.Language}.htm";
       }
     }
-
-    /// <summary>
-    /// Indicate filename of the online search a word providers.
-    /// </summary>
-    static public readonly string OnlineWordProvidersFileName
-      = AppDocumentsFolderPath + "OnlineWordProviders.txt";
-
-    /// <summary>
-    /// Indicate filename of the online bible search a verse providers.
-    /// </summary>
-    static public readonly string OnlineBibleProvidersFileName
-      = AppDocumentsFolderPath + "OnlineBibleProviders.txt";
-
-    /// <summary>
-    /// Indicate online search a word providers.
-    /// </summary>
-    static public readonly OnlineProviders OnlineWordProviders
-      = new OnlineProviders(OnlineWordProvidersFileName);
-
-    /// <summary>
-    /// Indicate online bible search a verse providers.
-    /// </summary>
-    static public readonly OnlineProviders OnlineBibleProviders
-      = new OnlineProviders(OnlineBibleProvidersFileName);
-
-    /// <summary>
-    /// Indicate online links providers.
-    /// </summary>
-    static public readonly List<OnlineProviders> OnlineLinksProviders
-      = new List<OnlineProviders>();
 
     /// <summary>
     /// Indicate filename of the bookmaks.

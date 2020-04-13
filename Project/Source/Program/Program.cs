@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       CheckCommandLineArguments(args);
-      ApplyCurrentLanguage();
+      UpdateLocalization();
       SetFormsIcon();
       Application.Run(MainForm.Instance);
     }
