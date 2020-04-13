@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -147,6 +147,13 @@ namespace Ordisoftware.HebrewWords
       {
         { "en", "Empty bookmarks?" },
         { "fr", "Vider les signets?" }
+      };
+
+    static public readonly Dictionary<string, string> DeleteBookmark
+      = new Dictionary<string, string>()
+      {
+        { "en", "Remove the bookmark?" },
+        { "fr", "Effacer le signet ?" }
       };
 
     static public readonly Dictionary<string, string> HebrewLettersNotFound
