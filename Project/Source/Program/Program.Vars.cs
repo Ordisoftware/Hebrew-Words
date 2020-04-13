@@ -252,7 +252,7 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Static constructor.
+    /// Static constructor. 
     /// </summary>
     static Program()
     {
