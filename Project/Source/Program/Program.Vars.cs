@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewWords
     {
       get
       {
-        return Globals.RootFolderPath + $"Help{Path.DirectorySeparatorChar}grammar-{Localizer.Language}.htm";
+        return Globals.HelpFolderPath + $"grammar-{Localizer.Language}.htm";
       }
     }
 

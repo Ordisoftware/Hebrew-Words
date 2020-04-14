@@ -83,9 +83,6 @@ namespace Ordisoftware.HebrewWords
         case Keys.Control | Keys.B:
           ActionViewBooksTranslation.PerformClick();
           return true;
-        case Keys.Control | Keys.G:
-          ActionShowGrammarGuide.PerformClick();
-          return true;
         case Keys.Control | Keys.H:
           ActionStartHebrewLetters.PerformClick();
           return true;
