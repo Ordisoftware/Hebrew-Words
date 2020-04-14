@@ -92,6 +92,13 @@ namespace Ordisoftware.HebrewWords
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
       AboutBox.Instance.Hide();
+      foreach ( Form form in Application.OpenForms )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
+        {
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ApplyResources(resources, form.Controls);
+        }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
@@ -104,13 +111,6 @@ namespace Ordisoftware.HebrewWords
         MainForm.Instance.RenderELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
       }
-      foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
-        {
-          new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-          ApplyResources(resources, form.Controls);
-        }
     }
 
     /// <summary>
