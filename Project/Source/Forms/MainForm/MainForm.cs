@@ -87,6 +87,10 @@ namespace Ordisoftware.HebrewWords
         else
           ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
       }
+    }
+
+    internal void CreateWebLinks()
+    {
       Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
     }
 

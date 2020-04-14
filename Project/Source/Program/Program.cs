@@ -72,6 +72,7 @@ namespace Ordisoftware.HebrewWords
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
+      MainForm.Instance.CreateWebLinks();
       if ( Globals.IsReady )
       {
         MainForm.Instance.RenderTranslation();
