@@ -100,12 +100,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2020.__.__ - Version 3.0
 
-- Exit application at startup if user choose to download the a newer version.
-- Move online providers values from code to files in the application documents folder.
-- Move tanak text files in Documents in a dedicated folder.
+- Exit application at startup if user choose to download a newer version.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add links to tanak and parasha wikipedia pages.
-- Add links to Sefaria, Halakhah, Lexilogos and Hebrew Gematria websites.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add book translation text box in the navigation panel.
 - Add chapter title and memo text box in the navigation panel.
@@ -123,13 +119,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
-- Update websites links.
+- Add menu for web links about judaism.
 - Improve UI/UX.
 - Code refactoring.
+- Move online providers values from code to files in the application documents folder.
+- Move tanak text files in Documents in a dedicated folder.
 - Update help.
-
->>>>- Create online providers database tables.
->>>>- Add online providers editor form.
 
 >>>>- Add parasha list form with references links.
 
