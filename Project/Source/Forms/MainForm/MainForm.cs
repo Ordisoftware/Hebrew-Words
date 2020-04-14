@@ -52,13 +52,12 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
-      Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
-      Bookmarks = new Bookmarks(Program.BookmarksFilename);
-      History = new History(Program.HistoryFilename);
-      Globals.AllowClose = true;
-      ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      Globals.AllowClose = true;
+      Bookmarks = new Bookmarks(Program.BookmarksFilename);
+      History = new History(Program.HistoryFilename);
+      ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CurrentReference = new ReferenceItem(null, null, null, null);
       int index = 1;
       EventHandler action = (sender, e) =>
@@ -86,6 +85,13 @@ namespace Ordisoftware.HebrewWords
           ContextMenuStripVerse.Items.Insert(index++, new ToolStripSeparator());
         else
           ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
+      }
+      try
+      {
+        Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
+      }
+      catch
+      {
       }
     }
 
