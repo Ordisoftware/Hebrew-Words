@@ -1,5 +1,5 @@
-Lang/EN = Religion
-Lang/FR = Religion
+Lang/EN = Torah lessons
+Lang/FR = Cours de Torah
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com

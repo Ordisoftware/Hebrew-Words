@@ -1,5 +1,5 @@
-Lang/EN = Sacred Texts
-Lang/FR = Textes Sacrés
+Lang/EN = Sacred texts
+Lang/FR = Textes sacrés
 
 Name = (EN) Tanak @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_Bible

@@ -1,5 +1,5 @@
-Lang/EN = Bookstores
-Lang/FR = Librairies
+Lang/EN = Jewish bookstores
+Lang/FR = Librairies juives
 
 Name = (IW/EN/FR) Editions Gallia
 URL = http://librairiegallia.fr
@@ -43,8 +43,3 @@ URL = https://www.librairiedutemple.fr
 
 Name = (FR) Editions Lahy
 URL = http://editions-lahy.e-monsite.com
-
-- 
-
-Name = (FR) Bibliographie (Asher 'Haïm HaLevi)
-URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem/bibliography
