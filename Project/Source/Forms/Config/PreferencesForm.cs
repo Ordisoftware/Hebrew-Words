@@ -84,6 +84,8 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      TopMost = MainForm.Instance.TopMost;
+      BringToFront();
       UpdateLanguagesButtons();
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
