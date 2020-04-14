@@ -7,6 +7,8 @@ URL = https://en.wikipedia.org/wiki/Hebrew_Bible
 Name = (EN) Tanak @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Tanakh
 
+-
+
 Name = (EN) Parasha @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
 
@@ -22,7 +24,7 @@ URL = http://halakhah.com
 
 -
 
-Name = (EN) Tanak Hebrew Text @ fourmilab.ch
+Name = (IW) Tanak Hebrew Text @ fourmilab.ch
 URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
 
 Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
@@ -36,8 +38,12 @@ URL = https://studybible.info/IHOT/
 Name = (EN) Interlinear Euangélion @ studybible.info
 URL = https://studybible.info/IGNT
 
+-
+
 Name = (EN) Interlinear Bible @ biblehub.com
 URL = https://biblehub.com/interlinear/
+
+-
 
 Name = (FR) La Bible en hébreu @ lexilogos.com
 URL = https://www.lexilogos.com/bible_hebreu.htm

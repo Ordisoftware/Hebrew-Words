@@ -1,5 +1,5 @@
-Lang/EN = YouTube
-Lang/FR = YouTube
+Lang/EN = YouTube Channels
+Lang/FR = YouTube Chaînes
 
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
