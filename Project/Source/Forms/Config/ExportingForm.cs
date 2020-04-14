@@ -14,6 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -27,7 +28,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Text = AboutBox.Instance.AssemblyTitle;
+      Text = Globals.AssemblyTitle;
       this.CenterToMainForm();
     }
 

@@ -15,6 +15,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -37,7 +38,7 @@ namespace Ordisoftware.HebrewWords
 
     private void RenderAll()
     {
-      if ( Program.IsLoadingData || IsGoToRunning ) return;
+      if ( Globals.IsLoadingData || IsGoToRunning ) return;
       Refresh();
       RenderVerses();
       RenderTranslation();

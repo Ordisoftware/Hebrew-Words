@@ -15,6 +15,7 @@
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewWords.Properties;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -87,8 +88,8 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditShowTips.Checked = settings.ShowTips;
       if ( settings.BackupPath == "" )
       {
-        System.IO.Directory.CreateDirectory(Program.UserDocumentsFolderPath);
-        settings.BackupPath = Program.UserDocumentsFolderPath;
+        System.IO.Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
+        settings.BackupPath = Globals.UserDocumentsFolderPath;
       }
     }
 

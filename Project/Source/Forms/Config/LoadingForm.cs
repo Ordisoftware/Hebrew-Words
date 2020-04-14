@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -25,7 +26,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       this.CenterToMainForm();
-      LabelApplicationName.Text = AboutBox.Instance.AssemblyTitle;
+      LabelApplicationName.Text = Globals.AssemblyTitle;
     }
 
   }

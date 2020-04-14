@@ -65,12 +65,12 @@ namespace Ordisoftware.HebrewWords
       {
         EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
       };
-      foreach ( var item in Program.OnlineBibleProviders.Items )
+      foreach ( var item in Globals.OnlineBibleProviders.Items )
         if ( item.Name == "-" )
           MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
         else
           MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
-      foreach ( var item in Program.OnlineWordProviders.Items )
+      foreach ( var item in Globals.OnlineWordProviders.Items )
         if ( item.Name == "-" )
           MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
         else
@@ -191,8 +191,8 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Reset();
       Program.Settings.Reload();
       Program.Settings.Save();
-      Directory.CreateDirectory(Program.UserDocumentsFolderPath);
-      Program.Settings.BackupPath = Program.UserDocumentsFolderPath;
+      Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
+      Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);
       GrammarGuideForm.Instance.CenterToMainForm();
     }

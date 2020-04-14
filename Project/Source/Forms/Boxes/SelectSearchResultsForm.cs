@@ -18,6 +18,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -44,7 +45,7 @@ namespace Ordisoftware.HebrewWords
     private SelectSearchResultsForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
+      Text = Globals.AssemblyTitle;
       Icon = MainForm.Instance.Icon;
     }
 

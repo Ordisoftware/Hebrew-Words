@@ -15,6 +15,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
+
 
 namespace Ordisoftware.HebrewWords
 {
@@ -45,7 +47,7 @@ namespace Ordisoftware.HebrewWords
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
       };
       //( (ToolStripDropDownMenu)ActionSearchOnline.DropDown).ShowImageMargin = false;
-      foreach ( var item in Program.OnlineWordProviders.Items )
+      foreach ( var item in Globals.OnlineWordProviders.Items )
       {
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
@@ -101,7 +103,7 @@ namespace Ordisoftware.HebrewWords
 
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
-      if ( Program.IsLoadingData ) return;
+      if ( Globals.IsLoadingData ) return;
       if ( MainForm.Instance.IsRenderingSearch ) return;
       if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
       Focus();

@@ -17,6 +17,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
@@ -114,7 +115,7 @@ namespace Ordisoftware.HebrewWords
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
-      Program.IsLoadingData = true;
+      Globals.IsLoadingData = true;
       try
       {
         CreateSchemaIfNotExists();
@@ -181,7 +182,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        Program.IsLoadingData = false;
+        Globals.IsLoadingData = false;
         form.Close();
         SetFormDisabled(false);
       }

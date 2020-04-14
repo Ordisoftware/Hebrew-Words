@@ -16,6 +16,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -34,9 +35,9 @@ namespace Ordisoftware.HebrewWords
     private void DoBackupDB()
     {
       if ( Program.Settings.BackupCount == 0 ) return;
-      string partFilename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-");
+      string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
       string partBackup = "AutoBackup ";
-      var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Program.DBFileExtension);
+      var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DBFileExtension);
       while ( list.Count >= Program.Settings.BackupCount )
       {
         File.Delete(list[0].FullName);
@@ -47,8 +48,8 @@ namespace Ordisoftware.HebrewWords
       string strDate = String.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
                                      date.Year, date.Month, date.Day,
                                      date.Hour, date.Minute, date.Second);
-      string fileSource = Program.UserDataFolderPath + partFilename + Program.DBFileExtension;
-      string fileDest = partPath + partFilename + " " + strDate + Program.DBFileExtension;
+      string fileSource = Globals.UserDataFolderPath + partFilename + Globals.DBFileExtension;
+      string fileDest = partPath + partFilename + " " + strDate + Globals.DBFileExtension;
       if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
     }
 

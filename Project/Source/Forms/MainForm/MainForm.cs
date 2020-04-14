@@ -52,11 +52,12 @@ namespace Ordisoftware.HebrewWords
     private MainForm()
     {
       InitializeComponent();
+      Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
       History = new History(Program.HistoryFilename);
-      Program.AllowClose = true;
+      Globals.AllowClose = true;
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
-      Text = AboutBox.Instance.AssemblyTitle;
+      Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       CurrentReference = new ReferenceItem(null, null, null, null);
       int index = 1;
@@ -79,7 +80,7 @@ namespace Ordisoftware.HebrewWords
                                   CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       };
-      foreach ( var item in Program.OnlineBibleProviders.Items )
+      foreach ( var item in Globals.OnlineBibleProviders.Items )
       {
         if ( item.Name == "-" )
           ContextMenuStripVerse.Items.Insert(index++, new ToolStripSeparator());
@@ -118,7 +119,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      if ( Program.IsExiting ) return;
+      if ( Globals.IsExiting ) return;
       Refresh();
       InitializeDialogsDirectory();
       DoBackupDB();
@@ -128,7 +129,7 @@ namespace Ordisoftware.HebrewWords
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-      Program.IsReady = true;
+      Globals.IsReady = true;
     }
 
     /// <summary>
@@ -138,10 +139,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( Program.IsExiting ) return;
-      if ( !Program.IsReady ) return;
+      if ( Globals.IsExiting ) return;
+      if ( !Globals.IsReady ) return;
       ActionSave.PerformClick();
-      if ( EditConfirmClosing.Checked && !Program.IsSessionEnding )
+      if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
           e.Cancel = true;
     }
@@ -163,7 +164,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !Program.IsReady ) return;
+      if ( !Globals.IsReady ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -177,7 +178,7 @@ namespace Ordisoftware.HebrewWords
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
           form.Close();
-      Program.IsSessionEnding = true;
+      Globals.IsSessionEnding = true;
       Close();
     }
 
@@ -449,7 +450,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( !EditBooksForm.Run() ) return;
       Refresh();
-      Program.IsLoadingData = true;
+      Globals.IsLoadingData = true;
       try
       {
         int book = CurrentReference.Book.Number;
@@ -463,7 +464,7 @@ namespace Ordisoftware.HebrewWords
       }
       finally
       {
-        Program.IsLoadingData = false;
+        Globals.IsLoadingData = false;
         ActionSave.PerformClick();
       }
     }
@@ -517,10 +518,10 @@ namespace Ordisoftware.HebrewWords
         ActionBackup.PerformClick();
       if ( !DisplayManager.QueryYesNo(Translations.CreateNewDatabase.GetLang()) )
         return;
-      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
       ReLoadData(() =>
       {
-        File.Delete(Program.UserDataFolderPath + filename);
+        File.Delete(Globals.UserDataFolderPath + filename);
       });
     }
 
@@ -534,13 +535,13 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( DisplayManager.QueryYesNo(Translations.BackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
       ReLoadData(() =>
       {
-        File.Delete(Program.UserDataFolderPath + filename);
-        File.Copy(OpenFileDialogDB.FileName, Program.UserDataFolderPath + filename);
+        File.Delete(Globals.UserDataFolderPath + filename);
+        File.Copy(OpenFileDialogDB.FileName, Globals.UserDataFolderPath + filename);
       });
     }
 
@@ -552,11 +553,11 @@ namespace Ordisoftware.HebrewWords
     private void ActionBackup_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      string filename = AboutBox.Instance.AssemblyTitle.Replace(" ", "-") + Program.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
       SaveFileDialogDB.FileName = filename;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Program.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
+      File.Copy(Globals.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
     }
 
     /// <summary>
@@ -659,7 +660,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Program.RunShell(Program.HelpFilename);
+      Program.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -669,7 +670,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebHome_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenApplicationHome();
+      Program.OpenApplicationHome();
     }
 
     /// <summary>
@@ -679,7 +680,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenContactPage();
+      Program.OpenContactPage();
     }
 
     /// <summary>
@@ -689,7 +690,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
+      Program.OpenGitHibIssuesPage();
     }
 
     /// <summary>

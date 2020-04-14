@@ -17,6 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
@@ -90,7 +91,7 @@ namespace Ordisoftware.HebrewWords
     {
       try
       {
-        if ( Program.IsLoadingData )
+        if ( Globals.IsLoadingData )
           return;
         var items = new List<string>();
         foreach ( var item in Items )

@@ -15,6 +15,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -71,7 +72,7 @@ namespace Ordisoftware.HebrewWords
       {
         IsGoToRunning = false;
       }
-      if ( Program.IsLoadingData ) return;
+      if ( Globals.IsLoadingData ) return;
       if ( updated || forceUpdateView )
         RenderAll();
       if ( reference.Verse == null )
