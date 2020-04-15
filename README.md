@@ -119,7 +119,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
+- Add sqlite vacuum at startup.
 - Add menu for web links about judaism.
+- Add option to auto vacuum database at startup.
 - Improve UI/UX.
 - Code refactoring.
 - Move online providers values from code to files in the application documents folder.
