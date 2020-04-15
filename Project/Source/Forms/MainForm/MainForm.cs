@@ -18,6 +18,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.Odbc;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.HebrewWords.Data;
@@ -176,7 +177,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
-      if ( WindowState != FormWindowState.Normal  ) return;
+      if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -871,7 +872,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Program.Settings.SearchInBookSelectedNumber = ((BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+      Program.Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
       Program.Settings.Save();
     }
 
@@ -1250,7 +1251,7 @@ namespace Ordisoftware.HebrewWords
       var form = new EditMemoForm();
       form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
                  + " " + Translations.BookChapterTitle.GetLang().ToLower()
-                 + " " + ((ChapterItem)SelectChapter.SelectedItem ).Chapter.Number; 
+                 + " " + ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
       form.TextBox.Text = CurrentReference.Chapter.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
@@ -1258,6 +1259,24 @@ namespace Ordisoftware.HebrewWords
         EditChapterMemo.Text = form.TextBox.Text;
         ActionSave.PerformClick();
       }
+    }
+
+    private void ActionVacuum_Click(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      ReLoadData(() =>
+      {
+        using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+          try
+          {
+            connection.Open();
+            connection.Vacuum();
+          }
+          finally
+          {
+            connection.Close();
+          }
+      });
     }
 
   }

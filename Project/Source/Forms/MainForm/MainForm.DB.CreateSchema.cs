@@ -128,7 +128,7 @@ namespace Ordisoftware.HebrewWords
                               )");
                               //ConcordanceID TEXT DEFAULT '' NOT NULL,
                               //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
+          checkColumn("Books", "Original", "ALTER TABLE Books ADD COLUMN Original TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "CommonName", "ALTER TABLE Books ADD COLUMN CommonName TEXT DEFAULT '' NOT NULL;");
           checkColumn("Books", "Memo", "ALTER TABLE Books ADD COLUMN Memo TEXT DEFAULT '' NOT NULL;");
           checkColumn("Chapters", "Title", "ALTER TABLE Chapters ADD COLUMN Title TEXT DEFAULT '' NOT NULL;");

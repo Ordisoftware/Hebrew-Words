@@ -187,6 +187,8 @@
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripButton();
@@ -258,50 +260,50 @@
       // 
       // PanelMain
       // 
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.PanelMainOuter);
       this.PanelMain.Controls.Add(this.PanelNavigation);
       this.PanelMain.Controls.Add(this.PanelSepTop);
       this.PanelMain.Controls.Add(this.PanelTitle);
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // PanelMainOuter
       // 
+      resources.ApplyResources(this.PanelMainOuter, "PanelMainOuter");
       this.PanelMainOuter.BackColor = System.Drawing.SystemColors.ControlDarkDark;
       this.PanelMainOuter.Controls.Add(this.PanelMainInner);
-      resources.ApplyResources(this.PanelMainOuter, "PanelMainOuter");
       this.PanelMainOuter.Name = "PanelMainOuter";
       // 
       // PanelMainInner
       // 
+      resources.ApplyResources(this.PanelMainInner, "PanelMainInner");
       this.PanelMainInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.PanelMainInner.Controls.Add(this.PanelMainCenter);
-      resources.ApplyResources(this.PanelMainInner, "PanelMainInner");
       this.PanelMainInner.Name = "PanelMainInner";
       // 
       // PanelMainCenter
       // 
+      resources.ApplyResources(this.PanelMainCenter, "PanelMainCenter");
       this.PanelMainCenter.BackColor = System.Drawing.SystemColors.Control;
       this.PanelMainCenter.Controls.Add(this.TabControl);
-      resources.ApplyResources(this.PanelMainCenter, "PanelMainCenter");
       this.PanelMainCenter.Name = "PanelMainCenter";
       // 
       // TabControl
       // 
+      resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Controls.Add(this.TabPageVerses);
       this.TabControl.Controls.Add(this.TabPageTranslations);
       this.TabControl.Controls.Add(this.TabPageText);
       this.TabControl.Controls.Add(this.TabPageELS50);
       this.TabControl.Controls.Add(this.TabPageSearch);
-      resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
       this.TabControl.TabStop = false;
       // 
       // TabPageVerses
       // 
-      this.TabPageVerses.Controls.Add(this.PanelViewVerses);
       resources.ApplyResources(this.TabPageVerses, "TabPageVerses");
+      this.TabPageVerses.Controls.Add(this.PanelViewVerses);
       this.TabPageVerses.Name = "TabPageVerses";
       this.TabPageVerses.UseVisualStyleBackColor = true;
       // 
@@ -314,84 +316,84 @@
       // 
       // TabPageTranslations
       // 
-      this.TabPageTranslations.Controls.Add(this.PanelViewTranslations);
       resources.ApplyResources(this.TabPageTranslations, "TabPageTranslations");
+      this.TabPageTranslations.Controls.Add(this.PanelViewTranslations);
       this.TabPageTranslations.Name = "TabPageTranslations";
       this.TabPageTranslations.UseVisualStyleBackColor = true;
       // 
       // PanelViewTranslations
       // 
+      resources.ApplyResources(this.PanelViewTranslations, "PanelViewTranslations");
       this.PanelViewTranslations.BackColor = System.Drawing.SystemColors.Window;
       this.PanelViewTranslations.Controls.Add(this.EditTranslations);
-      resources.ApplyResources(this.PanelViewTranslations, "PanelViewTranslations");
       this.PanelViewTranslations.Name = "PanelViewTranslations";
       // 
       // EditTranslations
       // 
+      resources.ApplyResources(this.EditTranslations, "EditTranslations");
       this.EditTranslations.BackColor = System.Drawing.SystemColors.Window;
       this.EditTranslations.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditTranslations, "EditTranslations");
       this.EditTranslations.Name = "EditTranslations";
       this.EditTranslations.ReadOnly = true;
       // 
       // TabPageText
       // 
-      this.TabPageText.Controls.Add(this.PanelViewRawText);
       resources.ApplyResources(this.TabPageText, "TabPageText");
+      this.TabPageText.Controls.Add(this.PanelViewRawText);
       this.TabPageText.Name = "TabPageText";
       this.TabPageText.UseVisualStyleBackColor = true;
       // 
       // PanelViewRawText
       // 
+      resources.ApplyResources(this.PanelViewRawText, "PanelViewRawText");
       this.PanelViewRawText.BackColor = System.Drawing.SystemColors.Window;
       this.PanelViewRawText.Controls.Add(this.EditRawText);
-      resources.ApplyResources(this.PanelViewRawText, "PanelViewRawText");
       this.PanelViewRawText.Name = "PanelViewRawText";
       // 
       // EditRawText
       // 
+      resources.ApplyResources(this.EditRawText, "EditRawText");
       this.EditRawText.BackColor = System.Drawing.SystemColors.Window;
       this.EditRawText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditRawText, "EditRawText");
       this.EditRawText.Name = "EditRawText";
       this.EditRawText.ReadOnly = true;
       // 
       // TabPageELS50
       // 
-      this.TabPageELS50.Controls.Add(this.PanelViewELS50);
       resources.ApplyResources(this.TabPageELS50, "TabPageELS50");
+      this.TabPageELS50.Controls.Add(this.PanelViewELS50);
       this.TabPageELS50.Name = "TabPageELS50";
       this.TabPageELS50.UseVisualStyleBackColor = true;
       // 
       // PanelViewELS50
       // 
+      resources.ApplyResources(this.PanelViewELS50, "PanelViewELS50");
       this.PanelViewELS50.BackColor = System.Drawing.SystemColors.Window;
       this.PanelViewELS50.Controls.Add(this.EditELS50All);
-      resources.ApplyResources(this.PanelViewELS50, "PanelViewELS50");
       this.PanelViewELS50.Name = "PanelViewELS50";
       // 
       // EditELS50All
       // 
+      resources.ApplyResources(this.EditELS50All, "EditELS50All");
       this.EditELS50All.BackColor = System.Drawing.SystemColors.Window;
       this.EditELS50All.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditELS50All, "EditELS50All");
       this.EditELS50All.Name = "EditELS50All";
       this.EditELS50All.ReadOnly = true;
       // 
       // TabPageSearch
       // 
-      this.TabPageSearch.Controls.Add(this.PanelViewSearch);
       resources.ApplyResources(this.TabPageSearch, "TabPageSearch");
+      this.TabPageSearch.Controls.Add(this.PanelViewSearch);
       this.TabPageSearch.Name = "TabPageSearch";
       this.TabPageSearch.UseVisualStyleBackColor = true;
       // 
       // PanelViewSearch
       // 
+      resources.ApplyResources(this.PanelViewSearch, "PanelViewSearch");
       this.PanelViewSearch.BackColor = System.Drawing.SystemColors.Control;
       this.PanelViewSearch.Controls.Add(this.PanelSearchResultsOuter);
       this.PanelViewSearch.Controls.Add(this.panel1);
       this.PanelViewSearch.Controls.Add(this.PanelSearchFilters);
-      resources.ApplyResources(this.PanelViewSearch, "PanelViewSearch");
       this.PanelViewSearch.Name = "PanelViewSearch";
       // 
       // PanelSearchResultsOuter
@@ -416,13 +418,14 @@
       // 
       // PanelSearchFilters
       // 
+      resources.ApplyResources(this.PanelSearchFilters, "PanelSearchFilters");
       this.PanelSearchFilters.Controls.Add(this.PanelSearchFiltersRight);
       this.PanelSearchFilters.Controls.Add(this.SelectSearchType);
-      resources.ApplyResources(this.PanelSearchFilters, "PanelSearchFilters");
       this.PanelSearchFilters.Name = "PanelSearchFilters";
       // 
       // PanelSearchFiltersRight
       // 
+      resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInRemoveAll);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInAddAll);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchInBook);
@@ -437,13 +440,12 @@
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigateNext);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchNavigateLast);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchClear);
-      resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
       // 
       // ActionSearchInRemoveAll
       // 
-      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchInRemoveAll, "ActionSearchInRemoveAll");
+      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
       this.ActionSearchInRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionSearchInRemoveAll.Name = "ActionSearchInRemoveAll";
       this.ActionSearchInRemoveAll.UseVisualStyleBackColor = true;
@@ -451,8 +453,8 @@
       // 
       // ActionSearchInAddAll
       // 
-      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchInAddAll, "ActionSearchInAddAll");
+      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
       this.ActionSearchInAddAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionSearchInAddAll.Name = "ActionSearchInAddAll";
       this.ActionSearchInAddAll.UseVisualStyleBackColor = true;
@@ -563,42 +565,42 @@
       // 
       // SelectSearchType
       // 
+      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeVerses);
       this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Name = "SelectSearchType";
       this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchTypeTab;
       this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
       // 
       // SelectSearchTypeHebrew
       // 
-      this.SelectSearchTypeHebrew.Controls.Add(this.PanelSearchTop);
       resources.ApplyResources(this.SelectSearchTypeHebrew, "SelectSearchTypeHebrew");
+      this.SelectSearchTypeHebrew.Controls.Add(this.PanelSearchTop);
       this.SelectSearchTypeHebrew.Name = "SelectSearchTypeHebrew";
       this.SelectSearchTypeHebrew.UseVisualStyleBackColor = true;
       // 
       // PanelSearchTop
       // 
-      this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
+      this.PanelSearchTop.Controls.Add(this.EditLetters);
       this.PanelSearchTop.Name = "PanelSearchTop";
       // 
       // EditLetters
       // 
+      resources.ApplyResources(this.EditLetters, "EditLetters");
       this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
       this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
+      resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
       this.SelectSearchTypeTranslation.Controls.Add(this.label2);
       this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
-      resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
       this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
       this.SelectSearchTypeTranslation.UseVisualStyleBackColor = true;
       // 
@@ -609,20 +611,20 @@
       // 
       // EditSearchTranslation
       // 
+      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
       this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.Name = "EditSearchTranslation";
       this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
       this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeVerses
       // 
+      resources.ApplyResources(this.SelectSearchTypeVerses, "SelectSearchTypeVerses");
       this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllUntranslated);
       this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
       this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
       this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllTranslated);
-      resources.ApplyResources(this.SelectSearchTypeVerses, "SelectSearchTypeVerses");
       this.SelectSearchTypeVerses.Name = "SelectSearchTypeVerses";
       this.SelectSearchTypeVerses.UseVisualStyleBackColor = true;
       // 
@@ -654,6 +656,7 @@
       // 
       // PanelNavigation
       // 
+      resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
@@ -672,7 +675,6 @@
       this.PanelNavigation.Controls.Add(this.label4);
       this.PanelNavigation.Controls.Add(this.LabelSelectBook);
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
-      resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
       // 
       // EditChapterMemo
@@ -702,8 +704,8 @@
       // 
       // ActionEditBookMemo
       // 
-      this.ActionEditBookMemo.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionEditBookMemo, "ActionEditBookMemo");
+      this.ActionEditBookMemo.FlatAppearance.BorderSize = 0;
       this.ActionEditBookMemo.Name = "ActionEditBookMemo";
       this.ActionEditBookMemo.UseVisualStyleBackColor = true;
       this.ActionEditBookMemo.Click += new System.EventHandler(this.ActionEditBookMemo_Click);
@@ -726,41 +728,41 @@
       // 
       // ActionExportChapter
       // 
-      this.ActionExportChapter.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionExportChapter, "ActionExportChapter");
+      this.ActionExportChapter.FlatAppearance.BorderSize = 0;
       this.ActionExportChapter.Name = "ActionExportChapter";
       this.ActionExportChapter.UseVisualStyleBackColor = true;
       this.ActionExportChapter.Click += new System.EventHandler(this.ActionExportChapter_Click);
       // 
       // ActionExportBook
       // 
-      this.ActionExportBook.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionExportBook, "ActionExportBook");
+      this.ActionExportBook.FlatAppearance.BorderSize = 0;
       this.ActionExportBook.Name = "ActionExportBook";
       this.ActionExportBook.UseVisualStyleBackColor = true;
       this.ActionExportBook.Click += new System.EventHandler(this.ActionExportBook_Click);
       // 
       // ActionSearchVerse
       // 
-      this.ActionSearchVerse.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchVerse, "ActionSearchVerse");
+      this.ActionSearchVerse.FlatAppearance.BorderSize = 0;
       this.ActionSearchVerse.Name = "ActionSearchVerse";
       this.ActionSearchVerse.UseVisualStyleBackColor = true;
       this.ActionSearchVerse.Click += new System.EventHandler(this.ActionSearchVerse_Click);
       // 
       // SelectBook
       // 
-      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectBook.FormattingEnabled = true;
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // EditBookTranslation
       // 
+      resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
       this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
       this.EditBookTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
       this.EditBookTranslation.Name = "EditBookTranslation";
       this.EditBookTranslation.TextChanged += new System.EventHandler(this.EditBookTranslation_TextChanged);
       this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -768,9 +770,9 @@
       // 
       // EditChapterTitle
       // 
+      resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -786,8 +788,8 @@
       // 
       // SelectChapter
       // 
-      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectChapter.FormattingEnabled = true;
       this.SelectChapter.Name = "SelectChapter";
       this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
@@ -814,15 +816,15 @@
       // 
       // PanelTitle
       // 
+      resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
       this.PanelTitle.Controls.Add(this.LabelTitle);
-      resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
       // LabelTitle
       // 
-      this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
+      this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.LabelTitle.Name = "LabelTitle";
       // 
       // ChaptersBindingSource
@@ -897,8 +899,8 @@
       // 
       // ActionViewVerses
       // 
-      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
+      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionViewVerses.Name = "ActionViewVerses";
       this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
@@ -907,9 +909,9 @@
       // 
       // ActionExit
       // 
+      resources.ApplyResources(this.ActionExit, "ActionExit");
       this.ActionExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionExit, "ActionExit");
       this.ActionExit.Name = "ActionExit";
       this.ActionExit.Padding = new System.Windows.Forms.Padding(5);
       this.ActionExit.Click += new System.EventHandler(this.ActionExit_Click);
@@ -918,15 +920,15 @@
       // 
       // Sep4
       // 
+      resources.ApplyResources(this.Sep4, "Sep4");
       this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep4.Name = "Sep4";
-      resources.ApplyResources(this.Sep4, "Sep4");
       // 
       // ActionHelp
       // 
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
       this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
       this.ActionHelp.Name = "ActionHelp";
       this.ActionHelp.Padding = new System.Windows.Forms.Padding(5);
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
@@ -935,6 +937,7 @@
       // 
       // MenuWeb
       // 
+      resources.ApplyResources(this.MenuWeb, "MenuWeb");
       this.MenuWeb.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.MenuWeb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -954,32 +957,31 @@
             this.toolStripSeparator3,
             this.toolStripMenuItem6,
             this.toolStripMenuItem7});
-      resources.ApplyResources(this.MenuWeb, "MenuWeb");
       this.MenuWeb.Name = "MenuWeb";
       // 
       // ActionAbout
       // 
-      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
+      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
       // toolStripSeparator10
       // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
       resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
       // 
       // ActionWebCheckUpdate
       // 
-      this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
+      this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
       this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionWebCheckUpdate_Click);
       // 
       // ActionCreateGitHubIssue
       // 
-      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
+      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
       this.ActionCreateGitHubIssue.Tag = "";
       this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
@@ -993,64 +995,64 @@
       // 
       // toolStripSeparator11
       // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
       resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
       // 
       // ActionWebHome
       // 
-      this.ActionWebHome.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebHome, "ActionWebHome");
+      this.ActionWebHome.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionWebHome.Name = "ActionWebHome";
       this.ActionWebHome.Click += new System.EventHandler(this.ActionWebHome_Click);
       // 
       // ActionWebContact
       // 
-      this.ActionWebContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebContact, "ActionWebContact");
+      this.ActionWebContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionWebContact.Name = "ActionWebContact";
       this.ActionWebContact.Click += new System.EventHandler(this.ActionWebContact_Click);
       // 
       // toolStripMenuItem15
       // 
-      this.toolStripMenuItem15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.toolStripMenuItem15.Name = "toolStripMenuItem15";
       this.toolStripMenuItem15.Tag = "https://fr.tipeee.com/ordisoftware";
       this.toolStripMenuItem15.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem5
       // 
-      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
       resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
       // 
       // toolStripMenuItem16
       // 
-      this.toolStripMenuItem16.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.toolStripMenuItem16, "toolStripMenuItem16");
+      this.toolStripMenuItem16.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.toolStripMenuItem16.Name = "toolStripMenuItem16";
       this.toolStripMenuItem16.Tag = "https://www.linkedin.com/in/ordisoftware";
       this.toolStripMenuItem16.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem14
       // 
-      this.toolStripMenuItem14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.toolStripMenuItem14.Name = "toolStripMenuItem14";
       this.toolStripMenuItem14.Tag = "https://twitter.com/ordisoftware";
       this.toolStripMenuItem14.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem13
       // 
-      this.toolStripMenuItem13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
+      this.toolStripMenuItem13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.toolStripMenuItem13.Name = "toolStripMenuItem13";
       this.toolStripMenuItem13.Tag = "https://www.youtube.com/user/Ordisoftware";
       this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripSeparator3
       // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
       // 
       // toolStripMenuItem6
       // 
@@ -1068,15 +1070,15 @@
       // 
       // Sep6
       // 
+      resources.ApplyResources(this.Sep6, "Sep6");
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
-      resources.ApplyResources(this.Sep6, "Sep6");
       // 
       // ActionPreferences
       // 
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
       this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
       this.ActionPreferences.Name = "ActionPreferences";
       this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
       this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
@@ -1085,6 +1087,7 @@
       // 
       // MenuSettings
       // 
+      resources.ApplyResources(this.MenuSettings, "MenuSettings");
       this.MenuSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.MenuSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1093,11 +1096,11 @@
             this.Sep7,
             this.EditShowTips,
             this.EditConfirmClosing});
-      resources.ApplyResources(this.MenuSettings, "MenuSettings");
       this.MenuSettings.Name = "MenuSettings";
       // 
       // MenuitemScreenPosition
       // 
+      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
       this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditScreenNone,
             this.EditScreenTopLeft,
@@ -1105,48 +1108,47 @@
             this.EditScreenBottomLeft,
             this.EditScreenBottomRight,
             this.EditScreenCenter});
-      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
       this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
       // 
       // EditScreenNone
       // 
-      this.EditScreenNone.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenNone, "EditScreenNone");
+      this.EditScreenNone.CheckOnClick = true;
       this.EditScreenNone.Name = "EditScreenNone";
       this.EditScreenNone.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenTopLeft
       // 
-      this.EditScreenTopLeft.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenTopLeft, "EditScreenTopLeft");
+      this.EditScreenTopLeft.CheckOnClick = true;
       this.EditScreenTopLeft.Name = "EditScreenTopLeft";
       this.EditScreenTopLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenTopRight
       // 
-      this.EditScreenTopRight.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenTopRight, "EditScreenTopRight");
+      this.EditScreenTopRight.CheckOnClick = true;
       this.EditScreenTopRight.Name = "EditScreenTopRight";
       this.EditScreenTopRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenBottomLeft
       // 
-      this.EditScreenBottomLeft.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenBottomLeft, "EditScreenBottomLeft");
+      this.EditScreenBottomLeft.CheckOnClick = true;
       this.EditScreenBottomLeft.Name = "EditScreenBottomLeft";
       this.EditScreenBottomLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenBottomRight
       // 
-      this.EditScreenBottomRight.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenBottomRight, "EditScreenBottomRight");
+      this.EditScreenBottomRight.CheckOnClick = true;
       this.EditScreenBottomRight.Name = "EditScreenBottomRight";
       this.EditScreenBottomRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
       // EditScreenCenter
       // 
-      this.EditScreenCenter.CheckOnClick = true;
       resources.ApplyResources(this.EditScreenCenter, "EditScreenCenter");
+      this.EditScreenCenter.CheckOnClick = true;
       this.EditScreenCenter.Name = "EditScreenCenter";
       this.EditScreenCenter.Click += new System.EventHandler(this.EditScreenPosition_Click);
       // 
@@ -1158,15 +1160,15 @@
       // 
       // Sep7
       // 
-      this.Sep7.Name = "Sep7";
       resources.ApplyResources(this.Sep7, "Sep7");
+      this.Sep7.Name = "Sep7";
       // 
       // EditShowTips
       // 
+      resources.ApplyResources(this.EditShowTips, "EditShowTips");
       this.EditShowTips.Checked = true;
       this.EditShowTips.CheckOnClick = true;
       this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditShowTips, "EditShowTips");
       this.EditShowTips.Name = "EditShowTips";
       // 
       // EditConfirmClosing
@@ -1179,8 +1181,8 @@
       // 
       // ActionViewTranslations
       // 
-      this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionViewTranslations, "ActionViewTranslations");
+      this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionViewTranslations.Name = "ActionViewTranslations";
       this.ActionViewTranslations.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
@@ -1189,8 +1191,8 @@
       // 
       // ActionViewRawText
       // 
-      this.ActionViewRawText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionViewRawText, "ActionViewRawText");
+      this.ActionViewRawText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionViewRawText.Name = "ActionViewRawText";
       this.ActionViewRawText.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewRawText.Click += new System.EventHandler(this.ActionViewRawText_Click);
@@ -1199,8 +1201,8 @@
       // 
       // ActionViewELS50
       // 
-      this.ActionViewELS50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionViewELS50, "ActionViewELS50");
+      this.ActionViewELS50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionViewELS50.Name = "ActionViewELS50";
       this.ActionViewELS50.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
@@ -1209,8 +1211,8 @@
       // 
       // ActionViewSearch
       // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
+      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionViewSearch.Name = "ActionViewSearch";
       this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
@@ -1219,13 +1221,13 @@
       // 
       // toolStripSeparator4
       // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
       resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
       // 
       // ActionGoToReference
       // 
-      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
+      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionGoToReference.Name = "ActionGoToReference";
       this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
       this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
@@ -1234,8 +1236,8 @@
       // 
       // ActionRefresh
       // 
-      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionRefresh.Name = "ActionRefresh";
       this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
       this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
@@ -1244,13 +1246,13 @@
       // 
       // toolStripSeparator9
       // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
       resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
       // 
       // ActionCloseWindows
       // 
-      this.ActionCloseWindows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
+      this.ActionCloseWindows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionCloseWindows.Name = "ActionCloseWindows";
       this.ActionCloseWindows.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
@@ -1259,8 +1261,8 @@
       // 
       // ActionCopyToClipboard
       // 
-      this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
@@ -1269,11 +1271,12 @@
       // 
       // toolStripSeparator7
       // 
-      this.toolStripSeparator7.Name = "toolStripSeparator7";
       resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
       // 
       // MenuBookmarks
       // 
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionGoToBookmarkMaster,
@@ -1284,7 +1287,6 @@
             this.toolStripSeparator17,
             this.ActionSortBookmarks,
             this.ActionAddBookmark});
-      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.Name = "MenuBookmarks";
       // 
       // ActionGoToBookmarkMaster
@@ -1294,14 +1296,14 @@
       // 
       // toolStripSeparator12
       // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
       resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
       // 
       // MenuHistory
       // 
+      resources.ApplyResources(this.MenuHistory, "MenuHistory");
       this.MenuHistory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionClearHistory});
-      resources.ApplyResources(this.MenuHistory, "MenuHistory");
       this.MenuHistory.Name = "MenuHistory";
       // 
       // ActionClearHistory
@@ -1312,8 +1314,8 @@
       // 
       // menusep
       // 
-      this.menusep.Name = "menusep";
       resources.ApplyResources(this.menusep, "menusep");
+      this.menusep.Name = "menusep";
       // 
       // ActionClearBookmarks
       // 
@@ -1323,8 +1325,8 @@
       // 
       // toolStripSeparator17
       // 
-      this.toolStripSeparator17.Name = "toolStripSeparator17";
       resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
+      this.toolStripSeparator17.Name = "toolStripSeparator17";
       // 
       // ActionSortBookmarks
       // 
@@ -1340,6 +1342,7 @@
       // 
       // MenuTools
       // 
+      resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewBooksTranslation,
@@ -1354,7 +1357,6 @@
             this.toolStripMenuItem9,
             this.toolStripSeparator16,
             this.ActionViewStatistics});
-      resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
       // 
       // ActionViewBooksTranslation
@@ -1365,8 +1367,8 @@
       // 
       // toolStripSeparator6
       // 
-      this.toolStripSeparator6.Name = "toolStripSeparator6";
       resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
       // 
       // ActionShowGrammarGuide
       // 
@@ -1382,8 +1384,8 @@
       // 
       // toolStripSeparator13
       // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
       resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+      this.toolStripSeparator13.Name = "toolStripSeparator13";
       // 
       // ActionOpenShorashon
       // 
@@ -1401,8 +1403,8 @@
       // 
       // toolStripSeparator15
       // 
-      this.toolStripSeparator15.Name = "toolStripSeparator15";
       resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
       // 
       // toolStripMenuItem10
       // 
@@ -1420,8 +1422,8 @@
       // 
       // toolStripSeparator16
       // 
-      this.toolStripSeparator16.Name = "toolStripSeparator16";
       resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
       // 
       // ActionViewStatistics
       // 
@@ -1431,11 +1433,11 @@
       // 
       // MenuWebLinks
       // 
+      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
       this.MenuWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuWebLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenWebLinkTemplateFolder,
             this.ActionOpenWebLinkTemplateLink});
-      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
       this.MenuWebLinks.Name = "MenuWebLinks";
       // 
       // ActionOpenWebLinkTemplateFolder
@@ -1451,19 +1453,21 @@
       // 
       // toolStripSeparator1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
       // 
       // MenuDatabase
       // 
+      resources.ApplyResources(this.MenuDatabase, "MenuDatabase");
       this.MenuDatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionNew,
             this.ActionRestore,
             this.ActionBackup,
             this.toolStripSeparator5,
+            this.ActionVacuum,
+            this.toolStripSeparator2,
             this.ActionOpenBackupPath});
-      resources.ApplyResources(this.MenuDatabase, "MenuDatabase");
       this.MenuDatabase.Name = "MenuDatabase";
       // 
       // ActionNew
@@ -1486,8 +1490,19 @@
       // 
       // toolStripSeparator5
       // 
-      this.toolStripSeparator5.Name = "toolStripSeparator5";
       resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      // 
+      // ActionVacuum
+      // 
+      resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
+      this.ActionVacuum.Name = "ActionVacuum";
+      this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
+      // 
+      // toolStripSeparator2
+      // 
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
       // 
       // ActionOpenBackupPath
       // 
@@ -1497,8 +1512,8 @@
       // 
       // ActionSave
       // 
-      this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionSave, "ActionSave");
+      this.ActionSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
@@ -1507,70 +1522,70 @@
       // 
       // ActionImportConcordances
       // 
-      this.ActionImportConcordances.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionImportConcordances, "ActionImportConcordances");
+      this.ActionImportConcordances.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionImportConcordances.Name = "ActionImportConcordances";
       this.ActionImportConcordances.Click += new System.EventHandler(this.ActionImportConcordances_Click);
       // 
       // bindingNavigatorMoveFirstItem
       // 
-      this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
       resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
+      this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
       // 
       // bindingNavigatorMovePreviousItem
       // 
-      this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
       resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
+      this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
       // 
       // bindingNavigatorSeparator
       // 
-      this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
       resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
+      this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
       // 
       // bindingNavigatorPositionItem
       // 
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
+      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       // 
       // bindingNavigatorCountItem
       // 
-      this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
       resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
+      this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
       // 
       // bindingNavigatorSeparator1
       // 
-      this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
       resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
+      this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
       // 
       // bindingNavigatorMoveNextItem
       // 
-      this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
       resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
+      this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
       // 
       // bindingNavigatorMoveLastItem
       // 
-      this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
       resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
+      this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
       // 
       // bindingNavigatorSeparator2
       // 
-      this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
       resources.ApplyResources(this.bindingNavigatorSeparator2, "bindingNavigatorSeparator2");
+      this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
       // 
       // bindingNavigatorAddNewItem
       // 
-      this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
       resources.ApplyResources(this.bindingNavigatorAddNewItem, "bindingNavigatorAddNewItem");
+      this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
       // 
       // bindingNavigatorDeleteItem
       // 
-      this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
       resources.ApplyResources(this.bindingNavigatorDeleteItem, "bindingNavigatorDeleteItem");
+      this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
       // 
       // booksBindingNavigatorSaveItem
       // 
-      this.booksBindingNavigatorSaveItem.Name = "booksBindingNavigatorSaveItem";
       resources.ApplyResources(this.booksBindingNavigatorSaveItem, "booksBindingNavigatorSaveItem");
+      this.booksBindingNavigatorSaveItem.Name = "booksBindingNavigatorSaveItem";
       // 
       // SaveFileDialogMSWord
       // 
@@ -1594,6 +1609,7 @@
       // 
       // ContextMenuStripVerse
       // 
+      resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       this.ContextMenuStripVerse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenVerseOnline,
             this.toolStripMenuItem1,
@@ -1605,7 +1621,6 @@
             this.toolStripMenuItem4,
             this.ActionImportConsole});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       // 
       // ActionOpenVerseOnline
       // 
@@ -1614,8 +1629,8 @@
       // 
       // toolStripMenuItem1
       // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       // 
       // ActionCopyTranslation
       // 
@@ -1631,8 +1646,8 @@
       // 
       // toolStripMenuItem3
       // 
-      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
       resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
       // 
       // ActionSetAsBookmarkMaster
       // 
@@ -1648,8 +1663,8 @@
       // 
       // toolStripMenuItem4
       // 
-      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
       resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
       // 
       // ActionImportConsole
       // 
@@ -1930,6 +1945,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateLink;
+    private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
   }
 }
 
