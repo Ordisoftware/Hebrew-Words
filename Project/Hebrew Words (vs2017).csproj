@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Source\Common\Globals.cs" />
     <Compile Include="Source\Common\OnlineProviders.cs" />
+    <Compile Include="Source\Common\SQLiteHelper.cs" />
     <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Books\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">

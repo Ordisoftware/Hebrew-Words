@@ -15,6 +15,7 @@
 using System;
 using System.Data.Odbc;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -33,6 +34,8 @@ namespace Ordisoftware.HebrewWords
       using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
       {
         connection.Open();
+        if ( Program.Settings.VacuumAtStartup )
+          connection.Vacuum();
         try
         {
           void checkTable(string table, string sql)
