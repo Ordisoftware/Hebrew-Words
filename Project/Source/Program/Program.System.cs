@@ -239,12 +239,13 @@ namespace Ordisoftware.HebrewWords
             menu.MouseUp += (sender, e) =>
             {
               if ( e.Button != MouseButtons.Right ) return;
+              ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
               if ( !DisplayManager.QueryYesNo(Translations.AskToOpenAllLinks.GetLang()) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
                   SystemManager.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(500);
+                  Thread.Sleep(1000);
                 }
             };
           }
