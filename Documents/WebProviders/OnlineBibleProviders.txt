@@ -5,24 +5,24 @@
 ; URL = web link
 ; --------------------------------------------------------------------------------------------------
 
-Name = StudyBible.org (EN)
+Name = (EN) StudyBible.org
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = BibleHub.com (EN)
+Name = (EN) BibleHub.com
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
-Name = Chabad.org (EN)
+Name = (EN) Chabad.org
 URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
 
 -
 
-Name = Mechon-Mamre.org (EN)
+Name = (EN) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
 
-Name = Mechon-Mamre.org (FR)
+Name = (FR) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
 
 -
 
-Name = Djep.hd.free.fr (FR)
+Name = (FR) Djep.hd.free.fr
 URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%
