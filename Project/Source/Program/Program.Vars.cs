@@ -63,12 +63,13 @@ namespace Ordisoftware.HebrewWords
       get
       {
         if ( _GrammarGuideForm == null )
-          _GrammarGuideForm = HTMLBrowserForm.Create(Translations.GrammarGuideTitle, GrammarGuideFilename);
+          _GrammarGuideForm = new HTMLBrowserForm(Translations.GrammarGuideTitle, GrammarGuideFilename,
+                                                  nameof(Settings.GrammarGuideFormLocation),
+                                                  nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;
       }
     }
     static public HTMLBrowserForm _GrammarGuideForm;
-
 
   }
 

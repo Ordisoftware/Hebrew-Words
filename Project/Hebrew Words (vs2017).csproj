@@ -321,9 +321,6 @@
     <EmbeddedResource Include="Source\Common\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\HTMLBrowserForm.fr.resx">
-      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\HTMLBrowserForm.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
     </EmbeddedResource>
