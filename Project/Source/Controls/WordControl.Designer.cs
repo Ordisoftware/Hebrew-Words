@@ -38,9 +38,9 @@
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.EditTranslation = new System.Windows.Forms.TextBox();
       this.ContextMenuStripWord.SuspendLayout();
       this.SuspendLayout();
@@ -105,12 +105,6 @@
       this.MenuSeparator1.Name = "MenuSeparator1";
       resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       // 
-      // ActionCopyTranslation
-      // 
-      resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
-      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
-      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
-      // 
       // ActionCopyFontChars
       // 
       resources.ApplyResources(this.ActionCopyFontChars, "ActionCopyFontChars");
@@ -122,6 +116,12 @@
       resources.ApplyResources(this.ActionCopyUnicodeChars, "ActionCopyUnicodeChars");
       this.ActionCopyUnicodeChars.Name = "ActionCopyUnicodeChars";
       this.ActionCopyUnicodeChars.Click += new System.EventHandler(this.ActionCopyUnicodeChars_Click);
+      // 
+      // ActionCopyTranslation
+      // 
+      resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
+      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
+      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
       // 
       // EditTranslation
       // 

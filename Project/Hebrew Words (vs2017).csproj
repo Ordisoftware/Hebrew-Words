@@ -74,7 +74,9 @@
     <Compile Include="Source\Classes\Translations.Notices.cs" />
     <Compile Include="Source\Classes\Translations.Import.cs" />
     <Compile Include="Source\Common\Globals.cs" />
+    <Compile Include="Source\Common\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\OnlineProviders.cs" />
+    <Compile Include="Source\Common\OnlineProviders.Translations.cs" />
     <Compile Include="Source\Common\SQLiteHelper.cs" />
     <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Books\BooksNames.Common.cs" />
