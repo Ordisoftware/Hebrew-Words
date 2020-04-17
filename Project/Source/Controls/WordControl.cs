@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -39,21 +39,12 @@ namespace Ordisoftware.HebrewWords
     public WordControl()
     {
       InitializeComponent();
-      int index = 0;
-      EventHandler action = (sender, e) =>
+      OnlineProviders.CreateProvidersMenuItems(Globals.OnlineWordProviders, ActionSearchOnline, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
-      };
-      //( (ToolStripDropDownMenu)ActionSearchOnline.DropDown).ShowImageMargin = false;
-      foreach ( var item in Globals.OnlineWordProviders.Items )
-      {
-        if ( item.Name == "-" )
-          ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
-        else
-          ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-      }
+      });
     }
 
     public WordControl(ReferenceItem reference) : this()

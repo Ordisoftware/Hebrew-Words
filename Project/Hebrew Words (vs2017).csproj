@@ -280,6 +280,7 @@
     <Compile Include="Source\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\OnlineProviders.Menus.cs" />
     <Compile Include="Source\Program\Program.System.cs" />
     <Compile Include="Source\Program\Program.Tools.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
