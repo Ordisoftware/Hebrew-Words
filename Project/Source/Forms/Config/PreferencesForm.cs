@@ -196,7 +196,7 @@ namespace Ordisoftware.HebrewWords
       Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);
-      GrammarGuideForm.Instance.CenterToMainForm();
+      Program.GrammarGuideForm.CenterToMainForm();
     }
 
     /// <summary>

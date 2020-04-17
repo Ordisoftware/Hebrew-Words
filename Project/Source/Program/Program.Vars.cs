@@ -48,17 +48,27 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string HistoryFilename
     = Globals.UserDataFolderPath + "History.txt";
-      
+
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
     static public string GrammarGuideFilename
+      = Globals.HelpFolderPath + $"grammar-%LANG%.htm";
+
+    /// <summary>
+    /// Indicate the grammar guide form.
+    /// </summary>
+    static public HTMLBrowserForm GrammarGuideForm
     {
       get
       {
-        return Globals.HelpFolderPath + $"grammar-{Localizer.Language}.htm";
+        if ( _GrammarGuideForm == null )
+          _GrammarGuideForm = HTMLBrowserForm.Create(Translations.GrammarGuideTitle, GrammarGuideFilename);
+        return _GrammarGuideForm;
       }
     }
+    static public HTMLBrowserForm _GrammarGuideForm;
+
 
   }
 

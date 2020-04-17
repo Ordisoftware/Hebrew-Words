@@ -62,17 +62,17 @@ namespace Ordisoftware.HebrewWords
       Thread.CurrentThread.CurrentUICulture = culture;
       AboutBox.Instance.Hide();
       foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance && form != GrammarGuideForm.Instance )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm )
         {
           new Infralution.Localization.CultureManager().ManagedControl = form;
           ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
           ApplyResources(resources, form.Controls);
         }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
-      GrammarGuideForm.Instance.GrammarGuideForm_Shown(null, null);
+      GrammarGuideForm.GrammarGuideForm_Shown(null, null);
       MainForm.Instance.CreateWebLinks();
       if ( Globals.IsReady )
       {

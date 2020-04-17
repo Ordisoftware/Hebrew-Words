@@ -175,6 +175,13 @@ namespace Ordisoftware.HebrewWords
       };
 
 
+    static public readonly Dictionary<string, string> GrammarGuideTitle
+      = new Dictionary<string, string>()
+      {
+        { "en", "Grammar guide" },
+        { "fr", "Guide de grammaire" }
+      };
+
     static public readonly Dictionary<string, string> BookChapterTitle
       = new Dictionary<string, string>()
       {
