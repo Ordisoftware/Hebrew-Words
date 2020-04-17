@@ -55,12 +55,12 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      Globals.AllowClose = true;
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename); }
+      catch { }
+      CurrentReference = new ReferenceItem(null, null, null, null);
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
       History = new History(Program.HistoryFilename);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
-      CurrentReference = new ReferenceItem(null, null, null, null);
-      int index = 1;
       EventHandler action = (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -80,6 +80,7 @@ namespace Ordisoftware.HebrewWords
                                   CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       };
+      int index = 1;
       foreach ( var item in Globals.OnlineBibleProviders.Items )
       {
         if ( item.Name == "-" )
@@ -87,15 +88,11 @@ namespace Ordisoftware.HebrewWords
         else
           ContextMenuStripVerse.Items.Insert(index++, item.CreateMenuItem(action, ActionOpenVerseOnline.Image));
       }
-      try
-      {
-        Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
-      }
-      catch
-      {
-      }
     }
 
+    /// <summary>
+    /// Create web links menu items.
+    /// </summary>
     internal void CreateWebLinks()
     {
       Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
@@ -155,7 +152,10 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Translations.AskToExitApplication.GetLang()) )
+        {
           e.Cancel = true;
+          Globals.IsExiting = true;
+        }
     }
 
     /// <summary>
@@ -175,6 +175,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
+      if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
       if ( WindowState != FormWindowState.Normal ) return;
@@ -188,10 +189,13 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      Globals.IsExiting = true;
+      Globals.IsSessionEnding = true;
+      Globals.AllowClose = true;
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
-          form.Close();
-      Globals.IsSessionEnding = true;
+          try { form.Close(); }
+          catch { }
       Close();
     }
 
