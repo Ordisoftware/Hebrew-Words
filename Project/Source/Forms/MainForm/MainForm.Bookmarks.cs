@@ -56,7 +56,6 @@ namespace Ordisoftware.HebrewWords
       ActionGoToBookmarkMaster.MouseUp += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
       {
-        MenuBookmarks.DropDownItems.Add("-");
         foreach ( var reference in Bookmarks )
         {
           var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());

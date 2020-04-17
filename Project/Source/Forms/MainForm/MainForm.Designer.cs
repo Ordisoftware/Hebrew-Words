@@ -115,8 +115,8 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.MenuWeb = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -157,10 +157,8 @@
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionGoToBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
-      this.menusep = new System.Windows.Forms.ToolStripSeparator();
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSortBookmarks = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,6 +222,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -966,17 +965,17 @@
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
       // ActionWebCheckUpdate
       // 
       this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
       this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
       this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionWebCheckUpdate_Click);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionCreateGitHubIssue
       // 
@@ -1278,14 +1277,13 @@
       // 
       this.MenuBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionGoToBookmarkMaster,
-            this.toolStripSeparator12,
             this.MenuHistory,
-            this.menusep,
-            this.ActionClearBookmarks,
             this.toolStripSeparator17,
             this.ActionSortBookmarks,
-            this.ActionAddBookmark});
+            this.ActionAddBookmark,
+            this.ActionClearBookmarks,
+            this.toolStripSeparator8,
+            this.ActionGoToBookmarkMaster});
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.Name = "MenuBookmarks";
       // 
@@ -1293,11 +1291,6 @@
       // 
       resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
       this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
-      // 
-      // toolStripSeparator12
-      // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
-      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
       // MenuHistory
       // 
@@ -1311,11 +1304,6 @@
       resources.ApplyResources(this.ActionClearHistory, "ActionClearHistory");
       this.ActionClearHistory.Name = "ActionClearHistory";
       this.ActionClearHistory.Click += new System.EventHandler(this.ActionClearHistory_Click);
-      // 
-      // menusep
-      // 
-      this.menusep.Name = "menusep";
-      resources.ApplyResources(this.menusep, "menusep");
       // 
       // ActionClearBookmarks
       // 
@@ -1347,8 +1335,8 @@
             this.ActionViewBooksTranslation,
             this.toolStripSeparator6,
             this.ActionShowGrammarGuide,
-            this.ActionStartHebrewLetters,
             this.toolStripSeparator13,
+            this.ActionStartHebrewLetters,
             this.ActionOpenShorashon,
             this.ActionOpenHebrewGematria,
             this.toolStripSeparator15,
@@ -1697,6 +1685,11 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1855,7 +1848,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
     private System.Windows.Forms.ToolStripMenuItem ActionImportConsole;
-    private System.Windows.Forms.ToolStripSeparator menusep;
     private System.Windows.Forms.ToolStripMenuItem MenuHistory;
     private System.Windows.Forms.Panel PanelSearchFilters;
     private System.Windows.Forms.TabControl SelectSearchType;
@@ -1914,7 +1906,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewCalendar;
     private System.Windows.Forms.ToolStripMenuItem ActionClearHistory;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewGematria;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
@@ -1947,6 +1938,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateLink;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
   }
 }
 
