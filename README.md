@@ -79,8 +79,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - F4 : ELS50 verses view
 - F5 : Search view
 - Ctrl+B : Open the books names editor
-- Ctrl+G : Open the grammar guide
 - Ctrl+H : Open Hebrew Letters
+- Ctrl+G : Open the grammar guide
 - Ctrl+L : Open Shorashon web page
 - Ctrl+R : Find reference
 - Ctrl+F : Find verse number in current chapter (0 for first untranslated)
