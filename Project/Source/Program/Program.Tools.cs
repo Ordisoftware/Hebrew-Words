@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewWords
       if ( !File.Exists(Settings.HebrewLettersExe) )
       {
         if ( DisplayManager.QueryYesNo(Translations.AskToDownloadHebrewLetters.GetLang()) )
-          MainForm.Instance.toolStripMenuItem7.PerformClick();
+          MainForm.Instance.ActionDownloadHebrewLetters.PerformClick();
         return;
       }
       hebrew = HebrewAlphabet.SetFinal(hebrew, false);
