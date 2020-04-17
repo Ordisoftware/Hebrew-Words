@@ -941,8 +941,8 @@
       this.MenuWeb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
-            this.toolStripSeparator10,
             this.ActionWebCheckUpdate,
+            this.toolStripSeparator10,
             this.ActionCreateGitHubIssue,
             this.ActionWebQA,
             this.toolStripSeparator11,
