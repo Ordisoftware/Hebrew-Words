@@ -70,7 +70,7 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.HebrewWords.LettersControl();
+      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -1822,7 +1822,7 @@
     private System.Windows.Forms.Panel PanelSearchTop;
     private System.Windows.Forms.Button ActionSearchRun;
     private System.Windows.Forms.Button ActionSearchClear;
-    private LettersControl EditLetters;
+    private Ordisoftware.HebrewCommon.LettersControl EditLetters;
     private System.Windows.Forms.Panel PanelSearchResults;
     private System.Windows.Forms.ComboBox SelectChapter;
     private System.Windows.Forms.ComboBox SelectBook;

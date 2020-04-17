@@ -233,10 +233,10 @@
     <Compile Include="Source\Forms\Config\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Controls\LettersControl.cs">
+    <Compile Include="Source\Common\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Controls\LettersControl.designer.cs">
+    <Compile Include="Source\Common\LettersControl.designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
@@ -316,7 +316,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Source\Controls\LettersControl.resx">
+    <EmbeddedResource Include="Source\Common\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\GrammarGuideForm.fr.resx">

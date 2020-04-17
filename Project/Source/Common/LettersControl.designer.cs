@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords 
+﻿namespace Ordisoftware.HebrewCommon
 {
   partial class LettersControl
   {
