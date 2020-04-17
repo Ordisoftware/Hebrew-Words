@@ -189,7 +189,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
       Program.Settings.Reset();
       Program.Settings.Reload();
       Program.Settings.Save();
@@ -241,12 +241,12 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.OpenOnlineVerseHelp.GetLang());
+      DisplayManager.Show(Translations.OpenOnlineVerseNotice.GetLang());
     }
 
     private void ActionOnlineSearchHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.OpenOnlineSearchHelp.GetLang());
+      DisplayManager.Show(Translations.OpenOnlineSearchNotice.GetLang());
     }
 
   }

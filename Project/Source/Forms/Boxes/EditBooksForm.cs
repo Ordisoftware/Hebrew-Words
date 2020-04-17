@@ -153,7 +153,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.RestoreBooksCommonNames.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.AskToRestoreBooksCommonNames.GetLang()) )
         foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
           book.CommonName = BooksNames.Common.GetLang((Books)( book.Number - 1 ));
     }

@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewWords
       if ( !Globals.IsReady ) return;
       ActionSave.PerformClick();
       if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Translations.AskToExitApplication.GetLang()) )
           e.Cancel = true;
     }
 
@@ -527,9 +527,9 @@ namespace Ordisoftware.HebrewWords
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.BackupDatabaseBeforeReplace.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      if ( !DisplayManager.QueryYesNo(Translations.CreateNewDatabase.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(Translations.AskToCreateNewDatabase.GetLang()) )
         return;
       string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
       ReLoadData(() =>
@@ -546,7 +546,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionRestore_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.BackupDatabaseBeforeReplace.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
       string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
@@ -636,7 +636,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.RestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.AskToRestoreWindowPosition.GetLang()) )
       {
         Program.Settings.RestoreMainForm();
         ActionRefresh.PerformClick();
@@ -1036,7 +1036,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearHistory_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.EmptyHistory.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToEmptyHistory.GetLang()) ) return;
       History.Clear();
       UpdateHistory();
     }
@@ -1048,7 +1048,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.EmptyBookmarks.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToEmptyBookmarks.GetLang()) ) return;
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;
