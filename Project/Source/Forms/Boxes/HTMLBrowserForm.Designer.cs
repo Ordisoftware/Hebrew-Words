@@ -44,7 +44,7 @@
       this.WebBrowser.TabIndex = 0;
       this.WebBrowser.WebBrowserShortcutsEnabled = false;
       // 
-      // Form1
+      // HTMLBrowserForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -52,9 +52,12 @@
       this.Controls.Add(this.WebBrowser);
       this.MaximizeBox = false;
       this.MinimumSize = new System.Drawing.Size(350, 500);
-      this.Name = "Form1";
+      this.Name = "HTMLBrowserForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Browser";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HTMLBrowserForm_FormClosing);
+      this.Load += new System.EventHandler(this.HTMLBrowserForm_Load);
+      this.Shown += new System.EventHandler(this.HTMLBrowserForm_Shown);
       this.ResumeLayout(false);
 
     }
