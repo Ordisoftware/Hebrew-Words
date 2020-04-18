@@ -70,7 +70,6 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -156,19 +155,20 @@
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionGoToBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSortBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddBookmark = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGoToBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionStartHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionStartHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewGematria = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
@@ -222,7 +222,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -585,15 +585,6 @@
       this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
-      // 
-      // EditLetters
-      // 
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
@@ -1287,11 +1278,6 @@
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       this.MenuBookmarks.Name = "MenuBookmarks";
       // 
-      // ActionGoToBookmarkMaster
-      // 
-      resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
-      this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
-      // 
       // MenuHistory
       // 
       this.MenuHistory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1304,12 +1290,6 @@
       resources.ApplyResources(this.ActionClearHistory, "ActionClearHistory");
       this.ActionClearHistory.Name = "ActionClearHistory";
       this.ActionClearHistory.Click += new System.EventHandler(this.ActionClearHistory_Click);
-      // 
-      // ActionClearBookmarks
-      // 
-      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
-      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
-      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
       // 
       // toolStripSeparator17
       // 
@@ -1327,6 +1307,22 @@
       resources.ApplyResources(this.ActionAddBookmark, "ActionAddBookmark");
       this.ActionAddBookmark.Name = "ActionAddBookmark";
       this.ActionAddBookmark.Click += new System.EventHandler(this.ActionAddBookmark_Click);
+      // 
+      // ActionClearBookmarks
+      // 
+      resources.ApplyResources(this.ActionClearBookmarks, "ActionClearBookmarks");
+      this.ActionClearBookmarks.Name = "ActionClearBookmarks";
+      this.ActionClearBookmarks.Click += new System.EventHandler(this.ActionClearBookmarks_Click);
+      // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
+      // ActionGoToBookmarkMaster
+      // 
+      resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
+      this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
       // 
       // MenuTools
       // 
@@ -1364,16 +1360,16 @@
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
+      // toolStripSeparator13
+      // 
+      this.toolStripSeparator13.Name = "toolStripSeparator13";
+      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+      // 
       // ActionStartHebrewLetters
       // 
       resources.ApplyResources(this.ActionStartHebrewLetters, "ActionStartHebrewLetters");
       this.ActionStartHebrewLetters.Name = "ActionStartHebrewLetters";
       this.ActionStartHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
-      // toolStripSeparator13
-      // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
-      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
       // 
       // ActionOpenShorashon
       // 
@@ -1685,10 +1681,15 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // toolStripSeparator8
+      // EditLetters
       // 
-      this.toolStripSeparator8.Name = "toolStripSeparator8";
-      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.ShowValues = false;
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // MainForm
       // 
@@ -1815,7 +1816,6 @@
     private System.Windows.Forms.Panel PanelSearchTop;
     private System.Windows.Forms.Button ActionSearchRun;
     private System.Windows.Forms.Button ActionSearchClear;
-    private Ordisoftware.HebrewCommon.LettersControl EditLetters;
     private System.Windows.Forms.Panel PanelSearchResults;
     private System.Windows.Forms.ComboBox SelectChapter;
     private System.Windows.Forms.ComboBox SelectBook;
@@ -1939,6 +1939,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+    private HebrewCommon.LettersControl EditLetters;
   }
 }
 
