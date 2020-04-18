@@ -124,8 +124,6 @@ namespace Ordisoftware.HebrewWords
       InitializeDialogsDirectory();
       DoBackupDB();
       LoadData();
-      UpdateBookmarks();
-      UpdateHistory();
       TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
@@ -1259,6 +1257,9 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionVacuum_Click(object sender, EventArgs e)
     {
+      if ( !DisplayManager.QueryYesNo("Optimization process will close and reopen the database." + Environment.NewLine + Environment.NewLine +
+                                      "Do you want to continue?") )
+        return;
       ActionSave.PerformClick();
       ReLoadData(() =>
       {

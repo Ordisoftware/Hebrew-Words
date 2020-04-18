@@ -35,7 +35,9 @@ namespace Ordisoftware.HebrewWords
       {
         PopulateData();
         Bookmarks.Load();
+        UpdateBookmarks();
         History.Load();
+        UpdateHistory();
         if ( Program.Settings.OpenLastViewAtStartup )
           SetView(Program.Settings.CurrentView, true);
         else

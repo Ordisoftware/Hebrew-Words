@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewWords
     public EditMemoForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void ActionOk_Click(object sender, EventArgs e)

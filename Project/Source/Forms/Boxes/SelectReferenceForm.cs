@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewWords
     private SelectReferenceForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
       RefreshBooks();
     }
 
