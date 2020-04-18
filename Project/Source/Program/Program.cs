@@ -40,12 +40,16 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      if ( !CheckApplicationOnlyOneInstance() ) return;
-      CheckSettingsUpgrade();
+      if ( !SystemHelper.CheckApplicationOnlyOneInstance() ) return;
+      bool upgrade = Settings.UpgradeRequired;
+      SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
+      Settings.UpgradeRequired = upgrade;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Core.Diagnostics.Debugger.Active = true;
-      CheckCommandLineArguments(args);
+      string lang = Settings.Language;
+      SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
+      Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
     }
@@ -66,7 +70,7 @@ namespace Ordisoftware.HebrewWords
         {
           new Infralution.Localization.CultureManager().ManagedControl = form;
           ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-          ApplyResources(resources, form.Controls);
+          SystemHelper.ApplyResources(resources, form.Controls);
         }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;

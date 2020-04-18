@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
@@ -57,7 +58,7 @@ namespace Ordisoftware.HebrewWords
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            Program.RunShell(SaveFileDialogRTF.FileName);
+            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
           break;
         default:
           DisplayManager.ShowAdvert("Not implemented.");
@@ -89,14 +90,14 @@ namespace Ordisoftware.HebrewWords
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            Program.RunShell(SaveFileDialogRTF.FileName);
+            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
           break;
         case ViewModeType.Text:
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditRawText.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            Program.RunShell(SaveFileDialogRTF.FileName);
+            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
           break;
         default:
           DisplayManager.ShowAdvert("Not implemented.");

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.IO;
 using Ordisoftware.HebrewCommon;
@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
       {
-        if ( DisplayManager.QueryYesNo(Translations.AskToDownloadHebrewLetters.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Globals.AskToDownloadHebrewLetters.GetLang()) )
           MainForm.Instance.ActionDownloadHebrewLetters.PerformClick();
         return;
       }
@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
       if ( hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
-        RunShell(Settings.HebrewLettersExe, item);
+        SystemHelper.RunShell(Settings.HebrewLettersExe, item);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenOnlineConcordance(string hebrew)
     {
-      RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
+      SystemHelper.RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
     }
 
     /// <summary>
@@ -62,17 +62,17 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
-      RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
-                  .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
-                  .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
-                  .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
-                  .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
-                  .Replace("%BOOKNUM%", book.ToString())
-                  .Replace("%CHAPTERNUM%", chapter.ToString())
-                  .Replace("%VERSENUM%", verse.ToString())
-                  .Replace("%BOOKNUM#2%", book.ToString("00"))
-                  .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
-                  .Replace("%VERSENUM#2%", verse.ToString("00")));
+      SystemHelper.RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
+                               .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
+                               .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
+                               .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
+                               .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
+                               .Replace("%BOOKNUM%", book.ToString())
+                               .Replace("%CHAPTERNUM%", chapter.ToString())
+                               .Replace("%VERSENUM%", verse.ToString())
+                               .Replace("%BOOKNUM#2%", book.ToString("00"))
+                               .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
+                               .Replace("%VERSENUM#2%", verse.ToString("00")));
     }
 
   }

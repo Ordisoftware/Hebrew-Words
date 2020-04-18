@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewWords
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
-        Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
+        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
       });
     }
 

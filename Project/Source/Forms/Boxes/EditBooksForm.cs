@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
         string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
         foreach ( string item in strOriginal.Split(' ') )
         {
-          Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
+          SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
         }
       };
       foreach ( var item in Globals.OnlineWordProviders.Items )
