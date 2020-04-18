@@ -51,6 +51,7 @@ namespace Ordisoftware.HebrewWords
       SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
       Settings.Language = lang;
       UpdateLocalization();
+      SystemHelper.MainForm = MainForm.Instance;
       Application.Run(MainForm.Instance);
     }
 
