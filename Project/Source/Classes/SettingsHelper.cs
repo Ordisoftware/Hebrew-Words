@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewWords
       MainForm.EditScreenCenter.Checked = true;
       MainForm.EditConfirmClosing.Checked = true;
       MainForm.EditShowTips.Checked = true;
-      MainForm.SetView(ViewModeType.Verses);
+      MainForm.SetView(ViewMode.Verses);
       settings.Store();
     }
 

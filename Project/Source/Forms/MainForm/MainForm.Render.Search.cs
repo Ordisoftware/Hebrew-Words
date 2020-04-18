@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           {
             if ( e.Button == MouseButtons.Left )
             {
-              SetView(ViewModeType.Verses);
+              SetView(ViewMode.Verses);
               GoTo((ReferenceItem)( (Control)sender ).Tag);
             }
           };
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelMouseClick(object sender, EventArgs e)
     {
-      SetView(ViewModeType.Verses);
+      SetView(ViewMode.Verses);
       var item = (ReferenceItem)( (Control)sender ).Tag;
       GoTo(item);
     }

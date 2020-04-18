@@ -122,9 +122,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Verses")]
-        public global::Ordisoftware.HebrewWords.ViewModeType CurrentView {
+        public global::Ordisoftware.HebrewWords.ViewMode CurrentView {
             get {
-                return ((global::Ordisoftware.HebrewWords.ViewModeType)(this["CurrentView"]));
+                return ((global::Ordisoftware.HebrewWords.ViewMode)(this["CurrentView"]));
             }
             set {
                 this["CurrentView"] = value;

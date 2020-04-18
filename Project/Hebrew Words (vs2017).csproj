@@ -231,7 +231,7 @@
     <Compile Include="Source\Common\Localizer.cs" />
     <Compile Include="Source\Classes\SettingsHelper.cs" />
     <Compile Include="Source\Enums\ControlLocation.cs" />
-    <Compile Include="Source\Enums\ViewModeType.cs" />
+    <Compile Include="Source\Enums\ViewMode.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

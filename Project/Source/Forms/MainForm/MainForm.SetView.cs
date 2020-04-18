@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewWords
     /// Set the view panel.
     /// </summary>
     /// <param name="view">The view mode.</param>
-    internal void SetView(ViewModeType view)
+    internal void SetView(ViewMode view)
     {
       SetView(view, false);
     }
@@ -64,12 +64,12 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     /// <param name="view">The view mode.</param>
     /// <param name="first">true to first.</param>
-    internal void SetView(ViewModeType view, bool first)
+    internal void SetView(ViewMode view, bool first)
     {
-      var ViewPanels = new Dictionary<ViewModeType, ViewConnector>()
+      var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
       {
         {
-          ViewModeType.Verses,
+          ViewMode.Verses,
           new ViewConnector
           {
             MenuItem = ActionViewVerses,
@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          ViewModeType.Translations,
+          ViewMode.Translations,
           new ViewConnector
           {
             MenuItem = ActionViewTranslations,
@@ -87,7 +87,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          ViewModeType.Text,
+          ViewMode.Text,
           new ViewConnector
           {
             MenuItem = ActionViewRawText,
@@ -96,7 +96,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          ViewModeType.ELS50,
+          ViewMode.ELS50,
           new ViewConnector
           {
             MenuItem = ActionViewELS50,
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          ViewModeType.Search,
+          ViewMode.Search,
           new ViewConnector
           {
             MenuItem = ActionViewSearch,
@@ -122,22 +122,22 @@ namespace Ordisoftware.HebrewWords
       if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
       LabelTitle.Text = Translations.ViewPanelTitle.GetLang(view).ToUpper();
-      ActionCopyToClipboard.Enabled = view == ViewModeType.Translations;
-      ActionExportBook.Enabled = view == ViewModeType.Verses
-                              || view == ViewModeType.ELS50;
-      ActionExportChapter.Enabled = view == ViewModeType.Verses
-                                 || view == ViewModeType.Translations
-                                 || view == ViewModeType.Text;
-      SelectBook.Enabled = view != ViewModeType.Search;
+      ActionCopyToClipboard.Enabled = view == ViewMode.Translations;
+      ActionExportBook.Enabled = view == ViewMode.Verses
+                              || view == ViewMode.ELS50;
+      ActionExportChapter.Enabled = view == ViewMode.Verses
+                                 || view == ViewMode.Translations
+                                 || view == ViewMode.Text;
+      SelectBook.Enabled = view != ViewMode.Search;
       LabelSelectBook.Enabled = SelectBook.Enabled;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
       EditBookTranslation.Enabled = ActionExportChapter.Enabled;
       EditChapterTitle.Enabled = ActionExportChapter.Enabled;
       EditChapterMemo.Enabled = ActionExportChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
-      ActionSearchVerse.Enabled = view == ViewModeType.Verses
-                               || view == ViewModeType.Translations
-                               || view == ViewModeType.Text;
+      ActionSearchVerse.Enabled = view == ViewMode.Verses
+                               || view == ViewMode.Translations
+                               || view == ViewMode.Text;
       Refresh();
     }
 

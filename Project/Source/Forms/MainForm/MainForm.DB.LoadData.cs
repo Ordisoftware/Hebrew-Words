@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewWords
           SetView(Program.Settings.CurrentView, true);
         else
         {
-          SetView(ViewModeType.Verses, true);
+          SetView(ViewMode.Verses, true);
           Program.Settings.CurrentSearchTypeTab = 0;
         }
         if ( Program.Settings.GoToMasterBookmarkAtStartup )

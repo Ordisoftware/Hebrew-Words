@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewWords
           ActionViewELS50.PerformClick();
           return true;
         case Keys.F5:
-          if ( Program.Settings.CurrentView != ViewModeType.Search )
+          if ( Program.Settings.CurrentView != ViewMode.Search )
             ActionViewSearch.PerformClick();
           else
             RotateSearchTab();
@@ -105,9 +105,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, -ScrollIncrement, true);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, -ScrollIncrement, true);
           }
           break;
@@ -115,9 +115,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, ScrollIncrement, true);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, ScrollIncrement, true);
           }
           break;
@@ -125,9 +125,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, -PanelViewVerses.Height, true);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, -PanelViewVerses.Height, true);
           }
           break;
@@ -135,9 +135,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, PanelViewVerses.Height, true);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, PanelViewVerses.Height, true);
           }
           break;
@@ -145,9 +145,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, 0, false);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, 0, false);
           }
           break;
@@ -155,9 +155,9 @@ namespace Ordisoftware.HebrewWords
           if ( ActiveControl is TextBox ) return false;
           switch ( Program.Settings.CurrentView )
           {
-            case ViewModeType.Verses:
+            case ViewMode.Verses:
               return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
-            case ViewModeType.Search:
+            case ViewMode.Search:
               return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
           }
           break;

@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewWords
     private void GoToBookmark(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.ELS50
-        || Program.Settings.CurrentView == ViewModeType.Search )
-        SetView(ViewModeType.Verses);
+      if ( Program.Settings.CurrentView == ViewMode.ELS50
+        || Program.Settings.CurrentView == ViewMode.Search )
+        SetView(ViewMode.Verses);
       GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewWords
       Label:
       switch ( Program.Settings.CurrentView )
       {
-        case ViewModeType.Verses:
+        case ViewMode.Verses:
           foreach ( var control in PanelViewVerses.Controls )
             if ( control is Label )
             {
@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewWords
                   break;
                 }
           break;
-        case ViewModeType.Translations:
+        case ViewMode.Translations:
           foreach ( string line in EditTranslations.Lines )
           {
             string s = reference.Verse.Number + ". ";
@@ -123,7 +123,7 @@ namespace Ordisoftware.HebrewWords
             }
           }
           break;
-        case ViewModeType.Text:
+        case ViewMode.Text:
           foreach ( string line in EditRawText.Lines )
           {
             string s = ":" + reference.Verse.Number;
@@ -137,7 +137,7 @@ namespace Ordisoftware.HebrewWords
           }
           break;
         default:
-          SetView(ViewModeType.Verses);
+          SetView(ViewMode.Verses);
           goto Label;
       }
       CurrentReference = new ReferenceItem(reference);

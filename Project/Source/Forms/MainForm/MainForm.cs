@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewWords
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-        if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+        if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
         {
           var reference = (ReferenceItem)control.Tag;
           Program.OpenOnlineVerse((string)menuitem.Tag,
@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewWords
                                   reference.Verse.Number);
         }
         else
-        if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+        if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
           Program.OpenOnlineVerse((string)menuitem.Tag,
                                   CurrentReference.Book.Number,
                                   CurrentReference.Chapter.Number,
@@ -297,8 +297,8 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewVerses_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.Verses ) return;
-      SetView(ViewModeType.Verses);
+      if ( Program.Settings.CurrentView == ViewMode.Verses ) return;
+      SetView(ViewMode.Verses);
       GoTo(CurrentReference);
     }
 
@@ -310,8 +310,8 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewTranslations_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.Translations ) return;
-      SetView(ViewModeType.Translations);
+      if ( Program.Settings.CurrentView == ViewMode.Translations ) return;
+      SetView(ViewMode.Translations);
       RenderTranslation();
       GoTo(CurrentReference);
     }
@@ -324,8 +324,8 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewRawText_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.Text ) return;
-      SetView(ViewModeType.Text);
+      if ( Program.Settings.CurrentView == ViewMode.Text ) return;
+      SetView(ViewMode.Text);
       GoTo(CurrentReference);
     }
 
@@ -337,8 +337,8 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewELS50_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.ELS50 ) return;
-      SetView(ViewModeType.ELS50);
+      if ( Program.Settings.CurrentView == ViewMode.ELS50 ) return;
+      SetView(ViewMode.ELS50);
     }
 
     /// <summary>
@@ -349,10 +349,10 @@ namespace Ordisoftware.HebrewWords
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewModeType.Search )
+      if ( Program.Settings.CurrentView == ViewMode.Search )
         RotateSearchTab();
       else
-        SetView(ViewModeType.Search);
+        SetView(ViewMode.Search);
       SelectSearchType_Selected(null, null);
     }
 
@@ -422,13 +422,13 @@ namespace Ordisoftware.HebrewWords
     {
       switch ( Program.Settings.CurrentView )
       {
-        case ViewModeType.Translations:
+        case ViewMode.Translations:
           Clipboard.SetText(EditTranslations.Text);
           break;
-        case ViewModeType.Text:
+        case ViewMode.Text:
           Clipboard.SetText(EditRawText.Text);
           break;
-        case ViewModeType.ELS50:
+        case ViewMode.ELS50:
           Clipboard.SetText(EditELS50All.Text);
           break;
       }
@@ -487,7 +487,7 @@ namespace Ordisoftware.HebrewWords
       var reference = StatisticsForm.Run();
       if ( reference != null )
       {
-        SetView(ViewModeType.Verses);
+        SetView(ViewMode.Verses);
         GoTo(reference);
       }
     }
@@ -923,14 +923,14 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         var verse = reference.Verse;
         Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
       {
         var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
         var verse = reference.Verse;
@@ -947,7 +947,7 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         Program.Settings.BookmarkMasterBook = reference.Book.Number;
@@ -955,7 +955,7 @@ namespace Ordisoftware.HebrewWords
         Program.Settings.BookmarkMasterVerse = reference.Verse.Number;
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
       {
         Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
         Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
@@ -975,7 +975,7 @@ namespace Ordisoftware.HebrewWords
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem reference = null;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
       {
         reference = (ReferenceItem)control.Tag;
         reference = new ReferenceItem(reference.Book.Number,
@@ -983,7 +983,7 @@ namespace Ordisoftware.HebrewWords
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
         reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1005,7 +1005,7 @@ namespace Ordisoftware.HebrewWords
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem reference = null;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
       {
         reference = (ReferenceItem)control.Tag;
         reference = new ReferenceItem(reference.Book.Number,
@@ -1013,7 +1013,7 @@ namespace Ordisoftware.HebrewWords
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
         reference = new ReferenceItem(CurrentReference.Book.Number,

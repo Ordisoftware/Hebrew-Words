@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewWords
       var book = CurrentReference.Book;
       switch ( Program.Settings.CurrentView )
       {
-        case ViewModeType.Verses:
+        case ViewMode.Verses:
           SaveFileDialogMSWord.FileName = book.Name + ".docx";
           if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
           var form = new ExportingForm();
@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewWords
             form.Close();
           }
           break;
-        case ViewModeType.ELS50:
+        case ViewMode.ELS50:
           SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
@@ -72,7 +72,7 @@ namespace Ordisoftware.HebrewWords
       var chapter = CurrentReference.Chapter;
       switch ( Program.Settings.CurrentView )
       {
-        case ViewModeType.Verses:
+        case ViewMode.Verses:
           SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
           if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
           SetFormDisabled(true);
@@ -85,14 +85,14 @@ namespace Ordisoftware.HebrewWords
             SetFormDisabled(false);
           }
           break;
-        case ViewModeType.Translations:
+        case ViewMode.Translations:
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
             SystemHelper.RunShell(SaveFileDialogRTF.FileName);
           break;
-        case ViewModeType.Text:
+        case ViewMode.Text:
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditRawText.SaveFile(SaveFileDialogRTF.FileName);
@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewWords
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewModeType.Search )
+      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         var book = reference.Book;
@@ -120,7 +120,7 @@ namespace Ordisoftware.HebrewWords
         ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewModeType.Verses )
+      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
       {
         var book = CurrentReference.Book;
         var chapter = CurrentReference.Chapter;

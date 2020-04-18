@@ -18,9 +18,9 @@ namespace Ordisoftware.HebrewWords
 {
 
   /// <summary>
-  /// Provide view mode type.
+  /// Provide view mode.
   /// </summary>
-  public enum ViewModeType
+  public enum ViewMode
   {
 
     /// <summary>

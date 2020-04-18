@@ -90,39 +90,39 @@ namespace Ordisoftware.HebrewWords
         { "fr", "CHAPITRE" }
       };
 
-    static public readonly Dictionary<ViewModeType, Dictionary<string, string>> ViewPanelTitle
-      = new Dictionary<ViewModeType, Dictionary<string, string>>()
+    static public readonly Dictionary<ViewMode, Dictionary<string, string>> ViewPanelTitle
+      = new Dictionary<ViewMode, Dictionary<string, string>>()
       {
         {
-          ViewModeType.Verses, new Dictionary<string, string>
+          ViewMode.Verses, new Dictionary<string, string>
           {
             { "en", "Tanak Verses" },
             { "fr", "Versets du Tanak" }
           }
         },
         {
-          ViewModeType.Translations, new Dictionary<string, string>
+          ViewMode.Translations, new Dictionary<string, string>
           {
             { "en", "Tanak Translation" },
             { "fr", "Traduction du Tanak" }
           }
         },
         {
-          ViewModeType.Text, new Dictionary<string, string>
+          ViewMode.Text, new Dictionary<string, string>
           {
             { "en", "Tanak Hebrew Text" },
             { "fr", "Texte Hébreu du Tanak" }
           }
         },
         {
-          ViewModeType.ELS50, new Dictionary<string, string>
+          ViewMode.ELS50, new Dictionary<string, string>
           {
             { "en", "Tanak ELS50 Verses" },
             { "fr", "Versets ELS50 du Tanak" }
           }
         },
         {
-          ViewModeType.Search, new Dictionary<string, string>
+          ViewMode.Search, new Dictionary<string, string>
           {
             { "en", "Search in the Tanak" },
             { "fr", "Recherche dans le Tanak" }
