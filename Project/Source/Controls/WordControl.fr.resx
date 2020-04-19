@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 170</value>
+    <value>319, 214</value>
   </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -139,7 +139,7 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Recherche en ligne</value>
@@ -147,7 +147,7 @@
   <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFQSURBVDhP3dLLTsJAFAbgeRdfwMTHUyGK1kpURECWgtxc
         GRKFwsLEtTGRJoiGi1wUKdG2UGopFPydKW4aWLHTk3zTk9Pp30tK/kGFUzk1lMghGBecYgICsexCQSqU
         EHCazKcJa0rVFh4rLXp8tRUrTYjPLyiUaguJTzUUyw07hLA71dsyUukcNrY4rFPJyyzqko7KW49S51Tb
         PZQbXftpCFsk9Qtuzz7eFcPm8vDoKCZaXQ2NTm8OmzclFSfnGRC29A0L25wX8mAMWbewwx9CNaY0mAZ+
@@ -157,7 +157,7 @@
 </value>
   </data>
   <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
     <value>Recherche traduction</value>
@@ -179,13 +179,13 @@
 </value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
     <value>Recherche dans la base de données</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 6</value>
+    <value>315, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -202,31 +202,53 @@
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
-  <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 6</value>
-  </data>
-  <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
-        GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
-        sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
-        eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
-        94QefRPVvOhqw5g7rYRftSrqmzU0NjfQ+ClLds7cE3r0TVTz/IaFlKt/wSEnxJHXX3F04BuakkJ1ztwT
-        evRNVJO8bsnL+sCXoIztRh34Xcdy5bPqnLkn9OibqObZtdbowGypBBEGqMian5tVnTP3hB59E9U4V09H
-        B4IgwNbWH1VCiOibe0KPvolqEldORQeKxaKSRRjivfwFixWBRRFibmZGvdOjb6Iau3P3wF6Wl4T52v1O
-        ZX3QN1ENF+npghL20jz8HcdHVnBMVvPwitpNeMX9B55ctpAeSqgjqaynKiP/up6fQyGXV+X5ebh+CRND
-        DuibqObBRasU77TQ29GC3ksnVcVl9XX8W3H53ic9+iYacVjWif8o+pJY7C81a0AShQAVCwAAAABJRU5E
-        rkJggg==
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAHESURBVDhPxVJNTxpRFB1kgitr3BniB51hqJmBB4MRsBSp
+        X2mTtpsajSubmYF/YP+EsmZBP3bq1t/FcjIEkI/Te6+FuGhi0o03HHLeeeedd9/NaC9fSqn7bDYLx3Ge
+        hW3bc/Cazt1rfLjZbCIIfPi+j0ajIetGEMD3PHiEgDjrzGdgLwdJwP7hEaq1PVSq71A/OAQ1hlr9PUqV
+        XewQqnt10X50Oii/rQo6xDOZDDTHseEFTZyenYPr4psn5p+/fsua6+b2TrTReIyvJ2eEUzyMRkibJgc4
+        +PT5CyaTMfr9Po4/fBRzr9dHjW5mRFFPtOtWC5hO6TfBVev6sQMaIsrlCra2bAwGAyiVF/OUjI7Dw80K
+        Z419xeI2XLeIUqnMQ4Tmuq5sMsIwnPMoiv7Jn6JQKDwGLC+vQNcTGA6HiMd12ex2u3Mj81gshqWlV1hY
+        0Om5EyQSi8jnqVtO4TYNw5SBmWaaQuK4vPwuRgZzXY/DsjLi4Ys2N1P0XAWNUyzrDQWksbHxmgJoMHRr
+        KmUgmVwTMGfNMCysribRbrexvv43gP5CDpmBO+JnMVcqJ2A+03hw/AHlcrynQgrWCoTt/wSffdHStD/r
+        slK0fv5gNAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="ActionCopyTranslation.Text" xml:space="preserve">
-    <value>Copier la traduction</value>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Compter le nombre exact d'occurrences</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAGvSURBVDhPnVLLLgNRGJ5nsBZE65awqqISCbGwliChmDG2
+        7iQkGhY8jahWUBIWNt7AU6i69KLVafv5vzNzdBYI/uTrdznn/3vOzBi65qxF07RsEPRaa8xbCwnm5M/c
+        tK+YqTLNBUcvKF/XoZ9yZtJsW9Ho7P1XGzUmJqeS/pxaKqR+vaDTv+jT353ALcuybLm83KcO5r/Vhj07
+        jbHRkZj4EDXBRa01pifGb5iTdTYzOX7HjPdooJCidu9V1xqtAhZZZ0Fj+PA6E9m/RDiWUuj10OdBe3/G
+        fewZPrg+MSJ7Kfy32GuEYxeeBVpW4p6qoXHpuO5rFZU1iw+snbiZVHj3XAbsugOC6wl0bZ3KvjIq70XF
+        QFUGxZV3SpLBkQEJYa4Bvf4BQBE922dA5Q3lQlb2FtCxKQOrRZTyWRSyr6iV8so3Lbsn4+mNPu8K7RtJ
+        NaBt4xRO/hlB4W7x5MJrBrmXDFpWkwisJ1HOPake9hqD++5DrOXTwFtG+BFONq1Y+9LLg0Il94hqLq00
+        Sz3EoZ2j20F5JZE9gccD1D7f74E50S+N/GP28sMI+D6MP8IIfADtTSFVpzqLEAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Compter le nombre d'occurrences de la racine</value>
+  </data>
+  <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
   </data>
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -244,7 +266,7 @@
 </value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="ActionCopyFontChars.Text" xml:space="preserve">
     <value>Copier les caractères de la fonte Hebrew</value>
@@ -265,9 +287,30 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copier les caractères unicodes</value>
+  </data>
+  <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
+        GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
+        sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
+        eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
+        94QefRPVvOhqw5g7rYRftSrqmzU0NjfQ+ClLds7cE3r0TVTz/IaFlKt/wSEnxJHXX3F04BuakkJ1ztwT
+        evRNVJO8bsnL+sCXoIztRh34Xcdy5bPqnLkn9OibqObZtdbowGypBBEGqMian5tVnTP3hB59E9U4V09H
+        B4IgwNbWH1VCiOibe0KPvolqEldORQeKxaKSRRjivfwFixWBRRFibmZGvdOjb6Iau3P3wF6Wl4T52v1O
+        ZX3QN1ENF+npghL20jz8HcdHVnBMVvPwitpNeMX9B55ctpAeSqgjqaynKiP/up6fQyGXV+X5ebh+CRND
+        DuibqObBRasU77TQ29GC3ksnVcVl9XX8W3H53ic9+iYacVjWif8o+pJY7C81a0AShQAVCwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
+  </data>
+  <data name="ActionCopyTranslation.Text" xml:space="preserve">
+    <value>Copier la traduction</value>
   </data>
 </root>

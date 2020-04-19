@@ -143,7 +143,7 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
@@ -161,7 +161,7 @@
 </value>
   </data>
   <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -183,13 +183,13 @@
 </value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
     <value>Search in database</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>309, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -206,13 +206,52 @@
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
   </data>
+  <data name="toolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAHESURBVDhPxVJNTxpRFB1kgitr3BniB51hqJmBB4MRsBSp
+        X2mTtpsajSubmYF/YP+EsmZBP3bq1t/FcjIEkI/Te6+FuGhi0o03HHLeeeedd9/NaC9fSqn7bDYLx3Ge
+        hW3bc/Cazt1rfLjZbCIIfPi+j0ajIetGEMD3PHiEgDjrzGdgLwdJwP7hEaq1PVSq71A/OAQ1hlr9PUqV
+        XewQqnt10X50Oii/rQo6xDOZDDTHseEFTZyenYPr4psn5p+/fsua6+b2TrTReIyvJ2eEUzyMRkibJgc4
+        +PT5CyaTMfr9Po4/fBRzr9dHjW5mRFFPtOtWC5hO6TfBVev6sQMaIsrlCra2bAwGAyiVF/OUjI7Dw80K
+        Z419xeI2XLeIUqnMQ4Tmuq5sMsIwnPMoiv7Jn6JQKDwGLC+vQNcTGA6HiMd12ex2u3Mj81gshqWlV1hY
+        0Om5EyQSi8jnqVtO4TYNw5SBmWaaQuK4vPwuRgZzXY/DsjLi4Ys2N1P0XAWNUyzrDQWksbHxmgJoMHRr
+        KmUgmVwTMGfNMCysribRbrexvv43gP5CDpmBO+JnMVcqJ2A+03hw/AHlcrynQgrWCoTt/wSffdHStD/r
+        slK0fv5gNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 22</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Count the exact number of occurrences</value>
+  </data>
+  <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAGvSURBVDhPnVLLLgNRGJ5nsBZE65awqqISCbGwliChmDG2
+        7iQkGhY8jahWUBIWNt7AU6i69KLVafv5vzNzdBYI/uTrdznn/3vOzBi65qxF07RsEPRaa8xbCwnm5M/c
+        tK+YqTLNBUcvKF/XoZ9yZtJsW9Ho7P1XGzUmJqeS/pxaKqR+vaDTv+jT353ALcuybLm83KcO5r/Vhj07
+        jbHRkZj4EDXBRa01pifGb5iTdTYzOX7HjPdooJCidu9V1xqtAhZZZ0Fj+PA6E9m/RDiWUuj10OdBe3/G
+        fewZPrg+MSJ7Kfy32GuEYxeeBVpW4p6qoXHpuO5rFZU1iw+snbiZVHj3XAbsugOC6wl0bZ3KvjIq70XF
+        QFUGxZV3SpLBkQEJYa4Bvf4BQBE922dA5Q3lQlb2FtCxKQOrRZTyWRSyr6iV8so3Lbsn4+mNPu8K7RtJ
+        NaBt4xRO/hlB4W7x5MJrBrmXDFpWkwisJ1HOPake9hqD++5DrOXTwFtG+BFONq1Y+9LLg0Il94hqLq00
+        Sz3EoZ2j20F5JZE9gccD1D7f74E50S+N/GP28sMI+D6MP8IIfADtTSFVpzqLEAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Count the number of occurrences of the root</value>
+  </data>
   <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 6</value>
+    <value>309, 6</value>
   </data>
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -230,7 +269,7 @@
 </value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionCopyFontChars.Text" xml:space="preserve">
     <value>Copy hebrew font chars</value>
@@ -251,7 +290,7 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copy unicode chars</value>
@@ -272,13 +311,13 @@
 </value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>312, 22</value>
   </data>
   <data name="ActionCopyTranslation.Text" xml:space="preserve">
     <value>Copy translation</value>
   </data>
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 192</value>
+    <value>313, 236</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
     <value>ContextMenuStripWord</value>
@@ -390,6 +429,18 @@
     <value>ActionOpenHebrewLetters</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuSeparator1.Name" xml:space="preserve">

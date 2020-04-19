@@ -37,6 +37,8 @@
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +66,8 @@
             this.ActionSearchWord,
             this.MenuSeparator2,
             this.ActionOpenHebrewLetters,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem1,
             this.MenuSeparator1,
             this.ActionCopyFontChars,
             this.ActionCopyUnicodeChars,
@@ -99,6 +103,16 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      // 
+      // toolStripMenuItem1
+      // 
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       // 
       // MenuSeparator1
       // 
@@ -159,5 +173,7 @@
     internal System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
   }
 }
