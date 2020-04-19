@@ -122,6 +122,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add sqlite vacuum at startup.
 - Add menu for web links about judaism.
 - Add option to auto vacuum database at startup.
+- Add option to enable debugger.
+- Add debugger (exception information form).
 - Improve UI/UX.
 - Code refactoring.
 - Move online providers values from code to files in the application documents folder.
@@ -129,6 +131,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update help.
 
 >>>>- Add parasha list form with references links.
+
+>>>>- Add count the number of a word occurences.
 
 >>>>- Add option to choose double-click action on a word in the search translated form.
 
