@@ -47,11 +47,11 @@ namespace Ordisoftware.HebrewWords
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Core.Diagnostics.Debugger.Active = true;
+      Globals.Settings = Settings;
+      Globals.MainForm = MainForm.Instance;
       string lang = Settings.Language;
       SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
       Settings.Language = lang;
-      SystemHelper.Settings = Settings;
-      SystemHelper.MainForm = MainForm.Instance;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
     }

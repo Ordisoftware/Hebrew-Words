@@ -556,13 +556,13 @@
     <value>8, 8</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>104, 13</value>
   </data>
   <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="ActionReset.Text" xml:space="preserve">
-    <value>Reset to defaults</value>
+    <value>Reset default values</value>
   </data>
   <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
     <value>ActionReset</value>
@@ -1110,7 +1110,7 @@
     <value>317, 17</value>
   </metadata>
   <data name="MenuSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
+    <value>61, 4</value>
   </data>
   <data name="&gt;&gt;MenuSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>MenuSelectOnlineVerseURL</value>

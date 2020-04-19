@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Source\Classes\Translations.Notices.cs" />
     <Compile Include="Source\Classes\Translations.Import.cs" />
+    <Compile Include="Source\Common\EnumHelper.cs" />
     <Compile Include="Source\Common\Globals.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\HTMLBrowserForm.cs">
