@@ -70,6 +70,7 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
+      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -170,7 +171,6 @@
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStartHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewGematria = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenLexilogosOld = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenLexilogosModern = new System.Windows.Forms.ToolStripMenuItem();
@@ -222,7 +222,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -585,6 +584,16 @@
       this.PanelSearchTop.Controls.Add(this.EditLetters);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
+      // 
+      // EditLetters
+      // 
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.ShowValues = false;
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
@@ -1334,7 +1343,6 @@
             this.toolStripSeparator13,
             this.ActionStartHebrewLetters,
             this.ActionOpenShorashon,
-            this.ActionOpenHebrewGematria,
             this.toolStripSeparator15,
             this.ActionOpenLexilogosOld,
             this.ActionOpenLexilogosModern,
@@ -1377,13 +1385,6 @@
       this.ActionOpenShorashon.Name = "ActionOpenShorashon";
       this.ActionOpenShorashon.Tag = "http://shorashon.free.fr/online/";
       this.ActionOpenShorashon.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionOpenHebrewGematria
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewGematria, "ActionOpenHebrewGematria");
-      this.ActionOpenHebrewGematria.Name = "ActionOpenHebrewGematria";
-      this.ActionOpenHebrewGematria.Tag = "http://www.billheidrick.com/works/hgemat.htm";
-      this.ActionOpenHebrewGematria.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripSeparator15
       // 
@@ -1681,16 +1682,6 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // EditLetters
-      // 
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.ShowValues = false;
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1907,7 +1898,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionClearHistory;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewGematria;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TextBox EditChapterTitle;
     private System.Windows.Forms.Label LabelChapterTitle;
