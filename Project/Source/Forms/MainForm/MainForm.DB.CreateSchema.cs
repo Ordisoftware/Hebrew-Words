@@ -35,7 +35,10 @@ namespace Ordisoftware.HebrewWords
       {
         connection.Open();
         if ( Program.Settings.VacuumAtStartup )
+        {
           connection.Vacuum();
+        }
+        connection.CheckIntegrity();
         try
         {
           void checkTable(string table, string sql)
