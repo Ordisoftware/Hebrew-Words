@@ -90,6 +90,16 @@ namespace Ordisoftware.HebrewWords
     private void EditTranslation_KeyDown(object sender, KeyEventArgs e)
     {
       Focus();
+      if ( e.Control && e.KeyCode == Keys.T )
+        ActionSearchTranslated.PerformClick();
+      else
+      if ( e.Control && e.KeyCode == Keys.K )
+      {
+        MainForm.Instance.SetView(ViewMode.Search);
+        MainForm.Instance.SelectSearchType.SelectedTab = MainForm.Instance.SelectSearchTypeHebrew;
+        MainForm.Instance.EditLetters.Text = Reference.Word.Hebrew;
+        MainForm.Instance.ActionSearchRun.PerformClick();
+      }
     }
 
     private void EditTranslation_TextChanged(object sender, EventArgs e)
@@ -163,11 +173,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
-    {
-      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
-    }
-
-    private void ActionSearchOnline_Click_1(object sender, EventArgs e)
     {
       Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
     }

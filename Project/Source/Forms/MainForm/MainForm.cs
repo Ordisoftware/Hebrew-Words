@@ -499,7 +499,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.OpenHebrewLetters("");
+      Program.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "");
     }
 
     /// <summary>
