@@ -14,8 +14,8 @@
 /// <edited> 2016-04 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Properties;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.HebrewWords.Properties;
 
 namespace Ordisoftware.HebrewWords
 {
