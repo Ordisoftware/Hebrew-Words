@@ -1267,6 +1267,7 @@ namespace Ordisoftware.HebrewWords
           try
           {
             connection.Open();
+            connection.CheckIntegrity();
             connection.Vacuum();
           }
           finally
