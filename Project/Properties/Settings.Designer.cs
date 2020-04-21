@@ -656,5 +656,17 @@ namespace Ordisoftware.HebrewWords.Properties {
                 this["VacuumAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DebuggerEnabled {
+            get {
+                return ((bool)(this["DebuggerEnabled"]));
+            }
+            set {
+                this["DebuggerEnabled"] = value;
+            }
+        }
     }
 }

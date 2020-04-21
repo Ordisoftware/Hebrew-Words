@@ -61,6 +61,14 @@ namespace Ordisoftware.HebrewWords
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
       History = new History(Program.HistoryFilename);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
+    }
+
+    /// <summary>
+    /// Create providers and web links menu items.
+    /// </summary>
+    internal void CreateProvidersAndWebLinks()
+    {
+      OnlineProviders.CreateWebLinksMenuItems(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image);
       OnlineProviders.CreateProvidersMenuItems(Globals.OnlineBibleProviders, ContextMenuStripVerse, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -80,14 +88,6 @@ namespace Ordisoftware.HebrewWords
                                   CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       });
-    }
-
-    /// <summary>
-    /// Create web links menu items.
-    /// </summary>
-    internal void CreateWebLinks()
-    {
-      OnlineProviders.CreateWebLinksMenuItems(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image);
     }
 
     /// <summary>
