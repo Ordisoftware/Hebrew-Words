@@ -136,6 +136,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 >>>>- Add option to choose double-click action on a word in the search translated form.
 
+>>>>- Improve search to find words in chapters translated title.
+
 >>>>- Add copy/cut/paste for the text box in the search view.
 >>>>- Add copy hebrew unicode to clipboard button in the search view.
 >>>>- Add paste from unicode clipboard content button in the search view.
