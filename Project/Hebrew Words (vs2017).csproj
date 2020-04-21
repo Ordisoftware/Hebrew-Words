@@ -71,8 +71,8 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Classes\Translations.Notices.cs" />
-    <Compile Include="Source\Classes\Translations.Import.cs" />
+    <Compile Include="Source\Program\Translations.Notices.cs" />
+    <Compile Include="Source\Program\Translations.Import.cs" />
     <Compile Include="Source\Common\EnumHelper.cs" />
     <Compile Include="Source\Common\Globals.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
@@ -96,7 +96,7 @@
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Entities\VerseItem.cs" />
-    <Compile Include="Source\Books\BooksNames.Common.cs" />
+    <Compile Include="Source\Enums\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +111,9 @@
     </Compile>
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
-    <Compile Include="Source\Classes\DataSetHelper.cs" />
-    <Compile Include="Source\Books\BooksNames.BibleHub.cs" />
-    <Compile Include="Source\Books\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Program\DataSetHelper.cs" />
+    <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
@@ -134,7 +134,7 @@
     <Compile Include="Source\Forms\Import\ImportVerseForm.Designer.cs">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\Translations.cs" />
+    <Compile Include="Source\Program\Translations.cs" />
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
     <Compile Include="Source\Entities\ChapterItem.cs" />
@@ -146,20 +146,20 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Books\BooksBounds.cs" />
-    <Compile Include="Source\Books\BooksNames.Djep.cs" />
-    <Compile Include="Source\Books\BooksNames.Original.cs" />
-    <Compile Include="Source\Books\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Books\BooksNames.StudyBible.cs" />
+    <Compile Include="Source\Enums\BooksBounds.cs" />
+    <Compile Include="Source\Enums\BooksNames.Djep.cs" />
+    <Compile Include="Source\Enums\BooksNames.Original.cs" />
+    <Compile Include="Source\Enums\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\ExportDocX.cs" />
+    <Compile Include="Source\Program\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
-    <Compile Include="Source\Books\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Enums\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
@@ -235,10 +235,10 @@
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Books\Books.cs" />
+    <Compile Include="Source\Enums\Books.cs" />
     <Compile Include="Source\Common\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Localizer.cs" />
-    <Compile Include="Source\Classes\SettingsHelper.cs" />
+    <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Common\ControlLocation.cs" />
     <Compile Include="Source\Enums\ViewMode.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
@@ -280,16 +280,16 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Controls\StatControl.cs">
+    <Compile Include="Source\Forms\Controls\StatControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Controls\StatControl.Designer.cs">
+    <Compile Include="Source\Forms\Controls\StatControl.Designer.cs">
       <DependentUpon>StatControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Controls\WordControl.cs">
+    <Compile Include="Source\Forms\Controls\WordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Controls\WordControl.Designer.cs">
+    <Compile Include="Source\Forms\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\OnlineProviders.Menus.cs" />
@@ -406,7 +406,7 @@
       <DependentUpon>PreferencesForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\StatControl.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Controls\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
@@ -415,14 +415,14 @@
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\StatControl.resx">
+    <EmbeddedResource Include="Source\Forms\Controls\StatControl.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\WordControl.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Controls\WordControl.fr.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\WordControl.resx">
+    <EmbeddedResource Include="Source\Forms\Controls\WordControl.resx">
       <DependentUpon>WordControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
