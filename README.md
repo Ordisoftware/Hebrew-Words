@@ -80,6 +80,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - F5 : Search view
 - Ctrl+B : Open the books names editor
 - Ctrl+H : Open Hebrew Letters
+- Ctrl+T : Open translated form for the focused hebrew word
+- Ctrl+K : Open search panel for the focused hebrew word
 - Ctrl+G : Open the grammar guide
 - Ctrl+L : Open Shorashon web page
 - Ctrl+R : Find reference
@@ -121,6 +123,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
 - Add menu for web links about judaism.
+- Improve open Hebrew Letters for the current word when focused on the verses view.
+- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
+- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
 - Add optimize database menu.
 - Add option to auto optimize database at startup.
 - Add option to enable debugger.
