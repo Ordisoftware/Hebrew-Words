@@ -101,6 +101,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### 2020.__.__ - Version 3.0
 
 - Exit application at startup if user choose to download a newer version.
+- Integrate the new input panel from Hebrew Letters v4.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add book translation text box in the navigation panel.
@@ -119,9 +120,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add auto sort bookmarks option.
 - Add option to open the master bookmark else the first verse of the Tanak.
 - Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
-- Add sqlite vacuum at startup.
 - Add menu for web links about judaism.
-- Add option to auto vacuum database at startup.
+- Add optimize database menu.
+- Add option to auto optimize database at startup.
 - Add option to enable debugger.
 - Add debugger (exception information form).
 - Improve UI/UX.
@@ -130,6 +131,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move tanak text files in Documents in a dedicated folder.
 - Update help.
 
+
 >>>>- Add parasha list form with references links.
 
 >>>>- Add count the number of a word occurences.
@@ -137,11 +139,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add option to choose double-click action on a word in the search translated form.
 
 >>>>- Improve search to find words in chapters translated title.
-
->>>>- Add copy/cut/paste for the text box in the search view.
->>>>- Add copy hebrew unicode to clipboard button in the search view.
->>>>- Add paste from unicode clipboard content button in the search view.
->>>>- Add letters values in the search view.
 
 >>>>- Add book memo and chapter title/memo in DOCX export.
 >>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
