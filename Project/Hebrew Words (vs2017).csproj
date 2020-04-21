@@ -82,10 +82,19 @@
     <Compile Include="Source\Common\HTMLBrowserForm.designer.cs">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\LettersControl.CreateLetters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Source\Common\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\OnlineProviders.cs" />
     <Compile Include="Source\Common\SQLiteHelper.cs" />
     <Compile Include="Source\Common\SystemHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Books\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
@@ -307,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\EditMemoForm.fr.resx">
       <DependentUpon>EditMemoForm.cs</DependentUpon>

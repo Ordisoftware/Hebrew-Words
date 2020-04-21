@@ -50,12 +50,6 @@ namespace Ordisoftware.HebrewWords
     = Globals.UserDataFolderPath + "History.txt";
 
     /// <summary>
-    /// Indicate filename of the grammar guide.
-    /// </summary>
-    static public string GrammarGuideFilename
-      = Globals.HelpFolderPath + $"grammar-%LANG%.htm";
-
-    /// <summary>
     /// Indicate the grammar guide form.
     /// </summary>
     static public HTMLBrowserForm GrammarGuideForm
@@ -63,7 +57,7 @@ namespace Ordisoftware.HebrewWords
       get
       {
         if ( _GrammarGuideForm == null )
-          _GrammarGuideForm = new HTMLBrowserForm(Globals.GrammarGuideTitle, GrammarGuideFilename,
+          _GrammarGuideForm = new HTMLBrowserForm(Globals.GrammarGuideTitle, Globals.GrammarGuideFilename,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;
