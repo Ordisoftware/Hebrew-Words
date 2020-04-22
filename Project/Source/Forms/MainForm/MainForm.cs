@@ -1277,6 +1277,7 @@ namespace Ordisoftware.HebrewWords
             connection.Open();
             connection.CheckIntegrity();
             connection.Vacuum();
+            Program.Settings.VacuumLastDone = DateTime.Now;
           }
           finally
           {
