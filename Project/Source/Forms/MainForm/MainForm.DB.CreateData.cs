@@ -52,9 +52,10 @@ namespace Ordisoftware.HebrewWords
         foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
         {
           Books enumBook = (Books)( book.Number - 1 );
-          book.Hebrew = BooksNames.Hebrew[enumBook];
-          book.Original = BooksNames.Original[enumBook];
           book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
+          book.Hebrew = BooksNames.Hebrew[enumBook];
+          if ( book.Original == "")
+            book.Original = BooksNames.Original[enumBook];
           if ( book.CommonName == "" )
             book.CommonName = BooksNames.Common.GetLang(enumBook);
         }
