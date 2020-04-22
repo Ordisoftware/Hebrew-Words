@@ -36,9 +36,16 @@ namespace Ordisoftware.HebrewWords
         connection.Open();
         if ( Program.Settings.VacuumAtStartup )
         {
-          connection.Vacuum();
+          bool doVacuum = true;
+          if ( Program.Settings.VacuumLastDone != null )
+            doVacuum = Program.Settings.VacuumLastDone.AddDays(7) <= DateTime.Now;
+          if ( doVacuum )
+          {
+            connection.CheckIntegrity();
+            connection.Vacuum();
+            Program.Settings.VacuumLastDone = DateTime.Now;
+          }
         }
-        connection.CheckIntegrity();
         try
         {
           void checkTable(string table, string sql)

@@ -384,7 +384,7 @@
     <value>233, 17</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
-    <value>Optimiser la base de données au démarrage</value>
+    <value>Optimiser BD au démarrage chaque semaine</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>

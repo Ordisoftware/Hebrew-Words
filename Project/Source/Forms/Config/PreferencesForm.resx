@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 209</value>
+    <value>18, 225</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>39</value>
   </data>
   <metadata name="LabelOnlineSearch.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 259</value>
+    <value>18, 275</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelOnlineSearch.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>38</value>
   </data>
   <metadata name="LabelBackupPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -196,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 359</value>
+    <value>18, 375</value>
   </data>
   <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBackupPath.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>35</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -229,7 +229,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBackupCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 60</value>
+    <value>304, 104</value>
   </data>
   <data name="LabelBackupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBackupCount.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
   </data>
   <metadata name="LabelAutoSaveDelay.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -262,7 +262,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 110</value>
+    <value>304, 154</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 13</value>
@@ -283,7 +283,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <metadata name="LabelOnlineVerseURL.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -295,7 +295,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 309</value>
+    <value>18, 325</value>
   </data>
   <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 13</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <metadata name="LabelCommentaryLinesCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -328,7 +328,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 409</value>
+    <value>260, 425</value>
   </data>
   <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
@@ -349,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <metadata name="LabelBookmarksCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -361,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 509</value>
+    <value>260, 525</value>
   </data>
   <data name="LabelBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -382,7 +382,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBookmarksCount.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <metadata name="LabelWordControlWidth.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -394,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 459</value>
+    <value>260, 475</value>
   </data>
   <data name="LabelWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -415,7 +415,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelWordControlWidth.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <metadata name="LabelMaxRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 559</value>
+    <value>260, 575</value>
   </data>
   <data name="LabelMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 13</value>
@@ -448,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMaxRefCount.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <metadata name="LabelHistoryCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -460,7 +460,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 509</value>
+    <value>375, 525</value>
   </data>
   <data name="LabelHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -481,7 +481,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelHistoryCount.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <metadata name="LabelMinRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -493,7 +493,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 609</value>
+    <value>260, 625</value>
   </data>
   <data name="LabelMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 13</value>
@@ -514,7 +514,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMinRefCount.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -598,10 +598,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>42</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 228</value>
+    <value>21, 244</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -619,7 +619,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>41</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -644,7 +644,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 226</value>
+    <value>445, 242</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 19</value>
@@ -662,7 +662,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>37</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -671,7 +671,7 @@
     <value>Exe files (*.exe)|*.exe</value>
   </data>
   <data name="EditOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 278</value>
+    <value>21, 294</value>
   </data>
   <data name="EditOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -689,7 +689,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>40</value>
   </data>
   <data name="ActionSelectBackupPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -714,7 +714,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 376</value>
+    <value>445, 392</value>
   </data>
   <data name="ActionSelectBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 19</value>
@@ -732,10 +732,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectBackupPath.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>34</value>
   </data>
   <data name="EditBackupPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 378</value>
+    <value>21, 394</value>
   </data>
   <data name="EditBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -753,13 +753,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBackupPath.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>36</value>
   </data>
   <data name="EditBackupCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 78</value>
+    <value>307, 122</value>
   </data>
   <data name="EditBackupCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>51, 20</value>
   </data>
   <data name="EditBackupCount.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -774,13 +774,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBackupCount.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>32</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 128</value>
+    <value>307, 172</value>
   </data>
   <data name="EditAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>51, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -795,7 +795,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="SelectOpenNothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -933,7 +933,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 559</value>
+    <value>21, 575</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 107</value>
@@ -954,10 +954,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 328</value>
+    <value>21, 344</value>
   </data>
   <data name="EditOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 20</value>
@@ -975,13 +975,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>
   <data name="EditCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 427</value>
+    <value>263, 443</value>
   </data>
   <data name="EditCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -999,10 +999,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="EditBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 527</value>
+    <value>263, 543</value>
   </data>
   <data name="EditBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1020,10 +1020,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 477</value>
+    <value>263, 493</value>
   </data>
   <data name="EditWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1041,10 +1041,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 577</value>
+    <value>263, 593</value>
   </data>
   <data name="EditMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1062,10 +1062,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMaxRefCount.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="EditHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 527</value>
+    <value>378, 543</value>
   </data>
   <data name="EditHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1083,10 +1083,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="EditMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 627</value>
+    <value>263, 643</value>
   </data>
   <data name="EditMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1104,7 +1104,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMinRefCount.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <metadata name="MenuSelectOnlineVerseURL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>317, 17</value>
@@ -1143,7 +1143,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 326</value>
+    <value>445, 342</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 19</value>
@@ -1161,7 +1161,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="ActionOnlineVerseHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1204,7 +1204,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionOnlineVerseHelp.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1327,7 +1327,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>447, 276</value>
+    <value>447, 292</value>
   </data>
   <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 19</value>
@@ -1345,7 +1345,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineSearch.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="ActionOnlineSearchHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1388,7 +1388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionOnlineSearchHelp.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1397,7 +1397,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 174</value>
+    <value>21, 198</value>
   </data>
   <data name="EditOpenGeneratedMSWordFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
@@ -1418,7 +1418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOpenGeneratedMSWordFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditAutoSortBookmarks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1427,7 +1427,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoSortBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 151</value>
+    <value>21, 175</value>
   </data>
   <data name="EditAutoSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 17</value>
@@ -1448,7 +1448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditAutoSortBookmarks.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1457,7 +1457,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 128</value>
+    <value>21, 152</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -1478,7 +1478,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditGoToMasterBookmarkAtStartup.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="EditOpenLastViewAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1487,7 +1487,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 105</value>
+    <value>21, 129</value>
   </data>
   <data name="EditOpenLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 17</value>
@@ -1508,7 +1508,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditOpenLastViewAtStartup.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1517,7 +1517,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 59</value>
+    <value>21, 106</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 17</value>
@@ -1538,7 +1538,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditVacuumAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1547,16 +1547,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 82</value>
+    <value>21, 60</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 17</value>
+    <value>218, 17</value>
   </data>
   <data name="EditVacuumAtStartup.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
-    <value>Optimize database at startup</value>
+    <value>Optimize database at startup every week</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartup.Name" xml:space="preserve">
     <value>EditVacuumAtStartup</value>
@@ -1568,7 +1568,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartup.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 83</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 17</value>
+  </data>
+  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Enable debugger</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

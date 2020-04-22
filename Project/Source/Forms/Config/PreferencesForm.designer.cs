@@ -80,6 +80,7 @@
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -502,6 +503,15 @@
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -510,6 +520,7 @@
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.ActionSelectLangFR);
       this.Controls.Add(this.ActionSelectLangEN);
+      this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditAutoSortBookmarks);
       this.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
@@ -611,5 +622,6 @@
     private System.Windows.Forms.CheckBox EditGoToMasterBookmarkAtStartup;
     private System.Windows.Forms.CheckBox EditAutoSortBookmarks;
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
+    private System.Windows.Forms.CheckBox checkBox1;
   }
 }
