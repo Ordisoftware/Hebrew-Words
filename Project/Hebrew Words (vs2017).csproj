@@ -145,7 +145,6 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
-    <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Enums\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
     <Compile Include="Source\Enums\BooksNames.Original.cs" />

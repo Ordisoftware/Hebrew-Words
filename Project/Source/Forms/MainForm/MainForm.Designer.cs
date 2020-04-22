@@ -589,12 +589,12 @@
       // EditLetters
       // 
       resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.FontSizeInput = 24F;
-      this.EditLetters.FontSizeLabels = 6.25F;
-      this.EditLetters.FontSizeLetters = 20.25F;
+      this.EditLetters.InputFontSize = 24F;
+      this.EditLetters.LabelsFontSize = 6.25F;
+      this.EditLetters.LettersFontSize = 20.25F;
       this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
       this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      this.EditLetters.MaxLength = 20;
+      this.EditLetters.InputMaxLength = 20;
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.ShowKeys = true;
       this.EditLetters.ShowValues = false;
