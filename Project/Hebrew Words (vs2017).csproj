@@ -240,7 +240,7 @@
     <Compile Include="Source\Common\Localizer.cs" />
     <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Common\ControlLocation.cs" />
-    <Compile Include="Source\Enums\ViewMode.cs" />
+    <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
