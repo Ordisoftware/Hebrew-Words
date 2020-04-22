@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewWords
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      MainForm.Instance.CreateProvidersAndWebLinks();
+      MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
       if ( Globals.IsReady )

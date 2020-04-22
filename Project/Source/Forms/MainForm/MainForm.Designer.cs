@@ -70,7 +70,6 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -102,8 +101,6 @@
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.label1 = new System.Windows.Forms.Label();
@@ -164,6 +161,7 @@
       this.ActionClearBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToBookmarkMaster = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -177,8 +175,6 @@
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionOpenWebLinkTemplateFolder = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenWebLinkTemplateLink = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuDatabase = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -217,12 +213,14 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -249,12 +247,12 @@
       this.PanelNavigation.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -586,21 +584,6 @@
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
       // 
-      // EditLetters
-      // 
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.InputFontSize = 24F;
-      this.EditLetters.LabelsFontSize = 6.25F;
-      this.EditLetters.LettersFontSize = 20.25F;
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      this.EditLetters.InputMaxLength = 20;
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.ShowKeys = true;
-      this.EditLetters.ShowValues = false;
-      this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
       // SelectSearchTypeTranslation
       // 
       this.SelectSearchTypeTranslation.Controls.Add(this.label2);
@@ -836,16 +819,6 @@
       // 
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // WordsBindingSource
       // 
@@ -1340,6 +1313,11 @@
       resources.ApplyResources(this.ActionGoToBookmarkMaster, "ActionGoToBookmarkMaster");
       this.ActionGoToBookmarkMaster.Name = "ActionGoToBookmarkMaster";
       // 
+      // toolStripSeparator12
+      // 
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
+      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+      // 
       // MenuTools
       // 
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1426,22 +1404,8 @@
       // MenuWebLinks
       // 
       this.MenuWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuWebLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionOpenWebLinkTemplateFolder,
-            this.ActionOpenWebLinkTemplateLink});
       resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
       this.MenuWebLinks.Name = "MenuWebLinks";
-      // 
-      // ActionOpenWebLinkTemplateFolder
-      // 
-      resources.ApplyResources(this.ActionOpenWebLinkTemplateFolder, "ActionOpenWebLinkTemplateFolder");
-      this.ActionOpenWebLinkTemplateFolder.Name = "ActionOpenWebLinkTemplateFolder";
-      // 
-      // ActionOpenWebLinkTemplateLink
-      // 
-      resources.ApplyResources(this.ActionOpenWebLinkTemplateLink, "ActionOpenWebLinkTemplateLink");
-      this.ActionOpenWebLinkTemplateLink.Name = "ActionOpenWebLinkTemplateLink";
-      this.ActionOpenWebLinkTemplateLink.Tag = "";
       // 
       // toolStripSeparator1
       // 
@@ -1664,6 +1628,34 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
+      // EditLetters
+      // 
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.InputFontSize = 24F;
+      this.EditLetters.InputMaxLength = 20;
+      this.EditLetters.InputText = "";
+      this.EditLetters.InputTextSelectionStart = 0;
+      this.EditLetters.LabelsFontSize = 6.25F;
+      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
+      this.EditLetters.LettersFontSize = 20.25F;
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.ShowKeys = true;
+      this.EditLetters.ShowValues = false;
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1688,11 +1680,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator12
-      // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
-      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
       // MainForm
       // 
@@ -1737,13 +1724,13 @@
       this.PanelNavigation.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1930,12 +1917,10 @@
     private System.Windows.Forms.ToolStripMenuItem ActionWebLinkedIn;
     private System.Windows.Forms.ToolStripMenuItem ActionWebTipeee;
     private System.Windows.Forms.ToolStripDropDownButton MenuWebLinks;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateFolder;
     private System.Windows.Forms.ToolStripMenuItem ActionAbout;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
     private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateLink;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;

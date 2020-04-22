@@ -61,15 +61,15 @@ namespace Ordisoftware.HebrewWords
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
       History = new History(Program.HistoryFilename);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
+      CreateProvidersLinks();
     }
 
     /// <summary>
-    /// Create providers and web links menu items.
+    /// Create providers links menu items.
     /// </summary>
-    internal void CreateProvidersAndWebLinks()
+    internal void CreateProvidersLinks()
     {
-      OnlineProviders.CreateWebLinksMenuItems(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image);
-      OnlineProviders.CreateProvidersMenuItems(Globals.OnlineBibleProviders, ContextMenuStripVerse, (sender, e) =>
+      ContextMenuStripVerse.InitializeFromProviders(Globals.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
@@ -88,6 +88,14 @@ namespace Ordisoftware.HebrewWords
                                   CurrentReference.Chapter.Number,
                                   Convert.ToInt32(control.Text));
       });
+    }
+
+    /// <summary>
+    /// Create web links menu items.
+    /// </summary>
+    internal void CreateWebLinks()
+    {
+      MenuWebLinks.InitializeFromWebLinks();
     }
 
     /// <summary>
@@ -366,7 +374,7 @@ namespace Ordisoftware.HebrewWords
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
         ActiveControl = EditLetters;
-        EditLetters.Input.Focus();
+        EditLetters.Focus();
       }
       else
       if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
@@ -837,7 +845,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchClear_Click(object sender, EventArgs e)
     {
-      EditLetters.Input.Text = "";
+      EditLetters.InputText = "";
       EditSearchTranslation.Text = "";
       Program.Settings.Save();
       ClearSearchResults();
@@ -1096,10 +1104,10 @@ namespace Ordisoftware.HebrewWords
     /// <param name="word"></param>
     public void SearchWord(string word)
     {
-      ActionViewSearch.PerformClick();
+      SetView(ViewMode.Search);
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.Input.Text = HebrewAlphabet.SetFinal(word, false);
-      EditLetters.Input.SelectionStart = EditLetters.Input.TextLength;
+      EditLetters.InputText = HebrewAlphabet.SetFinal(word, false);
+      EditLetters.InputTextSelectionStart = EditLetters.InputText.Length;
     }
 
     /// <summary>

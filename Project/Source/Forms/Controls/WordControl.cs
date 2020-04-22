@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewWords
     public WordControl()
     {
       InitializeComponent();
-      OnlineProviders.CreateProvidersMenuItems(Globals.OnlineWordProviders, ActionSearchOnline, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
@@ -94,12 +94,7 @@ namespace Ordisoftware.HebrewWords
         ActionSearchTranslated.PerformClick();
       else
       if ( e.Control && e.KeyCode == Keys.K )
-      {
-        MainForm.Instance.SetView(ViewMode.Search);
-        MainForm.Instance.SelectSearchType.SelectedTab = MainForm.Instance.SelectSearchTypeHebrew;
-        MainForm.Instance.EditLetters.Text = Reference.Word.Hebrew;
-        MainForm.Instance.ActionSearchRun.PerformClick();
-      }
+        MainForm.Instance.SearchWord(LabelHebrew.Text);
     }
 
     private void EditTranslation_TextChanged(object sender, EventArgs e)
