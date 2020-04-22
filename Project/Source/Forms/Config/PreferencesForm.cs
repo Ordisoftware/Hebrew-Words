@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewWords
       Program.Settings.Reset();
       Program.Settings.Reload();
       Program.Settings.Language = Localizer.Language;
-      Program.Settings.Save();
+      Program.Settings.Store();
       Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);

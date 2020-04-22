@@ -1274,10 +1274,7 @@ namespace Ordisoftware.HebrewWords
         using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
           try
           {
-            connection.Open();
-            connection.CheckIntegrity();
-            connection.Vacuum();
-            Program.Settings.VacuumLastDone = DateTime.Now;
+            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone, true);
           }
           finally
           {
