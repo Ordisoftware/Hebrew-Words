@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Link label link clicked event information.</param>
     private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemManager.OpenWebLink(((LinkLabel)sender).Text);
+      SystemHelper.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>

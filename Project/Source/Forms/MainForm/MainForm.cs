@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      try { Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename); }
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
       catch { }
       CurrentReference = new ReferenceItem(null, null, null, null);
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
@@ -510,7 +510,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
+      SystemHelper.OpenWebLink(url);
     }
 
     /// <summary>

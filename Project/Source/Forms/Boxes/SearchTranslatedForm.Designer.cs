@@ -61,10 +61,10 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.EditReturn);
       this.PanelButtons.Controls.Add(this.LabelReference);
       this.PanelButtons.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // EditReturn
@@ -78,8 +78,8 @@
       // 
       // LabelReference
       // 
-      resources.ApplyResources(this.LabelReference, "LabelReference");
       this.LabelReference.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelReference, "LabelReference");
       this.LabelReference.LinkColor = System.Drawing.Color.Navy;
       this.LabelReference.Name = "LabelReference";
       this.LabelReference.TabStop = true;
@@ -95,17 +95,17 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.ListView);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // ListView
       // 
-      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.ContextMenuStrip = this.ContextMenuStripResults;
+      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.FullRowSelect = true;
       this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListView.HideSelection = false;
@@ -130,7 +130,6 @@
       // 
       // ContextMenuStripResults
       // 
-      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
             this.ActionAddTranslation,
@@ -139,6 +138,7 @@
             this.toolStripSeparator1,
             this.ActionReachReference});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
       // ActionUseTranslation
       // 
@@ -154,8 +154,8 @@
       // 
       // toolStripSeparator2
       // 
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionCopyTranslation
       // 
@@ -165,8 +165,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionReachReference
       // 
@@ -176,7 +176,6 @@
       // 
       // PanelTop
       // 
-      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Controls.Add(this.LabelHebrewWordSource);
       this.PanelTop.Controls.Add(this.EditDistinct);
       this.PanelTop.Controls.Add(this.ActionReset);
@@ -184,6 +183,7 @@
       this.PanelTop.Controls.Add(this.ActionDelFirst);
       this.PanelTop.Controls.Add(this.EditWholeWord);
       this.PanelTop.Controls.Add(this.EditHebrew);
+      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
       // 
       // LabelHebrewWordSource
