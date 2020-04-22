@@ -129,7 +129,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add optimize database menu.
 - Add option to auto optimize database at startup.
 - Add option to enable debugger.
-- Add debugger (exception information form).
+- Add debugger (exception information form with GitHub issue creation).
 - Improve UI/UX.
 - Code refactoring.
 - Move online providers values from code to files in the application documents folder.
