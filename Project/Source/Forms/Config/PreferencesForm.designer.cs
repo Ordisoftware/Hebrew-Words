@@ -511,6 +511,7 @@
       this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.checkBox1.Name = "checkBox1";
       this.checkBox1.UseVisualStyleBackColor = true;
+      this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
       // 
       // PreferencesForm
       // 
