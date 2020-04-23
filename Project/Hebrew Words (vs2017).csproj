@@ -60,14 +60,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dependencies\Core Library\Diagnostics\Debugger.cs" />
-    <Compile Include="Dependencies\Core Library\Diagnostics\ExceptionForm.cs">
+    <Compile Include="Dependencies\Core Library\Debugger.cs" />
+    <Compile Include="Dependencies\Core Library\ExceptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dependencies\Core Library\Diagnostics\ExceptionForm.designer.cs">
+    <Compile Include="Dependencies\Core Library\ExceptionForm.designer.cs">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dependencies\Core Library\Diagnostics\ExceptionInfo.cs" />
+    <Compile Include="Dependencies\Core Library\ExceptionInfo.cs" />
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -307,7 +307,7 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dependencies\Core Library\Diagnostics\ExceptionForm.resx">
+    <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.fr.resx">

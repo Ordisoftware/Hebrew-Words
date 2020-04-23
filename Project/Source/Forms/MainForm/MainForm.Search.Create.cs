@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewWords
       };
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
-        SearchWord1 = EditLetters.InputText;
+        SearchWord1 = EditLetters.TextInput;
         SearchWord2 = HebrewAlphabet.SetFinal(SearchWord1, true);
         CheckWord = checkWordHebrew;
       }

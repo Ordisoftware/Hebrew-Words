@@ -1631,21 +1631,14 @@
       // EditLetters
       // 
       resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.InputFontSize = 24F;
-      this.EditLetters.InputMaxLength = 20;
-      this.EditLetters.InputText = "";
-      this.EditLetters.InputTextSelectionStart = 0;
-      this.EditLetters.LabelsFontSize = 6.25F;
-      this.EditLetters.LettersBackground = System.Drawing.Color.LightYellow;
-      this.EditLetters.LettersFontSize = 20.25F;
+      this.EditLetters.BackColorInput = System.Drawing.Color.AliceBlue;
+      this.EditLetters.BackColorLetters = System.Drawing.Color.LightYellow;
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.ShowKeys = true;
       this.EditLetters.ShowValues = false;
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);      // 
       // BooksBindingSource
       // 
       this.BooksBindingSource.DataMember = "Books";
