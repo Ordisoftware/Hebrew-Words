@@ -72,6 +72,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Program\Translations.Notices.cs" />
     <Compile Include="Source\Program\Translations.Import.cs" />
     <Compile Include="Source\Common\EnumHelper.cs" />
@@ -90,12 +96,6 @@
     <Compile Include="Source\Common\OnlineProviders.cs" />
     <Compile Include="Source\Common\SQLiteHelper.cs" />
     <Compile Include="Source\Common\SystemHelper.cs" />
-    <Compile Include="Source\Common\UndoRedoTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Enums\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
@@ -315,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.fr.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UndoRedoTextBox.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>

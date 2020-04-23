@@ -43,7 +43,7 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditTranslation = new System.Windows.Forms.TextBox();
+      this.EditTranslation = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.ContextMenuStripWord.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -169,7 +169,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionSearchWord;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
-    internal System.Windows.Forms.TextBox EditTranslation;
+    internal Ordisoftware.HebrewCommon.UndoRedoTextBox EditTranslation;
     internal System.Windows.Forms.Label LabelHebrew;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
