@@ -56,8 +56,9 @@
       // 
       // labelTrademark
       // 
-      resources.ApplyResources(this.labelTrademark, "labelTrademark");
       this.labelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.labelTrademark, "labelTrademark");
+      this.labelTrademark.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.labelTrademark.LinkColor = System.Drawing.Color.Navy;
       this.labelTrademark.Name = "labelTrademark";
       this.labelTrademark.TabStop = true;
@@ -84,8 +85,8 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // AboutBox

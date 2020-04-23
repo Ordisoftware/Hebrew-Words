@@ -183,6 +183,7 @@
       // 
       this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionReset.LinkColor = System.Drawing.Color.Navy;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.TabStop = true;
