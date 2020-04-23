@@ -103,11 +103,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### 2020.__.__ - Version 3.0
 
 - Exit application at startup if user choose to download a newer version.
-- Integrate the new input panel from Hebrew Letters v4.
+- Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Add book translation text box in the navigation panel.
-- Add chapter title and memo text box in the navigation panel.
+- Add book name translation text box in the navigation panel.
+- Add chapter title and memo text boxes in the navigation panel.
 - Add buttons to edit book and chapter memos in the navigation panel.
 - Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
 - Add books common names field in the database and in the edit books information form.
@@ -127,7 +127,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Ctrl+T shortcut to open the translated form the focused hebrew word.
 - Add Ctrl+K shortcut to open the search view for the focused hebrew word.
 - Add optimize database menu.
-- Add option to auto optimize database at startup.
+- Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
 - Improve UI/UX.
