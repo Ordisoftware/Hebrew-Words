@@ -107,6 +107,7 @@ namespace Ordisoftware.HebrewWords
           {
             emptyline = false;
             wordcontrol = new WordControl(new ReferenceItem(reference, word));
+            wordcontrol.LabelHebrew.ContextMenuStrip = ContextMenuStripWord;
             wordcontrol.Width = widthWord;
             wordcontrol.Location = new Point(x, y);
             controls[indexControl++] = wordcontrol;
@@ -161,7 +162,7 @@ namespace Ordisoftware.HebrewWords
       var control = (Control)sender;
       var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
       var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
-      wordcontrol.Focus();
+      //wordcontrol.Focus();
       control.Focus();
     }
 

@@ -70,6 +70,7 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
+      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
       this.EditSearchTranslation = new System.Windows.Forms.TextBox();
@@ -101,6 +102,8 @@
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.label1 = new System.Windows.Forms.Label();
@@ -213,14 +216,24 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
       this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
       this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -247,12 +260,13 @@
       this.PanelNavigation.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ContextMenuStripWord.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -584,6 +598,25 @@
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
       // 
+      // EditLetters
+      // 
+      this.EditLetters.BackColorInput = System.Drawing.Color.AliceBlue;
+      this.EditLetters.BackColorLetters = System.Drawing.Color.LightYellow;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.FontSizeInput = 24F;
+      this.EditLetters.FontSizeKeys = 8.25F;
+      this.EditLetters.FontSizeLetters = 20.25F;
+      this.EditLetters.FontSizeValues = 6.25F;
+      this.EditLetters.MaxLengthInput = 20;
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.SelectionStartInput = 0;
+      this.EditLetters.ShowKeys = true;
+      this.EditLetters.ShowValues = false;
+      this.EditLetters.TextInput = "";
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
       // SelectSearchTypeTranslation
       // 
       this.SelectSearchTypeTranslation.Controls.Add(this.label2);
@@ -819,6 +852,16 @@
       // 
       this.ChaptersBindingSource.DataMember = "Books_Chapters";
       this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataMember = "Books";
+      this.BooksBindingSource.DataSource = this.DataSet;
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // WordsBindingSource
       // 
@@ -1628,27 +1671,6 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
-      // EditLetters
-      // 
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.BackColorInput = System.Drawing.Color.AliceBlue;
-      this.EditLetters.BackColorLetters = System.Drawing.Color.LightYellow;
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.ShowKeys = true;
-      this.EditLetters.ShowValues = false;
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // BooksTableAdapter
       // 
       this.BooksTableAdapter.ClearBeforeFill = true;
@@ -1673,6 +1695,91 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
+      // 
+      // ContextMenuStripWord
+      // 
+      this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionSearchOnline,
+            this.ActionSearchTranslated,
+            this.ActionSearchWord,
+            this.MenuSeparator2,
+            this.ActionOpenHebrewLetters,
+            this.toolStripSeparator14,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem6,
+            this.MenuSeparator1,
+            this.ActionCopyFontChars,
+            this.ActionCopyUnicodeChars,
+            this.ActionCopyWordTranslation});
+      this.ContextMenuStripWord.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
+      // 
+      // ActionSearchOnline
+      // 
+      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
+      this.ActionSearchOnline.Name = "ActionSearchOnline";
+      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
+      // 
+      // ActionSearchTranslated
+      // 
+      resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
+      this.ActionSearchTranslated.Name = "ActionSearchTranslated";
+      this.ActionSearchTranslated.Click += new System.EventHandler(this.ActionSearchTranslated_Click);
+      // 
+      // ActionSearchWord
+      // 
+      resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
+      this.ActionSearchWord.Name = "ActionSearchWord";
+      this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWordInDatabase_Click);
+      // 
+      // MenuSeparator2
+      // 
+      this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      // 
+      // toolStripMenuItem6
+      // 
+      resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+      this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+      // 
+      // MenuSeparator1
+      // 
+      this.MenuSeparator1.Name = "MenuSeparator1";
+      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
+      // 
+      // ActionCopyFontChars
+      // 
+      resources.ApplyResources(this.ActionCopyFontChars, "ActionCopyFontChars");
+      this.ActionCopyFontChars.Name = "ActionCopyFontChars";
+      this.ActionCopyFontChars.Click += new System.EventHandler(this.ActionCopyFontChars_Click);
+      // 
+      // ActionCopyUnicodeChars
+      // 
+      resources.ApplyResources(this.ActionCopyUnicodeChars, "ActionCopyUnicodeChars");
+      this.ActionCopyUnicodeChars.Name = "ActionCopyUnicodeChars";
+      this.ActionCopyUnicodeChars.Click += new System.EventHandler(this.ActionCopyUnicodeChars_Click);
+      // 
+      // ActionCopyWordTranslation
+      // 
+      resources.ApplyResources(this.ActionCopyWordTranslation, "ActionCopyWordTranslation");
+      this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
+      this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
+      // 
+      // toolStripSeparator14
+      // 
+      this.toolStripSeparator14.Name = "toolStripSeparator14";
+      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
       // MainForm
       // 
@@ -1717,13 +1824,14 @@
       this.PanelNavigation.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
+      this.ContextMenuStripWord.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -1921,6 +2029,19 @@
     internal System.Windows.Forms.Button ActionSearchRun;
     internal System.Windows.Forms.TabControl SelectSearchType;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripWord;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchWord;
+    private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+    private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyWordTranslation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+    internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
   }
 }
 

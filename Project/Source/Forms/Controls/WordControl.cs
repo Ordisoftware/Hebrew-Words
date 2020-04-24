@@ -24,27 +24,11 @@ namespace Ordisoftware.HebrewWords
   public partial class WordControl : UserControl
   {
 
-    public event MouseEventHandler HebrewMouseClick
-    {
-      add { LabelHebrew.MouseClick += value; }
-      remove { LabelHebrew.MouseClick -= value; }
-    }
-
-    public ReferenceItem Reference
-    {
-      get;
-      private set;
-    }
+    public ReferenceItem Reference { get; private set; }
 
     public WordControl()
     {
       InitializeComponent();
-      ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
-        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", Reference.Word.Original));
-      });
     }
 
     public WordControl(ReferenceItem reference) : this()
@@ -52,7 +36,6 @@ namespace Ordisoftware.HebrewWords
       Reference = reference;
       LabelHebrew.Text = reference.Word.Hebrew;
       EditTranslation.Text = reference.Word.Translation;
-      LabelHebrew.Tag = reference.Word.Original;
     }
 
     public new bool Focus()
@@ -64,7 +47,7 @@ namespace Ordisoftware.HebrewWords
 
     private void WordControl_Click(object sender, EventArgs e)
     {
-      Focus();
+      EditTranslation.Focus();
     }
 
     private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
@@ -87,22 +70,12 @@ namespace Ordisoftware.HebrewWords
       EditTranslation.BackColor = SystemColors.Window;
     }
 
-    private void EditTranslation_KeyDown(object sender, KeyEventArgs e)
-    {
-      Focus();
-      if ( e.Control && e.KeyCode == Keys.T )
-        ActionSearchTranslated.PerformClick();
-      else
-      if ( e.Control && e.KeyCode == Keys.K )
-        MainForm.Instance.SearchWord(LabelHebrew.Text);
-    }
-
     private void EditTranslation_TextChanged(object sender, EventArgs e)
     {
       if ( Globals.IsLoadingData ) return;
       if ( MainForm.Instance.IsRenderingSearch ) return;
       if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
-      Focus();
+      // ? Focus();
       MainForm.Instance.ActionSave.Enabled = true;
     }
 
@@ -127,49 +100,14 @@ namespace Ordisoftware.HebrewWords
           Program.OpenHebrewLetters(LabelHebrew.Text);
           break;
         case HebrewWordClickOpen.OnlineSearch:
-          Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
+          Program.OpenOnlineConcordance(Reference.Word.Original);
           break;
         case HebrewWordClickOpen.SearchTranslated:
-          ActionSearchTranslated.PerformClick();
+          MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickOpen.Nothing:
           break;
       }
-    }
-
-    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
-    {
-      Program.OpenHebrewLetters(LabelHebrew.Text);
-    }
-
-    private void ActionCopyTranslation_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(Reference.Word.Translation);
-    }
-
-    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(Reference.Word.Original);
-    }
-
-    private void ActionCopyFontChars_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(Reference.Word.Hebrew);
-    }
-
-    private void ActionSearchTranslated_Click(object sender, EventArgs e)
-    {
-      SearchTranslatedForm.Run(this);
-    }
-
-    private void ActionSearchWord_Click(object sender, EventArgs e)
-    {
-      MainForm.Instance.SearchWord(LabelHebrew.Text);
-    }
-
-    private void ActionSearchOnline_Click(object sender, EventArgs e)
-    {
-      Program.OpenOnlineConcordance((string)LabelHebrew.Tag);
     }
 
   }

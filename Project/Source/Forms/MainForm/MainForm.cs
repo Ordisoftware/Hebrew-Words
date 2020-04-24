@@ -62,6 +62,12 @@ namespace Ordisoftware.HebrewWords
       History = new History(Program.HistoryFilename);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CreateProvidersLinks();
+      ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        string word = CurrentReference.Word.Original;
+        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
+      });
     }
 
     /// <summary>
@@ -605,6 +611,31 @@ namespace Ordisoftware.HebrewWords
     private void TimerAutoSave_Tick(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionVacuum for tick events.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ActionVacuum_Click(object sender, EventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo("Optimization process will close and reopen the database." + Environment.NewLine + Environment.NewLine +
+                                      "Do you want to continue?") )
+        return;
+      ActionSave.PerformClick();
+      ReLoadData(() =>
+      {
+        using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+          try
+          {
+            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone, true);
+          }
+          finally
+          {
+            connection.Close();
+          }
+      });
     }
 
     /// <summary>
@@ -1263,24 +1294,53 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
-    private void ActionVacuum_Click(object sender, EventArgs e)
+    /*private WordControl GetWordControl(object sender)
     {
-      if ( !DisplayManager.QueryYesNo("Optimization process will close and reopen the database." + Environment.NewLine + Environment.NewLine +
-                                      "Do you want to continue?") )
-        return;
-      ActionSave.PerformClick();
-      ReLoadData(() =>
+      WordControl control = null;
+      if ( sender is ToolStripMenuItem )
+        control = (WordControl)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl.Parent;
+      else
+      if ( sender is ContextMenuStrip )
       {
-        using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-          try
-          {
-            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone, true);
-          }
-          finally
-          {
-            connection.Close();
-          }
-      });
+        control = (WordControl)( (ContextMenuStrip)sender ).SourceControl;
+      }
+      else
+      if ( sender is WordControl )
+        control = (WordControl)sender;
+      else
+        ;
+      return control;
+    }*/
+
+    private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(CurrentReference.Word.Translation);
+    }
+
+    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(CurrentReference.Word.Original);
+    }
+
+    private void ActionCopyFontChars_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(CurrentReference.Word.Hebrew);
+    }
+
+    private void ActionSearchTranslated_Click(object sender, EventArgs e)
+    {
+      if ( ActiveControl is WordControl )
+      SearchTranslatedForm.Run((WordControl)ActiveControl);
+    }
+
+    private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
+    {
+      SearchWord(CurrentReference.Word.Hebrew);
+    }
+
+    private void ActionSearchOnline_Click(object sender, EventArgs e)
+    {
+      Program.OpenOnlineConcordance(CurrentReference.Word.Original);
     }
 
   }
