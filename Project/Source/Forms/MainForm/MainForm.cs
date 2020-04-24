@@ -705,7 +705,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenGitHibIssuesPage();
+      SystemHelper.CreateGitHubIssue();
     }
 
     /// <summary>
