@@ -83,6 +83,7 @@ namespace Ordisoftware.HebrewWords
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
+      UndoRedoTextBox.Relocalize();
       if ( Globals.IsReady )
       {
         MainForm.Instance.RenderTranslation();

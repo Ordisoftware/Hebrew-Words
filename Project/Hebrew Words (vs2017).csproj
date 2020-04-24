@@ -72,6 +72,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Common\UndoRedoTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -315,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.en.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UndoRedoTextBox.fr.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
