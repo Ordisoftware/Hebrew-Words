@@ -620,8 +620,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e"></param>
     private void ActionVacuum_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo("Optimization process will close and reopen the database." + Environment.NewLine + Environment.NewLine +
-                                      "Do you want to continue?") )
+      if ( !DisplayManager.QueryYesNo(Globals.AskToOptimizeDatabase.GetLang()) )
         return;
       ActionSave.PerformClick();
       ReLoadData(() =>
