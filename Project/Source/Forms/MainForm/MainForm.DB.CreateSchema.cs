@@ -82,19 +82,18 @@ namespace Ordisoftware.HebrewWords
                                     Original TEXT DEFAULT '' NOT NULL,
                                     Hebrew TEXT DEFAULT '' NOT NULL,
                                     Translation TEXT DEFAULT '' NOT NULL,
-                                    ClassicTranslation TEXT DEFAULT '' NOT NULL,
-                                    Transliteration TEXT DEFAULT '' NOT NULL,
                                     CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                     FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                                   )");
+          //Transliteration TEXT DEFAULT '' NOT NULL,
+          //ClassicTranslation TEXT DEFAULT '' NOT NULL,
           //ConcordanceID TEXT DEFAULT '' NOT NULL,
           //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-          string sqlColumn = "ALTER TABLE %TABLE% ADD COLUMN %COLUMN% TEXT DEFAULT '' NOT NULL";
-          connection.CheckColumn("Books", "Original", sqlColumn);
-          connection.CheckColumn("Books", "CommonName", sqlColumn);
-          connection.CheckColumn("Books", "Memo", sqlColumn);
-          connection.CheckColumn("Chapters", "Title", sqlColumn);
-          connection.CheckColumn("Chapters", "Memo", sqlColumn);
+          connection.CheckColumn("Books", "Original", "TEXT", "''", true);
+          connection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
+          connection.CheckColumn("Books", "Memo", "TEXT", "''", true);
+          connection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
+          connection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
           //upgraded = connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
           //upgraded = connection.CheckColumn("Words", "Transliteration", sqlColumn);
           //upgraded = connection.CheckColumn("Words", "ConcordanceID", sqlColumn);
