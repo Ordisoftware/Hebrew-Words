@@ -87,8 +87,12 @@ namespace Ordisoftware.HebrewWords
       }
     }
 
+    private bool Mutex;
+
     public void Save()
     {
+      if ( Mutex ) return;
+      Mutex = true;
       try
       {
         if ( Globals.IsLoadingData )
@@ -101,6 +105,10 @@ namespace Ordisoftware.HebrewWords
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        Mutex = false;
       }
     }
 
