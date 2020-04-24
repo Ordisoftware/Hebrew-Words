@@ -32,7 +32,7 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.TextBox = new System.Windows.Forms.TextBox();
+      this.TextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.PanelSep = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
@@ -92,7 +92,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    internal System.Windows.Forms.TextBox TextBox;
+    internal Ordisoftware.HebrewCommon.UndoRedoTextBox TextBox;
     private System.Windows.Forms.Panel PanelSep;
   }
 }
