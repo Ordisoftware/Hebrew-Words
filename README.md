@@ -104,6 +104,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Exit application at startup if user choose to download a newer version.
 - Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
+- Fix error message when several SearchTranslatedForm are opened.
+- Fix error message when typing in the comment boxes.
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add book name translation text box in the navigation panel.
@@ -160,8 +162,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 (- Database updated to support internal strong concordance popup menus in the future.)
 
 - Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
-- Found bug to solve in the future : error message when several SearchTranslatedForm are opened - using the top refresh button cancels that.
-- Found bug to solve in the future : error message, sometimes, when typing too fastly in the comment boxes.
 
 #### 2019.11.14 - Version 2.4
 
