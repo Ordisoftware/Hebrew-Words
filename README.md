@@ -32,13 +32,13 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 ## Screenshots
 
-![verses Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png)
+![verses View](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png)
 
-![Translations Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png)
+![Translation View](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png)
 
-![Search Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png)
+![Search View](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png)
 
-![Stats Tab](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png)
+![Statistics](http://www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png)
 
 ## Videos
 
