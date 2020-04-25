@@ -71,6 +71,12 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Common\EditProvidersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\EditProvidersForm.Designer.cs">
+      <DependentUpon>EditProvidersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
       <SubType>Component</SubType>
@@ -312,6 +318,9 @@
     </Compile>
     <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\EditProvidersForm.resx">
+      <DependentUpon>EditProvidersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.fr.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
