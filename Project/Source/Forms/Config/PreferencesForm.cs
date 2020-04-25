@@ -57,6 +57,7 @@ namespace Ordisoftware.HebrewWords
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      // TODO init from helper
       EventHandler action1 = (sender, e) =>
       {
         EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
