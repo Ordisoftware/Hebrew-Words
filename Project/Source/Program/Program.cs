@@ -73,9 +73,8 @@ namespace Ordisoftware.HebrewWords
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         SystemHelper.ApplyResources(resources, form.Controls);
       };
-      update(Globals.MainForm);
       foreach ( Form form in Application.OpenForms )
-        if ( form != Globals.MainForm && form != AboutBox.Instance && form != GrammarGuideForm )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm )
           update(form);
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
