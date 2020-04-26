@@ -79,6 +79,9 @@
       <DependentUpon>EditDataFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
       <SubType>Component</SubType>
     </Compile>
