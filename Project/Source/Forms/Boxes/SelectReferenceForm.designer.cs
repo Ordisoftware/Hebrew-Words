@@ -51,6 +51,9 @@ namespace Ordisoftware.HebrewWords
       this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
       this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.textBox3 = new System.Windows.Forms.TextBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -130,12 +133,30 @@ namespace Ordisoftware.HebrewWords
       this.EditFilterVersesTranslated.UseVisualStyleBackColor = true;
       this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
       // 
+      // textBox1
+      // 
+      resources.ApplyResources(this.textBox1, "textBox1");
+      this.textBox1.Name = "textBox1";
+      // 
+      // textBox2
+      // 
+      resources.ApplyResources(this.textBox2, "textBox2");
+      this.textBox2.Name = "textBox2";
+      // 
+      // textBox3
+      // 
+      resources.ApplyResources(this.textBox3, "textBox3");
+      this.textBox3.Name = "textBox3";
+      // 
       // SelectReferenceForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.textBox3);
+      this.Controls.Add(this.textBox2);
+      this.Controls.Add(this.textBox1);
       this.Controls.Add(this.EditFilterVersesTranslated);
       this.Controls.Add(this.EditFilterChaptersWithTitle);
       this.Controls.Add(this.SelectVerse);
@@ -184,6 +205,9 @@ namespace Ordisoftware.HebrewWords
     private ComboBox SelectVerse;
     private CheckBox EditFilterChaptersWithTitle;
     private CheckBox EditFilterVersesTranslated;
+    private TextBox textBox1;
+    private TextBox textBox2;
+    private TextBox textBox3;
   }
 
 }
