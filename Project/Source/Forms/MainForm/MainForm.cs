@@ -64,8 +64,9 @@ namespace Ordisoftware.HebrewWords
       CreateProvidersLinks();
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
+        if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
-        string word = CurrentReference.Word.Original;
+        string word = ((WordControl)ActiveControl).Reference.Word.Original;
         SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
     }
@@ -1339,7 +1340,8 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
-      Program.OpenOnlineConcordance(CurrentReference.Word.Original);
+      if ( !( ActiveControl is WordControl ) ) return;
+      Program.OpenOnlineConcordance(( (WordControl)ActiveControl ).Reference.Word.Original);
     }
 
   }
