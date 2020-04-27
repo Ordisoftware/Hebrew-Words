@@ -67,6 +67,7 @@ namespace Ordisoftware.HebrewWords
                                .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
                                .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
                                .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
+                               .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)( book - 1 )])
                                .Replace("%BOOKNUM%", book.ToString())
                                .Replace("%CHAPTERNUM%", chapter.ToString())
                                .Replace("%VERSENUM%", verse.ToString())
