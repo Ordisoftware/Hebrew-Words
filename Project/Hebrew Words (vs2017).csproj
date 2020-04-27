@@ -91,6 +91,7 @@
     <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Enums\BooksNames.LEvangile.cs" />
     <Compile Include="Source\Program\Translations.Notices.cs" />
     <Compile Include="Source\Program\Translations.Import.cs" />
     <Compile Include="Source\Common\EnumHelper.cs" />
