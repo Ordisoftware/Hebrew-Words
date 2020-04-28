@@ -38,6 +38,7 @@ namespace Ordisoftware.HebrewWords
                 "%BOOKSB% : StudyBible.org book name" + NewLine +
                 "%BOOKBIBLEHUB% : BibleHub.org book name" + NewLine +
                 "%BOOKCHABAD% : Chabad.org book name" + NewLine +
+                "%BOOKEL% : LEvangile.com book name" + NewLine +
                 "%BOOKMM% : Mechon-Mamre.org book name" + NewLine +
                 "%BOOKDJEP% : Djep.hd.free.fr book name" + NewLine + NewLine +
                 "%BOOKNUM% : Book number" + NewLine +
@@ -50,6 +51,7 @@ namespace Ordisoftware.HebrewWords
                 "%BOOKSB% : Nom du livre StudyBible.org" + NewLine +
                 "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + NewLine +
                 "%BOOKCHABAD% : Nom du livre Chabad.org" + NewLine +
+                "%BOOKEL% : Nom du livre LEvangile.com" + NewLine +
                 "%BOOKMM% : Nom du livre Mechon-Mamre.org" + NewLine +
                 "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + NewLine + NewLine +
                 "%BOOKNUM% : Numéro du livre" + NewLine +
