@@ -210,13 +210,17 @@ namespace Ordisoftware.HebrewWords
 
     private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
     {
-      var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
-      if ( control != null ) control.Focus();
       if ( e.Button != MouseButtons.Left ) return;
+      var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
+      //if ( control != null ) control.Focus();
       Program.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
-                              CurrentReference.Book.Number,
+                              control.Reference.Book.Number,
+                              control.Reference.Chapter.Number,
+                              control.Reference.Verse.Number);
+      /*Program.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
+                              control.Reference.Book.Number,
                               CurrentReference.Chapter.Number,
-                              Convert.ToInt32(( (Label)sender ).Text));
+                              Convert.ToInt32(( (Label)sender ).Text));*/
     }
 
   }
