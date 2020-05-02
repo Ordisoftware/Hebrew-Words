@@ -138,6 +138,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move tanak text files in Documents in a dedicated folder.
 - Update help.
 
+>>>>- Add option to go to last reference on startup.
 
 >>>>- Add parasha list form with references links.
 
