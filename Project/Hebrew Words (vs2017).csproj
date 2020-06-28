@@ -82,12 +82,17 @@
     <Compile Include="Source\Common\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Common\UndoRedoTextBox.Static.cs" />
     <Compile Include="Source\Common\UndoRedoTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Static.Actions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Static.Init.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Enums\BooksNames.LEvangile.cs" />
     <Compile Include="Source\Program\Translations.Notices.cs" />

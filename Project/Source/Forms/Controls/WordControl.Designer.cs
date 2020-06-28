@@ -51,7 +51,7 @@
       // 
       // EditTranslation
       // 
-      this.EditTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
+      this.EditTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       this.EditTranslation.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.EditTranslation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
       this.EditTranslation.Location = new System.Drawing.Point(0, 33);
