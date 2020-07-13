@@ -3,7 +3,7 @@
 >This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).
 
 >Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
->[Project Website](http://www.ordisoftware.com/projects/hebrew-words)<br/>
+>[Project Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
