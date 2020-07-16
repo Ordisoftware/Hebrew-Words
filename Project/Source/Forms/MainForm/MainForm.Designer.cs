@@ -1079,14 +1079,14 @@
       // 
       resources.ApplyResources(this.ActionDownloadHebrewCalendar, "ActionDownloadHebrewCalendar");
       this.ActionDownloadHebrewCalendar.Name = "ActionDownloadHebrewCalendar";
-      this.ActionDownloadHebrewCalendar.Tag = "http://www.ordisoftware.com/projects/hebrew-calendar";
+      this.ActionDownloadHebrewCalendar.Tag = "https://www.ordisoftware.com/projects/hebrew-calendar";
       this.ActionDownloadHebrewCalendar.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionDownloadHebrewLetters
       // 
       resources.ApplyResources(this.ActionDownloadHebrewLetters, "ActionDownloadHebrewLetters");
       this.ActionDownloadHebrewLetters.Name = "ActionDownloadHebrewLetters";
-      this.ActionDownloadHebrewLetters.Tag = "http://www.ordisoftware.com/projects/hebrew-letters";
+      this.ActionDownloadHebrewLetters.Tag = "https://www.ordisoftware.com/projects/hebrew-letters";
       this.ActionDownloadHebrewLetters.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // Sep6

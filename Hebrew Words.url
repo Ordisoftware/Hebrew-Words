@@ -1,4 +1,4 @@
 [DEFAULT]
-BASEURL=http://www.ordisoftware.com/projects/hebrew-words
+BASEURL=https://www.ordisoftware.com/projects/hebrew-words
 [InternetShortcut]
-URL=http://www.ordisoftware.com/projects/hebrew-words/?referer=Ordisoftware.HebrewWords
+URL=https://www.ordisoftware.com/projects/hebrew-words/?referer=Ordisoftware.HebrewWords
