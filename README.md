@@ -100,7 +100,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### 2020.__.__ - Version 3.0
+#### 2021.__.__ - Version 3.0
 
 - Exit application at startup if user choose to download a newer version.
 - Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
