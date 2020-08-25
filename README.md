@@ -102,7 +102,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2021.__.__ - Version 3.0
 
-- Exit application at startup if user choose to download a newer version.
+- Improve check update to allow auto update or direct download or open app web page.
 - Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
 - Fix error message when several SearchTranslatedForm are opened.
 - Fix error message when typing in the comment boxes.
@@ -132,6 +132,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
+- Fix app not responding on windows logoff or system shutdown.
 - Improve UI/UX.
 - Code refactoring.
 - Move online providers values from code to files in the application documents folder.
@@ -151,6 +152,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 >>>>- Add book memo and chapter title/memo in DOCX export.
 >>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
 >>>>- Add menu to open a batch export form.
+>>>>- Add option to enable or disable the web links menu.
 
 (>>>>- Add word occurences calculator button in the search panel.)
 
@@ -163,11 +165,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 (- Database updated to support internal strong concordance popup menus in the future.)
 
 - Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
-
-- Add tools menu duplicated in the tray icon.
-- Add option to enable/disable the web links menu.
-- Fix app not responding on windows logoff or system shutdown.
-- Improve check update to allow auto update or direct download or open app web page.
 
 #### 2019.11.14 - Version 2.4
 
