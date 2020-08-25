@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Link label link clicked event information.</param>
     private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenWebLink(((LinkLabel)sender).Text);
+      Shell.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>
@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Link label link clicked event information.</param>
     private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenAuthorHome();
+      Shell.OpenAuthorHome();
     }
 
     /// <summary>

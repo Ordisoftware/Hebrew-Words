@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewWords
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         string word = ((WordControl)ActiveControl).Reference.Word.Original;
-        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
+        Shell.Run(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
     }
 
@@ -100,9 +100,9 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Create web links menu items.
     /// </summary>
-    internal void CreateWebLinks()
+    internal void InitializeSpecialMenus()
     {
-      MenuWebLinks.InitializeFromWebLinks();
+      MenuWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
     private void MainForm_Load(object sender, EventArgs e)
     {
       Program.Settings.Retrieve();
-      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
       {
         Application.Exit();
         return;
@@ -183,6 +183,7 @@ namespace Ordisoftware.HebrewWords
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
+      Program.Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
@@ -525,7 +526,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemHelper.OpenWebLink(url);
+      Shell.OpenWebLink(url);
     }
 
     /// <summary>
@@ -589,7 +590,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionOpenBackupPath_Click(object sender, EventArgs e)
     {
-      SystemHelper.RunShell(Program.Settings.BackupPath);
+      Shell.Run(Program.Settings.BackupPath);
     }
 
     /// <summary>
@@ -706,7 +707,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemHelper.RunShell(Globals.HelpFilename);
+      Shell.Run(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -716,7 +717,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebHome_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenApplicationHome();
+      Shell.OpenApplicationHome();
     }
 
     /// <summary>
@@ -726,7 +727,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenContactPage();
+      Shell.OpenContactPage();
     }
 
     /// <summary>
@@ -736,7 +737,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemHelper.CreateGitHubIssue();
+      Shell.CreateGitHubIssue();
     }
 
     /// <summary>
@@ -746,7 +747,11 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
-      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false);
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, false) )
+      {
+        Application.Exit();
+        return;
+      }
     }
 
     /// <summary>

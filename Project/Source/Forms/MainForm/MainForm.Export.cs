@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewWords
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
+            Shell.Run(SaveFileDialogRTF.FileName);
           break;
         default:
           DisplayManager.ShowAdvert("Not implemented.");
@@ -90,14 +90,14 @@ namespace Ordisoftware.HebrewWords
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
+            Shell.Run(SaveFileDialogRTF.FileName);
           break;
         case ViewMode.Text:
           SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
           if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
           EditRawText.SaveFile(SaveFileDialogRTF.FileName);
           if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemHelper.RunShell(SaveFileDialogRTF.FileName);
+            Shell.Run(SaveFileDialogRTF.FileName);
           break;
         default:
           DisplayManager.ShowAdvert("Not implemented.");

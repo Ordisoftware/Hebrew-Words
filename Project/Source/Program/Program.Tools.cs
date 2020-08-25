@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewWords
       if ( hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
-        SystemHelper.RunShell(Settings.HebrewLettersExe, item);
+        Shell.Run(Settings.HebrewLettersExe, item);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenOnlineConcordance(string hebrew)
     {
-      SystemHelper.RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
+      Shell.Run(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
     {
-      SystemHelper.RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
+      Shell.Run(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
                                .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
                                .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
                                .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])

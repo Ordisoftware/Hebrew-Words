@@ -16,7 +16,10 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO.Pipes;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
@@ -40,9 +43,9 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      if ( !SystemHelper.CheckApplicationOnlyOneInstance() ) return;
+      if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
+      Settings.CheckUpgrade(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
@@ -50,10 +53,37 @@ namespace Ordisoftware.HebrewWords
       Globals.MainForm = MainForm.Instance;
       Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
-      SystemHelper.CheckCommandLineArguments(args, ref lang);
+      Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
+    }
+
+    /// <summary>
+    /// Bring to front the app in case of duplicate process start.
+    /// </summary>
+    /// <param name="ar"></param>
+    static void IPCRequest(IAsyncResult ar)
+    {
+      var server = ar.AsyncState as NamedPipeServerStream;
+      server.EndWaitForConnection(ar);
+      var command = new BinaryFormatter().Deserialize(server) as string;
+      if ( command == "BringToFront" )
+        if ( MainForm.Instance.Visible )
+          MainForm.Instance.SyncUI(() =>
+          {
+            if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
+              MainForm.Instance.WindowState = Settings.MainFormState;
+            var old = MainForm.Instance.TopMost;
+            MainForm.Instance.TopMost = true;
+            MainForm.Instance.BringToFront();
+            MainForm.Instance.Show();
+            MainForm.Instance.TopMost = old;
+          });
+        else
+          MainForm.Instance.SyncUI(() => MainForm.Instance.Show());
+      server.Close();
+      SystemHelper.CreateIPCServer(IPCRequest);
     }
 
     /// <summary>
@@ -71,7 +101,7 @@ namespace Ordisoftware.HebrewWords
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-        SystemHelper.ApplyResources(resources, form.Controls);
+        resources.Apply(form.Controls);
       };
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance && form != GrammarGuideForm )
@@ -79,10 +109,10 @@ namespace Ordisoftware.HebrewWords
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      MainForm.Instance.CreateWebLinks();
+      MainForm.Instance.InitializeSpecialMenus();
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-      UndoRedoTextBox.RelocalizeContextMenu();
+      UndoRedoTextBox.Relocalize();
       if ( Globals.IsReady )
       {
         MainForm.Instance.RenderTranslation();
