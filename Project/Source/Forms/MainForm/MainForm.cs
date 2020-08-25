@@ -759,6 +759,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by ActionWebReleaseNotes for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
+    {
+      Shell.OpenWebLink(Globals.ApplicationChangeLogURL);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

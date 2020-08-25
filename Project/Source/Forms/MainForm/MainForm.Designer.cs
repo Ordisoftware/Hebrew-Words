@@ -115,18 +115,20 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.MenuWeb = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebHome = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebContact = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebTipeee = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWebLinkedIn = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebTwitter = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebYouTube = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWebTipeee = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWebLinkedIn = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionDownloadHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -227,13 +229,14 @@
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -634,6 +637,7 @@
       // 
       this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
       this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.Name = "EditSearchTranslation";
       this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
@@ -703,6 +707,7 @@
       resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
       this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditChapterMemo.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       this.EditChapterMemo.Name = "EditChapterMemo";
       this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
       this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -783,6 +788,7 @@
       // 
       this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
       this.EditBookTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditBookTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
       this.EditBookTranslation.Name = "EditBookTranslation";
       this.EditBookTranslation.TextChanged += new System.EventHandler(this.EditBookTranslation_TextChanged);
@@ -793,6 +799,7 @@
       // 
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditChapterTitle.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
@@ -962,6 +969,8 @@
       this.MenuWeb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
+            this.toolStripSeparator18,
+            this.ActionWebReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator10,
             this.ActionCreateGitHubIssue,
@@ -969,11 +978,12 @@
             this.toolStripSeparator11,
             this.ActionWebHome,
             this.ActionWebContact,
-            this.ActionWebTipeee,
             this.toolStripMenuItem5,
-            this.ActionWebLinkedIn,
             this.ActionWebTwitter,
             this.ActionWebYouTube,
+            this.toolStripSeparator19,
+            this.ActionWebTipeee,
+            this.ActionWebLinkedIn,
             this.toolStripSeparator3,
             this.ActionDownloadHebrewCalendar,
             this.ActionDownloadHebrewLetters});
@@ -987,12 +997,24 @@
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
+      // toolStripSeparator18
+      // 
+      this.toolStripSeparator18.Name = "toolStripSeparator18";
+      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+      // 
       // ActionWebCheckUpdate
       // 
       this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
       this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
       this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionWebCheckUpdate_Click);
+      // 
+      // ActionWebReleaseNotes
+      // 
+      this.ActionWebReleaseNotes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionWebReleaseNotes, "ActionWebReleaseNotes");
+      this.ActionWebReleaseNotes.Name = "ActionWebReleaseNotes";
+      this.ActionWebReleaseNotes.Click += new System.EventHandler(this.ActionWebReleaseNotes_Click);
       // 
       // toolStripSeparator10
       // 
@@ -1033,26 +1055,10 @@
       this.ActionWebContact.Name = "ActionWebContact";
       this.ActionWebContact.Click += new System.EventHandler(this.ActionWebContact_Click);
       // 
-      // ActionWebTipeee
-      // 
-      this.ActionWebTipeee.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebTipeee, "ActionWebTipeee");
-      this.ActionWebTipeee.Name = "ActionWebTipeee";
-      this.ActionWebTipeee.Tag = "https://fr.tipeee.com/ordisoftware";
-      this.ActionWebTipeee.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
       // toolStripMenuItem5
       // 
       this.toolStripMenuItem5.Name = "toolStripMenuItem5";
       resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-      // 
-      // ActionWebLinkedIn
-      // 
-      this.ActionWebLinkedIn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebLinkedIn, "ActionWebLinkedIn");
-      this.ActionWebLinkedIn.Name = "ActionWebLinkedIn";
-      this.ActionWebLinkedIn.Tag = "https://www.linkedin.com/in/ordisoftware";
-      this.ActionWebLinkedIn.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionWebTwitter
       // 
@@ -1069,6 +1075,22 @@
       this.ActionWebYouTube.Name = "ActionWebYouTube";
       this.ActionWebYouTube.Tag = "https://www.youtube.com/user/Ordisoftware";
       this.ActionWebYouTube.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // ActionWebTipeee
+      // 
+      this.ActionWebTipeee.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionWebTipeee, "ActionWebTipeee");
+      this.ActionWebTipeee.Name = "ActionWebTipeee";
+      this.ActionWebTipeee.Tag = "https://fr.tipeee.com/ordisoftware";
+      this.ActionWebTipeee.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // ActionWebLinkedIn
+      // 
+      this.ActionWebLinkedIn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionWebLinkedIn, "ActionWebLinkedIn");
+      this.ActionWebLinkedIn.Name = "ActionWebLinkedIn";
+      this.ActionWebLinkedIn.Tag = "https://www.linkedin.com/in/ordisoftware";
+      this.ActionWebLinkedIn.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripSeparator3
       // 
@@ -1743,6 +1765,11 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
+      // toolStripSeparator14
+      // 
+      this.toolStripSeparator14.Name = "toolStripSeparator14";
+      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
+      // 
       // toolStripMenuItem2
       // 
       resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
@@ -1776,10 +1803,10 @@
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
       // 
-      // toolStripSeparator14
+      // toolStripSeparator19
       // 
-      this.toolStripSeparator14.Name = "toolStripSeparator14";
-      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
       // MainForm
       // 
@@ -2042,6 +2069,9 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyWordTranslation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
+    private System.Windows.Forms.ToolStripMenuItem ActionWebReleaseNotes;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
   }
 }
 
