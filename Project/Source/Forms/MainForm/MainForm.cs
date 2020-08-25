@@ -155,12 +155,16 @@ namespace Ordisoftware.HebrewWords
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       ActionSave.PerformClick();
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
+      {
+        Globals.IsExiting = true;
+        return;
+      }
       if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
         if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
-        {
           e.Cancel = true;
+        else
           Globals.IsExiting = true;
-        }
     }
 
     /// <summary>
