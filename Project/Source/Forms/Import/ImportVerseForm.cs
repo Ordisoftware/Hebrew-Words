@@ -53,10 +53,7 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ActiveControl = EditSource;
-      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
-        this.CenterToMainForm();
-      else
-        CenterToScreen();
+      this.CenterToMainFormElseScreen();
     }
 
     private ImportVerseForm(ReferenceItem reference)

@@ -79,6 +79,16 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Event handler. Called by PreferencesForm for load events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_Load(object sender, EventArgs e)
+    {
+      this.CenterToMainFormElseScreen();
+    }
+
+    /// <summary>
     /// Event handler. Called by PreferencesForm for shown events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -198,7 +208,7 @@ namespace Ordisoftware.HebrewWords
       Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;
       PreferencesForm_Shown(null, null);
-      Program.GrammarGuideForm.CenterToMainForm();
+      Program.GrammarGuideForm.CenterToMainFormElseScreen();
     }
 
     /// <summary>
