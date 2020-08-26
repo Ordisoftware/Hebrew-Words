@@ -158,7 +158,7 @@ namespace Ordisoftware.HebrewWords
         return;
       }
       if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
           e.Cancel = true;
         else
           Globals.IsExiting = true;
@@ -623,7 +623,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e"></param>
     private void ActionVacuum_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Globals.AskToOptimizeDatabase.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToOptimizeDatabase.GetLang()) )
         return;
       ActionSave.PerformClick();
       ReLoadData(() =>
@@ -671,7 +671,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Globals.AskToRestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Localizer.AskToRestoreWindowPosition.GetLang()) )
       {
         Program.Settings.RestoreMainForm();
         ActionRefresh.PerformClick();

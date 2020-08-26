@@ -14,6 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -27,39 +28,39 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> OpenOnlineSearchNotice
       = new Dictionary<string, string>()
       {
-        { "en", "Use the %WORD% tag to replace the value." },
-        { "fr", "Utiliser le tag %WORD% pour remplacer la valeur." },
+        { Localizer.EN, "Use the %WORD% tag to replace the value." },
+        { Localizer.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
       };
 
     static public readonly Dictionary<string, string> OpenOnlineVerseNotice
       = new Dictionary<string, string>()
       {
-        { "en", "Use the following tags to replace values:" + NewLine + NewLine +
-                "%BOOKSB% : StudyBible.org book name" + NewLine +
-                "%BOOKBIBLEHUB% : BibleHub.org book name" + NewLine +
-                "%BOOKCHABAD% : Chabad.org book name" + NewLine +
-                "%BOOKEL% : LEvangile.com book name" + NewLine +
-                "%BOOKMM% : Mechon-Mamre.org book name" + NewLine +
-                "%BOOKDJEP% : Djep.hd.free.fr book name" + NewLine + NewLine +
-                "%BOOKNUM% : Book number" + NewLine +
-                "%CHAPTERNUM% : Chapter number" + NewLine +
-                "%VERSENUM% : Verse number" + NewLine + NewLine +
-                "%BOOKNUM#2% : Book number in two digits" + NewLine +
-                "%CHAPTERNUM#2% : Chapter number in two digits" + NewLine +
-                "%VERSENUM#2% : Verse number in two digits" },
-        { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
-                "%BOOKSB% : Nom du livre StudyBible.org" + NewLine +
-                "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + NewLine +
-                "%BOOKCHABAD% : Nom du livre Chabad.org" + NewLine +
-                "%BOOKEL% : Nom du livre LEvangile.com" + NewLine +
-                "%BOOKMM% : Nom du livre Mechon-Mamre.org" + NewLine +
-                "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + NewLine + NewLine +
-                "%BOOKNUM% : Numéro du livre" + NewLine +
-                "%CHAPTERNUM% : Numéro du chaptre" + NewLine +
-                "%VERSENUM% : Numéro du verset" + NewLine + NewLine +
-                "%BOOKNUM#2% : Numéro du livre sur 2 digits" + NewLine +
-                "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + NewLine +
-                "%VERSENUM#2% : Numéro du verset sur 2 digits" },
+        { Localizer.EN, "Use the following tags to replace values:" + Localizer.NL + Localizer.NL +
+                        "%BOOKSB% : StudyBible.org book name" + Localizer.NL +
+                        "%BOOKBIBLEHUB% : BibleHub.org book name" + Localizer.NL +
+                        "%BOOKCHABAD% : Chabad.org book name" + Localizer.NL +
+                        "%BOOKEL% : LEvangile.com book name" + Localizer.NL +
+                        "%BOOKMM% : Mechon-Mamre.org book name" + Localizer.NL +
+                        "%BOOKDJEP% : Djep.hd.free.fr book name" + Localizer.NL + Localizer.NL +
+                        "%BOOKNUM% : Book number" + Localizer.NL +
+                        "%CHAPTERNUM% : Chapter number" + Localizer.NL +
+                        "%VERSENUM% : Verse number" + Localizer.NL + Localizer.NL +
+                        "%BOOKNUM#2% : Book number in two digits" + Localizer.NL +
+                        "%CHAPTERNUM#2% : Chapter number in two digits" + Localizer.NL +
+                        "%VERSENUM#2% : Verse number in two digits" },
+        { Localizer.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Localizer.NL + Localizer.NL +
+                        "%BOOKSB% : Nom du livre StudyBible.org" + Localizer.NL +
+                        "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + Localizer.NL +
+                        "%BOOKCHABAD% : Nom du livre Chabad.org" + Localizer.NL +
+                        "%BOOKEL% : Nom du livre LEvangile.com" + Localizer.NL +
+                        "%BOOKMM% : Nom du livre Mechon-Mamre.org" + Localizer.NL +
+                        "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Localizer.NL + Localizer.NL +
+                        "%BOOKNUM% : Numéro du livre" + Localizer.NL +
+                        "%CHAPTERNUM% : Numéro du chaptre" + Localizer.NL +
+                        "%VERSENUM% : Numéro du verset" + Localizer.NL + Localizer.NL +
+                        "%BOOKNUM#2% : Numéro du livre sur 2 digits" + Localizer.NL +
+                        "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + Localizer.NL +
+                        "%VERSENUM#2% : Numéro du verset sur 2 digits" },
       };
 
   }
