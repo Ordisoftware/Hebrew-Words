@@ -72,9 +72,17 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
+    /// Create web links menu items.
+    /// </summary>
+    internal void InitializeSpecialMenus()
+    {
+      MenuWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+    }
+
+    /// <summary>
     /// Create providers links menu items.
     /// </summary>
-    internal void CreateProvidersLinks()
+    private void CreateProvidersLinks()
     {
       ContextMenuStripVerse.InitializeFromProviders(Globals.OnlineBibleProviders, (sender, e) =>
       {
@@ -98,26 +106,15 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Create web links menu items.
-    /// </summary>
-    internal void InitializeSpecialMenus()
-    {
-      MenuWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-    }
-
-    /// <summary>
     /// Event handler. Called by MainForm for load events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
+      if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
-      {
-        Application.Exit();
-        return;
-      }
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) ) return;
       if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
         Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
