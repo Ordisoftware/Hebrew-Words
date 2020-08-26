@@ -29,7 +29,10 @@ namespace Ordisoftware.HebrewWords
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       Text = Globals.AssemblyTitle;
-      this.CenterToMainForm();
+      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
+        this.CenterToMainForm();
+      else
+        CenterToScreen();
     }
 
     private void ButtonCancel_Click(object sender, EventArgs e)

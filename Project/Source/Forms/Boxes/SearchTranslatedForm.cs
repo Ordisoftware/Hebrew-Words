@@ -43,9 +43,12 @@ namespace Ordisoftware.HebrewWords
       form.Show();
       form.Location = new Point(Program.Settings.SearchTranslatedFormLocation.X,
                                 Program.Settings.SearchTranslatedFormLocation.Y);
-      if ( form.Location.X == -1 && form.Location.Y == -1 )
+      if ( form.Location.X < 0 && form.Location.Y < 0 )
       {
-        form.CenterToMainForm();
+        if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
+          form.CenterToMainForm();
+        else
+          form.CenterToScreen();
         Program.Settings.SearchTranslatedFormLocation = new Point(form.Location.X, form.Location.Y);
         Program.Settings.Save();
       }
