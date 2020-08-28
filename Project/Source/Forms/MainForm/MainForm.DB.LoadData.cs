@@ -129,12 +129,14 @@ namespace Ordisoftware.HebrewWords
                       + GetRowsCount(DataSet.Verses.TableName)
                       + GetRowsCount(DataSet.Words.TableName);
         int step = 0;
-        form.ProgressBar.Maximum = rowsCount / PopulateDataPaging * 2;
+        //form.ProgressBar.Maximum = rowsCount / PopulateDataPaging * 2;
+        int count = rowsCount / PopulateDataPaging * 2;
         progress = (sender, e) =>
         {
           step++;
           if ( step < PopulateDataPaging ) return;
-          form.ProgressBar.PerformStep();
+          //form.ProgressBar.PerformStep();
+          form.UpdateProgress(-1, count, );
           step = 0;
           Refresh();
           Application.DoEvents();
