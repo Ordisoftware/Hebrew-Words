@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewWords
         bool inprogress = true;
         int index = 0;
         int delta = 1;
-        var form = new LoadingForm();
+        var form = LoadingForm.Instance; ////////////////////////////////////////////////////
         form.LabelOperation.Text = Translations.ProgressCreatingData.GetLang();
         form.ProgressBar.Maximum = 64;
         form.Show();

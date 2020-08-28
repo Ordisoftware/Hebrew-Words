@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewWords
     private void PopulateData()
     {
       DataRowChangeEventHandler progress = null;
-      var form = new LoadingForm();
+      var form = LoadingForm.Instance; ////////////////////////////////////////////////////////////////
       form.Show();
       form.Refresh();
       SetFormDisabled(true);
@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewWords
           step++;
           if ( step < PopulateDataPaging ) return;
           //form.ProgressBar.PerformStep();
-          form.UpdateProgress(-1, count, );
+          //////////////////////////////////////////////////////////form.UpdateProgress(-1, count, );
           step = 0;
           Refresh();
           Application.DoEvents();

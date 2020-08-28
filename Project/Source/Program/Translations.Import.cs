@@ -28,69 +28,69 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> ImportLinesCountMismatch
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Incorrect elements." + Localizer.NL + Localizer.NL +
-                        "Non empty lines count: {0}" + Localizer.NL + Localizer.NL +
+        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
+                        "Non empty lines count: {0}" + Globals.NL + Globals.NL +
                         "Must be even." },
-        { Localizer.FR, "Elements incorrects." + Localizer.NL + Localizer.NL +
-                        "Nombre de lignes non vides: {0}" + Localizer.NL + Localizer.NL +
+        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
+                        "Nombre de lignes non vides: {0}" + Globals.NL + Globals.NL +
                         "Doit être pair." }
       };
 
     static public readonly Dictionary<string, string> ImportItemsCountMismatch
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Incorrect elements." + Localizer.NL + Localizer.NL +
-                        "Words count: {0}" + Localizer.NL +
-                        "Translations count: {1}" + Localizer.NL +
+        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
+                        "Words count: {0}" + Globals.NL +
+                        "Translations count: {1}" + Globals.NL +
                         "Must be equal."},
-        { Localizer.FR, "Elements incorrects." + Localizer.NL + Localizer.NL +
-                        "Nombre de mots: {0}" + Localizer.NL +
-                        "Nombre de translations: {1}" + Localizer.NL +
+        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
+                        "Nombre de mots: {0}" + Globals.NL +
+                        "Nombre de translations: {1}" + Globals.NL +
                         "Doit être égal." }
       };
 
     static public readonly Dictionary<string, string> ImportWordsCountMismatch
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Incorrect elements." + Localizer.NL + Localizer.NL +
-                        "Verse words count: {0}" + Localizer.NL +
-                        "Imported words count: {1}" + Localizer.NL + Localizer.NL +
+        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
+                        "Verse words count: {0}" + Globals.NL +
+                        "Imported words count: {1}" + Globals.NL + Globals.NL +
                         "Must be equal." },
-        { Localizer.FR, "Elements incorrects." + Localizer.NL + Localizer.NL +
-                        "Nombre de mots du verset: {0}" + Localizer.NL +
-                        "Nombre de mots importés: {1}" + Localizer.NL +Localizer.NL +
+        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
+                        "Nombre de mots du verset: {0}" + Globals.NL +
+                        "Nombre de mots importés: {1}" + Globals.NL +Globals.NL +
                         "Doit être égal." }
       };
 
     static public readonly Dictionary<string, string> ImportWordMismatch
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Incorrect hebrew." + Localizer.NL + Localizer.NL +
-                        "Verse word: {0}" + Localizer.NL +
-                        "Imported word: {1}" + Localizer.NL + Localizer.NL +
+        { Languages.EN, "Incorrect hebrew." + Globals.NL + Globals.NL +
+                        "Verse word: {0}" + Globals.NL +
+                        "Imported word: {1}" + Globals.NL + Globals.NL +
                         "Must be equal." },
-        { Localizer.FR, "Hébreu incorrect." + Localizer.NL + Localizer.NL +
-                        "Mot du verset: {0}" + Localizer.NL +
-                        "Mot importé: {1}" + Localizer.NL + Localizer.NL +
+        { Languages.FR, "Hébreu incorrect." + Globals.NL + Globals.NL +
+                        "Mot du verset: {0}" + Globals.NL +
+                        "Mot importé: {1}" + Globals.NL + Globals.NL +
                         "Doit être égal." }
       };
 
     static public readonly Dictionary<string, string> ImportHelp
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "This console allows for example to import an MS Word verse table." + Localizer.NL + Localizer.NL +
-                        "This table must first be converted to text with | as a separator." + Localizer.NL + Localizer.NL +
-                        "The import text must be presented in groups of two lines:" + Localizer.NL +
-                        "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Localizer.NL +
-                        "- A second containing a list of translations." + Localizer.NL + Localizer.NL +
-                        "There can be as many groups of two lines as necessary." + Localizer.NL + Localizer.NL +
+        { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL + Globals.NL +
+                        "This table must first be converted to text with | as a separator." + Globals.NL + Globals.NL +
+                        "The import text must be presented in groups of two lines:" + Globals.NL +
+                        "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
+                        "- A second containing a list of translations." + Globals.NL + Globals.NL +
+                        "There can be as many groups of two lines as necessary." + Globals.NL + Globals.NL +
                         "Imported translation fields can be edited in the result grid." },
-        { Localizer.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Localizer.NL + Localizer.NL +
-                        "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Localizer.NL + Localizer.NL +
-                        "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Localizer.NL +
-                        "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Localizer.NL +
-                        "- Une deuxième contenant une liste de traductions." + Localizer.NL + Localizer.NL +
-                        "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Localizer.NL + Localizer.NL +
+        { Languages.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL + Globals.NL +
+                        "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL + Globals.NL +
+                        "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
+                        "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
+                        "- Une deuxième contenant une liste de traductions." + Globals.NL + Globals.NL +
+                        "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL + Globals.NL +
                         "Les champs de traduction importés peuvent être édités dans la grille du résultat." }
       };
 

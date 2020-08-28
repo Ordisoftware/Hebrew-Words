@@ -114,7 +114,10 @@ namespace Ordisoftware.HebrewWords
     {
       if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) ) return;
+      var lastdone = Program.Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
+      Program.Settings.CheckUpdateLastDone = lastdone;
+      if ( exit ) return;
       if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
         Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
@@ -748,11 +751,13 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, false) )
-      {
-        Application.Exit();
-        return;
-      }
+      ActionSave.PerformClick();
+      var lastdone = Program.Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, e == null);
+      Program.Settings.CheckUpdateLastDone = lastdone;
+      if ( !exit ) return;
+      Globals.IsExiting = true;
+      Close();
     }
 
     /// <summary>
@@ -762,7 +767,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
     {
-      Shell.OpenWebLink(Globals.ApplicationChangeLogURL);
+      Shell.OpenApplicationReleaseNotes();
     }
 
     /// <summary>

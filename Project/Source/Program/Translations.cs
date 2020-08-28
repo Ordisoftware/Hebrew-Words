@@ -28,65 +28,65 @@ namespace Ordisoftware.HebrewWords
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Literal word-for-word translation of the Hebrew Bible" },
-        { Localizer.FR, "Traduction littérale mot-à-mot de la Bible hébraïque" }
+        { Languages.EN, "Literal word-for-word translation of the Hebrew Bible" },
+        { Languages.FR, "Traduction littérale mot-à-mot de la Bible hébraïque" }
       };
 
     static public readonly Dictionary<string, string> ProgressCreatingData
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Creating data..." },
-        { Localizer.FR, "Création des données..." }
+        { Languages.EN, "Creating data..." },
+        { Languages.FR, "Création des données..." }
       };
 
     static public readonly Dictionary<string, string> AskToCreateNewDatabase
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Do you want to create a new database wich will replace the actual?" },
-        { Localizer.FR, "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
+        { Languages.EN, "Do you want to create a new database wich will replace the actual?" },
+        { Languages.FR, "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
       };
 
     static public readonly Dictionary<string, string> AskToBackupDatabaseBeforeReplace
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Do you want to backup database before replace it?" },
-        { Localizer.FR, "Voulez-vous archiver la base de données avant de la remplacer ?" }
+        { Languages.EN, "Do you want to backup database before replace it?" },
+        { Languages.FR, "Voulez-vous archiver la base de données avant de la remplacer ?" }
       };
 
     static public readonly Dictionary<string, string> AskToRestoreBooksCommonNames
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Restore default books common names?" },
-        { Localizer.FR, "Restaurer les noms communs par défaut des livres ?" }
+        { Languages.EN, "Restore default books common names?" },
+        { Languages.FR, "Restaurer les noms communs par défaut des livres ?" }
       };
 
     static public readonly Dictionary<string, string> AskToEmptyHistory
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Empty history?" },
-        { Localizer.FR, "Vider l'historique ?" }
+        { Languages.EN, "Empty history?" },
+        { Languages.FR, "Vider l'historique ?" }
       };
 
     static public readonly Dictionary<string, string> AskToEmptyBookmarks
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Empty bookmarks?" },
-        { Localizer.FR, "Vider les signets?" }
+        { Languages.EN, "Empty bookmarks?" },
+        { Languages.FR, "Vider les signets?" }
       };
 
     static public readonly Dictionary<string, string> AskToDeleteBookmark
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Remove the bookmark?" },
-        { Localizer.FR, "Effacer le signet ?" }
+        { Languages.EN, "Remove the bookmark?" },
+        { Languages.FR, "Effacer le signet ?" }
       };
 
 
     static public readonly Dictionary<string, string> BookChapterTitle
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "CHAPTER" },
-        { Localizer.FR, "CHAPITRE" }
+        { Languages.EN, "CHAPTER" },
+        { Languages.FR, "CHAPITRE" }
       };
 
     static public readonly Dictionary<ViewMode, Dictionary<string, string>> ViewPanelTitle
@@ -95,36 +95,36 @@ namespace Ordisoftware.HebrewWords
         {
           ViewMode.Verses, new Dictionary<string, string>
           {
-            { Localizer.EN, "Tanak Verses" },
-            { Localizer.FR, "Versets du Tanak" }
+            { Languages.EN, "Tanak Verses" },
+            { Languages.FR, "Versets du Tanak" }
           }
         },
         {
           ViewMode.Translations, new Dictionary<string, string>
           {
-            { Localizer.EN, "Tanak Translation" },
-            { Localizer.FR, "Traduction du Tanak" }
+            { Languages.EN, "Tanak Translation" },
+            { Languages.FR, "Traduction du Tanak" }
           }
         },
         {
           ViewMode.Text, new Dictionary<string, string>
           {
-            { Localizer.EN, "Tanak Hebrew Text" },
-            { Localizer.FR, "Texte Hébreu du Tanak" }
+            { Languages.EN, "Tanak Hebrew Text" },
+            { Languages.FR, "Texte Hébreu du Tanak" }
           }
         },
         {
           ViewMode.ELS50, new Dictionary<string, string>
           {
-            { Localizer.EN, "Tanak ELS50 Verses" },
-            { Localizer.FR, "Versets ELS50 du Tanak" }
+            { Languages.EN, "Tanak ELS50 Verses" },
+            { Languages.FR, "Versets ELS50 du Tanak" }
           }
         },
         {
           ViewMode.Search, new Dictionary<string, string>
           {
-            { Localizer.EN, "Search in the Tanak" },
-            { Localizer.FR, "Recherche dans le Tanak" }
+            { Languages.EN, "Search in the Tanak" },
+            { Languages.FR, "Recherche dans le Tanak" }
           }
         }
       };
