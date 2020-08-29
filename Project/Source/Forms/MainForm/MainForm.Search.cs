@@ -13,7 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {

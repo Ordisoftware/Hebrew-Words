@@ -19,7 +19,6 @@ using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
@@ -45,13 +44,13 @@ namespace Ordisoftware.HebrewWords
     {
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      Settings.CheckUpgrade(ref upgrade);
+      Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
+      Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;

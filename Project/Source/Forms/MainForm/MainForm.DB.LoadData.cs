@@ -18,7 +18,6 @@ using System.Data.Odbc;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {

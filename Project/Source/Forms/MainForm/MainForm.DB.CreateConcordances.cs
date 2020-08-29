@@ -19,7 +19,6 @@ using System.Data.Odbc;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {

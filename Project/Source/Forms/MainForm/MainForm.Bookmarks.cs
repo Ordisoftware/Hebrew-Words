@@ -14,7 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {

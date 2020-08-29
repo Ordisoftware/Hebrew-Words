@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewWords
       if ( Program.Settings.BackupCount == 0 ) return;
       string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
       string partBackup = "AutoBackup ";
-      var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DBFileExtension);
+      var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DatabaseFileExtension);
       while ( list.Count >= Program.Settings.BackupCount )
       {
         File.Delete(list[0].FullName);
@@ -45,11 +45,11 @@ namespace Ordisoftware.HebrewWords
       }
       string partPath = Program.Settings.BackupPath + partBackup;
       var date = DateTime.Now;
-      string strDate = String.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
+      string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
                                      date.Year, date.Month, date.Day,
                                      date.Hour, date.Minute, date.Second);
-      string fileSource = Globals.UserDataFolderPath + partFilename + Globals.DBFileExtension;
-      string fileDest = partPath + partFilename + " " + strDate + Globals.DBFileExtension;
+      string fileSource = Globals.UserDataFolderPath + partFilename + Globals.DatabaseFileExtension;
+      string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
       if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
     }
 

@@ -22,7 +22,6 @@ using System.Data.Odbc;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.HebrewWords.Data;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -545,7 +544,7 @@ namespace Ordisoftware.HebrewWords
         ActionBackup.PerformClick();
       if ( !DisplayManager.QueryYesNo(Translations.AskToCreateNewDatabase.GetLang()) )
         return;
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       ReLoadData(() =>
       {
         File.Delete(Globals.UserDataFolderPath + filename);
@@ -562,7 +561,7 @@ namespace Ordisoftware.HebrewWords
       ActionSave.PerformClick();
       if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
       ReLoadData(() =>
@@ -580,7 +579,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionBackup_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
+      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       SaveFileDialogDB.FileName = filename;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
