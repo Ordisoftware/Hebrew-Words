@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
@@ -25,8 +24,8 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> ImportLinesCountMismatch
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ImportLinesCountMismatch
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
                         "Non empty lines count: {0}" + Globals.NL + Globals.NL +
@@ -36,8 +35,8 @@ namespace Ordisoftware.HebrewWords
                         "Doit être pair." }
       };
 
-    static public readonly Dictionary<string, string> ImportItemsCountMismatch
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ImportItemsCountMismatch
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
                         "Words count: {0}" + Globals.NL +
@@ -49,8 +48,8 @@ namespace Ordisoftware.HebrewWords
                         "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> ImportWordsCountMismatch
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ImportWordsCountMismatch
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
                         "Verse words count: {0}" + Globals.NL +
@@ -62,8 +61,8 @@ namespace Ordisoftware.HebrewWords
                         "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> ImportWordMismatch
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ImportWordMismatch
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Incorrect hebrew." + Globals.NL + Globals.NL +
                         "Verse word: {0}" + Globals.NL +
@@ -75,8 +74,8 @@ namespace Ordisoftware.HebrewWords
                         "Doit être égal." }
       };
 
-    static public readonly Dictionary<string, string> ImportHelp
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ImportHelp
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL + Globals.NL +
                         "This table must first be converted to text with | as a separator." + Globals.NL + Globals.NL +

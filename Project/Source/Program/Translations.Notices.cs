@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
@@ -25,15 +24,15 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> OpenOnlineSearchNotice
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary OpenOnlineSearchNotice
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Use the %WORD% tag to replace the value." },
         { Languages.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
       };
 
-    static public readonly Dictionary<string, string> OpenOnlineVerseNotice
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary OpenOnlineVerseNotice
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Use the following tags to replace values:" + Globals.NL + Globals.NL +
                         "%BOOKSB% : StudyBible.org book name" + Globals.NL +

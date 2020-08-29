@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
@@ -25,103 +24,103 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> ApplicationDescription
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ApplicationDescription
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Literal word-for-word translation of the Hebrew Bible" },
         { Languages.FR, "Traduction littérale mot-à-mot de la Bible hébraïque" }
       };
 
-    static public readonly Dictionary<string, string> ProgressCreatingData
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressCreatingData
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Creating data..." },
         { Languages.FR, "Création des données..." }
       };
 
-    static public readonly Dictionary<string, string> AskToCreateNewDatabase
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToCreateNewDatabase
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Do you want to create a new database wich will replace the actual?" },
         { Languages.FR, "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToBackupDatabaseBeforeReplace
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToBackupDatabaseBeforeReplace
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Do you want to backup database before replace it?" },
         { Languages.FR, "Voulez-vous archiver la base de données avant de la remplacer ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToRestoreBooksCommonNames
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToRestoreBooksCommonNames
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Restore default books common names?" },
         { Languages.FR, "Restaurer les noms communs par défaut des livres ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToEmptyHistory
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToEmptyHistory
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Empty history?" },
         { Languages.FR, "Vider l'historique ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToEmptyBookmarks
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToEmptyBookmarks
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Empty bookmarks?" },
         { Languages.FR, "Vider les signets?" }
       };
 
-    static public readonly Dictionary<string, string> AskToDeleteBookmark
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToDeleteBookmark
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Remove the bookmark?" },
         { Languages.FR, "Effacer le signet ?" }
       };
 
 
-    static public readonly Dictionary<string, string> BookChapterTitle
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary BookChapterTitle
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "CHAPTER" },
         { Languages.FR, "CHAPITRE" }
       };
 
-    static public readonly Dictionary<ViewMode, Dictionary<string, string>> ViewPanelTitle
-      = new Dictionary<ViewMode, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<ViewMode, NullSafeStringDictionary> ViewPanelTitle
+      = new NullSafeDictionary<ViewMode, NullSafeStringDictionary>()
       {
         {
-          ViewMode.Verses, new Dictionary<string, string>
+          ViewMode.Verses, new NullSafeStringDictionary
           {
             { Languages.EN, "Tanak Verses" },
             { Languages.FR, "Versets du Tanak" }
           }
         },
         {
-          ViewMode.Translations, new Dictionary<string, string>
+          ViewMode.Translations, new NullSafeStringDictionary
           {
             { Languages.EN, "Tanak Translation" },
             { Languages.FR, "Traduction du Tanak" }
           }
         },
         {
-          ViewMode.Text, new Dictionary<string, string>
+          ViewMode.Text, new NullSafeStringDictionary
           {
             { Languages.EN, "Tanak Hebrew Text" },
             { Languages.FR, "Texte Hébreu du Tanak" }
           }
         },
         {
-          ViewMode.ELS50, new Dictionary<string, string>
+          ViewMode.ELS50, new NullSafeStringDictionary
           {
             { Languages.EN, "Tanak ELS50 Verses" },
             { Languages.FR, "Versets ELS50 du Tanak" }
           }
         },
         {
-          ViewMode.Search, new Dictionary<string, string>
+          ViewMode.Search, new NullSafeStringDictionary
           {
             { Languages.EN, "Search in the Tanak" },
             { Languages.FR, "Recherche dans le Tanak" }

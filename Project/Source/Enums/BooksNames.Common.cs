@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewWords
 {
@@ -21,8 +22,8 @@ namespace Ordisoftware.HebrewWords
   static public partial class BooksNames
   {
 
-    static public readonly Dictionary<string, Dictionary<Books, string>> Common
-      = new Dictionary<string, Dictionary<Books, string>>()
+    static public readonly NullSafeDictionary<string, Dictionary<Books, string>> Common
+      = new NullSafeDictionary<string, Dictionary<Books, string>>()
       {
         {
           "fr", new Dictionary<Books, string>
