@@ -27,70 +27,80 @@ namespace Ordisoftware.HebrewWords
     static public readonly NullSafeStringDictionary ImportLinesCountMismatch
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
-                        "Non empty lines count: {0}" + Globals.NL + Globals.NL +
-                        "Must be even." },
-        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
-                        "Nombre de lignes non vides: {0}" + Globals.NL + Globals.NL +
-                        "Doit être pair." }
+        { Languages.EN, "Incorrect elements." + Globals.NL2 +
+                        "Non empty lines count: {0}" + Globals.NL2 +
+                        "Must be even."
+        },
+        { Languages.FR, "Elements incorrects." + Globals.NL2 +
+                        "Nombre de lignes non vides: {0}" + Globals.NL2 +
+                        "Doit être pair."
+        }
       };
 
     static public readonly NullSafeStringDictionary ImportItemsCountMismatch
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
+        { Languages.EN, "Incorrect elements." + Globals.NL2 +
                         "Words count: {0}" + Globals.NL +
                         "Translations count: {1}" + Globals.NL +
-                        "Must be equal."},
-        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
+                        "Must be equal."
+        },
+        { Languages.FR, "Elements incorrects." + Globals.NL2 +
                         "Nombre de mots: {0}" + Globals.NL +
                         "Nombre de translations: {1}" + Globals.NL +
-                        "Doit être égal." }
+                        "Doit être égal."
+        }
       };
 
     static public readonly NullSafeStringDictionary ImportWordsCountMismatch
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL + Globals.NL +
+        { Languages.EN, "Incorrect elements." + Globals.NL2 +
                         "Verse words count: {0}" + Globals.NL +
-                        "Imported words count: {1}" + Globals.NL + Globals.NL +
-                        "Must be equal." },
-        { Languages.FR, "Elements incorrects." + Globals.NL + Globals.NL +
+                        "Imported words count: {1}" + Globals.NL2 +
+                        "Must be equal."
+        },
+        { Languages.FR, "Elements incorrects." + Globals.NL2 +
                         "Nombre de mots du verset: {0}" + Globals.NL +
                         "Nombre de mots importés: {1}" + Globals.NL +Globals.NL +
-                        "Doit être égal." }
+                        "Doit être égal."
+        }
       };
 
     static public readonly NullSafeStringDictionary ImportWordMismatch
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Incorrect hebrew." + Globals.NL + Globals.NL +
+        { Languages.EN, "Incorrect hebrew." + Globals.NL2 +
                         "Verse word: {0}" + Globals.NL +
-                        "Imported word: {1}" + Globals.NL + Globals.NL +
-                        "Must be equal." },
-        { Languages.FR, "Hébreu incorrect." + Globals.NL + Globals.NL +
+                        "Imported word: {1}" + Globals.NL2 +
+                        "Must be equal."
+        },
+        { Languages.FR, "Hébreu incorrect." + Globals.NL2 +
                         "Mot du verset: {0}" + Globals.NL +
-                        "Mot importé: {1}" + Globals.NL + Globals.NL +
-                        "Doit être égal." }
+                        "Mot importé: {1}" + Globals.NL2 +
+                        "Doit être égal."
+        }
       };
 
     static public readonly NullSafeStringDictionary ImportHelp
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL + Globals.NL +
-                        "This table must first be converted to text with | as a separator." + Globals.NL + Globals.NL +
+        { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL2 +
+                        "This table must first be converted to text with | as a separator." + Globals.NL2 +
                         "The import text must be presented in groups of two lines:" + Globals.NL +
                         "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
-                        "- A second containing a list of translations." + Globals.NL + Globals.NL +
-                        "There can be as many groups of two lines as necessary." + Globals.NL + Globals.NL +
-                        "Imported translation fields can be edited in the result grid." },
-        { Languages.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL + Globals.NL +
-                        "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL + Globals.NL +
+                        "- A second containing a list of translations." + Globals.NL2 +
+                        "There can be as many groups of two lines as necessary." + Globals.NL2 +
+                        "Imported translation fields can be edited in the result grid."
+        },
+        { Languages.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
+                        "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL2 +
                         "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
                         "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
-                        "- Une deuxième contenant une liste de traductions." + Globals.NL + Globals.NL +
-                        "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL + Globals.NL +
-                        "Les champs de traduction importés peuvent être édités dans la grille du résultat." }
+                        "- Une deuxième contenant une liste de traductions." + Globals.NL2 +
+                        "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL2 +
+                        "Les champs de traduction importés peuvent être édités dans la grille du résultat."
+        }
       };
 
   }

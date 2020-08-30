@@ -34,29 +34,29 @@ namespace Ordisoftware.HebrewWords
     static public readonly NullSafeStringDictionary OpenOnlineVerseNotice
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Use the following tags to replace values:" + Globals.NL + Globals.NL +
+        { Languages.EN, "Use the following tags to replace values:" + Globals.NL2 +
                         "%BOOKSB% : StudyBible.org book name" + Globals.NL +
                         "%BOOKBIBLEHUB% : BibleHub.org book name" + Globals.NL +
                         "%BOOKCHABAD% : Chabad.org book name" + Globals.NL +
                         "%BOOKEL% : LEvangile.com book name" + Globals.NL +
                         "%BOOKMM% : Mechon-Mamre.org book name" + Globals.NL +
-                        "%BOOKDJEP% : Djep.hd.free.fr book name" + Globals.NL + Globals.NL +
+                        "%BOOKDJEP% : Djep.hd.free.fr book name" + Globals.NL2 +
                         "%BOOKNUM% : Book number" + Globals.NL +
                         "%CHAPTERNUM% : Chapter number" + Globals.NL +
-                        "%VERSENUM% : Verse number" + Globals.NL + Globals.NL +
+                        "%VERSENUM% : Verse number" + Globals.NL2 +
                         "%BOOKNUM#2% : Book number in two digits" + Globals.NL +
                         "%CHAPTERNUM#2% : Chapter number in two digits" + Globals.NL +
                         "%VERSENUM#2% : Verse number in two digits" },
-        { Languages.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL + Globals.NL +
+        { Languages.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
                         "%BOOKSB% : Nom du livre StudyBible.org" + Globals.NL +
                         "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + Globals.NL +
                         "%BOOKCHABAD% : Nom du livre Chabad.org" + Globals.NL +
                         "%BOOKEL% : Nom du livre LEvangile.com" + Globals.NL +
                         "%BOOKMM% : Nom du livre Mechon-Mamre.org" + Globals.NL +
-                        "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Globals.NL + Globals.NL +
+                        "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Globals.NL2 +
                         "%BOOKNUM% : Numéro du livre" + Globals.NL +
                         "%CHAPTERNUM% : Numéro du chaptre" + Globals.NL +
-                        "%VERSENUM% : Numéro du verset" + Globals.NL + Globals.NL +
+                        "%VERSENUM% : Numéro du verset" + Globals.NL2 +
                         "%BOOKNUM#2% : Numéro du livre sur 2 digits" + Globals.NL +
                         "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + Globals.NL +
                         "%VERSENUM#2% : Numéro du verset sur 2 digits" },

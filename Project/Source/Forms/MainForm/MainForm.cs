@@ -1089,7 +1089,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearHistory_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.AskToEmptyHistory.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToEmptyHistory.GetLang()) ) return;
       History.Clear();
       UpdateHistory();
     }
@@ -1101,7 +1101,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.AskToEmptyBookmarks.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToEmptyBookmarks.GetLang()) ) return;
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;

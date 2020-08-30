@@ -31,13 +31,6 @@ namespace Ordisoftware.HebrewWords
         { Languages.FR, "Traduction littérale mot-à-mot de la Bible hébraïque" }
       };
 
-    static public readonly NullSafeStringDictionary ProgressCreatingData
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Creating data..." },
-        { Languages.FR, "Création des données..." }
-      };
-
     static public readonly NullSafeStringDictionary AskToCreateNewDatabase
       = new NullSafeStringDictionary()
       {
@@ -58,28 +51,6 @@ namespace Ordisoftware.HebrewWords
         { Languages.EN, "Restore default books common names?" },
         { Languages.FR, "Restaurer les noms communs par défaut des livres ?" }
       };
-
-    static public readonly NullSafeStringDictionary AskToEmptyHistory
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Empty history?" },
-        { Languages.FR, "Vider l'historique ?" }
-      };
-
-    static public readonly NullSafeStringDictionary AskToEmptyBookmarks
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Empty bookmarks?" },
-        { Languages.FR, "Vider les signets?" }
-      };
-
-    static public readonly NullSafeStringDictionary AskToDeleteBookmark
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Remove the bookmark?" },
-        { Languages.FR, "Effacer le signet ?" }
-      };
-
 
     static public readonly NullSafeStringDictionary BookChapterTitle
       = new NullSafeStringDictionary()
