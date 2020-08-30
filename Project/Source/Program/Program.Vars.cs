@@ -28,26 +28,26 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate application documents folder.
     /// </summary>
-    static public readonly string TanakFolderPath
-      = Globals.DocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
+    static public string TanakFolderPath
+      => Globals.DocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate application documents folder.
     /// </summary>
-    static public readonly string ParashaFolderPath
-      = Globals.DocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
+    static public string ParashaFolderPath
+      => Globals.DocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the bookmaks.
     /// </summary>
     static public string BookmarksFilename
-      = Globals.UserDataFolderPath + "Bookmarks.txt";
+      => Globals.UserDataFolderPath + "Bookmarks.txt";
 
     /// <summary>
     /// Indicate filename of the history.
     /// </summary>
     static public string HistoryFilename
-    = Globals.UserDataFolderPath + "History.txt";
+    => Globals.UserDataFolderPath + "History.txt";
 
     /// <summary>
     /// Indicate the grammar guide form.
@@ -57,7 +57,8 @@ namespace Ordisoftware.HebrewWords
       get
       {
         if ( _GrammarGuideForm == null )
-          _GrammarGuideForm = new HTMLBrowserForm(Localizer.GrammarGuideTitle, Globals.GrammarGuideFilename,
+          _GrammarGuideForm = new HTMLBrowserForm(Localizer.GrammarGuideTitle,
+                                                  Globals.GrammarGuideFilename,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;

@@ -46,7 +46,8 @@ namespace Ordisoftware.HebrewWords
                         "%VERSENUM% : Verse number" + Globals.NL2 +
                         "%BOOKNUM#2% : Book number in two digits" + Globals.NL +
                         "%CHAPTERNUM#2% : Chapter number in two digits" + Globals.NL +
-                        "%VERSENUM#2% : Verse number in two digits" },
+                        "%VERSENUM#2% : Verse number in two digits"
+        },
         { Languages.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
                         "%BOOKSB% : Nom du livre StudyBible.org" + Globals.NL +
                         "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + Globals.NL +
@@ -59,7 +60,8 @@ namespace Ordisoftware.HebrewWords
                         "%VERSENUM% : Numéro du verset" + Globals.NL2 +
                         "%BOOKNUM#2% : Numéro du livre sur 2 digits" + Globals.NL +
                         "%CHAPTERNUM#2% : Numéro du chapitre sur 2 digits" + Globals.NL +
-                        "%VERSENUM#2% : Numéro du verset sur 2 digits" },
+                        "%VERSENUM#2% : Numéro du verset sur 2 digits"
+        },
       };
 
   }
