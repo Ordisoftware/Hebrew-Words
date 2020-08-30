@@ -252,12 +252,12 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.OpenOnlineVerseNotice.GetLang());
+      DisplayManager.ShowInformation(Translations.OpenOnlineVerseNotice.GetLang());
     }
 
     private void ActionOnlineSearchHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.OpenOnlineSearchNotice.GetLang());
+      DisplayManager.ShowInformation(Translations.OpenOnlineSearchNotice.GetLang());
     }
 
     private void checkBox1_CheckedChanged(object sender, EventArgs e)

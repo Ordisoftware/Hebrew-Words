@@ -118,7 +118,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.ImportHelp.GetLang());
+      DisplayManager.ShowInformation(Translations.ImportHelp.GetLang());
     }
 
   }

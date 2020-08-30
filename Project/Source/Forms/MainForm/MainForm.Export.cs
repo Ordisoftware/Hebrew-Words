@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewWords
             Shell.Run(SaveFileDialogRTF.FileName);
           break;
         default:
-          DisplayManager.ShowAdvert("Not implemented.");
+          DisplayManager.ShowInformation("Not implemented.");
           break;
       }
     }
@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewWords
             Shell.Run(SaveFileDialogRTF.FileName);
           break;
         default:
-          DisplayManager.ShowAdvert("Not implemented.");
+          DisplayManager.ShowInformation("Not implemented.");
           break;
       }
     }
