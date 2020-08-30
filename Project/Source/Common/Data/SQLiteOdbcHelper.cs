@@ -67,15 +67,15 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     static public void InitializeVersion(this OdbcConnection connection)
     {
+      ADONETAccess = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
       try
       {
         using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
           EngineVersion = "SQLite " + command.ExecuteScalar().ToString();
-        ADONETAccess = connection.GetType().Name;
       }
-      catch ( Exception ex )
+      catch
       {
-        ex.Manage();
+        EngineVersion = Localizer.ErrorSlot.GetLang();
       }
     }
 
