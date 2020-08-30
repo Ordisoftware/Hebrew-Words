@@ -69,7 +69,7 @@
     <Compile Include="Source\Common\Controls\LettersControl.Designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Controls\LettersControl.Prepare.cs">
+    <Compile Include="Source\Common\Controls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\UndoRedoTextBox.Actions.cs">
