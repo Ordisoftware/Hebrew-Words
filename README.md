@@ -25,26 +25,20 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 ## Requirements
 
-- Windows Vista x32/x64 or higher
+- Windows 7 SP1 x32/x64 or higher
 - Screen 1024x768 or higher
-- Framework .NET 4.5
+- Framework .NET 4.7.2
 - SQLite ODBC Driver
 
 ## Screenshots
 
-![verses View](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png)
+[![verses View](https://i1.wp.com/www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png?resize=300%2C233&ssl=1)](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-verses-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Translation View](https://i1.wp.com/www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png?resize=300%2C233&ssl=1)](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png)
 
-![Translation View](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-translation-en.png)
-
-![Search View](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png)
-
-![Statistics](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png)
+[![Search View](https://i1.wp.com/www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png?resize=300%2C233&ssl=1)](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-search-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Statistics](https://i0.wp.com/www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png?resize=149%2C200&ssl=1)](https://www.ordisoftware.com/uploads/2019/09/hebrew-words-stats-en.png)
 
 ## Videos
 
-[![Showing video](https://img.youtube.com/vi/2c5JAdFU1Kk/0.jpg)](https://www.youtube.com/watch?v=2c5JAdFU1Kk)
-
-[![Showing video](https://img.youtube.com/vi/Wc5SdiASvCg/0.jpg)](https://www.youtube.com/watch?v=Wc5SdiASvCg)
+[![Showing video](https://img.youtube.com/vi/2c5JAdFU1Kk/mqdefault.jpg)](https://www.youtube.com/watch?v=2c5JAdFU1Kk)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/Wc5SdiASvCg/mqdefault.jpg)](https://www.youtube.com/watch?v=Wc5SdiASvCg)
 
 ## Frequently asked questions
 
