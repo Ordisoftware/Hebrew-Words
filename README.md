@@ -98,7 +98,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2021.__.__ - Version 3.0
 
-- Improve check update to allow auto update or direct download or open app web page.
 - Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
 - Fix error message when several SearchTranslatedForm are opened.
 - Fix error message when typing in the comment boxes.
@@ -128,12 +127,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
-- Fix app not responding on windows logoff or system shutdown.
-- Improve UI/UX.
-- Code refactoring.
 - Move online providers values from code to files in the application documents folder.
 - Move tanak text files in Documents in a dedicated folder.
-- Update help.
 
 >>>>- Add bookmarks backup
 
@@ -163,6 +158,16 @@ Yes, because implementing features requires a lot of Windows resources that depe
 (- Database updated to support internal strong concordance popup menus in the future.)
 
 - Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
+
+- Add usage statistics form in tools menu.
+- Improve check update to allow auto update or direct download or open app web page.
+- Fix app not responding on windows logoff or system shutdown.
+- Some UI/UX improvements.
+- Some code refactorings.
+- Update help.
+- Update to SQLite 3.32.3 ODBC Driver.
+- Update Framework .NET version to 4.7.2 for only Windows 7 SP1 or higher.
+- Improve setup.
 
 #### 2019.11.14 - Version 2.4
 
