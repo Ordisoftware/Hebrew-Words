@@ -33,7 +33,17 @@ namespace Ordisoftware.HebrewWords
       try
       {
         PopulateData();
-        Bookmarks.Load();
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
+                                 Localizer.ContactSupport[Languages.FR]);
+        ex.Manage();
+        Environment.Exit(-1);
+      }
+      try
+      {
+      Bookmarks.Load();
         UpdateBookmarks();
         History.Load();
         UpdateHistory();
@@ -52,11 +62,6 @@ namespace Ordisoftware.HebrewWords
         else
           GoTo(1, 1, 1, true);
         ActionSave.PerformClick();
-      }
-      catch ( OdbcException ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-        Application.Exit();
       }
       catch ( Exception ex )
       {
@@ -173,15 +178,6 @@ namespace Ordisoftware.HebrewWords
           DataSet.Verses.RowChanged -= progress;
           DataSet.Words.RowChanged -= progress;
         }
-      }
-      catch ( OdbcException ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-        Application.Exit();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
       }
       finally
       {

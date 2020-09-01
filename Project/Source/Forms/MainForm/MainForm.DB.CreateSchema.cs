@@ -33,13 +33,12 @@ namespace Ordisoftware.HebrewWords
       bool upgraded = false;
       OdbcSQLiteHelper.CreateDSNIfNotExists();
       using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-        try
-        {
-          connection.Open();
-          if ( Program.Settings.VacuumAtStartup )
-            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
-          connection.CheckTable("Books",
-                                @"CREATE TABLE 'Books' 
+      {
+        connection.Open();
+        if ( Program.Settings.VacuumAtStartup )
+          Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
+        connection.CheckTable("Books",
+                              @"CREATE TABLE 'Books' 
                                   ( 
                                     ID TEXT DEFAULT '' NOT NULL,
                                     Number INTEGER NOT NULL,
@@ -51,8 +50,8 @@ namespace Ordisoftware.HebrewWords
                                     Memo TEXT DEFAULT '' NOT NULL,
                                     CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                                   )");
-          connection.CheckTable("Chapters",
-                                @"CREATE TABLE Chapters 
+        connection.CheckTable("Chapters",
+                              @"CREATE TABLE Chapters 
                                   ( 
                                     ID TEXT DEFAULT '' NOT NULL,
                                     BookID TEXT DEFAULT '' NOT NULL,
@@ -63,8 +62,8 @@ namespace Ordisoftware.HebrewWords
                                     CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
                                     FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
                                   )");
-          connection.CheckTable("Verses",
-                                @"CREATE TABLE Verses 
+        connection.CheckTable("Verses",
+                              @"CREATE TABLE Verses 
                                   ( 
                                     ID TEXT DEFAULT '' NOT NULL,
                                     ChapterID TEXT DEFAULT '' NOT NULL,
@@ -73,8 +72,8 @@ namespace Ordisoftware.HebrewWords
                                     CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
                                     FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
                                   )");
-          connection.CheckTable("Words",
-                                @"CREATE TABLE Words 
+        connection.CheckTable("Words",
+                              @"CREATE TABLE Words 
                                   ( 
                                     ID TEXT DEFAULT '' NOT NULL,
                                     VerseID TEXT DEFAULT '' NOT NULL,
@@ -85,28 +84,20 @@ namespace Ordisoftware.HebrewWords
                                     CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
                                     FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
                                   )");
-          //Transliteration TEXT DEFAULT '' NOT NULL,
-          //ClassicTranslation TEXT DEFAULT '' NOT NULL,
-          //ConcordanceID TEXT DEFAULT '' NOT NULL,
-          //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-          connection.CheckColumn("Books", "Original", "TEXT", "''", true);
-          connection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
-          connection.CheckColumn("Books", "Memo", "TEXT", "''", true);
-          connection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
-          connection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
-          //upgraded = connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
-          //upgraded = connection.CheckColumn("Words", "Transliteration", sqlColumn);
-          //upgraded = connection.CheckColumn("Words", "ConcordanceID", sqlColumn);
-          //NeedUpgradeForConcordances = upgraded;
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
-        finally
-        {
-          connection.Close();
-        }
+        //Transliteration TEXT DEFAULT '' NOT NULL,
+        //ClassicTranslation TEXT DEFAULT '' NOT NULL,
+        //ConcordanceID TEXT DEFAULT '' NOT NULL,
+        //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
+        connection.CheckColumn("Books", "Original", "TEXT", "''", true);
+        connection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
+        connection.CheckColumn("Books", "Memo", "TEXT", "''", true);
+        connection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
+        connection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
+        //upgraded = connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
+        //upgraded = connection.CheckColumn("Words", "Transliteration", sqlColumn);
+        //upgraded = connection.CheckColumn("Words", "ConcordanceID", sqlColumn);
+        //NeedUpgradeForConcordances = upgraded;
+      }
     }
 
   }
