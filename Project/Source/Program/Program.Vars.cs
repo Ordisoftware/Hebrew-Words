@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewWords
     /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
-    static public readonly Properties.Settings Settings 
+    static public readonly Properties.Settings Settings
       = Properties.Settings.Default;
 
     /// <summary>
@@ -86,19 +86,35 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     static public string UserDataFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
-
     /// <summary>
     /// Indicate user documents folder path.
     /// </summary>
     static public string UserDocumentsFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
-
     /// <summary>
     /// Indicate the extension of database file.
     /// </summary>

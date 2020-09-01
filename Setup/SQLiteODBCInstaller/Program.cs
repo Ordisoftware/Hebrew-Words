@@ -30,9 +30,9 @@ namespace SQLiteODBCInstaller
         MessageBox.Show(ex.Message);
       }
       if ( IntPtr.Size > 4 )
-        RunShell("sqliteodbc_w64.exe", "/S");
+        RunShell("sqliteodbc_w64.exe", "");
       else
-        RunShell("sqliteodbc.exe", "/S");
+        RunShell("sqliteodbc.exe", "");
     }
 
     static public void RunShell(string filename, string arguments)
@@ -43,6 +43,7 @@ namespace SQLiteODBCInstaller
           process.StartInfo.FileName = filename;
           process.StartInfo.Arguments = arguments;
           process.Start();
+          process.WaitForExit();
         }
         catch ( Exception ex )
         {

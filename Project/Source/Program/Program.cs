@@ -31,7 +31,6 @@ namespace Ordisoftware.HebrewWords
       CheckCommandLineArguments(args);
       ApplyCurrentLanguage();
       SetFormsIcon();
-      InitializeUserFolders();
       Application.Run(MainForm.Instance);
     }
 
