@@ -31,6 +31,7 @@ namespace Ordisoftware.HebrewWords
     public void CreateSchemaIfNotExists()
     {
       bool upgraded = false;
+      OdbcSQLiteHelper.CreateDSNIfNotExists();
       using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
         try
         {
