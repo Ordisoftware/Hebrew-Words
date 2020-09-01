@@ -169,6 +169,10 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update Framework .NET version to 4.7.2 for only Windows 7 SP1 or higher.
 - Improve setup.
 
+#### 2020.09.01 - Version 2.5
+
+- Maintenance release.
+
 #### 2019.11.14 - Version 2.4
 
 - Add history persistence.
