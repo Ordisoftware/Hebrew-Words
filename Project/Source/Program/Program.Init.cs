@@ -110,24 +110,6 @@ namespace Ordisoftware.HebrewWords
       GrammarGuideForm.Instance.Icon = MainForm.Instance.Icon;
     }
 
-    static private void InitializeUserFolders()
-    {
-      UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                           + Path.DirectorySeparatorChar
-                           + AboutBox.Instance.AssemblyCompany
-                           + Path.DirectorySeparatorChar
-                           + AboutBox.Instance.AssemblyTitle
-                           + Path.DirectorySeparatorChar;
-      UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                              + Path.DirectorySeparatorChar
-                              + AboutBox.Instance.AssemblyCompany
-                              + Path.DirectorySeparatorChar
-                              + AboutBox.Instance.AssemblyTitle
-                              + Path.DirectorySeparatorChar;
-      Directory.CreateDirectory(UserDataFolderPath);
-      Directory.CreateDirectory(UserDocumentsFolderPath);
-    }
-
   }
 
 }
