@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewWords
       }
       if ( count != 0 )
         return;
-      string filename = Program.AppCSVDocumentsFolderPath + "BHS-Strong-no\\brief_info_StrongNo.csv";
+      string filename = Path.Combine(Program.AppCSVDocumentsFolderPath, "BHS-Strong-no\\brief_info_StrongNo.csv");
       var lines = File.ReadAllLines(filename).ToList();
       foreach ( string line in lines )
       {

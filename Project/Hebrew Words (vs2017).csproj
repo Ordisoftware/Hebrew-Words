@@ -88,6 +88,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\Core\AbortException.cs" />
+    <Compile Include="Source\Common\Core\Chronometer.cs" />
     <Compile Include="Source\Common\Core\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\LogEvent.cs" />
     <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
@@ -148,6 +149,7 @@
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\System\EnumHelper.cs" />
+    <Compile Include="Source\Common\System\Globals.Assembly.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
     <Compile Include="Source\Common\System\Languages.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />

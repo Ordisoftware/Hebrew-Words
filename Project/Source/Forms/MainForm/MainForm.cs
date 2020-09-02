@@ -547,7 +547,7 @@ namespace Ordisoftware.HebrewWords
       string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       ReLoadData(() =>
       {
-        File.Delete(Globals.UserDataFolderPath + filename);
+        File.Delete(Path.Combine(Globals.UserDataFolderPath, filename));
       });
     }
 
@@ -566,8 +566,8 @@ namespace Ordisoftware.HebrewWords
         return;
       ReLoadData(() =>
       {
-        File.Delete(Globals.UserDataFolderPath + filename);
-        File.Copy(OpenFileDialogDB.FileName, Globals.UserDataFolderPath + filename);
+        File.Delete(Path.Combine(Globals.UserDataFolderPath,filename));
+        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, filename));
       });
     }
 
@@ -583,7 +583,7 @@ namespace Ordisoftware.HebrewWords
       SaveFileDialogDB.FileName = filename;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Globals.UserDataFolderPath + filename, SaveFileDialogDB.FileName);
+      File.Copy(Path.Combine(Globals.UserDataFolderPath, filename), SaveFileDialogDB.FileName);
     }
 
     /// <summary>

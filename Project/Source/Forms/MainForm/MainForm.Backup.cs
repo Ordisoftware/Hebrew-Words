@@ -43,13 +43,13 @@ namespace Ordisoftware.HebrewWords
         File.Delete(list[0].FullName);
         list.RemoveAt(0);
       }
-      string partPath = Program.Settings.BackupPath + partBackup;
+      string partPath = Path.Combine(Program.Settings.BackupPath, partBackup);
       var date = DateTime.Now;
       string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
                                      date.Year, date.Month, date.Day,
                                      date.Hour, date.Minute, date.Second);
-      string fileSource = Globals.UserDataFolderPath + partFilename + Globals.DatabaseFileExtension;
-      string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
+      string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
+      string fileDest = Path.Combine(partPath, partFilename + " " + strDate + Globals.DatabaseFileExtension);
       if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
     }
 

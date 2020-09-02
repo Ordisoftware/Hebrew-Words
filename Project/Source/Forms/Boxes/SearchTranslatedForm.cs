@@ -161,7 +161,7 @@ namespace Ordisoftware.HebrewWords
           ActionAddTranslation.PerformClick();
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.TranslatedItemDoubleClickOpen.GetFullname());
+          throw new NotImplementedExceptionEx(Program.Settings.TranslatedItemDoubleClickOpen.ToStringFull());
       }
     }
 

@@ -29,25 +29,25 @@ namespace Ordisoftware.HebrewWords
     /// Indicate application documents folder.
     /// </summary>
     static public string TanakFolderPath
-      => Globals.DocumentsFolderPath + "Tanak" + Path.DirectorySeparatorChar;
+      => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
 
     /// <summary>
     /// Indicate application documents folder.
     /// </summary>
     static public string ParashaFolderPath
-      => Globals.DocumentsFolderPath + "Parasha" + Path.DirectorySeparatorChar;
+      => Path.Combine(Globals.DocumentsFolderPath, "Parasha");
 
     /// <summary>
     /// Indicate filename of the bookmaks.
     /// </summary>
     static public string BookmarksFilename
-      => Globals.UserDataFolderPath + "Bookmarks.txt";
+      => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
 
     /// <summary>
     /// Indicate filename of the history.
     /// </summary>
     static public string HistoryFilename
-    => Globals.UserDataFolderPath + "History.txt";
+    => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
     /// <summary>
     /// Indicate the grammar guide form.

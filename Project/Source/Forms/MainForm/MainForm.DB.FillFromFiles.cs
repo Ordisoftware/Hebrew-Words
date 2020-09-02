@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewWords
         }
         foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
         {
-          string filename = path + bookid.ToString().Replace("_", " ") + ".txt";
+          string filename = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
           if ( !File.Exists(filename) )
           {
             DisplayManager.ShowWarning(Localizer.FileNotFound.GetLang(filename));
