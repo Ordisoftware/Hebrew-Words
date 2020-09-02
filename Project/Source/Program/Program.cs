@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewWords
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      ExceptionManager.Active = Settings.DebuggerEnabled;
+      DebugManager.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
