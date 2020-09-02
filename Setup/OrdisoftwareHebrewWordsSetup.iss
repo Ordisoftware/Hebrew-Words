@@ -9,56 +9,32 @@
 AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 AppMutex=9117fa5b-51de-481e-9cb1-65a606d6ca69
 AppCopyright=Copyright 2012-2020 Olivier Rogier
-#include "Scripts\CommonSetup.iss"
+#include "Scripts\Setup.iss"
 
-#include "Scripts\CommonMessages.iss"
+[Languages]
+#include "Scripts\Languages.iss"
+
+[CustomMessages]
+#include "Scripts\Messages.iss"
 
 [Tasks]
-#include "Scripts\CommonTasks.iss"
+#include "Scripts\Tasks.iss"
 
 
 [Dirs]
 
 [InstallDelete]
-#include "Scripts\CommonInstallDelete.iss"
+#include "Scripts\InstallDelete.iss"
 
 [Files]
-#include "Scripts\CommonFiles.iss"
+#include "Scripts\Files.iss"
 
 [Icons]
-#include "Scripts\CommonIcons.iss"
+#include "Scripts\Icons.iss"
 
 
 [Run]
-#include "Scripts\CommonRun.iss"
+#include "Scripts\Run.iss"
 
 [Code]
-procedure CurStepChanged(CurStep: TSetupStep);
-var
-	filename, sourcepath, destpath : string;
-begin
-	case CurStep of
-		// executed just before installation starts
-    ssInstall:
-    begin
-      sourcepath := ExpandConstant('{app}') + '\Bin\';
-      destpath := ExpandConstant('{userappdata}') + '\{#MyAppPublisher}\{#MyAppName}\';
-      filename := 'Bookmarks.txt';
-			if FileExists(sourcepath + filename) then
-			begin
-				RenameFile(sourcepath + filename, destpath + filename);
-			end;
-      filename := 'History.txt';
-			if FileExists(sourcepath + filename) then
-			begin
-				RenameFile(sourcepath + filename, destpath + filename);
-			end;
-    end;
-		// executed just after the installation finishes
-		ssPostInstall:
-		begin
-		end;
-  end;
-end;
-
 #include "Scripts\CheckDotNetFramework.iss"
