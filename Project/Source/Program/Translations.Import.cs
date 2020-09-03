@@ -24,8 +24,8 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly NullSafeStringDictionary ImportLinesCountMismatch
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ImportLinesCountMismatch
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Incorrect elements." + Globals.NL2 +
                         "Non empty lines count: {0}" + Globals.NL2 +
@@ -37,8 +37,8 @@ namespace Ordisoftware.HebrewWords
         }
       };
 
-    static public readonly NullSafeStringDictionary ImportItemsCountMismatch
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ImportItemsCountMismatch
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Incorrect elements." + Globals.NL2 +
                         "Words count: {0}" + Globals.NL +
@@ -52,8 +52,8 @@ namespace Ordisoftware.HebrewWords
         }
       };
 
-    static public readonly NullSafeStringDictionary ImportWordsCountMismatch
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ImportWordsCountMismatch
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Incorrect elements." + Globals.NL2 +
                         "Verse words count: {0}" + Globals.NL +
@@ -67,8 +67,8 @@ namespace Ordisoftware.HebrewWords
         }
       };
 
-    static public readonly NullSafeStringDictionary ImportWordMismatch
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ImportWordMismatch
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Incorrect hebrew." + Globals.NL2 +
                         "Verse word: {0}" + Globals.NL +
@@ -82,8 +82,8 @@ namespace Ordisoftware.HebrewWords
         }
       };
 
-    static public readonly NullSafeStringDictionary ImportHelp
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ImportHelp
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL2 +
                         "This table must first be converted to text with | as a separator." + Globals.NL2 +

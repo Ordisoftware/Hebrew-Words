@@ -51,9 +51,9 @@ namespace Ordisoftware.HebrewWords
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
-      string lang = Settings.Language;
+      Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);
-      Settings.Language = lang;
+      Settings.LanguageSelected = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
     }
@@ -91,7 +91,7 @@ namespace Ordisoftware.HebrewWords
     static internal void UpdateLocalization()
     {
       string lang = "en-US";
-      if ( Settings.Language == "fr" ) lang = "fr-FR";
+      if ( Settings.LanguageSelected == Language.French ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;

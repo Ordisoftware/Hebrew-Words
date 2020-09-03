@@ -162,12 +162,12 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateLanguagesButtons()
     {
-      if ( Program.Settings.Language == "en" )
+      if ( Program.Settings.LanguageSelected == Language.English )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Program.Settings.Language == "fr" )
+      if ( Program.Settings.LanguageSelected == Language.French )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      Program.Settings.Language = "en";
+      Program.Settings.LanguageSelected = Language.English;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      Program.Settings.Language = "fr";
+      Program.Settings.LanguageSelected = Language.French;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -202,7 +202,7 @@ namespace Ordisoftware.HebrewWords
       if ( !DisplayManager.QueryYesNo(Localizer.AskToResetPreferences.GetLang()) ) return;
       Program.Settings.Reset();
       Program.Settings.Reload();
-      Program.Settings.Language = Languages.Current;
+      Program.Settings.LanguageSelected = Languages.Current;
       Program.Settings.Store();
       Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
       Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;

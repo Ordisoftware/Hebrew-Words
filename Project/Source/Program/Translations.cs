@@ -24,74 +24,74 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly NullSafeStringDictionary ApplicationDescription
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> ApplicationDescription
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Literal word-for-word translation of the Hebrew Bible" },
         { Languages.FR, "Traduction littérale mot-à-mot de la Bible hébraïque" }
       };
 
-    static public readonly NullSafeStringDictionary AskToCreateNewDatabase
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> AskToCreateNewDatabase
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Do you want to create a new database wich will replace the actual?" },
         { Languages.FR, "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?" }
       };
 
-    static public readonly NullSafeStringDictionary AskToBackupDatabaseBeforeReplace
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> AskToBackupDatabaseBeforeReplace
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Do you want to backup database before replace it?" },
         { Languages.FR, "Voulez-vous archiver la base de données avant de la remplacer ?" }
       };
 
-    static public readonly NullSafeStringDictionary AskToRestoreBooksCommonNames
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> AskToRestoreBooksCommonNames
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "Restore default books common names?" },
         { Languages.FR, "Restaurer les noms communs par défaut des livres ?" }
       };
 
-    static public readonly NullSafeStringDictionary BookChapterTitle
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language> BookChapterTitle
+      = new NullSafeOfStringDictionary<Language>
       {
         { Languages.EN, "CHAPTER" },
         { Languages.FR, "CHAPITRE" }
       };
 
-    static public readonly NullSafeDictionary<ViewMode, NullSafeStringDictionary> ViewPanelTitle
-      = new NullSafeDictionary<ViewMode, NullSafeStringDictionary>()
+    static public readonly NullSafeDictionary<ViewMode, NullSafeOfStringDictionary<Language>> ViewPanelTitle
+      = new NullSafeDictionary<ViewMode, NullSafeOfStringDictionary<Language>>()
       {
         {
-          ViewMode.Verses, new NullSafeStringDictionary
+          ViewMode.Verses, new NullSafeOfStringDictionary<Language>
           {
             { Languages.EN, "Tanak Verses" },
             { Languages.FR, "Versets du Tanak" }
           }
         },
         {
-          ViewMode.Translations, new NullSafeStringDictionary
+          ViewMode.Translations, new NullSafeOfStringDictionary<Language>
           {
             { Languages.EN, "Tanak Translation" },
             { Languages.FR, "Traduction du Tanak" }
           }
         },
         {
-          ViewMode.Text, new NullSafeStringDictionary
+          ViewMode.Text, new NullSafeOfStringDictionary<Language>
           {
             { Languages.EN, "Tanak Hebrew Text" },
             { Languages.FR, "Texte Hébreu du Tanak" }
           }
         },
         {
-          ViewMode.ELS50, new NullSafeStringDictionary
+          ViewMode.ELS50, new NullSafeOfStringDictionary<Language>
           {
             { Languages.EN, "Tanak ELS50 Verses" },
             { Languages.FR, "Versets ELS50 du Tanak" }
           }
         },
         {
-          ViewMode.Search, new NullSafeStringDictionary
+          ViewMode.Search, new NullSafeOfStringDictionary<Language>
           {
             { Languages.EN, "Search in the Tanak" },
             { Languages.FR, "Recherche dans le Tanak" }

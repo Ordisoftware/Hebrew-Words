@@ -22,11 +22,11 @@ namespace Ordisoftware.HebrewWords
   static public partial class BooksNames
   {
 
-    static public readonly NullSafeDictionary<string, Dictionary<Books, string>> Common
-      = new NullSafeDictionary<string, Dictionary<Books, string>>()
+    static public readonly NullSafeDictionary<Language, NullSafeOfStringDictionary<Books>> Common
+      = new NullSafeDictionary<Language, NullSafeOfStringDictionary<Books>>()
       {
         {
-          "fr", new Dictionary<Books, string>
+          Languages.FR, new NullSafeOfStringDictionary<Books>
           {
             // Torah
             { Books.Bereshit,          "Génèse"},
@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          "en", new Dictionary<Books, string>
+          Languages.EN, new NullSafeOfStringDictionary<Books>
           {
             // Torah
             { Books.Bereshit, "Genesis" },
