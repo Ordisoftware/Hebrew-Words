@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewWords
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         string word = ((WordControl)ActiveControl).Reference.Word.Original;
-        Shell.Run(( (string)menuitem.Tag ).Replace("%WORD%", word));
+        SystemManager.Run(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
     }
 
@@ -529,7 +529,7 @@ namespace Ordisoftware.HebrewWords
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      Shell.OpenWebLink(url);
+      SystemManager.OpenWebLink(url);
     }
 
     /// <summary>
@@ -593,7 +593,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionOpenBackupPath_Click(object sender, EventArgs e)
     {
-      Shell.Run(Program.Settings.BackupPath);
+      SystemManager.Run(Program.Settings.BackupPath);
     }
 
     /// <summary>
@@ -710,7 +710,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Shell.Run(Globals.HelpFilename);
+      SystemManager.Run(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -720,7 +720,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebHome_Click(object sender, EventArgs e)
     {
-      Shell.OpenApplicationHome();
+      SystemManager.OpenApplicationHome();
     }
 
     /// <summary>
@@ -730,7 +730,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
-      Shell.OpenContactPage();
+      SystemManager.OpenContactPage();
     }
 
     /// <summary>
@@ -740,7 +740,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      Shell.CreateGitHubIssue();
+      SystemManager.CreateGitHubIssue();
     }
 
     /// <summary>
@@ -766,7 +766,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
     {
-      Shell.OpenApplicationReleaseNotes();
+      SystemManager.OpenApplicationReleaseNotes();
     }
 
     /// <summary>

@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewWords
     [STAThread]
     static void Main(string[] args)
     {
-      if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
+      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewWords
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
       string lang = Settings.Language;
-      Shell.CheckCommandLineArguments(args, ref lang);
+      SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewWords
         else
           MainForm.Instance.SyncUI(() => MainForm.Instance.Show());
       server.Close();
-      SystemHelper.CreateIPCServer(IPCRequest);
+      SystemManager.CreateIPCServer(IPCRequest);
     }
 
     /// <summary>
