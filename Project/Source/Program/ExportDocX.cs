@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewWords
             }
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.Run(filename);
+              SystemManager.RunShell(filename);
           }
           catch ( Exception ex )
           {
@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewWords
               AddVerse(verse, includeTranslation);
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.Run(filename);
+              SystemManager.RunShell(filename);
           }
           catch ( Exception ex )
           {
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewWords
             AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.Run(filename);
+              SystemManager.RunShell(filename);
           }
           catch ( Exception ex )
           {

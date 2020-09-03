@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewWords
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         string word = ((WordControl)ActiveControl).Reference.Word.Original;
-        SystemManager.Run(( (string)menuitem.Tag ).Replace("%WORD%", word));
+        SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
     }
 
@@ -593,7 +593,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionOpenBackupPath_Click(object sender, EventArgs e)
     {
-      SystemManager.Run(Program.Settings.BackupPath);
+      SystemManager.RunShell(Program.Settings.BackupPath);
     }
 
     /// <summary>
@@ -710,7 +710,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemManager.Run(Globals.HelpFilename);
+      SystemManager.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
