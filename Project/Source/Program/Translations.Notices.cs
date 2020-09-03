@@ -24,15 +24,15 @@ namespace Ordisoftware.HebrewWords
   static public partial class Translations
   {
 
-    static public readonly NullSafeOfStringDictionary<Language> OpenOnlineSearchNotice
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary OpenOnlineSearchNotice
+      = new TranslationsDictionary
       {
         { Languages.EN, "Use the %WORD% tag to replace the value." },
         { Languages.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> OpenOnlineVerseNotice
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary OpenOnlineVerseNotice
+      = new TranslationsDictionary
       {
         { Languages.EN, "Use the following tags to replace values:" + Globals.NL2 +
                         "%BOOKSB% : StudyBible.org book name" + Globals.NL +
