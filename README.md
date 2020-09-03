@@ -163,7 +163,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve debugger to support logging.
 - Improve exception form to view log and send mail in addition to create a GitHub issue.
-- Fix app not responding on windows logoff or system shutdown.
 - Some UI/UX improvements.
 - Some code refactorings.
 - Update help.
