@@ -36,8 +36,8 @@ namespace Ordisoftware.HebrewWords
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
-                                 Localizer.ContactSupport[Languages.FR]);
+        DisplayManager.ShowError(Localizer.ApplicationMustExit[Language.FR] + Globals.NL2 +
+                                 Localizer.ContactSupport[Language.FR]);
         ex.Manage();
         Environment.Exit(-1);
       }

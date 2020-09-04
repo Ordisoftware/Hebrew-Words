@@ -162,12 +162,12 @@ namespace Ordisoftware.HebrewWords
 
     private void UpdateLanguagesButtons()
     {
-      if ( Program.Settings.LanguageSelected == Language.English )
+      if ( Program.Settings.LanguageSelected == Language.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Program.Settings.LanguageSelected == Language.French )
+      if ( Program.Settings.LanguageSelected == Language.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      Program.Settings.LanguageSelected = Language.English;
+      Program.Settings.LanguageSelected = Language.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      Program.Settings.LanguageSelected = Language.French;
+      Program.Settings.LanguageSelected = Language.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;

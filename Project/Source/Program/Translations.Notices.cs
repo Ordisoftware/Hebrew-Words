@@ -27,14 +27,14 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary OpenOnlineSearchNotice
       = new TranslationsDictionary
       {
-        { Languages.EN, "Use the %WORD% tag to replace the value." },
-        { Languages.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
+        { Language.EN, "Use the %WORD% tag to replace the value." },
+        { Language.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
       };
 
     static public readonly TranslationsDictionary OpenOnlineVerseNotice
       = new TranslationsDictionary
       {
-        { Languages.EN, "Use the following tags to replace values:" + Globals.NL2 +
+        { Language.EN, "Use the following tags to replace values:" + Globals.NL2 +
                         "%BOOKSB% : StudyBible.org book name" + Globals.NL +
                         "%BOOKBIBLEHUB% : BibleHub.org book name" + Globals.NL +
                         "%BOOKCHABAD% : Chabad.org book name" + Globals.NL +
@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewWords
                         "%CHAPTERNUM#2% : Chapter number in two digits" + Globals.NL +
                         "%VERSENUM#2% : Verse number in two digits"
         },
-        { Languages.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
+        { Language.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
                         "%BOOKSB% : Nom du livre StudyBible.org" + Globals.NL +
                         "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + Globals.NL +
                         "%BOOKCHABAD% : Nom du livre Chabad.org" + Globals.NL +

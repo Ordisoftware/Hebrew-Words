@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewWords
       = new NullSafeDictionary<Language, NullSafeOfStringDictionary<Books>>()
       {
         {
-          Languages.FR, new NullSafeOfStringDictionary<Books>
+          Language.FR, new NullSafeOfStringDictionary<Books>
           {
             // Torah
             { Books.Bereshit,          "Génèse"},
@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewWords
           }
         },
         {
-          Languages.EN, new NullSafeOfStringDictionary<Books>
+          Language.EN, new NullSafeOfStringDictionary<Books>
           {
             // Torah
             { Books.Bereshit, "Genesis" },

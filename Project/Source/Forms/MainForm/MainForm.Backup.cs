@@ -34,23 +34,26 @@ namespace Ordisoftware.HebrewWords
 
     private void DoBackupDB()
     {
-      if ( Program.Settings.BackupCount == 0 ) return;
-      string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
-      string partBackup = "AutoBackup ";
-      var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DatabaseFileExtension);
-      while ( list.Count >= Program.Settings.BackupCount )
+      SystemManager.TryCatchManage(() =>
       {
-        File.Delete(list[0].FullName);
-        list.RemoveAt(0);
-      }
-      string partPath = Path.Combine(Program.Settings.BackupPath, partBackup);
-      var date = DateTime.Now;
-      string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
-                                     date.Year, date.Month, date.Day,
-                                     date.Hour, date.Minute, date.Second);
-      string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
-      string fileDest = Path.Combine(partPath, partFilename + " " + strDate + Globals.DatabaseFileExtension);
-      if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
+        if ( Program.Settings.BackupCount == 0 ) return;
+        string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
+        string partBackup = "AutoBackup ";
+        var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DatabaseFileExtension);
+        while ( list.Count >= Program.Settings.BackupCount )
+        {
+          File.Delete(list[0].FullName);
+          list.RemoveAt(0);
+        }
+        string partPath = Path.Combine(Program.Settings.BackupPath, partBackup);
+        var date = DateTime.Now;
+        string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
+                                       date.Year, date.Month, date.Day,
+                                       date.Hour, date.Minute, date.Second);
+        string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
+        string fileDest = Path.Combine(partPath, partFilename + " " + strDate + Globals.DatabaseFileExtension);
+        if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
+      });
     }
 
   }

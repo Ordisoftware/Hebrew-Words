@@ -27,11 +27,11 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary ImportLinesCountMismatch
       = new TranslationsDictionary
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL2 +
+        { Language.EN, "Incorrect elements." + Globals.NL2 +
                         "Non empty lines count: {0}" + Globals.NL2 +
                         "Must be even."
         },
-        { Languages.FR, "Elements incorrects." + Globals.NL2 +
+        { Language.FR, "Elements incorrects." + Globals.NL2 +
                         "Nombre de lignes non vides: {0}" + Globals.NL2 +
                         "Doit être pair."
         }
@@ -40,12 +40,12 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary ImportItemsCountMismatch
       = new TranslationsDictionary
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL2 +
+        { Language.EN, "Incorrect elements." + Globals.NL2 +
                         "Words count: {0}" + Globals.NL +
                         "Translations count: {1}" + Globals.NL +
                         "Must be equal."
         },
-        { Languages.FR, "Elements incorrects." + Globals.NL2 +
+        { Language.FR, "Elements incorrects." + Globals.NL2 +
                         "Nombre de mots: {0}" + Globals.NL +
                         "Nombre de translations: {1}" + Globals.NL +
                         "Doit être égal."
@@ -55,12 +55,12 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary ImportWordsCountMismatch
       = new TranslationsDictionary
       {
-        { Languages.EN, "Incorrect elements." + Globals.NL2 +
+        { Language.EN, "Incorrect elements." + Globals.NL2 +
                         "Verse words count: {0}" + Globals.NL +
                         "Imported words count: {1}" + Globals.NL2 +
                         "Must be equal."
         },
-        { Languages.FR, "Elements incorrects." + Globals.NL2 +
+        { Language.FR, "Elements incorrects." + Globals.NL2 +
                         "Nombre de mots du verset: {0}" + Globals.NL +
                         "Nombre de mots importés: {1}" + Globals.NL +Globals.NL +
                         "Doit être égal."
@@ -70,12 +70,12 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary ImportWordMismatch
       = new TranslationsDictionary
       {
-        { Languages.EN, "Incorrect hebrew." + Globals.NL2 +
+        { Language.EN, "Incorrect hebrew." + Globals.NL2 +
                         "Verse word: {0}" + Globals.NL +
                         "Imported word: {1}" + Globals.NL2 +
                         "Must be equal."
         },
-        { Languages.FR, "Hébreu incorrect." + Globals.NL2 +
+        { Language.FR, "Hébreu incorrect." + Globals.NL2 +
                         "Mot du verset: {0}" + Globals.NL +
                         "Mot importé: {1}" + Globals.NL2 +
                         "Doit être égal."
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewWords
     static public readonly TranslationsDictionary ImportHelp
       = new TranslationsDictionary
       {
-        { Languages.EN, "This console allows for example to import an MS Word verse table." + Globals.NL2 +
+        { Language.EN, "This console allows for example to import an MS Word verse table." + Globals.NL2 +
                         "This table must first be converted to text with | as a separator." + Globals.NL2 +
                         "The import text must be presented in groups of two lines:" + Globals.NL +
                         "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewWords
                         "There can be as many groups of two lines as necessary." + Globals.NL2 +
                         "Imported translation fields can be edited in the result grid."
         },
-        { Languages.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
+        { Language.FR, "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
                         "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL2 +
                         "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
                         "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
