@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -46,6 +47,7 @@ namespace Ordisoftware.HebrewWords
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
+      CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
@@ -83,6 +85,24 @@ namespace Ordisoftware.HebrewWords
           MainForm.Instance.SyncUI(() => MainForm.Instance.Show());
       server.Close();
       SystemManager.CreateIPCServer(IPCRequest);
+    }
+
+    /// <summary>
+    /// Check if settings must be reseted.
+    /// </summary>
+    private static void CheckSettingsReset()
+    {
+      if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
+      {
+        string langCode = Settings.Language;
+        var langValue = Languages.Values[langCode];
+        if ( langValue != Language.None )
+          Settings.LanguageSelected = langValue;
+        else
+          Settings.LanguageSelected = Languages.Current;
+      }
+      else
+        Settings.LanguageSelected = Languages.Current;
     }
 
     /// <summary>
