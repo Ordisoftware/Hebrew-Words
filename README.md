@@ -169,7 +169,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
 - Improve setup.
-- The application now automatically creates the DSN in the Windows registry.
+- The application now automatically creates the ODBC DSN in the Windows registry.
 
 #### 2020.09.01 - Version 2.5
 
