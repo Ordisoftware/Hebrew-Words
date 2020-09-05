@@ -705,7 +705,7 @@ namespace Ordisoftware.HebrewWords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("784, 561")]
+        [global::System.Configuration.DefaultSettingValueAttribute("884, 661")]
         public global::System.Drawing.Size TraceFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["TraceFormSize"]));
@@ -724,6 +724,30 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
             set {
                 this["Language"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public int TraceFormTextBoxFontSize {
+            get {
+                return ((int)(this["TraceFormTextBoxFontSize"]));
+            }
+            set {
+                this["TraceFormTextBoxFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TraceEnabled {
+            get {
+                return ((bool)(this["TraceEnabled"]));
+            }
+            set {
+                this["TraceEnabled"] = value;
             }
         }
     }

@@ -896,7 +896,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="e">Event information.</param>
     private void ActionSearchClear_Click(object sender, EventArgs e)
     {
-      EditLetters.TextInput = "";
+      EditLetters.InputText = "";
       EditSearchTranslation.Text = "";
       Program.Settings.Save();
       ClearSearchResults();
@@ -1157,8 +1157,8 @@ namespace Ordisoftware.HebrewWords
     {
       SetView(ViewMode.Search);
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.TextInput = HebrewAlphabet.SetFinal(word, false);
-      EditLetters.SelectionStartInput = EditLetters.TextInput.Length;
+      EditLetters.InputText = HebrewAlphabet.SetFinal(word, false);
+      EditLetters.InputSelectionStart = EditLetters.InputText.Length;
     }
 
     /// <summary>

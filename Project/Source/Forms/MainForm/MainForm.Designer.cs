@@ -603,19 +603,19 @@
       // 
       // EditLetters
       // 
-      this.EditLetters.BackColorInput = System.Drawing.Color.AliceBlue;
-      this.EditLetters.BackColorLetters = System.Drawing.Color.LightYellow;
+      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
+      this.EditLetters.LettersBackColor = System.Drawing.Color.LightYellow;
       resources.ApplyResources(this.EditLetters, "EditLetters");
       this.EditLetters.FontSizeInput = 24F;
       this.EditLetters.FontSizeKeys = 8.25F;
       this.EditLetters.FontSizeLetters = 20.25F;
       this.EditLetters.FontSizeValues = 6.25F;
-      this.EditLetters.MaxLengthInput = 20;
+      this.EditLetters.InputMaxLength = 20;
       this.EditLetters.Name = "EditLetters";
-      this.EditLetters.SelectionStartInput = 0;
+      this.EditLetters.InputSelectionStart = 0;
       this.EditLetters.ShowKeys = true;
       this.EditLetters.ShowValues = false;
-      this.EditLetters.TextInput = "";
+      this.EditLetters.InputText = "";
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
