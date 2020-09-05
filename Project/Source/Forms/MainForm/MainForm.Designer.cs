@@ -113,25 +113,7 @@
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
-      this.MenuWeb = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWebHome = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebContact = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWebTwitter = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebYouTube = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebTipeee = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebLinkedIn = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionDownloadHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionDownloadHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -236,7 +218,6 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -603,19 +584,12 @@
       // 
       // EditLetters
       // 
-      this.EditLetters.InputBackColor = System.Drawing.Color.AliceBlue;
-      this.EditLetters.LettersBackColor = System.Drawing.Color.LightYellow;
+      this.EditLetters.BackColor = System.Drawing.Color.Transparent;
       resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.FontSizeInput = 24F;
-      this.EditLetters.FontSizeKeys = 8.25F;
-      this.EditLetters.FontSizeLetters = 20.25F;
-      this.EditLetters.FontSizeValues = 6.25F;
-      this.EditLetters.InputMaxLength = 20;
-      this.EditLetters.Name = "EditLetters";
       this.EditLetters.InputSelectionStart = 0;
-      this.EditLetters.ShowKeys = true;
-      this.EditLetters.ShowValues = false;
       this.EditLetters.InputText = "";
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.ShowValues = false;
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
@@ -900,7 +874,7 @@
             this.ActionExit,
             this.Sep4,
             this.ActionHelp,
-            this.MenuWeb,
+            this.ActionInformation,
             this.Sep6,
             this.ActionPreferences,
             this.MenuSettings,
@@ -963,153 +937,12 @@
       this.ActionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // MenuWeb
+      // ActionInformation
       // 
-      this.MenuWeb.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.MenuWeb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionAbout,
-            this.toolStripSeparator18,
-            this.ActionWebReleaseNotes,
-            this.ActionWebCheckUpdate,
-            this.toolStripSeparator10,
-            this.ActionCreateGitHubIssue,
-            this.ActionWebQA,
-            this.toolStripSeparator11,
-            this.ActionWebHome,
-            this.ActionWebContact,
-            this.toolStripMenuItem5,
-            this.ActionWebTwitter,
-            this.ActionWebYouTube,
-            this.toolStripSeparator19,
-            this.ActionWebTipeee,
-            this.ActionWebLinkedIn,
-            this.toolStripSeparator3,
-            this.ActionDownloadHebrewCalendar,
-            this.ActionDownloadHebrewLetters});
-      resources.ApplyResources(this.MenuWeb, "MenuWeb");
-      this.MenuWeb.Name = "MenuWeb";
-      // 
-      // ActionAbout
-      // 
-      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionAbout, "ActionAbout");
-      this.ActionAbout.Name = "ActionAbout";
-      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
-      // 
-      // toolStripSeparator18
-      // 
-      this.toolStripSeparator18.Name = "toolStripSeparator18";
-      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
-      // 
-      // ActionWebCheckUpdate
-      // 
-      this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
-      this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
-      this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionWebCheckUpdate_Click);
-      // 
-      // ActionWebReleaseNotes
-      // 
-      this.ActionWebReleaseNotes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebReleaseNotes, "ActionWebReleaseNotes");
-      this.ActionWebReleaseNotes.Name = "ActionWebReleaseNotes";
-      this.ActionWebReleaseNotes.Click += new System.EventHandler(this.ActionWebReleaseNotes_Click);
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
-      // ActionCreateGitHubIssue
-      // 
-      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
-      this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
-      this.ActionCreateGitHubIssue.Tag = "";
-      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
-      // 
-      // ActionWebQA
-      // 
-      resources.ApplyResources(this.ActionWebQA, "ActionWebQA");
-      this.ActionWebQA.Name = "ActionWebQA";
-      this.ActionWebQA.Tag = "http://asherhaimhalevi.free-bb.fr/";
-      this.ActionWebQA.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator11
-      // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
-      // 
-      // ActionWebHome
-      // 
-      this.ActionWebHome.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebHome, "ActionWebHome");
-      this.ActionWebHome.Name = "ActionWebHome";
-      this.ActionWebHome.Click += new System.EventHandler(this.ActionWebHome_Click);
-      // 
-      // ActionWebContact
-      // 
-      this.ActionWebContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebContact, "ActionWebContact");
-      this.ActionWebContact.Name = "ActionWebContact";
-      this.ActionWebContact.Click += new System.EventHandler(this.ActionWebContact_Click);
-      // 
-      // toolStripMenuItem5
-      // 
-      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-      resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-      // 
-      // ActionWebTwitter
-      // 
-      this.ActionWebTwitter.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebTwitter, "ActionWebTwitter");
-      this.ActionWebTwitter.Name = "ActionWebTwitter";
-      this.ActionWebTwitter.Tag = "https://twitter.com/ordisoftware";
-      this.ActionWebTwitter.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionWebYouTube
-      // 
-      this.ActionWebYouTube.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebYouTube, "ActionWebYouTube");
-      this.ActionWebYouTube.Name = "ActionWebYouTube";
-      this.ActionWebYouTube.Tag = "https://www.youtube.com/user/Ordisoftware";
-      this.ActionWebYouTube.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionWebTipeee
-      // 
-      this.ActionWebTipeee.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebTipeee, "ActionWebTipeee");
-      this.ActionWebTipeee.Name = "ActionWebTipeee";
-      this.ActionWebTipeee.Tag = "https://fr.tipeee.com/ordisoftware";
-      this.ActionWebTipeee.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionWebLinkedIn
-      // 
-      this.ActionWebLinkedIn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebLinkedIn, "ActionWebLinkedIn");
-      this.ActionWebLinkedIn.Name = "ActionWebLinkedIn";
-      this.ActionWebLinkedIn.Tag = "https://www.linkedin.com/in/ordisoftware";
-      this.ActionWebLinkedIn.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-      // 
-      // ActionDownloadHebrewCalendar
-      // 
-      resources.ApplyResources(this.ActionDownloadHebrewCalendar, "ActionDownloadHebrewCalendar");
-      this.ActionDownloadHebrewCalendar.Name = "ActionDownloadHebrewCalendar";
-      this.ActionDownloadHebrewCalendar.Tag = "https://www.ordisoftware.com/projects/hebrew-calendar";
-      this.ActionDownloadHebrewCalendar.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionDownloadHebrewLetters
-      // 
-      resources.ApplyResources(this.ActionDownloadHebrewLetters, "ActionDownloadHebrewLetters");
-      this.ActionDownloadHebrewLetters.Name = "ActionDownloadHebrewLetters";
-      this.ActionDownloadHebrewLetters.Tag = "https://www.ordisoftware.com/projects/hebrew-letters";
-      this.ActionDownloadHebrewLetters.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      this.ActionInformation.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionInformation, "ActionInformation");
+      this.ActionInformation.Name = "ActionInformation";
       // 
       // Sep6
       // 
@@ -1803,11 +1636,6 @@
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
       // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1977,17 +1805,11 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewBooksTranslation;
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
     private System.Windows.Forms.ToolStripMenuItem ActionViewStatistics;
-    private System.Windows.Forms.ToolStripDropDownButton MenuWeb;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebHome;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebCheckUpdate;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebContact;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
     private System.Windows.Forms.TabPage SelectSearchTypeVerses;
     private System.Windows.Forms.RadioButton SelectSearchRequestAllUntranslated;
     private System.Windows.Forms.RadioButton SelectSearchRequestAllPartiallyTranslated;
     private System.Windows.Forms.RadioButton SelectSearchRequestAllFullyTranslated;
     private System.Windows.Forms.RadioButton SelectSearchRequestAllTranslated;
-    private System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssue;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
@@ -2018,8 +1840,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.Button ActionSearchInRemoveAll;
     private System.Windows.Forms.Button ActionSearchInAddAll;
-    internal System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewLetters;
-    private System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewCalendar;
     private System.Windows.Forms.ToolStripMenuItem ActionClearHistory;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
@@ -2039,16 +1859,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenLexilogosOld;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenLexilogosModern;
     private System.Windows.Forms.ToolStripMenuItem ActionAddBookmark;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebTwitter;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebYouTube;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebLinkedIn;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebTipeee;
     private System.Windows.Forms.ToolStripDropDownButton MenuWebLinks;
-    private System.Windows.Forms.ToolStripMenuItem ActionAbout;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
@@ -2069,9 +1880,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyWordTranslation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
-    private System.Windows.Forms.ToolStripMenuItem ActionWebReleaseNotes;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
+    internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
   }
 }
 

@@ -68,6 +68,12 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Common\Controls\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Controls\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Controls\FormsHelper.cs" />
     <Compile Include="Source\Common\Controls\LettersControl.cs">
@@ -376,6 +382,12 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.fr.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>

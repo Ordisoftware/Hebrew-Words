@@ -522,17 +522,6 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionOpenWebsiteURL for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
-    {
-      string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionNew for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -695,7 +684,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionAbout_Click(object sender, EventArgs e)
+    internal void ActionAbout_Click(object sender, EventArgs e)
     {
       if ( AboutBox.Instance.Visible )
         AboutBox.Instance.BringToFront();
@@ -704,51 +693,11 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionHelp for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionHelp_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.HelpFilename);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebHome for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionWebHome_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenApplicationHome();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebContact for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionWebContact_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenContactPage();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionCreateGitHubIssue for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
-    {
-      SystemManager.CreateGitHubIssue();
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionWebCheckUpdate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
       var lastdone = Program.Settings.CheckUpdateLastDone;
@@ -760,13 +709,24 @@ namespace Ordisoftware.HebrewWords
     }
 
     /// <summary>
-    /// Event handler. Called by ActionWebReleaseNotes for click events.
+    /// Event handler. Called by ActionOpenWebsiteURL for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
+    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenApplicationReleaseNotes();
+      string url = (string)( (ToolStripItem)sender ).Tag;
+      SystemManager.OpenWebLink(url);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionHelp for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionHelp_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>

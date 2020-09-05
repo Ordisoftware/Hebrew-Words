@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewWords
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value);
+      SystemManager.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value, Program.Settings.HebrewLettersExe);
     }
 
     private void ActionSearchWord_Click(object sender, EventArgs e)
