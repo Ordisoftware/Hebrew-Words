@@ -2134,9 +2134,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
         QhNLSsJP32NZ5gPC0tsITe9iSWLFDbU2t+XfCpf82p2KSQnxDcKsrVmj9c95AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripMenuItem2.Text" xml:space="preserve">
-    <value>Compter le nombre exact d'occurrences</value>
-  </data>
   <data name="toolStripMenuItem6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
