@@ -160,6 +160,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
 
 - Add usage statistics form in tools menu.
+- Add option to enable or disable message boxes sounds.
+- Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve debugger to support logging.
 - Improve exception form to view log.
