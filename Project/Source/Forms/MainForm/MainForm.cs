@@ -20,10 +20,10 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using Microsoft.Win32;
-using Ordisoftware.HebrewCommon;
-using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.Core;
+using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewWords
       History = new History(Program.HistoryFilename);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CreateProvidersLinks();
-      ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(ProvidersCollection.OnlineWordProviders, (sender, e) =>
       {
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void CreateProvidersLinks()
     {
-      ContextMenuStripVerse.InitializeFromProviders(Globals.OnlineBibleProviders, (sender, e) =>
+      ContextMenuStripVerse.InitializeFromProviders(ProvidersCollection.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;

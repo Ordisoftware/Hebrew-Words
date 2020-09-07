@@ -15,7 +15,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class EditMemoForm : Form

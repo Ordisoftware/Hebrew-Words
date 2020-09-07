@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class MainForm
   {
@@ -70,17 +70,17 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.HebrewCommon.LettersControl();
+      this.EditLetters = new Ordisoftware.Hebrew.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
-      this.EditSearchTranslation = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditSearchTranslation = new Ordisoftware.Core.UndoRedoTextBox();
       this.SelectSearchTypeVerses = new System.Windows.Forms.TabPage();
       this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
       this.PanelNavigation = new System.Windows.Forms.Panel();
-      this.EditChapterMemo = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditChapterMemo = new Ordisoftware.Core.UndoRedoTextBox();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
       this.LabelChapterTitle = new System.Windows.Forms.Label();
@@ -91,8 +91,8 @@
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.EditBookTranslation = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditChapterTitle = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditBookTranslation = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditChapterTitle = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditELS50 = new System.Windows.Forms.TextBox();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
       this.LabelTitle = new System.Windows.Forms.Label();
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewWords.Data.DataSet();
+      this.DataSet = new Ordisoftware.Hebrew.Words.Data.DataSet();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.label1 = new System.Windows.Forms.Label();
@@ -200,11 +200,11 @@
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.BooksTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.BooksTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ChaptersTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.ChaptersTableAdapter();
-      this.VersesTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.VersesTableAdapter();
-      this.WordsTableAdapter = new Ordisoftware.HebrewWords.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.BooksTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.BooksTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.TableAdapterManager();
+      this.ChaptersTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.ChaptersTableAdapter();
+      this.VersesTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.VersesTableAdapter();
+      this.WordsTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.WordsTableAdapter();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
@@ -485,8 +485,8 @@
       // EditSearchInKetouvim
       // 
       resources.ApplyResources(this.EditSearchInKetouvim, "EditSearchInKetouvim");
-      this.EditSearchInKetouvim.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInKetouvim;
-      this.EditSearchInKetouvim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInKetouvim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInKetouvim.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SearchInKetouvim;
+      this.EditSearchInKetouvim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SearchInKetouvim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditSearchInKetouvim.Name = "EditSearchInKetouvim";
       this.EditSearchInKetouvim.UseVisualStyleBackColor = true;
       this.EditSearchInKetouvim.CheckedChanged += new System.EventHandler(this.EditSearchInSelectBook_CheckedChanged);
@@ -494,8 +494,8 @@
       // EditSearchInNeviim
       // 
       resources.ApplyResources(this.EditSearchInNeviim, "EditSearchInNeviim");
-      this.EditSearchInNeviim.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInNeviim;
-      this.EditSearchInNeviim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInNeviim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInNeviim.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SearchInNeviim;
+      this.EditSearchInNeviim.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SearchInNeviim", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditSearchInNeviim.Name = "EditSearchInNeviim";
       this.EditSearchInNeviim.UseVisualStyleBackColor = true;
       this.EditSearchInNeviim.CheckedChanged += new System.EventHandler(this.EditSearchInSelectBook_CheckedChanged);
@@ -503,9 +503,9 @@
       // EditSearchInTorah
       // 
       resources.ApplyResources(this.EditSearchInTorah, "EditSearchInTorah");
-      this.EditSearchInTorah.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchInTorah;
+      this.EditSearchInTorah.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SearchInTorah;
       this.EditSearchInTorah.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSearchInTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSearchInTorah.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SearchInTorah", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditSearchInTorah.Name = "EditSearchInTorah";
       this.EditSearchInTorah.UseVisualStyleBackColor = true;
       this.EditSearchInTorah.CheckedChanged += new System.EventHandler(this.EditSearchInSelectBook_CheckedChanged);
@@ -563,10 +563,10 @@
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeVerses);
-      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Name = "SelectSearchType";
-      this.SelectSearchType.SelectedIndex = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CurrentSearchTypeTab;
+      this.SelectSearchType.SelectedIndex = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CurrentSearchTypeTab;
       this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
       // 
       // SelectSearchTypeHebrew
@@ -611,7 +611,7 @@
       // 
       this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
       this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.Name = "EditSearchTranslation";
       this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
@@ -681,7 +681,7 @@
       resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
       this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditChapterMemo.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditChapterMemo.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditChapterMemo.Name = "EditChapterMemo";
       this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
       this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -762,7 +762,7 @@
       // 
       this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
       this.EditBookTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditBookTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditBookTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
       this.EditBookTranslation.Name = "EditBookTranslation";
       this.EditBookTranslation.TextChanged += new System.EventHandler(this.EditBookTranslation_TextChanged);
@@ -773,7 +773,7 @@
       // 
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditChapterTitle.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
@@ -1535,7 +1535,7 @@
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.BooksTableAdapter = this.BooksTableAdapter;
       this.TableAdapterManager.ChaptersTableAdapter = this.ChaptersTableAdapter;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewWords.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       this.TableAdapterManager.VersesTableAdapter = this.VersesTableAdapter;
       this.TableAdapterManager.WordsTableAdapter = this.WordsTableAdapter;
       // 
@@ -1798,7 +1798,7 @@
     internal System.Windows.Forms.TabPage SelectSearchTypeHebrew;
     private System.Windows.Forms.TabPage SelectSearchTypeTranslation;
     private System.Windows.Forms.Panel PanelSearchFiltersRight;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditSearchTranslation;
+    private Ordisoftware.Core.UndoRedoTextBox EditSearchTranslation;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.ToolStripDropDownButton MenuTools;
@@ -1844,12 +1844,12 @@
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMaster;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditChapterTitle;
+    private Ordisoftware.Core.UndoRedoTextBox EditChapterTitle;
     private System.Windows.Forms.Label LabelChapterTitle;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditChapterMemo;
+    private Ordisoftware.Core.UndoRedoTextBox EditChapterMemo;
     private System.Windows.Forms.Label LabelChapterMemo;
     private System.Windows.Forms.Label LabelBookTranslation;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditBookTranslation;
+    private Ordisoftware.Core.UndoRedoTextBox EditBookTranslation;
     private System.Windows.Forms.Button ActionEditChapterMemo;
     private System.Windows.Forms.Button ActionEditBookMemo;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
@@ -1863,7 +1863,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-    internal HebrewCommon.LettersControl EditLetters;
+    internal Ordisoftware.Hebrew.LettersControl EditLetters;
     internal System.Windows.Forms.Button ActionSearchRun;
     internal System.Windows.Forms.TabControl SelectSearchType;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;

@@ -14,9 +14,9 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   static public partial class BooksNames

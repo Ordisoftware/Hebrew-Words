@@ -1,8 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.HebrewWords.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.Hebrew.Words.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MainFormPosition" Type="Ordisoftware.HebrewCommon.ControlLocation" Scope="User">
+    <Setting Name="MainFormPosition" Type="Ordisoftware.Core.ControlLocation" Scope="User">
       <Value Profile="(Default)">Center</Value>
     </Setting>
     <Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
@@ -26,7 +26,7 @@
     <Setting Name="ShowTips" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CurrentView" Type="Ordisoftware.HebrewWords.ViewMode" Scope="User">
+    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Words.ViewMode" Scope="User">
       <Value Profile="(Default)">Verses</Value>
     </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
@@ -55,7 +55,7 @@
     <Setting Name="AutoSaveDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
+    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.Hebrew.Words.HebrewWordClickOpen" Scope="User">
       <Value Profile="(Default)">SearchTranslated</Value>
     </Setting>
     <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
@@ -136,13 +136,13 @@
     <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="LanguageSelected" Type="Ordisoftware.HebrewCommon.Language" Scope="User">
+    <Setting Name="LanguageSelected" Type="Ordisoftware.Hebrew.Language" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="FoundReferencesColumnRefWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">130</Value>
     </Setting>
-    <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen" Scope="User">
+    <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen" Scope="User">
       <Value Profile="(Default)">ReachReference</Value>
     </Setting>
     <Setting Name="EditMemoFormClientSize" Type="System.Drawing.Size" Scope="User">
@@ -194,6 +194,9 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="AdvancedDialogBoxes" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunch" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

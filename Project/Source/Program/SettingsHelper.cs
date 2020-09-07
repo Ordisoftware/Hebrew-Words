@@ -14,10 +14,10 @@
 /// <edited> 2016-04 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
-using Ordisoftware.HebrewWords.Properties;
+using Ordisoftware.Core;
+using Ordisoftware.Hebrew.Words.Properties;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>

@@ -21,9 +21,9 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
@@ -93,6 +93,8 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private static void CheckSettingsReset()
     {
+      if ( Settings.FirstLaunch )
+        Settings.LanguageSelected = Languages.Current;
       if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
       {
         string langCode = Settings.Language;
@@ -102,8 +104,8 @@ namespace Ordisoftware.HebrewWords
         else
           Settings.LanguageSelected = Languages.Current;
       }
-      else
-        Settings.LanguageSelected = Languages.Current;
+      Settings.FirstLaunch = false;
+      Settings.Save();
     }
 
     /// <summary>

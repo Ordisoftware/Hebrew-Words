@@ -14,9 +14,9 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.IO;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewWords
     /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenHebrewLetters(string hebrew)
     {
-      SystemManager.OpenHebrewLetters(hebrew, Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(hebrew, Settings.HebrewLettersExe);
     }
 
     /// <summary>

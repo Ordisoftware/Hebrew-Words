@@ -132,7 +132,7 @@
     <value>StatAllBooks</value>
   </data>
   <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.StatControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
     <value>GroupBoxAllBooks</value>
@@ -232,7 +232,7 @@
     <value>StatTorah</value>
   </data>
   <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.StatControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
     <value>GroupBoxTorah</value>
@@ -298,7 +298,7 @@
     <value>StatBook</value>
   </data>
   <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewWords.StatControl, Ordisoftware.HebrewWords, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
     <value>GroupBoxBook</value>

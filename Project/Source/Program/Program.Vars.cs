@@ -14,9 +14,9 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.IO;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewWords
       {
         if ( _GrammarGuideForm == null )
           _GrammarGuideForm = new HTMLBrowserForm(Localizer.GrammarGuideTitle,
-                                                  Globals.HebrewGrammarGuideFilename,
+                                                  ProvidersCollection.HebrewGrammarGuideFilename,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;

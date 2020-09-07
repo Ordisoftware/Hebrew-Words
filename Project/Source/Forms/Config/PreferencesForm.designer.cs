@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class PreferencesForm
   {
@@ -454,62 +454,62 @@
       // EditOpenGeneratedMSWordFiles
       // 
       resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
-      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
       this.EditOpenGeneratedMSWordFiles.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
       this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
       // 
       // EditAutoSortBookmarks
       // 
       resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
-      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.AutoSortBookmarks;
+      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoSortBookmarks;
       this.EditAutoSortBookmarks.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
       this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
       // 
       // EditGoToMasterBookmarkAtStartup
       // 
       resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
-      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
+      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
       this.EditGoToMasterBookmarkAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
       this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditOpenLastViewAtStartup
       // 
       resources.ApplyResources(this.EditOpenLastViewAtStartup, "EditOpenLastViewAtStartup");
-      this.EditOpenLastViewAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenLastViewAtStartup;
-      this.EditOpenLastViewAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenLastViewAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditOpenLastViewAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenLastViewAtStartup;
+      this.EditOpenLastViewAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenLastViewAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
       this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CheckUpdateAtStartup;
+      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CheckUpdateAtStartup;
       this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
-      this.EditVacuumAtStartup.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.VacuumAtStartup;
+      this.EditVacuumAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.VacuumAtStartup;
       this.EditVacuumAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditVacuumAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "VacuumAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditVacuumAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "VacuumAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       // 
       // checkBox1
       // 
       resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.checkBox1.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
       this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.checkBox1.Name = "checkBox1";
       this.checkBox1.UseVisualStyleBackColor = true;
       this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);

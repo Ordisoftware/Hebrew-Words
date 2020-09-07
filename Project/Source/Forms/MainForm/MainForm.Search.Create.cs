@@ -15,10 +15,10 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Data;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Hebrew.Words.Data;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class MainForm

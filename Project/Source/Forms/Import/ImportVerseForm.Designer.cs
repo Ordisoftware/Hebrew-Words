@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class ImportVerseForm
   {
@@ -54,7 +54,7 @@
       // 
       // PanelMain
       // 
-      this.PanelMain.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSplitterDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.PanelMain.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "ImportVerseFormSplitterDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
@@ -67,7 +67,7 @@
       // 
       this.PanelMain.Panel2.Controls.Add(this.DataGridView);
       resources.ApplyResources(this.PanelMain.Panel2, "PanelMain.Panel2");
-      this.PanelMain.SplitterDistance = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSplitterDistance;
+      this.PanelMain.SplitterDistance = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ImportVerseFormSplitterDistance;
       this.PanelMain.TabStop = false;
       this.PanelMain.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.PanelMain_SplitterMoving);
       // 
@@ -120,7 +120,7 @@
       // 
       // importResultsBindingSource
       // 
-      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportverseResults);
+      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.ImportverseResults);
       // 
       // panel1
       // 
@@ -162,10 +162,10 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSize;
+      this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ImportVerseFormSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.panel1);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "ImportVerseForm";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportVerseForm_FormClosed);

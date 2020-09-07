@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class EditMemoForm
   {
@@ -32,7 +32,7 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.TextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.TextBox = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelSep = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
@@ -73,11 +73,11 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.EditMemoFormClientSize;
+      this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.EditMemoFormClientSize;
       this.Controls.Add(this.TextBox);
       this.Controls.Add(this.PanelSep);
       this.Controls.Add(this.PanelButtons);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "EditMemoFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "EditMemoFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "EditMemoForm";
@@ -92,7 +92,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    internal Ordisoftware.HebrewCommon.UndoRedoTextBox TextBox;
+    internal Ordisoftware.Core.UndoRedoTextBox TextBox;
     private System.Windows.Forms.Panel PanelSep;
   }
 }

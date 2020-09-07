@@ -14,9 +14,9 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.Linq;
-using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class WordControl
   {
@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       this.LabelHebrew = new System.Windows.Forms.Label();
-      this.EditTranslation = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTranslation = new Ordisoftware.Core.UndoRedoTextBox();
       this.SuspendLayout();
       // 
       // LabelHebrew
@@ -51,7 +51,7 @@
       // 
       // EditTranslation
       // 
-      this.EditTranslation.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditTranslation.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.EditTranslation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
       this.EditTranslation.Location = new System.Drawing.Point(0, 33);
@@ -80,7 +80,7 @@
     }
 
     #endregion
-    internal Ordisoftware.HebrewCommon.UndoRedoTextBox EditTranslation;
+    internal Ordisoftware.Core.UndoRedoTextBox EditTranslation;
     internal System.Windows.Forms.Label LabelHebrew;
   }
 }

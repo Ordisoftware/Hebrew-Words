@@ -14,7 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>

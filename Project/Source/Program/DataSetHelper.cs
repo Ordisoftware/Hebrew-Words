@@ -13,9 +13,9 @@
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.Hebrew.Words.Data;
   
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   static public class DataSetHelper

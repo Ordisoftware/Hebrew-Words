@@ -14,7 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public class Bookmarks : ReferencesList

@@ -16,9 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Data;
+using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class MainForm

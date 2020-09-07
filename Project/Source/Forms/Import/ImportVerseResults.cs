@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public class ImportVerseResult

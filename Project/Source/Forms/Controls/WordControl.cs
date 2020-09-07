@@ -15,10 +15,10 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class WordControl : UserControl

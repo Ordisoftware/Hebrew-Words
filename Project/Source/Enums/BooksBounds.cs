@@ -15,7 +15,7 @@
 using System;
 using System.Linq;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public struct BookBound

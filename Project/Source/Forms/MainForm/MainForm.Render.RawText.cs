@@ -14,7 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class MainForm

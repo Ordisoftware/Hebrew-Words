@@ -16,9 +16,9 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
@@ -65,12 +65,12 @@ namespace Ordisoftware.HebrewWords
       {
         EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
       };
-      foreach ( var item in Globals.OnlineBibleProviders.Items )
+      foreach ( var item in ProvidersCollection.OnlineBibleProviders.Items )
         if ( item.Name == "-" )
           MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
         else
           MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
-      foreach ( var item in Globals.OnlineWordProviders.Items )
+      foreach ( var item in ProvidersCollection.OnlineWordProviders.Items )
         if ( item.Name == "-" )
           MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
         else

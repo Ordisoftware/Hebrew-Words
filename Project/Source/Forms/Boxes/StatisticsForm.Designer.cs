@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class StatisticsForm
   {
@@ -30,14 +30,14 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
-      this.StatAllBooks = new Ordisoftware.HebrewWords.StatControl();
+      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
-      this.StatTorah = new Ordisoftware.HebrewWords.StatControl();
+      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.StatBook = new Ordisoftware.HebrewWords.StatControl();
+      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ordisoftware.HebrewWords.Properties {
+namespace Ordisoftware.Hebrew.Words.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::Ordisoftware.HebrewCommon.ControlLocation MainFormPosition {
+        public global::Ordisoftware.Core.ControlLocation MainFormPosition {
             get {
-                return ((global::Ordisoftware.HebrewCommon.ControlLocation)(this["MainFormPosition"]));
+                return ((global::Ordisoftware.Core.ControlLocation)(this["MainFormPosition"]));
             }
             set {
                 this["MainFormPosition"] = value;
@@ -122,9 +122,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Verses")]
-        public global::Ordisoftware.HebrewWords.ViewMode CurrentView {
+        public global::Ordisoftware.Hebrew.Words.ViewMode CurrentView {
             get {
-                return ((global::Ordisoftware.HebrewWords.ViewMode)(this["CurrentView"]));
+                return ((global::Ordisoftware.Hebrew.Words.ViewMode)(this["CurrentView"]));
             }
             set {
                 this["CurrentView"] = value;
@@ -216,9 +216,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SearchTranslated")]
-        public global::Ordisoftware.HebrewWords.HebrewWordClickOpen HebrewWordClickOpen {
+        public global::Ordisoftware.Hebrew.Words.HebrewWordClickOpen HebrewWordClickOpen {
             get {
-                return ((global::Ordisoftware.HebrewWords.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));
+                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));
             }
             set {
                 this["HebrewWordClickOpen"] = value;
@@ -540,9 +540,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("None")]
-        public global::Ordisoftware.HebrewCommon.Language LanguageSelected {
+        public global::Ordisoftware.Core.Language LanguageSelected {
             get {
-                return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageSelected"]));
+                return ((global::Ordisoftware.Core.Language)(this["LanguageSelected"]));
             }
             set {
                 this["LanguageSelected"] = value;
@@ -564,9 +564,9 @@ namespace Ordisoftware.HebrewWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("ReachReference")]
-        public global::Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen TranslatedItemDoubleClickOpen {
+        public global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen TranslatedItemDoubleClickOpen {
             get {
-                return ((global::Ordisoftware.HebrewWords.TranslatedItemDoubleClickOpen)(this["TranslatedItemDoubleClickOpen"]));
+                return ((global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen)(this["TranslatedItemDoubleClickOpen"]));
             }
             set {
                 this["TranslatedItemDoubleClickOpen"] = value;
@@ -772,6 +772,18 @@ namespace Ordisoftware.HebrewWords.Properties {
             }
             set {
                 this["AdvancedDialogBoxes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunch {
+            get {
+                return ((bool)(this["FirstLaunch"]));
+            }
+            set {
+                this["FirstLaunch"] = value;
             }
         }
     }

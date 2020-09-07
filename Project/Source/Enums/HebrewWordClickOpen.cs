@@ -14,7 +14,7 @@
 /// <edited> 2020-03 </edited>
 using System;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public enum HebrewWordClickOpen

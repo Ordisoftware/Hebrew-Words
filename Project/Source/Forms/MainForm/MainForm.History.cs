@@ -14,9 +14,9 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   public partial class MainForm

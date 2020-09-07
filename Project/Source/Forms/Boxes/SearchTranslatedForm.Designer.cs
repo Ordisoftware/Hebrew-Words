@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class SearchTranslatedForm
   {
@@ -70,9 +70,9 @@
       // EditReturn
       // 
       resources.ApplyResources(this.EditReturn, "EditReturn");
-      this.EditReturn.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CloseSearchTranslatedFormReturnToReference;
+      this.EditReturn.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CloseSearchTranslatedFormReturnToReference;
       this.EditReturn.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CloseSearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CloseSearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditReturn.Name = "EditReturn";
       this.EditReturn.UseVisualStyleBackColor = true;
       // 
@@ -122,7 +122,7 @@
       // columnHeader1
       // 
       resources.ApplyResources(this.columnHeader1, "columnHeader1");
-      this.columnHeader1.Width = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesColumnRefWidth;
+      this.columnHeader1.Width = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.FoundReferencesColumnRefWidth;
       // 
       // columnHeader2
       // 
@@ -247,11 +247,11 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormSize;
+      this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SearchTranslatedFormSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
       this.Controls.Add(this.PanelButtons);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SearchTranslatedFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "SearchTranslatedForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchTranslatedForm_FormClosing);
