@@ -185,6 +185,7 @@
       <DependentUpon>CommonMenusControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Hebrew\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Hebrew\HebrewTranslations.cs" />
     <Compile Include="Source\Common\Hebrew\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
