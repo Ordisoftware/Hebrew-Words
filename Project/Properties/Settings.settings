@@ -136,7 +136,7 @@
     <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="LanguageSelected" Type="Ordisoftware.Hebrew.Language" Scope="User">
+    <Setting Name="LanguageSelected" Type="Ordisoftware.Core.Language" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="FoundReferencesColumnRefWidth" Type="System.Int32" Scope="User">
