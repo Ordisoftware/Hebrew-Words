@@ -199,7 +199,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToResetPreferences.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetPreferences.GetLang()) ) return;
       Program.Settings.Reset();
       Program.Settings.Reload();
       Program.Settings.LanguageSelected = Languages.Current;

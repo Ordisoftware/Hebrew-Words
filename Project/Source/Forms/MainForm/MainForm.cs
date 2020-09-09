@@ -160,7 +160,7 @@ namespace Ordisoftware.Hebrew.Words
         return;
       }
       if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
           e.Cancel = true;
         else
           Globals.IsExiting = true;
@@ -611,7 +611,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e"></param>
     private void ActionVacuum_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToOptimizeDatabase.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOptimizeDatabase.GetLang()) )
         return;
       ActionSave.PerformClick();
       ReLoadData(() =>
@@ -659,7 +659,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Localizer.AskToRestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
       {
         Program.Settings.RestoreMainForm();
         ActionRefresh.PerformClick();
@@ -1046,7 +1046,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionClearHistory_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToEmptyHistory.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
       History.Clear();
       UpdateHistory();
     }
@@ -1058,7 +1058,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToEmptyBookmarks.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
       Program.Settings.BookmarkMasterBook = 1;
       Program.Settings.BookmarkMasterChapter = 1;
       Program.Settings.BookmarkMasterVerse = 1;

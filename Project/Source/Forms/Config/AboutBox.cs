@@ -63,10 +63,10 @@ namespace Ordisoftware.Hebrew.Words
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Localizer.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       labelTitle.Text = Globals.AssemblyTitle;
       labelDescription.Text = Translations.ApplicationDescription.GetLang();
-      labelVersion.Text = Localizer.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      labelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
       labelCopyright.Text = Globals.AssemblyCopyright;
       labelTrademark.Text = Globals.AssemblyTrademark;
       TopMost = MainForm.Instance.TopMost;

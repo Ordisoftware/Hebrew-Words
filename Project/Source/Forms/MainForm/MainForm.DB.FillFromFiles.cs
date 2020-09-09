@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Words
           string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
           if ( !File.Exists(filePath) )
           {
-            DisplayManager.ShowWarning(Localizer.FileNotFound.GetLang(filePath));
+            DisplayManager.ShowWarning(SysTranslations.FileNotFound.GetLang(filePath));
             continue;
           }
           string[] filecontent = File.ReadAllLines(filePath);
