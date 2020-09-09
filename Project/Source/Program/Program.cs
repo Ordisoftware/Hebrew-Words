@@ -54,6 +54,7 @@ namespace Ordisoftware.Hebrew.Words
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      DebugManager.TraceEnabled = true;// Settings.TraceEnabled;
       Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
@@ -93,9 +94,9 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private static void CheckSettingsReset()
     {
-      if ( Settings.FirstLaunch )
-        Settings.LanguageSelected = Languages.Current;
       Settings.FirstLaunch = false;
+      if ( Settings.LanguageSelected == Language.None )
+        Settings.LanguageSelected = Languages.Current;
       Settings.Save();
     }
 

@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Words
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); }
       catch { }
       CurrentReference = new ReferenceItem(null, null, null, null);
       Bookmarks = new Bookmarks(Program.BookmarksFilename);
@@ -726,7 +726,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell(Globals.HelpFilename);
+      SystemManager.RunShell(Globals.HelpFilePath);
     }
 
     /// <summary>
