@@ -159,6 +159,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
 
+- Add permanent database file locking while running.
+- Add concurrency control to avoid database editing when multiple instances are running.
 - Add usage statistics form in tools menu.
 - Add option to enable or disable message boxes sounds.
 - Improve message boxes.
