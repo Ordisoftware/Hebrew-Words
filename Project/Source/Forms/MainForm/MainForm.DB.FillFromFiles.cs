@@ -52,13 +52,13 @@ namespace Ordisoftware.Hebrew.Words
         }
         foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
         {
-          string filename = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
-          if ( !File.Exists(filename) )
+          string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
+          if ( !File.Exists(filePath) )
           {
-            DisplayManager.ShowWarning(Localizer.FileNotFound.GetLang(filename));
+            DisplayManager.ShowWarning(Localizer.FileNotFound.GetLang(filePath));
             continue;
           }
-          string[] filecontent = File.ReadAllLines(filename);
+          string[] filecontent = File.ReadAllLines(filePath);
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;

@@ -57,8 +57,8 @@ namespace Ordisoftware.Hebrew.Words
       try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); }
       catch { }
       CurrentReference = new ReferenceItem(null, null, null, null);
-      Bookmarks = new Bookmarks(Program.BookmarksFilename);
-      History = new History(Program.HistoryFilename);
+      Bookmarks = new Bookmarks(Program.BookmarksFilePath);
+      History = new History(Program.HistoryFilePath);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CreateProvidersLinks();
       ActionSearchOnline.InitializeFromProviders(ProvidersCollection.OnlineWordProviders, (sender, e) =>
@@ -533,10 +533,9 @@ namespace Ordisoftware.Hebrew.Words
         ActionBackup.PerformClick();
       if ( !DisplayManager.QueryYesNo(Translations.AskToCreateNewDatabase.GetLang()) )
         return;
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       ReLoadData(() =>
       {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath, filename));
+        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
       });
     }
 
@@ -550,13 +549,12 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
       ReLoadData(() =>
       {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath,filename));
-        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, filename));
+        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
+        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
       });
     }
 
@@ -568,11 +566,10 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionBackup_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DatabaseFileExtension;
-      SaveFileDialogDB.FileName = filename;
+      SaveFileDialogDB.FileName = Globals.DatabaseFileName;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Path.Combine(Globals.UserDataFolderPath, filename), SaveFileDialogDB.FileName);
+      File.Copy(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName), SaveFileDialogDB.FileName);
     }
 
     /// <summary>

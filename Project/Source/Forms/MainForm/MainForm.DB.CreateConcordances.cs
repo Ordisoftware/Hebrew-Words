@@ -38,8 +38,8 @@ namespace Ordisoftware.Hebrew.Words
       }
       if ( count != 0 )
         return;
-      string filename = Path.Combine(Program.AppCSVDocumentsFolderPath, "BHS-Strong-no\\brief_info_StrongNo.csv");
-      var lines = File.ReadAllLines(filename).ToList();
+      string filePath = Path.Combine(Program.AppCSVDocumentsFolderPath, "BHS-Strong-no\\brief_info_StrongNo.csv");
+      var lines = File.ReadAllLines(filePath).ToList();
       foreach ( string line in lines )
       {
         var items = line.Split('\t');
@@ -147,9 +147,9 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        string filename = Program.AppCSVDocumentsFolderPath
+        string filePath = Program.AppCSVDocumentsFolderPath
                       + "OpenHebrewBible\\WLC_mappingTemplate_takenAway_wordWithoutSN.csv";
-        var lines = File.ReadAllLines(filename).Skip(2).ToList();
+        var lines = File.ReadAllLines(filePath).Skip(2).ToList();
         for ( int index = 0; index < lines.Count; index++ )
         {
           if ( lines[index] == "＠" )

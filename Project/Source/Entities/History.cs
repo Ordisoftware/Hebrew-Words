@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Words
       Save();
     }
 
-    public History(string filename) : base(filename)
+    public History(string filePath) : base(filePath)
     {
     }
 

@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Words
       Save();
     }
 
-    public Bookmarks(string filename) : base(filename)
+    public Bookmarks(string filePath) : base(filePath)
     {
     }
 

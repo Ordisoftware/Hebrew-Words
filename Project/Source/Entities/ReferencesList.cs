@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Words
 
     protected readonly List<ReferenceItem> Items = new List<ReferenceItem>();
 
-    protected string Filename;
+    protected string FilePath;
 
     public int Count { get { return Items.Count; } }
 
@@ -59,11 +59,11 @@ namespace Ordisoftware.Hebrew.Words
     public void Load()
     {
       Items.Clear();
-      if ( !File.Exists(Filename) )
+      if ( !File.Exists(FilePath) )
         return;
       try
       {
-        var list = File.ReadLines(Filename);
+        var list = File.ReadLines(FilePath);
         foreach ( string item in list )
         {
           if ( item == "" || item.Count(c => c == '.') != 2 )
@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Words
         var items = new List<string>();
         foreach ( var item in Items )
           items.Add(item.ToStringNumbers());
-        File.WriteAllLines(Filename, items);
+        File.WriteAllLines(FilePath, items);
       }
       catch ( Exception ex )
       {
@@ -111,9 +111,9 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    public ReferencesList(string filename)
+    public ReferencesList(string filePath)
     {
-      Filename = filename;
+      FilePath = filePath;
     }
   }
 

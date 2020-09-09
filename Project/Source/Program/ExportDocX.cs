@@ -35,13 +35,13 @@ namespace Ordisoftware.Hebrew.Words
     static private Font FontHebrew = new Font("Hebrew");
     static private Font FontCalibri = new Font("Calibri");
 
-    static public void Run(string filename,
+    static public void Run(string filePath,
                            Data.DataSet.BooksRow book,
                            bool includeTranslation,
                            Func<bool> showProgress)
     {
       {
-        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
           try
           {
             SetPageMargins();
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Words
             }
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filename);
+              SystemManager.RunShell(filePath);
           }
           catch ( Exception ex )
           {
@@ -64,13 +64,13 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    static public void Run(string filename, 
+    static public void Run(string filePath, 
                            Data.DataSet.BooksRow book, 
                            Data.DataSet.ChaptersRow chapter, 
                            bool includeTranslation)
     {
       {
-        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
           try
           {
             SetPageMargins();
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Words
               AddVerse(verse, includeTranslation);
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filename);
+              SystemManager.RunShell(filePath);
           }
           catch ( Exception ex )
           {
@@ -89,14 +89,14 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    static public void Run(string filename, 
+    static public void Run(string filePath, 
                            Data.DataSet.BooksRow book, 
                            Data.DataSet.ChaptersRow chapter, 
                            bool includeTranslation, 
                            int verse)
     {
       {
-        using ( Document = DocX.Create(filename, DocumentTypes.Document) )
+        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
           try
           {
             SetPageMargins();
@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Words
             AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
             Document.Save();
             if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filename);
+              SystemManager.RunShell(filePath);
           }
           catch ( Exception ex )
           {

@@ -38,15 +38,15 @@ namespace Ordisoftware.Hebrew.Words
       => Path.Combine(Globals.DocumentsFolderPath, "Parasha");
 
     /// <summary>
-    /// Indicate filename of the bookmaks.
+    /// Indicate file path of the bookmaks.
     /// </summary>
-    static public string BookmarksFilename
+    static public string BookmarksFilePath
       => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
 
     /// <summary>
-    /// Indicate filename of the history.
+    /// Indicate file path of the history.
     /// </summary>
-    static public string HistoryFilename
+    static public string HistoryFilePath
     => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
     /// <summary>
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         if ( _GrammarGuideForm == null )
           _GrammarGuideForm = new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                  ProvidersCollection.HebrewGrammarGuideFilename,
+                                                  ProvidersCollection.HebrewGrammarGuideFilePath,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;
