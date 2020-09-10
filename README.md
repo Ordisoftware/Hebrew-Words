@@ -169,7 +169,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to enable or disable message boxes sounds.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
-- Improve check update to check the SSL certificate of the website and the checksum of the setup.
+- Improve check update to check the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Some UI/UX improvements.
