@@ -322,7 +322,7 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       if ( Program.Settings.CurrentView == ViewMode.Verses ) return;
       SetView(ViewMode.Verses);
-      GoTo(CurrentReference);
+      GoToReference(CurrentReference);
     }
 
     /// <summary>
@@ -336,7 +336,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( Program.Settings.CurrentView == ViewMode.Translations ) return;
       SetView(ViewMode.Translations);
       RenderTranslation();
-      GoTo(CurrentReference);
+      GoToReference(CurrentReference);
     }
 
     /// <summary>
@@ -349,7 +349,7 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       if ( Program.Settings.CurrentView == ViewMode.Text ) return;
       SetView(ViewMode.Text);
-      GoTo(CurrentReference);
+      GoToReference(CurrentReference);
     }
 
     /// <summary>
@@ -511,7 +511,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( reference != null )
       {
         SetView(ViewMode.Verses);
-        GoTo(reference);
+        GoToReference(reference);
       }
     }
 
@@ -802,7 +802,7 @@ namespace Ordisoftware.Hebrew.Words
                                              ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                              1);
         RenderAll();
-        GoTo(CurrentReference);
+        GoToReference(CurrentReference);
       }
       finally
       {
@@ -910,7 +910,7 @@ namespace Ordisoftware.Hebrew.Words
     private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
     {
       PanelViewVerses.Focus();
-      GoTo(CurrentReference);
+      GoToReference(CurrentReference);
     }
 
     /// <summary>
@@ -1097,7 +1097,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionGoToVerse_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      GoTo(SelectReferenceForm.Run());
+      GoToReference(SelectReferenceForm.Run());
     }
 
     /// <summary>
@@ -1107,7 +1107,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionSearchVerse_Click(object sender, EventArgs e)
     {
-      GoTo(SelectVerseForm.Run());
+      GoToReference(SelectVerseForm.Run());
     }
 
     /// <summary>

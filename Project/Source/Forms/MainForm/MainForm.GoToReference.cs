@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( Program.Settings.CurrentView == ViewMode.ELS50
         || Program.Settings.CurrentView == ViewMode.Search )
         SetView(ViewMode.Verses);
-      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+      GoToReference((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
 
     /// <summary>
@@ -37,13 +37,13 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
     {
-      GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
+      GoToReference(new ReferenceItem(book, chapter, verse), forceUpdateView);
     }
 
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
-    public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
+    public void GoToReference(ReferenceItem reference, bool forceUpdateView = false)
     {
       if ( reference == null ) return;
       if ( IsGoToRunning ) return;

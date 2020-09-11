@@ -167,7 +167,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ReachReferencedWord(ReferenceItem reference)
     {
-      MainForm.Instance.GoTo(reference);
+      MainForm.Instance.GoToReference(reference);
     }
 
     private void ActionReachReference_Click(object sender, EventArgs e)
