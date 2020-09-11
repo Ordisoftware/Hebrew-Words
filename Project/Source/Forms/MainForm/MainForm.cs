@@ -116,7 +116,11 @@ namespace Ordisoftware.Hebrew.Words
       var lastdone = Program.Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
       Program.Settings.CheckUpdateLastDone = lastdone;
-      if ( exit ) return;
+      if ( exit )
+      {
+        SystemManager.Exit();
+        return;
+      }
       if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
         Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
