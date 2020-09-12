@@ -98,6 +98,15 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - F12 : About
 - Escape : Close window or Cancel process 
 
+## Roadmap
+
+- Add strong's concordances to database.
+- Add classic english translation to database.
+- Add form to edit strong's concordances.
+- Add form to edit classis english translation.
+- Add classic english translation between an hebrew word and the working translation.
+- Change contextual click on a hebrew word to use database instead of web search.
+
 ## Changelog
 
 #### 2021.__.__ - Version 3.0
