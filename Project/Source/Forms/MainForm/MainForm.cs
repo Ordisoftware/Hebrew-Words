@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
-        string word = ((WordControl)ActiveControl).Reference.Word.Original;
+        string word = ( (WordControl)ActiveControl ).Reference.Word.Original;
         SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
     }
@@ -1311,7 +1311,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
       if ( ActiveControl is WordControl )
-      SearchTranslatedForm.Run((WordControl)ActiveControl);
+        SearchTranslatedForm.Run((WordControl)ActiveControl);
     }
 
     private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
@@ -1325,6 +1325,24 @@ namespace Ordisoftware.Hebrew.Words
       Program.OpenOnlineConcordance(( (WordControl)ActiveControl ).Reference.Word.Original);
     }
 
+    private void button1_Click(object sender, EventArgs e)
+    {
+      long value = 0;
+      var books = from book in MainForm.Instance.DataSet.Books
+                  where book.Number <= BooksBounds.Torah.Max
+                  select book;
+      foreach ( Data.DataSet.BooksRow book in books )
+        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+              foreach ( char letter in word.Hebrew )
+              {
+                int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));
+                if ( index == -1 ) ;
+                value += HebrewAlphabet.ValuesSimple[index];
+              }
+      DisplayManager.Show(value.ToString());
+    }
   }
 
 }
