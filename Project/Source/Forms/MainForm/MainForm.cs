@@ -1325,7 +1325,7 @@ namespace Ordisoftware.Hebrew.Words
       Program.OpenOnlineConcordance(( (WordControl)ActiveControl ).Reference.Word.Original);
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
     {
       long value = 0;
       var books = from book in MainForm.Instance.DataSet.Books

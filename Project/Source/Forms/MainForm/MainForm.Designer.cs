@@ -218,7 +218,6 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.button1 = new System.Windows.Forms.Button();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -656,7 +655,6 @@
       // 
       // PanelNavigation
       // 
-      this.PanelNavigation.Controls.Add(this.button1);
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
@@ -1638,13 +1636,6 @@
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
       // 
-      // button1
-      // 
-      resources.ApplyResources(this.button1, "button1");
-      this.button1.Name = "button1";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1890,7 +1881,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
-    private System.Windows.Forms.Button button1;
   }
 }
 
