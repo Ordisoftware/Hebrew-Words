@@ -586,7 +586,7 @@
     <None Include="Data\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="License\MPL 2.0.rtf" />
+    <None Include="Licenses\MPL 2.0.rtf" />
     <None Include="Properties\DataSources\ImportResults.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -599,8 +599,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="License\MPL 2.0.htm" />
-    <Content Include="License\MPL 2.0.txt" />
+    <Content Include="Licenses\MPL 2.0.htm" />
+    <Content Include="Licenses\MPL 2.0.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

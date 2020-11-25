@@ -38,6 +38,8 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static public readonly MainForm Instance;
 
+    private readonly Properties.Settings Settings = Program.Settings;
+
     /// <summary>
     /// Static constructor.
     /// </summary>
@@ -87,7 +89,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-        if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+        if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
         {
           var reference = (ReferenceItem)control.Tag;
           Program.OpenOnlineVerse((string)menuitem.Tag,
@@ -96,7 +98,7 @@ namespace Ordisoftware.Hebrew.Words
                                   reference.Verse.Number);
         }
         else
-        if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+        if ( control is Label && Settings.CurrentView == ViewMode.Verses )
           Program.OpenOnlineVerse((string)menuitem.Tag,
                                   CurrentReference.Book.Number,
                                   CurrentReference.Chapter.Number,
@@ -112,19 +114,22 @@ namespace Ordisoftware.Hebrew.Words
     private void MainForm_Load(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      Program.Settings.Retrieve();
-      var lastdone = Program.Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
-      Program.Settings.CheckUpdateLastDone = lastdone;
+      Settings.Retrieve();
+      var lastdone = Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                     ref lastdone,
+                                     7, // TODO Settings.CheckUpdateAtStartupDaysInterval,
+                                     true);
+      Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
       {
         SystemManager.Exit();
         return;
       }
-      if ( Program.Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
+      if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
-        Program.Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
-        Program.Settings.Save();
+        Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
+        Settings.Save();
       }
       UpdateSearchButtons();
       BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
@@ -142,9 +147,9 @@ namespace Ordisoftware.Hebrew.Words
       InitializeDialogsDirectory();
       DoBackupDB();
       LoadData();
-      TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+      TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
       if ( TimerAutoSave.Enabled )
-        TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+        TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
       Globals.IsReady = true;
     }
 
@@ -177,7 +182,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Program.Settings.Store();
+      Settings.Store();
     }
 
     /// <summary>
@@ -190,7 +195,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
-      Program.Settings.Store();
+      Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
@@ -217,10 +222,10 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     internal void InitializeDialogsDirectory()
     {
-      OpenFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
-      SaveFileDialogDB.InitialDirectory = Program.Settings.BackupPath;
-      SaveFileDialogMSWord.InitialDirectory = Program.Settings.BackupPath;
-      SaveFileDialogRTF.InitialDirectory = Program.Settings.BackupPath;
+      OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
+      SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
+      SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;
+      SaveFileDialogRTF.InitialDirectory = Settings.BackupPath;
     }
 
     /// <summary>
@@ -252,7 +257,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         SelectBook.SelectedIndex = 0;
         foreach ( var item in SelectSearchInBook.Items )
-          if ( ( (BookItem)item ).Book.Number == Program.Settings.SearchInBookSelectedNumber )
+          if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
             SelectSearchInBook.SelectedItem = item;
         if ( SelectSearchInBook.SelectedIndex == -1 )
           SelectSearchInBook.SelectedIndex = 0;
@@ -320,7 +325,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionViewVerses_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.Verses ) return;
+      if ( Settings.CurrentView == ViewMode.Verses ) return;
       SetView(ViewMode.Verses);
       GoToReference(CurrentReference);
     }
@@ -333,7 +338,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionViewTranslations_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.Translations ) return;
+      if ( Settings.CurrentView == ViewMode.Translations ) return;
       SetView(ViewMode.Translations);
       RenderTranslation();
       GoToReference(CurrentReference);
@@ -347,7 +352,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionViewRawText_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.Text ) return;
+      if ( Settings.CurrentView == ViewMode.Text ) return;
       SetView(ViewMode.Text);
       GoToReference(CurrentReference);
     }
@@ -360,7 +365,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionViewELS50_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.ELS50 ) return;
+      if ( Settings.CurrentView == ViewMode.ELS50 ) return;
       SetView(ViewMode.ELS50);
     }
 
@@ -372,7 +377,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionViewSearch_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.Search )
+      if ( Settings.CurrentView == ViewMode.Search )
         RotateSearchTab();
       else
         SetView(ViewMode.Search);
@@ -423,16 +428,16 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionCloseWindows_Click(object sender, EventArgs e)
     {
-      bool value = Program.Settings.CloseSearchTranslatedFormReturnToReference;
+      bool value = Settings.CloseSearchTranslatedFormReturnToReference;
       try
       {
-        Program.Settings.CloseSearchTranslatedFormReturnToReference = false;
+        Settings.CloseSearchTranslatedFormReturnToReference = false;
         foreach ( var form in SearchTranslatedForm.Forms.ToList() )
           form.Close();
       }
       finally
       {
-        Program.Settings.CloseSearchTranslatedFormReturnToReference = value;
+        Settings.CloseSearchTranslatedFormReturnToReference = value;
       }
     }
 
@@ -443,7 +448,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionCopyToClipboard_Click(object sender, EventArgs e)
     {
-      switch ( Program.Settings.CurrentView )
+      switch ( Settings.CurrentView )
       {
         case ViewMode.Translations:
           Clipboard.SetText(EditTranslations.Text);
@@ -583,7 +588,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionOpenBackupPath_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell(Program.Settings.BackupPath);
+      SystemManager.RunShell(Settings.BackupPath);
     }
 
     /// <summary>
@@ -620,10 +625,10 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       ReLoadData(() =>
       {
-        using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+        using ( var connection = new OdbcConnection(Settings.ConnectionString) )
           try
           {
-            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone, true);
+            Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
           }
           finally
           {
@@ -665,7 +670,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
       {
-        Program.Settings.RestoreMainForm();
+        Settings.RestoreMainForm();
         ActionRefresh.PerformClick();
       }
     }
@@ -701,9 +706,12 @@ namespace Ordisoftware.Hebrew.Words
     internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      var lastdone = Program.Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, e == null);
-      Program.Settings.CheckUpdateLastDone = lastdone;
+      var lastdone = Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                     ref lastdone,
+                                     7, // TODO Settings.CheckUpdateAtStartupDaysInterval,
+                                     e == null);
+      Settings.CheckUpdateLastDone = lastdone;
       if ( !exit ) return;
       Globals.IsExiting = true;
       Close();
@@ -859,7 +867,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       EditLetters.InputText = "";
       EditSearchTranslation.Text = "";
-      Program.Settings.Save();
+      Settings.Save();
       ClearSearchResults();
       UpdateSearchButtons();
       RenderSearch();
@@ -886,8 +894,8 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Program.Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
-      Program.Settings.Save();
+      Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+      Settings.Save();
     }
 
     /// <summary>
@@ -943,14 +951,14 @@ namespace Ordisoftware.Hebrew.Words
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
         var verse = reference.Verse;
         Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
       {
         var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
         var verse = reference.Verse;
@@ -967,21 +975,21 @@ namespace Ordisoftware.Hebrew.Words
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
-        Program.Settings.BookmarkMasterBook = reference.Book.Number;
-        Program.Settings.BookmarkMasterChapter = reference.Chapter.Number;
-        Program.Settings.BookmarkMasterVerse = reference.Verse.Number;
+        Settings.BookmarkMasterBook = reference.Book.Number;
+        Settings.BookmarkMasterChapter = reference.Chapter.Number;
+        Settings.BookmarkMasterVerse = reference.Verse.Number;
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
       {
-        Program.Settings.BookmarkMasterBook = CurrentReference.Book.Number;
-        Program.Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-        Program.Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
+        Settings.BookmarkMasterBook = CurrentReference.Book.Number;
+        Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
+        Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
       }
-      Program.Settings.Store();
+      Settings.Store();
       UpdateBookmarks();
     }
 
@@ -995,7 +1003,7 @@ namespace Ordisoftware.Hebrew.Words
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem reference = null;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         reference = (ReferenceItem)control.Tag;
         reference = new ReferenceItem(reference.Book.Number,
@@ -1003,7 +1011,7 @@ namespace Ordisoftware.Hebrew.Words
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
         reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1025,7 +1033,7 @@ namespace Ordisoftware.Hebrew.Words
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       ReferenceItem reference = null;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         reference = (ReferenceItem)control.Tag;
         reference = new ReferenceItem(reference.Book.Number,
@@ -1033,7 +1041,7 @@ namespace Ordisoftware.Hebrew.Words
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
       {
         int index = Convert.ToInt32(control.Text) - 1;
         reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1063,11 +1071,11 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionClearBookmarks_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
-      Program.Settings.BookmarkMasterBook = 1;
-      Program.Settings.BookmarkMasterChapter = 1;
-      Program.Settings.BookmarkMasterVerse = 1;
+      Settings.BookmarkMasterBook = 1;
+      Settings.BookmarkMasterChapter = 1;
+      Settings.BookmarkMasterVerse = 1;
       Bookmarks.Clear();
-      Program.Settings.Store();
+      Settings.Store();
       UpdateBookmarks();
     }
 
