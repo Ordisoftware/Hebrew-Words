@@ -46,7 +46,7 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 
 _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as well as a way to perform exact translations"_
 
-![Note](https://www.ordisoftware.com/uploads/2019/11/softpedia3.5.png)
+[![Note](https://www.ordisoftware.com/theme/softpedia3.5.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml)
 
 ## Requirements
 
