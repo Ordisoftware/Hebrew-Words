@@ -8,6 +8,23 @@
 
 A tool for Windows written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
 
+## Table of content
+
+1. [Functionalities](#Functionalities)
+2. [Review](#Review)
+3. [Requirements](#Requirements)
+4. [Screenshots](#Screenshots)
+5. [Videos](#Videos)
+6. [Frequently asked questions](#Frequently-asked-questions)
+    - [How to install SQlite ODBC Driver?](#How-to-install-SQlite-ODBC-Driver)
+    - [What to do in case of ODBC datasource connection error?](#What-to-do-in-case-of-ODBC-datasource-connection-error)
+    - [What to do if the check update tells that the SSL certificate is wrong or expired?](#What-to-do-if-the-check-update-tells-that-the-SSL-certificate-is-wrong-or-expired)
+    - [What to do if there is a problem with the display?](#What-to-do-if-there-is-a-problem-with-the-display)
+    - [The software sometimes runs slowly, is this normal?](#The-software-sometimes-runs-slowly-is-this-normal)
+7. [Keyboard shortcuts](#Keyboard-shortcuts)
+8. [Future improvements](#Future-improvements)
+9. [Changelog](#Changelog)
+
 ## Functionalities
 
 - Translate verses word-for-word.
@@ -22,6 +39,14 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 - Links to various online resources.
 - Show some statistics.
 - English, French.
+
+## Review
+
+[Softpedia.com](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml)
+
+_"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as well as a way to perform exact translations"_
+
+![Note](https://www.ordisoftware.com/uploads/2019/11/softpedia3.5.png)
 
 ## Requirements
 
@@ -71,7 +96,7 @@ Use the refresh view action of the menu at the top.
 
 Yes, because implementing features requires a lot of Windows resources that depend on the performance of the computer.
 
-#### Keyboard shortcuts
+## Keyboard shortcuts
 
 - F1 : Verses view
 - F2 : Translation view
@@ -98,7 +123,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - F12 : About
 - Escape : Close window or Cancel process 
 
-## Roadmap
+## Future improvements
 
 - Add strong's concordances to database.
 - Add classic english translation to database.
