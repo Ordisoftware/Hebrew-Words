@@ -211,6 +211,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
+- Replace DocX 1.2 dependency by the NuGet package 1.7.1.
 - The application now automatically creates the ODBC DSN in the Windows registry.
 - Improve setup.
 

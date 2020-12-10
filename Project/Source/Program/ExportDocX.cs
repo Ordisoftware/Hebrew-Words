@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using Ordisoftware.Core;
 using Xceed.Words.NET;
+using Xceed.Document.NET;
 
 namespace Ordisoftware.Hebrew.Words
 {
