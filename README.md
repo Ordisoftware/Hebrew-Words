@@ -223,6 +223,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Serilog-sinks-file NuGet package.
 - Add Markdig NuGet package.
 - Add Newtonsoft.Json NuGet package.
+- Add FileHelpers NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Humanizer NuGet package.
 - Add FluentValidation NuGet package.
