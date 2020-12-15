@@ -134,7 +134,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### 2021.__.__ - Version 3.0
+#### Version 3.0 (in progress)
 
 - Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
 - Fix error message when several SearchTranslatedForm are opened.
@@ -168,52 +168,53 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move online providers values from code to files in the application documents folder.
 - Move tanak text files in Documents in a dedicated folder.
 
->>>>- Add bookmarks backup
+> Add bookmarks backup/restore.
+> Add option to go to last reference on startup.
+> Add parasha list form with references links.
+> Add count the number of a word occurences.
+> Add option to choose double-click action on a word in the search translated form.
+> Improve search to find words in chapters translated title.
 
->>>>- Add option to go to last reference on startup.
+> Add book memo and chapter title/memo in DOCX export.
+> Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+> Add menu to open a batch export form.
+> Add option to enable or disable the web links menu.
 
->>>>- Add parasha list form with references links.
-
->>>>- Add count the number of a word occurences.
-
->>>>- Add option to choose double-click action on a word in the search translated form.
-
->>>>- Improve search to find words in chapters translated title.
-
->>>>- Add book memo and chapter title/memo in DOCX export.
->>>>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
->>>>- Add menu to open a batch export form.
->>>>- Add option to enable or disable the web links menu.
-
-(>>>>- Add word occurences calculator button in the search panel.)
-
-(>>>>- Add option to change fonts size.)
-
-(>>>>- Improve auto-backup to allow periodic archive as weekly or monthly)
-
-(>>>>- Improve import console to support hebrew unicode chars in addition to hebrew font.)
-
-(- Database updated to support internal strong concordance popup menus in the future.)
-
-- Found crashes since v2.2 under Windows Vista when using "Search trabslated" and "Search word in database" menu items from the verses view.
+> (Add word occurences calculator button in the search panel.)
+> (Add option to change fonts size.)
+> (Improve auto-backup to allow periodic archive as weekly or monthly)
+> (Improve import console to support hebrew unicode chars in addition to hebrew font.)
+- (Database updated to support internal strong concordance popup menus in the future.)
 
 - Add permanent database file locking while running.
-- Add concurrency control to avoid database editing when multiple instances are running.
 - Add usage statistics form in tools menu.
+- Add option to set automatic web check update frequency.
+- Add option to enable or disable the web links menu.
 - Add option to enable or disable message boxes sounds.
+- Add option to set application's volume.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
-- Some UI/UX improvements.
+- Improve UI/UX.
 - Massive code refactoring.
 - Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
-- Replace DocX 1.2 dependency by the NuGet package 1.7.1.
 - The application now automatically creates the ODBC DSN in the Windows registry.
 - Improve setup.
+- Rename 32x32 icon files.
+- Refactor project folders hierarchy.
+- Replace simple internal command line parser by CommandLineParser NuGet package.
+- Add Serilog NuGet package.
+- Add Serilog-sinks-file NuGet package.
+- Add Markdig NuGet package.
+- Add Newtonsoft.Json NuGet package.
+- Add MoreLINQ NuGet package.
+- Add Humanizer NuGet package.
+- Add FluentValidation NuGet package.
+- Replace DocX 1.2 dependency by the NuGet package 1.7.1.
 
 #### 2020.09.01 - Version 2.5
 
