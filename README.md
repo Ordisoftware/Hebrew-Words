@@ -169,22 +169,34 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move tanak text files in Documents in a dedicated folder.
 
 > Add bookmarks backup/restore.
+
 > Add option to go to last reference on startup.
+
 > Add parasha list form with references links.
+
 > Add count the number of a word occurences.
+
 > Add option to choose double-click action on a word in the search translated form.
+
 > Improve search to find words in chapters translated title.
 
 > Add book memo and chapter title/memo in DOCX export.
+
 > Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+
 > Add menu to open a batch export form.
+
 > Add option to enable or disable the web links menu.
 
 > (Add word occurences calculator button in the search panel.)
+
 > (Add option to change fonts size.)
+
 > (Improve auto-backup to allow periodic archive as weekly or monthly)
+
 > (Improve import console to support hebrew unicode chars in addition to hebrew font.)
-- (Database updated to support internal strong concordance popup menus in the future.)
+
+> (Database updated to support internal strong concordance popup menus in the future.)
 
 - Add permanent database file locking while running.
 - Add usage statistics form in tools menu.
