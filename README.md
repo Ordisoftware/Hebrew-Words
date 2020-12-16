@@ -225,6 +225,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Newtonsoft.Json NuGet package.
 - Add FileHelpers NuGet package.
 - Add MoreLINQ NuGet package.
+- Add Enums.NET NuGet package.
 - Add Humanizer NuGet package.
 - Add FluentValidation NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.7.1.
