@@ -1,10 +1,9 @@
 # Hebrew Words
 
->This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).
-
->Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
->[Project Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
->[Twitter](https://twitter.com/ordisoftware)<br/>
+> Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
+> This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
+> [Project Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
+> [Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
 
@@ -168,36 +167,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move online providers values from code to files in the application documents folder.
 - Move tanak text files in Documents in a dedicated folder.
 
-> Add bookmarks backup/restore.
-
-> Add option to go to last reference on startup.
-
-> Add parasha list form with references links.
-
-> Add count the number of a word occurences.
-
-> Add option to choose double-click action on a word in the search translated form.
-
-> Improve search to find words in chapters translated title.
-
-> Add book memo and chapter title/memo in DOCX export.
-
-> Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
-
-> Add menu to open a batch export form.
-
-> Add option to enable or disable the web links menu.
-
-> (Add word occurences calculator button in the search panel.)
-
-> (Add option to change fonts size.)
-
-> (Improve auto-backup to allow periodic archive as weekly or monthly)
-
-> (Improve import console to support hebrew unicode chars in addition to hebrew font.)
-
-> (Database updated to support internal strong concordance popup menus in the future.)
-
 - Add permanent database file locking while running.
 - Add usage statistics form in tools menu.
 - Add option to set automatic web check update frequency.
@@ -229,6 +198,22 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Humanizer NuGet package.
 - Add FluentValidation NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.7.1.
+
+>- Add bookmarks backup/restore.
+>- Add option to go to last reference on startup.
+>- Add parasha list form with references links.
+>- Add count the number of a word occurences.
+>- Add option to choose double-click action on a word in the search translated form.
+>- Improve search to find words in chapters translated title.
+>- Add book memo and chapter title/memo in DOCX export.
+>- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+>- Add menu to open a batch export form.
+>- Add option to enable or disable the web links menu.
+>- (Add word occurences calculator button in the search panel.)
+>- (Add option to change fonts size.)
+>- (Improve auto-backup to allow periodic archive as weekly or monthly)
+>- (Improve import console to support hebrew unicode chars in addition to hebrew font.)
+>- (Database updated to support internal strong concordance popup menus in the future.)
 
 #### 2020.09.01 - Version 2.5
 
