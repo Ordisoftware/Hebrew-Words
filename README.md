@@ -195,11 +195,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Enums.NET NuGet package.
 - Add Humanizer NuGet package.
 - Add FluentValidation NuGet package.
-- Add GlobalHotKey NuGet package.
-- Add InputSimulatorStandard NuGet package.
 - Add Serilog NuGet package.
 - Add Serilog-sinks-file NuGet package.
-- Replace DocX 1.2 dependency by the NuGet package 1.7.1.
+- Add InputSimulatorStandard NuGet package.
+- Add Global Shortcut Manager dependency.
+- Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL).
 
 >- Add bookmarks backup/restore.
 >- Add option to go to last reference on startup.
