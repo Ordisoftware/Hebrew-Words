@@ -2,7 +2,7 @@
 
 > Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
 > This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
-> [Project Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
+> [Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
 > [Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
@@ -12,12 +12,13 @@ A tool for Windows written in C# that helps for the literal word-for-word transl
 1. [Functionalities](#Functionalities)
 2. [Review](#Review)
 3. [Requirements](#Requirements)
-4. [Screenshots](#Screenshots)
-5. [Videos](#Videos)
-6. [Frequently asked questions](#Frequently-asked-questions)
-7. [Keyboard shortcuts](#Keyboard-shortcuts)
-8. [Future improvements](#Future-improvements)
-9. [Changelog](#Changelog)
+4. [Download](#Download)
+5. [Screenshots](#Screenshots)
+6. [Videos](#Videos)
+7. [Frequently asked questions](#Frequently-asked-questions)
+8. [Keyboard shortcuts](#Keyboard-shortcuts)
+9. [Future improvements](#Future-improvements)
+10. [Changelog](#Changelog)
 
 ## Functionalities
 
@@ -48,6 +49,10 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Screen 1024x768 or higher
 - Framework .NET 4.7.2
 - SQLite ODBC Driver
+
+## Download
+
+[Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
 ## Screenshots
 
