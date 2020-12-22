@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Words
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
-      DebugManager.TraceEnabled = true;// Settings.TraceEnabled;
+      DebugManager.TraceEnabled = Settings.TraceEnabled;
       Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<SystemCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
