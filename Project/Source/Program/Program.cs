@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew.Words
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.TraceEnabled = true;// Settings.TraceEnabled;
       Language lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<CommandLineOptions>(args, ref lang);
+      SystemManager.CheckCommandLineArguments<SystemCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
