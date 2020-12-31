@@ -77,9 +77,17 @@ In the event that an error message indicates that a DLL file could not be copied
 
 #### What to do in case of ODBC datasource connection error?
 
-The software tries to register an ODBC DSN to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Words\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-Words" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
+The software tries to register an ODBC DSN to the registry but in case of problem run:
 
-"%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Words\Hebrew-Words.sqlite"
+&emsp;`C:\Program Files\Ordisoftware\Hebrew Words\System\RegisterODBC.reg`
+
+Or open the *ODBC Datasource Manager* (Admin tools in Windows' Control panel) and create a user datasource named:
+
+&emsp;`Hebrew-Words` for `SQLite 3 ODBC Driver`
+
+With `Database Name` sets to:
+
+&emsp;`%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Words\Hebrew-Words.sqlite`
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
