@@ -291,7 +291,7 @@
       // 
       resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
       this.EditCommentaryLinesCount.Maximum = new decimal(new int[] {
-            10,
+            20,
             0,
             0,
             0});
