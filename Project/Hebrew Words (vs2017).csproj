@@ -284,7 +284,7 @@
     <Compile Include="Source\Common\Hebrew\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
-    <Compile Include="Source\Common\Hebrew\Parasha.cs" />
+    <Compile Include="Source\Common\Hebrew\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Parashot.cs" />
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
     <Compile Include="Source\Common\Hebrew\SelectValueComboBox.cs">
