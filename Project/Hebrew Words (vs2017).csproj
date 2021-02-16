@@ -284,6 +284,8 @@
     <Compile Include="Source\Common\Hebrew\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Hebrew\Parasha.cs" />
+    <Compile Include="Source\Common\Hebrew\Parashot.cs" />
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
     <Compile Include="Source\Common\Hebrew\SelectValueComboBox.cs">
       <SubType>UserControl</SubType>
@@ -339,7 +341,7 @@
     <Compile Include="Source\Entities\ChapterItem.cs" />
     <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
-    <Compile Include="Source\Enums\BooksBounds.cs" />
+    <Compile Include="Source\Common\Hebrew\BooksBounds.cs" />
     <Compile Include="Source\Enums\BooksNames.Djep.cs" />
     <Compile Include="Source\Enums\BooksNames.Original.cs" />
     <Compile Include="Source\Enums\BooksNames.MechonMamre.cs" />
@@ -422,7 +424,7 @@
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Enums\Books.cs" />
+    <Compile Include="Source\Common\Hebrew\Books.cs" />
     <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">

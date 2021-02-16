@@ -14,7 +14,7 @@
 /// <edited> 2019-09 </edited>
 using System;
 
-namespace Ordisoftware.Hebrew.Words
+namespace Ordisoftware.Hebrew
 {
 
   public enum Books
