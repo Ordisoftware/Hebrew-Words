@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         if ( _GrammarGuideForm == null )
           _GrammarGuideForm = new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                  ProvidersCollection.HebrewGrammarGuideFilePath,
+                                                  OnlineProviders.HebrewGrammarGuideFilePath,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;

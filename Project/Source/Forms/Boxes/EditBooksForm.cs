@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Words
           SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
         }
       };
-      foreach ( var item in ProvidersCollection.OnlineWordProviders.Items )
+      foreach ( var item in OnlineProviders.OnlineWordProviders.Items )
       {
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());

@@ -65,12 +65,12 @@ namespace Ordisoftware.Hebrew.Words
       {
         EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
       };
-      foreach ( var item in ProvidersCollection.OnlineBibleProviders.Items )
+      foreach ( var item in OnlineProviders.OnlineBibleProviders.Items )
         if ( item.Name == "-" )
           MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
         else
           MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
-      foreach ( var item in ProvidersCollection.OnlineWordProviders.Items )
+      foreach ( var item in OnlineProviders.OnlineWordProviders.Items )
         if ( item.Name == "-" )
           MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
         else

@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Words
       History = new History(Program.HistoryFilePath);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CreateProvidersLinks();
-      ActionSearchOnline.InitializeFromProviders(ProvidersCollection.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void CreateProvidersLinks()
     {
-      ContextMenuStripVerse.InitializeFromProviders(ProvidersCollection.OnlineBibleProviders, (sender, e) =>
+      ContextMenuStripVerse.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
