@@ -92,17 +92,17 @@ namespace Ordisoftware.Hebrew.Words
         if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
         {
           var reference = (ReferenceItem)control.Tag;
-          Program.OpenOnlineVerse((string)menuitem.Tag,
-                                  reference.Book.Number,
-                                  reference.Chapter.Number,
-                                  reference.Verse.Number);
+          HebrewTools.OpenOnlineVerse((string)menuitem.Tag,
+                                      reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
         }
         else
         if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-          Program.OpenOnlineVerse((string)menuitem.Tag,
-                                  CurrentReference.Book.Number,
-                                  CurrentReference.Chapter.Number,
-                                  Convert.ToInt32(control.Text));
+          HebrewTools.OpenOnlineVerse((string)menuitem.Tag,
+                                      CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      Convert.ToInt32(control.Text));
       });
     }
 

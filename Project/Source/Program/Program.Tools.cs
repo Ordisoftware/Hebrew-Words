@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.IO;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
@@ -41,25 +40,6 @@ namespace Ordisoftware.Hebrew.Words
     static public void OpenOnlineConcordance(string hebrew)
     {
       SystemManager.RunShell(Settings.SearchOnlineURL.Replace("%WORD%", hebrew));
-    }
-
-    /// <summary>
-    /// Open default online verse search url.
-    /// </summary>
-    static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
-    {
-      SystemManager.RunShell(url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)( book - 1 )])
-                   .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)( book - 1 )])
-                   .Replace("%BOOKCHABAD%", BooksNames.Chabad[(Books)( book - 1 )])
-                   .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)( book - 1 )])
-                   .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)( book - 1 )])
-                   .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)( book - 1 )])
-                   .Replace("%BOOKNUM%", book.ToString())
-                   .Replace("%CHAPTERNUM%", chapter.ToString())
-                   .Replace("%VERSENUM%", verse.ToString())
-                   .Replace("%BOOKNUM#2%", book.ToString("00"))
-                   .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
-                   .Replace("%VERSENUM#2%", verse.ToString("00")));
     }
 
   }

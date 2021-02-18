@@ -296,11 +296,11 @@
     <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.Designer.cs">
       <DependentUpon>SelectValueComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\BooksNames.LEvangile.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
     <Compile Include="Source\Program\Translations.Notices.cs" />
     <Compile Include="Source\Program\Translations.Import.cs" />
     <Compile Include="Source\Entities\VerseItem.cs" />
-    <Compile Include="Source\Enums\BooksNames.Common.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
     <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,8 +316,8 @@
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Program\DataSetHelper.cs" />
-    <Compile Include="Source\Enums\BooksNames.BibleHub.cs" />
-    <Compile Include="Source\Enums\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
@@ -344,10 +344,10 @@
     <Compile Include="Source\Entities\ChapterItem.cs" />
     <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
-    <Compile Include="Source\Enums\BooksNames.Djep.cs" />
-    <Compile Include="Source\Enums\BooksNames.Original.cs" />
-    <Compile Include="Source\Enums\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Enums\BooksNames.StudyBible.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,7 +356,7 @@
     </Compile>
     <Compile Include="Source\Program\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
-    <Compile Include="Source\Enums\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
