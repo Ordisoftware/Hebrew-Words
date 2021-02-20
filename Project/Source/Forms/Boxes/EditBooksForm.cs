@@ -83,9 +83,9 @@ namespace Ordisoftware.Hebrew.Words
         int rowSelected = e.RowIndex;
         if ( e.RowIndex != -1 )
         {
-          EditBooks.ClearSelection();
+          //TODO remove? EditBooks.ClearSelection();
           EditBooks.Rows[rowSelected].Selected = true;
-          BooksBindingSource.Position = e.RowIndex;
+          //TODO remove? BooksBindingSource.Position = e.RowIndex;
         }
       }
     }
