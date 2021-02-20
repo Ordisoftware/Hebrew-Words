@@ -1,18 +1,20 @@
-Bereshit = 
-Noa'h = 
-Lek Leka = 
-Vayera = 
-Haye Sarah = 
-Toledot = 
-Vayetse = 
-Vayishla'h = 
-Vayeshev = 
-Mikets = 
-Vayigash = 
-Vaye'hi = 
+// BOOK BERESHIT
+Bereshit = Will of the Mind in the Space of the Home of the Energy of the Matter
+Noa'h = Power of the Creature
+Lek Leka = Transmission of the Inner Momentum for the Evolution of the Power
+Vayera = Foundation of the Peace of the Educated Mind
+Haye Sarah = Vitality of the Energy of the Love for the Home of the Breath of the Incarnation
+Toledot = Purpose of the Communication of the Instruction to the Student: the Light of the Matter
+Vayetse = Communication of the Impulse of the Right Potential
+Vayishla'h = Direction of the Energy of the Flesh Uplifted with Fidelity
+Vayeshev = Foundation of the Peace of the Home of the Will
+Mikets = Path of the Right Truth
+Vayigash = Communication of Love, Generosity and Friendship
+Vaye'hi = Reality of the Energy of the Authority of the Love
+// BOOK SHEMOT
 Shemot = 
 Vaera = 
-Bo = 
+Bo = Creation of the Potential
 Beshala'h = 
 Yitro = 
 Mishpatim = 
@@ -21,6 +23,7 @@ Tetsave =
 Ki Tissa = 
 Vayaqhel = 
 Peqoudei = 
+// BOOK VAYIQRA
 Vayikra = 
 Tsav = 
 Shemini = 
@@ -31,6 +34,7 @@ Kedoshim =
 Emor = 
 Behar = 
 Be'houqotaï = 
+// BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
 Beha'alotka = 
@@ -41,6 +45,7 @@ Balaq =
 Pin'has = 
 Matot = 
 Massei = 
+// BOOK DEVARIM
 Devarim = 
 Vaet'hanan = 
 Eikev = 
@@ -51,4 +56,4 @@ Ki Tavo =
 Nitsavim = 
 Vayelekh = 
 Haazinou = 
-Vezot HaBeraka = 
+Vezot HaBerakah = 
