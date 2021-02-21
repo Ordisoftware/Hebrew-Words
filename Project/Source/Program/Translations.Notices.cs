@@ -37,9 +37,10 @@ namespace Ordisoftware.Hebrew.Words
         { Language.EN, "Use the following tags to replace values:" + Globals.NL2 +
                         "%BOOKSB% : StudyBible.org book name" + Globals.NL +
                         "%BOOKBIBLEHUB% : BibleHub.org book name" + Globals.NL +
+                        "%BOOKSEFARIA% : Sefaria.org book name" + Globals.NL +
                         "%BOOKCHABAD% : Chabad.org book name" + Globals.NL +
-                        "%BOOKEL% : LEvangile.com book name" + Globals.NL +
                         "%BOOKMM% : Mechon-Mamre.org book name" + Globals.NL +
+                        "%BOOKEL% : LEvangile.com book name" + Globals.NL +
                         "%BOOKDJEP% : Djep.hd.free.fr book name" + Globals.NL2 +
                         "%BOOKNUM% : Book number" + Globals.NL +
                         "%CHAPTERNUM% : Chapter number" + Globals.NL +
@@ -51,9 +52,10 @@ namespace Ordisoftware.Hebrew.Words
         { Language.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
                         "%BOOKSB% : Nom du livre StudyBible.org" + Globals.NL +
                         "%BOOKBIBLEHUB% : Nom du livre BibleHub.org" + Globals.NL +
+                        "%BOOKSEFARIA% : Nom du livre Sefaria.org" + Globals.NL +
                         "%BOOKCHABAD% : Nom du livre Chabad.org" + Globals.NL +
-                        "%BOOKEL% : Nom du livre LEvangile.com" + Globals.NL +
                         "%BOOKMM% : Nom du livre Mechon-Mamre.org" + Globals.NL +
+                        "%BOOKEL% : Nom du livre LEvangile.com" + Globals.NL +
                         "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Globals.NL2 +
                         "%BOOKNUM% : Numéro du livre" + Globals.NL +
                         "%CHAPTERNUM% : Numéro du chaptre" + Globals.NL +
