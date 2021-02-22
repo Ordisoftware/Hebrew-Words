@@ -95,7 +95,7 @@ namespace Ordisoftware.Hebrew.Words
         LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Lettriq", "Memo", "TEXT", "''", true);
+        LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
         //upgraded = !connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);

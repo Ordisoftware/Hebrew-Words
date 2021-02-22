@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Hebrew Words")]
-[assembly: AssemblyDescription("Literal word-for-word translation of the Hebrew Bible")]
+[assembly: AssemblyDescription("Literal word-for-word translator of the Hebrew Bible")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-words")]

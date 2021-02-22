@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.IO;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words

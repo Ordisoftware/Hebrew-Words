@@ -17,7 +17,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-
 namespace Ordisoftware.Hebrew.Words
 {
 
@@ -102,7 +101,7 @@ namespace Ordisoftware.Hebrew.Words
           Program.OpenOnlineConcordance(Reference.Word.Original);
           break;
         case HebrewWordClickOpen.SearchTranslated:
-          //MainForm.Instance.ActionSearchTranslated.PerformClick();
+          MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickOpen.Nothing:
           break;

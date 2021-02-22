@@ -24,8 +24,8 @@ namespace Ordisoftware.Hebrew.Words
     static public readonly TranslationsDictionary ApplicationDescription
       = new TranslationsDictionary
       {
-        [Language.EN] = "A tool for the literal word-for-word translation of the Hebrew Bible",
-        [Language.FR] = "Un outil pour la traduction littérale mot-à-mot de la Bible hébraïque"
+        [Language.EN] = "Literal word-for-word translator of the Hebrew Bible",
+        [Language.FR] = "Traducteur littéral mot-à-mot de la Bible hébraïque"
       };
 
     static public readonly TranslationsDictionary AskToCreateNewDatabase
