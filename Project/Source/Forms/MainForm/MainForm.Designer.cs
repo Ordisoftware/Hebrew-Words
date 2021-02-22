@@ -206,6 +206,7 @@
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,7 +220,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1270,6 +1270,7 @@
       // 
       // MenuTools
       // 
+      resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewBooksTranslation,
@@ -1283,7 +1284,6 @@
             this.ActionOpenLexilogosModern,
             this.toolStripSeparator16,
             this.ActionViewStatistics});
-      resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
       // 
       // ActionViewBooksTranslation
@@ -1353,14 +1353,14 @@
       // 
       // ActionWebLinks
       // 
-      this.ActionWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
+      this.ActionWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionWebLinks.Name = "ActionWebLinks";
       // 
       // ActionInformation
       // 
-      this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionInformation, "ActionInformation");
+      this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionInformation.Name = "ActionInformation";
       // 
       // ActionImportConcordances
@@ -1572,6 +1572,11 @@
       this.toolStripMenuItem5.Tag = "http://shorashon.free.fr/online/";
       this.toolStripMenuItem5.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
@@ -1640,11 +1645,6 @@
       // WordsTableAdapter
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // MainForm
       // 

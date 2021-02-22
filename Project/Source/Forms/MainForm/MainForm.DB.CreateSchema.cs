@@ -50,6 +50,7 @@ namespace Ordisoftware.Hebrew.Words
                                             Name TEXT DEFAULT '' NOT NULL,
                                             CommonName TEXT DEFAULT '' NOT NULL,
                                             Translation TEXT DEFAULT '' NOT NULL,
+                                            Lettriq TEXT DEFAULT '' NOT NULL,
                                             Memo TEXT DEFAULT '' NOT NULL,
                                             CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
                                           )");
@@ -94,6 +95,7 @@ namespace Ordisoftware.Hebrew.Words
         LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true);
+        LockFileConnection.CheckColumn("Lettriq", "Memo", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
         LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
         //upgraded = !connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
