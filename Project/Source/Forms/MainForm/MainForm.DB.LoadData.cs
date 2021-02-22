@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Words
       }
       try
       {
-      Bookmarks.Load();
+        Bookmarks.Load();
         UpdateBookmarks();
         History.Load();
         UpdateHistory();
@@ -54,14 +54,6 @@ namespace Ordisoftware.Hebrew.Words
           SetView(ViewMode.Verses, true);
           Program.Settings.CurrentSearchTypeTab = 0;
         }
-        if ( Program.Settings.GoToMasterBookmarkAtStartup )
-          GoTo(Program.Settings.BookmarkMasterBook,
-               Program.Settings.BookmarkMasterChapter,
-               Program.Settings.BookmarkMasterVerse,
-               true);
-        else
-          GoTo(1, 1, 1, true);
-        ActionSave.PerformClick();
       }
       catch ( Exception ex )
       {

@@ -112,7 +112,6 @@
       this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
-      this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
@@ -875,7 +874,6 @@
             this.ActionViewVerses,
             this.ActionExit,
             this.Sep4,
-            this.Sep6,
             this.ActionPreferences,
             this.MenuSettings,
             this.ActionViewTranslations,
@@ -926,12 +924,6 @@
       this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep4.Name = "Sep4";
       resources.ApplyResources(this.Sep4, "Sep4");
-      // 
-      // Sep6
-      // 
-      this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep6.Name = "Sep6";
-      resources.ApplyResources(this.Sep6, "Sep6");
       // 
       // ActionPreferences
       // 
@@ -1718,7 +1710,6 @@
     internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
     internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
     private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
-    private System.Windows.Forms.ToolStripSeparator Sep6;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;

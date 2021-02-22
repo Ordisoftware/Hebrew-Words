@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionSearchWord_Click(object sender, EventArgs e)
     {
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      MainForm.Instance.SearchWord(( (Data.DataSet.BooksRow)row ).Hebrew);
+      MainForm.Instance.SearchHebrewWord(( (Data.DataSet.BooksRow)row ).Hebrew);
 
       // TODO form to select one word from multiple having more than 1 char
 

@@ -155,20 +155,52 @@ namespace Ordisoftware.Hebrew.Words
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
       Globals.IsReady = true;
+      bool auto = false;
       if ( SystemManager.CommandLineOptions != null )
+        try
+        {
+          var options = (ApplicationCommandLine)SystemManager.CommandLineOptions;
+          if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
+          {
+            GoTo(options.ReferenceToGo);
+            auto = true;
+          }
+          else
+          if ( !string.IsNullOrEmpty(options.WordHebrew) )
+          {
+            auto = true;
+            defaultGoTo();
+            SearchHebrewWord(options.WordHebrew);
+          }
+          else
+          if ( !string.IsNullOrEmpty(options.WordUnicode) )
+          {
+            auto = true;
+            defaultGoTo();
+            SearchHebrewWord(HebrewAlphabet.ConvertToHebrewFont(options.WordHebrew));
+          }
+          else
+          if ( !string.IsNullOrEmpty(options.WordTranslated) )
+          {
+            auto = true;
+            defaultGoTo();
+            SearchTranslatedWord(options.WordTranslated);
+          }
+        }
+        catch
+        {
+        }
+      if ( !auto ) defaultGoTo();
+      ActionSave.PerformClick();
+      void defaultGoTo()
       {
-        var options = (ApplicationCommandLine)SystemManager.CommandLineOptions;
-        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
-          ;
+        if ( Program.Settings.GoToMasterBookmarkAtStartup )
+          GoTo(Program.Settings.BookmarkMasterBook,
+               Program.Settings.BookmarkMasterChapter,
+               Program.Settings.BookmarkMasterVerse,
+               true);
         else
-        if ( !string.IsNullOrEmpty(options.WordHebrew) )
-          ;
-        else
-        if ( !string.IsNullOrEmpty(options.WordUnicode) )
-          ;
-        else
-        if ( !string.IsNullOrEmpty(options.WordTranslated) )
-          ;
+          GoTo(1, 1, 1, true);
       }
     }
 
@@ -1133,12 +1165,24 @@ namespace Ordisoftware.Hebrew.Words
     /// Search a hebrew word.
     /// </summary>
     /// <param name="word"></param>
-    public void SearchWord(string word)
+    public void SearchHebrewWord(string word)
     {
       SetView(ViewMode.Search);
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
       EditLetters.InputText = HebrewAlphabet.SetFinal(word, false);
       EditLetters.InputSelectionStart = EditLetters.InputText.Length;
+    }
+
+    /// <summary>
+    /// Search a translated word.
+    /// </summary>
+    /// <param name="word"></param>
+    public void SearchTranslatedWord(string word)
+    {
+      SetView(ViewMode.Search);
+      SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
+      EditLetters.InputText = word;
+      EditLetters.InputSelectionStart = EditSearchTranslation.Text.Length;
     }
 
     /// <summary>
@@ -1335,7 +1379,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
     {
-      SearchWord(CurrentReference.Word.Hebrew);
+      SearchHebrewWord(CurrentReference.Word.Hebrew);
     }
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
