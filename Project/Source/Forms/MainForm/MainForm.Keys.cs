@@ -89,15 +89,6 @@ namespace Ordisoftware.Hebrew.Words
         case Keys.Control | Keys.L:
           ActionOpenShorashon.PerformClick();
           return true;
-        case Keys.F8:
-          ActionPreferences.PerformClick();
-          return true;
-        case Keys.F11:
-          ActionHelp.PerformClick();
-          return true;
-        case Keys.F12:
-          ActionAbout_Click(null, null);
-          return true;
         case Keys.Escape:
           if ( IsRenderingSearch ) CancelRequired = true;
           break;

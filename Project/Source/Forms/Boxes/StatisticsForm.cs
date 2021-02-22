@@ -197,7 +197,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
     {
-      Program.OpenHebrewLetters(((Label)sender).Text);
+      HebrewTools.OpenHebrewLetters(( (Label)sender ).Text, Program.Settings.HebrewLettersExe);
     }
 
     private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -105,30 +105,31 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Keyboard shortcuts
 
-- F1 : Verses view
-- F2 : Translation view
-- F3 : Hebrew text view
-- F4 : ELS50 verses view
-- F5 : Search view
-- Ctrl+B : Open the books names editor
-- Ctrl+H : Open Hebrew Letters
-- Ctrl+T : Open translated form for the focused hebrew word
-- Ctrl+K : Open search panel for the focused hebrew word
-- Ctrl+G : Open the grammar guide
-- Ctrl+L : Open Shorashon web page
-- Ctrl+R : Find reference
-- Ctrl+F : Find verse number in current chapter (0 for first untranslated)
-- Ctrl+S : Save changes
-- Ctrl+Home : Reach the beginning of the view
-- Ctrl+End : Reach the ending of the view
-- Ctrl+Up : Scroll the view up (fine)
-- Ctrl+Down : Scroll the view down (fine)
-- PageUp : Scroll the view up
-- PageDown : Scroll the view down
-- F8 : Preferences
-- F11 : Help
-- F12 : About
-- Escape : Close window or Cancel process 
+| Keys | Actions |
+|-|-|
+| F1 | Verses view |
+| F2 | Translation view |
+| F3 | Hebrew text view |
+| F4 | ELS50 verses view |
+| F5 | Search view |
+| Ctrl+B | Open the books names editor |
+| Ctrl+H | Open Hebrew Letters |
+| Ctrl+T | Open translated form for the focused hebrew word |
+| Ctrl+K | Open search panel for the focused hebrew word |
+| Ctrl+G | Open the grammar guide |
+| Ctrl+L | Open Shorashon web page |
+| Ctrl+R | Find reference |
+| Ctrl+F | Find verse number in current chapter (0 for first untranslated) |
+| Ctrl+S | Save changes |
+| Ctrl+Home | Reach the beginning of the view |
+| Ctrl+End | Reach the ending of the view |
+| Ctrl+Up | Scroll the view up (fine) |
+| Ctrl+Down | Scroll the view down (fine) |
+| PageUp | Scroll the view up |
+| PageDown | Scroll the view down |
+| F9 | Preferences |
+| F12 | About |
+| Alt + F4 (or Escape) | Close window |
 
 ## Future improvements
 
@@ -141,61 +142,20 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### Version 3.0 (in progress)
+## Future improvements
 
-- Integrate the new input panel from Hebrew Letters v4 having undo/redo/copy/cit/paste capabilities.
-- Fix error message when several SearchTranslatedForm are opened.
-- Fix error message when typing in the comment boxes.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Add book name translation text box in the navigation panel.
-- Add chapter title and memo text boxes in the navigation panel.
-- Add buttons to edit book and chapter memos in the navigation panel.
-- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
-- Add books common names field in the database and in the edit books information form.
-- Add open book menu item in the edit books information form.
-- Fix edit books information form : modifications are not saved since an old version.
-- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-- Add source hebrew word in the search translated form.
-- Change selection controls in the go to reference form.
-- Add options to filter the books in the go to reference form.
-- Add "Add a bookmark" menu item.
-- Add "Sort bookmarks" menu item.
-- Add auto sort bookmarks option.
-- Add option to open the master bookmark else the first verse of the Tanak.
-- Fix bookmarks and history files introduced in v2.4 (stored in bin folder instead of user data, moved by the setup).
-- Add menu for web links about judaism.
-- Improve open Hebrew Letters for the current word when focused on the verses view.
-- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
-- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
-- Add optimize database menu.
-- Add option to auto optimize database at startup once a week.
-- Add option to enable debugger.
-- Add debugger (exception information form with GitHub issue creation).
-- Move online providers values from code to files in the application documents folder.
-- Move tanak text files in Documents in a dedicated folder.
 
+
+#### 2021.03.12 - Version 3.0
+
+- Add menu for web links.
 - Add permanent database file locking while running.
-- Add usage statistics form in tools menu.
-- Add option to set automatic web check update frequency.
-- Add option to enable or disable the web links menu.
-- Add option to enable or disable message boxes sounds.
-- Add option to set application's volume.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Improve UI/UX.
-- Massive code refactoring.
-- Update help.
-- Update to SQLite 3.32.3 ODBC Driver.
-- Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
-- The application now automatically creates the ODBC DSN in the Windows registry.
-- Improve setup.
-- Rename 32x32 icon files.
-- Refactor project folders hierarchy.
-- Replace simple internal command line parser by CommandLineParser NuGet package.
 - Add Markdig NuGet package.
 - Add FileHelpers NuGet package.
 - Add Newtonsoft.Json NuGet package.
@@ -207,23 +167,78 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Serilog-sinks-file NuGet package.
 - Add InputSimulatorStandard NuGet package.
 - Add Global Shortcut Manager dependency.
+- Replace simple internal command line parser by CommandLineParser NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL).
+- The application now automatically creates the ODBC DSN in the Windows registry.
+- Massive files and code refactoring.
+- Incorporate common code written since more than one year for Calendar.
+- Update to SQLite 3.32.3 ODBC Driver.
+- Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
+- Update setup.
+- Update web links.
+- Update help.
 
->- Add bookmarks backup/restore.
->- Add option to go to last reference on startup.
->- Add parasha list form with references links.
->- Add count the number of a word occurences.
->- Add option to choose double-click action on a word in the search translated form.
->- Improve search to find words in chapters translated title.
->- Add book memo and chapter title/memo in DOCX export.
->- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
->- Add menu to open a batch export form.
->- Add option to enable or disable the web links menu.
->- (Add word occurences calculator button in the search panel.)
->- (Add option to change fonts size.)
->- (Improve auto-backup to allow periodic archive as weekly or monthly)
->- (Improve import console to support hebrew unicode chars in addition to hebrew font.)
->- (Database updated to support internal strong concordance popup menus in the future.)
+> ???
+- Fix error message when several SearchTranslatedForm are opened.
+- Fix error message when typing in the comment boxes.
+
+> TODO
+- Add open book menu item in the edit books information form.
+- Fix edit books information form : modifications are not saved since an old version.
+- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
+- Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Integrate the new input panel from Hebrew Letters v4+.
+- Add debugger (exception information form with GitHub issue creation).
+- Move online providers values from code to files in the application documents folder.
+- Move tanak text files in Documents in a dedicated folder.
+
+> IN PROGRESS
+- Add book name translation text box in the navigation panel.
+- Add chapter title and memo text boxes in the navigation panel.
+- Add buttons to edit book and chapter memos in the navigation panel.
+- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
+- Add books common names field in the database and in the edit books information form.
+- Add source hebrew word in the search translated form.
+- Add options to filter the books in the go to reference form.
+- Add "Add a bookmark" menu item.
+- Add "Sort bookmarks" menu item.
+- Add auto sort bookmarks option.
+- Add option to open the master bookmark else the first verse of the Tanak.
+- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
+- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
+- Add keyboard shortcuts notice in windows settings menu.
+- Add sounds to clipboard actions.
+- Add optimize database menu.
+- Add option to auto optimize database at startup once a week.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable message boxes sounds.
+- Add option to enable or disable success dialogs.
+- Add option to set application's volume.
+- Add usage statistics form in tools menu.
+- Change selection controls in the go to reference form.
+- Improve open Hebrew Letters for the current word when focused on the verses view.
+- Improve search to find words in chapters translated title.
+
+> FUTURE
+
+- Add parasha list form with references links.
+- Add bookmarks backup/restore.
+- Add book memo and chapter title/memo in DOCX export.
+- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+- Add menu to open a batch export form.
+- Add count the number of a word occurences.
+- Add option to go to last reference on startup.
+- Add option to choose double-click action on a word in the search translated form.
+
+> VERY FUTURE
+- Add word occurences calculator button in the search panel.
+- Add option to change fonts size.
+- Improve auto-backup to allow periodic archive as weekly or monthly
+- Improve import console to support hebrew unicode chars in addition to hebrew font.
+- Database updated to support internal strong concordance popup menus in the future.
 
 #### 2020.09.01 - Version 2.5
 

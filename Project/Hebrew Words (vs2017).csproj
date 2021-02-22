@@ -221,6 +221,12 @@
     <Compile Include="Source\Common\Core\WinForms\DataFileEditorForm.Designer.cs">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Core\WinForms\ExceptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,15 @@
     <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
@@ -299,17 +314,10 @@
     <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.Designer.cs">
       <DependentUpon>SelectValueComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
-    <Compile Include="Source\Program\Translations.Notices.cs" />
-    <Compile Include="Source\Program\Translations.Import.cs" />
-    <Compile Include="Source\Entities\VerseItem.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
-    <Compile Include="Source\Forms\Boxes\EditMemoForm.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.GoTo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\EditMemoForm.Designer.cs">
-      <DependentUpon>EditMemoForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Forms\Import\ImportStrongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,9 +326,9 @@
     </Compile>
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
+    <Compile Include="Source\Program\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\AppTranslations.cs" />
     <Compile Include="Source\Program\DataSetHelper.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
@@ -341,16 +349,11 @@
     <Compile Include="Source\Forms\Import\ImportVerseForm.Designer.cs">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program\Translations.cs" />
     <Compile Include="Source\Entities\Bookmarks.cs" />
     <Compile Include="Source\Entities\BookItem.cs" />
     <Compile Include="Source\Entities\ChapterItem.cs" />
     <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,7 +362,6 @@
     </Compile>
     <Compile Include="Source\Program\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
@@ -390,9 +392,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.GoToReference.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
@@ -506,6 +505,12 @@
     <EmbeddedResource Include="Source\Common\Core\WinForms\DataFileEditorForm.resx">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.fr.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\ExceptionForm.fr.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,12 +567,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.resx">
       <DependentUpon>SelectValueComboBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\EditMemoForm.fr.resx">
-      <DependentUpon>EditMemoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\EditMemoForm.resx">
-      <DependentUpon>EditMemoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>

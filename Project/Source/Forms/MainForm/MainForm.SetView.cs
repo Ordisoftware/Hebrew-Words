@@ -121,7 +121,7 @@ namespace Ordisoftware.Hebrew.Words
       ViewPanels[view].Panel.Parent = PanelMainCenter;
       if ( ViewPanels[view].Focused != null ) ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
-      LabelTitle.Text = Translations.ViewPanelTitle.GetLang(view).ToUpper();
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       ActionCopyToClipboard.Enabled = view == ViewMode.Translations;
       ActionExportBook.Enabled = view == ViewMode.Verses
                               || view == ViewMode.ELS50;

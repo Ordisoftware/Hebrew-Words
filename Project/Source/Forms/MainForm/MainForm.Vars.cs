@@ -24,6 +24,8 @@ namespace Ordisoftware.Hebrew.Words
   public partial class MainForm
   {
 
+    private readonly Properties.Settings Settings = Program.Settings;
+
     /// <summary>
     /// Indicate loading data progress bar divisor.
     /// </summary>

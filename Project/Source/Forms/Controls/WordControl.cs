@@ -96,13 +96,13 @@ namespace Ordisoftware.Hebrew.Words
       switch ( Program.Settings.HebrewWordClickOpen )
       {
         case HebrewWordClickOpen.HebrewLetters:
-          Program.OpenHebrewLetters(LabelHebrew.Text);
+          HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Program.Settings.HebrewLettersExe);
           break;
         case HebrewWordClickOpen.OnlineSearch:
           Program.OpenOnlineConcordance(Reference.Word.Original);
           break;
         case HebrewWordClickOpen.SearchTranslated:
-          MainForm.Instance.ActionSearchTranslated.PerformClick();
+          //MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickOpen.Nothing:
           break;

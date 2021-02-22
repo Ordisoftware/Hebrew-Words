@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,17 +32,13 @@ namespace Ordisoftware.Hebrew.Words
   {
 
     /// <summary>
-    /// Indicate the default Settings instance.
-    /// </summary>
-    static public readonly Properties.Settings Settings
-      = Properties.Settings.Default;
-
-    /// <summary>
     /// Process startup method.
     /// </summary>
     [STAThread]
     static void Main(string[] args)
     {
+      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
+      //Globals.AlternativeToURL = "";
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
@@ -55,9 +51,20 @@ namespace Ordisoftware.Hebrew.Words
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       Language lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<SystemCommandLine>(args, ref lang);
+      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
+      if ( SystemManager.CommandLineOptions != null )
+        if ( SystemManager.CommandLineOptions.ResetSettings )
+        {
+          SystemManager.CleanAllLocalAppSettingsFolders();
+          CheckSettingsReset(true);
+        }
+        else
+        if ( !Settings.FirstLaunch
+          && SystemManager.CommandLineOptions != null
+          && SystemManager.CommandLineOptions.HideGUI )
+          Globals.ForceStartupHide = true;
       Application.Run(MainForm.Instance);
     }
 
@@ -91,9 +98,15 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Check if settings must be reseted.
     /// </summary>
-    private static void CheckSettingsReset()
+    private static void CheckSettingsReset(bool force = false)
     {
-      Settings.FirstLaunch = false;
+      if ( force )
+      {
+        if ( !force && !Settings.FirstLaunch )
+          DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+        Settings.Reset();
+        Settings.LanguageSelected = Languages.Current;
+      }
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
       Settings.Save();
@@ -130,8 +143,8 @@ namespace Ordisoftware.Hebrew.Words
       menu.DropDownItems.Clear();
       MainForm.Instance.ActionInformation.DropDownItems.Clear();
       MainForm.Instance.ActionInformation.DropDownItems.AddRange(list.ToArray());
-      control.AboutBoxHandler += MainForm.Instance.ActionAbout_Click;
-      control.WebCheckUpdateHandler += MainForm.Instance.ActionWebCheckUpdate_Click;
+      control.AboutBoxHandler = MainForm.Instance.ActionAbout_Click;
+      control.WebCheckUpdateHandler = MainForm.Instance.ActionWebCheckUpdate_Click;
       MainForm.Instance.InitializeSpecialMenus();
       // Various updates
       AboutBox.Instance.AboutBox_Shown(null, null);
@@ -149,3 +162,33 @@ namespace Ordisoftware.Hebrew.Words
   }
 
 }
+
+/*static internal void UpdateLocalization()
+    {
+      string lang = "en-US";
+      if ( Settings.Language == "fr" ) lang = "fr-FR";
+      var culture = new CultureInfo(lang);
+      Thread.CurrentThread.CurrentCulture = culture;
+      Thread.CurrentThread.CurrentUICulture = culture;
+      foreach ( Form form in Application.OpenForms )
+        if ( form != AboutBox.Instance && form != GrammarGuideForm )
+        {
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ApplyResources(resources, form.Controls);
+        }
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      AboutBox.Instance.AboutBox_Shown(null, null);
+      GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
+      if ( MainForm.Instance.IsReady )
+      {
+        MainForm.Instance.RenderTranslation();
+        MainForm.Instance.RenderRawText();
+        MainForm.Instance.RenderELS50();
+        MainForm.Instance.SetView(Settings.CurrentView, true);
+      }
+    }
+
+  }*/

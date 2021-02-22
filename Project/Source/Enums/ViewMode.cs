@@ -10,22 +10,43 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <created> 2019-01 </created>
+/// <edited> 2019-01 </edited>
 using System;
-using System.IO;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
 {
 
-  static partial class Program
+  /// <summary>
+  /// Provide view mode type.
+  /// </summary>
+  public enum ViewMode
   {
 
-    static public void OpenOnlineConcordance(string hebrew)
-    {
-      SystemManager.RunShell(Settings.SearchOnlineURL + hebrew);
-    }
+    /// <summary>
+    /// Verses panels view mode.
+    /// </summary>
+    Verses,
+
+    /// <summary>
+    /// Translations panel view mode.
+    /// </summary>
+    Translations,
+
+    /// <summary>
+    /// Text view mode.
+    /// </summary>
+    Text,
+
+    /// <summary>
+    /// ELS50 view mode.
+    /// </summary>
+    ELS50,
+
+    /// <summary>
+    /// Search view mode.
+    /// </summary>
+    Search
 
   }
 

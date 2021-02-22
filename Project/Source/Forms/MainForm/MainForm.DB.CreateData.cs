@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew.Words
           Books enumBook = (Books)( book.Number - 1 );
           book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
           book.Hebrew = BooksNames.Hebrew[enumBook];
-          if ( book.Original == "")
+          if ( book.Original == "" )
             book.Original = BooksNames.Original[enumBook];
           if ( book.CommonName == "" )
             book.CommonName = BooksNames.Common.GetLang(enumBook);
@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Words
         bool inprogress = true;
         int index = 0;
         int delta = 1;
-        var form = LoadingForm.Instance; ////////////////////////////////////////////////////
+        var form = LoadingForm.Instance;
         form.LabelOperation.Text = SysTranslations.ProgressCreatingData.GetLang();
         form.ProgressBar.Maximum = 64;
         form.Show();

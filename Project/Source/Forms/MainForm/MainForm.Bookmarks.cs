@@ -36,7 +36,7 @@ namespace Ordisoftware.Hebrew.Words
       MouseEventHandler bookmarkClicked = (sender, e) =>
       {
         if ( e.Button != MouseButtons.Right ) return;
-        // bug reentrance (?) if ( !DisplayManager.QueryYesNo(Translations.DeleteBookmark.GetLang()) ) return;
+        // bug reentrance (?) if ( !DisplayManager.QueryYesNo(AppTranslations.DeleteBookmark.GetLang()) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         if ( menuitem.Tag == bookmarkMaster )
         {

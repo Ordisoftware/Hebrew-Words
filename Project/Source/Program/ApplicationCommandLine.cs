@@ -10,23 +10,28 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.IO;
+using CommandLine;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
 {
 
-  static partial class Program
+  public class ApplicationCommandLine : SystemCommandLine
   {
+    [Option('r', "reference", Required = false, HelpText = "Reference to go.")]
+    public bool ReferenceToGo { get; set; }
 
-    static public void OpenOnlineConcordance(string hebrew)
-    {
-      SystemManager.RunShell(Settings.SearchOnlineURL + hebrew);
-    }
+    [Option('w', "unicode", Required = false, HelpText = "Unicode word to search.")]
+    public bool WordHebrew { get; set; }
 
+    [Option('u', "unicode", Required = false, HelpText = "Unicode word to search.")]
+    public bool WordUnicode { get; set; }
+
+    [Option('w', "word", Required = false, HelpText = "Translated word to search.")]
+    public bool WordTranslated { get; set; }
   }
 
 }

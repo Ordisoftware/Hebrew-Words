@@ -23,27 +23,18 @@ namespace Ordisoftware.Hebrew.Words
   public partial class MainForm
   {
 
-    private void GoToBookmark(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.ELS50
-        || Program.Settings.CurrentView == ViewMode.Search )
-        SetView(ViewMode.Verses);
-      GoToReference((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
-    }
-
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
     public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
     {
-      GoToReference(new ReferenceItem(book, chapter, verse), forceUpdateView);
+      GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
     }
 
     /// <summary>
     /// Go to book / chapter / verse into view verses panel.
     /// </summary>
-    public void GoToReference(ReferenceItem reference, bool forceUpdateView = false)
+    public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
     {
       if ( reference == null ) return;
       if ( IsGoToRunning ) return;
@@ -142,9 +133,9 @@ namespace Ordisoftware.Hebrew.Words
       }
       CurrentReference = new ReferenceItem(reference);
       AddCurrentToHistory();
-      EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
-      EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
-      EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
+      //EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
+      //EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
+      //EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
       try
       {
 

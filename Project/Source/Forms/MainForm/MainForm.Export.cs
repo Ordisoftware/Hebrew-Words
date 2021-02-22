@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Words
             SystemManager.RunShell(SaveFileDialogRTF.FileName);
           break;
         default:
-          DisplayManager.ShowInformation("Not implemented.");
+          DisplayManager.ShowWarning("Not implemented.");
           break;
       }
     }
@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Words
             SystemManager.RunShell(SaveFileDialogRTF.FileName);
           break;
         default:
-          DisplayManager.ShowInformation("Not implemented.");
+          DisplayManager.ShowWarning("Not implemented.");
           break;
       }
     }

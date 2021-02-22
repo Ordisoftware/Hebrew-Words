@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -38,8 +39,6 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static public readonly MainForm Instance;
 
-    private readonly Properties.Settings Settings = Program.Settings;
-
     /// <summary>
     /// Static constructor.
     /// </summary>
@@ -54,10 +53,10 @@ namespace Ordisoftware.Hebrew.Words
     private MainForm()
     {
       InitializeComponent();
+      SoundItem.Initialize();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); }
-      catch { }
+      SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
       CurrentReference = new ReferenceItem(null, null, null, null);
       Bookmarks = new Bookmarks(Program.BookmarksFilePath);
       History = new History(Program.HistoryFilePath);
@@ -77,7 +76,9 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     internal void InitializeSpecialMenus()
     {
-      MenuWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+      ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      if ( Settings.WebLinksMenuEnabled )
+        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
     }
 
     /// <summary>
@@ -115,10 +116,13 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
+                                                                   Settings.ApplicationVolume));
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
-                                     7, // TODO Settings.CheckUpdateAtStartupDaysInterval,
+                                     Settings.CheckUpdateAtStartupDaysInterval,
                                      true);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
@@ -195,7 +199,6 @@ namespace Ordisoftware.Hebrew.Words
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
-      Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
@@ -327,7 +330,7 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       if ( Settings.CurrentView == ViewMode.Verses ) return;
       SetView(ViewMode.Verses);
-      GoToReference(CurrentReference);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -341,7 +344,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( Settings.CurrentView == ViewMode.Translations ) return;
       SetView(ViewMode.Translations);
       RenderTranslation();
-      GoToReference(CurrentReference);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -354,7 +357,7 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       if ( Settings.CurrentView == ViewMode.Text ) return;
       SetView(ViewMode.Text);
-      GoToReference(CurrentReference);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -516,7 +519,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( reference != null )
       {
         SetView(ViewMode.Verses);
-        GoToReference(reference);
+        GoTo(reference);
       }
     }
 
@@ -527,7 +530,8 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
     {
-      Program.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "");
+      HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
+                                    Settings.HebrewLettersExe);
     }
 
     /// <summary>
@@ -538,9 +542,9 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionNew_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
-      if ( !DisplayManager.QueryYesNo(Translations.AskToCreateNewDatabase.GetLang()) )
+      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
         return;
       ReLoadData(() =>
       {
@@ -556,7 +560,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionRestore_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(Translations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionBackup.PerformClick();
       if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
         return;
@@ -709,12 +713,14 @@ namespace Ordisoftware.Hebrew.Words
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
-                                     7, // TODO Settings.CheckUpdateAtStartupDaysInterval,
+                                     Settings.CheckUpdateAtStartupDaysInterval,
                                      e == null);
       Settings.CheckUpdateLastDone = lastdone;
-      if ( !exit ) return;
-      Globals.IsExiting = true;
-      Close();
+      if ( exit )
+        Close();
+      else
+      if ( Visible )
+        BringToFront();
     }
 
     /// <summary>
@@ -726,16 +732,6 @@ namespace Ordisoftware.Hebrew.Words
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
       SystemManager.OpenWebLink(url);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionHelp for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionHelp_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.HelpFilePath);
     }
 
     /// <summary>
@@ -810,7 +806,7 @@ namespace Ordisoftware.Hebrew.Words
                                              ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                              1);
         RenderAll();
-        GoToReference(CurrentReference);
+        GoTo(CurrentReference);
       }
       finally
       {
@@ -918,7 +914,7 @@ namespace Ordisoftware.Hebrew.Words
     private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
     {
       PanelViewVerses.Focus();
-      GoToReference(CurrentReference);
+      GoTo(CurrentReference);
     }
 
     /// <summary>
@@ -1105,7 +1101,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionGoToVerse_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      GoToReference(SelectReferenceForm.Run());
+      GoTo(SelectReferenceForm.Run());
     }
 
     /// <summary>
@@ -1115,7 +1111,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionSearchVerse_Click(object sender, EventArgs e)
     {
-      GoToReference(SelectVerseForm.Run());
+      GoTo(SelectVerseForm.Run());
     }
 
     /// <summary>
@@ -1272,7 +1268,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       var form = new EditMemoForm();
       form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
-                 + " " + Translations.BookChapterTitle.GetLang().ToLower()
+                 + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
                  + " " + ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
       form.TextBox.Text = CurrentReference.Chapter.Memo;
       form.TextBox.SelectionStart = 0;
@@ -1333,6 +1329,15 @@ namespace Ordisoftware.Hebrew.Words
       Program.OpenOnlineConcordance(( (WordControl)ActiveControl ).Reference.Word.Original);
     }
 
+    private void GoToBookmark(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      if ( Program.Settings.CurrentView == ViewMode.ELS50
+        || Program.Settings.CurrentView == ViewMode.Search )
+        SetView(ViewMode.Verses);
+      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+    }
+
     private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
     {
       long value = 0;
@@ -1351,6 +1356,7 @@ namespace Ordisoftware.Hebrew.Words
               }
       DisplayManager.Show(value.ToString());
     }
+
   }
 
 }

@@ -146,7 +146,7 @@ namespace Ordisoftware.Hebrew.Words
 
     static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
     {
-      AddTitle(Translations.BookChapterTitle.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
+      AddTitle(AppTranslations.BookChapterTitle.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
     }
 
     static private void AddTitle(string str, Font font, int size, string styleName)

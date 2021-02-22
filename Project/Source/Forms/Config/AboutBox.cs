@@ -11,9 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
-using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static internal AboutBox Instance { get; private set; }
+    static public AboutBox Instance { get; private set; }
 
     /// <summary>
     /// Static constructor.
@@ -58,49 +58,60 @@ namespace Ordisoftware.Hebrew.Words
     private void AboutBox_Load(object sender, EventArgs e)
     {
       this.CenterToMainFormElseScreen();
-      editLicense.Rtf = Properties.Resources.MPL_2_0;
+      EditLicense.Rtf = Properties.Resources.MPL_2_0;
+      Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     }
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
       Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
-      labelTitle.Text = Globals.AssemblyTitle;
-      labelDescription.Text = Translations.ApplicationDescription.GetLang();
-      labelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
-      labelCopyright.Text = Globals.AssemblyCopyright;
-      labelTrademark.Text = Globals.AssemblyTrademark;
+      LabelTitle.Text = Globals.AssemblyTitle;
+      LabelDescription.Text = AppTranslations.ApplicationDescription.GetLang();
+      LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      LabelCopyright.Text = Globals.AssemblyCopyright;
+      LabelTrademark.Text = Globals.AssemblyTrademark;
       TopMost = MainForm.Instance.TopMost;
       BringToFront();
     }
 
     /// <summary>
-    /// Event handler. Called by labelIconsProvider for link clicked events.
+    /// Event handler. Called by LabelProvider for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link label link clicked event information.</param>
-    private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SystemManager.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>
-    /// Event handler. Called by labelTrademarkName for link clicked events.
+    /// Event handler. Called by LabelTrademarkName for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link label link clicked event information.</param>
-    private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SystemManager.OpenAuthorHome();
     }
 
     /// <summary>
-    /// Event handler. Called by editLicense for link clicked events.
+    /// Event handler. Called by EditLicense for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link clicked event information.</param>
-    private void editLicense_LinkClicked(object sender, LinkClickedEventArgs e)
+    private void EditLicense_LinkClicked(object sender, LinkClickedEventArgs e)
     {
-      Process.Start(e.LinkText);
+      SystemManager.OpenWebLink(e.LinkText);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPrivacyNotice for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Link clicked event information.</param>
+    private void ActionPrivacyNotice_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(SysTranslations.NoticePrivacyNoData.GetLang());
     }
 
   }

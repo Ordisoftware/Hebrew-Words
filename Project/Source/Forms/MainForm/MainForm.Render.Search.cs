@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Words
             if ( e.Button == MouseButtons.Left )
             {
               SetView(ViewMode.Verses);
-              GoToReference((ReferenceItem)( (Control)sender ).Tag);
+              GoTo((ReferenceItem)( (Control)sender ).Tag);
             }
           };
           controls[indexControl++] = linklabel;
@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       SetView(ViewMode.Verses);
       var item = (ReferenceItem)( (Control)sender ).Tag;
-      GoToReference(item);
+      GoTo(item);
     }
 
   }

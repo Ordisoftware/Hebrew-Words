@@ -10,26 +10,23 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-03  </created>
-/// <edited> 2020-03 </edited>
+/// <created> 2019-01 </created>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class EditMemoForm : Form
+  public partial class LoadingFormHebrewWords : Form
   {
 
-    public EditMemoForm()
+    public LoadingFormHebrewWords()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-    }
-
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-
+      this.CenterToMainFormElseScreen();
+      LabelApplicationName.Text = Globals.AssemblyTitle;
     }
 
   }

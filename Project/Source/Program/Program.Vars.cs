@@ -26,6 +26,12 @@ namespace Ordisoftware.Hebrew.Words
   {
 
     /// <summary>
+    /// Indicate the default Settings instance.
+    /// </summary>
+    static public readonly Properties.Settings Settings
+      = Properties.Settings.Default;
+
+    /// <summary>
     /// Indicate application documents folder.
     /// </summary>
     static public string TanakFolderPath
