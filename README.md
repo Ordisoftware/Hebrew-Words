@@ -148,14 +148,35 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2021.03.12 - Version 3.0
 
+- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add open book menu item in the edit books information form.
+- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to auto optimize database at startup once a week.
+
+- Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Add source hebrew word in the search translated form.
+- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
+- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
+- Add "Add translation (to a word)" action in the search translated form, in addition to the "use" action.
+- Add "Add a bookmark" menu item.
+- Add "Sort bookmarks" menu item.
+- Add auto sort bookmarks option.
+- Add new input panel from Hebrew Letters v4+.
+- Add new advanced textbox for future undo/redo.
+- Add optimize database menu.
 - Add menu for web links.
-- Add permanent database file locking while running.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Improve UI/UX.
+- Fix error message when several SearchTranslatedForm are opened.
+- Fix error message when typing in the comment boxes.
+- Fix edit books information form : modifications are not saved since an old version.
 - Add Markdig NuGet package.
 - Add FileHelpers NuGet package.
 - Add Newtonsoft.Json NuGet package.
@@ -169,50 +190,28 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Global Shortcut Manager dependency.
 - Replace simple internal command line parser by CommandLineParser NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL).
+- Add debugger (exception information form with GitHub issue creation).
+- The application now permanently lock database file while running.
 - The application now automatically creates the ODBC DSN in the Windows registry.
+- Move online providers values from code to files in the application documents folder.
+- Move tanak text files in Documents in a dedicated folder.
+- Add books common names field in the database and in the edit books information form.
+- Add common code written since more than one year for Calendar.
 - Massive files and code refactoring.
-- Incorporate common code written since more than one year for Calendar.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
 - Update setup.
 - Update web links.
 - Update help.
 
-> ???
-- Fix error message when several SearchTranslatedForm are opened.
-- Fix error message when typing in the comment boxes.
-
-> TODO
-- Add open book menu item in the edit books information form.
-- Fix edit books information form : modifications are not saved since an old version.
-- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Integrate the new input panel from Hebrew Letters v4+.
-- Add debugger (exception information form with GitHub issue creation).
-- Move online providers values from code to files in the application documents folder.
-- Move tanak text files in Documents in a dedicated folder.
 
 > IN PROGRESS
 - Add book name translation text box in the navigation panel.
 - Add chapter title and memo text boxes in the navigation panel.
 - Add buttons to edit book and chapter memos in the navigation panel.
-- Add "add translation (to a word)" action in the search translated form, in addition to the "use" action.
-- Add books common names field in the database and in the edit books information form.
-- Add source hebrew word in the search translated form.
 - Add options to filter the books in the go to reference form.
-- Add "Add a bookmark" menu item.
-- Add "Sort bookmarks" menu item.
-- Add auto sort bookmarks option.
-- Add option to open the master bookmark else the first verse of the Tanak.
-- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
-- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
 - Add keyboard shortcuts notice in windows settings menu.
 - Add sounds to clipboard actions.
-- Add optimize database menu.
-- Add option to auto optimize database at startup once a week.
-- Add option to enable debugger.
-- Add option to set automatic web check update frequency.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable message boxes sounds.
 - Add option to enable or disable success dialogs.
