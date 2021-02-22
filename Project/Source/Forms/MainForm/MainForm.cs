@@ -155,6 +155,21 @@ namespace Ordisoftware.Hebrew.Words
       if ( TimerAutoSave.Enabled )
         TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
       Globals.IsReady = true;
+      if ( SystemManager.CommandLineOptions != null )
+      {
+        var options = (ApplicationCommandLine)SystemManager.CommandLineOptions;
+        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
+          ;
+        else
+        if ( !string.IsNullOrEmpty(options.WordHebrew) )
+          ;
+        else
+        if ( !string.IsNullOrEmpty(options.WordUnicode) )
+          ;
+        else
+        if ( !string.IsNullOrEmpty(options.WordTranslated) )
+          ;
+      }
     }
 
     /// <summary>

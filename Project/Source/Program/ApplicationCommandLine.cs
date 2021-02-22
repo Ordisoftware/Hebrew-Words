@@ -21,17 +21,17 @@ namespace Ordisoftware.Hebrew.Words
 
   public class ApplicationCommandLine : SystemCommandLine
   {
-    [Option('r', "reference", Required = false, HelpText = "Reference to go.")]
-    public bool ReferenceToGo { get; set; }
+    [Option("ref", Required = false, HelpText = "Reference to go.")]
+    public string ReferenceToGo { get; set; }
 
-    [Option('w', "unicode", Required = false, HelpText = "Unicode word to search.")]
-    public bool WordHebrew { get; set; }
+    [Option("hebrew", Required = false, HelpText = "Hebrew word to search.")]
+    public string WordHebrew { get; set; }
 
-    [Option('u', "unicode", Required = false, HelpText = "Unicode word to search.")]
-    public bool WordUnicode { get; set; }
+    [Option("unicode", Required = false, HelpText = "Unicode word to search.")]
+    public string WordUnicode { get; set; }
 
-    [Option('w', "word", Required = false, HelpText = "Translated word to search.")]
-    public bool WordTranslated { get; set; }
+    [Option("word", Required = false, HelpText = "Translated word to search.")]
+    public string WordTranslated { get; set; }
   }
 
 }
