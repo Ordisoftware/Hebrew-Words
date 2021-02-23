@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -135,21 +134,11 @@ namespace Ordisoftware.Hebrew.Words
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      // Menu information
-      var control = new CommonMenusControl();
-      var menu = control.MenuInformation;
-      var list = new List<ToolStripItem>();
-      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
-      menu.DropDownItems.Clear();
-      MainForm.Instance.ActionInformation.DropDownItems.Clear();
-      MainForm.Instance.ActionInformation.DropDownItems.AddRange(list.ToArray());
-      control.AboutBoxHandler = MainForm.Instance.ActionAbout_Click;
-      control.WebCheckUpdateHandler = MainForm.Instance.ActionWebCheckUpdate_Click;
-      MainForm.Instance.InitializeSpecialMenus();
       // Various updates
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
       UndoRedoTextBox.Relocalize();
+      MainForm.Instance.CreateSystemInformationMenu();
       if ( Globals.IsReady )
       {
         MainForm.Instance.RenderTranslation();

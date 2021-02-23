@@ -26,6 +26,8 @@ namespace Ordisoftware.Hebrew.Words
 
     private readonly Properties.Settings Settings = Program.Settings;
 
+    internal CommonMenusControl SystemInformationMenu;
+
     /// <summary>
     /// Indicate loading data progress bar divisor.
     /// </summary>

@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-03 </edited>
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Diagnostics;
@@ -69,6 +70,24 @@ namespace Ordisoftware.Hebrew.Words
         string word = ( (WordControl)ActiveControl ).Reference.Word.Original;
         SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
+    }
+
+    /// <summary>
+    /// Create system information menu items.
+    /// </summary>
+    internal void CreateSystemInformationMenu()
+    {
+      SystemInformationMenu = new CommonMenusControl(ActionAbout_Click,
+                                                     ActionWebCheckUpdate_Click,
+                                                     ActionViewLog_Click,
+                                                     ActionViewStats_Click);
+      var menu = SystemInformationMenu.MenuInformation;
+      var list = new List<ToolStripItem>();
+      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
+      menu.DropDownItems.Clear();
+      ActionInformation.DropDownItems.Clear();
+      ActionInformation.DropDownItems.AddRange(list.ToArray());
+      InitializeSpecialMenus();
     }
 
     /// <summary>
@@ -137,6 +156,9 @@ namespace Ordisoftware.Hebrew.Words
       }
       UpdateSearchButtons();
       BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
+      SystemInformationMenu.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+      SystemInformationMenu.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      DebugManager.TraceEnabledChanged += value => SystemInformationMenu.ActionViewLog.Enabled = value;
     }
 
     /// <summary>
@@ -768,6 +790,17 @@ namespace Ordisoftware.Hebrew.Words
       else
       if ( Visible )
         BringToFront();
+    }
+
+    internal void ActionViewLog_Click(object sender, EventArgs e)
+    {
+      DebugManager.TraceForm.Popup();
+    }
+
+    private void ActionViewStats_Click(object sender, EventArgs e)
+    {
+      // TODO usage stats form and rename tanak stats
+      //StatisticsForm.Run();
     }
 
     /// <summary>
