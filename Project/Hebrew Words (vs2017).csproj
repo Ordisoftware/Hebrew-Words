@@ -499,9 +499,6 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.en.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.fr.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
