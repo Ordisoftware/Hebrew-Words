@@ -69,7 +69,6 @@ namespace Ordisoftware.Hebrew.Words
     private BookStatistic CountersAll = new BookStatistic();
     private BookStatistic CountersTorah = new BookStatistic();
     private BookStatistic CountersSelected = new BookStatistic();
-    //private string LongestWord = string.Empty;
     
     private void InitializeCounters()
     {
@@ -96,6 +95,8 @@ namespace Ordisoftware.Hebrew.Words
           }
         }
       }
+      if ( LabelLongestReferenceValue.Tag != null )
+        LabelLongestReferenceValue.Text = ( (ReferenceItem)LabelLongestReferenceValue.Tag ).ToString();
       void count(Books book, BookStatistic counters)
       {
         try
@@ -205,9 +206,9 @@ namespace Ordisoftware.Hebrew.Words
       HebrewTools.OpenHebrewLetters(( (Label)sender ).Text, Program.Settings.HebrewLettersExe);
     }
 
-    private void LabelMiddleReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Reference = (ReferenceItem)(sender as LinkLabel).Tag;
+      Reference = (ReferenceItem)((LinkLabel)sender).Tag;
       Close();
     }
 

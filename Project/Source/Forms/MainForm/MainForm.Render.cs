@@ -39,11 +39,19 @@ namespace Ordisoftware.Hebrew.Words
     private void RenderAll()
     {
       if ( Globals.IsLoadingData || IsGoToRunning ) return;
-      Refresh();
-      RenderVerses();
-      RenderTranslation();
-      RenderRawText();
-      RenderELS50();
+      LabelRenderingVerses.Visible = true;
+      try
+      {
+        Refresh();
+        RenderVerses();
+        RenderTranslation();
+        RenderRawText();
+        RenderELS50();
+      }
+      finally
+      {
+        LabelRenderingVerses.Visible = false;
+      }
     }
 
   }

@@ -145,7 +145,7 @@
       resources.ApplyResources(this.LabelMiddleReferenceValue, "LabelMiddleReferenceValue");
       this.LabelMiddleReferenceValue.Name = "LabelMiddleReferenceValue";
       this.LabelMiddleReferenceValue.TabStop = true;
-      this.LabelMiddleReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelMiddleReferenceValue_LinkClicked);
+      this.LabelMiddleReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
       // 
       // LabelMiddleLetter
       // 
@@ -259,7 +259,7 @@
       resources.ApplyResources(this.LabelLongestReferenceValue, "LabelLongestReferenceValue");
       this.LabelLongestReferenceValue.Name = "LabelLongestReferenceValue";
       this.LabelLongestReferenceValue.TabStop = true;
-      this.LabelLongestReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelMiddleReferenceValue_LinkClicked);
+      this.LabelLongestReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
       // 
       // LabelLongestWordValue
       // 
