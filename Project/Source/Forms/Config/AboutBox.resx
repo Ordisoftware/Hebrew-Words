@@ -244,7 +244,7 @@
     <value>64, 13</value>
   </data>
   <data name="LabelTrademark.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>0</value>
   </data>
   <data name="LabelTrademark.Text" xml:space="preserve">
     <value>-Trademark-</value>
@@ -274,7 +274,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -301,7 +301,7 @@
     <value>483, 204</value>
   </data>
   <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>1</value>
   </data>
   <data name="EditLicense.Text" xml:space="preserve">
     <value />
@@ -376,7 +376,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionCheckUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
     <value>ActionCheckUpdate</value>
@@ -421,7 +421,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionViewStats.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionViewStats.Name" xml:space="preserve">
     <value>ActionViewStats</value>
@@ -464,7 +464,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionPrivacyNotice.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
     <value>ActionPrivacyNotice</value>
