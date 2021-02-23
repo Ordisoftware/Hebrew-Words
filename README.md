@@ -148,6 +148,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2021.03.12 - Version 3.0
 
+- Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add source hebrew word in the search translated form.
 - Add Ctrl+T shortcut to open the translated form the focused hebrew word.
@@ -225,7 +226,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 > FUTURE
 
-- Add parasha list form with references links.
 - Add bookmarks backup/restore.
 - Add book memo and chapter title/memo in DOCX export.
 - Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
