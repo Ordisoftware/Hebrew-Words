@@ -155,6 +155,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to enable debugger.
 - Add option to set automatic web check update frequency.
 - Add option to auto optimize database at startup once a week.
+- Add show usage statistics from about box.
+- Add check update from about box.
 
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add source hebrew word in the search translated form.
