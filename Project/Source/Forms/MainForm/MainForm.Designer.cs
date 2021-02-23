@@ -219,6 +219,7 @@
       this.ChaptersTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.WordsTableAdapter();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1266,6 +1267,7 @@
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewBooksTranslation,
+            this.ActionViewParashot,
             this.toolStripSeparator6,
             this.ActionShowGrammarGuide,
             this.toolStripSeparator13,
@@ -1638,6 +1640,12 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1884,6 +1892,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
   }
 }
 

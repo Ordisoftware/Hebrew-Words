@@ -858,5 +858,65 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["WebLinksMenuEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point ParashotFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["ParashotFormLocation"]));
+            }
+            set {
+                this["ParashotFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("984, 676")]
+        public global::System.Drawing.Size ParashotFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["ParashotFormClientSize"]));
+            }
+            set {
+                this["ParashotFormClientSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState ParashotFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["ParashotFormWindowState"]));
+            }
+            set {
+                this["ParashotFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal ParashotFormFontSize {
+            get {
+                return ((decimal)(this["ParashotFormFontSize"]));
+            }
+            set {
+                this["ParashotFormFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int ParashotFormColumnTranslationWidth {
+            get {
+                return ((int)(this["ParashotFormColumnTranslationWidth"]));
+            }
+            set {
+                this["ParashotFormColumnTranslationWidth"] = value;
+            }
+        }
     }
 }

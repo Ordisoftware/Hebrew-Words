@@ -577,6 +577,16 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     /// <summary>
+    /// Event handler. Called by ActionViewParashot for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      ParashotForm.Run();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewStatistics for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

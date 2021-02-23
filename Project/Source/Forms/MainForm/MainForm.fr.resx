@@ -117,7 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SelectSearchTypeHebrew.Text" xml:space="preserve">
     <value>Hébreu</value>
   </data>
@@ -136,6 +135,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectSearchTypeVerses.Text" xml:space="preserve">
     <value>Versets</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SelectSearchRequestAllUntranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
   </data>
@@ -547,5 +547,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Tableau des Parashot</value>
   </data>
 </root>

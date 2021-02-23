@@ -217,5 +217,20 @@
     <Setting Name="WebLinksMenuEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ParashotFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="ParashotFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 676</Value>
+    </Setting>
+    <Setting Name="ParashotFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="ParashotFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="ParashotFormColumnTranslationWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
