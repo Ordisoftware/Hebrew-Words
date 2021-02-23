@@ -241,8 +241,9 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      ActionSave.PerformClick();
-      /*MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(ParashotTable.TableName);
+      // TODO export parashot board
+      /*ActionSave.PerformClick();
+      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(ParashotTable.TableName);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
@@ -256,8 +257,8 @@ namespace Ordisoftware.Hebrew.Words
           SystemManager.RunShell(Path.GetDirectoryName(filePath));
         if ( Program.Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
-      }*/
-      ActiveControl = DataGridView;
+      }
+      ActiveControl = DataGridView;*/
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
