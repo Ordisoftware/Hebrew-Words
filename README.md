@@ -148,16 +148,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2021.03.12 - Version 3.0
 
-- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
-- Add open book menu item in the edit books information form.
-- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add option to enable debugger.
-- Add option to set automatic web check update frequency.
-- Add option to auto optimize database at startup once a week.
-- Add show usage statistics from about box.
-- Add check update from about box.
-
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add source hebrew word in the search translated form.
 - Add Ctrl+T shortcut to open the translated form the focused hebrew word.
@@ -206,6 +196,16 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update web links.
 - Update help.
 
+> TO CHECK
+- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add open book menu item in the edit books information form.
+- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to auto optimize database at startup once a week.
+- Add show usage statistics from about box.
+- Add check update from about box.
 
 > IN PROGRESS
 - Add book name translation text box in the navigation panel.
