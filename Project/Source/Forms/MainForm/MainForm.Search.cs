@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Words
       try
       {
         ActionSearchRun.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew 
-                                     && EditLetters.InputText.Length >= 2 )
+                                     && EditLetters.Input.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation 
                                      && EditSearchTranslation.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );

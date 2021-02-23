@@ -117,22 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 24</value>
-  </data>
-  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
     <value>StatAllBooks</value>
   </data>
   <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
     <value>GroupBoxAllBooks</value>
@@ -140,12 +129,14 @@
   <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="GroupBoxAllBooks.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 13</value>
   </data>
   <data name="GroupBoxAllBooks.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 100</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupBoxAllBooks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -162,7 +153,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxAllBooks.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
+  </data>
+  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
+    <value>StatAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
+    <value>GroupBoxAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -172,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 2</value>
+    <value>226, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -199,10 +211,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 378</value>
+    <value>10, 463</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 28</value>
+    <value>304, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -217,22 +229,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="StatTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 24</value>
-  </data>
-  <data name="StatTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <data name="StatTorah.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;StatTorah.Name" xml:space="preserve">
     <value>StatTorah</value>
   </data>
   <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
     <value>GroupBoxTorah</value>
@@ -262,6 +265,75 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTorah.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="StatTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="StatTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
+  </data>
+  <data name="StatTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatTorah.Name" xml:space="preserve">
+    <value>StatTorah</value>
+  </data>
+  <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
+    <value>GroupBoxTorah</value>
+  </data>
+  <data name="&gt;&gt;StatTorah.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
+    <value>SelectBook</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Name" xml:space="preserve">
+    <value>StatBook</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 124</value>
+  </data>
+  <data name="GroupBoxBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 100</value>
+  </data>
+  <data name="GroupBoxBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxBook.Text" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.Name" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
@@ -298,37 +370,13 @@
     <value>StatBook</value>
   </data>
   <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
     <value>GroupBoxBook</value>
   </data>
   <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="GroupBoxBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 124</value>
-  </data>
-  <data name="GroupBoxBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 100</value>
-  </data>
-  <data name="GroupBoxBook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBoxBook.Text" xml:space="preserve">
-    <value>Book</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxBook.Name" xml:space="preserve">
-    <value>GroupBoxBook</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxBook.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxBook.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="LabelMiddleReferenceValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,7 +385,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleReferenceValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 34</value>
+    <value>56, 32</value>
   </data>
   <data name="LabelMiddleReferenceValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -367,7 +415,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleLetter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+    <value>13, 86</value>
   </data>
   <data name="LabelMiddleLetter.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -400,7 +448,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleLetterValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 79</value>
+    <value>57, 77</value>
   </data>
   <data name="LabelMiddleLetterValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 30</value>
@@ -433,7 +481,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleWordValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 52</value>
+    <value>57, 50</value>
   </data>
   <data name="LabelMiddleWordValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 30</value>
@@ -463,7 +511,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 61</value>
+    <value>13, 59</value>
   </data>
   <data name="LabelMiddleWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 13</value>
@@ -493,7 +541,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleReference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 34</value>
+    <value>13, 32</value>
   </data>
   <data name="LabelMiddleReference.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -538,7 +586,151 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMiddle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorahValue.Name" xml:space="preserve">
+    <value>LabelCountTorahValue</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorahValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorahValue.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorahValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvahValue.Name" xml:space="preserve">
+    <value>LabelCountMitsvahValue</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvahValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvahValue.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvahValue.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMoshehValue.Name" xml:space="preserve">
+    <value>LabelCountMoshehValue</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMoshehValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMoshehValue.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMoshehValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVHValue.Name" xml:space="preserve">
+    <value>LabelCountYHVHValue</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVHValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVHValue.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVHValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohimValue.Name" xml:space="preserve">
+    <value>LabelCountElohimValue</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohimValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohimValue.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohimValue.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorah.Name" xml:space="preserve">
+    <value>LabelCountTorah</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorah.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountTorah.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvah.Name" xml:space="preserve">
+    <value>LabelCountMitsvah</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvah.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMitsvah.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMosheh.Name" xml:space="preserve">
+    <value>LabelCountMosheh</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMosheh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMosheh.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountMosheh.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVH.Name" xml:space="preserve">
+    <value>LabelCountYHVH</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVH.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountYHVH.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohim.Name" xml:space="preserve">
+    <value>LabelCountElohim</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohim.Parent" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelCountElohim.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="GroupBoxOccurences.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 235</value>
+  </data>
+  <data name="GroupBoxOccurences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 123</value>
+  </data>
+  <data name="GroupBoxOccurences.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxOccurences.Text" xml:space="preserve">
+    <value>Occurences in the Torah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOccurences.Name" xml:space="preserve">
+    <value>GroupBoxOccurences</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOccurences.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOccurences.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOccurences.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelCountTorahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -840,29 +1032,152 @@
   <data name="&gt;&gt;LabelCountElohim.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="GroupBoxOccurences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 235</value>
+  <data name="LabelLongestReferenceValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="GroupBoxOccurences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 123</value>
+  <data name="LabelLongestReferenceValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="GroupBoxOccurences.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelLongestReferenceValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 25</value>
+  </data>
+  <data name="LabelLongestReferenceValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="LabelLongestReferenceValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelLongestReferenceValue.Text" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Name" xml:space="preserve">
+    <value>LabelLongestReferenceValue</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelLongestWordValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLongestWordValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Hebrew, 15.749999pt</value>
+  </data>
+  <data name="LabelLongestWordValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLongestWordValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 43</value>
+  </data>
+  <data name="LabelLongestWordValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 30</value>
+  </data>
+  <data name="LabelLongestWordValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="GroupBoxOccurences.Text" xml:space="preserve">
-    <value>Occurences in the Torah</value>
+  <data name="LabelLongestWordValue.Text" xml:space="preserve">
+    <value>a</value>
   </data>
-  <data name="&gt;&gt;GroupBoxOccurences.Name" xml:space="preserve">
-    <value>GroupBoxOccurences</value>
+  <data name="&gt;&gt;LabelLongestWordValue.Name" xml:space="preserve">
+    <value>LabelLongestWordValue</value>
   </data>
-  <data name="&gt;&gt;GroupBoxOccurences.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelLongestWordValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelLongestWord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLongestWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLongestWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 52</value>
+  </data>
+  <data name="LabelLongestWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="LabelLongestWord.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelLongestWord.Text" xml:space="preserve">
+    <value>Word:</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Name" xml:space="preserve">
+    <value>LabelLongestWord</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelLongestWordReference.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLongestWordReference.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLongestWordReference.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 25</value>
+  </data>
+  <data name="LabelLongestWordReference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="LabelLongestWordReference.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelLongestWordReference.Text" xml:space="preserve">
+    <value>Verse:</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Name" xml:space="preserve">
+    <value>LabelLongestWordReference</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 369</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 80</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Mots le plus long</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxOccurences.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxOccurences.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -871,7 +1186,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>327, 416</value>
+    <value>324, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

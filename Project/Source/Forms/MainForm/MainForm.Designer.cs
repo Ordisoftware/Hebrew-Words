@@ -588,12 +588,9 @@
       // 
       this.EditLetters.BackColor = System.Drawing.Color.Transparent;
       resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.InputSelectionStart = 0;
-      this.EditLetters.InputText = "";
       this.EditLetters.Name = "EditLetters";
       this.EditLetters.ShowValues = false;
       this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.TextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation

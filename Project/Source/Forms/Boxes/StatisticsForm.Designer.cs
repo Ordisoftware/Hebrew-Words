@@ -56,12 +56,18 @@
       this.LabelCountMosheh = new System.Windows.Forms.Label();
       this.LabelCountYHVH = new System.Windows.Forms.Label();
       this.LabelCountElohim = new System.Windows.Forms.Label();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.LabelLongestReferenceValue = new System.Windows.Forms.LinkLabel();
+      this.LabelLongestWordValue = new System.Windows.Forms.Label();
+      this.LabelLongestWord = new System.Windows.Forms.Label();
+      this.LabelLongestWordReference = new System.Windows.Forms.Label();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
       this.GroupBoxBook.SuspendLayout();
       this.GroupBoxMiddle.SuspendLayout();
       this.GroupBoxOccurences.SuspendLayout();
+      this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -238,12 +244,48 @@
       resources.ApplyResources(this.LabelCountElohim, "LabelCountElohim");
       this.LabelCountElohim.Name = "LabelCountElohim";
       // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.LabelLongestReferenceValue);
+      this.groupBox1.Controls.Add(this.LabelLongestWordValue);
+      this.groupBox1.Controls.Add(this.LabelLongestWord);
+      this.groupBox1.Controls.Add(this.LabelLongestWordReference);
+      resources.ApplyResources(this.groupBox1, "groupBox1");
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.TabStop = false;
+      // 
+      // LabelLongestReferenceValue
+      // 
+      resources.ApplyResources(this.LabelLongestReferenceValue, "LabelLongestReferenceValue");
+      this.LabelLongestReferenceValue.Name = "LabelLongestReferenceValue";
+      this.LabelLongestReferenceValue.TabStop = true;
+      this.LabelLongestReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelMiddleReferenceValue_LinkClicked);
+      // 
+      // LabelLongestWordValue
+      // 
+      resources.ApplyResources(this.LabelLongestWordValue, "LabelLongestWordValue");
+      this.LabelLongestWordValue.Name = "LabelLongestWordValue";
+      this.LabelLongestWordValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelMiddleValue_MouseClick);
+      this.LabelLongestWordValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
+      this.LabelLongestWordValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
+      // 
+      // LabelLongestWord
+      // 
+      resources.ApplyResources(this.LabelLongestWord, "LabelLongestWord");
+      this.LabelLongestWord.Name = "LabelLongestWord";
+      // 
+      // LabelLongestWordReference
+      // 
+      resources.ApplyResources(this.LabelLongestWordReference, "LabelLongestWordReference");
+      this.LabelLongestWordReference.Name = "LabelLongestWordReference";
+      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.GroupBoxOccurences);
+      this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.GroupBoxMiddle);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.GroupBoxBook);
@@ -262,6 +304,8 @@
       this.GroupBoxMiddle.PerformLayout();
       this.GroupBoxOccurences.ResumeLayout(false);
       this.GroupBoxOccurences.PerformLayout();
+      this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -295,5 +339,10 @@
     private System.Windows.Forms.Label LabelCountMosheh;
     private System.Windows.Forms.Label LabelCountMitsvahValue;
     private System.Windows.Forms.Label LabelCountMitsvah;
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.LinkLabel LabelLongestReferenceValue;
+    private System.Windows.Forms.Label LabelLongestWordValue;
+    private System.Windows.Forms.Label LabelLongestWord;
+    private System.Windows.Forms.Label LabelLongestWordReference;
   }
 }

@@ -181,7 +181,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( SystemManager.CommandLineOptions != null )
         try
         {
-          var options = (ApplicationCommandLine)SystemManager.CommandLineOptions;
+          var options = ApplicationCommandLine.Instance;
           if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
           {
             GoTo(options.ReferenceToGo);
@@ -951,7 +951,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Event information.</param>
     private void ActionSearchClear_Click(object sender, EventArgs e)
     {
-      EditLetters.InputText = "";
+      EditLetters.Input.Text = "";
       EditSearchTranslation.Text = "";
       Settings.Save();
       ClearSearchResults();
@@ -1212,8 +1212,8 @@ namespace Ordisoftware.Hebrew.Words
     {
       SetView(ViewMode.Search);
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.InputText = HebrewAlphabet.SetFinal(word, false);
-      EditLetters.InputSelectionStart = EditLetters.InputText.Length;
+      EditLetters.Input.Text = HebrewAlphabet.SetFinal(word, false);
+      EditLetters.Input.SelectionStart = EditLetters.Input.Text.Length;
     }
 
     /// <summary>
@@ -1224,8 +1224,8 @@ namespace Ordisoftware.Hebrew.Words
     {
       SetView(ViewMode.Search);
       SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
-      EditLetters.InputText = word;
-      EditLetters.InputSelectionStart = EditSearchTranslation.Text.Length;
+      EditLetters.Input.Text = word;
+      EditLetters.Input.SelectionStart = EditSearchTranslation.Text.Length;
     }
 
     /// <summary>

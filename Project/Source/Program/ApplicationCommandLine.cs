@@ -21,6 +21,10 @@ namespace Ordisoftware.Hebrew.Words
 
   public class ApplicationCommandLine : SystemCommandLine
   {
+
+    static public ApplicationCommandLine Instance
+      => SystemManager.CommandLineOptions as ApplicationCommandLine;
+
     [Option("ref", Required = false, HelpText = "Reference to go.")]
     public string ReferenceToGo { get; set; }
 
@@ -32,6 +36,7 @@ namespace Ordisoftware.Hebrew.Words
 
     [Option("word", Required = false, HelpText = "Translated word to search.")]
     public string WordTranslated { get; set; }
+
   }
 
 }
