@@ -29,7 +29,7 @@ A libre and open-source software written in C# that helps for the literal word-f
 - Right mouse click on a verse number to open context menu with more options like bookmarks.
 - MS Word export of a book or a chapter or a verse.
 - Determine the Equidistant Letter Sequence of 50 for Tav.
-- Search hebrew or translated words with filters.
+- Search Hebrew or translated words with filters.
 - Grammar guide.
 - Links to various online resources.
 - Show some statistics.
@@ -114,8 +114,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | F5 | Search view |
 | Ctrl+B | Open the books names editor |
 | Ctrl+H | Open Hebrew Letters |
-| Ctrl+T | Open translated form for the focused hebrew word |
-| Ctrl+K | Open search panel for the focused hebrew word |
+| Ctrl+T | Open translated form for the focused Hebrew word |
+| Ctrl+K | Open search panel for the focused Hebrew word |
 | Ctrl+G | Open the grammar guide |
 | Ctrl+L | Open Shorashon web page |
 | Ctrl+R | Find reference |
@@ -137,8 +137,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add classic english translation to database.
 - Add form to edit strong's concordances.
 - Add form to edit classis english translation.
-- Add classic english translation between an hebrew word and the working translation.
-- Change contextual click on a hebrew word to use database instead of web search.
+- Add classic english translation between an Hebrew word and the working translation.
+- Change contextual click on a Hebrew word to use database instead of web search.
 
 ## Changelog
 
@@ -150,9 +150,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Add source hebrew word in the search translated form.
-- Add Ctrl+T shortcut to open the translated form the focused hebrew word.
-- Add Ctrl+K shortcut to open the search view for the focused hebrew word.
+- Add source Hebrew word in the search translated form.
+- Add Ctrl+T shortcut to open the translated form the focused Hebrew word.
+- Add Ctrl+K shortcut to open the search view for the focused Hebrew word.
 - Add "Add translation (to a word)" action in the search translated form, in addition to the "use" action.
 - Add "Add a bookmark" menu item.
 - Add "Sort bookmarks" menu item.
@@ -239,7 +239,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add word occurences calculator button in the search panel.
 - Add option to change fonts size.
 - Improve auto-backup to allow periodic archive as weekly or monthly
-- Improve import console to support hebrew unicode chars in addition to hebrew font.
+- Improve import console to support Hebrew unicode chars in addition to Hebrew font.
 - Database updated to support internal strong concordance popup menus in the future.
 
 #### 2020.09.01 - Version 2.5
@@ -279,7 +279,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.09.19 - Version 2.0
 
-- Add context menu on hebrew words, on verses numbers and on search reference found.
+- Add context menu on Hebrew words, on verses numbers and on search reference found.
 - Add search translations of a word.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
@@ -324,7 +324,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.08.25 - Version 1.4
 
-- Add shortcut for hebrew raw text view.
+- Add shortcut for Hebrew raw text view.
 - Improve check update.
 
 #### 2019.05.22 - Version 1.3
