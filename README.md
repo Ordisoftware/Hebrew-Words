@@ -195,7 +195,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Move tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since more than one year for Calendar.
-- Massive files and code refactoring.
+- Files and code refactoring.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
 - Update setup.
