@@ -52,6 +52,10 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Download
 
+**What's new in the latest version**
+
+-
+
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
 ## Screenshots
