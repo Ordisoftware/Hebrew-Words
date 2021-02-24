@@ -135,6 +135,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      ProcessLocksTable.Lock();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                    Settings.ApplicationVolume));
@@ -256,6 +257,7 @@ namespace Ordisoftware.Hebrew.Words
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Settings.Store();
+      ProcessLocksTable.Unlock();
     }
 
     /// <summary>
