@@ -58,7 +58,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
-[Author's Tanak Database in French](https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books)
+[Author's Tanak Database in French](https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books/tree/master/Tanak)
 
 ## Screenshots
 
