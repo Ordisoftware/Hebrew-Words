@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data.Odbc;
 using System.Windows.Forms;
@@ -41,63 +41,65 @@ namespace Ordisoftware.Hebrew.Words
         if ( Program.Settings.VacuumAtStartup )
           Program.Settings.VacuumLastDone = LockFileConnection.Optimize(Program.Settings.VacuumLastDone);
         LockFileConnection.CheckTable("Books",
-                                      @"CREATE TABLE 'Books' 
-                                          ( 
-                                            ID TEXT DEFAULT '' NOT NULL,
-                                            Number INTEGER NOT NULL,
-                                            Original TEXT DEFAULT '' NOT NULL,
-                                            Hebrew TEXT DEFAULT '' NOT NULL,
-                                            Name TEXT DEFAULT '' NOT NULL,
-                                            CommonName TEXT DEFAULT '' NOT NULL,
-                                            Translation TEXT DEFAULT '' NOT NULL,
-                                            Lettriq TEXT DEFAULT '' NOT NULL,
-                                            Memo TEXT DEFAULT '' NOT NULL,
-                                            CONSTRAINT Pk_Book_ID PRIMARY KEY ( ID ) 
-                                          )");
+                                      @"CREATE TABLE Books
+                                        ( 
+                                          ID TEXT DEFAULT '' NOT NULL,
+                                          Number INTEGER DEFAULT 0 NOT NULL,
+                                          Original TEXT DEFAULT '' NOT NULL,
+                                          Hebrew TEXT DEFAULT '' NOT NULL,
+                                          Name TEXT DEFAULT '' NOT NULL,
+                                          CommonName TEXT DEFAULT '' NOT NULL,
+                                          Translation TEXT DEFAULT '' NOT NULL,
+                                          Lettriq TEXT DEFAULT '' NOT NULL,
+                                          Memo TEXT DEFAULT '' NOT NULL,
+                                          PRIMARY KEY(ID) 
+                                        )");
         LockFileConnection.CheckTable("Chapters",
                                       @"CREATE TABLE Chapters 
-                                          ( 
-                                            ID TEXT DEFAULT '' NOT NULL,
-                                            BookID TEXT DEFAULT '' NOT NULL,
-                                            Number INTEGER NOT NULL,
-                                            Title TEXT DEFAULT '' NOT NULL,
-                                            Memo TEXT DEFAULT '' NOT NULL,
-                                            ELS50 TEXT DEFAULT '' NOT NULL,
-                                            CONSTRAINT Pk_Chapter_ID PRIMARY KEY ( ID ), 
-                                            FOREIGN KEY ( BookID ) REFERENCES Books( ID ) 
-                                          )");
+                                        ( 
+                                          ID TEXT DEFAULT '' NOT NULL,
+                                          BookID TEXT DEFAULT '' NOT NULL,
+                                          Number INTEGER DEFAULT 0 NOT NULL,
+                                          Title TEXT DEFAULT '' NOT NULL,
+                                          Memo TEXT DEFAULT '' NOT NULL,
+                                          ELS50 TEXT DEFAULT '' NOT NULL,
+                                          FOREIGN KEY(BookID) REFERENCES Books(ID),
+                                          PRIMARY KEY(ID)
+                                        )");
         LockFileConnection.CheckTable("Verses",
                                       @"CREATE TABLE Verses 
-                                          ( 
-                                            ID TEXT DEFAULT '' NOT NULL,
-                                            ChapterID TEXT DEFAULT '' NOT NULL,
-                                            Number INTEGER NOT NULL,
-                                            Comment TEXT DEFAULT '' NOT NULL,
-                                            CONSTRAINT Pk_Verse_ID PRIMARY KEY ( ID ), 
-                                            FOREIGN KEY ( ChapterID ) REFERENCES Chapters( ID ) 
-                                          )");
+                                        ( 
+                                          ID TEXT DEFAULT '' NOT NULL,
+                                          ChapterID TEXT DEFAULT '' NOT NULL,
+                                          Number INTEGER DEFAULT 0 NOT NULL,
+                                          Comment TEXT DEFAULT '' NOT NULL,
+                                          FOREIGN KEY(ChapterID) REFERENCES Chapters(ID),
+                                          PRIMARY KEY(ID)
+                                        )");
         LockFileConnection.CheckTable("Words",
                                       @"CREATE TABLE Words 
-                                          ( 
-                                            ID TEXT DEFAULT '' NOT NULL,
-                                            VerseID TEXT DEFAULT '' NOT NULL,
-                                            Number INTEGER NOT NULL,
-                                            Original TEXT DEFAULT '' NOT NULL,
-                                            Hebrew TEXT DEFAULT '' NOT NULL,
-                                            Translation TEXT DEFAULT '' NOT NULL,
-                                            CONSTRAINT Pk_Word_ID PRIMARY KEY ( ID ), 
-                                            FOREIGN KEY ( VerseID ) REFERENCES Verses( ID ) 
-                                          )");
+                                        ( 
+                                          ID TEXT DEFAULT '' NOT NULL,
+                                          VerseID TEXT DEFAULT '' NOT NULL,
+                                          Number INTEGER DEFAULT 0 NOT NULL,
+                                          Original TEXT DEFAULT '' NOT NULL,
+                                          Hebrew TEXT DEFAULT '' NOT NULL,
+                                          Translation TEXT DEFAULT '' NOT NULL,
+                                          FOREIGN KEY (VerseID) REFERENCES Verses(ID),
+                                          PRIMARY KEY (ID)
+                                        )");
         //Transliteration TEXT DEFAULT '' NOT NULL,
         //ClassicTranslation TEXT DEFAULT '' NOT NULL,
         //ConcordanceID TEXT DEFAULT '' NOT NULL,
         //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-        LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true);
-        LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true);
+        bool b = Globals.DatabaseUpgraded;
+        b = !LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true) || b;
+        Globals.DatabaseUpgraded = b;
         //upgraded = !connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
         //upgraded = !connection.CheckColumn("Words", "Transliteration", sqlColumn);
         //upgraded = !connection.CheckColumn("Words", "ConcordanceID", sqlColumn);

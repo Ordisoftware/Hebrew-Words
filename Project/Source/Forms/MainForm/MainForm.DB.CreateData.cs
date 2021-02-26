@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Data.Odbc;
@@ -48,16 +48,17 @@ namespace Ordisoftware.Hebrew.Words
       if ( count != 0 )
       {
         BooksTableAdapter.Fill(DataSet.Books);
-        foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        {
-          Books enumBook = (Books)( book.Number - 1 );
-          book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
-          book.Hebrew = BooksNames.Hebrew[enumBook];
-          if ( book.Original == "" )
-            book.Original = BooksNames.Original[enumBook];
-          if ( book.CommonName == "" )
-            book.CommonName = BooksNames.Common.GetLang(enumBook);
-        }
+        if ( Globals.DatabaseUpgraded )
+          foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+          {
+            Books enumBook = (Books)( book.Number - 1 );
+            book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
+            book.Hebrew = BooksNames.Hebrew[enumBook];
+            if ( book.Original == "" )
+              book.Original = BooksNames.Original[enumBook];
+            if ( book.CommonName == "" )
+              book.CommonName = BooksNames.Common.GetLang(enumBook);
+          }
         TableAdapterManager.UpdateAll(DataSet);
       }
       else
