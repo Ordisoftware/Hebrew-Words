@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Words
   public partial class MainForm
   {
 
-    internal void RenderRawText()
+    public void RenderRawText()
     {
       EditRawText.Clear();
       var list = CurrentReference.Chapter.GetVersesRows();

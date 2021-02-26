@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Words
         foreach ( var reference in results )
         {
           Application.DoEvents();
-          if ( CancelRequired ) { CancelRequired = false; break; }
+          if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
           x = maxX;
           y += marginY;
           linklabel = new LinkLabel();

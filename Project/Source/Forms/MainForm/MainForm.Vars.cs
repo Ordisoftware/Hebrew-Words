@@ -24,9 +24,10 @@ namespace Ordisoftware.Hebrew.Words
   public partial class MainForm
   {
 
+    /// <summary>
+    /// Indicate the default Settings instance.
+    /// </summary>
     private readonly Properties.Settings Settings = Program.Settings;
-
-    internal CommonMenusControl SystemInformationMenu;
 
     /// <summary>
     /// Indicate loading data progress bar divisor.
@@ -59,11 +60,6 @@ namespace Ordisoftware.Hebrew.Words
     private bool IsGoToRunning;
 
     /// <summary>
-    /// Indicate if current processing must be cancelled.
-    /// </summary>
-    private bool CancelRequired;
-
-    /// <summary>
     /// Indicate previous seach paging position.
     /// </summary>
     private int PreviousSeachPagingPosition = -1;
@@ -75,7 +71,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private IEnumerable<ReferenceItem> SearchResults;
 
-    internal int SearchResultsCount { get; private set; }
+    public int SearchResultsCount { get; private set; }
 
     private int PagingCountDisableForm = 50;
     private int PagingCurrent = 0;

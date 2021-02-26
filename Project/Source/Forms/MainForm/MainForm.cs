@@ -75,13 +75,13 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Create system information menu items.
     /// </summary>
-    internal void CreateSystemInformationMenu()
+    public void CreateSystemInformationMenu()
     {
-      SystemInformationMenu = new CommonMenusControl(ActionAbout_Click,
-                                                     ActionWebCheckUpdate_Click,
-                                                     ActionViewLog_Click,
-                                                     ActionViewStats_Click);
-      var menu = SystemInformationMenu.MenuInformation;
+      CommonMenusControl.Instance = new CommonMenusControl(ActionAbout_Click,
+                                                           ActionWebCheckUpdate_Click,
+                                                           ActionViewLog_Click,
+                                                           ActionViewStats_Click);
+      var menu = CommonMenusControl.Instance.MenuInformation;
       var list = new List<ToolStripItem>();
       foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
       menu.DropDownItems.Clear();
@@ -93,7 +93,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Create web links menu items.
     /// </summary>
-    internal void InitializeSpecialMenus()
+    public void InitializeSpecialMenus()
     {
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
       if ( Settings.WebLinksMenuEnabled )
@@ -157,9 +157,9 @@ namespace Ordisoftware.Hebrew.Words
       }
       UpdateSearchButtons();
       BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
-      SystemInformationMenu.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      SystemInformationMenu.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-      DebugManager.TraceEnabledChanged += value => SystemInformationMenu.ActionViewLog.Enabled = value;
+      CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+      CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
-    internal void InitializeDialogsDirectory()
+    public void InitializeDialogsDirectory()
     {
       OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
       SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
@@ -305,7 +305,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Set form disabled or enabled.
     /// </summary>
-    internal void SetFormDisabled(bool disabled)
+    public void SetFormDisabled(bool disabled)
     {
       Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
       ToolStrip.Enabled = !disabled;
@@ -765,7 +765,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void EditScreenPosition_Click(object sender, EventArgs e)
+    public void EditScreenPosition_Click(object sender, EventArgs e)
     {
       DoScreenPosition(sender, e);
     }
@@ -775,7 +775,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionAbout_Click(object sender, EventArgs e)
+    public void ActionAbout_Click(object sender, EventArgs e)
     {
       if ( AboutBox.Instance.Visible )
         AboutBox.Instance.BringToFront();
@@ -788,7 +788,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
       var lastdone = Settings.CheckUpdateLastDone;
@@ -804,7 +804,7 @@ namespace Ordisoftware.Hebrew.Words
         BringToFront();
     }
 
-    internal void ActionViewLog_Click(object sender, EventArgs e)
+    public void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Popup();
     }

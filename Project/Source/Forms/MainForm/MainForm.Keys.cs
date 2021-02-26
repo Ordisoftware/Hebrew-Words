@@ -15,6 +15,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
 {
@@ -90,7 +91,7 @@ namespace Ordisoftware.Hebrew.Words
           ActionOpenShorashon.PerformClick();
           return true;
         case Keys.Escape:
-          if ( IsRenderingSearch ) CancelRequired = true;
+          if ( IsRenderingSearch ) Globals.CancelRequired = true;
           break;
         case Keys.Control | Keys.Up:
           if ( ActiveControl is TextBox ) return false;

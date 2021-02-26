@@ -126,7 +126,7 @@ namespace Ordisoftware.Hebrew.Words
       return Equals(this, y);
     }
 
-    internal bool EqualsWord(ReferenceItem y)
+    public bool EqualsWord(ReferenceItem y)
     {
       return Equals(y) && ( Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
     }

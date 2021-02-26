@@ -48,7 +48,6 @@
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionUndo = new System.Windows.Forms.Button();
-      this.ActionViewNotice = new System.Windows.Forms.Button();
       this.ActionErase = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -108,7 +107,6 @@
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionReset);
       this.PanelBottom.Controls.Add(this.ActionUndo);
-      this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionErase);
       this.PanelBottom.Controls.Add(this.ActionSave);
       this.PanelBottom.Controls.Add(this.ActionClose);
@@ -193,15 +191,6 @@
       this.ActionUndo.Name = "ActionUndo";
       this.ActionUndo.UseVisualStyleBackColor = true;
       this.ActionUndo.Click += new System.EventHandler(this.ActionUndo_Click);
-      // 
-      // ActionViewNotice
-      // 
-      this.ActionViewNotice.AllowDrop = true;
-      this.ActionViewNotice.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
-      this.ActionViewNotice.Name = "ActionViewNotice";
-      this.ActionViewNotice.UseVisualStyleBackColor = true;
-      this.ActionViewNotice.Click += new System.EventHandler(this.ActionViewNotice_Click);
       // 
       // ActionErase
       // 
@@ -628,7 +617,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnicode;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
-    private System.Windows.Forms.Button ActionViewNotice;
     private System.Windows.Forms.Button ActionErase;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsFind;
   }

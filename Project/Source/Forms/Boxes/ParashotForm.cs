@@ -201,14 +201,6 @@ namespace Ordisoftware.Hebrew.Words
       form.Popup(null, sender == null);
     }
 
-    private void ActionViewNotice_Click(object sender, EventArgs e)
-    {
-      ShowNotice(sender,
-                 HebrewTranslations.NoticeParashahTitle,
-                 HebrewTranslations.NoticeParashah,
-                 MessageBoxEx.DefaultMediumWidth);
-    }
-
     private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo("Overwrite default files?") )

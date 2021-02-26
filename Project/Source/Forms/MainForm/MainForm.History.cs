@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Words
   public partial class MainForm
   {
 
-    internal void AddCurrentToHistory()
+    public void AddCurrentToHistory()
     {
       History.Add(CurrentReference);
       UpdateHistory();
