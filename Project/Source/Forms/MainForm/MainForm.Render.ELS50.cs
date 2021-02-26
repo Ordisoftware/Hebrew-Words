@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     public void RenderELS50()

@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class ExportingForm : Form
+  partial class ExportingForm : Form
   {
 
     public bool CancelRequired { get; private set; }

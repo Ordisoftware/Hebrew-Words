@@ -18,7 +18,7 @@ using System.Linq;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public class History : ReferencesList
+  class History : ReferencesList
   {
 
     public override void Add(ReferenceItem reference)

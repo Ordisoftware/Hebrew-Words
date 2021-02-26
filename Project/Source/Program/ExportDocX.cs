@@ -21,7 +21,7 @@ using Xceed.Document.NET;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  static public class ExportDocX
+  static class ExportDocX
   {
 
     /// <summary>

@@ -20,7 +20,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class ImportVerseForm : Form
+  partial class ImportVerseForm : Form
   {
 
     private Data.DataSet.BooksRow GhostBook;

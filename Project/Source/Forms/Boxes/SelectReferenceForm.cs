@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class SelectReferenceForm : Form
+  partial class SelectReferenceForm : Form
   {
 
     static public ReferenceItem Run()

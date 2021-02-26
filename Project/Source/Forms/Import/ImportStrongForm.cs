@@ -26,7 +26,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class ImportStrongForm : Form
+  partial class ImportStrongForm : Form
   {
 
     public ImportStrongForm()

@@ -94,7 +94,7 @@
 
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Label Label;
-    internal System.Windows.Forms.ProgressBar ProgressBar;
+    public System.Windows.Forms.ProgressBar ProgressBar;
     private System.Windows.Forms.Panel panel2;
     private System.Windows.Forms.Button ActionCancel;
   }

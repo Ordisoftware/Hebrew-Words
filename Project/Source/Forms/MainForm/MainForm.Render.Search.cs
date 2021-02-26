@@ -22,7 +22,7 @@ using Ordisoftware.Hebrew.Words.Data;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private void RenderSearch()

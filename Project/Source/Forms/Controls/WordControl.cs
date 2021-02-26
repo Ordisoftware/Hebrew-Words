@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class WordControl : UserControl
+  partial class WordControl : UserControl
   {
 
     public ReferenceItem Reference { get; private set; }

@@ -23,7 +23,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm : Form
+  partial class MainForm : Form
   {
 
     private void CreateConcordances()
@@ -199,7 +199,7 @@ namespace Ordisoftware.Hebrew.Words
 
   }
 
-  public class WordWithConcordance
+  class WordWithConcordance
   {
     public string Original;
     public string Hebrew;

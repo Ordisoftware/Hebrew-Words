@@ -103,9 +103,9 @@
     private System.Windows.Forms.Label LabelVerses;
     private System.Windows.Forms.Label LabelWords;
     private System.Windows.Forms.Label LabelLetters;
-    internal System.Windows.Forms.Label LabelChaptersValue;
-    internal System.Windows.Forms.Label LabelVersesValue;
-    internal System.Windows.Forms.Label LabelWordsValue;
-    internal System.Windows.Forms.Label LabelLettersValue;
+    public System.Windows.Forms.Label LabelChaptersValue;
+    public System.Windows.Forms.Label LabelVersesValue;
+    public System.Windows.Forms.Label LabelWordsValue;
+    public System.Windows.Forms.Label LabelLettersValue;
   }
 }

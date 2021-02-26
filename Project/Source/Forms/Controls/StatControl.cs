@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class StatControl : UserControl
+  partial class StatControl : UserControl
   {
 
     public StatControl()

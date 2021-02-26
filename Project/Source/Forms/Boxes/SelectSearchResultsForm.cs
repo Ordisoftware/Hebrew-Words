@@ -23,7 +23,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class SelectSearchResultsForm : Form
+  partial class SelectSearchResultsForm : Form
   {
 
     static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)

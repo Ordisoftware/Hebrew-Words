@@ -18,7 +18,7 @@ using Ordisoftware.Hebrew.Words.Data;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  static public class DataSetHelper
+  static class DataSetHelper
   {
 
     static public string GetTranslation(this DataSet.VersesRow verse)

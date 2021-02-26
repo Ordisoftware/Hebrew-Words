@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Words
   /// <summary>
   /// Provide book reference item
   /// </summary>
-  public class BookItem
+  class BookItem
   {
 
     public DataSet.BooksRow Book { get; set; }

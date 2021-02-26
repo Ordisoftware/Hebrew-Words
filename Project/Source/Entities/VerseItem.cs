@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Words
   /// <summary>
   /// Provide verse reference item
   /// </summary>
-  public class VerseItem
+  class VerseItem
   {
 
     public DataSet.VersesRow Verse { get; set; }

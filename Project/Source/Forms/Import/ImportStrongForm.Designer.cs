@@ -66,6 +66,6 @@
     #endregion
 
     private System.Windows.Forms.Button ActionLoadStrong;
-    internal System.Windows.Forms.RichTextBox RichTextBox;
+    public System.Windows.Forms.RichTextBox RichTextBox;
   }
 }

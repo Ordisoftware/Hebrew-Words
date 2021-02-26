@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Words
   /// Form for viewing the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class PreferencesForm : Form
+  partial class PreferencesForm : Form
   {
 
     static private bool First;

@@ -23,7 +23,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm : Form
+  partial class MainForm : Form
   {
 
     /// <summary>

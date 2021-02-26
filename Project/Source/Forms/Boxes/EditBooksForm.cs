@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class EditBooksForm : Form
+  partial class EditBooksForm : Form
   {
 
     static public bool Run()

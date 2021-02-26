@@ -80,7 +80,7 @@
     }
 
     #endregion
-    internal Ordisoftware.Core.UndoRedoTextBox EditTranslation;
-    internal System.Windows.Forms.Label LabelHebrew;
+    public Ordisoftware.Core.UndoRedoTextBox EditTranslation;
+    public System.Windows.Forms.Label LabelHebrew;
   }
 }

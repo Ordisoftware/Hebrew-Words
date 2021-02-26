@@ -18,7 +18,7 @@ using Ordisoftware.Hebrew.Words.Data;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     public void RenderTranslation()

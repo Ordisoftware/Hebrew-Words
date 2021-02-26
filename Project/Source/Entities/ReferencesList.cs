@@ -22,7 +22,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public abstract class ReferencesList : IEnumerable<ReferenceItem>
+  abstract class ReferencesList : IEnumerable<ReferenceItem>
   {
 
     protected readonly List<ReferenceItem> Items = new List<ReferenceItem>();

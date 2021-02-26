@@ -22,7 +22,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class SearchTranslatedForm : Form
+  partial class SearchTranslatedForm : Form
   {
 
     static public readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();

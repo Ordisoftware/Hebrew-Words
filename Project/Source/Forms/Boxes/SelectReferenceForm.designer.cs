@@ -8,7 +8,7 @@ namespace Ordisoftware.Hebrew.Words
   /// Provide input box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class SelectReferenceForm : Form
+  partial class SelectReferenceForm : Form
   {
 
     /// <summary>

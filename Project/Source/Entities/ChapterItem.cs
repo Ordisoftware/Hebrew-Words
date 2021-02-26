@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Words
   /// <summary>
   /// Provide chapter reference item
   /// </summary>
-  public class ChapterItem
+  class ChapterItem
   {
 
     public DataSet.ChaptersRow Chapter { get; set; }

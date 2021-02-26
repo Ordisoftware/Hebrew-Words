@@ -20,7 +20,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class StatisticsForm : Form
+  partial class StatisticsForm : Form
   {
 
     private class BookStatistic

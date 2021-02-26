@@ -8,7 +8,7 @@ namespace Ordisoftware.Hebrew.Words
   /// Provide input box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class SelectVerseForm : Form
+  partial class SelectVerseForm : Form
   {
 
     /// <summary>
@@ -122,7 +122,7 @@ namespace Ordisoftware.Hebrew.Words
     /// The label.
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
-    internal NumericUpDown EditVerseNumber;
+    public NumericUpDown EditVerseNumber;
   }
 
 }

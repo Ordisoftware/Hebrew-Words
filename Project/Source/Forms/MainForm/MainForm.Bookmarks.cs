@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private void UpdateBookmarks()

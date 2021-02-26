@@ -158,8 +158,8 @@
     private System.Windows.Forms.RichTextBox EditLicense;
     private System.Windows.Forms.Label LabelDescription;
     private System.Windows.Forms.Panel PanelBottom;
-    internal System.Windows.Forms.Button ActionCheckUpdate;
-    internal System.Windows.Forms.Button ActionViewStats;
+    public System.Windows.Forms.Button ActionCheckUpdate;
+    public System.Windows.Forms.Button ActionViewStats;
     private System.Windows.Forms.Button ActionPrivacyNotice;
   }
 }

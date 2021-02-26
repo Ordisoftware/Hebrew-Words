@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Words
   /// Provide application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class MainForm : Form
+  partial class MainForm : Form
   {
 
     /// <summary>

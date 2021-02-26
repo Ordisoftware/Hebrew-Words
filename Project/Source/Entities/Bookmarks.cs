@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public class Bookmarks : ReferencesList
+  class Bookmarks : ReferencesList
   {
 
     public override void Add(ReferenceItem reference)

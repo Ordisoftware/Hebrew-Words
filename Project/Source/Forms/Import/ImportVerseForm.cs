@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class ImportVerseForm : Form
+  partial class ImportVerseForm : Form
   {
 
     static public void Run(ReferenceItem reference)
