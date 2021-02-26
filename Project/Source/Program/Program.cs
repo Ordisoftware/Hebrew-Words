@@ -15,10 +15,10 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO.Pipes;
 using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO.Pipes;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
@@ -36,15 +36,15 @@ namespace Ordisoftware.Hebrew.Words
     [STAThread]
     static void Main(string[] args)
     {
-      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
-      //Globals.AlternativeToURL = "";
-      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
-      bool upgrade = Settings.UpgradeRequired;
-      Settings.CheckUpgradeRequired(ref upgrade);
-      Settings.UpgradeRequired = upgrade;
-      CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
+      Globals.AlternativeToURL = "";
+      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
+      Globals.SettingsUpgraded = Settings.UpgradeRequired;
+      Settings.CheckUpgradeRequired(ref Globals.SettingsUpgraded);
+      Settings.UpgradeRequired = Globals.SettingsUpgraded;
+      CheckSettingsReset();
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
@@ -53,17 +53,7 @@ namespace Ordisoftware.Hebrew.Words
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      if ( SystemManager.CommandLineOptions != null )
-        if ( SystemManager.CommandLineOptions.ResetSettings )
-        {
-          SystemManager.CleanAllLocalAppSettingsFolders();
-          CheckSettingsReset(true);
-        }
-        else
-        if ( !Settings.FirstLaunch
-          && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideGUI )
-          Globals.ForceStartupHide = true;
+      ProcessCommandLineOptions();
       Application.Run(MainForm.Instance);
     }
 
@@ -109,6 +99,24 @@ namespace Ordisoftware.Hebrew.Words
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
       Settings.Save();
+    }
+
+    /// <summary>
+    /// Process command line options.
+    /// </summary>
+    static private void ProcessCommandLineOptions()
+    {
+      if ( SystemManager.CommandLineOptions != null )
+        if ( SystemManager.CommandLineOptions.ResetSettings )
+        {
+          SystemManager.CleanAllLocalAppSettingsFolders();
+          CheckSettingsReset(true);
+        }
+        else
+        if ( !Settings.FirstLaunch
+          && SystemManager.CommandLineOptions != null
+          && SystemManager.CommandLineOptions.HideGUI )
+          Globals.ForceStartupHide = true;
     }
 
     /// <summary>
