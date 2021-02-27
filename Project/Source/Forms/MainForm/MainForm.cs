@@ -225,6 +225,13 @@ namespace Ordisoftware.Hebrew.Words
         else
           GoTo(1, 1, 1, true);
       }
+      if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+        SystemManager.TryCatch(() =>
+        {
+          var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
+          var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+          if ( menuItem != null ) menuItem.PerformClick();
+        });
     }
 
     /// <summary>

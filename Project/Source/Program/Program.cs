@@ -97,6 +97,12 @@ namespace Ordisoftware.Hebrew.Words
           DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.LanguageSelected = Languages.Current;
+        Settings.SetUpgradeFlagsOff();
+      }
+      if ( Settings.FirstLaunchV3_0 )
+      {
+        Settings.SetFirstAndUpgradeFlagsOff();
+        Settings.FirstLaunch = true;
       }
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
@@ -147,7 +153,7 @@ namespace Ordisoftware.Hebrew.Words
       // Various updates
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-      UndoRedoTextBox.Relocalize();
+      TextBoxEx.Relocalize();
       MainForm.Instance.CreateSystemInformationMenu();
       if ( Globals.IsReady )
       {

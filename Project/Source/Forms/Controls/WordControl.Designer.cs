@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       this.LabelHebrew = new System.Windows.Forms.Label();
-      this.EditTranslation = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTranslation = new Ordisoftware.Core.TextBoxEx();
       this.SuspendLayout();
       // 
       // LabelHebrew
@@ -80,7 +80,7 @@
     }
 
     #endregion
-    public Ordisoftware.Core.UndoRedoTextBox EditTranslation;
+    public Ordisoftware.Core.TextBoxEx EditTranslation;
     public System.Windows.Forms.Label LabelHebrew;
   }
 }

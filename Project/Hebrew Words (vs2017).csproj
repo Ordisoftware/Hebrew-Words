@@ -199,19 +199,19 @@
     <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Actions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Designer.cs">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Initialize.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Common\Core\WinForms.Controls\ToolStripMenuItemHelper.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Actions.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Designer.cs">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Initialize.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Source\Common\Core\WinForms\DataFileEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,11 +493,11 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.fr.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\TextBoxEx.fr.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\DataFileEditorForm.fr.resx">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>

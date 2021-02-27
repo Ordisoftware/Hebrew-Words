@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -138,6 +138,17 @@ namespace Ordisoftware.Hebrew.Words
       {
         Mutex = false;
       }
+    }
+
+    static internal void SetUpgradeFlagsOff(this Settings settings)
+    {
+      settings.UpgradeRequired = false;
+    }
+
+    static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
+    {
+      settings.SetUpgradeFlagsOff();
+      settings.FirstLaunchV3_0 = false;
     }
 
   }

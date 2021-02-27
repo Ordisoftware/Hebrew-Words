@@ -1271,7 +1271,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -1682,7 +1682,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -2178,7 +2178,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -2202,7 +2202,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>

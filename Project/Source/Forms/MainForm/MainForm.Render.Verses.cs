@@ -66,13 +66,13 @@ namespace Ordisoftware.Hebrew.Words
         int widthWord = Program.Settings.WordControlWidth;
         int verseLineCount = Program.Settings.VerseCommentaryLinesCount;
         int textHeight;
-        var textboxTemp = new UndoRedoTextBox();
+        var textboxTemp = new TextBoxEx();
         using ( Graphics g = textboxTemp.CreateGraphics() )
         {
           textHeight = TextRenderer.MeasureText(g, "Text", textboxTemp.Font).Height;
         }
         Label label;
-        UndoRedoTextBox editComment;
+        TextBoxEx editComment;
         int indexControl = 0;
         int capacity = references.Count() * 2 + references.Select(r => r.Verse.GetWordsRows().Count()).Sum();
         Control[] controls = new Control[capacity];
@@ -120,7 +120,7 @@ namespace Ordisoftware.Hebrew.Words
             }
           }
           if ( emptyline ) y -= dy;
-          editComment = new UndoRedoTextBox();
+          editComment = new TextBoxEx();
           label.Tag = editComment;
           if ( verseLineCount > 1 )
           {
