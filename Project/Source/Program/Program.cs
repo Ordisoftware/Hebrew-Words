@@ -123,7 +123,7 @@ namespace Ordisoftware.Hebrew.Words
         else
         if ( !Settings.FirstLaunch
           && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideGUI )
+          && SystemManager.CommandLineOptions.HideMainForm )
           Globals.ForceStartupHide = true;
     }
 
