@@ -36,54 +36,82 @@ namespace Ordisoftware.Hebrew.Words
     [STAThread]
     static void Main(string[] args)
     {
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
-      Globals.AlternativeToURL = "";
-      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
-      bool upgrade = Settings.UpgradeRequired;
-      Globals.SettingsUpgraded = upgrade;
-      Settings.CheckUpgradeRequired(ref upgrade);
-      Settings.UpgradeRequired = upgrade;
-      Globals.SettingsUpgraded = Globals.SettingsUpgraded && !Settings.FirstLaunch;
-      CheckSettingsReset();
-      Globals.Settings = Settings;
-      Globals.MainForm = MainForm.Instance;
-      DebugManager.Enabled = Settings.DebuggerEnabled;
-      DebugManager.TraceEnabled = Settings.TraceEnabled;
-      Language lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-      Settings.LanguageSelected = lang;
-      UpdateLocalization();
-      ProcessCommandLineOptions();
+      try
+      {
+        Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
+        Globals.AlternativeToURL = "";
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Language lang = Settings.LanguageSelected;
+        SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
+        Settings.LanguageSelected = lang;
+        SystemManager.IPCAnswers = IPCAnswers;
+        if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
+        bool upgrade = Settings.UpgradeRequired;
+        Globals.SettingsUpgraded = upgrade;
+        Settings.CheckUpgradeRequired(ref upgrade);
+        Settings.UpgradeRequired = upgrade;
+        Globals.SettingsUpgraded = Globals.SettingsUpgraded && !Settings.FirstLaunch;
+        CheckSettingsReset();
+        Globals.Settings = Settings;
+        Globals.MainForm = MainForm.Instance;
+        DebugManager.Enabled = Settings.DebuggerEnabled;
+        DebugManager.TraceEnabled = Settings.TraceEnabled;
+        UpdateLocalization();
+        ProcessCommandLineOptions();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
       Application.Run(MainForm.Instance);
     }
 
     /// <summary>
-    /// Bring to front the app in case of duplicate process start.
+    /// IPC requests.
     /// </summary>
-    /// <param name="ar"></param>
-    static void IPCRequest(IAsyncResult ar)
+    static void IPCRequests(IAsyncResult ar)
     {
-      var server = ar.AsyncState as NamedPipeServerStream;
-      server.EndWaitForConnection(ar);
-      var command = new BinaryFormatter().Deserialize(server) as string;
-      if ( command == "BringToFront" )
-        if ( MainForm.Instance.Visible )
-          MainForm.Instance.SyncUI(() =>
-          {
-            if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
-              MainForm.Instance.WindowState = Settings.MainFormState;
-            var old = MainForm.Instance.TopMost;
-            MainForm.Instance.TopMost = true;
-            MainForm.Instance.BringToFront();
-            MainForm.Instance.Show();
-            MainForm.Instance.TopMost = old;
-          });
-        else
-          MainForm.Instance.SyncUI(() => MainForm.Instance.Show());
-      server.Close();
-      SystemManager.CreateIPCServer(IPCRequest);
+      SystemManager.TryCatchManage(() =>
+      {
+        var server = ar.AsyncState as NamedPipeServerStream;
+        server.EndWaitForConnection(ar);
+        var command = new BinaryFormatter().Deserialize(server) as string;
+        if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
+          //if ( MainForm.Instance.Visible )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
+            /*{
+              if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
+                MainForm.Instance.WindowState = Settings.MainFormState;
+              var old = MainForm.Instance.TopMost;
+              MainForm.Instance.TopMost = true;
+              MainForm.Instance.BringToFront();
+              MainForm.Instance.Show();
+              MainForm.Instance.TopMost = old;
+            });
+          else
+            MainForm.Instance.SyncUI(() => MainForm.Instance.Show());*/
+        server.Close();
+        SystemManager.CreateIPCServer(IPCRequests);
+      });
+    }
+
+    /// <summary>
+    /// IPC answers.
+    /// </summary>
+    static private void IPCAnswers()
+    {
+      try
+      {
+        if ( ApplicationCommandLine.Instance.HideMainForm )
+          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
+        if ( ApplicationCommandLine.Instance.ShowMainForm )
+          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
@@ -91,22 +119,29 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private static void CheckSettingsReset(bool force = false)
     {
-      if ( force )
+      try
       {
-        if ( !force && !Settings.FirstLaunch )
-          DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-        Settings.Reset();
-        Settings.LanguageSelected = Languages.Current;
-        Settings.SetUpgradeFlagsOff();
+        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
+        {
+          if ( !force && !Settings.FirstLaunch )
+            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+          Settings.Reset();
+          Settings.LanguageSelected = Languages.Current;
+          Settings.SetUpgradeFlagsOff();
+        }
+        if ( Settings.FirstLaunchV3_0 )
+        {
+          Settings.SetFirstAndUpgradeFlagsOff();
+          Settings.FirstLaunch = true;
+        }
+        if ( Settings.LanguageSelected == Language.None )
+          Settings.LanguageSelected = Languages.Current;
+        Settings.Save();
       }
-      if ( Settings.FirstLaunchV3_0 )
+      catch ( Exception ex )
       {
-        Settings.SetFirstAndUpgradeFlagsOff();
-        Settings.FirstLaunch = true;
+        ex.Manage();
       }
-      if ( Settings.LanguageSelected == Language.None )
-        Settings.LanguageSelected = Languages.Current;
-      Settings.Save();
     }
 
     /// <summary>
@@ -114,7 +149,9 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static private void ProcessCommandLineOptions()
     {
-      if ( SystemManager.CommandLineOptions != null )
+      try
+      {
+        if ( SystemManager.CommandLineOptions != null )
         if ( SystemManager.CommandLineOptions.ResetSettings )
         {
           SystemManager.CleanAllLocalAppSettingsFolders();
@@ -125,6 +162,11 @@ namespace Ordisoftware.Hebrew.Words
           && SystemManager.CommandLineOptions != null
           && SystemManager.CommandLineOptions.HideMainForm )
           Globals.ForceStartupHide = true;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
@@ -132,68 +174,57 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static public void UpdateLocalization()
     {
-      string lang = "en-US";
-      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
-      var culture = new CultureInfo(lang);
-      Thread.CurrentThread.CurrentCulture = culture;
-      Thread.CurrentThread.CurrentUICulture = culture;
-      AboutBox.Instance.Hide();
-      Action<Form> update = form =>
+      try
       {
-        new Infralution.Localization.CultureManager().ManagedControl = form;
-        ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-        resources.Apply(form.Controls);
-      };
-      foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance && form != GrammarGuideForm )
-          update(form);
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      // Various updates
-      AboutBox.Instance.AboutBox_Shown(null, null);
-      GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-      TextBoxEx.Relocalize();
-      MainForm.Instance.CreateSystemInformationMenu();
-      if ( Globals.IsReady )
+        void update(Form form)
+        {
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          resources.Apply(form.Controls);
+        }
+        string lang = "en-US";
+        if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
+        var culture = new CultureInfo(lang);
+        Thread.CurrentThread.CurrentCulture = culture;
+        Thread.CurrentThread.CurrentUICulture = culture;
+        MessageBoxEx.CloseAll();
+        AboutBox.Instance.Hide();
+        foreach ( Form form in Application.OpenForms )
+        {
+          if ( form != AboutBox.Instance && form != GrammarGuideForm )
+            update(form);
+          if ( form is ShowTextForm formShowText )
+            formShowText.Relocalize();
+        }
+        string tempLogTitle = DebugManager.TraceForm.Text;
+        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
+        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
+        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+        // Various updates
+        DebugManager.TraceForm.Text = tempLogTitle;
+        DebugManager.TraceForm.AppendText(tempLogContent);
+        AboutBox.Instance.AboutBox_Shown(null, null);
+        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
+        LoadingForm.Instance.Relocalize();
+        TextBoxEx.Relocalize();
+        MainForm.Instance.CreateSystemInformationMenu();
+        if ( Globals.IsReady )
+        {
+          MainForm.Instance.RenderTranslation();
+          MainForm.Instance.RenderRawText();
+          MainForm.Instance.RenderELS50();
+          MainForm.Instance.SetView(Settings.CurrentView, true);
+        }
+      }
+      catch ( Exception ex )
       {
-        MainForm.Instance.RenderTranslation();
-        MainForm.Instance.RenderRawText();
-        MainForm.Instance.RenderELS50();
-        MainForm.Instance.SetView(Settings.CurrentView, true);
+        ex.Manage();
       }
     }
 
   }
 
 }
-
-/*static public void UpdateLocalization()
-    {
-      string lang = "en-US";
-      if ( Settings.Language == "fr" ) lang = "fr-FR";
-      var culture = new CultureInfo(lang);
-      Thread.CurrentThread.CurrentCulture = culture;
-      Thread.CurrentThread.CurrentUICulture = culture;
-      foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance && form != GrammarGuideForm )
-        {
-          new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-          ApplyResources(resources, form.Controls);
-        }
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      AboutBox.Instance.AboutBox_Shown(null, null);
-      GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-      if ( MainForm.Instance.IsReady )
-      {
-        MainForm.Instance.RenderTranslation();
-        MainForm.Instance.RenderRawText();
-        MainForm.Instance.RenderELS50();
-        MainForm.Instance.SetView(Settings.CurrentView, true);
-      }
-    }
-
-  }*/

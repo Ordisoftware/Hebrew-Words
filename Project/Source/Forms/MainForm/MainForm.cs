@@ -87,6 +87,7 @@ namespace Ordisoftware.Hebrew.Words
       menu.DropDownItems.Clear();
       ActionInformation.DropDownItems.Clear();
       ActionInformation.DropDownItems.AddRange(list.ToArray());
+      CommonMenusControl.Instance.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }
 

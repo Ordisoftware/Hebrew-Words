@@ -18,7 +18,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Words
 {
 
-  static class AppTranslations
+  static partial class AppTranslations
   {
 
     static public readonly TranslationsDictionary ApplicationDescription
