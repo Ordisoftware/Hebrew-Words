@@ -330,6 +330,7 @@
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Program\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\AppTranslations.News.cs" />
     <Compile Include="Source\Program\AppTranslations.cs" />
     <Compile Include="Source\Program\DataSetHelper.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
