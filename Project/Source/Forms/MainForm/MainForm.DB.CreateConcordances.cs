@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Words
         concordance.ID = items[0];
         concordance.Usage = items[1];
         concordance.Original = items[2];
-        concordance.Hebrew = HebrewAlphabet.ConvertToHebrewFont(items[2].RemoveDiacritics());
+        concordance.Hebrew = HebrewAlphabet.ToHebrewFont(items[2].RemoveDiacritics());
         concordance.Transliteration = items[3];
         concordance.Phonetic = items[4];
         concordance.Translation = items[5];
@@ -178,7 +178,7 @@ namespace Ordisoftware.Hebrew.Words
             items[3] = items[3].Trim();
             var item = new WordWithConcordance();
             item.Original = items[3].RemoveDiacritics();
-            item.Hebrew = new string(HebrewAlphabet.ConvertToHebrewFont(items[3].RemoveDiacritics()).ToArray());
+            item.Hebrew = new string(HebrewAlphabet.ToHebrewFont(items[3].RemoveDiacritics()).ToArray());
             item.Transliteration = items[4];
             item.Concordance = items[6];
             item.Translation = items[7];

@@ -200,7 +200,7 @@ namespace Ordisoftware.Hebrew.Words
           {
             auto = true;
             defaultGoTo();
-            SearchHebrewWord(HebrewAlphabet.ConvertToHebrewFont(options.WordHebrew));
+            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.WordHebrew));
           }
           else
           if ( !string.IsNullOrEmpty(options.WordTranslated) )
