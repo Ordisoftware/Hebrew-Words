@@ -5,7 +5,7 @@
 > [Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
 > [Twitter](https://twitter.com/ordisoftware)<br/>
 
-A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible verses.
+A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and Hebrew Bible.
 
 ## Table of content
 
