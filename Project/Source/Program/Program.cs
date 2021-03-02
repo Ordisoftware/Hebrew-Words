@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         server.EndWaitForConnection(ar);
         var command = new BinaryFormatter().Deserialize(server) as string;
-        if ( Globals.IsReady ) return;
+        if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           //if ( MainForm.Instance.Visible )
           MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
@@ -93,11 +93,12 @@ namespace Ordisoftware.Hebrew.Words
         });
         else
         MainForm.Instance.SyncUI(() => MainForm.Instance.Show());*/
-        SystemManager.CreateIPCServer(IPCRequests);
       }
       finally
       {
         server.Close();
+        if ( Globals.IsReady )
+          SystemManager.CreateIPCServer(IPCRequests);
       }
     }
 
