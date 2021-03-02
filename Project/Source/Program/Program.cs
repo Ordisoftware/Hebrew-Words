@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Words
         Application.SetCompatibleTextRenderingDefault(false);
         Language lang = Settings.LanguageSelected;
         SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-        SystemManager.IPCAnswers = IPCAnswers;
+        SystemManager.ProcessIPCommands = ProcessIPCommands;
         if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
         bool upgrade = Settings.UpgradeRequired;
         Globals.SettingsUpgraded = upgrade;
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Words
         Settings.UpgradeRequired = upgrade;
         Globals.SettingsUpgraded = Globals.SettingsUpgraded && !Settings.FirstLaunch;
         CheckSettingsReset();
-        Settings.LanguageSelected = lang;
+        if ( lang != Language.None ) Settings.LanguageSelected = lang;
         Settings.Save();
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
@@ -73,46 +73,43 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static void IPCRequests(IAsyncResult ar)
     {
-      SystemManager.TryCatchManage(() =>
+      var server = ar.AsyncState as NamedPipeServerStream;
+      try
       {
-        var server = ar.AsyncState as NamedPipeServerStream;
         server.EndWaitForConnection(ar);
         var command = new BinaryFormatter().Deserialize(server) as string;
+        if ( Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           //if ( MainForm.Instance.Visible )
           MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
-            /*{
-              if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
-                MainForm.Instance.WindowState = Settings.MainFormState;
-              var old = MainForm.Instance.TopMost;
-              MainForm.Instance.TopMost = true;
-              MainForm.Instance.BringToFront();
-              MainForm.Instance.Show();
-              MainForm.Instance.TopMost = old;
-            });
-          else
-            MainForm.Instance.SyncUI(() => MainForm.Instance.Show());*/
-        server.Close();
+        /*{
+          if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
+            MainForm.Instance.WindowState = Settings.MainFormState;
+          var old = MainForm.Instance.TopMost;
+          MainForm.Instance.TopMost = true;
+          MainForm.Instance.BringToFront();
+          MainForm.Instance.Show();
+          MainForm.Instance.TopMost = old;
+        });
+        else
+        MainForm.Instance.SyncUI(() => MainForm.Instance.Show());*/
         SystemManager.CreateIPCServer(IPCRequests);
-      });
+      }
+      finally
+      {
+        server.Close();
+      }
     }
 
     /// <summary>
     /// IPC answers.
     /// </summary>
-    static private void IPCAnswers()
+    static private void ProcessIPCommands()
     {
-      try
-      {
-        if ( ApplicationCommandLine.Instance.HideMainForm )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
-        if ( ApplicationCommandLine.Instance.ShowMainForm )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      if ( ApplicationCommandLine.Instance.HideMainForm )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
+      if ( ApplicationCommandLine.Instance.ShowMainForm )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
     }
 
     /// <summary>
