@@ -118,24 +118,32 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | F3 | Hebrew text view |
 | F4 | ELS50 verses view |
 | F5 | Search view |
-| Ctrl+B | Open the books names editor |
-| Ctrl+H | Open Hebrew Letters |
-| Ctrl+T | Open translated form for the focused Hebrew word |
-| Ctrl+K | Open search panel for the focused Hebrew word |
-| Ctrl+G | Open the grammar guide |
-| Ctrl+L | Open Shorashon web page |
-| Ctrl+R | Find reference |
-| Ctrl+F | Find verse number in current chapter (0 for first untranslated) |
-| Ctrl+S | Save changes |
-| Ctrl+Home | Reach the beginning of the view |
-| Ctrl+End | Reach the ending of the view |
-| Ctrl+Up | Scroll the view up (fine) |
-| Ctrl+Down | Scroll the view down (fine) |
+| Ctrl + B | Open the books names editor |
+| Ctrl + H | Open Hebrew Letters |
+| Ctrl + T | Open translated form for the focused Hebrew word |
+| Ctrl + K | Open search panel for the focused Hebrew word |
+| Ctrl + G | Open the grammar guide |
+| Ctrl + R | Open Shorashon web page |
+| Ctrl + Alt + R | Open Shorashim web page |
+| Ctrl + F | Find verse number in current chapter (0 for first untranslated) |
+| Ctrl + Alt + F | Find reference |
+| Ctrl + S | Save changes |
+| Ctrl + Back | Cancel changes |
+| Ctrl + Home | Reach the beginning of the view |
+| Ctrl + End | Reach the ending of the view |
+| Ctrl + Up | Scroll the view up (fine) |
+| Ctrl + Down | Scroll the view down (fine) |
 | PageUp | Scroll the view up |
 | PageDown | Scroll the view down |
+| Alt + T | Show tools menu |
+| Alt + L | Show web links menu |
+| Alt + S | Show settings menu |
+| Alt + I | Show information menu |
 | F9 | Preferences |
+| F10 | Log file window |
+| F11 | Usage statistics window |
 | F12 | About |
-| Alt + F4 (or Escape) | Close window |
+| Alt + F4 (or Escape) | Exit application |
 
 ## Future improvements
 
@@ -166,6 +174,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add new input panel from Hebrew Letters v4+.
 - Add new advanced textbox for future undo/redo.
 - Add optimize database menu.
+- Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
