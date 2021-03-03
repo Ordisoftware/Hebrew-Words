@@ -81,12 +81,9 @@ namespace Ordisoftware.Hebrew.Words
                                                            ActionWebCheckUpdate_Click,
                                                            ActionViewLog_Click,
                                                            ActionViewStats_Click);
-      var menu = CommonMenusControl.Instance.MenuInformation;
-      var list = new List<ToolStripItem>();
-      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
-      menu.DropDownItems.Clear();
-      ActionInformation.DropDownItems.Clear();
-      ActionInformation.DropDownItems.AddRange(list.ToArray());
+      ToolStrip.Items.Remove(ActionInformation);
+      ActionInformation = CommonMenusControl.Instance.ActionInformation;
+      ToolStrip.Items.Add(ActionInformation);
       CommonMenusControl.Instance.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }
@@ -805,11 +802,7 @@ namespace Ordisoftware.Hebrew.Words
                                      Settings.CheckUpdateAtStartupDaysInterval,
                                      e == null);
       Settings.CheckUpdateLastDone = lastdone;
-      if ( exit )
-        Close();
-      else
-      if ( Visible )
-        BringToFront();
+      if ( exit ) Close();
     }
 
     public void ActionViewLog_Click(object sender, EventArgs e)
