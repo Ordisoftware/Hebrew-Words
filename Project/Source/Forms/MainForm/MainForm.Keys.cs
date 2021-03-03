@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew.Words
         case Keys.Control | Keys.S:
           ActionSave.PerformClick();
           return true;
-        case Keys.Control | Keys.R:
+        case Keys.Control | Keys.Alt | Keys.F:
           ActionGoToReference.PerformClick();
           return true;
         case Keys.Control | Keys.F:
@@ -83,12 +83,6 @@ namespace Ordisoftware.Hebrew.Words
           return true;
         case Keys.Control | Keys.B:
           ActionViewBooksTranslation.PerformClick();
-          return true;
-        case Keys.Control | Keys.H:
-          ActionStartHebrewLetters.PerformClick();
-          return true;
-        case Keys.Control | Keys.L:
-          ActionOpenShorashon.PerformClick();
           return true;
         case Keys.Escape:
           if ( IsRenderingSearch ) Globals.CancelRequired = true;
