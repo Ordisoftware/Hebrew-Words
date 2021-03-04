@@ -123,8 +123,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | Ctrl + T | Open translated form for the focused Hebrew word |
 | Ctrl + K | Open search panel for the focused Hebrew word |
 | Ctrl + G | Open the grammar guide |
-| Ctrl + L | Open Shorashon web page |
-| Ctrl + R | Open Shorashim web page |
 | Ctrl + F | Find verse number in current chapter (0 for first untranslated) |
 | Ctrl + Alt + F | Find reference |
 | Ctrl + S | Save changes |
