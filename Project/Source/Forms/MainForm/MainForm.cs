@@ -77,13 +77,13 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     public void CreateSystemInformationMenu()
     {
-      Controls.Add(CommonMenusControl.CreateInstance(ToolStrip,
-                                                     ref ActionInformation,
-                                                     AppTranslations.NoticeNewFeatures,
-                                                     ActionAbout_Click,
-                                                     ActionWebCheckUpdate_Click,
-                                                     ActionViewLog_Click,
-                                                     ActionViewStats_Click));
+      CommonMenusControl.CreateInstance(ToolStrip,
+                                        ref ActionInformation,
+                                        AppTranslations.NoticeNewFeatures,
+                                        ActionAbout_Click,
+                                        ActionWebCheckUpdate_Click,
+                                        ActionViewLog_Click,
+                                        ActionViewStats_Click);
       InitializeSpecialMenus();
     }
 
