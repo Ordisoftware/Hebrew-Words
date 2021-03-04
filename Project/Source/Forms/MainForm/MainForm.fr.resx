@@ -433,8 +433,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
-  <data name="ActionViewStatistics.Text" xml:space="preserve">
-    <value>Voir les statistiques</value>
+  <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
+    <value>Statistiques sur la bible</value>
   </data>
   <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>

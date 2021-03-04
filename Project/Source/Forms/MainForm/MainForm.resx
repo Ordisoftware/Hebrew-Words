@@ -177,7 +177,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 662</value>
+    <value>984, 657</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
@@ -217,7 +217,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="PanelMainOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 468</value>
+    <value>964, 463</value>
   </data>
   <data name="PanelMainOuter.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -253,7 +253,7 @@
     <value>1, 1</value>
   </data>
   <data name="PanelMainInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 466</value>
+    <value>962, 461</value>
   </data>
   <data name="PanelMainInner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelMainCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 466</value>
+    <value>962, 461</value>
   </data>
   <data name="PanelMainCenter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -373,7 +373,7 @@
     <value>0, 0</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 466</value>
+    <value>962, 461</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -412,7 +412,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 440</value>
+    <value>954, 435</value>
   </data>
   <data name="TabPageVerses.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -478,7 +478,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 434</value>
+    <value>948, 429</value>
   </data>
   <data name="PanelViewVerses.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -514,7 +514,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 440</value>
+    <value>954, 435</value>
   </data>
   <data name="TabPageTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -556,7 +556,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 434</value>
+    <value>948, 429</value>
   </data>
   <data name="PanelViewTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -583,7 +583,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 414</value>
+    <value>928, 409</value>
   </data>
   <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -622,7 +622,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 440</value>
+    <value>954, 435</value>
   </data>
   <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -664,7 +664,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 434</value>
+    <value>948, 429</value>
   </data>
   <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -688,7 +688,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 414</value>
+    <value>928, 409</value>
   </data>
   <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -727,7 +727,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 440</value>
+    <value>954, 435</value>
   </data>
   <data name="TabPageELS50.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -769,7 +769,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 434</value>
+    <value>948, 429</value>
   </data>
   <data name="PanelViewELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -793,7 +793,7 @@
     <value>10, 10</value>
   </data>
   <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 414</value>
+    <value>928, 409</value>
   </data>
   <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -832,7 +832,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 440</value>
+    <value>954, 435</value>
   </data>
   <data name="TabPageSearch.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -898,7 +898,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelViewSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 434</value>
+    <value>948, 429</value>
   </data>
   <data name="PanelViewSearch.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -940,7 +940,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResultsOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 153</value>
+    <value>928, 148</value>
   </data>
   <data name="PanelSearchResultsOuter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -970,7 +970,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 131</value>
+    <value>906, 126</value>
   </data>
   <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -994,7 +994,7 @@
     <value>10, 261</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 10</value>
+    <value>928, 10</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1042,7 +1042,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelSearchFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>936, 251</value>
+    <value>928, 251</value>
   </data>
   <data name="PanelSearchFilters.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1234,7 +1234,7 @@
     <value>540, 0</value>
   </data>
   <data name="PanelSearchFiltersRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 251</value>
+    <value>388, 251</value>
   </data>
   <data name="PanelSearchFiltersRight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1330,7 +1330,7 @@
     <value>15, 155</value>
   </data>
   <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 21</value>
+    <value>362, 21</value>
   </data>
   <data name="SelectSearchInBook.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1357,7 +1357,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 234</value>
+    <value>177, 234</value>
   </data>
   <data name="SelectSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 18</value>
@@ -1384,7 +1384,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="EditSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 206</value>
+    <value>177, 206</value>
   </data>
   <data name="EditSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
@@ -1602,7 +1602,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionNavigateSearchFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 196</value>
+    <value>87, 196</value>
   </data>
   <data name="ActionNavigateSearchFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1650,7 +1650,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 196</value>
+    <value>132, 196</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1699,7 +1699,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigateNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 196</value>
+    <value>298, 196</value>
   </data>
   <data name="ActionSearchNavigateNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1752,7 +1752,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigateLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>351, 196</value>
+    <value>343, 196</value>
   </data>
   <data name="ActionSearchNavigateLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1963,30 +1963,6 @@
   <data name="&gt;&gt;PanelSearchTop.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditLetters.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EditLetters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EditLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 205</value>
-  </data>
-  <data name="EditLetters.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;EditLetters.Name" xml:space="preserve">
-    <value>EditLetters</value>
-  </data>
-  <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
-    <value>PanelSearchTop</value>
-  </data>
-  <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
@@ -2070,36 +2046,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="EditSearchTranslation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="EditSearchTranslation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20.25pt</value>
-  </data>
-  <data name="EditSearchTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 177</value>
-  </data>
-  <data name="EditSearchTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 38</value>
-  </data>
-  <data name="EditSearchTranslation.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditSearchTranslation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;EditSearchTranslation.Name" xml:space="preserve">
-    <value>EditSearchTranslation</value>
-  </data>
-  <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
-    <value>SelectSearchTypeTranslation</value>
-  </data>
-  <data name="&gt;&gt;EditSearchTranslation.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Name" xml:space="preserve">
     <value>SelectSearchRequestAllUntranslated</value>
@@ -2519,7 +2465,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>10, 44</value>
   </data>
   <data name="PanelNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 140</value>
+    <value>964, 140</value>
   </data>
   <data name="PanelNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -2535,39 +2481,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;PanelNavigation.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="EditChapterMemo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="EditChapterMemo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="EditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>558, 73</value>
-  </data>
-  <data name="EditChapterMemo.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditChapterMemo.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="EditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 57</value>
-  </data>
-  <data name="EditChapterMemo.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;EditChapterMemo.Name" xml:space="preserve">
-    <value>EditChapterMemo</value>
-  </data>
-  <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
-    <value>PanelNavigation</value>
-  </data>
-  <data name="&gt;&gt;EditChapterMemo.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="LabelChapterMemo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2763,7 +2676,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionEditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 68</value>
+    <value>921, 68</value>
   </data>
   <data name="ActionEditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -2824,7 +2737,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>928, 13</value>
+    <value>920, 13</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -3041,54 +2954,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="EditBookTranslation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="EditBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 40</value>
-  </data>
-  <data name="EditBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 22</value>
-  </data>
-  <data name="EditBookTranslation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditBookTranslation.Name" xml:space="preserve">
-    <value>EditBookTranslation</value>
-  </data>
-  <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
-    <value>PanelNavigation</value>
-  </data>
-  <data name="&gt;&gt;EditBookTranslation.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="EditChapterTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="EditChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 108</value>
-  </data>
-  <data name="EditChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 22</value>
-  </data>
-  <data name="EditChapterTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;EditChapterTitle.Name" xml:space="preserve">
-    <value>EditChapterTitle</value>
-  </data>
-  <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
-    <value>PanelNavigation</value>
-  </data>
-  <data name="&gt;&gt;EditChapterTitle.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="EditELS50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -3099,7 +2964,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>558, 19</value>
   </data>
   <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 30</value>
+    <value>342, 30</value>
   </data>
   <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3249,7 +3114,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>10, 34</value>
   </data>
   <data name="PanelSepTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 10</value>
+    <value>964, 10</value>
   </data>
   <data name="PanelSepTop.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -3288,7 +3153,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>1, 1, 1, 1</value>
   </data>
   <data name="PanelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 24</value>
+    <value>964, 24</value>
   </data>
   <data name="PanelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3318,7 +3183,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>1, 1</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>970, 22</value>
+    <value>962, 22</value>
   </data>
   <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3346,15 +3211,6 @@ A verse is founded if the translation of one of its words contains an expression
   </metadata>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
-  </metadata>
-  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>249, 19</value>
-  </metadata>
-  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>249, 19</value>
   </metadata>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>525, 56</value>
@@ -3573,7 +3429,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="MenuSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ActionViewTranslations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3956,7 +3812,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="MenuDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4047,7 +3903,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="MenuTools.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4079,7 +3935,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Ctrl+B</value>
   </data>
   <data name="ActionViewBooksTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionViewBooksTranslation.Text" xml:space="preserve">
     <value>Edit books information</value>
@@ -4111,13 +3967,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Ctrl+F5</value>
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4145,13 +4001,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Ctrl+G</value>
   </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="ActionStartHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4173,7 +4029,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Ctrl+H</value>
   </data>
   <data name="ActionStartHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionStartHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -4196,13 +4052,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionOpenShorashim.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Maj+R</value>
+    <value>Ctrl+R</value>
   </data>
   <data name="ActionOpenShorashim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionOpenShorashim.Text" xml:space="preserve">
-    <value>Shorashim Lexicon</value>
+    <value>Shorashim lexicon</value>
   </data>
   <data name="ActionOpenShorashon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4224,16 +4080,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionOpenShorashon.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+R</value>
+    <value>Ctrl+L</value>
   </data>
   <data name="ActionOpenShorashon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionOpenShorashon.Text" xml:space="preserve">
-    <value>Shorashon Lexicon</value>
+    <value>Shorashon lexicon</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="ActionOpenLexilogosOld.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4255,10 +4111,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionOpenLexilogosOld.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionOpenLexilogosOld.Text" xml:space="preserve">
-    <value>Dictionnaires hébreu ancien @ lexilogos.com</value>
+    <value>Lexilogos hébreu ancien</value>
   </data>
   <data name="ActionOpenLexilogosModern.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4280,15 +4136,15 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionOpenLexilogosModern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="ActionOpenLexilogosModern.Text" xml:space="preserve">
-    <value>Dictionnaires hébreu moderne Lexilogos.com</value>
+    <value>Lexilogos hébreu moderne</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>233, 6</value>
   </data>
-  <data name="ActionViewStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewBibleStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALaSURBVDhPdZF7TM1hGMfP1qqZdEqlklGLaDkhIXU45NLF
@@ -4306,17 +4162,17 @@ A verse is founded if the translation of one of its words contains an expression
         0eQ9kqdeI7jr4oxUK7Oz3yf1yL3/1TBhabzJf1mqSXe/SaH4CZQZ/1GXznH8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionViewStatistics.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionViewBibleStatistics.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionViewStatistics.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionViewBibleStatistics.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionViewStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+  <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
   </data>
-  <data name="ActionViewStatistics.Text" xml:space="preserve">
-    <value>View statistics</value>
+  <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
+    <value>Statistics about the Bible</value>
   </data>
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4495,7 +4351,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>5, 5, 5, 0</value>
   </data>
   <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 54</value>
+    <value>984, 54</value>
   </data>
   <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -5424,6 +5280,150 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCopyWordTranslation.Text" xml:space="preserve">
     <value>Copy translation</value>
   </data>
+  <data name="EditLetters.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditLetters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EditLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 205</value>
+  </data>
+  <data name="EditLetters.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Name" xml:space="preserve">
+    <value>EditLetters</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
+    <value>PanelSearchTop</value>
+  </data>
+  <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditSearchTranslation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="EditSearchTranslation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20.25pt</value>
+  </data>
+  <data name="EditSearchTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 177</value>
+  </data>
+  <data name="EditSearchTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 38</value>
+  </data>
+  <data name="EditSearchTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditSearchTranslation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;EditSearchTranslation.Name" xml:space="preserve">
+    <value>EditSearchTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
+    <value>SelectSearchTypeTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditSearchTranslation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditChapterMemo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="EditChapterMemo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 73</value>
+  </data>
+  <data name="EditChapterMemo.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditChapterMemo.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 57</value>
+  </data>
+  <data name="EditChapterMemo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;EditChapterMemo.Name" xml:space="preserve">
+    <value>EditChapterMemo</value>
+  </data>
+  <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;EditChapterMemo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditBookTranslation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EditBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 40</value>
+  </data>
+  <data name="EditBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 22</value>
+  </data>
+  <data name="EditBookTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditBookTranslation.Name" xml:space="preserve">
+    <value>EditBookTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;EditBookTranslation.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditChapterTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EditChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 108</value>
+  </data>
+  <data name="EditChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 22</value>
+  </data>
+  <data name="EditChapterTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditChapterTitle.Name" xml:space="preserve">
+    <value>EditChapterTitle</value>
+  </data>
+  <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;EditChapterTitle.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>249, 19</value>
+  </metadata>
+  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>249, 19</value>
+  </metadata>
   <metadata name="BooksTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>516, 19</value>
   </metadata>
@@ -5449,7 +5449,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>992, 716</value>
+    <value>984, 711</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 750</value>
@@ -5465,18 +5465,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.Data.DataSet, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;WordsBindingSource.Name" xml:space="preserve">
     <value>WordsBindingSource</value>
@@ -5820,18 +5808,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionStartHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenShorashim.Name" xml:space="preserve">
-    <value>ActionOpenShorashim</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenShorashim.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenShorashon.Name" xml:space="preserve">
-    <value>ActionOpenShorashon</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenShorashon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator15.Name" xml:space="preserve">
     <value>toolStripSeparator15</value>
   </data>
@@ -5856,10 +5832,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator16.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewStatistics.Name" xml:space="preserve">
-    <value>ActionViewStatistics</value>
+  <data name="&gt;&gt;ActionViewBibleStatistics.Name" xml:space="preserve">
+    <value>ActionViewBibleStatistics</value>
   </data>
-  <data name="&gt;&gt;ActionViewStatistics.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionViewBibleStatistics.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionWebLinks.Name" xml:space="preserve">
@@ -6125,6 +6101,30 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionCopyWordTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenShorashim.Name" xml:space="preserve">
+    <value>ActionOpenShorashim</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenShorashim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenShorashon.Name" xml:space="preserve">
+    <value>ActionOpenShorashon</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenShorashon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.Data.DataSet, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BooksTableAdapter.Name" xml:space="preserve">
     <value>BooksTableAdapter</value>
