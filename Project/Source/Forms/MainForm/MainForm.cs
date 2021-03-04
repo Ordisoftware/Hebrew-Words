@@ -816,17 +816,6 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     /// <summary>
-    /// Event handler. Called by ActionOpenWebsiteURL for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
-    {
-      string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -1461,6 +1450,10 @@ namespace Ordisoftware.Hebrew.Words
       DisplayManager.Show(value.ToString());
     }
 
+    private void ActionOpenShorashim_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 }
