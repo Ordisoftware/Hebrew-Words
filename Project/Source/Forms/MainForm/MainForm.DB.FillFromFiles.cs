@@ -34,6 +34,11 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
+        SetFormDisabled(true);
+        DataSet.Words.Clear();
+        DataSet.Verses.Clear();
+        DataSet.Chapters.Clear();
+        DataSet.Books.Clear();
         Data.DataSet.BooksRow book = null;
         Data.DataSet.ChaptersRow chapter = null;
         Data.DataSet.VersesRow verse = null;
@@ -131,36 +136,40 @@ namespace Ordisoftware.Hebrew.Words
           }
         }
         if ( chapter != null ) nextChapter();
-        int count = DataSet.Books.Count
-                  + DataSet.Chapters.Count
-                  + DataSet.Verses.Count
-                  + DataSet.Words.Count;
-        // TODO update table by table
-        LoadingForm.Instance.Initialize("Updating...", count);
-        void update(object sender, OdbcRowUpdatedEventArgs rowEvent)
-        {
-          if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-        };
-        TableAdapterManager.BooksTableAdapter.Adapter.RowUpdated += update;
-        TableAdapterManager.ChaptersTableAdapter.Adapter.RowUpdated += update;
-        TableAdapterManager.VersesTableAdapter.Adapter.RowUpdated += update;
-        TableAdapterManager.WordsTableAdapter.Adapter.RowUpdated += update;
-        try
-        {
-          TableAdapterManager.UpdateAll(DataSet);
-        }
-        finally
-        {
-          TableAdapterManager.BooksTableAdapter.Adapter.RowUpdated -= update;
-          TableAdapterManager.ChaptersTableAdapter.Adapter.RowUpdated -= update;
-          TableAdapterManager.VersesTableAdapter.Adapter.RowUpdated -= update;
-          TableAdapterManager.WordsTableAdapter.Adapter.RowUpdated -= update;
-        }
+        SaveCreatedData();
       }
       catch ( Exception ex )
       {
         ex.Manage();
       }
+      finally
+      {
+        SetFormDisabled(false);
+      }
+    }
+
+    private void SaveCreatedData()
+    {
+      process(DataSet.Books, BooksTableAdapter.Adapter);
+      process(DataSet.Chapters, ChaptersTableAdapter.Adapter);
+      process(DataSet.Verses, VersesTableAdapter.Adapter);
+      process(DataSet.Words, WordsTableAdapter.Adapter);
+      void process(DataTable table, OdbcDataAdapter adapter)
+      {
+        string str = SysTranslations.ProgressSavingData.GetLang() + " " + table.TableName;
+        LoadingForm.Instance.Initialize(str, table.Rows.Count, 0, true, 100);
+        adapter.RowUpdated += update;
+        adapter.InsertCommand.Connection.Open();
+        adapter.InsertCommand.Transaction = adapter.InsertCommand.Connection.BeginTransaction();
+        adapter.Update(table);
+        adapter.InsertCommand.Transaction.Commit();
+        adapter.InsertCommand.Connection.Close();
+        adapter.RowUpdated += update;
+      }
+      void update(object sender, OdbcRowUpdatedEventArgs rowEvent)
+      {
+        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
+      };
     }
 
   }

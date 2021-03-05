@@ -97,7 +97,7 @@ namespace Ordisoftware.Hebrew.Words
                 PanelViewVerses.ScrollControlIntoView(label);
                 PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
                 int index = PanelViewVerses.Controls.IndexOf(label);
-                ( (WordControl)PanelViewVerses.Controls[index + 1] ).Focus();
+                ( PanelViewVerses.Controls[index + 1] as WordControl )?.Focus();
                 break;
               }
             }

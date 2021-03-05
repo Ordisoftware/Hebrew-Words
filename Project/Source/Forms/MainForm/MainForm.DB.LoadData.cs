@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Data.Odbc;
@@ -81,90 +81,44 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     /// <summary>
-    /// Get the rows count of a table.
-    /// </summary>
-    private int GetRowsCount(string tableName)
-    {
-      int count = 0;
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-      {
-        connection.Open();
-        try
-        {
-          var command = new OdbcCommand("SELECT COUNT(ID) FROM [" + tableName + "]", connection);
-          var reader = command.ExecuteReader();
-          if ( reader.Read() ) count = (int)reader[0];
-        }
-        finally
-        {
-          connection.Close();
-        }
-      }
-      return count;
-    }
-
-    /// <summary>
     /// Show a splash screen while loading data.
     /// </summary>
     private void PopulateData()
     {
-      void update(object sender, DataRowChangeEventArgs e)
-      {
-        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-      };
-      void load(DataTable table, Action action)
-      {
-        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName,
-                                        GetRowsCount(table.TableName) * 2);
-        action();
-      }
       SetFormDisabled(true);
       Globals.IsLoadingData = true;
       try
       {
         CreateSchemaIfNotExists();
         CreateDataIfNotExists();
-        int step = 0;
-        //DataSet.StrongConcordances.RowChanged += progress;
-        DataSet.Books.RowChanged += update;
-        DataSet.Chapters.RowChanged += update;
-        DataSet.Verses.RowChanged += update;
-        DataSet.Words.RowChanged += update;
-        try
-        {
-          //DataSet.StrongConcordances.BeginLoadData();
-          DataSet.Books.BeginLoadData();
-          DataSet.Chapters.BeginLoadData();
-          DataSet.Verses.BeginLoadData();
-          DataSet.Words.BeginLoadData();
-          //StrongConcordancesTableAdapter.Fill(DataSet.StrongConcordances);
-          load(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
-          load(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
-          load(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
-          load(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
-          //DataSet.StrongConcordances.EndLoadData();
-          DataSet.Books.EndLoadData();
-          DataSet.Chapters.EndLoadData();
-          DataSet.Verses.EndLoadData();
-          DataSet.Words.EndLoadData();
-          InitBooksCombobox();
-          //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
-        }
-        finally
-        {
-          //DataSet.StrongConcordances.RowChanged -= progress;
-          DataSet.Books.RowChanged -= update;
-          DataSet.Chapters.RowChanged -= update;
-          DataSet.Verses.RowChanged -= update;
-          DataSet.Words.RowChanged -= update;
-        }
+        //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
+        process(DataSet.Books, ()=>BooksTableAdapter.Fill(DataSet.Books));
+        process(DataSet.Chapters, ()=>ChaptersTableAdapter.Fill(DataSet.Chapters));
+        process(DataSet.Verses, ()=>VersesTableAdapter.Fill(DataSet.Verses));
+        process(DataSet.Words, ()=>WordsTableAdapter.Fill(DataSet.Words));
+        InitBooksCombobox();
+        //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
       }
       finally
       {
-        LoadingForm.Instance.Hide();
         Globals.IsLoadingData = false;
+        LoadingForm.Instance.Hide();
         SetFormDisabled(false);
       }
+      void process(DataTable table, Action action)
+      {
+        string str = SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName;
+        LoadingForm.Instance.Initialize(str, LockFileConnection.GetRowsCount(table.TableName) * 2);
+        table.RowChanged += update;
+        table.BeginLoadData();
+        action();
+        table.EndLoadData();
+        table.RowChanged -= update;
+      }
+      void update(object sender, DataRowChangeEventArgs e)
+      {
+        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
+      };
     }
 
   }

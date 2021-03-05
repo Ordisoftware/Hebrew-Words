@@ -14,7 +14,6 @@
 /// <edited> 2021-02 </edited>
 using System;
 using System.Data;
-using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -35,15 +34,12 @@ namespace Ordisoftware.Hebrew.Words
 
     private void CreateBooks()
     {
-      int count = 0;
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-      {
-        connection.Open();
-        var command = new OdbcCommand("select count(*) FROM Books", connection);
-        count = (int)command.ExecuteScalar();
-        connection.Close();
-      }
-      if ( count != 0 )
+      // TODO refactor and get count for each table and if only one is 0 show message query to recreate
+      int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
+      int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
+      int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
+      int countWords = LockFileConnection.GetRowsCount(DataSet.Words.TableName);
+      if ( countBooks != 0 )
       {
         BooksTableAdapter.Fill(DataSet.Books);
         if ( Globals.DatabaseUpgraded )
@@ -59,7 +55,10 @@ namespace Ordisoftware.Hebrew.Words
           }
         TableAdapterManager.UpdateAll(DataSet);
       }
-      else
+      if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
+        || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
+          && DisplayManager.QueryYesNoAbort("Database corrupted. Reset?", // TODO translation
+                                          onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
         try
         {
           FillFromFiles();
@@ -68,6 +67,16 @@ namespace Ordisoftware.Hebrew.Words
         {
           LoadingForm.Instance.Hide();
         }
+    }
+
+    static bool CheckIfOneIsTrueAndSomeOthersNot(params bool[] values)
+    {
+      bool firstIsTrue = values[0];
+      bool result = firstIsTrue ^ values[1];
+      if ( values.Length > 2 )
+        for ( int index = 2; index < values.Length; index++ )
+          result = result || ( firstIsTrue ^ values[index] );
+      return result;
     }
 
   }

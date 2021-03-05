@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
+using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Data;
 
 namespace Ordisoftware.Hebrew.Words
@@ -102,9 +103,9 @@ namespace Ordisoftware.Hebrew.Words
         Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
         Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
       }
-      catch
+      catch ( Exception ex )
       {
-        throw new Exception(string.Format("Bad reference: {0}.{1}.{2}:{3}", book, chapter, verse, word));
+        throw new Exception($"Error with reference: {book}.{chapter}.{verse}:{word}{Globals.NL2}{ex.Message}");
       }
     }
 
