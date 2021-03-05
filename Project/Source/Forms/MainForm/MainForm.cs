@@ -66,8 +66,8 @@ namespace Ordisoftware.Hebrew.Words
       {
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
-        string word = ( (WordControl)ActiveControl ).Reference.Word.Original;
-        SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
+        string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
+        HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, word);
       });
     }
 
@@ -1418,7 +1418,8 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
       if ( !( ActiveControl is WordControl ) ) return;
-      Program.OpenOnlineConcordance(( (WordControl)ActiveControl ).Reference.Word.Original);
+      string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
+      HebrewTools.OpenOnlineWordProvider(Settings.SearchOnlineURL, word);
     }
 
     private void GoToBookmark(object sender, EventArgs e)

@@ -93,7 +93,8 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      Program.OpenOnlineConcordance(( (Data.DataSet.BooksRow)row ).Original);
+      string word = ( (Data.DataSet.BooksRow)row ).Hebrew;
+      HebrewTools.OpenOnlineWordProvider(Program.Settings.SearchOnlineURL, word);
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)

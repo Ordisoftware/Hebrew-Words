@@ -98,7 +98,8 @@ namespace Ordisoftware.Hebrew.Words
           HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Program.Settings.HebrewLettersExe);
           break;
         case HebrewWordClickOpen.OnlineSearch:
-          Program.OpenOnlineConcordance(Reference.Word.Original);
+          string word = Reference.Word.Hebrew;
+          HebrewTools.OpenOnlineWordProvider(Program.Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickOpen.SearchTranslated:
           MainForm.Instance.ActionSearchTranslated.PerformClick();

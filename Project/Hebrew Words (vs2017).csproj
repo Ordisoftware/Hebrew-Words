@@ -482,7 +482,6 @@
     <Compile Include="Source\Forms\Controls\WordControl.Designer.cs">
       <DependentUpon>WordControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program\Program.Tools.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
     <Compile Include="Source\Program\Program.cs" />
     <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
