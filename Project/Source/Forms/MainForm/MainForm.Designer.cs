@@ -270,7 +270,7 @@
       // 
       // PanelMainInner
       // 
-      this.PanelMainInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelMainInner.BackColor = System.Drawing.SystemColors.Control;
       this.PanelMainInner.Controls.Add(this.PanelMainCenter);
       resources.ApplyResources(this.PanelMainInner, "PanelMainInner");
       this.PanelMainInner.Name = "PanelMainInner";
