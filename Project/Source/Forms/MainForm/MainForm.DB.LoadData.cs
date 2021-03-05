@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew.Words
       SearchResults = null;
       Refresh();
       DataSet.Clear();
-      if (action != null) action();
+      action?.Invoke();
       History.Clear();
       LoadData();
     }
@@ -108,40 +108,28 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void PopulateData()
     {
-      DataRowChangeEventHandler progress = null;
-      var form = LoadingForm.Instance; ////////////////////////////////////////////////////////////////
-      form.Show();
-      form.Refresh();
+      void update(object sender, DataRowChangeEventArgs e)
+      {
+        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
+      };
+      void load(DataTable table, Action action)
+      {
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName,
+                                        GetRowsCount(table.TableName) * 2);
+        action();
+      }
       SetFormDisabled(true);
       Globals.IsLoadingData = true;
       try
       {
         CreateSchemaIfNotExists();
         CreateDataIfNotExists();
-        form.Refresh();
-        int rowsCount = /*GetRowsCount(DataSet.StrongConcordances.TableName)
-                      + */GetRowsCount(DataSet.Books.TableName)
-                      + GetRowsCount(DataSet.Chapters.TableName)
-                      + GetRowsCount(DataSet.Verses.TableName)
-                      + GetRowsCount(DataSet.Words.TableName);
         int step = 0;
-        //form.ProgressBar.Maximum = rowsCount / PopulateDataPaging * 2;
-        int count = rowsCount / PopulateDataPaging * 2;
-        progress = (sender, e) =>
-        {
-          step++;
-          if ( step < PopulateDataPaging ) return;
-          //form.ProgressBar.PerformStep();
-          //////////////////////////////////////////////////////////form.UpdateProgress(-1, count, );
-          step = 0;
-          Refresh();
-          Application.DoEvents();
-        };
         //DataSet.StrongConcordances.RowChanged += progress;
-        DataSet.Books.RowChanged += progress;
-        DataSet.Chapters.RowChanged += progress;
-        DataSet.Verses.RowChanged += progress;
-        DataSet.Words.RowChanged += progress;
+        DataSet.Books.RowChanged += update;
+        DataSet.Chapters.RowChanged += update;
+        DataSet.Verses.RowChanged += update;
+        DataSet.Words.RowChanged += update;
         try
         {
           //DataSet.StrongConcordances.BeginLoadData();
@@ -150,10 +138,10 @@ namespace Ordisoftware.Hebrew.Words
           DataSet.Verses.BeginLoadData();
           DataSet.Words.BeginLoadData();
           //StrongConcordancesTableAdapter.Fill(DataSet.StrongConcordances);
-          BooksTableAdapter.Fill(DataSet.Books);
-          ChaptersTableAdapter.Fill(DataSet.Chapters);
-          VersesTableAdapter.Fill(DataSet.Verses);
-          WordsTableAdapter.Fill(DataSet.Words);
+          load(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
+          load(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
+          load(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
+          load(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
           //DataSet.StrongConcordances.EndLoadData();
           DataSet.Books.EndLoadData();
           DataSet.Chapters.EndLoadData();
@@ -165,16 +153,16 @@ namespace Ordisoftware.Hebrew.Words
         finally
         {
           //DataSet.StrongConcordances.RowChanged -= progress;
-          DataSet.Books.RowChanged -= progress;
-          DataSet.Chapters.RowChanged -= progress;
-          DataSet.Verses.RowChanged -= progress;
-          DataSet.Words.RowChanged -= progress;
+          DataSet.Books.RowChanged -= update;
+          DataSet.Chapters.RowChanged -= update;
+          DataSet.Verses.RowChanged -= update;
+          DataSet.Words.RowChanged -= update;
         }
       }
       finally
       {
+        LoadingForm.Instance.Hide();
         Globals.IsLoadingData = false;
-        form.Close();
         SetFormDisabled(false);
       }
     }

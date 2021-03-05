@@ -11,12 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
+using System.Data.Odbc;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
@@ -50,8 +52,11 @@ namespace Ordisoftware.Hebrew.Words
           chapter.ELS50 = res;
           strELS50 = "";
         }
-        foreach ( Books bookid in Enum.GetValues(typeof(Books)) )
+        var books = Enums.GetValues<Books>();
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressCreatingData.GetLang(), books.Count);
+        foreach ( Books bookid in books )
         {
+          LoadingForm.Instance.DoProgress();
           string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
           if ( !File.Exists(filePath) )
           {
@@ -126,7 +131,31 @@ namespace Ordisoftware.Hebrew.Words
           }
         }
         if ( chapter != null ) nextChapter();
-        TableAdapterManager.UpdateAll(DataSet);
+        int count = DataSet.Books.Count
+                  + DataSet.Chapters.Count
+                  + DataSet.Verses.Count
+                  + DataSet.Words.Count;
+        // TODO update table by table
+        LoadingForm.Instance.Initialize("Updating...", count);
+        void update(object sender, OdbcRowUpdatedEventArgs rowEvent)
+        {
+          if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
+        };
+        TableAdapterManager.BooksTableAdapter.Adapter.RowUpdated += update;
+        TableAdapterManager.ChaptersTableAdapter.Adapter.RowUpdated += update;
+        TableAdapterManager.VersesTableAdapter.Adapter.RowUpdated += update;
+        TableAdapterManager.WordsTableAdapter.Adapter.RowUpdated += update;
+        try
+        {
+          TableAdapterManager.UpdateAll(DataSet);
+        }
+        finally
+        {
+          TableAdapterManager.BooksTableAdapter.Adapter.RowUpdated -= update;
+          TableAdapterManager.ChaptersTableAdapter.Adapter.RowUpdated -= update;
+          TableAdapterManager.VersesTableAdapter.Adapter.RowUpdated -= update;
+          TableAdapterManager.WordsTableAdapter.Adapter.RowUpdated -= update;
+        }
       }
       catch ( Exception ex )
       {

@@ -15,8 +15,6 @@
 using System;
 using System.Data;
 using System.Data.Odbc;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -62,50 +60,14 @@ namespace Ordisoftware.Hebrew.Words
         TableAdapterManager.UpdateAll(DataSet);
       }
       else
-      {
-        bool inprogress = true;
-        int index = 0;
-        int delta = 1;
-        var form = LoadingForm.Instance;
-        form.LabelOperation.Text = SysTranslations.ProgressCreatingData.GetLang();
-        form.ProgressBar.Maximum = 64;
-        form.Show();
         try
         {
-          var taskProgress = new Task(() =>
-          {
-            while ( inprogress )
-            {
-              Application.DoEvents();
-              index += delta;
-              if ( index == form.ProgressBar.Maximum ) delta = -1;
-              if ( index == 0 ) delta = +1;
-              form.ProgressBar.SyncUI(() => form.ProgressBar.Value = index);
-              this.SyncUI(Refresh);
-              form.SyncUI(form.Refresh);
-              Thread.Sleep(200);
-            }
-          });
-          taskProgress.Start();
-          var taskLoad = new Task(() =>
-          {
-            FillFromFiles();
-          });
-          taskLoad.Start();
-          while ( inprogress )
-          {
-            Application.DoEvents();
-            if ( taskLoad.IsCompleted ) inprogress = false;
-            Thread.Sleep(200);
-          }
-          form.ProgressBar.Value = form.ProgressBar.Maximum;
+          FillFromFiles();
         }
         finally
         {
-          inprogress = false;
-          form.Close();
+          LoadingForm.Instance.Hide();
         }
-      }
     }
 
   }
