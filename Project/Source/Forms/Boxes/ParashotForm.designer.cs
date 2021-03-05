@@ -63,7 +63,7 @@
       this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnUnicode = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
-      this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -93,7 +93,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-      this.ContextMenu.SuspendLayout();
+      this.ContextMenuParashah.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       this.SuspendLayout();
       // 
@@ -253,7 +253,7 @@
             this.ColumnLinked,
             this.ColumnUnicode,
             this.ColumnMemo});
-      this.DataGridView.ContextMenuStrip = this.ContextMenu;
+      this.DataGridView.ContextMenuStrip = this.ContextMenuParashah;
       this.DataGridView.DataSource = this.BindingSource;
       this.DataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.DataGridView.EnableHeadersVisualStyles = false;
@@ -372,7 +372,7 @@
       // 
       // ContextMenu
       // 
-      this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenVerseOnline,
             this.ActionSearchOnline,
             this.MenuSeparator1,
@@ -389,8 +389,8 @@
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode});
-      this.ContextMenu.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenu, "ContextMenu");
+      this.ContextMenuParashah.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuParashah, "ContextMenu");
       // 
       // ActionOpenVerseOnline
       // 
@@ -558,7 +558,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.PanelMain.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-      this.ContextMenu.ResumeLayout(false);
+      this.ContextMenuParashah.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       this.ResumeLayout(false);
 
@@ -568,11 +568,7 @@
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelMain;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-    private System.Windows.Forms.ContextMenuStrip ContextMenu;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;

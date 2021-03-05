@@ -1433,7 +1433,7 @@ namespace Ordisoftware.Hebrew.Words
     private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
     {
       long value = 0;
-      var books = from book in MainForm.Instance.DataSet.Books
+      var books = from book in DataSet.Books
                   where book.Number <= BooksBounds.Torah.Max
                   select book;
       foreach ( Data.DataSet.BooksRow book in books )
@@ -1443,7 +1443,7 @@ namespace Ordisoftware.Hebrew.Words
               foreach ( char letter in word.Hebrew )
               {
                 int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));
-                if ( index == -1 ) ;
+                if ( index == -1 ) { }
                 value += HebrewAlphabet.ValuesSimple[index];
               }
       DisplayManager.Show(value.ToString());

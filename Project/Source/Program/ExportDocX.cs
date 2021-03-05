@@ -157,7 +157,7 @@ namespace Ordisoftware.Hebrew.Words
       table.Rows[0].Cells[0].Width = 555;
       table.Rows[0].Cells[1].Width = 55;
       var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
-      paragraph.StyleName = styleName;
+      paragraph.StyleId = styleName;
       paragraph.Append(str);
       paragraph.Direction = Direction.RightToLeft;
       paragraph.Font(font);

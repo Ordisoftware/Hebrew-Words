@@ -32,7 +32,6 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     public void CreateSchemaIfNotExists()
     {
-      bool upgraded = false;
       SystemManager.TryCatchManage(() =>
       {
         SQLiteOdbcHelper.CreateOrUpdateDSN();
