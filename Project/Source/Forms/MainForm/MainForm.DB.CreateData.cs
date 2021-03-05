@@ -56,8 +56,8 @@ namespace Ordisoftware.Hebrew.Words
       }
       if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
         || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
-          && DisplayManager.QueryYesNoAbort("Database corrupted. Reset?", // TODO translation
-                                          onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
+          && DisplayManager.QueryYesNoAbort(SysTranslations.AskToResetCorruptedDatabase.GetLang($"Books.Count = {countBooks}{Globals.NL}Chapters.Count = {countChapters}{Globals.NL}Verses.Count = {countVerses}{Globals.NL}Words.Count = {countWords}"),
+                                            onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
         try
         {
           FillFromFiles();
