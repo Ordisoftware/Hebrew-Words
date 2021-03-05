@@ -34,7 +34,6 @@ namespace Ordisoftware.Hebrew.Words
 
     private void CreateBooks()
     {
-      // TODO refactor and get count for each table and if only one is 0 show message query to recreate
       int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
       int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
       int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
