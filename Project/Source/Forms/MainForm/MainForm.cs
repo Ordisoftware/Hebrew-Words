@@ -185,18 +185,12 @@ namespace Ordisoftware.Hebrew.Words
             auto = true;
           }
           else
-          if ( !string.IsNullOrEmpty(options.WordHebrew) )
+          if ( !string.IsNullOrEmpty(options.Word) )
           {
             auto = true;
             defaultGoTo();
-            SearchHebrewWord(options.WordHebrew);
-          }
-          else
-          if ( !string.IsNullOrEmpty(options.WordUnicode) )
-          {
-            auto = true;
-            defaultGoTo();
-            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.WordHebrew));
+            // TODO recup code Letters
+            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.Word));
           }
           else
           if ( !string.IsNullOrEmpty(options.WordTranslated) )

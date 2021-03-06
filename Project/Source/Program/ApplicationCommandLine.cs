@@ -25,16 +25,13 @@ namespace Ordisoftware.Hebrew.Words
     static public ApplicationCommandLine Instance
       => SystemManager.CommandLineOptions as ApplicationCommandLine;
 
-    [Option("ref", Required = false, HelpText = "Reference to go.")]
+    [Option("verse", Required = false, HelpText = "Verse reference to go.")]
     public string ReferenceToGo { get; set; }
 
-    [Option("hebrew", Required = false, HelpText = "Hebrew word to search.")]
-    public string WordHebrew { get; set; }
+    [Option("word", Required = false, HelpText = "Unicode chars or else Hebrew font chars word to search.")]
+    public string Word { get; set; }
 
-    [Option("unicode", Required = false, HelpText = "Unicode word to search.")]
-    public string WordUnicode { get; set; }
-
-    [Option("word", Required = false, HelpText = "Translated word to search.")]
+    [Option("translated", Required = false, HelpText = "Translated word to search.")]
     public string WordTranslated { get; set; }
 
   }

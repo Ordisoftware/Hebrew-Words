@@ -101,6 +101,7 @@ namespace Ordisoftware.Hebrew
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
+        // TODO use Words direct call
         HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
       });
     }
