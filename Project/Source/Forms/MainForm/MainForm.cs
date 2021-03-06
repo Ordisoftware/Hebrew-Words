@@ -284,13 +284,15 @@ namespace Ordisoftware.Hebrew.Words
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      if ( Globals.IsSessionEnding ) return;
       Globals.IsExiting = true;
       Globals.IsSessionEnding = true;
       Globals.AllowClose = true;
+      TimerTooltip.Stop();
+      MessageBoxEx.CloseAll();
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
-          try { form.Close(); }
-          catch { }
+          SystemManager.TryCatch(() => form.Close());
       Close();
     }
 
