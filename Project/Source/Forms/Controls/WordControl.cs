@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Words
           break;
         case HebrewWordClickOpen.OnlineSearch:
           string word = Reference.Word.Hebrew;
-          HebrewTools.OpenOnlineWordProvider(Program.Settings.SearchOnlineURL, word);
+          HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickOpen.SearchTranslated:
           MainForm.Instance.ActionSearchTranslated.PerformClick();

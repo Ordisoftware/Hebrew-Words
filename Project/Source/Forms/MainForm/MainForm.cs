@@ -62,12 +62,12 @@ namespace Ordisoftware.Hebrew.Words
       History = new History(Program.HistoryFilePath);
       ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
       CreateProvidersLinks();
-      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         if ( !( ActiveControl is WordControl ) ) return;
         var menuitem = (ToolStripMenuItem)sender;
         string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-        HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, word);
+        HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
       });
     }
 
@@ -101,21 +101,21 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void CreateProvidersLinks()
     {
-      ContextMenuStripVerse.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
+      ContextMenuStripVerse.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
         if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
         {
           var reference = (ReferenceItem)control.Tag;
-          HebrewTools.OpenOnlineVerse((string)menuitem.Tag,
+          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
                                       reference.Book.Number,
                                       reference.Chapter.Number,
                                       reference.Verse.Number);
         }
         else
         if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-          HebrewTools.OpenOnlineVerse((string)menuitem.Tag,
+          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
                                       CurrentReference.Book.Number,
                                       CurrentReference.Chapter.Number,
                                       Convert.ToInt32(control.Text));
@@ -1415,7 +1415,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( !( ActiveControl is WordControl ) ) return;
       string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-      HebrewTools.OpenOnlineWordProvider(Settings.SearchOnlineURL, word);
+      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
     }
 
     private void GoToBookmark(object sender, EventArgs e)

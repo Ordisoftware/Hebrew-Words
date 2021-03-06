@@ -92,17 +92,17 @@ namespace Ordisoftware.Hebrew
 
     private void InitializeMenu()
     {
-      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
-          HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, word);
+          HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
       });
-      ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         // TODO use Words direct call
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
       });
     }
 

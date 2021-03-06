@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Words
           SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
         }
       };
-      foreach ( var item in OnlineProviders.OnlineWordProviders.Items )
+      foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
       {
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
       string word = ( (Data.DataSet.BooksRow)row ).Hebrew;
-      HebrewTools.OpenOnlineWordProvider(Program.Settings.SearchOnlineURL, word);
+      HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)

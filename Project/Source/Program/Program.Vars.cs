@@ -38,12 +38,6 @@ namespace Ordisoftware.Hebrew.Words
       => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
 
     /// <summary>
-    /// Indicate application documents folder.
-    /// </summary>
-    static public string ParashaFolderPath
-      => Path.Combine(Globals.DocumentsFolderPath, "Parasha");
-
-    /// <summary>
     /// Indicate file path of the bookmaks.
     /// </summary>
     static public string BookmarksFilePath
@@ -64,7 +58,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         if ( _GrammarGuideForm == null )
           _GrammarGuideForm = new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                  OnlineProviders.HebrewGrammarGuideFilePath,
+                                                  HebrewGlobals.HebrewGrammarGuideFilePath,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;

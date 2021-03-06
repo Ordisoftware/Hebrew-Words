@@ -212,10 +212,10 @@ namespace Ordisoftware.Hebrew.Words
       if ( e.Button != MouseButtons.Left ) return;
       var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
       //if ( control != null ) control.Focus();
-      HebrewTools.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
-                                  control.Reference.Book.Number,
-                                  control.Reference.Chapter.Number,
-                                  control.Reference.Verse.Number);
+      HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
+                                    control.Reference.Book.Number,
+                                    control.Reference.Chapter.Number,
+                                    control.Reference.Verse.Number);
       /*HebrewTools.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
                                   control.Reference.Book.Number,
                                   CurrentReference.Chapter.Number,

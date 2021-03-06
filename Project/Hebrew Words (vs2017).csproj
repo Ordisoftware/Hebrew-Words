@@ -291,7 +291,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.Static.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.cs">
       <SubType>UserControl</SubType>
