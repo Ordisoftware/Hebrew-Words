@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Words.
+/// This file is part of Ordisoftware Hebrew Calendar and Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -19,8 +19,11 @@ using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using Program = Ordisoftware.Hebrew.Words.Program;
+using Properties = Ordisoftware.Hebrew.Words.Properties;
+using MainForm = Ordisoftware.Hebrew.Words.MainForm;
 
-namespace Ordisoftware.Hebrew.Words
+namespace Ordisoftware.Hebrew
 {
 
   partial class ParashotForm : Form
@@ -28,7 +31,7 @@ namespace Ordisoftware.Hebrew.Words
 
     static public ParashotForm Instance { get; private set; }
 
-    static public void Run(string referenceBegin = null)
+    static public void Run(Parashah parashah = null)
     {
       if ( Instance == null )
         Instance = new ParashotForm();
@@ -36,13 +39,16 @@ namespace Ordisoftware.Hebrew.Words
       if ( Instance.Visible )
       {
         Instance.Popup();
-        Instance.Select(referenceBegin);
+        Instance.Select(parashah);
         return;
       }
       Instance.Show();
       Instance.BringToFront();
-      Instance.Select(referenceBegin);
+      Instance.Select(parashah);
     }
+
+    public readonly Properties.Settings Settings
+      = Properties.Settings.Default;
 
     private DataRowView CurrentDataBoundItem
       => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
@@ -55,17 +61,19 @@ namespace Ordisoftware.Hebrew.Words
     {
       var item = CurrentDataBoundItem;
       bool islinked = Convert.ToBoolean(item[nameof(Parashah.IsLinkedToNext)]);
-      return $"Sefer {item[nameof(Parashah.Book)]}, Parashah n°{item[nameof(Parashah.Number)]}, " +
+      return $"Sefer {(TorahBooks)( (int)item[nameof(Parashah.Book)] - 1 )} " +
+             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} " +
+             $"Parashah n°{item[nameof(Parashah.Number)]} " +
              $"{item[nameof(Parashah.Name)]}{( islinked ? "*" : string.Empty )} " +
-             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} : " +
-             $"{item[nameof(Parashah.Translation)]} ; {item[nameof(Parashah.Lettriq)]} " +
-             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
+             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )}) : " +
+             $"{item[nameof(Parashah.Translation)].ToString().GetOrEmpty()} ; " +
+             $"{item[nameof(Parashah.Lettriq)].ToString().GetOrEmpty()} ; " +
+             $"{item[nameof(Parashah.Memo)].ToString().GetOrEmpty()} ";
     }
 
     private void UpdateStats()
     {
-      // TODO update stats
-      //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      // TODO update stats ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
       //ApplicationStatistics.UpdateDDParashotMemorySizeRequired = true;
     }
 
@@ -74,9 +82,9 @@ namespace Ordisoftware.Hebrew.Words
       InitializeComponent();
       InitializeMenu();
       Icon = Globals.MainForm.Icon;
-      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
+      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
       UpdateStats();
@@ -97,16 +105,13 @@ namespace Ordisoftware.Hebrew.Words
       });
     }
 
-    private void Select(string referenceBegin)
+    private void Select(Parashah parashah)
     {
-      if ( string.IsNullOrEmpty(referenceBegin) ) return;
-      referenceBegin = referenceBegin.Split(',')[0];
+      if ( parashah == null ) return;
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var datarowview = (DataRowView)row.DataBoundItem;
-        string reference = $"{(int)datarowview[nameof(Parashah.Book)]}." +
-                           $"{(string)datarowview[nameof(Parashah.VerseBegin)]}";
-        if ( reference == referenceBegin )
+        if ( (string)datarowview[nameof(Parashah.ID)] == parashah.ID )
         {
           DataGridView.CurrentCell = row.Cells[0];
           break;
@@ -116,13 +121,13 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
-      EditFontSize.Value = Program.Settings.ParashotFormFontSize;
-      Location = Program.Settings.ParashotFormLocation;
-      ClientSize = Program.Settings.ParashotFormClientSize;
+      EditFontSize.Value = Settings.ParashotFormFontSize;
+      Location = Settings.ParashotFormLocation;
+      ClientSize = Settings.ParashotFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Program.Settings.ParashotFormWindowState;
-      if ( Program.Settings.ParashotFormColumnTranslationWidth != -1 )
-        ColumnTranslation.Width = Program.Settings.ParashotFormColumnTranslationWidth;
+      WindowState = Settings.ParashotFormWindowState;
+      if ( Settings.ParashotFormColumnTranslationWidth != -1 )
+        ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
     }
 
     private void ParashotForm_Shown(object sender, EventArgs e)
@@ -176,14 +181,14 @@ namespace Ordisoftware.Hebrew.Words
       Instance = null;
       if ( WindowState == FormWindowState.Minimized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.ParashotFormWindowState = WindowState;
+      Settings.ParashotFormWindowState = WindowState;
       if ( WindowState == FormWindowState.Maximized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.ParashotFormLocation = Location;
-      Program.Settings.ParashotFormClientSize = ClientSize;
-      Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
-      Program.Settings.ParashotFormFontSize = EditFontSize.Value;
-      Program.Settings.Save();
+      Settings.ParashotFormLocation = Location;
+      Settings.ParashotFormClientSize = ClientSize;
+      Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
+      Settings.ParashotFormFontSize = EditFontSize.Value;
+      Settings.Save();
       ParashotTable.Release();
       UpdateStats();
     }
@@ -191,14 +196,6 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
-    }
-
-    private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
-    {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
-      if ( form == null )
-        form = new MessageBoxEx(title, text, width); form.ShowInTaskbar = true;
-      form.Popup(null, sender == null);
     }
 
     private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
@@ -233,11 +230,10 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      // TODO export parashot board
-      /*ActionSave.PerformClick();
+      /* TODO export parashot board ActionSave.PerformClick();
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(ParashotTable.TableName);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
       {
@@ -245,9 +241,9 @@ namespace Ordisoftware.Hebrew.Words
         ParashotTable.DataTable.Export(filePath, Program.BoardExportTargets);
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                           Globals.KeyboardSoundFilePath);
-        if ( Program.Settings.AutoOpenExportFolder )
+        if ( Settings.AutoOpenExportFolder )
           SystemManager.RunShell(Path.GetDirectoryName(filePath));
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       ActiveControl = DataGridView;*/
@@ -397,11 +393,6 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    private void ActionOpenShorashon_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
-    }
-
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
     {
       Program.GrammarGuideForm.Popup();
@@ -410,7 +401,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
-                                    Program.Settings.HebrewLettersExe);
+                                    Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
