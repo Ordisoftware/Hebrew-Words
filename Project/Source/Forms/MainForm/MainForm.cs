@@ -47,12 +47,29 @@ namespace Ordisoftware.Hebrew.Words
       Instance = new MainForm();
     }
 
+    // https://stackoverflow.com/questions/2097164/how-to-change-system-windows-forms-toolstripbutton-highlight-background-color-wh#2097341
+    private class ToolStripRenderer : ToolStripProfessionalRenderer
+    {
+      protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
+      {
+        var button = e.Item as ToolStripButton;
+        if ( button != null && button.Checked )
+        {
+          var bounds = new Rectangle(0, 0, e.Item.Width - 1, e.Item.Height - 1);
+          e.Graphics.FillRectangle(SystemBrushes.ControlLight, bounds);
+          e.Graphics.DrawRectangle(SystemPens.ControlDark, bounds);
+        }
+        else base.OnRenderButtonBackground(e);
+      }
+    }
+
     /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
     {
       InitializeComponent();
+      ToolStrip.Renderer = new ToolStripRenderer();
       SoundItem.Initialize();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
