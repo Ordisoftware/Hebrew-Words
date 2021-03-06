@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Words
       = Properties.Settings.Default;
 
     /// <summary>
-    /// Indicate application documents folder.
+    /// Indicate application tanak documents folder.
     /// </summary>
     static public string TanakFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
