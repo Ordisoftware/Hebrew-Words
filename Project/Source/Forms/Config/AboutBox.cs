@@ -133,6 +133,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
       MainForm.Instance.ActionWebCheckUpdate_Click(sender, EventArgs.Empty);
+      BringToFront();
     }
 
   }
