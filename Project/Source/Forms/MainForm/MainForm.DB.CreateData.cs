@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( countBooks != 0 )
       {
         BooksTableAdapter.Fill(DataSet.Books);
-        if ( Globals.DatabaseUpgraded )
+        if ( Globals.IsDatabaseUpgraded )
           foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
           {
             Books enumBook = (Books)( book.Number - 1 );

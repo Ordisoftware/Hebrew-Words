@@ -91,14 +91,14 @@ namespace Ordisoftware.Hebrew.Words
         //ClassicTranslation TEXT DEFAULT '' NOT NULL,
         //ConcordanceID TEXT DEFAULT '' NOT NULL,
         //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-        bool b = Globals.DatabaseUpgraded;
+        bool b = Globals.IsDatabaseUpgraded;
         b = !LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true) || b;
-        Globals.DatabaseUpgraded = b;
+        Globals.IsDatabaseUpgraded = b;
         //upgraded = !connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
         //upgraded = !connection.CheckColumn("Words", "Transliteration", sqlColumn);
         //upgraded = !connection.CheckColumn("Words", "ConcordanceID", sqlColumn);

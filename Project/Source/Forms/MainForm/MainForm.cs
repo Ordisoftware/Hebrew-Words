@@ -232,7 +232,7 @@ namespace Ordisoftware.Hebrew.Words
         else
           GoTo(1, 1, 1, true);
       }
-      if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+      if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
         SystemManager.TryCatch(() =>
         {
           var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
