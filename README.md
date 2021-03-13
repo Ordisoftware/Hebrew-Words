@@ -154,11 +154,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-## Future improvements
-
-
-
-#### 2021.03.12 - Version 3.0
+#### In progress - Version 3.0
 
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
