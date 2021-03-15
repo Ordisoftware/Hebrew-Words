@@ -80,19 +80,7 @@ namespace Ordisoftware.Hebrew.Words
         var command = new BinaryFormatter().Deserialize(server) as string;
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
-          //if ( MainForm.Instance.Visible )
           MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
-        /*{
-          if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
-            MainForm.Instance.WindowState = Settings.MainFormState;
-          var old = MainForm.Instance.TopMost;
-          MainForm.Instance.TopMost = true;
-          MainForm.Instance.BringToFront();
-          MainForm.Instance.Show();
-          MainForm.Instance.TopMost = old;
-        });
-        else
-        MainForm.Instance.SyncUI(() => MainForm.Instance.Show());*/
       }
       finally
       {
@@ -120,7 +108,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
+        if ( force )
         {
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
@@ -150,7 +138,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        if ( SystemManager.CommandLineOptions != null )
+        if ( SystemManager.CommandLineOptions == null ) return;
         if ( SystemManager.CommandLineOptions.ResetSettings )
         {
           SystemManager.CleanAllLocalAppSettingsFolders();
