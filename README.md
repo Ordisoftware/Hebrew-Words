@@ -184,7 +184,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
-- Add Humanizer NuGet package.
 - Add Global Shortcut Manager dependency.
 - Add InputSimulatorStandard NuGet package.
 - Add Serilog NuGet package.
