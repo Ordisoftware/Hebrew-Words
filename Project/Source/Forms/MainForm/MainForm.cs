@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void CreateProvidersLinks()
     {
-      ContextMenuStripVerse.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;

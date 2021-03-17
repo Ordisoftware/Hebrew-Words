@@ -4070,9 +4070,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Open online</value>
   </data>
-  <data name="ActionOpenVerseOnline.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 6</value>
   </data>
@@ -4432,7 +4429,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Copy translation</value>
   </data>
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 270</value>
+    <value>313, 248</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
     <value>ContextMenuStripWord</value>
