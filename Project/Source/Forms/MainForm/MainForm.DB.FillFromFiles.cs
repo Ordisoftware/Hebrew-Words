@@ -164,7 +164,7 @@ namespace Ordisoftware.Hebrew.Words
         adapter.Update(table);
         adapter.InsertCommand.Transaction.Commit();
         adapter.InsertCommand.Connection.Close();
-        adapter.RowUpdated += update;
+        adapter.RowUpdated -= update;
       }
       void update(object sender, OdbcRowUpdatedEventArgs rowEvent)
       {
