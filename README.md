@@ -190,7 +190,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Serilog-sinks-file NuGet package.
 - Add Serilog-sinks-winforms NuGet package.
 - Replace simple internal command line parser by CommandLineParser NuGet package.
-- Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL).
+- Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).
 - Add debugger (exception information form with GitHub issue creation).
 - The application now permanently lock database file while running.
 - The application now automatically creates the ODBC DSN in the Windows registry.
