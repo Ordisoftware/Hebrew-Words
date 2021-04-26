@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -100,7 +100,6 @@ namespace Ordisoftware.Hebrew
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
-        var menuitem = (ToolStripMenuItem)sender;
         MainForm.Instance.GoTo(CurrentDataBoundItemFullReferenceBegin);
       });
     }

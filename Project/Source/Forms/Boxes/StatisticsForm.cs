@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    private void buttonClose_Click(object sender, EventArgs e)
+    private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
     }
@@ -145,7 +145,7 @@ namespace Ordisoftware.Hebrew.Words
                   LabelMiddleReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
                   LabelMiddleReferenceValue.Text = LabelMiddleReferenceValue.Tag.ToString();
                   LabelMiddleWordValue.Text = word.Hebrew;
-                  LabelMiddleLetterValue.Text = letter.ToString(); ;
+                  LabelMiddleLetterValue.Text = letter.ToString();
                   return;
                 }
               }
@@ -153,7 +153,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void InitializeOccurences()
     {
-      Func<Func<string, bool>, string> getCount = check =>
+      string getCount(Func<string, bool> check)
       {
         var query = from book in MainForm.Instance.DataSet.Books
                     from chapter in book.GetChaptersRows()
@@ -162,7 +162,7 @@ namespace Ordisoftware.Hebrew.Words
                     where check(word.Hebrew) && book.Number <= BooksBounds.Torah.Max
                     select word;
         return query.Count().ToString();
-      };
+      }
       LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
       LabelCountElohimValue.Text = getCount(s => HebrewAlphabet.SetFinal(s, false).Contains("myhla"));
       LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));

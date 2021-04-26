@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -32,11 +32,6 @@ namespace Ordisoftware.Hebrew.Words
     public ImportStrongForm()
     {
       InitializeComponent();
-    }
-
-    private void ActionLoadStrong_Click(object sender, EventArgs e)
-    {
-
     }
 
   }

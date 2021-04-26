@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Data;
 using System.Data.Odbc;
@@ -107,7 +107,9 @@ namespace Ordisoftware.Hebrew.Words
                 countWords = 0;
                 verse = DataSet.Verses.NewVersesRow();
                 verse.ID = Guid.NewGuid().ToString();
+#pragma warning disable S2259 // Null pointers should not be dereferenced
                 verse.ChapterID = chapter.ID;
+#pragma warning restore S2259 // Null pointers should not be dereferenced
                 verse.Number = ++countVerses;
                 verse.Comment = "";
                 listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
@@ -124,7 +126,9 @@ namespace Ordisoftware.Hebrew.Words
                 {
                   word = DataSet.Words.NewWordsRow();
                   word.ID = Guid.NewGuid().ToString();
+#pragma warning disable S2259 // Null pointers should not be dereferenced
                   word.VerseID = verse.ID;
+#pragma warning restore S2259 // Null pointers should not be dereferenced
                   word.Number = ++countWords;
                   word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
                   word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
@@ -169,7 +173,7 @@ namespace Ordisoftware.Hebrew.Words
       void update(object sender, OdbcRowUpdatedEventArgs rowEvent)
       {
         if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-      };
+      }
     }
 
   }

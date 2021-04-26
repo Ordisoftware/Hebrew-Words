@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Hebrew.Words.Data;
@@ -36,7 +36,7 @@ namespace Ordisoftware.Hebrew.Words
       else
       if ( nb >= 10 ) str = Verse.Number.ToString("00");
       else
-      str = Verse.Number.ToString();
+        str = Verse.Number.ToString();
       if ( Verse.IsTranslated() ) str += $" - {Verse.GetTranslation()}";
       return str;
     }

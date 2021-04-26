@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -98,10 +98,12 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).SingleOrDefault();
+        Book = MainForm.Instance.DataSet.Books.SingleOrDefault(b => b.Number == book);
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous
         Chapter = Book?.GetChaptersRows()[chapter - 1] ?? null;
         Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
         Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous
       }
       catch ( Exception ex )
       {
@@ -111,7 +113,8 @@ namespace Ordisoftware.Hebrew.Words
 
     static public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
+      return x != null
+          && y != null
           && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
           && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
           && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
@@ -122,9 +125,9 @@ namespace Ordisoftware.Hebrew.Words
       return Equals(this, obj as ReferenceItem);
     }
 
-    public bool Equals(ReferenceItem y)
+    public bool Equals(ReferenceItem other)
     {
-      return Equals(this, y);
+      return Equals(this, other);
     }
 
     public bool EqualsWord(ReferenceItem y)

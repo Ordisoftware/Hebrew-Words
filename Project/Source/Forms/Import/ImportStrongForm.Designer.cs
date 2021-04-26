@@ -40,7 +40,6 @@
       this.ActionLoadStrong.TabIndex = 0;
       this.ActionLoadStrong.Text = "Load Strong";
       this.ActionLoadStrong.UseVisualStyleBackColor = true;
-      this.ActionLoadStrong.Click += new System.EventHandler(this.ActionLoadStrong_Click);
       // 
       // RichTextBox
       // 

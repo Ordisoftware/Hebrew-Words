@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -32,87 +32,81 @@ namespace Ordisoftware.Hebrew.Words
     /// </remarks>
     static private DocX Document = null;
 
-    static private Font FontVerdana = new Font("Verdana");
-    static private Font FontHebrew = new Font("Hebrew");
-    static private Font FontCalibri = new Font("Calibri");
+    static private readonly Font FontVerdana = new Font("Verdana");
+    static private readonly Font FontHebrew = new Font("Hebrew");
+    static private readonly Font FontCalibri = new Font("Calibri");
 
     static public void Run(string filePath,
                            Data.DataSet.BooksRow book,
                            bool includeTranslation,
                            Func<bool> showProgress)
     {
-      {
-        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
-          try
+      using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
+        try
+        {
+          SetPageMargins();
+          AddBookTitle(book);
+          foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
           {
-            SetPageMargins();
-            AddBookTitle(book);
-            foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-            {
-              if ( showProgress != null && showProgress() ) break;
-              AddChapterTitle(chapter);
-              foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-                AddVerse(verse, includeTranslation);
-            }
-            Document.Save();
-            if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filePath);
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
-      }
-    }
-
-    static public void Run(string filePath, 
-                           Data.DataSet.BooksRow book, 
-                           Data.DataSet.ChaptersRow chapter, 
-                           bool includeTranslation)
-    {
-      {
-        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
-          try
-          {
-            SetPageMargins();
-            AddBookTitle(book);
+            if ( showProgress != null && showProgress() ) break;
             AddChapterTitle(chapter);
             foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
               AddVerse(verse, includeTranslation);
-            Document.Save();
-            if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filePath);
           }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
-      }
+          Document.Save();
+          if ( Program.Settings.OpenGeneratedMSWordFiles )
+            SystemManager.RunShell(filePath);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
-    static public void Run(string filePath, 
-                           Data.DataSet.BooksRow book, 
-                           Data.DataSet.ChaptersRow chapter, 
-                           bool includeTranslation, 
+    static public void Run(string filePath,
+                           Data.DataSet.BooksRow book,
+                           Data.DataSet.ChaptersRow chapter,
+                           bool includeTranslation)
+    {
+      using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
+        try
+        {
+          SetPageMargins();
+          AddBookTitle(book);
+          AddChapterTitle(chapter);
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            AddVerse(verse, includeTranslation);
+          Document.Save();
+          if ( Program.Settings.OpenGeneratedMSWordFiles )
+            SystemManager.RunShell(filePath);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
+    static public void Run(string filePath,
+                           Data.DataSet.BooksRow book,
+                           Data.DataSet.ChaptersRow chapter,
+                           bool includeTranslation,
                            int verse)
     {
-      {
-        using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
-          try
-          {
-            SetPageMargins();
-            AddBookTitle(book);
-            AddChapterTitle(chapter);
-            AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
-            Document.Save();
-            if ( Program.Settings.OpenGeneratedMSWordFiles )
-              SystemManager.RunShell(filePath);
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
-      }
+      using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
+        try
+        {
+          SetPageMargins();
+          AddBookTitle(book);
+          AddChapterTitle(chapter);
+          AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
+          Document.Save();
+          if ( Program.Settings.OpenGeneratedMSWordFiles )
+            SystemManager.RunShell(filePath);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
     static private void SetPageMargins()
@@ -165,11 +159,11 @@ namespace Ordisoftware.Hebrew.Words
       Document.InsertParagraph().AppendLine();
     }
 
-    static private void SetCellSize(Cell cell, 
-                                    int width, 
-                                    int marginTop, 
-                                    int marginBottom, 
-                                    int MarginLeft, 
+    static private void SetCellSize(Cell cell,
+                                    int width,
+                                    int marginTop,
+                                    int marginBottom,
+                                    int MarginLeft,
                                     int MarginRight)
     {
       cell.Width = width;

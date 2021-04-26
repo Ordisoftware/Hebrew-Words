@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -57,14 +57,14 @@ namespace Ordisoftware.Hebrew.Words
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       // TODO init from helper
-      EventHandler action1 = (sender, e) =>
+      void action1(object sender, EventArgs e)
       {
         EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
-      };
-      EventHandler action2 = (sender, e) =>
+      }
+      void action2(object sender, EventArgs e)
       {
         EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
-      };
+      }
       foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
         if ( item.Name == "-" )
           MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
@@ -260,7 +260,7 @@ namespace Ordisoftware.Hebrew.Words
       DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineWordProvider.GetLang());
     }
 
-    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
       //Core.Diagnostics.Debugger.Active = EditEnableDebugger.Checked; + add load/shown
     }

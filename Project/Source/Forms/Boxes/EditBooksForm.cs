@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -36,17 +36,14 @@ namespace Ordisoftware.Hebrew.Words
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       int index = 0;
-      EventHandler action = (sender, e) =>
+      void action(object sender, EventArgs e)
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
         var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
         string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
         foreach ( string item in strOriginal.Split(' ') )
-        {
           SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
-        }
-      };
+      }
       foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
       {
         if ( item.Name == "-" )

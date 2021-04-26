@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -23,13 +23,14 @@ namespace Ordisoftware.Hebrew.Words
 
     public bool Equals(ReferenceItem x, ReferenceItem y)
     {
-      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
+      return x != null
+          && y != null
           && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
     }
 
-    public int GetHashCode(ReferenceItem value)
+    public int GetHashCode(ReferenceItem obj)
     {
-      return value?.Word?.Translation.GetHashCode() ?? 0;
+      return obj?.Word?.Translation.GetHashCode() ?? 0;
     }
 
   }

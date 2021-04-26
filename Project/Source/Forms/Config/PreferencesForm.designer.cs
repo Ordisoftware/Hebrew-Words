@@ -80,7 +80,7 @@
       this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelBackupPath = new System.Windows.Forms.Label();
@@ -504,15 +504,15 @@
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       // 
-      // checkBox1
+      // EditDebuggerEnabled
       // 
-      resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
-      this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+      resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
+      this.EditDebuggerEnabled.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditDebuggerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditDebuggerEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
+      this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
+      this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
       // PreferencesForm
       // 
@@ -522,7 +522,7 @@
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.ActionSelectLangFR);
       this.Controls.Add(this.ActionSelectLangEN);
-      this.Controls.Add(this.checkBox1);
+      this.Controls.Add(this.EditDebuggerEnabled);
       this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
       this.Controls.Add(this.EditAutoSortBookmarks);
       this.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
@@ -625,6 +625,6 @@
     private System.Windows.Forms.CheckBox EditGoToMasterBookmarkAtStartup;
     private System.Windows.Forms.CheckBox EditAutoSortBookmarks;
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
-    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.CheckBox EditDebuggerEnabled;
   }
 }

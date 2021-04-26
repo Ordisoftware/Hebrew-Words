@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -27,7 +27,6 @@ namespace Ordisoftware.Hebrew.Words
       var form = new SelectVerseForm();
       form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.GetVersesRows().Count();
       if ( form.ShowDialog() != DialogResult.OK ) return null;
-      int value = (int)form.EditVerseNumber.Value;
       return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
                                MainForm.Instance.CurrentReference.Chapter.Number,
                                (int)form.EditVerseNumber.Value);

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -111,7 +111,7 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
 
-    public ReferencesList(string filePath)
+    protected ReferencesList(string filePath)
     {
       FilePath = filePath;
     }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -161,7 +161,7 @@ namespace Ordisoftware.Hebrew.Words
           ActionAddTranslation.PerformClick();
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.TranslatedItemDoubleClickOpen.ToStringFull());
+          throw new AdvancedNotImplementedException(Program.Settings.TranslatedItemDoubleClickOpen.ToStringFull());
       }
     }
 
@@ -263,9 +263,11 @@ namespace Ordisoftware.Hebrew.Words
         ListView.Items.Clear();
         string wordHebrew = EditHebrew.Text;
         if ( wordHebrew.Length < 2 ) return;
+#pragma warning disable IDE0039 // Utiliser une fonction locale
         Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
         Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
         Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
+#pragma warning restore IDE0039 // Utiliser une fonction locale
         var references = from book in MainForm.Instance.DataSet.Books
                          from chapter in book.GetChaptersRows()
                          from verse in chapter.GetVersesRows()

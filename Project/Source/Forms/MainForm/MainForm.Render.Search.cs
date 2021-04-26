@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -40,9 +40,8 @@ namespace Ordisoftware.Hebrew.Words
           return;
         if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
           SetFormDisabled(true);
-        var results = SearchResults.ToList()
-                      .Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
-                      .Take(Program.Settings.FoundReferencesViewable);
+        var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
+                                   .Take(Program.Settings.FoundReferencesViewable);
         int referenceSize = 160;
         int marginX = 10;
         int marginY = 10;
@@ -108,7 +107,9 @@ namespace Ordisoftware.Hebrew.Words
                 label.ForeColor = SystemColors.ControlText;
             controls[indexControl++] = label;
           }
+#pragma warning disable S2259 // Null pointers should not be dereferenced
           y += label.PreferredHeight + marginY;
+#pragma warning restore S2259 // Null pointers should not be dereferenced
           if ( reference.Verse.IsTranslated() )
           {
             label = new Label();

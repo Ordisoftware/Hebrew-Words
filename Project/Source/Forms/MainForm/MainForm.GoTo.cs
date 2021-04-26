@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -77,7 +77,7 @@ namespace Ordisoftware.Hebrew.Words
         RenderAll();
       if ( reference.Verse == null )
       {
-        var found = CurrentReference.Chapter.GetVersesRows().Where(v => !v.IsTranslated()).FirstOrDefault();
+        var found = CurrentReference.Chapter.GetVersesRows().FirstOrDefault(v => !v.IsTranslated());
         if ( found != null )
           reference.Verse = found;
         else

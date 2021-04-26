@@ -1568,34 +1568,34 @@
   <data name="&gt;&gt;EditVacuumAtStartup.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditDebuggerEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 83</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
   </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditDebuggerEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
+  <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Enable debugger</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="&gt;&gt;EditDebuggerEnabled.Name" xml:space="preserve">
+    <value>EditDebuggerEnabled</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditDebuggerEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditDebuggerEnabled.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

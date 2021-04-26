@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -27,11 +27,11 @@ namespace Ordisoftware.Hebrew.Words
     private void CreateSearchResults()
     {
       ClearSearchResults();
-      Func<DataSet.WordsRow, bool> checkWordHebrew = row =>
+      bool checkWordHebrew(DataSet.WordsRow row)
       {
         return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
-      };
-      Func<DataSet.WordsRow, bool> checkWordTranslation = row =>
+      }
+      bool checkWordTranslation(DataSet.WordsRow row)
       {
         var str = row.Translation.ToLower().RemoveDiacritics();
         if ( !SearchWord1.Contains(",") )
@@ -48,23 +48,23 @@ namespace Ordisoftware.Hebrew.Words
           }
           return false;
         }
-      };
-      Func<DataSet.VersesRow, bool> checkTranslatedAll = verse =>
+      }
+      bool checkTranslatedAll(DataSet.VersesRow verse)
       {
         return verse.IsTranslated();
-      };
-      Func<DataSet.VersesRow, bool> checkTranslatedAllFully = verse =>
+      }
+      bool checkTranslatedAllFully(DataSet.VersesRow verse)
       {
         return verse.IsFullyTranslated();
-      };
-      Func<DataSet.VersesRow, bool> checkTranslatedAllPartially = verse =>
+      }
+      bool checkTranslatedAllPartially(DataSet.VersesRow verse)
       {
         return verse.IsPartiallyTranslated();
-      };
-      Func<DataSet.VersesRow, bool> checkTranslatedAllUntranslated = verse =>
+      }
+      bool checkTranslatedAllUntranslated(DataSet.VersesRow verse)
       {
         return !verse.IsTranslated();
-      };
+      }
       if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
       {
         SearchWord1 = EditLetters.Input.Text;
@@ -88,13 +88,13 @@ namespace Ordisoftware.Hebrew.Words
           CheckVerse = checkTranslatedAllUntranslated;
       }
       int bookSelected = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
-      Func<int, bool> isBookSelected = index =>
+      bool isBookSelected(int index)
       {
         return ( EditSearchInTorah.Checked && index <= BooksBounds.Torah.Max )
             || ( EditSearchInNeviim.Checked && index >= BooksBounds.Neviim.Min && index <= BooksBounds.Neviim.Max )
             || ( EditSearchInKetouvim.Checked && index >= BooksBounds.Ketouvim.Min )
             || ( SelectSearchInBook.Enabled && index == bookSelected );
-      };
+      }
       if ( SearchWord1 != "" && SearchWord1.Length >= 2 && CheckVerse == null )
       {
         SearchResults = from book in DataSet.Books
@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Words
         if ( SearchResultsCount > Program.Settings.FoundReferencesToOpenDialog )
         {
           SearchResults = SelectSearchResultsForm.Run(SearchResults);
-          if ( SearchResults == null )
+          if ( SearchResults == null || !SearchResults.Any() )
             SearchResultsCount = 0;
           else
             try

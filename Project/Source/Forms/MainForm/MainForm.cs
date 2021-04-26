@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static public readonly MainForm Instance;
+    static public MainForm Instance { get; private set; }
 
     /// <summary>
     /// Static constructor.
@@ -52,8 +52,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
       {
-        var button = e.Item as ToolStripButton;
-        if ( button != null && button.Checked )
+        if ( e.Item is ToolStripButton button && button.Checked )
         {
           var bounds = new Rectangle(0, 0, e.Item.Width - 1, e.Item.Height - 1);
           e.Graphics.FillRectangle(SystemBrushes.ControlLight, bounds);
@@ -1425,7 +1424,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
     {
-      SearchHebrewWord(CurrentReference.Word.Hebrew);
+      SearchHebrewWord(((WordControl)ActiveControl).Reference.Word.Hebrew);
     }
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
@@ -1463,10 +1462,6 @@ namespace Ordisoftware.Hebrew.Words
       DisplayManager.Show(value.ToString());
     }
 
-    private void ActionOpenShorashim_Click(object sender, EventArgs e)
-    {
-
-    }
   }
 
 }

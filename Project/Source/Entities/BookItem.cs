@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Hebrew.Words.Data;
@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Words
     public override string ToString()
     {
       if ( Book == null ) return "";
-      int nb = MainForm.Instance.DataSet.Books.Count();
+      int nb = MainForm.Instance.DataSet.Books.Count;
       string str = "";
       if ( nb >= 100 ) str = Book.Number.ToString("000");
       else

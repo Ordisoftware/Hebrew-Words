@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -46,12 +46,12 @@ namespace Ordisoftware.Hebrew.Words
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      Func<Panel, int, bool, bool> scroll = (panel, y, abs) =>
+      bool scroll(Panel panel, int y, bool abs)
       {
         int dy = abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0;
         panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, y + dy);
         return true;
-      };
+      }
       switch ( keyData )
       {
         case Keys.F1:

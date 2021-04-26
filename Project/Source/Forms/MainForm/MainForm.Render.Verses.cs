@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -161,7 +161,7 @@ namespace Ordisoftware.Hebrew.Words
       var control = (Control)sender;
       var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
       var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
-      control.Focus();
+      wordcontrol.Focus();
     }
 
     private void EditVerseComment_TextChanged(object sender, EventArgs e)
@@ -203,8 +203,8 @@ namespace Ordisoftware.Hebrew.Words
 
     private void LabelVerseNumber_MouseDown(object sender, EventArgs e)
     {
-      var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
-      if ( control != null ) control.Focus();
+      if ( PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] is WordControl control )
+        control.Focus();
     }
 
     private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)

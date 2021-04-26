@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -77,7 +77,9 @@ namespace Ordisoftware.Hebrew.Words
       try
       {
         server.EndWaitForConnection(ar);
+#pragma warning disable S5773 // Types allowed to be deserialized should be restricted
         var command = new BinaryFormatter().Deserialize(server) as string;
+#pragma warning restore S5773 // Types allowed to be deserialized should be restricted
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
@@ -108,9 +110,11 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        if ( force )
+        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
         {
+#pragma warning disable S2583 // Conditionally executed code should be reachable
           if ( !force && !Settings.FirstLaunch )
+#pragma warning restore S2583 // Conditionally executed code should be reachable
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;

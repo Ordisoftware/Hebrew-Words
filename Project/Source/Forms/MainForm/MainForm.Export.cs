@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -38,12 +38,12 @@ namespace Ordisoftware.Hebrew.Words
             form.ProgressBar.Maximum = SelectChapter.Items.Count;
             form.Show();
             form.Refresh();
-            Func<bool> showProgress = () =>
+            bool showProgress()
             {
               form.ProgressBar.PerformStep();
               Application.DoEvents();
               return form.CancelRequired;
-            };
+            }
             ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, showProgress);
           }
           finally

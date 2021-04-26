@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Words
 
     static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
     {
-      if ( references == null ) return null;
+      if ( references == null ) return new List<ReferenceItem>();
       var form = new SelectSearchResultsForm(references);
       if ( form.ShowDialog() == DialogResult.Cancel )
         form.References = null;
@@ -103,7 +103,7 @@ namespace Ordisoftware.Hebrew.Words
       foreach ( ListViewItem item in SelectBooks.Items )
         if ( item.Checked )
           list.Add((int)item.Tag);
-      References = OriginalReferences.ToList().Where(r => list.Contains(r.Book.Number));
+      References = OriginalReferences.Where(r => list.Contains(r.Book.Number));
       if ( EditOnlyWithTranslation.Checked )
         References = References.Where(r => r.Verse.IsTranslated());
       if ( EditOnlyWithoutTranslation.Checked )
@@ -136,7 +136,7 @@ namespace Ordisoftware.Hebrew.Words
       Mutex = false;
       if ( EditOnlyWithTranslation.Checked )
       {
-        CreateReferences(OriginalReferences.ToList().Where(r => r.Verse.IsTranslated()));
+        CreateReferences(OriginalReferences.Where(r => r.Verse.IsTranslated()));
         ActionAddAll.PerformClick();
       }
       else
@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew.Words
       Mutex = false;
       if ( EditOnlyWithoutTranslation.Checked )
       {
-        CreateReferences(OriginalReferences.ToList().Where(r => !r.Verse.IsTranslated()));
+        CreateReferences(OriginalReferences.Where(r => !r.Verse.IsTranslated()));
         ActionAddAll.PerformClick();
       }
       else

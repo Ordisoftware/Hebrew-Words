@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-04 </edited>
 using System;
+using System.Text;
 using Ordisoftware.Hebrew.Words.Data;
   
 namespace Ordisoftware.Hebrew.Words
@@ -23,13 +24,13 @@ namespace Ordisoftware.Hebrew.Words
 
     static public string GetTranslation(this DataSet.VersesRow verse)
     {
-      string result = "";
+      var result = new StringBuilder();
       foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
       {
         var str = word.Translation.Trim();
-        result += str != "" ? str + " " : "[...] ";
+        result.Append(str != "" ? str + " " : "[...] ");
       }
-      return result.Trim();
+      return result.ToString().Trim();
     }
 
     static public bool IsTranslated(this DataSet.VersesRow verse)
@@ -58,8 +59,8 @@ namespace Ordisoftware.Hebrew.Words
           haveEmpty = true;
         if ( word.Translation.Trim() != "" )
           haveTranslation = true;
-        if ( haveEmpty.HasValue && haveEmpty.Value == true
-          && haveTranslation.HasValue && haveTranslation.Value == true )
+        if ( haveEmpty.HasValue && haveEmpty.Value
+          && haveTranslation.HasValue && haveTranslation.Value )
           return true;
       }
       return false;

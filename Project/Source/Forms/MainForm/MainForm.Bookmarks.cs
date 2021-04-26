@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -26,50 +26,50 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-      if ( Program.Settings.AutoSortBookmarks )
-        Bookmarks.Sort();
-      while ( MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
-        MenuBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
-      var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
-                                             Program.Settings.BookmarkMasterChapter,
-                                             Program.Settings.BookmarkMasterVerse);
-      MouseEventHandler bookmarkClicked = (sender, e) =>
-      {
-        if ( e.Button != MouseButtons.Right ) return;
-        // bug reentrance (?) if ( !DisplayManager.QueryYesNo(AppTranslations.DeleteBookmark.GetLang()) ) return;
-        var menuitem = (ToolStripMenuItem)sender;
-        if ( menuitem.Tag == bookmarkMaster )
+        if ( Program.Settings.AutoSortBookmarks )
+          Bookmarks.Sort();
+        while ( MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
+          MenuBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
+        var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
+                                               Program.Settings.BookmarkMasterChapter,
+                                               Program.Settings.BookmarkMasterVerse);
+        void bookmarkClicked(object sender, MouseEventArgs e)
         {
-          Program.Settings.BookmarkMasterBook = 1;
-          Program.Settings.BookmarkMasterChapter = 1;
-          Program.Settings.BookmarkMasterVerse = 1;
-          UpdateBookmarks();
+          if ( e.Button != MouseButtons.Right ) return;
+          // bug reentrance (?) if ( !DisplayManager.QueryYesNo(AppTranslations.DeleteBookmark.GetLang()) ) return;
+          var menuitem = (ToolStripMenuItem)sender;
+          if ( menuitem.Tag == bookmarkMaster )
+          {
+            Program.Settings.BookmarkMasterBook = 1;
+            Program.Settings.BookmarkMasterChapter = 1;
+            Program.Settings.BookmarkMasterVerse = 1;
+            UpdateBookmarks();
+          }
+          else
+          {
+            Bookmarks.Remove((ReferenceItem)menuitem.Tag);
+            UpdateBookmarks();
+          }
         }
-        else
+        ActionGoToBookmarkMaster.Text = bookmarkMaster.ToStringFull();
+        ActionGoToBookmarkMaster.Tag = bookmarkMaster;
+        ActionGoToBookmarkMaster.MouseUp += bookmarkClicked;
+        if ( Bookmarks.Count > 0 )
         {
-          Bookmarks.Remove((ReferenceItem)menuitem.Tag);
-          UpdateBookmarks();
+          foreach ( var reference in Bookmarks )
+          {
+            var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());
+            item.Tag = reference;
+            item.Click += GoToBookmark;
+            item.MouseUp += bookmarkClicked;
+            item.ImageScaling = ToolStripItemImageScaling.None;
+            item.Image = ActionAddToBookmarks.Image;
+          }
         }
-      };
-      ActionGoToBookmarkMaster.Text = bookmarkMaster.ToStringFull();
-      ActionGoToBookmarkMaster.Tag = bookmarkMaster;
-      ActionGoToBookmarkMaster.MouseUp += bookmarkClicked;
-      if ( Bookmarks.Count > 0 )
-      {
-        foreach ( var reference in Bookmarks )
-        {
-          var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());
-          item.Tag = reference;
-          item.Click += GoToBookmark;
-          item.MouseUp += bookmarkClicked;
-          item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionAddToBookmarks.Image;
-        }
-      }
-      ActionClearBookmarks.Enabled = Bookmarks.Count > 0
-                                  && MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
-      ActionSortBookmarks.Enabled = Bookmarks.Count > 0
-                                 && !Program.Settings.AutoSortBookmarks;
+        ActionClearBookmarks.Enabled = Bookmarks.Count > 0
+                                    && MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
+        ActionSortBookmarks.Enabled = Bookmarks.Count > 0
+                                   && !Program.Settings.AutoSortBookmarks;
       }
       catch ( Exception ex )
       {
