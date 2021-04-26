@@ -122,7 +122,7 @@ namespace Ordisoftware.Hebrew.Words
                         "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL2 +
                         "Les champs de traduction importés peuvent être édités dans la grille du résultat."
       };
-        
+
     static public readonly TranslationsDictionary BookChapterTitle
       = new TranslationsDictionary
       {

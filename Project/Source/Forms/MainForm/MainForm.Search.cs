@@ -45,9 +45,9 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        ActionSearchRun.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew 
+        ActionSearchRun.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew
                                      && EditLetters.Input.Text.Length >= 2 )
-                                || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation 
+                                || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation
                                      && EditSearchTranslation.Text.Length >= 2 )
                                 || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );
         ActionNavigateSearchFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
@@ -59,8 +59,8 @@ namespace Ordisoftware.Hebrew.Words
         SelectSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
         SelectSearchPaging.Maximum = PagingCount;
         SelectSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
-        EditSearchPaging.Text = SearchResultsCount == 0 
-                              ? "0" 
+        EditSearchPaging.Text = SearchResultsCount == 0
+                              ? "0"
                               : PagingCurrent + "/" + PagingCount + " (" + SearchResultsCount + ")";
       }
       catch ( Exception ex )

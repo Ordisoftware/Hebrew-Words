@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Words
           || lineHebrewElements.Length != lineTranslationElements.Length )
         {
           IsResultValid = false;
-          DisplayManager.ShowError(AppTranslations.ImportItemsCountMismatch.GetLang(lineHebrewElements.Length, 
+          DisplayManager.ShowError(AppTranslations.ImportItemsCountMismatch.GetLang(lineHebrewElements.Length,
                                                                                     lineTranslationElements.Length));
           return;
         }

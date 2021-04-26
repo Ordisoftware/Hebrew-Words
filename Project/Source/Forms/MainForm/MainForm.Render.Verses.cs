@@ -152,7 +152,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         IsRenderingSearch = false;
         SetFormDisabled(false);
-        PanelViewVerses.Visible = true;        
+        PanelViewVerses.Visible = true;
       }
     }
 

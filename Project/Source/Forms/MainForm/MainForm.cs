@@ -1424,7 +1424,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
     {
-      SearchHebrewWord(((WordControl)ActiveControl).Reference.Word.Hebrew);
+      SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
     }
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)

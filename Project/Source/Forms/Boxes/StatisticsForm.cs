@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Words
     private BookStatistic CountersAll = new BookStatistic();
     private BookStatistic CountersTorah = new BookStatistic();
     private BookStatistic CountersSelected = new BookStatistic();
-    
+
     private void InitializeCounters()
     {
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books )
@@ -208,7 +208,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void LabelReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Reference = (ReferenceItem)((LinkLabel)sender).Tag;
+      Reference = (ReferenceItem)( (LinkLabel)sender ).Tag;
       Close();
     }
 

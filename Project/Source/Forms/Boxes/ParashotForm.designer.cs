@@ -90,11 +90,11 @@
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -235,7 +235,7 @@
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -339,7 +339,7 @@
       this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
       dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle16;
       resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
       this.ColumnLinked.Name = "ColumnLinked";
@@ -350,7 +350,7 @@
       this.ColumnUnicode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnUnicode.DataPropertyName = "Unicode";
       dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle17.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle17.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle17;
       resources.ApplyResources(this.ColumnUnicode, "ColumnUnicode");
       this.ColumnUnicode.Name = "ColumnUnicode";
@@ -553,11 +553,11 @@
       this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }

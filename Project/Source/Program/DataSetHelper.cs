@@ -15,7 +15,7 @@
 using System;
 using System.Text;
 using Ordisoftware.Hebrew.Words.Data;
-  
+
 namespace Ordisoftware.Hebrew.Words
 {
 

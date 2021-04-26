@@ -176,5 +176,5 @@ namespace Ordisoftware.Hebrew.Words
     }
 
   }
-  
+
 }

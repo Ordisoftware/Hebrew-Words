@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Words
       this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -95,7 +95,7 @@ namespace Ordisoftware.Hebrew.Words
       this.Name = "SelectVerseForm";
       this.ShowInTaskbar = false;
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

@@ -13,7 +13,7 @@
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
     protected override void Dispose(bool disposing)
     {
-      if ( disposing && (components != null) )
+      if ( disposing && ( components != null ) )
       {
         components.Dispose();
       }
@@ -94,15 +94,15 @@
       LabelHistoryCount = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBackupCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).BeginInit();
       this.GroupBoxHebrewWordClick.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxRefCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditMinRefCount ) ).BeginInit();
       this.SuspendLayout();
       // 
       // LabelHebrewLettersPath
@@ -571,16 +571,16 @@
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBackupCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).EndInit();
       this.GroupBoxHebrewWordClick.ResumeLayout(false);
       this.GroupBoxHebrewWordClick.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxRefCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditMinRefCount ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

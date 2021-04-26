@@ -58,10 +58,10 @@
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBooks ) ).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataSet ) ).BeginInit();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.SuspendLayout();
@@ -240,7 +240,7 @@
       // 
       this.dataGridViewTextBoxColumn3.DataPropertyName = "Hebrew";
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
       resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
       this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -286,10 +286,10 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditBooksForm_FormClosing);
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBooks ) ).EndInit();
       this.ContextMenuStripResults.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataSet ) ).EndInit();
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.PanelMain.ResumeLayout(false);

@@ -115,8 +115,8 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ListView_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (ListView.SelectedItems.Count > 0)
-        LabelHebrewWordSource.Text = ((ReferenceItem)ListView.SelectedItems[0].Tag).Word.Hebrew;
+      if ( ListView.SelectedItems.Count > 0 )
+        LabelHebrewWordSource.Text = ( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Hebrew;
     }
 
     private bool KeyProcessed = false;
@@ -222,7 +222,7 @@ namespace Ordisoftware.Hebrew.Words
     private void EditHebrew_TextChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if (EditWholeWord.Checked)
+      if ( EditWholeWord.Checked )
         EditWholeWord.Checked = false;
       else
         UpdateResult();

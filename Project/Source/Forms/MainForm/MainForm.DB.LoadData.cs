@@ -92,10 +92,10 @@ namespace Ordisoftware.Hebrew.Words
         CreateSchemaIfNotExists();
         CreateDataIfNotExists();
         //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-        process(DataSet.Books, ()=>BooksTableAdapter.Fill(DataSet.Books));
-        process(DataSet.Chapters, ()=>ChaptersTableAdapter.Fill(DataSet.Chapters));
-        process(DataSet.Verses, ()=>VersesTableAdapter.Fill(DataSet.Verses));
-        process(DataSet.Words, ()=>WordsTableAdapter.Fill(DataSet.Words));
+        process(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
+        process(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
+        process(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
+        process(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
         InitBooksCombobox();
         //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
       }
