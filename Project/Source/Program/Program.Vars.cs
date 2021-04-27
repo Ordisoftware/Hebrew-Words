@@ -14,6 +14,7 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.IO;
+using System.Collections.Generic;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Words
@@ -65,6 +66,24 @@ namespace Ordisoftware.Hebrew.Words
       }
     }
     static private HTMLBrowserForm _GrammarGuideForm;
+
+    static public string HebrewStrongsJsonFilePath
+      => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
+
+    static public string GreekStrongsJsonFilePath
+      => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-greek-dictionary.js");
+
+    static public string BibleJsonFilePath
+      => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
+
+    static Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
+      = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
+
+    static Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
+      = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
+
+    static Json.Verse.JsonVerse[] JsonBibleBookGenesis
+      = JsonHelper.LoadBook(BibleJsonFilePath);
 
   }
 

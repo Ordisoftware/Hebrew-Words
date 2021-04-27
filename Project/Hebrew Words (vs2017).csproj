@@ -324,6 +324,8 @@
     <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Entities\JsonStrong.cs" />
+    <Compile Include="Source\Entities\JsonVerse.cs" />
     <Compile Include="Source\Forms\Boxes\ParashotForm.cs">
       <SubType>Form</SubType>
     </Compile>
