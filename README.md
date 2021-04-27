@@ -176,6 +176,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Improve UI/UX.
+- Fix drop down menus shown on another monitor instead of the same screen.
 - Fix error message when several SearchTranslatedForm are opened.
 - Fix error message when typing in the comment boxes.
 - Fix edit books information form : modifications are not saved since an old version.
