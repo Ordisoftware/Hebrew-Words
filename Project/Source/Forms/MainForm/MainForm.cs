@@ -183,6 +183,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Globals.IsExiting ) return;
       Refresh();
+      ToolStrip.SetDropDownOpening();
       InitializeDialogsDirectory();
       DoBackupDB();
       LoadData();
