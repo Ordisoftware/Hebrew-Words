@@ -165,6 +165,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static public void UpdateLocalization()
     {
+      Globals.ChronoTranslate.Restart();
       try
       {
         void update(Form form)
@@ -213,6 +214,11 @@ namespace Ordisoftware.Hebrew.Words
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        Globals.ChronoTranslate.Stop();
+        Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }
     }
 
