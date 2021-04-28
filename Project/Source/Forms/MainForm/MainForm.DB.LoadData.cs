@@ -97,7 +97,8 @@ namespace Ordisoftware.Hebrew.Words
         process(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
         process(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
         InitBooksCombobox();
-        //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
+        //if ( NeedUpgradeForConcordances )
+          ImportWordsConcordances();
       }
       finally
       {

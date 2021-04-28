@@ -76,13 +76,13 @@ namespace Ordisoftware.Hebrew.Words
     static public string BibleJsonFilePath
       => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
 
-    static Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
+    static public Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
       = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
 
-    static Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
+    static public Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
       = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
 
-    static Json.Verse.JsonVerse[] JsonBibleBookGenesis
+    static public Json.Verse.JsonVerse[] JsonBibleBookGenesis
       = JsonHelper.LoadBook(BibleJsonFilePath);
 
   }

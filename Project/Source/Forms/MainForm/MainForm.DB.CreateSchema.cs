@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Words
   partial class MainForm : Form
   {
 
-    //private bool NeedUpgradeForConcordances;
+    private bool NeedUpgradeForConcordances;
 
     private OdbcConnection LockFileConnection;
 
@@ -87,9 +87,9 @@ namespace Ordisoftware.Hebrew.Words
                                           FOREIGN KEY (VerseID) REFERENCES Verses(ID),
                                           PRIMARY KEY (ID)
                                         )");
-        //Transliteration TEXT DEFAULT '' NOT NULL,
-        //ClassicTranslation TEXT DEFAULT '' NOT NULL,
+        //CommonTranslation TEXT DEFAULT '' NOT NULL,
         //ConcordanceID TEXT DEFAULT '' NOT NULL,
+        //Transliteration TEXT DEFAULT '' NOT NULL,
         //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
         bool b = Globals.IsDatabaseUpgraded;
         b = !LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true) || b;
@@ -99,10 +99,12 @@ namespace Ordisoftware.Hebrew.Words
         b = !LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true) || b;
         Globals.IsDatabaseUpgraded = b;
-        //upgraded = !connection.CheckColumn("Words", "ClassicTranslation", sqlColumn);
-        //upgraded = !connection.CheckColumn("Words", "Transliteration", sqlColumn);
-        //upgraded = !connection.CheckColumn("Words", "ConcordanceID", sqlColumn);
-        //NeedUpgradeForConcordances = upgraded;
+        b = false;
+        //b = !LockFileConnection.CheckColumn("Words", "CommonTranslation", "TEXT", "''", true) || b;
+        //b = !LockFileConnection.CheckColumn("Words", "Transliteration", "TEXT", "''", true) || b;
+        //b = !LockFileConnection.CheckColumn("Words", "ConcordanceID", "TEXT", "''", true) || b;
+        NeedUpgradeForConcordances = b;
+        Globals.IsDatabaseUpgraded = Globals.IsDatabaseUpgraded || b;
       });
     }
 
