@@ -38,6 +38,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
+        Globals.ChronoStartingApp.Start();
         Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
         Globals.AlternativeToURL = "";
         Application.EnableVisualStyles();
@@ -59,7 +60,9 @@ namespace Ordisoftware.Hebrew.Words
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
         UpdateLocalization();
+        Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
+        Globals.ChronoStartingApp.Start();
       }
       catch ( Exception ex )
       {
