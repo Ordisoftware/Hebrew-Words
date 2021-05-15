@@ -147,7 +147,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ProcessLocksTable.Lock();
+      ProcessLocks.Lock();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                    Settings.ApplicationVolume));
@@ -271,7 +271,7 @@ namespace Ordisoftware.Hebrew.Words
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Settings.Store();
-      ProcessLocksTable.Unlock();
+      ProcessLocks.Unlock();
     }
 
     /// <summary>
@@ -645,7 +645,7 @@ namespace Ordisoftware.Hebrew.Words
         return;
       ReLoadData(() =>
       {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
+        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
       });
     }
 
@@ -663,8 +663,8 @@ namespace Ordisoftware.Hebrew.Words
         return;
       ReLoadData(() =>
       {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
-        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName));
+        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
+        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
       });
     }
 
@@ -676,10 +676,10 @@ namespace Ordisoftware.Hebrew.Words
     private void ActionBackup_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      SaveFileDialogDB.FileName = Globals.DatabaseFileName;
+      SaveFileDialogDB.FileName = Globals.ApplicationDatabaseFileName;
       if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
       if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Path.Combine(Globals.UserDataFolderPath, Globals.DatabaseFileName), SaveFileDialogDB.FileName);
+      File.Copy(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName), SaveFileDialogDB.FileName);
     }
 
     /// <summary>

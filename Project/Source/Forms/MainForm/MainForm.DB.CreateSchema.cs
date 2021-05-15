@@ -16,6 +16,8 @@ using System;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using System.Collections.Generic;
+using SQLite;
 
 namespace Ordisoftware.Hebrew.Words
 {
@@ -110,6 +112,65 @@ namespace Ordisoftware.Hebrew.Words
 
   }
 
+  /*[Table("Books")]
+  public class Book
+  {
+    [PrimaryKey]
+    public string ID { get; set; }
+    public int Number { get; set; }
+    public string Original { get; set; }
+    public string Hebrew { get; set; }
+    public string Name { get; set; }
+    public string CommonName { get; set; }
+    public string Translation { get; set; }
+    public string Lettriq { get; set; }
+    public string Memo { get; set; }
+    public List<Chapter> Chapters
+      => ApplicationDatabase.Instance.Chapters.Where(item => item.BookID == ID).ToList();
+  }
+
+  [Table("Chapters")]
+  public class Chapter
+  {
+    [PrimaryKey]
+    public string ID { get; set; }
+    public string BookID { get; set; }
+    public int Number { get; set; }
+    public string Title { get; set; }
+    public string Memo { get; set; }
+    public string ELS50 { get; set; }
+    public List<Verse> Verses
+      => ApplicationDatabase.Instance.Verses.Where(item => item.ChapterID == ID).ToList();
+  }
+
+  [Table("Verses")]
+  public class Verse
+  {
+    [PrimaryKey]
+    public string ID { get; set; }
+    public string ChapterID { get; set; }
+    public int Number { get; set; }
+    public string Comment { get; set; }
+    public List<Word> Words
+      => ApplicationDatabase.Instance.Words.Where(item => item.VerseID == ID).ToList();
+  }
+
+  [Table("Words")]
+  public class Word
+  {
+    [PrimaryKey]
+    public string ID { get; set; }
+    public string VerseID { get; set; }
+    public string Code { get; set; }
+    public int Number { get; set; }
+    public string Original { get; set; }
+    public string Hebrew { get; set; }
+    public string Translation { get; set; }
+  }
+
+*/
+
+
 }
 
 /*
@@ -127,3 +188,4 @@ namespace Ordisoftware.Hebrew.Words
     CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
   )");
 */
+

@@ -218,8 +218,11 @@
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Hebrew Words Verset</value>
   </data>
-  <data name="ActionOpenHebrewWordsFind.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Hebrew Words Recherche</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -259,5 +262,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Étudier en ligne</value>
   </data>
 </root>
