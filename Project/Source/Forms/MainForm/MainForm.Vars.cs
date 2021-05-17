@@ -29,6 +29,8 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private readonly Properties.Settings Settings = Program.Settings;
 
+    static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+
     /// <summary>
     /// Indicate loading data progress bar divisor.
     /// </summary>
