@@ -59,7 +59,6 @@ namespace Ordisoftware.Hebrew.Words
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
-        UpdateLocalization();
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();
@@ -182,37 +181,35 @@ namespace Ordisoftware.Hebrew.Words
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
-        MessageBoxEx.CloseAll();
-        AboutBox.Instance.Hide();
+        if ( Globals.IsReady )
+        {
+          MessageBoxEx.CloseAll();
+          AboutBox.Instance.Hide();
+        }
+        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
         {
-          if ( form != AboutBox.Instance && form != GrammarGuideForm )
+          if ( form != DebugManager.TraceForm && form != AboutBox.Instance && form != GrammarGuideForm )
             update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
         }
-        string tempLogTitle = DebugManager.TraceForm.Text;
-        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
-        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
-        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         // Various updates
-        DebugManager.TraceForm.Text = tempLogTitle;
-        DebugManager.TraceForm.AppendText(tempLogContent);
-        AboutBox.Instance.AboutBox_Shown(null, null);
-        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-        LoadingForm.Instance.Relocalize();
-        TextBoxEx.Relocalize();
-        MainForm.Instance.CreateSystemInformationMenu();
         if ( Globals.IsReady )
         {
+          LoadingForm.Instance.Relocalize();
+          TextBoxEx.Relocalize();
+          AboutBox.Instance.AboutBox_Shown(null, null);
+          GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
           MainForm.Instance.RenderTranslation();
           MainForm.Instance.RenderRawText();
           MainForm.Instance.RenderELS50();
           MainForm.Instance.SetView(Settings.CurrentView, true);
         }
+        MainForm.Instance.CreateSystemInformationMenu();
       }
       catch ( Exception ex )
       {
