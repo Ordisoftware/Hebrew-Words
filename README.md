@@ -156,6 +156,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### In progress - Version 3.0
 
+- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Optimize overall performances.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add source Hebrew word in the search translated form.
@@ -180,19 +182,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Fix error message when several SearchTranslatedForm are opened.
 - Fix error message when typing in the comment boxes.
 - Fix edit books information form : modifications are not saved since an old version.
-- Add Markdig NuGet package.
-- Add FileHelpers NuGet package.
-- Add Newtonsoft.Json NuGet package.
-- Add MoreLINQ NuGet package.
-- Add Enums.NET NuGet package.
-- Add Global Shortcut Manager dependency.
-- Add InputSimulatorStandard NuGet package.
-- Add Serilog NuGet package.
-- Add Serilog-sinks-file NuGet package.
-- Add Serilog-sinks-winforms NuGet package.
 - Replace simple internal command line parser by CommandLineParser NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).
-- Add debugger (exception information form with GitHub issue creation).
+- Add debugger and serilog tracing (exception information form with GitHub issue creation).
 - The application now permanently lock database file while running.
 - The application now automatically creates the ODBC DSN in the Windows registry.
 - Move online providers values from code to files in the application documents folder.
