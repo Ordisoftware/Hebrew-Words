@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Words
@@ -29,6 +29,11 @@ namespace Ordisoftware.Hebrew.Words
     Verses,
 
     /// <summary>
+    /// Search view mode.
+    /// </summary>
+    Search,
+
+    /// <summary>
     /// Translations panel view mode.
     /// </summary>
     Translations,
@@ -41,12 +46,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// ELS50 view mode.
     /// </summary>
-    ELS50,
-
-    /// <summary>
-    /// Search view mode.
-    /// </summary>
-    Search
+    ELS50
 
   }
 
