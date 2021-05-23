@@ -69,6 +69,8 @@
       this.linkLabel23 = new System.Windows.Forms.LinkLabel();
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.label1 = new System.Windows.Forms.Label();
+      this.label20 = new System.Windows.Forms.Label();
+      this.linkLabel20 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -375,11 +377,27 @@
       resources.ApplyResources(this.label1, "label1");
       this.label1.Name = "label1";
       // 
+      // label20
+      // 
+      resources.ApplyResources(this.label20, "label20");
+      this.label20.Name = "label20";
+      // 
+      // linkLabel20
+      // 
+      this.linkLabel20.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel20, "linkLabel20");
+      this.linkLabel20.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel20.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel20.Name = "linkLabel20";
+      this.linkLabel20.TabStop = true;
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.label20);
+      this.Controls.Add(this.linkLabel20);
       this.Controls.Add(this.label23);
       this.Controls.Add(this.linkLabel23);
       this.Controls.Add(this.label15);
@@ -472,5 +490,7 @@
     private System.Windows.Forms.LinkLabel linkLabel23;
     private System.Windows.Forms.LinkLabel linkLabel1;
     private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label label20;
+    private System.Windows.Forms.LinkLabel linkLabel20;
   }
 }
