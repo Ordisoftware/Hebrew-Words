@@ -90,6 +90,8 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -406,7 +408,9 @@
             this.ActionCopyUnicodeChars,
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
-            this.ActionCopyLineUnicode});
+            this.ActionCopyLineUnicode,
+            this.toolStripMenuItem1,
+            this.ActionViewParashahInfos});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -558,6 +562,17 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionViewParashahInfos
+      // 
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -632,5 +647,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
     private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
   }
 }

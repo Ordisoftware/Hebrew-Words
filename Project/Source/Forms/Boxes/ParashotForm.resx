@@ -552,7 +552,7 @@
     <value>Translation</value>
   </data>
   <data name="ColumnTranslation.Width" type="System.Int32, mscorlib">
-    <value>140</value>
+    <value>300</value>
   </data>
   <metadata name="ColumnLettriq.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -751,7 +751,7 @@
     <value>250, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Go to Verse</value>
+    <value>Hebrew Words Verse</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -770,7 +770,7 @@
     <value>250, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Search word</value>
+    <value>Hebrew Words Search</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -878,8 +878,33 @@
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copy line (unicode chars)</value>
   </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 6</value>
+  </data>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 314</value>
+    <value>251, 342</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1204,6 +1229,18 @@
   </data>
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Name" xml:space="preserve">
+    <value>ActionViewParashahInfos</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>
