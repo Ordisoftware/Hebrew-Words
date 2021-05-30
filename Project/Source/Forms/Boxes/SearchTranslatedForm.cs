@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         form.CenterToMainFormElseScreen();
         Program.Settings.SearchTranslatedFormLocation = new Point(form.Location.X, form.Location.Y);
-        Program.Settings.Save();
+        SystemManager.TryCatch(Program.Settings.Save);
       }
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Words
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
       Program.Settings.SearchTranslatedFormLocation = new Point(Location.X, Location.Y);
       Program.Settings.SearchTranslatedFormFilterDistinct = EditDistinct.Checked;
-      Program.Settings.Save();
+      SystemManager.TryCatch(Program.Settings.Save);
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)

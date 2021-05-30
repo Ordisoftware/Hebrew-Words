@@ -132,7 +132,7 @@ namespace Ordisoftware.Hebrew.Words
         if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
         settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
         settings.ShowTips = MainForm.EditShowTips.Checked;
-        settings.Save();
+        SystemManager.TryCatch(Program.Settings.Save);
       }
       finally
       {

@@ -93,7 +93,7 @@ namespace Ordisoftware.Hebrew.Words
       if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
       {
         Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
-        Settings.Save();
+        SystemManager.TryCatch(Settings.Save);
       }
       UpdateSearchButtons();
       BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
@@ -129,19 +129,19 @@ namespace Ordisoftware.Hebrew.Words
             auto = true;
           }
           else
-          if ( !string.IsNullOrEmpty(options.Word) )
+          if ( !string.IsNullOrEmpty(options.SearchWord) )
           {
             auto = true;
             defaultGoTo();
             // TODO recup code Letters
-            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.Word));
+            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
           }
           else
-          if ( !string.IsNullOrEmpty(options.WordTranslated) )
+          if ( !string.IsNullOrEmpty(options.SearchTranslated) )
           {
             auto = true;
             defaultGoTo();
-            SearchTranslatedWord(options.WordTranslated);
+            SearchTranslatedWord(options.SearchTranslated);
           }
         }
         catch
@@ -961,7 +961,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       EditLetters.TextBox.Text = "";
       EditSearchTranslation.Text = "";
-      Settings.Save();
+      SystemManager.TryCatch(Settings.Save);
       ClearSearchResults();
       UpdateSearchButtons();
       RenderSearch();
@@ -989,7 +989,7 @@ namespace Ordisoftware.Hebrew.Words
     private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
     {
       Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
-      Settings.Save();
+      SystemManager.TryCatch(Settings.Save);
     }
 
     /// <summary>

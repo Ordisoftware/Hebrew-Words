@@ -29,10 +29,10 @@ namespace Ordisoftware.Hebrew.Words
     public string ReferenceToGo { get; set; }
 
     [Option("word", Required = false, HelpText = "Unicode chars or else Hebrew font chars word to search.")]
-    public string Word { get; set; }
+    public string SearchWord { get; set; }
 
     [Option("translated", Required = false, HelpText = "Translated word to search.")]
-    public string WordTranslated { get; set; }
+    public string SearchTranslated { get; set; }
 
   }
 

@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       DeleteGhost();
-      Program.Settings.Save();
+      SystemManager.TryCatch(Program.Settings.Save);
     }
 
     private void ImportVerseForm_Shown(object sender, EventArgs e)

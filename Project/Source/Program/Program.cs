@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Words
         Globals.IsSettingsUpgraded = Globals.IsSettingsUpgraded && !Settings.FirstLaunch;
         CheckSettingsReset();
         if ( lang != Language.None ) Settings.LanguageSelected = lang;
-        Settings.Save();
+        SystemManager.TryCatch(Settings.Save);
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
@@ -71,6 +71,38 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     /// <summary>
+    /// Check if settings must be reseted.
+    /// </summary>
+    private static void CheckSettingsReset(bool force = false)
+    {
+      try
+      {
+        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
+        {
+#pragma warning disable S2583 // Conditionally executed code should be reachable
+          if ( !force && !Settings.FirstLaunch )
+            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+#pragma warning restore S2583 // Conditionally executed code should be reachable
+          Settings.Reset();
+          Settings.LanguageSelected = Languages.Current;
+          Settings.SetUpgradeFlagsOff();
+        }
+        if ( Settings.FirstLaunchV3_0 )
+        {
+          Settings.SetFirstAndUpgradeFlagsOff();
+          Settings.FirstLaunch = true;
+        }
+        if ( Settings.LanguageSelected == Language.None )
+          Settings.LanguageSelected = Languages.Current;
+        SystemManager.TryCatch(Settings.Save);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
+
+    /// <summary>
     /// IPC requests.
     /// </summary>
     static void IPCRequests(IAsyncResult ar)
@@ -80,11 +112,17 @@ namespace Ordisoftware.Hebrew.Words
       {
         server.EndWaitForConnection(ar);
 #pragma warning disable S5773 // Types allowed to be deserialized should be restricted
-        var command = new BinaryFormatter().Deserialize(server) as string;
+        if ( !( new BinaryFormatter().Deserialize(server) is string command ) ) return;
 #pragma warning restore S5773 // Types allowed to be deserialized should be restricted
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
+        if ( command == nameof(ApplicationCommandLine.Instance.ReferenceToGo) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.GoTo(ApplicationCommandLine.Instance.ReferenceToGo));
+        if ( command == nameof(ApplicationCommandLine.Instance.SearchWord) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.SearchHebrewWord(ApplicationCommandLine.Instance.SearchWord));
+        if ( command == nameof(ApplicationCommandLine.Instance.SearchWord) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.SearchTranslatedWord(ApplicationCommandLine.Instance.SearchTranslated));
       }
       finally
       {
@@ -99,42 +137,15 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static private void IPCSendCommands()
     {
+      if ( ApplicationCommandLine.Instance == null ) return;
       if ( ApplicationCommandLine.Instance.HideMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
       if ( ApplicationCommandLine.Instance.ShowMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
-    }
-
-    /// <summary>
-    /// Check if settings must be reseted.
-    /// </summary>
-    private static void CheckSettingsReset(bool force = false)
-    {
-      try
-      {
-        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
-        {
-#pragma warning disable S2583 // Conditionally executed code should be reachable
-          if ( !force && !Settings.FirstLaunch )
-#pragma warning restore S2583 // Conditionally executed code should be reachable
-            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-          Settings.Reset();
-          Settings.LanguageSelected = Languages.Current;
-          Settings.SetUpgradeFlagsOff();
-        }
-        if ( Settings.FirstLaunchV3_0 )
-        {
-          Settings.SetFirstAndUpgradeFlagsOff();
-          Settings.FirstLaunch = true;
-        }
-        if ( Settings.LanguageSelected == Language.None )
-          Settings.LanguageSelected = Languages.Current;
-        Settings.Save();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      if ( !ApplicationCommandLine.Instance.ReferenceToGo.IsNullOrEmpty() )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ReferenceToGo));
+      if ( !ApplicationCommandLine.Instance.SearchTranslated.IsNullOrEmpty() )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.SearchTranslated));
     }
 
     /// <summary>
@@ -187,7 +198,6 @@ namespace Ordisoftware.Hebrew.Words
           AboutBox.Instance.Hide();
         }
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
