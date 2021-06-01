@@ -161,7 +161,7 @@ namespace Ordisoftware.Hebrew.Words
       var control = (Control)sender;
       var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
       var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
-      wordcontrol.Focus();
+      //wordcontrol.Focus();
     }
 
     private void EditVerseComment_TextChanged(object sender, EventArgs e)
