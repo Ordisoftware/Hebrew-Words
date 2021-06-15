@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Data;
 using System.Drawing;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -202,6 +201,41 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     /// <summary>
+    /// Session ending event.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
+    private void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
+      Globals.IsExiting = true;
+      Globals.IsSessionEnding = true;
+      Globals.AllowClose = true;
+      TimerTooltip.Stop();
+      MessageBoxEx.CloseAll();
+      foreach ( Form form in Application.OpenForms )
+        if ( form != this && form.Visible )
+          SystemManager.TryCatch(() => form.Close());
+      Close();
+    }
+
+    /// <summary>
+    /// WndProc override.
+    /// </summary>
+    protected override void WndProc(ref Message m)
+    {
+      switch ( m.Msg )
+      {
+        case NativeMethods.WM_QUERYENDSESSION:
+          SessionEnding(this, null);
+          break;
+        default:
+          base.WndProc(ref m);
+          break;
+      }
+    }
+
+    /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
     public void InitializeDialogsDirectory()
@@ -302,25 +336,6 @@ namespace Ordisoftware.Hebrew.Words
       if ( !Visible ) return;
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
-    }
-
-    /// <summary>
-    /// Session ending event.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    private void SessionEnding(object sender, SessionEndingEventArgs e)
-    {
-      if ( Globals.IsSessionEnding ) return;
-      Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      TimerTooltip.Stop();
-      MessageBoxEx.CloseAll();
-      foreach ( Form form in Application.OpenForms )
-        if ( form != this && form.Visible )
-          SystemManager.TryCatch(() => form.Close());
-      Close();
     }
 
     /// <summary>
