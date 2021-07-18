@@ -199,6 +199,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Change selection controls in the go to reference form.
 - Improve open Hebrew Letters for the current word when focused on the verses view.
 - Improve search to find words in chapters translated title.
+- Add search in comments
 
 > FUTURE
 
