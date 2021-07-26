@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -1439,8 +1439,8 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchTranslated_Click(object sender, EventArgs e)
     {
-      if ( ActiveControl is WordControl )
-        SearchTranslatedForm.Run((WordControl)ActiveControl);
+      if ( ActiveControl is WordControl control )
+        SearchTranslatedForm.Run(control);
     }
 
     private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
