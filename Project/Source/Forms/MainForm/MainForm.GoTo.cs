@@ -103,8 +103,8 @@ namespace Ordisoftware.Hebrew.Words
             }
           if ( reference.Word != null )
             foreach ( Control control in PanelViewVerses.Controls )
-              if ( control is WordControl )
-                if ( ( (WordControl)control ).Reference.Word == reference.Word )
+              if ( control is WordControl wordcontrol )
+                if ( wordcontrol.Reference.Word == reference.Word )
                 {
                   control.Focus();
                   break;

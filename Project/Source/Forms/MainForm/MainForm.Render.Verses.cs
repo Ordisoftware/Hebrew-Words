@@ -158,9 +158,9 @@ namespace Ordisoftware.Hebrew.Words
 
     private void EditVerseComment_KeyDown(object sender, KeyEventArgs e)
     {
-      var control = (Control)sender;
-      var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
-      var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
+      //var control = (Control)sender;
+      //var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
+      //var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
       //wordcontrol.Focus();
     }
 

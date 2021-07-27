@@ -84,8 +84,8 @@ namespace Ordisoftware.Hebrew.Words
               int indexWord = -1;
               int countBad = 0;
               var words = Program.JsonBibleBookGenesis[indexVerse].Items;
-                                 //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
-                                 //.ToArray();
+              //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
+              //.ToArray();
               /*if ( verse.GetWordsRows().Length != words.Length )
               {
                 errors.Add("##### " + new ReferenceItem(book, chapter, verse).ToString() + " words count mismatch");
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew.Words
                     }
                     else
                     {
-                      errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + (indexWord + 1) + "\t\t" +
+                      errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + ( indexWord + 1 ) + "\t\t" +
                                  word.Hebrew + " <=> " + hebrew + "\t\t" +
                                  word.Original + " <=> " + unicode + "\t\t" + words[indexWord].Number + " : " + words[indexWord].Text);
                       countBad++;
@@ -117,13 +117,13 @@ namespace Ordisoftware.Hebrew.Words
                       {
                         errors.Add("!!!!! Verse mismatch !!!!!");
                         //indexVerse--;
-                        continue;
+                        //continue;
                       }
                     }
                   }
                   else
                   {
-                    errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + (indexWord+1) + "\t\t" +
+                    errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + ( indexWord + 1 ) + "\t\t" +
                                word.Hebrew + " is missing or at wrong place\t\t" +
                                word.Original + " is missing or at wrong place");
                     countBad++;
@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew.Words
                     {
                       errors.Add("!!!!! Verse mismatch !!!!!");
                       //indexVerse--;
-                      continue;
+                      //continue;
                     }
                   }
                 }

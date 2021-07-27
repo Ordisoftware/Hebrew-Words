@@ -72,9 +72,9 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
 
   internal class ParseIntegerConverter : JsonConverter
   {
-    public override bool CanConvert(Type t) => t == typeof(long) || t == typeof(long?);
+    public override bool CanConvert(Type objectType) => objectType == typeof(long) || objectType == typeof(long?);
 
-    public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
       if ( reader.TokenType == JsonToken.Null ) return null;
       var value = serializer.Deserialize<string>(reader);
@@ -86,16 +86,15 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
       throw new Exception("Cannot unmarshal type long");
     }
 
-    public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
-      if ( untypedValue == null )
+      if ( value == null )
       {
         serializer.Serialize(writer, null);
         return;
       }
-      var value = (long)untypedValue;
-      serializer.Serialize(writer, value.ToString());
-      return;
+      var valueTyped = (long)value;
+      serializer.Serialize(writer, valueTyped.ToString());
     }
 
     public static readonly ParseIntegerConverter Singleton = new ParseIntegerConverter();
