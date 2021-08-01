@@ -63,6 +63,9 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ImportWordsConcordances()
     {
+
+      return;
+
       //CreateWordsConcordances();
       LoadingForm.Instance.Initialize("Importing strong's concordances...", DataSet.Chapters.Count);
       LoadingForm.Instance.TopMost = false;
