@@ -45,10 +45,9 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Requirements
 
-- Windows 7 SP1 x32/x64 or higher
 - Screen 1024x768 or higher
+- Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.7.2
-- SQLite ODBC Driver
 
 ## Download
 
