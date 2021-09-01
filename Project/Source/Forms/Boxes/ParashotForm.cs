@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -65,6 +65,7 @@ namespace Ordisoftware.Hebrew
       Icon = Globals.MainForm.Icon;
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       DataGridView.Visible = false;
+      this.InitDropDowns();
     }
 
     private void InitializeMenu()
@@ -102,7 +103,7 @@ namespace Ordisoftware.Hebrew
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
-  Cursor = Cursors.WaitCursor;
+      Cursor = Cursors.WaitCursor;
       PanelBottom.Enabled = false;
       try
       {
@@ -140,7 +141,7 @@ namespace Ordisoftware.Hebrew
     private void Timer_Tick(object sender, EventArgs e)
     {
       UpdateControls();
-      if ( Created && !DataGridView.ReadOnly)
+      if ( Created && !DataGridView.ReadOnly )
       {
         ActionUndo.PerformClick();
         MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
@@ -459,14 +460,22 @@ namespace Ordisoftware.Hebrew
 
     static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
     {
-      var linked = withLinked ? parashah.GetLinked() : null;
+      string title = HebrewTranslations.WeeklyParashah.GetLang();
+      var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
+      if ( form != null )
+      {
+        form.Popup();
+        return true;
+      }
+      var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
       if ( parashah == null ) return false;
       var message = parashah.ToStringReadable();
       message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx(HebrewTranslations.WeeklyParashah.GetLang(), message, width: MessageBoxEx.DefaultMediumWidth);
+      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium);
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
+      // Open board
       form.ActionYes.Visible = true;
       form.ActionYes.Text = SysTranslations.Board.GetLang();
       form.ActionYes.Click += async (_s, _e) =>
@@ -475,6 +484,7 @@ namespace Ordisoftware.Hebrew
         await System.Threading.Tasks.Task.Delay(1000);
         Instance.Popup();
       };
+      // Open memo
       form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
       form.ActionNo.Text = SysTranslations.Memo.GetLang();
       form.ActionNo.Click += (_s, _e) =>
@@ -483,7 +493,19 @@ namespace Ordisoftware.Hebrew
         string memo2 = linked?.Memo ?? "";
         DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
       };
-      form.ShowDialog(owner);
+      // Copy to clipboard
+      form.ActionRetry.Visible = true;
+      form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
+      form.ActionRetry.DialogResult = DialogResult.None;
+      form.ActionRetry.Click -= form.ActionClose_Click;
+      form.ActionRetry.Click += (_s, _e) =>
+      {
+        Clipboard.SetText(message);
+        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
+                                          Globals.ClipboardSoundFilePath);
+      };
+      form.AllowClose = true;
+      form.Show();
       return true;
     }
 
