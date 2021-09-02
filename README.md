@@ -48,6 +48,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.7.2
+- SQLite 3.35.5
 
 ## Download
 
@@ -131,6 +132,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### In progress - Version 3.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
 - Optimize overall performances.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
