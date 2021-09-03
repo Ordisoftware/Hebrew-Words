@@ -168,7 +168,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since more than one year for Calendar.
 - Files and code refactoring.
-- Update to SQLite 3.32.3 ODBC Driver.
+- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Nuget SQLitePCLRaw.bundle_green must remain `v2.0.4`.
 - Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
 - Update setup.
 - Update web links.
