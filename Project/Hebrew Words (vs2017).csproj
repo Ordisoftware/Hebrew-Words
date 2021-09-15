@@ -304,7 +304,10 @@
     <Compile Include="Source\Common\Core\WinForms\WebUpdateForm.Designer.cs">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
     <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.cs" />
@@ -330,9 +333,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebration.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebrations.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
@@ -347,7 +348,6 @@
     <Compile Include="Source\Common\Hebrew\Entities\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.cs">
       <SubType>UserControl</SubType>
