@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew.Words
             book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
             book.Hebrew = BooksNames.Hebrew[enumBook];
             if ( book.Original == "" )
-              book.Original = BooksNames.Original[enumBook];
+              book.Original = BooksNames.Unicode[enumBook];
             if ( book.CommonName == "" )
               book.CommonName = BooksNames.Common.GetLang(enumBook);
           }

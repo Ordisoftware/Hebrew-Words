@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Words
           book = DataSet.Books.NewBooksRow();
           book.ID = Guid.NewGuid().ToString();
           book.Number = (int)bookid + 1;
-          book.Original = BooksNames.Original[bookid];
+          book.Original = BooksNames.Unicode[bookid];
           book.Hebrew = BooksNames.Hebrew[bookid];
           book.Name = bookid.ToString().Replace("_", " ");
           book.CommonName = BooksNames.Common.GetLang(bookid);
