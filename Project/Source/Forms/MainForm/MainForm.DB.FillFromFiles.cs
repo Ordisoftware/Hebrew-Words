@@ -57,9 +57,9 @@ namespace Ordisoftware.Hebrew.Words
           chapter.ELS50 = res;
           strELS50 = "";
         }
-        var books = Enums.GetValues<Books>();
+        var books = Enums.GetValues<TanakBook>();
         LoadingForm.Instance.Initialize(SysTranslations.ProgressCreatingData.GetLang(), books.Count);
-        foreach ( Books bookid in books )
+        foreach ( TanakBook bookid in books )
         {
           LoadingForm.Instance.DoProgress();
           string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");

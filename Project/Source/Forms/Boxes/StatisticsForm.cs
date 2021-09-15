@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Words
       Close();
     }
 
-    private Dictionary<Books, BookStatistic> CountersBooks = new Dictionary<Books, BookStatistic>();
+    private Dictionary<TanakBook, BookStatistic> CountersBooks = new Dictionary<TanakBook, BookStatistic>();
     private BookStatistic CountersAll = new BookStatistic();
     private BookStatistic CountersTorah = new BookStatistic();
     private BookStatistic CountersSelected = new BookStatistic();
@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew.Words
       foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books )
       {
         var stat = new BookStatistic() { Book = book };
-        CountersBooks.Add(( (Books)book.Number ) - 1, stat);
+        CountersBooks.Add(( (TanakBook)book.Number ) - 1, stat);
         foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
         {
           stat.CountChapters++;
@@ -97,7 +97,7 @@ namespace Ordisoftware.Hebrew.Words
       }
       if ( LabelLongestReferenceValue.Tag != null )
         LabelLongestReferenceValue.Text = ( (ReferenceItem)LabelLongestReferenceValue.Tag ).ToString();
-      void count(Books book, BookStatistic counters)
+      void count(TanakBook book, BookStatistic counters)
       {
         try
         {
@@ -110,9 +110,9 @@ namespace Ordisoftware.Hebrew.Words
         {
         }
       }
-      foreach ( Books book in Enum.GetValues(typeof(Books)) )
+      foreach ( TanakBook book in Enum.GetValues(typeof(TanakBook)) )
         count(book, CountersAll);
-      foreach ( Books book in Enum.GetValues(typeof(TorahBooks)) )
+      foreach ( TanakBook book in Enum.GetValues(typeof(TorahBook)) )
         count(book, CountersTorah);
       SetCounters(StatAllBooks, CountersAll);
       SetCounters(StatTorah, CountersTorah);
@@ -174,7 +174,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        Books book = (Books)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
+        TanakBook book = (TanakBook)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
         CountersSelected = new BookStatistic();
         CountersSelected.CountChapters += CountersBooks[book].CountChapters;
         CountersSelected.CountVerses += CountersBooks[book].CountVerses;

@@ -44,8 +44,8 @@ namespace Ordisoftware.Hebrew.Words
         if ( Globals.IsDatabaseUpgraded )
           foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
           {
-            Books enumBook = (Books)( book.Number - 1 );
-            book.Name = Enum.GetName(typeof(Books), enumBook).Replace("_", " ");
+            TanakBook enumBook = (TanakBook)( book.Number - 1 );
+            book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
             book.Hebrew = BooksNames.Hebrew[enumBook];
             if ( book.Original == "" )
               book.Original = BooksNames.Unicode[enumBook];

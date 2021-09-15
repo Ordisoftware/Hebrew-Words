@@ -152,7 +152,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
         foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-          book.CommonName = BooksNames.Common.GetLang((Books)( book.Number - 1 ));
+          book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
     }
 
     private void ActionOpen_Click(object sender, EventArgs e)
