@@ -54,7 +54,6 @@ namespace Ordisoftware.Hebrew.Words
     {
       InitializeComponent();
       new Task(InitializeIconsAndSound).Start();
-      new Task(CreateProvidersLinks).Start();
       Interlocks.Take();
       SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
       Text = Globals.AssemblyTitle;
@@ -253,75 +252,6 @@ namespace Ordisoftware.Hebrew.Words
     {
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
-    }
-
-    /// <summary>
-    /// Create system information menu items.
-    /// </summary>
-    public void CreateSystemInformationMenu()
-    {
-      CommonMenusControl.CreateInstance(ToolStrip,
-                                        ref ActionInformation,
-                                        AppTranslations.NoticeNewFeatures,
-                                        ActionAbout_Click,
-                                        ActionWebCheckUpdate_Click,
-                                        ActionViewLog_Click,
-                                        ActionViewStats_Click);
-      InitializeSpecialMenus();
-    }
-
-    /// <summary>
-    /// Create web links menu items.
-    /// </summary>
-    public void InitializeSpecialMenus()
-    {
-      if ( Settings.WebLinksMenuEnabled )
-        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-
-      CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-      ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      //MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      //if ( Settings.WebLinksMenuEnabled )
-      //{
-      //  ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-      //  ActionWebLinks.DuplicateTo(MenuWebLinks);
-      //}
-      //ActionTools.DuplicateTo(MenuTools);
-      //ActionInformation.DuplicateTo(MenuInformation);
-    }
-
-    /// <summary>
-    /// Create providers links menu items.
-    /// </summary>
-    private void CreateProvidersLinks()
-    {
-      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
-      {
-        if ( !( ActiveControl is WordControl ) ) return;
-        var menuitem = (ToolStripMenuItem)sender;
-        string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-        HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
-      });
-      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-        if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-        {
-          var reference = (ReferenceItem)control.Tag;
-          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                      reference.Book.Number,
-                                      reference.Chapter.Number,
-                                      reference.Verse.Number);
-        }
-        else
-        if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                      CurrentReference.Book.Number,
-                                      CurrentReference.Chapter.Number,
-                                      Convert.ToInt32(control.Text));
-      });
     }
 
     /// <summary>

@@ -954,5 +954,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["BenchmarkTranslate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LoadingFormHidden {
+            get {
+                return ((bool)(this["LoadingFormHidden"]));
+            }
+            set {
+                this["LoadingFormHidden"] = value;
+            }
+        }
     }
 }

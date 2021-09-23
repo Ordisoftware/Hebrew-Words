@@ -20,6 +20,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Words
 {
@@ -57,11 +59,12 @@ namespace Ordisoftware.Hebrew.Words
         SystemManager.TryCatch(Settings.Save);
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
-        DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
+        DebugManager.Enabled = Settings.DebuggerEnabled;
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();
+        LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
       }
       catch ( Exception ex )
       {
@@ -77,7 +80,9 @@ namespace Ordisoftware.Hebrew.Words
     {
       try
       {
-        if ( force /*|| Settings.UpgradeResetRequiredVx_y*/ )
+        // Check reset
+        if ( force
+        /*|| Settings.UpgradeResetRequiredVx_y*/ )
         {
 #pragma warning disable S2583 // Conditionally executed code should be reachable
           if ( !force && !Settings.FirstLaunch )
@@ -92,8 +97,14 @@ namespace Ordisoftware.Hebrew.Words
           Settings.SetFirstAndUpgradeFlagsOff();
           Settings.FirstLaunch = true;
         }
+        // Check language
         if ( Settings.LanguageSelected == Language.None )
           Settings.LanguageSelected = Languages.Current;
+        // Check applications
+        string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
+        string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
+        string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+        // Save settings
         SystemManager.TryCatch(Settings.Save);
       }
       catch ( Exception ex )
@@ -179,6 +190,7 @@ namespace Ordisoftware.Hebrew.Words
     static public void UpdateLocalization()
     {
       Globals.ChronoTranslate.Restart();
+      Task task = null;
       try
       {
         void update(Form form)
@@ -192,6 +204,8 @@ namespace Ordisoftware.Hebrew.Words
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
+        task = new Task(HebrewGlobals.LoadProviders);
+        task.Start();
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
@@ -227,6 +241,7 @@ namespace Ordisoftware.Hebrew.Words
       }
       finally
       {
+        task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }
