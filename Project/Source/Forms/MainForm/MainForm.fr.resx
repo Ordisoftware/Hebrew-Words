@@ -268,9 +268,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionWebYouTube.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
   </data>
-  <data name="ActionWebTipeee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
   <data name="ActionWebLinkedIn.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
   </data>
