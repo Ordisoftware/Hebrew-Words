@@ -209,12 +209,16 @@ namespace Ordisoftware.Hebrew.Words
           MessageBoxEx.CloseAll();
           AboutBox.Instance.Hide();
         }
+        else
+          update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
         {
-          if ( form != DebugManager.TraceForm && form != AboutBox.Instance && form != GrammarGuideForm )
+          if ( form != DebugManager.TraceForm
+            && form != AboutBox.Instance
+            && form != GrammarGuideForm )
             update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
@@ -231,6 +235,7 @@ namespace Ordisoftware.Hebrew.Words
           MainForm.Instance.RenderELS50();
           MainForm.Instance.SetView(Settings.CurrentView, true);
         }
+        task?.Wait();
         MainForm.Instance.CreateSystemInformationMenu();
       }
       catch ( Exception ex )
@@ -239,7 +244,6 @@ namespace Ordisoftware.Hebrew.Words
       }
       finally
       {
-        task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }
