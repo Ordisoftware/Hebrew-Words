@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -101,11 +101,11 @@ namespace Ordisoftware.Hebrew.Words
       try
       {
         Book = MainForm.Instance.DataSet.Books.SingleOrDefault(b => b.Number == book);
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous - N/A
         Chapter = Book?.GetChaptersRows()[chapter - 1] ?? null;
         Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
         Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous - N/A
       }
       catch ( Exception ex )
       {
@@ -170,6 +170,42 @@ namespace Ordisoftware.Hebrew.Words
           return 1;
       }
 
+    }
+
+    public static bool operator ==(ReferenceItem left, ReferenceItem right)
+    {
+      if ( ReferenceEquals(left, null) )
+        return ReferenceEquals(right, null);
+      else
+        return left.CompareTo(right) == 0;
+    }
+
+    public static bool operator !=(ReferenceItem left, ReferenceItem right)
+    {
+      if ( ReferenceEquals(left, null) )
+        return !ReferenceEquals(right, null);
+      else
+        return left.CompareTo(right) != 0;
+    }
+
+    public static bool operator <(ReferenceItem left, ReferenceItem right)
+    {
+      return left.CompareTo(right) < 0;
+    }
+
+    public static bool operator <=(ReferenceItem left, ReferenceItem right)
+    {
+      return left.CompareTo(right) <= 0;
+    }
+
+    public static bool operator >(ReferenceItem left, ReferenceItem right)
+    {
+      return left.CompareTo(right) > 0;
+    }
+
+    public static bool operator >=(ReferenceItem left, ReferenceItem right)
+    {
+      return left.CompareTo(right) >= 0;
     }
 
   }

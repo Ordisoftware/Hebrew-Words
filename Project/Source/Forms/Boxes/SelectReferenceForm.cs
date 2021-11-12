@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Words
                                ( (VerseItem)form.SelectVerse.SelectedItem )?.Verse.Number ?? 1);
     }
 
-    private Data.DataSet DataSet = MainForm.Instance.DataSet;
+    private readonly Data.DataSet DataSet = MainForm.Instance.DataSet;
 
     private SelectReferenceForm()
     {

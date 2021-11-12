@@ -24,32 +24,31 @@ namespace Ordisoftware.Hebrew.Words
   static partial class AppTranslations
   {
 
-    static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures
-      = new NullSafeDictionary<string, TranslationsDictionary>
+    static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
+    {
+
+      ["1.x"] = new TranslationsDictionary
       {
+        [Language.EN] = "Initial release.",
 
-        ["1.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "Initial release.",
+        [Language.FR] = "Version initiale."
+      },
 
-          [Language.FR] = "Version initiale."
-        },
+      ["2.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "",
 
-        ["2.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "",
+        [Language.FR] = ""
+      },
 
-          [Language.FR] = ""
-        },
+      ["3.0"] = new TranslationsDictionary
+      {
+        [Language.EN] = "",
 
-        ["3.0"] = new TranslationsDictionary
-        {
-          [Language.EN] = "",
+        [Language.FR] = ""
+      },
 
-          [Language.FR] = ""
-        },
-
-      };
+    };
 
   }
 

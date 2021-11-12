@@ -32,9 +32,9 @@ namespace Ordisoftware.Hebrew.Words
     /// </remarks>
     static private DocX Document = null;
 
-    static private readonly Font FontVerdana = new Font("Verdana");
-    static private readonly Font FontHebrew = new Font("Hebrew");
-    static private readonly Font FontCalibri = new Font("Calibri");
+    static private readonly Font FontVerdana = new("Verdana");
+    static private readonly Font FontHebrew = new("Hebrew");
+    static private readonly Font FontCalibri = new("Calibri");
 
     static public void Run(string filePath,
                            Data.DataSet.BooksRow book,

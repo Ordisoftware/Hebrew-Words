@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Words
   partial class SearchTranslatedForm : Form
   {
 
-    static public readonly List<SearchTranslatedForm> Forms = new List<SearchTranslatedForm>();
+    static public readonly List<SearchTranslatedForm> Forms = new();
 
     static public void Run(WordControl sender)
     {
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Words
       MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
     }
 
-    private WordControl WordControl;
+    private readonly WordControl WordControl;
     private bool Mutex;
 
     private SearchTranslatedForm()
@@ -138,7 +138,7 @@ namespace Ordisoftware.Hebrew.Words
       {
         KeyProcessed = false;
         if ( EditHebrew.SelectionStart != 0 )
-          EditHebrew.SelectionStart = EditHebrew.SelectionStart - 1;
+          EditHebrew.SelectionStart--;
       }
     }
 

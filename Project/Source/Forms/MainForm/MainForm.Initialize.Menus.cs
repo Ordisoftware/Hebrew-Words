@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
-        if ( !( ActiveControl is WordControl ) ) return;
+        if ( ActiveControl is not WordControl  ) return;
         var menuitem = (ToolStripMenuItem)sender;
         string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
         HebrewTools.OpenWordProvider((string)menuitem.Tag, word);

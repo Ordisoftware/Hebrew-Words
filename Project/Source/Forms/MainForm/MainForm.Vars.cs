@@ -34,12 +34,12 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// Indicate loading data progress bar divisor.
     /// </summary>
-    private const int PopulateDataPaging = 10000;
+    // TODO remove ? private const int PopulateDataPaging = 10000;
 
     /// <summary>
     /// Indicate last showned tooltip.
     /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
+    private readonly ToolTip LastToolTip = new();
 
     /// <summary>
     /// Indicate current bible reference.
@@ -66,8 +66,8 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private int PreviousSeachPagingPosition = -1;
 
-    private Bookmarks Bookmarks;
-    private History History;
+    private readonly Bookmarks Bookmarks;
+    private readonly History History;
 
     private int BookmarksMenuFirstIndex;
 
@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew.Words
 
     public int SearchResultsCount { get; private set; }
 
-    private int PagingCountDisableForm = 50;
+    private readonly int PagingCountDisableForm = 50;
     private int PagingCurrent = 0;
     private int PagingCount = 0;
 
@@ -85,13 +85,13 @@ namespace Ordisoftware.Hebrew.Words
     private string SearchWord1;
     private string SearchWord2;
 
-    private readonly Font HebrewFont12 = new Font("Hebrew", 12f);
+    private readonly Font HebrewFont12 = new("Hebrew", 12f);
 
-    private readonly Font LatinFont10 = new Font("Verdana", 10f);
+    private readonly Font LatinFont10 = new("Verdana", 10f);
 
-    private readonly Font LatinFont8 = new Font("Verdana", 8f);
+    private readonly Font LatinFont8 = new("Verdana", 8f);
 
-    private readonly Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
+    private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
 
   }
 

@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private const char ElementsSeparator = '|';
 
-    private ImportverseResults ImportResults = new ImportverseResults();
+    private readonly ImportverseResults ImportResults = new();
 
     private void DoAnalyse()
     {

@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Words
   abstract class ReferencesList : IEnumerable<ReferenceItem>
   {
 
-    protected readonly List<ReferenceItem> Items = new List<ReferenceItem>();
+    protected readonly List<ReferenceItem> Items = new();
 
     protected string FilePath;
 

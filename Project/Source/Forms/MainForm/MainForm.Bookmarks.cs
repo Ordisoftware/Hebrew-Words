@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Words
           if ( e.Button != MouseButtons.Right ) return;
           // bug reentrance (?) if ( !DisplayManager.QueryYesNo(AppTranslations.DeleteBookmark.GetLang()) ) return;
           var menuitem = (ToolStripMenuItem)sender;
-          if ( menuitem.Tag == bookmarkMaster )
+          if ( menuitem.Tag as ReferenceItem == bookmarkMaster )
           {
             Program.Settings.BookmarkMasterBook = 1;
             Program.Settings.BookmarkMasterChapter = 1;

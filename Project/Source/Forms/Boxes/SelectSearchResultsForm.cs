@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Words
     private bool Mutex;
 
     private IEnumerable<ReferenceItem> References;
-    private IEnumerable<ReferenceItem> OriginalReferences;
+    private readonly IEnumerable<ReferenceItem> OriginalReferences;
     private int Count;
 
     private SelectSearchResultsForm()

@@ -43,9 +43,9 @@ namespace Ordisoftware.Hebrew.Words
 
     private bool IsResultValid;
 
-    private Data.DataSet DataSet;
+    private readonly Data.DataSet DataSet;
 
-    private ReferenceItem Reference;
+    private readonly ReferenceItem Reference;
 
     private ImportVerseForm()
     {

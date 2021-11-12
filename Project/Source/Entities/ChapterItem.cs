@@ -31,10 +31,12 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Chapter == null ) return "";
       int nb = Chapter.BooksRow.GetChaptersRows().Count();
-      string str = "";
-      if ( nb >= 100 ) str = Chapter.Number.ToString("000");
+      string str;
+      if ( nb >= 100 ) 
+        str = Chapter.Number.ToString("000");
       else
-      if ( nb >= 10 ) str = Chapter.Number.ToString("00");
+      if ( nb >= 10 ) 
+        str = Chapter.Number.ToString("00");
       else
         str = Chapter.Number.ToString();
       if ( Chapter.Title != "" ) str += $" - {Chapter.Title}";

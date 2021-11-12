@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Words
   partial class MainForm
   {
 
-    private int ScrollIncrement = 25;
+    private readonly int ScrollIncrement = 25;
 
     /// <summary>
     /// Rotate current search tab.
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      bool scroll(Panel panel, int y, bool abs)
+      static bool scroll(Panel panel, int y, bool abs)
       {
         int dy = abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0;
         panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, y + dy);

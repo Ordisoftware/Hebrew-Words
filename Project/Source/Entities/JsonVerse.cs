@@ -60,13 +60,11 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
 
   internal static class Converter
   {
-    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+    public static readonly JsonSerializerSettings Settings = new()
     {
       MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
       DateParseHandling = DateParseHandling.None,
-      Converters = {
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
+      Converters = { new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal } }
     };
   }
 
@@ -78,11 +76,8 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
     {
       if ( reader.TokenType == JsonToken.Null ) return null;
       var value = serializer.Deserialize<string>(reader);
-      long l;
-      if ( Int64.TryParse(value, out l) )
-      {
+      if ( Int64.TryParse(value, out long l) )
         return l;
-      }
       throw new Exception("Cannot unmarshal type long");
     }
 
@@ -97,7 +92,7 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
       serializer.Serialize(writer, valueTyped.ToString());
     }
 
-    public static readonly ParseIntegerConverter Singleton = new ParseIntegerConverter();
+    public static readonly ParseIntegerConverter Singleton = new();
   }
 
 }

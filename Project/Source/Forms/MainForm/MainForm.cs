@@ -339,7 +339,7 @@ namespace Ordisoftware.Hebrew.Words
     private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
-      if ( !( sender is ToolStripItem ) ) return;
+      if ( sender is not ToolStripItem  ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
       if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
@@ -676,15 +676,15 @@ namespace Ordisoftware.Hebrew.Words
       ActionSave.PerformClick();
       ReLoadData(() =>
       {
-        using ( var connection = new OdbcConnection(Settings.ConnectionString) )
-          try
-          {
-            Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
-          }
-          finally
-          {
-            connection.Close();
-          }
+        using var connection = new OdbcConnection(Settings.ConnectionString);
+        try
+        {
+          Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
+        }
+        finally
+        {
+          connection.Close();
+        }
       });
     }
 
@@ -1380,7 +1380,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
-      if ( !( ActiveControl is WordControl ) ) return;
+      if ( ActiveControl is not WordControl  ) return;
       string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
       HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
     }

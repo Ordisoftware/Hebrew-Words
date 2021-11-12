@@ -47,8 +47,7 @@ namespace Ordisoftware.Hebrew.Words
                          where book.Number == itemBook.Number
                             && chapter.Number == itemChapter.Number
                          select new ReferenceItem(book, chapter, verse);
-        var wordcontrol = new WordControl();
-        wordcontrol.Width = Program.Settings.WordControlWidth;
+        var wordcontrol = new WordControl { Width = Program.Settings.WordControlWidth };
         int widthLabel = 40;
         int mX = 50;
         int mY = 50;
@@ -140,7 +139,7 @@ namespace Ordisoftware.Hebrew.Words
           editComment.Enter += EditVerseComment_Enter;
           editComment.Leave += EditVerseComment_Leave;
           controls[indexControl++] = editComment;
-          y = y + dy_marginY_commentHeight;
+          y += dy_marginY_commentHeight;
         }
         PanelViewVerses.Controls.AddRange(controls);
       }

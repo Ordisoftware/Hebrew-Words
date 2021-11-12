@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Words
           linklabel.Tag = reference;
           linklabel.Font = LatinFont8;
           linklabel.Text = reference.ToString();
-          linklabel.Location = new Point(x = x - referenceSize, y);
+          linklabel.Location = new Point(x -= referenceSize, y);
           linklabel.ContextMenuStrip = ContextMenuStripVerse;
           linklabel.LinkColor = Color.DarkBlue;
           linklabel.LinkClicked += (sender, e) =>
@@ -107,9 +107,9 @@ namespace Ordisoftware.Hebrew.Words
                 label.ForeColor = SystemColors.ControlText;
             controls[indexControl++] = label;
           }
-#pragma warning disable S2259 // Null pointers should not be dereferenced
+#pragma warning disable S2259 // Null pointers should not be dereferenced - N/A
           y += label.PreferredHeight + marginY;
-#pragma warning restore S2259 // Null pointers should not be dereferenced
+#pragma warning restore S2259 // Null pointers should not be dereferenced - N/A
           if ( reference.Verse.IsTranslated() )
           {
             label = new Label();

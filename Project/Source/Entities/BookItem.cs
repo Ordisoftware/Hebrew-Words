@@ -31,10 +31,12 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( Book == null ) return "";
       int nb = MainForm.Instance.DataSet.Books.Count;
-      string str = "";
-      if ( nb >= 100 ) str = Book.Number.ToString("000");
+      string str;
+      if ( nb >= 100 ) 
+        str = Book.Number.ToString("000");
       else
-      if ( nb >= 10 ) str = Book.Number.ToString("00");
+      if ( nb >= 10 ) 
+        str = Book.Number.ToString("00");
       else
         str = Book.Number.ToString();
       str += ". " + Book.Name;

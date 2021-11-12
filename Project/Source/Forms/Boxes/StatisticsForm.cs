@@ -65,10 +65,10 @@ namespace Ordisoftware.Hebrew.Words
       Close();
     }
 
-    private Dictionary<TanakBook, BookStatistic> CountersBooks = new Dictionary<TanakBook, BookStatistic>();
-    private BookStatistic CountersAll = new BookStatistic();
-    private BookStatistic CountersTorah = new BookStatistic();
-    private BookStatistic CountersSelected = new BookStatistic();
+    private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = new();
+    private readonly BookStatistic CountersAll = new();
+    private readonly BookStatistic CountersTorah = new();
+    private BookStatistic CountersSelected = new();
 
     private void InitializeCounters()
     {
