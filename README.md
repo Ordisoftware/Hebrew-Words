@@ -174,7 +174,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update setup.
 - Update web links.
 - Update help.
-- Updgrade Visual Studio 2022 and C# 10.
+- Upgrade to Visual Studio 2022 and C# 10.
 
 > TO CHECK
 - Add option to open the last verse else the master bookmark else the first verse of the Tanak.
