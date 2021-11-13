@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -25,7 +25,11 @@ namespace Ordisoftware.Hebrew.Words
   partial class MainForm : Form
   {
 
+#pragma warning disable IDE0052 // Supprimer les membres privés non lus
+#pragma warning disable S4487 // Unread "private" fields should be removed
     private bool NeedUpgradeForConcordances;
+#pragma warning restore S4487 // Unread "private" fields should be removed
+#pragma warning restore IDE0052 // Supprimer les membres privés non lus
 
     private OdbcConnection LockFileConnection;
 
@@ -106,7 +110,9 @@ namespace Ordisoftware.Hebrew.Words
         //b = !LockFileConnection.CheckColumn("Words", "Transliteration", "TEXT", "''", true) || b;
         //b = !LockFileConnection.CheckColumn("Words", "ConcordanceID", "TEXT", "''", true) || b;
         NeedUpgradeForConcordances = b;
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous - To be later used
         Globals.IsDatabaseUpgraded = Globals.IsDatabaseUpgraded || b;
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous
       });
     }
 

@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -120,35 +120,34 @@ namespace Ordisoftware.Hebrew.Words
       [Language.FR] = "CHAPITRE"
     };
 
-    static public readonly NullSafeDictionary<ViewMode, TranslationsDictionary> ViewPanelTitle
-      = new NullSafeDictionary<ViewMode, TranslationsDictionary>
+    static public readonly NullSafeDictionary<ViewMode, TranslationsDictionary> ViewPanelTitle = new()
+    {
+      [ViewMode.Verses] = new TranslationsDictionary
       {
-        [ViewMode.Verses] = new TranslationsDictionary
-        {
-          [Language.EN] = "Tanak Verses",
-          [Language.FR] = "Versets du Tanak"
-        },
-        [ViewMode.Translations] = new TranslationsDictionary
-        {
-          [Language.EN] = "Tanak Translation",
-          [Language.FR] = "Traduction du Tanak"
-        },
-        [ViewMode.Text] = new TranslationsDictionary
-        {
-          [Language.EN] = "Tanak Hebrew Text",
-          [Language.FR] = "Texte Hébreu du Tanak"
-        },
-        [ViewMode.ELS50] = new TranslationsDictionary
-        {
-          [Language.EN] = "Tanak ELS50 Verses",
-          [Language.FR] = "Versets ELS50 du Tanak"
-        },
-        [ViewMode.Search] = new TranslationsDictionary
-        {
-          [Language.EN] = "Search in the Tanak",
-          [Language.FR] = "Recherche dans le Tanak"
-        }
-      };
+        [Language.EN] = "Tanak Verses",
+        [Language.FR] = "Versets du Tanak"
+      },
+      [ViewMode.Translations] = new TranslationsDictionary
+      {
+        [Language.EN] = "Tanak Translation",
+        [Language.FR] = "Traduction du Tanak"
+      },
+      [ViewMode.Text] = new TranslationsDictionary
+      {
+        [Language.EN] = "Tanak Hebrew Text",
+        [Language.FR] = "Texte Hébreu du Tanak"
+      },
+      [ViewMode.ELS50] = new TranslationsDictionary
+      {
+        [Language.EN] = "Tanak ELS50 Verses",
+        [Language.FR] = "Versets ELS50 du Tanak"
+      },
+      [ViewMode.Search] = new TranslationsDictionary
+      {
+        [Language.EN] = "Search in the Tanak",
+        [Language.FR] = "Recherche dans le Tanak"
+      }
+    };
 
   }
 

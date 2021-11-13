@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -104,8 +104,10 @@ namespace Ordisoftware.Hebrew.Words
           Settings.LanguageSelected = Languages.Current;
         // Check applications
         string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
+#pragma warning disable S1481 // Unused local variables should be removed - For future usage
         string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
         string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+#pragma warning restore S1481 // Unused local variables should be removed
         // Save settings
         SystemManager.TryCatch(Settings.Save);
       }
@@ -173,9 +175,7 @@ namespace Ordisoftware.Hebrew.Words
           CheckSettingsReset(true);
         }
         else
-        if ( !Settings.FirstLaunch
-          && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideMainForm )
+        if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
           Globals.ForceStartupHide = true;
       }
       catch ( Exception ex )

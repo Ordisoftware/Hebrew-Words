@@ -3,17 +3,16 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
 using System;
-using System.Linq;
 using Ordisoftware.Hebrew.Words.Data;
 
 namespace Ordisoftware.Hebrew.Words
@@ -32,16 +31,16 @@ namespace Ordisoftware.Hebrew.Words
       if ( Book == null ) return "";
       int nb = MainForm.Instance.DataSet.Books.Count;
       string str;
-      if ( nb >= 100 ) 
+      if ( nb >= 100 )
         str = Book.Number.ToString("000");
       else
-      if ( nb >= 10 ) 
+      if ( nb >= 10 )
         str = Book.Number.ToString("00");
       else
         str = Book.Number.ToString();
       str += ". " + Book.Name;
-      if ( Book.CommonName != "" ) str += $" ({Book.CommonName})";
-      if ( Book.Translation != "" ) str += $" - {Book.Translation}";
+      if ( Book.CommonName.Length > 0 ) str += $" ({Book.CommonName})";
+      if ( Book.Translation.Length > 0 ) str += $" - {Book.Translation}";
       return str;
     }
 

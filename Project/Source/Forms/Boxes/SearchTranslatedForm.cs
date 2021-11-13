@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -207,7 +207,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( ListView.SelectedItems.Count < 1 ) return;
       var str = CleanTranslation(( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Translation);
-      if ( WordControl.Reference.Word.Translation.Trim() == "" )
+      if ( WordControl.Reference.Word.Translation.Trim().Length == 0 )
       {
         WordControl.Reference.Word.Translation = str;
         WordControl.EditTranslation.Text = str;
@@ -263,23 +263,22 @@ namespace Ordisoftware.Hebrew.Words
         ListView.Items.Clear();
         string wordHebrew = EditHebrew.Text;
         if ( wordHebrew.Length < 2 ) return;
-#pragma warning disable IDE0039 // Utiliser une fonction locale
-        Func<string, bool> checkWholeWord = str => { return str == wordHebrew; };
-        Func<string, bool> checkContains = str => { return str.Contains(wordHebrew); };
+        //#pragma warning disable IDE0039 // Utiliser une fonction locale
+        bool checkWholeWord(string str) => str == wordHebrew;
+        bool checkContains(string str) => str.Contains(wordHebrew);
         Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
-#pragma warning restore IDE0039 // Utiliser une fonction locale
+        //#pragma warning restore IDE0039 // Utiliser une fonction locale
         var references = from book in MainForm.Instance.DataSet.Books
                          from chapter in book.GetChaptersRows()
                          from verse in chapter.GetVersesRows()
                          from word in verse.GetWordsRows()
-                         where check(word.Hebrew) && word.Translation != ""
+                         where check(word.Hebrew) && word.Translation.Length > 0
                          select new ReferenceItem(book, chapter, verse, word);
         if ( EditDistinct.Checked )
           references = references.Distinct(new WordTranslationComparer());
         foreach ( var item in references )
         {
-          var itemList = new ListViewItem(item.ToString());
-          itemList.Tag = item;
+          var itemList = new ListViewItem(item.ToString()) { Tag = item };
           itemList.SubItems.Add(item.Word.Translation);
           ListView.Items.Add(itemList);
         }

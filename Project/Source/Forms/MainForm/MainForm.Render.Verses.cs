@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -48,15 +48,15 @@ namespace Ordisoftware.Hebrew.Words
                             && chapter.Number == itemChapter.Number
                          select new ReferenceItem(book, chapter, verse);
         var wordcontrol = new WordControl { Width = Program.Settings.WordControlWidth };
-        int widthLabel = 40;
-        int mX = 50;
-        int mY = 50;
-        int delta = 10;
+        const int widthLabel = 40;
+        const int mX = 50;
+        const int mY = 50;
+        const int delta = 10;
         int width = ClientSize.Width - mX;
         int dx = wordcontrol.Width + delta;
         int dy = wordcontrol.Height + delta;
-        int marginX = mX;
-        int marginY = mY;
+        const int marginX = mX;
+        const int marginY = mY;
         int x = width - dx - marginX;
         int y = delta;
         int minx = x;
@@ -73,9 +73,9 @@ namespace Ordisoftware.Hebrew.Words
         Label label;
         TextBoxEx editComment;
         int indexControl = 0;
-        int capacity = references.Count() * 2 + references.Select(r => r.Verse.GetWordsRows().Count()).Sum();
+        int capacity = references.Count() * 2 + references.Select(r => r.Verse.GetWordsRows().Length).Sum();
         Control[] controls = new Control[capacity];
-        int deltaDIV4 = delta / 4;
+        const int deltaDIV4 = delta / 4;
         int dx_delta = dx + delta;
         int dy_delta = dy + delta;
         int dx_marginX = dx + marginX;
@@ -86,19 +86,21 @@ namespace Ordisoftware.Hebrew.Words
         int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
         foreach ( var reference in references )
         {
-          label = new Label();
-          label.Tag = reference;
-          label.Location = new Point(x + dx_delta, y + deltaDIV4);
-          label.AutoSize = false;
-          label.Width = widthLabel;
-          label.ForeColor = Color.DarkBlue;
-          label.Font = VerseNumberFont;
-          label.Text = reference.Verse.Number.ToString();
+          label = new Label
+          {
+            Tag = reference,
+            Location = new Point(x + dx_delta, y + deltaDIV4),
+            AutoSize = false,
+            Width = widthLabel,
+            ForeColor = Color.DarkBlue,
+            Font = VerseNumberFont,
+            Text = reference.Verse.Number.ToString(),
+            ContextMenuStrip = ContextMenuStripVerse
+          };
           label.MouseEnter += LabelVerseNumber_MouseEnter;
           label.MouseLeave += LabelVerseNumber_MouseLeave;
           label.MouseDown += LabelVerseNumber_MouseDown;
           label.MouseClick += LabelVerseNumber_MouseClick;
-          label.ContextMenuStrip = ContextMenuStripVerse;
           controls[indexControl++] = label;
           bool emptyline = false;
           foreach ( var word in reference.Verse.GetWordsRows() )

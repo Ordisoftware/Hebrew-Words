@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -55,14 +55,14 @@ namespace Ordisoftware.Hebrew.Words
       InitializeComponent();
       new Task(InitializeIconsAndSound).Start();
       Interlocks.Take();
-      SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
+      SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
       Text = Globals.AssemblyTitle;
       ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
       SystemEvents.SessionEnding += SessionEnding;
       CurrentReference = new ReferenceItem(null, null, null, null);
       Bookmarks = new Bookmarks(Program.BookmarksFilePath);
       History = new History(Program.HistoryFilePath);
-      ActionGoToBookmarkMaster.Click += new EventHandler(GoToBookmark);
+      ActionGoToBookmarkMaster.Click += GoToBookmark;
     }
 
     /// <summary>
@@ -162,7 +162,7 @@ namespace Ordisoftware.Hebrew.Words
         {
           var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
           var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-          if ( menuItem != null ) menuItem.PerformClick();
+          menuItem?.PerformClick();
         });
     }
 
@@ -339,10 +339,10 @@ namespace Ordisoftware.Hebrew.Words
     private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
-      if ( sender is not ToolStripItem  ) return;
+      if ( sender is not ToolStripItem ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
-      if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
+      if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
       TimerTooltip.Enabled = true;
     }
 
@@ -593,10 +593,7 @@ namespace Ordisoftware.Hebrew.Words
         ActionBackup.PerformClick();
       if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
         return;
-      ReLoadData(() =>
-      {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
-      });
+      ReLoadData(() => File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName)));
     }
 
     /// <summary>
@@ -1380,7 +1377,7 @@ namespace Ordisoftware.Hebrew.Words
 
     private void ActionSearchOnline_Click(object sender, EventArgs e)
     {
-      if ( ActiveControl is not WordControl  ) return;
+      if ( ActiveControl is not WordControl ) return;
       string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
       HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
     }

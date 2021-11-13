@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -42,17 +42,17 @@ namespace Ordisoftware.Hebrew.Words
           SetFormDisabled(true);
         var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
                                    .Take(Program.Settings.FoundReferencesViewable);
-        int referenceSize = 160;
-        int marginX = 10;
-        int marginY = 10;
-        int minX = marginX;
+        const int referenceSize = 160;
+        const int marginX = 10;
+        const int marginY = 10;
+        const int minX = marginX;
         int maxX = PanelSearchResults.ClientSize.Width - marginX;
         int x = 0;
         int y = 0;
         int xx;
         LinkLabel linklabel;
         int indexControl = 0;
-        int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Count()).Sum();
+        int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Length).Sum();
         Control[] controls = new Control[capacity];
         foreach ( var reference in results )
         {
@@ -60,14 +60,16 @@ namespace Ordisoftware.Hebrew.Words
           if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
           x = maxX;
           y += marginY;
-          linklabel = new LinkLabel();
-          linklabel.AutoSize = true;
-          linklabel.Tag = reference;
-          linklabel.Font = LatinFont8;
-          linklabel.Text = reference.ToString();
-          linklabel.Location = new Point(x -= referenceSize, y);
-          linklabel.ContextMenuStrip = ContextMenuStripVerse;
-          linklabel.LinkColor = Color.DarkBlue;
+          linklabel = new LinkLabel
+          {
+            AutoSize = true,
+            Tag = reference,
+            Font = LatinFont8,
+            Text = reference.ToString(),
+            Location = new Point(x -= referenceSize, y),
+            ContextMenuStrip = ContextMenuStripVerse,
+            LinkColor = Color.DarkBlue
+          };
           linklabel.LinkClicked += (sender, e) =>
           {
             if ( e.Button == MouseButtons.Left )
@@ -82,10 +84,12 @@ namespace Ordisoftware.Hebrew.Words
           Label label = null;
           foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
           {
-            label = new Label();
-            label.AutoSize = true;
-            label.Font = HebrewFont12;
-            label.Text = word.Hebrew.Trim();
+            label = new Label
+            {
+              AutoSize = true,
+              Font = HebrewFont12,
+              Text = word.Hebrew.Trim()
+            };
             x -= label.PreferredSize.Width;
             if ( x < minX )
             {
@@ -112,11 +116,13 @@ namespace Ordisoftware.Hebrew.Words
 #pragma warning restore S2259 // Null pointers should not be dereferenced - N/A
           if ( reference.Verse.IsTranslated() )
           {
-            label = new Label();
-            label.AutoSize = true;
-            label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
-            label.Text = reference.Verse.GetTranslation();
-            label.Location = new Point(xx - label.PreferredSize.Width, y);
+            label = new Label
+            {
+              AutoSize = true,
+              MaximumSize = new Size(xx - marginX, label.MaximumSize.Height),
+              Text = reference.Verse.GetTranslation(),
+              Location = new Point(xx - label.PreferredSize.Width, y)
+            };
             label.Click += (sender, e) => PanelSearchResults.Focus();
             controls[indexControl++] = label;
             y += label.PreferredHeight + marginY;

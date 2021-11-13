@@ -1,12 +1,12 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier. 
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </remarks>
     static private DocX Document = null;
 
-    static private readonly Font FontVerdana = new("Verdana");
+    //static private readonly Font FontVerdana = new("Verdana");
     static private readonly Font FontHebrew = new("Hebrew");
     static private readonly Font FontCalibri = new("Calibri");
 
@@ -121,14 +121,14 @@ namespace Ordisoftware.Hebrew.Words
     static private void AddBookTitle(Data.DataSet.BooksRow book)
     {
       AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
-      if ( book.Translation != "" )
+      if ( book.Translation.Length > 0 )
       {
         Table table = Document.InsertTable(1, 2);
         table.Alignment = Alignment.right;
         table.Design = TableDesign.None;
         table.Rows[0].Cells[0].Width = 555;
         table.Rows[0].Cells[1].Width = 55;
-        var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+        var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
         paragraph.Append(book.Translation);
         paragraph.Direction = Direction.RightToLeft;
         paragraph.Font(FontCalibri);
@@ -150,7 +150,7 @@ namespace Ordisoftware.Hebrew.Words
       table.Design = TableDesign.None;
       table.Rows[0].Cells[0].Width = 555;
       table.Rows[0].Cells[1].Width = 55;
-      var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+      var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
       paragraph.StyleName = styleName;
       paragraph.Append(str);
       paragraph.Direction = Direction.RightToLeft;
@@ -177,8 +177,8 @@ namespace Ordisoftware.Hebrew.Words
     {
       string strVerseRef = verse.Number.ToString();
       int rowFactor = Convert.ToInt32(includeTranslation) + 1;
-      int countWords = verse.GetWordsRows().Count();
-      int CountColumns = 4;
+      int countWords = verse.GetWordsRows().Length;
+      const int CountColumns = 4;
       int indexWord = countWords - 1;
       int countRows = ( (int)Math.Ceiling((double)countWords / (double)CountColumns) ) * rowFactor;
       Table table = Document.InsertTable(countRows, CountColumns + 1);
@@ -195,7 +195,7 @@ namespace Ordisoftware.Hebrew.Words
         }
         if ( row == 0 )
         {
-          var pVerseRef = cellVerse.Paragraphs.First().Append(strVerseRef);
+          var pVerseRef = cellVerse.Paragraphs[0].Append(strVerseRef);
           pVerseRef.Direction = Direction.RightToLeft;
           pVerseRef.Font(FontCalibri);
           pVerseRef.FontSize(12);
@@ -209,7 +209,7 @@ namespace Ordisoftware.Hebrew.Words
           string strWord = word.Hebrew;
           string strTranslation = word.Translation;
           var cell = table.Rows[row].Cells[i];
-          var pVerse = cell.Paragraphs.First().Append(strWord);
+          var pVerse = cell.Paragraphs[0].Append(strWord);
           cell.MarginTop = 5;
           pVerse.Direction = Direction.RightToLeft;
           pVerse.Font(FontHebrew);
@@ -217,7 +217,7 @@ namespace Ordisoftware.Hebrew.Words
           pVerse.Spacing(1);
           if ( includeTranslation )
           {
-            var pTranslation = table.Rows[row + 1].Cells[i].Paragraphs.First().Append(strTranslation);
+            var pTranslation = table.Rows[row + 1].Cells[i].Paragraphs[0].Append(strTranslation);
             pTranslation.Direction = Direction.LeftToRight;
             pTranslation.Alignment = Alignment.right;
             pTranslation.Font(FontCalibri);
@@ -225,7 +225,7 @@ namespace Ordisoftware.Hebrew.Words
           }
         }
       }
-      if ( verse.Comment != "" )
+      if ( verse.Comment.Length > 0 )
       {
         Document.InsertParagraph("").FontSize(8);
         table = Document.InsertTable(1, 2);
@@ -233,7 +233,7 @@ namespace Ordisoftware.Hebrew.Words
         table.Design = TableDesign.None;
         table.Rows[0].Cells[0].Width = 555;
         table.Rows[0].Cells[1].Width = 55;
-        var paragraph = table.Rows[0].Cells[0].Paragraphs.First();
+        var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
         paragraph.Append(verse.Comment);
         paragraph.Direction = Direction.LeftToRight;
         paragraph.Font(FontCalibri);

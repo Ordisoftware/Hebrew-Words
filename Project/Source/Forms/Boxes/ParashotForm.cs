@@ -3,15 +3,15 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -41,9 +41,13 @@ namespace Ordisoftware.Hebrew
         Instance.Select(parashah);
         return;
       }
-      Instance?.Show();
-      Instance?.ForceBringToFront();
-      Instance?.Select(parashah);
+      if ( Instance != null )
+      {
+        // NOP
+        Instance.Show();
+        Instance.ForceBringToFront();
+        Instance.Select(parashah);
+      }
     }
 
     public readonly Properties.Settings Settings
@@ -265,11 +269,13 @@ namespace Ordisoftware.Hebrew
       ActiveControl = DataGridView;
     }
 
+#pragma warning disable IDE0051 // Supprimer les membres privés non utilisés - For future usage
     private void DoExportTable(string filePath)
     {
-      //var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
-      //table.Export(filePath, Program.BoardExportTargets);
+      var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
+      table.Export(filePath, Program.BoardExportTargets);
     }
+#pragma warning restore IDE0051 // Supprimer les membres privés non utilisés
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
@@ -362,6 +368,7 @@ namespace Ordisoftware.Hebrew
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
+      if ( e.Value == null ) return;
       if ( e.ColumnIndex == ColumnLinked.Index )
         e.Value = Convert.ToBoolean(e.Value) ? Globals.Bullet : string.Empty;
       else
@@ -395,7 +402,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( DataGridView.ReadOnly ) return;
       if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
-      var form = new EditMemoForm();
+      using var form = new EditMemoForm();
       form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
       form.TextBox.Text = CurrentDataBoundItem.Memo;
       form.TextBox.SelectionStart = 0;
@@ -455,58 +462,7 @@ namespace Ordisoftware.Hebrew
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      ShowParashahDescription(this, CurrentDataBoundItem, false);
-    }
-
-    static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
-    {
-      string title = HebrewTranslations.WeeklyParashah.GetLang();
-      var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
-      if ( form != null )
-      {
-        form.Popup();
-        return true;
-      }
-      var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
-      if ( parashah == null ) return false;
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium);
-      form.StartPosition = FormStartPosition.CenterScreen;
-      form.ForceNoTopMost = true;
-      form.ShowInTaskbar = true;
-      // Open board
-      form.ActionYes.Visible = true;
-      form.ActionYes.Text = SysTranslations.Board.GetLang();
-      form.ActionYes.Click += async (_s, _e) =>
-      {
-        Run(parashah);
-        await System.Threading.Tasks.Task.Delay(1000);
-        Instance.Popup();
-      };
-      // Open memo
-      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionNo.Text = SysTranslations.Memo.GetLang();
-      form.ActionNo.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      // Copy to clipboard
-      form.ActionRetry.Visible = true;
-      form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
-      form.ActionRetry.DialogResult = DialogResult.None;
-      form.ActionRetry.Click -= form.ActionClose_Click;
-      form.ActionRetry.Click += (_s, _e) =>
-      {
-        Clipboard.SetText(message);
-        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
-                                          Globals.ClipboardSoundFilePath);
-      };
-      form.AllowClose = true;
-      form.Show();
-      return true;
+      ShowParashahDescription(CurrentDataBoundItem, false);
     }
 
   }

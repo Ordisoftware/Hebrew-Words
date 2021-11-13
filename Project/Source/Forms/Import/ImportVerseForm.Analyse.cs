@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Words
       var foundTranslation = new List<string>();
       DataGridView.DataSource = null;
       ImportResults.Clear();
-      var lines = EditSource.Lines.Where(line => line != "").ToList();
+      var lines = EditSource.Lines.Where(line => line.Length > 0).ToList();
       if ( lines.Count % 2 != 0 )
       {
         IsResultValid = false;
@@ -65,10 +65,10 @@ namespace Ordisoftware.Hebrew.Words
         foundTranslation.AddRange(lineTranslationElements.Reverse());
       }
       var wordsReference = Reference.Verse.GetWordsRows();
-      if ( foundWords.Count != wordsReference.Count() )
+      if ( foundWords.Count != wordsReference.Length )
       {
         IsResultValid = false;
-        DisplayManager.ShowError(AppTranslations.ImportWordsCountMismatch.GetLang(wordsReference.Count(),
+        DisplayManager.ShowError(AppTranslations.ImportWordsCountMismatch.GetLang(wordsReference.Length,
                                                                                   foundWords.Count));
         return;
       }
@@ -81,10 +81,12 @@ namespace Ordisoftware.Hebrew.Words
                                                                               foundWords[index]));
           return;
         }
-        var item = new ImportVerseResult();
-        item.Hebrew = wordsReference[index].Hebrew;
-        item.CurrentTranslation = wordsReference[index].Translation;
-        item.ImportedTranslation = foundTranslation[index];
+        var item = new ImportVerseResult
+        {
+          Hebrew = wordsReference[index].Hebrew,
+          CurrentTranslation = wordsReference[index].Translation,
+          ImportedTranslation = foundTranslation[index]
+        };
         ImportResults.Add(item);
       }
       IsResultValid = true;
