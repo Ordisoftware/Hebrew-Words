@@ -47,7 +47,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.7.2
+- Framework .NET 4.8
 - SQLite 3.35.5
 
 ## Download
@@ -175,6 +175,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update web links.
 - Update help.
 - Upgrade to Visual Studio 2022 and C# 10.
+- Update setup for Framework .NET 4.8
 
 > TO CHECK
 - Add option to open the last verse else the master bookmark else the first verse of the Tanak.
