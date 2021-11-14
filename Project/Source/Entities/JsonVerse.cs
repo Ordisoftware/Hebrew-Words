@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
     public long Id { get; set; }
   }
 
-  public partial class VersePart
+  public class VersePart
   {
     [JsonProperty("i")]
     public long I { get; set; }

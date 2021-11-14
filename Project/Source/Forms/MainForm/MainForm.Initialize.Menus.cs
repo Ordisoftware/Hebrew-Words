@@ -13,16 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-07 </edited>
 using System;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using System.Data.Odbc;
-using Microsoft.Win32;
 using Ordisoftware.Core;
-using Ordisoftware.Hebrew.Words.Data;
-using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Words
 {
@@ -82,16 +74,16 @@ namespace Ordisoftware.Hebrew.Words
         {
           var reference = (ReferenceItem)control.Tag;
           HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                      reference.Book.Number,
-                                      reference.Chapter.Number,
-                                      reference.Verse.Number);
+                                        reference.Book.Number,
+                                        reference.Chapter.Number,
+                                        reference.Verse.Number);
         }
         else
         if ( control is Label && Settings.CurrentView == ViewMode.Verses )
           HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                      CurrentReference.Book.Number,
-                                      CurrentReference.Chapter.Number,
-                                      Convert.ToInt32(control.Text));
+                                        CurrentReference.Book.Number,
+                                        CurrentReference.Chapter.Number,
+                                        Convert.ToInt32(control.Text));
       });
     }
 

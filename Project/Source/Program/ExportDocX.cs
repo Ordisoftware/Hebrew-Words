@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Words
     /// <remarks>
     /// Measures in float or double are in inch: 100f = 1 inch.
     /// </remarks>
-    static private DocX Document = null;
+    static private DocX Document;
 
     //static private readonly Font FontVerdana = new("Verdana");
     static private readonly Font FontHebrew = new("Hebrew");
@@ -180,7 +180,7 @@ namespace Ordisoftware.Hebrew.Words
       int countWords = verse.GetWordsRows().Length;
       const int CountColumns = 4;
       int indexWord = countWords - 1;
-      int countRows = ( (int)Math.Ceiling((double)countWords / (double)CountColumns) ) * rowFactor;
+      int countRows = ( (int)Math.Ceiling((double)countWords / CountColumns) ) * rowFactor;
       Table table = Document.InsertTable(countRows, CountColumns + 1);
       table.Alignment = Alignment.right;
       table.Design = TableDesign.None;

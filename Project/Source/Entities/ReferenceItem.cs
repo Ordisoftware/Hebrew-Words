@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Words
     public ReferenceItem(DataSet.BooksRow book,
                          DataSet.ChaptersRow chapter,
                          DataSet.VersesRow verse)
-      : this(book, chapter, verse, null)
+    : this(book, chapter, verse, null)
     {
     }
 
@@ -81,18 +81,18 @@ namespace Ordisoftware.Hebrew.Words
 
     public ReferenceItem(ReferenceItem reference,
                          DataSet.WordsRow word)
-      : this(reference)
+    : this(reference)
     {
       Word = word;
     }
 
     public ReferenceItem(ReferenceItem item)
-      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
+    : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
     {
     }
 
     public ReferenceItem(int book, int chapter, int verse)
-      : this(book, chapter, verse, 0)
+    : this(book, chapter, verse, 0)
     {
     }
 
@@ -101,11 +101,9 @@ namespace Ordisoftware.Hebrew.Words
       try
       {
         Book = MainForm.Instance.DataSet.Books.SingleOrDefault(b => b.Number == book);
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous - N/A
-        Chapter = Book?.GetChaptersRows()[chapter - 1] ?? null;
-        Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
-        Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous - N/A
+        Chapter = ( Book?.GetChaptersRows()[chapter - 1] );
+        Verse = verse == 0 ? null : ( Chapter?.GetVersesRows()[verse - 1] );
+        Word = word == 0 ? null : ( Verse?.GetWordsRows()[word - 1] );
       }
       catch ( Exception ex )
       {

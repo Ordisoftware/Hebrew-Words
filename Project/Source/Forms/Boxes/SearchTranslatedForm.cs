@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     private SearchTranslatedForm(WordControl sender)
-      : this()
+    : this()
     {
       Forms.Add(this);
       WordControl = sender;
@@ -119,7 +119,7 @@ namespace Ordisoftware.Hebrew.Words
         LabelHebrewWordSource.Text = ( (ReferenceItem)ListView.SelectedItems[0].Tag ).Word.Hebrew;
     }
 
-    private bool KeyProcessed = false;
+    private bool KeyProcessed;
 
     private void EditHebrew_KeyPress(object sender, KeyPressEventArgs e)
     {
@@ -263,11 +263,9 @@ namespace Ordisoftware.Hebrew.Words
         ListView.Items.Clear();
         string wordHebrew = EditHebrew.Text;
         if ( wordHebrew.Length < 2 ) return;
-        //#pragma warning disable IDE0039 // Utiliser une fonction locale
         bool checkWholeWord(string str) => str == wordHebrew;
         bool checkContains(string str) => str.Contains(wordHebrew);
         Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
-        //#pragma warning restore IDE0039 // Utiliser une fonction locale
         var references = from book in MainForm.Instance.DataSet.Books
                          from chapter in book.GetChaptersRows()
                          from verse in chapter.GetVersesRows()

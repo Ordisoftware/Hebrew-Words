@@ -76,8 +76,8 @@ namespace Ordisoftware.Hebrew.Words
     public int SearchResultsCount { get; private set; }
 
     private readonly int PagingCountDisableForm = 50;
-    private int PagingCurrent = 0;
-    private int PagingCount = 0;
+    private int PagingCurrent;
+    private int PagingCount;
 
     private Func<DataSet.WordsRow, bool> CheckWord;
     private Func<DataSet.VersesRow, bool> CheckVerse;

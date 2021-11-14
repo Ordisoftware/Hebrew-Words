@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Hebrew.Words

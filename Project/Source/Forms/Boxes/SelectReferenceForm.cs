@@ -141,8 +141,8 @@ namespace Ordisoftware.Hebrew.Words
         SelectVerse.Items.Clear();
         if ( SelectChapter.SelectedItem != null )
         {
-          var list = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.GetVersesRows();
-          foreach ( Data.DataSet.VersesRow verse in list )
+          var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
             SelectVerse.Items.Add(new VerseItem(verse));
         }
         if ( SelectVerse.Items.Count > 0 )

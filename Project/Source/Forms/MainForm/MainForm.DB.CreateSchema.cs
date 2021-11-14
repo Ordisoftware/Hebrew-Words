@@ -16,8 +16,6 @@ using System;
 using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using System.Collections.Generic;
-using SQLite;
 
 namespace Ordisoftware.Hebrew.Words
 {

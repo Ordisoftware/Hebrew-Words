@@ -38,13 +38,11 @@ namespace Ordisoftware.Hebrew.Words
           return str.Contains(SearchWord1);
         else
         {
-          var list = SearchWord1.Split(',');
-          foreach ( string item in list )
+          foreach ( string item in SearchWord1.Split(',') )
           {
             var exp = item.Trim();
-            if ( exp.Length >= 2 )
-              if ( str.Contains(exp) )
-                return true;
+            if ( exp.Length >= 2 && str.Contains(exp) )
+              return true;
           }
           return false;
         }

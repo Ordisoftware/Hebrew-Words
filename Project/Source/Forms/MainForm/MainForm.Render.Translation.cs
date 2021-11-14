@@ -25,8 +25,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       EditTranslations.Visible = false;
       EditTranslations.Clear();
-      var list = CurrentReference.Chapter.GetVersesRows();
-      foreach ( DataSet.VersesRow verse in list )
+      foreach ( DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
       {
         string str = verse.Number + ". ";
         EditTranslations.SelectedText = str + verse.GetTranslation();

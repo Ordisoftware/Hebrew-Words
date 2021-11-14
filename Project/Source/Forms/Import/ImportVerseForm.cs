@@ -56,7 +56,6 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     private ImportVerseForm(ReferenceItem reference)
-      : this()
     {
       Text += " - " + reference.ToString();
       DataSet = MainForm.Instance.DataSet;

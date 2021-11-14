@@ -293,18 +293,12 @@ namespace Ordisoftware.Hebrew.Words
         SelectBook.Items.Add(item);
         SelectSearchInBook.Items.Add(item);
       }
-      try
-      {
-        SelectBook.SelectedIndex = 0;
-        foreach ( var item in SelectSearchInBook.Items )
-          if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
-            SelectSearchInBook.SelectedItem = item;
-        if ( SelectSearchInBook.SelectedIndex == -1 )
-          SelectSearchInBook.SelectedIndex = 0;
-      }
-      finally
-      {
-      }
+      SelectBook.SelectedIndex = 0;
+      foreach ( var item in SelectSearchInBook.Items )
+        if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
+          SelectSearchInBook.SelectedItem = item;
+      if ( SelectSearchInBook.SelectedIndex == -1 )
+        SelectSearchInBook.SelectedIndex = 0;
     }
 
     /// <summary>
@@ -314,8 +308,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       if ( SelectBook.SelectedItem == null ) return;
       SelectChapter.Items.Clear();
-      var list = ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows();
-      foreach ( Data.DataSet.ChaptersRow chapter in list )
+      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
         SelectChapter.Items.Add(new ChapterItem(chapter));
       SelectChapter.SelectedIndex = 0;
     }

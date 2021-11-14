@@ -23,8 +23,7 @@ namespace Ordisoftware.Hebrew.Words
     public void RenderRawText()
     {
       EditRawText.Clear();
-      var list = CurrentReference.Chapter.GetVersesRows();
-      foreach ( Data.DataSet.VersesRow verse in list )
+      foreach ( Data.DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
       {
         string str = "";
         foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )

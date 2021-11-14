@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Words
     }
 
     private SelectSearchResultsForm(IEnumerable<ReferenceItem> references)
-      : this()
+    : this()
     {
       OriginalReferences = references.ToList();
       LabelFound.Text = String.Format(LabelFound.Text, OriginalReferences.Count());

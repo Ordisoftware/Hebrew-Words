@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Words
           }
 #pragma warning disable S2259 // Null pointers should not be dereferenced - N/A
           y += label.PreferredHeight + marginY;
-#pragma warning restore S2259 // Null pointers should not be dereferenced - N/A
+#pragma warning restore S2259 // Null pointers should not be dereferenced
           if ( reference.Verse.IsTranslated() )
           {
             label = new Label

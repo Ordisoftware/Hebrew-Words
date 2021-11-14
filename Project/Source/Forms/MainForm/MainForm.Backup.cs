@@ -39,8 +39,8 @@ namespace Ordisoftware.Hebrew.Words
         if ( Program.Settings.BackupCount == 0 ) return;
         const string partBackup = "AutoBackup ";
         string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
-        var list = GetFiles(Program.Settings.BackupPath, partBackup + partFilename + "*" + Globals.DatabaseFileExtension)
-                   .OrderBy(f => f.Name).ToList();
+        string filter = partBackup + partFilename + "*" + Globals.DatabaseFileExtension;
+        var list = GetFiles(Program.Settings.BackupPath, filter).OrderBy(f => f.Name).ToList();
         while ( list.Count >= Program.Settings.BackupCount )
         {
           File.Delete(list[0].FullName);

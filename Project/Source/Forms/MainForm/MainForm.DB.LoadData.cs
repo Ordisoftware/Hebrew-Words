@@ -14,7 +14,6 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Data;
-using System.Data.Odbc;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
