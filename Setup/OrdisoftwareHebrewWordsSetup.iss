@@ -17,6 +17,7 @@ AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 [CustomMessages]
 #include "Scripts\Messages.iss"
 
+
 [Tasks]
 #include "Scripts\Tasks.iss"
 
