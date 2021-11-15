@@ -63,9 +63,7 @@ namespace Ordisoftware.Hebrew.Words
     {
       return;
       //CreateWordsConcordances();
-#pragma warning disable CS0162 // Code inaccessible détecté
       LoadingForm.Instance.Initialize("Importing strong's concordances...", DataSet.Chapters.Count);
-#pragma warning restore CS0162 // Code inaccessible détecté
       LoadingForm.Instance.TopMost = false;
       var errors = new List<string>();
       int indexBook = -1;
