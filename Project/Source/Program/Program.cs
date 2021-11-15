@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.IO.Pipes;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Threading.Tasks;
@@ -78,18 +79,14 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private static void CheckSettingsReset(bool force = false)
     {
+      var resetForceVersions = new bool[] { };
       try
       {
         // Check reset
-        if ( force
-        /*|| Settings.UpgradeResetRequiredVx_y*/ )
+        if ( force || resetForceVersions.Contains(true) )
         {
-#pragma warning disable IDE0079 // Retirer la suppression inutile - irrelevant
-#pragma warning disable S2583 // Conditionally executed code should be reachable - irrelevant
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-#pragma warning restore S2583 // Conditionally executed code should be reachable - irrelevant
-#pragma warning restore IDE0079 // Retirer la suppression inutile - irrelevant
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
@@ -102,12 +99,6 @@ namespace Ordisoftware.Hebrew.Words
         // Check language
         if ( Settings.LanguageSelected == Language.None )
           Settings.LanguageSelected = Languages.Current;
-        // Check applications
-        string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
-#pragma warning disable S1481 // Unused local variables should be removed - For future usage
-        string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
-        string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
-#pragma warning restore S1481 // Unused local variables should be removed
         // Save settings
         SystemManager.TryCatch(Settings.Save);
       }
@@ -213,15 +204,14 @@ namespace Ordisoftware.Hebrew.Words
         }
         else
           update(MainForm.Instance);
+        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-        foreach ( Form form in Application.OpenForms )
+        var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
+        foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
         {
-          if ( form != DebugManager.TraceForm
-            && form != AboutBox.Instance
-            && form != GrammarGuideForm )
-            update(form);
+          update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
         }
