@@ -126,10 +126,11 @@
       this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
       this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
@@ -216,7 +217,6 @@
       this.ChaptersTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.ChaptersTableAdapter();
       this.VersesTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.VersesTableAdapter();
       this.WordsTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.WordsTableAdapter();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1035,6 +1035,21 @@
       this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditConfirmClosing.Name = "EditConfirmClosing";
       // 
+      // ActionViewSearch
+      // 
+      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
+      this.ActionViewSearch.Name = "ActionViewSearch";
+      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
+      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
       // ActionViewTranslations
       // 
       this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1064,16 +1079,6 @@
       this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
       this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // ActionViewSearch
-      // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
-      this.ActionViewSearch.Name = "ActionViewSearch";
-      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // toolStripSeparator4
       // 
@@ -1366,8 +1371,8 @@
       // 
       // bindingNavigatorPositionItem
       // 
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
+      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       // 
       // bindingNavigatorCountItem
       // 
@@ -1617,11 +1622,6 @@
       // 
       this.WordsTableAdapter.ClearBeforeFill = true;
       // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1680,8 +1680,6 @@
     }
 
     #endregion
-
-    private System.Windows.Forms.ToolStrip ToolStrip;
     private System.Windows.Forms.ToolStripButton ActionExit;
     private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.ToolStripDropDownButton MenuSettings;
@@ -1868,6 +1866,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     private System.Windows.Forms.Label LabelRenderingVerses;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    internal System.Windows.Forms.ToolStrip ToolStrip;
   }
 }
 

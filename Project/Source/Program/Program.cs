@@ -119,14 +119,18 @@ namespace Ordisoftware.Hebrew.Words
         server.EndWaitForConnection(ar);
         if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
         if ( !Globals.IsReady ) return;
-        if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.Popup());
-        if ( command == nameof(ApplicationCommandLine.Instance.ReferenceToGo) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.GoTo(ApplicationCommandLine.Instance.ReferenceToGo));
-        if ( command == nameof(ApplicationCommandLine.Instance.SearchWord) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.SearchHebrewWord(ApplicationCommandLine.Instance.SearchWord));
-        if ( command == nameof(ApplicationCommandLine.Instance.SearchWord) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.SearchTranslatedWord(ApplicationCommandLine.Instance.SearchTranslated));
+        var form = MainForm.Instance;
+        var cmd = ApplicationCommandLine.Instance;
+        Action action = command switch
+        {
+          nameof(cmd.ShowMainForm) => () => form.Popup(),
+          nameof(cmd.ReferenceToGo) => () => form.GoTo(cmd.ReferenceToGo),
+          nameof(cmd.SearchWord) => () => form.SearchHebrewWord(cmd.SearchWord),
+          nameof(cmd.SearchTranslated) => () => form.SearchTranslatedWord(cmd.SearchTranslated),
+          _ => null
+        };
+        if ( action != null )
+          MainForm.Instance.ToolStrip.SyncUI(action);
       }
       finally
       {
@@ -141,15 +145,12 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     static private void IPCSendCommands()
     {
-      if ( ApplicationCommandLine.Instance == null ) return;
-      if ( ApplicationCommandLine.Instance.HideMainForm )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
-      if ( ApplicationCommandLine.Instance.ShowMainForm )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
-      if ( !ApplicationCommandLine.Instance.ReferenceToGo.IsNullOrEmpty() )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ReferenceToGo));
-      if ( !ApplicationCommandLine.Instance.SearchTranslated.IsNullOrEmpty() )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.SearchTranslated));
+      var cmd = ApplicationCommandLine.Instance;
+      if ( cmd == null ) return;
+      if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
+      if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
+      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.ReferenceToGo));
+      if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.SearchTranslated));
     }
 
     /// <summary>
