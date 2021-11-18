@@ -129,8 +129,7 @@ namespace Ordisoftware.Hebrew.Words
           nameof(cmd.SearchTranslated) => () => form.SearchTranslatedWord(cmd.SearchTranslated),
           _ => null
         };
-        if ( action != null )
-          MainForm.Instance.ToolStrip.SyncUI(action);
+        if ( action != null ) form.ToolStrip.SyncUI(action);
       }
       finally
       {
