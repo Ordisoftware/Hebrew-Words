@@ -32,14 +32,6 @@
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Dsn=Hebrew-Words&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Dsn=Hebrew-Words</Value>
-    </Setting>
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
@@ -243,6 +235,14 @@
     </Setting>
     <Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Dsn=Hebrew-Words&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=Hebrew-Words</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -143,16 +143,6 @@ namespace Ordisoftware.Hebrew.Words.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Words")]
-        public string ConnectionString {
-            get {
-                return ((string)(this["ConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
@@ -964,6 +954,16 @@ namespace Ordisoftware.Hebrew.Words.Properties {
             }
             set {
                 this["LoadingFormHidden"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Words")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
             }
         }
     }
