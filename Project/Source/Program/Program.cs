@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
