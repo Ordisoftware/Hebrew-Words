@@ -12,30 +12,27 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  public void RenderRawText()
   {
-
-    public void RenderRawText()
+    EditRawText.Clear();
+    foreach ( Data.DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
     {
-      EditRawText.Clear();
-      foreach ( Data.DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
-      {
-        string str = "";
-        foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-          str = word.Hebrew + " " + str;
-        AddTextRightAligned(EditRawText, HebrewFont12, str);
-        AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);
-        EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
-      }
-      EditRawText.SelectionStart = 0;
-      EditRawText.Focus();
+      string str = "";
+      foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+        str = word.Hebrew + " " + str;
+      AddTextRightAligned(EditRawText, HebrewFont12, str);
+      AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);
+      EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
     }
-
+    EditRawText.SelectionStart = 0;
+    EditRawText.Focus();
   }
 
 }

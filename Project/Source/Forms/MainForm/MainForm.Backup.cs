@@ -12,51 +12,48 @@
 /// </license>
 /// <created> 2019-08 </created>
 /// <edited> 2019-08 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  private List<FileInfo> GetFiles(string pathname, string pattern)
   {
+    string[] list = Directory.Exists(pathname)
+                  ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
+                  : new string[0];
+    return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
+  }
 
-    private List<FileInfo> GetFiles(string pathname, string pattern)
+  private void DoBackupDB()
+  {
+    SystemManager.TryCatchManage(() =>
     {
-      string[] list = Directory.Exists(pathname)
-                    ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
-                    : new string[0];
-      return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
-    }
-
-    private void DoBackupDB()
-    {
-      SystemManager.TryCatchManage(() =>
+      if ( Program.Settings.BackupCount == 0 ) return;
+      const string partBackup = "AutoBackup ";
+      string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
+      string filter = partBackup + partFilename + "*" + Globals.DatabaseFileExtension;
+      var list = GetFiles(Program.Settings.BackupPath, filter).OrderBy(f => f.Name).ToList();
+      while ( list.Count >= Program.Settings.BackupCount )
       {
-        if ( Program.Settings.BackupCount == 0 ) return;
-        const string partBackup = "AutoBackup ";
-        string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
-        string filter = partBackup + partFilename + "*" + Globals.DatabaseFileExtension;
-        var list = GetFiles(Program.Settings.BackupPath, filter).OrderBy(f => f.Name).ToList();
-        while ( list.Count >= Program.Settings.BackupCount )
-        {
-          File.Delete(list[0].FullName);
-          list.RemoveAt(0);
-        }
-        string partPath = Path.Combine(Program.Settings.BackupPath, partBackup);
-        var date = DateTime.Now;
-        string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
-                                       date.Year, date.Month, date.Day,
-                                       date.Hour, date.Minute, date.Second);
-        string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
-        string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
-        if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
-      });
-    }
-
+        File.Delete(list[0].FullName);
+        list.RemoveAt(0);
+      }
+      string partPath = Path.Combine(Program.Settings.BackupPath, partBackup);
+      var date = DateTime.Now;
+      string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
+                                     date.Year, date.Month, date.Day,
+                                     date.Hour, date.Minute, date.Second);
+      string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
+      string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
+      if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
+    });
   }
 
 }

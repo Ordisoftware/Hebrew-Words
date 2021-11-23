@@ -12,31 +12,27 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew.Words
+class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
 {
 
-  class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
+  public bool Equals(ReferenceItem x, ReferenceItem y)
   {
+    return x != null
+        && y != null
+        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
+  }
 
-    public bool Equals(ReferenceItem x, ReferenceItem y)
-    {
-      return x != null
-          && y != null
-          && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-    }
-
-    public int GetHashCode(ReferenceItem obj)
-    {
-      return ( obj?.Book?.Number.GetHashCode() ?? 0 )
-           ^ ( obj?.Chapter?.Number.GetHashCode() ?? 0 )
-           ^ ( obj?.Verse?.Number.GetHashCode() ?? 0 );
-    }
-
+  public int GetHashCode(ReferenceItem obj)
+  {
+    return ( obj?.Book?.Number.GetHashCode() ?? 0 )
+         ^ ( obj?.Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( obj?.Verse?.Number.GetHashCode() ?? 0 );
   }
 
 }

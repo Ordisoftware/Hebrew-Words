@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Drawing;
 using System.Linq;
@@ -19,148 +21,143 @@ using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  private void RenderSearch()
   {
-
-    private void RenderSearch()
+    if ( IsRenderingSearch ) return;
+    IsRenderingSearch = true;
+    try
     {
-      if ( IsRenderingSearch ) return;
-      IsRenderingSearch = true;
-      try
+      UpdateSearchButtons();
+      PanelSearchResults.Visible = false;
+      PanelSearchResults.AutoScrollPosition = new Point(0, 0);
+      while ( PanelSearchResults.Controls.Count > 0 )
+        PanelSearchResults.Controls[0].Dispose();
+      if ( SearchResults == null || SearchResultsCount == 0 )
+        return;
+      if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+        SetFormDisabled(true);
+      var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
+                                 .Take(Program.Settings.FoundReferencesViewable);
+      const int referenceSize = 160;
+      const int marginX = 10;
+      const int marginY = 10;
+      const int minX = marginX;
+      int maxX = PanelSearchResults.ClientSize.Width - marginX;
+      int x = 0;
+      int y = 0;
+      int xx;
+      LinkLabel linklabel;
+      int indexControl = 0;
+      int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Length).Sum();
+      Control[] controls = new Control[capacity];
+      foreach ( var reference in results )
       {
-        UpdateSearchButtons();
-        PanelSearchResults.Visible = false;
-        PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-        while ( PanelSearchResults.Controls.Count > 0 )
-          PanelSearchResults.Controls[0].Dispose();
-        if ( SearchResults == null || SearchResultsCount == 0 )
-          return;
-        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
-          SetFormDisabled(true);
-        var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
-                                   .Take(Program.Settings.FoundReferencesViewable);
-        const int referenceSize = 160;
-        const int marginX = 10;
-        const int marginY = 10;
-        const int minX = marginX;
-        int maxX = PanelSearchResults.ClientSize.Width - marginX;
-        int x = 0;
-        int y = 0;
-        int xx;
-        LinkLabel linklabel;
-        int indexControl = 0;
-        int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Length).Sum();
-        Control[] controls = new Control[capacity];
-        foreach ( var reference in results )
+        Application.DoEvents();
+        if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
+        x = maxX;
+        y += marginY;
+        linklabel = new LinkLabel
         {
-          Application.DoEvents();
-          if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
-          x = maxX;
-          y += marginY;
-          linklabel = new LinkLabel
+          AutoSize = true,
+          Tag = reference,
+          Font = LatinFont8,
+          Text = reference.ToString(),
+          Location = new Point(x -= referenceSize, y),
+          ContextMenuStrip = ContextMenuStripVerse,
+          LinkColor = Color.DarkBlue
+        };
+        linklabel.LinkClicked += (sender, e) =>
+        {
+          if ( e.Button == MouseButtons.Left )
+          {
+            SetView(ViewMode.Verses);
+            GoTo((ReferenceItem)( (Control)sender ).Tag);
+          }
+        };
+        controls[indexControl++] = linklabel;
+        x -= marginX;
+        xx = x;
+        Label label = null;
+        foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
+        {
+          label = new Label
           {
             AutoSize = true,
-            Tag = reference,
-            Font = LatinFont8,
-            Text = reference.ToString(),
-            Location = new Point(x -= referenceSize, y),
-            ContextMenuStrip = ContextMenuStripVerse,
-            LinkColor = Color.DarkBlue
+            Font = HebrewFont12,
+            Text = word.Hebrew.Trim()
           };
-          linklabel.LinkClicked += (sender, e) =>
+          x -= label.PreferredSize.Width;
+          if ( x < minX )
           {
-            if ( e.Button == MouseButtons.Left )
-            {
-              SetView(ViewMode.Verses);
-              GoTo((ReferenceItem)( (Control)sender ).Tag);
-            }
-          };
-          controls[indexControl++] = linklabel;
-          x -= marginX;
-          xx = x;
-          Label label = null;
-          foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
-          {
-            label = new Label
-            {
-              AutoSize = true,
-              Font = HebrewFont12,
-              Text = word.Hebrew.Trim()
-            };
-            x -= label.PreferredSize.Width;
-            if ( x < minX )
-            {
-              x = xx - label.PreferredWidth;
-              y += label.PreferredHeight;
-            }
-            label.Location = new Point(x, y);
-            label.Click += (sender, e) => PanelSearchResults.Focus();
-            if ( CheckWord != null )
-              if ( CheckWord(word) )
-              {
-                label.Tag = new ReferenceItem(reference, word);
-                label.ForeColor = Color.DarkRed;
-                label.MouseEnter += LabelMouseEnter;
-                label.MouseLeave += LabelMouseLeave;
-                label.MouseClick += LabelMouseClick;
-              }
-              else
-                label.ForeColor = SystemColors.ControlText;
-            controls[indexControl++] = label;
+            x = xx - label.PreferredWidth;
+            y += label.PreferredHeight;
           }
-#pragma warning disable S2259 // Null pointers should not be dereferenced - N/A
-          y += label.PreferredHeight + marginY;
-#pragma warning restore S2259 // Null pointers should not be dereferenced
-          if ( reference.Verse.IsTranslated() )
-          {
-            label = new Label
+          label.Location = new Point(x, y);
+          label.Click += (sender, e) => PanelSearchResults.Focus();
+          if ( CheckWord != null )
+            if ( CheckWord(word) )
             {
-              AutoSize = true,
-              MaximumSize = new Size(xx - marginX, label.MaximumSize.Height),
-              Text = reference.Verse.GetTranslation(),
-              Location = new Point(xx - label.PreferredSize.Width, y)
-            };
-            label.Click += (sender, e) => PanelSearchResults.Focus();
-            controls[indexControl++] = label;
-            y += label.PreferredHeight + marginY;
-          }
+              label.Tag = new ReferenceItem(reference, word);
+              label.ForeColor = Color.DarkRed;
+              label.MouseEnter += LabelMouseEnter;
+              label.MouseLeave += LabelMouseLeave;
+              label.MouseClick += LabelMouseClick;
+            }
+            else
+              label.ForeColor = SystemColors.ControlText;
+          controls[indexControl++] = label;
         }
-        PanelSearchResults.Controls.AddRange(controls);
+#pragma warning disable S2259 // Null pointers should not be dereferenced - N/A
+        y += label.PreferredHeight + marginY;
+#pragma warning restore S2259 // Null pointers should not be dereferenced
+        if ( reference.Verse.IsTranslated() )
+        {
+          label = new Label
+          {
+            AutoSize = true,
+            MaximumSize = new Size(xx - marginX, label.MaximumSize.Height),
+            Text = reference.Verse.GetTranslation(),
+            Location = new Point(xx - label.PreferredSize.Width, y)
+          };
+          label.Click += (sender, e) => PanelSearchResults.Focus();
+          controls[indexControl++] = label;
+          y += label.PreferredHeight + marginY;
+        }
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        IsRenderingSearch = false;
-        if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
-          SetFormDisabled(false);
-        PanelSearchResults.Visible = true;
-        PanelSearchResults.Focus();
-      }
+      PanelSearchResults.Controls.AddRange(controls);
     }
-
-    private void LabelMouseEnter(object sender, EventArgs e)
+    catch ( Exception ex )
     {
-      ( (Control)sender ).Cursor = Cursors.Hand;
+      ex.Manage();
     }
-
-    private void LabelMouseLeave(object sender, EventArgs e)
+    finally
     {
-      ( (Control)sender ).Cursor = Cursors.Default;
+      IsRenderingSearch = false;
+      if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+        SetFormDisabled(false);
+      PanelSearchResults.Visible = true;
+      PanelSearchResults.Focus();
     }
+  }
 
-    private void LabelMouseClick(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Verses);
-      var item = (ReferenceItem)( (Control)sender ).Tag;
-      GoTo(item);
-    }
+  private void LabelMouseEnter(object sender, EventArgs e)
+  {
+    ( (Control)sender ).Cursor = Cursors.Hand;
+  }
 
+  private void LabelMouseLeave(object sender, EventArgs e)
+  {
+    ( (Control)sender ).Cursor = Cursors.Default;
+  }
+
+  private void LabelMouseClick(object sender, EventArgs e)
+  {
+    SetView(ViewMode.Verses);
+    var item = (ReferenceItem)( (Control)sender ).Tag;
+    GoTo(item);
   }
 
 }

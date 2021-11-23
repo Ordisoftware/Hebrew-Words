@@ -12,44 +12,40 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Localization strings.
+/// </summary>
+static partial class AppTranslations
 {
 
-  /// <summary>
-  /// Localization strings.
-  /// </summary>
-  static partial class AppTranslations
+  static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
-    static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
+    ["1.x"] = new TranslationsDictionary
     {
+      [Language.EN] = "Initial release.",
 
-      ["1.x"] = new TranslationsDictionary
-      {
-        [Language.EN] = "Initial release.",
+      [Language.FR] = "Version initiale."
+    },
 
-        [Language.FR] = "Version initiale."
-      },
+    ["2.x"] = new TranslationsDictionary
+    {
+      [Language.EN] = "",
 
-      ["2.x"] = new TranslationsDictionary
-      {
-        [Language.EN] = "",
+      [Language.FR] = ""
+    },
 
-        [Language.FR] = ""
-      },
+    ["3.0"] = new TranslationsDictionary
+    {
+      [Language.EN] = "",
 
-      ["3.0"] = new TranslationsDictionary
-      {
-        [Language.EN] = "",
+      [Language.FR] = ""
+    },
 
-        [Language.FR] = ""
-      },
-
-    };
-
-  }
+  };
 
 }

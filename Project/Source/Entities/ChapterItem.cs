@@ -12,42 +12,37 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
-using System.Linq;
+namespace Ordisoftware.Hebrew.Words;
+
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide chapter reference item
+/// </summary>
+class ChapterItem
 {
 
-  /// <summary>
-  /// Provide chapter reference item
-  /// </summary>
-  class ChapterItem
+  public DataSet.ChaptersRow Chapter { get; set; }
+
+  public override string ToString()
   {
+    if ( Chapter == null ) return "";
+    int nb = Chapter.BooksRow.GetChaptersRows().Length;
+    string str;
+    if ( nb >= 100 )
+      str = Chapter.Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Chapter.Number.ToString("00");
+    else
+      str = Chapter.Number.ToString();
+    if ( Chapter.Title.Length > 0 ) str += $" - {Chapter.Title}";
+    return str;
+  }
 
-    public DataSet.ChaptersRow Chapter { get; set; }
-
-    public override string ToString()
-    {
-      if ( Chapter == null ) return "";
-      int nb = Chapter.BooksRow.GetChaptersRows().Length;
-      string str;
-      if ( nb >= 100 )
-        str = Chapter.Number.ToString("000");
-      else
-      if ( nb >= 10 )
-        str = Chapter.Number.ToString("00");
-      else
-        str = Chapter.Number.ToString();
-      if ( Chapter.Title.Length > 0 ) str += $" - {Chapter.Title}";
-      return str;
-    }
-
-    public ChapterItem(DataSet.ChaptersRow chapter)
-    {
-      Chapter = chapter;
-    }
-
+  public ChapterItem(DataSet.ChaptersRow chapter)
+  {
+    Chapter = chapter;
   }
 
 }

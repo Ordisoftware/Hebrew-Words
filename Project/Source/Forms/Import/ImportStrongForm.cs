@@ -12,28 +12,16 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Words
+partial class ImportStrongForm : Form
 {
 
-  partial class ImportStrongForm : Form
+  public ImportStrongForm()
   {
-
-    public ImportStrongForm()
-    {
-      InitializeComponent();
-    }
-
+    InitializeComponent();
   }
 
 }

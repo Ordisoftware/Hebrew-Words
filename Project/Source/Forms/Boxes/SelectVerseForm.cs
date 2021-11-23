@@ -12,31 +12,27 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Words
+partial class SelectVerseForm : Form
 {
 
-  partial class SelectVerseForm : Form
+  static public ReferenceItem Run()
   {
+    var form = new SelectVerseForm();
+    form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.GetVersesRows().Length;
+    if ( form.ShowDialog() != DialogResult.OK ) return null;
+    return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
+                             MainForm.Instance.CurrentReference.Chapter.Number,
+                             (int)form.EditVerseNumber.Value);
+  }
 
-    static public ReferenceItem Run()
-    {
-      var form = new SelectVerseForm();
-      form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.GetVersesRows().Length;
-      if ( form.ShowDialog() != DialogResult.OK ) return null;
-      return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
-                               MainForm.Instance.CurrentReference.Chapter.Number,
-                               (int)form.EditVerseNumber.Value);
-    }
-
-    private SelectVerseForm()
-    {
-      InitializeComponent();
-      EditVerseNumber.Select(0, 1);
-    }
-
+  private SelectVerseForm()
+  {
+    InitializeComponent();
+    EditVerseNumber.Select(0, 1);
   }
 
 }

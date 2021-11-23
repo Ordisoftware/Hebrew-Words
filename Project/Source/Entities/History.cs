@@ -12,33 +12,29 @@
 /// </license>
 /// <created> 2019-11 </created>
 /// <edited> 2020-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Linq;
 
-namespace Ordisoftware.Hebrew.Words
+class History : ReferencesList
 {
 
-  class History : ReferencesList
+  public override void Add(ReferenceItem reference)
   {
+    if ( reference == null ) return;
+    if ( Program.Settings.HistoryCount < 1 )
+      return;
+    foreach ( var item in Items.ToList() )
+      if ( item.Equals(reference) )
+        Items.Remove(item);
+    Items.Insert(0, new ReferenceItem(reference));
+    while ( Items.Count > Program.Settings.BookmarksCount )
+      Items.RemoveAt(Items.Count - 1);
+    Save();
+  }
 
-    public override void Add(ReferenceItem reference)
-    {
-      if ( reference == null ) return;
-      if ( Program.Settings.HistoryCount < 1 )
-        return;
-      foreach ( var item in Items.ToList() )
-        if ( item.Equals(reference) )
-          Items.Remove(item);
-      Items.Insert(0, new ReferenceItem(reference));
-      while ( Items.Count > Program.Settings.BookmarksCount )
-        Items.RemoveAt(Items.Count - 1);
-      Save();
-    }
-
-    public History(string filePath) : base(filePath)
-    {
-    }
-
+  public History(string filePath) : base(filePath)
+  {
   }
 
 }

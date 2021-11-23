@@ -12,20 +12,16 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Words
+partial class StatControl : UserControl
 {
 
-  partial class StatControl : UserControl
+  public StatControl()
   {
-
-    public StatControl()
-    {
-      InitializeComponent();
-    }
-
+    InitializeComponent();
   }
 
 }

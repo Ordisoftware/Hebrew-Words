@@ -12,87 +12,84 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2020-03 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
-  {
+  /// <summary>
+  /// Indicate the default Settings instance.
+  /// </summary>
+  private readonly Properties.Settings Settings = Program.Settings;
 
-    /// <summary>
-    /// Indicate the default Settings instance.
-    /// </summary>
-    private readonly Properties.Settings Settings = Program.Settings;
+  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
-    static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+  /// <summary>
+  /// Indicate loading data progress bar divisor.
+  /// </summary>
+  // TODO remove ? private const int PopulateDataPaging = 10000;
 
-    /// <summary>
-    /// Indicate loading data progress bar divisor.
-    /// </summary>
-    // TODO remove ? private const int PopulateDataPaging = 10000;
+  /// <summary>
+  /// Indicate last showned tooltip.
+  /// </summary>
+  private readonly ToolTip LastToolTip = new();
 
-    /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
-    private readonly ToolTip LastToolTip = new();
+  /// <summary>
+  /// Indicate current bible reference.
+  /// </summary>
+  public ReferenceItem CurrentReference { get; set; }
 
-    /// <summary>
-    /// Indicate current bible reference.
-    /// </summary>
-    public ReferenceItem CurrentReference { get; set; }
+  /// <summary>
+  /// Indicate is combobox selection is changing.
+  /// </summary>
+  public bool IsComboBoxChanging { get; private set; }
 
-    /// <summary>
-    /// Indicate is combobox selection is changing.
-    /// </summary>
-    public bool IsComboBoxChanging { get; private set; }
+  /// <summary>
+  /// Indicate if rendering view is in running.
+  /// </summary>
+  public bool IsRenderingSearch { get; private set; }
 
-    /// <summary>
-    /// Indicate if rendering view is in running.
-    /// </summary>
-    public bool IsRenderingSearch { get; private set; }
+  /// <summary>
+  /// Indicate if GoTo is running.
+  /// </summary>
+  private bool IsGoToRunning;
 
-    /// <summary>
-    /// Indicate if GoTo is running.
-    /// </summary>
-    private bool IsGoToRunning;
+  /// <summary>
+  /// Indicate previous seach paging position.
+  /// </summary>
+  private int PreviousSeachPagingPosition = -1;
 
-    /// <summary>
-    /// Indicate previous seach paging position.
-    /// </summary>
-    private int PreviousSeachPagingPosition = -1;
+  private readonly Bookmarks Bookmarks;
+  private readonly History History;
 
-    private readonly Bookmarks Bookmarks;
-    private readonly History History;
+  private int BookmarksMenuFirstIndex;
 
-    private int BookmarksMenuFirstIndex;
+  private IEnumerable<ReferenceItem> SearchResults;
 
-    private IEnumerable<ReferenceItem> SearchResults;
+  public int SearchResultsCount { get; private set; }
 
-    public int SearchResultsCount { get; private set; }
+  private readonly int PagingCountDisableForm = 50;
+  private int PagingCurrent;
+  private int PagingCount;
 
-    private readonly int PagingCountDisableForm = 50;
-    private int PagingCurrent;
-    private int PagingCount;
+  private Func<DataSet.WordsRow, bool> CheckWord;
+  private Func<DataSet.VersesRow, bool> CheckVerse;
 
-    private Func<DataSet.WordsRow, bool> CheckWord;
-    private Func<DataSet.VersesRow, bool> CheckVerse;
+  private string SearchWord1;
+  private string SearchWord2;
 
-    private string SearchWord1;
-    private string SearchWord2;
+  private readonly Font HebrewFont12 = new("Hebrew", 12f);
 
-    private readonly Font HebrewFont12 = new("Hebrew", 12f);
+  private readonly Font LatinFont10 = new("Verdana", 10f);
 
-    private readonly Font LatinFont10 = new("Verdana", 10f);
+  private readonly Font LatinFont8 = new("Verdana", 8f);
 
-    private readonly Font LatinFont8 = new("Verdana", 8f);
-
-    private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
-
-  }
+  private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
 
 }

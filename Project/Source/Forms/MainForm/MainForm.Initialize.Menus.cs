@@ -12,81 +12,78 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-07 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide application's main form.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class MainForm : Form
 {
 
   /// <summary>
-  /// Provide application's main form.
+  /// Create system information menu items.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class MainForm : Form
+  public void CreateSystemInformationMenu()
   {
+    CommonMenusControl.CreateInstance(ToolStrip,
+                                      ref ActionInformation,
+                                      AppTranslations.NoticeNewFeatures,
+                                      ActionAbout_Click,
+                                      ActionWebCheckUpdate_Click,
+                                      ActionViewLog_Click,
+                                      ActionViewStats_Click);
+    InitializeSpecialMenus();
+  }
 
-    /// <summary>
-    /// Create system information menu items.
-    /// </summary>
-    public void CreateSystemInformationMenu()
-    {
-      CommonMenusControl.CreateInstance(ToolStrip,
-                                        ref ActionInformation,
-                                        AppTranslations.NoticeNewFeatures,
-                                        ActionAbout_Click,
-                                        ActionWebCheckUpdate_Click,
-                                        ActionViewLog_Click,
-                                        ActionViewStats_Click);
-      InitializeSpecialMenus();
-    }
+  /// <summary>
+  /// Create web links menu items.
+  /// </summary>
+  public void InitializeSpecialMenus()
+  {
+    CreateProvidersLinks();
+    CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+    CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+    ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
+    if ( Settings.WebLinksMenuEnabled )
+      ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+  }
 
-    /// <summary>
-    /// Create web links menu items.
-    /// </summary>
-    public void InitializeSpecialMenus()
+  /// <summary>
+  /// Create providers links menu items.
+  /// </summary>
+  private void CreateProvidersLinks()
+  {
+    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
-      CreateProvidersLinks();
-      CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-      ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      if ( Settings.WebLinksMenuEnabled )
-        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-    }
-
-    /// <summary>
-    /// Create providers links menu items.
-    /// </summary>
-    private void CreateProvidersLinks()
+      if ( ActiveControl is not WordControl ) return;
+      var menuitem = (ToolStripMenuItem)sender;
+      string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
+    });
+    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
-      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
-        if ( ActiveControl is not WordControl ) return;
-        var menuitem = (ToolStripMenuItem)sender;
-        string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-        HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
-      });
-      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-        if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-        {
-          var reference = (ReferenceItem)control.Tag;
-          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                        reference.Book.Number,
-                                        reference.Chapter.Number,
-                                        reference.Verse.Number);
-        }
-        else
-        if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-          HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                        CurrentReference.Book.Number,
-                                        CurrentReference.Chapter.Number,
-                                        Convert.ToInt32(control.Text));
-      });
-    }
-
+        var reference = (ReferenceItem)control.Tag;
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag,
+                                      reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
+      }
+      else
+      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag,
+                                      CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      Convert.ToInt32(control.Text));
+    });
   }
 
 }

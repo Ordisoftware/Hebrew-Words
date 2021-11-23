@@ -12,124 +12,121 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  private void DoExportBook()
   {
-
-    private void DoExportBook()
+    var book = CurrentReference.Book;
+    switch ( Program.Settings.CurrentView )
     {
-      var book = CurrentReference.Book;
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewMode.Verses:
-          SaveFileDialogMSWord.FileName = book.Name + ".docx";
-          if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-          var form = new ExportingForm();
-          SetFormDisabled(true);
-          try
+      case ViewMode.Verses:
+        SaveFileDialogMSWord.FileName = book.Name + ".docx";
+        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+        var form = new ExportingForm();
+        SetFormDisabled(true);
+        try
+        {
+          form.ProgressBar.Value = 0;
+          form.ProgressBar.Maximum = SelectChapter.Items.Count;
+          form.Show();
+          form.Refresh();
+          bool showProgress()
           {
-            form.ProgressBar.Value = 0;
-            form.ProgressBar.Maximum = SelectChapter.Items.Count;
-            form.Show();
-            form.Refresh();
-            bool showProgress()
-            {
-              form.ProgressBar.PerformStep();
-              Application.DoEvents();
-              return form.CancelRequired;
-            }
-            ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, showProgress);
+            form.ProgressBar.PerformStep();
+            Application.DoEvents();
+            return form.CancelRequired;
           }
-          finally
-          {
-            SetFormDisabled(false);
-            form.Close();
-          }
-          break;
-        case ViewMode.ELS50:
-          SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
-          if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemManager.RunShell(SaveFileDialogRTF.FileName);
-          break;
-        default:
-          DisplayManager.ShowWarning("Not implemented.");
-          break;
-      }
+          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, showProgress);
+        }
+        finally
+        {
+          SetFormDisabled(false);
+          form.Close();
+        }
+        break;
+      case ViewMode.ELS50:
+        SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
+        if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+        EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
+        if ( Program.Settings.OpenGeneratedMSWordFiles )
+          SystemManager.RunShell(SaveFileDialogRTF.FileName);
+        break;
+      default:
+        DisplayManager.ShowWarning("Not implemented.");
+        break;
     }
+  }
 
-    private void DoExportChapter()
+  private void DoExportChapter()
+  {
+    var book = CurrentReference.Book;
+    var chapter = CurrentReference.Chapter;
+    switch ( Program.Settings.CurrentView )
+    {
+      case ViewMode.Verses:
+        SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
+        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+        SetFormDisabled(true);
+        try
+        {
+          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true);
+        }
+        finally
+        {
+          SetFormDisabled(false);
+        }
+        break;
+      case ViewMode.Translations:
+        SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
+        if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+        EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
+        if ( Program.Settings.OpenGeneratedMSWordFiles )
+          SystemManager.RunShell(SaveFileDialogRTF.FileName);
+        break;
+      case ViewMode.Text:
+        SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
+        if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
+        EditRawText.SaveFile(SaveFileDialogRTF.FileName);
+        if ( Program.Settings.OpenGeneratedMSWordFiles )
+          SystemManager.RunShell(SaveFileDialogRTF.FileName);
+        break;
+      default:
+        DisplayManager.ShowWarning("Not implemented.");
+        break;
+    }
+  }
+
+  private void DoExportVerse(object sender)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+    {
+      var reference = (ReferenceItem)control.Tag;
+      var book = reference.Book;
+      var chapter = reference.Chapter;
+      var verse = reference.Verse;
+      SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse).ToString() + ".docx";
+      if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
+    }
+    else
+    if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
     {
       var book = CurrentReference.Book;
       var chapter = CurrentReference.Chapter;
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewMode.Verses:
-          SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
-          if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-          SetFormDisabled(true);
-          try
-          {
-            ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true);
-          }
-          finally
-          {
-            SetFormDisabled(false);
-          }
-          break;
-        case ViewMode.Translations:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
-          if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemManager.RunShell(SaveFileDialogRTF.FileName);
-          break;
-        case ViewMode.Text:
-          SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
-          if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-          EditRawText.SaveFile(SaveFileDialogRTF.FileName);
-          if ( Program.Settings.OpenGeneratedMSWordFiles )
-            SystemManager.RunShell(SaveFileDialogRTF.FileName);
-          break;
-        default:
-          DisplayManager.ShowWarning("Not implemented.");
-          break;
-      }
+      int verse = Convert.ToInt32(control.Text);
+      SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
+      if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
     }
-
-    private void DoExportVerse(object sender)
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
-      {
-        var reference = (ReferenceItem)control.Tag;
-        var book = reference.Book;
-        var chapter = reference.Chapter;
-        var verse = reference.Verse;
-        SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse).ToString() + ".docx";
-        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-        ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
-      }
-      else
-      if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
-      {
-        var book = CurrentReference.Book;
-        var chapter = CurrentReference.Chapter;
-        int verse = Convert.ToInt32(control.Text);
-        SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
-        if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-        ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
-      }
-    }
-
   }
 
 }

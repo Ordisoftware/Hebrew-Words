@@ -12,114 +12,111 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2020-03 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class ImportVerseForm : Form
 {
 
-  partial class ImportVerseForm : Form
+  static public void Run(ReferenceItem reference)
   {
-
-    static public void Run(ReferenceItem reference)
+    var form = new ImportVerseForm(reference);
+    var result = form.ShowDialog();
+    if ( result == DialogResult.Cancel )
+      form.DataSet.RejectChanges();
+    else
     {
-      var form = new ImportVerseForm(reference);
-      var result = form.ShowDialog();
-      if ( result == DialogResult.Cancel )
-        form.DataSet.RejectChanges();
-      else
+      if ( form.DataSet.HasChanges() )
       {
-        if ( form.DataSet.HasChanges() )
-        {
-          MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
-          foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-            control.EditTranslation.Text = control.Reference.Word.Translation;
-        }
-        MainForm.Instance.ActionSave.PerformClick();
+        MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
+        foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
+          control.EditTranslation.Text = control.Reference.Word.Translation;
       }
+      MainForm.Instance.ActionSave.PerformClick();
     }
+  }
 
-    private bool IsResultValid;
+  private bool IsResultValid;
 
-    private readonly Data.DataSet DataSet;
+  private readonly Data.DataSet DataSet;
 
-    private readonly ReferenceItem Reference;
+  private readonly ReferenceItem Reference;
 
-    private ImportVerseForm()
-    {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-      ActiveControl = EditSource;
-      this.CenterToMainFormElseScreen();
-    }
+  private ImportVerseForm()
+  {
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
+    ActiveControl = EditSource;
+    this.CenterToMainFormElseScreen();
+  }
 
-    private ImportVerseForm(ReferenceItem reference)
-    {
-      Text += " - " + reference.ToString();
-      DataSet = MainForm.Instance.DataSet;
-      Reference = reference;
-      CreateGhost();
-    }
+  private ImportVerseForm(ReferenceItem reference)
+  {
+    Text += " - " + reference.ToString();
+    DataSet = MainForm.Instance.DataSet;
+    Reference = reference;
+    CreateGhost();
+  }
 
-    private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      DeleteGhost();
-      SystemManager.TryCatch(Program.Settings.Save);
-    }
+  private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    DeleteGhost();
+    SystemManager.TryCatch(Program.Settings.Save);
+  }
 
-    private void ImportVerseForm_Shown(object sender, EventArgs e)
-    {
-      PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
-      DataGridView.Columns[0].Width = Program.Settings.ImportVerseFormGridColumnWidthHebrew;
-      DataGridView.Columns[1].Width = Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent;
-    }
+  private void ImportVerseForm_Shown(object sender, EventArgs e)
+  {
+    PanelMain.SplitterDistance = Program.Settings.ImportVerseFormSplitterDistance;
+    DataGridView.Columns[0].Width = Program.Settings.ImportVerseFormGridColumnWidthHebrew;
+    DataGridView.Columns[1].Width = Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent;
+  }
 
-    private void PanelMain_SplitterMoving(object sender, SplitterCancelEventArgs e)
-    {
-      Program.Settings.ImportVerseFormSplitterDistance = PanelMain.SplitterDistance;
-    }
+  private void PanelMain_SplitterMoving(object sender, SplitterCancelEventArgs e)
+  {
+    Program.Settings.ImportVerseFormSplitterDistance = PanelMain.SplitterDistance;
+  }
 
-    private void DataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-    {
-      if ( !Created ) return;
-      Program.Settings.ImportVerseFormGridColumnWidthHebrew = DataGridView.Columns[0].Width;
-      Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent = DataGridView.Columns[1].Width;
-    }
+  private void DataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+  {
+    if ( !Created ) return;
+    Program.Settings.ImportVerseFormGridColumnWidthHebrew = DataGridView.Columns[0].Width;
+    Program.Settings.ImportVerseFormGridColumnWidthTranslationCurrent = DataGridView.Columns[1].Width;
+  }
 
-    private void EditSource_TextChanged(object sender, EventArgs e)
-    {
-      var lines = EditSource.Lines.Where(line => line.Length > 0).ToList();
-      ActionAnalyse.Enabled = EditSource.Text.Length > 0 && lines.Count % 2 == 0;
-      IsResultValid = false;
-      ActionOK.Enabled = false;
-    }
+  private void EditSource_TextChanged(object sender, EventArgs e)
+  {
+    var lines = EditSource.Lines.Where(line => line.Length > 0).ToList();
+    ActionAnalyse.Enabled = EditSource.Text.Length > 0 && lines.Count % 2 == 0;
+    IsResultValid = false;
+    ActionOK.Enabled = false;
+  }
 
-    private void ActionAnalyse_Click(object sender, EventArgs e)
-    {
-      DoAnalyse();
-      if ( IsResultValid )
-        DataGridView.Focus();
-      else
-        EditSource.Focus();
-      ActionOK.Enabled = IsResultValid;
-    }
+  private void ActionAnalyse_Click(object sender, EventArgs e)
+  {
+    DoAnalyse();
+    if ( IsResultValid )
+      DataGridView.Focus();
+    else
+      EditSource.Focus();
+    ActionOK.Enabled = IsResultValid;
+  }
 
-    private void ActionOK_Click(object sender, EventArgs e)
-    {
-      var wordsReference = Reference.Verse.GetWordsRows();
-      for ( int index = 0; index < ImportResults.Count; index++ )
-        if ( ImportResults[index].Hebrew == wordsReference[index].Hebrew )
-          wordsReference[index].Translation = ImportResults[index].ImportedTranslation;
-      Close();
-    }
+  private void ActionOK_Click(object sender, EventArgs e)
+  {
+    var wordsReference = Reference.Verse.GetWordsRows();
+    for ( int index = 0; index < ImportResults.Count; index++ )
+      if ( ImportResults[index].Hebrew == wordsReference[index].Hebrew )
+        wordsReference[index].Translation = ImportResults[index].ImportedTranslation;
+    Close();
+  }
 
-    private void ActionHelp_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.ImportHelp.GetLang());
-    }
-
+  private void ActionHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.ImportHelp.GetLang());
   }
 
 }

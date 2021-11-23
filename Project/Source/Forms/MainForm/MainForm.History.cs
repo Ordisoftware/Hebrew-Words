@@ -12,48 +12,45 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2020-03 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  public void AddCurrentToHistory()
   {
+    History.Add(CurrentReference);
+    UpdateHistory();
+  }
 
-    public void AddCurrentToHistory()
+  private void UpdateHistory()
+  {
+    try
     {
-      History.Add(CurrentReference);
-      UpdateHistory();
-    }
-
-    private void UpdateHistory()
-    {
-      try
+      while ( MenuHistory.DropDownItems.Count > 1 )
+        MenuHistory.DropDownItems.RemoveAt(1);
+      if ( History.Count > 0 )
       {
-        while ( MenuHistory.DropDownItems.Count > 1 )
-          MenuHistory.DropDownItems.RemoveAt(1);
-        if ( History.Count > 0 )
+        MenuHistory.DropDownItems.Add("-");
+        foreach ( var reference in History )
         {
-          MenuHistory.DropDownItems.Add("-");
-          foreach ( var reference in History )
-          {
-            ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
-            item.Tag = reference;
-            item.Click += GoToBookmark;
-            item.ImageScaling = ToolStripItemImageScaling.None;
-            item.Image = ActionAddToBookmarks.Image;
-          }
+          ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
+          item.Tag = reference;
+          item.Click += GoToBookmark;
+          item.ImageScaling = ToolStripItemImageScaling.None;
+          item.Image = ActionAddToBookmarks.Image;
         }
-        ActionClearHistory.Enabled = History.Count > 0;
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      ActionClearHistory.Enabled = History.Count > 0;
     }
-
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
   }
 
 }

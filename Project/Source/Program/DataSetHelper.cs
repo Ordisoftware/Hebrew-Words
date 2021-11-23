@@ -12,59 +12,55 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Text;
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+static class DataSetHelper
 {
 
-  static class DataSetHelper
+  static public string GetTranslation(this DataSet.VersesRow verse)
   {
-
-    static public string GetTranslation(this DataSet.VersesRow verse)
+    var result = new StringBuilder();
+    foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
     {
-      var result = new StringBuilder();
-      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
-      {
-        var str = word.Translation.Trim();
-        result.Append(str.Length > 0 ? str + " " : "[...] ");
-      }
-      return result.ToString().Trim();
+      var str = word.Translation.Trim();
+      result.Append(str.Length > 0 ? str + " " : "[...] ");
     }
+    return result.ToString().Trim();
+  }
 
-    static public bool IsTranslated(this DataSet.VersesRow verse)
+  static public bool IsTranslated(this DataSet.VersesRow verse)
+  {
+    foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
+      if ( word.Translation.Trim().Length > 0 )
+        return true;
+    return false;
+  }
+
+  static public bool IsFullyTranslated(this DataSet.VersesRow verse)
+  {
+    foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
+      if ( word.Translation.Trim().Length == 0 )
+        return false;
+    return true;
+  }
+
+  static public bool IsPartiallyTranslated(this DataSet.VersesRow verse)
+  {
+    bool? haveEmpty = null;
+    bool? haveTranslation = null;
+    foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
     {
-      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
-        if ( word.Translation.Trim().Length > 0 )
-          return true;
-      return false;
+      if ( word.Translation.Trim().Length == 0 )
+        haveEmpty = true;
+      if ( word.Translation.Trim().Length > 0 )
+        haveTranslation = true;
+      if ( haveEmpty == true && haveTranslation == true )
+        return true;
     }
-
-    static public bool IsFullyTranslated(this DataSet.VersesRow verse)
-    {
-      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
-        if ( word.Translation.Trim().Length == 0 )
-          return false;
-      return true;
-    }
-
-    static public bool IsPartiallyTranslated(this DataSet.VersesRow verse)
-    {
-      bool? haveEmpty = null;
-      bool? haveTranslation = null;
-      foreach ( DataSet.WordsRow word in verse.GetWordsRows() )
-      {
-        if ( word.Translation.Trim().Length == 0 )
-          haveEmpty = true;
-        if ( word.Translation.Trim().Length > 0 )
-          haveTranslation = true;
-        if ( haveEmpty == true && haveTranslation == true )
-          return true;
-      }
-      return false;
-    }
-
+    return false;
   }
 
 }

@@ -12,38 +12,33 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2020-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.Hebrew.Words
+class Bookmarks : ReferencesList
 {
 
-  class Bookmarks : ReferencesList
+  public override void Add(ReferenceItem reference)
   {
-
-    public override void Add(ReferenceItem reference)
-    {
-      if ( reference == null ) return;
-      if ( Program.Settings.BookmarksCount < 1 )
+    if ( reference == null ) return;
+    if ( Program.Settings.BookmarksCount < 1 )
+      return;
+    foreach ( var item in Items )
+      if ( item.Equals(reference) )
         return;
-      foreach ( var item in Items )
-        if ( item.Equals(reference) )
-          return;
-      Items.Add(reference);
-      while ( Items.Count > Program.Settings.BookmarksCount )
-        Items.RemoveAt(0);
-      Save();
-    }
+    Items.Add(reference);
+    while ( Items.Count > Program.Settings.BookmarksCount )
+      Items.RemoveAt(0);
+    Save();
+  }
 
-    public void Remove(ReferenceItem reference)
-    {
-      Items.Remove(reference);
-      Save();
-    }
+  public void Remove(ReferenceItem reference)
+  {
+    Items.Remove(reference);
+    Save();
+  }
 
-    public Bookmarks(string filePath) : base(filePath)
-    {
-    }
-
+  public Bookmarks(string filePath) : base(filePath)
+  {
   }
 
 }

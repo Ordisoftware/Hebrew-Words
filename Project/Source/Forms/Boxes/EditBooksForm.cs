@@ -12,156 +12,153 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class EditBooksForm : Form
 {
 
-  partial class EditBooksForm : Form
+  static public bool Run()
   {
+    var form = new EditBooksForm();
+    form.ShowDialog();
+    return form.UpdateViewRequired;
+  }
 
-    static public bool Run()
+  private bool UpdateViewRequired;
+
+  private EditBooksForm()
+  {
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
+    int index = 0;
+    void action(object sender, EventArgs e)
     {
-      var form = new EditBooksForm();
-      form.ShowDialog();
-      return form.UpdateViewRequired;
-    }
-
-    private bool UpdateViewRequired;
-
-    private EditBooksForm()
-    {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-      int index = 0;
-      void action(object sender, EventArgs e)
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-        string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
-        foreach ( string item in strOriginal.Split(' ') )
-          SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
-      }
-      foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-      {
-        if ( item.Name == "-" )
-          ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
-        else
-          ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-      }
-    }
-
-    private void EditBooksForm_Load(object sender, EventArgs e)
-    {
-      EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
-      ActiveControl = EditBooks;
-    }
-
-    private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      Validate();
-      MainForm.Instance.BooksBindingSource.EndEdit();
-      UpdateViewRequired = MainForm.Instance.DataSet.HasChanges();
-      MainForm.Instance.TableAdapterManager.UpdateAll(MainForm.Instance.DataSet);
-    }
-
-    private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-    {
-      if ( e.ColumnIndex == 3 )
-        e.Value = ( (string)e.Value ).Trim();
-    }
-
-    private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-    {
-      if ( e.Button == MouseButtons.Right )
-      {
-        int rowSelected = e.RowIndex;
-        if ( e.RowIndex != -1 )
-        {
-          //TODO remove? EditBooks.ClearSelection();
-          EditBooks.Rows[rowSelected].Selected = true;
-          //TODO remove? BooksBindingSource.Position = e.RowIndex;
-        }
-      }
-    }
-
-    private void ActionSearchOnline_Click(object sender, EventArgs e)
-    {
+      var menuitem = (ToolStripMenuItem)sender;
       var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      string word = ( (Data.DataSet.BooksRow)row ).Hebrew;
-      HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+      string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
+      foreach ( string item in strOriginal.Split(' ') )
+        SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
     }
-
-    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
     {
-      HebrewTools.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value, Program.Settings.HebrewLettersExe);
-    }
-
-    private void ActionSearchWord_Click(object sender, EventArgs e)
-    {
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      MainForm.Instance.SearchHebrewWord(( (Data.DataSet.BooksRow)row ).Hebrew);
-
-      // TODO form to select one word from multiple having more than 1 char
-
-      Close();
-    }
-
-    private void ActionCopyName_Click(object sender, EventArgs e)
-    {
-      string strName = (string)EditBooks.SelectedRows[0].Cells[2].Value;
-      if ( strName.StartsWith("a ") ) strName = strName.Substring(2, strName.Length - 2);
+      if ( item.Name == "-" )
+        ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
       else
-      if ( strName.StartsWith("b ") ) strName = strName.Substring(2, strName.Length - 2);
-      string strCommonName = (string)EditBooks.SelectedRows[0].Cells[3].Value;
-      if ( strCommonName.Length > 0 )
-        strName += " (" + strCommonName + ")";
-      string strTranlation = (string)EditBooks.SelectedRows[0].Cells[4].Value;
-      if ( strTranlation.Length > 0 )
-        strName += " - " + strTranlation;
-      Clipboard.SetText(strName);
+        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
     }
+  }
 
-    private void ActionCopyFontChars_Click(object sender, EventArgs e)
+  private void EditBooksForm_Load(object sender, EventArgs e)
+  {
+    EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
+    ActiveControl = EditBooks;
+  }
+
+  private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    Validate();
+    MainForm.Instance.BooksBindingSource.EndEdit();
+    UpdateViewRequired = MainForm.Instance.DataSet.HasChanges();
+    MainForm.Instance.TableAdapterManager.UpdateAll(MainForm.Instance.DataSet);
+  }
+
+  private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+  {
+    if ( e.ColumnIndex == 3 )
+      e.Value = ( (string)e.Value ).Trim();
+  }
+
+  private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+  {
+    if ( e.Button == MouseButtons.Right )
     {
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Hebrew);
+      int rowSelected = e.RowIndex;
+      if ( e.RowIndex != -1 )
+      {
+        //TODO remove? EditBooks.ClearSelection();
+        EditBooks.Rows[rowSelected].Selected = true;
+        //TODO remove? BooksBindingSource.Position = e.RowIndex;
+      }
     }
+  }
 
-    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
-    {
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Original);
-    }
+  private void ActionSearchOnline_Click(object sender, EventArgs e)
+  {
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    string word = ( (Data.DataSet.BooksRow)row ).Hebrew;
+    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+  }
 
-    private void ActionEditMemo_Click(object sender, EventArgs e)
-    {
-      var form = new EditMemoForm();
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      var book = (Data.DataSet.BooksRow)row;
-      form.Text += book.Name;
-      form.TextBox.Text = book.Memo;
-      form.TextBox.SelectionStart = 0;
-      if ( form.ShowDialog() == DialogResult.OK )
-        book.Memo = form.TextBox.Text;
-    }
+  private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value, Program.Settings.HebrewLettersExe);
+  }
 
-    private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-        foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-          book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
-    }
+  private void ActionSearchWord_Click(object sender, EventArgs e)
+  {
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    MainForm.Instance.SearchHebrewWord(( (Data.DataSet.BooksRow)row ).Hebrew);
 
-    private void ActionOpen_Click(object sender, EventArgs e)
-    {
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      MainForm.Instance.GoTo(( (Data.DataSet.BooksRow)row ).Number, 1, 1);
-      Close();
-    }
+    // TODO form to select one word from multiple having more than 1 char
 
+    Close();
+  }
+
+  private void ActionCopyName_Click(object sender, EventArgs e)
+  {
+    string strName = (string)EditBooks.SelectedRows[0].Cells[2].Value;
+    if ( strName.StartsWith("a ") ) strName = strName.Substring(2, strName.Length - 2);
+    else
+    if ( strName.StartsWith("b ") ) strName = strName.Substring(2, strName.Length - 2);
+    string strCommonName = (string)EditBooks.SelectedRows[0].Cells[3].Value;
+    if ( strCommonName.Length > 0 )
+      strName += " (" + strCommonName + ")";
+    string strTranlation = (string)EditBooks.SelectedRows[0].Cells[4].Value;
+    if ( strTranlation.Length > 0 )
+      strName += " - " + strTranlation;
+    Clipboard.SetText(strName);
+  }
+
+  private void ActionCopyFontChars_Click(object sender, EventArgs e)
+  {
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Hebrew);
+  }
+
+  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+  {
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Original);
+  }
+
+  private void ActionEditMemo_Click(object sender, EventArgs e)
+  {
+    var form = new EditMemoForm();
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    var book = (Data.DataSet.BooksRow)row;
+    form.Text += book.Name;
+    form.TextBox.Text = book.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
+      book.Memo = form.TextBox.Text;
+  }
+
+  private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
+      foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
+        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
+  }
+
+  private void ActionOpen_Click(object sender, EventArgs e)
+  {
+    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    MainForm.Instance.GoTo(( (Data.DataSet.BooksRow)row ).Number, 1, 1);
+    Close();
   }
 
 }

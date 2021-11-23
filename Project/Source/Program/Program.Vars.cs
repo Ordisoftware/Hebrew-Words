@@ -12,80 +12,76 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.IO;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide Program class.
+/// </summary>
+static partial class Program
 {
 
   /// <summary>
-  /// Provide Program class.
+  /// Indicate the default Settings instance.
   /// </summary>
-  static partial class Program
+  static public readonly Properties.Settings Settings
+    = Properties.Settings.Default;
+
+  static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
+    = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
+
+  /// <summary>
+  /// Indicate application tanak documents folder.
+  /// </summary>
+  static public string TanakFolderPath
+    => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
+
+  /// <summary>
+  /// Indicate file path of the bookmaks.
+  /// </summary>
+  static public string BookmarksFilePath
+    => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
+
+  /// <summary>
+  /// Indicate file path of the history.
+  /// </summary>
+  static public string HistoryFilePath
+  => Path.Combine(Globals.UserDataFolderPath, "History.txt");
+
+  /// <summary>
+  /// Indicate the grammar guide form.
+  /// </summary>
+  static public HTMLBrowserForm GrammarGuideForm
   {
-
-    /// <summary>
-    /// Indicate the default Settings instance.
-    /// </summary>
-    static public readonly Properties.Settings Settings
-      = Properties.Settings.Default;
-
-    static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
-      = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
-
-    /// <summary>
-    /// Indicate application tanak documents folder.
-    /// </summary>
-    static public string TanakFolderPath
-      => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
-
-    /// <summary>
-    /// Indicate file path of the bookmaks.
-    /// </summary>
-    static public string BookmarksFilePath
-      => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
-
-    /// <summary>
-    /// Indicate file path of the history.
-    /// </summary>
-    static public string HistoryFilePath
-    => Path.Combine(Globals.UserDataFolderPath, "History.txt");
-
-    /// <summary>
-    /// Indicate the grammar guide form.
-    /// </summary>
-    static public HTMLBrowserForm GrammarGuideForm
+    get
     {
-      get
-      {
-        return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                         HebrewGlobals.HebrewGrammarGuideFilePath,
-                                                         nameof(Settings.GrammarGuideFormLocation),
-                                                         nameof(Settings.GrammarGuideFormSize));
-      }
+      return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
+                                                       HebrewGlobals.HebrewGrammarGuideFilePath,
+                                                       nameof(Settings.GrammarGuideFormLocation),
+                                                       nameof(Settings.GrammarGuideFormSize));
     }
-    static private HTMLBrowserForm _GrammarGuideForm;
-
-    static public string HebrewStrongsJsonFilePath
-      => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
-
-    static public string GreekStrongsJsonFilePath
-      => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-greek-dictionary.js");
-
-    static public string BibleJsonFilePath
-      => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
-
-    static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
-      = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
-
-    static public readonly Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
-      = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
-
-    static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
-      = JsonHelper.LoadBook(BibleJsonFilePath);
-
   }
+  static private HTMLBrowserForm _GrammarGuideForm;
+
+  static public string HebrewStrongsJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
+
+  static public string GreekStrongsJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-greek-dictionary.js");
+
+  static public string BibleJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
+
+  static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
+    = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
+
+  static public readonly Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
+    = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
+
+  static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
+    = JsonHelper.LoadBook(BibleJsonFilePath);
 
 }

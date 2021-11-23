@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,101 +21,96 @@ using System.IO;
 using System.Linq;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+abstract class ReferencesList : IEnumerable<ReferenceItem>
 {
 
-  abstract class ReferencesList : IEnumerable<ReferenceItem>
+  protected readonly List<ReferenceItem> Items = new();
+
+  protected string FilePath;
+
+  public int Count { get { return Items.Count; } }
+
+  public ReferenceItem this[int index] { get { return Items[index]; } }
+
+  IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
   {
+    return Items.GetEnumerator();
+  }
 
-    protected readonly List<ReferenceItem> Items = new();
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return Items.GetEnumerator();
+  }
 
-    protected string FilePath;
+  public void Clear()
+  {
+    Items.Clear();
+    Save();
+  }
 
-    public int Count { get { return Items.Count; } }
+  public void Sort()
+  {
+    Items.Sort();
+  }
 
-    public ReferenceItem this[int index] { get { return Items[index]; } }
+  public abstract void Add(ReferenceItem reference);
 
-    IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
+  public void Load()
+  {
+    Items.Clear();
+    if ( !File.Exists(FilePath) )
+      return;
+    try
     {
-      return Items.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return Items.GetEnumerator();
-    }
-
-    public void Clear()
-    {
-      Items.Clear();
-      Save();
-    }
-
-    public void Sort()
-    {
-      Items.Sort();
-    }
-
-    public abstract void Add(ReferenceItem reference);
-
-    public void Load()
-    {
-      Items.Clear();
-      if ( !File.Exists(FilePath) )
-        return;
-      try
+      foreach ( string item in File.ReadLines(FilePath) )
       {
-        foreach ( string item in File.ReadLines(FilePath) )
+        if ( item.Length == 0 || item.Count(c => c == '.') != 2 )
+          continue;
+        var parts = item.Split('.');
+        try
         {
-          if ( item.Length == 0 || item.Count(c => c == '.') != 2 )
-            continue;
-          var parts = item.Split('.');
-          try
-          {
-            Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                        Convert.ToInt32(parts[1]),
-                                        Convert.ToInt32(parts[2])));
-          }
-          catch
-          {
-          }
+          Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
+                                      Convert.ToInt32(parts[1]),
+                                      Convert.ToInt32(parts[2])));
+        }
+        catch
+        {
         }
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
     }
-
-    private bool Mutex;
-
-    public void Save()
+    catch ( Exception ex )
     {
-      if ( Mutex ) return;
-      Mutex = true;
-      try
-      {
-        if ( Globals.IsLoadingData )
-          return;
-        var items = new List<string>();
-        foreach ( var item in Items )
-          items.Add(item.ToStringNumbers());
-        File.WriteAllLines(FilePath, items);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        Mutex = false;
-      }
-    }
-
-    protected ReferencesList(string filePath)
-    {
-      FilePath = filePath;
+      ex.Manage();
     }
   }
 
+  private bool Mutex;
+
+  public void Save()
+  {
+    if ( Mutex ) return;
+    Mutex = true;
+    try
+    {
+      if ( Globals.IsLoadingData )
+        return;
+      var items = new List<string>();
+      foreach ( var item in Items )
+        items.Add(item.ToStringNumbers());
+      File.WriteAllLines(FilePath, items);
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+    finally
+    {
+      Mutex = false;
+    }
+  }
+
+  protected ReferencesList(string filePath)
+  {
+    FilePath = filePath;
+  }
 }

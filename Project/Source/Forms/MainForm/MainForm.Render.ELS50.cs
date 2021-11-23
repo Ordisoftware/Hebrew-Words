@@ -12,27 +12,24 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  public void RenderELS50()
   {
-
-    public void RenderELS50()
+    EditELS50All.Clear();
+    foreach ( Data.DataSet.ChaptersRow chapter in CurrentReference.Book.GetChaptersRows() )
     {
-      EditELS50All.Clear();
-      foreach ( Data.DataSet.ChaptersRow chapter in CurrentReference.Book.GetChaptersRows() )
-      {
-        AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
-        AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);
-        EditELS50All.AppendText(Environment.NewLine);
-      }
-      EditELS50All.SelectionStart = 0;
-      EditELS50All.Focus();
+      AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
+      AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);
+      EditELS50All.AppendText(Environment.NewLine);
     }
-
+    EditELS50All.SelectionStart = 0;
+    EditELS50All.Focus();
   }
 
 }

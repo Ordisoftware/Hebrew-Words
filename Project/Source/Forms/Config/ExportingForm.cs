@@ -12,35 +12,32 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class ExportingForm : Form
 {
 
-  partial class ExportingForm : Form
+  public bool CancelRequired { get; private set; }
+
+  public ExportingForm()
   {
-
-    public bool CancelRequired { get; private set; }
-
-    public ExportingForm()
-    {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-      Text = Globals.AssemblyTitle;
-      this.CenterToMainFormElseScreen();
-    }
-
-    private void ButtonCancel_Click(object sender, EventArgs e)
-    {
-      CancelRequired = true;
-    }
-
-    private void ExportForm_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      CancelRequired = true;
-    }
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
+    Text = Globals.AssemblyTitle;
+    this.CenterToMainFormElseScreen();
   }
 
+  private void ButtonCancel_Click(object sender, EventArgs e)
+  {
+    CancelRequired = true;
+  }
+
+  private void ExportForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    CancelRequired = true;
+  }
 }

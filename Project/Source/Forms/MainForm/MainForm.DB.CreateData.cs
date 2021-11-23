@@ -12,72 +12,69 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-02 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm : Form
 {
 
-  partial class MainForm : Form
+  /// <summary>
+  /// Create database content if not exists.
+  /// </summary>
+  public void CreateDataIfNotExists()
   {
+    //CreateConcordances();
+    CreateBooks();
+  }
 
-    /// <summary>
-    /// Create database content if not exists.
-    /// </summary>
-    public void CreateDataIfNotExists()
+  private void CreateBooks()
+  {
+    int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
+    int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
+    int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
+    int countWords = LockFileConnection.GetRowsCount(DataSet.Words.TableName);
+    if ( countBooks != 0 )
     {
-      //CreateConcordances();
-      CreateBooks();
+      BooksTableAdapter.Fill(DataSet.Books);
+      if ( Globals.IsDatabaseUpgraded )
+        foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+        {
+          TanakBook enumBook = (TanakBook)( book.Number - 1 );
+          book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
+          book.Hebrew = BooksNames.Hebrew[enumBook];
+          if ( book.Original.Length == 0 )
+            book.Original = BooksNames.Unicode[enumBook];
+          if ( book.CommonName.Length == 0 )
+            book.CommonName = BooksNames.Common.GetLang(enumBook);
+        }
+      TableAdapterManager.UpdateAll(DataSet);
     }
-
-    private void CreateBooks()
-    {
-      int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
-      int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
-      int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
-      int countWords = LockFileConnection.GetRowsCount(DataSet.Words.TableName);
-      if ( countBooks != 0 )
+    if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
+      || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
+        && DisplayManager.QueryYesNoAbort(SysTranslations.AskToResetCorruptedDatabase.GetLang($"Books.Count = {countBooks}{Globals.NL}Chapters.Count = {countChapters}{Globals.NL}Verses.Count = {countVerses}{Globals.NL}Words.Count = {countWords}"),
+                                          onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
+      try
       {
-        BooksTableAdapter.Fill(DataSet.Books);
-        if ( Globals.IsDatabaseUpgraded )
-          foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-          {
-            TanakBook enumBook = (TanakBook)( book.Number - 1 );
-            book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
-            book.Hebrew = BooksNames.Hebrew[enumBook];
-            if ( book.Original.Length == 0 )
-              book.Original = BooksNames.Unicode[enumBook];
-            if ( book.CommonName.Length == 0 )
-              book.CommonName = BooksNames.Common.GetLang(enumBook);
-          }
-        TableAdapterManager.UpdateAll(DataSet);
+        FillFromFiles();
       }
-      if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
-        || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
-          && DisplayManager.QueryYesNoAbort(SysTranslations.AskToResetCorruptedDatabase.GetLang($"Books.Count = {countBooks}{Globals.NL}Chapters.Count = {countChapters}{Globals.NL}Verses.Count = {countVerses}{Globals.NL}Words.Count = {countWords}"),
-                                            onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
-        try
-        {
-          FillFromFiles();
-        }
-        finally
-        {
-          LoadingForm.Instance.Hide();
-        }
-    }
+      finally
+      {
+        LoadingForm.Instance.Hide();
+      }
+  }
 
-    static bool CheckIfOneIsTrueAndSomeOthersNot(params bool[] values)
-    {
-      bool firstIsTrue = values[0];
-      bool result = firstIsTrue ^ values[1];
-      if ( values.Length > 2 )
-        for ( int index = 2; index < values.Length; index++ )
-          result = result || ( firstIsTrue ^ values[index] );
-      return result;
-    }
-
+  static bool CheckIfOneIsTrueAndSomeOthersNot(params bool[] values)
+  {
+    bool firstIsTrue = values[0];
+    bool result = firstIsTrue ^ values[1];
+    if ( values.Length > 2 )
+      for ( int index = 2; index < values.Length; index++ )
+        result = result || ( firstIsTrue ^ values[index] );
+    return result;
   }
 
 }

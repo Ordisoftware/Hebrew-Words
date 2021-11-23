@@ -12,170 +12,165 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-02 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm : Form
 {
-
-  partial class MainForm : Form
-  {
 
 #pragma warning disable IDE0052 // Supprimer les membres privés non lus
 #pragma warning disable S4487 // Unread "private" fields should be removed
-    private bool NeedUpgradeForConcordances;
+  private bool NeedUpgradeForConcordances;
 #pragma warning restore S4487 // Unread "private" fields should be removed
 #pragma warning restore IDE0052 // Supprimer les membres privés non lus
 
-    private OdbcConnection LockFileConnection;
+  private OdbcConnection LockFileConnection;
 
-    /// <summary>
-    /// Check if tables and columns exists or create them.
-    /// </summary>
-    public void CreateSchemaIfNotExists()
+  /// <summary>
+  /// Check if tables and columns exists or create them.
+  /// </summary>
+  public void CreateSchemaIfNotExists()
+  {
+    SystemManager.TryCatchManage(() =>
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        SQLiteOdbcHelper.CreateOrUpdateDSN();
-        LockFileConnection = new OdbcConnection(Program.Settings.ConnectionString);
-        LockFileConnection.Open();
-        if ( Program.Settings.VacuumAtStartup )
-          Program.Settings.VacuumLastDone = LockFileConnection.Optimize(Program.Settings.VacuumLastDone);
-        LockFileConnection.CheckTable("Books",
-                                      @"CREATE TABLE Books
-                                        ( 
-                                          ID TEXT DEFAULT '' NOT NULL,
-                                          Number INTEGER DEFAULT 0 NOT NULL,
-                                          Original TEXT DEFAULT '' NOT NULL,
-                                          Hebrew TEXT DEFAULT '' NOT NULL,
-                                          Name TEXT DEFAULT '' NOT NULL,
-                                          CommonName TEXT DEFAULT '' NOT NULL,
-                                          Translation TEXT DEFAULT '' NOT NULL,
-                                          Lettriq TEXT DEFAULT '' NOT NULL,
-                                          Memo TEXT DEFAULT '' NOT NULL,
-                                          PRIMARY KEY(ID) 
-                                        )");
-        LockFileConnection.CheckTable("Chapters",
-                                      @"CREATE TABLE Chapters 
-                                        ( 
-                                          ID TEXT DEFAULT '' NOT NULL,
-                                          BookID TEXT DEFAULT '' NOT NULL,
-                                          Number INTEGER DEFAULT 0 NOT NULL,
-                                          Title TEXT DEFAULT '' NOT NULL,
-                                          Memo TEXT DEFAULT '' NOT NULL,
-                                          ELS50 TEXT DEFAULT '' NOT NULL,
-                                          FOREIGN KEY(BookID) REFERENCES Books(ID),
-                                          PRIMARY KEY(ID)
-                                        )");
-        LockFileConnection.CheckTable("Verses",
-                                      @"CREATE TABLE Verses 
-                                        ( 
-                                          ID TEXT DEFAULT '' NOT NULL,
-                                          ChapterID TEXT DEFAULT '' NOT NULL,
-                                          Number INTEGER DEFAULT 0 NOT NULL,
-                                          Comment TEXT DEFAULT '' NOT NULL,
-                                          FOREIGN KEY(ChapterID) REFERENCES Chapters(ID),
-                                          PRIMARY KEY(ID)
-                                        )");
-        LockFileConnection.CheckTable("Words",
-                                      @"CREATE TABLE Words 
-                                        ( 
-                                          ID TEXT DEFAULT '' NOT NULL,
-                                          VerseID TEXT DEFAULT '' NOT NULL,
-                                          Number INTEGER DEFAULT 0 NOT NULL,
-                                          Original TEXT DEFAULT '' NOT NULL,
-                                          Hebrew TEXT DEFAULT '' NOT NULL,
-                                          Translation TEXT DEFAULT '' NOT NULL,
-                                          FOREIGN KEY (VerseID) REFERENCES Verses(ID),
-                                          PRIMARY KEY (ID)
-                                        )");
-        //CommonTranslation TEXT DEFAULT '' NOT NULL,
-        //ConcordanceID TEXT DEFAULT '' NOT NULL,
-        //Transliteration TEXT DEFAULT '' NOT NULL,
-        //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
-        bool b = Globals.IsDatabaseUpgraded;
-        b = !LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true) || b;
-        b = !LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true) || b;
-        b = !LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true) || b;
-        b = !LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true) || b;
-        b = !LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true) || b;
-        b = !LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true) || b;
-        Globals.IsDatabaseUpgraded = b;
-        b = false;
-        //b = !LockFileConnection.CheckColumn("Words", "CommonTranslation", "TEXT", "''", true) || b;
-        //b = !LockFileConnection.CheckColumn("Words", "Transliteration", "TEXT", "''", true) || b;
-        //b = !LockFileConnection.CheckColumn("Words", "ConcordanceID", "TEXT", "''", true) || b;
-        NeedUpgradeForConcordances = b;
+      SQLiteOdbcHelper.CreateOrUpdateDSN();
+      LockFileConnection = new OdbcConnection(Program.Settings.ConnectionString);
+      LockFileConnection.Open();
+      if ( Program.Settings.VacuumAtStartup )
+        Program.Settings.VacuumLastDone = LockFileConnection.Optimize(Program.Settings.VacuumLastDone);
+      LockFileConnection.CheckTable(@"Books",
+                                    @"CREATE TABLE Books
+                                      ( 
+                                        ID TEXT DEFAULT '' NOT NULL,
+                                        Number INTEGER DEFAULT 0 NOT NULL,
+                                        Original TEXT DEFAULT '' NOT NULL,
+                                        Hebrew TEXT DEFAULT '' NOT NULL,
+                                        Name TEXT DEFAULT '' NOT NULL,
+                                        CommonName TEXT DEFAULT '' NOT NULL,
+                                        Translation TEXT DEFAULT '' NOT NULL,
+                                        Lettriq TEXT DEFAULT '' NOT NULL,
+                                        Memo TEXT DEFAULT '' NOT NULL,
+                                        PRIMARY KEY(ID) 
+                                      )");
+      LockFileConnection.CheckTable(@"Chapters",
+                                    @"CREATE TABLE Chapters 
+                                      ( 
+                                        ID TEXT DEFAULT '' NOT NULL,
+                                        BookID TEXT DEFAULT '' NOT NULL,
+                                        Number INTEGER DEFAULT 0 NOT NULL,
+                                        Title TEXT DEFAULT '' NOT NULL,
+                                        Memo TEXT DEFAULT '' NOT NULL,
+                                        ELS50 TEXT DEFAULT '' NOT NULL,
+                                        FOREIGN KEY(BookID) REFERENCES Books(ID),
+                                        PRIMARY KEY(ID)
+                                      )");
+      LockFileConnection.CheckTable(@"Verses",
+                                    @"CREATE TABLE Verses 
+                                      ( 
+                                        ID TEXT DEFAULT '' NOT NULL,
+                                        ChapterID TEXT DEFAULT '' NOT NULL,
+                                        Number INTEGER DEFAULT 0 NOT NULL,
+                                        Comment TEXT DEFAULT '' NOT NULL,
+                                        FOREIGN KEY(ChapterID) REFERENCES Chapters(ID),
+                                        PRIMARY KEY(ID)
+                                      )");
+      LockFileConnection.CheckTable(@"Words",
+                                    @"CREATE TABLE Words 
+                                      ( 
+                                        ID TEXT DEFAULT '' NOT NULL,
+                                        VerseID TEXT DEFAULT '' NOT NULL,
+                                        Number INTEGER DEFAULT 0 NOT NULL,
+                                        Original TEXT DEFAULT '' NOT NULL,
+                                        Hebrew TEXT DEFAULT '' NOT NULL,
+                                        Translation TEXT DEFAULT '' NOT NULL,
+                                        FOREIGN KEY (VerseID) REFERENCES Verses(ID),
+                                        PRIMARY KEY (ID)
+                                      )");
+      //CommonTranslation TEXT DEFAULT '' NOT NULL,
+      //ConcordanceID TEXT DEFAULT '' NOT NULL,
+      //Transliteration TEXT DEFAULT '' NOT NULL,
+      //FOREIGN KEY ( ConcordanceID ) REFERENCES StrongConcordances( ID ) 
+      bool b = Globals.IsDatabaseUpgraded;
+      b = !LockFileConnection.CheckColumn("Books", "Original", "TEXT", "''", true) || b;
+      b = !LockFileConnection.CheckColumn("Books", "CommonName", "TEXT", "''", true) || b;
+      b = !LockFileConnection.CheckColumn("Books", "Memo", "TEXT", "''", true) || b;
+      b = !LockFileConnection.CheckColumn("Books", "Lettriq", "TEXT", "''", true) || b;
+      b = !LockFileConnection.CheckColumn("Chapters", "Title", "TEXT", "''", true) || b;
+      b = !LockFileConnection.CheckColumn("Chapters", "Memo", "TEXT", "''", true) || b;
+      Globals.IsDatabaseUpgraded = b;
+      b = false;
+      //b = !LockFileConnection.CheckColumn("Words", "CommonTranslation", "TEXT", "''", true) || b;
+      //b = !LockFileConnection.CheckColumn("Words", "Transliteration", "TEXT", "''", true) || b;
+      //b = !LockFileConnection.CheckColumn("Words", "ConcordanceID", "TEXT", "''", true) || b;
+      NeedUpgradeForConcordances = b;
 #pragma warning disable S2589 // Boolean expressions should not be gratuitous - To be later used
-        Globals.IsDatabaseUpgraded = Globals.IsDatabaseUpgraded || b;
+      Globals.IsDatabaseUpgraded = Globals.IsDatabaseUpgraded || b;
 #pragma warning restore S2589 // Boolean expressions should not be gratuitous
-      });
-    }
-
+    });
   }
-
-  /*[Table("Books")]
-  public class Book
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public int Number { get; set; }
-    public string Original { get; set; }
-    public string Hebrew { get; set; }
-    public string Name { get; set; }
-    public string CommonName { get; set; }
-    public string Translation { get; set; }
-    public string Lettriq { get; set; }
-    public string Memo { get; set; }
-    public List<Chapter> Chapters
-      => ApplicationDatabase.Instance.Chapters.Where(item => item.BookID == ID).ToList();
-  }
-
-  [Table("Chapters")]
-  public class Chapter
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string BookID { get; set; }
-    public int Number { get; set; }
-    public string Title { get; set; }
-    public string Memo { get; set; }
-    public string ELS50 { get; set; }
-    public List<Verse> Verses
-      => ApplicationDatabase.Instance.Verses.Where(item => item.ChapterID == ID).ToList();
-  }
-
-  [Table("Verses")]
-  public class Verse
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string ChapterID { get; set; }
-    public int Number { get; set; }
-    public string Comment { get; set; }
-    public List<Word> Words
-      => ApplicationDatabase.Instance.Words.Where(item => item.VerseID == ID).ToList();
-  }
-
-  [Table("Words")]
-  public class Word
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string VerseID { get; set; }
-    public string Code { get; set; }
-    public int Number { get; set; }
-    public string Original { get; set; }
-    public string Hebrew { get; set; }
-    public string Translation { get; set; }
-  }
-
-*/
-
 
 }
+
+/*[Table("Books")]
+public class Book
+{
+  [PrimaryKey]
+  public string ID { get; set; }
+  public int Number { get; set; }
+  public string Original { get; set; }
+  public string Hebrew { get; set; }
+  public string Name { get; set; }
+  public string CommonName { get; set; }
+  public string Translation { get; set; }
+  public string Lettriq { get; set; }
+  public string Memo { get; set; }
+  public List<Chapter> Chapters
+    => ApplicationDatabase.Instance.Chapters.Where(item => item.BookID == ID).ToList();
+}
+
+[Table("Chapters")]
+public class Chapter
+{
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string BookID { get; set; }
+  public int Number { get; set; }
+  public string Title { get; set; }
+  public string Memo { get; set; }
+  public string ELS50 { get; set; }
+  public List<Verse> Verses
+    => ApplicationDatabase.Instance.Verses.Where(item => item.ChapterID == ID).ToList();
+}
+
+[Table("Verses")]
+public class Verse
+{
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string ChapterID { get; set; }
+  public int Number { get; set; }
+  public string Comment { get; set; }
+  public List<Word> Words
+    => ApplicationDatabase.Instance.Words.Where(item => item.VerseID == ID).ToList();
+}
+
+[Table("Words")]
+public class Word
+{
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string VerseID { get; set; }
+  public string Code { get; set; }
+  public int Number { get; set; }
+  public string Original { get; set; }
+  public string Hebrew { get; set; }
+  public string Translation { get; set; }
+}
+
+*/
 
 /*
 "StrongConcordances",
@@ -192,4 +187,3 @@ namespace Ordisoftware.Hebrew.Words
     CONSTRAINT Pk_StrongConcordances_ID PRIMARY KEY ( ID ) 
   )");
 */
-

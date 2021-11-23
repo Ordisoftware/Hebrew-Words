@@ -12,28 +12,24 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using CommandLine;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+class ApplicationCommandLine : SystemCommandLine
 {
 
-  class ApplicationCommandLine : SystemCommandLine
-  {
+  static public ApplicationCommandLine Instance
+    => SystemManager.CommandLineOptions as ApplicationCommandLine;
 
-    static public ApplicationCommandLine Instance
-      => SystemManager.CommandLineOptions as ApplicationCommandLine;
+  [Option("verse", Required = false, HelpText = "Verse reference to go.")]
+  public string ReferenceToGo { get; set; }
 
-    [Option("verse", Required = false, HelpText = "Verse reference to go.")]
-    public string ReferenceToGo { get; set; }
+  [Option("word", Required = false, HelpText = "Unicode chars or else Hebrew font chars word to search.")]
+  public string SearchWord { get; set; }
 
-    [Option("word", Required = false, HelpText = "Unicode chars or else Hebrew font chars word to search.")]
-    public string SearchWord { get; set; }
-
-    [Option("translated", Required = false, HelpText = "Translated word to search.")]
-    public string SearchTranslated { get; set; }
-
-  }
+  [Option("translated", Required = false, HelpText = "Translated word to search.")]
+  public string SearchTranslated { get; set; }
 
 }

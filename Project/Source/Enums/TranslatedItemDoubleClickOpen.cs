@@ -12,16 +12,11 @@
 /// </license>
 /// <created> 2020-03 </created>
 /// <edited> 2020-03 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.Hebrew.Words
+public enum TranslatedItemDoubleClickOpen
 {
-
-  public enum TranslatedItemDoubleClickOpen
-  {
-    UseTranslation,
-    AddTranslation,
-    ReachReference
-  }
-
+  UseTranslation,
+  AddTranslation,
+  ReachReference
 }

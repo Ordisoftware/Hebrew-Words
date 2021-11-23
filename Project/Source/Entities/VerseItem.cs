@@ -12,42 +12,37 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
-using System.Linq;
+namespace Ordisoftware.Hebrew.Words;
+
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide verse reference item
+/// </summary>
+class VerseItem
 {
 
-  /// <summary>
-  /// Provide verse reference item
-  /// </summary>
-  class VerseItem
+  public DataSet.VersesRow Verse { get; set; }
+
+  public override string ToString()
   {
+    if ( Verse == null ) return "";
+    int nb = Verse.ChaptersRow.GetVersesRows().Length;
+    string str;
+    if ( nb >= 100 )
+      str = Verse.Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Verse.Number.ToString("00");
+    else
+      str = Verse.Number.ToString();
+    if ( Verse.IsTranslated() ) str += $" - {Verse.GetTranslation()}";
+    return str;
+  }
 
-    public DataSet.VersesRow Verse { get; set; }
-
-    public override string ToString()
-    {
-      if ( Verse == null ) return "";
-      int nb = Verse.ChaptersRow.GetVersesRows().Length;
-      string str;
-      if ( nb >= 100 )
-        str = Verse.Number.ToString("000");
-      else
-      if ( nb >= 10 )
-        str = Verse.Number.ToString("00");
-      else
-        str = Verse.Number.ToString();
-      if ( Verse.IsTranslated() ) str += $" - {Verse.GetTranslation()}";
-      return str;
-    }
-
-    public VerseItem(DataSet.VersesRow verse)
-    {
-      Verse = verse;
-    }
-
+  public VerseItem(DataSet.VersesRow verse)
+  {
+    Verse = verse;
   }
 
 }

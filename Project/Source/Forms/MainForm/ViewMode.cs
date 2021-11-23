@@ -12,42 +12,37 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide view mode.
+/// </summary>
+public enum ViewMode
 {
 
   /// <summary>
-  /// Provide view mode.
+  /// Verses panels view mode.
   /// </summary>
-  public enum ViewMode
-  {
+  Verses,
 
-    /// <summary>
-    /// Verses panels view mode.
-    /// </summary>
-    Verses,
+  /// <summary>
+  /// Search view mode.
+  /// </summary>
+  Search,
 
-    /// <summary>
-    /// Search view mode.
-    /// </summary>
-    Search,
+  /// <summary>
+  /// Translations panel view mode.
+  /// </summary>
+  Translations,
 
-    /// <summary>
-    /// Translations panel view mode.
-    /// </summary>
-    Translations,
+  /// <summary>
+  /// Text view mode.
+  /// </summary>
+  Text,
 
-    /// <summary>
-    /// Text view mode.
-    /// </summary>
-    Text,
-
-    /// <summary>
-    /// ELS50 view mode.
-    /// </summary>
-    ELS50
-
-  }
+  /// <summary>
+  /// ELS50 view mode.
+  /// </summary>
+  ELS50
 
 }

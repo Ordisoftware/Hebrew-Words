@@ -12,17 +12,12 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2020-03 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.Hebrew.Words
+public enum HebrewWordClickOpen
 {
-
-  public enum HebrewWordClickOpen
-  {
-    OnlineSearch,
-    HebrewLetters,
-    SearchTranslated,
-    Nothing
-  }
-
+  OnlineSearch,
+  HebrewLetters,
+  SearchTranslated,
+  Nothing
 }

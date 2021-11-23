@@ -12,75 +12,72 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// The application's main form.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class MainForm
 {
 
+  private bool DoScreenPositionMutex;
+
   /// <summary>
-  /// The application's main form.
+  /// Center the form to the screen.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class MainForm
+  public new void CenterToScreen()
   {
+    base.CenterToScreen();
+  }
 
-    private bool DoScreenPositionMutex;
-
-    /// <summary>
-    /// Center the form to the screen.
-    /// </summary>
-    public new void CenterToScreen()
+  /// <summary>
+  /// Execute the screen location operation.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  protected void DoScreenPosition(object sender, EventArgs e)
+  {
+    if ( DoScreenPositionMutex ) return;
+    try
     {
-      base.CenterToScreen();
+      DoScreenPositionMutex = true;
+      int left = SystemInformation.WorkingArea.Left;
+      int top = SystemInformation.WorkingArea.Top;
+      int width = SystemInformation.WorkingArea.Width;
+      int height = SystemInformation.WorkingArea.Height;
+      if ( sender is ToolStripMenuItem )
+      {
+        var value = sender as ToolStripMenuItem;
+        foreach ( ToolStripMenuItem item in ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems )
+          item.Checked = item == value;
+      }
+      if ( EditScreenNone.Checked )
+        return;
+      if ( EditScreenTopLeft.Checked )
+        Location = new Point(left, top);
+      else
+      if ( EditScreenTopRight.Checked )
+        Location = new Point(left + width - Width, top);
+      else
+      if ( EditScreenBottomLeft.Checked )
+        Location = new Point(left, top + height - Height);
+      else
+      if ( EditScreenBottomRight.Checked )
+        Location = new Point(left + width - Width, top + height - Height);
+      else
+      if ( EditScreenCenter.Checked )
+        CenterToScreen();
+      EditScreenNone.Checked = false;
     }
-
-    /// <summary>
-    /// Execute the screen location operation.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    protected void DoScreenPosition(object sender, EventArgs e)
+    finally
     {
-      if ( DoScreenPositionMutex ) return;
-      try
-      {
-        DoScreenPositionMutex = true;
-        int left = SystemInformation.WorkingArea.Left;
-        int top = SystemInformation.WorkingArea.Top;
-        int width = SystemInformation.WorkingArea.Width;
-        int height = SystemInformation.WorkingArea.Height;
-        if ( sender is ToolStripMenuItem )
-        {
-          var value = sender as ToolStripMenuItem;
-          foreach ( ToolStripMenuItem item in ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems )
-            item.Checked = item == value;
-        }
-        if ( EditScreenNone.Checked )
-          return;
-        if ( EditScreenTopLeft.Checked )
-          Location = new Point(left, top);
-        else
-        if ( EditScreenTopRight.Checked )
-          Location = new Point(left + width - Width, top);
-        else
-        if ( EditScreenBottomLeft.Checked )
-          Location = new Point(left, top + height - Height);
-        else
-        if ( EditScreenBottomRight.Checked )
-          Location = new Point(left + width - Width, top + height - Height);
-        else
-        if ( EditScreenCenter.Checked )
-          CenterToScreen();
-        EditScreenNone.Checked = false;
-      }
-      finally
-      {
-        DoScreenPositionMutex = false;
-      }
+      DoScreenPositionMutex = false;
     }
-
   }
 
 }

@@ -12,27 +12,23 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew.Words
+class WordTranslationComparer : IEqualityComparer<ReferenceItem>
 {
 
-  class WordTranslationComparer : IEqualityComparer<ReferenceItem>
+  public bool Equals(ReferenceItem x, ReferenceItem y)
   {
+    return x != null
+        && y != null
+        && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
+  }
 
-    public bool Equals(ReferenceItem x, ReferenceItem y)
-    {
-      return x != null
-          && y != null
-          && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
-    }
-
-    public int GetHashCode(ReferenceItem obj)
-    {
-      return obj?.Word?.Translation.GetHashCode() ?? 0;
-    }
-
+  public int GetHashCode(ReferenceItem obj)
+  {
+    return obj?.Word?.Translation.GetHashCode() ?? 0;
   }
 
 }

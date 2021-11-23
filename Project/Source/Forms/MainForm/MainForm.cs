@@ -12,1397 +12,1394 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-07 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Odbc;
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Data;
-using System.Threading.Tasks;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide application's main form.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class MainForm : Form
 {
 
   /// <summary>
-  /// Provide application's main form.
+  /// Indicate the singleton instance.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class MainForm : Form
+  static public MainForm Instance { get; private set; }
+
+  /// <summary>
+  /// Static constructor.
+  /// </summary>
+  static MainForm()
   {
+    Instance = new MainForm();
+  }
 
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static public MainForm Instance { get; private set; }
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  private MainForm()
+  {
+    InitializeComponent();
+    new Task(InitializeIconsAndSound).Start();
+    Interlocks.Take();
+    SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
+    Text = Globals.AssemblyTitle;
+    ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
+    SystemEvents.SessionEnding += SessionEnding;
+    CurrentReference = new ReferenceItem(null, null, null, null);
+    Bookmarks = new Bookmarks(Program.BookmarksFilePath);
+    History = new History(Program.HistoryFilePath);
+    ActionGoToBookmarkMaster.Click += GoToBookmark;
+  }
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static MainForm()
+  /// <summary>
+  /// Event handler. Called by MainForm for load events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void MainForm_Load(object sender, EventArgs e)
+  {
+    if ( Globals.IsExiting ) return;
+    Settings.Retrieve();
+    //StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
+    Globals.ChronoStartingApp.Stop();
+    var lastdone = Settings.CheckUpdateLastDone;
+    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                   ref lastdone,
+                                   Settings.CheckUpdateAtStartupDaysInterval,
+                                   true);
+    Settings.CheckUpdateLastDone = lastdone;
+    if ( exit )
     {
-      Instance = new MainForm();
+      SystemManager.Exit();
+      return;
     }
-
-    /// <summary>
-    /// Default constructor.
-    /// </summary>
-    private MainForm()
+    Globals.ChronoStartingApp.Start();
+    if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
     {
-      InitializeComponent();
-      new Task(InitializeIconsAndSound).Start();
-      Interlocks.Take();
-      SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
-      Text = Globals.AssemblyTitle;
-      ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
-      SystemEvents.SessionEnding += SessionEnding;
-      CurrentReference = new ReferenceItem(null, null, null, null);
-      Bookmarks = new Bookmarks(Program.BookmarksFilePath);
-      History = new History(Program.HistoryFilePath);
-      ActionGoToBookmarkMaster.Click += GoToBookmark;
+      Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
+      SystemManager.TryCatch(Settings.Save);
     }
+    UpdateSearchButtons();
+    BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
+    DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
+    Program.UpdateLocalization();
+  }
 
-    /// <summary>
-    /// Event handler. Called by MainForm for load events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void MainForm_Load(object sender, EventArgs e)
-    {
-      if ( Globals.IsExiting ) return;
-      Settings.Retrieve();
-      //StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
-      Globals.ChronoStartingApp.Stop();
-      var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                     ref lastdone,
-                                     Settings.CheckUpdateAtStartupDaysInterval,
-                                     true);
-      Settings.CheckUpdateLastDone = lastdone;
-      if ( exit )
+  /// <summary>
+  /// Event handler. Called by MainForm for shown events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void MainForm_Shown(object sender, EventArgs e)
+  {
+    if ( Globals.IsExiting ) return;
+    Refresh();
+    ToolStrip.SetDropDownOpening();
+    InitializeDialogsDirectory();
+    DoBackupDB();
+    LoadData();
+    TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
+    if ( TimerAutoSave.Enabled )
+      TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
+    Globals.IsReady = true;
+    bool auto = false;
+    if ( SystemManager.CommandLineOptions != null )
+      try
       {
-        SystemManager.Exit();
-        return;
-      }
-      Globals.ChronoStartingApp.Start();
-      if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
-      {
-        Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
-        SystemManager.TryCatch(Settings.Save);
-      }
-      UpdateSearchButtons();
-      BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
-      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
-      Program.UpdateLocalization();
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for shown events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void MainForm_Shown(object sender, EventArgs e)
-    {
-      if ( Globals.IsExiting ) return;
-      Refresh();
-      ToolStrip.SetDropDownOpening();
-      InitializeDialogsDirectory();
-      DoBackupDB();
-      LoadData();
-      TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
-      if ( TimerAutoSave.Enabled )
-        TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
-      Globals.IsReady = true;
-      bool auto = false;
-      if ( SystemManager.CommandLineOptions != null )
-        try
+        var options = ApplicationCommandLine.Instance;
+        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
         {
-          var options = ApplicationCommandLine.Instance;
-          if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
-          {
-            GoTo(options.ReferenceToGo);
-            auto = true;
-          }
-          else
-          if ( !string.IsNullOrEmpty(options.SearchWord) )
-          {
-            auto = true;
-            defaultGoTo();
-            // TODO recup code Letters
-            SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
-          }
-          else
-          if ( !string.IsNullOrEmpty(options.SearchTranslated) )
-          {
-            auto = true;
-            defaultGoTo();
-            SearchTranslatedWord(options.SearchTranslated);
-          }
+          GoTo(options.ReferenceToGo);
+          auto = true;
         }
-        catch
+        else
+        if ( !string.IsNullOrEmpty(options.SearchWord) )
         {
+          auto = true;
+          defaultGoTo();
+          // TODO recup code Letters
+          SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
         }
-      if ( !auto ) defaultGoTo();
-      ActionSave.PerformClick();
-      void defaultGoTo()
-      {
-        if ( Program.Settings.GoToMasterBookmarkAtStartup )
-          GoTo(Program.Settings.BookmarkMasterBook,
-               Program.Settings.BookmarkMasterChapter,
-               Program.Settings.BookmarkMasterVerse,
-               true);
         else
-          GoTo(1, 1, 1, true);
-      }
-      if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-        SystemManager.TryCatch(() =>
+        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
         {
-          var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
-          var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-          menuItem?.PerformClick();
-        });
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for form closing events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
-    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( Globals.IsExiting ) return;
-      if ( !Globals.IsReady ) return;
-      ActionSave.PerformClick();
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
-      {
-        Globals.IsExiting = true;
-        return;
+          auto = true;
+          defaultGoTo();
+          SearchTranslatedWord(options.SearchTranslated);
+        }
       }
-      if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
-          e.Cancel = true;
-        else
-          Globals.IsExiting = true;
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for form closed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
-    private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+      catch
+      {
+      }
+    if ( !auto ) defaultGoTo();
+    ActionSave.PerformClick();
+    void defaultGoTo()
     {
-      Settings.Store();
-      Interlocks.Release();
+      if ( Program.Settings.GoToMasterBookmarkAtStartup )
+        GoTo(Program.Settings.BookmarkMasterBook,
+             Program.Settings.BookmarkMasterChapter,
+             Program.Settings.BookmarkMasterVerse,
+             true);
+      else
+        GoTo(1, 1, 1, true);
     }
+    if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+      SystemManager.TryCatch(() =>
+      {
+        var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
+        var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+        menuItem?.PerformClick();
+      });
+  }
 
-    /// <summary>
-    /// Session ending event.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    private void SessionEnding(object sender, SessionEndingEventArgs e)
+  /// <summary>
+  /// Event handler. Called by MainForm for form closing events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Form closing event information.</param>
+  private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    if ( Globals.IsExiting ) return;
+    if ( !Globals.IsReady ) return;
+    ActionSave.PerformClick();
+    if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
     {
-      if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
       Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      TimerTooltip.Stop();
-      MessageBoxEx.CloseAll();
-      foreach ( Form form in Application.OpenForms )
-        if ( form != this && form.Visible )
-          SystemManager.TryCatch(() => form.Close());
-      Close();
+      return;
     }
-
-    /// <summary>
-    /// WndProc override.
-    /// </summary>
-    protected override void WndProc(ref Message m)
-    {
-      switch ( m.Msg )
-      {
-        case NativeMethods.WM_QUERYENDSESSION:
-          SessionEnding(this, null);
-          break;
-        default:
-          base.WndProc(ref m);
-          break;
-      }
-    }
-
-    /// <summary>
-    /// Set the initial directories of dialog boxes.
-    /// </summary>
-    public void InitializeDialogsDirectory()
-    {
-      OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
-      SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
-      SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;
-      SaveFileDialogRTF.InitialDirectory = Settings.BackupPath;
-    }
-
-    /// <summary>
-    /// Initialize icons
-    /// </summary>
-    private void InitializeIconsAndSound()
-    {
-      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for client size and location changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void MainForm_WindowsChanged(object sender, EventArgs e)
-    {
-      if ( Globals.IsExiting ) return;
-      if ( !Globals.IsReady ) return;
-      if ( !Visible ) return;
-      if ( WindowState != FormWindowState.Normal ) return;
-      EditScreenNone.PerformClick();
-    }
-
-    /// <summary>
-    /// Set form disabled or enabled.
-    /// </summary>
-    public void SetFormDisabled(bool disabled)
-    {
-      Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
-      ToolStrip.Enabled = !disabled;
-      PanelNavigation.Enabled = !disabled;
-      PanelMainCenter.Enabled = !disabled;
-      Refresh();
-    }
-
-    /// <summary>
-    /// Initialize books combobox.
-    /// </summary>
-    private void InitBooksCombobox()
-    {
-      SelectBook.Items.Clear();
-      SelectSearchInBook.Items.Clear();
-      foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-      {
-        var item = new BookItem(book);
-        SelectBook.Items.Add(item);
-        SelectSearchInBook.Items.Add(item);
-      }
-      SelectBook.SelectedIndex = 0;
-      foreach ( var item in SelectSearchInBook.Items )
-        if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
-          SelectSearchInBook.SelectedItem = item;
-      if ( SelectSearchInBook.SelectedIndex == -1 )
-        SelectSearchInBook.SelectedIndex = 0;
-    }
-
-    /// <summary>
-    /// Initialize chapter combobox.
-    /// </summary>
-    private void InitChaptersCombobox()
-    {
-      if ( SelectBook.SelectedItem == null ) return;
-      SelectChapter.Items.Clear();
-      foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
-        SelectChapter.Items.Add(new ChapterItem(chapter));
-      SelectChapter.SelectedIndex = 0;
-    }
-
-    /// <summary>
-    /// Timer event for tooltips.
-    /// </summary>
-    private void TimerTooltip_Tick(object sender, EventArgs e)
-    {
-      if ( !EditShowTips.Checked ) return;
-      var item = (ToolStripItem)LastToolTip.Tag;
-      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
-      LastToolTip.Tag = sender;
-      LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
-      TimerTooltip.Enabled = false;
-    }
-
-    /// <summary>
-    /// Show tooltip on mouse enter event.
-    /// </summary>
-    private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
-    {
-      if ( !EditShowTips.Checked ) return;
-      if ( sender is not ToolStripItem ) return;
-      if ( LastToolTip.Tag == sender ) return;
-      LastToolTip.Tag = sender;
-      if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
-      TimerTooltip.Enabled = true;
-    }
-
-    /// <summary>
-    /// Hide tooltip on mouse leave event.
-    /// </summary>
-    private void ShowToolTipOnMouseLeave(object sender, EventArgs e)
-    {
-      if ( !EditShowTips.Checked ) return;
-      TimerTooltip.Enabled = false;
-      LastToolTip.Tag = null;
-      LastToolTip.Hide(ToolStrip);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewVerses for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewVerses_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Settings.CurrentView == ViewMode.Verses ) return;
-      SetView(ViewMode.Verses);
-      GoTo(CurrentReference);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewTranslations for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewTranslations_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Settings.CurrentView == ViewMode.Translations ) return;
-      SetView(ViewMode.Translations);
-      RenderTranslation();
-      GoTo(CurrentReference);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewRawText for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewRawText_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Settings.CurrentView == ViewMode.Text ) return;
-      SetView(ViewMode.Text);
-      GoTo(CurrentReference);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewELS50 for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewELS50_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Settings.CurrentView == ViewMode.ELS50 ) return;
-      SetView(ViewMode.ELS50);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewSearch for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewSearch_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( Settings.CurrentView == ViewMode.Search )
-        RotateSearchTab();
+    if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
+        e.Cancel = true;
       else
-        SetView(ViewMode.Search);
-      SelectSearchType_Selected(null, null);
-    }
+        Globals.IsExiting = true;
+  }
 
-    /// <summary>
-    /// Event handler. Called by SelectSearchType for selected events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
-    {
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
-      {
-        ActiveControl = EditLetters;
-        EditLetters.Focus();
-      }
-      else
-      if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
-      {
-        ActiveControl = EditSearchTranslation;
-        EditSearchTranslation.Focus();
-      }
-      UpdateSearchButtons();
-    }
+  /// <summary>
+  /// Event handler. Called by MainForm for form closed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Form closing event information.</param>
+  private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    Settings.Store();
+    Interlocks.Release();
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionRefresh for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionRefresh_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Session ending event.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Session ending event information.</param>
+  private void SessionEnding(object sender, SessionEndingEventArgs e)
+  {
+    if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
+    Globals.IsExiting = true;
+    Globals.IsSessionEnding = true;
+    Globals.AllowClose = true;
+    TimerTooltip.Stop();
+    MessageBoxEx.CloseAll();
+    foreach ( Form form in Application.OpenForms )
+      if ( form != this && form.Visible )
+        SystemManager.TryCatch(() => form.Close());
+    Close();
+  }
+
+  /// <summary>
+  /// WndProc override.
+  /// </summary>
+  protected override void WndProc(ref Message m)
+  {
+    switch ( m.Msg )
     {
-      ActionSave.PerformClick();
+      case NativeMethods.WM_QUERYENDSESSION:
+        SessionEnding(this, null);
+        break;
+      default:
+        base.WndProc(ref m);
+        break;
+    }
+  }
+
+  /// <summary>
+  /// Set the initial directories of dialog boxes.
+  /// </summary>
+  public void InitializeDialogsDirectory()
+  {
+    OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
+    SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
+    SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;
+    SaveFileDialogRTF.InitialDirectory = Settings.BackupPath;
+  }
+
+  /// <summary>
+  /// Initialize icons
+  /// </summary>
+  private void InitializeIconsAndSound()
+  {
+    SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+    SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
+  }
+
+  /// <summary>
+  /// Event handler. Called by MainForm for client size and location changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void MainForm_WindowsChanged(object sender, EventArgs e)
+  {
+    if ( Globals.IsExiting ) return;
+    if ( !Globals.IsReady ) return;
+    if ( !Visible ) return;
+    if ( WindowState != FormWindowState.Normal ) return;
+    EditScreenNone.PerformClick();
+  }
+
+  /// <summary>
+  /// Set form disabled or enabled.
+  /// </summary>
+  public void SetFormDisabled(bool disabled)
+  {
+    Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
+    ToolStrip.Enabled = !disabled;
+    PanelNavigation.Enabled = !disabled;
+    PanelMainCenter.Enabled = !disabled;
+    Refresh();
+  }
+
+  /// <summary>
+  /// Initialize books combobox.
+  /// </summary>
+  private void InitBooksCombobox()
+  {
+    SelectBook.Items.Clear();
+    SelectSearchInBook.Items.Clear();
+    foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+    {
+      var item = new BookItem(book);
+      SelectBook.Items.Add(item);
+      SelectSearchInBook.Items.Add(item);
+    }
+    SelectBook.SelectedIndex = 0;
+    foreach ( var item in SelectSearchInBook.Items )
+      if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
+        SelectSearchInBook.SelectedItem = item;
+    if ( SelectSearchInBook.SelectedIndex == -1 )
+      SelectSearchInBook.SelectedIndex = 0;
+  }
+
+  /// <summary>
+  /// Initialize chapter combobox.
+  /// </summary>
+  private void InitChaptersCombobox()
+  {
+    if ( SelectBook.SelectedItem == null ) return;
+    SelectChapter.Items.Clear();
+    foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
+      SelectChapter.Items.Add(new ChapterItem(chapter));
+    SelectChapter.SelectedIndex = 0;
+  }
+
+  /// <summary>
+  /// Timer event for tooltips.
+  /// </summary>
+  private void TimerTooltip_Tick(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    var item = (ToolStripItem)LastToolTip.Tag;
+    var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
+    LastToolTip.Tag = sender;
+    LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+    TimerTooltip.Enabled = false;
+  }
+
+  /// <summary>
+  /// Show tooltip on mouse enter event.
+  /// </summary>
+  private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    if ( sender is not ToolStripItem ) return;
+    if ( LastToolTip.Tag == sender ) return;
+    LastToolTip.Tag = sender;
+    if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
+    TimerTooltip.Enabled = true;
+  }
+
+  /// <summary>
+  /// Hide tooltip on mouse leave event.
+  /// </summary>
+  private void ShowToolTipOnMouseLeave(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    TimerTooltip.Enabled = false;
+    LastToolTip.Tag = null;
+    LastToolTip.Hide(ToolStrip);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewVerses for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewVerses_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Verses ) return;
+    SetView(ViewMode.Verses);
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewTranslations for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewTranslations_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Translations ) return;
+    SetView(ViewMode.Translations);
+    RenderTranslation();
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewRawText for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewRawText_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Text ) return;
+    SetView(ViewMode.Text);
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewELS50 for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewELS50_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.ELS50 ) return;
+    SetView(ViewMode.ELS50);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewSearch for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewSearch_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Search )
+      RotateSearchTab();
+    else
+      SetView(ViewMode.Search);
+    SelectSearchType_Selected(null, null);
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectSearchType for selected events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
+  {
+    if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
+    {
+      ActiveControl = EditLetters;
+      EditLetters.Focus();
+    }
+    else
+    if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
+    {
+      ActiveControl = EditSearchTranslation;
+      EditSearchTranslation.Focus();
+    }
+    UpdateSearchButtons();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionRefresh for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionRefresh_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    int book = CurrentReference.Book.Number;
+    int chapter = CurrentReference.Chapter.Number;
+    int verse = CurrentReference.Verse?.Number ?? 1;
+    RenderAll();
+    RenderSearch();
+    GoTo(book, chapter, verse);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCloseWindows for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCloseWindows_Click(object sender, EventArgs e)
+  {
+    bool value = Settings.CloseSearchTranslatedFormReturnToReference;
+    try
+    {
+      Settings.CloseSearchTranslatedFormReturnToReference = false;
+      foreach ( var form in SearchTranslatedForm.Forms.ToList() )
+        form.Close();
+    }
+    finally
+    {
+      Settings.CloseSearchTranslatedFormReturnToReference = value;
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyToClipboard for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+  {
+    switch ( Settings.CurrentView )
+    {
+      case ViewMode.Translations:
+        Clipboard.SetText(EditTranslations.Text);
+        break;
+      case ViewMode.Text:
+        Clipboard.SetText(EditRawText.Text);
+        break;
+      case ViewMode.ELS50:
+        Clipboard.SetText(EditELS50All.Text);
+        break;
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowGrammarGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
+      Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
+    Program.GrammarGuideForm.Show();
+    Program.GrammarGuideForm.BringToFront();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewBooksTranslation for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( !EditBooksForm.Run() ) return;
+    Refresh();
+    Globals.IsLoadingData = true;
+    try
+    {
       int book = CurrentReference.Book.Number;
       int chapter = CurrentReference.Chapter.Number;
       int verse = CurrentReference.Verse?.Number ?? 1;
-      RenderAll();
-      RenderSearch();
+      InitBooksCombobox();
+
+      // TODO fix text box translation/title/memo vidés...
+
       GoTo(book, chapter, verse);
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionCloseWindows for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCloseWindows_Click(object sender, EventArgs e)
+    finally
     {
-      bool value = Settings.CloseSearchTranslatedFormReturnToReference;
+      Globals.IsLoadingData = false;
+      ActionSave.PerformClick();
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewParashot for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewParashot_Click(object sender, EventArgs e)
+  {
+    ParashotForm.Run();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewStatistics for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewStatistics_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    var reference = StatisticsForm.Run();
+    if ( reference != null )
+    {
+      SetView(ViewMode.Verses);
+      GoTo(reference);
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionStartHebrewLetters for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
+                                  Settings.HebrewLettersExe);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionNew for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionNew_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+      ActionBackup.PerformClick();
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
+      return;
+    ReLoadData(() => File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName)));
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionRestore for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionRestore_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+      ActionBackup.PerformClick();
+    if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
+      return;
+    ReLoadData(() =>
+    {
+      File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
+      File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
+    });
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionBackup for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionBackup_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    SaveFileDialogDB.FileName = Globals.ApplicationDatabaseFileName;
+    if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
+    if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
+    File.Copy(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName), SaveFileDialogDB.FileName);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenBackupPath for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenBackupPath_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Settings.BackupPath);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSave for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSave_Click(object sender, EventArgs e)
+  {
+    if ( DataSet.HasChanges() )
+      TableAdapterManager.UpdateAll(DataSet);
+    ActionSave.Enabled = false;
+  }
+
+  /// <summary>
+  /// Event handler. Called by TimerAutoSave for tick events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void TimerAutoSave_Tick(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionVacuum for tick events.
+  /// </summary>
+  /// <param name="sender"></param>
+  /// <param name="e"></param>
+  private void ActionVacuum_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOptimizeDatabase.GetLang()) )
+      return;
+    ActionSave.PerformClick();
+    ReLoadData(() =>
+    {
+      using var connection = new OdbcConnection(Settings.ConnectionString);
       try
       {
-        Settings.CloseSearchTranslatedFormReturnToReference = false;
-        foreach ( var form in SearchTranslatedForm.Forms.ToList() )
-          form.Close();
+        Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
       }
       finally
       {
-        Settings.CloseSearchTranslatedFormReturnToReference = value;
+        connection.Close();
       }
-    }
+    });
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionCopyToClipboard for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionPreferences for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionPreferences_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    bool refresh = PreferencesForm.Run();
+    InitializeDialogsDirectory();
+    UpdateBookmarks();
+    UpdateHistory();
+    if ( refresh )
     {
-      switch ( Settings.CurrentView )
-      {
-        case ViewMode.Translations:
-          Clipboard.SetText(EditTranslations.Text);
-          break;
-        case ViewMode.Text:
-          Clipboard.SetText(EditRawText.Text);
-          break;
-        case ViewMode.ELS50:
-          Clipboard.SetText(EditELS50All.Text);
-          break;
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionShowGrammarGuide for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
-    {
-      if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
-        Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
-      Program.GrammarGuideForm.Show();
-      Program.GrammarGuideForm.BringToFront();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewBooksTranslation for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( !EditBooksForm.Run() ) return;
       Refresh();
-      Globals.IsLoadingData = true;
-      try
-      {
-        int book = CurrentReference.Book.Number;
-        int chapter = CurrentReference.Chapter.Number;
-        int verse = CurrentReference.Verse?.Number ?? 1;
-        InitBooksCombobox();
-
-        // TODO fix text box translation/title/memo vidés...
-
-        GoTo(book, chapter, verse);
-      }
-      finally
-      {
-        Globals.IsLoadingData = false;
-        ActionSave.PerformClick();
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewParashot for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewParashot_Click(object sender, EventArgs e)
-    {
-      ParashotForm.Run();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewStatistics for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewStatistics_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      var reference = StatisticsForm.Run();
-      if ( reference != null )
-      {
-        SetView(ViewMode.Verses);
-        GoTo(reference);
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionStartHebrewLetters for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
-    {
-      HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
-                                    Settings.HebrewLettersExe);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionNew for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionNew_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
-        ActionBackup.PerformClick();
-      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
-        return;
-      ReLoadData(() => File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName)));
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionRestore for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionRestore_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
-        ActionBackup.PerformClick();
-      if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
-        return;
-      ReLoadData(() =>
-      {
-        File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
-        File.Copy(OpenFileDialogDB.FileName, Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
-      });
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionBackup for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionBackup_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      SaveFileDialogDB.FileName = Globals.ApplicationDatabaseFileName;
-      if ( SaveFileDialogDB.ShowDialog() == DialogResult.Cancel ) return;
-      if ( File.Exists(SaveFileDialogDB.FileName) ) File.Delete(SaveFileDialogDB.FileName);
-      File.Copy(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName), SaveFileDialogDB.FileName);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionOpenBackupPath for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenBackupPath_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Settings.BackupPath);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSave for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSave_Click(object sender, EventArgs e)
-    {
-      if ( DataSet.HasChanges() )
-        TableAdapterManager.UpdateAll(DataSet);
-      ActionSave.Enabled = false;
-    }
-
-    /// <summary>
-    /// Event handler. Called by TimerAutoSave for tick events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void TimerAutoSave_Tick(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionVacuum for tick events.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void ActionVacuum_Click(object sender, EventArgs e)
-    {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOptimizeDatabase.GetLang()) )
-        return;
-      ActionSave.PerformClick();
-      ReLoadData(() =>
-      {
-        using var connection = new OdbcConnection(Settings.ConnectionString);
-        try
-        {
-          Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
-        }
-        finally
-        {
-          connection.Close();
-        }
-      });
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionPreferences for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPreferences_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      bool refresh = PreferencesForm.Run();
-      InitializeDialogsDirectory();
-      UpdateBookmarks();
-      UpdateHistory();
-      if ( refresh )
-      {
-        Refresh();
-        RenderVerses();
-        UpdatePagingCount();
-        RenderSearch();
-        var reference = Instance.CurrentReference;
-        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-        GoTo(reference.Book.Number, reference.Chapter.Number, verse);
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionResetWinSettings for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionResetWinSettings_Click(object sender, EventArgs e)
-    {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
-      {
-        Settings.RestoreMainForm();
-        ActionRefresh.PerformClick();
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by SelectScreenPosition for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    public void EditScreenPosition_Click(object sender, EventArgs e)
-    {
-      DoScreenPosition(sender, e);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionAbout for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    public void ActionAbout_Click(object sender, EventArgs e)
-    {
-      if ( AboutBox.Instance.Visible )
-        AboutBox.Instance.BringToFront();
-      else
-        AboutBox.Instance.ShowDialog();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebCheckUpdate for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                     ref lastdone,
-                                     Settings.CheckUpdateAtStartupDaysInterval,
-                                     e == null);
-      Settings.CheckUpdateLastDone = lastdone;
-      if ( exit ) Close();
-    }
-
-    public void ActionViewLog_Click(object sender, EventArgs e)
-    {
-      DebugManager.TraceForm.Popup();
-    }
-
-    private void ActionViewStats_Click(object sender, EventArgs e)
-    {
-      // TODO usage stats form and rename tanak stats
-      //StatisticsForm.Run();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionExit for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionExit_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionExportBook for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionExportBook_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      DoExportBook();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionExportChapter for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionExportChapter_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      DoExportChapter();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionELS50CopyToClipboard for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionELS50CopyToClipboard_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(EditELS50.Text);
-    }
-
-    /// <summary>
-    /// Event handler. Called by SelectBook for selected index changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
-      InitChaptersCombobox();
-    }
-
-    /// <summary>
-    /// Event handler. Called by SelectChapter for selected index changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( IsComboBoxChanging ) return;
-      IsComboBoxChanging = true;
-      try
-      {
-        EditBookTranslation.Text = "";
-        EditChapterTitle.Text = "";
-        EditChapterMemo.Text = "";
-        ActionSave.PerformClick();
-        CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
-                                             ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
-                                             1);
-        RenderAll();
-        GoTo(CurrentReference);
-      }
-      finally
-      {
-        IsComboBoxChanging = false;
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelLetterSearch for key press events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
-    {
-      if ( e.KeyChar == '\r' ) ActionSearchRun.PerformClick();
-    }
-
-    /// <summary>
-    /// Event handler. Called by EditLetters for input text changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void EditLetters_InputTextChanged(object sender, EventArgs e)
-    {
-      UpdateSearchButtons();
-    }
-
-    /// <summary>
-    /// Event handler. Called by EditSearchTranslation for text changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void EditSearchTranslation_TextChanged(object sender, EventArgs e)
-    {
-      UpdateSearchButtons();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSearchWord for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchWord_Click(object sender, EventArgs e)
-    {
-      CreateSearchResults();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSearchClear for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchClear_Click(object sender, EventArgs e)
-    {
-      EditLetters.TextBox.Text = "";
-      EditSearchTranslation.Text = "";
-      SystemManager.TryCatch(Settings.Save);
-      ClearSearchResults();
-      UpdateSearchButtons();
+      RenderVerses();
+      UpdatePagingCount();
       RenderSearch();
+      var reference = Instance.CurrentReference;
+      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
     }
+  }
 
-    private void ActionSearchInAddAll_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionResetWinSettings for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionResetWinSettings_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
     {
-      EditSearchInTorah.Checked = true;
-      EditSearchInNeviim.Checked = true;
-      EditSearchInKetouvim.Checked = true;
+      Settings.RestoreMainForm();
+      ActionRefresh.PerformClick();
     }
+  }
 
-    private void ActionSearchInRemoveAll_Click(object sender, EventArgs e)
-    {
-      EditSearchInTorah.Checked = false;
-      EditSearchInNeviim.Checked = false;
-      EditSearchInKetouvim.Checked = false;
-    }
+  /// <summary>
+  /// Event handler. Called by SelectScreenPosition for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void EditScreenPosition_Click(object sender, EventArgs e)
+  {
+    DoScreenPosition(sender, e);
+  }
 
-    /// <summary>
-    /// Event handler. Called by SelectSearchInBook selected index changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
-      SystemManager.TryCatch(Settings.Save);
-    }
+  /// <summary>
+  /// Event handler. Called by ActionAbout for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionAbout_Click(object sender, EventArgs e)
+  {
+    if ( AboutBox.Instance.Visible )
+      AboutBox.Instance.BringToFront();
+    else
+      AboutBox.Instance.ShowDialog();
+  }
 
-    /// <summary>
-    /// Event handler. Called by EditSearchInSelectBook for checked changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void EditSearchInSelectBook_CheckedChanged(object sender, EventArgs e)
-    {
-      SelectSearchInBook.Enabled = !EditSearchInTorah.Checked
-                                && !EditSearchInNeviim.Checked
-                                && !EditSearchInKetouvim.Checked;
-    }
+  /// <summary>
+  /// Event handler. Called by ActionWebCheckUpdate for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    var lastdone = Settings.CheckUpdateLastDone;
+    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                   ref lastdone,
+                                   Settings.CheckUpdateAtStartupDaysInterval,
+                                   e == null);
+    Settings.CheckUpdateLastDone = lastdone;
+    if ( exit ) Close();
+  }
 
-    /// <summary>
-    /// Event handler. Called by PanelViewVerses for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
+  public void ActionViewLog_Click(object sender, EventArgs e)
+  {
+    DebugManager.TraceForm.Popup();
+  }
+
+  private void ActionViewStats_Click(object sender, EventArgs e)
+  {
+    // TODO usage stats form and rename tanak stats
+    //StatisticsForm.Run();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionExit for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExit_Click(object sender, EventArgs e)
+  {
+    Close();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionExportBook for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExportBook_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    DoExportBook();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionExportChapter for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExportChapter_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    DoExportChapter();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionELS50CopyToClipboard for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionELS50CopyToClipboard_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(EditELS50.Text);
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectBook for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
+    InitChaptersCombobox();
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectChapter for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( IsComboBoxChanging ) return;
+    IsComboBoxChanging = true;
+    try
     {
-      PanelViewVerses.Focus();
+      EditBookTranslation.Text = "";
+      EditChapterTitle.Text = "";
+      EditChapterMemo.Text = "";
+      ActionSave.PerformClick();
+      CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
+                                           ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
+                                           1);
+      RenderAll();
       GoTo(CurrentReference);
     }
-
-    /// <summary>
-    /// Event handler. Called by PanelSearchResults for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelSearchResults_MouseClick(object sender, MouseEventArgs e)
+    finally
     {
-      PanelSearchResults.Focus();
+      IsComboBoxChanging = false;
     }
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionExportVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionExportVerse_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by PanelLetterSearch for key press events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void PanelLetterSearch_KeyPress(object sender, KeyPressEventArgs e)
+  {
+    if ( e.KeyChar == '\r' ) ActionSearchRun.PerformClick();
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditLetters for input text changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditLetters_InputTextChanged(object sender, EventArgs e)
+  {
+    UpdateSearchButtons();
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditSearchTranslation for text changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditSearchTranslation_TextChanged(object sender, EventArgs e)
+  {
+    UpdateSearchButtons();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSearchWord for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchWord_Click(object sender, EventArgs e)
+  {
+    CreateSearchResults();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSearchClear for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchClear_Click(object sender, EventArgs e)
+  {
+    EditLetters.TextBox.Text = "";
+    EditSearchTranslation.Text = "";
+    SystemManager.TryCatch(Settings.Save);
+    ClearSearchResults();
+    UpdateSearchButtons();
+    RenderSearch();
+  }
+
+  private void ActionSearchInAddAll_Click(object sender, EventArgs e)
+  {
+    EditSearchInTorah.Checked = true;
+    EditSearchInNeviim.Checked = true;
+    EditSearchInKetouvim.Checked = true;
+  }
+
+  private void ActionSearchInRemoveAll_Click(object sender, EventArgs e)
+  {
+    EditSearchInTorah.Checked = false;
+    EditSearchInNeviim.Checked = false;
+    EditSearchInKetouvim.Checked = false;
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectSearchInBook selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+    SystemManager.TryCatch(Settings.Save);
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditSearchInSelectBook for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditSearchInSelectBook_CheckedChanged(object sender, EventArgs e)
+  {
+    SelectSearchInBook.Enabled = !EditSearchInTorah.Checked
+                              && !EditSearchInNeviim.Checked
+                              && !EditSearchInKetouvim.Checked;
+  }
+
+  /// <summary>
+  /// Event handler. Called by PanelViewVerses for mouse click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
+  {
+    PanelViewVerses.Focus();
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by PanelSearchResults for mouse click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void PanelSearchResults_MouseClick(object sender, MouseEventArgs e)
+  {
+    PanelSearchResults.Focus();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionExportVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExportVerse_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    DoExportVerse(sender);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyTranslation for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyTranslation_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
-      ActionSave.PerformClick();
-      DoExportVerse(sender);
+      var reference = (ReferenceItem)control.Tag;
+      var verse = reference.Verse;
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionCopyTranslation for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCopyTranslation_Click(object sender, EventArgs e)
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      {
-        var reference = (ReferenceItem)control.Tag;
-        var verse = reference.Verse;
-        Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
-      }
-      else
-      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-      {
-        var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
-        var verse = reference.Verse;
-        Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
-      }
+      var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
+      var verse = reference.Verse;
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
     }
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      {
-        var reference = (ReferenceItem)control.Tag;
-        Settings.BookmarkMasterBook = reference.Book.Number;
-        Settings.BookmarkMasterChapter = reference.Chapter.Number;
-        Settings.BookmarkMasterVerse = reference.Verse.Number;
-      }
-      else
-      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-      {
-        Settings.BookmarkMasterBook = CurrentReference.Book.Number;
-        Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-        Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
-      }
-      Settings.Store();
-      UpdateBookmarks();
+      var reference = (ReferenceItem)control.Tag;
+      Settings.BookmarkMasterBook = reference.Book.Number;
+      Settings.BookmarkMasterChapter = reference.Chapter.Number;
+      Settings.BookmarkMasterVerse = reference.Verse.Number;
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionAddToBookmarks for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionAddToBookmarks_Click(object sender, EventArgs e)
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      ReferenceItem reference = null;
-      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      {
-        reference = (ReferenceItem)control.Tag;
-        reference = new ReferenceItem(reference.Book.Number,
-                                      reference.Chapter.Number,
-                                      reference.Verse.Number);
-      }
-      else
-      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-      {
-        int index = Convert.ToInt32(control.Text) - 1;
-        reference = new ReferenceItem(CurrentReference.Book.Number,
-                                      CurrentReference.Chapter.Number,
-                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
-      }
-      Bookmarks.Add(reference);
-      UpdateBookmarks();
+      Settings.BookmarkMasterBook = CurrentReference.Book.Number;
+      Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
+      Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
     }
+    Settings.Store();
+    UpdateBookmarks();
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionImportConsole for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionImportConsole_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionAddToBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionAddToBookmarks_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    ReferenceItem reference = null;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
-      ActionSave.PerformClick();
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      ReferenceItem reference = null;
-      if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      {
-        reference = (ReferenceItem)control.Tag;
-        reference = new ReferenceItem(reference.Book.Number,
-                                      reference.Chapter.Number,
-                                      reference.Verse.Number);
-      }
-      else
-      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-      {
-        int index = Convert.ToInt32(control.Text) - 1;
-        reference = new ReferenceItem(CurrentReference.Book.Number,
-                                      CurrentReference.Chapter.Number,
-                                      CurrentReference.Chapter.GetVersesRows()[index].Number);
-      }
-      ImportVerseForm.Run(reference);
+      reference = (ReferenceItem)control.Tag;
+      reference = new ReferenceItem(reference.Book.Number,
+                                    reference.Chapter.Number,
+                                    reference.Verse.Number);
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionClearHistory for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionClearHistory_Click(object sender, EventArgs e)
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
-      History.Clear();
-      UpdateHistory();
+      int index = Convert.ToInt32(control.Text) - 1;
+      reference = new ReferenceItem(CurrentReference.Book.Number,
+                                    CurrentReference.Chapter.Number,
+                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
     }
+    Bookmarks.Add(reference);
+    UpdateBookmarks();
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionClearBookmarks for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionClearBookmarks_Click(object sender, EventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionImportConsole for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionImportConsole_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    ReferenceItem reference = null;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
-      Settings.BookmarkMasterBook = 1;
-      Settings.BookmarkMasterChapter = 1;
-      Settings.BookmarkMasterVerse = 1;
-      Bookmarks.Clear();
-      Settings.Store();
-      UpdateBookmarks();
+      reference = (ReferenceItem)control.Tag;
+      reference = new ReferenceItem(reference.Book.Number,
+                                    reference.Chapter.Number,
+                                    reference.Verse.Number);
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionSortBookmarks for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSortBookmarks_Click(object sender, EventArgs e)
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
-      Bookmarks.Sort();
-      UpdateBookmarks();
-      MenuBookmarks.ShowDropDown();
+      int index = Convert.ToInt32(control.Text) - 1;
+      reference = new ReferenceItem(CurrentReference.Book.Number,
+                                    CurrentReference.Chapter.Number,
+                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
     }
+    ImportVerseForm.Run(reference);
+  }
 
-    private void ActionAddBookmark_Click(object sender, EventArgs e)
-    {
-      Bookmarks.Add(SelectReferenceForm.Run());
-      UpdateBookmarks();
-    }
+  /// <summary>
+  /// Event handler. Called by ActionClearHistory for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearHistory_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
+    History.Clear();
+    UpdateHistory();
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionGoToVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionGoToVerse_Click(object sender, EventArgs e)
-    {
-      ActionSave.PerformClick();
-      GoTo(SelectReferenceForm.Run());
-    }
+  /// <summary>
+  /// Event handler. Called by ActionClearBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearBookmarks_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
+    Settings.BookmarkMasterBook = 1;
+    Settings.BookmarkMasterChapter = 1;
+    Settings.BookmarkMasterVerse = 1;
+    Bookmarks.Clear();
+    Settings.Store();
+    UpdateBookmarks();
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchVerse for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchVerse_Click(object sender, EventArgs e)
-    {
-      GoTo(SelectVerseForm.Run());
-    }
+  /// <summary>
+  /// Event handler. Called by ActionSortBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSortBookmarks_Click(object sender, EventArgs e)
+  {
+    Bookmarks.Sort();
+    UpdateBookmarks();
+    MenuBookmarks.ShowDropDown();
+  }
 
-    /// <summary>
-    /// Search a hebrew word.
-    /// </summary>
-    /// <param name="word"></param>
-    public void SearchHebrewWord(string word)
-    {
-      SetView(ViewMode.Search);
-      SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-      EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
-      EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
-    }
+  private void ActionAddBookmark_Click(object sender, EventArgs e)
+  {
+    Bookmarks.Add(SelectReferenceForm.Run());
+    UpdateBookmarks();
+  }
 
-    /// <summary>
-    /// Search a translated word.
-    /// </summary>
-    /// <param name="word"></param>
-    public void SearchTranslatedWord(string word)
-    {
-      SetView(ViewMode.Search);
-      SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
-      EditLetters.TextBox.Text = word;
-      EditLetters.TextBox.SelectionStart = EditSearchTranslation.Text.Length;
-    }
+  /// <summary>
+  /// Event handler. Called by ActionGoToVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionGoToVerse_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    GoTo(SelectReferenceForm.Run());
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchNavigateFirst for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
-    {
-      if ( IsRenderingSearch ) return;
-      PagingCurrent = 1;
-      RenderSearch();
-    }
+  /// <summary>
+  /// Event handler. Called by ActionSearchVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchVerse_Click(object sender, EventArgs e)
+  {
+    GoTo(SelectVerseForm.Run());
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchNavigatePrevious for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
-    {
-      if ( IsRenderingSearch ) return;
-      PagingCurrent--;
-      RenderSearch();
-    }
+  /// <summary>
+  /// Search a hebrew word.
+  /// </summary>
+  /// <param name="word"></param>
+  public void SearchHebrewWord(string word)
+  {
+    SetView(ViewMode.Search);
+    SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
+    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
+    EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchNavigateNext for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
-    {
-      if ( IsRenderingSearch ) return;
-      PagingCurrent++;
-      RenderSearch();
-    }
+  /// <summary>
+  /// Search a translated word.
+  /// </summary>
+  /// <param name="word"></param>
+  public void SearchTranslatedWord(string word)
+  {
+    SetView(ViewMode.Search);
+    SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
+    EditLetters.TextBox.Text = word;
+    EditLetters.TextBox.SelectionStart = EditSearchTranslation.Text.Length;
+  }
 
-    /// <summary>
-    /// Event handler. Called by ActionSearchNavigateLast for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
-    {
-      if ( IsRenderingSearch ) return;
-      PagingCurrent = PagingCount;
-      RenderSearch();
-    }
+  /// <summary>
+  /// Event handler. Called by ActionSearchNavigateFirst for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
+  {
+    if ( IsRenderingSearch ) return;
+    PagingCurrent = 1;
+    RenderSearch();
+  }
 
-    /// <summary>
-    /// Event handler. Called by SelectSearchPaging for value changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectSearchPaging_ValueChanged(object sender, EventArgs e)
-    {
-      if ( PagingCurrent != SelectSearchPaging.Value )
-      {
-        PagingCurrent = SelectSearchPaging.Value;
-        if ( PreviousSeachPagingPosition == -1 )
-          RenderSearch();
-        else
-          EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount + " (" + SearchResultsCount + ")";
-      }
-    }
+  /// <summary>
+  /// Event handler. Called by ActionSearchNavigatePrevious for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
+  {
+    if ( IsRenderingSearch ) return;
+    PagingCurrent--;
+    RenderSearch();
+  }
 
-    /// <summary>
-    /// Event handler. Called by SelectSearchPaging for mouse down events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectSearchPaging_MouseDown(object sender, MouseEventArgs e)
-    {
-      PreviousSeachPagingPosition = SelectSearchPaging.Value;
-    }
+  /// <summary>
+  /// Event handler. Called by ActionSearchNavigateNext for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
+  {
+    if ( IsRenderingSearch ) return;
+    PagingCurrent++;
+    RenderSearch();
+  }
 
-    /// <summary>
-    /// Event handler. Called by SelectSearchPaging for mouse up for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void SelectSearchPaging_MouseUp(object sender, MouseEventArgs e)
+  /// <summary>
+  /// Event handler. Called by ActionSearchNavigateLast for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
+  {
+    if ( IsRenderingSearch ) return;
+    PagingCurrent = PagingCount;
+    RenderSearch();
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectSearchPaging for value changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchPaging_ValueChanged(object sender, EventArgs e)
+  {
+    if ( PagingCurrent != SelectSearchPaging.Value )
     {
-      if ( PreviousSeachPagingPosition != SelectSearchPaging.Value )
+      PagingCurrent = SelectSearchPaging.Value;
+      if ( PreviousSeachPagingPosition == -1 )
         RenderSearch();
-      PreviousSeachPagingPosition = -1;
-    }
-
-    private void ActionImportConcordances_Click(object sender, EventArgs e)
-    {
-      new ImportStrongForm().ShowDialog();
-    }
-
-    private void EditDbTextBox_Enter(object sender, EventArgs e)
-    {
-      var control = (Control)sender;
-      control.BackColor = Color.Ivory;
-    }
-
-    private void EditDbTextBox_Leave(object sender, EventArgs e)
-    {
-      var control = (Control)sender;
-      control.BackColor = Color.LightYellow;
-    }
-
-    private void EditBookTranslation_TextChanged(object sender, EventArgs e)
-    {
-      if ( IsComboBoxChanging ) return;
-      CurrentReference.Book.Translation = EditBookTranslation.Text;
-      ActionSave.Enabled = true;
-    }
-
-    private void EditChapterTitle_TextChanged(object sender, EventArgs e)
-    {
-      if ( IsComboBoxChanging ) return;
-      CurrentReference.Chapter.Title = EditChapterTitle.Text;
-      ActionSave.Enabled = true;
-    }
-
-    private void EditChapterMemo_TextChanged(object sender, EventArgs e)
-    {
-      if ( IsComboBoxChanging ) return;
-      CurrentReference.Chapter.Memo = EditChapterMemo.Text;
-      ActionSave.Enabled = true;
-    }
-
-    private void ActionEditBookMemo_Click(object sender, EventArgs e)
-    {
-      var form = new EditMemoForm();
-      form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name;
-      form.TextBox.Text = CurrentReference.Book.Memo;
-      form.TextBox.SelectionStart = 0;
-      if ( form.ShowDialog() == DialogResult.OK )
-      {
-        CurrentReference.Book.Memo = form.TextBox.Text;
-        ActionSave.PerformClick();
-      }
-    }
-
-    private void ActionEditChapterMemo_Click(object sender, EventArgs e)
-    {
-      var form = new EditMemoForm();
-      form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
-                 + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
-                 + " " + ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
-      form.TextBox.Text = CurrentReference.Chapter.Memo;
-      form.TextBox.SelectionStart = 0;
-      if ( form.ShowDialog() == DialogResult.OK )
-      {
-        EditChapterMemo.Text = form.TextBox.Text;
-        ActionSave.PerformClick();
-      }
-    }
-
-    /*private WordControl GetWordControl(object sender)
-    {
-      WordControl control = null;
-      if ( sender is ToolStripMenuItem )
-        control = (WordControl)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl.Parent;
       else
-      if ( sender is ContextMenuStrip )
-      {
-        control = (WordControl)( (ContextMenuStrip)sender ).SourceControl;
-      }
-      else
-      if ( sender is WordControl )
-        control = (WordControl)sender;
-      else
-        ;
-      return control;
-    }*/
-
-    private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(CurrentReference.Word.Translation);
+        EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount + " (" + SearchResultsCount + ")";
     }
+  }
 
-    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(CurrentReference.Word.Original);
-    }
+  /// <summary>
+  /// Event handler. Called by SelectSearchPaging for mouse down events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchPaging_MouseDown(object sender, MouseEventArgs e)
+  {
+    PreviousSeachPagingPosition = SelectSearchPaging.Value;
+  }
 
-    private void ActionCopyFontChars_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(CurrentReference.Word.Hebrew);
-    }
+  /// <summary>
+  /// Event handler. Called by SelectSearchPaging for mouse up for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchPaging_MouseUp(object sender, MouseEventArgs e)
+  {
+    if ( PreviousSeachPagingPosition != SelectSearchPaging.Value )
+      RenderSearch();
+    PreviousSeachPagingPosition = -1;
+  }
 
-    private void ActionSearchTranslated_Click(object sender, EventArgs e)
-    {
-      if ( ActiveControl is WordControl control )
-        SearchTranslatedForm.Run(control);
-    }
+  private void ActionImportConcordances_Click(object sender, EventArgs e)
+  {
+    new ImportStrongForm().ShowDialog();
+  }
 
-    private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
-    {
-      SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
-    }
+  private void EditDbTextBox_Enter(object sender, EventArgs e)
+  {
+    var control = (Control)sender;
+    control.BackColor = Color.Ivory;
+  }
 
-    private void ActionSearchOnline_Click(object sender, EventArgs e)
-    {
-      if ( ActiveControl is not WordControl ) return;
-      string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
-    }
+  private void EditDbTextBox_Leave(object sender, EventArgs e)
+  {
+    var control = (Control)sender;
+    control.BackColor = Color.LightYellow;
+  }
 
-    private void GoToBookmark(object sender, EventArgs e)
+  private void EditBookTranslation_TextChanged(object sender, EventArgs e)
+  {
+    if ( IsComboBoxChanging ) return;
+    CurrentReference.Book.Translation = EditBookTranslation.Text;
+    ActionSave.Enabled = true;
+  }
+
+  private void EditChapterTitle_TextChanged(object sender, EventArgs e)
+  {
+    if ( IsComboBoxChanging ) return;
+    CurrentReference.Chapter.Title = EditChapterTitle.Text;
+    ActionSave.Enabled = true;
+  }
+
+  private void EditChapterMemo_TextChanged(object sender, EventArgs e)
+  {
+    if ( IsComboBoxChanging ) return;
+    CurrentReference.Chapter.Memo = EditChapterMemo.Text;
+    ActionSave.Enabled = true;
+  }
+
+  private void ActionEditBookMemo_Click(object sender, EventArgs e)
+  {
+    var form = new EditMemoForm();
+    form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name;
+    form.TextBox.Text = CurrentReference.Book.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
     {
+      CurrentReference.Book.Memo = form.TextBox.Text;
       ActionSave.PerformClick();
-      if ( Program.Settings.CurrentView == ViewMode.ELS50
-        || Program.Settings.CurrentView == ViewMode.Search )
-        SetView(ViewMode.Verses);
-      GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
     }
+  }
 
-    private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
+  private void ActionEditChapterMemo_Click(object sender, EventArgs e)
+  {
+    var form = new EditMemoForm();
+    form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
+               + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
+               + " " + ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
+    form.TextBox.Text = CurrentReference.Chapter.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
     {
-      long value = 0;
-      var books = from book in DataSet.Books
-                  where book.Number <= BooksBounds.Torah.Max
-                  select book;
-      foreach ( Data.DataSet.BooksRow book in books )
-        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-            foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
-              foreach ( char letter in word.Hebrew )
-              {
-                int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));
-                if ( index == -1 ) { }
-                value += HebrewAlphabet.ValuesSimple[index];
-              }
-      DisplayManager.Show(value.ToString());
+      EditChapterMemo.Text = form.TextBox.Text;
+      ActionSave.PerformClick();
     }
+  }
 
+  /*private WordControl GetWordControl(object sender)
+  {
+    WordControl control = null;
+    if ( sender is ToolStripMenuItem )
+      control = (WordControl)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl.Parent;
+    else
+    if ( sender is ContextMenuStrip )
+    {
+      control = (WordControl)( (ContextMenuStrip)sender ).SourceControl;
+    }
+    else
+    if ( sender is WordControl )
+      control = (WordControl)sender;
+    else
+      ;
+    return control;
+  }*/
+
+  private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Translation);
+  }
+
+  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Original);
+  }
+
+  private void ActionCopyFontChars_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Hebrew);
+  }
+
+  private void ActionSearchTranslated_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is WordControl control )
+      SearchTranslatedForm.Run(control);
+  }
+
+  private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
+  {
+    SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
+  }
+
+  private void ActionSearchOnline_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is not WordControl ) return;
+    string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
+    HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
+  }
+
+  private void GoToBookmark(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Program.Settings.CurrentView == ViewMode.ELS50
+      || Program.Settings.CurrentView == ViewMode.Search )
+      SetView(ViewMode.Verses);
+    GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+  }
+
+  private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
+  {
+    long value = 0;
+    var books = from book in DataSet.Books
+                where book.Number <= BooksBounds.Torah.Max
+                select book;
+    foreach ( Data.DataSet.BooksRow book in books )
+      foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+            foreach ( char letter in word.Hebrew )
+            {
+              int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));
+              if ( index == -1 ) { }
+              value += HebrewAlphabet.ValuesSimple[index];
+            }
+    DisplayManager.Show(value.ToString());
   }
 
 }

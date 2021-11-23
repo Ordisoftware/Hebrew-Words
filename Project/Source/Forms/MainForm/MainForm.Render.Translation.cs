@@ -12,35 +12,32 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  public void RenderTranslation()
   {
-
-    public void RenderTranslation()
+    EditTranslations.Visible = false;
+    EditTranslations.Clear();
+    foreach ( DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
     {
-      EditTranslations.Visible = false;
-      EditTranslations.Clear();
-      foreach ( DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
+      string str = verse.Number + ". ";
+      EditTranslations.SelectedText = str + verse.GetTranslation();
+      if ( verse.Comment.Length > 0 )
       {
-        string str = verse.Number + ". ";
-        EditTranslations.SelectedText = str + verse.GetTranslation();
-        if ( verse.Comment.Length > 0 )
-        {
-          EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
-          EditTranslations.SelectedText = verse.Comment;
-        }
         EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
+        EditTranslations.SelectedText = verse.Comment;
       }
-      EditTranslations.SelectionStart = 0;
-      EditTranslations.Visible = true;
-      EditTranslations.Focus();
+      EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
     }
-
+    EditTranslations.SelectionStart = 0;
+    EditTranslations.Visible = true;
+    EditTranslations.Focus();
   }
 
 }

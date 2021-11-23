@@ -12,145 +12,141 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Properties;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide Settings helper.
+/// </summary>
+static internal class SettingsHelper
 {
 
+  static private bool Mutex;
+
   /// <summary>
-  /// Provide Settings helper.
+  /// Indicate the main form instance.
   /// </summary>
-  static internal class SettingsHelper
+  static private readonly MainForm MainForm = MainForm.Instance;
+
+  /// <summary>
+  /// The Settings extension method that restores the main form settings.
+  /// </summary>
+  /// <param name="settings">The settings to act on.</param>
+  static internal void RestoreMainForm(this Settings settings)
   {
+    MainForm.Width = MainForm.MinimumSize.Width;
+    MainForm.Height = MainForm.MinimumSize.Height;
+    MainForm.WindowState = FormWindowState.Normal;
+    MainForm.CenterToScreen();
+    MainForm.EditScreenNone.Checked = false;
+    MainForm.EditScreenTopLeft.Checked = false;
+    MainForm.EditScreenTopRight.Checked = false;
+    MainForm.EditScreenBottomLeft.Checked = false;
+    MainForm.EditScreenBottomRight.Checked = false;
+    MainForm.EditScreenCenter.Checked = true;
+    MainForm.EditConfirmClosing.Checked = true;
+    MainForm.EditShowTips.Checked = true;
+    MainForm.SetView(ViewMode.Verses);
+    settings.Store();
+  }
 
-    static private bool Mutex;
-
-    /// <summary>
-    /// Indicate the main form instance.
-    /// </summary>
-    static private readonly MainForm MainForm = MainForm.Instance;
-
-    /// <summary>
-    /// The Settings extension method that restores the main form settings.
-    /// </summary>
-    /// <param name="settings">The settings to act on.</param>
-    static internal void RestoreMainForm(this Settings settings)
+  /// <summary>
+  /// The Settings extension method that retrieves the given settings.
+  /// </summary>
+  /// <param name="settings">The settings to act on.</param>
+  static internal void Retrieve(this Settings settings)
+  {
+    if ( Mutex ) return;
+    Mutex = true;
+    try
     {
-      MainForm.Width = MainForm.MinimumSize.Width;
-      MainForm.Height = MainForm.MinimumSize.Height;
-      MainForm.WindowState = FormWindowState.Normal;
-      MainForm.CenterToScreen();
-      MainForm.EditScreenNone.Checked = false;
-      MainForm.EditScreenTopLeft.Checked = false;
-      MainForm.EditScreenTopRight.Checked = false;
-      MainForm.EditScreenBottomLeft.Checked = false;
-      MainForm.EditScreenBottomRight.Checked = false;
-      MainForm.EditScreenCenter.Checked = true;
-      MainForm.EditConfirmClosing.Checked = true;
-      MainForm.EditShowTips.Checked = true;
-      MainForm.SetView(ViewMode.Verses);
-      settings.Store();
-    }
-
-    /// <summary>
-    /// The Settings extension method that retrieves the given settings.
-    /// </summary>
-    /// <param name="settings">The settings to act on.</param>
-    static internal void Retrieve(this Settings settings)
-    {
-      if ( Mutex ) return;
-      Mutex = true;
-      try
+      var area = SystemInformation.WorkingArea;
+      if ( settings.MainFormLeft >= area.Left && settings.MainFormLeft <= area.Width )
+        MainForm.Left = settings.MainFormLeft;
+      else
+        MainForm.Left = area.Left;
+      if ( settings.MainFormTop >= area.Top && settings.MainFormTop <= area.Height )
+        MainForm.Top = settings.MainFormTop;
+      else
+        MainForm.Top = area.Top;
+      if ( settings.MainFormWidth >= MainForm.MinimumSize.Width && settings.MainFormWidth <= area.Width )
+        MainForm.Width = settings.MainFormWidth;
+      else
+        MainForm.Width = MainForm.MinimumSize.Width;
+      if ( settings.MainFormHeight >= MainForm.MinimumSize.Height && settings.MainFormHeight <= area.Height )
+        MainForm.Height = settings.MainFormHeight;
+      else
+        MainForm.Height = MainForm.MinimumSize.Height;
+      MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
+      MainForm.EditScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
+      MainForm.EditScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
+      MainForm.EditScreenBottomLeft.Checked = settings.MainFormPosition == ControlLocation.BottomLeft;
+      MainForm.EditScreenBottomRight.Checked = settings.MainFormPosition == ControlLocation.BottomRight;
+      MainForm.EditScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
+      MainForm.EditScreenPosition_Click(null, null);
+      MainForm.WindowState = settings.MainFormState;
+      MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
+      MainForm.EditShowTips.Checked = settings.ShowTips;
+      if ( settings.BackupPath.Length == 0 )
       {
-        var area = SystemInformation.WorkingArea;
-        if ( settings.MainFormLeft >= area.Left && settings.MainFormLeft <= area.Width )
-          MainForm.Left = settings.MainFormLeft;
-        else
-          MainForm.Left = area.Left;
-        if ( settings.MainFormTop >= area.Top && settings.MainFormTop <= area.Height )
-          MainForm.Top = settings.MainFormTop;
-        else
-          MainForm.Top = area.Top;
-        if ( settings.MainFormWidth >= MainForm.MinimumSize.Width && settings.MainFormWidth <= area.Width )
-          MainForm.Width = settings.MainFormWidth;
-        else
-          MainForm.Width = MainForm.MinimumSize.Width;
-        if ( settings.MainFormHeight >= MainForm.MinimumSize.Height && settings.MainFormHeight <= area.Height )
-          MainForm.Height = settings.MainFormHeight;
-        else
-          MainForm.Height = MainForm.MinimumSize.Height;
-        MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
-        MainForm.EditScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
-        MainForm.EditScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
-        MainForm.EditScreenBottomLeft.Checked = settings.MainFormPosition == ControlLocation.BottomLeft;
-        MainForm.EditScreenBottomRight.Checked = settings.MainFormPosition == ControlLocation.BottomRight;
-        MainForm.EditScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
-        MainForm.EditScreenPosition_Click(null, null);
-        MainForm.WindowState = settings.MainFormState;
-        MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
-        MainForm.EditShowTips.Checked = settings.ShowTips;
-        if ( settings.BackupPath.Length == 0 )
-        {
-          System.IO.Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
-          settings.BackupPath = Globals.UserDocumentsFolderPath;
-        }
-      }
-      finally
-      {
-        Mutex = false;
+        System.IO.Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
+        settings.BackupPath = Globals.UserDocumentsFolderPath;
       }
     }
-
-    /// <summary>
-    /// The Settings extension method that stores the given settings.
-    /// </summary>
-    /// <param name="settings">The settings to act on.</param>
-    static internal void Store(this Settings settings)
+    finally
     {
-      if ( Mutex ) return;
-      Mutex = true;
-      try
+      Mutex = false;
+    }
+  }
+
+  /// <summary>
+  /// The Settings extension method that stores the given settings.
+  /// </summary>
+  /// <param name="settings">The settings to act on.</param>
+  static internal void Store(this Settings settings)
+  {
+    if ( Mutex ) return;
+    Mutex = true;
+    try
+    {
+      var winState = MainForm.WindowState;
+      if ( winState != FormWindowState.Minimized )
+        settings.MainFormState = winState;
+      if ( winState == FormWindowState.Normal )
       {
-        var winState = MainForm.WindowState;
-        if ( winState != FormWindowState.Minimized )
-          settings.MainFormState = winState;
-        if ( winState == FormWindowState.Normal )
-        {
-          settings.MainFormLeft = MainForm.Left;
-          settings.MainFormTop = MainForm.Top;
-          settings.MainFormWidth = MainForm.Width;
-          settings.MainFormHeight = MainForm.Height;
-        }
-        if ( MainForm.EditScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
-        if ( MainForm.EditScreenTopLeft.Checked ) settings.MainFormPosition = ControlLocation.TopLeft;
-        if ( MainForm.EditScreenTopRight.Checked ) settings.MainFormPosition = ControlLocation.TopRight;
-        if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
-        if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
-        if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
-        settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
-        settings.ShowTips = MainForm.EditShowTips.Checked;
-        SystemManager.TryCatch(Program.Settings.Save);
+        settings.MainFormLeft = MainForm.Left;
+        settings.MainFormTop = MainForm.Top;
+        settings.MainFormWidth = MainForm.Width;
+        settings.MainFormHeight = MainForm.Height;
       }
-      finally
-      {
-        Mutex = false;
-      }
+      if ( MainForm.EditScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
+      if ( MainForm.EditScreenTopLeft.Checked ) settings.MainFormPosition = ControlLocation.TopLeft;
+      if ( MainForm.EditScreenTopRight.Checked ) settings.MainFormPosition = ControlLocation.TopRight;
+      if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
+      if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
+      if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
+      settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
+      settings.ShowTips = MainForm.EditShowTips.Checked;
+      SystemManager.TryCatch(Program.Settings.Save);
     }
-
-    static internal void SetUpgradeFlagsOff(this Settings settings)
+    finally
     {
-      settings.UpgradeRequired = false;
+      Mutex = false;
     }
+  }
 
-    static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
-    {
-      settings.SetUpgradeFlagsOff();
-      settings.FirstLaunchV3_0 = false;
-    }
+  static internal void SetUpgradeFlagsOff(this Settings settings)
+  {
+    settings.UpgradeRequired = false;
+  }
 
+  static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
+  {
+    settings.SetUpgradeFlagsOff();
+    settings.FirstLaunchV3_0 = false;
   }
 
 }

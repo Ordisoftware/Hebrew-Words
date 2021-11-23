@@ -12,151 +12,148 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  public void GoTo(string reference, bool forceUpdateView = false)
   {
-
-    public void GoTo(string reference, bool forceUpdateView = false)
+    SystemManager.TryCatch(() =>
     {
-      SystemManager.TryCatch(() =>
+      int[] items = reference.Split('.').Select(int.Parse).ToArray();
+      GoTo(new ReferenceItem(items[0], items[1], items[2]), forceUpdateView);
+    });
+  }
+
+  /// <summary>
+  /// Go to book / chapter / verse into view verses panel.
+  /// </summary>
+  public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
+  {
+    GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
+  }
+
+  /// <summary>
+  /// Go to book / chapter / verse into view verses panel.
+  /// </summary>
+  public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
+  {
+    if ( reference == null ) return;
+    if ( IsGoToRunning ) return;
+    IsGoToRunning = true;
+    bool updated = false;
+    try
+    {
+      if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
       {
-        int[] items = reference.Split('.').Select(int.Parse).ToArray();
-        GoTo(new ReferenceItem(items[0], items[1], items[2]), forceUpdateView);
-      });
-    }
-
-    /// <summary>
-    /// Go to book / chapter / verse into view verses panel.
-    /// </summary>
-    public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
-    {
-      GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
-    }
-
-    /// <summary>
-    /// Go to book / chapter / verse into view verses panel.
-    /// </summary>
-    public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
-    {
-      if ( reference == null ) return;
-      if ( IsGoToRunning ) return;
-      IsGoToRunning = true;
-      bool updated = false;
-      try
+        foreach ( var item in SelectBook.Items )
+          if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
+          {
+            SelectBook.SelectedItem = item;
+            updated = true;
+            break;
+          }
+        if ( !updated ) throw new Exception("Book combobox index error.");
+      }
+      if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
       {
-        if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
-        {
-          foreach ( var item in SelectBook.Items )
-            if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
+        SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
+        updated = true;
+      }
+    }
+    finally
+    {
+      IsGoToRunning = false;
+    }
+    if ( Globals.IsLoadingData ) return;
+    if ( updated || forceUpdateView )
+      RenderAll();
+    if ( reference.Verse == null )
+    {
+      var found = Array.Find(CurrentReference.Chapter.GetVersesRows(), v => !v.IsTranslated());
+      reference.Verse = found ?? reference.Chapter.GetVersesRows()[0];
+    }
+  Label:
+    switch ( Program.Settings.CurrentView )
+    {
+      case ViewMode.Verses:
+        foreach ( var control in PanelViewVerses.Controls )
+          if ( control is Label )
+          {
+            var label = control as Label;
+            if ( label.Text == reference.Verse.Number.ToString() )
             {
-              SelectBook.SelectedItem = item;
-              updated = true;
+              PanelViewVerses.Focus();
+              PanelViewVerses.ScrollControlIntoView(label);
+              PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
+              int index = PanelViewVerses.Controls.IndexOf(label);
+              ( PanelViewVerses.Controls[index + 1] as WordControl )?.Focus();
               break;
             }
-          if ( !updated ) throw new Exception("Book combobox index error.");
-        }
-        if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
-        {
-          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
-          updated = true;
-        }
-      }
-      finally
-      {
-        IsGoToRunning = false;
-      }
-      if ( Globals.IsLoadingData ) return;
-      if ( updated || forceUpdateView )
-        RenderAll();
-      if ( reference.Verse == null )
-      {
-        var found = Array.Find(CurrentReference.Chapter.GetVersesRows(), v => !v.IsTranslated());
-        reference.Verse = found ?? reference.Chapter.GetVersesRows()[0];
-      }
-    Label:
-      switch ( Program.Settings.CurrentView )
-      {
-        case ViewMode.Verses:
-          foreach ( var control in PanelViewVerses.Controls )
-            if ( control is Label )
-            {
-              var label = control as Label;
-              if ( label.Text == reference.Verse.Number.ToString() )
+          }
+        if ( reference.Word != null )
+          foreach ( Control control in PanelViewVerses.Controls )
+            if ( control is WordControl wordcontrol )
+              if ( wordcontrol.Reference.Word == reference.Word )
               {
-                PanelViewVerses.Focus();
-                PanelViewVerses.ScrollControlIntoView(label);
-                PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
-                int index = PanelViewVerses.Controls.IndexOf(label);
-                ( PanelViewVerses.Controls[index + 1] as WordControl )?.Focus();
+                control.Focus();
                 break;
               }
-            }
-          if ( reference.Word != null )
-            foreach ( Control control in PanelViewVerses.Controls )
-              if ( control is WordControl wordcontrol )
-                if ( wordcontrol.Reference.Word == reference.Word )
-                {
-                  control.Focus();
-                  break;
-                }
-          break;
-        case ViewMode.Translations:
-          foreach ( string line in EditTranslations.Lines )
+        break;
+      case ViewMode.Translations:
+        foreach ( string line in EditTranslations.Lines )
+        {
+          string s = reference.Verse.Number + ". ";
+          if ( line.StartsWith(s) )
           {
-            string s = reference.Verse.Number + ". ";
-            if ( line.StartsWith(s) )
-            {
-              EditTranslations.SelectionStart = EditTranslations.Find(s);
-              EditTranslations.SelectionLength = 0;
-              EditTranslations.ScrollToCaret();
-              EditTranslations.Focus();
-            }
+            EditTranslations.SelectionStart = EditTranslations.Find(s);
+            EditTranslations.SelectionLength = 0;
+            EditTranslations.ScrollToCaret();
+            EditTranslations.Focus();
           }
-          break;
-        case ViewMode.Text:
-          foreach ( string line in EditRawText.Lines )
+        }
+        break;
+      case ViewMode.Text:
+        foreach ( string line in EditRawText.Lines )
+        {
+          string s = ":" + reference.Verse.Number;
+          if ( line.EndsWith(s) )
           {
-            string s = ":" + reference.Verse.Number;
-            if ( line.EndsWith(s) )
-            {
-              EditRawText.SelectionStart = EditRawText.Find(s);
-              EditRawText.SelectionLength = 0;
-              EditRawText.ScrollToCaret();
-              EditRawText.Focus();
-            }
+            EditRawText.SelectionStart = EditRawText.Find(s);
+            EditRawText.SelectionLength = 0;
+            EditRawText.ScrollToCaret();
+            EditRawText.Focus();
           }
-          break;
-        default:
-          SetView(ViewMode.Verses);
-          goto Label;
-      }
-      CurrentReference = new ReferenceItem(reference);
-      AddCurrentToHistory();
-      //EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
-      //EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
-      //EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
-      try
-      {
-
-
-
-        ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
-
-
-
-      }
-      catch
-      {
-      }
+        }
+        break;
+      default:
+        SetView(ViewMode.Verses);
+        goto Label;
     }
+    CurrentReference = new ReferenceItem(reference);
+    AddCurrentToHistory();
+    //EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
+    //EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
+    //EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
+    try
+    {
 
+
+
+      ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
+
+
+
+    }
+    catch
+    {
+    }
   }
 
 }

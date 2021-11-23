@@ -12,48 +12,44 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm
 {
 
-  partial class MainForm
+  private void AddTextRightAligned(RichTextBox control, Font font, string str)
   {
+    AddTextRightAligned(control, font, str, SystemColors.ControlText);
+  }
 
-    private void AddTextRightAligned(RichTextBox control, Font font, string str)
+  private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
+  {
+    control.SelectionFont = font;
+    control.SelectionColor = color;
+    control.SelectedText = str;
+    control.SelectionAlignment = HorizontalAlignment.Right;
+  }
+
+  private void RenderAll()
+  {
+    if ( Globals.IsLoadingData || IsGoToRunning ) return;
+    LabelRenderingVerses.Visible = true;
+    try
     {
-      AddTextRightAligned(control, font, str, SystemColors.ControlText);
+      Refresh();
+      RenderVerses();
+      RenderTranslation();
+      RenderRawText();
+      RenderELS50();
     }
-
-    private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
+    finally
     {
-      control.SelectionFont = font;
-      control.SelectionColor = color;
-      control.SelectedText = str;
-      control.SelectionAlignment = HorizontalAlignment.Right;
+      LabelRenderingVerses.Visible = false;
     }
-
-    private void RenderAll()
-    {
-      if ( Globals.IsLoadingData || IsGoToRunning ) return;
-      LabelRenderingVerses.Visible = true;
-      try
-      {
-        Refresh();
-        RenderVerses();
-        RenderTranslation();
-        RenderRawText();
-        RenderELS50();
-      }
-      finally
-      {
-        LabelRenderingVerses.Visible = false;
-      }
-    }
-
   }
 
 }

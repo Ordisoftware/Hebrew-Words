@@ -12,24 +12,20 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew.Words
+class ImportVerseResult
 {
+  public string Hebrew { get; set; }
+  public string CurrentTranslation { get; set; }
+  public string ImportedTranslation { get; set; }
+}
 
-  class ImportVerseResult
-  {
-    public string Hebrew { get; set; }
-    public string CurrentTranslation { get; set; }
-    public string ImportedTranslation { get; set; }
-  }
-
-  class ImportverseResults : List<ImportVerseResult>
-  {
-    public ImportverseResults() { }
-    public ImportverseResults(int capacity) : base(capacity) { }
-    public ImportverseResults(IEnumerable<ImportVerseResult> collection) : base(collection) { }
-  }
-
+class ImportverseResults : List<ImportVerseResult>
+{
+  public ImportverseResults() { }
+  public ImportverseResults(int capacity) : base(capacity) { }
+  public ImportverseResults(IEnumerable<ImportVerseResult> collection) : base(collection) { }
 }

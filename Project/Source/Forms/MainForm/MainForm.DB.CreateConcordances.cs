@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2019-09 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,112 +21,95 @@ using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+partial class MainForm : Form
 {
 
-  partial class MainForm : Form
+  /*private void CreateConcordances()
   {
-
-    /*private void CreateConcordances()
+    int count = 0;
+    using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
     {
-      int count = 0;
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-      {
-        connection.Open();
-        var command = new OdbcCommand("select count(*) FROM StrongConcordances", connection);
-        count = (int)command.ExecuteScalar();
-        connection.Close();
-      }
-      if ( count != 0 )
-        return;
-      string filePath = Path.Combine(Program.AppCSVDocumentsFolderPath, "BHS-Strong-no\\brief_info_StrongNo.csv");
-      var lines = File.ReadAllLines(filePath).ToList();
-      foreach ( string line in lines )
-      {
-        var items = line.Split('\t');
-        var concordance = DataSet.StrongConcordances.NewStrongConcordancesRow();
-        concordance.ID = items[0];
-        concordance.Usage = items[1];
-        concordance.Original = items[2];
-        concordance.Hebrew = HebrewAlphabet.ToHebrewFont(items[2].RemoveDiacritics());
-        concordance.Transliteration = items[3];
-        concordance.Phonetic = items[4];
-        concordance.Translation = items[5];
-        concordance.Memo = "";
-        DataSet.StrongConcordances.AddStrongConcordancesRow(concordance);
-      }
-      TableAdapterManager.UpdateAll(DataSet);
-    }*/
-
-    //Dictionary<int, SortedDictionary<string, WordWithConcordance>> VersesWithConcordances
-    //  = new Dictionary<int, SortedDictionary<string, WordWithConcordance>>();
-
-    private void ImportWordsConcordances()
-    {
+      connection.Open();
+      var command = new OdbcCommand("select count(*) FROM StrongConcordances", connection);
+      count = (int)command.ExecuteScalar();
+      connection.Close();
+    }
+    if ( count != 0 )
       return;
-      //CreateWordsConcordances();
-      LoadingForm.Instance.Initialize("Importing strong's concordances...", DataSet.Chapters.Count);
-      LoadingForm.Instance.TopMost = false;
-      var errors = new List<string>();
-      int indexBook = -1;
-      try
+    string filePath = Path.Combine(Program.AppCSVDocumentsFolderPath, "BHS-Strong-no\\brief_info_StrongNo.csv");
+    var lines = File.ReadAllLines(filePath).ToList();
+    foreach ( string line in lines )
+    {
+      var items = line.Split('\t');
+      var concordance = DataSet.StrongConcordances.NewStrongConcordancesRow();
+      concordance.ID = items[0];
+      concordance.Usage = items[1];
+      concordance.Original = items[2];
+      concordance.Hebrew = HebrewAlphabet.ToHebrewFont(items[2].RemoveDiacritics());
+      concordance.Transliteration = items[3];
+      concordance.Phonetic = items[4];
+      concordance.Translation = items[5];
+      concordance.Memo = "";
+      DataSet.StrongConcordances.AddStrongConcordancesRow(concordance);
+    }
+    TableAdapterManager.UpdateAll(DataSet);
+  }*/
+
+  //Dictionary<int, SortedDictionary<string, WordWithConcordance>> VersesWithConcordances
+  //  = new Dictionary<int, SortedDictionary<string, WordWithConcordance>>();
+
+  private void ImportWordsConcordances()
+  {
+    return;
+    //CreateWordsConcordances();
+    LoadingForm.Instance.Initialize("Importing strong's concordances...", DataSet.Chapters.Count);
+    LoadingForm.Instance.TopMost = false;
+    var errors = new List<string>();
+    int indexBook = -1;
+    try
+    {
+      foreach ( Data.DataSet.BooksRow book in Instance.DataSet.Books )
       {
-        foreach ( Data.DataSet.BooksRow book in Instance.DataSet.Books )
+        indexBook++;
+        int indexVerse = -1;
+        if ( indexBook >= 1 ) break;
+        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
         {
-          indexBook++;
-          int indexVerse = -1;
-          if ( indexBook >= 1 ) break;
-          foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+          LoadingForm.Instance.DoProgress();
+          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
           {
-            LoadingForm.Instance.DoProgress();
-            foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+            indexVerse++;
+            int indexWord = -1;
+            int countBad = 0;
+            var words = Program.JsonBibleBookGenesis[indexVerse].Items;
+            //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
+            //.ToArray();
+            /*if ( verse.GetWordsRows().Length != words.Length )
             {
-              indexVerse++;
-              int indexWord = -1;
-              int countBad = 0;
-              var words = Program.JsonBibleBookGenesis[indexVerse].Items;
-              //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
-              //.ToArray();
-              /*if ( verse.GetWordsRows().Length != words.Length )
+              errors.Add("##### " + new ReferenceItem(book, chapter, verse).ToString() + " words count mismatch");
+              //indexVerse--;
+              continue;
+            }*/
+            if ( indexVerse < Program.JsonBibleBookGenesis.Length )
+              foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
               {
-                errors.Add("##### " + new ReferenceItem(book, chapter, verse).ToString() + " words count mismatch");
-                //indexVerse--;
-                continue;
-              }*/
-              if ( indexVerse < Program.JsonBibleBookGenesis.Length )
-                foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+                indexWord++;
+                if ( indexWord < words.Length )
                 {
-                  indexWord++;
-                  if ( indexWord < words.Length )
+                  var unicode = words[indexWord].Word;
+                  var hebrew = HebrewAlphabet.ToHebrewFont(unicode);
+                  hebrew = HebrewAlphabet.OnlyHebrewFont(hebrew);
+                  int nc = CommonCount(word.Hebrew, hebrew);
+                  if ( word.Hebrew == hebrew || nc >= Math.Min(word.Hebrew.Length, hebrew.Length) - 1 )
                   {
-                    var unicode = words[indexWord].Word;
-                    var hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-                    hebrew = HebrewAlphabet.OnlyHebrewFont(hebrew);
-                    int nc = CommonCount(word.Hebrew, hebrew);
-                    if ( word.Hebrew == hebrew || nc >= Math.Min(word.Hebrew.Length, hebrew.Length) - 1 )
-                    {
-                      // TODO update fields
-                      countBad = 0;
-                    }
-                    else
-                    {
-                      errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + ( indexWord + 1 ) + "\t\t" +
-                                 word.Hebrew + " <=> " + hebrew + "\t\t" +
-                                 word.Original + " <=> " + unicode + "\t\t" + words[indexWord].Number + " : " + words[indexWord].Text);
-                      countBad++;
-                      if ( countBad >= 4 )
-                      {
-                        errors.Add("!!!!! Verse mismatch !!!!!");
-                        //indexVerse--;
-                        //continue;
-                      }
-                    }
+                    // TODO update fields
+                    countBad = 0;
                   }
                   else
                   {
                     errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + ( indexWord + 1 ) + "\t\t" +
-                               word.Hebrew + " is missing or at wrong place\t\t" +
-                               word.Original + " is missing or at wrong place");
+                               word.Hebrew + " <=> " + hebrew + "\t\t" +
+                               word.Original + " <=> " + unicode + "\t\t" + words[indexWord].Number + " : " + words[indexWord].Text);
                     countBad++;
                     if ( countBad >= 4 )
                     {
@@ -134,103 +119,115 @@ namespace Ordisoftware.Hebrew.Words
                     }
                   }
                 }
-              else
-                errors.Add(new ReferenceItem(book, chapter, verse).ToString() + " is missing.");
-            }
-          }
-        }
-        TableAdapterManager.UpdateAll(DataSet);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        LoadingForm.Instance.Hide();
-      }
-      var f = new ImportStrongForm();
-      f.RichTextBox.Text = string.Join(Environment.NewLine, errors.Take(10000));
-      f.ShowDialog();
-    }
-
-    public int CommonCount<T>(IEnumerable<T> source, IEnumerable<T> sequence, IEqualityComparer<T> comparer = null)
-    {
-      if ( sequence == null )
-        return 0;
-      if ( comparer == null )
-        comparer = EqualityComparer<T>.Default;
-      return source.GroupBy(t => t, comparer)
-                   .Join(sequence.GroupBy(t => t, comparer),
-                                          g => g.Key,
-                                          g => g.Key,
-                                          (lg, rg) => lg.Zip(rg, (l, _) => l).Count(), comparer)
-                   .Sum();
-    }
-
-    /*private void CreateWordsConcordances()
-    {
-      try
-      {
-        string filePath = Program.AppCSVDocumentsFolderPath
-                      + "OpenHebrewBible\\WLC_mappingTemplate_takenAway_wordWithoutSN.csv";
-        var lines = File.ReadAllLines(filePath).Skip(2).ToList();
-        for ( int index = 0; index < lines.Count; index++ )
-        {
-          if ( lines[index] == "＠" )
-          {
-            continue;
-          }
-          var items = lines[index].Split('\t');
-          if ( !int.TryParse(items[0], out int verseNum) )
-          {
-            MessageBox.Show("Bad number format at line n° " + index);
-            continue;
-          }
-          if ( !VersesWithConcordances.ContainsKey(verseNum) )
-            VersesWithConcordances.Add(verseNum, new SortedDictionary<string, WordWithConcordance>());
-          if ( !VersesWithConcordances[verseNum].ContainsKey(items[2]) )
-          {
-            if ( items[7].Contains("】") )
-              items[7] = items[7].Split('】')[1];
-            items[3] = items[3].Replace("־", "");
-            items[3] = items[3].Replace("׃", "");
-            items[3] = items[3].Trim('(');
-            items[3] = items[3].Trim(')');
-            items[3] = items[3].Trim(" ׀".ToCharArray());
-            items[3] = items[3].Trim(' ');
-            items[3] = items[3].Trim(new char[] { Convert.ToChar(8234), Convert.ToChar(8236) });
-            items[3] = items[3].Trim();
-            var item = new WordWithConcordance();
-            item.Original = items[3].RemoveDiacritics();
-            item.Hebrew = new string(HebrewAlphabet.ToHebrewFont(items[3].RemoveDiacritics()).ToArray());
-            item.Transliteration = items[4];
-            item.Concordance = items[6];
-            item.Translation = items[7];
-            VersesWithConcordances[verseNum].Add(items[2], item);
-          }
-          else
-          {
-            MessageBox.Show("Duplicated at line n° " + index);
-            continue;
+                else
+                {
+                  errors.Add(new ReferenceItem(book, chapter, verse).ToString() + "." + ( indexWord + 1 ) + "\t\t" +
+                             word.Hebrew + " is missing or at wrong place\t\t" +
+                             word.Original + " is missing or at wrong place");
+                  countBad++;
+                  if ( countBad >= 4 )
+                  {
+                    errors.Add("!!!!! Verse mismatch !!!!!");
+                    //indexVerse--;
+                    //continue;
+                  }
+                }
+              }
+            else
+              errors.Add(new ReferenceItem(book, chapter, verse).ToString() + " is missing.");
           }
         }
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-    }*/
-
+      TableAdapterManager.UpdateAll(DataSet);
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+    finally
+    {
+      LoadingForm.Instance.Hide();
+    }
+    var f = new ImportStrongForm();
+    f.RichTextBox.Text = string.Join(Environment.NewLine, errors.Take(10000));
+    f.ShowDialog();
   }
 
-  class WordWithConcordance
+  public int CommonCount<T>(IEnumerable<T> source, IEnumerable<T> sequence, IEqualityComparer<T> comparer = null)
   {
-    public string Original;
-    public string Hebrew;
-    public string Transliteration;
-    public string Concordance;
-    public string Translation;
+    if ( sequence == null )
+      return 0;
+    if ( comparer == null )
+      comparer = EqualityComparer<T>.Default;
+    return source.GroupBy(t => t, comparer)
+                 .Join(sequence.GroupBy(t => t, comparer),
+                                        g => g.Key,
+                                        g => g.Key,
+                                        (lg, rg) => lg.Zip(rg, (l, _) => l).Count(), comparer)
+                 .Sum();
   }
 
+  /*private void CreateWordsConcordances()
+  {
+    try
+    {
+      string filePath = Program.AppCSVDocumentsFolderPath
+                    + "OpenHebrewBible\\WLC_mappingTemplate_takenAway_wordWithoutSN.csv";
+      var lines = File.ReadAllLines(filePath).Skip(2).ToList();
+      for ( int index = 0; index < lines.Count; index++ )
+      {
+        if ( lines[index] == "＠" )
+        {
+          continue;
+        }
+        var items = lines[index].Split('\t');
+        if ( !int.TryParse(items[0], out int verseNum) )
+        {
+          MessageBox.Show("Bad number format at line n° " + index);
+          continue;
+        }
+        if ( !VersesWithConcordances.ContainsKey(verseNum) )
+          VersesWithConcordances.Add(verseNum, new SortedDictionary<string, WordWithConcordance>());
+        if ( !VersesWithConcordances[verseNum].ContainsKey(items[2]) )
+        {
+          if ( items[7].Contains("】") )
+            items[7] = items[7].Split('】')[1];
+          items[3] = items[3].Replace("־", "");
+          items[3] = items[3].Replace("׃", "");
+          items[3] = items[3].Trim('(');
+          items[3] = items[3].Trim(')');
+          items[3] = items[3].Trim(" ׀".ToCharArray());
+          items[3] = items[3].Trim(' ');
+          items[3] = items[3].Trim(new char[] { Convert.ToChar(8234), Convert.ToChar(8236) });
+          items[3] = items[3].Trim();
+          var item = new WordWithConcordance();
+          item.Original = items[3].RemoveDiacritics();
+          item.Hebrew = new string(HebrewAlphabet.ToHebrewFont(items[3].RemoveDiacritics()).ToArray());
+          item.Transliteration = items[4];
+          item.Concordance = items[6];
+          item.Translation = items[7];
+          VersesWithConcordances[verseNum].Add(items[2], item);
+        }
+        else
+        {
+          MessageBox.Show("Duplicated at line n° " + index);
+          continue;
+        }
+      }
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }*/
+
+}
+
+class WordWithConcordance
+{
+  public string Original;
+  public string Hebrew;
+  public string Transliteration;
+  public string Concordance;
+  public string Translation;
 }

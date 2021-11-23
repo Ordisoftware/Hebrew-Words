@@ -12,10 +12,11 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
+
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -24,223 +25,218 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provides Program class.
+/// </summary>
+static partial class Program
 {
 
   /// <summary>
-  /// Provides Program class.
+  /// Process startup method.
   /// </summary>
-  static partial class Program
+  [STAThread]
+  static void Main(string[] args)
   {
-
-    /// <summary>
-    /// Process startup method.
-    /// </summary>
-    [STAThread]
-    static void Main(string[] args)
+    try
     {
-      try
-      {
-        Globals.ChronoStartingApp.Start();
-        Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
-        Globals.AlternativeToURL = "";
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Language lang = Settings.LanguageSelected;
-        SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-        SystemManager.IPCSendCommands = IPCSendCommands;
-        if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
-        bool upgrade = Settings.UpgradeRequired;
-        Globals.IsSettingsUpgraded = upgrade;
-        Settings.CheckUpgradeRequired(ref upgrade);
-        Settings.UpgradeRequired = upgrade;
-        Globals.IsSettingsUpgraded = Globals.IsSettingsUpgraded && !Settings.FirstLaunch;
-        CheckSettingsReset();
-        if ( lang != Language.None ) Settings.LanguageSelected = lang;
-        SystemManager.TryCatch(Settings.Save);
-        Globals.Settings = Settings;
-        Globals.MainForm = MainForm.Instance;
-        DebugManager.TraceEnabled = Settings.TraceEnabled;
-        DebugManager.Enabled = Settings.DebuggerEnabled;
-        Globals.ChronoStartingApp.Stop();
-        ProcessCommandLineOptions();
-        Globals.ChronoStartingApp.Start();
-        LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      Application.Run(MainForm.Instance);
+      Globals.ChronoStartingApp.Start();
+      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
+      Globals.AlternativeToURL = "";
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      Language lang = Settings.LanguageSelected;
+      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
+      SystemManager.IPCSendCommands = IPCSendCommands;
+      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
+      bool upgrade = Settings.UpgradeRequired;
+      Globals.IsSettingsUpgraded = upgrade;
+      Settings.CheckUpgradeRequired(ref upgrade);
+      Settings.UpgradeRequired = upgrade;
+      Globals.IsSettingsUpgraded = Globals.IsSettingsUpgraded && !Settings.FirstLaunch;
+      CheckSettingsReset();
+      if ( lang != Language.None ) Settings.LanguageSelected = lang;
+      SystemManager.TryCatch(Settings.Save);
+      Globals.Settings = Settings;
+      Globals.MainForm = MainForm.Instance;
+      DebugManager.TraceEnabled = Settings.TraceEnabled;
+      DebugManager.Enabled = Settings.DebuggerEnabled;
+      Globals.ChronoStartingApp.Stop();
+      ProcessCommandLineOptions();
+      Globals.ChronoStartingApp.Start();
+      LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
     }
-
-    /// <summary>
-    /// Checks if settings must be reseted.
-    /// </summary>
-    private static void CheckSettingsReset(bool force = false)
+    catch ( Exception ex )
     {
-      var resetForceVersions = new bool[] { };
-      try
-      {
-        // Check reset
-        if ( force || resetForceVersions.Contains(true) )
-        {
-          if ( !force && !Settings.FirstLaunch )
-            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-          Settings.Reset();
-          Settings.LanguageSelected = Languages.Current;
-          Settings.SetUpgradeFlagsOff();
-        }
-        if ( Settings.FirstLaunchV3_0 )
-        {
-          Settings.SetFirstAndUpgradeFlagsOff();
-          Settings.FirstLaunch = true;
-        }
-        // Check language
-        if ( Settings.LanguageSelected == Language.None )
-          Settings.LanguageSelected = Languages.Current;
-        // Save settings
-        SystemManager.TryCatch(Settings.Save);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      ex.Manage();
     }
+    Application.Run(MainForm.Instance);
+  }
 
-    /// <summary>
-    /// IPC requests.
-    /// </summary>
-    static void IPCRequests(IAsyncResult ar)
+  /// <summary>
+  /// Checks if settings must be reseted.
+  /// </summary>
+  private static void CheckSettingsReset(bool force = false)
+  {
+    var resetForceVersions = new bool[] { };
+    try
     {
-      var server = ar.AsyncState as NamedPipeServerStream;
-      try
+      // Check reset
+      if ( force || resetForceVersions.Contains(true) )
       {
-        server.EndWaitForConnection(ar);
-        if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
-        if ( !Globals.IsReady ) return;
-        var form = MainForm.Instance;
-        var cmd = ApplicationCommandLine.Instance;
-        Action action = command switch
-        {
-          nameof(cmd.ShowMainForm) => () => form.Popup(),
-          nameof(cmd.ReferenceToGo) => () => form.GoTo(cmd.ReferenceToGo),
-          nameof(cmd.SearchWord) => () => form.SearchHebrewWord(cmd.SearchWord),
-          nameof(cmd.SearchTranslated) => () => form.SearchTranslatedWord(cmd.SearchTranslated),
-          _ => null
-        };
-        if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
+        if ( !force && !Settings.FirstLaunch )
+          DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+        Settings.Reset();
+        Settings.LanguageSelected = Languages.Current;
+        Settings.SetUpgradeFlagsOff();
       }
-      finally
+      if ( Settings.FirstLaunchV3_0 )
       {
-        server.Close();
-        if ( Globals.IsReady )
-          SystemManager.CreateIPCServer(IPCRequests);
+        Settings.SetFirstAndUpgradeFlagsOff();
+        Settings.FirstLaunch = true;
       }
+      // Check language
+      if ( Settings.LanguageSelected == Language.None )
+        Settings.LanguageSelected = Languages.Current;
+      // Save settings
+      SystemManager.TryCatch(Settings.Save);
     }
-
-    /// <summary>
-    /// Sends IPC commands.
-    /// </summary>
-    static private void IPCSendCommands()
+    catch ( Exception ex )
     {
+      ex.Manage();
+    }
+  }
+
+  /// <summary>
+  /// IPC requests.
+  /// </summary>
+  static void IPCRequests(IAsyncResult ar)
+  {
+    var server = ar.AsyncState as NamedPipeServerStream;
+    try
+    {
+      server.EndWaitForConnection(ar);
+      if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
+      if ( !Globals.IsReady ) return;
+      var form = MainForm.Instance;
       var cmd = ApplicationCommandLine.Instance;
-      if ( cmd == null ) return;
-      if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
-      if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
-      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.ReferenceToGo));
-      if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.SearchTranslated));
+      Action action = command switch
+      {
+        nameof(cmd.ShowMainForm) => () => form.Popup(),
+        nameof(cmd.ReferenceToGo) => () => form.GoTo(cmd.ReferenceToGo),
+        nameof(cmd.SearchWord) => () => form.SearchHebrewWord(cmd.SearchWord),
+        nameof(cmd.SearchTranslated) => () => form.SearchTranslatedWord(cmd.SearchTranslated),
+        _ => null
+      };
+      if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
     }
-
-    /// <summary>
-    /// Processes command line options.
-    /// </summary>
-    static private void ProcessCommandLineOptions()
+    finally
     {
-      try
-      {
-        if ( SystemManager.CommandLineOptions == null ) return;
-        if ( SystemManager.CommandLineOptions.ResetSettings )
-        {
-          SystemManager.CleanAllLocalAppSettingsFolders();
-          CheckSettingsReset(true);
-        }
-        else
-        if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
-          Globals.ForceStartupHide = true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      server.Close();
+      if ( Globals.IsReady )
+        SystemManager.CreateIPCServer(IPCRequests);
     }
+  }
 
-    /// <summary>
-    /// Updates localization strings to the whole application.
-    /// </summary>
-    static public void UpdateLocalization()
+  /// <summary>
+  /// Sends IPC commands.
+  /// </summary>
+  static private void IPCSendCommands()
+  {
+    var cmd = ApplicationCommandLine.Instance;
+    if ( cmd == null ) return;
+    if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
+    if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
+    if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.ReferenceToGo));
+    if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.SearchTranslated));
+  }
+
+  /// <summary>
+  /// Processes command line options.
+  /// </summary>
+  static private void ProcessCommandLineOptions()
+  {
+    try
     {
-      Globals.ChronoTranslate.Restart();
-      Task task = null;
-      try
+      if ( SystemManager.CommandLineOptions == null ) return;
+      if ( SystemManager.CommandLineOptions.ResetSettings )
       {
-        static void update(Form form)
-        {
-          new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new(form.GetType());
-          resources.ApplyResources(form.Controls);
-        }
-        string lang = "en-US";
-        if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
-        var culture = new CultureInfo(lang);
-        Thread.CurrentThread.CurrentCulture = culture;
-        Thread.CurrentThread.CurrentUICulture = culture;
-        task = new Task(HebrewGlobals.LoadProviders);
-        task.Start();
-        if ( Globals.IsReady )
-        {
-          MessageBoxEx.CloseAll();
-          AboutBox.Instance.Hide();
-        }
-        else
-          update(MainForm.Instance);
-        //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-        var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
-        foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
-        {
-          update(form);
-          if ( form is ShowTextForm formShowText )
-            formShowText.Relocalize();
-        }
-        // Various updates
-        if ( Globals.IsReady )
-        {
-          LoadingForm.Instance.Relocalize();
-          TextBoxEx.Relocalize();
-          AboutBox.Instance.AboutBox_Shown(null, null);
-          GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-          MainForm.Instance.RenderTranslation();
-          MainForm.Instance.RenderRawText();
-          MainForm.Instance.RenderELS50();
-          MainForm.Instance.SetView(Settings.CurrentView, true);
-        }
-        task?.Wait();
-        MainForm.Instance.CreateSystemInformationMenu();
+        SystemManager.CleanAllLocalAppSettingsFolders();
+        CheckSettingsReset(true);
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        Globals.ChronoTranslate.Stop();
-        Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
-      }
+      else
+      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
+        Globals.ForceStartupHide = true;
     }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
 
+  /// <summary>
+  /// Updates localization strings to the whole application.
+  /// </summary>
+  static public void UpdateLocalization()
+  {
+    Globals.ChronoTranslate.Restart();
+    Task task = null;
+    try
+    {
+      static void update(Form form)
+      {
+        new Infralution.Localization.CultureManager().ManagedControl = form;
+        ComponentResourceManager resources = new(form.GetType());
+        resources.ApplyResources(form.Controls);
+      }
+      string lang = "en-US";
+      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
+      var culture = new CultureInfo(lang);
+      Thread.CurrentThread.CurrentCulture = culture;
+      Thread.CurrentThread.CurrentUICulture = culture;
+      task = new Task(HebrewGlobals.LoadProviders);
+      task.Start();
+      if ( Globals.IsReady )
+      {
+        MessageBoxEx.CloseAll();
+        AboutBox.Instance.Hide();
+      }
+      else
+        update(MainForm.Instance);
+      //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
+      foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
+      {
+        update(form);
+        if ( form is ShowTextForm formShowText )
+          formShowText.Relocalize();
+      }
+      // Various updates
+      if ( Globals.IsReady )
+      {
+        LoadingForm.Instance.Relocalize();
+        TextBoxEx.Relocalize();
+        AboutBox.Instance.AboutBox_Shown(null, null);
+        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
+        MainForm.Instance.RenderTranslation();
+        MainForm.Instance.RenderRawText();
+        MainForm.Instance.RenderELS50();
+        MainForm.Instance.SetView(Settings.CurrentView, true);
+      }
+      task?.Wait();
+      MainForm.Instance.CreateSystemInformationMenu();
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+    finally
+    {
+      Globals.ChronoTranslate.Stop();
+      Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
+    }
   }
 
 }

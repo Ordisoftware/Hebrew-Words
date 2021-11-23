@@ -12,43 +12,39 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Words;
+
 using Ordisoftware.Hebrew.Words.Data;
 
-namespace Ordisoftware.Hebrew.Words
+/// <summary>
+/// Provide book reference item
+/// </summary>
+class BookItem
 {
 
-  /// <summary>
-  /// Provide book reference item
-  /// </summary>
-  class BookItem
+  public DataSet.BooksRow Book { get; set; }
+
+  public override string ToString()
   {
+    if ( Book == null ) return "";
+    int nb = MainForm.Instance.DataSet.Books.Count;
+    string str;
+    if ( nb >= 100 )
+      str = Book.Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Book.Number.ToString("00");
+    else
+      str = Book.Number.ToString();
+    str += ". " + Book.Name;
+    if ( Book.CommonName.Length > 0 ) str += $" ({Book.CommonName})";
+    if ( Book.Translation.Length > 0 ) str += $" - {Book.Translation}";
+    return str;
+  }
 
-    public DataSet.BooksRow Book { get; set; }
-
-    public override string ToString()
-    {
-      if ( Book == null ) return "";
-      int nb = MainForm.Instance.DataSet.Books.Count;
-      string str;
-      if ( nb >= 100 )
-        str = Book.Number.ToString("000");
-      else
-      if ( nb >= 10 )
-        str = Book.Number.ToString("00");
-      else
-        str = Book.Number.ToString();
-      str += ". " + Book.Name;
-      if ( Book.CommonName.Length > 0 ) str += $" ({Book.CommonName})";
-      if ( Book.Translation.Length > 0 ) str += $" - {Book.Translation}";
-      return str;
-    }
-
-    public BookItem(DataSet.BooksRow book)
-    {
-      Book = book;
-    }
-
+  public BookItem(DataSet.BooksRow book)
+  {
+    Book = book;
   }
 
 }
