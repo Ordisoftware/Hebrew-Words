@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using System;
@@ -33,7 +33,6 @@ partial class MainForm : Form
     CommonMenusControl.CreateInstance(ToolStrip,
                                       ref ActionInformation,
                                       AppTranslations.NoticeNewFeatures,
-                                      ActionAbout_Click,
                                       ActionWebCheckUpdate_Click,
                                       ActionViewLog_Click,
                                       ActionViewStats_Click);

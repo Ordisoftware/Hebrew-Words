@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Words
 {
-  partial class AboutBox
+  partial class AboutBoxOld
   {
     /// <summary>
     /// Variable nécessaire au concepteur.
@@ -27,7 +27,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBoxOld));
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelVersion = new System.Windows.Forms.Label();
       this.LabelCopyright = new System.Windows.Forms.Label();
@@ -391,7 +391,7 @@
       this.linkLabel20.Name = "linkLabel20";
       this.linkLabel20.TabStop = true;
       // 
-      // AboutBox
+      // AboutBoxOld
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -438,7 +438,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "AboutBox";
+      this.Name = "AboutBoxOld";
       this.Load += new System.EventHandler(this.AboutBox_Load);
       this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.PanelBottom.ResumeLayout(false);
