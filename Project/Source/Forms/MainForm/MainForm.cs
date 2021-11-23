@@ -36,7 +36,7 @@ partial class MainForm : Form
   /// <summary>
   /// Indicate the singleton instance.
   /// </summary>
-  static public MainForm Instance { get; private set; }
+  static internal MainForm Instance { get; private set; }
 
   /// <summary>
   /// Static constructor.
