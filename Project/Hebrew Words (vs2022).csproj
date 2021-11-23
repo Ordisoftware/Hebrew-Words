@@ -531,12 +531,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
-    <Compile Include="Source\Forms\Config\AboutBoxOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Config\AboutBoxOld.Designer.cs">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -710,12 +704,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\AboutBoxOld.fr.resx">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\AboutBoxOld.resx">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.fr.resx">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
