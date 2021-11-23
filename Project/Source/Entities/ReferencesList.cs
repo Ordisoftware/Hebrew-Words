@@ -14,13 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Ordisoftware.Core;
-
 abstract class ReferencesList : IEnumerable<ReferenceItem>
 {
 

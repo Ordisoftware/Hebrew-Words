@@ -14,14 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Data;
 using System.Data.Odbc;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
-using EnumsNET;
-using Ordisoftware.Core;
 
 partial class MainForm : Form
 {

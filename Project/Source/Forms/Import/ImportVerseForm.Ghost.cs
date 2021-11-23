@@ -14,11 +14,6 @@
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
-
 partial class ImportVerseForm : Form
 {
 

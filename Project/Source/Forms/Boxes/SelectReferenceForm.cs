@@ -14,10 +14,6 @@
 /// <edited> 2004-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Linq;
-using System.Windows.Forms;
-
 partial class SelectReferenceForm : Form
 {
 

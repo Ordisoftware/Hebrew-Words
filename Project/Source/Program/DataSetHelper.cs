@@ -14,7 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Text;
 using Ordisoftware.Hebrew.Words.Data;
 
 static class DataSetHelper

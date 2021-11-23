@@ -14,10 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using Program = Words.Program;
 using Properties = Words.Properties;
 using MainForm = Words.MainForm;

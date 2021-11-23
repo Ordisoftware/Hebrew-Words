@@ -14,8 +14,6 @@
 /// <edited> 2021-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Properties;
 
 /// <summary>

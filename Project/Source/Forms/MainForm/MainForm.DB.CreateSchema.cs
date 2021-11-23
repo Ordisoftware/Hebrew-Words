@@ -15,8 +15,6 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using System.Data.Odbc;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 
 partial class MainForm : Form
 {

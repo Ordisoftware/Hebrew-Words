@@ -14,8 +14,6 @@
 /// <edited> 2019-09 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Collections.Generic;
-
 class ImportVerseResult
 {
   public string Hebrew { get; set; }

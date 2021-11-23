@@ -14,16 +14,8 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Data;
 using System.Data.Odbc;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Microsoft.Win32;
-using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Data;
 
 /// <summary>

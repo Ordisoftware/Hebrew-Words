@@ -14,10 +14,6 @@
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 using Ordisoftware.Hebrew.Words.Data;
 
 partial class MainForm

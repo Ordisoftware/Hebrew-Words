@@ -14,9 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Linq;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Words.Data;
 
 partial class MainForm

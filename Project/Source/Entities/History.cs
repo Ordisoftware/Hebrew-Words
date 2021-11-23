@@ -14,8 +14,6 @@
 /// <edited> 2020-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Linq;
-
 class History : ReferencesList
 {
 

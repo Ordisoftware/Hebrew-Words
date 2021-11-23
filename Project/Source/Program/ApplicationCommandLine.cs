@@ -15,7 +15,6 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using CommandLine;
-using Ordisoftware.Core;
 
 class ApplicationCommandLine : SystemCommandLine
 {

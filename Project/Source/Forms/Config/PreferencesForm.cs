@@ -14,12 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Form for viewing the preferences.
 /// </summary>

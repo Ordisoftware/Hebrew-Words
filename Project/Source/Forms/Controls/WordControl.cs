@@ -14,11 +14,6 @@
 /// <edited> 2020-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 partial class WordControl : UserControl
 {
 

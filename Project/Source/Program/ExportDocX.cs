@@ -14,9 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Linq;
-using Ordisoftware.Core;
 using Xceed.Document.NET;
 using Xceed.Words.NET;
 

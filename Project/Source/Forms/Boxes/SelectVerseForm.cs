@@ -14,8 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Windows.Forms;
-
 partial class SelectVerseForm : Form
 {
 

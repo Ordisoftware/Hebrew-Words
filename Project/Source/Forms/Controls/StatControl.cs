@@ -14,8 +14,6 @@
 /// <edited> 2019-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Windows.Forms;
-
 partial class StatControl : UserControl
 {
 

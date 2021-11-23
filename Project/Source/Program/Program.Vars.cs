@@ -14,10 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.IO;
-using System.Collections.Generic;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provide Program class.
 /// </summary>
