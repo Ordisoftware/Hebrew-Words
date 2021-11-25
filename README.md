@@ -20,6 +20,19 @@
 
 A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and Hebrew Bible.
 
+## Table of content
+
+1. [Functionalities](#Functionalities)
+2. [Review](#Review)
+3. [Requirements](#Requirements)
+4. [Download](#Download)
+5. [Screenshots](#Screenshots)
+6. [Videos](#Videos)
+7. [Frequently asked questions](#Frequently-asked-questions)
+8. [Keyboard shortcuts](#Keyboard-shortcuts)
+9. [Future improvements](#Future-improvements)
+10. [Changelog](#Changelog)
+
 ## Functionalities
 
 - Translate verses word-for-word.
