@@ -1,6 +1,6 @@
 # Hebrew Words
 
-[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-words)](#)&nbsp;
+[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
 [![GitHub all releases](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](#)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
@@ -10,13 +10,11 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6)](#)&nbsp;
 [![.Net](https://img.shields.io/badge/.NET-5C2D91)](#)&nbsp;
 [![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg)](#)&nbsp;
-[![C#](https://img.shields.io/badge/c%23-%23239120.svg)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg)](#)&nbsp;
+[![C#](https://img.shields.io/badge/C%23-%23239120.svg)](#)&nbsp;
+[![SQLite](https://img.shields.io/badge/SQlite-%2307405e.svg)](#)&nbsp;
 
-> Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
-> This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
-> [Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
-> [Twitter](https://twitter.com/ordisoftware)<br/>
+[![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
+[![Guidelines](https://img.shields.io/badge/-Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
 A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and Hebrew Bible.
 
