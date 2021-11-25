@@ -1,6 +1,6 @@
 # Hebrew Words
 
-[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-words)](#)&nbsp;
+[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
 [![GitHub all releases](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](#)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
@@ -10,13 +10,11 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6)](#)&nbsp;
 [![.Net](https://img.shields.io/badge/.NET-5C2D91)](#)&nbsp;
 [![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg)](#)&nbsp;
-[![C#](https://img.shields.io/badge/c%23-%23239120.svg)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg)](#)&nbsp;
+[![C#](https://img.shields.io/badge/C%23-%23239120.svg)](#)&nbsp;
+[![SQLite](https://img.shields.io/badge/SQlite-%2307405e.svg)](#)&nbsp;
 
-> Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
-> This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
-> [Website](https://www.ordisoftware.com/projects/hebrew-words)<br/>
-> [Twitter](https://twitter.com/ordisoftware)<br/>
+[![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
+[![Guidelines](https://img.shields.io/badge/-Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
 A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and Hebrew Bible.
 
@@ -42,18 +40,36 @@ A libre and open-source software written in C# that helps for the literal word-f
 - Right mouse click on a verse number to open context menu with more options like bookmarks.
 - MS Word export of a book or a chapter or a verse.
 - Determine the Equidistant Letter Sequence of 50 for Tav.
-- Search hebrew or translated words with filters.
+- Search Hebrew or translated words with filters.
 - Grammar guide.
 - Links to various online resources.
 - Show some statistics.
 - English, French.
 
+## Review
+
+[Softpedia.com](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml)
+
+_"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as well as a way to perform exact translations"_
+
+[![Note](https://www.ordisoftware.com/wp-content/theming/softpedia3.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml)
+
 ## Requirements
 
-- Windows Vista x32/x64 or higher
 - Screen 1024x768 or higher
-- Framework .NET 4.5
-- SQLite ODBC Driver
+- Windows 7 SP1 x32/x64 or higher
+- Framework .NET 4.8
+- SQLite 3.35.5
+
+## Download
+
+**What's new in the latest version**
+
+-
+
+[Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
+
+[French Tanak database decoded by the author](https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books/tree/master/Tanak)
 
 ## Screenshots
 
@@ -67,21 +83,9 @@ A libre and open-source software written in C# that helps for the literal word-f
 
 ## Frequently asked questions
 
+#### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-#### How to install SQlite ODBC Driver?
-
-The setup tries to install the driver:
-
-- [sqliteodbc.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc.exe) on Windows 32-bit.
-- [sqliteodbc_w64.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc_w64.exe) on Windows 64-bit.
-
-#### What to do in case of ODBC datasource connection error?
-
-The setup tries to register an ODBC DSN to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Words\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-Words" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
-
-"%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Words\Hebrew-Words.sqlite"
-
-Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
 
 #### What to do if there is a problem with the display?
 
@@ -91,29 +95,143 @@ Use the refresh view action of the menu at the top.
 
 Yes, because implementing features requires a lot of Windows resources that depend on the performance of the computer.
 
-#### Keyboard shortcuts
+## Keyboard shortcuts
 
-- F1 : Verses view
-- F2 : Translation view
-- F3 : Hebrew text view
-- F4 : ELS50 verses view
-- F5 : Search view
-- Ctrl+S : Save changes
-- Ctrl+R : Find reference
-- Ctrl+F : Find verse number in current chapter (0 for first untranslated)
-- Ctrl+G : Open the grammar guide
-- Ctrl+Home : Reach the beginning of the view
-- Ctrl+End : Reach the ending of the view
-- Ctrl+Up : Scroll the view up (fine)
-- Ctrl+Down : Scroll the view down (fine)
-- PageUp : Scroll the view up
-- PageDown : Scroll the view down
-- F8 : Preferences
-- F11 : Help
-- F12 : About
-- Escape : Close window or Cancel process 
+| Keys | Actions |
+|-|-|
+| F1 | Verses view |
+| F2 | Translation view |
+| F3 | Hebrew text view |
+| F4 | ELS50 verses view |
+| F5 | Search view |
+| Ctrl + B | Open the books names editor |
+| Ctrl + H | Open Hebrew Letters |
+| Ctrl + T | Open translated form for the focused Hebrew word |
+| Ctrl + K | Open search panel for the focused Hebrew word |
+| Ctrl + G | Open the grammar guide |
+| Ctrl + F | Find verse number in current chapter (0 for first untranslated) |
+| Ctrl + Alt + F | Find reference |
+| Ctrl + S | Save changes |
+| Ctrl + Back | Cancel changes |
+| Ctrl + Home | Reach the beginning of the view |
+| Ctrl + End | Reach the ending of the view |
+| Ctrl + Up | Scroll the view up (fine) |
+| Ctrl + Down | Scroll the view down (fine) |
+| PageUp | Scroll the view up |
+| PageDown | Scroll the view down |
+| Alt + T | Show tools menu |
+| Alt + L | Show web links menu |
+| Alt + S | Show settings menu |
+| Alt + I | Show information menu |
+| F9 | Preferences |
+| F10 | Log file window |
+| F11 | Usage statistics window |
+| F12 | About |
+| Alt + F4 (or Escape) | Exit application |
+
+## Future improvements
+
+- Add strong's concordances to database.
+- Add classic english translation to database.
+- Add form to edit strong's concordances.
+- Add form to edit classis english translation.
+- Add classic english translation between an Hebrew word and the working translation.
+- Change contextual click on a Hebrew word to use database instead of web search.
 
 ## Changelog
+
+#### In progress - Version 3.0
+
+- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
+- Optimize overall performances.
+- Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
+- Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Add source Hebrew word in the search translated form.
+- Add Ctrl+T shortcut to open the translated form the focused Hebrew word.
+- Add Ctrl+K shortcut to open the search view for the focused Hebrew word.
+- Add "Add translation (to a word)" action in the search translated form, in addition to the "use" action.
+- Add "Add a bookmark" menu item.
+- Add "Sort bookmarks" menu item.
+- Add auto sort bookmarks option.
+- Add new input panel from Hebrew Letters v4+.
+- Add new advanced textbox for future undo/redo.
+- Add optimize database menu.
+- Add link to *hebrew.ch* shorashim database.
+- Add menu for web links.
+- Improve message boxes.
+- Improve check update to allow auto update or direct download or open app web page.
+- Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
+- Improve debugger to support logging.
+- Improve exception form to view log.
+- Improve UI/UX.
+- Fix drop down menus shown on another monitor instead of the same screen.
+- Fix error message when several SearchTranslatedForm are opened.
+- Fix error message when typing in the comment boxes.
+- Fix edit books information form : modifications are not saved since an old version.
+- Replace simple internal command line parser by CommandLineParser NuGet package.
+- Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).
+- Add debugger and serilog tracing (exception information form with GitHub issue creation).
+- The application now permanently lock database file while running.
+- The application now automatically creates the ODBC DSN in the Windows registry.
+- Move online providers values from code to files in the application documents folder.
+- Move tanak text files in Documents in a dedicated folder.
+- Add books common names field in the database and in the edit books information form.
+- Add common code written since more than one year for Calendar.
+- Files and code refactoring.
+- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Nuget SQLitePCLRaw.bundle_green must remain `v2.0.4`.
+- Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
+- Update setup.
+- Update web links.
+- Update help.
+- Upgrade to Visual Studio 2022 and C# 10.
+- Update setup for Framework .NET 4.8
+
+> TO CHECK
+- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add open book menu item in the edit books information form.
+- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to auto optimize database at startup once a week.
+- Add show usage statistics from about box.
+- Add check update from about box.
+
+> IN PROGRESS
+- Add book name translation text box in the navigation panel.
+- Add chapter title and memo text boxes in the navigation panel.
+- Add buttons to edit book and chapter memos in the navigation panel.
+- Add options to filter the books in the go to reference form.
+- Add keyboard shortcuts notice in windows settings menu.
+- Add sounds to clipboard actions.
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable message boxes sounds.
+- Add option to enable or disable success dialogs.
+- Add option to set application's volume.
+- Add usage statistics form in tools menu.
+- Change selection controls in the go to reference form.
+- Improve open Hebrew Letters for the current word when focused on the verses view.
+- Improve search to find words in chapters translated title.
+- Add search in comments
+
+> FUTURE
+
+- Add bookmarks backup/restore.
+- Add book memo and chapter title/memo in DOCX export.
+- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+- Add menu to open a batch export form.
+- Add count the number of a word occurences.
+- Add option to go to last reference on startup.
+- Add option to choose double-click action on a word in the search translated form.
+
+> VERY FUTURE
+- Add word occurences calculator button in the search panel.
+- Add option to change fonts size.
+- Improve auto-backup to allow periodic archive as weekly or monthly
+- Improve import console to support Hebrew unicode chars in addition to Hebrew font.
+- Database updated to support internal strong concordance popup menus in the future.
 
 #### 2020.09.01 - Version 2.5
 
@@ -152,7 +270,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.09.19 - Version 2.0
 
-- Add context menu on hebrew words, on verses numbers and on search reference found.
+- Add context menu on Hebrew words, on verses numbers and on search reference found.
 - Add search translations of a word.
 - Add option to define url to open verse online.
 - Add option to set commentary lines count.
@@ -197,7 +315,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.08.25 - Version 1.4
 
-- Add shortcut for hebrew raw text view.
+- Add shortcut for Hebrew raw text view.
 - Improve check update.
 
 #### 2019.05.22 - Version 1.3
