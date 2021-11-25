@@ -4,11 +4,11 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](#)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](#)&nbsp;<br/>
-[![Windows](https://img.shields.io/badge/Windows%207+-0078D6)](#)&nbsp;
-[![.Net](https://img.shields.io/badge/.NET%204.8-5C2D91)](#)&nbsp;
-[![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg)](#)&nbsp;
-[![C#](https://img.shields.io/badge/C%23%2010-%23239120.svg)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/SQlite%203.35-%2307405e.svg)](#)&nbsp;<br/>
+[![Windows](https://img.shields.io/badge/Windows%20Vista+-0078D6)](#)&nbsp;
+[![.Net](https://img.shields.io/badge/.NET%204.5-5C2D91)](#)&nbsp;
+[![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202017-5C2D91.svg)](#)&nbsp;
+[![C#](https://img.shields.io/badge/C%23%207.3-%23239120.svg)](#)&nbsp;
+[![SQLite](https://img.shields.io/badge/SQlite-%2307405e.svg)](#)&nbsp;<br/>
 [![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Guidelines](https://img.shields.io/badge/-Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -56,8 +56,8 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.8
-- SQLite 3.35.5
+- Framework .NET 4.5
+- SQLite ODBC Driver
 
 ## Download
 
