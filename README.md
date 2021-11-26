@@ -9,7 +9,7 @@
 [![.Net](https://img.shields.io/badge/.NET%204.5-5C2D91?label=framework)](#)&nbsp;
 [![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202017-5C2D91.svg?label=ide)](#)&nbsp;
 [![C#](https://img.shields.io/badge/C%23%207.3-%23239120.svg?label=lang)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/SQLite%20ODBC-%2307405e.svg?label=db)](#)&nbsp;<br/>
+[![SQLite](https://img.shields.io/badge/SQLite%20ODBC-gold.svg?label=db)](#)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
