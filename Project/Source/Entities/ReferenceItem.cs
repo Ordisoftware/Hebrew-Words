@@ -22,8 +22,6 @@ using Ordisoftware.Hebrew.Words.Data;
 class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
-  // TODO override <, >, <=, >=, ==, !=
-
   const string NULL = "(null)";
 
   public DataSet.BooksRow Book { get; set; }
