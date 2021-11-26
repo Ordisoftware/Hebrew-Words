@@ -1,5 +1,5 @@
-[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
-[![GitHub all releases](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](#)&nbsp;
+[![License](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
+[![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](#)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](#)&nbsp;
@@ -10,7 +10,7 @@
 [![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202017-5C2D91.svg?label=ide)](#)&nbsp;
 [![C#](https://img.shields.io/badge/C%23%207.3-%23239120.svg?label=lang)](#)&nbsp;
 [![SQLite](https://img.shields.io/badge/SQLite%20ODBC-%2307405e.svg?label=db)](#)&nbsp;<br/>
-[![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
+[![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
 # Hebrew Words
