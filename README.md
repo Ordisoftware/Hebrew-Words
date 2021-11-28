@@ -1,9 +1,9 @@
 [![License: MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
-[![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](#)&nbsp;
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](#)&nbsp;
+[![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](https://github.com/Ordisoftware/Hebrew-Words/releases)&nbsp;
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](#)&nbsp;
-[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](#)&nbsp;<br/>
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;
+[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;<br/>
 [![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
