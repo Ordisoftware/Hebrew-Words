@@ -1,6 +1,6 @@
 [![License: MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-words)](LICENSE)&nbsp;
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](https://github.com/Ordisoftware/Hebrew-Words/releases)&nbsp;
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/latest)&nbsp;
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;<br/>
