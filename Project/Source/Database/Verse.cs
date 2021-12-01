@@ -15,10 +15,9 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using System;
-using System.Linq;
-using System.Collections.Generic;
 using System.ComponentModel;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Verses")]
@@ -32,5 +31,58 @@ public class Verse : INotifyPropertyChanged
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
   }
+
+  [PrimaryKey]
+  public string ID
+  {
+    get => _ID;
+    set
+    {
+      if ( _ID == value ) return;
+      _ID = value;
+      NotifyPropertyChanged(nameof(ID));
+    }
+  }
+  private string _ID;
+
+  [ForeignKey(typeof(Chapter))]
+  public string ChapterID
+  {
+    get => _ChapterID;
+    set
+    {
+      if ( _ChapterID == value ) return;
+      _ChapterID = value;
+      NotifyPropertyChanged(nameof(ChapterID));
+    }
+  }
+  private string _ChapterID;
+
+  public int Number
+  {
+    get => _Number;
+    set
+    {
+      if ( _Number == value ) return;
+      _Number = value;
+      NotifyPropertyChanged(nameof(Number));
+    }
+  }
+  private int _Number;
+
+  public string Comment
+  {
+    get => _Comment;
+    set
+    {
+      if ( _Comment == value ) return;
+      _Comment = value;
+      NotifyPropertyChanged(nameof(Comment));
+    }
+  }
+  private string _Comment;
+
+  [field: NonSerialized]
+  public List<Word> Words = new();
 
 }

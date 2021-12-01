@@ -15,10 +15,10 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Chapters")]
@@ -32,5 +32,82 @@ public class Chapter : INotifyPropertyChanged
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
   }
+
+  [PrimaryKey]
+  public string ID
+  {
+    get => _ID;
+    set
+    {
+      if ( _ID == value ) return;
+      _ID = value;
+      NotifyPropertyChanged(nameof(ID));
+    }
+  }
+  private string _ID;
+
+  [ForeignKey(typeof(Book))]
+  public string BookID
+  {
+    get => _BookID;
+    set
+    {
+      if ( _BookID == value ) return;
+      _BookID = value;
+      NotifyPropertyChanged(nameof(BookID));
+    }
+  }
+  private string _BookID;
+
+  public int Number
+  {
+    get => _Number;
+    set
+    {
+      if ( _Number == value ) return;
+      _Number = value;
+      NotifyPropertyChanged(nameof(Number));
+    }
+  }
+  private int _Number;
+
+  public string Title
+  {
+    get => _Title;
+    set
+    {
+      if ( _Title == value ) return;
+      _Title = value;
+      NotifyPropertyChanged(nameof(Title));
+    }
+  }
+  private string _Title;
+
+  public string Memo
+  {
+    get => _Memo;
+    set
+    {
+      if ( _Memo == value ) return;
+      _Memo = value;
+      NotifyPropertyChanged(nameof(Memo));
+    }
+  }
+  private string _Memo;
+
+  public string ELS50
+  {
+    get => _ELS50;
+    set
+    {
+      if ( _ELS50 == value ) return;
+      _ELS50 = value;
+      NotifyPropertyChanged(nameof(ELS50));
+    }
+  }
+  private string _ELS50;
+
+  [field: NonSerialized]
+  public readonly List<Verse> Verses = new();
 
 }

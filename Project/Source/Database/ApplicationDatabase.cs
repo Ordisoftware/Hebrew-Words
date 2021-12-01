@@ -28,14 +28,8 @@ class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<Book> Books { get; private set; }
-  public List<Chapter> Chapters { get; private set; }
-  public List<Verse> Verses { get; private set; }
-  public List<Word> Words { get; private set; }
 
   public BindingListView<Book> BooksAsBindingList { get; private set; }
-  //public BindingListView<Chapter> ChaptersAsBindingList { get; private set; }
-  //public BindingListView<Verse> VersesAsBindingList { get; private set; }
-  //public BindingListView<Word> WordsAsBindingList { get; private set; }
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -57,17 +51,8 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoClose()
   {
-    if ( Books == null && Chapters == null && Verses == null && Words == null ) return;
-    if ( ClearListsOnCloseAndRelease )
-    {
-      Words?.Clear();
-      Verses?.Clear();
-      Chapters?.Clear();
-      Books?.Clear();
-    }
-    Words = null;
-    Verses = null;
-    Chapters = null;
+    if ( Books == null ) return;
+    if ( ClearListsOnCloseOrRelease ) Books?.Clear();
     Books = null;
   }
 
@@ -83,41 +68,45 @@ class ApplicationDatabase : SQLiteDatabase
   {
     base.LoadAll();
     Books = Connection.Table<Book>().ToList();
-    Chapters = Connection.Table<Chapter>().ToList();
-    Verses = Connection.Table<Verse>().ToList();
-    Words = Connection.Table<Word>().ToList();
+    foreach ( var book in Books )
+    {
+      OnLoadingData(book.Name);
+      book.Chapters.AddRange(Connection.Table<Chapter>().Where(chapter => chapter.BookID == book.ID));
+      foreach ( var chapter in book.Chapters )
+      {
+        chapter.Verses.AddRange(Connection.Table<Verse>().Where(verse => verse.ChapterID == chapter.ID));
+        foreach ( var verse in chapter.Verses )
+          verse.Words.AddRange(Connection.Table<Word>().Where(word => word.VerseID == verse.ID));
+      }
+      OnDataLoaded(book.Name);
+    }
     BooksAsBindingList = new BindingListView<Book>(Books);
-    //ChaptersAsBindingList = new BindingListView<Chapter>(Chapters);
-    //VersesAsBindingList = new BindingListView<Verse>(Verses);
-    //WordsAsBindingList = new BindingListView<Word>(Words);
   }
 
   protected override void DoSaveAll()
   {
     CheckAccess(Books, nameof(Books));
-    CheckAccess(Chapters, nameof(Chapters));
-    CheckAccess(Verses, nameof(Verses));
-    CheckAccess(Words, nameof(Words));
     Connection.UpdateAll(Books);
-    Connection.UpdateAll(Chapters);
-    Connection.UpdateAll(Verses);
-    Connection.UpdateAll(Words);
+    foreach ( var book in Books )
+    {
+      Connection.UpdateAll(book.Chapters);
+      foreach ( var chapter in book.Chapters )
+      {
+        Connection.UpdateAll(chapter.Verses);
+        foreach ( var verse in chapter.Verses )
+          Connection.UpdateAll(verse.Words);
+      }
+    }
   }
 
   public void DeleteAll()
   {
     CheckConnected();
-    CheckAccess(Words, nameof(Words));
-    CheckAccess(Verses, nameof(Verses));
-    CheckAccess(Chapters, nameof(Chapters));
     CheckAccess(Books, nameof(Books));
     Connection.DeleteAll<Word>();
     Connection.DeleteAll<Verse>();
     Connection.DeleteAll<Chapter>();
     Connection.DeleteAll<Book>();
-    Words.Clear();
-    Verses.Clear();
-    Chapters.Clear();
     Books.Clear();
   }
 

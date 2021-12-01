@@ -24,6 +24,8 @@ partial class MainForm : Form
   {
     try
     {
+      DBApp.Open();
+
       PopulateData();
     }
     catch ( Exception ex )
