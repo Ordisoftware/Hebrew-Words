@@ -17,6 +17,11 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm : Form
 {
 
+  private void OnLoadingData(string caption)
+  {
+    LoadingForm.Instance.DoProgress(operation: "Loading book: " + caption);
+  }
+
   /// <summary>
   /// Load data from database fro the first time.
   /// </summary>
@@ -24,8 +29,12 @@ partial class MainForm : Form
   {
     try
     {
+      LoadingForm.Instance.Initialize("", 39, quantify: false);
+      DBApp.LoadingData += OnLoadingData;
       DBApp.Open();
-
+      DBApp.LoadingData -= OnLoadingData;
+      LoadingForm.Instance.Hide();
+      Thread.Sleep(5000);
       PopulateData();
     }
     catch ( Exception ex )
