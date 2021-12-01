@@ -16,7 +16,6 @@ namespace Ordisoftware.Hebrew.Words;
 
 using System.Data.Odbc;
 using Microsoft.Win32;
-using Ordisoftware.Hebrew.Words.Data;
 
 /// <summary>
 /// Provide application's main form.
@@ -278,7 +277,7 @@ partial class MainForm : Form
   {
     SelectBook.Items.Clear();
     SelectSearchInBook.Items.Clear();
-    foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
+    foreach ( BookRow book in ApplicationDatabase.Instance.Books )
     {
       var item = new BookItem(book);
       SelectBook.Items.Add(item);
@@ -299,7 +298,7 @@ partial class MainForm : Form
   {
     if ( SelectBook.SelectedItem == null ) return;
     SelectChapter.Items.Clear();
-    foreach ( Data.DataSet.ChaptersRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.GetChaptersRows() )
+    foreach ( ChapterRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.Chapters )
       SelectChapter.Items.Add(new ChapterItem(chapter));
     SelectChapter.SelectedIndex = 0;
   }
@@ -630,8 +629,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSave_Click(object sender, EventArgs e)
   {
-    if ( DataSet.HasChanges() )
-      TableAdapterManager.UpdateAll(DataSet);
+    //if ( DataSet.HasChanges() )
+    //  TableAdapterManager.UpdateAll(DataSet);
     ActionSave.Enabled = false;
   }
 
@@ -1036,7 +1035,7 @@ partial class MainForm : Form
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
                                     CurrentReference.Chapter.Number,
-                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
+                                    CurrentReference.Chapter.Verses[index].Number);
     }
     Bookmarks.Add(reference);
     UpdateBookmarks();
@@ -1066,7 +1065,7 @@ partial class MainForm : Form
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
                                     CurrentReference.Chapter.Number,
-                                    CurrentReference.Chapter.GetVersesRows()[index].Number);
+                                    CurrentReference.Chapter.Verses[index].Number);
     }
     ImportVerseForm.Run(reference);
   }
@@ -1378,13 +1377,13 @@ partial class MainForm : Form
   private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
   {
     long value = 0;
-    var books = from book in DataSet.Books
+    var books = from book in ApplicationDatabase.Instance.Books
                 where book.Number <= BooksBounds.Torah.Max
                 select book;
-    foreach ( Data.DataSet.BooksRow book in books )
-      foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+    foreach ( BookRow book in books )
+      foreach ( ChapterRow chapter in book.Chapters )
+        foreach ( VerseRow verse in chapter.Verses )
+          foreach ( WordRow word in verse.Words )
             foreach ( char letter in word.Hebrew )
             {
               int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));

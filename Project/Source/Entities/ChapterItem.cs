@@ -14,20 +14,18 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 /// <summary>
 /// Provide chapter reference item
 /// </summary>
 class ChapterItem
 {
 
-  public DataSet.ChaptersRow Chapter { get; set; }
+  public ChapterRow Chapter { get; set; }
 
   public override string ToString()
   {
     if ( Chapter == null ) return "";
-    int nb = Chapter.BooksRow.GetChaptersRows().Length;
+    int nb = ApplicationDatabase.Instance.Books.Find(book => book.ID == Chapter.BookID).Chapters.Count;
     string str;
     if ( nb >= 100 )
       str = Chapter.Number.ToString("000");
@@ -40,7 +38,7 @@ class ChapterItem
     return str;
   }
 
-  public ChapterItem(DataSet.ChaptersRow chapter)
+  public ChapterItem(ChapterRow chapter)
   {
     Chapter = chapter;
   }

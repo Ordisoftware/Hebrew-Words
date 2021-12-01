@@ -14,19 +14,18 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 partial class MainForm
 {
 
   private void CreateSearchResults()
   {
     ClearSearchResults();
-    bool checkWordHebrew(DataSet.WordsRow row)
+    if ( SelectSearchInBook.SelectedItem == null ) return;
+    bool checkWordHebrew(WordRow row)
     {
       return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
     }
-    bool checkWordTranslation(DataSet.WordsRow row)
+    bool checkWordTranslation(WordRow row)
     {
       var str = row.Translation.ToLower().RemoveDiacritics();
       if ( !SearchWord1.Contains(",") )
@@ -42,19 +41,19 @@ partial class MainForm
         return false;
       }
     }
-    bool checkTranslatedAll(DataSet.VersesRow verse)
+    bool checkTranslatedAll(VerseRow verse)
     {
       return verse.IsTranslated();
     }
-    bool checkTranslatedAllFully(DataSet.VersesRow verse)
+    bool checkTranslatedAllFully(VerseRow verse)
     {
       return verse.IsFullyTranslated();
     }
-    bool checkTranslatedAllPartially(DataSet.VersesRow verse)
+    bool checkTranslatedAllPartially(VerseRow verse)
     {
       return verse.IsPartiallyTranslated();
     }
-    bool checkTranslatedAllUntranslated(DataSet.VersesRow verse)
+    bool checkTranslatedAllUntranslated(VerseRow verse)
     {
       return !verse.IsTranslated();
     }
@@ -90,19 +89,19 @@ partial class MainForm
     }
     if ( SearchWord1.Length > 0 && SearchWord1.Length >= 2 && CheckVerse == null )
     {
-      SearchResults = from book in DataSet.Books
-                      from chapter in book.GetChaptersRows()
-                      from verse in chapter.GetVersesRows()
-                      from word in verse.GetWordsRows()
+      SearchResults = from book in ApplicationDatabase.Instance.Books
+                      from chapter in book.Chapters
+                      from verse in chapter.Verses
+                      from word in verse.Words
                       where isBookSelected(book.Number) && CheckWord(word)
                       select new ReferenceItem(book, chapter, verse);
     }
     else
     if ( CheckVerse != null )
     {
-      SearchResults = from book in DataSet.Books
-                      from chapter in book.GetChaptersRows()
-                      from verse in chapter.GetVersesRows()
+      SearchResults = from book in ApplicationDatabase.Instance.Books
+                      from chapter in book.Chapters
+                      from verse in chapter.Verses
                       where isBookSelected(book.Number) && CheckVerse(verse)
                       select new ReferenceItem(book, chapter, verse);
     }

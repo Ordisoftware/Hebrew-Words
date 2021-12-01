@@ -17,60 +17,62 @@ namespace Ordisoftware.Hebrew.Words;
 partial class ImportVerseForm : Form
 {
 
-  private Data.DataSet.BooksRow GhostBook;
-  private Data.DataSet.ChaptersRow GhostChapter;
-  private Data.DataSet.VersesRow GhostVerse;
-  private Data.DataSet.WordsRow[] GhostWords;
+  // TODO UPGRADE
+
+  private BookRow GhostBook;
+  private ChapterRow GhostChapter;
+  private VerseRow GhostVerse;
+  //private WordRow[] GhostWords;
 
   private void CreateGhost()
   {
-    GhostBook = DataSet.Books.NewBooksRow();
-    GhostBook.ID = Guid.NewGuid().ToString();
-    GhostBook.Number = 0;
-    GhostBook.Original = "";
-    GhostBook.Hebrew = "";
-    GhostBook.Name = "";
-    GhostBook.CommonName = "";
-    GhostBook.Translation = "";
-    GhostBook.Memo = "";
-    DataSet.Books.AddBooksRow(GhostBook);
-    GhostChapter = DataSet.Chapters.NewChaptersRow();
-    GhostChapter.ID = Guid.NewGuid().ToString();
-    GhostChapter.BookID = GhostBook.ID;
-    GhostChapter.Number = 0;
-    GhostChapter.ELS50 = "";
-    GhostChapter.Title = "";
-    GhostChapter.Memo = "";
-    DataSet.Chapters.AddChaptersRow(GhostChapter);
-    GhostVerse = DataSet.Verses.NewVersesRow();
-    GhostVerse.ID = Guid.NewGuid().ToString();
-    GhostVerse.ChapterID = GhostChapter.ID;
-    GhostVerse.Number = 0;
-    GhostVerse.Comment = "";
-    DataSet.Verses.AddVersesRow(GhostVerse);
-    var words = Reference.Verse.GetWordsRows();
-    for ( int i = 0; i < words.Length; i++ )
-    {
-      var word = DataSet.Words.NewWordsRow();
-      word.ID = Guid.NewGuid().ToString();
-      word.VerseID = GhostVerse.ID;
-      word.Number = words[i].Number;
-      word.Original = words[i].Original;
-      word.Hebrew = words[i].Hebrew;
-      word.Translation = words[i].Translation;
-      DataSet.Words.AddWordsRow(word);
-    }
-    GhostWords = GhostVerse.GetWordsRows();
-    ActionOK.Enabled = false;
+    //GhostBook = DataSet.Books.NewBooksRow();
+    //GhostBook.ID = Guid.NewGuid().ToString();
+    //GhostBook.Number = 0;
+    //GhostBook.Original = "";
+    //GhostBook.Hebrew = "";
+    //GhostBook.Name = "";
+    //GhostBook.CommonName = "";
+    //GhostBook.Translation = "";
+    //GhostBook.Memo = "";
+    //DataSet.Books.AddBooksRow(GhostBook);
+    //GhostChapter = DataSet.Chapters.NewChaptersRow();
+    //GhostChapter.ID = Guid.NewGuid().ToString();
+    //GhostChapter.BookID = GhostBook.ID;
+    //GhostChapter.Number = 0;
+    //GhostChapter.ELS50 = "";
+    //GhostChapter.Title = "";
+    //GhostChapter.Memo = "";
+    //DataSet.Chapters.AddChaptersRow(GhostChapter);
+    //GhostVerse = DataSet.Verses.NewVersesRow();
+    //GhostVerse.ID = Guid.NewGuid().ToString();
+    //GhostVerse.ChapterID = GhostChapter.ID;
+    //GhostVerse.Number = 0;
+    //GhostVerse.Comment = "";
+    //DataSet.Verses.AddVersesRow(GhostVerse);
+    //var words = Reference.Verse.Words;
+    //for ( int i = 0; i < words.Length; i++ )
+    //{
+    //  var word = DataSet.Words.NewWordsRow();
+    //  word.ID = Guid.NewGuid().ToString();
+    //  word.VerseID = GhostVerse.ID;
+    //  word.Number = words[i].Number;
+    //  word.Original = words[i].Original;
+    //  word.Hebrew = words[i].Hebrew;
+    //  word.Translation = words[i].Translation;
+    //  DataSet.Words.AddWordsRow(word);
+    //}
+    //GhostWords = GhostVerse.Words;
+    //ActionOK.Enabled = false;
   }
 
   private void DeleteGhost()
   {
-    foreach ( var word in GhostWords.ToList() )
-      DataSet.Words.RemoveWordsRow(word);
-    DataSet.Verses.RemoveVersesRow(GhostVerse);
-    DataSet.Chapters.RemoveChaptersRow(GhostChapter);
-    DataSet.Books.RemoveBooksRow(GhostBook);
+    //foreach ( var word in GhostWords.ToList() )
+    //  DataSet.Words.RemoveWordsRow(word);
+    //DataSet.Verses.RemoveVersesRow(GhostVerse);
+    //DataSet.Chapters.RemoveChaptersRow(GhostChapter);
+    //DataSet.Books.RemoveBooksRow(GhostBook);
   }
 
 }

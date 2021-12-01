@@ -20,10 +20,11 @@ partial class MainForm
   public void RenderRawText()
   {
     EditRawText.Clear();
-    foreach ( Data.DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
+    if ( CurrentReference.Chapter == null ) return;
+    foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
     {
       string str = "";
-      foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+      foreach ( WordRow word in verse.Words )
         str = word.Hebrew + " " + str;
       AddTextRightAligned(EditRawText, HebrewFont12, str);
       AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);

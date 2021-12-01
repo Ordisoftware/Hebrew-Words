@@ -20,7 +20,7 @@ partial class SelectVerseForm : Form
   static public ReferenceItem Run()
   {
     var form = new SelectVerseForm();
-    form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.GetVersesRows().Length;
+    form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.Verses.Count;
     if ( form.ShowDialog() != DialogResult.OK ) return null;
     return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
                              MainForm.Instance.CurrentReference.Chapter.Number,

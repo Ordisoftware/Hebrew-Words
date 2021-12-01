@@ -14,20 +14,19 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 /// <summary>
 /// Provide verse reference item
 /// </summary>
 class VerseItem
 {
 
-  public DataSet.VersesRow Verse { get; set; }
+  public VerseRow Verse { get; set; }
 
   public override string ToString()
   {
     if ( Verse == null ) return "";
-    int nb = Verse.ChaptersRow.GetVersesRows().Length;
+    //int nb = ApplicationDatabase.Instance.Books.Find(book => book.ID == Chapter.BookID).Chapters.Count;
+    int nb = 0;// Verse.ChaptersRow.Verses.Length;
     string str;
     if ( nb >= 100 )
       str = Verse.Number.ToString("000");
@@ -40,7 +39,7 @@ class VerseItem
     return str;
   }
 
-  public VerseItem(DataSet.VersesRow verse)
+  public VerseItem(VerseRow verse)
   {
     Verse = verse;
   }

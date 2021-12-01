@@ -14,8 +14,6 @@
 /// <edited> 2019-09 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 partial class MainForm
 {
 
@@ -23,7 +21,8 @@ partial class MainForm
   {
     EditTranslations.Visible = false;
     EditTranslations.Clear();
-    foreach ( DataSet.VersesRow verse in CurrentReference.Chapter.GetVersesRows() )
+    if ( CurrentReference.Chapter == null ) return;
+    foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
     {
       string str = verse.Number + ". ";
       EditTranslations.SelectedText = str + verse.GetTranslation();

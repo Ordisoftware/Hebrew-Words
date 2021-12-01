@@ -102,11 +102,6 @@
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.Hebrew.Words.Data.DataSet();
-      this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -212,11 +207,6 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.BooksTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.BooksTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ChaptersTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.ChaptersTableAdapter();
-      this.VersesTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.VersesTableAdapter();
-      this.WordsTableAdapter = new Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.WordsTableAdapter();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -243,11 +233,6 @@
       this.SelectSearchTypeVerses.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
       this.PanelTitle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
@@ -833,31 +818,6 @@
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
       // 
-      // ChaptersBindingSource
-      // 
-      this.ChaptersBindingSource.DataMember = "Books_Chapters";
-      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataMember = "Books";
-      this.BooksBindingSource.DataSource = this.DataSet;
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // WordsBindingSource
-      // 
-      this.WordsBindingSource.DataMember = "Verses_Words";
-      this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // VersesBindingSource
-      // 
-      this.VersesBindingSource.DataMember = "Chapters_Verses";
-      this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
-      // 
       // label1
       // 
       resources.ApplyResources(this.label1, "label1");
@@ -1371,8 +1331,8 @@
       // 
       // bindingNavigatorPositionItem
       // 
-      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
       this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
       // 
       // bindingNavigatorCountItem
       // 
@@ -1597,31 +1557,6 @@
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
       // 
-      // BooksTableAdapter
-      // 
-      this.BooksTableAdapter.ClearBeforeFill = true;
-      // 
-      // TableAdapterManager
-      // 
-      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
-      this.TableAdapterManager.BooksTableAdapter = this.BooksTableAdapter;
-      this.TableAdapterManager.ChaptersTableAdapter = this.ChaptersTableAdapter;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Words.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-      this.TableAdapterManager.VersesTableAdapter = this.VersesTableAdapter;
-      this.TableAdapterManager.WordsTableAdapter = this.WordsTableAdapter;
-      // 
-      // ChaptersTableAdapter
-      // 
-      this.ChaptersTableAdapter.ClearBeforeFill = true;
-      // 
-      // VersesTableAdapter
-      // 
-      this.VersesTableAdapter.ClearBeforeFill = true;
-      // 
-      // WordsTableAdapter
-      // 
-      this.WordsTableAdapter.ClearBeforeFill = true;
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1666,11 +1601,6 @@
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
@@ -1737,7 +1667,6 @@
     private System.Windows.Forms.RichTextBox EditELS50All;
     private System.Windows.Forms.RichTextBox EditTranslations;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    public Data.DataSet DataSet;
     public System.Windows.Forms.ToolStripButton ActionSave;
     private System.Windows.Forms.ToolStripButton ActionViewSearch;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
@@ -1808,15 +1737,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionStartHebrewLetters;
     private System.Windows.Forms.CheckBox EditSearchInKetouvim;
     private System.Windows.Forms.CheckBox EditSearchInNeviim;
-    private Data.DataSetTableAdapters.BooksTableAdapter BooksTableAdapter;
-    public Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
-    private Data.DataSetTableAdapters.ChaptersTableAdapter ChaptersTableAdapter;
-    private Data.DataSetTableAdapters.VersesTableAdapter VersesTableAdapter;
-    private Data.DataSetTableAdapters.WordsTableAdapter WordsTableAdapter;
-    public System.Windows.Forms.BindingSource BooksBindingSource;
-    private System.Windows.Forms.BindingSource ChaptersBindingSource;
-    private System.Windows.Forms.BindingSource VersesBindingSource;
-    private System.Windows.Forms.BindingSource WordsBindingSource;
     private System.Windows.Forms.Panel PanelSearchResultsOuter;
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
     private System.Windows.Forms.ComboBox SelectSearchInBook;

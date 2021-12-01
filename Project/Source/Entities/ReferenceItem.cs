@@ -14,8 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 /// <summary>
 /// Provide reference item
 /// </summary>
@@ -24,10 +22,10 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 
   const string NULL = "(null)";
 
-  public DataSet.BooksRow Book { get; set; }
-  public DataSet.ChaptersRow Chapter { get; set; }
-  public DataSet.VersesRow Verse { get; set; }
-  public DataSet.WordsRow Word { get; set; }
+  public BookRow Book { get; set; }
+  public ChapterRow Chapter { get; set; }
+  public VerseRow Verse { get; set; }
+  public WordRow Word { get; set; }
 
   public override string ToString()
   {
@@ -55,17 +53,17 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   {
   }
 
-  public ReferenceItem(DataSet.BooksRow book,
-                       DataSet.ChaptersRow chapter,
-                       DataSet.VersesRow verse)
+  public ReferenceItem(BookRow book,
+                       ChapterRow chapter,
+                       VerseRow verse)
   : this(book, chapter, verse, null)
   {
   }
 
-  public ReferenceItem(DataSet.BooksRow book,
-                       DataSet.ChaptersRow chapter,
-                       DataSet.VersesRow verse,
-                       DataSet.WordsRow word)
+  public ReferenceItem(BookRow book,
+                       ChapterRow chapter,
+                       VerseRow verse,
+                       WordRow word)
   {
     Book = book;
     Chapter = chapter;
@@ -74,7 +72,7 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   }
 
   public ReferenceItem(ReferenceItem reference,
-                       DataSet.WordsRow word)
+                       WordRow word)
   : this(reference)
   {
     Word = word;
@@ -94,10 +92,10 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   {
     try
     {
-      Book = MainForm.Instance.DataSet.Books.SingleOrDefault(b => b.Number == book);
-      Chapter = ( Book?.GetChaptersRows()[chapter - 1] );
-      Verse = verse == 0 ? null : ( Chapter?.GetVersesRows()[verse - 1] );
-      Word = word == 0 ? null : ( Verse?.GetWordsRows()[word - 1] );
+      Book = ApplicationDatabase.Instance.Books.SingleOrDefault(b => b.Number == book);
+      Chapter = ( Book?.Chapters[chapter - 1] );
+      Verse = verse == 0 ? null : ( Chapter?.Verses[verse - 1] );
+      Word = word == 0 ? null : ( Verse?.Words[word - 1] );
     }
     catch ( Exception ex )
     {

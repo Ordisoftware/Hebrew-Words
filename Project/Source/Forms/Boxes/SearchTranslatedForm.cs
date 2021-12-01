@@ -258,10 +258,10 @@ partial class SearchTranslatedForm : Form
       bool checkWholeWord(string str) => str == wordHebrew;
       bool checkContains(string str) => str.Contains(wordHebrew);
       Func<string, bool> check = EditWholeWord.Checked ? checkWholeWord : checkContains;
-      var references = from book in MainForm.Instance.DataSet.Books
-                       from chapter in book.GetChaptersRows()
-                       from verse in chapter.GetVersesRows()
-                       from word in verse.GetWordsRows()
+      var references = from book in ApplicationDatabase.Instance.Books
+                       from chapter in book.Chapters
+                       from verse in chapter.Verses
+                       from word in verse.Words
                        where check(word.Hebrew) && word.Translation.Length > 0
                        select new ReferenceItem(book, chapter, verse, word);
       if ( EditDistinct.Checked )

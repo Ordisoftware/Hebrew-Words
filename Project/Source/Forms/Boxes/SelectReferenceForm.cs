@@ -26,8 +26,6 @@ partial class SelectReferenceForm : Form
                              ( (VerseItem)form.SelectVerse.SelectedItem )?.Verse.Number ?? 1);
   }
 
-  private readonly Data.DataSet DataSet = MainForm.Instance.DataSet;
-
   private SelectReferenceForm()
   {
     InitializeComponent();
@@ -57,12 +55,12 @@ partial class SelectReferenceForm : Form
     try
     {
       SelectBook.Items.Clear();
-      foreach ( var book in DataSet.Books )
+      foreach ( var book in ApplicationDatabase.Instance.Books )
       {
         bool selected = false;
-        foreach ( var chapter in book.GetChaptersRows() )
+        foreach ( var chapter in book.Chapters )
           if ( !EditFilterChaptersWithTitle.Checked || chapter.Title.Length > 0 )
-            foreach ( var verse in chapter.GetVersesRows() )
+            foreach ( var verse in chapter.Verses )
               if ( !EditFilterVersesTranslated.Checked || verse.IsTranslated() )
                 selected = true;
         if ( selected )
@@ -95,16 +93,15 @@ partial class SelectReferenceForm : Form
       SelectVerse.Items.Clear();
       if ( SelectBook.SelectedItem != null )
       {
-        int number = ( (BookItem)SelectBook.SelectedItem ).Book.Number;
-        var list = from chapter in DataSet.Chapters
-                   where chapter.BooksRow.Number == number
-                   select chapter;
+        var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+        int number = book.Number;
+        var list = (IEnumerable<ChapterRow>)book.Chapters;
         if ( EditFilterChaptersWithTitle.Checked )
           list = list.Where(chapter => chapter.Title.Length > 0);
         if ( EditFilterVersesTranslated.Checked )
           list = list.Where(chapter =>
           {
-            foreach ( var verse in chapter.GetVersesRows() )
+            foreach ( var verse in chapter.Verses )
               if ( verse.IsTranslated() )
                 return true;
             return false;
@@ -137,7 +134,7 @@ partial class SelectReferenceForm : Form
       if ( SelectChapter.SelectedItem != null )
       {
         var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+        foreach ( VerseRow verse in chapter.Verses )
           SelectVerse.Items.Add(new VerseItem(verse));
       }
       if ( SelectVerse.Items.Count > 0 )

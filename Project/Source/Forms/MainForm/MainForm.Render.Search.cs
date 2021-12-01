@@ -14,8 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 partial class MainForm
 {
 
@@ -46,7 +44,7 @@ partial class MainForm
       int xx;
       LinkLabel linklabel;
       int indexControl = 0;
-      int capacity = results.Count() * 2 + results.Select(r => r.Verse.GetWordsRows().Length).Sum();
+      int capacity = results.Count() * 2 + results.Select(r => r.Verse.Words.Count).Sum();
       Control[] controls = new Control[capacity];
       foreach ( var reference in results )
       {
@@ -76,7 +74,7 @@ partial class MainForm
         x -= marginX;
         xx = x;
         Label label = null;
-        foreach ( DataSet.WordsRow word in reference.Verse.GetWordsRows() )
+        foreach ( WordRow word in reference.Verse.Words )
         {
           label = new Label
           {

@@ -31,35 +31,35 @@ partial class EditBooksForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     int index = 0;
-    void action(object sender, EventArgs e)
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-      string strOriginal = ( (Data.DataSet.BooksRow)row ).Original;
-      foreach ( string item in strOriginal.Split(' ') )
-        SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
-    }
-    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-    {
-      if ( item.Name == "-" )
-        ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
-      else
-        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-    }
+    //void action(object sender, EventArgs e)
+    //{
+    //  var menuitem = (ToolStripMenuItem)sender;
+    //  var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //  string strOriginal = ( (BookRow)row ).Original;
+    //  foreach ( string item in strOriginal.Split(' ') )
+    //    SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
+    //}
+    //foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
+    //{
+    //  if ( item.Name == "-" )
+    //    ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
+    //  else
+    //    ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
+    //}
   }
 
   private void EditBooksForm_Load(object sender, EventArgs e)
   {
-    EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
+    // TODO bind EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
     ActiveControl = EditBooks;
   }
 
   private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
   {
     Validate();
-    MainForm.Instance.BooksBindingSource.EndEdit();
-    UpdateViewRequired = MainForm.Instance.DataSet.HasChanges();
-    MainForm.Instance.TableAdapterManager.UpdateAll(MainForm.Instance.DataSet);
+    //MainForm.Instance.BooksBindingSource.EndEdit();
+    //UpdateViewRequired = ApplicationDatabase.Instance.HasChanges();
+    //MainForm.Instance.TableAdapterManager.UpdateAll(ApplicationDatabase.Instance);
   }
 
   private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -84,9 +84,9 @@ partial class EditBooksForm : Form
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
   {
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    string word = ( (Data.DataSet.BooksRow)row ).Hebrew;
-    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //string word = ( (BookRow)row ).Hebrew;
+    //HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -96,8 +96,8 @@ partial class EditBooksForm : Form
 
   private void ActionSearchWord_Click(object sender, EventArgs e)
   {
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    MainForm.Instance.SearchHebrewWord(( (Data.DataSet.BooksRow)row ).Hebrew);
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //MainForm.Instance.SearchHebrewWord(( (BookRow)row ).Hebrew);
 
     // TODO form to select one word from multiple having more than 1 char
 
@@ -121,40 +121,40 @@ partial class EditBooksForm : Form
 
   private void ActionCopyFontChars_Click(object sender, EventArgs e)
   {
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Hebrew);
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //Clipboard.SetText(( (BookRow)row ).Hebrew);
   }
 
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    Clipboard.SetText(( (Data.DataSet.BooksRow)row ).Original);
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //Clipboard.SetText(( (BookRow)row ).Original);
   }
 
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
-    var form = new EditMemoForm();
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    var book = (Data.DataSet.BooksRow)row;
-    form.Text += book.Name;
-    form.TextBox.Text = book.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      book.Memo = form.TextBox.Text;
+    //var form = new EditMemoForm();
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //var book = (BookRow)row;
+    //form.Text += book.Name;
+    //form.TextBox.Text = book.Memo;
+    //form.TextBox.SelectionStart = 0;
+    //if ( form.ShowDialog() == DialogResult.OK )
+    //  book.Memo = form.TextBox.Text;
   }
 
   private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-      foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
-        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
+    //if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
+    //  foreach ( BookRow book in ApplicationDatabase.Instance.Books.Rows )
+    //    book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
   }
 
   private void ActionOpen_Click(object sender, EventArgs e)
   {
-    var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    MainForm.Instance.GoTo(( (Data.DataSet.BooksRow)row ).Number, 1, 1);
-    Close();
+    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
+    //MainForm.Instance.GoTo(( (BookRow)row ).Number, 1, 1);
+    //Close();
   }
 
 }

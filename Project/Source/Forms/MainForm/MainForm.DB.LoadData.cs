@@ -34,8 +34,7 @@ partial class MainForm : Form
       DBApp.Open();
       DBApp.LoadingData -= OnLoadingData;
       LoadingForm.Instance.Hide();
-      Thread.Sleep(5000);
-      PopulateData();
+      //PopulateData();
     }
     catch ( Exception ex )
     {
@@ -77,7 +76,7 @@ partial class MainForm : Form
     PanelSearchResults.Controls.Clear();
     SearchResults = null;
     Refresh();
-    DataSet.Clear();
+    // TODO reload DataSet.Clear();
     action?.Invoke();
     History.Clear();
     LoadData();
@@ -88,41 +87,41 @@ partial class MainForm : Form
   /// </summary>
   private void PopulateData()
   {
-    SetFormDisabled(true);
-    Globals.IsLoadingData = true;
-    try
-    {
-      CreateSchemaIfNotExists();
-      CreateDataIfNotExists();
-      //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-      process(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
-      process(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
-      process(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
-      process(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
-      InitBooksCombobox();
-      //if ( NeedUpgradeForConcordances )
-      ImportWordsConcordances();
-    }
-    finally
-    {
-      Globals.IsLoadingData = false;
-      LoadingForm.Instance.Hide();
-      SetFormDisabled(false);
-    }
-    void process(DataTable table, Action action)
-    {
-      string str = SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName;
-      LoadingForm.Instance.Initialize(str, LockFileConnection.GetRowsCount(table.TableName) * 2);
-      table.RowChanged += update;
-      table.BeginLoadData();
-      action();
-      table.EndLoadData();
-      table.RowChanged -= update;
-    }
-    void update(object sender, DataRowChangeEventArgs e)
-    {
-      if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-    }
+    //SetFormDisabled(true);
+    //Globals.IsLoadingData = true;
+    //try
+    //{
+    //  CreateSchemaIfNotExists();
+    //  CreateDataIfNotExists();
+    //  //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
+    //  process(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
+    //  process(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
+    //  process(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
+    //  process(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
+    //  InitBooksCombobox();
+    //  //if ( NeedUpgradeForConcordances )
+    //  ImportWordsConcordances();
+    //}
+    //finally
+    //{
+    //  Globals.IsLoadingData = false;
+    //  LoadingForm.Instance.Hide();
+    //  SetFormDisabled(false);
+    //}
+    //void process(DataTable table, Action action)
+    //{
+    //  string str = SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName;
+    //  LoadingForm.Instance.Initialize(str, LockFileConnection.GetRowsCount(table.TableName) * 2);
+    //  table.RowChanged += update;
+    //  table.BeginLoadData();
+    //  action();
+    //  table.EndLoadData();
+    //  table.RowChanged -= update;
+    //}
+    //void update(object sender, DataRowChangeEventArgs e)
+    //{
+    //  if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
+    //}
   }
 
 }

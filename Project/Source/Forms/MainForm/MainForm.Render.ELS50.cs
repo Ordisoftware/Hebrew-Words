@@ -20,7 +20,8 @@ partial class MainForm
   public void RenderELS50()
   {
     EditELS50All.Clear();
-    foreach ( Data.DataSet.ChaptersRow chapter in CurrentReference.Book.GetChaptersRows() )
+    if ( CurrentReference.Chapter == null ) return;
+    foreach ( ChapterRow chapter in CurrentReference.Book.Chapters )
     {
       AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
       AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);

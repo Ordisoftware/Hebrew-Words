@@ -32,11 +32,12 @@ partial class MainForm
       CurrentReference.Verse = null;
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
+      if ( itemBook == null || itemChapter == null ) return;
       EditELS50.Text = itemChapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
-      var references = from book in DataSet.Books
-                       from chapter in book.GetChaptersRows()
-                       from verse in chapter.GetVersesRows()
+      var references = from book in ApplicationDatabase.Instance.Books
+                       from chapter in book.Chapters
+                       from verse in chapter.Verses
                        where book.Number == itemBook.Number
                           && chapter.Number == itemChapter.Number
                        select new ReferenceItem(book, chapter, verse);
@@ -66,7 +67,7 @@ partial class MainForm
       Label label;
       TextBoxEx editComment;
       int indexControl = 0;
-      int capacity = references.Count() * 2 + references.Select(r => r.Verse.GetWordsRows().Length).Sum();
+      int capacity = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
       Control[] controls = new Control[capacity];
       const int deltaDIV4 = delta / 4;
       int dx_delta = dx + delta;
@@ -96,7 +97,7 @@ partial class MainForm
         label.MouseClick += LabelVerseNumber_MouseClick;
         controls[indexControl++] = label;
         bool emptyline = false;
-        foreach ( var word in reference.Verse.GetWordsRows() )
+        foreach ( var word in reference.Verse.Words )
         {
           emptyline = false;
           wordcontrol = new WordControl(new ReferenceItem(reference, word));

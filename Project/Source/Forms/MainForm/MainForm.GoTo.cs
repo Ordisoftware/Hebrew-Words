@@ -45,22 +45,24 @@ partial class MainForm
     bool updated = false;
     try
     {
-      if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
-      {
-        foreach ( var item in SelectBook.Items )
-          if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
-          {
-            SelectBook.SelectedItem = item;
-            updated = true;
-            break;
-          }
-        if ( !updated ) throw new Exception("Book combobox index error.");
-      }
-      if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
-      {
-        SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
-        updated = true;
-      }
+      if ( SelectBook.SelectedItem != null )
+        if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
+        {
+          foreach ( var item in SelectBook.Items )
+            if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
+            {
+              SelectBook.SelectedItem = item;
+              updated = true;
+              break;
+            }
+          if ( !updated ) throw new Exception("Book combobox index error.");
+        }
+      if ( SelectChapter.SelectedIndex > 0 )
+        if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
+        {
+          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
+          updated = true;
+        }
     }
     finally
     {
@@ -71,8 +73,8 @@ partial class MainForm
       RenderAll();
     if ( reference.Verse == null )
     {
-      var found = Array.Find(CurrentReference.Chapter.GetVersesRows(), v => !v.IsTranslated());
-      reference.Verse = found ?? reference.Chapter.GetVersesRows()[0];
+      var found = CurrentReference.Chapter.Verses.Find(v => !v.IsTranslated());
+      reference.Verse = found ?? reference.Chapter.Verses[0];
     }
   Label:
     switch ( Program.Settings.CurrentView )
@@ -141,7 +143,7 @@ partial class MainForm
 
 
 
-      ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
+      // TODO bind ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
 
 
 

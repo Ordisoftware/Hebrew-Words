@@ -33,7 +33,7 @@ static class ExportDocX
   static private readonly Font FontCalibri = new("Calibri");
 
   static public void Run(string filePath,
-                         Data.DataSet.BooksRow book,
+                         BookRow book,
                          bool includeTranslation,
                          Func<bool> showProgress)
   {
@@ -42,11 +42,11 @@ static class ExportDocX
       {
         SetPageMargins();
         AddBookTitle(book);
-        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+        foreach ( ChapterRow chapter in book.Chapters )
         {
           if ( showProgress != null && showProgress() ) break;
           AddChapterTitle(chapter);
-          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+          foreach ( VerseRow verse in chapter.Verses )
             AddVerse(verse, includeTranslation);
         }
         Document.Save();
@@ -60,8 +60,8 @@ static class ExportDocX
   }
 
   static public void Run(string filePath,
-                         Data.DataSet.BooksRow book,
-                         Data.DataSet.ChaptersRow chapter,
+                         BookRow book,
+                         ChapterRow chapter,
                          bool includeTranslation)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
@@ -70,7 +70,7 @@ static class ExportDocX
         SetPageMargins();
         AddBookTitle(book);
         AddChapterTitle(chapter);
-        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+        foreach ( VerseRow verse in chapter.Verses )
           AddVerse(verse, includeTranslation);
         Document.Save();
         if ( Program.Settings.OpenGeneratedMSWordFiles )
@@ -83,8 +83,8 @@ static class ExportDocX
   }
 
   static public void Run(string filePath,
-                         Data.DataSet.BooksRow book,
-                         Data.DataSet.ChaptersRow chapter,
+                         BookRow book,
+                         ChapterRow chapter,
                          bool includeTranslation,
                          int verse)
   {
@@ -94,7 +94,7 @@ static class ExportDocX
         SetPageMargins();
         AddBookTitle(book);
         AddChapterTitle(chapter);
-        AddVerse(chapter.GetVersesRows()[verse - 1], includeTranslation);
+        AddVerse(chapter.Verses[verse - 1], includeTranslation);
         Document.Save();
         if ( Program.Settings.OpenGeneratedMSWordFiles )
           SystemManager.RunShell(filePath);
@@ -114,7 +114,7 @@ static class ExportDocX
     Document.DifferentOddAndEvenPages = true;
   }
 
-  static private void AddBookTitle(Data.DataSet.BooksRow book)
+  static private void AddBookTitle(BookRow book)
   {
     AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
     if ( book.Translation.Length > 0 )
@@ -134,7 +134,7 @@ static class ExportDocX
     }
   }
 
-  static private void AddChapterTitle(Data.DataSet.ChaptersRow chapter)
+  static private void AddChapterTitle(ChapterRow chapter)
   {
     AddTitle(AppTranslations.BookChapterTitle.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
   }
@@ -169,11 +169,11 @@ static class ExportDocX
     cell.MarginRight = MarginRight;
   }
 
-  static private void AddVerse(Data.DataSet.VersesRow verse, bool includeTranslation)
+  static private void AddVerse(VerseRow verse, bool includeTranslation)
   {
     string strVerseRef = verse.Number.ToString();
     int rowFactor = Convert.ToInt32(includeTranslation) + 1;
-    int countWords = verse.GetWordsRows().Length;
+    int countWords = verse.Words.Count;
     const int CountColumns = 4;
     int indexWord = countWords - 1;
     int countRows = ( (int)Math.Ceiling((double)countWords / CountColumns) ) * rowFactor;
@@ -198,7 +198,7 @@ static class ExportDocX
         pVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
-      var words = verse.GetWordsRows().OrderByDescending(w => w.Number).ToList();
+      var words = verse.Words.OrderByDescending(w => w.Number).ToList();
       for ( int i = 3; i >= 0 && indexWord >= 0; i--, indexWord-- )
       {
         var word = words[indexWord];

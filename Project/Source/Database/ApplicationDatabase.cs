@@ -27,9 +27,9 @@ class ApplicationDatabase : SQLiteDatabase
     SQLiteDatabase.Instance = Instance;
   }
 
-  public List<Book> Books { get; private set; }
+  public List<BookRow> Books { get; private set; }
 
-  public BindingListView<Book> BooksAsBindingList { get; private set; }
+  public BindingListView<BookRow> BooksAsBindingList { get; private set; }
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -58,29 +58,29 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void CreateTables()
   {
-    Connection.CreateTable<Book>();
-    Connection.CreateTable<Chapter>();
-    Connection.CreateTable<Verse>();
-    Connection.CreateTable<Word>();
+    Connection.CreateTable<BookRow>();
+    Connection.CreateTable<ChapterRow>();
+    Connection.CreateTable<VerseRow>();
+    Connection.CreateTable<WordRow>();
   }
 
   public override void LoadAll()
   {
     base.LoadAll();
-    Books = Connection.Table<Book>().ToList();
+    Books = Connection.Table<BookRow>().ToList();
     foreach ( var book in Books )
     {
       OnLoadingData(book.Name);
-      book.Chapters.AddRange(Connection.Table<Chapter>().Where(chapter => chapter.BookID == book.ID));
+      book.Chapters.AddRange(Connection.Table<ChapterRow>().Where(chapter => chapter.BookID == book.ID));
       foreach ( var chapter in book.Chapters )
       {
-        chapter.Verses.AddRange(Connection.Table<Verse>().Where(verse => verse.ChapterID == chapter.ID));
+        chapter.Verses.AddRange(Connection.Table<VerseRow>().Where(verse => verse.ChapterID == chapter.ID));
         foreach ( var verse in chapter.Verses )
-          verse.Words.AddRange(Connection.Table<Word>().Where(word => word.VerseID == verse.ID));
+          verse.Words.AddRange(Connection.Table<WordRow>().Where(word => word.VerseID == verse.ID));
       }
       OnDataLoaded(book.Name);
     }
-    BooksAsBindingList = new BindingListView<Book>(Books);
+    BooksAsBindingList = new BindingListView<BookRow>(Books);
   }
 
   protected override void DoSaveAll()
@@ -103,10 +103,10 @@ class ApplicationDatabase : SQLiteDatabase
   {
     CheckConnected();
     CheckAccess(Books, nameof(Books));
-    Connection.DeleteAll<Word>();
-    Connection.DeleteAll<Verse>();
-    Connection.DeleteAll<Chapter>();
-    Connection.DeleteAll<Book>();
+    Connection.DeleteAll<WordRow>();
+    Connection.DeleteAll<VerseRow>();
+    Connection.DeleteAll<ChapterRow>();
+    Connection.DeleteAll<BookRow>();
     Books.Clear();
   }
 

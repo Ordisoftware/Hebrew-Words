@@ -19,7 +19,7 @@ partial class StatisticsForm : Form
 
   private class BookStatistic
   {
-    public Data.DataSet.BooksRow Book;
+    public BookRow Book;
     public int CountChapters;
     public int CountVerses;
     public int CountWords;
@@ -44,7 +44,7 @@ partial class StatisticsForm : Form
       InitializeCounters();
       InitializeMiddle();
       InitializeOccurences();
-      foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books.Rows )
+      foreach ( var book in ApplicationDatabase.Instance.Books )
         SelectBook.Items.Add(new BookItem(book));
       SelectBook.SelectedIndex = 0;
     }
@@ -66,17 +66,17 @@ partial class StatisticsForm : Form
 
   private void InitializeCounters()
   {
-    foreach ( Data.DataSet.BooksRow book in MainForm.Instance.DataSet.Books )
+    foreach ( BookRow book in ApplicationDatabase.Instance.Books )
     {
       var stat = new BookStatistic() { Book = book };
       CountersBooks.Add(( (TanakBook)book.Number ) - 1, stat);
-      foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+      foreach ( ChapterRow chapter in book.Chapters )
       {
         stat.CountChapters++;
-        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+        foreach ( VerseRow verse in chapter.Verses )
         {
           stat.CountVerses++;
-          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+          foreach ( var word in verse.Words )
           {
             stat.CountWords++;
             stat.CountLetters += word.Hebrew.Length;
@@ -124,13 +124,13 @@ partial class StatisticsForm : Form
   {
     int lcount = (int)Math.Truncate(CountersTorah.CountLetters / 2.0);
     int index = 0;
-    var books = from book in MainForm.Instance.DataSet.Books
+    var books = from book in ApplicationDatabase.Instance.Books
                 where book.Number <= BooksBounds.Torah.Max
                 select book;
-    foreach ( Data.DataSet.BooksRow book in books )
-      foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
-        foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
-          foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+    foreach ( var book in books )
+      foreach ( var chapter in book.Chapters )
+        foreach ( var verse in chapter.Verses )
+          foreach ( var word in verse.Words )
             foreach ( char letter in word.Hebrew )
             {
               index++;
@@ -149,10 +149,10 @@ partial class StatisticsForm : Form
   {
     string getCount(Func<string, bool> check)
     {
-      var query = from book in MainForm.Instance.DataSet.Books
-                  from chapter in book.GetChaptersRows()
-                  from verse in chapter.GetVersesRows()
-                  from word in verse.GetWordsRows()
+      var query = from book in ApplicationDatabase.Instance.Books
+                  from chapter in book.Chapters
+                  from verse in chapter.Verses
+                  from word in verse.Words
                   where check(word.Hebrew) && book.Number <= BooksBounds.Torah.Max
                   select word;
       return query.Count().ToString();

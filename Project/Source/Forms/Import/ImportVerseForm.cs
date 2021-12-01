@@ -22,22 +22,21 @@ partial class ImportVerseForm : Form
     var form = new ImportVerseForm(reference);
     var result = form.ShowDialog();
     if ( result == DialogResult.Cancel )
-      form.DataSet.RejectChanges();
+      ; //TODO cancel changes form.DataSet.RejectChanges();
     else
     {
-      if ( form.DataSet.HasChanges() )
-      {
-        MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
-        foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-          control.EditTranslation.Text = control.Reference.Word.Translation;
-      }
+      // TODO apply
+      //if ( form.DataSet.HasChanges() )
+      //{
+      //  MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
+      //  foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
+      //    control.EditTranslation.Text = control.Reference.Word.Translation;
+      //}
       MainForm.Instance.ActionSave.PerformClick();
     }
   }
 
   private bool IsResultValid;
-
-  private readonly Data.DataSet DataSet;
 
   private readonly ReferenceItem Reference;
 
@@ -52,7 +51,6 @@ partial class ImportVerseForm : Form
   private ImportVerseForm(ReferenceItem reference)
   {
     Text += " - " + reference.ToString();
-    DataSet = MainForm.Instance.DataSet;
     Reference = reference;
     CreateGhost();
   }
@@ -102,7 +100,7 @@ partial class ImportVerseForm : Form
 
   private void ActionOK_Click(object sender, EventArgs e)
   {
-    var wordsReference = Reference.Verse.GetWordsRows();
+    var wordsReference = Reference.Verse.Words;
     for ( int index = 0; index < ImportResults.Count; index++ )
       if ( ImportResults[index].Hebrew == wordsReference[index].Hebrew )
         wordsReference[index].Translation = ImportResults[index].ImportedTranslation;

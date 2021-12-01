@@ -28,38 +28,38 @@ partial class MainForm : Form
 
   private void CreateBooks()
   {
-    int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
-    int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
-    int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
-    int countWords = LockFileConnection.GetRowsCount(DataSet.Words.TableName);
-    if ( countBooks != 0 )
-    {
-      BooksTableAdapter.Fill(DataSet.Books);
-      if ( Globals.IsDatabaseUpgraded )
-        foreach ( Data.DataSet.BooksRow book in DataSet.Books.Rows )
-        {
-          TanakBook enumBook = (TanakBook)( book.Number - 1 );
-          book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
-          book.Hebrew = BooksNames.Hebrew[enumBook];
-          if ( book.Original.Length == 0 )
-            book.Original = BooksNames.Unicode[enumBook];
-          if ( book.CommonName.Length == 0 )
-            book.CommonName = BooksNames.Common.GetLang(enumBook);
-        }
-      TableAdapterManager.UpdateAll(DataSet);
-    }
-    if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
-      || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
-        && DisplayManager.QueryYesNoAbort(SysTranslations.AskToResetCorruptedDatabase.GetLang($"Books.Count = {countBooks}{Globals.NL}Chapters.Count = {countChapters}{Globals.NL}Verses.Count = {countVerses}{Globals.NL}Words.Count = {countWords}"),
-                                          onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
-      try
-      {
-        FillFromFiles();
-      }
-      finally
-      {
-        LoadingForm.Instance.Hide();
-      }
+    //int countBooks = LockFileConnection.GetRowsCount(DataSet.Books.TableName);
+    //int countChapters = LockFileConnection.GetRowsCount(DataSet.Chapters.TableName);
+    //int countVerses = LockFileConnection.GetRowsCount(DataSet.Verses.TableName);
+    //int countWords = LockFileConnection.GetRowsCount(DataSet.Words.TableName);
+    //if ( countBooks != 0 )
+    //{
+    //  BooksTableAdapter.Fill(DataSet.Books);
+    //  if ( Globals.IsDatabaseUpgraded )
+    //    foreach ( BookRow book in DataSet.Books.Rows )
+    //    {
+    //      TanakBook enumBook = (TanakBook)( book.Number - 1 );
+    //      book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
+    //      book.Hebrew = BooksNames.Hebrew[enumBook];
+    //      if ( book.Original.Length == 0 )
+    //        book.Original = BooksNames.Unicode[enumBook];
+    //      if ( book.CommonName.Length == 0 )
+    //        book.CommonName = BooksNames.Common.GetLang(enumBook);
+    //    }
+    //  TableAdapterManager.UpdateAll(DataSet);
+    //}
+    //if ( ( countBooks == 0 && countChapters == 0 && countVerses == 0 && countWords == 0 )
+    //  || ( CheckIfOneIsTrueAndSomeOthersNot(countBooks == 0, countChapters == 0, countVerses == 0, countWords == 0)
+    //    && DisplayManager.QueryYesNoAbort(SysTranslations.AskToResetCorruptedDatabase.GetLang($"Books.Count = {countBooks}{Globals.NL}Chapters.Count = {countChapters}{Globals.NL}Verses.Count = {countVerses}{Globals.NL}Words.Count = {countWords}"),
+    //                                      onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
+    //  try
+    //  {
+    //    FillFromFiles();
+    //  }
+    //  finally
+    //  {
+    //    LoadingForm.Instance.Hide();
+    //  }
   }
 
   static bool CheckIfOneIsTrueAndSomeOthersNot(params bool[] values)

@@ -55,21 +55,22 @@ partial class MainForm : Form
   {
     return;
     //CreateWordsConcordances();
-    LoadingForm.Instance.Initialize("Importing strong's concordances...", DataSet.Chapters.Count);
+    LoadingForm.Instance.Initialize("Importing strong's concordances...",
+                                    ApplicationDatabase.Instance.Books.Sum(book => book.Chapters.Count));
     LoadingForm.Instance.TopMost = false;
     var errors = new List<string>();
     int indexBook = -1;
     try
     {
-      foreach ( Data.DataSet.BooksRow book in Instance.DataSet.Books )
+      foreach ( BookRow book in ApplicationDatabase.Instance.Books )
       {
         indexBook++;
         int indexVerse = -1;
         if ( indexBook >= 1 ) break;
-        foreach ( Data.DataSet.ChaptersRow chapter in book.GetChaptersRows() )
+        foreach ( ChapterRow chapter in book.Chapters )
         {
           LoadingForm.Instance.DoProgress();
-          foreach ( Data.DataSet.VersesRow verse in chapter.GetVersesRows() )
+          foreach ( VerseRow verse in chapter.Verses )
           {
             indexVerse++;
             int indexWord = -1;
@@ -77,14 +78,14 @@ partial class MainForm : Form
             var words = Program.JsonBibleBookGenesis[indexVerse].Items;
             //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
             //.ToArray();
-            /*if ( verse.GetWordsRows().Length != words.Length )
+            /*if ( verse.Words.Length != words.Length )
             {
               errors.Add("##### " + new ReferenceItem(book, chapter, verse).ToString() + " words count mismatch");
               //indexVerse--;
               continue;
             }*/
             if ( indexVerse < Program.JsonBibleBookGenesis.Length )
-              foreach ( Data.DataSet.WordsRow word in verse.GetWordsRows() )
+              foreach ( WordRow word in verse.Words )
               {
                 indexWord++;
                 if ( indexWord < words.Length )
@@ -131,7 +132,7 @@ partial class MainForm : Form
           }
         }
       }
-      TableAdapterManager.UpdateAll(DataSet);
+      // TODO update TableAdapterManager.UpdateAll(DataSet);
     }
     catch ( Exception ex )
     {

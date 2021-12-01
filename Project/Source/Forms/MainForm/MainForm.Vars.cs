@@ -14,8 +14,6 @@
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 partial class MainForm
 {
 
@@ -32,7 +30,7 @@ partial class MainForm
   // TODO remove ? private const int PopulateDataPaging = 10000;
 
   /// <summary>
-  /// Indicate last showned tooltip.
+  /// Indicate last shown tool-tip.
   /// </summary>
   private readonly ToolTip LastToolTip = new();
 
@@ -42,7 +40,7 @@ partial class MainForm
   public ReferenceItem CurrentReference { get; set; }
 
   /// <summary>
-  /// Indicate is combobox selection is changing.
+  /// Indicate is combo-box selection is changing.
   /// </summary>
   public bool IsComboBoxChanging { get; private set; }
 
@@ -57,7 +55,7 @@ partial class MainForm
   private bool IsGoToRunning;
 
   /// <summary>
-  /// Indicate previous seach paging position.
+  /// Indicate previous each paging position.
   /// </summary>
   private int PreviousSeachPagingPosition = -1;
 
@@ -74,8 +72,8 @@ partial class MainForm
   private int PagingCurrent;
   private int PagingCount;
 
-  private Func<DataSet.WordsRow, bool> CheckWord;
-  private Func<DataSet.VersesRow, bool> CheckVerse;
+  private Func<WordRow, bool> CheckWord;
+  private Func<VerseRow, bool> CheckVerse;
 
   private string SearchWord1;
   private string SearchWord2;

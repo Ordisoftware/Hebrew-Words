@@ -56,11 +56,11 @@ partial class ImportVerseForm : Form
       foundWords.AddRange(lineHebrewElements.Reverse());
       foundTranslation.AddRange(lineTranslationElements.Reverse());
     }
-    var wordsReference = Reference.Verse.GetWordsRows();
-    if ( foundWords.Count != wordsReference.Length )
+    var wordsReference = Reference.Verse.Words;
+    if ( foundWords.Count != wordsReference.Count )
     {
       IsResultValid = false;
-      DisplayManager.ShowError(AppTranslations.ImportWordsCountMismatch.GetLang(wordsReference.Length,
+      DisplayManager.ShowError(AppTranslations.ImportWordsCountMismatch.GetLang(wordsReference.Count,
                                                                                 foundWords.Count));
       return;
     }

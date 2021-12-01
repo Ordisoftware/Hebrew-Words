@@ -14,20 +14,18 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Ordisoftware.Hebrew.Words.Data;
-
 /// <summary>
 /// Provide book reference item
 /// </summary>
 class BookItem
 {
 
-  public DataSet.BooksRow Book { get; set; }
+  public BookRow Book { get; set; }
 
   public override string ToString()
   {
     if ( Book == null ) return "";
-    int nb = MainForm.Instance.DataSet.Books.Count;
+    int nb = ApplicationDatabase.Instance.Books.Count;
     string str;
     if ( nb >= 100 )
       str = Book.Number.ToString("000");
@@ -42,7 +40,7 @@ class BookItem
     return str;
   }
 
-  public BookItem(DataSet.BooksRow book)
+  public BookItem(BookRow book)
   {
     Book = book;
   }
