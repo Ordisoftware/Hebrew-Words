@@ -398,6 +398,11 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Database\ApplicationDatabase.cs" />
+    <Compile Include="Source\Database\Word.cs" />
+    <Compile Include="Source\Database\Verse.cs" />
+    <Compile Include="Source\Database\Chapter.cs" />
+    <Compile Include="Source\Database\Book.cs" />
     <Compile Include="Source\Entities\JsonStrong.cs" />
     <Compile Include="Source\Entities\JsonVerse.cs" />
     <Compile Include="Source\Forms\Boxes\ParashotForm.ShowDescription.cs">
