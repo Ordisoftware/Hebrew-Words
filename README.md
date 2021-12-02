@@ -130,11 +130,28 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Future improvements
 
+### Level 1
+
+- Add bookmarks backup/restore.
+- Add book memo and chapter title/memo in DOCX export.
+- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+- Add menu to open a batch export form.
+- Add count the number of a word occurrences.
+- Add option to go to last reference on startup.
+- Add option to choose double-click action on a word in the search translated form.
+- Add word occurrences calculator button in the search panel.
+- Add option to change fonts size.
+- Improve auto-backup to allow periodic archive as weekly or monthly.
+- Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
+- Database updated to support internal strong concordance popup menus in the future.
+
+### Level 2
+
 - Add strong's concordances to database.
-- Add classic english translation to database.
+- Add classic English translation to database.
 - Add form to edit strong's concordances.
-- Add form to edit classis english translation.
-- Add classic english translation between an Hebrew word and the working translation.
+- Add form to edit classic English translation.
+- Add classic English translation between an Hebrew word and the working translation.
 - Change contextual click on a Hebrew word to use database instead of web search.
 
 ## Changelog
@@ -154,7 +171,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add "Sort bookmarks" menu item.
 - Add auto sort bookmarks option.
 - Add new input panel from Hebrew Letters v4+.
-- Add new advanced textbox for future undo/redo.
+- Add new advanced text-box for future undo/redo.
 - Add optimize database menu.
 - Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
@@ -164,6 +181,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Improve message boxes.
+- Improve about box to dynamically display the list of dependencies and media used.
 - Improve UI/UX.
 - Fix drop down menus shown on another monitor instead of the same screen.
 - Fix error message when several SearchTranslatedForm are opened.
@@ -175,7 +193,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - The application now permanently lock database file while running.
 - The application now automatically creates the ODBC DSN in the Windows registry.
 - Move online providers values from code to files in the application documents folder.
-- Move tanak text files in Documents in a dedicated folder.
+- Move Tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since more than one year for Calendar.
 - Files and code refactoring.
@@ -216,23 +234,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve search to find words in chapters translated title.
 - Add search in comments
 
-> FUTURE
-
-- Add bookmarks backup/restore.
-- Add book memo and chapter title/memo in DOCX export.
-- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
-- Add menu to open a batch export form.
-- Add count the number of a word occurences.
-- Add option to go to last reference on startup.
-- Add option to choose double-click action on a word in the search translated form.
-
-> VERY FUTURE
-- Add word occurences calculator button in the search panel.
-- Add option to change fonts size.
-- Improve auto-backup to allow periodic archive as weekly or monthly
-- Improve import console to support Hebrew unicode chars in addition to Hebrew font.
-- Database updated to support internal strong concordance popup menus in the future.
-
 #### 2020.09.01 - Version 2.5
 
 - Maintenance release.
@@ -272,7 +273,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Add context menu on Hebrew words, on verses numbers and on search reference found.
 - Add search translations of a word.
-- Add option to define url to open verse online.
+- Add option to define URL to open verse online.
 - Add option to set commentary lines count.
 - Add option to disable startup check update.
 - Add master bookmark used at startup.
@@ -293,7 +294,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Improve verses view.
 - Improve export UI.
-- Fix select chapter combobox.
+- Fix select chapter combo-box.
 
 #### 2019.08.30 - Version 1.7
 
@@ -325,7 +326,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.01.29 - Version 1.2
 
-- Add word docx export.
+- Add word DOCX export.
 
 #### 2019.01.28 - Version 1.1
 
@@ -333,7 +334,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add search a word.
 - Add open verse online.
 - Add verse comment edition.
-- Some improvments.
+- Some improvements.
 
 #### 2019.01.26 - Version 1.0
 
