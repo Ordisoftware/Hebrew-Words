@@ -651,21 +651,15 @@ partial class MainForm : Form
   /// <param name="e"></param>
   private void ActionVacuum_Click(object sender, EventArgs e)
   {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOptimizeDatabase.GetLang()) )
-      return;
-    ActionSave.PerformClick();
-    ReLoadData(() =>
-    {
-      using var connection = new OdbcConnection(Settings.ConnectionString);
-      try
-      {
-        Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone, -1, true);
-      }
-      finally
-      {
-        connection.Close();
-      }
-    });
+    Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                 .Connection
+                                                 .Optimize(Settings.VacuumLastDone,
+                                                           Settings.VacuumAtStartupDaysInterval,
+                                                           true);
+    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+    //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+    //ApplicationStatistics.UpdateDBFileSizeRequired = true;
+    DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
   }
 
   /// <summary>
@@ -1393,4 +1387,8 @@ partial class MainForm : Form
     DisplayManager.Show(value.ToString());
   }
 
+  private void ActionVacuumDB_Click(object sender, EventArgs e)
+  {
+
+  }
 }

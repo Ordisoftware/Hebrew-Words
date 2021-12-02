@@ -71,17 +71,14 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.Hebrew.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.label2 = new System.Windows.Forms.Label();
-      this.EditSearchTranslation = new Ordisoftware.Core.TextBoxEx();
       this.SelectSearchTypeVerses = new System.Windows.Forms.TabPage();
       this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
       this.PanelNavigation = new System.Windows.Forms.Panel();
-      this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
       this.LabelChapterTitle = new System.Windows.Forms.Label();
@@ -92,8 +89,6 @@
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
-      this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditELS50 = new System.Windows.Forms.TextBox();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
@@ -207,6 +202,12 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditLetters = new Ordisoftware.Hebrew.LettersControl();
+      this.EditSearchTranslation = new Ordisoftware.Core.TextBoxEx();
+      this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
+      this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
+      this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
+      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -574,15 +575,6 @@
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
       // 
-      // EditLetters
-      // 
-      this.EditLetters.BackColor = System.Drawing.Color.Transparent;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.ShowValues = false;
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
-      // 
       // SelectSearchTypeTranslation
       // 
       this.SelectSearchTypeTranslation.Controls.Add(this.label2);
@@ -595,16 +587,6 @@
       // 
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
-      // 
-      // EditSearchTranslation
-      // 
-      this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
-      this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
-      this.EditSearchTranslation.Name = "EditSearchTranslation";
-      this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
-      this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeVerses
       // 
@@ -664,17 +646,6 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
-      // 
-      // EditChapterMemo
-      // 
-      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
-      this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
-      this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditChapterMemo.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditChapterMemo.Name = "EditChapterMemo";
-      this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
-      this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
-      this.EditChapterMemo.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
       // LabelChapterMemo
       // 
@@ -746,28 +717,6 @@
       this.SelectBook.FormattingEnabled = true;
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
-      // 
-      // EditBookTranslation
-      // 
-      this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
-      this.EditBookTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditBookTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
-      this.EditBookTranslation.Name = "EditBookTranslation";
-      this.EditBookTranslation.TextChanged += new System.EventHandler(this.EditBookTranslation_TextChanged);
-      this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
-      this.EditBookTranslation.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
-      // 
-      // EditChapterTitle
-      // 
-      this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
-      this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
-      this.EditChapterTitle.Name = "EditChapterTitle";
-      this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
-      this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
-      this.EditChapterTitle.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
       // EditELS50
       // 
@@ -1105,7 +1054,8 @@
             this.toolStripSeparator5,
             this.ActionVacuum,
             this.toolStripSeparator2,
-            this.ActionOpenBackupPath});
+            this.ActionOpenBackupPath,
+            this.ActionOpenExportFolder});
       resources.ApplyResources(this.MenuDatabase, "MenuDatabase");
       this.MenuDatabase.Name = "MenuDatabase";
       this.MenuDatabase.Padding = new System.Windows.Forms.Padding(5);
@@ -1331,8 +1281,8 @@
       // 
       // bindingNavigatorPositionItem
       // 
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
+      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       // 
       // bindingNavigatorCountItem
       // 
@@ -1556,6 +1506,63 @@
       resources.ApplyResources(this.ActionCopyWordTranslation, "ActionCopyWordTranslation");
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
+      // 
+      // EditLetters
+      // 
+      this.EditLetters.BackColor = System.Drawing.Color.Transparent;
+      resources.ApplyResources(this.EditLetters, "EditLetters");
+      this.EditLetters.Name = "EditLetters";
+      this.EditLetters.ShowValues = false;
+      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // EditSearchTranslation
+      // 
+      this.EditSearchTranslation.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditSearchTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
+      this.EditSearchTranslation.Name = "EditSearchTranslation";
+      this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
+      this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      // 
+      // EditChapterMemo
+      // 
+      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
+      this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
+      this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditChapterMemo.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditChapterMemo.Name = "EditChapterMemo";
+      this.EditChapterMemo.TextChanged += new System.EventHandler(this.EditChapterMemo_TextChanged);
+      this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
+      this.EditChapterMemo.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
+      // 
+      // EditBookTranslation
+      // 
+      this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
+      this.EditBookTranslation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditBookTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
+      this.EditBookTranslation.Name = "EditBookTranslation";
+      this.EditBookTranslation.TextChanged += new System.EventHandler(this.EditBookTranslation_TextChanged);
+      this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
+      this.EditBookTranslation.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
+      // 
+      // EditChapterTitle
+      // 
+      this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
+      this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
+      this.EditChapterTitle.Name = "EditChapterTitle";
+      this.EditChapterTitle.TextChanged += new System.EventHandler(this.EditChapterTitle_TextChanged);
+      this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
+      this.EditChapterTitle.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
+      // 
+      // ActionOpenExportFolder
+      // 
+      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
+      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
       // 
       // MainForm
       // 
@@ -1787,6 +1794,7 @@
     private System.Windows.Forms.Label LabelRenderingVerses;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     internal System.Windows.Forms.ToolStrip ToolStrip;
+    private ToolStripMenuItem ActionOpenExportFolder;
   }
 }
 

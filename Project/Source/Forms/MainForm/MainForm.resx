@@ -3199,7 +3199,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionNew.Text" xml:space="preserve">
     <value>New database</value>
@@ -3229,7 +3229,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionRestore.Text" xml:space="preserve">
     <value>Restore database</value>
@@ -3258,13 +3258,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionBackup.Text" xml:space="preserve">
     <value>Backup database</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 6</value>
+    <value>207, 6</value>
   </data>
   <data name="ActionVacuum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3290,13 +3290,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionVacuum.Text" xml:space="preserve">
     <value>Optimize database</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 6</value>
+    <value>207, 6</value>
   </data>
   <data name="ActionOpenBackupPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3323,10 +3323,42 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionOpenBackupPath.Text" xml:space="preserve">
-    <value>Browse archive folder</value>
+    <value>Open archive folder</value>
+  </data>
+  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
+        igKhw5WakSc85Fp1kYKC6Txs00qJuintIo8zNcMoEGwHnc7ZtjSzsER0ZM7T0/Ptm7Yo8oEf//f7vvd9
+        eP/v+wm7QT1vrYmFRX88gBTb9LHTlvrEwzZjUpS9TqPcokGjdBhTjolQSQVY+wD8dMqsTGCoQoX3VdFb
+        pqFI+XZD0mywXAiL/gQLHfDbLmHZehnr39qApXFg2SXjl5iQzxWy4Q2YDJvUqt8GS4PwO9JJJvwjGVhh
+        vDqahvWxNGA8A5i4GiSdBi4M18agRXs0PGgQA/j6sTqehVVXLsljYg7guQ5MXsP885Nw66PgqZaIhLcm
+        EpNGFabqozFpim6hAWfg62JnBdj4WMwiMp2P1MYnEHmvIfL7IQp4FoZQRLQDiCh5CmGpjuMVXsDTfBqD
+        ZSoMlSvhqjgSKNxOCp0ZwlqbgGV3JZxNydyGG7wLPzkgcrvlrAG+f6uBrv0T8E7DOAW6Vm6NUmjbIWx1
+        SZh9k42Znkxg8SXg5Qw+Z0FkmwNJt1vduNvhQVmXB6WdXpQwLm3nNijZwKCGu/kcfrgqgLlHwMwd4PtN
+        GsgdTPn5ag2oNDvxlecXcq+L/wulKKaB3ZTMvcaz9WccZgO7qOJMynkFdkPNsWBhAzB2j8HH50ViYCwp
+        YGA1xi/YjWqaJPBPi4OdW/HWKDn5vkCSyTyC+z2jaHrlxMPeUTxg3NgbYkCFF54/dDHv7MFUiZwzBy5c
+        Sdx7ShT9uYXHfXKRpM04MIOgdpNdIewQ2u3XGKbr2DL4S2EFzf17mKAobsPOG2TzJFLrUvG+W52LwfR/
+        aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenExportFolder.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+E</value>
+  </data>
+  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Open export folder</value>
   </data>
   <data name="MenuDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3648,7 +3680,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAnNJREFUOE+Nk0tPE1EcxWer7twajS5MQQMk+A00MSaujYmayM7oAoioVCx+BAVF
+        vgAADr4B6kKxwAAAAnNJREFUOE+Nk0tPE1EcxWer7twajS5MQQMk+A00MSaujYmayM7oAoioVCx+BAVF
         oUGjA0UlyqvaTl/Td0tBrMVSoNAWykAfkFaoRVqZ9nhvH4IGE05yksn/nvPLnXtzmX/lc45gK7kUDbh1
         V0qj/UvT3314yj4EYIsYiMw5nfoRdsz8sQ8mZW/GqGRvGYdenynFi6qQ6oY9ExaE3SrMOgfwzTYI5DYL
         APyMY4Z/gvgMh6TgweryPBb8XxHxj0LvGEOFVDvMSKR6rHpVyMdcSAf1mLQOAGKatPNANgG/4REiUyqk
@@ -3745,19 +3777,15 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionViewBibleStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALaSURBVDhPdZF7TM1hGMfP1qqZdEqlklGLaDkhIXU45NLF
-        QdEFKemUa0vzTyzGPzSjEkqqua822YqszYYzc5sQihG6rVxKdNyd2vHx/jq/OS7z3b7bu+d9vp897/Mq
-        fhdnHJWmCmWhodT+KzWOcH6o2eIs1aQ7qpQOcvu/4uFaeDARmkXoxTBhN9mu5tr9SfB4O3K7RerNFVq/
-        9Codek/4XA1vV0HraGFf2WOgKw76KwVg3J8AzaYKz1lbq5i56waH8pIw6VXQKyDvMqBzmtnvM8FUjeHa
-        WFq3BKBXDJ4lxxWK6RknGmIP3yOm5BHhBQ2s25VDT60Ytfs0fDoIX3OBKgy1wTSGRWBM1NGhCeWWUuk5
-        AFhXdIXKh72U17/jVL2BIzffU3zuEs8vzIPX+0X4LB3lGhpCwuiLT4BUHWSmc83Z5fYAQLO9hpjjT9Ge
-        fEHEqRbCT7cTerKTwJyr8Gg8nfu0NKnDMMXGQ1IS6FZDxgbu+E8w7yIy/zrZO0t56eFO22hvsbNxtPir
-        eDZpCo2BM3imngtLxQJXLBeAREhJhvT11AcEmAHeCTl7Wrdtg+CZEBQC4n3Mmw8RC2DhYoheCnF/ATI3
-        8iRqwa/fcGnTpfBDLI/AIJghAcJkwCIBWGIBJK6E5FUYd++gUR1i+c4nnl6gvyzelwbT1DB7DoiNo10I
-        UdEQGwvLxA4SEujP2kxvSS517u4WwAVr27q+NSJcU40pPw+WxECo+IVwCSJNIZ6Rlsq33Bw+lBXQ7OdB
-        9SC7i3JcoUh3cgq96+xCf+R8+rOzMB4txlhZQV/RAYyFBXwpP8aH/N10L4+k3WsIdUo7gqytVXJ8QLZR
-        VjZavb2D8ZW/H981U/kYpMIw2Yce1Si6fN144+NE03AlentHY5SNjVZkrMxRi2yEA0oG2+3VOzh21bu6
-        0eQ9kqdeI7jr4oxUK7Oz3yf1yL3/1TBhabzJf1mqSXe/SaH4CZQZ/1GXznH8AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHESURBVDhPxVJNTxpRFB1kgitr3BniB51hqJmBB4MRsBSp
+        X2mTtpsajSubmYF/YP+EsmZBP3bq1t/FcjIEkI/Te6+FuGhi0o03HHLeeeedd9/NaC9fSqn7bDYLx3Ge
+        hW3bc/Cazt1rfLjZbCIIfPi+j0ajIetGEMD3PHiEgDjrzGdgLwdJwP7hEaq1PVSq71A/OAQ1hlr9PUqV
+        XewQqnt10X50Oii/rQo6xDOZDDTHseEFTZyenYPr4psn5p+/fsua6+b2TrTReIyvJ2eEUzyMRkibJgc4
+        +PT5CyaTMfr9Po4/fBRzr9dHjW5mRFFPtOtWC5hO6TfBVev6sQMaIsrlCra2bAwGAyiVF/OUjI7Dw80K
+        Z419xeI2XLeIUqnMQ4Tmuq5sMsIwnPMoiv7Jn6JQKDwGLC+vQNcTGA6HiMd12ex2u3Mj81gshqWlV1hY
+        0Om5EyQSi8jnqVtO4TYNw5SBmWaaQuK4vPwuRgZzXY/DsjLi4Ys2N1P0XAWNUyzrDQWksbHxmgJoMHRr
+        KmUgmVwTMGfNMCysribRbrexvv43gP5CDpmBO+JnMVcqJ2A+03hw/AHlcrynQgrWCoTt/wSffdHStD/r
+        slK0fv5gNAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionViewBibleStatistics.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3770,7 +3798,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>236, 22</value>
   </data>
   <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
-    <value>Statistics about the Bible</value>
+    <value>Tanak's statistics</value>
   </data>
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3977,6 +4005,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="bindingNavigatorSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 6</value>
+  </data>
+  <data name="bindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
   <data name="bindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
@@ -4436,6 +4467,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 711</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 750</value>
@@ -5050,6 +5084,12 @@ A verse is founded if the translation of one of its words contains an expression
     <value>ActionCopyWordTranslation</value>
   </data>
   <data name="&gt;&gt;ActionCopyWordTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">
+    <value>ActionOpenExportFolder</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenExportFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
