@@ -629,8 +629,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSave_Click(object sender, EventArgs e)
   {
-    //if ( DataSet.HasChanges() )
-    //  TableAdapterManager.UpdateAll(DataSet);
+    if ( ApplicationDatabase.Instance.HasChanges )
+      ApplicationDatabase.Instance.SaveAll();
     ActionSave.Enabled = false;
   }
 

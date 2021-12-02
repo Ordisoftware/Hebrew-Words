@@ -14,7 +14,6 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System.Net;
 using Equin.ApplicationFramework;
 
 class ApplicationDatabase : SQLiteDatabase
@@ -96,6 +95,7 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoSaveAll()
   {
+    if ( !HasChanges ) return;
     CheckAccess(Books, nameof(Books));
     Connection.UpdateAll(ModifiedObjects);
     ModifiedObjects.Clear();
