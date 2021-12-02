@@ -73,7 +73,7 @@ partial class MainForm
         controls[indexControl++] = linklabel;
         x -= marginX;
         xx = x;
-        Label label = null;
+        Label label = new();
         foreach ( WordRow word in reference.Verse.Words )
         {
           label = new Label
@@ -104,7 +104,7 @@ partial class MainForm
           controls[indexControl++] = label;
         }
         y += label.PreferredHeight + marginY;
-        if ( reference.Verse.IsTranslated() )
+        if ( reference.Verse.HasTranslation() )
         {
           label = new Label
           {

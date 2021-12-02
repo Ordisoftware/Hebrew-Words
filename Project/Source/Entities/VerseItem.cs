@@ -25,7 +25,7 @@ class VerseItem
   public override string ToString()
   {
     if ( Verse == null ) return "";
-    int nb = ApplicationDatabase.Instance.AllChapters.Find(chapter => chapter.ID == Verse.ChapterID).Verses.Count;
+    int nb = ApplicationDatabase.Instance.Chapters.Find(chapter => chapter.ID == Verse.ChapterID).Verses.Count;
     string str;
     if ( nb >= 100 )
       str = Verse.Number.ToString("000");
@@ -34,7 +34,7 @@ class VerseItem
       str = Verse.Number.ToString("00");
     else
       str = Verse.Number.ToString();
-    if ( Verse.IsTranslated() ) str += $" - {Verse.GetTranslation()}";
+    if ( Verse.HasTranslation() ) str += $" - {Verse.GetTranslation()}";
     return str;
   }
 

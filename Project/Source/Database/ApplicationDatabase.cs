@@ -28,9 +28,9 @@ class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<BookRow> Books { get; private set; }
-  public List<ChapterRow> AllChapters { get; } = new();
-  public List<VerseRow> AllVerses { get; } = new();
-  public List<WordRow> AllWords { get; } = new();
+  public List<ChapterRow> Chapters { get; } = new();
+  public List<VerseRow> Verses { get; } = new();
+  public List<WordRow> Words { get; } = new();
 
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }
 
@@ -70,22 +70,22 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     Books = Connection.Table<BookRow>().ToList();
-    AllChapters.Clear();
-    AllVerses.Clear();
-    AllWords.Clear();
+    Chapters.Clear();
+    Verses.Clear();
+    Words.Clear();
     foreach ( var book in Books )
     {
       OnLoadingData(book.Name);
       book.Chapters.AddRange(Connection.Table<ChapterRow>().Where(chapter => chapter.BookID == book.ID));
-      AllChapters.AddRange(book.Chapters);
+      Chapters.AddRange(book.Chapters);
       foreach ( var chapter in book.Chapters )
       {
         chapter.Verses.AddRange(Connection.Table<VerseRow>().Where(verse => verse.ChapterID == chapter.ID));
-        AllVerses.AddRange(chapter.Verses);
+        Verses.AddRange(chapter.Verses);
         foreach ( var verse in chapter.Verses )
         {
           verse.Words.AddRange(Connection.Table<WordRow>().Where(word => word.VerseID == verse.ID));
-          AllWords.AddRange(verse.Words);
+          Words.AddRange(verse.Words);
         }
       }
       OnDataLoaded(book.Name);
@@ -162,7 +162,6 @@ class ApplicationDatabase : SQLiteDatabase
       }
   }
 
-#pragma warning disable S2259 // Null pointers should not be dereferenced
   private void FillFromFiles()
   {
     try
@@ -180,7 +179,7 @@ class ApplicationDatabase : SQLiteDatabase
       {
         chapter.ELS50 = "";
         book.Chapters.Add(chapter);
-        AllChapters.Add(chapter);
+        Chapters.Add(chapter);
         strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
         int i = strELS50.Length - 1;
         while ( i >= 0 && strELS50[i] != 't' ) i--;
@@ -201,7 +200,7 @@ class ApplicationDatabase : SQLiteDatabase
           continue;
         }
         string[] filecontent = File.ReadAllLines(filePath);
-        book = new BookRow();
+        book = new();
         book.ID = Guid.NewGuid().ToString();
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
@@ -222,7 +221,7 @@ class ApplicationDatabase : SQLiteDatabase
           {
             if ( chapter != null ) nextChapter();
             countVerses = 0;
-            chapter = new ChapterRow();
+            chapter = new();
             chapter.ID = Guid.NewGuid().ToString();
             chapter.BookID = book.ID;
             chapter.Number = ++countChapters;
@@ -238,7 +237,7 @@ class ApplicationDatabase : SQLiteDatabase
             if ( list.Length == 2 )
             {
               countWords = 0;
-              verse = new VerseRow();
+              verse = new();
               verse.ID = Guid.NewGuid().ToString();
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
@@ -246,7 +245,7 @@ class ApplicationDatabase : SQLiteDatabase
               listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
-              AllVerses.Add(verse);
+              Verses.Add(verse);
             }
             else
             {
@@ -256,7 +255,7 @@ class ApplicationDatabase : SQLiteDatabase
             for ( int i = 0; i < listWordsHebrew.Length; i++ )
               if ( listWordsHebrew[i].Length > 0 )
               {
-                word = new WordRow();
+                word = new();
                 word.ID = Guid.NewGuid().ToString();
                 word.VerseID = verse.ID;
                 word.Number = ++countWords;
@@ -264,7 +263,7 @@ class ApplicationDatabase : SQLiteDatabase
                 word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
                 word.Translation = "";
                 verse.Words.Add(word);
-                AllWords.Add(word);
+                Words.Add(word);
                 strELS50 = listWordsHebrew[i] + strELS50;
               }
           }
@@ -279,11 +278,11 @@ class ApplicationDatabase : SQLiteDatabase
         LoadingForm.Instance.DoProgress(operation: msg + nameof(books));
         Connection.InsertAll(Books);
         LoadingForm.Instance.DoProgress(operation: msg + nameof(BookRow.Chapters));
-        Connection.InsertAll(AllChapters);
+        Connection.InsertAll(Chapters);
         LoadingForm.Instance.DoProgress(operation: msg + nameof(ChapterRow.Verses));
-        Connection.InsertAll(AllVerses);
+        Connection.InsertAll(Verses);
         LoadingForm.Instance.DoProgress(operation: msg + nameof(VerseRow.Words));
-        Connection.InsertAll(AllWords);
+        Connection.InsertAll(Words);
         LoadingForm.Instance.DoProgress(operation: "Finishing...");
         Commit();
       }
@@ -303,6 +302,5 @@ class ApplicationDatabase : SQLiteDatabase
       MainForm.Instance.SetFormDisabled(false);
     }
   }
-#pragma warning restore S2259 // Null pointers should not be dereferenced
 
 }

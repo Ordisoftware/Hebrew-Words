@@ -151,7 +151,6 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Memo;
 
-  [field: NonSerialized]
-  public readonly List<ChapterRow> Chapters = new();
+  public List<ChapterRow> Chapters { get; } = new();
 
 }

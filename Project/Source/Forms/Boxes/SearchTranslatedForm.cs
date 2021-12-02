@@ -22,16 +22,16 @@ partial class SearchTranslatedForm : Form
   static public void Run(WordControl sender)
   {
     if ( sender == null || sender.Reference == null ) return;
-    foreach ( SearchTranslatedForm f in Forms.ToList() )
-      if ( f.WordControl.Reference.EqualsWord(sender.Reference) )
-      {
-        if ( f.WindowState == FormWindowState.Minimized )
-          f.WindowState = FormWindowState.Normal;
-        f.Show();
-        f.BringToFront();
-        return;
-      }
-    var form = new SearchTranslatedForm(sender);
+    var form = Forms.Find(f => f.WordControl.Reference.EqualsWord(sender.Reference));
+    if ( form != null )
+    {
+      if ( form.WindowState == FormWindowState.Minimized )
+        form.WindowState = FormWindowState.Normal;
+      form.Show();
+      form.BringToFront();
+      return;
+    }
+    form = new SearchTranslatedForm(sender);
     form.Show();
     form.Location = new Point(Program.Settings.SearchTranslatedFormLocation.X,
                               Program.Settings.SearchTranslatedFormLocation.Y);
@@ -45,6 +45,7 @@ partial class SearchTranslatedForm : Form
   }
 
   private readonly WordControl WordControl;
+
   private bool Mutex;
 
   private SearchTranslatedForm()
@@ -170,13 +171,9 @@ partial class SearchTranslatedForm : Form
 
   private string CleanTranslation(string str)
   {
-    return str.Replace(".", "")
-              .Replace(",", "")
-              .Replace(";", "")
-              .Replace(":", "")
-              .Replace("!", "")
-              .Replace("?", "")
-              .Trim();
+    foreach ( var sign in new[] { ".", ",", ";", ":", "!", "?" } )
+      str = str.Replace(sign, string.Empty);
+    return str.Trim();
   }
 
   private void ActionCopyTranslation_Click(object sender, EventArgs e)

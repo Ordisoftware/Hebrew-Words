@@ -1388,8 +1388,4 @@ partial class MainForm : Form
     DisplayManager.Show(value.ToString());
   }
 
-  private void ActionVacuumDB_Click(object sender, EventArgs e)
-  {
-
-  }
 }

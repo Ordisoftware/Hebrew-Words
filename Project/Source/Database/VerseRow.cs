@@ -21,7 +21,7 @@ using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Verses")]
-public class VerseRow : INotifyPropertyChanged
+public partial class VerseRow : INotifyPropertyChanged
 {
 
   [field: NonSerialized]
@@ -87,50 +87,6 @@ public class VerseRow : INotifyPropertyChanged
   }
   private string _Comment;
 
-  [field: NonSerialized]
-  public List<WordRow> Words = new();
-
-  public string GetTranslation()
-  {
-    var result = new StringBuilder();
-    foreach ( var word in Words )
-    {
-      var str = word.Translation.Trim();
-      result.Append(str.Length > 0 ? str + " " : "[...] ");
-    }
-    return result.ToString().Trim();
-  }
-
-  public bool IsTranslated()
-  {
-    foreach ( var word in Words )
-      if ( word.Translation.Trim().Length > 0 )
-        return true;
-    return false;
-  }
-
-  public bool IsFullyTranslated()
-  {
-    foreach ( var word in Words )
-      if ( word.Translation.Trim().Length == 0 )
-        return false;
-    return true;
-  }
-
-  public bool IsPartiallyTranslated()
-  {
-    bool? haveEmpty = null;
-    bool? haveTranslation = null;
-    foreach ( var word in Words )
-    {
-      if ( word.Translation.Trim().Length == 0 )
-        haveEmpty = true;
-      if ( word.Translation.Trim().Length > 0 )
-        haveTranslation = true;
-      if ( haveEmpty == true && haveTranslation == true )
-        return true;
-    }
-    return false;
-  }
+  public List<WordRow> Words { get; } = new();
 
 }

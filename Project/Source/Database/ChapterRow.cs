@@ -114,7 +114,6 @@ public class ChapterRow : INotifyPropertyChanged
   }
   private string _ELS50;
 
-  [field: NonSerialized]
-  public readonly List<VerseRow> Verses = new();
+  public List<VerseRow> Verses { get; } = new();
 
 }

@@ -64,7 +64,7 @@ partial class MainForm : Form
     {
       var menuitem = sender as ToolStripMenuItem;
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
-      var control = contextmenu?.SourceControl as Label;
+      var control = contextmenu?.SourceControl;
       if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;

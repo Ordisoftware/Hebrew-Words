@@ -21,7 +21,7 @@ partial class SelectReferenceForm : Form
   {
     var form = new SelectReferenceForm();
     if ( form.ShowDialog() != DialogResult.OK ) return null;
-    return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem ).Book.Number,
+    return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem )?.Book.Number ?? 1,
                              ( (ChapterItem)form.SelectChapter.SelectedItem )?.Chapter.Number ?? 1,
                              ( (VerseItem)form.SelectVerse.SelectedItem )?.Verse.Number ?? 1);
   }
@@ -61,7 +61,7 @@ partial class SelectReferenceForm : Form
         foreach ( var chapter in book.Chapters )
           if ( !EditFilterChaptersWithTitle.Checked || chapter.Title.Length > 0 )
             foreach ( var verse in chapter.Verses )
-              if ( !EditFilterVersesTranslated.Checked || verse.IsTranslated() )
+              if ( !EditFilterVersesTranslated.Checked || verse.HasTranslation() )
                 selected = true;
         if ( selected )
           SelectBook.Items.Add(new BookItem(book));
@@ -94,18 +94,11 @@ partial class SelectReferenceForm : Form
       if ( SelectBook.SelectedItem != null )
       {
         var book = ( (BookItem)SelectBook.SelectedItem ).Book;
-        int number = book.Number;
         var list = (IEnumerable<ChapterRow>)book.Chapters;
         if ( EditFilterChaptersWithTitle.Checked )
           list = list.Where(chapter => chapter.Title.Length > 0);
         if ( EditFilterVersesTranslated.Checked )
-          list = list.Where(chapter =>
-          {
-            foreach ( var verse in chapter.Verses )
-              if ( verse.IsTranslated() )
-                return true;
-            return false;
-          });
+          list = list.Where(chapter => chapter.Verses.Any(verse => verse.HasTranslation()));
         foreach ( var chapter in list )
           SelectChapter.Items.Add(new ChapterItem(chapter));
       }

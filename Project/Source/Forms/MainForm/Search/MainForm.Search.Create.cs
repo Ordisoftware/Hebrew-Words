@@ -43,7 +43,7 @@ partial class MainForm
     }
     bool checkTranslatedAll(VerseRow verse)
     {
-      return verse.IsTranslated();
+      return verse.HasTranslation();
     }
     bool checkTranslatedAllFully(VerseRow verse)
     {
@@ -55,7 +55,7 @@ partial class MainForm
     }
     bool checkTranslatedAllUntranslated(VerseRow verse)
     {
-      return !verse.IsTranslated();
+      return !verse.HasTranslation();
     }
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {

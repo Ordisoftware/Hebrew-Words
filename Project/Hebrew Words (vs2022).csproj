@@ -395,6 +395,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
+    <Compile Include="Source\Database\VerseRow.Logic.cs" />
     <Compile Include="Source\Database\WordRow.cs" />
     <Compile Include="Source\Database\VerseRow.cs" />
     <Compile Include="Source\Database\ChapterRow.cs" />
@@ -413,7 +414,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.GoTo.cs">
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.GoTo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Entities\VerseItem.cs" />
@@ -425,9 +426,9 @@
     </Compile>
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
-    <Compile Include="Source\Program\ApplicationCommandLine.cs" />
-    <Compile Include="Source\Program\AppTranslations.News.cs" />
-    <Compile Include="Source\Program\AppTranslations.cs" />
+    <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
@@ -459,7 +460,7 @@
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program\ExportDocX.cs" />
+    <Compile Include="Source\Program\System\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
     <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
@@ -474,43 +475,43 @@
     <Compile Include="Source\Forms\Config\ExportingForm.Designer.cs">
       <DependentUpon>ExportingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Backup.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateConcordances.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.DB.CreateConcordances.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.History.cs">
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.History.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Search.cs">
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Search.Create.cs">
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Search.Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.Translation.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Translation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.Verses.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Verses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.ELS50.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.ELS50.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.RawText.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.RawText.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
@@ -520,27 +521,27 @@
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Program\SettingsHelper.cs" />
-    <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
+    <Compile Include="Source\Program\System\SettingsHelper.cs" />
+    <Compile Include="Source\Enums\ViewMode.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadData.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.DB.LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Render.Search.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.SetView.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateUI.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.cs">

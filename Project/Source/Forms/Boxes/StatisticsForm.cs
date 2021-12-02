@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class StatisticsForm : Form
 {
 
-  private class BookStatistic
+  private sealed class BookStatistic
   {
     public BookRow Book;
     public int CountChapters;
@@ -76,13 +76,13 @@ partial class StatisticsForm : Form
         foreach ( VerseRow verse in chapter.Verses )
         {
           stat.CountVerses++;
-          foreach ( var word in verse.Words )
+          foreach ( var hebrew in verse.Words.Select(word => word.Hebrew) )
           {
             stat.CountWords++;
-            stat.CountLetters += word.Hebrew.Length;
-            if ( word.Hebrew.Length > LabelLongestWordValue.Text.Length )
+            stat.CountLetters += hebrew.Length;
+            if ( hebrew.Length > LabelLongestWordValue.Text.Length )
             {
-              LabelLongestWordValue.Text = word.Hebrew;
+              LabelLongestWordValue.Text = hebrew;
               LabelLongestReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
             }
           }
@@ -130,15 +130,15 @@ partial class StatisticsForm : Form
     foreach ( var book in books )
       foreach ( var chapter in book.Chapters )
         foreach ( var verse in chapter.Verses )
-          foreach ( var word in verse.Words )
-            foreach ( char letter in word.Hebrew )
+          foreach ( var hebrew in verse.Words.Select(word => word.Hebrew) )
+            foreach ( char letter in hebrew )
             {
               index++;
               if ( index == lcount )
               {
                 LabelMiddleReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
                 LabelMiddleReferenceValue.Text = LabelMiddleReferenceValue.Tag.ToString();
-                LabelMiddleWordValue.Text = word.Hebrew;
+                LabelMiddleWordValue.Text = hebrew;
                 LabelMiddleLetterValue.Text = letter.ToString();
                 return;
               }

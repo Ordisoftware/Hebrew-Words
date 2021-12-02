@@ -24,7 +24,7 @@ partial class MainForm
   /// <summary>
   /// Provide view connector.
   /// </summary>
-  private class ViewConnector
+  private sealed class ViewConnector
   {
 
     /// <summary>

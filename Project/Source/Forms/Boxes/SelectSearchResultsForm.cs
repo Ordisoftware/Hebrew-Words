@@ -96,9 +96,9 @@ partial class SelectSearchResultsForm : Form
         list.Add((int)item.Tag);
     References = OriginalReferences.Where(r => list.Contains(r.Book.Number));
     if ( EditOnlyWithTranslation.Checked )
-      References = References.Where(r => r.Verse.IsTranslated());
+      References = References.Where(r => r.Verse.HasTranslation());
     if ( EditOnlyWithoutTranslation.Checked )
-      References = References.Where(r => !r.Verse.IsTranslated());
+      References = References.Where(r => !r.Verse.HasTranslation());
     DialogResult = DialogResult.Yes;
   }
 
@@ -127,7 +127,7 @@ partial class SelectSearchResultsForm : Form
     Mutex = false;
     if ( EditOnlyWithTranslation.Checked )
     {
-      CreateReferences(OriginalReferences.Where(r => r.Verse.IsTranslated()));
+      CreateReferences(OriginalReferences.Where(r => r.Verse.HasTranslation()));
       ActionAddAll.PerformClick();
     }
     else
@@ -142,7 +142,7 @@ partial class SelectSearchResultsForm : Form
     Mutex = false;
     if ( EditOnlyWithoutTranslation.Checked )
     {
-      CreateReferences(OriginalReferences.Where(r => !r.Verse.IsTranslated()));
+      CreateReferences(OriginalReferences.Where(r => !r.Verse.HasTranslation()));
       ActionAddAll.PerformClick();
     }
     else
