@@ -158,11 +158,12 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add optimize database menu.
 - Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
-- Improve message boxes.
+- Change web check update to use GitHub as an alternative if author's website is down.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
+- Improve message boxes.
 - Improve UI/UX.
 - Fix drop down menus shown on another monitor instead of the same screen.
 - Fix error message when several SearchTranslatedForm are opened.
