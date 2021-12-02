@@ -62,9 +62,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Download
 
-**What's new in the latest version**
-
--
+**What's new in the latest version 3**
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
@@ -88,11 +86,11 @@ The software verifies the validity of the certificate of the update server in ad
 
 #### What to do if there is a problem with the display?
 
-Use the refresh view action of the menu at the top.
+The refresh view button of the menu at the top redraws the entire form.
 
 #### The software sometimes runs slowly, is this normal?
 
-Yes, because implementing features requires a lot of Windows resources that depend on the performance of the computer.
+Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
 ## Keyboard shortcuts
 
@@ -118,19 +116,21 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | Ctrl + Down | Scroll the view down (fine) |
 | PageUp | Scroll the view up |
 | PageDown | Scroll the view down |
-| Alt + T | Show tools menu |
-| Alt + L | Show web links menu |
-| Alt + S | Show settings menu |
-| Alt + I | Show information menu |
+| Alt + T | Tools menu |
+| Alt + L | Web links menu |
+| Alt + S | Settings menu |
+| Alt + I | Information menu |
+| Alt + E | Export folder |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
 | F12 | About |
-| Alt + F4 (or Escape) | Exit application |
+| Alt + F4 (or Escape) | Close window |
+| Ctrl + Alt + F4 | Exit application |
 
 ## Future improvements
 
-### Level 1
+#### Soon
 
 - Add bookmarks backup/restore.
 - Add book memo and chapter title/memo in DOCX export.
@@ -145,7 +145,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 - Database updated to support internal strong concordance popup menus in the future.
 
-### Level 2
+#### Later
 
 - Add strong's concordances to database.
 - Add classic English translation to database.
