@@ -27,8 +27,8 @@ partial class WordControl : UserControl
   public WordControl(ReferenceItem reference) : this()
   {
     Reference = reference;
-    LabelHebrew.Text = reference.Word.Hebrew;
-    EditTranslation.Text = reference.Word.Translation;
+    LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
+    EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
   }
 
   public new bool Focus()
@@ -66,9 +66,6 @@ partial class WordControl : UserControl
   {
     if ( Globals.IsLoadingData ) return;
     if ( MainForm.Instance.IsRenderingSearch ) return;
-    if ( Reference.Word != null ) Reference.Word.Translation = EditTranslation.Text;
-    // ? Focus();
-    MainForm.Instance.ActionSave.Enabled = true;
   }
 
   private void LabelHebrew_MouseEnter(object sender, EventArgs e)

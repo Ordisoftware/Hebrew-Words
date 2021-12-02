@@ -134,6 +134,7 @@ partial class MainForm
         editComment.KeyDown += EditVerseComment_KeyDown;
         editComment.Enter += EditVerseComment_Enter;
         editComment.Leave += EditVerseComment_Leave;
+        editComment.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
         controls[indexControl++] = editComment;
         y += dy_marginY_commentHeight;
       }
@@ -161,10 +162,10 @@ partial class MainForm
 
   private void EditVerseComment_TextChanged(object sender, EventArgs e)
   {
-    if ( Globals.IsLoadingData ) return;
-    var control = (Control)sender;
-    ( (ReferenceItem)control.Tag ).Verse.Comment = control.Text;
-    ActionSave.Enabled = true;
+    //if ( Globals.IsLoadingData ) return;
+    //var control = (Control)sender;
+    //( (ReferenceItem)control.Tag ).Verse.Comment = control.Text;
+    //ActionSave.Enabled = true;
   }
 
   private void EditVerseComment_Enter(object sender, EventArgs e)

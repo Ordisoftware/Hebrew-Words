@@ -154,6 +154,9 @@ partial class MainForm : Form
         var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
         menuItem?.PerformClick();
       });
+    ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
+    ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
+    // TODO redo all bindings and remove all .enabled = true/false
   }
 
   /// <summary>
@@ -631,7 +634,6 @@ partial class MainForm : Form
   {
     if ( ApplicationDatabase.Instance.HasChanges )
       ApplicationDatabase.Instance.SaveAll();
-    ActionSave.Enabled = false;
   }
 
   /// <summary>
@@ -1261,23 +1263,23 @@ partial class MainForm : Form
 
   private void EditBookTranslation_TextChanged(object sender, EventArgs e)
   {
-    if ( IsComboBoxChanging ) return;
-    CurrentReference.Book.Translation = EditBookTranslation.Text;
-    ActionSave.Enabled = true;
+    //if ( IsComboBoxChanging ) return;
+    //CurrentReference.Book.Translation = EditBookTranslation.Text;
+    //ActionSave.Enabled = true;
   }
 
   private void EditChapterTitle_TextChanged(object sender, EventArgs e)
   {
-    if ( IsComboBoxChanging ) return;
-    CurrentReference.Chapter.Title = EditChapterTitle.Text;
-    ActionSave.Enabled = true;
+    //if ( IsComboBoxChanging ) return;
+    //CurrentReference.Chapter.Title = EditChapterTitle.Text;
+    //ActionSave.Enabled = true;
   }
 
   private void EditChapterMemo_TextChanged(object sender, EventArgs e)
   {
-    if ( IsComboBoxChanging ) return;
-    CurrentReference.Chapter.Memo = EditChapterMemo.Text;
-    ActionSave.Enabled = true;
+    //if ( IsComboBoxChanging ) return;
+    //CurrentReference.Chapter.Memo = EditChapterMemo.Text;
+    //ActionSave.Enabled = true;
   }
 
   private void ActionEditBookMemo_Click(object sender, EventArgs e)

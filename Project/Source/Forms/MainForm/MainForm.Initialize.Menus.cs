@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Windows.Forms;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -62,8 +63,9 @@ partial class MainForm : Form
     });
     ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      var menuitem = sender as ToolStripMenuItem;
+      var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
+      var control = contextmenu?.SourceControl as Label;
       if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       {
         var reference = (ReferenceItem)control.Tag;
