@@ -77,7 +77,7 @@ partial class MainForm
       int dy_marginY_commentHeight = dy + marginY + heightComment;
       int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
       int yPanel = 0;
-      int count = 0;
+      int controlsCount = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
       foreach ( var reference in references )
       {
         y = deltaMul2;
@@ -142,6 +142,7 @@ partial class MainForm
         panel.Height = y;
         yPanel += y;
         PanelViewVerses.Controls.Add(panel);
+        LabelProgress.Text = $"Rendering {controlsCount} controls for {CurrentReference.Chapter.Verses.Count} verses...";
       }
     }
     catch ( Exception ex )
@@ -150,7 +151,6 @@ partial class MainForm
     }
     finally
     {
-      LabelProgress.Text = $"Rendering {CurrentReference.Chapter.Verses.Count} verses...";
       LabelProgress.Refresh();
       IsRendering = false;
       PanelViewVerses.Visible = true;
