@@ -79,7 +79,7 @@ partial class MainForm
         ActionViewBooksTranslation.PerformClick();
         return true;
       case Keys.Escape:
-        if ( IsRenderingSearch ) Globals.CancelRequired = true;
+        if ( IsRendering ) Globals.CancelRequired = true;
         break;
       case Keys.Control | Keys.Up:
         if ( ActiveControl is TextBox ) return false;

@@ -53,7 +53,6 @@ partial class MainForm : Form
 
   private void ImportWordsConcordances()
   {
-    return;
     //CreateWordsConcordances();
     LoadingForm.Instance.Initialize("Importing strong's concordances...",
                                     ApplicationDatabase.Instance.Books.Sum(book => book.Chapters.Count));

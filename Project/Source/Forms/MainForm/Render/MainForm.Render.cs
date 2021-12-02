@@ -33,19 +33,11 @@ partial class MainForm
   private void RenderAll()
   {
     if ( Globals.IsLoadingData || IsGoToRunning ) return;
-    LabelRenderingVerses.Visible = true;
-    try
-    {
-      Refresh();
-      RenderVerses();
-      RenderTranslation();
-      RenderRawText();
-      RenderELS50();
-    }
-    finally
-    {
-      LabelRenderingVerses.Visible = false;
-    }
+    Refresh();
+    RenderVerses();
+    RenderTranslation();
+    RenderRawText();
+    RenderELS50();
   }
 
 }

@@ -19,15 +19,13 @@ partial class MainForm
 
   private void RenderVerses()
   {
-    if ( IsRenderingSearch ) return;
-    IsRenderingSearch = true;
+    if ( IsRendering ) return;
+    IsRendering = true;
     try
     {
-      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
+      PanelViewVerses.Visible = false;
+      PanelViewVerses.Controls.Clear();
       SetFormDisabled(true);
-      PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-      while ( PanelViewVerses.Controls.Count > 1 )
-        PanelViewVerses.Controls[1].Dispose();
       CurrentReference.Verse = null;
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
@@ -45,6 +43,9 @@ partial class MainForm
       const int mX = 50;
       const int mY = 50;
       const int delta = 10;
+      const int deltaMul2 = delta * 2;
+      const int deltaDiv2 = delta / 2;
+      const int deltaDiv4 = delta / 4;
       int width = ClientSize.Width - mX;
       int dx = wordcontrol.Width + delta;
       int dy = wordcontrol.Height + delta;
@@ -63,12 +64,10 @@ partial class MainForm
       {
         textHeight = TextRenderer.MeasureText(g, "Text", textboxTemp.Font).Height;
       }
+      Panel panel;
       Label label;
       TextBoxEx editComment;
       int indexControl = 0;
-      int capacity = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
-      Control[] controls = new Control[capacity];
-      const int deltaDIV4 = delta / 4;
       int dx_delta = dx + delta;
       int dy_delta = dy + delta;
       int dx_marginX = dx + marginX;
@@ -77,12 +76,16 @@ partial class MainForm
       int heightComment = textHeight * ( verseLineCount + 1 ) - 3;
       int dy_marginY_commentHeight = dy + marginY + heightComment;
       int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
+      int yPanel = 0;
+      int count = 0;
       foreach ( var reference in references )
       {
+        y = deltaMul2;
+        panel = new Panel();
         label = new Label
         {
           Tag = reference,
-          Location = new Point(x + dx_delta, y + deltaDIV4),
+          Location = new Point(x + dx_delta, y + deltaDiv4),
           AutoSize = false,
           Width = widthLabel,
           ForeColor = Color.DarkBlue,
@@ -94,7 +97,7 @@ partial class MainForm
         label.MouseLeave += LabelVerseNumber_MouseLeave;
         label.MouseDown += LabelVerseNumber_MouseDown;
         label.MouseClick += LabelVerseNumber_MouseClick;
-        controls[indexControl++] = label;
+        panel.Controls.Add(label);
         bool emptyline = false;
         foreach ( var word in reference.Verse.Words )
         {
@@ -103,7 +106,7 @@ partial class MainForm
           wordcontrol.LabelHebrew.ContextMenuStrip = ContextMenuStripWord;
           wordcontrol.Width = widthWord;
           wordcontrol.Location = new Point(x, y);
-          controls[indexControl++] = wordcontrol;
+          panel.Controls.Add(wordcontrol);
           x -= dx;
           if ( x < delta )
           {
@@ -132,10 +135,14 @@ partial class MainForm
         editComment.Enter += EditVerseComment_Enter;
         editComment.Leave += EditVerseComment_Leave;
         editComment.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
-        controls[indexControl++] = editComment;
+        panel.Controls.Add(editComment);
         y += dy_marginY_commentHeight;
+        panel.Location = new Point(0, yPanel);
+        panel.Width = PanelViewVerses.ClientSize.Width - deltaMul2;
+        panel.Height = y;
+        yPanel += y;
+        PanelViewVerses.Controls.Add(panel);
       }
-      PanelViewVerses.Controls.AddRange(controls);
     }
     catch ( Exception ex )
     {
@@ -143,9 +150,12 @@ partial class MainForm
     }
     finally
     {
-      IsRenderingSearch = false;
-      SetFormDisabled(false);
+      LabelProgress.Text = $"Rendering {CurrentReference.Chapter.Verses.Count} verses...";
+      LabelProgress.Refresh();
+      IsRendering = false;
       PanelViewVerses.Visible = true;
+      LabelProgress.Text = "";
+      SetFormDisabled(false);
     }
   }
 

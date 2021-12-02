@@ -88,14 +88,14 @@ partial class MainForm : Form
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
       // TODO refactor 39
-      LoadingForm.Instance.Initialize("", 39, quantify: false);
+      LoadingForm.Instance.Initialize("", 39 + 1 + 1, quantify: false);
       DBApp.LoadingData += OnLoadingData;
       DBApp.Open();
       DBApp.LoadAll();
       DBApp.LoadingData -= OnLoadingData;
+      LoadingForm.Instance.DoProgress(operation: "Finishing...");
+      //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
       InitBooksCombobox();
-      //if ( NeedUpgradeForConcordances )
-      ImportWordsConcordances();
     }
     finally
     {

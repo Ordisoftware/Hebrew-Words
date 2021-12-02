@@ -47,7 +47,7 @@ partial class MainForm
   /// <summary>
   /// Indicate if rendering view is in running.
   /// </summary>
-  public bool IsRenderingSearch { get; private set; }
+  public bool IsRendering { get; private set; }
 
   /// <summary>
   /// Indicate if GoTo is running.

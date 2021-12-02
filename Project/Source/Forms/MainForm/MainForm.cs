@@ -112,8 +112,8 @@ partial class MainForm : Form
         var options = ApplicationCommandLine.Instance;
         if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
         {
-          GoTo(options.ReferenceToGo);
           auto = true;
+          GoTo(options.ReferenceToGo);
         }
         else
         if ( !string.IsNullOrEmpty(options.SearchWord) )
@@ -824,7 +824,7 @@ partial class MainForm : Form
                                            ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                            1);
       RenderAll();
-      GoTo(CurrentReference);
+      if ( !Globals.IsLoadingData ) GoTo(CurrentReference);
     }
     finally
     {
@@ -1163,7 +1163,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
   {
-    if ( IsRenderingSearch ) return;
+    if ( IsRendering ) return;
     PagingCurrent = 1;
     RenderSearch();
   }
@@ -1175,7 +1175,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
   {
-    if ( IsRenderingSearch ) return;
+    if ( IsRendering ) return;
     PagingCurrent--;
     RenderSearch();
   }
@@ -1187,7 +1187,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
   {
-    if ( IsRenderingSearch ) return;
+    if ( IsRendering ) return;
     PagingCurrent++;
     RenderSearch();
   }
@@ -1199,7 +1199,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
   {
-    if ( IsRenderingSearch ) return;
+    if ( IsRendering ) return;
     PagingCurrent = PagingCount;
     RenderSearch();
   }

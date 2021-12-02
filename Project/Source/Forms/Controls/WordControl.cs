@@ -33,7 +33,7 @@ partial class WordControl : UserControl
 
   public new bool Focus()
   {
-    if ( MainForm.Instance.IsRenderingSearch ) return false;
+    if ( MainForm.Instance.IsRendering ) return false;
     EditTranslation.Focus();
     return true;
   }
@@ -50,7 +50,7 @@ partial class WordControl : UserControl
 
   private void EditTranslation_Enter(object sender, EventArgs e)
   {
-    if ( MainForm.Instance.IsRenderingSearch ) return;
+    if ( MainForm.Instance.IsRendering ) return;
     EditTranslation.BackColor = Color.AliceBlue;
     EditTranslation.SelectionStart = 0;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
