@@ -11,12 +11,15 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
 {
 
+  /// <summary>
+  /// Go to book / chapter / verse into view verses panel.
+  /// </summary>
   public void GoTo(string reference, bool forceUpdateView = false)
   {
     SystemManager.TryCatch(() =>
@@ -55,7 +58,7 @@ partial class MainForm
               updated = true;
               break;
             }
-          if ( !updated ) throw new Exception("Book combobox index error.");
+          if ( !updated ) throw new Exception("Book combo-box index error.");
         }
       if ( SelectChapter.SelectedIndex > 0 )
         if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )

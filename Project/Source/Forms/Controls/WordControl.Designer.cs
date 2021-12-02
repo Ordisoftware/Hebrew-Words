@@ -59,7 +59,6 @@
       this.EditTranslation.Size = new System.Drawing.Size(200, 22);
       this.EditTranslation.TabIndex = 1;
       this.EditTranslation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-      this.EditTranslation.TextChanged += new System.EventHandler(this.EditTranslation_TextChanged);
       // 
       // WordControl
       // 

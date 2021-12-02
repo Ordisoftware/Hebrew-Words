@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Xceed.Document.NET;
@@ -28,7 +28,7 @@ static class ExportDocX
   /// </remarks>
   static private DocX Document;
 
-  //static private readonly Font FontVerdana = new("Verdana");
+  //static private read-only Font FontVerdana = new("Verdana");
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 

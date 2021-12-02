@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -103,9 +103,7 @@ partial class MainForm
               label.ForeColor = SystemColors.ControlText;
           controls[indexControl++] = label;
         }
-#pragma warning disable S2259 // Null pointers should not be dereferenced - N/A
         y += label.PreferredHeight + marginY;
-#pragma warning restore S2259 // Null pointers should not be dereferenced
         if ( reference.Verse.IsTranslated() )
         {
           label = new Label

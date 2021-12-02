@@ -60,15 +60,9 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
         if ( item.Length == 0 || item.Count(c => c == '.') != 2 )
           continue;
         var parts = item.Split('.');
-        try
-        {
-          Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
-                                      Convert.ToInt32(parts[1]),
-                                      Convert.ToInt32(parts[2])));
-        }
-        catch
-        {
-        }
+        SystemManager.TryCatch(() => Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
+                                                                 Convert.ToInt32(parts[1]),
+                                                                 Convert.ToInt32(parts[2]))));
       }
     }
     catch ( Exception ex )

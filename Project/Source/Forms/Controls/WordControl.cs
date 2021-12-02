@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class WordControl : UserControl
@@ -60,12 +60,6 @@ partial class WordControl : UserControl
   private void EditTranslation_Leave(object sender, EventArgs e)
   {
     EditTranslation.BackColor = SystemColors.Window;
-  }
-
-  private void EditTranslation_TextChanged(object sender, EventArgs e)
-  {
-    if ( Globals.IsLoadingData ) return;
-    if ( MainForm.Instance.IsRenderingSearch ) return;
   }
 
   private void LabelHebrew_MouseEnter(object sender, EventArgs e)

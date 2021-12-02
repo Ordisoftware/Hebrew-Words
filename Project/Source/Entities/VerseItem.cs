@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -25,8 +25,7 @@ class VerseItem
   public override string ToString()
   {
     if ( Verse == null ) return "";
-    //int nb = ApplicationDatabase.Instance.Books.Find(book => book.ID == Chapter.BookID).Chapters.Count;
-    int nb = 0;// Verse.ChaptersRow.Verses.Length;
+    int nb = ApplicationDatabase.Instance.AllChapters.Find(chapter => chapter.ID == Verse.ChapterID).Verses.Count;
     string str;
     if ( nb >= 100 )
       str = Verse.Number.ToString("000");

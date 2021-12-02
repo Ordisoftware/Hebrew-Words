@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -24,7 +24,6 @@ partial class MainForm
     try
     {
       PanelViewVerses.AutoScrollPosition = new Point(0, 0);
-      //PanelViewVerses.Visible = false;
       SetFormDisabled(true);
       PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       while ( PanelViewVerses.Controls.Count > 1 )
@@ -130,8 +129,6 @@ partial class MainForm
         editComment.Tag = reference;
         editComment.BackColor = Color.Honeydew;
         editComment.Text = reference.Verse.Comment;
-        editComment.TextChanged += EditVerseComment_TextChanged;
-        editComment.KeyDown += EditVerseComment_KeyDown;
         editComment.Enter += EditVerseComment_Enter;
         editComment.Leave += EditVerseComment_Leave;
         editComment.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -150,22 +147,6 @@ partial class MainForm
       SetFormDisabled(false);
       PanelViewVerses.Visible = true;
     }
-  }
-
-  private void EditVerseComment_KeyDown(object sender, KeyEventArgs e)
-  {
-    //var control = (Control)sender;
-    //var index = ( (Panel)control.Parent ).Controls.IndexOf(control) - 1;
-    //var wordcontrol = (WordControl)( (Panel)control.Parent ).Controls[index];
-    //wordcontrol.Focus();
-  }
-
-  private void EditVerseComment_TextChanged(object sender, EventArgs e)
-  {
-    //if ( Globals.IsLoadingData ) return;
-    //var control = (Control)sender;
-    //( (ReferenceItem)control.Tag ).Verse.Comment = control.Text;
-    //ActionSave.Enabled = true;
   }
 
   private void EditVerseComment_Enter(object sender, EventArgs e)
@@ -207,15 +188,10 @@ partial class MainForm
   {
     if ( e.Button != MouseButtons.Left ) return;
     var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
-    //if ( control != null ) control.Focus();
     HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
                                   control.Reference.Book.Number,
                                   control.Reference.Chapter.Number,
                                   control.Reference.Verse.Number);
-    /*HebrewTools.OpenOnlineVerse(Program.Settings.OpenVerseOnlineURL,
-                                control.Reference.Book.Number,
-                                CurrentReference.Chapter.Number,
-                                Convert.ToInt32(( (Label)sender ).Text));*/
   }
 
 }
