@@ -30,9 +30,11 @@ public class VerseRow : INotifyPropertyChanged
   protected void NotifyPropertyChanged(string p)
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    ApplicationDatabase.Instance.AddToModified(this);
   }
 
   [PrimaryKey]
+  [NotNull]
   public string ID
   {
     get => _ID;
@@ -46,6 +48,7 @@ public class VerseRow : INotifyPropertyChanged
   private string _ID;
 
   [ForeignKey(typeof(ChapterRow))]
+  [NotNull]
   public string ChapterID
   {
     get => _ChapterID;
@@ -58,6 +61,7 @@ public class VerseRow : INotifyPropertyChanged
   }
   private string _ChapterID;
 
+  [NotNull]
   public int Number
   {
     get => _Number;
@@ -70,6 +74,7 @@ public class VerseRow : INotifyPropertyChanged
   }
   private int _Number;
 
+  [NotNull]
   public string Comment
   {
     get => _Comment;

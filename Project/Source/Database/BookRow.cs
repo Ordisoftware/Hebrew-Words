@@ -30,9 +30,11 @@ public class BookRow : INotifyPropertyChanged
   protected void NotifyPropertyChanged(string p)
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    ApplicationDatabase.Instance.AddToModified(this);
   }
 
   [PrimaryKey]
+  [NotNull]
   public string ID
   {
     get => _ID;
@@ -45,6 +47,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _ID;
 
+  [NotNull]
   public int Number
   {
     get => _Number;
@@ -57,6 +60,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private int _Number;
 
+  [NotNull]
   public string Original
   {
     get => _Original;
@@ -69,6 +73,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Original;
 
+  [NotNull]
   public string Hebrew
   {
     get => _Hebrew;
@@ -81,6 +86,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Hebrew;
 
+  [NotNull]
   public string Name
   {
     get => _Name;
@@ -93,6 +99,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Name;
 
+  [NotNull]
   public string CommonName
   {
     get => _CommonName;
@@ -105,6 +112,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _CommonName;
 
+  [NotNull]
   public string Translation
   {
     get => _Translation;
@@ -117,6 +125,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Translation;
 
+  [NotNull]
   public string Lettriq
   {
     get => _Lettriq;
@@ -129,6 +138,7 @@ public class BookRow : INotifyPropertyChanged
   }
   private string _Lettriq;
 
+  [NotNull]
   public string Memo
   {
     get => _Memo;

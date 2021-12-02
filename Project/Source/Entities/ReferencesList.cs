@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 abstract class ReferencesList : IEnumerable<ReferenceItem>
@@ -48,7 +48,7 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
 
   public abstract void Add(ReferenceItem reference);
 
-  public void Load()
+  public void Load(Action actionAfter)
   {
     Items.Clear();
     if ( !File.Exists(FilePath) )
@@ -74,6 +74,10 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
     catch ( Exception ex )
     {
       ex.Manage();
+    }
+    finally
+    {
+      actionAfter?.Invoke();
     }
   }
 

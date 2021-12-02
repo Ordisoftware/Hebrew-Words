@@ -73,8 +73,8 @@ partial class MainForm
       RenderAll();
     if ( reference.Verse == null )
     {
-      var found = CurrentReference.Chapter.Verses.Find(v => !v.IsTranslated());
-      reference.Verse = found ?? reference.Chapter.Verses[0];
+      var found = CurrentReference.Chapter?.Verses?.Find(v => !v.IsTranslated());
+      reference.Verse = found ?? reference.Chapter?.Verses[0];
     }
   Label:
     switch ( Program.Settings.CurrentView )
@@ -84,7 +84,7 @@ partial class MainForm
           if ( control is Label )
           {
             var label = control as Label;
-            if ( label.Text == reference.Verse.Number.ToString() )
+            if ( label.Text == reference.Verse?.Number.ToString() )
             {
               PanelViewVerses.Focus();
               PanelViewVerses.ScrollControlIntoView(label);

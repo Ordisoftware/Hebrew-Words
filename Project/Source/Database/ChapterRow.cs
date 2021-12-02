@@ -31,9 +31,11 @@ public class ChapterRow : INotifyPropertyChanged
   protected void NotifyPropertyChanged(string p)
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    ApplicationDatabase.Instance.AddToModified(this);
   }
 
   [PrimaryKey]
+  [NotNull]
   public string ID
   {
     get => _ID;
@@ -47,6 +49,7 @@ public class ChapterRow : INotifyPropertyChanged
   private string _ID;
 
   [ForeignKey(typeof(BookRow))]
+  [NotNull]
   public string BookID
   {
     get => _BookID;
@@ -59,6 +62,7 @@ public class ChapterRow : INotifyPropertyChanged
   }
   private string _BookID;
 
+  [NotNull]
   public int Number
   {
     get => _Number;
@@ -71,6 +75,7 @@ public class ChapterRow : INotifyPropertyChanged
   }
   private int _Number;
 
+  [NotNull]
   public string Title
   {
     get => _Title;
@@ -83,6 +88,7 @@ public class ChapterRow : INotifyPropertyChanged
   }
   private string _Title;
 
+  [NotNull]
   public string Memo
   {
     get => _Memo;
@@ -95,6 +101,7 @@ public class ChapterRow : INotifyPropertyChanged
   }
   private string _Memo;
 
+  [NotNull]
   public string ELS50
   {
     get => _ELS50;

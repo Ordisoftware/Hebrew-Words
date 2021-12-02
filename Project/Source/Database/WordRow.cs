@@ -30,9 +30,11 @@ public class WordRow : INotifyPropertyChanged
   protected void NotifyPropertyChanged(string p)
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    ApplicationDatabase.Instance.AddToModified(this);
   }
 
   [PrimaryKey]
+  [NotNull]
   public string ID
   {
     get => _ID;
@@ -46,6 +48,7 @@ public class WordRow : INotifyPropertyChanged
   private string _ID;
 
   [ForeignKey(typeof(VerseRow))]
+  [NotNull]
   public string VerseID
   {
     get => _VerseID;
@@ -58,6 +61,7 @@ public class WordRow : INotifyPropertyChanged
   }
   private string _VerseID;
 
+  [NotNull]
   public int Number
   {
     get => _Number;
@@ -70,6 +74,7 @@ public class WordRow : INotifyPropertyChanged
   }
   private int _Number;
 
+  [NotNull]
   public string Original
   {
     get => _Original;
@@ -82,6 +87,7 @@ public class WordRow : INotifyPropertyChanged
   }
   private string _Original;
 
+  [NotNull]
   public string Hebrew
   {
     get => _Hebrew;
@@ -94,6 +100,7 @@ public class WordRow : INotifyPropertyChanged
   }
   private string _Hebrew;
 
+  [NotNull]
   public string Translation
   {
     get => _Translation;

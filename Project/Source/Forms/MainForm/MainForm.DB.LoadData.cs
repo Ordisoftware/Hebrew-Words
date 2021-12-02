@@ -11,62 +11,16 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm : Form
 {
 
-  private void OnLoadingData(string caption)
-  {
-    LoadingForm.Instance.DoProgress(operation: "Loading book: " + caption);
-  }
-
-  /// <summary>
-  /// Load data from database fro the first time.
-  /// </summary>
-  private void LoadData()
-  {
-    try
-    {
-      LoadingForm.Instance.Initialize("", 39, quantify: false);
-      DBApp.LoadingData += OnLoadingData;
-      DBApp.Open();
-      DBApp.LoadingData -= OnLoadingData;
-      LoadingForm.Instance.Hide();
-      //PopulateData();
-    }
-    catch ( Exception ex )
-    {
-      DisplayManager.ShowError(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
-                               SysTranslations.ContactSupport[Language.FR]);
-      ex.Manage();
-      Environment.Exit(-1);
-    }
-    try
-    {
-      Bookmarks.Load();
-      UpdateBookmarks();
-      History.Load();
-      UpdateHistory();
-      if ( Program.Settings.OpenLastViewAtStartup )
-        SetView(Program.Settings.CurrentView, true);
-      else
-      {
-        SetView(ViewMode.Verses, true);
-        Program.Settings.CurrentSearchTypeTab = 0;
-      }
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-  }
-
   /// <summary>
   /// Reload data from database.
   /// </summary>
-  private void ReLoadData(Action action = null)
+  private void ReLoadData(Action actionBefore = null)
   {
     ActionCloseWindows.PerformClick();
     ActionSearchClear.PerformClick();
@@ -76,10 +30,51 @@ partial class MainForm : Form
     PanelSearchResults.Controls.Clear();
     SearchResults = null;
     Refresh();
-    // TODO reload DataSet.Clear();
-    action?.Invoke();
-    History.Clear();
+    actionBefore?.Invoke();
     LoadData();
+  }
+
+  /// <summary>
+  /// Load data from database fro the first time.
+  /// </summary>
+  private void LoadData()
+  {
+    Globals.ChronoLoadData.Start();
+    try
+    {
+      try
+      {
+        PopulateData();
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
+                                 SysTranslations.ContactSupport[Language.FR]);
+        ex.Manage();
+        Environment.Exit(-1);
+      }
+      try
+      {
+        Bookmarks.Load(UpdateBookmarks);
+        History.Load(UpdateHistory);
+        if ( Program.Settings.OpenLastViewAtStartup )
+          SetView(Program.Settings.CurrentView, true);
+        else
+        {
+          SetView(ViewMode.Verses, true);
+          Program.Settings.CurrentSearchTypeTab = 0;
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
+    finally
+    {
+      Globals.ChronoLoadData.Stop();
+      Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+    }
   }
 
   /// <summary>
@@ -87,41 +82,33 @@ partial class MainForm : Form
   /// </summary>
   private void PopulateData()
   {
-    //SetFormDisabled(true);
-    //Globals.IsLoadingData = true;
-    //try
-    //{
-    //  CreateSchemaIfNotExists();
-    //  CreateDataIfNotExists();
-    //  //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-    //  process(DataSet.Books, () => BooksTableAdapter.Fill(DataSet.Books));
-    //  process(DataSet.Chapters, () => ChaptersTableAdapter.Fill(DataSet.Chapters));
-    //  process(DataSet.Verses, () => VersesTableAdapter.Fill(DataSet.Verses));
-    //  process(DataSet.Words, () => WordsTableAdapter.Fill(DataSet.Words));
-    //  InitBooksCombobox();
-    //  //if ( NeedUpgradeForConcordances )
-    //  ImportWordsConcordances();
-    //}
-    //finally
-    //{
-    //  Globals.IsLoadingData = false;
-    //  LoadingForm.Instance.Hide();
-    //  SetFormDisabled(false);
-    //}
-    //void process(DataTable table, Action action)
-    //{
-    //  string str = SysTranslations.ProgressLoadingData.GetLang() + " " + table.TableName;
-    //  LoadingForm.Instance.Initialize(str, LockFileConnection.GetRowsCount(table.TableName) * 2);
-    //  table.RowChanged += update;
-    //  table.BeginLoadData();
-    //  action();
-    //  table.EndLoadData();
-    //  table.RowChanged -= update;
-    //}
-    //void update(object sender, DataRowChangeEventArgs e)
-    //{
-    //  if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-    //}
+    SetFormDisabled(true);
+    Globals.IsLoadingData = true;
+    try
+    {
+      //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
+      // TODO refactor 39
+      LoadingForm.Instance.Initialize("", 39, quantify: false);
+      DBApp.LoadingData += OnLoadingData;
+      DBApp.Open();
+      DBApp.LoadAll();
+      DBApp.LoadingData -= OnLoadingData;
+      InitBooksCombobox();
+      //if ( NeedUpgradeForConcordances )
+      ImportWordsConcordances();
+    }
+    finally
+    {
+      Globals.IsLoadingData = false;
+      LoadingForm.Instance.Hide();
+      SetFormDisabled(false);
+    }
+    //
+    static void OnLoadingData(string caption)
+    {
+      LoadingForm.Instance.DoProgress(operation: "Loading book: " + caption);
+    }
+
   }
 
 }
