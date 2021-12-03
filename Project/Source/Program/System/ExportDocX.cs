@@ -50,7 +50,7 @@ static class ExportDocX
             AddVerse(verse, includeTranslation);
         }
         Document.Save();
-        if ( Program.Settings.OpenGeneratedMSWordFiles )
+        if ( Program.Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( Exception ex )
@@ -73,7 +73,7 @@ static class ExportDocX
         foreach ( VerseRow verse in chapter.Verses )
           AddVerse(verse, includeTranslation);
         Document.Save();
-        if ( Program.Settings.OpenGeneratedMSWordFiles )
+        if ( Program.Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( Exception ex )
@@ -96,7 +96,7 @@ static class ExportDocX
         AddChapterTitle(chapter);
         AddVerse(chapter.Verses[verse - 1], includeTranslation);
         Document.Save();
-        if ( Program.Settings.OpenGeneratedMSWordFiles )
+        if ( Program.Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( Exception ex )

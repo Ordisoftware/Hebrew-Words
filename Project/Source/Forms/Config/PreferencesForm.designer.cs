@@ -454,7 +454,7 @@
       // EditOpenGeneratedMSWordFiles
       // 
       resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
-      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoOpenExportedFile;
       this.EditOpenGeneratedMSWordFiles.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
@@ -507,7 +507,7 @@
       // EditDebuggerEnabled
       // 
       resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
-      this.EditDebuggerEnabled.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenGeneratedMSWordFiles;
+      this.EditDebuggerEnabled.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoOpenExportedFile;
       this.EditDebuggerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditDebuggerEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";

@@ -119,7 +119,7 @@
     <Setting Name="ImportVerseFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">792, 666</Value>
     </Setting>
-    <Setting Name="OpenGeneratedMSWordFiles" Type="System.Boolean" Scope="User">
+    <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="SearchInBookSelectedNumber" Type="System.Int32" Scope="User">
@@ -165,7 +165,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">2000-01-01</Value>
     </Setting>
     <Setting Name="TraceFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
@@ -236,15 +236,31 @@
     <Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Dsn=Hebrew-Words&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Dsn=Hebrew-Words</Value>
-    </Setting>
     <Setting Name="TraceFormShowOnlyErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ExportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
+    </Setting>
+    <Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
+      <Value Profile="(Default)">PNG</Value>
+    </Setting>
+    <Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StatisticsFormAlwaysOnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StatisticsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

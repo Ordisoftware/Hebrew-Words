@@ -99,12 +99,12 @@ static class SettingsHelper
       MainForm.EditShowTips.Checked = settings.ShowTips;
       MainForm.EditSoundsEnabled.Checked = settings.SoundsEnabled;
       MainForm.EditUseAdvancedDialogBoxes.Checked = settings.AdvancedDialogBoxes;
-      // TODO add setting : MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
-      // TODO add setting : DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
+      MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
+      DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
       //
-      // TODO add setting : if ( settings.AutoOpenExportedFile && se// TODO add setting : ttings.AutoOpenExportFolder )
-      //  settings.AutoOpenExportFolder = false;
+      if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
+        settings.AutoOpenExportFolder = false;
       if ( settings.BackupPath.Length == 0 )
       {
         Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
@@ -148,7 +148,7 @@ static class SettingsHelper
       settings.ShowTips = MainForm.EditShowTips.Checked;
       settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
-      // TODO add setting : settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
+      settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
       SystemManager.TryCatch(settings.Save);
     }
     finally
@@ -179,7 +179,7 @@ static class SettingsHelper
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
-    string directory = "";// TODO add setting : settings.ExportFolder;
+    string directory = settings.ExportFolder;
     if ( directory == "%USER_APP_DOCUMENTS%" )
       directory = Globals.UserDocumentsFolderPath;
     return directory;

@@ -19,6 +19,11 @@ using Equin.ApplicationFramework;
 class ApplicationDatabase : SQLiteDatabase
 {
 
+  static public readonly string BooksTableName = nameof(Books);
+  static public readonly string ChaptersTableName = nameof(BookRow.Chapters);
+  static public readonly string VersesTableName = nameof(ChapterRow.Verses);
+  static public readonly string WordsTableName = nameof(VerseRow.Words);
+
   static new public ApplicationDatabase Instance { get; protected set; }
 
   static ApplicationDatabase()
@@ -96,7 +101,7 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void DoSaveAll()
   {
     if ( !HasChanges ) return;
-    CheckAccess(Books, nameof(Books));
+    CheckAccess(Books, BooksTableName);
     Connection.UpdateAll(ModifiedObjects);
     ModifiedObjects.Clear();
   }
@@ -104,7 +109,7 @@ class ApplicationDatabase : SQLiteDatabase
   public void DeleteAll()
   {
     CheckConnected();
-    CheckAccess(Books, nameof(Books));
+    CheckAccess(Books, BooksTableName);
     Connection.DeleteAll<WordRow>();
     Connection.DeleteAll<VerseRow>();
     Connection.DeleteAll<ChapterRow>();
@@ -115,25 +120,25 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void UpgradeSchema()
   {
     base.UpgradeSchema();
-    if ( Connection.CheckTable(nameof(Books)) )
+    if ( Connection.CheckTable(BooksTableName) )
     {
       bool b = Globals.IsDatabaseUpgraded;
-      b = !Connection.CheckColumn(nameof(Books), nameof(BookRow.Original), "") || b;
-      b = !Connection.CheckColumn(nameof(Books), nameof(BookRow.CommonName), "") || b;
-      b = !Connection.CheckColumn(nameof(Books), nameof(BookRow.Memo), "") || b;
-      b = !Connection.CheckColumn(nameof(Books), nameof(BookRow.Lettriq), "") || b;
-      b = !Connection.CheckColumn(nameof(BookRow.Chapters), nameof(ChapterRow.Title), "") || b;
-      b = !Connection.CheckColumn(nameof(BookRow.Chapters), nameof(ChapterRow.Memo), "") || b;
+      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Original), "") || b;
+      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.CommonName), "") || b;
+      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Memo), "") || b;
+      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Lettriq), "") || b;
+      b = !Connection.CheckColumn(ChaptersTableName, nameof(ChapterRow.Title), "") || b;
+      b = !Connection.CheckColumn(ChaptersTableName, nameof(ChapterRow.Memo), "") || b;
       Globals.IsDatabaseUpgraded = b;
     }
   }
 
   protected override void CreateDataIfNotExist(bool reset = false)
   {
-    long countBooks = Connection.GetRowsCount(nameof(Instance.Books));
-    long countChapters = Connection.GetRowsCount(nameof(BookRow.Chapters));
-    long countVerses = Connection.GetRowsCount(nameof(ChapterRow.Verses));
-    long countWords = Connection.GetRowsCount(nameof(VerseRow.Words));
+    long countBooks = Connection.GetRowsCount(BooksTableName);
+    long countChapters = Connection.GetRowsCount(ChaptersTableName);
+    long countVerses = Connection.GetRowsCount(VersesTableName);
+    long countWords = Connection.GetRowsCount(WordsTableName);
     if ( countBooks != 0 && Globals.IsDatabaseUpgraded )
     {
       foreach ( BookRow book in Books )
@@ -275,13 +280,13 @@ class ApplicationDatabase : SQLiteDatabase
       try
       {
         string msg = SysTranslations.ProgressSavingData.GetLang();
-        LoadingForm.Instance.DoProgress(operation: msg + nameof(books));
+        LoadingForm.Instance.DoProgress(operation: msg + BooksTableName);
         Connection.InsertAll(Books);
-        LoadingForm.Instance.DoProgress(operation: msg + nameof(BookRow.Chapters));
+        LoadingForm.Instance.DoProgress(operation: msg + ChaptersTableName);
         Connection.InsertAll(Chapters);
-        LoadingForm.Instance.DoProgress(operation: msg + nameof(ChapterRow.Verses));
+        LoadingForm.Instance.DoProgress(operation: msg + VersesTableName);
         Connection.InsertAll(Verses);
-        LoadingForm.Instance.DoProgress(operation: msg + nameof(VerseRow.Words));
+        LoadingForm.Instance.DoProgress(operation: msg + WordsTableName);
         Connection.InsertAll(Words);
         LoadingForm.Instance.DoProgress(operation: "Finishing...");
         Commit();

@@ -90,8 +90,8 @@ partial class MainForm : Form
     try
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-      // TODO refactor 39
-      LoadingForm.Instance.Initialize("", 39 + 1 + 1, quantify: false);
+      int countBook = (int)ApplicationDatabase.Instance.Connection.GetRowsCount(ApplicationDatabase.BooksTableName);
+      LoadingForm.Instance.Initialize("", countBook + 1 + 1, quantify: false);
       DBApp.LoadingData += OnLoadingData;
       DBApp.Open();
       DBApp.LoadAll();

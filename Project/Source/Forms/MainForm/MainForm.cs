@@ -286,7 +286,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditShowSuccessDialogs_CheckedChanged(object sender, EventArgs e)
   {
-    // TODO add setting : Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+    Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
     DisplayManager.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
   }
 

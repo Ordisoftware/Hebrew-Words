@@ -31,7 +31,7 @@ partial class MainForm
     get
     {
       var cp = base.CreateParams;
-      // TODO add setting : if ( Settings.WindowsDoubleBufferingEnabled )
+      if ( Settings.WindowsDoubleBufferingEnabled )
       {
         cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
         //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
