@@ -23,8 +23,8 @@ partial class MainForm
     {
       if ( Program.Settings.AutoSortBookmarks )
         Bookmarks.Sort();
-      while ( MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
-        MenuBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
+      while ( ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
+        ActionBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
       var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
                                              Program.Settings.BookmarkMasterChapter,
                                              Program.Settings.BookmarkMasterVerse);
@@ -53,7 +53,7 @@ partial class MainForm
       {
         foreach ( var reference in Bookmarks )
         {
-          var item = (ToolStripMenuItem)MenuBookmarks.DropDownItems.Add(reference.ToStringFull());
+          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringFull());
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;
@@ -62,7 +62,7 @@ partial class MainForm
         }
       }
       ActionClearBookmarks.Enabled = Bookmarks.Count > 0
-                                  && MenuBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
+                                  && ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
       ActionSortBookmarks.Enabled = Bookmarks.Count > 0
                                  && !Program.Settings.AutoSortBookmarks;
     }

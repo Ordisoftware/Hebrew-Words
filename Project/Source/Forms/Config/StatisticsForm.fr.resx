@@ -340,4 +340,7 @@
   <data name="dBParashotMemorySizeLabel.Text" xml:space="preserve">
     <value>Taille mémoire Parashot :</value>
   </data>
+  <data name="renderingLabel.Text" xml:space="preserve">
+    <value>Dernier rendu :</value>
+  </data>
 </root>

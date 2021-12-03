@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -50,6 +50,25 @@ partial class MainForm
     }
     switch ( keyData )
     {
+      // System close
+      case Keys.Alt | Keys.Control | Keys.F4:
+        ActionExit.PerformClick();
+        return true;
+      case Keys.Escape:
+        if ( IsRendering ) Globals.CancelRequired = true;
+        break;
+      // System tools
+      case Keys.F9:
+        ActionPreferences.PerformClick();
+        return true;
+      // Change view
+      case Keys.Control | Keys.Shift | Keys.Tab:
+        SetView(Settings.CurrentView.Previous());
+        return true;
+      case Keys.Control | Keys.Tab:
+        SetView(Settings.CurrentView.Next());
+        return true;
+      // View
       case Keys.F1:
         ActionViewVerses.PerformClick();
         return true;
@@ -68,21 +87,41 @@ partial class MainForm
         else
           RotateSearchTab();
         return true;
+      // Actions
       case Keys.Control | Keys.S:
         ActionSave.PerformClick();
-        return true;
-      case Keys.Control | Keys.Alt | Keys.F:
-        ActionGoToReference.PerformClick();
         return true;
       case Keys.Control | Keys.F:
         ActionSearchVerse.PerformClick();
         return true;
-      case Keys.Control | Keys.B:
-        ActionViewBooksTranslation.PerformClick();
+      case Keys.Alt | Keys.F:
+        ActionViewSearch.PerformClick();
         return true;
-      case Keys.Escape:
-        if ( IsRendering ) Globals.CancelRequired = true;
-        break;
+      case Keys.Shift | Keys.Control | Keys.F:
+        ActionGoToReference.PerformClick();
+        return true;
+      // Application menus
+      case Keys.Alt | Keys.D:
+        ActionDatabase.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.B:
+        ActionBookmarks.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.T:
+        ActionTools.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.L:
+        if ( ActionWebLinks.Enabled )
+          ActionWebLinks.ShowDropDown();
+        return true;
+      // System menus
+      case Keys.Alt | Keys.S:
+        ActionSettings.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.I:
+        ActionInformation.ShowDropDown();
+        return true;
+      // Scrolling small
       case Keys.Control | Keys.Up:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
@@ -103,6 +142,7 @@ partial class MainForm
             return scroll(PanelSearchResults, ScrollIncrement, true);
         }
         break;
+      // Scrolling large
       case Keys.PageUp:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
@@ -123,6 +163,7 @@ partial class MainForm
             return scroll(PanelSearchResults, PanelViewVerses.Height, true);
         }
         break;
+      // Scrolling bounds
       case Keys.Control | Keys.Home:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )

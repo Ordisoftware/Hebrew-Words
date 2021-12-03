@@ -975,7 +975,7 @@ partial class MainForm : Form
   {
     Bookmarks.Sort();
     UpdateBookmarks();
-    MenuBookmarks.ShowDropDown();
+    ActionBookmarks.ShowDropDown();
   }
 
   private void ActionAddBookmark_Click(object sender, EventArgs e)

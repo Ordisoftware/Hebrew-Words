@@ -52,93 +52,75 @@ partial class MainForm
     {
       if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
       {
-        foreach ( var item in SelectBook.Items )
-          if ( ( item as ObjectView<BookRow> )?.Object.Number == reference.Book.Number )
-          {
-            SelectBook.SelectedItem = item;
-            updated = true;
-            break;
-          }
-        if ( !updated ) throw new Exception("Book combo-box index error.");
+        var item = SelectBook.Items.AsIEnumerable<ObjectView<BookRow>>()
+                                   .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
+        SelectBook.SelectedItem = item ?? throw new Exception("Book combo-box index error.");
+        updated = true;
       }
-      if ( SelectChapter.SelectedIndex > 0 )
-        if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
-        {
-          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
-          updated = true;
-        }
+      if ( SelectChapter.SelectedIndex != reference.Chapter?.Number - 1 )
+      {
+        SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
+        updated = true;
+      }
     }
     finally
     {
       IsGoToRunning = false;
-      CurrentReference = new ReferenceItem(reference);
-      AddCurrentToHistory();
     }
-    if ( Globals.IsLoadingData ) return;
-    if ( updated || forceUpdateView )
-      RenderAll();
     if ( reference.Verse == null )
     {
       var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation);
       reference.Verse = found ?? reference.Chapter?.Verses[0];
     }
-  Label:
+    CurrentReference = new ReferenceItem(reference);
+    AddCurrentToHistory();
+    if ( updated || forceUpdateView ) RenderAll();
+    // 
     switch ( Program.Settings.CurrentView )
     {
       case ViewMode.Verses:
-        foreach ( var control in PanelViewVerses.Controls )
-          if ( control is Label )
-          {
-            var label = control as Label;
-            if ( label.Text == reference.Verse?.Number.ToString() )
-            {
-              PanelViewVerses.Focus();
-              PanelViewVerses.ScrollControlIntoView(label);
-              PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
-              int index = PanelViewVerses.Controls.IndexOf(label);
-              ( PanelViewVerses.Controls[index + 1] as WordControl )?.Focus();
-              break;
-            }
-          }
-        if ( reference.Word != null )
-          foreach ( Control control in PanelViewVerses.Controls )
-            if ( control is WordControl wordcontrol )
-              if ( wordcontrol.Reference.Word == reference.Word )
-              {
-                control.Focus();
-                break;
-              }
+        var label = PanelViewVerses.GetAll<Label>()
+                                   .Where(label => label.Text == reference.Verse?.Number.ToString())
+                                   .FirstOrDefault();
+        if ( label != null )
+        {
+          PanelViewVerses.Focus();
+          PanelViewVerses.ScrollControlIntoView(label);
+          PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
+          if ( reference.Word != null )
+            PanelViewVerses.GetAll<WordControl>()
+                           .Where(wordcontrol => wordcontrol.Reference.Word == reference.Word)
+                           .FirstOrDefault()?
+                           .Focus();
+          else
+            ( label.Parent.Controls[1] as WordControl )?.Focus();
+        }
         break;
       case ViewMode.Translations:
-        foreach ( string line in EditTranslations.Lines )
-        {
-          string s = reference.Verse.Number + ". ";
-          if ( line.StartsWith(s) )
-          {
-            EditTranslations.SelectionStart = EditTranslations.Find(s);
-            EditTranslations.SelectionLength = 0;
-            EditTranslations.ScrollToCaret();
-            EditTranslations.Focus();
-          }
-        }
+        string strTr = reference.Verse.Number + ". ";
+        searchRef(EditTranslations, strTr, line => line.StartsWith(strTr));
         break;
       case ViewMode.Text:
-        foreach ( string line in EditRawText.Lines )
-        {
-          string s = ":" + reference.Verse.Number;
-          if ( line.EndsWith(s) )
-          {
-            EditRawText.SelectionStart = EditRawText.Find(s);
-            EditRawText.SelectionLength = 0;
-            EditRawText.ScrollToCaret();
-            EditRawText.Focus();
-          }
-        }
+        string strSrc = ":" + reference.Verse.Number;
+        searchRef(EditRawText, strSrc, line => line.EndsWith(strSrc));
         break;
       default:
-        SetView(ViewMode.Verses);
-        goto Label;
+        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
     }
+    //
+    void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
+    {
+      foreach ( string line in textbox.Lines )
+        if ( check(line) )
+        {
+          textbox.SelectionStart = textbox.Find(str);
+          textbox.SelectionLength = 0;
+          textbox.ScrollToCaret();
+          textbox.Focus();
+          break;
+        }
+    }
+
   }
 
 }

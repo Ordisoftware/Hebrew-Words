@@ -66,7 +66,7 @@ partial class MainForm : Form
       SystemManager.TryCatch(Settings.Save);
     }
     UpdateSearchButtons();
-    BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
+    BookmarksMenuFirstIndex = ActionBookmarks.DropDownItems.Count;
     DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
   }
 
