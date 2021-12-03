@@ -36,6 +36,24 @@ partial class PreferencesForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     this.InitDropDowns();
+    void action1(object sender, EventArgs e)
+    {
+      EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+    }
+    void action2(object sender, EventArgs e)
+    {
+      EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+    }
+    foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
+      if ( item.Name == "-" )
+        MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
+      else
+        MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
+    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
+      if ( item.Name == "-" )
+        MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
+      else
+        MenuSelectSearchRequest.Items.Add(item.CreateMenuItem(action2));
   }
 
   /// <summary>
@@ -247,6 +265,13 @@ partial class PreferencesForm : Form
       edit.Text = dialog.FileName;
   }
 
+  private void ActionSelectBackupFolder_Click(object sender, EventArgs e)
+  {
+    SystemManager.TryCatch(() => FolderBrowserDialog.SelectedPath = Settings.GetBackupDirectory());
+    if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
+      EditBackupFolder.Text = FolderBrowserDialog.SelectedPath;
+  }
+
   private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
   {
     DoActionSelectPath(OpenExeFileDialog, EditCalculatorPath);
@@ -263,6 +288,11 @@ partial class PreferencesForm : Form
       EditExportFolder.Text = (string)Settings.Properties[nameof(Settings.ExportFolder)].DefaultValue;
   }
 
+  private void ActionResetBackupFolder_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditBackupFolder.Text = (string)Settings.Properties[nameof(Settings.BackupFolder)].DefaultValue;
+  }
   private void ActionResetCalculatorPath_Click(object sender, EventArgs e)
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
@@ -273,6 +303,35 @@ partial class PreferencesForm : Form
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
       EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
+  }
+
+  #endregion
+
+  #region Rendering
+
+  private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
+  {
+    EditMinRefCount.Maximum = EditMaxRefCount.Value;
+  }
+
+  private void ActionSelectOnlineSearch_Click(object sender, EventArgs e)
+  {
+    MenuSelectSearchRequest.Show(ActionSelectOnlineSearch, new Point(0, ActionSelectOnlineSearch.Height));
+  }
+
+  private void ActionOnlineSearchHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineWordProvider.GetLang());
+  }
+
+  private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineBibleProvider.GetLang());
+  }
+
+  private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
+  {
+    MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
   }
 
   #endregion

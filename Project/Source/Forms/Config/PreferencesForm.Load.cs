@@ -43,6 +43,29 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
     // System
     EditLogEnabled.Enabled = DebugManager.Enabled;
+
+    EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
+    EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL;
+    EditBackupCount.Value = Program.Settings.BackupCount;
+    EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
+    EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount;
+    EditWordControlWidth.Value = Program.Settings.WordControlWidth;
+    EditBookmarksCount.Value = Program.Settings.BookmarksCount;
+    EditHistoryCount.Value = Program.Settings.HistoryCount;
+    EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable;
+    EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog;
+    SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
+    SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
+    SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
+    SelectOpenNothing.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Nothing;
+    if ( First )
+    {
+      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
+      WordControlWidthPrevious = (int)EditWordControlWidth.Value;
+      MaxrefCountPrevious = (int)EditMaxRefCount.Value;
+      First = false;
+    }
+
   }
 
 }

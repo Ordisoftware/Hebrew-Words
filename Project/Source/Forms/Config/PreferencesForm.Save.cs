@@ -38,6 +38,33 @@ partial class PreferencesForm
     Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
     Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
     Settings.WebLinksMenuEnabled = EditWebLinksMenuEnabled.Checked;
+
+    Program.Settings.SearchOnlineURL = EditOnlineSearch.Text;
+    Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
+    Program.Settings.BackupCount = (int)EditBackupCount.Value;
+    Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
+    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+    Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
+    Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
+    Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
+    Program.Settings.FoundReferencesViewable = (int)EditMaxRefCount.Value;
+    Program.Settings.FoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
+    if ( SelectOpenHebrewLetters.Checked )
+      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
+    if ( SelectOpenOnlineSearch.Checked )
+      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
+    if ( SelectOpenTranslated.Checked )
+      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
+    if ( SelectOpenNothing.Checked )
+      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Nothing;
+    MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
+    if ( MainForm.Instance.TimerAutoSave.Enabled )
+      MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+    Program.Settings.Store();
+    UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
+                      || WordControlWidthPrevious != (int)EditWordControlWidth.Value
+                      || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
+
   }
 
 }

@@ -22,71 +22,41 @@ partial class PreferencesForm
 {
 
   static public int TabIndexApplication { get; private set; }
-  static public int TabIndexPaths { get; private set; }
-  static public int TabIndexPrint { get; private set; }
   static public int TabIndexStartup { get; private set; }
-
-  // Mono spaced fonts list
-  static private readonly string[] MonoSpacedFonts =
-  {
-    "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
-    "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
-    "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
-    "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
-    "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
-    "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
-    "tex gyre cursor", "ubuntu mono", "um typewriter"
-  };
+  static public int TabIndexRendering { get; private set; }
+  static public int TabIndexTools { get; private set; }
+  static public int TabIndexPaths { get; private set; }
 
   // Intervals Min, Max, Default, Increment
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 30, 15, 1);
-  static public readonly (int, int, int, int) PrintingMarginInterval = (10, 150, 50, 10);
-  static public readonly (int, int, int, int) PrintPageCountWarningInterval = (10, 100, 20, 10);
-  static public readonly (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
-  static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
-  static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
-  static public readonly (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
-  static public readonly (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
-  static public readonly (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
-  static public readonly (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
-  static public readonly (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
-  static public readonly (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
-  static public readonly (int, int, int, int) TextReportFontSizeInterval = (7, 30, 10, 1);
-  static public readonly (int, int, int, int) VisualMonthFontSizeInterval = (7, 30, 9, 1);
-  static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
-
-  // Available keys for hotkey keys
-  static private readonly List<Keys> AvailableHotKeyKeys;
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  static private bool First;
+  static private bool LanguageChanged;
+  static private int CommentaryLinesCountPrevious;
+  static private int WordControlWidthPrevious;
+  static private int MaxrefCountPrevious;
+  static private bool UpdateViewRequired;
+
   static public bool Reseted { get; private set; }
   static private bool DoReset;
-  static private bool LanguageChanged;
 
   static PreferencesForm()
   {
     using ( var form = new PreferencesForm() )
     {
       TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
-      TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
-      TabIndexPrint = form.TabControl.TabPages.IndexOf(form.TabPagePrint);
       TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
+      TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
+      TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
+      TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
     }
-    var filter1 = new Regex("(^F[0-9]{1,2}$)");
-    var filter2 = new Regex("(^[A-Z]$)");
-    var filter3 = new Regex("(^D[0-D9]$)");
-    var filter4 = new Regex("(^NumPad[0-D9]$)");
-    AvailableHotKeyKeys = Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success)
-                               .Concat(Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success))
-                               .Concat(Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success))
-                               .Concat(Enums.GetValues<Keys>().Where(x => filter4.Match(x.ToString()).Success))
-                               .ToList();
   }
 
   static public bool Run(int index = -1)
   {
+    First = true;
     Reseted = false;
     Language lang = Settings.LanguageSelected;
     var form = new PreferencesForm();
@@ -108,11 +78,9 @@ partial class PreferencesForm
       form.ShowDialog();
     }
     MainForm.Instance.InitializeDialogsDirectory();
-    bool result = Reseted
-               || lang != Settings.LanguageSelected;
+    bool result = Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
     Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
     form.Dispose();
-    form = null;
     return result;
   }
 
