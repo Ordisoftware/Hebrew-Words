@@ -24,7 +24,6 @@ partial class MainForm
     Globals.ChronoRendering.Restart();
     try
     {
-      //PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelViewVerses.Visible = false;
       while ( PanelViewVerses.Controls.Count > 0 )
         PanelViewVerses.Controls[0].Dispose();

@@ -105,10 +105,17 @@ static class SettingsHelper
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
-      if ( settings.BackupPath.Length == 0 )
+      if ( settings.ExportFolder.Length == 0 )
       {
-        Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
-        settings.BackupPath = Globals.UserDocumentsFolderPath;
+        string path = Globals.UserDocumentsFolderPath;
+        Directory.CreateDirectory(path);
+        settings.ExportFolder = path;
+      }
+      if ( settings.BackupFolder.Length == 0 )
+      {
+        string path = Path.Combine(Globals.UserDocumentsFolderPath, "Backup");
+        Directory.CreateDirectory(path);
+        settings.BackupFolder = path;
       }
     }
     finally
@@ -179,9 +186,7 @@ static class SettingsHelper
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
-    string directory = settings.ExportFolder;
-    directory.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-    return directory;
+    return settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath); ;
   }
 
   /// <summary>
@@ -189,9 +194,9 @@ static class SettingsHelper
   /// </summary>
   static internal string GetBackupDirectory(this Settings settings)
   {
-    string directory = settings.BackupFolder;
-    directory.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-    return directory;
+    string diectory = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    Directory.CreateDirectory(diectory);
+    return diectory;
   }
 
 }

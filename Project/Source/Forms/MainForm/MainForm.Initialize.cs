@@ -225,11 +225,10 @@ partial class MainForm : Form
   /// </summary>
   public void InitializeDialogsDirectory()
   {
-    string directory = Settings.GetExportDirectory(); // TODO use it
-    OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogRTF.InitialDirectory = Settings.BackupPath;
+    OpenFileDialogDB.InitialDirectory = Settings.GetBackupDirectory();
+    SaveFileDialogDB.InitialDirectory = Settings.GetBackupDirectory();
+    SaveFileDialogMSWord.InitialDirectory = Settings.GetExportDirectory();
+    SaveFileDialogRTF.InitialDirectory = Settings.GetExportDirectory();
   }
 
   /// <summary>

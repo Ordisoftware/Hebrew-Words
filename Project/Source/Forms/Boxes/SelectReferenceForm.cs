@@ -1,4 +1,3 @@
-using Equin.ApplicationFramework;
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
@@ -14,6 +13,8 @@ using Equin.ApplicationFramework;
 /// <created> 2019-09 </created>
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
+
+using Equin.ApplicationFramework;
 
 partial class SelectReferenceForm : Form
 {

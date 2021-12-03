@@ -27,18 +27,19 @@ partial class PreferencesForm
     Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
     Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;
     Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
+    Settings.CalculatorExe = EditCalculatorPath.Text;
     Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
     Settings.AutoOpenExportedFile = EditAutoOpenExportedFile.Checked;
     Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
     Settings.CheckUpdateAtStartupDaysInterval = (int)EditCheckUpdateAtStartupInterval.Value;
     Settings.TraceEnabled = EditLogEnabled.Checked;
     Settings.ExportFolder = EditExportFolder.Text;
+    Settings.BackupFolder = EditBackupFolder.Text;
     Settings.ApplicationVolume = EditVolume.Value;
     Settings.UsageStatisticsEnabled = EditUsageStatisticsEnabled.Checked;
     Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
     Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
     Settings.WebLinksMenuEnabled = EditWebLinksMenuEnabled.Checked;
-
     Program.Settings.SearchOnlineURL = EditOnlineSearch.Text;
     Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
     Program.Settings.BackupCount = (int)EditBackupCount.Value;
@@ -49,22 +50,20 @@ partial class PreferencesForm
     Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
     Program.Settings.FoundReferencesViewable = (int)EditMaxRefCount.Value;
     Program.Settings.FoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
-    if ( SelectOpenHebrewLetters.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
-    if ( SelectOpenOnlineSearch.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
-    if ( SelectOpenTranslated.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
-    if ( SelectOpenNothing.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Nothing;
+    // Word click action
+    if ( SelectOpenHebrewLetters.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
+    if ( SelectOpenOnlineSearch.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
+    if ( SelectOpenTranslated.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
+    if ( SelectOpenNothing.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Nothing;
+    // Timer auto-save
     MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
     if ( MainForm.Instance.TimerAutoSave.Enabled )
       MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
+    // End
     Program.Settings.Store();
     UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
                       || WordControlWidthPrevious != (int)EditWordControlWidth.Value
                       || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
-
   }
 
 }

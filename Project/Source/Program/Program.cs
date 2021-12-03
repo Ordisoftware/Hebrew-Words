@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using System.IO.Pipes;
@@ -199,7 +199,7 @@ static partial class Program
       }
       else
         update(MainForm.Instance);
-      //new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;

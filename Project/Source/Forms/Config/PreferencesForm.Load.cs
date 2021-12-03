@@ -27,37 +27,35 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditVacuumAtStartup.Checked = Settings.VacuumAtStartup);
     SystemManager.TryCatch(() => EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval);
     SystemManager.TryCatch(() => EditHebrewLettersPath.Text = Settings.HebrewLettersExe);
+    SystemManager.TryCatch(() => EditCalculatorPath.Text = Settings.CalculatorExe);
     SystemManager.TryCatch(() => EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder);
     SystemManager.TryCatch(() => EditAutoOpenExportedFile.Checked = Settings.AutoOpenExportedFile);
     SystemManager.TryCatch(() => EditCheckUpdateAtStartup.Checked = Settings.CheckUpdateAtStartup);
     SystemManager.TryCatch(() => EditCheckUpdateAtStartupInterval.Value = Settings.CheckUpdateAtStartupDaysInterval);
     SystemManager.TryCatch(() => EditLogEnabled.Checked = Settings.TraceEnabled);
     SystemManager.TryCatch(() => EditExportFolder.Text = Settings.ExportFolder);
+    SystemManager.TryCatch(() => EditBackupFolder.Text = Settings.BackupFolder);
     SystemManager.TryCatch(() => EditVolume.Value = Settings.ApplicationVolume);
     SystemManager.TryCatch(() => EditUsageStatisticsEnabled.Checked = Settings.UsageStatisticsEnabled);
     SystemManager.TryCatch(() => EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled);
     SystemManager.TryCatch(() => EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate);
     SystemManager.TryCatch(() => EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled);
-    // Special
-    SystemManager.TryCatch(() => LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString());
-    SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
-    // System
-    EditLogEnabled.Enabled = DebugManager.Enabled;
-
-    EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
-    EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL;
-    EditBackupCount.Value = Program.Settings.BackupCount;
-    EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
-    EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount;
-    EditWordControlWidth.Value = Program.Settings.WordControlWidth;
-    EditBookmarksCount.Value = Program.Settings.BookmarksCount;
-    EditHistoryCount.Value = Program.Settings.HistoryCount;
-    EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable;
-    EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog;
+    SystemManager.TryCatch(() => EditOnlineSearch.Text = Program.Settings.SearchOnlineURL);
+    SystemManager.TryCatch(() => EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL);
+    SystemManager.TryCatch(() => EditBackupCount.Value = Program.Settings.BackupCount);
+    SystemManager.TryCatch(() => EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay);
+    SystemManager.TryCatch(() => EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
+    SystemManager.TryCatch(() => EditWordControlWidth.Value = Program.Settings.WordControlWidth);
+    SystemManager.TryCatch(() => EditBookmarksCount.Value = Program.Settings.BookmarksCount);
+    SystemManager.TryCatch(() => EditHistoryCount.Value = Program.Settings.HistoryCount);
+    SystemManager.TryCatch(() => EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable);
+    SystemManager.TryCatch(() => EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog);
+    // Word click action
     SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
     SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
     SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
     SelectOpenNothing.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Nothing;
+    //
     if ( First )
     {
       CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
@@ -65,7 +63,11 @@ partial class PreferencesForm
       MaxrefCountPrevious = (int)EditMaxRefCount.Value;
       First = false;
     }
-
+    // Special
+    SystemManager.TryCatch(() => LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString());
+    SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
+    // System
+    EditLogEnabled.Enabled = DebugManager.Enabled;
   }
 
 }

@@ -1,5 +1,4 @@
-﻿using Equin.ApplicationFramework;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -14,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
+
+using Equin.ApplicationFramework;
 
 partial class MainForm
 {

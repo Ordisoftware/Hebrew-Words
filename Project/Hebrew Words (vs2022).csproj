@@ -576,12 +576,6 @@
     <Compile Include="Source\Forms\MainForm\UI\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesFormOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesFormOld.designer.cs">
-      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Forms\Controls\StatControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -771,14 +765,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\PreferencesFormOld.fr.resx">
-      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\PreferencesFormOld.resx">
-      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Controls\StatControl.fr.resx">

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -30,21 +30,7 @@ static partial class AppTranslations
   {
     [Language.EN] = "Ctrl + Tab : Next view" + Globals.NL +
                     "Shift + Ctrl + Tab : Previous view" + Globals.NL +
-                    "F1 : Analysis view" + Globals.NL +
-                    "F2 : Settings view" + Globals.NL +
-                    "F3 : Notebook view" + Globals.NL +
-                    "F5 (or Ctrl + F) : Search" + Globals.NL +
-                    "Ctrl + Home : First letter" + Globals.NL +
-                    "Ctrl + End : Last letter" + Globals.NL +
-                    "Ctrl + PageUp : Previous letter" + Globals.NL +
-                    "Ctrl + PageDn : Next letter" + Globals.NL +
-                    "Ctrl + Ins (or +) : Add meaning" + Globals.NL +
-                    "Ctrl + Del (or -) : Delete meaning" + Globals.NL +
-                    "Ctrl + S : Save changes" + Globals.NL +
-                    "Ctrl + Back : Cancel changes" + Globals.NL +
-                    "Ctrl + M : Lettriq analysis method notice" + Globals.NL +
                     "Ctrl + G : Grammar guide" + Globals.NL +
-                    "Alt + N : New window" + Globals.NL +
                     "Alt + T : Tools menu" + Globals.NL +
                     "Alt + L : Web links menu" + Globals.NL +
                     "Alt + I : Information menu" + Globals.NL +
@@ -58,21 +44,7 @@ static partial class AppTranslations
 
     [Language.FR] = "Ctrl + Tab : Vue suivante" + Globals.NL +
                     "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
-                    "F1 : Vue d'analyse" + Globals.NL +
-                    "F2 : Vue des paramètres" + Globals.NL +
-                    "F3 : Vue du carnet" + Globals.NL +
-                    "F5 (ou Ctrl + F) : Recherche" + Globals.NL +
-                    "Ctrl + Début : Première lettre" + Globals.NL +
-                    "Ctrl + Fin : Dernière lettre" + Globals.NL +
-                    "Ctrl + PagePrec : Letter précédente" + Globals.NL +
-                    "Ctrl + PageSuiv : Letter suivante" + Globals.NL +
-                    "Ctrl + Ins (ou +) : Ajoute une signification" + Globals.NL +
-                    "Ctrl + Suppr (ou -) : Efface une signification" + Globals.NL +
-                    "Ctrl + S : Sauve les changements" + Globals.NL +
-                    "Ctrl + Back : Annule les changements" + Globals.NL +
-                    "Ctrl + M : Notice de la méthode d'analyse lettrique" + Globals.NL +
                     "Ctrl + G : Guide de grammaire" + Globals.NL +
-                    "Alt + N : Nouvelle fenêtre" + Globals.NL +
                     "Alt + T : Menu des outils" + Globals.NL +
                     "Alt + L : Menu des liens web" + Globals.NL +
                     "Alt + I : Menu des informations" + Globals.NL +

@@ -398,7 +398,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>195, 6</value>
   </data>
   <data name="ActionViewBooksTranslation.Text" xml:space="preserve">
-    <value>Editer les informations des livres</value>
+    <value>Tableau des livres</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
@@ -550,5 +550,20 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
     <value>Fichiers Rich Text Format (*.rtf)|*.rtf</value>
+  </data>
+  <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
+    <value>Boites de dialogues avancées</value>
+  </data>
+  <data name="ActionOpenCalculator.Text" xml:space="preserve">
+    <value>Calculatrice</value>
+  </data>
+  <data name="EditSoundsEnabled.Text" xml:space="preserve">
+    <value>Activer les sons</value>
+  </data>
+  <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
+    <value>Notice des raccourcis clavier</value>
+  </data>
+  <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
+    <value>Boîtes de dialogue de réussite à la place des sons</value>
   </data>
 </root>

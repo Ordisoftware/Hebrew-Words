@@ -204,6 +204,8 @@ partial class MainForm : Form
     InitializeDialogsDirectory();
     UpdateBookmarks();
     UpdateHistory();
+    InitializeSpecialMenus();
+    InitializeDialogsDirectory();
     if ( refresh )
     {
       Refresh();
@@ -383,6 +385,16 @@ partial class MainForm : Form
   {
     HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
                                   Settings.HebrewLettersExe);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenCalculator for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenCalculator_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Settings.CalculatorExe);
   }
 
   /// <summary>
@@ -642,7 +654,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenBackupPath_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Settings.BackupPath);
+    SystemManager.RunShell(Program.Settings.GetBackupDirectory());
   }
 
   /// <summary>
@@ -652,7 +664,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenExportFolder_Click(object sender, EventArgs e)
   {
-    //SystemManager.RunShell(Settings.ExportPath);
+    SystemManager.RunShell(Settings.GetExportDirectory());
   }
 
   /// <summary>

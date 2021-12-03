@@ -34,6 +34,8 @@ partial class MainForm
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
   }
 
+  // TODO update keys
+
   /// <summary>
   /// Process the command key.
   /// </summary>

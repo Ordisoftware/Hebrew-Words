@@ -128,8 +128,8 @@
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -150,6 +150,7 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.sYSTEMSTATSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1023,8 +1024,8 @@
             this.ActionBackup,
             this.toolStripSeparator5,
             this.ActionVacuum,
-            this.toolStripSeparator2,
             this.ActionOpenBackupPath,
+            this.toolStripSeparator2,
             this.ActionOpenExportFolder});
       resources.ApplyResources(this.MenuDatabase, "MenuDatabase");
       this.MenuDatabase.Name = "MenuDatabase";
@@ -1059,16 +1060,16 @@
       this.ActionVacuum.Name = "ActionVacuum";
       this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
       // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-      // 
       // ActionOpenBackupPath
       // 
       resources.ApplyResources(this.ActionOpenBackupPath, "ActionOpenBackupPath");
       this.ActionOpenBackupPath.Name = "ActionOpenBackupPath";
       this.ActionOpenBackupPath.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionOpenExportFolder
       // 
@@ -1169,6 +1170,7 @@
             this.ActionShowGrammarGuide,
             this.toolStripSeparator13,
             this.ActionOpenHebrewLetters,
+            this.ActionOpenCalculator,
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.sYSTEMSTATSToolStripMenuItem});
@@ -1208,6 +1210,13 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
+      // 
+      // ActionOpenCalculator
+      // 
+      this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
+      this.ActionOpenCalculator.Name = "ActionOpenCalculator";
+      this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
       // 
       // toolStripSeparator16
       // 
@@ -1815,6 +1824,7 @@
     public ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashot;
     private ToolStripMenuItem sYSTEMSTATSToolStripMenuItem;
+    private ToolStripMenuItem ActionOpenCalculator;
   }
 }
 
