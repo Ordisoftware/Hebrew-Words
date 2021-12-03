@@ -80,6 +80,7 @@ partial class MainForm : Form
     this.InitDropDowns();
     DoBackupDB();
     LoadData();
+    SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( TimerAutoSave.Enabled )
       TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;

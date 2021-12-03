@@ -100,7 +100,7 @@ public partial class VerseRow : INotifyPropertyChanged
       str = Number.ToString("00");
     else
       str = Number.ToString();
-    if ( HasTranslation() ) str += $" - {GetTranslation()}";
+    if ( HasTranslation ) str += $" - {Translation}";
     return str;
   }
 

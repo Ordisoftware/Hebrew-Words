@@ -51,8 +51,8 @@ partial class ParashotForm : Form
 
   private void UpdateStats()
   {
-    //Words.ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-    //Words.ApplicationStatistics.UpdateDDParashotMemorySizeRequired = true;
+    Words.ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+    Words.ApplicationStatistics.UpdateDBParashotMemorySizeRequired = true;
   }
 
   private ParashotForm()
@@ -161,8 +161,10 @@ partial class ParashotForm : Form
 
   private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    string list = string.Join(Globals.NL, Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName)).Indent(4);
-    string msg = SysTranslations.DatabaseTableLocked.GetLang(HebrewDatabase.Instance.ParashotTableName, list, Timer.Interval / 1000);
+    var table = Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName);
+    string list = string.Join(Globals.NL, table).Indent(4);
+    string name = HebrewDatabase.Instance.ParashotTableName;
+    string msg = SysTranslations.DatabaseTableLocked.GetLang(name, list, Timer.Interval / 1000);
     DisplayManager.Show(msg);
   }
 
@@ -262,13 +264,11 @@ partial class ParashotForm : Form
     ActiveControl = DataGridView;
   }
 
-#pragma warning disable IDE0051 // Supprimer les membres privés non utilisés - For future usage
   private void DoExportTable(string filePath)
   {
     var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
     table.Export(filePath, Program.BoardExportTargets);
   }
-#pragma warning restore IDE0051 // Supprimer les membres privés non utilisés
 
   private void ActionReset_Click(object sender, EventArgs e)
   {

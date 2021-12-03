@@ -206,6 +206,9 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.SelectSearchTranslationIncludeComments = new System.Windows.Forms.RadioButton();
+      this.SelectSearchTranslationOnlyComments = new System.Windows.Forms.RadioButton();
+      this.SelectSearchTranslationOnlyTranslations = new System.Windows.Forms.RadioButton();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -580,6 +583,9 @@
       // 
       // SelectSearchTypeTranslation
       // 
+      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationOnlyComments);
+      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationOnlyTranslations);
+      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationIncludeComments);
       this.SelectSearchTypeTranslation.Controls.Add(this.LabelSearchTranslationHelp);
       this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
       resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
@@ -1585,6 +1591,27 @@
       this.VersesBindingSource.DataMember = "Verses";
       this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
       // 
+      // SelectSearchTranslationIncludeComments
+      // 
+      resources.ApplyResources(this.SelectSearchTranslationIncludeComments, "SelectSearchTranslationIncludeComments");
+      this.SelectSearchTranslationIncludeComments.Name = "SelectSearchTranslationIncludeComments";
+      this.SelectSearchTranslationIncludeComments.TabStop = true;
+      this.SelectSearchTranslationIncludeComments.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchTranslationOnlyComments
+      // 
+      resources.ApplyResources(this.SelectSearchTranslationOnlyComments, "SelectSearchTranslationOnlyComments");
+      this.SelectSearchTranslationOnlyComments.Name = "SelectSearchTranslationOnlyComments";
+      this.SelectSearchTranslationOnlyComments.TabStop = true;
+      this.SelectSearchTranslationOnlyComments.UseVisualStyleBackColor = true;
+      // 
+      // SelectSearchTranslationOnlyTranslations
+      // 
+      resources.ApplyResources(this.SelectSearchTranslationOnlyTranslations, "SelectSearchTranslationOnlyTranslations");
+      this.SelectSearchTranslationOnlyTranslations.Name = "SelectSearchTranslationOnlyTranslations";
+      this.SelectSearchTranslationOnlyTranslations.TabStop = true;
+      this.SelectSearchTranslationOnlyTranslations.UseVisualStyleBackColor = true;
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1816,6 +1843,9 @@
     public ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashot;
     private ToolStripMenuItem ActionOpenCalculator;
+    private RadioButton SelectSearchTranslationIncludeComments;
+    private RadioButton SelectSearchTranslationOnlyComments;
+    private RadioButton SelectSearchTranslationOnlyTranslations;
   }
 }
 

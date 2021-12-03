@@ -25,7 +25,7 @@ partial class MainForm
     foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
     {
       string str = verse.Number + ". ";
-      EditTranslations.SelectedText = str + verse.GetTranslation();
+      EditTranslations.SelectedText = str + verse.Translation;
       if ( verse.Comment.Length > 0 )
       {
         EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;

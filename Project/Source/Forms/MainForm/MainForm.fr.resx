@@ -566,4 +566,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
     <value>Boîtes de dialogue de réussite à la place des sons</value>
   </data>
+  <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
+    <value>Inclure les commentaires</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
+    <value>Seulement les commentaires</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
+    <value>Seulement les translations</value>
+  </data>
 </root>

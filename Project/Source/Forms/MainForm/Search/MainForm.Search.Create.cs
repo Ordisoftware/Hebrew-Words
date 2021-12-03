@@ -21,64 +21,44 @@ partial class MainForm
   {
     ClearSearchResults();
     if ( SelectSearchInBook.SelectedItem == null ) return;
-    bool checkWordHebrew(WordRow row)
-    {
-      return row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
-    }
-    bool checkWordTranslation(WordRow row)
-    {
-      var str = row.Translation.ToLower().RemoveDiacritics();
-      if ( !SearchWord1.Contains(",") )
-        return str.Contains(SearchWord1);
-      else
-      {
-        foreach ( string item in SearchWord1.Split(',') )
-        {
-          var exp = item.Trim();
-          if ( exp.Length >= 2 && str.Contains(exp) )
-            return true;
-        }
-        return false;
-      }
-    }
-    bool checkTranslatedAll(VerseRow verse)
-    {
-      return verse.HasTranslation();
-    }
-    bool checkTranslatedAllFully(VerseRow verse)
-    {
-      return verse.IsFullyTranslated();
-    }
-    bool checkTranslatedAllPartially(VerseRow verse)
-    {
-      return verse.IsPartiallyTranslated();
-    }
-    bool checkTranslatedAllUntranslated(VerseRow verse)
-    {
-      return !verse.HasTranslation();
-    }
+    //
+    bool checkWordHebrew(WordRow row) => row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
+    bool checkTranslatedAll(VerseRow verse) => verse.HasTranslation;
+    bool checkTranslatedAllFully(VerseRow verse) => verse.IsFullyTranslated;
+    bool checkTranslatedAllPartially(VerseRow verse) => verse.IsPartiallyTranslated;
+    bool checkTranslatedAllUntranslated(VerseRow verse) => !verse.HasTranslation;
+    bool checkWordTranslation(WordRow row) => checkWordNoHebrew(row.Translation.ToLower().RemoveDiacritics());
+    bool checkVerseComment(VerseRow row) => checkWordNoHebrew(row.Comment.ToLower().RemoveDiacritics());
+    bool checkWordNoHebrew(string str)
+      => SearchWord1.Contains(",")
+         ? SearchWord1.Split(',').Select(item => item.Trim()).Any(item => item.Length >= 2 && str.Contains(item))
+         : str.Contains(SearchWord1);
+    //
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {
       SearchWord1 = EditLetters.TextBox.Text;
       SearchWord2 = HebrewAlphabet.SetFinal(SearchWord1, true);
       CheckWord = checkWordHebrew;
     }
+    else
     if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
     {
       SearchWord1 = EditSearchTranslation.Text.ToLower().RemoveDiacritics();
+      // TODO assign depending on radiogroup
       CheckWord = checkWordTranslation;
+      CheckVerse = checkVerseComment;
     }
+    else
     if ( SelectSearchType.SelectedTab == SelectSearchTypeVerses )
     {
-      if ( SelectSearchRequestAllTranslated.Checked )
-        CheckVerse = checkTranslatedAll;
-      if ( SelectSearchRequestAllFullyTranslated.Checked )
-        CheckVerse = checkTranslatedAllFully;
-      if ( SelectSearchRequestAllPartiallyTranslated.Checked )
-        CheckVerse = checkTranslatedAllPartially;
-      if ( SelectSearchRequestAllUntranslated.Checked )
-        CheckVerse = checkTranslatedAllUntranslated;
+      if ( SelectSearchRequestAllTranslated.Checked ) CheckVerse = checkTranslatedAll;
+      if ( SelectSearchRequestAllFullyTranslated.Checked ) CheckVerse = checkTranslatedAllFully;
+      if ( SelectSearchRequestAllPartiallyTranslated.Checked ) CheckVerse = checkTranslatedAllPartially;
+      if ( SelectSearchRequestAllUntranslated.Checked ) CheckVerse = checkTranslatedAllUntranslated;
     }
+    else
+      throw new AdvancedNotImplementedException(SelectSearchType.SelectedTab.Text);
+    //
     int bookSelected = ( (BookRow)SelectSearchInBook.SelectedItem ).Number;
     bool isBookSelected(int index)
     {
@@ -87,24 +67,24 @@ partial class MainForm
           || ( EditSearchInKetouvim.Checked && index >= BooksBounds.Ketouvim.Min )
           || ( SelectSearchInBook.Enabled && index == bookSelected );
     }
-    if ( SearchWord1.Length > 0 && SearchWord1.Length >= 2 && CheckVerse == null )
-    {
-      SearchResults = from book in ApplicationDatabase.Instance.Books
-                      from chapter in book.Chapters
-                      from verse in chapter.Verses
-                      from word in verse.Words
-                      where isBookSelected(book.Number) && CheckWord(word)
-                      select new ReferenceItem(book, chapter, verse);
-    }
+    //
+    IEnumerable<ReferenceItem> createSearch(Func<VerseRow, WordRow, bool> check)
+      => from book in ApplicationDatabase.Instance.Books
+         from chapter in book.Chapters
+         from verse in chapter.Verses
+         from word in verse.Words
+         where isBookSelected(book.Number) && check(verse, word)
+         select new ReferenceItem(book, chapter, verse);
+    //
+    if ( SearchWord1.Length >= 2 && CheckWord != null && CheckVerse != null )
+      SearchResults = createSearch((verse, word) => CheckWord(word) || CheckVerse(verse));
+    else
+    if ( SearchWord1.Length >= 2 && CheckVerse == null )
+      SearchResults = createSearch((_, word) => CheckWord(word));
     else
     if ( CheckVerse != null )
-    {
-      SearchResults = from book in ApplicationDatabase.Instance.Books
-                      from chapter in book.Chapters
-                      from verse in chapter.Verses
-                      where isBookSelected(book.Number) && CheckVerse(verse)
-                      select new ReferenceItem(book, chapter, verse);
-    }
+      SearchResults = createSearch((verse, _) => CheckVerse(verse));
+    //
     if ( SearchResults != null )
     {
       SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
@@ -134,6 +114,7 @@ partial class MainForm
           }
       }
     }
+    //
     UpdatePagingCount();
     RenderSearch();
   }

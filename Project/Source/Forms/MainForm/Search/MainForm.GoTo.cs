@@ -79,7 +79,7 @@ partial class MainForm
       RenderAll();
     if ( reference.Verse == null )
     {
-      var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation());
+      var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation);
       reference.Verse = found ?? reference.Chapter?.Verses[0];
     }
   Label:

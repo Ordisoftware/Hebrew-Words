@@ -46,7 +46,7 @@ partial class BibleStatisticsForm : Form
       InitializeCounters();
       InitializeMiddle();
       InitializeOccurences();
-      SelectBook.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+      SelectBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
       SelectBook.DisplayMember = "Name";
     }
     finally

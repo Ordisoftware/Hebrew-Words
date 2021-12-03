@@ -752,14 +752,14 @@ partial class MainForm : Form
     {
       var reference = (ReferenceItem)control.Tag;
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
     else
     if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
       var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.GetTranslation()}");
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
   }
 

@@ -17,35 +17,37 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseRow
 {
 
-  public string GetTranslation()
-  {
-    var result = new StringBuilder();
-    foreach ( var str in Words.Select(word => word.Translation.Trim()) )
-      result.Append(str.Length > 0 ? str + " " : "[...] ");
-    return result.ToString().Trim();
-  }
+  public bool HasTranslation
+    => Words.Any(word => word.Translation.Trim().Length > 0);
 
-  public bool HasTranslation()
-  {
-    return Words.Any(word => word.Translation.Trim().Length > 0);
-  }
+  public bool IsFullyTranslated
+    => Words.All(word => word.Translation.Trim().Length > 0);
 
-  public bool IsFullyTranslated()
+  public bool IsPartiallyTranslated
   {
-    return Words.All(word => word.Translation.Trim().Length > 0);
-  }
-
-  public bool IsPartiallyTranslated()
-  {
-    bool? haveEmpty = null;
-    bool? haveTranslation = null;
-    foreach ( int length in Words.Select(word => word.Translation.Trim().Length) )
+    get
     {
-      if ( length == 0 ) haveEmpty = true;
-      if ( length > 0 ) haveTranslation = true;
-      if ( haveEmpty == true && haveTranslation == true ) return true;
+      bool? haveEmpty = null;
+      bool? haveTranslation = null;
+      foreach ( int length in Words.Select(word => word.Translation.Trim().Length) )
+      {
+        if ( length == 0 ) haveEmpty = true;
+        if ( length > 0 ) haveTranslation = true;
+        if ( haveEmpty == true && haveTranslation == true ) return true;
+      }
+      return false;
     }
-    return false;
+  }
+
+  public string Translation
+  {
+    get
+    {
+      var result = new StringBuilder();
+      foreach ( var str in Words.Select(word => word.Translation.Trim()) )
+        result.Append(str.Length > 0 ? str + " " : "[...] ");
+      return result.ToString().Trim();
+    }
   }
 
 }
