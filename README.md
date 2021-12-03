@@ -170,11 +170,27 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add "Add a bookmark" menu item.
 - Add "Sort bookmarks" menu item.
 - Add auto sort bookmarks option.
+- Add book name translation text box in the navigation panel.
+- Add chapter title and memo text boxes in the navigation panel.
+- Add buttons to edit book and chapter memos in the navigation panel.
+- Add options to filter the books in the go to reference form.
 - Add new input panel from Hebrew Letters v4+.
 - Add new advanced text-box for future undo/redo.
-- Add optimize database menu.
 - Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
+- Add optimize database menu.
+- Add usage statistics form in tools menu.
+- Add keyboard shortcuts notice in windows settings menu.
+- Add sounds to clipboard actions.
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable message boxes sounds.
+- Add option to enable or disable success dialogs.
+- Add option to set application's volume.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to auto optimize database at startup once a week.
+- Add show usage statistics from about box.
+- Add check update from about box.
 - Change web check update to use GitHub as an alternative if author's website is down.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
@@ -208,27 +224,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 > TO CHECK
 - Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add open book menu item in the edit books information form.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add option to enable debugger.
-- Add option to set automatic web check update frequency.
-- Add option to auto optimize database at startup once a week.
-- Add show usage statistics from about box.
-- Add check update from about box.
 
 > IN PROGRESS
-- Add book name translation text box in the navigation panel.
-- Add chapter title and memo text boxes in the navigation panel.
-- Add buttons to edit book and chapter memos in the navigation panel.
-- Add options to filter the books in the go to reference form.
-- Add keyboard shortcuts notice in windows settings menu.
-- Add sounds to clipboard actions.
-- Add option to enable or disable the web links menu.
-- Add option to enable or disable message boxes sounds.
-- Add option to enable or disable success dialogs.
-- Add option to set application's volume.
-- Add usage statistics form in tools menu.
 - Change selection controls in the go to reference form.
 - Improve open Hebrew Letters for the current word when focused on the verses view.
 - Improve search to find words in chapters translated title.
