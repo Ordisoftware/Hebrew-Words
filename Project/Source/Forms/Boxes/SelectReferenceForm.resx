@@ -147,6 +147,9 @@
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 5</value>
   </data>
@@ -175,7 +178,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 258</value>
+    <value>0, 260</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>474, 35</value>
@@ -197,6 +200,9 @@
   </data>
   <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="LabelVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 174</value>
@@ -252,6 +258,9 @@
   <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 59</value>
   </data>
@@ -303,6 +312,9 @@
   <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>195, 17</value>
+  </metadata>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 139</value>
   </data>
@@ -324,6 +336,9 @@
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>365, 19</value>
+  </metadata>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 219</value>
   </data>
@@ -475,16 +490,31 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>474, 293</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>474, 295</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Find reference</value>
+  </data>
+  <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
+    <value>ChaptersBindingSource</value>
+  </data>
+  <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VersesBindingSource.Name" xml:space="preserve">
+    <value>VersesBindingSource</value>
+  </data>
+  <data name="&gt;&gt;VersesBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SelectReferenceForm</value>

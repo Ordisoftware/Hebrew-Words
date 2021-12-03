@@ -76,7 +76,6 @@ partial class MainForm : Form
     {
       Globals.ChronoLoadData.Stop();
       Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-      //UpdateCurrentReference(true);
     }
   }
 

@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectReferenceForm));
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
@@ -48,13 +49,19 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.LabelBook = new System.Windows.Forms.Label();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectVerse = new System.Windows.Forms.ComboBox();
+      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
       this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.textBox3 = new System.Windows.Forms.TextBox();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -90,6 +97,7 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // SelectBook
       // 
+      this.SelectBook.DataSource = this.BooksBindingSource;
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectBook.DropDownWidth = 450;
       this.SelectBook.FormattingEnabled = true;
@@ -104,6 +112,7 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // SelectChapter
       // 
+      this.SelectChapter.DataSource = this.ChaptersBindingSource;
       this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectChapter.DropDownWidth = 450;
       this.SelectChapter.FormattingEnabled = true;
@@ -111,27 +120,38 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectChapter.Name = "SelectChapter";
       this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
+      // ChaptersBindingSource
+      // 
+      this.ChaptersBindingSource.DataMember = "Chapters";
+      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
       // SelectVerse
       // 
+      this.SelectVerse.DataSource = this.VersesBindingSource;
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectVerse.DropDownWidth = 450;
       this.SelectVerse.FormattingEnabled = true;
       resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
       // 
+      // VersesBindingSource
+      // 
+      this.VersesBindingSource.DataMember = "Verses";
+      this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
+      // 
       // EditFilterChaptersWithTitle
       // 
       resources.ApplyResources(this.EditFilterChaptersWithTitle, "EditFilterChaptersWithTitle");
       this.EditFilterChaptersWithTitle.Name = "EditFilterChaptersWithTitle";
       this.EditFilterChaptersWithTitle.UseVisualStyleBackColor = true;
-      this.EditFilterChaptersWithTitle.CheckedChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
+      this.EditFilterChaptersWithTitle.CheckedChanged += new System.EventHandler(this.EditFilterChaptersWithTitle_CheckedChanged);
       // 
       // EditFilterVersesTranslated
       // 
       resources.ApplyResources(this.EditFilterVersesTranslated, "EditFilterVersesTranslated");
       this.EditFilterVersesTranslated.Name = "EditFilterVersesTranslated";
       this.EditFilterVersesTranslated.UseVisualStyleBackColor = true;
-      this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.EditFilter_SelectedIndexChanged);
+      this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.EditFilterVersesTranslated_CheckedChanged);
       // 
       // textBox1
       // 
@@ -147,6 +167,10 @@ namespace Ordisoftware.Hebrew.Words
       // 
       resources.ApplyResources(this.textBox3, "textBox3");
       this.textBox3.Name = "textBox3";
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
       // 
       // SelectReferenceForm
       // 
@@ -172,6 +196,9 @@ namespace Ordisoftware.Hebrew.Words
       this.Name = "SelectReferenceForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -208,6 +235,9 @@ namespace Ordisoftware.Hebrew.Words
     private TextBox textBox1;
     private TextBox textBox2;
     private TextBox textBox3;
+    private BindingSource BooksBindingSource;
+    private BindingSource ChaptersBindingSource;
+    private BindingSource VersesBindingSource;
   }
 
 }

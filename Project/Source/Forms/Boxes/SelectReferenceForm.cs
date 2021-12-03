@@ -32,118 +32,71 @@ partial class SelectReferenceForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    RefreshBooks();
+    MainForm.Instance.Cursor = Cursors.WaitCursor;
+    try
+    {
+      CreateDataSource();
+    }
+    finally
+    {
+      MainForm.Instance.Cursor = Cursors.Default;
+    }
+  }
+
+  private void EditFilterChaptersWithTitle_CheckedChanged(object sender, EventArgs e)
+  {
+    Cursor = Cursors.WaitCursor;
+    try
+    {
+      CreateDataSource();
+    }
+    finally
+    {
+      Cursor = Cursors.Default;
+    }
+  }
+
+  private void EditFilterVersesTranslated_CheckedChanged(object sender, EventArgs e)
+  {
+    Cursor = Cursors.WaitCursor;
+    try
+    {
+      CreateDataSource();
+    }
+    finally
+    {
+      Cursor = Cursors.Default;
+    }
+  }
+
+  private void CreateDataSource()
+  {
+    var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
+    if ( EditFilterChaptersWithTitle.Checked )
+      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
+    if ( EditFilterVersesTranslated.Checked )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
+    SelectBook.DataSource = new BindingListView<BookRow>(books.ToList());
   }
 
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    RefreshChapters();
+    string id = ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.ID ?? string.Empty;
+    var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
+    if ( EditFilterChaptersWithTitle.Checked )
+      chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
+    if ( EditFilterVersesTranslated.Checked )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+    SelectChapter.DataSource = new BindingListView<ChapterRow>(chapters.ToList());
   }
 
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    RefreshVerses();
-  }
-
-  private void EditFilter_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    RefreshBooks();
-  }
-
-  private void RefreshBooks()
-  {
-    if ( Mutex ) return;
-    Mutex = true;
-    try
-    {
-      //SelectBook.Items.Clear();
-      //foreach ( var book in ApplicationDatabase.Instance.Books )
-      //{
-      //  bool selected = false;
-      //  foreach ( var chapter in book.Chapters )
-      //    if ( !EditFilterChaptersWithTitle.Checked || chapter.Title.Length > 0 )
-      //      foreach ( var verse in chapter.Verses )
-      //        if ( !EditFilterVersesTranslated.Checked || verse.HasTranslation() )
-      //          selected = true;
-      //  if ( selected )
-      //    SelectBook.Items.Add(new BookItem(book));
-      //}
-      //if ( SelectBook.Items.Count > 0 )
-      //{
-      //  SelectBook.Enabled = true;
-      //  SelectBook.SelectedIndex = 0;
-      //}
-      //else
-      //  SelectBook.Enabled = false;
-    }
-    finally
-    {
-      Mutex = false;
-    }
-    RefreshChapters();
-  }
-
-  private bool Mutex;
-
-  private void RefreshChapters()
-  {
-    if ( Mutex ) return;
-    Mutex = true;
-    try
-    {
-      //SelectChapter.Items.Clear();
-      //SelectVerse.Items.Clear();
-      //if ( SelectBook.SelectedItem != null )
-      //{
-      //  var book = ( (BookItem)SelectBook.SelectedItem ).Book;
-      //  var list = (IEnumerable<ChapterRow>)book.Chapters;
-      //  if ( EditFilterChaptersWithTitle.Checked )
-      //    list = list.Where(chapter => chapter.Title.Length > 0);
-      //  if ( EditFilterVersesTranslated.Checked )
-      //    list = list.Where(chapter => chapter.Verses.Any(verse => verse.HasTranslation()));
-      //  foreach ( var chapter in list )
-      //    SelectChapter.Items.Add(new ChapterItem(chapter));
-      //}
-      //if ( SelectChapter.Items.Count > 0 )
-      //{
-      //  SelectChapter.Enabled = true;
-      //  SelectChapter.SelectedIndex = 0;
-      //}
-      //else
-      //  SelectChapter.Enabled = false;
-    }
-    finally
-    {
-      Mutex = false;
-    }
-    RefreshVerses();
-  }
-
-  private void RefreshVerses()
-  {
-    if ( Mutex ) return;
-    Mutex = true;
-    try
-    {
-      //SelectVerse.Items.Clear();
-      //if ( SelectChapter.SelectedItem != null )
-      //{
-      //  var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-      //  foreach ( VerseRow verse in chapter.Verses )
-      //    SelectVerse.Items.Add(new VerseItem(verse));
-      //}
-      //if ( SelectVerse.Items.Count > 0 )
-      //{
-      //  SelectVerse.Enabled = true;
-      //  SelectVerse.SelectedIndex = 0;
-      //}
-      //else
-      //  SelectVerse.Enabled = false;
-    }
-    finally
-    {
-      Mutex = false;
-    }
+    string id = ( SelectChapter.SelectedItem as ObjectView<ChapterRow> )?.Object.ID ?? string.Empty;
+    var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
+    if ( EditFilterVersesTranslated.Checked )
+      verses = verses.Where(v => v.HasTranslation);
+    SelectVerse.DataSource = new BindingListView<VerseRow>(verses.ToList());
   }
 
 }
