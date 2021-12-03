@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Words
 {
-  partial class StatisticsForm
+  partial class BibleStatisticsForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibleStatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
       this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();

@@ -1065,5 +1065,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["WindowsDoubleBufferingEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkRendering {
+            get {
+                return ((long)(this["BenchmarkRendering"]));
+            }
+            set {
+                this["BenchmarkRendering"] = value;
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ partial class MainForm
   {
     if ( IsRendering ) return;
     IsRendering = true;
+    Globals.ChronoRendering.Restart();
     try
     {
       //PanelViewVerses.AutoScrollPosition = new Point(0, 0);
@@ -156,6 +157,8 @@ partial class MainForm
       PanelViewVerses.Visible = true;
       LabelProgress.Text = "";
       SetFormDisabled(false);
+      Globals.ChronoRendering.Stop();
+      Settings.BenchmarkRendering = Globals.ChronoRendering.ElapsedMilliseconds;
     }
   }
 

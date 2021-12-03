@@ -410,6 +410,12 @@
     <Compile Include="Source\Forms\Boxes\ParashotForm.designer.cs">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\StatisticsForm.designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,8 @@
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\System\ApplicationStatistics.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.cs" />
     <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
@@ -563,11 +571,11 @@
     </Compile>
     <Compile Include="Source\Program\Program.Vars.cs" />
     <Compile Include="Source\Program\Program.cs" />
-    <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
+    <Compile Include="Source\Forms\Boxes\BibleStatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\StatisticsForm.Designer.cs">
-      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\BibleStatisticsForm.Designer.cs">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.cs">
       <SubType>Form</SubType>
@@ -671,6 +679,12 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ParashotForm.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -739,11 +753,11 @@
     <EmbeddedResource Include="Source\Forms\Controls\StatControl.fr.resx">
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
-      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\BibleStatisticsForm.fr.resx">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
-      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\BibleStatisticsForm.resx">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Controls\StatControl.resx">
       <DependentUpon>StatControl.cs</DependentUpon>

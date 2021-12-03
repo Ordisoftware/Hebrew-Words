@@ -46,7 +46,7 @@ partial class MainForm : Form
     if ( Globals.IsExiting ) return;
     Settings.Retrieve();
     Program.UpdateLocalization();
-    //StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
+    StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
     Globals.ChronoStartingApp.Stop();
     var lastdone = Settings.CheckUpdateLastDone;
     bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
@@ -125,11 +125,18 @@ partial class MainForm : Form
       else
         GoTo(1, 1, 1, true);
     }
+    Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                           AppTranslations.NoticeKeyboardShortcuts,
+                                                           true, false, 340, 450, false, false);
+    Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
+    Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+    Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
     Globals.ChronoStartingApp.Stop();
     Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
+    SystemManager.TryCatch(Settings.Save);
+    SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
-    SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
   }
 
   /// <summary>
@@ -218,7 +225,7 @@ partial class MainForm : Form
   /// </summary>
   public void InitializeDialogsDirectory()
   {
-    // TODO use string directory = Settings.GetExportDirectory();
+    string directory = Settings.GetExportDirectory(); // TODO use it
     OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
     SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
     SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;

@@ -145,12 +145,14 @@
       this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.sYSTEMSTATSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripButton();
@@ -205,7 +207,6 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1170,7 +1171,8 @@
             this.toolStripSeparator13,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
-            this.ActionViewBibleStatistics});
+            this.ActionViewBibleStatistics,
+            this.sYSTEMSTATSToolStripMenuItem});
       this.MenuTools.Name = "MenuTools";
       this.MenuTools.Padding = new System.Windows.Forms.Padding(5);
       // 
@@ -1179,6 +1181,12 @@
       resources.ApplyResources(this.ActionViewBooksTranslation, "ActionViewBooksTranslation");
       this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
       this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
+      // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // toolStripSeparator6
       // 
@@ -1211,7 +1219,13 @@
       // 
       resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
       this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
-      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewStatistics_Click);
+      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
+      // 
+      // sYSTEMSTATSToolStripMenuItem
+      // 
+      this.sYSTEMSTATSToolStripMenuItem.Name = "sYSTEMSTATSToolStripMenuItem";
+      resources.ApplyResources(this.sYSTEMSTATSToolStripMenuItem, "sYSTEMSTATSToolStripMenuItem");
+      this.sYSTEMSTATSToolStripMenuItem.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionWebLinks
       // 
@@ -1580,12 +1594,6 @@
       this.VersesBindingSource.DataMember = "Verses";
       this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
       // 
-      // ActionViewParashot
-      // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1817,6 +1825,7 @@
     public ToolStripMenuItem EditESCtoExit;
     public ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashot;
+    private ToolStripMenuItem sYSTEMSTATSToolStripMenuItem;
   }
 }
 

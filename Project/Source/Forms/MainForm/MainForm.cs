@@ -251,7 +251,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
   {
-    Globals.NoticeKeyboardShortcutsForm.Popup();
+    Globals.NoticeKeyboardShortcutsForm?.Popup();
   }
 
   /// <summary>
@@ -386,14 +386,14 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewStatistics for click events.
+  /// Event handler. Called by ActionViewBibleStatistics for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewStatistics_Click(object sender, EventArgs e)
+  private void ActionViewBibleStatistics_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    var reference = StatisticsForm.Run();
+    var reference = BibleStatisticsForm.Run();
     if ( reference != null )
     {
       SetView(ViewMode.Verses);

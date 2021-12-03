@@ -1,5 +1,4 @@
-﻿using Equin.ApplicationFramework;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -12,10 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class StatisticsForm : Form
+using Equin.ApplicationFramework;
+
+partial class BibleStatisticsForm : Form
 {
 
   private sealed class BookStatistic
@@ -29,14 +30,14 @@ partial class StatisticsForm : Form
 
   static public ReferenceItem Run()
   {
-    var form = new StatisticsForm();
+    var form = new BibleStatisticsForm();
     form.ShowDialog();
     return form.Reference;
   }
 
   private ReferenceItem Reference;
 
-  private StatisticsForm()
+  private BibleStatisticsForm()
   {
     InitializeComponent();
     MainForm.Instance.SetFormDisabled(true);
@@ -45,11 +46,8 @@ partial class StatisticsForm : Form
       InitializeCounters();
       InitializeMiddle();
       InitializeOccurences();
-      SelectBook.DataSource = MainForm.Instance.BookRowBindingSource;
+      SelectBook.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
       SelectBook.DisplayMember = "Name";
-      //foreach ( var book in ApplicationDatabase.Instance.Books )
-      //  SelectBook.Items.Add(new BookItem(book));
-      //SelectBook.SelectedIndex = 0;
     }
     finally
     {

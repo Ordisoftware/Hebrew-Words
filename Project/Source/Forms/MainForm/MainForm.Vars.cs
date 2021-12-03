@@ -25,11 +25,6 @@ partial class MainForm
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
   /// <summary>
-  /// Indicates loading data progress bar divisor.
-  /// </summary>
-  // TODO remove ? private const int PopulateDataPaging = 10000;
-
-  /// <summary>
   /// Indicates last shown tool-tip.
   /// </summary>
   private readonly ToolTip LastToolTip = new();
