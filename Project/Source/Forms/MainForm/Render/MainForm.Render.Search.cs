@@ -32,8 +32,7 @@ partial class MainForm
         return;
       if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(true);
-      var results = SearchResults/*.ToList()*/
-                                 .Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
+      var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
                                  .Take(Program.Settings.FoundReferencesViewable);
       int referenceSize = 160;
       int marginX = 10;
