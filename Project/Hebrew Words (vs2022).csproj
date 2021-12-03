@@ -417,7 +417,6 @@
     <Compile Include="Source\Forms\MainForm\Search\MainForm.GoTo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Entities\VerseItem.cs" />
     <Compile Include="Source\Forms\Import\ImportStrongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,8 +449,6 @@
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Entities\Bookmarks.cs" />
-    <Compile Include="Source\Entities\BookItem.cs" />
-    <Compile Include="Source\Entities\ChapterItem.cs" />
     <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
@@ -766,6 +763,7 @@
     <None Include="App.config" />
     <None Include="Licenses\MPL 2.0.rtf" />
     <None Include="Packages.config" />
+    <None Include="Properties\DataSources\BookRow.datasource" />
     <None Include="Properties\DataSources\ImportResults.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

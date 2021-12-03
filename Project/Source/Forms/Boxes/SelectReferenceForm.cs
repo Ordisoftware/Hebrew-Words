@@ -1,3 +1,4 @@
+using Equin.ApplicationFramework;
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
@@ -21,9 +22,9 @@ partial class SelectReferenceForm : Form
   {
     var form = new SelectReferenceForm();
     if ( form.ShowDialog() != DialogResult.OK ) return null;
-    return new ReferenceItem(( (BookItem)form.SelectBook.SelectedItem )?.Book.Number ?? 1,
-                             ( (ChapterItem)form.SelectChapter.SelectedItem )?.Chapter.Number ?? 1,
-                             ( (VerseItem)form.SelectVerse.SelectedItem )?.Verse.Number ?? 1);
+    return new ReferenceItem(( form.SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
+                             ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                             ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
 
   private SelectReferenceForm()
@@ -54,25 +55,25 @@ partial class SelectReferenceForm : Form
     Mutex = true;
     try
     {
-      SelectBook.Items.Clear();
-      foreach ( var book in ApplicationDatabase.Instance.Books )
-      {
-        bool selected = false;
-        foreach ( var chapter in book.Chapters )
-          if ( !EditFilterChaptersWithTitle.Checked || chapter.Title.Length > 0 )
-            foreach ( var verse in chapter.Verses )
-              if ( !EditFilterVersesTranslated.Checked || verse.HasTranslation() )
-                selected = true;
-        if ( selected )
-          SelectBook.Items.Add(new BookItem(book));
-      }
-      if ( SelectBook.Items.Count > 0 )
-      {
-        SelectBook.Enabled = true;
-        SelectBook.SelectedIndex = 0;
-      }
-      else
-        SelectBook.Enabled = false;
+      //SelectBook.Items.Clear();
+      //foreach ( var book in ApplicationDatabase.Instance.Books )
+      //{
+      //  bool selected = false;
+      //  foreach ( var chapter in book.Chapters )
+      //    if ( !EditFilterChaptersWithTitle.Checked || chapter.Title.Length > 0 )
+      //      foreach ( var verse in chapter.Verses )
+      //        if ( !EditFilterVersesTranslated.Checked || verse.HasTranslation() )
+      //          selected = true;
+      //  if ( selected )
+      //    SelectBook.Items.Add(new BookItem(book));
+      //}
+      //if ( SelectBook.Items.Count > 0 )
+      //{
+      //  SelectBook.Enabled = true;
+      //  SelectBook.SelectedIndex = 0;
+      //}
+      //else
+      //  SelectBook.Enabled = false;
     }
     finally
     {
@@ -89,26 +90,26 @@ partial class SelectReferenceForm : Form
     Mutex = true;
     try
     {
-      SelectChapter.Items.Clear();
-      SelectVerse.Items.Clear();
-      if ( SelectBook.SelectedItem != null )
-      {
-        var book = ( (BookItem)SelectBook.SelectedItem ).Book;
-        var list = (IEnumerable<ChapterRow>)book.Chapters;
-        if ( EditFilterChaptersWithTitle.Checked )
-          list = list.Where(chapter => chapter.Title.Length > 0);
-        if ( EditFilterVersesTranslated.Checked )
-          list = list.Where(chapter => chapter.Verses.Any(verse => verse.HasTranslation()));
-        foreach ( var chapter in list )
-          SelectChapter.Items.Add(new ChapterItem(chapter));
-      }
-      if ( SelectChapter.Items.Count > 0 )
-      {
-        SelectChapter.Enabled = true;
-        SelectChapter.SelectedIndex = 0;
-      }
-      else
-        SelectChapter.Enabled = false;
+      //SelectChapter.Items.Clear();
+      //SelectVerse.Items.Clear();
+      //if ( SelectBook.SelectedItem != null )
+      //{
+      //  var book = ( (BookItem)SelectBook.SelectedItem ).Book;
+      //  var list = (IEnumerable<ChapterRow>)book.Chapters;
+      //  if ( EditFilterChaptersWithTitle.Checked )
+      //    list = list.Where(chapter => chapter.Title.Length > 0);
+      //  if ( EditFilterVersesTranslated.Checked )
+      //    list = list.Where(chapter => chapter.Verses.Any(verse => verse.HasTranslation()));
+      //  foreach ( var chapter in list )
+      //    SelectChapter.Items.Add(new ChapterItem(chapter));
+      //}
+      //if ( SelectChapter.Items.Count > 0 )
+      //{
+      //  SelectChapter.Enabled = true;
+      //  SelectChapter.SelectedIndex = 0;
+      //}
+      //else
+      //  SelectChapter.Enabled = false;
     }
     finally
     {
@@ -123,20 +124,20 @@ partial class SelectReferenceForm : Form
     Mutex = true;
     try
     {
-      SelectVerse.Items.Clear();
-      if ( SelectChapter.SelectedItem != null )
-      {
-        var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
-        foreach ( VerseRow verse in chapter.Verses )
-          SelectVerse.Items.Add(new VerseItem(verse));
-      }
-      if ( SelectVerse.Items.Count > 0 )
-      {
-        SelectVerse.Enabled = true;
-        SelectVerse.SelectedIndex = 0;
-      }
-      else
-        SelectVerse.Enabled = false;
+      //SelectVerse.Items.Clear();
+      //if ( SelectChapter.SelectedItem != null )
+      //{
+      //  var chapter = ( (ChapterItem)SelectChapter.SelectedItem ).Chapter;
+      //  foreach ( VerseRow verse in chapter.Verses )
+      //    SelectVerse.Items.Add(new VerseItem(verse));
+      //}
+      //if ( SelectVerse.Items.Count > 0 )
+      //{
+      //  SelectVerse.Enabled = true;
+      //  SelectVerse.SelectedIndex = 0;
+      //}
+      //else
+      //  SelectVerse.Enabled = false;
     }
     finally
     {

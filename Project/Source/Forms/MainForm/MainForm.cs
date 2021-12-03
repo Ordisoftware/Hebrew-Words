@@ -14,6 +14,7 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+using Equin.ApplicationFramework;
 using Microsoft.Win32;
 
 /// <summary>
@@ -51,7 +52,7 @@ partial class MainForm : Form
     CurrentReference = new ReferenceItem(null, null, null, null);
     Bookmarks = new Bookmarks(Program.BookmarksFilePath);
     History = new History(Program.HistoryFilePath);
-    ActionGoToBookmarkMaster.Click += GoToBookmark;
+    ActionGoToBookmarkMain.Click += GoToBookmark;
   }
 
   /// <summary>
@@ -273,40 +274,7 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Initialize books combobox.
-  /// </summary>
-  private void InitBooksCombobox()
-  {
-    SelectBook.Items.Clear();
-    SelectSearchInBook.Items.Clear();
-    foreach ( BookRow book in ApplicationDatabase.Instance.Books )
-    {
-      var item = new BookItem(book);
-      SelectBook.Items.Add(item);
-      SelectSearchInBook.Items.Add(item);
-    }
-    SelectBook.SelectedIndex = 0;
-    foreach ( var item in SelectSearchInBook.Items )
-      if ( ( (BookItem)item ).Book.Number == Settings.SearchInBookSelectedNumber )
-        SelectSearchInBook.SelectedItem = item;
-    if ( SelectSearchInBook.SelectedIndex == -1 )
-      SelectSearchInBook.SelectedIndex = 0;
-  }
-
-  /// <summary>
-  /// Initialize chapter combobox.
-  /// </summary>
-  private void InitChaptersCombobox()
-  {
-    if ( SelectBook.SelectedItem == null ) return;
-    SelectChapter.Items.Clear();
-    foreach ( ChapterRow chapter in ( (BookItem)SelectBook.SelectedItem ).Book.Chapters )
-      SelectChapter.Items.Add(new ChapterItem(chapter));
-    SelectChapter.SelectedIndex = 0;
-  }
-
-  /// <summary>
-  /// Timer event for tooltips.
+  /// Timer event for tool-tips.
   /// </summary>
   private void TimerTooltip_Tick(object sender, EventArgs e)
   {
@@ -509,24 +477,8 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     if ( !EditBooksForm.Run() ) return;
-    Refresh();
-    Globals.IsLoadingData = true;
-    try
-    {
-      int book = CurrentReference.Book.Number;
-      int chapter = CurrentReference.Chapter.Number;
-      int verse = CurrentReference.Verse?.Number ?? 1;
-      InitBooksCombobox();
-
-      // TODO fix text box translation/title/memo vidés...
-
-      GoTo(book, chapter, verse);
-    }
-    finally
-    {
-      Globals.IsLoadingData = false;
-      ActionSave.PerformClick();
-    }
+    GoTo(CurrentReference);
+    ActionSave.PerformClick();
   }
 
   /// <summary>
@@ -794,44 +746,80 @@ partial class MainForm : Form
     Clipboard.SetText(EditELS50.Text);
   }
 
-  /// <summary>
-  /// Event handler. Called by SelectBook for selected index changed events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    CurrentReference = new ReferenceItem(( (BookItem)SelectBook.SelectedItem ).Book.Number, 1, 1);
-    InitChaptersCombobox();
+    if ( TextBoxMutex ) return;
+    DisableChapterPos = true;
   }
 
-  /// <summary>
-  /// Event handler. Called by SelectChapter for selected index changed events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( IsComboBoxChanging ) return;
-    IsComboBoxChanging = true;
+    NeedUpdateCurrentReference = true;
+  }
+
+  private void BookRowBindingSource_PositionChanged(object sender, EventArgs e)
+  {
+    UpdateCurrentReference();
+  }
+
+  private void ChaptersBindingSource_PositionChanged(object sender, EventArgs e)
+  {
+    if ( DisableChapterPos )
+      DisableChapterPos = false;
+    else
+      UpdateCurrentReference();
+  }
+
+  private void BookRowBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+  {
+    NeedUpdateCurrentReference = true;
+  }
+
+  private void ChaptersBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+  {
+    NeedUpdateCurrentReference = true;
+  }
+
+  private void EditDbTextBox_Enter(object sender, EventArgs e)
+  {
+    var control = (Control)sender;
+    control.BackColor = Color.Ivory;
+    TextBoxMutex = true;
+  }
+
+  private void EditDbTextBox_Leave(object sender, EventArgs e)
+  {
+    var control = (Control)sender;
+    control.BackColor = Color.LightYellow;
+    TextBoxMutex = false;
+  }
+
+  private bool TextBoxMutex;
+  private bool DisableChapterPos;
+  private bool NeedUpdateCurrentReference;
+  private bool UpdateCurrentReferenceMutex;
+
+  private void UpdateCurrentReference()
+  {
+    if ( Globals.IsLoadingData ) return;
+    if ( !NeedUpdateCurrentReference ) return;
+    if ( UpdateCurrentReferenceMutex ) return;
+    UpdateCurrentReferenceMutex = true;
     try
     {
-      EditBookTranslation.DataBindings.Clear();
-      EditChapterTitle.DataBindings.Clear();
-      EditChapterMemo.DataBindings.Clear();
-      ActionSave.PerformClick();
-      CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
-                                           ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
+      var old = new ReferenceItem(CurrentReference);
+      CurrentReference = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
+                                           ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                            1);
+      if ( old == CurrentReference ) return;
+      ActionSave.PerformClick();
       RenderAll();
-      if ( !Globals.IsLoadingData ) GoTo(CurrentReference);
-      EditBookTranslation.DataBindings.Add("Text", CurrentReference.Book, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
-      EditChapterTitle.DataBindings.Add("Text", CurrentReference.Chapter, "Title", false, DataSourceUpdateMode.OnPropertyChanged);
-      EditChapterMemo.DataBindings.Add("Text", CurrentReference.Chapter, "Memo", false, DataSourceUpdateMode.OnPropertyChanged);
     }
     finally
     {
-      IsComboBoxChanging = false;
+      DisableChapterPos = false;
+      NeedUpdateCurrentReference = false;
+      UpdateCurrentReferenceMutex = false;
     }
   }
 
@@ -911,7 +899,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectSearchInBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    Settings.SearchInBookSelectedNumber = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+    Settings.SearchInBookSelectedNumber = ( SelectSearchInBook.SelectedItem as BookRow )?.Number ?? 1;
     SystemManager.TryCatch(Settings.Save);
   }
 
@@ -1251,43 +1239,10 @@ partial class MainForm : Form
     new ImportStrongForm().ShowDialog();
   }
 
-  private void EditDbTextBox_Enter(object sender, EventArgs e)
-  {
-    var control = (Control)sender;
-    control.BackColor = Color.Ivory;
-  }
-
-  private void EditDbTextBox_Leave(object sender, EventArgs e)
-  {
-    var control = (Control)sender;
-    control.BackColor = Color.LightYellow;
-  }
-
-  private void EditBookTranslation_TextChanged(object sender, EventArgs e)
-  {
-    //if ( IsComboBoxChanging ) return;
-    //CurrentReference.Book.Translation = EditBookTranslation.Text;
-    //ActionSave.Enabled = true;
-  }
-
-  private void EditChapterTitle_TextChanged(object sender, EventArgs e)
-  {
-    //if ( IsComboBoxChanging ) return;
-    //CurrentReference.Chapter.Title = EditChapterTitle.Text;
-    //ActionSave.Enabled = true;
-  }
-
-  private void EditChapterMemo_TextChanged(object sender, EventArgs e)
-  {
-    //if ( IsComboBoxChanging ) return;
-    //CurrentReference.Chapter.Memo = EditChapterMemo.Text;
-    //ActionSave.Enabled = true;
-  }
-
   private void ActionEditBookMemo_Click(object sender, EventArgs e)
   {
     var form = new EditMemoForm();
-    form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name;
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name ?? string.Empty;
     form.TextBox.Text = CurrentReference.Book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
@@ -1300,9 +1255,10 @@ partial class MainForm : Form
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
   {
     var form = new EditMemoForm();
-    form.Text += ( (BookItem)SelectBook.SelectedItem ).Book.Name
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name
                + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
-               + " " + ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number;
+               + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number
+              ?? string.Empty;
     form.TextBox.Text = CurrentReference.Chapter.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )

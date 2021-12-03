@@ -48,6 +48,7 @@ partial class MainForm : Form
       }
       catch ( Exception ex )
       {
+        Globals.ChronoLoadData.Stop();
         DisplayManager.ShowError(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
                                  SysTranslations.ContactSupport[Language.FR]);
         ex.Manage();
@@ -67,6 +68,7 @@ partial class MainForm : Form
       }
       catch ( Exception ex )
       {
+        Globals.ChronoLoadData.Stop();
         ex.Manage();
       }
     }
@@ -74,6 +76,7 @@ partial class MainForm : Form
     {
       Globals.ChronoLoadData.Stop();
       Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+      //UpdateCurrentReference(true);
     }
   }
 
@@ -94,8 +97,8 @@ partial class MainForm : Form
       DBApp.LoadAll();
       DBApp.LoadingData -= OnLoadingData;
       LoadingForm.Instance.DoProgress(operation: "Finishing...");
+      BookRowBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
       //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
-      InitBooksCombobox();
     }
     finally
     {

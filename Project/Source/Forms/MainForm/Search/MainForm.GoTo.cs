@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using Equin.ApplicationFramework;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -48,18 +49,17 @@ partial class MainForm
     bool updated = false;
     try
     {
-      if ( SelectBook.SelectedItem != null )
-        if ( ( (BookItem)SelectBook.SelectedItem ).Book.Number != reference.Book.Number )
-        {
-          foreach ( var item in SelectBook.Items )
-            if ( ( (BookItem)item ).Book.Number == reference.Book.Number )
-            {
-              SelectBook.SelectedItem = item;
-              updated = true;
-              break;
-            }
-          if ( !updated ) throw new Exception("Book combo-box index error.");
-        }
+      if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
+      {
+        foreach ( var item in SelectBook.Items )
+          if ( ( item as ObjectView<BookRow> )?.Object.Number == reference.Book.Number )
+          {
+            SelectBook.SelectedItem = item;
+            updated = true;
+            break;
+          }
+        if ( !updated ) throw new Exception("Book combo-box index error.");
+      }
       if ( SelectChapter.SelectedIndex > 0 )
         if ( SelectChapter.SelectedIndex != reference.Chapter.Number - 1 )
         {
@@ -70,6 +70,8 @@ partial class MainForm
     finally
     {
       IsGoToRunning = false;
+      CurrentReference = new ReferenceItem(reference);
+      AddCurrentToHistory();
     }
     if ( Globals.IsLoadingData ) return;
     if ( updated || forceUpdateView )
@@ -135,24 +137,6 @@ partial class MainForm
       default:
         SetView(ViewMode.Verses);
         goto Label;
-    }
-    CurrentReference = new ReferenceItem(reference);
-    AddCurrentToHistory();
-    //EditBookTranslation.Text = CurrentReference?.Book?.Translation ?? "";
-    //EditChapterTitle.Text = CurrentReference?.Chapter?.Title ?? "";
-    //EditChapterMemo.Text = CurrentReference?.Chapter?.Memo ?? "";
-    try
-    {
-
-
-
-      // TODO bind ChaptersBindingSource.Position = ChaptersBindingSource.Find("ID", CurrentReference.Chapter.ID);
-
-
-
-    }
-    catch
-    {
     }
   }
 

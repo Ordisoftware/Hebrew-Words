@@ -153,4 +153,21 @@ public class BookRow : INotifyPropertyChanged
 
   public List<ChapterRow> Chapters { get; } = new();
 
+  public override string ToString()
+  {
+    int nb = ApplicationDatabase.Instance.Books.Count;
+    string str;
+    if ( nb >= 100 )
+      str = Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Number.ToString("00");
+    else
+      str = Number.ToString();
+    str += ". " + Name;
+    if ( CommonName.Length > 0 ) str += $" ({CommonName})";
+    if ( Translation.Length > 0 ) str += $" - {Translation}";
+    return str;
+  }
+
 }

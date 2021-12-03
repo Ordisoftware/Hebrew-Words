@@ -79,7 +79,7 @@ partial class MainForm
       if ( SelectSearchRequestAllUntranslated.Checked )
         CheckVerse = checkTranslatedAllUntranslated;
     }
-    int bookSelected = ( (BookItem)SelectSearchInBook.SelectedItem ).Book.Number;
+    int bookSelected = ( (BookRow)SelectSearchInBook.SelectedItem ).Number;
     bool isBookSelected(int index)
     {
       return ( EditSearchInTorah.Checked && index <= BooksBounds.Torah.Max )

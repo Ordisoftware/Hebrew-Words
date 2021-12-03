@@ -89,4 +89,19 @@ public partial class VerseRow : INotifyPropertyChanged
 
   public List<WordRow> Words { get; } = new();
 
+  public override string ToString()
+  {
+    int nb = ApplicationDatabase.Instance.Chapters.Find(chapter => chapter.ID == ChapterID).Verses.Count;
+    string str;
+    if ( nb >= 100 )
+      str = Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Number.ToString("00");
+    else
+      str = Number.ToString();
+    if ( HasTranslation() ) str += $" - {GetTranslation()}";
+    return str;
+  }
+
 }

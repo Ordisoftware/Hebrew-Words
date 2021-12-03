@@ -116,4 +116,19 @@ public class ChapterRow : INotifyPropertyChanged
 
   public List<VerseRow> Verses { get; } = new();
 
+  public override string ToString()
+  {
+    int nb = ApplicationDatabase.Instance.Books.Find(book => book.ID == BookID).Chapters.Count;
+    string str;
+    if ( nb >= 100 )
+      str = Number.ToString("000");
+    else
+    if ( nb >= 10 )
+      str = Number.ToString("00");
+    else
+      str = Number.ToString();
+    if ( Title.Length > 0 ) str += $" - {Title}";
+    return str;
+  }
+
 }

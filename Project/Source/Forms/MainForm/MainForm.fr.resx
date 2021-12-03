@@ -123,7 +123,7 @@
   <data name="SelectSearchTypeTranslation.Text" xml:space="preserve">
     <value>Traduction</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="LabelSearchTranslationHelp.Text" xml:space="preserve">
     <value>Vous pouvez chercher une ou plusieurs expression(s).
 
 Chaque expression doit contenir au moins deux lettres.
@@ -181,7 +181,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 15</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="LabelChapterELS50.Text" xml:space="preserve">
     <value>Verset ELS50 du chapitre</value>
   </data>
   <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
@@ -208,17 +208,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionExit.ToolTipText" xml:space="preserve">
     <value>Quitter</value>
   </data>
-  <data name="ActionHelp.Text" xml:space="preserve">
-    <value>Aide</value>
-  </data>
-  <data name="ActionHelp.ToolTipText" xml:space="preserve">
-    <value>Aide (F11)</value>
-  </data>
   <data name="ActionAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
-  </data>
-  <data name="ActionAbout.Text" xml:space="preserve">
-    <value>A propos</value>
   </data>
   <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
     <value>368, 6</value>
@@ -226,23 +217,14 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
   </data>
-  <data name="ActionWebCheckUpdate.Text" xml:space="preserve">
-    <value>Vérifier mise à jour</value>
-  </data>
   <data name="ActionWebReleaseNotes.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
-  </data>
-  <data name="ActionWebReleaseNotes.Text" xml:space="preserve">
-    <value>Notes de version</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>368, 6</value>
   </data>
   <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
-  </data>
-  <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
-    <value>Soumettre un problème ou une fonctionnalité</value>
   </data>
   <data name="ActionWebQA.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
@@ -252,9 +234,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
-  </data>
-  <data name="ActionWebHome.Text" xml:space="preserve">
-    <value>Site web</value>
   </data>
   <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
@@ -277,14 +256,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionDownloadHebrewCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
   </data>
-  <data name="ActionDownloadHebrewCalendar.Text" xml:space="preserve">
-    <value>Suivre les évènements de la Torah avec Hebrew Calendar</value>
-  </data>
   <data name="ActionDownloadHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 22</value>
-  </data>
-  <data name="ActionDownloadHebrewLetters.Text" xml:space="preserve">
-    <value>Etudier les mots avec Hebrew Letters</value>
   </data>
   <data name="ActionPreferences.Text" xml:space="preserve">
     <value>Préférences</value>
@@ -329,7 +302,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>279, 22</value>
   </data>
   <data name="EditShowTips.Text" xml:space="preserve">
-    <value>Affichier les astuces des menus</value>
+    <value>Afficher les astuces des menus</value>
   </data>
   <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
@@ -467,7 +440,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>238, 22</value>
   </data>
   <data name="ActionOpenBackupPath.Text" xml:space="preserve">
-    <value>Parcourir le dossier d'archivage</value>
+    <value>Ouvrir le dossier d'archivage</value>
   </data>
   <data name="ActionSave.Text" xml:space="preserve">
     <value>Sauvegarder</value>
@@ -504,9 +477,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionSetAsBookmarkMaster.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
-  </data>
-  <data name="ActionSetAsBookmarkMaster.Text" xml:space="preserve">
-    <value>Définir comme signet maître</value>
   </data>
   <data name="ActionAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
@@ -547,5 +517,38 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
+  </data>
+  <data name="ActionCountOccurences.Text" xml:space="preserve">
+    <value>Compter le nombre exact d'occurrences</value>
+  </data>
+  <data name="ActionCountRootOccurences.Text" xml:space="preserve">
+    <value>Compter le nombre d'occurrences de la racine</value>
+  </data>
+  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
+    <value>Aller à la référence (Alt+F)</value>
+  </data>
+  <data name="ActionShowGrammarGuide2.Text" xml:space="preserve">
+    <value>Guide de grammaire</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
+    <value>Signet principal</value>
+  </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export</value>
+  </data>
+  <data name="ActionSetAsBookmarkMain.Text" xml:space="preserve">
+    <value>Définir comme signet principal</value>
+  </data>
+  <data name="OpenFileDialogDB.Filter" xml:space="preserve">
+    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  </data>
+  <data name="SaveFileDialogDB.Filter" xml:space="preserve">
+    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  </data>
+  <data name="SaveFileDialogMSWord.Filter" xml:space="preserve">
+    <value>Fichiers MSWord (*.docx)|*.docx</value>
+  </data>
+  <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
+    <value>Fichiers Rich Text Format (*.rtf)|*.rtf</value>
   </data>
 </root>

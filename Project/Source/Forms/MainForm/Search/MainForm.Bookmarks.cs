@@ -46,9 +46,9 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMaster.Text = bookmarkMaster.ToStringFull();
-      ActionGoToBookmarkMaster.Tag = bookmarkMaster;
-      ActionGoToBookmarkMaster.MouseUp += bookmarkClicked;
+      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringFull();
+      ActionGoToBookmarkMain.Tag = bookmarkMaster;
+      ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
       {
         foreach ( var reference in Bookmarks )

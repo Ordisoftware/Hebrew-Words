@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using Equin.ApplicationFramework;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -44,9 +45,11 @@ partial class StatisticsForm : Form
       InitializeCounters();
       InitializeMiddle();
       InitializeOccurences();
-      foreach ( var book in ApplicationDatabase.Instance.Books )
-        SelectBook.Items.Add(new BookItem(book));
-      SelectBook.SelectedIndex = 0;
+      SelectBook.DataSource = MainForm.Instance.BookRowBindingSource;
+      SelectBook.DisplayMember = "Name";
+      //foreach ( var book in ApplicationDatabase.Instance.Books )
+      //  SelectBook.Items.Add(new BookItem(book));
+      //SelectBook.SelectedIndex = 0;
     }
     finally
     {
@@ -168,7 +171,7 @@ partial class StatisticsForm : Form
   {
     try
     {
-      TanakBook book = (TanakBook)( ( (BookItem)SelectBook.SelectedItem ).Book.Number - 1 );
+      TanakBook book = (TanakBook)( ( SelectBook.SelectedItem as ObjectView<BookRow> ).Object.Number - 1 );
       CountersSelected = new BookStatistic();
       CountersSelected.CountChapters += CountersBooks[book].CountChapters;
       CountersSelected.CountVerses += CountersBooks[book].CountVerses;

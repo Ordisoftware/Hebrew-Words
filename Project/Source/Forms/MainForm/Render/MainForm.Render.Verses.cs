@@ -23,8 +23,10 @@ partial class MainForm
     IsRendering = true;
     try
     {
+      //PanelViewVerses.AutoScrollPosition = new Point(0, 0);
       PanelViewVerses.Visible = false;
-      PanelViewVerses.Controls.Clear();
+      while ( PanelViewVerses.Controls.Count > 0 )
+        PanelViewVerses.Controls[0].Dispose();
       SetFormDisabled(true);
       CurrentReference.Verse = null;
       var itemBook = CurrentReference.Book;
