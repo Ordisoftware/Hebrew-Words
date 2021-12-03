@@ -242,7 +242,7 @@ partial class MainForm : Form
   /// </summary>
   private void InitializeIconsAndSound()
   {
-    SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+    SystemManager.TryCatch(() => new SoundPlayer(Globals.EmptySoundFilePath).Play());
     SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
   }
 
@@ -816,15 +816,18 @@ partial class MainForm : Form
     IsComboBoxChanging = true;
     try
     {
-      EditBookTranslation.Text = "";
-      EditChapterTitle.Text = "";
-      EditChapterMemo.Text = "";
+      EditBookTranslation.DataBindings.Clear();
+      EditChapterTitle.DataBindings.Clear();
+      EditChapterMemo.DataBindings.Clear();
       ActionSave.PerformClick();
       CurrentReference = new ReferenceItem(CurrentReference.Book.Number,
                                            ( (ChapterItem)SelectChapter.SelectedItem ).Chapter.Number,
                                            1);
       RenderAll();
       if ( !Globals.IsLoadingData ) GoTo(CurrentReference);
+      EditBookTranslation.DataBindings.Add("Text", CurrentReference.Book, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
+      EditChapterTitle.DataBindings.Add("Text", CurrentReference.Chapter, "Title", false, DataSourceUpdateMode.OnPropertyChanged);
+      EditChapterMemo.DataBindings.Add("Text", CurrentReference.Chapter, "Memo", false, DataSourceUpdateMode.OnPropertyChanged);
     }
     finally
     {

@@ -44,7 +44,6 @@ partial class MainForm
       const int mY = 50;
       const int delta = 10;
       const int deltaMul2 = delta * 2;
-      const int deltaDiv2 = delta / 2;
       const int deltaDiv4 = delta / 4;
       int width = ClientSize.Width - mX;
       int dx = wordcontrol.Width + delta;
@@ -67,7 +66,6 @@ partial class MainForm
       Panel panel;
       Label label;
       TextBoxEx editComment;
-      int indexControl = 0;
       int dx_delta = dx + delta;
       int dy_delta = dy + delta;
       int dx_marginX = dx + marginX;

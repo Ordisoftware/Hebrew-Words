@@ -100,6 +100,7 @@
       this.LabelSelectChapter = new System.Windows.Forms.Label();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
+      this.LabelProgress = new System.Windows.Forms.Label();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -207,7 +208,6 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.LabelProgress = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -806,6 +806,12 @@
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
+      // LabelProgress
+      // 
+      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelProgress, "LabelProgress");
+      this.LabelProgress.Name = "LabelProgress";
+      // 
       // LabelTitle
       // 
       this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1331,8 +1337,8 @@
       // 
       // bindingNavigatorPositionItem
       // 
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
+      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
       // 
       // bindingNavigatorCountItem
       // 
@@ -1556,12 +1562,6 @@
       resources.ApplyResources(this.ActionCopyWordTranslation, "ActionCopyWordTranslation");
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
-      // 
-      // LabelProgress
-      // 
-      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelProgress, "LabelProgress");
-      this.LabelProgress.Name = "LabelProgress";
       // 
       // MainForm
       // 
