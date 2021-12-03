@@ -1,154 +1,89 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
-using System;
-using System.IO;
-using System.Windows.Forms;
+/// <edited> 2021-12 </edited>
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.HebrewWords
+/// <summary>
+/// Provides Program class.
+/// </summary>
+static partial class Program
 {
 
-  static partial class Program
+  /// <summary>
+  /// Indicates the default Settings instance.
+  /// </summary>
+  static public readonly Properties.Settings Settings
+    = Properties.Settings.Default;
+
+  static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
+    = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
+
+  /// <summary>
+  /// Indicates image export targets
+  /// </summary>
+  static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
+    = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
+
+  /// <summary>
+  /// Indicates application tanak documents folder.
+  /// </summary>
+  static public string TanakFolderPath
+    => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
+
+  /// <summary>
+  /// Indicates file path of the bookmaks.
+  /// </summary>
+  static public string BookmarksFilePath
+    => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
+
+  /// <summary>
+  /// Indicates file path of the history.
+  /// </summary>
+  static public string HistoryFilePath
+  => Path.Combine(Globals.UserDataFolderPath, "History.txt");
+
+  /// <summary>
+  /// Indicates the grammar guide form.
+  /// </summary>
+  static public HTMLBrowserForm GrammarGuideForm
   {
-
-    /// <summary>
-    /// Indicate the default Settings instance.
-    /// </summary>
-    static public readonly Properties.Settings Settings
-      = Properties.Settings.Default;
-
-    /// <summary>
-    /// Indicate the check update URL.
-    /// </summary>
-    static public string CheckUpdateURL
+    get
     {
-      get
-      {
-        string title = AboutBox.Instance.AssemblyTitle;
-        return "http://" + AboutBox.Instance.AssemblyTrademark + "/files/" + title.Replace(" ", "") + ".update";
-      }
+      return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
+                                                       HebrewGlobals.HebrewGrammarGuideFilePath,
+                                                       nameof(Settings.GrammarGuideFormLocation),
+                                                       nameof(Settings.GrammarGuideFormSize));
     }
-
-    /// <summary>
-    /// Indicate the download application URL.
-    /// </summary>
-    static public string DownloadApplicationURL
-    {
-      get
-      {
-        return AboutBox.Instance.AssemblyProduct;
-      }
-    }
-
-    /// <summary>
-    /// Indicate the GitHub repository.
-    /// </summary>
-    static public string GitHubRepositoryURL
-    {
-      get
-      {
-        string title = AboutBox.Instance.AssemblyTitle;
-        return "https://github.com/" + AboutBox.Instance.CompanyName + "/" + title.Replace(" ", "-");
-      }
-    }
-
-    /// <summary>
-    /// Indicate root folder path of the application.
-    /// </summary>
-    static public readonly string AppRootFolderPath
-      = Directory.GetParent
-        (
-          Path.GetDirectoryName(Application.ExecutablePath
-                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
-                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
-        ).FullName
-      + Path.DirectorySeparatorChar;
-
-    /// <summary>
-    /// Indicate application documents folder.
-    /// </summary>
-    static public readonly string AppDocumentsFolderPath
-      = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
-
-    /// <summary>
-    /// Indicate user data folder in roaming.
-    /// </summary>
-    static public string UserDataFolderPath
-    {
-      get
-      {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                    + Path.DirectorySeparatorChar
-                    + AboutBox.Instance.AssemblyCompany
-                    + Path.DirectorySeparatorChar
-                    + AboutBox.Instance.AssemblyTitle
-                    + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(path);
-        return path;
-      }
-    }
-    /// <summary>
-    /// Indicate user documents folder path.
-    /// </summary>
-    static public string UserDocumentsFolderPath
-    {
-      get
-      {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                    + Path.DirectorySeparatorChar
-                    + AboutBox.Instance.AssemblyCompany
-                    + Path.DirectorySeparatorChar
-                    + AboutBox.Instance.AssemblyTitle
-                    + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(path);
-        return path;
-      }
-    }
-    /// <summary>
-    /// Indicate the extension of database file.
-    /// </summary>
-    static public readonly string DBFileExtension
-      = ".sqlite";
-
-    /// <summary>
-    /// Indicate filename of the application's icon.
-    /// </summary>
-    static public readonly string IconFilename
-      = AppRootFolderPath + "Application.ico";
-
-    /// <summary>
-    /// Indicate filename of the help.
-    /// </summary>
-    static public string HelpFilename
-    {
-      get
-      {
-        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
-      }
-    }
-
-    /// <summary>
-    /// Indicate filename of the grammar guide.
-    /// </summary>
-    static public string GrammarGuideFilename
-    {
-      get
-      {
-        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "grammar-" + Localizer.Language + ".htm";
-      }
-    }
-
   }
+  static private HTMLBrowserForm _GrammarGuideForm;
+
+  static public string HebrewStrongsJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
+
+  static public string GreekStrongsJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-greek-dictionary.js");
+
+  static public string BibleJsonFilePath
+    => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
+
+  static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
+    = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
+
+  static public readonly Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
+    = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
+
+  static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
+    = JsonHelper.LoadBook(BibleJsonFilePath);
 
 }

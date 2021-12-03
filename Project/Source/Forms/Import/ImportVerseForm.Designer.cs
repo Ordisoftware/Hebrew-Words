@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class ImportVerseForm
   {
@@ -34,27 +34,27 @@
       this.PanelMain = new System.Windows.Forms.SplitContainer();
       this.EditSource = new System.Windows.Forms.TextBox();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnCurrentTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnImportedTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.importResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionAnalyse = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.importResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.importResultsBindingSource ) ).BeginInit();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.importResultsBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
       // 
-      this.PanelMain.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSplitterDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.PanelMain.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "ImportVerseFormSplitterDistance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
@@ -67,8 +67,9 @@
       // 
       this.PanelMain.Panel2.Controls.Add(this.DataGridView);
       resources.ApplyResources(this.PanelMain.Panel2, "PanelMain.Panel2");
-      this.PanelMain.SplitterDistance = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSplitterDistance;
+      this.PanelMain.SplitterDistance = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ImportVerseFormSplitterDistance;
       this.PanelMain.TabStop = false;
+      this.PanelMain.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.PanelMain_SplitterMoving);
       // 
       // EditSource
       // 
@@ -91,6 +92,17 @@
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DataGridView_ColumnWidthChanged);
+      // 
+      // ColumnHebrew
+      // 
+      this.ColumnHebrew.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
+      this.ColumnHebrew.Name = "ColumnHebrew";
+      this.ColumnHebrew.ReadOnly = true;
       // 
       // ColumnCurrentTranslation
       // 
@@ -105,6 +117,10 @@
       this.ColumnImportedTranslation.DataPropertyName = "ImportedTranslation";
       resources.ApplyResources(this.ColumnImportedTranslation, "ColumnImportedTranslation");
       this.ColumnImportedTranslation.Name = "ColumnImportedTranslation";
+      // 
+      // importResultsBindingSource
+      // 
+      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.ImportverseResults);
       // 
       // panel1
       // 
@@ -141,40 +157,27 @@
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
       // 
-      // ColumnHebrew
-      // 
-      this.ColumnHebrew.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
-      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
-      this.ColumnHebrew.Name = "ColumnHebrew";
-      this.ColumnHebrew.ReadOnly = true;
-      // 
-      // importResultsBindingSource
-      // 
-      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.HebrewWords.ImportverseResults);
-      // 
       // ImportVerseForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.ImportVerseFormSize;
+      this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ImportVerseFormSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.panel1);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "ImportVerseForm";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportVerseForm_FormClosed);
+      this.Shown += new System.EventHandler(this.ImportVerseForm_Shown);
       this.PanelMain.Panel1.ResumeLayout(false);
       this.PanelMain.Panel1.PerformLayout();
       this.PanelMain.Panel2.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.importResultsBindingSource ) ).EndInit();
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.importResultsBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -189,7 +192,6 @@
     private System.Windows.Forms.Button ActionAnalyse;
     private System.Windows.Forms.DataGridView DataGridView;
     private System.Windows.Forms.BindingSource importResultsBindingSource;
-    private System.Windows.Forms.DataGridViewTextBoxColumn newTranslationDataGridViewTextBoxColumn;
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCurrentTranslation;

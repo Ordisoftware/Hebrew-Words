@@ -1,41 +1,36 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
-using System;
-using System.Collections.Generic;
+/// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.HebrewWords
+class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
 {
 
-  class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
+  public bool Equals(ReferenceItem x, ReferenceItem y)
   {
+    return x != null
+        && y != null
+        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
+  }
 
-    public bool Equals(ReferenceItem x, ReferenceItem y)
-    {
-      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
-          && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-    }
-
-    public int GetHashCode(ReferenceItem value)
-    {
-      return ( value?.Book?.Number.GetHashCode() ?? 0 )
-           ^ ( value?.Chapter?.Number.GetHashCode() ?? 0 )
-           ^ ( value?.Verse?.Number.GetHashCode() ?? 0 );
-    }
-
+  public int GetHashCode(ReferenceItem obj)
+  {
+    return ( obj?.Book?.Number.GetHashCode() ?? 0 )
+         ^ ( obj?.Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( obj?.Verse?.Number.GetHashCode() ?? 0 );
   }
 
 }

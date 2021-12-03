@@ -4,12 +4,12 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;<br/>
-[![OS: Windows](https://img.shields.io/badge/Windows%20Vista%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
-[![Framework: .Net](https://img.shields.io/badge/.NET%204.5-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
-[![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202017-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
-[![Lang: C#](https://img.shields.io/badge/C%23%207.3-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![DB: SQLite](https://img.shields.io/badge/SQLite%20ODBC-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
+[![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
+[![Lang: C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.35-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -57,10 +57,12 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.5
-- SQLite ODBC Driver
+- Framework .NET 4.8
+- SQLite 3.35.5
 
 ## Download
+
+**What's new in the latest version 3**
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
@@ -84,11 +86,11 @@ The software verifies the validity of the certificate of the update server in ad
 
 #### What to do if there is a problem with the display?
 
-Use the refresh view action of the menu at the top.
+The refresh view button of the menu at the top redraws the entire form.
 
 #### The software sometimes runs slowly, is this normal?
 
-Yes, because implementing features requires a lot of Windows resources that depend on the performance of the computer.
+Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
 ## Keyboard shortcuts
 
@@ -114,23 +116,42 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | Ctrl + Down | Scroll the view down (fine) |
 | PageUp | Scroll the view up |
 | PageDown | Scroll the view down |
-| Alt + T | Show tools menu |
-| Alt + L | Show web links menu |
-| Alt + S | Show settings menu |
-| Alt + I | Show information menu |
+| Alt + T | Tools menu |
+| Alt + L | Web links menu |
+| Alt + S | Settings menu |
+| Alt + I | Information menu |
+| Alt + E | Export folder |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
 | F12 | About |
-| Alt + F4 (or Escape) | Exit application |
+| Alt + F4 (or Escape) | Close window |
+| Ctrl + Alt + F4 | Exit application |
 
 ## Future improvements
 
+#### Soon
+
+- Add bookmarks backup/restore.
+- Add book memo and chapter title/memo in DOCX export.
+- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
+- Add menu to open a batch export form.
+- Add count the number of a word occurrences.
+- Add option to go to last reference on startup.
+- Add option to choose double-click action on a word in the search translated form.
+- Add word occurrences calculator button in the search panel.
+- Add option to change fonts size.
+- Improve auto-backup to allow periodic archive as weekly or monthly.
+- Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
+- Database updated to support internal strong concordance popup menus in the future.
+
+#### Later
+
 - Add strong's concordances to database.
-- Add classic english translation to database.
+- Add classic English translation to database.
 - Add form to edit strong's concordances.
-- Add form to edit classis english translation.
-- Add classic english translation between an Hebrew word and the working translation.
+- Add form to edit classic English translation.
+- Add classic English translation between an Hebrew word and the working translation.
 - Change contextual click on a Hebrew word to use database instead of web search.
 
 ## Changelog
@@ -149,16 +170,34 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add "Add a bookmark" menu item.
 - Add "Sort bookmarks" menu item.
 - Add auto sort bookmarks option.
+- Add book name translation text box in the navigation panel.
+- Add chapter title and memo text boxes in the navigation panel.
+- Add buttons to edit book and chapter memos in the navigation panel.
+- Add options to filter the books in the go to reference form.
 - Add new input panel from Hebrew Letters v4+.
-- Add new advanced textbox for future undo/redo.
-- Add optimize database menu.
+- Add new advanced text-box for future undo/redo.
 - Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
-- Improve message boxes.
+- Add optimize database menu.
+- Add usage statistics form in tools menu.
+- Add keyboard shortcuts notice in windows settings menu.
+- Add sounds to clipboard actions.
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable message boxes sounds.
+- Add option to enable or disable success dialogs.
+- Add option to set application's volume.
+- Add option to enable debugger.
+- Add option to set automatic web check update frequency.
+- Add option to auto optimize database at startup once a week.
+- Add show usage statistics from about box.
+- Add check update from about box.
+- Change web check update to use GitHub as an alternative if author's website is down.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
+- Improve message boxes.
+- Improve about box to dynamically display the list of dependencies and media used.
 - Improve UI/UX.
 - Fix drop down menus shown on another monitor instead of the same screen.
 - Fix error message when several SearchTranslatedForm are opened.
@@ -170,7 +209,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - The application now permanently lock database file while running.
 - The application now automatically creates the ODBC DSN in the Windows registry.
 - Move online providers values from code to files in the application documents folder.
-- Move tanak text files in Documents in a dedicated folder.
+- Move Tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since more than one year for Calendar.
 - Files and code refactoring.
@@ -185,48 +224,15 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 > TO CHECK
 - Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add open book menu item in the edit books information form.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add option to enable debugger.
-- Add option to set automatic web check update frequency.
-- Add option to auto optimize database at startup once a week.
-- Add show usage statistics from about box.
-- Add check update from about box.
 
 > IN PROGRESS
-- Add book name translation text box in the navigation panel.
-- Add chapter title and memo text boxes in the navigation panel.
-- Add buttons to edit book and chapter memos in the navigation panel.
-- Add options to filter the books in the go to reference form.
-- Add keyboard shortcuts notice in windows settings menu.
-- Add sounds to clipboard actions.
-- Add option to enable or disable the web links menu.
-- Add option to enable or disable message boxes sounds.
-- Add option to enable or disable success dialogs.
-- Add option to set application's volume.
-- Add usage statistics form in tools menu.
 - Change selection controls in the go to reference form.
 - Improve open Hebrew Letters for the current word when focused on the verses view.
 - Improve search to find words in chapters translated title.
 - Add search in comments
-
-> FUTURE
-
-- Add bookmarks backup/restore.
-- Add book memo and chapter title/memo in DOCX export.
-- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
-- Add menu to open a batch export form.
-- Add count the number of a word occurences.
-- Add option to go to last reference on startup.
-- Add option to choose double-click action on a word in the search translated form.
-
-> VERY FUTURE
-- Add word occurences calculator button in the search panel.
-- Add option to change fonts size.
-- Improve auto-backup to allow periodic archive as weekly or monthly
-- Improve import console to support Hebrew unicode chars in addition to Hebrew font.
-- Database updated to support internal strong concordance popup menus in the future.
 
 #### 2020.09.01 - Version 2.5
 
@@ -267,7 +273,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Add context menu on Hebrew words, on verses numbers and on search reference found.
 - Add search translations of a word.
-- Add option to define url to open verse online.
+- Add option to define URL to open verse online.
 - Add option to set commentary lines count.
 - Add option to disable startup check update.
 - Add master bookmark used at startup.
@@ -288,7 +294,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Improve verses view.
 - Improve export UI.
-- Fix select chapter combobox.
+- Fix select chapter combo-box.
 
 #### 2019.08.30 - Version 1.7
 
@@ -320,7 +326,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### 2019.01.29 - Version 1.2
 
-- Add word docx export.
+- Add word DOCX export.
 
 #### 2019.01.28 - Version 1.1
 
@@ -328,7 +334,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add search a word.
 - Add open verse online.
 - Add verse comment edition.
-- Some improvments.
+- Some improvements.
 
 #### 2019.01.26 - Version 1.0
 

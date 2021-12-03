@@ -1,0 +1,51 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+FOLDER-SEPARATOR
+
+Lang/EN = Rabbis websites
+Lang/FR = Sites Web de rabbins
+
+Name = (FR) Rav Yehia Benchetrit
+URL = http://ravbenchetrit.com
+
+Name = (FR) Rav Emmanuel Bensimon
+URL = https://nafshi.fr
+
+Name = (FR) Rav Azriel Cohen-Arazi
+URL = http://www.torahacademy.fr
+
+Name = (FR) Rav Avraham Ifrah
+URL = https://breslev.fr
+
+Name = (EN) Rabbi Yosef Yitzchak Jacobson
+URL = https://www.theyeshiva.net
+
+Name = (FR/EN) Rav David Pinto
+URL = https://hevratpinto.org
+
+Name = (FR) Rav Yakov Sitruk
+URL = https://www.alef-ledoroth.com
+
+Name = (EN) Rabbi Adin Steinsaltz
+URL = https://steinsaltz.org
+
+-
+
+Name = (FR) Halacha Yomit (Rav Ovadia Yossef)
+URL = http://halachayomit.co.il/fr/default.aspx
+
+Name = (EN) Halacha Yomit (Rabbi Ovadia Yosef)
+URL = http://halachayomit.co.il/en/Default.aspx
+
+Name = (IW) Halacha Yomit (Rabbi Ovadia Yosef)
+URL = http://halachayomit.co.il/he/default.aspx

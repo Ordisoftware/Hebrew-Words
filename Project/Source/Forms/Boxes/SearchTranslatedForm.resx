@@ -220,7 +220,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 328</value>
+    <value>10, 428</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 28</value>
@@ -255,17 +255,14 @@
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAIwSURBVDhPjZJvSBNhHMfXC3sZGdGL3lUv6oWVu2zTSbdh
-        TSx80auE3kQUFtSyP1CULzJDYhSRqc3b1kUvDMZG9GJQGtaL0qCwaJnn7m6n2aZlJZvbbbd/fXu2GyQ4
-        5z7wg+d5fp/vPdzvTrMUgWk08Pb98NuM8D+g1bLR4BkTBKcZItuEglqczz30rV8jZ4EUh2x8DNnoG0Dx
-        IR0ZBW83obu1ylJQizPeW++L8reRnPcg/MGI8JgZ6fBLzA1Z8Om+wU+Udaq5Ary9HukFD+RAJyIfmxGf
-        6oQy6yavUodN6yt2FrTiCP37qODTZvKAZ4hNtiL6pQXpPx6EvCfgvlJlJcoa1VwBX09d1+8RC1I/nIhN
-        HEOMO45ZbyMmu7Xg+/aCt+khMAaIThoB1rR8mF97dT5Z7IISsiLOn85XJjyI7OILZBa9yEZcyETcmHEd
-        wPt7ta8Lsf8IjJ5ILJKhDiSnLyEhtSEhWpAInCP7C1CmzmP6iQnv7tQMEn2bmlqC6KhF0NNEbjDj24CR
-        fMJhKMHrSH2/BtlPwgMNeN6xiyHqVjWxnD25untyy5kZVwP+ysNIz91AXLgM0aEH27bjKulvzpul4Pq0
-        Q/OvWgDZBUVqJ0PT4fHF7e2kVakaqyDYtYhyN5EKWkm4Bof1lQfJ8Qa1uwoiSx0NOCgsjJ6C9EiHI/TG
-        Q+S4Qu2WAcdo30oPKUz07/5JtrmZrM03ykViKQiO6ghZlv5tS5C7tVpdloNG8w+24EzQP6t53AAAAABJ
-        RU5ErkJggg==
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAGuSURBVDhPtVLZSkJRFL0PfUIT1WPvBZWERdpDYW9NNlBB
+        IM0ZZTZA32FzRNCoRhF9hU8l+pCWQ2F0r2WjNyVidc7uNoC3kKAFi3XW3mevc7ls4d8wOdwLq3kAFvMg
+        KfdKK22UcE4NmfggnXkxBYUz+yiY3EWu1fnJHOsusif2kDV9CEtPFyn3vP5xJ2/cDo3NBSGfDUduZZxK
+        j/BLT1+8jiNw/wpTZxupLxrHifio8AHh6APqHAEI2eMOcNxcBHEXCeH+Msw0jNjlOWKSiPZWI6QrEeeh
+        EEKBwDvPzmimessPIctiJ1My50blkgdVK15ULntQuuAFXhJoMTbjKS4jen0DUYoySpBEkWZ0G76vAO2i
+        GzWrHhjWvEy90LIwjuamRtJEMom4LBOfn2WqUUDm2HtAse0I5fPH0C64SYtsx1RvbKgnVYNu/VvAT/gt
+        QM+/IGdsR7HqaDc2KadU1PCfqJl1weAMonrTDz2jjnM7iCpnBLqDGPq7O0jJszrv87u126eoWPOwJcvI
+        KGP79LFpKRwZ6Pu+iWpUx+hQP0bMw4xmUu6VVtpI/7W/QxDeAHIZ7sUEm35yAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionUseTranslation.Size" type="System.Drawing.Size, System.Drawing">
@@ -273,6 +270,29 @@
   </data>
   <data name="ActionUseTranslation.Text" xml:space="preserve">
     <value>Use translation</value>
+  </data>
+  <data name="ActionAddTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAHGSURBVDhPpZLNSxthEIfn4H9g6YdYT/4HbXI1axGMRqsm
+        2yRF7KEHC55MtDmIXgQpVKkgEYyHXmzTmo30nvZgD6V+INieNCZZW1F2tYpJ3c2ulF/3fROpBKMpPvAw
+        7+zOzM4uS9emfugD7oYWUDMYx53BBcs4bg8wpUutCc7DHl4G1T6PYy9r4MfxKX7m/kC2YvJAw4b6GxtK
+        roxZbO9n4YylQTeDEhh+Tyd6Hvvg83Rhd2cH25kM5HT6YlMp3iNEk6Dq/hhPTNOEz+uFYZg4PDyCqu5D
+        uVAVqqLwnoY3m2zAPE8YHrebR8M0oOkaTrSCmq5DzxvI502uaZ0ZjtIBoigWT5XRGJVBN4qv4O5oh/eR
+        iIftbTwvJZzoxf1hgm2EYLec+9yHZikHuhX4t0E5Ip+ewR8hRNYJ338FMPuN8PQ1wTH1BGSfXoFTkvHg
+        XQqNzOgWhLdJOLgZCO+PIYwSwsuEV1+JD5xcIsysElpfEoiqqmzW/3TvMptfENZ2B3jzGWt7ITj5gApw
+        WYUTi4TRj4UNWGS5a7zCAU0jJHXPEMYShC9yiEeWs+vFkiupY8XsiS3WNiwWm+sKtyuDFZ//Nv/VXAai
+        vw81CKls+mj+AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionAddTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="ActionAddTranslation.Text" xml:space="preserve">
+    <value>Add translation</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 6</value>
   </data>
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -316,7 +336,7 @@
     <value>Reach reference</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 76</value>
+    <value>162, 104</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -331,7 +351,7 @@
     <value>0, 0</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 220</value>
+    <value>272, 300</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -352,13 +372,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 98</value>
+    <value>10, 118</value>
   </data>
   <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 230</value>
+    <value>272, 310</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -374,6 +394,39 @@
   </data>
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="LabelHebrewWordSource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="LabelHebrewWordSource.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Hebrew, 12pt</value>
+  </data>
+  <data name="LabelHebrewWordSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelHebrewWordSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 84</value>
+  </data>
+  <data name="LabelHebrewWordSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 24</value>
+  </data>
+  <data name="LabelHebrewWordSource.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LabelHebrewWordSource.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewWordSource.Name" xml:space="preserve">
+    <value>LabelHebrewWordSource</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewWordSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewWordSource.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewWordSource.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="EditDistinct.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -400,7 +453,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditDistinct.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -436,7 +489,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionDelLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -472,7 +525,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;ActionDelLast.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionDelFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -493,7 +546,7 @@
     <value>5</value>
   </data>
   <data name="ActionDelFirst.Text" xml:space="preserve">
-    <value>- &gt;</value>
+    <value>&gt; -</value>
   </data>
   <data name="&gt;&gt;ActionDelFirst.Name" xml:space="preserve">
     <value>ActionDelFirst</value>
@@ -505,7 +558,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;ActionDelFirst.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditWholeWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -532,7 +585,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditWholeWord.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditHebrew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -562,7 +615,7 @@
     <value>PanelTop</value>
   </data>
   <data name="&gt;&gt;EditHebrew.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -571,7 +624,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 88</value>
+    <value>272, 108</value>
   </data>
   <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -593,9 +646,6 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
@@ -632,6 +682,18 @@
   </data>
   <data name="&gt;&gt;ActionUseTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionAddTranslation.Name" xml:space="preserve">
+    <value>ActionAddTranslation</value>
+  </data>
+  <data name="&gt;&gt;ActionAddTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCopyTranslation.Name" xml:space="preserve">
     <value>ActionCopyTranslation</value>

@@ -1,14 +1,14 @@
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
   /// Provide input box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class SelectVerseForm : Form
+  partial class SelectVerseForm : Form
   {
 
     /// <summary>
@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewWords
       this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -65,9 +65,9 @@ namespace Ordisoftware.HebrewWords
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionCancel);
       this.panel1.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // LabelVerse
@@ -95,7 +95,7 @@ namespace Ordisoftware.HebrewWords
       this.Name = "SelectVerseForm";
       this.ShowInTaskbar = false;
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -122,7 +122,7 @@ namespace Ordisoftware.HebrewWords
     /// The label.
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
-    internal NumericUpDown EditVerseNumber;
+    public NumericUpDown EditVerseNumber;
   }
 
 }

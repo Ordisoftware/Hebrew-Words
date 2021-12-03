@@ -1,6 +1,6 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
-  partial class LoadingForm
+  partial class LoadingFormHebrewWords
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingFormHebrewWords));
       this.PanelMain = new System.Windows.Forms.Panel();
       this.ProgressBar = new System.Windows.Forms.ProgressBar();
       this.LabelApplicationName = new System.Windows.Forms.Label();

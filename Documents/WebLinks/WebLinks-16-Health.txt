@@ -1,0 +1,80 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Health and herbology
+Lang/FR = Santé et herbologie
+
+Name = (EN) Ayurveda
+URL = https://en.wikipedia.org/wiki/Ayurveda
+
+Name = (FR) Ayurveda
+URL = https://fr.wikipedia.org/wiki/Ayurveda
+
+Name = (EN) Traditional Chinese medicine
+URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
+
+Name = (FR) Médecine traditionnelle chinoise
+URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
+
+-
+
+Name = (EN) Yoga
+URL = https://en.wikipedia.org/wiki/Yoga
+
+Name = (FR) Yoga
+URL = https://fr.wikipedia.org/wiki/Yoga
+
+Name = (EN) Qigong
+URL = https://en.wikipedia.org/wiki/Qigong
+
+Name = (FR) Qi gong
+URL = https://fr.wikipedia.org/wiki/Qi_gong
+
+Name = (EN) Bodybuilding
+URL = https://en.wikipedia.org/wiki/Bodybuilding
+
+Name = (FR) Bodybuilding
+URL = https://fr.wikipedia.org/wiki/Culturisme
+
+-
+
+Name = (EN) History of herbalism
+URL = https://en.wikipedia.org/wiki/History_of_herbalism
+
+Name = (EN) Medicinal plants
+URL = https://en.wikipedia.org/wiki/Medicinal_plants
+
+Name = (FR) Plante médicinale
+URL = https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale
+
+Name = (EN) Chinese herbology
+URL = https://en.wikipedia.org/wiki/Chinese_herbology
+
+Name = (FR) Pharmacopée chinoise
+URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
+
+-
+
+Name = (EN) American National Center for Biotechnology Information
+URL = https://www.ncbi.nlm.nih.gov
+
+Name = (EN) WebMD Health Information and Herbs Database
+URL = https://www.webmd.com
+
+Name = (EN) Yet Another Traditional Chinese Medicine Database
+URL = cadd.pharmacy.nankai.edu.cn/yatcm
+
+Name = (EN) AyurTimes Ayurveda and Indian Herbs
+URL = https://www.ayurtimes.com
+
+Name = (EN) Springer's Indian Medicinal Plants Database (PDF 8 MiB)
+URL = http://gbpihedenvis.nic.in/PDFs/Glossary_Medicinal_Plants_Springer.pdf

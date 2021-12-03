@@ -1,9 +1,3 @@
-﻿namespace Ordisoftware.HebrewWords.Data
+﻿namespace Ordisoftware.Hebrew.Words.Data
 {
-
-  partial class DataSet
-  {
-
-  }
-
 }

@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9117FA5B-51DE-481E-9CB1-65A606D6CA69}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ordisoftware.Hebrew.Words</RootNamespace>
+    <AssemblyName>Ordisoftware.Hebrew.Words</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>1587, 1591, 0649</NoWarn>
+    <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Words.xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+    <NoWarn>1587, 1591, 0649</NoWarn>
+    <LangVersion>latest</LangVersion>
+    <AllowedReferenceRelatedFileExtensions>
+          *.pdb;
+          Ordisoftware*.xml
+    </AllowedReferenceRelatedFileExtensions>
+    <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Words.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
+      <HintPath>packages\CommandLineParser.2.8.0\lib\net461\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>packages\Enums.NET.4.0.0\lib\net45\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Equin.ApplicationFramework.BindingListView, Version=1.4.5222.35545, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Equin.ApplicationFramework.BindingListView.1.4.5222.35545\lib\net40-Client\Equin.ApplicationFramework.BindingListView.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.5.1.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>packages\FileHelpers.3.5.1\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="GregsStack.InputSimulatorStandard, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GregsStack.InputSimulatorStandard.1.3.2\lib\net40\GregsStack.InputSimulatorStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdig, Version=0.26.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Markdig.0.26.0\lib\net452\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MoreLinq, Version=3.3.2.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>packages\morelinq.3.3.2\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.WinForms, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.Sinks.WinForms.2.3.1\lib\net46\Serilog.Sinks.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.8.116.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\sqlite-net-pcl.1.8.116\lib\netstandard2.0\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLiteNetExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SQLiteNetExtensions.2.1.0\lib\netstandard1.1\SQLiteNetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.0.7.1395, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.2.0.7\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.7.1395, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.core.2.0.7\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.nativelibrary, Version=2.0.7.1395, Culture=neutral, PublicKeyToken=502ed628492ab262, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.2.0.7\lib\net461\SQLitePCLRaw.nativelibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.0.7.1395, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.provider.dynamic_cdecl.2.0.7\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Document.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.4.1\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\DocX.1.4.1\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dependencies\CultureManager\CultureManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Windows Global Hotkey\Hotkey.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyAction.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyEventArgs.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
+    <Compile Include="Source\Common\Core\Classes\CompilerHelper.cs" />
+    <Compile Include="Source\Common\Core\Debug\Chronometer.cs" />
+    <Compile Include="Source\Common\Core\Classes\EnumHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\ObjectHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\StackMethods.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Format.cs" />
+    <Compile Include="Source\Common\Core\Classes\WebCheckUpdate.cs" />
+    <Compile Include="Source\Common\Core\Collections\AutoResizedList.cs" />
+    <Compile Include="Source\Common\Core\Collections\CollectionsHelper.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeList.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeOfEnumDictionary.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeOfStringDictionary.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeSortedDictionary.cs" />
+    <Compile Include="Source\Common\Core\Collections\NullSafeStringList.cs" />
+    <Compile Include="Source\Common\Core\Collections\SortedAutoDictionary.cs" />
+    <Compile Include="Source\Common\Core\Data\DataFile.cs" />
+    <Compile Include="Source\Common\Core\Data\DataTableHelper.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteDatabase.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteNetHelper.cs" />
+    <Compile Include="Source\Common\Core\Debug\DebugManager.cs" />
+    <Compile Include="Source\Common\Core\Debug\DebugManager.Delegates.cs" />
+    <Compile Include="Source\Common\Core\Debug\DebugManager.Trace.cs" />
+    <Compile Include="Source\Common\Core\Display\AutoMenu.cs" />
+    <Compile Include="Source\Common\Core\Display\AutoMenu.Test.cs" />
+    <Compile Include="Source\Common\Core\Display\DisplayManager.cs" />
+    <Compile Include="Source\Common\Core\Display\DisplayManager.Query.cs" />
+    <Compile Include="Source\Common\Core\Display\DisplayManager.QueryValue.cs" />
+    <Compile Include="Source\Common\Core\Display\DisplayManager.Show.cs" />
+    <Compile Include="Source\Common\Core\Display\ShellIcons.cs" />
+    <Compile Include="Source\Common\Core\Enums\ControlLocation.cs" />
+    <Compile Include="Source\Common\Core\Enums\DataFileFolder.cs" />
+    <Compile Include="Source\Common\Core\Enums\ExportAction.cs" />
+    <Compile Include="Source\Common\Core\Enums\ExportTarget.cs" />
+    <Compile Include="Source\Common\Core\Enums\InputValueResult.cs" />
+    <Compile Include="Source\Common\Core\Enums\Language.cs" />
+    <Compile Include="Source\Common\Core\Enums\LogTraceEvent.cs" />
+    <Compile Include="Source\Common\Core\Enums\MessageBoxFormStyle.cs" />
+    <Compile Include="Source\Common\Core\Enums\MessageBoxIconStyle.cs" />
+    <Compile Include="Source\Common\Core\Enums\PowerActions.cs" />
+    <Compile Include="Source\Common\Core\Enums\ShowExceptionMode.cs" />
+    <Compile Include="Source\Common\Core\Enums\SoundSource.cs" />
+    <Compile Include="Source\Common\Core\Enums\TraceFileRollOverMode.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\ExceptionInfo.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\SQLiteException.cs" />
+    <Compile Include="Source\Common\Core\Globalization\Languages.cs" />
+    <Compile Include="Source\Common\Core\Globalization\Localizer.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Application.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Database.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Processing.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Settings.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.WebUpdate.cs" />
+    <Compile Include="Source\Common\Core\Globals\GlobalSuppressions.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Assembly.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Files.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Folders.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Providers.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.State.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Trace.cs" />
+    <Compile Include="Source\Common\Core\Globals\GlobalUsings.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProviders.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Core\Providers\ProviderSettings.cs" />
+    <Compile Include="Source\Common\Core\System\MediaMixer.cs" />
+    <Compile Include="Source\Common\Core\System\NativeMethods.cs" />
+    <Compile Include="Source\Common\Core\System\SoundItem.cs" />
+    <Compile Include="Source\Common\Core\System\SystemCommandLine.cs" />
+    <Compile Include="Source\Common\Core\System\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.IPC.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.Platform.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.Power.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.Shell.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.SSL.cs" />
+    <Compile Include="Source\Common\Core\System\SystemManager.Try.cs" />
+    <Compile Include="Source\Common\Core\System\SystemStatistics.cs" />
+    <Compile Include="Source\Common\Core\WinControls\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\ComboBoxNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\ComboBoxNavigator.Designer.cs">
+      <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\SelectYearsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\SelectYearsControl.designer.cs">
+      <DependentUpon>SelectYearsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\TextBoxEx.Actions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\TextBoxEx.Designer.cs">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\TextBoxEx.Initialize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\ToolStripCheckBoxItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinControls\ToolStripMenuItemHelper.cs" />
+    <Compile Include="Source\Common\Core\WinForms\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\DataFileEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\DataFileEditorForm.Designer.cs">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\ExceptionForm.designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\WinFormsHelper.cs" />
+    <Compile Include="Source\Common\Core\WinForms\HTMLBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\HTMLBrowserForm.Designer.cs">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\InputBox.designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\LoadingForm.designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\ShowTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\ShowTextForm.Designer.cs">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\TraceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\TraceForm.Designer.cs">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\WebUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\WebUpdateForm.Designer.cs">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Parashot.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Terms.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Interlock.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Interlocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.Properties.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.ToString.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermAnalysis.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Unicode.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebrations.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishFR.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadFR.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.MyJewishLearning.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TheYeshivaNet.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahBox.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahJews.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahOrg.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaFR.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.YeshivaCo.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\TorahCelebration.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Designer.cs">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Database\ApplicationDatabase.cs" />
+    <Compile Include="Source\Database\VerseRow.Logic.cs" />
+    <Compile Include="Source\Database\WordRow.cs" />
+    <Compile Include="Source\Database\VerseRow.cs" />
+    <Compile Include="Source\Database\ChapterRow.cs" />
+    <Compile Include="Source\Database\BookRow.cs" />
+    <Compile Include="Source\Entities\JsonStrong.cs" />
+    <Compile Include="Source\Entities\JsonVerse.cs" />
+    <Compile Include="Source\Forms\Boxes\ParashotForm.ShowDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ParashotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ParashotForm.designer.cs">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\StatisticsForm.designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.GoTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportStrongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportStrongForm.Designer.cs">
+      <DependentUpon>ImportStrongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Entities\ReferencesList.cs" />
+    <Compile Include="Source\Entities\History.cs" />
+    <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\System\ApplicationStatistics.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.cs" />
+    <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseResults.cs" />
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Ghost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Import\ImportVerseForm.Designer.cs">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Entities\Bookmarks.cs" />
+    <Compile Include="Source\Entities\WordTranslationComparer.cs" />
+    <Compile Include="Source\Entities\ReferenceItemComparer.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.Designer.cs">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Program\System\ExportDocX.cs" />
+    <Compile Include="Source\Entities\ReferenceItem.cs" />
+    <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
+    <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\EditBooksForm.Designer.cs">
+      <DependentUpon>EditBooksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Config\ExportingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\ExportingForm.Designer.cs">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.DB.CreateConcordances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Bookmarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Search\MainForm.Search.Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Translation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Verses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.ELS50.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.RawText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectVerseForm.designer.cs">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Program\System\SettingsHelper.cs" />
+    <Compile Include="Source\Enums\ViewMode.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.DB.LoadData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.Keys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.UpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\StatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\StatControl.Designer.cs">
+      <DependentUpon>StatControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\WordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\WordControl.Designer.cs">
+      <DependentUpon>WordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Program\Program.Vars.cs" />
+    <Compile Include="Source\Program\Program.cs" />
+    <Compile Include="Source\Forms\Boxes\BibleStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\BibleStatisticsForm.Designer.cs">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
+      <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\ComboBoxNavigator.resx">
+      <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\SelectYearsControl.resx">
+      <DependentUpon>SelectYearsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\TextBoxEx.fr.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinControls\TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\AboutBox.fr.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\DataFileEditorForm.fr.resx">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\DataFileEditorForm.resx">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.fr.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\ExceptionForm.fr.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\HTMLBrowserForm.fr.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\HTMLBrowserForm.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\InputBox.fr.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\LoadingForm.fr.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\MessageBoxEx.fr.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\ShowTextForm.fr.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\ShowTextForm.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\TraceForm.fr.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\TraceForm.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.fr.resx">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.resx">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinControls\LettersControl.fr.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinControls\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ParashotForm.fr.resx">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ParashotForm.resx">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
+      <DependentUpon>ImportStrongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.fr.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectReferenceForm.resx">
+      <DependentUpon>SelectReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.fr.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
+      <DependentUpon>ImportVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.fr.resx">
+      <DependentUpon>EditBooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.resx">
+      <DependentUpon>EditBooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\ExportingForm.fr.resx">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\ExportingForm.resx">
+      <DependentUpon>ExportingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSearchResultsForm.fr.resx">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSearchResultsForm.resx">
+      <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.fr.resx">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.resx">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Controls\StatControl.fr.resx">
+      <DependentUpon>StatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\BibleStatisticsForm.fr.resx">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\BibleStatisticsForm.resx">
+      <DependentUpon>BibleStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Controls\StatControl.resx">
+      <DependentUpon>StatControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Controls\WordControl.resx">
+      <DependentUpon>WordControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchTranslatedForm.fr.resx">
+      <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchTranslatedForm.resx">
+      <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="Licenses\MPL 2.0.rtf" />
+    <None Include="Packages.config" />
+    <None Include="Properties\DataSources\BookRow.datasource" />
+    <None Include="Properties\DataSources\ImportResults.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Source\Common\Core\Globals\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Licenses\MPL 2.0.htm" />
+    <Content Include="Licenses\MPL 2.0.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.2.0.7\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.7\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.7\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLitePCLRaw.lib.e_sqlite3.2.0.7\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets'))" />
+  </Target>
+</Project>

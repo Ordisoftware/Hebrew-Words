@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewWords
+﻿namespace Ordisoftware.Hebrew.Words
 {
   partial class SearchTranslatedForm
   {
@@ -36,14 +36,17 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader1 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.columnHeader2 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReachReference = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop = new System.Windows.Forms.Panel();
+      this.LabelHebrewWordSource = new System.Windows.Forms.Label();
       this.EditDistinct = new System.Windows.Forms.CheckBox();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionDelLast = new System.Windows.Forms.Button();
@@ -67,15 +70,17 @@
       // EditReturn
       // 
       resources.ApplyResources(this.EditReturn, "EditReturn");
-      this.EditReturn.Checked = global::Ordisoftware.HebrewWords.Properties.Settings.Default.CloseSearchTranslatedFormReturnToReference;
+      this.EditReturn.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CloseSearchTranslatedFormReturnToReference;
       this.EditReturn.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "CloseSearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditReturn.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CloseSearchTranslatedFormReturnToReference", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditReturn.Name = "EditReturn";
       this.EditReturn.UseVisualStyleBackColor = true;
       // 
       // LabelReference
       // 
+      this.LabelReference.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelReference, "LabelReference");
+      this.LabelReference.LinkColor = System.Drawing.Color.Navy;
       this.LabelReference.Name = "LabelReference";
       this.LabelReference.TabStop = true;
       this.LabelReference.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReference_LinkClicked);
@@ -110,13 +115,14 @@
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       this.ListView.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.ListView_ColumnWidthChanged);
+      this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
       this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
       this.ListView.Resize += new System.EventHandler(this.ListView_Resize);
       // 
       // columnHeader1
       // 
       resources.ApplyResources(this.columnHeader1, "columnHeader1");
-      this.columnHeader1.Width = global::Ordisoftware.HebrewWords.Properties.Settings.Default.FoundReferencesColumnRefWidth;
+      this.columnHeader1.Width = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.FoundReferencesColumnRefWidth;
       // 
       // columnHeader2
       // 
@@ -126,6 +132,8 @@
       // 
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
+            this.ActionAddTranslation,
+            this.toolStripSeparator2,
             this.ActionCopyTranslation,
             this.toolStripSeparator1,
             this.ActionReachReference});
@@ -137,6 +145,17 @@
       resources.ApplyResources(this.ActionUseTranslation, "ActionUseTranslation");
       this.ActionUseTranslation.Name = "ActionUseTranslation";
       this.ActionUseTranslation.Click += new System.EventHandler(this.ActionUseTranslation_Click);
+      // 
+      // ActionAddTranslation
+      // 
+      resources.ApplyResources(this.ActionAddTranslation, "ActionAddTranslation");
+      this.ActionAddTranslation.Name = "ActionAddTranslation";
+      this.ActionAddTranslation.Click += new System.EventHandler(this.ActionAddTranslation_Click);
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionCopyTranslation
       // 
@@ -157,6 +176,7 @@
       // 
       // PanelTop
       // 
+      this.PanelTop.Controls.Add(this.LabelHebrewWordSource);
       this.PanelTop.Controls.Add(this.EditDistinct);
       this.PanelTop.Controls.Add(this.ActionReset);
       this.PanelTop.Controls.Add(this.ActionDelLast);
@@ -165,6 +185,11 @@
       this.PanelTop.Controls.Add(this.EditHebrew);
       resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
+      // 
+      // LabelHebrewWordSource
+      // 
+      resources.ApplyResources(this.LabelHebrewWordSource, "LabelHebrewWordSource");
+      this.LabelHebrewWordSource.Name = "LabelHebrewWordSource";
       // 
       // EditDistinct
       // 
@@ -222,11 +247,11 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = global::Ordisoftware.HebrewWords.Properties.Settings.Default.SearchTranslatedFormSize;
+      this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SearchTranslatedFormSize;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelTop);
       this.Controls.Add(this.PanelButtons);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.HebrewWords.Properties.Settings.Default, "SearchTranslatedFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SearchTranslatedFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "SearchTranslatedForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchTranslatedForm_FormClosing);
@@ -262,5 +287,8 @@
     private System.Windows.Forms.Button ActionReset;
     private System.Windows.Forms.CheckBox EditDistinct;
     private System.Windows.Forms.CheckBox EditReturn;
+    private System.Windows.Forms.ToolStripMenuItem ActionAddTranslation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.Label LabelHebrewWordSource;
   }
 }

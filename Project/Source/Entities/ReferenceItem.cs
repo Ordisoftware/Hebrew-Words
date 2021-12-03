@@ -1,130 +1,201 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
-using System;
-using System.Linq;
-using Ordisoftware.HebrewWords.Data;
+/// <edited> 2021-12 </edited>
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.HebrewWords
+/// <summary>
+/// Provides reference item
+/// </summary>
+class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
-  /// <summary>
-  /// Provide reference item
-  /// </summary>
-  public class ReferenceItem
+  const string NULL = "(null)";
+
+  public BookRow Book { get; set; }
+  public ChapterRow Chapter { get; set; }
+  public VerseRow Verse { get; set; }
+  public WordRow Word { get; set; }
+
+  public override string ToString()
   {
+    return ( Book?.Name ?? NULL ) + " " +
+           ( Chapter?.Number.ToString() ?? NULL ) + "." +
+           ( Verse?.Number.ToString() ?? NULL );
+  }
 
-    const string NULL = "(null)";
+  public string ToStringFull()
+  {
+    return ( Book?.Name ?? NULL ) + " (" +
+           ( Book?.CommonName ?? NULL ) + ") " +
+           ( Chapter?.Number.ToString() ?? NULL ) + "." +
+           ( Verse?.Number.ToString() ?? NULL );
+  }
 
-    public DataSet.BooksRow Book { get; set; }
-    public DataSet.ChaptersRow Chapter { get; set; }
-    public DataSet.VersesRow Verse { get; set; }
-    public DataSet.WordsRow Word { get; set; }
+  public string ToStringNumbers()
+  {
+    return ( Book?.Number.ToString() ?? NULL ) + "." +
+           ( Chapter?.Number.ToString() ?? NULL ) + "." +
+           ( Verse?.Number.ToString() ?? NULL );
+  }
 
-    public override string ToString()
+  private ReferenceItem()
+  {
+  }
+
+  public ReferenceItem(BookRow book,
+                       ChapterRow chapter,
+                       VerseRow verse)
+  : this(book, chapter, verse, null)
+  {
+  }
+
+  public ReferenceItem(BookRow book,
+                       ChapterRow chapter,
+                       VerseRow verse,
+                       WordRow word)
+  {
+    Book = book;
+    Chapter = chapter;
+    Verse = verse;
+    Word = word;
+  }
+
+  public ReferenceItem(ReferenceItem reference,
+                       WordRow word)
+  : this(reference)
+  {
+    Word = word;
+  }
+
+  public ReferenceItem(ReferenceItem item)
+  : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
+  {
+  }
+
+  public ReferenceItem(int book, int chapter, int verse)
+  : this(book, chapter, verse, 0)
+  {
+  }
+
+  public ReferenceItem(int book, int chapter, int verse, int word)
+  {
+    try
     {
-      return ( Book?.Name ?? NULL ) + " " +
-             ( Chapter?.Number.ToString() ?? NULL ) + "." +
-             ( Verse?.Number.ToString() ?? NULL );
+      Book = ApplicationDatabase.Instance.Books.SingleOrDefault(b => b.Number == book);
+      Chapter = ( Book?.Chapters[chapter - 1] );
+      Verse = verse == 0 ? null : ( Chapter?.Verses[verse - 1] );
+      Word = word == 0 ? null : ( Verse?.Words[word - 1] );
+    }
+    catch ( Exception ex )
+    {
+      throw new Exception($"Error with reference: {book}.{chapter}.{verse}:{word}{Globals.NL2}{ex.Message}");
+    }
+  }
+
+  static public bool Equals(ReferenceItem x, ReferenceItem y)
+  {
+    return x != null
+        && y != null
+        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
+        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
+        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
+  }
+
+  public override bool Equals(object obj)
+  {
+    return Equals(this, obj as ReferenceItem);
+  }
+
+  public bool Equals(ReferenceItem other)
+  {
+    return Equals(this, other);
+  }
+
+  public bool EqualsWord(ReferenceItem y)
+  {
+    return Equals(y) && ( Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
+  }
+
+  public override int GetHashCode()
+  {
+    return ( Book?.Number.GetHashCode() ?? 0 )
+         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( Verse?.Number.GetHashCode() ?? 0 );
+  }
+
+  public int CompareTo(ReferenceItem other)
+  {
+    if ( other == null )
+      return 1;
+    else
+    {
+      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+        && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
+        && ( Verse?.Number ?? 0 ) == ( other.Verse?.Number ?? 0 ) )
+        return 0;
+      else
+      if ( ( Book?.Number ?? 0 ) < ( other.Book?.Number ?? 0 ) )
+        return -1;
+      else
+      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+        && ( Chapter?.Number ?? 0 ) < ( other.Chapter?.Number ?? 0 ) )
+        return -1;
+      else
+      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
+        && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
+        && ( Verse?.Number ?? 0 ) < ( other.Verse?.Number ?? 0 ) )
+        return -1;
+      else
+        return 1;
     }
 
-    public string ToStringNumbers()
-    {
-      return ( Book?.Number.ToString() ?? NULL ) + "." +
-             ( Chapter?.Number.ToString() ?? NULL ) + "." +
-             ( Verse?.Number.ToString() ?? NULL );
-    }
+  }
 
-    private ReferenceItem()
-    {
-    }
+  public static bool operator ==(ReferenceItem left, ReferenceItem right)
+  {
+    if ( left is null )
+      return right is null;
+    else
+      return left.CompareTo(right) == 0;
+  }
 
-    public ReferenceItem(DataSet.BooksRow book, 
-                         DataSet.ChaptersRow chapter, 
-                         DataSet.VersesRow verse)
-      : this(book, chapter, verse, null)
-    {
-    }
+  public static bool operator !=(ReferenceItem left, ReferenceItem right)
+  {
+    if ( left is null )
+      return right is not null;
+    else
+      return left.CompareTo(right) != 0;
+  }
 
-    public ReferenceItem(DataSet.BooksRow book, 
-                         DataSet.ChaptersRow chapter, 
-                         DataSet.VersesRow verse, 
-                         DataSet.WordsRow word)
-    {
-      Book = book;
-      Chapter = chapter;
-      Verse = verse;
-      Word = word;
-    }
+  public static bool operator <(ReferenceItem left, ReferenceItem right)
+  {
+    return left.CompareTo(right) < 0;
+  }
 
-    public ReferenceItem(ReferenceItem reference,
-                         DataSet.WordsRow word)
-      : this(reference)
-    {
-      Word = word;
-    }
+  public static bool operator <=(ReferenceItem left, ReferenceItem right)
+  {
+    return left.CompareTo(right) <= 0;
+  }
 
-    public ReferenceItem(ReferenceItem item)
-      : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
-    {
-    }
+  public static bool operator >(ReferenceItem left, ReferenceItem right)
+  {
+    return left.CompareTo(right) > 0;
+  }
 
-    public ReferenceItem(int book, int chapter, int verse)
-      : this(book, chapter, verse, 0)
-    {
-    }
-
-    public ReferenceItem(int book, int chapter, int verse, int word)
-    {
-      try
-      {
-        Book = MainForm.Instance.DataSet.Books.Where(b => b.Number == book).SingleOrDefault();
-        Chapter = Book?.GetChaptersRows()[chapter - 1] ?? null;
-        Verse = verse == 0 ? null : Chapter?.GetVersesRows()[verse - 1] ?? null;
-        Word = word == 0 ? null : Verse?.GetWordsRows()[word - 1] ?? null;
-      }
-      catch
-      {
-        throw new Exception(string.Format("Bad reference: {0}.{1}.{2}:{3}", book, chapter, verse, word));
-      }
-    }
-
-    static public bool Equals(ReferenceItem x, ReferenceItem y)
-    {
-      return !ReferenceEquals(x, null) && !ReferenceEquals(y, null)
-          && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-          && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-          && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-    }
-
-    public bool Equals(ReferenceItem y)
-    {
-      return Equals(this, y);
-    }
-
-    internal bool EqualsWord(ReferenceItem y)
-    {
-      return Equals(y) && ( Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
-    }
-
-    public override int GetHashCode()
-    {
-      return ( Book?.Number.GetHashCode() ?? 0 )
-           ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-           ^ ( Verse?.Number.GetHashCode() ?? 0 );
-    }
-
+  public static bool operator >=(ReferenceItem left, ReferenceItem right)
+  {
+    return left.CompareTo(right) >= 0;
   }
 
 }

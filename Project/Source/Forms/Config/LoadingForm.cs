@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,21 +11,22 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
-  public partial class LoadingForm : Form
+  public partial class LoadingFormHebrewWords : Form
   {
 
-    public LoadingForm()
+    public LoadingFormHebrewWords()
     {
       InitializeComponent();
-      this.CenterToMainForm();
-      LabelApplicationName.Text = AboutBox.Instance.AssemblyTitle;
+      this.CenterToMainFormElseScreen();
+      LabelApplicationName.Text = Globals.AssemblyTitle;
     }
 
   }

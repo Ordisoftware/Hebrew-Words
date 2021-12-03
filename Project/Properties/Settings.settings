@@ -1,8 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.HebrewWords.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.Hebrew.Words.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MainFormPosition" Type="Ordisoftware.HebrewWords.ControlLocation" Scope="User">
+    <Setting Name="MainFormPosition" Type="Ordisoftware.Core.ControlLocation" Scope="User">
       <Value Profile="(Default)">Center</Value>
     </Setting>
     <Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
@@ -26,28 +26,17 @@
     <Setting Name="ShowTips" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CurrentView" Type="Ordisoftware.HebrewWords.ViewModeType" Scope="User">
+    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Words.ViewMode" Scope="User">
       <Value Profile="(Default)">Verses</Value>
     </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Dsn=Hebrew-Words&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Dsn=Hebrew-Words</Value>
-    </Setting>
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
     </Setting>
     <Setting Name="SearchOnlineURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.google.com/search?q=strong+hebrew+</Value>
-    </Setting>
-    <Setting Name="BackupPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://www.pealim.com/search/?q=%WORD%</Value>
     </Setting>
     <Setting Name="BackupCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
@@ -55,8 +44,8 @@
     <Setting Name="AutoSaveDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.HebrewWords.HebrewWordClickOpen" Scope="User">
-      <Value Profile="(Default)">OnlineSearch</Value>
+    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.Hebrew.Words.HebrewWordClickOpen" Scope="User">
+      <Value Profile="(Default)">SearchTranslated</Value>
     </Setting>
     <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>
@@ -65,7 +54,7 @@
       <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="BookmarksCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="BookmarkMasterBook" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
@@ -83,7 +72,7 @@
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">292, 366</Value>
+      <Value Profile="(Default)">292, 466</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
@@ -98,7 +87,7 @@
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">392, 466</Value>
+      <Value Profile="(Default)">492, 566</Value>
     </Setting>
     <Setting Name="SearchTranslatedFormFilterDistinct" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -127,7 +116,7 @@
     <Setting Name="ImportVerseFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">792, 666</Value>
     </Setting>
-    <Setting Name="OpenGeneratedMSWordFiles" Type="System.Boolean" Scope="User">
+    <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="SearchInBookSelectedNumber" Type="System.Int32" Scope="User">
@@ -136,11 +125,152 @@
     <Setting Name="ImportVerseFormSplitterDistance" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="LanguageSelected" Type="Ordisoftware.Core.Language" Scope="User">
+      <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="FoundReferencesColumnRefWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">130</Value>
+    </Setting>
+    <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen" Scope="User">
+      <Value Profile="(Default)">ReachReference</Value>
+    </Setting>
+    <Setting Name="EditMemoFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">492, 266</Value>
+    </Setting>
+    <Setting Name="EditBooksFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">692, 666</Value>
+    </Setting>
+    <Setting Name="GoToMasterBookmarkAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ImportVerseFormGridColumnWidthHebrew" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="ImportVerseFormGridColumnWidthTranslationCurrent" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="AutoSortBookmarks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DebuggerEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2000-01-01</Value>
+    </Setting>
+    <Setting Name="TraceFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="TraceFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">884, 661</Value>
+    </Setting>
+    <Setting Name="TraceFormTextBoxFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="TraceEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SoundsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdvancedDialogBoxes" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UsageStatisticsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BenchmarkLoadData" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkStartingApp" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ApplicationVolume" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="CheckUpdateAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="WebLinksMenuEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ParashotFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="ParashotFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 676</Value>
+    </Setting>
+    <Setting Name="ParashotFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="ParashotFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="ParashotFormColumnTranslationWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="ShowLastNewInVersionAfterUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV3_0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BenchmarkTranslate" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TraceFormShowOnlyErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ExportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
+    </Setting>
+    <Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
+      <Value Profile="(Default)">PNG</Value>
+    </Setting>
+    <Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StatisticsFormAlwaysOnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StatisticsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BenchmarkRendering" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Core.DataExportTarget" Scope="User">
+      <Value Profile="(Default)">CSV</Value>
+    </Setting>
+    <Setting Name="CalculatorExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">calc.exe</Value>
+    </Setting>
+    <Setting Name="BackupFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USER_APP_DOCUMENTS%\Backup</Value>
     </Setting>
   </Settings>
 </SettingsFile>

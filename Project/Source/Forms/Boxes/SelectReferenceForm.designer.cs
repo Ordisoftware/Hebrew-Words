@@ -1,14 +1,14 @@
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.HebrewWords
+namespace Ordisoftware.Hebrew.Words
 {
 
   /// <summary>
   /// Provide input box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class SelectReferenceForm : Form
+  partial class SelectReferenceForm : Form
   {
 
     /// <summary>
@@ -39,19 +39,29 @@ namespace Ordisoftware.HebrewWords
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectReferenceForm));
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
-      this.SelectVerse = new System.Windows.Forms.NumericUpDown();
       this.LabelChapter = new System.Windows.Forms.Label();
-      this.SelectChapter = new System.Windows.Forms.NumericUpDown();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.LabelBook = new System.Windows.Forms.Label();
+      this.SelectChapter = new System.Windows.Forms.ComboBox();
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.SelectVerse = new System.Windows.Forms.ComboBox();
+      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
+      this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.textBox3 = new System.Windows.Forms.TextBox();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectVerse)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectChapter)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -80,45 +90,18 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this.LabelVerse, "LabelVerse");
       this.LabelVerse.Name = "LabelVerse";
       // 
-      // SelectVerse
-      // 
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
-      this.SelectVerse.Name = "SelectVerse";
-      this.SelectVerse.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.SelectVerse.ValueChanged += new System.EventHandler(this.SelectVerse_ValueChanged);
-      this.SelectVerse.Enter += new System.EventHandler(this.SelectValue_Enter);
-      // 
       // LabelChapter
       // 
       resources.ApplyResources(this.LabelChapter, "LabelChapter");
       this.LabelChapter.Name = "LabelChapter";
       // 
-      // SelectChapter
-      // 
-      resources.ApplyResources(this.SelectChapter, "SelectChapter");
-      this.SelectChapter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.SelectChapter.Name = "SelectChapter";
-      this.SelectChapter.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.SelectChapter.ValueChanged += new System.EventHandler(this.SelectChapter_ValueChanged);
-      this.SelectChapter.Enter += new System.EventHandler(this.SelectValue_Enter);
-      // 
       // SelectBook
       // 
-      resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.DataSource = this.BooksBindingSource;
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectBook.DropDownWidth = 450;
       this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
@@ -127,15 +110,82 @@ namespace Ordisoftware.HebrewWords
       resources.ApplyResources(this.LabelBook, "LabelBook");
       this.LabelBook.Name = "LabelBook";
       // 
+      // SelectChapter
+      // 
+      this.SelectChapter.DataSource = this.ChaptersBindingSource;
+      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectChapter.DropDownWidth = 450;
+      this.SelectChapter.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.Name = "SelectChapter";
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
+      // 
+      // ChaptersBindingSource
+      // 
+      this.ChaptersBindingSource.DataMember = "Chapters";
+      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      // 
+      // SelectVerse
+      // 
+      this.SelectVerse.DataSource = this.VersesBindingSource;
+      this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectVerse.DropDownWidth = 450;
+      this.SelectVerse.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
+      this.SelectVerse.Name = "SelectVerse";
+      // 
+      // VersesBindingSource
+      // 
+      this.VersesBindingSource.DataMember = "Verses";
+      this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
+      // 
+      // EditFilterChaptersWithTitle
+      // 
+      resources.ApplyResources(this.EditFilterChaptersWithTitle, "EditFilterChaptersWithTitle");
+      this.EditFilterChaptersWithTitle.Name = "EditFilterChaptersWithTitle";
+      this.EditFilterChaptersWithTitle.UseVisualStyleBackColor = true;
+      this.EditFilterChaptersWithTitle.CheckedChanged += new System.EventHandler(this.EditFilterChaptersWithTitle_CheckedChanged);
+      // 
+      // EditFilterVersesTranslated
+      // 
+      resources.ApplyResources(this.EditFilterVersesTranslated, "EditFilterVersesTranslated");
+      this.EditFilterVersesTranslated.Name = "EditFilterVersesTranslated";
+      this.EditFilterVersesTranslated.UseVisualStyleBackColor = true;
+      this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.EditFilterVersesTranslated_CheckedChanged);
+      // 
+      // textBox1
+      // 
+      resources.ApplyResources(this.textBox1, "textBox1");
+      this.textBox1.Name = "textBox1";
+      // 
+      // textBox2
+      // 
+      resources.ApplyResources(this.textBox2, "textBox2");
+      this.textBox2.Name = "textBox2";
+      // 
+      // textBox3
+      // 
+      resources.ApplyResources(this.textBox3, "textBox3");
+      this.textBox3.Name = "textBox3";
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      // 
       // SelectReferenceForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.SelectBook);
-      this.Controls.Add(this.SelectChapter);
+      this.Controls.Add(this.textBox3);
+      this.Controls.Add(this.textBox2);
+      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.EditFilterVersesTranslated);
+      this.Controls.Add(this.EditFilterChaptersWithTitle);
       this.Controls.Add(this.SelectVerse);
+      this.Controls.Add(this.SelectChapter);
+      this.Controls.Add(this.SelectBook);
       this.Controls.Add(this.LabelBook);
       this.Controls.Add(this.LabelChapter);
       this.Controls.Add(this.LabelVerse);
@@ -146,8 +196,9 @@ namespace Ordisoftware.HebrewWords
       this.Name = "SelectReferenceForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.SelectVerse)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectChapter)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -174,11 +225,19 @@ namespace Ordisoftware.HebrewWords
     /// The label.
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
-    internal NumericUpDown SelectVerse;
     private Label LabelChapter;
-    internal NumericUpDown SelectChapter;
     private ComboBox SelectBook;
     private Label LabelBook;
+    private ComboBox SelectChapter;
+    private ComboBox SelectVerse;
+    private CheckBox EditFilterChaptersWithTitle;
+    private CheckBox EditFilterVersesTranslated;
+    private TextBox textBox1;
+    private TextBox textBox2;
+    private TextBox textBox3;
+    private BindingSource BooksBindingSource;
+    private BindingSource ChaptersBindingSource;
+    private BindingSource VersesBindingSource;
   }
 
 }

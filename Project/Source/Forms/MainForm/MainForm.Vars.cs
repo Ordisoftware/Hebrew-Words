@@ -1,107 +1,87 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2019 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using Ordisoftware.HebrewWords.Data;
+/// <edited> 2021-12 </edited>
+namespace Ordisoftware.Hebrew.Words;
 
-namespace Ordisoftware.HebrewWords
+partial class MainForm
 {
 
-  public partial class MainForm
-  {
+  /// <summary>
+  /// Indicates the default Settings instance.
+  /// </summary>
+  private readonly Properties.Settings Settings = Program.Settings;
 
-    private const int PopulateDataPaging = 10000;
+  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
-    /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
+  /// <summary>
+  /// Indicates last shown tool-tip.
+  /// </summary>
+  private readonly ToolTip LastToolTip = new();
 
-    /// <summary>
-    /// Indicate current bible reference.
-    /// </summary>
-    public ReferenceItem CurrentReference { get; set; }
+  /// <summary>
+  /// Indicates current bible reference.
+  /// </summary>
+  public ReferenceItem CurrentReference { get; set; }
 
-    /// <summary>
-    /// Indicate combobox mutex.
-    /// </summary>
-    public bool ComboBoxMutex { get; private set; }
+  /// <summary>
+  /// Indicates is combo-box selection is changing.
+  /// </summary>
+  public bool IsComboBoxChanging { get; private set; }
 
-    /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    public bool IsReady { get; private set; }
+  /// <summary>
+  /// Indicates if rendering view is in running.
+  /// </summary>
+  public bool IsRendering { get; private set; }
 
-    /// <summary>
-    /// Indicate if windows session is ending.
-    /// </summary>
-    private bool IsSessionEnding;
+  /// <summary>
+  /// Indicates if GoTo is running.
+  /// </summary>
+  private bool IsGoToRunning;
 
-    /// <summary>
-    /// Indicate if is in loading data stage.
-    /// </summary>
-    public bool IsLoadingData { get; private set; }
+  /// <summary>
+  /// Indicates previous each paging position.
+  /// </summary>
+  private int PreviousSeachPagingPosition = -1;
 
-    /// <summary>
-    /// Indicate if render view is in progress.
-    /// </summary>
-    public bool RenderInProcess { get; private set; }
+  private Bookmarks Bookmarks { get; init; }
+  private History History { get; init; }
 
-    /// <summary>
-    /// Indicate if GoTo is running.
-    /// </summary>
-    private bool IsGoToRunning;
+  private int BookmarksMenuFirstIndex;
 
-    /// <summary>
-    /// Indicate if current processing must be cancelled.
-    /// </summary>
-    private bool CancelRequired;
+  private IEnumerable<ReferenceItem> SearchResults;
 
-    /// <summary>
-    /// Indicate previous seach paging position.
-    /// </summary>
-    private int PreviousSeachPagingPosition = -1;
+  public int SearchResultsCount { get; private set; }
 
-    private readonly Bookmarks Bookmarks = new Bookmarks();
+  private readonly int PagingCountDisableForm = 50;
+  private int PagingCurrent;
+  private int PagingCount;
 
-    private readonly History History = new History();
+  private Func<WordRow, bool> CheckWord;
+  private Func<VerseRow, bool> CheckVerse;
 
-    private IEnumerable<ReferenceItem> SearchResults;
+  private string SearchWord1;
+  private string SearchWord2;
 
-    internal int SearchResultsCount { get; private set; }
+  private readonly Font HebrewFont12 = new("Hebrew", 12f);
 
-    private int PagingCountDisableForm = 50;
-    private int PagingCurrent = 0;
-    private int PagingCount = 0;
+  private readonly Font LatinFont10 = new("Verdana", 10f);
 
-    private Func<DataSet.WordsRow, bool> CheckWord;
-    private Func<DataSet.VersesRow, bool> CheckVerse;
+  private readonly Font LatinFont8 = new("Verdana", 8f);
 
-    private string SearchWord1;
-    private string SearchWord2;
+  private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
 
-    private readonly Font HebrewFont12 = new Font("Hebrew", 12f);
-
-    private readonly Font LatinFont10 = new Font("Verdana", 10f);
-
-    private readonly Font LatinFont8 = new Font("Verdana", 8f);
-
-    private readonly Font VerseNumberFont = new Font("Calibri", 13f, FontStyle.Bold);
-
-  }
+  public ApplicationDatabase DBApp = ApplicationDatabase.Instance;
+  public HebrewDatabase DBHebrew = HebrewDatabase.Instance;
 
 }

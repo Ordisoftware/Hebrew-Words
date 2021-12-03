@@ -117,210 +117,99 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
-    <value>Chemin de Hebrew Letters</value>
-  </data>
-  <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
-  </data>
-  <data name="LabelOnlineSearch.Text" xml:space="preserve">
-    <value>Requête de recherche en ligne</value>
-  </data>
-  <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 13</value>
-  </data>
-  <data name="LabelBackupPath.Text" xml:space="preserve">
-    <value>Chemin par défaut des archives</value>
-  </data>
-  <data name="LabelBackupCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
-  </data>
-  <data name="LabelBackupCount.Text" xml:space="preserve">
-    <value>Nombre d'archives automatiques à conserver</value>
-  </data>
-  <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 13</value>
-  </data>
-  <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
-    <value>Délai pour la sauvegarde automatique (min)</value>
-  </data>
-  <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
-  </data>
-  <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
-    <value>URL du verset en ligne</value>
-  </data>
-  <data name="LabelCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 13</value>
-  </data>
-  <data name="LabelCommentaryLinesCount.Text" xml:space="preserve">
-    <value>Nombre de lignes pour un commentaire</value>
-  </data>
-  <data name="LabelBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
-  </data>
-  <data name="LabelBookmarksCount.Text" xml:space="preserve">
-    <value>Nombre de signets</value>
-  </data>
-  <data name="LabelWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 13</value>
-  </data>
-  <data name="LabelWordControlWidth.Text" xml:space="preserve">
-    <value>Largeur d'un WordControl</value>
-  </data>
-  <data name="LabelMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
-  </data>
-  <data name="LabelMaxRefCount.Text" xml:space="preserve">
-    <value>Nombre max de références pour la recherche</value>
-  </data>
-  <data name="LabelHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="LabelHistoryCount.Text" xml:space="preserve">
-    <value>Nombre d'historique</value>
-  </data>
-  <data name="LabelMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 13</value>
-  </data>
-  <data name="LabelMinRefCount.Text" xml:space="preserve">
-    <value>Ref. min. pour ouvrir la boite de recherche</value>
-  </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
   </data>
-  <data name="ActionReset.Text" xml:space="preserve">
+  <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-  <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
-        QrqRuvAiUDEo5WS2CgkWUttxL9WFgTeWjLyoLipBoVIbO3sx0ulebEqrxphrUbaz7ek5x1PrMBc98Nwc
-        fs/n+33Ot+a35u8ey4TcRxF0HUHQYUBguAkBsQF+e9nKt5DLnNEieoVcJjUQ8ZxD2icin3wBFMJAnv65
-        sGk5rEK0iF4BsRHAZ+SWxrA2eRlBtxlB8QBWHrUgNXka8vxZYENSN9Eievlth1UA1h8DPyROXoKceo0v
-        s3ew7OlAdOw4AV4CGrcGSLZ6rhxCISGgEO2FHL+Kwsf7QPoJYYvwWmsJeAO/WKWCZGtgzzkCBlCI9UOO
-        9LH+BeTfn+dG7zTA9L8A/AcbUwRwcvwK5KjAFheRX+gEcjPw3qoj6CUrVAOwG74/Q2HV8hfgEgFdQOa5
-        BngK3+16BFzmpBYrSyIZOQ8B1wgYKAMWu4GUhxUOAt8m6HGe0lC5hWRvBrKjBFzXAeRwD/DpAd5aDxF0
-        E/g6CuWtFitLBazfQ3Hthg5QSlgRfXgCkfFWXmSIW47wP2wB8A8buYEdSA6i+MECOSZAXu4FEoPwDvFC
-        WZFhJy81wgrGSoDPYcrEJ9qQmetEkZcorSrnFAiwcGUDlAF+0aiG/U5TVovptM/dXds/bW2akexGxDyt
-        SL/qQGlFQMBhQnvLrpM9p3af6Wvb26683YxUaie9h65zd+0XpqzNs0GnmRPNysRt9HZ6B/1f+gOjq0ys
-        qfkFIaj3TySvysIAAAAASUVORK5CYII=
-</value>
+  <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>477, 13</value>
   </data>
-  <data name="ActionSelectBackupPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
-        QrqRuvAiUDEo5WS2CgkWUttxL9WFgTeWjLyoLipBoVIbO3sx0ulebEqrxphrUbaz7ek5x1PrMBc98Nwc
-        fs/n+33Ot+a35u8ey4TcRxF0HUHQYUBguAkBsQF+e9nKt5DLnNEieoVcJjUQ8ZxD2icin3wBFMJAnv65
-        sGk5rEK0iF4BsRHAZ+SWxrA2eRlBtxlB8QBWHrUgNXka8vxZYENSN9Eievlth1UA1h8DPyROXoKceo0v
-        s3ew7OlAdOw4AV4CGrcGSLZ6rhxCISGgEO2FHL+Kwsf7QPoJYYvwWmsJeAO/WKWCZGtgzzkCBlCI9UOO
-        9LH+BeTfn+dG7zTA9L8A/AcbUwRwcvwK5KjAFheRX+gEcjPw3qoj6CUrVAOwG74/Q2HV8hfgEgFdQOa5
-        BngK3+16BFzmpBYrSyIZOQ8B1wgYKAMWu4GUhxUOAt8m6HGe0lC5hWRvBrKjBFzXAeRwD/DpAd5aDxF0
-        E/g6CuWtFitLBazfQ3Hthg5QSlgRfXgCkfFWXmSIW47wP2wB8A8buYEdSA6i+MECOSZAXu4FEoPwDvFC
-        WZFhJy81wgrGSoDPYcrEJ9qQmetEkZcorSrnFAiwcGUDlAF+0aiG/U5TVovptM/dXds/bW2akexGxDyt
-        SL/qQGlFQMBhQnvLrpM9p3af6Wvb26683YxUaie9h65zd+0XpqzNs0GnmRPNysRt9HZ6B/1f+gOjq0ys
-        qfkFIaj3TySvysIAAAAASUVORK5CYII=
-</value>
+  <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 13</value>
   </data>
-  <data name="SelectOpenOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 17</value>
+  <data name="LabelVolume.Text" xml:space="preserve">
+    <value>Volume des sons (non applicable aux sons système des boites de dialogue)</value>
   </data>
-  <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
-    <value>Requête de recherche en ligne</value>
+  <data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 17</value>
   </data>
-  <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 17</value>
+  <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
   </data>
-  <data name="SelectOpenTranslated.Text" xml:space="preserve">
-    <value>Recherche des traductions</value>
+  <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
+    <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Clic sur mot hébreu ouvre</value>
+  <data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
   </data>
-  <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKnSURBVDhPjZHrS5NhGMZHfYiiKO2g+LVPQQUlBEXQlw5Q
-        lKcKor+gwKgPHrba4d00lzNJp043a1rZm5SMtIMuN92sLTpiHgojdc6pbYmagqkffr07YJFIXfDjgee+
-        rpv7fh7Zn9qstevWK+2za6/YCbPuynM2qOyzCdJ9zLK8NqieBTLq2umctAGtEm3M4+ZdyM7JujbiVK2B
-        mHWp4jRPAvKWfmYZY5rXuEfh1ieo7B3mvq+IcawITg/xGsfSJgnaZl3GnXf0TMGXmUn65otpHnPR+E1J
-        Q3A7lzvPcLwlhzdT2ZwW3cTrHJmxaFQb1Y9/ip+neegDz/hP3i5k45rbw4PJbZiDKznhFEmqmePAsws8
-        8pezUuX8EYtGtUn9lOKeBRxjcH8EjMVVVJaL1FTbuH3Thmitp772HmKNiFgrctdai8VcjcVSkxxpsFnT
-        zDnPAgZp5xKDAf+gH5fbi6vjFe4OLx1hXniidETPYX+AEmMFkQZbBAeFgbMobjUz9T1EKBgkGAz9k4mJ
-        CUrLK+tlidrWuaMtTVQUFTPQP4C52oqp0kLFMoRrVZLna/9gdIrES1ZL4o0PlBkK6e3ppcHWxEhglMAy
-        hGsNtka6unspLTNF1kiKF+zBUn0+n7q78bz0MjTkw+lsx9nmwtHm/o3ThW9oiJeS52NXD+Wmqug7SNp5
-        UXt9rFAnoBc0FGjU5Gm0KNX55Kr0ZKsKkauvoRQKUAv5aLT5CLoC5HKlI5aPaMeq8zf1a/Jc/tV6Lyuu
-        vpF2zGLYfAif+Qjegn11kif8dX+yVSIqpUKBSi5HI8+VzlyyspT4TXthRojQb9pPZraWHIWKXIVykVhc
-        JktLTSM9RmpKOoePnqLPuIv3RckR+oy7OXjsNCkpGaSlpi8Si0f093j/gSz5F3LjOUKOXwa4AAAAAElF
-        TkSuQmCC
-</value>
+  <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
   </data>
-  <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAJFSURBVDhPfVDdS1NhHN5fYMNtFwbZTXd50Rddpd2ImiXR
-        +lpHGyNEK0OhvJBMCysoQaNslrbyI0ktz5m7si5KRQZjbqa5tZ3VbIhJXthVUF49vc+74+yLfvDjd55P
-        eI/pz7FWaG6zQ/tudqjYJJaXmLxh+ffYnFrRZqcPro4QPBOLGJ1ZgTe8Ii8xeer0GZGNIZl3YQy9U0to
-        e5VCSXsYW+snYKsdl5eYPHX6/irJEc3a9BdU98WwrWEKV70f8OsQk6dOH/1GNP3mxmdR1A3p2HM9gLxm
-        vwxN6qvYUj+J8fiqxNub/FKnj/7MP8lWRn50vllC/u0QCsTuvRGUgbJ7s9hxLYCjnXMS72oJSJ0++pmT
-        BRZFQ4N3AUXtMyi+8xaFbWHsbzXKbgYR+fxNFuy7FZIeLv3MyQJruYZzgwmUud9l9mDHHApF2evYVxmu
-        HtBRfHcWh+6ndfqZkwW2ci+UnhiOd0dwrCu99ocRHBAlnMujSZSKb/uDeanRRz9zRoG25vBEUdGrQ3kS
-        k+t4HIO9K4pS9zwOi7KTnvcZjT76mZMFFvuj4YIWP6oGP+LM0wRc/TqcfXGcECEOLzF56vTRz5wsEJPL
-        9zh74qgZ+YSzw0lUCtPp/oQs4CUmT50+4/256bgYc/7FmhyXD5UDCVzyLaJOS+H8iwVUDSXlJSZPnT76
-        jWhmskhaFBUlrUHUqilcebmMxrFleYnJUzfCWenY70Nyt+VI93Oroq5ln1KxvsTkqRu+/w7ftlMszetL
-        vPHmzJhMPwHQ0wXkZ5DOYAAAAABJRU5ErkJggg==
-</value>
+  <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
+    <value>Activer le menu des liens web</value>
   </data>
-  <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHbSURBVDhPpZNNS1RhGIafctleQ1sUGujUqCXkoCuhrQuF
-        /oGLTNsYEliEFbSq/oKI4MpAS3GhO5OBaeNJnanEhR8p7moC++buvs5sClyULS7Oc+7net7zvudwQtJ/
-        cWT4L0Tk7k4fep33Zqm0qjg3oDjbr+X1FW05A2oyeji4zDAb0Tyk715Kc2PSizF9cPn4eaKfZPOTKdRk
-        9HBwmYmWIW+hcVBPphPNvnW7xrs6HZosllXCqPW9oSajh4P7dCZRZG4qznTf1/B4QdH0QFObX6U6S9Wh
-        NZ7W4NqktTN6OJF5qNsTrxT1NxQv11b0zf0t884gr5rEKOshQ01GDwf3h8kXvQtekh71SY2+ZswFc9G0
-        mtypCtRk9HBwPcNsZYGR3orQbFoMA20npE4PAzUZPRxcz6QLFEqJPns7u2bD/HGE9pMpvx8BB5cZZiPO
-        96v6XlFxLa9ne045t7eYvrh21yat2bZ7OLjpjGcjsoOqGt3WwkdLOUtXLB1UnqQO3xtqMno4uFWjO4qs
-        P2NcuqUC8lU3u0KLh37CwIH208xnN9Rk9HBw82SXh71A7k75i1/Gnlne3PC2vGr9dRXevNa2M6Amo4eD
-        +8l0NPSU/TNEq2k7Jnybo/+yv0PxC0/PmXQSJ4tzAAAAAElFTkSuQmCC
-</value>
+  <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
   </data>
-  <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAI+SURBVDhPpdNdSFNhHMfxZ1pWhETvaRESWVBQkl0IQRB1
-        EVF0GXRh3VQrhaS6iQoxMugiIQm7SrqIaM1FXmREKGsvRbNstelB3ZxN15zNTc/apql8e47niEHeWAc+
-        F+fh+f/+zwuPAP7LvIMLIUTl8xfC3IQ4a0WceYYot+D3uHC7nDgcDp3bjd3vJyj79f5B/ruFVvxSUWnu
-        HJWSPP6chIk06VQKVTX8TCNHodkKra+g7TU4W2dChNb5iTeBqHqPuCRVviMa7EbpUvB36nxKD95IDPLl
-        qguXwPrF0GIzAs5Zuf8hjrjqQVxrR1zxMBYJ0RcM0hvQ9YT6URJjUJAD21fC1nywNM4F3HQOI6rbMdV8
-        lEHtZIYHCYfDhPp1fQMRAmoWimTnXWth5yp4WGcEmK1UvYkibnVgqu1A3PjEVHKIoeh3BiOGoRjfspNQ
-        nAel62DPGqivngsobxlE3PFikkRNB6RGGPkxTCxmiI8QlfXskPsvK5A2wO2LcwFHmwcw3fVJXxG1XhhX
-        UUeTJBKGMZW4dgu7l8L+Qt31U0bAeStltn5y6/2Y7vnkSr7AdIZsOkVKXuWMTAZVC9i7DA5uhEOb4PLx
-        2YAmtllCLHqgkNPQhajzyZnTTE3+YnxiQjc1jTxC2LccjmyGY0VQccAIuGBj9dMweY+C5DYGEA3d2tT5
-        v8Mr4MQWOFkM5lIjoMKmSmgr0c5DnLageJy4HG+x2+06l4s2fxcBWaAVzeoRQpWPQZRIpf+o5K/XtTCI
-        3zwauJ2iBs52AAAAAElFTkSuQmCC
-</value>
+  <data name="EditParashahCaptionWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 17</value>
   </data>
-  <data name="EditOpenGeneratedMSWordFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 17</value>
   </data>
-  <data name="EditOpenGeneratedMSWordFiles.Text" xml:space="preserve">
-    <value>Ouvrir les fichiers MSWord générés</value>
+  <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
   </data>
-  <data name="EditOpenLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
+  <data name="EditDebuggerEnabled.Text" xml:space="preserve">
+    <value>Activer le debogueur</value>
   </data>
-  <data name="EditOpenLastViewAtStartup.Text" xml:space="preserve">
-    <value>Ouvrir la dernière vue au démarrage</value>
+  <data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
+    <value>Activer les statistiques d'usage</value>
+  </data>
+  <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="EditLogEnabled.Text" xml:space="preserve">
+    <value>Activer le fichier log</value>
+  </data>
+  <data name="TabPageStartup.Text" xml:space="preserve">
+    <value>Démarrage</value>
+  </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
+    <value>Afficher les nouveautés après une mise à jour</value>
+  </data>
+  <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelLastDBOptimize.Text" xml:space="preserve">
+    <value>Dernière optimisation :</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 17</value>
+  </data>
+  <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="LabelLastStartupCheck.Text" xml:space="preserve">
+    <value>Dernière vérification :</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
+    <value>Fréquence de vérification en nombre de jours</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 17</value>
@@ -328,35 +217,409 @@
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier la mise à jour au démarrage</value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADMAAAAzAAAAMwAAADMAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhrcP9sbW7/bW1u/2xtbv9oa3D/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAHBQE1AAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAM2dpbv8AAAAzAAAAMwAA
-        ADMAAAAzAAAAMwAAADMAAAAzypY2/9+sSP/bpkH/26ZA/9umP//fqD//5aw+/+6yP/9bYGj/7rI//+Ws
-        Pv/fqD//26Y//9umQf/cqEb/1KE7/6lxF///////////////////////////////////////U1VZ////
-        /////////////////////////////9unRf+qcRT//////////////////////////////////////1BR
-        Uv/////////////////////////////////apUD/qnEU///////QlTD/0Zg4/9KZOv/RmDj/0ZUv////
-        //9QUVL/////////////////////////////////2qQ//6pyFf//////0po6/9SfRf/VoUj/1Z9F/9Sb
-        Ov//////UlNU///////5+fj/9vb1//b29f/29/f//////9qlP/+qchX//////9KXM//Umzz/1Z0+/9Sc
-        PP/VmTT/+Pv//1RVVv/29fT/7ezr/+vq6f/q6un/6enq///////apT//q3MW///////f4+3/4OXw/+Hm
-        8f/h5fD/4ubu/+nq7v9VV1n/6ejq/+Dg4v/e3uD/3t7g/93d4P//////26dB/612G//27+X/8+rc//Tq
-        2//06tv/9Orb//Xs2//98d7/WFxj//3x3v/169r/8+nZ//Pp2f/y6dn/8uvh/96rSf+weyT/rXYc/6x0
-        GP+sdBj/rHQY/610F/+vdRb/tHgV/11lcv+0eBX/r3UW/610F/+sdBj/rHQY/6pzGv/KlTb/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADNja3f/AAAAMwAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZsdv9pbXT/am1y/2ltdP9mbHb/AAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
-        AAD8HwAA//8AAA==
-</value>
+  <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
+    <value>Vérifier la mise à jour durant l'exécution</value>
+  </data>
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="EditRestoreLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 17</value>
+  </data>
+  <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 17</value>
+  </data>
+  <data name="EditVacuumAtStartup.Text" xml:space="preserve">
+    <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 13</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 17</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 17</value>
+  </data>
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
+  </data>
+  <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="EditNavigationWindowUseUnicodeIcons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 13</value>
+  </data>
+  <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 17</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 17</value>
+  </data>
+  <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 13</value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditAskRegenerateIfIntervalGreater.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 17</value>
+  </data>
+  <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 13</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 17</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 13</value>
+  </data>
+  <data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 17</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 17</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 17</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 17</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 17</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 13</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 17</value>
+  </data>
+  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 17</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="LabelImageExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 13</value>
+  </data>
+  <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export d'images</value>
+  </data>
+  <data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export de données</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 13</value>
+  </data>
+  <data name="LabelPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 13</value>
+  </data>
+  <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 13</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export en cas de succès</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="EditShowPrintDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="TabPagePaths.Text" xml:space="preserve">
+    <value>Chemins</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 13</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelExportFolder.Text" xml:space="preserve">
+    <value>Dossier d'exportation</value>
+  </data>
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
+    <value>Calculatrice système</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
+  </data>
+  <data name="OpenExeFileDialog.Filter" xml:space="preserve">
+    <value>Fichiers EXE (*.exe)|*.exe</value>
+  </data>
+  <data name="SaveThemeDialog.Filter" xml:space="preserve">
+    <value>Fichiers de thème (*.ini)|*.ini</value>
+  </data>
+  <data name="OpenThemeDialog.Filter" xml:space="preserve">
+    <value>Fichiers de thème (*.ini)|*.ini</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Clic sur mot hébreu ouvre</value>
+  </data>
+  <data name="LabelCommentaryLinesCount.Text" xml:space="preserve">
+    <value>Nombre de lignes pour le commentaire</value>
+  </data>
+  <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
+    <value>Requête par défaut de recherche en ligne de verset</value>
+  </data>
+  <data name="LabelOnlineSearch.Text" xml:space="preserve">
+    <value>Requête par défaut de recherche en ligne de mot</value>
+  </data>
+  <data name="EditGoToMasterBookmarkAtStartup.Text" xml:space="preserve">
+    <value>Aller au favori principal au démarrage</value>
+  </data>
+  <data name="LabelHistoryCount.Text" xml:space="preserve">
+    <value>Nombre d'historique</value>
+  </data>
+  <data name="LabelMaxRefCount.Text" xml:space="preserve">
+    <value>Références max à afficher pour la recherche</value>
+  </data>
+  <data name="LabelMinRefCount.Text" xml:space="preserve">
+    <value>Références min pour ouvrir le dialogue de recherche</value>
+  </data>
+  <data name="SelectOpenNothing.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="TabPageRendering.Text" xml:space="preserve">
+    <value>Rendu</value>
+  </data>
+  <data name="SelectOpenTranslated.Text" xml:space="preserve">
+    <value>Recherche des traduits</value>
+  </data>
+  <data name="LabelWordControlWidth.Text" xml:space="preserve">
+    <value>Largeur du WordControl</value>
+  </data>
+  <data name="EditAutoSortBookmarks.Text" xml:space="preserve">
+    <value>Trier automatiquement les favoris</value>
+  </data>
+  <data name="LabelBackupCount.Text" xml:space="preserve">
+    <value>Nombre de backups automatiques à conserver</value>
+  </data>
+  <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
+    <value>Délai pour la sauvegarde automatique (min)</value>
+  </data>
+  <data name="LabelBackupPath.Text" xml:space="preserve">
+    <value>Dossier de sauvegarde</value>
+  </data>
+  <data name="LabelBookmarksCount.Text" xml:space="preserve">
+    <value>Nombre de favoris</value>
+  </data>
+  <data name="TabPageTools.Text" xml:space="preserve">
+    <value>Outils</value>
   </data>
 </root>
