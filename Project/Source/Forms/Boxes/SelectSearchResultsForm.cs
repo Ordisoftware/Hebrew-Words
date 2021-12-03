@@ -44,7 +44,7 @@ partial class SelectSearchResultsForm : Form
   : this()
   {
     OriginalReferences = references.ToList();
-    LabelFound.Text = String.Format(LabelFound.Text, OriginalReferences.Count());
+    LabelFound.Text = string.Format(LabelFound.Text, OriginalReferences.Count());
   }
 
   private void SelectSearchResultsForm_Load(object sender, EventArgs e)
@@ -60,21 +60,19 @@ partial class SelectSearchResultsForm : Form
       References = references.ToList();
       Count = 0;
       LabelCount.Text = "0";
-      var query = from r in references
-                  group r by r.Book into books
+      var query = from reference in references
+                  group reference by reference.Book into books
                   select new { Key = books.Key.Number, Count = books.Count() };
       SelectBooks.Items.Clear();
       foreach ( var item in query )
       {
-        var row = SelectBooks.Items.Add(ApplicationDatabase.Instance.Books.Single(b => b.Number == item.Key).Name);
+        var row = SelectBooks.Items.Add(ApplicationDatabase.Instance.Books.Single(book => book.Number == item.Key).Name);
         row.Tag = item.Key;
         row.SubItems.Add(item.Count.ToString());
       }
       int textHeight;
-      using ( Graphics g = SelectBooks.CreateGraphics() )
-      {
-        textHeight = TextRenderer.MeasureText(g, "Text", SelectBooks.Font).Height + 4;
-      }
+      using var graphics = SelectBooks.CreateGraphics();
+      textHeight = TextRenderer.MeasureText(graphics, "Text", SelectBooks.Font).Height + 4;
       Height = Height - ClientSize.Height
              + SelectBooks.Location.Y
              + SelectBooks.Items.Count * textHeight + SelectBooks.Height - SelectBooks.ClientSize.Height
@@ -91,14 +89,10 @@ partial class SelectSearchResultsForm : Form
   private void ActionSelect_Click(object sender, EventArgs e)
   {
     var list = new List<int>();
-    foreach ( ListViewItem item in SelectBooks.Items )
-      if ( item.Checked )
-        list.Add((int)item.Tag);
+    foreach ( ListViewItem item in SelectBooks.Items ) if ( item.Checked ) list.Add((int)item.Tag);
     References = OriginalReferences.Where(r => list.Contains(r.Book.Number));
-    if ( EditOnlyWithTranslation.Checked )
-      References = References.Where(r => r.Verse.HasTranslation);
-    if ( EditOnlyWithoutTranslation.Checked )
-      References = References.Where(r => !r.Verse.HasTranslation);
+    if ( EditOnlyWithTranslation.Checked ) References = References.Where(r => r.Verse.HasTranslation);
+    if ( EditOnlyWithoutTranslation.Checked ) References = References.Where(r => !r.Verse.HasTranslation);
     DialogResult = DialogResult.Yes;
   }
 
@@ -111,10 +105,8 @@ partial class SelectSearchResultsForm : Form
   {
     if ( Initializing ) return;
     if ( e.Item.SubItems.Count == 0 ) return;
-    if ( e.Item.Checked )
-      Count += Convert.ToInt32(e.Item.SubItems[1].Text);
-    else
-      Count -= Convert.ToInt32(e.Item.SubItems[1].Text);
+    int value = Convert.ToInt32(e.Item.SubItems[1].Text);
+    Count += e.Item.Checked ? value : -value;
     LabelCount.Text = Count.ToString();
     ActionSelect.Enabled = Count > 0;
   }
@@ -127,7 +119,7 @@ partial class SelectSearchResultsForm : Form
     Mutex = false;
     if ( EditOnlyWithTranslation.Checked )
     {
-      CreateReferences(OriginalReferences.Where(r => r.Verse.HasTranslation));
+      CreateReferences(OriginalReferences.Where(reference => reference.Verse.HasTranslation));
       ActionAddAll.PerformClick();
     }
     else
@@ -142,7 +134,7 @@ partial class SelectSearchResultsForm : Form
     Mutex = false;
     if ( EditOnlyWithoutTranslation.Checked )
     {
-      CreateReferences(OriginalReferences.Where(r => !r.Verse.HasTranslation));
+      CreateReferences(OriginalReferences.Where(reference => !reference.Verse.HasTranslation));
       ActionAddAll.PerformClick();
     }
     else
@@ -156,14 +148,12 @@ partial class SelectSearchResultsForm : Form
 
   private void ActionAddAll_Click(object sender, EventArgs e)
   {
-    foreach ( ListViewItem item in SelectBooks.Items )
-      item.Checked = true;
+    foreach ( ListViewItem item in SelectBooks.Items ) item.Checked = true;
   }
 
   private void ActionRemoveAll_Click(object sender, EventArgs e)
   {
-    foreach ( ListViewItem item in SelectBooks.Items )
-      item.Checked = false;
+    foreach ( ListViewItem item in SelectBooks.Items ) item.Checked = false;
   }
 
 }
