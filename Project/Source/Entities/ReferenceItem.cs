@@ -15,7 +15,7 @@
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
-/// Provide reference item
+/// Provides reference item
 /// </summary>
 class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {

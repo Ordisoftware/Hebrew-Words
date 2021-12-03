@@ -17,15 +17,15 @@ namespace Ordisoftware.Hebrew.Words;
 using Ordisoftware.Hebrew.Words.Properties;
 
 /// <summary>
-/// Provide Settings helper.
+/// Provides Settings helper.
 /// </summary>
-static internal class SettingsHelper
+static class SettingsHelper
 {
 
   static private bool Mutex;
 
   /// <summary>
-  /// Indicate the main form instance.
+  /// Indicates the main form instance.
   /// </summary>
   static private readonly MainForm MainForm = MainForm.Instance;
 
@@ -47,6 +47,14 @@ static internal class SettingsHelper
     MainForm.EditScreenCenter.Checked = true;
     MainForm.EditConfirmClosing.Checked = true;
     MainForm.EditShowTips.Checked = true;
+    MainForm.EditSoundsEnabled.Checked = true;
+    DisplayManager.AdvancedFormUseSounds = true;
+    MainForm.EditUseAdvancedDialogBoxes.Checked = true;
+    DisplayManager.FormStyle = MessageBoxFormStyle.Advanced;
+    MainForm.EditShowSuccessDialogs.Checked = false;
+    DisplayManager.ShowSuccessDialogs = false;
+    settings.ApplicationVolume = 100;
+    MediaMixer.SetApplicationVolume(Globals.ProcessId, settings.ApplicationVolume);
     MainForm.SetView(ViewMode.Verses);
     settings.Store();
   }
@@ -86,11 +94,20 @@ static internal class SettingsHelper
       MainForm.EditScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
       MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
+      //
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
       MainForm.EditShowTips.Checked = settings.ShowTips;
+      MainForm.EditSoundsEnabled.Checked = settings.SoundsEnabled;
+      MainForm.EditUseAdvancedDialogBoxes.Checked = settings.AdvancedDialogBoxes;
+      // TODO add setting : MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
+      // TODO add setting : DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
+      MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
+      //
+      // TODO add setting : if ( settings.AutoOpenExportedFile && se// TODO add setting : ttings.AutoOpenExportFolder )
+      //  settings.AutoOpenExportFolder = false;
       if ( settings.BackupPath.Length == 0 )
       {
-        System.IO.Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
+        Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
         settings.BackupPath = Globals.UserDocumentsFolderPath;
       }
     }
@@ -126,9 +143,13 @@ static internal class SettingsHelper
       if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
       if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
       if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
+      //
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
-      SystemManager.TryCatch(Program.Settings.Save);
+      settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
+      settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
+      // TODO add setting : settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
+      SystemManager.TryCatch(settings.Save);
     }
     finally
     {
@@ -136,15 +157,32 @@ static internal class SettingsHelper
     }
   }
 
+  /// <summary>
+  /// Sets the upgrade flags off.
+  /// </summary>
   static internal void SetUpgradeFlagsOff(this Settings settings)
   {
     settings.UpgradeRequired = false;
   }
 
+  /// <summary>
+  /// Sets the first and upgrade flags off.
+  /// </summary>
   static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
   {
     settings.SetUpgradeFlagsOff();
     settings.FirstLaunchV3_0 = false;
+  }
+
+  /// <summary>
+  /// Get the export directory.
+  /// </summary>
+  static internal string GetExportDirectory(this Settings settings)
+  {
+    string directory = "";// TODO add setting : settings.ExportFolder;
+    if ( directory == "%USER_APP_DOCUMENTS%" )
+      directory = Globals.UserDocumentsFolderPath;
+    return directory;
   }
 
 }

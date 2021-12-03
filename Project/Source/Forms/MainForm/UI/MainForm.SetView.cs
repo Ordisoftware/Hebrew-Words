@@ -22,7 +22,7 @@ partial class MainForm
 {
 
   /// <summary>
-  /// Provide view connector.
+  /// Provides view connector.
   /// </summary>
   private sealed class ViewConnector
   {

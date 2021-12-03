@@ -15,17 +15,18 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
-using Microsoft.Win32;
 
 /// <summary>
-/// Provide application's main form.
+/// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 partial class MainForm : Form
 {
 
+  #region Singleton
+
   /// <summary>
-  /// Indicate the singleton instance.
+  /// Indicates the singleton instance.
   /// </summary>
   static internal MainForm Instance { get; private set; }
 
@@ -37,19 +38,17 @@ partial class MainForm : Form
     Instance = new MainForm();
   }
 
+  #endregion
+
+  #region Form Management
+
   /// <summary>
   /// Default constructor.
   /// </summary>
   private MainForm()
   {
     InitializeComponent();
-    new Task(InitializeIconsAndSound).Start();
-    Interlocks.Take();
-    SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
-    Text = Globals.AssemblyTitle;
-    ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
-    SystemEvents.SessionEnding += SessionEnding;
-    CurrentReference = new ReferenceItem(null, null, null, null);
+    DoConstructor();
     Bookmarks = new Bookmarks(Program.BookmarksFilePath);
     History = new History(Program.HistoryFilePath);
     ActionGoToBookmarkMain.Click += GoToBookmark;
@@ -62,31 +61,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void MainForm_Load(object sender, EventArgs e)
   {
-    if ( Globals.IsExiting ) return;
-    Settings.Retrieve();
-    //StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
-    Globals.ChronoStartingApp.Stop();
-    var lastdone = Settings.CheckUpdateLastDone;
-    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                   ref lastdone,
-                                   Settings.CheckUpdateAtStartupDaysInterval,
-                                   true);
-    Settings.CheckUpdateLastDone = lastdone;
-    if ( exit )
-    {
-      SystemManager.Exit();
-      return;
-    }
-    Globals.ChronoStartingApp.Start();
-    if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
-    {
-      Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
-      SystemManager.TryCatch(Settings.Save);
-    }
-    UpdateSearchButtons();
-    BookmarksMenuFirstIndex = MenuBookmarks.DropDownItems.Count;
-    DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
-    Program.UpdateLocalization();
+    DoFormLoad(sender, e);
   }
 
   /// <summary>
@@ -96,167 +71,39 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void MainForm_Shown(object sender, EventArgs e)
   {
-    if ( Globals.IsExiting ) return;
-    Refresh();
-    ToolStrip.SetDropDownOpening();
-    InitializeDialogsDirectory();
-    DoBackupDB();
-    LoadData();
-    TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
-    if ( TimerAutoSave.Enabled )
-      TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
-    Globals.IsReady = true;
-    bool auto = false;
-    if ( SystemManager.CommandLineOptions != null )
-      try
-      {
-        var options = ApplicationCommandLine.Instance;
-        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
-        {
-          auto = true;
-          GoTo(options.ReferenceToGo);
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchWord) )
-        {
-          auto = true;
-          defaultGoTo();
-          // TODO recup code Letters
-          SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
-        {
-          auto = true;
-          defaultGoTo();
-          SearchTranslatedWord(options.SearchTranslated);
-        }
-      }
-      catch
-      {
-      }
-    if ( !auto ) defaultGoTo();
-    ActionSave.PerformClick();
-    void defaultGoTo()
-    {
-      if ( Program.Settings.GoToMasterBookmarkAtStartup )
-        GoTo(Program.Settings.BookmarkMasterBook,
-             Program.Settings.BookmarkMasterChapter,
-             Program.Settings.BookmarkMasterVerse,
-             true);
-      else
-        GoTo(1, 1, 1, true);
-    }
-    if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-      SystemManager.TryCatch(() =>
-      {
-        var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
-        var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-        menuItem?.PerformClick();
-      });
-    ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
-    ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
-    // TODO redo all bindings and remove all .enabled = true/false
+    DoFormShown(sender, e);
   }
 
   /// <summary>
   /// Event handler. Called by MainForm for form closing events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Form closing event information.</param>
+  /// <param name="e">Event information.</param>
   private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( Globals.IsExiting ) return;
-    if ( !Globals.IsReady ) return;
-    ActionSave.PerformClick();
-    if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
-    {
-      Globals.IsExiting = true;
-      return;
-    }
-    if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
-        e.Cancel = true;
-      else
-        Globals.IsExiting = true;
+    DoFormClosing(sender, e);
   }
 
   /// <summary>
   /// Event handler. Called by MainForm for form closed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Form closing event information.</param>
+  /// <param name="e">Event information.</param>
   private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
   {
-    Settings.Store();
-    Interlocks.Release();
+    DoFormClosed(sender, e);
   }
 
   /// <summary>
-  /// Session ending event.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Session ending event information.</param>
-  private void SessionEnding(object sender, SessionEndingEventArgs e)
-  {
-    if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
-    Globals.IsExiting = true;
-    Globals.IsSessionEnding = true;
-    Globals.AllowClose = true;
-    TimerTooltip.Stop();
-    MessageBoxEx.CloseAll();
-    foreach ( Form form in Application.OpenForms )
-      if ( form != this && form.Visible )
-        SystemManager.TryCatch(() => form.Close());
-    Close();
-  }
-
-  /// <summary>
-  /// WndProc override.
-  /// </summary>
-  protected override void WndProc(ref Message m)
-  {
-    switch ( m.Msg )
-    {
-      case NativeMethods.WM_QUERYENDSESSION:
-        SessionEnding(this, null);
-        break;
-      default:
-        base.WndProc(ref m);
-        break;
-    }
-  }
-
-  /// <summary>
-  /// Set the initial directories of dialog boxes.
-  /// </summary>
-  public void InitializeDialogsDirectory()
-  {
-    OpenFileDialogDB.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogDB.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogMSWord.InitialDirectory = Settings.BackupPath;
-    SaveFileDialogRTF.InitialDirectory = Settings.BackupPath;
-  }
-
-  /// <summary>
-  /// Initialize icons
-  /// </summary>
-  private void InitializeIconsAndSound()
-  {
-    SystemManager.TryCatch(() => new SoundPlayer(Globals.EmptySoundFilePath).Play());
-    SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
-  }
-
-  /// <summary>
-  /// Event handler. Called by MainForm for client size and location changed events.
+  /// Event handler. Called by MainForm for windows changed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   private void MainForm_WindowsChanged(object sender, EventArgs e)
   {
-    if ( Globals.IsExiting ) return;
-    if ( !Globals.IsReady ) return;
     if ( !Visible ) return;
+    if ( !Globals.IsReady ) return;
+    if ( Globals.IsExiting ) return;
     if ( WindowState != FormWindowState.Normal ) return;
     EditScreenNone.PerformClick();
   }
@@ -273,9 +120,15 @@ partial class MainForm : Form
     Refresh();
   }
 
+  #endregion
+
+  #region Top Menu Tool-Tips
+
   /// <summary>
-  /// Timer event for tool-tips.
+  /// Event handler. Called by TimerTooltip for tick events.
   /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void TimerTooltip_Tick(object sender, EventArgs e)
   {
     if ( !EditShowTips.Checked ) return;
@@ -287,9 +140,11 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Show tooltip on mouse enter event.
+  /// Event handler. Called by ShowToolTip for on mouse enter events.
   /// </summary>
-  private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ShowToolTip_OnMouseEnter(object sender, EventArgs e)
   {
     if ( !EditShowTips.Checked ) return;
     if ( sender is not ToolStripItem ) return;
@@ -300,15 +155,255 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Hide tooltip on mouse leave event.
+  /// Event handler. Called by ShowToolTip for on mouse leave events.
   /// </summary>
-  private void ShowToolTipOnMouseLeave(object sender, EventArgs e)
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ShowToolTip_OnMouseLeave(object sender, EventArgs e)
   {
     if ( !EditShowTips.Checked ) return;
     TimerTooltip.Enabled = false;
     LastToolTip.Tag = null;
     LastToolTip.Hide(ToolStrip);
   }
+
+  #endregion
+
+  #region Menu System
+
+  /// <summary>
+  /// Event handler. Called by ActionExit for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExit_Click(object sender, EventArgs e)
+  {
+    Close();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionExit for mouse up events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionExit_MouseUp(object sender, MouseEventArgs e)
+  {
+    if ( e.Button == MouseButtons.Right )
+      Close();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionPreferences for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionPreferences_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    bool refresh = PreferencesForm.Run();
+    InitializeDialogsDirectory();
+    UpdateBookmarks();
+    UpdateHistory();
+    if ( refresh )
+    {
+      Refresh();
+      RenderVerses();
+      UpdatePagingCount();
+      RenderSearch();
+      var reference = Instance.CurrentReference;
+      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+    }
+  }
+
+  #endregion
+
+  #region Menu Settings
+
+  /// <summary>
+  /// Event handler. Called by ActionResetWinSettings for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionResetWinSettings_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
+    {
+      Settings.RestoreMainForm();
+      ActionRefresh.PerformClick();
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditScreenPosition for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void EditScreenPosition_Click(object sender, EventArgs e)
+  {
+    DoScreenPosition(sender, e);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowKeyboardNotice for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
+  {
+    Globals.NoticeKeyboardShortcutsForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditDialogBoxesSettings for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void EditDialogBoxesSettings_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.SoundsEnabled = EditSoundsEnabled.Checked;
+    DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
+    DisplayManager.FormStyle = EditUseAdvancedDialogBoxes.Checked
+                               ? MessageBoxFormStyle.Advanced
+                               : MessageBoxFormStyle.System;
+    switch ( DisplayManager.FormStyle )
+    {
+      case MessageBoxFormStyle.System:
+        DisplayManager.IconStyle = EditSoundsEnabled.Checked
+                                   ? MessageBoxIconStyle.ForceInformation
+                                   : MessageBoxIconStyle.ForceNone;
+        break;
+      case MessageBoxFormStyle.Advanced:
+        DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
+        break;
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditShowSuccessDialogs for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditShowSuccessDialogs_CheckedChanged(object sender, EventArgs e)
+  {
+    // TODO add setting : Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+    DisplayManager.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+  }
+
+  #endregion
+
+  #region Menu Information
+
+  /// <summary>
+  /// Event handler. Called by ActionWebCheckUpdate for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+  {
+    var lastdone = Settings.CheckUpdateLastDone;
+    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                   ref lastdone,
+                                   Settings.CheckUpdateAtStartupDaysInterval,
+                                   e == null);
+    Settings.CheckUpdateLastDone = lastdone;
+    if ( exit )
+    {
+      Globals.AllowClose = true;
+      Close();
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewLog for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionViewLog_Click(object sender, EventArgs e)
+  {
+    DebugManager.TraceForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewStats for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionViewStats_Click(object sender, EventArgs e)
+  {
+    StatisticsForm.Run();
+  }
+
+  #endregion
+
+  #region Menu Tools
+
+  /// <summary>
+  /// Event handler. Called by ActionViewBooksTranslation for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( !EditBooksForm.Run() ) return;
+    GoTo(CurrentReference);
+    ActionSave.PerformClick();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewParashot for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewParashot_Click(object sender, EventArgs e)
+  {
+    ParashotForm.Run();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowGrammarGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
+      Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
+    Program.GrammarGuideForm.Show();
+    Program.GrammarGuideForm.BringToFront();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionStartHebrewLetters for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
+                                  Settings.HebrewLettersExe);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewStatistics for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewStatistics_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    var reference = StatisticsForm.Run();
+    if ( reference != null )
+    {
+      SetView(ViewMode.Verses);
+      GoTo(reference);
+    }
+  }
+
+  #endregion
+
+  #region Menu Application View
 
   /// <summary>
   /// Event handler. Called by ActionViewVerses for click events.
@@ -398,6 +493,21 @@ partial class MainForm : Form
     UpdateSearchButtons();
   }
 
+  #endregion
+
+  #region Menu Application Actions
+
+  /// <summary>
+  /// Event handler. Called by ActionGoToVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionGoToVerse_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    GoTo(SelectReferenceForm.Run());
+  }
+
   /// <summary>
   /// Event handler. Called by ActionRefresh for click events.
   /// </summary>
@@ -455,68 +565,9 @@ partial class MainForm : Form
     }
   }
 
-  /// <summary>
-  /// Event handler. Called by ActionShowGrammarGuide for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
-  {
-    if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
-      Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
-    Program.GrammarGuideForm.Show();
-    Program.GrammarGuideForm.BringToFront();
-  }
+  #endregion
 
-  /// <summary>
-  /// Event handler. Called by ActionViewBooksTranslation for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    if ( !EditBooksForm.Run() ) return;
-    GoTo(CurrentReference);
-    ActionSave.PerformClick();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionViewParashot for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionViewParashot_Click(object sender, EventArgs e)
-  {
-    ParashotForm.Run();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionViewStatistics for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionViewStatistics_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    var reference = StatisticsForm.Run();
-    if ( reference != null )
-    {
-      SetView(ViewMode.Verses);
-      GoTo(reference);
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionStartHebrewLetters for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
-  {
-    HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
-                                  Settings.HebrewLettersExe);
-  }
+  #region Menu Application Database
 
   /// <summary>
   /// Event handler. Called by ActionNew for click events.
@@ -567,6 +618,24 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionVacuum for tick events.
+  /// </summary>
+  /// <param name="sender"></param>
+  /// <param name="e"></param>
+  private void ActionVacuum_Click(object sender, EventArgs e)
+  {
+    Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                 .Connection
+                                                 .Optimize(Settings.VacuumLastDone,
+                                                           Settings.VacuumAtStartupDaysInterval,
+                                                           true);
+    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+    //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+    //ApplicationStatistics.UpdateDBFileSizeRequired = true;
+    DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionOpenBackupPath for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -574,6 +643,16 @@ partial class MainForm : Form
   private void ActionOpenBackupPath_Click(object sender, EventArgs e)
   {
     SystemManager.RunShell(Settings.BackupPath);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenExportFolder for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenExportFolder_Click(object sender, EventArgs e)
+  {
+    //SystemManager.RunShell(Settings.ExportPath);
   }
 
   /// <summary>
@@ -597,122 +676,7 @@ partial class MainForm : Form
     ActionSave.PerformClick();
   }
 
-  /// <summary>
-  /// Event handler. Called by ActionVacuum for tick events.
-  /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
-  private void ActionVacuum_Click(object sender, EventArgs e)
-  {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-    //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-    //ApplicationStatistics.UpdateDBFileSizeRequired = true;
-    DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionPreferences for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionPreferences_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    bool refresh = PreferencesForm.Run();
-    InitializeDialogsDirectory();
-    UpdateBookmarks();
-    UpdateHistory();
-    if ( refresh )
-    {
-      Refresh();
-      RenderVerses();
-      UpdatePagingCount();
-      RenderSearch();
-      var reference = Instance.CurrentReference;
-      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionResetWinSettings for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionResetWinSettings_Click(object sender, EventArgs e)
-  {
-    if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
-    {
-      Settings.RestoreMainForm();
-      ActionRefresh.PerformClick();
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by SelectScreenPosition for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void EditScreenPosition_Click(object sender, EventArgs e)
-  {
-    DoScreenPosition(sender, e);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionAbout for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionAbout_Click(object sender, EventArgs e)
-  {
-    if ( AboutBox.Instance.Visible )
-      AboutBox.Instance.BringToFront();
-    else
-      AboutBox.Instance.ShowDialog();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionWebCheckUpdate for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    var lastdone = Settings.CheckUpdateLastDone;
-    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                   ref lastdone,
-                                   Settings.CheckUpdateAtStartupDaysInterval,
-                                   e == null);
-    Settings.CheckUpdateLastDone = lastdone;
-    if ( exit ) Close();
-  }
-
-  public void ActionViewLog_Click(object sender, EventArgs e)
-  {
-    DebugManager.TraceForm.Popup();
-  }
-
-  private void ActionViewStats_Click(object sender, EventArgs e)
-  {
-    // TODO usage stats form and rename tanak stats
-    //StatisticsForm.Run();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionExit for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionExit_Click(object sender, EventArgs e)
-  {
-    Close();
-  }
+  #endregion
 
   /// <summary>
   /// Event handler. Called by ActionExportBook for click events.
@@ -745,6 +709,11 @@ partial class MainForm : Form
   {
     Clipboard.SetText(EditELS50.Text);
   }
+
+  private bool TextBoxMutex;
+  private bool DisableChapterPos;
+  private bool NeedUpdateCurrentReference;
+  private bool UpdateCurrentReferenceMutex;
 
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
@@ -793,11 +762,6 @@ partial class MainForm : Form
     control.BackColor = Color.LightYellow;
     TextBoxMutex = false;
   }
-
-  private bool TextBoxMutex;
-  private bool DisableChapterPos;
-  private bool NeedUpdateCurrentReference;
-  private bool UpdateCurrentReferenceMutex;
 
   private void UpdateCurrentReference()
   {
@@ -1103,17 +1067,6 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionGoToVerse for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionGoToVerse_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    GoTo(SelectReferenceForm.Run());
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionSearchVerse for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -1268,24 +1221,6 @@ partial class MainForm : Form
     }
   }
 
-  /*private WordControl GetWordControl(object sender)
-  {
-    WordControl control = null;
-    if ( sender is ToolStripMenuItem )
-      control = (WordControl)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl.Parent;
-    else
-    if ( sender is ContextMenuStrip )
-    {
-      control = (WordControl)( (ContextMenuStrip)sender ).SourceControl;
-    }
-    else
-    if ( sender is WordControl )
-      control = (WordControl)sender;
-    else
-      ;
-    return control;
-  }*/
-
   private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
   {
     Clipboard.SetText(CurrentReference.Word.Translation);
@@ -1327,6 +1262,24 @@ partial class MainForm : Form
       SetView(ViewMode.Verses);
     GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
   }
+
+  /*private WordControl GetWordControl(object sender)
+  {
+    WordControl control = null;
+    if ( sender is ToolStripMenuItem )
+      control = (WordControl)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl.Parent;
+    else
+    if ( sender is ContextMenuStrip )
+    {
+      control = (WordControl)( (ContextMenuStrip)sender ).SourceControl;
+    }
+    else
+    if ( sender is WordControl )
+      control = (WordControl)sender;
+    else
+      ;
+    return control;
+  }*/
 
   private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
   {

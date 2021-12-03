@@ -15,14 +15,14 @@
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
-/// Provide application's main form.
+/// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 partial class MainForm : Form
 {
 
   /// <summary>
-  /// Create system information menu items.
+  /// Creates system information menu items.
   /// </summary>
   public void CreateSystemInformationMenu()
   {
@@ -36,7 +36,7 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Create web links menu items.
+  /// Initializes special menus.
   /// </summary>
   public void InitializeSpecialMenus()
   {
@@ -49,18 +49,20 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Create providers links menu items.
+  /// Creates providers links menu items.
   /// </summary>
   private void CreateProvidersLinks()
   {
-    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    // Word search online
+    ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       if ( ActiveControl is not WordControl ) return;
       var menuitem = (ToolStripMenuItem)sender;
       string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
     });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    // Verse read online
+    ActionVerseReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = sender as ToolStripMenuItem;
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;

@@ -15,13 +15,13 @@
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
-/// Provide Program class.
+/// Provides Program class.
 /// </summary>
 static partial class Program
 {
 
   /// <summary>
-  /// Indicate the default Settings instance.
+  /// Indicates the default Settings instance.
   /// </summary>
   static public readonly Properties.Settings Settings
     = Properties.Settings.Default;
@@ -30,25 +30,25 @@ static partial class Program
     = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
 
   /// <summary>
-  /// Indicate application tanak documents folder.
+  /// Indicates application tanak documents folder.
   /// </summary>
   static public string TanakFolderPath
     => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
 
   /// <summary>
-  /// Indicate file path of the bookmaks.
+  /// Indicates file path of the bookmaks.
   /// </summary>
   static public string BookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
 
   /// <summary>
-  /// Indicate file path of the history.
+  /// Indicates file path of the history.
   /// </summary>
   static public string HistoryFilePath
   => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
   /// <summary>
-  /// Indicate the grammar guide form.
+  /// Indicates the grammar guide form.
   /// </summary>
   static public HTMLBrowserForm GrammarGuideForm
   {

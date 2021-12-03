@@ -18,49 +18,49 @@ partial class MainForm
 {
 
   /// <summary>
-  /// Indicate the default Settings instance.
+  /// Indicates the default Settings instance.
   /// </summary>
   private readonly Properties.Settings Settings = Program.Settings;
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
   /// <summary>
-  /// Indicate loading data progress bar divisor.
+  /// Indicates loading data progress bar divisor.
   /// </summary>
   // TODO remove ? private const int PopulateDataPaging = 10000;
 
   /// <summary>
-  /// Indicate last shown tool-tip.
+  /// Indicates last shown tool-tip.
   /// </summary>
   private readonly ToolTip LastToolTip = new();
 
   /// <summary>
-  /// Indicate current bible reference.
+  /// Indicates current bible reference.
   /// </summary>
   public ReferenceItem CurrentReference { get; set; }
 
   /// <summary>
-  /// Indicate is combo-box selection is changing.
+  /// Indicates is combo-box selection is changing.
   /// </summary>
   public bool IsComboBoxChanging { get; private set; }
 
   /// <summary>
-  /// Indicate if rendering view is in running.
+  /// Indicates if rendering view is in running.
   /// </summary>
   public bool IsRendering { get; private set; }
 
   /// <summary>
-  /// Indicate if GoTo is running.
+  /// Indicates if GoTo is running.
   /// </summary>
   private bool IsGoToRunning;
 
   /// <summary>
-  /// Indicate previous each paging position.
+  /// Indicates previous each paging position.
   /// </summary>
   private int PreviousSeachPagingPosition = -1;
 
-  private readonly Bookmarks Bookmarks;
-  private readonly History History;
+  private Bookmarks Bookmarks { get; init; }
+  private History History { get; init; }
 
   private int BookmarksMenuFirstIndex;
 

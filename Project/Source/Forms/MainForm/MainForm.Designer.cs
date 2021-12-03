@@ -110,18 +110,6 @@
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
-      this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
-      this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenBottomLeft = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenBottomRight = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
-      this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
-      this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
@@ -157,7 +145,6 @@
       this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -167,13 +154,32 @@
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripButton();
+      this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
+      this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenBottomLeft = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenBottomRight = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
+      this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
       this.SaveFileDialogMSWord = new System.Windows.Forms.SaveFileDialog();
       this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
       this.OpenFileDialogDB = new System.Windows.Forms.OpenFileDialog();
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
       this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionVerseReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,7 +189,7 @@
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -199,6 +205,7 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -216,21 +223,21 @@
       this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
       this.SelectSearchTypeTranslation.SuspendLayout();
       this.SelectSearchTypeVerses.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -844,7 +851,6 @@
             this.ActionExit,
             this.Sep4,
             this.ActionPreferences,
-            this.MenuSettings,
             this.ActionViewSearch,
             this.toolStripSeparator10,
             this.ActionViewTranslations,
@@ -864,7 +870,8 @@
             this.MenuTools,
             this.ActionWebLinks,
             this.ActionInformation,
-            this.ActionImportConcordances});
+            this.ActionImportConcordances,
+            this.ActionSettings});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
@@ -875,8 +882,8 @@
       this.ActionViewVerses.Name = "ActionViewVerses";
       this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
-      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionExit
       // 
@@ -886,8 +893,9 @@
       this.ActionExit.Name = "ActionExit";
       this.ActionExit.Padding = new System.Windows.Forms.Padding(5);
       this.ActionExit.Click += new System.EventHandler(this.ActionExit_Click);
-      this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      this.ActionExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ActionExit_MouseUp);
       // 
       // Sep4
       // 
@@ -903,103 +911,8 @@
       this.ActionPreferences.Name = "ActionPreferences";
       this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
       this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
-      this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // MenuSettings
-      // 
-      this.MenuSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.MenuSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuitemScreenPosition,
-            this.ActionResetWinSettings,
-            this.Sep7,
-            this.EditShowTips,
-            this.EditConfirmClosing});
-      resources.ApplyResources(this.MenuSettings, "MenuSettings");
-      this.MenuSettings.Name = "MenuSettings";
-      this.MenuSettings.Padding = new System.Windows.Forms.Padding(5);
-      // 
-      // MenuitemScreenPosition
-      // 
-      this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EditScreenNone,
-            this.EditScreenTopLeft,
-            this.EditScreenTopRight,
-            this.EditScreenBottomLeft,
-            this.EditScreenBottomRight,
-            this.EditScreenCenter});
-      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
-      this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
-      // 
-      // EditScreenNone
-      // 
-      this.EditScreenNone.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenNone, "EditScreenNone");
-      this.EditScreenNone.Name = "EditScreenNone";
-      this.EditScreenNone.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // EditScreenTopLeft
-      // 
-      this.EditScreenTopLeft.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenTopLeft, "EditScreenTopLeft");
-      this.EditScreenTopLeft.Name = "EditScreenTopLeft";
-      this.EditScreenTopLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // EditScreenTopRight
-      // 
-      this.EditScreenTopRight.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenTopRight, "EditScreenTopRight");
-      this.EditScreenTopRight.Name = "EditScreenTopRight";
-      this.EditScreenTopRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // EditScreenBottomLeft
-      // 
-      this.EditScreenBottomLeft.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenBottomLeft, "EditScreenBottomLeft");
-      this.EditScreenBottomLeft.Name = "EditScreenBottomLeft";
-      this.EditScreenBottomLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // EditScreenBottomRight
-      // 
-      this.EditScreenBottomRight.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenBottomRight, "EditScreenBottomRight");
-      this.EditScreenBottomRight.Name = "EditScreenBottomRight";
-      this.EditScreenBottomRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // EditScreenCenter
-      // 
-      this.EditScreenCenter.CheckOnClick = true;
-      resources.ApplyResources(this.EditScreenCenter, "EditScreenCenter");
-      this.EditScreenCenter.Name = "EditScreenCenter";
-      this.EditScreenCenter.Click += new System.EventHandler(this.EditScreenPosition_Click);
-      // 
-      // ActionResetWinSettings
-      // 
-      resources.ApplyResources(this.ActionResetWinSettings, "ActionResetWinSettings");
-      this.ActionResetWinSettings.Name = "ActionResetWinSettings";
-      this.ActionResetWinSettings.Click += new System.EventHandler(this.ActionResetWinSettings_Click);
-      // 
-      // Sep7
-      // 
-      this.Sep7.Name = "Sep7";
-      resources.ApplyResources(this.Sep7, "Sep7");
-      // 
-      // EditShowTips
-      // 
-      this.EditShowTips.Checked = true;
-      this.EditShowTips.CheckOnClick = true;
-      this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditShowTips, "EditShowTips");
-      this.EditShowTips.Name = "EditShowTips";
-      // 
-      // EditConfirmClosing
-      // 
-      resources.ApplyResources(this.EditConfirmClosing, "EditConfirmClosing");
-      this.EditConfirmClosing.Checked = true;
-      this.EditConfirmClosing.CheckOnClick = true;
-      this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditConfirmClosing.Name = "EditConfirmClosing";
+      this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionViewSearch
       // 
@@ -1008,8 +921,8 @@
       this.ActionViewSearch.Name = "ActionViewSearch";
       this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator10
       // 
@@ -1023,8 +936,8 @@
       this.ActionViewTranslations.Name = "ActionViewTranslations";
       this.ActionViewTranslations.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
-      this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionViewRawText
       // 
@@ -1033,8 +946,8 @@
       this.ActionViewRawText.Name = "ActionViewRawText";
       this.ActionViewRawText.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewRawText.Click += new System.EventHandler(this.ActionViewRawText_Click);
-      this.ActionViewRawText.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewRawText.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewRawText.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewRawText.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionViewELS50
       // 
@@ -1043,8 +956,8 @@
       this.ActionViewELS50.Name = "ActionViewELS50";
       this.ActionViewELS50.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
-      this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator4
       // 
@@ -1058,8 +971,8 @@
       this.ActionGoToReference.Name = "ActionGoToReference";
       this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
       this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
-      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionRefresh
       // 
@@ -1068,8 +981,8 @@
       this.ActionRefresh.Name = "ActionRefresh";
       this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
       this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
-      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator9
       // 
@@ -1083,8 +996,8 @@
       this.ActionCloseWindows.Name = "ActionCloseWindows";
       this.ActionCloseWindows.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
-      this.ActionCloseWindows.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionCloseWindows.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionCloseWindows.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionCloseWindows.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionCopyToClipboard
       // 
@@ -1093,8 +1006,8 @@
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
-      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator7
       // 
@@ -1161,6 +1074,7 @@
       // 
       resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
       this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
+      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
       // 
       // ActionSave
       // 
@@ -1169,8 +1083,8 @@
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
-      this.ActionSave.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSave.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSave.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSave.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator1
       // 
@@ -1266,12 +1180,6 @@
       this.ActionViewBooksTranslation.Name = "ActionViewBooksTranslation";
       this.ActionViewBooksTranslation.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
       // 
-      // ActionViewParashot
-      // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
-      // 
       // toolStripSeparator6
       // 
       this.toolStripSeparator6.Name = "toolStripSeparator6";
@@ -1326,6 +1234,159 @@
       this.ActionImportConcordances.Name = "ActionImportConcordances";
       this.ActionImportConcordances.Click += new System.EventHandler(this.ActionImportConcordances_Click);
       // 
+      // ActionSettings
+      // 
+      this.ActionSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuitemScreenPosition,
+            this.ActionResetWinSettings,
+            this.Sep7,
+            this.ActionShowKeyboardNotice,
+            this.toolStripSeparator11,
+            this.EditShowTips,
+            this.EditUseAdvancedDialogBoxes,
+            this.EditSoundsEnabled,
+            this.EditShowSuccessDialogs,
+            this.toolStripSeparator15,
+            this.EditESCtoExit,
+            this.EditConfirmClosing});
+      resources.ApplyResources(this.ActionSettings, "ActionSettings");
+      this.ActionSettings.Name = "ActionSettings";
+      this.ActionSettings.Padding = new System.Windows.Forms.Padding(5);
+      // 
+      // MenuitemScreenPosition
+      // 
+      this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditScreenNone,
+            this.EditScreenTopLeft,
+            this.EditScreenTopRight,
+            this.EditScreenBottomLeft,
+            this.EditScreenBottomRight,
+            this.EditScreenCenter});
+      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
+      this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
+      // 
+      // EditScreenNone
+      // 
+      this.EditScreenNone.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenNone, "EditScreenNone");
+      this.EditScreenNone.Name = "EditScreenNone";
+      this.EditScreenNone.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenTopLeft
+      // 
+      this.EditScreenTopLeft.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenTopLeft, "EditScreenTopLeft");
+      this.EditScreenTopLeft.Name = "EditScreenTopLeft";
+      this.EditScreenTopLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenTopRight
+      // 
+      this.EditScreenTopRight.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenTopRight, "EditScreenTopRight");
+      this.EditScreenTopRight.Name = "EditScreenTopRight";
+      this.EditScreenTopRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenBottomLeft
+      // 
+      this.EditScreenBottomLeft.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenBottomLeft, "EditScreenBottomLeft");
+      this.EditScreenBottomLeft.Name = "EditScreenBottomLeft";
+      this.EditScreenBottomLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenBottomRight
+      // 
+      this.EditScreenBottomRight.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenBottomRight, "EditScreenBottomRight");
+      this.EditScreenBottomRight.Name = "EditScreenBottomRight";
+      this.EditScreenBottomRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenCenter
+      // 
+      this.EditScreenCenter.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenCenter, "EditScreenCenter");
+      this.EditScreenCenter.Name = "EditScreenCenter";
+      this.EditScreenCenter.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // ActionResetWinSettings
+      // 
+      resources.ApplyResources(this.ActionResetWinSettings, "ActionResetWinSettings");
+      this.ActionResetWinSettings.Name = "ActionResetWinSettings";
+      this.ActionResetWinSettings.Click += new System.EventHandler(this.ActionResetWinSettings_Click);
+      // 
+      // Sep7
+      // 
+      this.Sep7.Name = "Sep7";
+      resources.ApplyResources(this.Sep7, "Sep7");
+      // 
+      // ActionShowKeyboardNotice
+      // 
+      resources.ApplyResources(this.ActionShowKeyboardNotice, "ActionShowKeyboardNotice");
+      this.ActionShowKeyboardNotice.Name = "ActionShowKeyboardNotice";
+      this.ActionShowKeyboardNotice.Click += new System.EventHandler(this.ActionShowKeyboardNotice_Click);
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
+      // EditShowTips
+      // 
+      this.EditShowTips.Checked = true;
+      this.EditShowTips.CheckOnClick = true;
+      this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowTips, "EditShowTips");
+      this.EditShowTips.Name = "EditShowTips";
+      // 
+      // EditUseAdvancedDialogBoxes
+      // 
+      this.EditUseAdvancedDialogBoxes.Checked = true;
+      this.EditUseAdvancedDialogBoxes.CheckOnClick = true;
+      this.EditUseAdvancedDialogBoxes.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditUseAdvancedDialogBoxes, "EditUseAdvancedDialogBoxes");
+      this.EditUseAdvancedDialogBoxes.Name = "EditUseAdvancedDialogBoxes";
+      this.EditUseAdvancedDialogBoxes.CheckedChanged += new System.EventHandler(this.EditDialogBoxesSettings_CheckedChanged);
+      // 
+      // EditSoundsEnabled
+      // 
+      this.EditSoundsEnabled.Checked = true;
+      this.EditSoundsEnabled.CheckOnClick = true;
+      this.EditSoundsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditSoundsEnabled, "EditSoundsEnabled");
+      this.EditSoundsEnabled.Name = "EditSoundsEnabled";
+      this.EditSoundsEnabled.CheckedChanged += new System.EventHandler(this.EditDialogBoxesSettings_CheckedChanged);
+      // 
+      // EditShowSuccessDialogs
+      // 
+      this.EditShowSuccessDialogs.Checked = true;
+      this.EditShowSuccessDialogs.CheckOnClick = true;
+      this.EditShowSuccessDialogs.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowSuccessDialogs, "EditShowSuccessDialogs");
+      this.EditShowSuccessDialogs.Name = "EditShowSuccessDialogs";
+      this.EditShowSuccessDialogs.CheckedChanged += new System.EventHandler(this.EditShowSuccessDialogs_CheckedChanged);
+      // 
+      // toolStripSeparator15
+      // 
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
+      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+      // 
+      // EditESCtoExit
+      // 
+      this.EditESCtoExit.Checked = true;
+      this.EditESCtoExit.CheckOnClick = true;
+      this.EditESCtoExit.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditESCtoExit, "EditESCtoExit");
+      this.EditESCtoExit.Name = "EditESCtoExit";
+      // 
+      // EditConfirmClosing
+      // 
+      resources.ApplyResources(this.EditConfirmClosing, "EditConfirmClosing");
+      this.EditConfirmClosing.Checked = true;
+      this.EditConfirmClosing.CheckOnClick = true;
+      this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditConfirmClosing.Name = "EditConfirmClosing";
+      // 
       // SaveFileDialogMSWord
       // 
       resources.ApplyResources(this.SaveFileDialogMSWord, "SaveFileDialogMSWord");
@@ -1349,7 +1410,7 @@
       // ContextMenuStripVerse
       // 
       this.ContextMenuStripVerse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionOpenVerseOnline,
+            this.ActionVerseReadOnline,
             this.toolStripMenuItem1,
             this.ActionCopyTranslation,
             this.ActionExportVerse,
@@ -1361,10 +1422,10 @@
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       // 
-      // ActionOpenVerseOnline
+      // ActionVerseReadOnline
       // 
-      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
-      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      resources.ApplyResources(this.ActionVerseReadOnline, "ActionVerseReadOnline");
+      this.ActionVerseReadOnline.Name = "ActionVerseReadOnline";
       // 
       // toolStripMenuItem1
       // 
@@ -1414,7 +1475,7 @@
       // ContextMenuStripWord
       // 
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionSearchOnline,
+            this.ActionWordSearchOnline,
             this.ActionSearchTranslated,
             this.ActionSearchWord,
             this.MenuSeparator2,
@@ -1431,11 +1492,11 @@
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
-      // ActionSearchOnline
+      // ActionWordSearchOnline
       // 
-      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
-      this.ActionSearchOnline.Name = "ActionSearchOnline";
-      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
+      resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
+      this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
+      this.ActionWordSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
       // 
       // ActionSearchTranslated
       // 
@@ -1519,6 +1580,12 @@
       this.VersesBindingSource.DataMember = "Verses";
       this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
       // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1550,7 +1617,7 @@
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -1560,15 +1627,15 @@
       this.SelectSearchTypeVerses.PerformLayout();
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1666,7 +1733,6 @@
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     private System.Windows.Forms.ToolStripDropDownButton MenuBookmarks;
     private System.Windows.Forms.ToolStripDropDownButton MenuDatabase;
-    private System.Windows.Forms.ToolStripDropDownButton MenuSettings;
     private System.Windows.Forms.ToolStripDropDownButton MenuTools;
     private System.Windows.Forms.ToolStripMenuItem ActionAddBookmark;
     private System.Windows.Forms.ToolStripMenuItem ActionAddToBookmarks;
@@ -1686,10 +1752,9 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters2;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
-    private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
+    private System.Windows.Forms.ToolStripMenuItem ActionVerseReadOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionRestore;
-    private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionWordSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchWord;
     private System.Windows.Forms.ToolStripMenuItem ActionSetAsBookmarkMain;
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
@@ -1698,13 +1763,10 @@
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripMenuItem ActionViewBibleStatistics;
     private System.Windows.Forms.ToolStripMenuItem ActionViewBooksTranslation;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     private System.Windows.Forms.ToolStripMenuItem MenuHistory;
-    private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
     private System.Windows.Forms.ToolStripSeparator Sep4;
-    private System.Windows.Forms.ToolStripSeparator Sep7;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
@@ -1735,14 +1797,26 @@
     public System.Windows.Forms.ToolStripButton ActionSave;
     public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
     public System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
-    public System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenBottomLeft;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenBottomRight;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenCenter;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenNone;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
-    public System.Windows.Forms.ToolStripMenuItem EditScreenTopRight;
-    public System.Windows.Forms.ToolStripMenuItem EditShowTips;
+    private ToolStripDropDownButton ActionSettings;
+    private ToolStripMenuItem MenuitemScreenPosition;
+    public ToolStripMenuItem EditScreenNone;
+    public ToolStripMenuItem EditScreenTopLeft;
+    public ToolStripMenuItem EditScreenTopRight;
+    public ToolStripMenuItem EditScreenBottomLeft;
+    public ToolStripMenuItem EditScreenBottomRight;
+    public ToolStripMenuItem EditScreenCenter;
+    private ToolStripMenuItem ActionResetWinSettings;
+    private ToolStripSeparator Sep7;
+    private ToolStripMenuItem ActionShowKeyboardNotice;
+    private ToolStripSeparator toolStripSeparator11;
+    public ToolStripMenuItem EditShowTips;
+    public ToolStripMenuItem EditUseAdvancedDialogBoxes;
+    public ToolStripMenuItem EditSoundsEnabled;
+    public ToolStripMenuItem EditShowSuccessDialogs;
+    private ToolStripSeparator toolStripSeparator15;
+    public ToolStripMenuItem EditESCtoExit;
+    public ToolStripMenuItem EditConfirmClosing;
+    internal ToolStripMenuItem ActionViewParashot;
   }
 }
 
