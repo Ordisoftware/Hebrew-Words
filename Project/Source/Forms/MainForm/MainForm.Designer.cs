@@ -173,7 +173,6 @@
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
       this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-      this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
       this.SaveFileDialogMSWord = new System.Windows.Forms.SaveFileDialog();
       this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
@@ -1263,7 +1262,6 @@
             this.EditSoundsEnabled,
             this.EditShowSuccessDialogs,
             this.toolStripSeparator15,
-            this.EditESCtoExit,
             this.EditConfirmClosing});
       resources.ApplyResources(this.ActionSettings, "ActionSettings");
       this.ActionSettings.Name = "ActionSettings";
@@ -1384,14 +1382,6 @@
       // 
       this.toolStripSeparator15.Name = "toolStripSeparator15";
       resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
-      // 
-      // EditESCtoExit
-      // 
-      this.EditESCtoExit.Checked = true;
-      this.EditESCtoExit.CheckOnClick = true;
-      this.EditESCtoExit.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditESCtoExit, "EditESCtoExit");
-      this.EditESCtoExit.Name = "EditESCtoExit";
       // 
       // EditConfirmClosing
       // 
@@ -1822,7 +1812,6 @@
     public ToolStripMenuItem EditSoundsEnabled;
     public ToolStripMenuItem EditShowSuccessDialogs;
     private ToolStripSeparator toolStripSeparator15;
-    public ToolStripMenuItem EditESCtoExit;
     public ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashot;
     private ToolStripMenuItem sYSTEMSTATSToolStripMenuItem;

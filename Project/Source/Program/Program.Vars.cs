@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -28,6 +28,12 @@ static partial class Program
 
   static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
     = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
+
+  /// <summary>
+  /// Indicates image export targets
+  /// </summary>
+  static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
+    = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
 
   /// <summary>
   /// Indicates application tanak documents folder.

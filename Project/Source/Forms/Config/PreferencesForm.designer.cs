@@ -29,141 +29,95 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.Label LabelHebrewLettersPath;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
-      System.Windows.Forms.Label LabelOnlineSearch;
-      System.Windows.Forms.Label LabelBackupPath;
-      System.Windows.Forms.Label LabelBackupCount;
-      System.Windows.Forms.Label LabelAutoSaveDelay;
-      System.Windows.Forms.Label LabelOnlineVerseURL;
-      System.Windows.Forms.Label LabelCommentaryLinesCount;
-      System.Windows.Forms.Label LabelBookmarksCount;
-      System.Windows.Forms.Label LabelWordControlWidth;
-      System.Windows.Forms.Label LabelMaxRefCount;
-      System.Windows.Forms.Label LabelHistoryCount;
-      System.Windows.Forms.Label LabelMinRefCount;
+      this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ActionReset = new System.Windows.Forms.LinkLabel();
-      this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
-      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-      this.EditOnlineSearch = new System.Windows.Forms.TextBox();
-      this.ActionSelectBackupPath = new System.Windows.Forms.Button();
-      this.EditBackupPath = new System.Windows.Forms.TextBox();
-      this.EditBackupCount = new System.Windows.Forms.NumericUpDown();
-      this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
-      this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
-      this.SelectOpenNothing = new System.Windows.Forms.RadioButton();
-      this.SelectOpenOnlineSearch = new System.Windows.Forms.RadioButton();
-      this.SelectOpenTranslated = new System.Windows.Forms.RadioButton();
-      this.SelectOpenHebrewLetters = new System.Windows.Forms.RadioButton();
-      this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
+      this.ActionExportSettings = new System.Windows.Forms.Button();
+      this.ActionImportSettings = new System.Windows.Forms.Button();
+      this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
+      this.OpenExeFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.PanelBottomSeparator = new System.Windows.Forms.Panel();
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-      this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
-      this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
-      this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
-      this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
-      this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
-      this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
-      this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
-      this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
+      this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
+      this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.LabelExportFolder = new System.Windows.Forms.Label();
+      this.ActionResetExportFolder = new System.Windows.Forms.Button();
+      this.ActionSelectExportFolder = new System.Windows.Forms.Button();
+      this.LabelCalculatorPath = new System.Windows.Forms.Label();
+      this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
+      this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
+      this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
+      this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
+      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.TabPagePrint = new System.Windows.Forms.TabPage();
+      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
+      this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
+      this.LabelSaveImageCountWarning = new System.Windows.Forms.Label();
+      this.LabelSaveImageCountWarningIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelPrintPageCountWarning = new System.Windows.Forms.Label();
+      this.LabelPrintPageCountWarningIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelPrintMargin = new System.Windows.Forms.Label();
+      this.LabelPrintingMarginIntervalInfo = new System.Windows.Forms.Label();
+      this.EditSaveImageCountWarning = new System.Windows.Forms.NumericUpDown();
+      this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
+      this.EditPrintPageCountWarning = new System.Windows.Forms.NumericUpDown();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
+      this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
+      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
+      this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
+      this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
+      this.TabPageStartup = new System.Windows.Forms.TabPage();
+      this.EditShowLastNewInVersionAfterUpdate = new System.Windows.Forms.CheckBox();
+      this.LabelLastDBOptimizeDate = new System.Windows.Forms.Label();
+      this.LabelLastDBOptimize = new System.Windows.Forms.Label();
+      this.LabelLastStartupCheckDate = new System.Windows.Forms.Label();
+      this.LabelLastStartupCheck = new System.Windows.Forms.Label();
+      this.LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
+      this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
+      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
+      this.EditCheckUpdateAtStartupInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
+      this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
+      this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.EditVolume = new System.Windows.Forms.TrackBar();
+      this.LabelVolume = new System.Windows.Forms.Label();
+      this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
-      this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
-      this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
-      this.EditOpenGeneratedMSWordFiles = new System.Windows.Forms.CheckBox();
-      this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
-      this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditOpenLastViewAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
+      this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
-      LabelHebrewLettersPath = new System.Windows.Forms.Label();
-      LabelOnlineSearch = new System.Windows.Forms.Label();
-      LabelBackupPath = new System.Windows.Forms.Label();
-      LabelBackupCount = new System.Windows.Forms.Label();
-      LabelAutoSaveDelay = new System.Windows.Forms.Label();
-      LabelOnlineVerseURL = new System.Windows.Forms.Label();
-      LabelCommentaryLinesCount = new System.Windows.Forms.Label();
-      LabelBookmarksCount = new System.Windows.Forms.Label();
-      LabelWordControlWidth = new System.Windows.Forms.Label();
-      LabelMaxRefCount = new System.Windows.Forms.Label();
-      LabelHistoryCount = new System.Windows.Forms.Label();
-      LabelMinRefCount = new System.Windows.Forms.Label();
+      this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
+      this.EditLogEnabled = new System.Windows.Forms.CheckBox();
+      this.TabControl = new System.Windows.Forms.TabControl();
+      this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelButtons.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBackupCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).BeginInit();
-      this.GroupBoxHebrewWordClick.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxRefCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMinRefCount ) ).BeginInit();
+      this.TabPagePaths.SuspendLayout();
+      this.TabPagePrint.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
+      this.TabPageStartup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
+      this.TabPageApplication.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
+      this.TabControl.SuspendLayout();
       this.SuspendLayout();
       // 
-      // LabelHebrewLettersPath
+      // DialogColor
       // 
-      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
-      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
-      // 
-      // LabelOnlineSearch
-      // 
-      resources.ApplyResources(LabelOnlineSearch, "LabelOnlineSearch");
-      LabelOnlineSearch.Name = "LabelOnlineSearch";
-      // 
-      // LabelBackupPath
-      // 
-      resources.ApplyResources(LabelBackupPath, "LabelBackupPath");
-      LabelBackupPath.Name = "LabelBackupPath";
-      // 
-      // LabelBackupCount
-      // 
-      resources.ApplyResources(LabelBackupCount, "LabelBackupCount");
-      LabelBackupCount.Name = "LabelBackupCount";
-      // 
-      // LabelAutoSaveDelay
-      // 
-      resources.ApplyResources(LabelAutoSaveDelay, "LabelAutoSaveDelay");
-      LabelAutoSaveDelay.Name = "LabelAutoSaveDelay";
-      // 
-      // LabelOnlineVerseURL
-      // 
-      resources.ApplyResources(LabelOnlineVerseURL, "LabelOnlineVerseURL");
-      LabelOnlineVerseURL.Name = "LabelOnlineVerseURL";
-      // 
-      // LabelCommentaryLinesCount
-      // 
-      resources.ApplyResources(LabelCommentaryLinesCount, "LabelCommentaryLinesCount");
-      LabelCommentaryLinesCount.Name = "LabelCommentaryLinesCount";
-      // 
-      // LabelBookmarksCount
-      // 
-      resources.ApplyResources(LabelBookmarksCount, "LabelBookmarksCount");
-      LabelBookmarksCount.Name = "LabelBookmarksCount";
-      // 
-      // LabelWordControlWidth
-      // 
-      resources.ApplyResources(LabelWordControlWidth, "LabelWordControlWidth");
-      LabelWordControlWidth.Name = "LabelWordControlWidth";
-      // 
-      // LabelMaxRefCount
-      // 
-      resources.ApplyResources(LabelMaxRefCount, "LabelMaxRefCount");
-      LabelMaxRefCount.Name = "LabelMaxRefCount";
-      // 
-      // LabelHistoryCount
-      // 
-      resources.ApplyResources(LabelHistoryCount, "LabelHistoryCount");
-      LabelHistoryCount.Name = "LabelHistoryCount";
-      // 
-      // LabelMinRefCount
-      // 
-      resources.ApplyResources(LabelMinRefCount, "LabelMinRefCount");
-      LabelMinRefCount.Name = "LabelMinRefCount";
+      this.DialogColor.FullOpen = true;
       // 
       // ActionClose
       // 
@@ -174,25 +128,123 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ActionReset);
+      this.PanelButtons.Controls.Add(this.ActionExportSettings);
+      this.PanelButtons.Controls.Add(this.ActionImportSettings);
+      this.PanelButtons.Controls.Add(this.ActionResetSettings);
       this.PanelButtons.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
-      // ActionReset
+      // ActionExportSettings
       // 
-      this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionReset, "ActionReset");
-      this.ActionReset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionReset.LinkColor = System.Drawing.Color.Navy;
-      this.ActionReset.Name = "ActionReset";
-      this.ActionReset.TabStop = true;
-      this.ActionReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReset_LinkClicked);
+      this.ActionExportSettings.AllowDrop = true;
+      this.ActionExportSettings.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionExportSettings, "ActionExportSettings");
+      this.ActionExportSettings.Name = "ActionExportSettings";
+      this.ActionExportSettings.UseVisualStyleBackColor = true;
+      this.ActionExportSettings.Click += new System.EventHandler(this.ActionExportSettings_Click);
       // 
-      // EditHebrewLettersPath
+      // ActionImportSettings
       // 
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.ActionImportSettings.AllowDrop = true;
+      this.ActionImportSettings.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionImportSettings, "ActionImportSettings");
+      this.ActionImportSettings.Name = "ActionImportSettings";
+      this.ActionImportSettings.UseVisualStyleBackColor = true;
+      this.ActionImportSettings.Click += new System.EventHandler(this.ActionImportSettings_Click);
+      // 
+      // ActionResetSettings
+      // 
+      this.ActionResetSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionResetSettings, "ActionResetSettings");
+      this.ActionResetSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
+      this.ActionResetSettings.Name = "ActionResetSettings";
+      this.ActionResetSettings.TabStop = true;
+      this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
+      // 
+      // OpenExeFileDialog
+      // 
+      resources.ApplyResources(this.OpenExeFileDialog, "OpenExeFileDialog");
+      // 
+      // PanelBottomSeparator
+      // 
+      resources.ApplyResources(this.PanelBottomSeparator, "PanelBottomSeparator");
+      this.PanelBottomSeparator.Name = "PanelBottomSeparator";
+      // 
+      // TabPagePaths
+      // 
+      this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.LabelExportFolder);
+      this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
+      this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
+      this.TabPagePaths.Controls.Add(this.LabelCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.LabelHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.EditExportFolder);
+      this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
+      resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
+      this.TabPagePaths.Name = "TabPagePaths";
+      // 
+      // LabelExportFolder
+      // 
+      resources.ApplyResources(this.LabelExportFolder, "LabelExportFolder");
+      this.LabelExportFolder.Name = "LabelExportFolder";
+      // 
+      // ActionResetExportFolder
+      // 
+      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetExportFolder, "ActionResetExportFolder");
+      this.ActionResetExportFolder.Name = "ActionResetExportFolder";
+      this.ActionResetExportFolder.UseVisualStyleBackColor = true;
+      this.ActionResetExportFolder.Click += new System.EventHandler(this.ActionResetExportFolder_Click);
+      // 
+      // ActionSelectExportFolder
+      // 
+      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectExportFolder, "ActionSelectExportFolder");
+      this.ActionSelectExportFolder.Name = "ActionSelectExportFolder";
+      this.ActionSelectExportFolder.UseVisualStyleBackColor = true;
+      this.ActionSelectExportFolder.Click += new System.EventHandler(this.ActionSelectExportFolder_Click);
+      // 
+      // LabelCalculatorPath
+      // 
+      resources.ApplyResources(this.LabelCalculatorPath, "LabelCalculatorPath");
+      this.LabelCalculatorPath.Name = "LabelCalculatorPath";
+      // 
+      // ActionResetHebrewLettersPath
+      // 
+      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetHebrewLettersPath, "ActionResetHebrewLettersPath");
+      this.ActionResetHebrewLettersPath.Name = "ActionResetHebrewLettersPath";
+      this.ActionResetHebrewLettersPath.UseVisualStyleBackColor = true;
+      this.ActionResetHebrewLettersPath.Click += new System.EventHandler(this.ActionResetHebrewLettersPath_Click);
+      // 
+      // ActionResetCalculatorPath
+      // 
+      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetCalculatorPath, "ActionResetCalculatorPath");
+      this.ActionResetCalculatorPath.Name = "ActionResetCalculatorPath";
+      this.ActionResetCalculatorPath.UseVisualStyleBackColor = true;
+      this.ActionResetCalculatorPath.Click += new System.EventHandler(this.ActionResetCalculatorPath_Click);
+      // 
+      // ActionSelectCalculatorPath
+      // 
+      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectCalculatorPath, "ActionSelectCalculatorPath");
+      this.ActionSelectCalculatorPath.Name = "ActionSelectCalculatorPath";
+      this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
+      this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
+      // 
+      // LabelHebrewLettersPath
+      // 
+      resources.ApplyResources(this.LabelHebrewLettersPath, "LabelHebrewLettersPath");
+      this.LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
       // 
       // ActionSelectHebrewLettersPath
       // 
@@ -202,214 +254,340 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
-      // OpenFileDialog
+      // EditExportFolder
       // 
-      resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
+      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
+      this.EditExportFolder.Name = "EditExportFolder";
+      this.EditExportFolder.ReadOnly = true;
       // 
-      // EditOnlineSearch
+      // EditCalculatorPath
       // 
-      resources.ApplyResources(this.EditOnlineSearch, "EditOnlineSearch");
-      this.EditOnlineSearch.Name = "EditOnlineSearch";
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
       // 
-      // ActionSelectBackupPath
+      // EditHebrewLettersPath
       // 
-      this.ActionSelectBackupPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectBackupPath, "ActionSelectBackupPath");
-      this.ActionSelectBackupPath.Name = "ActionSelectBackupPath";
-      this.ActionSelectBackupPath.UseVisualStyleBackColor = true;
-      this.ActionSelectBackupPath.Click += new System.EventHandler(this.ActionSelectBackupPath_Click);
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // EditBackupPath
+      // TabPagePrint
       // 
-      resources.ApplyResources(this.EditBackupPath, "EditBackupPath");
-      this.EditBackupPath.Name = "EditBackupPath";
+      this.TabPagePrint.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPagePrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePrint.Controls.Add(this.EditImageExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.EditDataExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.LabelImageExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.LabelDataExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.LabelSaveImageCountWarning);
+      this.TabPagePrint.Controls.Add(this.LabelSaveImageCountWarningIntervalInfo);
+      this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarning);
+      this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarningIntervalInfo);
+      this.TabPagePrint.Controls.Add(this.LabelPrintMargin);
+      this.TabPagePrint.Controls.Add(this.LabelPrintingMarginIntervalInfo);
+      this.TabPagePrint.Controls.Add(this.EditSaveImageCountWarning);
+      this.TabPagePrint.Controls.Add(this.EditAutoOpenExportedFile);
+      this.TabPagePrint.Controls.Add(this.EditPrintPageCountWarning);
+      this.TabPagePrint.Controls.Add(this.EditExportDataEnumsAsTranslations);
+      this.TabPagePrint.Controls.Add(this.EditAutoOpenExportFolder);
+      this.TabPagePrint.Controls.Add(this.EditPrintImageInLandscape);
+      this.TabPagePrint.Controls.Add(this.EditShowPrintDialog);
+      this.TabPagePrint.Controls.Add(this.EditPrintingMargin);
+      resources.ApplyResources(this.TabPagePrint, "TabPagePrint");
+      this.TabPagePrint.Name = "TabPagePrint";
       // 
-      // EditBackupCount
+      // EditImageExportFileFormat
       // 
-      resources.ApplyResources(this.EditBackupCount, "EditBackupCount");
-      this.EditBackupCount.Maximum = new decimal(new int[] {
+      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditImageExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
+      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
+      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
+      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
+      // 
+      // EditDataExportFileFormat
+      // 
+      this.EditDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditDataExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.EditDataExportFileFormat, "EditDataExportFileFormat");
+      this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
+      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
+      this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
+      // 
+      // LabelImageExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
+      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
+      // 
+      // LabelDataExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelDataExportFileFormat, "LabelDataExportFileFormat");
+      this.LabelDataExportFileFormat.Name = "LabelDataExportFileFormat";
+      // 
+      // LabelSaveImageCountWarning
+      // 
+      resources.ApplyResources(this.LabelSaveImageCountWarning, "LabelSaveImageCountWarning");
+      this.LabelSaveImageCountWarning.Name = "LabelSaveImageCountWarning";
+      // 
+      // LabelSaveImageCountWarningIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelSaveImageCountWarningIntervalInfo, "LabelSaveImageCountWarningIntervalInfo");
+      this.LabelSaveImageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelSaveImageCountWarningIntervalInfo.Name = "LabelSaveImageCountWarningIntervalInfo";
+      // 
+      // LabelPrintPageCountWarning
+      // 
+      resources.ApplyResources(this.LabelPrintPageCountWarning, "LabelPrintPageCountWarning");
+      this.LabelPrintPageCountWarning.Name = "LabelPrintPageCountWarning";
+      // 
+      // LabelPrintPageCountWarningIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelPrintPageCountWarningIntervalInfo, "LabelPrintPageCountWarningIntervalInfo");
+      this.LabelPrintPageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelPrintPageCountWarningIntervalInfo.Name = "LabelPrintPageCountWarningIntervalInfo";
+      // 
+      // LabelPrintMargin
+      // 
+      resources.ApplyResources(this.LabelPrintMargin, "LabelPrintMargin");
+      this.LabelPrintMargin.Name = "LabelPrintMargin";
+      // 
+      // LabelPrintingMarginIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelPrintingMarginIntervalInfo, "LabelPrintingMarginIntervalInfo");
+      this.LabelPrintingMarginIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelPrintingMarginIntervalInfo.Name = "LabelPrintingMarginIntervalInfo";
+      // 
+      // EditSaveImageCountWarning
+      // 
+      this.EditSaveImageCountWarning.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditSaveImageCountWarning, "EditSaveImageCountWarning");
+      this.EditSaveImageCountWarning.Name = "EditSaveImageCountWarning";
+      this.EditSaveImageCountWarning.ReadOnly = true;
+      // 
+      // EditAutoOpenExportedFile
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
+      this.EditAutoOpenExportedFile.Name = "EditAutoOpenExportedFile";
+      this.EditAutoOpenExportedFile.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportedFile.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportedFile_CheckedChanged);
+      // 
+      // EditPrintPageCountWarning
+      // 
+      this.EditPrintPageCountWarning.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditPrintPageCountWarning, "EditPrintPageCountWarning");
+      this.EditPrintPageCountWarning.Name = "EditPrintPageCountWarning";
+      this.EditPrintPageCountWarning.ReadOnly = true;
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoOpenExportFolder
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
+      this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
+      this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // EditPrintImageInLandscape
+      // 
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      // 
+      // EditShowPrintDialog
+      // 
+      resources.ApplyResources(this.EditShowPrintDialog, "EditShowPrintDialog");
+      this.EditShowPrintDialog.Name = "EditShowPrintDialog";
+      this.EditShowPrintDialog.UseVisualStyleBackColor = true;
+      // 
+      // EditPrintingMargin
+      // 
+      this.EditPrintingMargin.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditPrintingMargin, "EditPrintingMargin");
+      this.EditPrintingMargin.Name = "EditPrintingMargin";
+      this.EditPrintingMargin.ReadOnly = true;
+      // 
+      // TabPageStartup
+      // 
+      this.TabPageStartup.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageStartup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageStartup.Controls.Add(this.EditShowLastNewInVersionAfterUpdate);
+      this.TabPageStartup.Controls.Add(this.LabelLastDBOptimizeDate);
+      this.TabPageStartup.Controls.Add(this.LabelLastDBOptimize);
+      this.TabPageStartup.Controls.Add(this.LabelLastStartupCheckDate);
+      this.TabPageStartup.Controls.Add(this.LabelLastStartupCheck);
+      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateFrequency);
+      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateEveryWeek);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartupInterval);
+      this.TabPageStartup.Controls.Add(this.EditVacuumAtStartupInterval);
+      this.TabPageStartup.Controls.Add(this.EditVacuumAtStartup);
+      this.TabPageStartup.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
+      resources.ApplyResources(this.TabPageStartup, "TabPageStartup");
+      this.TabPageStartup.Name = "TabPageStartup";
+      // 
+      // EditShowLastNewInVersionAfterUpdate
+      // 
+      resources.ApplyResources(this.EditShowLastNewInVersionAfterUpdate, "EditShowLastNewInVersionAfterUpdate");
+      this.EditShowLastNewInVersionAfterUpdate.Name = "EditShowLastNewInVersionAfterUpdate";
+      this.EditShowLastNewInVersionAfterUpdate.UseVisualStyleBackColor = true;
+      // 
+      // LabelLastDBOptimizeDate
+      // 
+      resources.ApplyResources(this.LabelLastDBOptimizeDate, "LabelLastDBOptimizeDate");
+      this.LabelLastDBOptimizeDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelLastDBOptimizeDate.Name = "LabelLastDBOptimizeDate";
+      // 
+      // LabelLastDBOptimize
+      // 
+      resources.ApplyResources(this.LabelLastDBOptimize, "LabelLastDBOptimize");
+      this.LabelLastDBOptimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelLastDBOptimize.Name = "LabelLastDBOptimize";
+      // 
+      // LabelLastStartupCheckDate
+      // 
+      resources.ApplyResources(this.LabelLastStartupCheckDate, "LabelLastStartupCheckDate");
+      this.LabelLastStartupCheckDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelLastStartupCheckDate.Name = "LabelLastStartupCheckDate";
+      // 
+      // LabelLastStartupCheck
+      // 
+      resources.ApplyResources(this.LabelLastStartupCheck, "LabelLastStartupCheck");
+      this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelLastStartupCheck.Name = "LabelLastStartupCheck";
+      // 
+      // LabelCheckUpdateFrequency
+      // 
+      resources.ApplyResources(this.LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
+      this.LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
+      // 
+      // LabelCheckUpdateAtStartupInfo
+      // 
+      resources.ApplyResources(this.LabelCheckUpdateAtStartupInfo, "LabelCheckUpdateAtStartupInfo");
+      this.LabelCheckUpdateAtStartupInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelCheckUpdateAtStartupInfo.Name = "LabelCheckUpdateAtStartupInfo";
+      // 
+      // EditCheckUpdateAtStartup
+      // 
+      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
+      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      this.EditCheckUpdateAtStartup.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
+      // 
+      // EditCheckUpdateEveryWeek
+      // 
+      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
+      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
+      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
+      this.EditCheckUpdateEveryWeek.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
+      // 
+      // EditCheckUpdateAtStartupInterval
+      // 
+      this.EditCheckUpdateAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditCheckUpdateAtStartupInterval, "EditCheckUpdateAtStartupInterval");
+      this.EditCheckUpdateAtStartupInterval.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-      this.EditBackupCount.Name = "EditBackupCount";
-      // 
-      // EditAutoSaveDelay
-      // 
-      resources.ApplyResources(this.EditAutoSaveDelay, "EditAutoSaveDelay");
-      this.EditAutoSaveDelay.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-      this.EditAutoSaveDelay.Name = "EditAutoSaveDelay";
-      // 
-      // GroupBoxHebrewWordClick
-      // 
-      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenNothing);
-      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenOnlineSearch);
-      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenTranslated);
-      this.GroupBoxHebrewWordClick.Controls.Add(this.SelectOpenHebrewLetters);
-      resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
-      this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
-      this.GroupBoxHebrewWordClick.TabStop = false;
-      // 
-      // SelectOpenNothing
-      // 
-      resources.ApplyResources(this.SelectOpenNothing, "SelectOpenNothing");
-      this.SelectOpenNothing.Name = "SelectOpenNothing";
-      this.SelectOpenNothing.TabStop = true;
-      this.SelectOpenNothing.UseVisualStyleBackColor = true;
-      // 
-      // SelectOpenOnlineSearch
-      // 
-      resources.ApplyResources(this.SelectOpenOnlineSearch, "SelectOpenOnlineSearch");
-      this.SelectOpenOnlineSearch.Name = "SelectOpenOnlineSearch";
-      this.SelectOpenOnlineSearch.TabStop = true;
-      this.SelectOpenOnlineSearch.UseVisualStyleBackColor = true;
-      // 
-      // SelectOpenTranslated
-      // 
-      resources.ApplyResources(this.SelectOpenTranslated, "SelectOpenTranslated");
-      this.SelectOpenTranslated.Name = "SelectOpenTranslated";
-      this.SelectOpenTranslated.TabStop = true;
-      this.SelectOpenTranslated.UseVisualStyleBackColor = true;
-      // 
-      // SelectOpenHebrewLetters
-      // 
-      resources.ApplyResources(this.SelectOpenHebrewLetters, "SelectOpenHebrewLetters");
-      this.SelectOpenHebrewLetters.Name = "SelectOpenHebrewLetters";
-      this.SelectOpenHebrewLetters.TabStop = true;
-      this.SelectOpenHebrewLetters.UseVisualStyleBackColor = true;
-      // 
-      // EditOnlineVerseURL
-      // 
-      resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
-      this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      // 
-      // EditCommentaryLinesCount
-      // 
-      resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
-      this.EditCommentaryLinesCount.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-      this.EditCommentaryLinesCount.Minimum = new decimal(new int[] {
+      this.EditCheckUpdateAtStartupInterval.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-      this.EditCommentaryLinesCount.Name = "EditCommentaryLinesCount";
-      this.EditCommentaryLinesCount.Value = new decimal(new int[] {
+      this.EditCheckUpdateAtStartupInterval.Name = "EditCheckUpdateAtStartupInterval";
+      this.EditCheckUpdateAtStartupInterval.ReadOnly = true;
+      this.EditCheckUpdateAtStartupInterval.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+      // 
+      // EditVacuumAtStartupInterval
+      // 
+      this.EditVacuumAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditVacuumAtStartupInterval, "EditVacuumAtStartupInterval");
+      this.EditVacuumAtStartupInterval.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.EditVacuumAtStartupInterval.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-      // 
-      // EditBookmarksCount
-      // 
-      resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
-      this.EditBookmarksCount.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-      this.EditBookmarksCount.Name = "EditBookmarksCount";
-      // 
-      // EditWordControlWidth
-      // 
-      this.EditWordControlWidth.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
-      this.EditWordControlWidth.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-      this.EditWordControlWidth.Minimum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-      this.EditWordControlWidth.Name = "EditWordControlWidth";
-      this.EditWordControlWidth.Value = new decimal(new int[] {
-            150,
+      this.EditVacuumAtStartupInterval.Name = "EditVacuumAtStartupInterval";
+      this.EditVacuumAtStartupInterval.ReadOnly = true;
+      this.EditVacuumAtStartupInterval.Value = new decimal(new int[] {
+            7,
             0,
             0,
             0});
       // 
-      // EditMaxRefCount
+      // EditVacuumAtStartup
       // 
-      this.EditMaxRefCount.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
-      this.EditMaxRefCount.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-      this.EditMaxRefCount.Name = "EditMaxRefCount";
-      this.EditMaxRefCount.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-      this.EditMaxRefCount.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
+      resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
+      this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
+      this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
+      this.EditVacuumAtStartup.CheckedChanged += new System.EventHandler(this.EditVacuumAtStartup_CheckedChanged);
       // 
-      // EditHistoryCount
+      // LabelOptimizeDatabaseIntervalInfo
       // 
-      resources.ApplyResources(this.EditHistoryCount, "EditHistoryCount");
-      this.EditHistoryCount.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-      this.EditHistoryCount.Name = "EditHistoryCount";
+      resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
+      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
       // 
-      // EditMinRefCount
+      // TabPageApplication
       // 
-      this.EditMinRefCount.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
-      this.EditMinRefCount.Name = "EditMinRefCount";
+      this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.EditVolume);
+      this.TabPageApplication.Controls.Add(this.LabelVolume);
+      this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
+      this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
+      this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
+      this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
+      this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
+      this.TabPageApplication.Controls.Add(this.EditLogEnabled);
+      resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
+      this.TabPageApplication.Name = "TabPageApplication";
       // 
-      // ActionSelectOnlineVerseURL
+      // EditVolume
       // 
-      this.ActionSelectOnlineVerseURL.AllowDrop = true;
-      this.ActionSelectOnlineVerseURL.ContextMenuStrip = this.MenuSelectOnlineVerseURL;
-      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
-      this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
-      this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
-      this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
+      resources.ApplyResources(this.EditVolume, "EditVolume");
+      this.EditVolume.Maximum = 100;
+      this.EditVolume.Name = "EditVolume";
+      this.EditVolume.TickFrequency = 10;
+      this.EditVolume.Value = 100;
+      this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
       // 
-      // MenuSelectOnlineVerseURL
+      // LabelVolume
       // 
-      this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
-      resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
+      resources.ApplyResources(this.LabelVolume, "LabelVolume");
+      this.LabelVolume.Name = "LabelVolume";
       // 
-      // ActionOnlineVerseHelp
+      // LabelVolumeValue
       // 
-      this.ActionOnlineVerseHelp.AllowDrop = true;
-      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
-      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
-      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
-      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
+      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelVolumeValue.Name = "LabelVolumeValue";
       // 
       // ActionSelectLangEN
       // 
-      this.ActionSelectLangEN.AllowDrop = true;
       this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
@@ -419,7 +597,6 @@
       // 
       // ActionSelectLangFR
       // 
-      this.ActionSelectLangFR.AllowDrop = true;
       this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
@@ -427,204 +604,167 @@
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
       // 
-      // ActionSelectOnlineSearch
+      // EditWindowsDoubleBufferingEnabled
       // 
-      this.ActionSelectOnlineSearch.AllowDrop = true;
-      this.ActionSelectOnlineSearch.ContextMenuStrip = this.MenuSelectSearchRequest;
-      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
-      this.ActionSelectOnlineSearch.Name = "ActionSelectOnlineSearch";
-      this.ActionSelectOnlineSearch.UseVisualStyleBackColor = true;
-      this.ActionSelectOnlineSearch.Click += new System.EventHandler(this.ActionSelectOnlineSearch_Click);
+      resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
+      this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
+      this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
       // 
-      // MenuSelectSearchRequest
+      // EditWebLinksMenuEnabled
       // 
-      this.MenuSelectSearchRequest.Name = "MenuSelectOnlineVerseURL";
-      resources.ApplyResources(this.MenuSelectSearchRequest, "MenuSelectSearchRequest");
-      // 
-      // ActionOnlineSearchHelp
-      // 
-      this.ActionOnlineSearchHelp.AllowDrop = true;
-      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
-      this.ActionOnlineSearchHelp.Name = "ActionOnlineSearchHelp";
-      this.ActionOnlineSearchHelp.UseVisualStyleBackColor = true;
-      this.ActionOnlineSearchHelp.Click += new System.EventHandler(this.ActionOnlineSearchHelp_Click);
-      // 
-      // EditOpenGeneratedMSWordFiles
-      // 
-      resources.ApplyResources(this.EditOpenGeneratedMSWordFiles, "EditOpenGeneratedMSWordFiles");
-      this.EditOpenGeneratedMSWordFiles.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoOpenExportedFile;
-      this.EditOpenGeneratedMSWordFiles.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditOpenGeneratedMSWordFiles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditOpenGeneratedMSWordFiles.Name = "EditOpenGeneratedMSWordFiles";
-      this.EditOpenGeneratedMSWordFiles.UseVisualStyleBackColor = true;
-      // 
-      // EditAutoSortBookmarks
-      // 
-      resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
-      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoSortBookmarks;
-      this.EditAutoSortBookmarks.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
-      this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
-      // 
-      // EditGoToMasterBookmarkAtStartup
-      // 
-      resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
-      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
-      this.EditGoToMasterBookmarkAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
-      this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditOpenLastViewAtStartup
-      // 
-      resources.ApplyResources(this.EditOpenLastViewAtStartup, "EditOpenLastViewAtStartup");
-      this.EditOpenLastViewAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.OpenLastViewAtStartup;
-      this.EditOpenLastViewAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenLastViewAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditOpenLastViewAtStartup.Name = "EditOpenLastViewAtStartup";
-      this.EditOpenLastViewAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditCheckUpdateAtStartup
-      // 
-      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CheckUpdateAtStartup;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
-      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditVacuumAtStartup
-      // 
-      resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
-      this.EditVacuumAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.VacuumAtStartup;
-      this.EditVacuumAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditVacuumAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "VacuumAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
-      this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
+      this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
+      this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
       // 
       // EditDebuggerEnabled
       // 
       resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
-      this.EditDebuggerEnabled.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoOpenExportedFile;
-      this.EditDebuggerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditDebuggerEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "OpenGeneratedMSWordFiles", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
+      // EditUsageStatisticsEnabled
+      // 
+      resources.ApplyResources(this.EditUsageStatisticsEnabled, "EditUsageStatisticsEnabled");
+      this.EditUsageStatisticsEnabled.Name = "EditUsageStatisticsEnabled";
+      this.EditUsageStatisticsEnabled.UseVisualStyleBackColor = true;
+      this.EditUsageStatisticsEnabled.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
+      // 
+      // EditLogEnabled
+      // 
+      resources.ApplyResources(this.EditLogEnabled, "EditLogEnabled");
+      this.EditLogEnabled.Name = "EditLogEnabled";
+      this.EditLogEnabled.UseVisualStyleBackColor = true;
+      this.EditLogEnabled.CheckedChanged += new System.EventHandler(this.EditLogEnabled_CheckedChanged);
+      // 
+      // TabControl
+      // 
+      resources.ApplyResources(this.TabControl, "TabControl");
+      this.TabControl.Controls.Add(this.TabPageApplication);
+      this.TabControl.Controls.Add(this.TabPageStartup);
+      this.TabControl.Controls.Add(this.TabPagePrint);
+      this.TabControl.Controls.Add(this.TabPagePaths);
+      this.TabControl.Multiline = true;
+      this.TabControl.Name = "TabControl";
+      this.TabControl.SelectedIndex = 0;
+      // 
+      // SaveThemeDialog
+      // 
+      resources.ApplyResources(this.SaveThemeDialog, "SaveThemeDialog");
+      // 
+      // OpenThemeDialog
+      // 
+      this.OpenThemeDialog.FileName = "openFileDialog1";
+      resources.ApplyResources(this.OpenThemeDialog, "OpenThemeDialog");
+      // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.ActionSelectLangFR);
-      this.Controls.Add(this.ActionSelectLangEN);
-      this.Controls.Add(this.EditDebuggerEnabled);
-      this.Controls.Add(this.EditOpenGeneratedMSWordFiles);
-      this.Controls.Add(this.EditAutoSortBookmarks);
-      this.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
-      this.Controls.Add(this.EditOpenLastViewAtStartup);
-      this.Controls.Add(this.EditVacuumAtStartup);
-      this.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.Controls.Add(this.ActionOnlineSearchHelp);
-      this.Controls.Add(this.ActionOnlineVerseHelp);
-      this.Controls.Add(this.ActionSelectOnlineSearch);
-      this.Controls.Add(this.ActionSelectOnlineVerseURL);
-      this.Controls.Add(this.EditWordControlWidth);
-      this.Controls.Add(LabelWordControlWidth);
-      this.Controls.Add(this.EditMinRefCount);
-      this.Controls.Add(LabelMinRefCount);
-      this.Controls.Add(this.EditMaxRefCount);
-      this.Controls.Add(LabelMaxRefCount);
-      this.Controls.Add(this.EditHistoryCount);
-      this.Controls.Add(LabelHistoryCount);
-      this.Controls.Add(this.EditBookmarksCount);
-      this.Controls.Add(LabelBookmarksCount);
-      this.Controls.Add(this.EditCommentaryLinesCount);
-      this.Controls.Add(LabelCommentaryLinesCount);
-      this.Controls.Add(LabelOnlineVerseURL);
-      this.Controls.Add(this.EditOnlineVerseURL);
-      this.Controls.Add(this.GroupBoxHebrewWordClick);
-      this.Controls.Add(this.EditAutoSaveDelay);
-      this.Controls.Add(LabelAutoSaveDelay);
-      this.Controls.Add(this.EditBackupCount);
-      this.Controls.Add(LabelBackupCount);
-      this.Controls.Add(this.ActionSelectBackupPath);
-      this.Controls.Add(LabelBackupPath);
-      this.Controls.Add(this.EditBackupPath);
-      this.Controls.Add(this.ActionSelectHebrewLettersPath);
-      this.Controls.Add(LabelOnlineSearch);
-      this.Controls.Add(LabelHebrewLettersPath);
-      this.Controls.Add(this.EditOnlineSearch);
-      this.Controls.Add(this.EditHebrewLettersPath);
+      this.Controls.Add(this.TabControl);
+      this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
-      this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PreferencesForm_FormClosed);
       this.Load += new System.EventHandler(this.PreferencesForm_Load);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBackupCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).EndInit();
-      this.GroupBoxHebrewWordClick.ResumeLayout(false);
-      this.GroupBoxHebrewWordClick.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxRefCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMinRefCount ) ).EndInit();
+      this.TabPagePaths.ResumeLayout(false);
+      this.TabPagePaths.PerformLayout();
+      this.TabPagePrint.ResumeLayout(false);
+      this.TabPagePrint.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).EndInit();
+      this.TabPageStartup.ResumeLayout(false);
+      this.TabPageStartup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
+      this.TabPageApplication.ResumeLayout(false);
+      this.TabPageApplication.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
+      this.TabControl.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
     #endregion
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.TextBox EditHebrewLettersPath;
-    private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
-    private System.Windows.Forms.OpenFileDialog OpenFileDialog;
-    private System.Windows.Forms.TextBox EditOnlineSearch;
-    private System.Windows.Forms.Button ActionSelectBackupPath;
-    private System.Windows.Forms.TextBox EditBackupPath;
-    private System.Windows.Forms.NumericUpDown EditBackupCount;
-    private System.Windows.Forms.NumericUpDown EditAutoSaveDelay;
-    private System.Windows.Forms.GroupBox GroupBoxHebrewWordClick;
-    private System.Windows.Forms.RadioButton SelectOpenOnlineSearch;
-    private System.Windows.Forms.RadioButton SelectOpenHebrewLetters;
-    private System.Windows.Forms.TextBox EditOnlineVerseURL;
+    private System.Windows.Forms.Button ActionExportSettings;
+    private System.Windows.Forms.Button ActionImportSettings;
+    private System.Windows.Forms.ColorDialog DialogColor;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
-    private System.Windows.Forms.NumericUpDown EditCommentaryLinesCount;
-    private System.Windows.Forms.NumericUpDown EditBookmarksCount;
-    private System.Windows.Forms.NumericUpDown EditWordControlWidth;
-    private System.Windows.Forms.NumericUpDown EditMaxRefCount;
-    private System.Windows.Forms.RadioButton SelectOpenTranslated;
-    private System.Windows.Forms.NumericUpDown EditHistoryCount;
-    private System.Windows.Forms.LinkLabel ActionReset;
-    private System.Windows.Forms.NumericUpDown EditMinRefCount;
-    private System.Windows.Forms.Button ActionSelectOnlineVerseURL;
-    private System.Windows.Forms.ContextMenuStrip MenuSelectOnlineVerseURL;
-    private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
-    private System.Windows.Forms.CheckBox EditOpenLastViewAtStartup;
-    private System.Windows.Forms.Button ActionOnlineVerseHelp;
-    private System.Windows.Forms.CheckBox EditOpenGeneratedMSWordFiles;
-    private System.Windows.Forms.Button ActionSelectLangEN;
-    private System.Windows.Forms.Button ActionSelectLangFR;
-    private System.Windows.Forms.RadioButton SelectOpenNothing;
-    private System.Windows.Forms.Button ActionSelectOnlineSearch;
-    private System.Windows.Forms.ContextMenuStrip MenuSelectSearchRequest;
-    private System.Windows.Forms.Button ActionOnlineSearchHelp;
-    private System.Windows.Forms.CheckBox EditGoToMasterBookmarkAtStartup;
-    private System.Windows.Forms.CheckBox EditAutoSortBookmarks;
-    private System.Windows.Forms.CheckBox EditVacuumAtStartup;
-    private System.Windows.Forms.CheckBox EditDebuggerEnabled;
+    private System.Windows.Forms.LinkLabel ActionResetSettings;
+    private System.Windows.Forms.OpenFileDialog OpenExeFileDialog;
+    private System.Windows.Forms.OpenFileDialog OpenSettingsDialog;
+    private System.Windows.Forms.Panel PanelBottomSeparator;
+    private System.Windows.Forms.Panel PanelButtons;
+    private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
+    private TabPage TabPagePaths;
+    private Label LabelExportFolder;
+    private Button ActionResetExportFolder;
+    private Button ActionSelectExportFolder;
+    private Label LabelCalculatorPath;
+    private Button ActionResetHebrewLettersPath;
+    private Button ActionResetCalculatorPath;
+    private Button ActionSelectCalculatorPath;
+    private Label LabelHebrewLettersPath;
+    private Button ActionSelectHebrewLettersPath;
+    private TextBoxEx EditExportFolder;
+    private TextBoxEx EditCalculatorPath;
+    private TextBoxEx EditHebrewLettersPath;
+    private TabPage TabPagePrint;
+    private ComboBox EditImageExportFileFormat;
+    private ComboBox EditDataExportFileFormat;
+    private Label LabelImageExportFileFormat;
+    private Label LabelDataExportFileFormat;
+    private Label LabelSaveImageCountWarning;
+    private Label LabelSaveImageCountWarningIntervalInfo;
+    private Label LabelPrintPageCountWarning;
+    private Label LabelPrintPageCountWarningIntervalInfo;
+    private Label LabelPrintMargin;
+    private Label LabelPrintingMarginIntervalInfo;
+    private NumericUpDown EditSaveImageCountWarning;
+    private CheckBox EditAutoOpenExportedFile;
+    private NumericUpDown EditPrintPageCountWarning;
+    private CheckBox EditExportDataEnumsAsTranslations;
+    private CheckBox EditAutoOpenExportFolder;
+    private CheckBox EditPrintImageInLandscape;
+    private CheckBox EditShowPrintDialog;
+    private NumericUpDown EditPrintingMargin;
+    private TabPage TabPageStartup;
+    private CheckBox EditShowLastNewInVersionAfterUpdate;
+    private Label LabelLastDBOptimizeDate;
+    private Label LabelLastDBOptimize;
+    private Label LabelLastStartupCheckDate;
+    private Label LabelLastStartupCheck;
+    private Label LabelCheckUpdateFrequency;
+    private Label LabelCheckUpdateAtStartupInfo;
+    private CheckBox EditCheckUpdateAtStartup;
+    private CheckBox EditCheckUpdateEveryWeek;
+    private NumericUpDown EditCheckUpdateAtStartupInterval;
+    private NumericUpDown EditVacuumAtStartupInterval;
+    private CheckBox EditVacuumAtStartup;
+    private Label LabelOptimizeDatabaseIntervalInfo;
+    private TabPage TabPageApplication;
+    private TrackBar EditVolume;
+    private Label LabelVolume;
+    private Label LabelVolumeValue;
+    private Button ActionSelectLangEN;
+    private Button ActionSelectLangFR;
+    private CheckBox EditWindowsDoubleBufferingEnabled;
+    private CheckBox EditWebLinksMenuEnabled;
+    private CheckBox EditDebuggerEnabled;
+    private CheckBox EditUsageStatisticsEnabled;
+    private CheckBox EditLogEnabled;
+    private TabControl TabControl;
+    private SaveFileDialog SaveThemeDialog;
+    private OpenFileDialog OpenThemeDialog;
   }
 }

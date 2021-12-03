@@ -1077,5 +1077,29 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["BenchmarkRendering"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CSV")]
+        public global::Ordisoftware.Core.DataExportTarget ExportDataPreferredTarget {
+            get {
+                return ((global::Ordisoftware.Core.DataExportTarget)(this["ExportDataPreferredTarget"]));
+            }
+            set {
+                this["ExportDataPreferredTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("calc.exe")]
+        public string CalculatorExe {
+            get {
+                return ((string)(this["CalculatorExe"]));
+            }
+            set {
+                this["CalculatorExe"] = value;
+            }
+        }
     }
 }

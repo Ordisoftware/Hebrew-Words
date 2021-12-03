@@ -105,6 +105,7 @@
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -410,6 +411,30 @@
     <Compile Include="Source\Forms\Boxes\ParashotForm.designer.cs">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Config\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,11 +576,11 @@
     <Compile Include="Source\Forms\MainForm\UI\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.cs">
+    <Compile Include="Source\Forms\Config\PreferencesFormOld.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Config\PreferencesFormOld.designer.cs">
+      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Controls\StatControl.cs">
       <SubType>UserControl</SubType>
@@ -679,6 +704,12 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ParashotForm.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,12 +773,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesFormOld.fr.resx">
+      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesFormOld.resx">
+      <DependentUpon>PreferencesFormOld.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Controls\StatControl.fr.resx">

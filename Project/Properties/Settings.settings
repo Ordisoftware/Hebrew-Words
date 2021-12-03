@@ -266,5 +266,11 @@
     <Setting Name="BenchmarkRendering" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Core.DataExportTarget" Scope="User">
+      <Value Profile="(Default)">CSV</Value>
+    </Setting>
+    <Setting Name="CalculatorExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">calc.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

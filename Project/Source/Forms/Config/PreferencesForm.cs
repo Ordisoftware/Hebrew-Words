@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -10,37 +10,23 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <created> 2016-04 </created>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
+using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
+
 /// <summary>
-/// Form for viewing the preferences.
+/// Provides form to edit the preferences.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 partial class PreferencesForm : Form
 {
 
-  static private bool First;
-  static private bool LanguageChanged;
-  static private int CommentaryLinesCountPrevious;
-  static private int WordControlWidthPrevious;
-  static private int MaxrefCountPrevious;
-  static private bool UpdateViewRequired;
+  private bool IsReady;
 
-  static public bool Run()
-  {
-    First = true;
-    var form = new PreferencesForm();
-    form.ShowDialog();
-    while ( LanguageChanged )
-    {
-      LanguageChanged = false;
-      form = new PreferencesForm();
-      form.ShowDialog();
-    }
-    return UpdateViewRequired;
-  }
+  #region Form Management
 
   /// <summary>
   /// Default constructor.
@@ -49,25 +35,7 @@ partial class PreferencesForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    // TODO init from helper
-    void action1(object sender, EventArgs e)
-    {
-      EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
-    }
-    void action2(object sender, EventArgs e)
-    {
-      EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
-    }
-    foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
-      if ( item.Name == "-" )
-        MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
-      else
-        MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
-    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-      if ( item.Name == "-" )
-        MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
-      else
-        MenuSelectSearchRequest.Items.Add(item.CreateMenuItem(action2));
+    this.InitDropDowns();
   }
 
   /// <summary>
@@ -78,6 +46,7 @@ partial class PreferencesForm : Form
   private void PreferencesForm_Load(object sender, EventArgs e)
   {
     this.CenterToMainFormElseScreen();
+    DoFormLoad();
   }
 
   /// <summary>
@@ -87,32 +56,18 @@ partial class PreferencesForm : Form
   /// <param name="e">Event information.</param>
   private void PreferencesForm_Shown(object sender, EventArgs e)
   {
-    TopMost = MainForm.Instance.TopMost;
-    BringToFront();
-    UpdateLanguagesButtons();
-    EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
-    EditOnlineSearch.Text = Program.Settings.SearchOnlineURL;
-    EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL;
-    EditBackupPath.Text = Program.Settings.BackupPath;
-    EditBackupCount.Value = Program.Settings.BackupCount;
-    EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay;
-    EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount;
-    EditWordControlWidth.Value = Program.Settings.WordControlWidth;
-    EditBookmarksCount.Value = Program.Settings.BookmarksCount;
-    EditHistoryCount.Value = Program.Settings.HistoryCount;
-    EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable;
-    EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog;
-    SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
-    SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
-    SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
-    SelectOpenNothing.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Nothing;
-    if ( First )
-    {
-      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
-      WordControlWidthPrevious = (int)EditWordControlWidth.Value;
-      MaxrefCountPrevious = (int)EditMaxRefCount.Value;
-      First = false;
-    }
+    DoFormShow();
+  }
+
+  /// <summary>
+  /// Event handler. Called by PreferencesForm for closing events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
+    DoFormClosing(sender, e);
   }
 
   /// <summary>
@@ -122,54 +77,36 @@ partial class PreferencesForm : Form
   /// <param name="e">Event information.</param>
   private void PreferencesForm_FormClosed(object sender, FormClosedEventArgs e)
   {
-    Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
-    Program.Settings.SearchOnlineURL = EditOnlineSearch.Text;
-    Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
-    Program.Settings.BackupPath = EditBackupPath.Text.EndsWith(Path.DirectorySeparatorChar.ToString())
-                                ? EditBackupPath.Text
-                                : EditBackupPath.Text + Path.DirectorySeparatorChar;
-    Program.Settings.BackupCount = (int)EditBackupCount.Value;
-    Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
-    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
-    Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
-    Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
-    Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
-    Program.Settings.FoundReferencesViewable = (int)EditMaxRefCount.Value;
-    Program.Settings.FoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
-    if ( SelectOpenHebrewLetters.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
-    if ( SelectOpenOnlineSearch.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
-    if ( SelectOpenTranslated.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.SearchTranslated;
-    if ( SelectOpenNothing.Checked )
-      Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.Nothing;
-    MainForm.Instance.TimerAutoSave.Enabled = Program.Settings.AutoSaveDelay != 0;
-    if ( MainForm.Instance.TimerAutoSave.Enabled )
-      MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
-    Program.Settings.Store();
-    UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
-                      || WordControlWidthPrevious != (int)EditWordControlWidth.Value
-                      || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
+    IsReady = false;
   }
 
-  private void UpdateLanguagesButtons()
+  #endregion
+
+  #region Export and import
+
+  private void ActionExportSettings_Click(object sender, EventArgs e)
   {
-    if ( Program.Settings.LanguageSelected == Language.EN )
-    {
-      ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
-      ActionSelectLangFR.BackColor = SystemColors.Control;
-    }
-    if ( Program.Settings.LanguageSelected == Language.FR )
-    {
-      ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
-      ActionSelectLangEN.BackColor = SystemColors.Control;
-    }
+    DoExportSettings();
   }
+
+  private void ActionImportSettings_Click(object sender, EventArgs e)
+  {
+    DoImportSettings();
+  }
+
+  private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    DoResetSettings();
+  }
+
+  #endregion
+
+  #region Language
 
   private void ActionSelectLangEN_Click(object sender, EventArgs e)
   {
-    Program.Settings.LanguageSelected = Language.EN;
+    if ( Settings.LanguageSelected == Language.EN ) return;
+    Settings.LanguageSelected = Language.EN;
     Program.UpdateLocalization();
     UpdateLanguagesButtons();
     LanguageChanged = true;
@@ -178,84 +115,166 @@ partial class PreferencesForm : Form
 
   private void ActionSelectLangFR_Click(object sender, EventArgs e)
   {
-    Program.Settings.LanguageSelected = Language.FR;
+    if ( Settings.LanguageSelected == Language.FR ) return;
+    Settings.LanguageSelected = Language.FR;
     Program.UpdateLocalization();
     UpdateLanguagesButtons();
     LanguageChanged = true;
     Close();
   }
 
-  /// <summary>
-  /// Event handler. Called by ActionReset for link clicked events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  private void UpdateLanguagesButtons()
   {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetPreferences.GetLang()) ) return;
-    Program.Settings.Reset();
-    Program.Settings.Reload();
-    Program.Settings.LanguageSelected = Languages.Current;
-    Program.Settings.Store();
-    Directory.CreateDirectory(Globals.UserDocumentsFolderPath);
-    Program.Settings.BackupPath = Globals.UserDocumentsFolderPath;
-    PreferencesForm_Shown(null, null);
-    Program.GrammarGuideForm.CenterToMainFormElseScreen();
+    if ( Settings.LanguageSelected == Language.EN )
+    {
+      ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
+      ActionSelectLangFR.BackColor = SystemColors.Control;
+    }
+    if ( Settings.LanguageSelected == Language.FR )
+    {
+      ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
+      ActionSelectLangEN.BackColor = SystemColors.Control;
+    }
   }
 
-  /// <summary>
-  /// Event handler. Called by ActionSelectHebrewLettersPath for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
-  {
-    OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
-    OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
-    if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
-      EditHebrewLettersPath.Text = OpenFileDialog.FileName;
-  }
+  #endregion
 
-  /// <summary>
-  /// Event handler. Called by ActionSelectBackupPath for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionSelectBackupPath_Click(object sender, EventArgs e)
-  {
-    FolderBrowserDialog.SelectedPath = EditBackupPath.Text;
-    if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
-      EditBackupPath.Text = FolderBrowserDialog.SelectedPath;
-  }
-
-  private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
-  {
-    EditMinRefCount.Maximum = EditMaxRefCount.Value;
-  }
-
-  private void ActionSelectOnlineSearch_Click(object sender, EventArgs e)
-  {
-    MenuSelectSearchRequest.Show(ActionSelectOnlineSearch, new Point(0, ActionSelectOnlineSearch.Height));
-  }
-
-  private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
-  {
-    MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
-  }
-
-  private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
-  {
-    DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineBibleProvider.GetLang());
-  }
-
-  private void ActionOnlineSearchHelp_Click(object sender, EventArgs e)
-  {
-    DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineWordProvider.GetLang());
-  }
+  #region Application
 
   private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
   {
-    //Core.Diagnostics.Debugger.Active = EditEnableDebugger.Checked; + add load/shown
+    if ( !EditDebuggerEnabled.Checked )
+      EditLogEnabled.Checked = false;
+    DebugManager.Enabled = EditDebuggerEnabled.Checked;
+    EditLogEnabled.Enabled = DebugManager.Enabled;
   }
+
+  private void EditLogEnabled_CheckedChanged(object sender, EventArgs e)
+  {
+    DebugManager.TraceEnabled = EditLogEnabled.Checked;
+    CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+    StatisticsForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+  }
+
+  private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
+  {
+    CommonMenusControl.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+    AboutBox.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+    StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
+    if ( !EditUsageStatisticsEnabled.Checked )
+      StatisticsForm.Instance.Close();
+  }
+
+  private void EditVolume_ValueChanged(object sender, EventArgs e)
+  {
+    MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
+    LabelVolumeValue.Text = EditVolume.Value + "%";
+    if ( !IsReady ) return;
+    Settings.ApplicationVolume = EditVolume.Value;
+    SystemManager.TryCatch(Settings.Store);
+    DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
+  }
+
+  #endregion
+
+  #region Startup
+
+  private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
+  {
+    EditCheckUpdateEveryWeek.Enabled = EditCheckUpdateAtStartup.Checked;
+    EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
+  }
+
+  private void EditVacuumAtStartup_CheckedChanged(object sender, EventArgs e)
+  {
+    EditVacuumAtStartupInterval.Enabled = EditVacuumAtStartup.Checked;
+  }
+
+  #endregion
+
+  #region Export Save, Copy and Print
+
+  private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+      EditAutoOpenExportedFile.Checked = false;
+  }
+
+  private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+      EditAutoOpenExportFolder.Checked = false;
+  }
+
+  private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+  {
+    e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
+  }
+
+  private void EditDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+  }
+
+  private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+  {
+    e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
+  }
+
+  private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+  }
+
+  #endregion
+
+  #region Paths
+
+  private void ActionSelectExportFolder_Click(object sender, EventArgs e)
+  {
+    SystemManager.TryCatch(() => FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory());
+    if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
+      EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
+  }
+
+  private void DoActionSelectPath(FileDialog dialog, TextBox edit)
+  {
+    SystemManager.TryCatch(() => dialog.InitialDirectory = Path.GetDirectoryName(edit.Text));
+    SystemManager.TryCatch(() => dialog.FileName = Path.GetFileName(edit.Text));
+    if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
+      edit.Text = dialog.FileName;
+  }
+
+  private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
+  {
+    DoActionSelectPath(OpenExeFileDialog, EditCalculatorPath);
+  }
+
+  private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
+  {
+    DoActionSelectPath(OpenExeFileDialog, EditHebrewLettersPath);
+  }
+
+  private void ActionResetExportFolder_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditExportFolder.Text = (string)Settings.Properties[nameof(Settings.ExportFolder)].DefaultValue;
+  }
+
+  private void ActionResetCalculatorPath_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditCalculatorPath.Text = (string)Settings.Properties[nameof(Settings.CalculatorExe)].DefaultValue;
+  }
+
+  private void ActionResetHebrewLettersPath_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
+  }
+
+  #endregion
 
 }
