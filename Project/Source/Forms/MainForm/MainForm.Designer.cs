@@ -106,12 +106,12 @@
       this.LabelTitle = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
-      this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
@@ -153,7 +153,6 @@
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
-      this.sYSTEMSTATSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripButton();
@@ -848,12 +847,12 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewVerses,
+            this.ActionViewSearch,
             this.ActionExit,
             this.Sep4,
             this.ActionPreferences,
-            this.ActionViewSearch,
             this.toolStripSeparator10,
+            this.ActionViewVerses,
             this.ActionViewTranslations,
             this.ActionViewRawText,
             this.ActionViewELS50,
@@ -876,15 +875,15 @@
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
-      // ActionViewVerses
+      // ActionViewSearch
       // 
-      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
-      this.ActionViewVerses.Name = "ActionViewVerses";
-      this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
-      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
+      this.ActionViewSearch.Name = "ActionViewSearch";
+      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
+      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionExit
       // 
@@ -915,20 +914,20 @@
       this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // ActionViewSearch
-      // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
-      this.ActionViewSearch.Name = "ActionViewSearch";
-      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
       // toolStripSeparator10
       // 
       this.toolStripSeparator10.Name = "toolStripSeparator10";
       resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
+      // ActionViewVerses
+      // 
+      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
+      this.ActionViewVerses.Name = "ActionViewVerses";
+      this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
+      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionViewTranslations
       // 
@@ -1172,8 +1171,7 @@
             this.ActionOpenHebrewLetters,
             this.ActionOpenCalculator,
             this.toolStripSeparator16,
-            this.ActionViewBibleStatistics,
-            this.sYSTEMSTATSToolStripMenuItem});
+            this.ActionViewBibleStatistics});
       this.MenuTools.Name = "MenuTools";
       this.MenuTools.Padding = new System.Windows.Forms.Padding(5);
       // 
@@ -1228,12 +1226,6 @@
       resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
       this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
       this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
-      // 
-      // sYSTEMSTATSToolStripMenuItem
-      // 
-      this.sYSTEMSTATSToolStripMenuItem.Name = "sYSTEMSTATSToolStripMenuItem";
-      resources.ApplyResources(this.sYSTEMSTATSToolStripMenuItem, "sYSTEMSTATSToolStripMenuItem");
-      this.sYSTEMSTATSToolStripMenuItem.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionWebLinks
       // 
@@ -1823,7 +1815,6 @@
     private ToolStripSeparator toolStripSeparator15;
     public ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashot;
-    private ToolStripMenuItem sYSTEMSTATSToolStripMenuItem;
     private ToolStripMenuItem ActionOpenCalculator;
   }
 }

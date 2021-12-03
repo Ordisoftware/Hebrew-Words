@@ -70,8 +70,8 @@ partial class PreferencesForm
       Settings.Reload();
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
-      SystemManager.TryCatch(Settings.Store);
       Settings.Retrieve();
+      SystemManager.TryCatch(Settings.Store);
       Settings.SetFirstAndUpgradeFlagsOff();
       Program.UpdateLocalization();
       LanguageChanged = true;

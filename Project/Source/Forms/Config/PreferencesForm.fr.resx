@@ -619,4 +619,7 @@
   <data name="LabelBookmarksCount.Text" xml:space="preserve">
     <value>Nombre de favoris</value>
   </data>
+  <data name="TabPageTools.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
 </root>

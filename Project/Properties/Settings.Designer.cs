@@ -145,7 +145,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.Hebrew.Letters.exe")]
         public string HebrewLettersExe {
             get {
                 return ((string)(this["HebrewLettersExe"]));

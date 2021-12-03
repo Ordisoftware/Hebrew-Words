@@ -94,6 +94,17 @@ static partial class Program
       // Check language
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
+      // Check applications
+      string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
+      string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
+      string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+      // Check applications : Letters
+      if ( !File.Exists(Settings.HebrewLettersExe) )
+        if ( File.Exists(pathLettersOld) )
+          Settings.HebrewLettersExe = pathLettersOld;
+        else
+        if ( File.Exists(pathLettersDefault) )
+          Settings.HebrewLettersExe = pathLettersDefault;
       // Save settings
       SystemManager.TryCatch(Settings.Save);
     }

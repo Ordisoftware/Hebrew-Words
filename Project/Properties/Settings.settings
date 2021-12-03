@@ -33,7 +33,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
     </Setting>
     <Setting Name="SearchOnlineURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.pealim.com/search/?q=%WORD%</Value>

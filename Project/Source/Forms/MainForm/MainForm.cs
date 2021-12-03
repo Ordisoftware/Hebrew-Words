@@ -574,7 +574,11 @@ partial class MainForm : Form
       case ViewMode.ELS50:
         Clipboard.SetText(EditELS50All.Text);
         break;
+      default:
+        throw new AdvancedNotImplementedException(Settings.CurrentView);
     }
+    DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
+                                      Globals.ClipboardSoundFilePath);
   }
 
   #endregion
@@ -1229,10 +1233,7 @@ partial class MainForm : Form
     form.TextBox.Text = CurrentReference.Book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
-    {
       CurrentReference.Book.Memo = form.TextBox.Text;
-      ActionSave.PerformClick();
-    }
   }
 
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
@@ -1245,10 +1246,7 @@ partial class MainForm : Form
     form.TextBox.Text = CurrentReference.Chapter.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
-    {
       EditChapterMemo.Text = form.TextBox.Text;
-      ActionSave.PerformClick();
-    }
   }
 
   private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
