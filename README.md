@@ -161,6 +161,10 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
 - Optimize overall performances.
+- Add verse navigator in the verses view panel.
+- Add Alt + Left and Right to navigate between verses.
+- Add option to render only current verse or all of the chapter.
+- Add filter verses view panel.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add source Hebrew word in the search translated form.
@@ -181,6 +185,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add optimize database menu.
 - Add usage statistics form in tools menu.
 - Add keyboard shortcuts notice in windows settings menu.
+- Add and change many shortcuts.
 - Add sounds to clipboard actions.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable message boxes sounds.
