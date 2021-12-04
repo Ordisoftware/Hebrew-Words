@@ -43,20 +43,7 @@ partial class SelectReferenceForm : Form
     }
   }
 
-  private void EditFilterChaptersWithTitle_CheckedChanged(object sender, EventArgs e)
-  {
-    Cursor = Cursors.WaitCursor;
-    try
-    {
-      CreateDataSource();
-    }
-    finally
-    {
-      Cursor = Cursors.Default;
-    }
-  }
-
-  private void EditFilterVersesTranslated_CheckedChanged(object sender, EventArgs e)
+  private void UpdateFilters(object sender, EventArgs e)
   {
     Cursor = Cursors.WaitCursor;
     try
@@ -76,27 +63,52 @@ partial class SelectReferenceForm : Form
       books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
     if ( EditFilterVersesTranslated.Checked )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
-    SelectBook.DataSource = new BindingListView<BookRow>(books.ToList());
+    if ( EditFilterBook.Text != string.Empty )
+      books = books.Where(b => b.Name.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0
+                            || b.CommonName.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0
+                            || b.Translation.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0);
+    var list = books.ToList();
+    SelectBook.DataSource = new BindingList<BookRow>(list);
+    if ( list.Count == 0 )
+    {
+      SelectChapter.DataSource = null;
+      SelectVerse.DataSource = null;
+    }
   }
 
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.ID ?? string.Empty;
+    string id = ( SelectBook.SelectedItem as BookRow )?.ID;
+    if ( id == null )
+    {
+      SelectChapter.DataSource = null;
+      return;
+    }
     var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
     if ( EditFilterChaptersWithTitle.Checked )
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
     if ( EditFilterVersesTranslated.Checked )
       chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
-    SelectChapter.DataSource = new BindingListView<ChapterRow>(chapters.ToList());
+    var list = chapters.ToList();
+    SelectChapter.DataSource = new BindingList<ChapterRow>(list);
+    if ( list.Count == 0 )
+    {
+      SelectVerse.DataSource = null;
+    }
   }
 
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectChapter.SelectedItem as ObjectView<ChapterRow> )?.Object.ID ?? string.Empty;
+    string id = ( SelectChapter.SelectedItem as ChapterRow )?.ID;
+    if ( id == null )
+    {
+      SelectVerse.DataSource = null;
+      return;
+    }
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
-    SelectVerse.DataSource = new BindingListView<VerseRow>(verses.ToList());
+    SelectVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
   }
 
 }
