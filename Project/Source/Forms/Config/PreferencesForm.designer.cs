@@ -68,18 +68,22 @@
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectBackupFolder = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditBackupFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.TabPageStartup = new System.Windows.Forms.TabPage();
+      this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
+      this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
       this.EditShowLastNewInVersionAfterUpdate = new System.Windows.Forms.CheckBox();
       this.LabelLastDBOptimizeDate = new System.Windows.Forms.Label();
       this.LabelLastDBOptimize = new System.Windows.Forms.Label();
       this.LabelLastStartupCheckDate = new System.Windows.Forms.Label();
       this.LabelLastStartupCheck = new System.Windows.Forms.Label();
-      this.LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
       this.LabelInfoCheckUpdateAtStartup = new System.Windows.Forms.Label();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
@@ -129,12 +133,6 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
-      this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditBackupFolder = new Ordisoftware.Core.TextBoxEx();
-      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
-      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -413,6 +411,38 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditBackupFolder
+      // 
+      this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
+      this.EditBackupFolder.Name = "EditBackupFolder";
+      this.EditBackupFolder.ReadOnly = true;
+      // 
+      // EditExportFolder
+      // 
+      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
+      this.EditExportFolder.Name = "EditExportFolder";
+      this.EditExportFolder.ReadOnly = true;
+      // 
+      // EditCalculatorPath
+      // 
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
+      // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // EditAutoOpenExportedFile
       // 
       resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
@@ -438,16 +468,30 @@
       this.TabPageStartup.Controls.Add(this.LabelLastDBOptimize);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheckDate);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheck);
-      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateFrequency);
       this.TabPageStartup.Controls.Add(this.LabelInfoCheckUpdateAtStartup);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.TabPageStartup.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartupInterval);
       this.TabPageStartup.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageStartup.Controls.Add(this.EditVacuumAtStartup);
       this.TabPageStartup.Controls.Add(this.LabelInfoOptimizeDatabaseIntervalInfo);
       resources.ApplyResources(this.TabPageStartup, "TabPageStartup");
       this.TabPageStartup.Name = "TabPageStartup";
+      // 
+      // EditAutoSortBookmarks
+      // 
+      resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
+      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoSortBookmarks;
+      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
+      this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
+      // 
+      // EditGoToMasterBookmarkAtStartup
+      // 
+      resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
+      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
+      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
+      this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditShowLastNewInVersionAfterUpdate
       // 
@@ -479,11 +523,6 @@
       this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastStartupCheck.Name = "LabelLastStartupCheck";
       // 
-      // LabelCheckUpdateFrequency
-      // 
-      resources.ApplyResources(this.LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
-      this.LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
-      // 
       // LabelInfoCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.LabelInfoCheckUpdateAtStartup, "LabelInfoCheckUpdateAtStartup");
@@ -496,13 +535,6 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       this.EditCheckUpdateAtStartup.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
-      // 
-      // EditCheckUpdateEveryWeek
-      // 
-      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
-      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
-      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
-      this.EditCheckUpdateEveryWeek.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
       // 
       // EditCheckUpdateAtStartupInterval
       // 
@@ -917,54 +949,6 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
-      // EditAutoSortBookmarks
-      // 
-      resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
-      this.EditAutoSortBookmarks.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.AutoSortBookmarks;
-      this.EditAutoSortBookmarks.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
-      this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
-      // 
-      // EditGoToMasterBookmarkAtStartup
-      // 
-      resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
-      this.EditGoToMasterBookmarkAtStartup.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.GoToMasterBookmarkAtStartup;
-      this.EditGoToMasterBookmarkAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "GoToMasterBookmarkAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
-      this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditBackupFolder
-      // 
-      this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
-      this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
-      this.EditBackupFolder.Name = "EditBackupFolder";
-      this.EditBackupFolder.ReadOnly = true;
-      // 
-      // EditExportFolder
-      // 
-      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
-      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
-      this.EditExportFolder.Name = "EditExportFolder";
-      this.EditExportFolder.ReadOnly = true;
-      // 
-      // EditCalculatorPath
-      // 
-      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
-      this.EditCalculatorPath.Name = "EditCalculatorPath";
-      this.EditCalculatorPath.ReadOnly = true;
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1048,10 +1032,8 @@
     private Label LabelLastDBOptimize;
     private Label LabelLastStartupCheckDate;
     private Label LabelLastStartupCheck;
-    private Label LabelCheckUpdateFrequency;
     private Label LabelInfoCheckUpdateAtStartup;
     private CheckBox EditCheckUpdateAtStartup;
-    private CheckBox EditCheckUpdateEveryWeek;
     private NumericUpDown EditCheckUpdateAtStartupInterval;
     private NumericUpDown EditVacuumAtStartupInterval;
     private CheckBox EditVacuumAtStartup;

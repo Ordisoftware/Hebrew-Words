@@ -199,7 +199,6 @@ partial class PreferencesForm : Form
 
   private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
   {
-    EditCheckUpdateEveryWeek.Enabled = EditCheckUpdateAtStartup.Checked;
     EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
   }
 
