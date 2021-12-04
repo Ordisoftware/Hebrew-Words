@@ -43,11 +43,6 @@ partial class WordControl : UserControl
     EditTranslation.Focus();
   }
 
-  private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
-  {
-    EditTranslation.Focus();
-  }
-
   private void EditTranslation_Enter(object sender, EventArgs e)
   {
     if ( MainForm.Instance.IsRendering ) return;
@@ -75,23 +70,43 @@ partial class WordControl : UserControl
     LabelHebrew.ForeColor = SystemColors.ControlText;
   }
 
-  private void LabelHebrew_Click(object sender, EventArgs e)
+  private void LabelHebrew_MouseClick(object sender, MouseEventArgs e)
   {
     EditTranslation.Focus();
-    switch ( Program.Settings.HebrewWordClickOpen )
+    if ( e.Button != MouseButtons.Left ) return;
+    if ( ModifierKeys == ( Keys.Shift | Keys.Control ) )
+      process(Program.Settings.HebrewWordShiftCtrlClickAction);
+    else
+    if ( ModifierKeys == Keys.Control )
+      process(Program.Settings.HebrewWordCtrlClickAction);
+    else
+    if ( ModifierKeys == Keys.Shift )
+      process(Program.Settings.HebrewWordShiftClickAction);
+    else
+      process(Program.Settings.HebrewWordClickAction);
+    //
+    void process(HebrewWordClickAction value)
     {
-      case HebrewWordClickOpen.HebrewLetters:
-        HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Program.Settings.HebrewLettersExe);
-        break;
-      case HebrewWordClickOpen.OnlineSearch:
-        string word = Reference.Word.Hebrew;
-        HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
-        break;
-      case HebrewWordClickOpen.SearchTranslated:
-        MainForm.Instance.ActionSearchTranslated.PerformClick();
-        break;
-      case HebrewWordClickOpen.Nothing:
-        break;
+      switch ( value )
+      {
+        case HebrewWordClickAction.ContextMenu:
+          LabelHebrew.ContextMenuStrip?.Show(LabelHebrew, new Point(0, LabelHebrew.Height));
+          break;
+        case HebrewWordClickAction.OnlineSearch:
+          string word = Reference.Word.Hebrew;
+          HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+          break;
+        case HebrewWordClickAction.SearchTranslated:
+          MainForm.Instance.ActionSearchTranslated.PerformClick();
+          break;
+        case HebrewWordClickAction.HebrewLetters:
+          HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Program.Settings.HebrewLettersExe);
+          break;
+        case HebrewWordClickAction.Nothing:
+          break;
+        default:
+          throw new AdvancedNotImplementedException(value);
+      }
     }
   }
 

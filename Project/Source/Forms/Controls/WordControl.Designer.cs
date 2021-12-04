@@ -44,8 +44,7 @@
       this.LabelHebrew.TabIndex = 0;
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.LabelHebrew.Click += new System.EventHandler(this.LabelHebrew_Click);
-      this.LabelHebrew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseDown);
+      this.LabelHebrew.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 

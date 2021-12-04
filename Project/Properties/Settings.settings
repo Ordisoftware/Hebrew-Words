@@ -44,8 +44,8 @@
     <Setting Name="AutoSaveDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="HebrewWordClickOpen" Type="Ordisoftware.Hebrew.Words.HebrewWordClickOpen" Scope="User">
-      <Value Profile="(Default)">SearchTranslated</Value>
+    <Setting Name="HebrewWordClickAction" Type="Ordisoftware.Hebrew.Words.HebrewWordClickAction" Scope="User">
+      <Value Profile="(Default)">ContextMenu</Value>
     </Setting>
     <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>
@@ -131,7 +131,7 @@
     <Setting Name="FoundReferencesColumnRefWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">130</Value>
     </Setting>
-    <Setting Name="TranslatedItemDoubleClickOpen" Type="Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen" Scope="User">
+    <Setting Name="TranslatedItemDoubleClickAction" Type="Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickAction" Scope="User">
       <Value Profile="(Default)">ReachReference</Value>
     </Setting>
     <Setting Name="EditMemoFormClientSize" Type="System.Drawing.Size" Scope="User">
@@ -274,6 +274,18 @@
     </Setting>
     <Setting Name="RenderAllChapterVerses" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HebrewWordShiftClickAction" Type="Ordisoftware.Hebrew.Words.HebrewWordClickAction" Scope="User">
+      <Value Profile="(Default)">OnlineSearch</Value>
+    </Setting>
+    <Setting Name="HebrewWordCtrlClickAction" Type="Ordisoftware.Hebrew.Words.HebrewWordClickAction" Scope="User">
+      <Value Profile="(Default)">SearchTranslated</Value>
+    </Setting>
+    <Setting Name="HebrewWordShiftCtrlClickAction" Type="Ordisoftware.Hebrew.Words.HebrewWordClickAction" Scope="User">
+      <Value Profile="(Default)">HebrewLetters</Value>
+    </Setting>
+    <Setting Name="VerseLabelClickAction" Type="Ordisoftware.Hebrew.Words.VerseLabelClickAction" Scope="User">
+      <Value Profile="(Default)">ContextMenu</Value>
     </Setting>
   </Settings>
 </SettingsFile>

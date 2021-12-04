@@ -50,11 +50,41 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditHistoryCount.Value = Program.Settings.HistoryCount);
     SystemManager.TryCatch(() => EditSearchDisplayMaxRef.Value = Program.Settings.FoundReferencesViewable);
     SystemManager.TryCatch(() => EditSearchMinRefForDialog.Value = Program.Settings.FoundReferencesToOpenDialog);
-    // Word click action
-    SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
-    SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
-    SelectOpenTranslated.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.SearchTranslated;
-    SelectOpenNothing.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.Nothing;
+    // Word click action 1
+    GroupBoxHebrewWordClick0.Checked = Program.Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
+    GroupBoxHebrewWordClick1.Checked = Program.Settings.HebrewWordClickAction == HebrewWordClickAction.OnlineSearch;
+    GroupBoxHebrewWordClick2.Checked = Program.Settings.HebrewWordClickAction == HebrewWordClickAction.SearchTranslated;
+    GroupBoxHebrewWordClick3.Checked = Program.Settings.HebrewWordClickAction == HebrewWordClickAction.HebrewLetters;
+    GroupBoxHebrewWordClick4.Checked = Program.Settings.HebrewWordClickAction == HebrewWordClickAction.Nothing;
+    // Word click action 2
+    GroupBoxHebrewWordClickShift0.Checked = Program.Settings.HebrewWordShiftClickAction == HebrewWordClickAction.ContextMenu;
+    GroupBoxHebrewWordClickShift1.Checked = Program.Settings.HebrewWordShiftClickAction == HebrewWordClickAction.OnlineSearch;
+    GroupBoxHebrewWordClickShift2.Checked = Program.Settings.HebrewWordShiftClickAction == HebrewWordClickAction.SearchTranslated;
+    GroupBoxHebrewWordClickShift3.Checked = Program.Settings.HebrewWordShiftClickAction == HebrewWordClickAction.HebrewLetters;
+    GroupBoxHebrewWordClickShift4.Checked = Program.Settings.HebrewWordShiftClickAction == HebrewWordClickAction.Nothing;
+    // Word click action 3
+    GroupBoxHebrewWordClickCtrl0.Checked = Program.Settings.HebrewWordCtrlClickAction == HebrewWordClickAction.ContextMenu;
+    GroupBoxHebrewWordClickCtrl1.Checked = Program.Settings.HebrewWordCtrlClickAction == HebrewWordClickAction.OnlineSearch;
+    GroupBoxHebrewWordClickCtrl2.Checked = Program.Settings.HebrewWordCtrlClickAction == HebrewWordClickAction.SearchTranslated;
+    GroupBoxHebrewWordClickCtrl3.Checked = Program.Settings.HebrewWordCtrlClickAction == HebrewWordClickAction.HebrewLetters;
+    GroupBoxHebrewWordClickCtrl4.Checked = Program.Settings.HebrewWordCtrlClickAction == HebrewWordClickAction.Nothing;
+    // Word click action 4
+    GroupBoxHebrewWordClickShiftCtrl0.Checked = Program.Settings.HebrewWordShiftCtrlClickAction == HebrewWordClickAction.ContextMenu;
+    GroupBoxHebrewWordClickShiftCtrl1.Checked = Program.Settings.HebrewWordShiftCtrlClickAction == HebrewWordClickAction.OnlineSearch;
+    GroupBoxHebrewWordClickShiftCtrl2.Checked = Program.Settings.HebrewWordShiftCtrlClickAction == HebrewWordClickAction.SearchTranslated;
+    GroupBoxHebrewWordClickShiftCtrl3.Checked = Program.Settings.HebrewWordShiftCtrlClickAction == HebrewWordClickAction.HebrewLetters;
+    GroupBoxHebrewWordClickShiftCtrl4.Checked = Program.Settings.HebrewWordShiftCtrlClickAction == HebrewWordClickAction.Nothing;
+    // Translated double clock
+    GroupBoxTranslatedItemDoubleClick1.Checked = Program.Settings.TranslatedItemDoubleClickAction == TranslatedItemDoubleClickAction.UseTranslation;
+    GroupBoxTranslatedItemDoubleClick1.Checked = Program.Settings.TranslatedItemDoubleClickAction == TranslatedItemDoubleClickAction.UseTranslation;
+    GroupBoxTranslatedItemDoubleClick2.Checked = Program.Settings.TranslatedItemDoubleClickAction == TranslatedItemDoubleClickAction.AddTranslation;
+    GroupBoxTranslatedItemDoubleClick3.Checked = Program.Settings.TranslatedItemDoubleClickAction == TranslatedItemDoubleClickAction.ReachReference;
+    GroupBoxTranslatedItemDoubleClick4.Checked = Program.Settings.TranslatedItemDoubleClickAction == TranslatedItemDoubleClickAction.Nothing;
+    // Verse label click action
+    GroupBoxVerseLabelClick1.Checked = Program.Settings.VerseLabelClickAction == VerseLabelClickAction.OnlineRead;
+    GroupBoxVerseLabelClick2.Checked = Program.Settings.VerseLabelClickAction == VerseLabelClickAction.ContextMenu;
+    GroupBoxVerseLabelClick3.Checked = Program.Settings.VerseLabelClickAction == VerseLabelClickAction.Select;
+    GroupBoxVerseLabelClick4.Checked = Program.Settings.VerseLabelClickAction == VerseLabelClickAction.Nothing;
     //
     if ( First )
     {
