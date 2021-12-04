@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Linq;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -22,9 +23,7 @@ class Bookmarks : ReferencesList
     if ( reference == null ) return;
     if ( Program.Settings.BookmarksCount < 1 )
       return;
-    foreach ( var item in Items )
-      if ( item.Equals(reference) )
-        return;
+    if ( Items.Any(item => item.Equals(reference)) ) return;
     Items.Add(reference);
     while ( Items.Count > Program.Settings.BookmarksCount )
       Items.RemoveAt(0);

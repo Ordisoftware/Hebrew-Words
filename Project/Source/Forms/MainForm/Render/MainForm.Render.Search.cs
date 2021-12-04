@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -34,10 +34,10 @@ partial class MainForm
         SetFormDisabled(true);
       var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
                                  .Take(Program.Settings.FoundReferencesViewable);
-      int referenceSize = 160;
-      int marginX = 10;
-      int marginY = 10;
-      int minX = marginX;
+      const int referenceSize = 160;
+      const int marginX = 10;
+      const int marginY = 10;
+      const int minX = marginX;
       int maxX = PanelSearchResults.ClientSize.Width - marginX;
       int x = 0;
       int y = 0;
@@ -52,12 +52,12 @@ partial class MainForm
         if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
         x = maxX;
         y += marginY;
-        linklabel = new LinkLabel();
+        linklabel = new();
         linklabel.AutoSize = true;
         linklabel.Tag = reference;
         linklabel.Font = LatinFont8;
         linklabel.Text = reference.ToString();
-        linklabel.Location = new Point(x = x - referenceSize, y);
+        linklabel.Location = new Point(x -= referenceSize, y);
         linklabel.ContextMenuStrip = ContextMenuStripVerse;
         linklabel.LinkColor = Color.DarkBlue;
         linklabel.LinkClicked += (sender, e) =>
@@ -74,7 +74,7 @@ partial class MainForm
         Label label = null;
         foreach ( var word in reference.Verse.Words )
         {
-          label = new Label();
+          label = new();
           label.AutoSize = true;
           label.Font = HebrewFont12;
           label.Text = word.Hebrew.Trim();
@@ -102,7 +102,7 @@ partial class MainForm
         y += label.PreferredHeight + marginY;
         if ( reference.Verse.HasTranslation )
         {
-          label = new Label();
+          label = new();
           label.AutoSize = true;
           label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
           label.Text = reference.Verse.Translation;

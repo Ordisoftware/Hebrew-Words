@@ -26,7 +26,7 @@ partial class SelectReferenceForm : Form
                              ( form.SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
 
-  private Dictionary<TextBox, bool> FilterModified;
+  private readonly Dictionary<TextBox, bool> FilterModified;
 
   private SelectReferenceForm()
   {

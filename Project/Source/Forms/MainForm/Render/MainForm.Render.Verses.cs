@@ -95,7 +95,7 @@ partial class MainForm
         }
       }
       if ( emptyline ) y -= dy;
-      editComment = new TextBoxEx();
+      editComment = new();
       editComment.Tag = reference;  // TODO reorg Tags using panel to get ref
       label.Tag = editComment;
       if ( verseLineCount > 1 )

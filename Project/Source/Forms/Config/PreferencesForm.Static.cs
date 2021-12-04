@@ -52,14 +52,12 @@ partial class PreferencesForm
 
   static PreferencesForm()
   {
-    using ( var form = new PreferencesForm() )
-    {
-      TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
-      TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
-      TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
-      TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
-      TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
-    }
+    using var form = new PreferencesForm();
+    TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
+    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
+    TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
+    TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
+    TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
   }
 
   static public bool Run(int index = -1)
