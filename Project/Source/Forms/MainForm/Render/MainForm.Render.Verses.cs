@@ -17,8 +17,10 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVerses(Panel container, IEnumerable<ReferenceItem> references)
+  private int RenderVerses(Panel container, IEnumerable<ReferenceItem> references)
   {
+    while ( container.Controls.Count > 0 )
+      container.Controls[0].Dispose();
     var wordcontrol = new WordControl { Width = Program.Settings.WordControlWidth };
     const int widthLabel = 40;
     const int mX = 50;
@@ -118,9 +120,8 @@ partial class MainForm
       panel.Height = y;
       yPanel += y;
       container.Controls.Add(panel);
-      if ( SelectRenderAllVerses.Checked )
-        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
     }
+    return controlsCount;
   }
 
   private void EditVerseComment_Enter(object sender, EventArgs e)

@@ -899,6 +899,7 @@ partial class MainForm : Form
       if ( old == CurrentReference ) return;
       ActionSave.PerformClick();
       RenderAll();
+      GoTo(CurrentReference);
     }
     finally
     {
@@ -1359,5 +1360,135 @@ partial class MainForm : Form
             }
     DisplayManager.Show(value.ToString());
   }
+
+  #region Verses Filtered
+
+  private Dictionary<TextBox, bool> FilterModified;
+
+  private void UpdateFilters(object sender, EventArgs e)
+  {
+    Cursor = Cursors.WaitCursor;
+    try { CreateFilterDataSource(); }
+    finally { Cursor = Cursors.Default; }
+  }
+
+  private void ActionClearFilterBook_Click(object sender, EventArgs e)
+  {
+    EditFilterBook.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void ActionClearFilterChapter_Click(object sender, EventArgs e)
+  {
+    EditFilterChapter.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void ActionClearFilterVerse_Click(object sender, EventArgs e)
+  {
+    EditFilterVerse.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void EditFilter_TextChanged(object sender, EventArgs e)
+  {
+    FilterModified[(TextBox)sender] = true;
+  }
+
+  private void EditFilterBook_KeyUp(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Enter && FilterModified[(TextBox)sender] )
+    {
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
+    }
+  }
+
+  private void EditFilter_Leave(object sender, EventArgs e)
+  {
+    if ( FilterModified[(TextBox)sender] )
+    {
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
+    }
+  }
+
+  private void CreateFilterDataSource()
+  {
+    var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
+    if ( EditFilterChaptersWithTitle.Checked )
+      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
+    if ( EditFilterVersesTranslated.Checked )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
+    if ( EditFilterBook.Text != string.Empty )
+      books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
+                            || b.CommonName.RawContains(EditFilterBook.Text)
+                            || b.Lettriq.RawContains(EditFilterBook.Text)
+                            || b.Memo.RawContains(EditFilterBook.Text)
+                            || b.Translation.RawContains(EditFilterBook.Text));
+    if ( EditFilterChapter.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
+                                                || c.Memo.RawContains(EditFilterChapter.Text)));
+    if ( EditFilterVerse.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                                  || v.Comment.RawContains(EditFilterVerse.Text))));
+    var list = books.ToList();
+    SelectFilterBook.DataSource = new BindingList<BookRow>(list);
+    if ( list.Count == 0 )
+    {
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
+    }
+  }
+
+  private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    string id = ( SelectFilterBook.SelectedItem as BookRow )?.ID;
+    if ( id == null )
+    {
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
+      return;
+    }
+    var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
+    if ( EditFilterChaptersWithTitle.Checked )
+      chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
+    if ( EditFilterVersesTranslated.Checked )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+    if ( EditFilterChapter.Text != string.Empty )
+      chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
+                                  || c.Memo.RawContains(EditFilterChapter.Text));
+    if ( EditFilterVerse.Text != string.Empty )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                    || v.Comment.RawContains(EditFilterVerse.Text)));
+    var list = chapters.ToList();
+    SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
+    if ( list.Count == 0 )
+      SelectFilterVerse.DataSource = null;
+  }
+
+  private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    string id = ( SelectFilterChapter.SelectedItem as ChapterRow )?.ID;
+    if ( id == null )
+    {
+      SelectFilterVerse.DataSource = null;
+      return;
+    }
+    var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
+    if ( EditFilterVersesTranslated.Checked )
+      verses = verses.Where(v => v.HasTranslation);
+    if ( EditFilterVerse.Text != string.Empty )
+      verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
+                              || v.Comment.RawContains(EditFilterVerse.Text));
+    SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
+  }
+
+  private void SelectFilterVerse_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    RenderVersesFiltered();
+  }
+
+  #endregion
 
 }

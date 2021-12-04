@@ -21,12 +21,11 @@ partial class MainForm
   {
     if ( IsRendering ) return;
     IsRendering = true;
+    int controlsCount = 0;
     Globals.ChronoRendering.Restart();
     try
     {
       if ( SelectRenderAllVerses.Checked ) PanelViewVerses.Visible = false;
-      while ( PanelViewVerses.Controls.Count > 0 )
-        PanelViewVerses.Controls[0].Dispose();
       if ( SelectRenderAllVerses.Checked ) SetFormDisabled(true);
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
@@ -41,7 +40,7 @@ partial class MainForm
                             && chapter.Number == itemChapter.Number
                          select new ReferenceItem(book, chapter, verse)
                        : new List<ReferenceItem> { CurrentReference };
-      RenderVerses(PanelViewVerses, references);
+      controlsCount = RenderVerses(PanelViewVerses, references);
     }
     catch ( Exception ex )
     {
@@ -49,11 +48,11 @@ partial class MainForm
     }
     finally
     {
-      if ( SelectRenderAllVerses.Checked )
-        LabelProgress.Refresh();
       IsRendering = false;
       if ( SelectRenderAllVerses.Checked )
       {
+        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
+        LabelProgress.Refresh();
         PanelViewVerses.Visible = true;
         LabelProgress.Text = "";
         SetFormDisabled(false);
