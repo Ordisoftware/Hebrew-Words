@@ -425,6 +425,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewVerses_Click(object sender, EventArgs e)
   {
+    // TODO move all view clicks in setview
     ActionSave.PerformClick();
     if ( Settings.CurrentView == ViewMode.Verses ) return;
     SetView(ViewMode.Verses);

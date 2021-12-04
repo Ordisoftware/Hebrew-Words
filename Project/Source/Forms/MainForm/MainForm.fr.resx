@@ -603,7 +603,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Filtre sur le title et le mémo</value>
   </data>
   <data name="LabelInfoFilterVerse.Text" xml:space="preserve">
-    <value>Filtre que la traduction et le commentaire</value>
+    <value>Filtre sur la traduction et le commentaire</value>
   </data>
   <data name="LabelInfoFilterNote.Text" xml:space="preserve">
     <value>Note : Les filtres sont cumulatifs sans casse ni signes, appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête</value>
