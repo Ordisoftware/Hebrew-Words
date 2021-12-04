@@ -88,17 +88,18 @@ partial class MainForm
           RotateSearchTab();
         return true;
       // Actions
-      case Keys.Control | Keys.S:
-        ActionSave.PerformClick();
-        return true;
-      case Keys.Control | Keys.F:
-        ActionSearchVerse.PerformClick();
+      case Keys.F6:
+      case Keys.Shift | Keys.Control | Keys.F:
+        ActionGoToReference.PerformClick();
         return true;
       case Keys.Alt | Keys.F:
         ActionViewSearch.PerformClick();
         return true;
-      case Keys.Shift | Keys.Control | Keys.F:
-        ActionGoToReference.PerformClick();
+      case Keys.Control | Keys.F:
+        ActionSearchVerse.PerformClick();
+        return true;
+      case Keys.Control | Keys.S:
+        ActionSave.PerformClick();
         return true;
       // Application menus
       case Keys.Alt | Keys.D:

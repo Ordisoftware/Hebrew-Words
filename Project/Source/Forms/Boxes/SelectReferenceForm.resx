@@ -178,10 +178,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 260</value>
+    <value>0, 216</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 35</value>
+    <value>534, 35</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -205,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 174</value>
+    <value>10, 110</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -226,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="LabelChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -235,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 94</value>
+    <value>10, 60</value>
   </data>
   <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -256,13 +256,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 59</value>
+    <value>13, 30</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
@@ -280,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="LabelBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +289,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 14</value>
+    <value>10, 10</value>
   </data>
   <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -310,13 +310,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>195, 17</value>
   </metadata>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 139</value>
+    <value>13, 80</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
@@ -334,13 +334,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 19</value>
   </metadata>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 219</value>
+    <value>13, 130</value>
   </data>
   <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
@@ -358,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="EditFilterChaptersWithTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,13 +367,13 @@
     <value>NoControl</value>
   </data>
   <data name="EditFilterChaptersWithTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 36</value>
+    <value>13, 163</value>
   </data>
   <data name="EditFilterChaptersWithTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
   </data>
   <data name="EditFilterChaptersWithTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="EditFilterChaptersWithTitle.Text" xml:space="preserve">
     <value>Chapters with title</value>
@@ -388,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditFilterChaptersWithTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="EditFilterVersesTranslated.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditFilterVersesTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 62</value>
+    <value>13, 186</value>
   </data>
   <data name="EditFilterVersesTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -418,69 +418,212 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditFilterVersesTranslated.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditFilterBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 30</value>
+  </data>
+  <data name="EditFilterBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="EditFilterBook.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditFilterBook.Name" xml:space="preserve">
+    <value>EditFilterBook</value>
+  </data>
+  <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditFilterBook.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditFilterChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 80</value>
+  </data>
+  <data name="EditFilterChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="EditFilterChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditFilterChapter.Name" xml:space="preserve">
+    <value>EditFilterChapter</value>
+  </data>
+  <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditFilterChapter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditFilterVerse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 130</value>
+  </data>
+  <data name="EditFilterVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="EditFilterVerse.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;EditFilterVerse.Name" xml:space="preserve">
+    <value>EditFilterVerse</value>
+  </data>
+  <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditFilterVerse.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 34</value>
+  <data name="ActionClearFilterBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 20</value>
+  <data name="ActionClearFilterBook.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="ActionClearFilterBook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="ActionClearFilterBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
+        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
+        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
+        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
+        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
+        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
+        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
+        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
+        AABJRU5ErkJggg==
+</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ActionClearFilterBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="ActionClearFilterBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>494, 27</value>
+  </data>
+  <data name="ActionClearFilterBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionClearFilterBook.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterBook.Name" xml:space="preserve">
+    <value>ActionClearFilterBook</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterBook.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionClearFilterBook.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 114</value>
+  <data name="ActionClearFilterChapter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 20</value>
+  <data name="ActionClearFilterChapter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="ActionClearFilterChapter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="ActionClearFilterChapter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ActionClearFilterChapter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
+  <data name="ActionClearFilterChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>494, 77</value>
+  </data>
+  <data name="ActionClearFilterChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionClearFilterChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterChapter.Name" xml:space="preserve">
+    <value>ActionClearFilterChapter</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterChapter.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionClearFilterChapter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 194</value>
+  <data name="ActionClearFilterVerse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 20</value>
+  <data name="ActionClearFilterVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="ActionClearFilterVerse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
+  <data name="ActionClearFilterVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ActionClearFilterVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+  <data name="ActionClearFilterVerse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>494, 127</value>
+  </data>
+  <data name="ActionClearFilterVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionClearFilterVerse.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterVerse.Name" xml:space="preserve">
+    <value>ActionClearFilterVerse</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearFilterVerse.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionClearFilterVerse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -490,13 +633,19 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>474, 295</value>
+    <value>534, 251</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Find reference</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
+    <value>BooksBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
     <value>ChaptersBindingSource</value>
@@ -508,12 +657,6 @@
     <value>VersesBindingSource</value>
   </data>
   <data name="&gt;&gt;VersesBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
