@@ -192,18 +192,18 @@ partial class MainForm
 
   private void LabelVerseNumber_MouseDown(object sender, EventArgs e)
   {
-    if ( PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] is WordControl control )
+    if ( sender is Label label && label.Parent.Controls[1] is WordControl control )
       control.Focus();
   }
 
   private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
   {
     if ( e.Button != MouseButtons.Left ) return;
-    var control = PanelViewVerses.Controls[PanelViewVerses.Controls.IndexOf((Control)sender) + 1] as WordControl;
-    HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
-                                  control.Reference.Book.Number,
-                                  control.Reference.Chapter.Number,
-                                  control.Reference.Verse.Number);
+    if ( sender is Label label && label.Parent.Controls[1] is WordControl control )
+      HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
+                                    control.Reference.Book.Number,
+                                    control.Reference.Chapter.Number,
+                                    control.Reference.Verse.Number);
   }
 
 }

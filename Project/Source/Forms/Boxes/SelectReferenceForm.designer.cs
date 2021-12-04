@@ -58,6 +58,9 @@ namespace Ordisoftware.Hebrew.Words
       this.EditFilterBook = new System.Windows.Forms.TextBox();
       this.EditFilterChapter = new System.Windows.Forms.TextBox();
       this.EditFilterVerse = new System.Windows.Forms.TextBox();
+      this.ActionClearFilterBook = new System.Windows.Forms.Button();
+      this.ActionClearFilterChapter = new System.Windows.Forms.Button();
+      this.ActionClearFilterVerse = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
@@ -99,7 +102,7 @@ namespace Ordisoftware.Hebrew.Words
       // 
       this.SelectBook.DataSource = this.BooksBindingSource;
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectBook.DropDownWidth = 450;
+      this.SelectBook.DropDownWidth = 500;
       this.SelectBook.FormattingEnabled = true;
       resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
@@ -118,7 +121,7 @@ namespace Ordisoftware.Hebrew.Words
       // 
       this.SelectChapter.DataSource = this.ChaptersBindingSource;
       this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectChapter.DropDownWidth = 450;
+      this.SelectChapter.DropDownWidth = 500;
       this.SelectChapter.FormattingEnabled = true;
       resources.ApplyResources(this.SelectChapter, "SelectChapter");
       this.SelectChapter.Name = "SelectChapter";
@@ -133,7 +136,7 @@ namespace Ordisoftware.Hebrew.Words
       // 
       this.SelectVerse.DataSource = this.VersesBindingSource;
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectVerse.DropDownWidth = 450;
+      this.SelectVerse.DropDownWidth = 500;
       this.SelectVerse.FormattingEnabled = true;
       resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
@@ -161,26 +164,58 @@ namespace Ordisoftware.Hebrew.Words
       // 
       resources.ApplyResources(this.EditFilterBook, "EditFilterBook");
       this.EditFilterBook.Name = "EditFilterBook";
-      this.EditFilterBook.TextChanged += new System.EventHandler(this.UpdateFilters);
+      this.EditFilterBook.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
+      this.EditFilterBook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
+      this.EditFilterBook.Leave += new System.EventHandler(this.EditFilter_Leave);
       // 
       // EditFilterChapter
       // 
       resources.ApplyResources(this.EditFilterChapter, "EditFilterChapter");
       this.EditFilterChapter.Name = "EditFilterChapter";
-      this.EditFilterChapter.TextChanged += new System.EventHandler(this.UpdateFilters);
+      this.EditFilterChapter.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
+      this.EditFilterChapter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
+      this.EditFilterChapter.Leave += new System.EventHandler(this.EditFilter_Leave);
       // 
       // EditFilterVerse
       // 
       resources.ApplyResources(this.EditFilterVerse, "EditFilterVerse");
       this.EditFilterVerse.Name = "EditFilterVerse";
-      this.EditFilterVerse.TextChanged += new System.EventHandler(this.UpdateFilters);
+      this.EditFilterVerse.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
+      this.EditFilterVerse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
+      this.EditFilterVerse.Leave += new System.EventHandler(this.EditFilter_Leave);
+      // 
+      // ActionClearFilterBook
+      // 
+      resources.ApplyResources(this.ActionClearFilterBook, "ActionClearFilterBook");
+      this.ActionClearFilterBook.FlatAppearance.BorderSize = 0;
+      this.ActionClearFilterBook.Name = "ActionClearFilterBook";
+      this.ActionClearFilterBook.UseVisualStyleBackColor = true;
+      this.ActionClearFilterBook.Click += new System.EventHandler(this.ActionClearFilterBook_Click);
+      // 
+      // ActionClearFilterChapter
+      // 
+      resources.ApplyResources(this.ActionClearFilterChapter, "ActionClearFilterChapter");
+      this.ActionClearFilterChapter.FlatAppearance.BorderSize = 0;
+      this.ActionClearFilterChapter.Name = "ActionClearFilterChapter";
+      this.ActionClearFilterChapter.UseVisualStyleBackColor = true;
+      this.ActionClearFilterChapter.Click += new System.EventHandler(this.ActionClearFilterChapter_Click);
+      // 
+      // ActionClearFilterVerse
+      // 
+      resources.ApplyResources(this.ActionClearFilterVerse, "ActionClearFilterVerse");
+      this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
+      this.ActionClearFilterVerse.Name = "ActionClearFilterVerse";
+      this.ActionClearFilterVerse.UseVisualStyleBackColor = true;
+      this.ActionClearFilterVerse.Click += new System.EventHandler(this.ActionClearFilterVerse_Click);
       // 
       // SelectReferenceForm
       // 
-      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionClearFilterVerse);
+      this.Controls.Add(this.ActionClearFilterChapter);
+      this.Controls.Add(this.ActionClearFilterBook);
       this.Controls.Add(this.EditFilterVerse);
       this.Controls.Add(this.EditFilterChapter);
       this.Controls.Add(this.EditFilterBook);
@@ -241,6 +276,9 @@ namespace Ordisoftware.Hebrew.Words
     private BindingSource BooksBindingSource;
     private BindingSource ChaptersBindingSource;
     private BindingSource VersesBindingSource;
+    public Button ActionClearFilterBook;
+    public Button ActionClearFilterChapter;
+    public Button ActionClearFilterVerse;
   }
 
 }

@@ -14,8 +14,6 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Equin.ApplicationFramework;
-
 partial class SelectReferenceForm : Form
 {
 
@@ -23,36 +21,72 @@ partial class SelectReferenceForm : Form
   {
     var form = new SelectReferenceForm();
     if ( form.ShowDialog() != DialogResult.OK ) return null;
-    return new ReferenceItem(( form.SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
+    return new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
                              ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                              ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
+
+  private Dictionary<TextBox, bool> FilterModified;
 
   private SelectReferenceForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     MainForm.Instance.Cursor = Cursors.WaitCursor;
-    try
+    FilterModified = new()
     {
-      CreateDataSource();
-    }
-    finally
-    {
-      MainForm.Instance.Cursor = Cursors.Default;
-    }
+      { EditFilterBook, false },
+      { EditFilterChapter, false },
+      { EditFilterVerse, false },
+    };
+    UpdateFilters(null, null);
   }
 
   private void UpdateFilters(object sender, EventArgs e)
   {
     Cursor = Cursors.WaitCursor;
-    try
+    try { CreateDataSource(); }
+    finally { Cursor = Cursors.Default; }
+  }
+
+  private void ActionClearFilterBook_Click(object sender, EventArgs e)
+  {
+    EditFilterBook.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void ActionClearFilterChapter_Click(object sender, EventArgs e)
+  {
+    EditFilterChapter.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void ActionClearFilterVerse_Click(object sender, EventArgs e)
+  {
+    EditFilterVerse.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  private void EditFilter_TextChanged(object sender, EventArgs e)
+  {
+    FilterModified[(TextBox)sender] = true;
+  }
+
+  private void EditFilterBook_KeyUp(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Enter && FilterModified[(TextBox)sender] )
     {
-      CreateDataSource();
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
     }
-    finally
+  }
+
+  private void EditFilter_Leave(object sender, EventArgs e)
+  {
+    if ( FilterModified[(TextBox)sender] )
     {
-      Cursor = Cursors.Default;
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
     }
   }
 
@@ -64,9 +98,17 @@ partial class SelectReferenceForm : Form
     if ( EditFilterVersesTranslated.Checked )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
     if ( EditFilterBook.Text != string.Empty )
-      books = books.Where(b => b.Name.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0
-                            || b.CommonName.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0
-                            || b.Translation.IndexOf(EditFilterBook.Text, StringComparison.CurrentCultureIgnoreCase) >= 0);
+      books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
+                            || b.CommonName.RawContains(EditFilterBook.Text)
+                            || b.Lettriq.RawContains(EditFilterBook.Text)
+                            || b.Memo.RawContains(EditFilterBook.Text)
+                            || b.Translation.RawContains(EditFilterBook.Text));
+    if ( EditFilterChapter.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
+                                                || c.Memo.RawContains(EditFilterChapter.Text)));
+    if ( EditFilterVerse.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                                  || v.Comment.RawContains(EditFilterVerse.Text))));
     var list = books.ToList();
     SelectBook.DataSource = new BindingList<BookRow>(list);
     if ( list.Count == 0 )
@@ -82,6 +124,7 @@ partial class SelectReferenceForm : Form
     if ( id == null )
     {
       SelectChapter.DataSource = null;
+      SelectVerse.DataSource = null;
       return;
     }
     var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
@@ -89,12 +132,16 @@ partial class SelectReferenceForm : Form
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
     if ( EditFilterVersesTranslated.Checked )
       chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+    if ( EditFilterChapter.Text != string.Empty )
+      chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
+                                  || c.Memo.RawContains(EditFilterChapter.Text));
+    if ( EditFilterVerse.Text != string.Empty )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                    || v.Comment.RawContains(EditFilterVerse.Text)));
     var list = chapters.ToList();
     SelectChapter.DataSource = new BindingList<ChapterRow>(list);
     if ( list.Count == 0 )
-    {
       SelectVerse.DataSource = null;
-    }
   }
 
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,6 +155,9 @@ partial class SelectReferenceForm : Form
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
+    if ( EditFilterVerse.Text != string.Empty )
+      verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
+                              || v.Comment.RawContains(EditFilterVerse.Text));
     SelectVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
   }
 

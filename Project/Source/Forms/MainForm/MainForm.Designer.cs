@@ -226,21 +226,21 @@
       this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
       this.SelectSearchTypeTranslation.SuspendLayout();
       this.SelectSearchTypeVerses.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -874,17 +874,17 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewSearch,
             this.ActionExit,
             this.Sep4,
             this.ActionPreferences,
-            this.toolStripSeparator10,
             this.ActionViewVerses,
             this.ActionViewTranslations,
             this.ActionViewRawText,
             this.ActionViewELS50,
-            this.toolStripSeparator4,
+            this.toolStripSeparator10,
+            this.ActionViewSearch,
             this.ActionGoToReference,
+            this.toolStripSeparator4,
             this.ActionRefresh,
             this.toolStripSeparator9,
             this.ActionCloseWindows,
@@ -1643,7 +1643,7 @@
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -1653,15 +1653,15 @@
       this.SelectSearchTypeVerses.PerformLayout();
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
