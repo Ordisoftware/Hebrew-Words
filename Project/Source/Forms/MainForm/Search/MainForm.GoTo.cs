@@ -55,7 +55,7 @@ partial class MainForm
       {
         var item = SelectBook.Items.AsIEnumerable<ObjectView<BookRow>>()
                                    .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
-        SelectBook.SelectedItem = item ?? throw new Exception("Book combo-box index error.");
+        SelectBook.SelectedItem = item ?? throw new SystemException("Book combo-box internal index error.");
         updated = true;
       }
       if ( SelectChapter.SelectedIndex != reference.Chapter?.Number - 1 )

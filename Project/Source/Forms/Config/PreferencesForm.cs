@@ -199,7 +199,6 @@ partial class PreferencesForm : Form
 
   private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
   {
-    EditCheckUpdateEveryWeek.Enabled = EditCheckUpdateAtStartup.Checked;
     EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
   }
 
@@ -311,7 +310,7 @@ partial class PreferencesForm : Form
 
   private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
   {
-    EditMinRefCount.Maximum = EditMaxRefCount.Value;
+    EditSearchMinRefForDialog.Maximum = EditSearchDisplayMaxRef.Value;
   }
 
   private void ActionSelectOnlineSearch_Click(object sender, EventArgs e)

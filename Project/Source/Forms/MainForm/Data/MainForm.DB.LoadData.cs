@@ -20,7 +20,7 @@ partial class MainForm : Form
   /// <summary>
   /// Reload data from database.
   /// </summary>
-  private void ReLoadData(Action actionBefore = null)
+  private void ReLoadData(Action actionBeforeRestart = null)
   {
     ActionCloseWindows.PerformClick();
     ActionSearchClear.PerformClick();
@@ -30,8 +30,11 @@ partial class MainForm : Form
     PanelSearchResults.Controls.Clear();
     SearchResults = null;
     Refresh();
-    actionBefore?.Invoke();
+    ApplicationDatabase.Instance.Close();
+    actionBeforeRestart?.Invoke();
+    ApplicationDatabase.Restart();
     LoadData();
+    DoStartGoTo();
   }
 
   /// <summary>
@@ -86,17 +89,18 @@ partial class MainForm : Form
   {
     SetFormDisabled(true);
     Globals.IsLoadingData = true;
+    string msg = SysTranslations.LoadingData.GetLang() + " {0}";
     try
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-      int countBook = (int)ApplicationDatabase.Instance.Connection.GetRowsCount(ApplicationDatabase.BooksTableName);
-      LoadingForm.Instance.Initialize("", countBook + 1 + 1, quantify: false);
-      DBApp.LoadingData += OnLoadingData;
-      DBApp.Open();
-      DBApp.LoadAll();
-      DBApp.LoadingData -= OnLoadingData;
-      LoadingForm.Instance.DoProgress(operation: "Finishing...");
+      LoadingForm.Instance.Initialize("", Enums.GetValues<TanakBook>().Count + 1 + 1, quantify: false);
+      ApplicationDatabase.Instance.LoadingData += OnLoadingData;
+      ApplicationDatabase.Instance.Open();
+      ApplicationDatabase.Instance.LoadAll();
+      ApplicationDatabase.Instance.LoadingData -= OnLoadingData;
+      LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
       BookRowBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+      SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
       //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
     }
     finally
@@ -106,9 +110,9 @@ partial class MainForm : Form
       SetFormDisabled(false);
     }
     //
-    static void OnLoadingData(string caption)
+    void OnLoadingData(string caption)
     {
-      LoadingForm.Instance.DoProgress(operation: "Loading book: " + caption);
+      LoadingForm.Instance.DoProgress(operation: string.Format(msg, caption));
     }
 
   }

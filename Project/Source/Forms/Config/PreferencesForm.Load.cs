@@ -42,14 +42,14 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled);
     SystemManager.TryCatch(() => EditOnlineSearch.Text = Program.Settings.SearchOnlineURL);
     SystemManager.TryCatch(() => EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL);
-    SystemManager.TryCatch(() => EditBackupCount.Value = Program.Settings.BackupCount);
+    SystemManager.TryCatch(() => EditAutoBackupCount.Value = Program.Settings.BackupCount);
     SystemManager.TryCatch(() => EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay);
-    SystemManager.TryCatch(() => EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
+    SystemManager.TryCatch(() => EditCommentLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
     SystemManager.TryCatch(() => EditWordControlWidth.Value = Program.Settings.WordControlWidth);
     SystemManager.TryCatch(() => EditBookmarksCount.Value = Program.Settings.BookmarksCount);
     SystemManager.TryCatch(() => EditHistoryCount.Value = Program.Settings.HistoryCount);
-    SystemManager.TryCatch(() => EditMaxRefCount.Value = Program.Settings.FoundReferencesViewable);
-    SystemManager.TryCatch(() => EditMinRefCount.Value = Program.Settings.FoundReferencesToOpenDialog);
+    SystemManager.TryCatch(() => EditSearchDisplayMaxRef.Value = Program.Settings.FoundReferencesViewable);
+    SystemManager.TryCatch(() => EditSearchMinRefForDialog.Value = Program.Settings.FoundReferencesToOpenDialog);
     // Word click action
     SelectOpenHebrewLetters.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.HebrewLetters;
     SelectOpenOnlineSearch.Checked = Program.Settings.HebrewWordClickOpen == HebrewWordClickOpen.OnlineSearch;
@@ -58,9 +58,9 @@ partial class PreferencesForm
     //
     if ( First )
     {
-      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
+      CommentaryLinesCountPrevious = (int)EditCommentLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
-      MaxrefCountPrevious = (int)EditMaxRefCount.Value;
+      MaxrefCountPrevious = (int)EditSearchDisplayMaxRef.Value;
       First = false;
     }
     // Special

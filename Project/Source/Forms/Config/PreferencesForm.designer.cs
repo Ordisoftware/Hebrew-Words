@@ -82,17 +82,17 @@
       this.LabelLastDBOptimize = new System.Windows.Forms.Label();
       this.LabelLastStartupCheckDate = new System.Windows.Forms.Label();
       this.LabelLastStartupCheck = new System.Windows.Forms.Label();
-      this.LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
-      this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
+      this.LabelInfoCheckUpdateAtStartup = new System.Windows.Forms.Label();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
-      this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelInfoOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.LabelInfoAutoSaveDelay = new System.Windows.Forms.Label();
+      this.LabelInfoAutoBackupCount = new System.Windows.Forms.Label();
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
-      this.EditBackupCount = new System.Windows.Forms.NumericUpDown();
+      this.EditAutoBackupCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
@@ -105,12 +105,18 @@
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageRendering = new System.Windows.Forms.TabPage();
+      this.LabelInfoSearchMinRefForDialog = new System.Windows.Forms.Label();
+      this.LabelInfoSearchDisplayMaxRef = new System.Windows.Forms.Label();
+      this.LabelInfoHistoryCount = new System.Windows.Forms.Label();
+      this.LabelInfoBookmarksCount = new System.Windows.Forms.Label();
+      this.LabelInfoWordControlWidth = new System.Windows.Forms.Label();
+      this.LabelInfoCommentLinesCount = new System.Windows.Forms.Label();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
-      this.EditMinRefCount = new System.Windows.Forms.NumericUpDown();
-      this.EditMaxRefCount = new System.Windows.Forms.NumericUpDown();
+      this.EditSearchMinRefForDialog = new System.Windows.Forms.NumericUpDown();
+      this.EditSearchDisplayMaxRef = new System.Windows.Forms.NumericUpDown();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
-      this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
+      this.EditCommentLinesCount = new System.Windows.Forms.NumericUpDown();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
       this.SelectOpenNothing = new System.Windows.Forms.RadioButton();
@@ -145,16 +151,16 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageApplication.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoBackupCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabControl.SuspendLayout();
       this.TabPageRendering.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).BeginInit();
       this.TabPageTools.SuspendLayout();
       this.GroupBoxHebrewWordClick.SuspendLayout();
       this.SuspendLayout();
@@ -462,14 +468,12 @@
       this.TabPageStartup.Controls.Add(this.LabelLastDBOptimize);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheckDate);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheck);
-      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateFrequency);
-      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
+      this.TabPageStartup.Controls.Add(this.LabelInfoCheckUpdateAtStartup);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.TabPageStartup.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartupInterval);
       this.TabPageStartup.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageStartup.Controls.Add(this.EditVacuumAtStartup);
-      this.TabPageStartup.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
+      this.TabPageStartup.Controls.Add(this.LabelInfoOptimizeDatabaseIntervalInfo);
       resources.ApplyResources(this.TabPageStartup, "TabPageStartup");
       this.TabPageStartup.Name = "TabPageStartup";
       // 
@@ -519,16 +523,11 @@
       this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastStartupCheck.Name = "LabelLastStartupCheck";
       // 
-      // LabelCheckUpdateFrequency
+      // LabelInfoCheckUpdateAtStartup
       // 
-      resources.ApplyResources(this.LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
-      this.LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
-      // 
-      // LabelCheckUpdateAtStartupInfo
-      // 
-      resources.ApplyResources(this.LabelCheckUpdateAtStartupInfo, "LabelCheckUpdateAtStartupInfo");
-      this.LabelCheckUpdateAtStartupInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelCheckUpdateAtStartupInfo.Name = "LabelCheckUpdateAtStartupInfo";
+      resources.ApplyResources(this.LabelInfoCheckUpdateAtStartup, "LabelInfoCheckUpdateAtStartup");
+      this.LabelInfoCheckUpdateAtStartup.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoCheckUpdateAtStartup.Name = "LabelInfoCheckUpdateAtStartup";
       // 
       // EditCheckUpdateAtStartup
       // 
@@ -536,13 +535,6 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       this.EditCheckUpdateAtStartup.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
-      // 
-      // EditCheckUpdateEveryWeek
-      // 
-      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
-      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
-      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
-      this.EditCheckUpdateEveryWeek.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
       // 
       // EditCheckUpdateAtStartupInterval
       // 
@@ -595,19 +587,21 @@
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       this.EditVacuumAtStartup.CheckedChanged += new System.EventHandler(this.EditVacuumAtStartup_CheckedChanged);
       // 
-      // LabelOptimizeDatabaseIntervalInfo
+      // LabelInfoOptimizeDatabaseIntervalInfo
       // 
-      resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
-      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
+      resources.ApplyResources(this.LabelInfoOptimizeDatabaseIntervalInfo, "LabelInfoOptimizeDatabaseIntervalInfo");
+      this.LabelInfoOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoOptimizeDatabaseIntervalInfo.Name = "LabelInfoOptimizeDatabaseIntervalInfo";
       // 
       // TabPageApplication
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.LabelInfoAutoSaveDelay);
+      this.TabPageApplication.Controls.Add(this.LabelInfoAutoBackupCount);
       this.TabPageApplication.Controls.Add(this.EditAutoSaveDelay);
       this.TabPageApplication.Controls.Add(LabelAutoSaveDelay);
-      this.TabPageApplication.Controls.Add(this.EditBackupCount);
+      this.TabPageApplication.Controls.Add(this.EditAutoBackupCount);
       this.TabPageApplication.Controls.Add(LabelBackupCount);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
@@ -624,25 +618,27 @@
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       // 
+      // LabelInfoAutoSaveDelay
+      // 
+      resources.ApplyResources(this.LabelInfoAutoSaveDelay, "LabelInfoAutoSaveDelay");
+      this.LabelInfoAutoSaveDelay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoAutoSaveDelay.Name = "LabelInfoAutoSaveDelay";
+      // 
+      // LabelInfoAutoBackupCount
+      // 
+      resources.ApplyResources(this.LabelInfoAutoBackupCount, "LabelInfoAutoBackupCount");
+      this.LabelInfoAutoBackupCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoAutoBackupCount.Name = "LabelInfoAutoBackupCount";
+      // 
       // EditAutoSaveDelay
       // 
       resources.ApplyResources(this.EditAutoSaveDelay, "EditAutoSaveDelay");
-      this.EditAutoSaveDelay.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
       this.EditAutoSaveDelay.Name = "EditAutoSaveDelay";
       // 
-      // EditBackupCount
+      // EditAutoBackupCount
       // 
-      resources.ApplyResources(this.EditBackupCount, "EditBackupCount");
-      this.EditBackupCount.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-      this.EditBackupCount.Name = "EditBackupCount";
+      resources.ApplyResources(this.EditAutoBackupCount, "EditAutoBackupCount");
+      this.EditAutoBackupCount.Name = "EditAutoBackupCount";
       // 
       // EditVolume
       // 
@@ -731,20 +727,62 @@
       // 
       this.TabPageRendering.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageRendering.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageRendering.Controls.Add(this.LabelInfoSearchMinRefForDialog);
+      this.TabPageRendering.Controls.Add(this.LabelInfoSearchDisplayMaxRef);
+      this.TabPageRendering.Controls.Add(this.LabelInfoHistoryCount);
+      this.TabPageRendering.Controls.Add(this.LabelInfoBookmarksCount);
+      this.TabPageRendering.Controls.Add(this.LabelInfoWordControlWidth);
+      this.TabPageRendering.Controls.Add(this.LabelInfoCommentLinesCount);
       this.TabPageRendering.Controls.Add(this.EditWordControlWidth);
       this.TabPageRendering.Controls.Add(LabelWordControlWidth);
-      this.TabPageRendering.Controls.Add(this.EditMinRefCount);
+      this.TabPageRendering.Controls.Add(this.EditSearchMinRefForDialog);
       this.TabPageRendering.Controls.Add(LabelMinRefCount);
-      this.TabPageRendering.Controls.Add(this.EditMaxRefCount);
+      this.TabPageRendering.Controls.Add(this.EditSearchDisplayMaxRef);
       this.TabPageRendering.Controls.Add(LabelMaxRefCount);
       this.TabPageRendering.Controls.Add(this.EditHistoryCount);
       this.TabPageRendering.Controls.Add(LabelHistoryCount);
       this.TabPageRendering.Controls.Add(this.EditBookmarksCount);
       this.TabPageRendering.Controls.Add(LabelBookmarksCount);
-      this.TabPageRendering.Controls.Add(this.EditCommentaryLinesCount);
+      this.TabPageRendering.Controls.Add(this.EditCommentLinesCount);
       this.TabPageRendering.Controls.Add(LabelCommentaryLinesCount);
       resources.ApplyResources(this.TabPageRendering, "TabPageRendering");
       this.TabPageRendering.Name = "TabPageRendering";
+      // 
+      // LabelInfoSearchMinRefForDialog
+      // 
+      resources.ApplyResources(this.LabelInfoSearchMinRefForDialog, "LabelInfoSearchMinRefForDialog");
+      this.LabelInfoSearchMinRefForDialog.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoSearchMinRefForDialog.Name = "LabelInfoSearchMinRefForDialog";
+      // 
+      // LabelInfoSearchDisplayMaxRef
+      // 
+      resources.ApplyResources(this.LabelInfoSearchDisplayMaxRef, "LabelInfoSearchDisplayMaxRef");
+      this.LabelInfoSearchDisplayMaxRef.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoSearchDisplayMaxRef.Name = "LabelInfoSearchDisplayMaxRef";
+      // 
+      // LabelInfoHistoryCount
+      // 
+      resources.ApplyResources(this.LabelInfoHistoryCount, "LabelInfoHistoryCount");
+      this.LabelInfoHistoryCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoHistoryCount.Name = "LabelInfoHistoryCount";
+      // 
+      // LabelInfoBookmarksCount
+      // 
+      resources.ApplyResources(this.LabelInfoBookmarksCount, "LabelInfoBookmarksCount");
+      this.LabelInfoBookmarksCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoBookmarksCount.Name = "LabelInfoBookmarksCount";
+      // 
+      // LabelInfoWordControlWidth
+      // 
+      resources.ApplyResources(this.LabelInfoWordControlWidth, "LabelInfoWordControlWidth");
+      this.LabelInfoWordControlWidth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoWordControlWidth.Name = "LabelInfoWordControlWidth";
+      // 
+      // LabelInfoCommentLinesCount
+      // 
+      resources.ApplyResources(this.LabelInfoCommentLinesCount, "LabelInfoCommentLinesCount");
+      this.LabelInfoCommentLinesCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoCommentLinesCount.Name = "LabelInfoCommentLinesCount";
       // 
       // EditWordControlWidth
       // 
@@ -754,93 +792,43 @@
             0,
             0});
       resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
-      this.EditWordControlWidth.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-      this.EditWordControlWidth.Minimum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
       this.EditWordControlWidth.Name = "EditWordControlWidth";
-      this.EditWordControlWidth.Value = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
       // 
-      // EditMinRefCount
+      // EditSearchMinRefForDialog
       // 
-      this.EditMinRefCount.Increment = new decimal(new int[] {
+      this.EditSearchMinRefForDialog.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMinRefCount, "EditMinRefCount");
-      this.EditMinRefCount.Name = "EditMinRefCount";
+      resources.ApplyResources(this.EditSearchMinRefForDialog, "EditSearchMinRefForDialog");
+      this.EditSearchMinRefForDialog.Name = "EditSearchMinRefForDialog";
       // 
-      // EditMaxRefCount
+      // EditSearchDisplayMaxRef
       // 
-      this.EditMaxRefCount.Increment = new decimal(new int[] {
+      this.EditSearchDisplayMaxRef.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditMaxRefCount, "EditMaxRefCount");
-      this.EditMaxRefCount.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-      this.EditMaxRefCount.Name = "EditMaxRefCount";
-      this.EditMaxRefCount.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-      this.EditMaxRefCount.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
+      resources.ApplyResources(this.EditSearchDisplayMaxRef, "EditSearchDisplayMaxRef");
+      this.EditSearchDisplayMaxRef.Name = "EditSearchDisplayMaxRef";
+      this.EditSearchDisplayMaxRef.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
       // 
       // EditHistoryCount
       // 
       resources.ApplyResources(this.EditHistoryCount, "EditHistoryCount");
-      this.EditHistoryCount.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
       this.EditHistoryCount.Name = "EditHistoryCount";
       // 
       // EditBookmarksCount
       // 
       resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
-      this.EditBookmarksCount.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
       this.EditBookmarksCount.Name = "EditBookmarksCount";
       // 
-      // EditCommentaryLinesCount
+      // EditCommentLinesCount
       // 
-      resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
-      this.EditCommentaryLinesCount.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-      this.EditCommentaryLinesCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.EditCommentaryLinesCount.Name = "EditCommentaryLinesCount";
-      this.EditCommentaryLinesCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+      resources.ApplyResources(this.EditCommentLinesCount, "EditCommentLinesCount");
+      this.EditCommentLinesCount.Name = "EditCommentLinesCount";
       // 
       // TabPageTools
       // 
@@ -988,17 +976,17 @@
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBackupCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoBackupCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabControl.ResumeLayout(false);
       this.TabPageRendering.ResumeLayout(false);
       this.TabPageRendering.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMinRefCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxRefCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).EndInit();
       this.TabPageTools.ResumeLayout(false);
       this.TabPageTools.PerformLayout();
       this.GroupBoxHebrewWordClick.ResumeLayout(false);
@@ -1044,14 +1032,12 @@
     private Label LabelLastDBOptimize;
     private Label LabelLastStartupCheckDate;
     private Label LabelLastStartupCheck;
-    private Label LabelCheckUpdateFrequency;
-    private Label LabelCheckUpdateAtStartupInfo;
+    private Label LabelInfoCheckUpdateAtStartup;
     private CheckBox EditCheckUpdateAtStartup;
-    private CheckBox EditCheckUpdateEveryWeek;
     private NumericUpDown EditCheckUpdateAtStartupInterval;
     private NumericUpDown EditVacuumAtStartupInterval;
     private CheckBox EditVacuumAtStartup;
-    private Label LabelOptimizeDatabaseIntervalInfo;
+    private Label LabelInfoOptimizeDatabaseIntervalInfo;
     private TabPage TabPageApplication;
     private TrackBar EditVolume;
     private Label LabelVolume;
@@ -1068,11 +1054,11 @@
     private OpenFileDialog OpenThemeDialog;
     private TabPage TabPageRendering;
     private NumericUpDown EditWordControlWidth;
-    private NumericUpDown EditMinRefCount;
-    private NumericUpDown EditMaxRefCount;
+    private NumericUpDown EditSearchMinRefForDialog;
+    private NumericUpDown EditSearchDisplayMaxRef;
     private NumericUpDown EditHistoryCount;
     private NumericUpDown EditBookmarksCount;
-    private NumericUpDown EditCommentaryLinesCount;
+    private NumericUpDown EditCommentLinesCount;
     private TabPage TabPageTools;
     private Button ActionOnlineSearchHelp;
     private Button ActionOnlineVerseHelp;
@@ -1088,11 +1074,19 @@
     private CheckBox EditGoToMasterBookmarkAtStartup;
     private CheckBox EditAutoSortBookmarks;
     private NumericUpDown EditAutoSaveDelay;
-    private NumericUpDown EditBackupCount;
+    private NumericUpDown EditAutoBackupCount;
     private TextBoxEx EditBackupFolder;
     private Button ActionResetBackupFolder;
     private Button ActionSelectBackupFolder;
     private ContextMenuStrip MenuSelectSearchRequest;
     private ContextMenuStrip MenuSelectOnlineVerseURL;
+    private Label LabelInfoAutoSaveDelay;
+    private Label LabelInfoAutoBackupCount;
+    private Label LabelInfoSearchMinRefForDialog;
+    private Label LabelInfoSearchDisplayMaxRef;
+    private Label LabelInfoHistoryCount;
+    private Label LabelInfoBookmarksCount;
+    private Label LabelInfoWordControlWidth;
+    private Label LabelInfoCommentLinesCount;
   }
 }

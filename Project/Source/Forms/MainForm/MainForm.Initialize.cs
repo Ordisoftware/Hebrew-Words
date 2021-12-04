@@ -60,11 +60,6 @@ partial class MainForm : Form
       return;
     }
     Globals.ChronoStartingApp.Start();
-    if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
-    {
-      Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
-      SystemManager.TryCatch(Settings.Save);
-    }
     UpdateSearchButtons();
     BookmarksMenuFirstIndex = ActionBookmarks.DropDownItems.Count;
     DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
@@ -80,7 +75,6 @@ partial class MainForm : Form
     this.InitDropDowns();
     DoBackupDB();
     LoadData();
-    SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( TimerAutoSave.Enabled )
       TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
@@ -99,7 +93,7 @@ partial class MainForm : Form
         if ( !string.IsNullOrEmpty(options.SearchWord) )
         {
           auto = true;
-          defaultGoTo();
+          DoStartGoTo();
           // TODO recup code Letters
           SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
         }
@@ -107,25 +101,15 @@ partial class MainForm : Form
         if ( !string.IsNullOrEmpty(options.SearchTranslated) )
         {
           auto = true;
-          defaultGoTo();
+          DoStartGoTo();
           SearchTranslatedWord(options.SearchTranslated);
         }
       }
       catch
       {
       }
-    if ( !auto ) defaultGoTo();
+    if ( !auto ) DoStartGoTo();
     ActionSave.PerformClick();
-    void defaultGoTo()
-    {
-      if ( Program.Settings.GoToMasterBookmarkAtStartup )
-        GoTo(Program.Settings.BookmarkMasterBook,
-             Program.Settings.BookmarkMasterChapter,
-             Program.Settings.BookmarkMasterVerse,
-             true);
-      else
-        GoTo(1, 1, 1, true);
-    }
     Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                            AppTranslations.NoticeKeyboardShortcuts,
                                                            true, false, 340, 450, false, false);
@@ -138,6 +122,17 @@ partial class MainForm : Form
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
+  }
+
+  private void DoStartGoTo()
+  {
+    if ( Program.Settings.GoToMasterBookmarkAtStartup )
+      GoTo(Program.Settings.BookmarkMasterBook,
+           Program.Settings.BookmarkMasterChapter,
+           Program.Settings.BookmarkMasterVerse,
+           true);
+    else
+      GoTo(1, 1, 1, true);
   }
 
   /// <summary>

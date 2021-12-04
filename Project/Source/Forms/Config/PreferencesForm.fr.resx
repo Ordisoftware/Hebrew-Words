@@ -208,9 +208,6 @@
   <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 13</value>
   </data>
-  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
-    <value>Fréquence de vérification en nombre de jours</value>
-  </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 17</value>
   </data>
@@ -219,9 +216,6 @@
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 17</value>
-  </data>
-  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
-    <value>Vérifier la mise à jour durant l'exécution</value>
   </data>
   <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 17</value>

@@ -597,7 +597,10 @@ partial class MainForm : Form
       ActionBackup.PerformClick();
     if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
       return;
-    ReLoadData(() => File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName)));
+    ReLoadData(() =>
+    {
+      File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName));
+    });
   }
 
   /// <summary>

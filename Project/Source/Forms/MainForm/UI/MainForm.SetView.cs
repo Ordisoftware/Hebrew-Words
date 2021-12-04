@@ -114,6 +114,7 @@ partial class MainForm
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
     ViewPanels[view].Focused?.Focus();
+    PanelNavigation.Visible = view != ViewMode.Search;
     Program.Settings.CurrentView = view;
     LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
     ActionCopyToClipboard.Enabled = view == ViewMode.Translations;

@@ -26,11 +26,6 @@ public enum ViewMode
   Verses,
 
   /// <summary>
-  /// Search view mode.
-  /// </summary>
-  Search,
-
-  /// <summary>
   /// Translations panel view mode.
   /// </summary>
   Translations,
@@ -43,6 +38,11 @@ public enum ViewMode
   /// <summary>
   /// ELS50 view mode.
   /// </summary>
-  ELS50
+  ELS50,
+
+  /// <summary>
+  /// Search view mode.
+  /// </summary>
+  Search
 
 }

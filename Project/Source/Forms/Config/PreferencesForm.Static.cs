@@ -29,6 +29,14 @@ partial class PreferencesForm
 
   // Intervals Min, Max, Default, Increment
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
+  static public readonly (int, int, int, int) AutoBackupCountInterval = (0, 30, 5, 1);
+  static public readonly (int, int, int, int) AutoSaveDelayInterval = (0, 15, 5, 1);
+  static public readonly (int, int, int, int) BookmarksCountInterval = (0, 50, 20, 1);
+  static public readonly (int, int, int, int) CommentLinesCountInterval = (1, 20, 2, 1);
+  static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
+  static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
+  static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20 , 5);
+  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 205, 5);
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
