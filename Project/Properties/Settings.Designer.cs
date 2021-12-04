@@ -193,13 +193,13 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SearchTranslated")]
-        public global::Ordisoftware.Hebrew.Words.HebrewWordClickOpen HebrewWordClickOpen {
+        [global::System.Configuration.DefaultSettingValueAttribute("ContextMenu")]
+        public global::Ordisoftware.Hebrew.Words.HebrewWordClickAction HebrewWordClickAction {
             get {
-                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickOpen)(this["HebrewWordClickOpen"]));
+                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickAction)(this["HebrewWordClickAction"]));
             }
             set {
-                this["HebrewWordClickOpen"] = value;
+                this["HebrewWordClickAction"] = value;
             }
         }
         
@@ -542,12 +542,12 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("ReachReference")]
-        public global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen TranslatedItemDoubleClickOpen {
+        public global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickAction TranslatedItemDoubleClickAction {
             get {
-                return ((global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickOpen)(this["TranslatedItemDoubleClickOpen"]));
+                return ((global::Ordisoftware.Hebrew.Words.TranslatedItemDoubleClickAction)(this["TranslatedItemDoubleClickAction"]));
             }
             set {
-                this["TranslatedItemDoubleClickOpen"] = value;
+                this["TranslatedItemDoubleClickAction"] = value;
             }
         }
         
@@ -1111,6 +1111,54 @@ namespace Ordisoftware.Hebrew.Words.Properties {
             }
             set {
                 this["RenderAllChapterVerses"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("OnlineSearch")]
+        public global::Ordisoftware.Hebrew.Words.HebrewWordClickAction HebrewWordShiftClickAction {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickAction)(this["HebrewWordShiftClickAction"]));
+            }
+            set {
+                this["HebrewWordShiftClickAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SearchTranslated")]
+        public global::Ordisoftware.Hebrew.Words.HebrewWordClickAction HebrewWordCtrlClickAction {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickAction)(this["HebrewWordCtrlClickAction"]));
+            }
+            set {
+                this["HebrewWordCtrlClickAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HebrewLetters")]
+        public global::Ordisoftware.Hebrew.Words.HebrewWordClickAction HebrewWordShiftCtrlClickAction {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.HebrewWordClickAction)(this["HebrewWordShiftCtrlClickAction"]));
+            }
+            set {
+                this["HebrewWordShiftCtrlClickAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ContextMenu")]
+        public global::Ordisoftware.Hebrew.Words.VerseLabelClickAction VerseLabelClickAction {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.VerseLabelClickAction)(this["VerseLabelClickAction"]));
+            }
+            set {
+                this["VerseLabelClickAction"] = value;
             }
         }
     }

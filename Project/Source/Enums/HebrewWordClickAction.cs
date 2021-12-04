@@ -10,13 +10,15 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-03 </created>
+/// <created> 2019-09 </created>
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-public enum TranslatedItemDoubleClickOpen
+public enum HebrewWordClickAction
 {
-  UseTranslation,
-  AddTranslation,
-  ReachReference
+  Nothing,
+  ContextMenu,
+  OnlineSearch,
+  SearchTranslated,
+  HebrewLetters
 }

@@ -142,19 +142,19 @@ partial class SearchTranslatedForm : Form
 
   private void ListView_DoubleClick(object sender, EventArgs e)
   {
-    switch ( Program.Settings.TranslatedItemDoubleClickOpen )
+    switch ( Program.Settings.TranslatedItemDoubleClickAction )
     {
-      case TranslatedItemDoubleClickOpen.ReachReference:
-        ActionReachReference.PerformClick();
-        break;
-      case TranslatedItemDoubleClickOpen.UseTranslation:
+      case TranslatedItemDoubleClickAction.UseTranslation:
         ActionUseTranslation.PerformClick();
         break;
-      case TranslatedItemDoubleClickOpen.AddTranslation:
+      case TranslatedItemDoubleClickAction.AddTranslation:
         ActionAddTranslation.PerformClick();
         break;
+      case TranslatedItemDoubleClickAction.ReachReference:
+        ActionReachReference.PerformClick();
+        break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.TranslatedItemDoubleClickOpen.ToStringFull());
+        throw new AdvancedNotImplementedException(Program.Settings.TranslatedItemDoubleClickAction.ToStringFull());
     }
   }
 

@@ -1306,13 +1306,6 @@ partial class MainForm : Form
     SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
   }
 
-  private void ActionSearchOnline_Click(object sender, EventArgs e)
-  {
-    if ( ActiveControl is not WordControl ) return;
-    string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
-    HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
-  }
-
   private void GoToBookmark(object sender, EventArgs e)
   {
     ActionSave.PerformClick();

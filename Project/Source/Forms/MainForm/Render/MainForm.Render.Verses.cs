@@ -163,10 +163,26 @@ partial class MainForm
   {
     if ( e.Button != MouseButtons.Left ) return;
     if ( sender is Label label && label.Parent.Controls[1] is WordControl control )
-      HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
-                                    control.Reference.Book.Number,
-                                    control.Reference.Chapter.Number,
-                                    control.Reference.Verse.Number);
+    {
+      switch ( Settings.VerseLabelClickAction )
+      {
+        case VerseLabelClickAction.ContextMenu:
+          label.ContextMenuStrip?.Show(label, new Point(0, label.Height));
+          break;
+        case VerseLabelClickAction.OnlineRead:
+          HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
+                                        control.Reference.Book.Number,
+                                        control.Reference.Chapter.Number,
+                                        control.Reference.Verse.Number);
+          break;
+        case VerseLabelClickAction.Select:
+          break;
+        case VerseLabelClickAction.Nothing:
+          break;
+        default:
+          throw new AdvancedNotImplementedException(Settings.VerseLabelClickAction);
+      }
+    }
   }
 
 }

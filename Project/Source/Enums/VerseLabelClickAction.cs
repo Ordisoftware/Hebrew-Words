@@ -14,10 +14,10 @@
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-public enum HebrewWordClickOpen
+public enum VerseLabelClickAction
 {
-  OnlineSearch,
-  HebrewLetters,
-  SearchTranslated,
-  Nothing
+  Nothing,
+  ContextMenu,
+  OnlineRead,
+  Select
 }

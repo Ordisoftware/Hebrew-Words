@@ -498,7 +498,7 @@
   <data name="ActionApplyFilterVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
+        vgAADr4B6kKxwAAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
         UJQvMkNiFJGpzdvWRS8Mxkb0YlAa1ovSoLBomefubqfZpmUlm9ttt399e7YbJDjnPvCD53l+n+893O9O
         sxSBaTTw9v3w24zwP6DVstHgGRMEpxki24SCWpzPPfStXyNngRSHbHwM2egbQPEhHRkFbzehu7XKUlCL
         M95b74vyt5Gc9yD8wYjwmBnp8EvMDVnw6b7BT5R1qrkCvL0e6QUP5EAnIh+bEZ/qhDLrJq9Sh03rK3YW
@@ -588,7 +588,7 @@
   <data name="ActionApplyFilterChapter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
+        vgAADr4B6kKxwAAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
         UJQvMkNiFJGpzdvWRS8Mxkb0YlAa1ovSoLBomefubqfZpmUlm9ttt399e7YbJDjnPvCD53l+n+893O9O
         sxSBaTTw9v3w24zwP6DVstHgGRMEpxki24SCWpzPPfStXyNngRSHbHwM2egbQPEhHRkFbzehu7XKUlCL
         M95b74vyt5Gc9yD8wYjwmBnp8EvMDVnw6b7BT5R1qrkCvL0e6QUP5EAnIh+bEZ/qhDLrJq9Sh03rK3YW
@@ -633,7 +633,7 @@
   <data name="ActionApplyFilterBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
+        vgAADr4B6kKxwAAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
         UJQvMkNiFJGpzdvWRS8Mxkb0YlAa1ovSoLBomefubqfZpmUlm9ttt399e7YbJDjnPvCD53l+n+893O9O
         sxSBaTTw9v3w24zwP6DVstHgGRMEpxki24SCWpzPPfStXyNngRSHbHwM2egbQPEhHRkFbzehu7XKUlCL
         M95b74vyt5Gc9yD8wYjwmBnp8EvMDVnw6b7BT5R1qrkCvL0e6QUP5EAnIh+bEZ/qhDLrJq9Sh03rK3YW
@@ -5203,13 +5203,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionVerseReadOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionVerseReadOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 6</value>
+    <value>190, 6</value>
   </data>
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5226,7 +5226,7 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionCopyTranslation.Text" xml:space="preserve">
     <value>Copy translation</value>
@@ -5249,13 +5249,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionExportVerse.Text" xml:space="preserve">
-    <value>MS Word export</value>
+    <value>Export to MS Word file</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 6</value>
+    <value>190, 6</value>
   </data>
   <data name="ActionSetAsBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5273,7 +5273,7 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionSetAsBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionSetAsBookmarkMain.Text" xml:space="preserve">
     <value>Set as main bookmark</value>
@@ -5296,13 +5296,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionAddToBookmarks.Text" xml:space="preserve">
     <value>Add to bookmarks</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 6</value>
+    <value>190, 6</value>
   </data>
   <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5320,13 +5320,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionImportConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 154</value>
+    <value>194, 154</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
@@ -5359,6 +5359,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionWordSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 6</value>
   </data>
   <data name="ActionSearchTranslated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5488,6 +5491,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCountOccurences.Text" xml:space="preserve">
     <value>Count the exact number of occurrences</value>
   </data>
+  <data name="ActionCountOccurences.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionCountRootOccurences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -5507,8 +5513,14 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCountRootOccurences.Text" xml:space="preserve">
     <value>Count the number of occurrences of the root</value>
   </data>
+  <data name="ActionCountRootOccurences.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>309, 6</value>
+  </data>
+  <data name="MenuSeparator1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5571,7 +5583,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Copy translation</value>
   </data>
   <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 248</value>
+    <value>313, 254</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
     <value>ContextMenuStripWord</value>
@@ -6232,6 +6244,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;WordsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
+    <value>toolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

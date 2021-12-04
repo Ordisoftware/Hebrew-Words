@@ -402,6 +402,7 @@
     <Compile Include="Source\Database\BookRow.cs" />
     <Compile Include="Source\Entities\JsonStrong.cs" />
     <Compile Include="Source\Entities\JsonVerse.cs" />
+    <Compile Include="Source\Enums\HebrewWordClickAction.cs" />
     <Compile Include="Source\Forms\Boxes\ParashotForm.ShowDescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,7 +470,7 @@
     <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.cs" />
-    <Compile Include="Source\Enums\TranslatedItemDoubleClickOpen.cs" />
+    <Compile Include="Source\Enums\TranslatedItemDoubleClickAction.cs" />
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,7 +501,7 @@
     </Compile>
     <Compile Include="Source\Program\System\ExportDocX.cs" />
     <Compile Include="Source\Entities\ReferenceItem.cs" />
-    <Compile Include="Source\Enums\HebrewWordClickOpen.cs" />
+    <Compile Include="Source\Enums\VerseLabelClickAction.cs" />
     <Compile Include="Source\Forms\Boxes\EditBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>

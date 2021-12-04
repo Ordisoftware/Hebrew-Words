@@ -42,6 +42,7 @@
       this.EditTranslations = new System.Windows.Forms.RichTextBox();
       this.TabPageVerseFiltered = new System.Windows.Forms.TabPage();
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
+      this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
       this.LabelInfoFilterNote = new System.Windows.Forms.Label();
       this.LabelInfoFilterVerse = new System.Windows.Forms.Label();
@@ -241,7 +242,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -375,6 +376,13 @@
       this.PanelViewVerseFiltered.Controls.Add(this.PanelViewVerseFilteredSingle);
       this.PanelViewVerseFiltered.Controls.Add(this.PanelViewVerseFilters);
       this.PanelViewVerseFiltered.Name = "PanelViewVerseFiltered";
+      // 
+      // PanelViewVerseFilteredSingle
+      // 
+      resources.ApplyResources(this.PanelViewVerseFilteredSingle, "PanelViewVerseFilteredSingle");
+      this.PanelViewVerseFilteredSingle.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelViewVerseFilteredSingle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelViewVerseFilteredSingle.Name = "PanelViewVerseFilteredSingle";
       // 
       // PanelViewVerseFilters
       // 
@@ -1814,6 +1822,7 @@
       // 
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWordSearchOnline,
+            this.toolStripSeparator10,
             this.ActionSearchTranslated,
             this.ActionSearchWord,
             this.MenuSeparator2,
@@ -1834,7 +1843,6 @@
       // 
       resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
       this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
-      this.ActionWordSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
       // 
       // ActionSearchTranslated
       // 
@@ -1913,12 +1921,10 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // PanelViewVerseFilteredSingle
+      // toolStripSeparator10
       // 
-      resources.ApplyResources(this.PanelViewVerseFilteredSingle, "PanelViewVerseFilteredSingle");
-      this.PanelViewVerseFilteredSingle.BackColor = System.Drawing.SystemColors.Control;
-      this.PanelViewVerseFilteredSingle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.PanelViewVerseFilteredSingle.Name = "PanelViewVerseFilteredSingle";
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // MainForm
       // 
@@ -2194,6 +2200,7 @@
     public Button ActionApplyFilterChapter;
     public Button ActionApplyFilterBook;
     public Panel PanelViewVerseFilteredSingle;
+    private ToolStripSeparator toolStripSeparator10;
   }
 }
 

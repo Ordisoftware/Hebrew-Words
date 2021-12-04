@@ -470,7 +470,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>225, 22</value>
   </data>
   <data name="ActionExportVerse.Text" xml:space="preserve">
-    <value>Export MS Word</value>
+    <value>Export vers fichier MS Word</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 6</value>
