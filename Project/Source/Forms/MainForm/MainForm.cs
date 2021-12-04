@@ -1496,6 +1496,11 @@ partial class MainForm : Form
                                        ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
   }
 
+  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.FilterVersesNotice.GetLang());
+  }
+
   #endregion
 
 }

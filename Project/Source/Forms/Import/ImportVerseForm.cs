@@ -109,7 +109,7 @@ partial class ImportVerseForm : Form
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    DisplayManager.ShowInformation(AppTranslations.ImportHelp.GetLang());
+    DisplayManager.ShowInformation(AppTranslations.ImportNotice.GetLang());
   }
 
 }

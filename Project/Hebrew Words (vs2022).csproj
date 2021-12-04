@@ -467,6 +467,7 @@
     <Compile Include="Source\Entities\History.cs" />
     <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
     <Compile Include="Source\Program\System\ApplicationStatistics.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Notices.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.cs" />

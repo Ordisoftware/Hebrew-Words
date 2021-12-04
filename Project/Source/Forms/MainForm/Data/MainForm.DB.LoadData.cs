@@ -89,7 +89,6 @@ partial class MainForm : Form
   {
     SetFormDisabled(true);
     Globals.IsLoadingData = true;
-    string msg = SysTranslations.LoadingData.GetLang() + " {0}";
     try
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
@@ -112,7 +111,7 @@ partial class MainForm : Form
     //
     void OnLoadingData(string caption)
     {
-      LoadingForm.Instance.DoProgress(operation: string.Format(msg, caption));
+      LoadingForm.Instance.DoProgress(operation: caption);
     }
 
   }

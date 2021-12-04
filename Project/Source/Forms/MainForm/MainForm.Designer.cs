@@ -44,10 +44,7 @@
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
-      this.LabelInfoFilterNote = new System.Windows.Forms.Label();
-      this.LabelInfoFilterVerse = new System.Windows.Forms.Label();
-      this.LabelInfoFilterChapter = new System.Windows.Forms.Label();
-      this.LabelInfoFilterBook = new System.Windows.Forms.Label();
+      this.LabelInfoFilterVerses = new System.Windows.Forms.Button();
       this.ActionGoFromVerseFilteredToVersesPanel = new System.Windows.Forms.Button();
       this.ActionApplyFilterVerse = new System.Windows.Forms.Button();
       this.ActionClearFilterVerse = new System.Windows.Forms.Button();
@@ -228,6 +225,7 @@
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -242,7 +240,6 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -386,10 +383,7 @@
       // 
       // PanelViewVerseFilters
       // 
-      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterNote);
-      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterVerse);
-      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterChapter);
-      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterBook);
+      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterVerses);
       this.PanelViewVerseFilters.Controls.Add(this.ActionGoFromVerseFilteredToVersesPanel);
       this.PanelViewVerseFilters.Controls.Add(this.ActionApplyFilterVerse);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterVerse);
@@ -411,29 +405,13 @@
       resources.ApplyResources(this.PanelViewVerseFilters, "PanelViewVerseFilters");
       this.PanelViewVerseFilters.Name = "PanelViewVerseFilters";
       // 
-      // LabelInfoFilterNote
+      // LabelInfoFilterVerses
       // 
-      resources.ApplyResources(this.LabelInfoFilterNote, "LabelInfoFilterNote");
-      this.LabelInfoFilterNote.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoFilterNote.Name = "LabelInfoFilterNote";
-      // 
-      // LabelInfoFilterVerse
-      // 
-      resources.ApplyResources(this.LabelInfoFilterVerse, "LabelInfoFilterVerse");
-      this.LabelInfoFilterVerse.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoFilterVerse.Name = "LabelInfoFilterVerse";
-      // 
-      // LabelInfoFilterChapter
-      // 
-      resources.ApplyResources(this.LabelInfoFilterChapter, "LabelInfoFilterChapter");
-      this.LabelInfoFilterChapter.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoFilterChapter.Name = "LabelInfoFilterChapter";
-      // 
-      // LabelInfoFilterBook
-      // 
-      resources.ApplyResources(this.LabelInfoFilterBook, "LabelInfoFilterBook");
-      this.LabelInfoFilterBook.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoFilterBook.Name = "LabelInfoFilterBook";
+      resources.ApplyResources(this.LabelInfoFilterVerses, "LabelInfoFilterVerses");
+      this.LabelInfoFilterVerses.FlatAppearance.BorderSize = 0;
+      this.LabelInfoFilterVerses.Name = "LabelInfoFilterVerses";
+      this.LabelInfoFilterVerses.UseVisualStyleBackColor = true;
+      this.LabelInfoFilterVerses.Click += new System.EventHandler(this.LabelInfoFilterVerses_Click);
       // 
       // ActionGoFromVerseFilteredToVersesPanel
       // 
@@ -1844,6 +1822,11 @@
       resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
       this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
       // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
       // ActionSearchTranslated
       // 
       resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
@@ -1920,11 +1903,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // MainForm
       // 
@@ -2192,15 +2170,12 @@
     private Label LabelFilterChapter;
     private Label LabelFilterVerse;
     private Button ActionGoFromVerseFilteredToVersesPanel;
-    private Label LabelInfoFilterVerse;
-    private Label LabelInfoFilterChapter;
-    private Label LabelInfoFilterBook;
-    private Label LabelInfoFilterNote;
     public Button ActionApplyFilterVerse;
     public Button ActionApplyFilterChapter;
     public Button ActionApplyFilterBook;
     public Panel PanelViewVerseFilteredSingle;
     private ToolStripSeparator toolStripSeparator10;
+    private Button LabelInfoFilterVerses;
   }
 }
 
