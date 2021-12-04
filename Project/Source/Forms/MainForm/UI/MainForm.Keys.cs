@@ -36,7 +36,7 @@ partial class MainForm
 
   // TODO update keys
 
-  static private ViewMode[] RotateIgnoreViews = new[] { ViewMode.Text, ViewMode.ELS50 };
+  private static readonly ViewMode[] RotateIgnoreViews = new[] { ViewMode.Text, ViewMode.ELS50 };
 
   /// <summary>
   /// Process the command key.

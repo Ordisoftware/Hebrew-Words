@@ -186,7 +186,7 @@ static class SettingsHelper
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
-    return settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath); ;
+    return settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
   }
 
   /// <summary>

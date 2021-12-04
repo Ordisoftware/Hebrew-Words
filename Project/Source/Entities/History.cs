@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Linq;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -22,9 +23,8 @@ class History : ReferencesList
     if ( reference == null ) return;
     if ( Program.Settings.HistoryCount < 1 )
       return;
-    foreach ( var item in Items.ToList() )
-      if ( item.Equals(reference) )
-        Items.Remove(item);
+    foreach ( var item in Items.Where(item => item.Equals(reference)).ToList() )
+      Items.Remove(item);
     Items.Insert(0, new ReferenceItem(reference));
     while ( Items.Count > Program.Settings.BookmarksCount )
       Items.RemoveAt(Items.Count - 1);

@@ -93,7 +93,7 @@ partial class MainForm : Form
     try
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-      LoadingForm.Instance.Initialize("", Enums.GetValues<TanakBook>().Count + 1 + 1, quantify: false);
+      LoadingForm.Instance.Initialize("", Enums.GetValues<TanakBook>().Count + 1 + 1 + 1, quantify: false);
       ApplicationDatabase.Instance.LoadingData += OnLoadingData;
       ApplicationDatabase.Instance.Open();
       ApplicationDatabase.Instance.LoadAll();

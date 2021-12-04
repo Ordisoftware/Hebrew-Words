@@ -88,7 +88,7 @@ partial class PreferencesForm
 
   private void DoExportSettings()
   {
-    SaveSettingsDialog.FileName = $"Settings";
+    SaveSettingsDialog.FileName = "Settings";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
     TabControl.SelectedIndex = 0;
     SaveSettings();

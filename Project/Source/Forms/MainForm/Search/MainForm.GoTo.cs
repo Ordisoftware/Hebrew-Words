@@ -82,8 +82,7 @@ partial class MainForm
     {
       case ViewMode.Verses:
         var label = PanelViewVerses.GetAll<Label>()
-                                   .Where(label => label.Text == reference.Verse?.Number.ToString())
-                                   .FirstOrDefault();
+                                   .FirstOrDefault(label => label.Text == reference.Verse?.Number.ToString());
         if ( label != null )
         {
           PanelViewVerses.Focus();
@@ -91,8 +90,7 @@ partial class MainForm
           //PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
           if ( reference.Word != null )
             PanelViewVerses.GetAll<WordControl>()
-                           .Where(wordcontrol => wordcontrol.Reference.Word == reference.Word)
-                           .FirstOrDefault()?
+                           .FirstOrDefault(wordcontrol => wordcontrol.Reference.Word == reference.Word)?
                            .Focus();
           else
             ( label.Parent.Controls[1] as WordControl )?.Focus();
@@ -108,7 +106,7 @@ partial class MainForm
         break;
     }
     //
-    void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
+    static void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
     {
       foreach ( string line in textbox.Lines )
         if ( check(line) )
