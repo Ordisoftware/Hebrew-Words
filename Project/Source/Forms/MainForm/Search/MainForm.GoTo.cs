@@ -46,6 +46,7 @@ partial class MainForm
   {
     if ( reference == null ) return;
     if ( IsGoToRunning ) return;
+    if ( Globals.IsExiting ) return;
     IsGoToRunning = true;
     bool updated = false;
     try
@@ -104,8 +105,6 @@ partial class MainForm
         string strSrc = ":" + reference.Verse.Number;
         searchRef(EditRawText, strSrc, line => line.EndsWith(strSrc));
         break;
-      default:
-        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
     }
     //
     void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
