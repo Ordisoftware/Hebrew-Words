@@ -74,8 +74,9 @@ partial class MainForm
       reference.Verse = found ?? reference.Chapter?.Verses[0];
     }
     CurrentReference = new ReferenceItem(reference);
-    AddCurrentToHistory();
-    if ( updated || forceUpdateView ) RenderAll();
+    MoveVerseBindingSourceAndAddCurrentToHistory();
+    if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView )
+      RenderAll();
     // 
     switch ( Program.Settings.CurrentView )
     {
@@ -86,8 +87,8 @@ partial class MainForm
         if ( label != null )
         {
           PanelViewVerses.Focus();
-          PanelViewVerses.ScrollControlIntoView(label);
-          PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
+          PanelViewVerses.ScrollControlIntoView(label.Parent);
+          //PanelViewVerses.ScrollControlIntoView((Control)label.Tag);
           if ( reference.Word != null )
             PanelViewVerses.GetAll<WordControl>()
                            .Where(wordcontrol => wordcontrol.Reference.Word == reference.Word)

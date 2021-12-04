@@ -110,6 +110,13 @@ partial class MainForm : Form
       }
     if ( !auto ) DoStartGoTo();
     ActionSave.PerformClick();
+    FilterModified = new()
+    {
+      { EditFilterBook, false },
+      { EditFilterChapter, false },
+      { EditFilterVerse, false },
+    };
+    UpdateFilters(null, null);
     Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                            AppTranslations.NoticeKeyboardShortcuts,
                                                            true, false, 340, 450, false, false);

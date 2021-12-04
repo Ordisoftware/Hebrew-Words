@@ -10,44 +10,33 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-01 </created>
+/// <created> 2021-12 </created>
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-/// <summary>
-/// Provides view mode.
-/// </summary>
-public enum ViewMode
+partial class MainForm
 {
 
-  /// <summary>
-  /// Verses panel.
-  /// </summary>
-  Verses,
-
-  /// <summary>
-  /// Filters panel.
-  /// </summary>
-  Filters,
-
-  /// <summary>
-  /// Translations panel.
-  /// </summary>
-  Translations,
-
-  /// <summary>
-  /// Search panel.
-  /// </summary>
-  Search,
-
-  /// <summary>
-  /// Source text panel.
-  /// </summary>
-  Text,
-
-  /// <summary>
-  /// ELS50 verses panel.
-  /// </summary>
-  ELS50
+  private void RenderVersesFiltered()
+  {
+    if ( IsRendering ) return;
+    IsRendering = true;
+    try
+    {
+      var references = new List<ReferenceItem>();
+      references.Add(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+                                       ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                                       ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
+      RenderVerses(PanelViewFiltersVerse, references);
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+    finally
+    {
+      IsRendering = false;
+    }
+  }
 
 }

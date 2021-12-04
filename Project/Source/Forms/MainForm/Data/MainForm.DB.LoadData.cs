@@ -99,7 +99,7 @@ partial class MainForm : Form
       ApplicationDatabase.Instance.LoadAll();
       ApplicationDatabase.Instance.LoadingData -= OnLoadingData;
       LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
-      BookRowBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+      BooksBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
       SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
       //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
     }

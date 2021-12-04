@@ -76,11 +76,14 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+      if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.Filters ) )
+      {
+        var reference = (ReferenceItem)( (Control)control.Tag ).Tag;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,
-                                      CurrentReference.Book.Number,
-                                      CurrentReference.Chapter.Number,
-                                      Convert.ToInt32(control.Text));
+                                      reference.Book.Number,
+                                      reference.Chapter.Number,
+                                      reference.Verse.Number);
+      }
     });
   }
 

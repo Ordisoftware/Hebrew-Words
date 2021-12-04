@@ -198,166 +198,166 @@
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelFilterVerse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelFilterVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelFilterVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 110</value>
   </data>
-  <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelFilterVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
   </data>
-  <data name="LabelVerse.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelFilterVerse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="LabelVerse.Text" xml:space="preserve">
+  <data name="LabelFilterVerse.Text" xml:space="preserve">
     <value>Verse</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.Name" xml:space="preserve">
-    <value>LabelVerse</value>
+  <data name="&gt;&gt;LabelFilterVerse.Name" xml:space="preserve">
+    <value>LabelFilterVerse</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterVerse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterVerse.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterVerse.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="LabelChapter.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelFilterChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelChapter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelFilterChapter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelFilterChapter.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 60</value>
   </data>
-  <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelFilterChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
   </data>
-  <data name="LabelChapter.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelFilterChapter.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="LabelChapter.Text" xml:space="preserve">
+  <data name="LabelFilterChapter.Text" xml:space="preserve">
     <value>Chapter</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.Name" xml:space="preserve">
-    <value>LabelChapter</value>
+  <data name="&gt;&gt;LabelFilterChapter.Name" xml:space="preserve">
+    <value>LabelFilterChapter</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterChapter.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterChapter.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LabelChapter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterChapter.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="FilterBooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectFilterBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 30</value>
   </data>
-  <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectFilterBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
   </data>
-  <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectFilterBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
-    <value>SelectBook</value>
+  <data name="&gt;&gt;SelectFilterBook.Name" xml:space="preserve">
+    <value>SelectFilterBook</value>
   </data>
-  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterBook.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterBook.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="LabelBook.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelFilterBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelFilterBook.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelFilterBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelFilterBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
-  <data name="LabelBook.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelFilterBook.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="LabelBook.Text" xml:space="preserve">
+  <data name="LabelFilterBook.Text" xml:space="preserve">
     <value>Book</value>
   </data>
-  <data name="&gt;&gt;LabelBook.Name" xml:space="preserve">
-    <value>LabelBook</value>
+  <data name="&gt;&gt;LabelFilterBook.Name" xml:space="preserve">
+    <value>LabelFilterBook</value>
   </data>
-  <data name="&gt;&gt;LabelBook.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelBook.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterBook.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LabelBook.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelFilterBook.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="FilterChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>195, 17</value>
   </metadata>
-  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectFilterChapter.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 80</value>
   </data>
-  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectFilterChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
   </data>
-  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectFilterChapter.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
-    <value>SelectChapter</value>
+  <data name="&gt;&gt;SelectFilterChapter.Name" xml:space="preserve">
+    <value>SelectFilterChapter</value>
   </data>
-  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterChapter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterChapter.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterChapter.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>365, 19</value>
+  <metadata name="FilterVersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>399, 18</value>
   </metadata>
-  <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectFilterVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 130</value>
   </data>
-  <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectFilterVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 21</value>
   </data>
-  <data name="SelectVerse.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectFilterVerse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;SelectVerse.Name" xml:space="preserve">
-    <value>SelectVerse</value>
+  <data name="&gt;&gt;SelectFilterVerse.Name" xml:space="preserve">
+    <value>SelectFilterVerse</value>
   </data>
-  <data name="&gt;&gt;SelectVerse.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterVerse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectVerse.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterVerse.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectFilterVerse.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="EditFilterChaptersWithTitle.AutoSize" type="System.Boolean, mscorlib">
@@ -495,7 +495,7 @@
   <data name="ActionClearFilterBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
+        vQAADr0BR/uQrQAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
         UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
         UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
         1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
@@ -542,7 +542,7 @@
   <data name="ActionClearFilterChapter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
         ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
         z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
         3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
@@ -641,22 +641,22 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Find reference</value>
   </data>
-  <data name="&gt;&gt;BooksBindingSource.Name" xml:space="preserve">
-    <value>BooksBindingSource</value>
+  <data name="&gt;&gt;FilterBooksBindingSource.Name" xml:space="preserve">
+    <value>FilterBooksBindingSource</value>
   </data>
-  <data name="&gt;&gt;BooksBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;FilterBooksBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ChaptersBindingSource.Name" xml:space="preserve">
-    <value>ChaptersBindingSource</value>
+  <data name="&gt;&gt;FilterChaptersBindingSource.Name" xml:space="preserve">
+    <value>FilterChaptersBindingSource</value>
   </data>
-  <data name="&gt;&gt;ChaptersBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;FilterChaptersBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;VersesBindingSource.Name" xml:space="preserve">
-    <value>VersesBindingSource</value>
+  <data name="&gt;&gt;FilterVersesBindingSource.Name" xml:space="preserve">
+    <value>FilterVersesBindingSource</value>
   </data>
-  <data name="&gt;&gt;VersesBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;FilterVersesBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

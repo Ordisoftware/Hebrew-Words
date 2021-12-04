@@ -1101,5 +1101,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["BackupFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RenderAllChapterVerses {
+            get {
+                return ((bool)(this["RenderAllChapterVerses"]));
+            }
+            set {
+                this["RenderAllChapterVerses"] = value;
+            }
+        }
     }
 }

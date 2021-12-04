@@ -21,9 +21,9 @@ partial class SelectReferenceForm : Form
   {
     var form = new SelectReferenceForm();
     if ( form.ShowDialog() != DialogResult.OK ) return null;
-    return new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
-                             ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                             ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
+    return new ReferenceItem(( form.SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+                             ( form.SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                             ( form.SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
 
   private Dictionary<TextBox, bool> FilterModified;
@@ -44,7 +44,7 @@ partial class SelectReferenceForm : Form
   private void UpdateFilters(object sender, EventArgs e)
   {
     Cursor = Cursors.WaitCursor;
-    try { CreateDataSource(); }
+    try { CreateFilterDataSource(); }
     finally { Cursor = Cursors.Default; }
   }
 
@@ -89,7 +89,7 @@ partial class SelectReferenceForm : Form
     }
   }
 
-  private void CreateDataSource()
+  private void CreateFilterDataSource()
   {
     var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
     if ( EditFilterChaptersWithTitle.Checked )
@@ -109,21 +109,21 @@ partial class SelectReferenceForm : Form
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
                                                                   || v.Comment.RawContains(EditFilterVerse.Text))));
     var list = books.ToList();
-    SelectBook.DataSource = new BindingList<BookRow>(list);
+    SelectFilterBook.DataSource = new BindingList<BookRow>(list);
     if ( list.Count == 0 )
     {
-      SelectChapter.DataSource = null;
-      SelectVerse.DataSource = null;
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
     }
   }
 
-  private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
+  private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectBook.SelectedItem as BookRow )?.ID;
+    string id = ( SelectFilterBook.SelectedItem as BookRow )?.ID;
     if ( id == null )
     {
-      SelectChapter.DataSource = null;
-      SelectVerse.DataSource = null;
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
       return;
     }
     var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
@@ -138,17 +138,17 @@ partial class SelectReferenceForm : Form
       chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
                                                     || v.Comment.RawContains(EditFilterVerse.Text)));
     var list = chapters.ToList();
-    SelectChapter.DataSource = new BindingList<ChapterRow>(list);
+    SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
     if ( list.Count == 0 )
-      SelectVerse.DataSource = null;
+      SelectFilterVerse.DataSource = null;
   }
 
-  private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
+  private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectChapter.SelectedItem as ChapterRow )?.ID;
+    string id = ( SelectFilterChapter.SelectedItem as ChapterRow )?.ID;
     if ( id == null )
     {
-      SelectVerse.DataSource = null;
+      SelectFilterVerse.DataSource = null;
       return;
     }
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
@@ -157,7 +157,7 @@ partial class SelectReferenceForm : Form
     if ( EditFilterVerse.Text != string.Empty )
       verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
                               || v.Comment.RawContains(EditFilterVerse.Text));
-    SelectVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
+    SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
   }
 
 }

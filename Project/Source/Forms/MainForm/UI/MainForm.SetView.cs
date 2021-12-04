@@ -72,6 +72,15 @@ partial class MainForm
         }
       },
       {
+        ViewMode.Filters,
+        new ViewConnector
+        {
+          MenuItem = ActionViewFilters,
+          Panel = PanelViewFilters,
+          Focused = PanelViewFilters
+        }
+      },
+      {
         ViewMode.Translations,
         new ViewConnector
         {
@@ -114,7 +123,7 @@ partial class MainForm
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
     ViewPanels[view].Focused?.Focus();
-    PanelNavigation.Visible = view != ViewMode.Search;
+    PanelNavigation.Visible = view != ViewMode.Filters && view != ViewMode.Search;
     Program.Settings.CurrentView = view;
     LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
     ActionCopyToClipboard.Enabled = view == ViewMode.Translations;

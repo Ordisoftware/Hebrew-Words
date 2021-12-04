@@ -31,7 +31,7 @@ class ApplicationDatabase : SQLiteDatabase
     Restart();
   }
 
-  static internal void Restart()
+  static public void Restart()
   {
     Instance?.Close();
     Instance = new ApplicationDatabase();
