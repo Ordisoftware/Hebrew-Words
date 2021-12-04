@@ -42,14 +42,14 @@ partial class PreferencesForm
     Settings.WebLinksMenuEnabled = EditWebLinksMenuEnabled.Checked;
     Program.Settings.SearchOnlineURL = EditOnlineSearch.Text;
     Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
-    Program.Settings.BackupCount = (int)EditBackupCount.Value;
+    Program.Settings.BackupCount = (int)EditAutoBackupCount.Value;
     Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
-    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentLinesCount.Value;
     Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
     Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
     Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
-    Program.Settings.FoundReferencesViewable = (int)EditMaxRefCount.Value;
-    Program.Settings.FoundReferencesToOpenDialog = (int)EditMinRefCount.Value;
+    Program.Settings.FoundReferencesViewable = (int)EditSearchDisplayMaxRef.Value;
+    Program.Settings.FoundReferencesToOpenDialog = (int)EditSearchMinRefForDialog.Value;
     // Word click action
     if ( SelectOpenHebrewLetters.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.HebrewLetters;
     if ( SelectOpenOnlineSearch.Checked ) Program.Settings.HebrewWordClickOpen = HebrewWordClickOpen.OnlineSearch;
@@ -61,9 +61,9 @@ partial class PreferencesForm
       MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
     // End
     Program.Settings.Store();
-    UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
+    UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentLinesCount.Value
                       || WordControlWidthPrevious != (int)EditWordControlWidth.Value
-                      || MaxrefCountPrevious != (int)EditMaxRefCount.Value;
+                      || MaxrefCountPrevious != (int)EditSearchDisplayMaxRef.Value;
   }
 
 }

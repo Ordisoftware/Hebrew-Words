@@ -151,7 +151,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelWordControlWidth.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <metadata name="LabelMinRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -184,7 +184,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMinRefCount.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <metadata name="LabelMaxRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -217,7 +217,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMaxRefCount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <metadata name="LabelHistoryCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -250,7 +250,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelHistoryCount.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <metadata name="LabelBookmarksCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -283,7 +283,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelBookmarksCount.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>15</value>
   </data>
   <metadata name="LabelCommentaryLinesCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -316,7 +316,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>17</value>
   </data>
   <metadata name="LabelBackupPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -433,7 +433,7 @@
     <value>108, 13</value>
   </data>
   <data name="LabelAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
+    <value>11</value>
   </data>
   <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
     <value>Auto save delay (min)</value>
@@ -448,7 +448,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -466,7 +466,7 @@
     <value>142, 13</value>
   </data>
   <data name="LabelBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>9</value>
   </data>
   <data name="LabelBackupCount.Text" xml:space="preserve">
     <value>Auto backups count to keep</value>
@@ -481,7 +481,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelBackupCount.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>662, 19</value>
@@ -701,7 +701,7 @@
     <value>60, 21</value>
   </data>
   <data name="EditImageExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;EditImageExportFileFormat.Name" xml:space="preserve">
     <value>EditImageExportFileFormat</value>
@@ -825,7 +825,7 @@
     <value>60, 21</value>
   </data>
   <data name="EditDataExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;EditDataExportFileFormat.Name" xml:space="preserve">
     <value>EditDataExportFileFormat</value>
@@ -971,7 +971,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionResetBackupFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionResetBackupFolder.Name" xml:space="preserve">
     <value>ActionResetBackupFolder</value>
@@ -1011,7 +1011,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionResetHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;ActionResetHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionResetHebrewLettersPath</value>
@@ -1051,7 +1051,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionResetCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionResetCalculatorPath.Name" xml:space="preserve">
     <value>ActionResetCalculatorPath</value>
@@ -1094,7 +1094,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
     <value>ActionSelectCalculatorPath</value>
@@ -1167,7 +1167,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionSelectBackupFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionSelectBackupFolder.Name" xml:space="preserve">
     <value>ActionSelectBackupFolder</value>
@@ -1210,7 +1210,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -1231,7 +1231,7 @@
     <value>456, 20</value>
   </data>
   <data name="EditBackupFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditBackupFolder.Name" xml:space="preserve">
     <value>EditBackupFolder</value>
@@ -1273,7 +1273,7 @@
     <value>456, 20</value>
   </data>
   <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
     <value>EditCalculatorPath</value>
@@ -1294,7 +1294,7 @@
     <value>456, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -1348,7 +1348,7 @@
     <value>178, 17</value>
   </data>
   <data name="EditAutoOpenExportedFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Open exported file after success</value>
@@ -1363,7 +1363,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportedFile.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1378,7 +1378,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder after success</value>
@@ -1393,7 +1393,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="EditAutoSortBookmarks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,7 +1408,7 @@
     <value>123, 17</value>
   </data>
   <data name="EditAutoSortBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>2</value>
   </data>
   <data name="EditAutoSortBookmarks.Text" xml:space="preserve">
     <value>Auto sort bookmarks</value>
@@ -1438,7 +1438,7 @@
     <value>174, 17</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>1</value>
   </data>
   <data name="EditGoToMasterBookmarkAtStartup.Text" xml:space="preserve">
     <value>Go to main bookmark at startup</value>
@@ -1468,7 +1468,7 @@
     <value>203, 17</value>
   </data>
   <data name="EditShowLastNewInVersionAfterUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
     <value>Show last new in version after update</value>
@@ -1650,37 +1650,37 @@
   <data name="&gt;&gt;LabelCheckUpdateFrequency.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelInfoCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelInfoCheckUpdateAtStartup.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelInfoCheckUpdateAtStartup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelInfoCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 170</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelInfoCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelInfoCheckUpdateAtStartup.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="LabelCheckUpdateAtStartupInfo.Text" xml:space="preserve">
+  <data name="LabelInfoCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelCheckUpdateAtStartupInfo.Name" xml:space="preserve">
-    <value>LabelCheckUpdateAtStartupInfo</value>
+  <data name="&gt;&gt;LabelInfoCheckUpdateAtStartup.Name" xml:space="preserve">
+    <value>LabelInfoCheckUpdateAtStartup</value>
   </data>
-  <data name="&gt;&gt;LabelCheckUpdateAtStartupInfo.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCheckUpdateAtStartup.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCheckUpdateAtStartupInfo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCheckUpdateAtStartup.Parent" xml:space="preserve">
     <value>TabPageStartup</value>
   </data>
-  <data name="&gt;&gt;LabelCheckUpdateAtStartupInfo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCheckUpdateAtStartup.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
@@ -1696,7 +1696,7 @@
     <value>140, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Check update at startup</value>
@@ -1726,7 +1726,7 @@
     <value>158, 17</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
     <value>Check update while running</value>
@@ -1753,7 +1753,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditCheckUpdateAtStartupInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartupInterval.Name" xml:space="preserve">
     <value>EditCheckUpdateAtStartupInterval</value>
@@ -1771,13 +1771,13 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditVacuumAtStartupInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 232</value>
+    <value>42, 232</value>
   </data>
   <data name="EditVacuumAtStartupInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
   <data name="EditVacuumAtStartupInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartupInterval.Name" xml:space="preserve">
     <value>EditVacuumAtStartupInterval</value>
@@ -1804,7 +1804,7 @@
     <value>283, 17</value>
   </data>
   <data name="EditVacuumAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimize database at startup every this number of days</value>
@@ -1821,37 +1821,37 @@
   <data name="&gt;&gt;EditVacuumAtStartup.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 236</value>
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 236</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="LabelOptimizeDatabaseIntervalInfo.Text" xml:space="preserve">
+  <data name="LabelInfoOptimizeDatabaseIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelOptimizeDatabaseIntervalInfo.Name" xml:space="preserve">
-    <value>LabelOptimizeDatabaseIntervalInfo</value>
+  <data name="&gt;&gt;LabelInfoOptimizeDatabaseIntervalInfo.Name" xml:space="preserve">
+    <value>LabelInfoOptimizeDatabaseIntervalInfo</value>
   </data>
-  <data name="&gt;&gt;LabelOptimizeDatabaseIntervalInfo.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoOptimizeDatabaseIntervalInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelOptimizeDatabaseIntervalInfo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoOptimizeDatabaseIntervalInfo.Parent" xml:space="preserve">
     <value>TabPageStartup</value>
   </data>
-  <data name="&gt;&gt;LabelOptimizeDatabaseIntervalInfo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoOptimizeDatabaseIntervalInfo.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
   <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
@@ -1881,6 +1881,72 @@
   <data name="&gt;&gt;TabPageStartup.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LabelInfoAutoSaveDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 302</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="LabelInfoAutoSaveDelay.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Name" xml:space="preserve">
+    <value>LabelInfoAutoSaveDelay</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 252</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="LabelInfoAutoBackupCount.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Name" xml:space="preserve">
+    <value>LabelInfoAutoBackupCount</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 298</value>
   </data>
@@ -1888,7 +1954,7 @@
     <value>51, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
     <value>EditAutoSaveDelay</value>
@@ -1900,28 +1966,28 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
-  <data name="EditBackupCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditAutoBackupCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 248</value>
   </data>
-  <data name="EditBackupCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditAutoBackupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
   </data>
-  <data name="EditBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
+  <data name="EditAutoBackupCount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;EditBackupCount.Name" xml:space="preserve">
-    <value>EditBackupCount</value>
+  <data name="&gt;&gt;EditAutoBackupCount.Name" xml:space="preserve">
+    <value>EditAutoBackupCount</value>
   </data>
-  <data name="&gt;&gt;EditBackupCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoBackupCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditBackupCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoBackupCount.Parent" xml:space="preserve">
     <value>TabPageApplication</value>
   </data>
-  <data name="&gt;&gt;EditBackupCount.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;EditAutoBackupCount.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="EditVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1936,7 +2002,7 @@
     <value>490, 18</value>
   </data>
   <data name="EditVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
     <value>EditVolume</value>
@@ -1948,7 +2014,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1981,7 +2047,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2014,7 +2080,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2055,7 +2121,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2098,7 +2164,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2113,7 +2179,7 @@
     <value>237, 17</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
     <value>Enable double-buffering for drawing windows</value>
@@ -2128,7 +2194,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2158,7 +2224,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2188,7 +2254,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2218,7 +2284,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2248,7 +2314,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -2280,6 +2346,204 @@
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
+  <data name="LabelInfoSearchMinRefForDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 292</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="LabelInfoSearchMinRefForDialog.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchMinRefForDialog.Name" xml:space="preserve">
+    <value>LabelInfoSearchMinRefForDialog</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchMinRefForDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchMinRefForDialog.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchMinRefForDialog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 242</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="LabelInfoSearchDisplayMaxRef.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchDisplayMaxRef.Name" xml:space="preserve">
+    <value>LabelInfoSearchDisplayMaxRef</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchDisplayMaxRef.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchDisplayMaxRef.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoSearchDisplayMaxRef.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelInfoHistoryCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoHistoryCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoHistoryCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 192</value>
+  </data>
+  <data name="LabelInfoHistoryCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoHistoryCount.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="LabelInfoHistoryCount.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoHistoryCount.Name" xml:space="preserve">
+    <value>LabelInfoHistoryCount</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoHistoryCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoHistoryCount.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoHistoryCount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 142</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="LabelInfoBookmarksCount.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoBookmarksCount.Name" xml:space="preserve">
+    <value>LabelInfoBookmarksCount</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoBookmarksCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoBookmarksCount.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoBookmarksCount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 92</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LabelInfoWordControlWidth.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoWordControlWidth.Name" xml:space="preserve">
+    <value>LabelInfoWordControlWidth</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoWordControlWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoWordControlWidth.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoWordControlWidth.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 42</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="LabelInfoCommentLinesCount.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoCommentLinesCount.Name" xml:space="preserve">
+    <value>LabelInfoCommentLinesCount</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoCommentLinesCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoCommentLinesCount.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoCommentLinesCount.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 88</value>
   </data>
@@ -2287,7 +2551,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditWordControlWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>74</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.Name" xml:space="preserve">
     <value>EditWordControlWidth</value>
@@ -2299,49 +2563,49 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
-  <data name="EditMinRefCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditSearchMinRefForDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 288</value>
   </data>
-  <data name="EditMinRefCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditSearchMinRefForDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditMinRefCount.TabIndex" type="System.Int32, mscorlib">
-    <value>78</value>
+  <data name="EditSearchMinRefForDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;EditMinRefCount.Name" xml:space="preserve">
-    <value>EditMinRefCount</value>
+  <data name="&gt;&gt;EditSearchMinRefForDialog.Name" xml:space="preserve">
+    <value>EditSearchMinRefForDialog</value>
   </data>
-  <data name="&gt;&gt;EditMinRefCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchMinRefForDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditMinRefCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchMinRefForDialog.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;EditMinRefCount.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;EditSearchMinRefForDialog.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="EditMaxRefCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditSearchDisplayMaxRef.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 238</value>
   </data>
-  <data name="EditMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditSearchDisplayMaxRef.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditMaxRefCount.TabIndex" type="System.Int32, mscorlib">
-    <value>77</value>
+  <data name="EditSearchDisplayMaxRef.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;EditMaxRefCount.Name" xml:space="preserve">
-    <value>EditMaxRefCount</value>
+  <data name="&gt;&gt;EditSearchDisplayMaxRef.Name" xml:space="preserve">
+    <value>EditSearchDisplayMaxRef</value>
   </data>
-  <data name="&gt;&gt;EditMaxRefCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchDisplayMaxRef.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditMaxRefCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchDisplayMaxRef.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;EditMaxRefCount.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;EditSearchDisplayMaxRef.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="EditHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 188</value>
@@ -2350,7 +2614,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditHistoryCount.TabIndex" type="System.Int32, mscorlib">
-    <value>76</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.Name" xml:space="preserve">
     <value>EditHistoryCount</value>
@@ -2362,7 +2626,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="EditBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 138</value>
@@ -2371,7 +2635,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.Name" xml:space="preserve">
     <value>EditBookmarksCount</value>
@@ -2383,28 +2647,28 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>14</value>
   </data>
-  <data name="EditCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditCommentLinesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 38</value>
   </data>
-  <data name="EditCommentaryLinesCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCommentLinesCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditCommentaryLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
+  <data name="EditCommentLinesCount.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;EditCommentaryLinesCount.Name" xml:space="preserve">
-    <value>EditCommentaryLinesCount</value>
+  <data name="&gt;&gt;EditCommentLinesCount.Name" xml:space="preserve">
+    <value>EditCommentLinesCount</value>
   </data>
-  <data name="&gt;&gt;EditCommentaryLinesCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCommentLinesCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditCommentaryLinesCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCommentLinesCount.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;EditCommentLinesCount.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="TabPageRendering.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -2621,7 +2885,7 @@
     <value>24, 19</value>
   </data>
   <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionOnlineSearchHelp.Name" xml:space="preserve">
     <value>ActionOnlineSearchHelp</value>
@@ -2664,7 +2928,7 @@
     <value>24, 19</value>
   </data>
   <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>72</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionOnlineVerseHelp.Name" xml:space="preserve">
     <value>ActionOnlineVerseHelp</value>
@@ -2708,7 +2972,7 @@
     <value>24, 19</value>
   </data>
   <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineSearch.Name" xml:space="preserve">
     <value>ActionSelectOnlineSearch</value>
@@ -2752,7 +3016,7 @@
     <value>24, 19</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>ActionSelectOnlineVerseURL</value>
@@ -2773,7 +3037,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Name" xml:space="preserve">
     <value>EditOnlineVerseURL</value>
@@ -2794,7 +3058,7 @@
     <value>420, 20</value>
   </data>
   <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
     <value>EditOnlineSearch</value>
@@ -2909,6 +3173,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 471</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

@@ -311,7 +311,7 @@ partial class PreferencesForm : Form
 
   private void EditMaxRefCount_ValueChanged(object sender, EventArgs e)
   {
-    EditMinRefCount.Maximum = EditMaxRefCount.Value;
+    EditSearchMinRefForDialog.Maximum = EditSearchDisplayMaxRef.Value;
   }
 
   private void ActionSelectOnlineSearch_Click(object sender, EventArgs e)

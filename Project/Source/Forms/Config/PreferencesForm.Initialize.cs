@@ -89,8 +89,16 @@ partial class PreferencesForm
   /// </summary>
   private void LoadEditIntervals()
   {
-    setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
-    setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+    setInterval(EditCheckUpdateAtStartupInterval, LabelInfoCheckUpdateAtStartup, CheckUpdateInterval);
+    setInterval(EditVacuumAtStartupInterval, LabelInfoOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+    setInterval(EditAutoBackupCount, LabelInfoAutoBackupCount, AutoBackupCountInterval);
+    setInterval(EditAutoSaveDelay, LabelInfoAutoSaveDelay, AutoSaveDelayInterval);
+    setInterval(EditBookmarksCount, LabelInfoBookmarksCount, BookmarksCountInterval);
+    setInterval(EditCommentLinesCount, LabelInfoCommentLinesCount, CommentLinesCountInterval);
+    setInterval(EditHistoryCount, LabelInfoHistoryCount, HistoryCountInterval);
+    setInterval(EditSearchDisplayMaxRef, LabelInfoSearchDisplayMaxRef, SearchDisplayMaxRefInterval);
+    setInterval(EditSearchMinRefForDialog, LabelInfoSearchMinRefForDialog, SearchMinRefForDialogInterval);
+    setInterval(EditWordControlWidth, LabelInfoWordControlWidth, WordControlWidthInterval);
     //
     static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
     {
