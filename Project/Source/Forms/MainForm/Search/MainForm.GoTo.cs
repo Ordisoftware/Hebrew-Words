@@ -75,7 +75,8 @@ partial class MainForm
     }
     CurrentReference = new ReferenceItem(reference);
     AddCurrentToHistory();
-    if ( updated || forceUpdateView ) RenderAll();
+    if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView )
+      RenderAll();
     // 
     switch ( Program.Settings.CurrentView )
     {

@@ -431,6 +431,19 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionViewFilters for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewFilters_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Filters ) return;
+    SetView(ViewMode.Verses);
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionViewTranslations for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -442,6 +455,21 @@ partial class MainForm : Form
     SetView(ViewMode.Translations);
     RenderTranslation();
     GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewSearch for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewSearch_Click(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.Search )
+      RotateSearchTab();
+    else
+      SetView(ViewMode.Search);
+    SelectSearchType_Selected(null, null);
   }
 
   /// <summary>
@@ -467,21 +495,6 @@ partial class MainForm : Form
     ActionSave.PerformClick();
     if ( Settings.CurrentView == ViewMode.ELS50 ) return;
     SetView(ViewMode.ELS50);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionViewSearch for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionViewSearch_Click(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Search )
-      RotateSearchTab();
-    else
-      SetView(ViewMode.Search);
-    SelectSearchType_Selected(null, null);
   }
 
   /// <summary>
@@ -760,7 +773,7 @@ partial class MainForm : Form
     else
     if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
-      var reference = ( (ReferenceItem)( (Control)control.Tag ).Tag );
+      var reference = (ReferenceItem)( (Control)control.Tag ).Tag;
       var verse = reference.Verse;
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
@@ -1331,6 +1344,16 @@ partial class MainForm : Form
               value += HebrewAlphabet.ValuesSimple[index];
             }
     DisplayManager.Show(value.ToString());
+  }
+
+  private void ActionPreviousVerse_Click(object sender, EventArgs e)
+  {
+    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+  }
+
+  private void ActionNextVerse_Click(object sender, EventArgs e)
+  {
+    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
   }
 
 }

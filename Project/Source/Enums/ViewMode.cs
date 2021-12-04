@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -21,28 +21,33 @@ public enum ViewMode
 {
 
   /// <summary>
-  /// Verses panels view mode.
+  /// Verses panel.
   /// </summary>
   Verses,
 
   /// <summary>
-  /// Translations panel view mode.
+  /// Filters panel.
+  /// </summary>
+  Filters,
+
+  /// <summary>
+  /// Translations panel.
   /// </summary>
   Translations,
 
   /// <summary>
-  /// Text view mode.
+  /// Search panel.
+  /// </summary>
+  Search,
+
+  /// <summary>
+  /// Source text panel.
   /// </summary>
   Text,
 
   /// <summary>
-  /// ELS50 view mode.
+  /// ELS50 verses panel.
   /// </summary>
-  ELS50,
-
-  /// <summary>
-  /// Search view mode.
-  /// </summary>
-  Search
+  ELS50
 
 }

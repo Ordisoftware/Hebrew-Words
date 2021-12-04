@@ -37,15 +37,11 @@
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageVerses = new System.Windows.Forms.TabPage();
       this.PanelViewVerses = new System.Windows.Forms.Panel();
+      this.TabPageFilter = new System.Windows.Forms.TabPage();
+      this.PanelViewFilters = new System.Windows.Forms.Panel();
       this.TabPageTranslations = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
       this.EditTranslations = new System.Windows.Forms.RichTextBox();
-      this.TabPageText = new System.Windows.Forms.TabPage();
-      this.PanelViewRawText = new System.Windows.Forms.Panel();
-      this.EditRawText = new System.Windows.Forms.RichTextBox();
-      this.TabPageELS50 = new System.Windows.Forms.TabPage();
-      this.PanelViewELS50 = new System.Windows.Forms.Panel();
-      this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.TabPageSearch = new System.Windows.Forms.TabPage();
       this.PanelViewSearch = new System.Windows.Forms.Panel();
       this.PanelSearchResultsOuter = new System.Windows.Forms.Panel();
@@ -82,7 +78,16 @@
       this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
       this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
+      this.TabPageText = new System.Windows.Forms.TabPage();
+      this.PanelViewRawText = new System.Windows.Forms.Panel();
+      this.EditRawText = new System.Windows.Forms.RichTextBox();
+      this.TabPageELS50 = new System.Windows.Forms.TabPage();
+      this.PanelViewELS50 = new System.Windows.Forms.Panel();
+      this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.PanelNavigation = new System.Windows.Forms.Panel();
+      this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
+      this.ActionNextVerse = new System.Windows.Forms.Button();
+      this.ActionPreviousVerse = new System.Windows.Forms.Button();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -109,13 +114,14 @@
       this.LabelTitle = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
-      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewFilters = new System.Windows.Forms.ToolStripButton();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -215,12 +221,9 @@
       this.PanelMainCenter.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageVerses.SuspendLayout();
+      this.TabPageFilter.SuspendLayout();
       this.TabPageTranslations.SuspendLayout();
       this.PanelViewTranslations.SuspendLayout();
-      this.TabPageText.SuspendLayout();
-      this.PanelViewRawText.SuspendLayout();
-      this.TabPageELS50.SuspendLayout();
-      this.PanelViewELS50.SuspendLayout();
       this.TabPageSearch.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchResultsOuter.SuspendLayout();
@@ -232,6 +235,10 @@
       this.PanelSearchTop.SuspendLayout();
       this.SelectSearchTypeTranslation.SuspendLayout();
       this.SelectSearchTypeVerses.SuspendLayout();
+      this.TabPageText.SuspendLayout();
+      this.PanelViewRawText.SuspendLayout();
+      this.TabPageELS50.SuspendLayout();
+      this.PanelViewELS50.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
@@ -276,10 +283,11 @@
       // TabControl
       // 
       this.TabControl.Controls.Add(this.TabPageVerses);
+      this.TabControl.Controls.Add(this.TabPageFilter);
       this.TabControl.Controls.Add(this.TabPageTranslations);
+      this.TabControl.Controls.Add(this.TabPageSearch);
       this.TabControl.Controls.Add(this.TabPageText);
       this.TabControl.Controls.Add(this.TabPageELS50);
-      this.TabControl.Controls.Add(this.TabPageSearch);
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
@@ -298,6 +306,19 @@
       this.PanelViewVerses.BackColor = System.Drawing.SystemColors.Control;
       this.PanelViewVerses.Name = "PanelViewVerses";
       this.PanelViewVerses.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelViewVerses_MouseClick);
+      // 
+      // TabPageFilter
+      // 
+      this.TabPageFilter.Controls.Add(this.PanelViewFilters);
+      resources.ApplyResources(this.TabPageFilter, "TabPageFilter");
+      this.TabPageFilter.Name = "TabPageFilter";
+      this.TabPageFilter.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewFilters
+      // 
+      resources.ApplyResources(this.PanelViewFilters, "PanelViewFilters");
+      this.PanelViewFilters.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelViewFilters.Name = "PanelViewFilters";
       // 
       // TabPageTranslations
       // 
@@ -320,50 +341,6 @@
       resources.ApplyResources(this.EditTranslations, "EditTranslations");
       this.EditTranslations.Name = "EditTranslations";
       this.EditTranslations.ReadOnly = true;
-      // 
-      // TabPageText
-      // 
-      this.TabPageText.Controls.Add(this.PanelViewRawText);
-      resources.ApplyResources(this.TabPageText, "TabPageText");
-      this.TabPageText.Name = "TabPageText";
-      this.TabPageText.UseVisualStyleBackColor = true;
-      // 
-      // PanelViewRawText
-      // 
-      this.PanelViewRawText.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelViewRawText.Controls.Add(this.EditRawText);
-      resources.ApplyResources(this.PanelViewRawText, "PanelViewRawText");
-      this.PanelViewRawText.Name = "PanelViewRawText";
-      // 
-      // EditRawText
-      // 
-      this.EditRawText.BackColor = System.Drawing.SystemColors.Window;
-      this.EditRawText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditRawText, "EditRawText");
-      this.EditRawText.Name = "EditRawText";
-      this.EditRawText.ReadOnly = true;
-      // 
-      // TabPageELS50
-      // 
-      this.TabPageELS50.Controls.Add(this.PanelViewELS50);
-      resources.ApplyResources(this.TabPageELS50, "TabPageELS50");
-      this.TabPageELS50.Name = "TabPageELS50";
-      this.TabPageELS50.UseVisualStyleBackColor = true;
-      // 
-      // PanelViewELS50
-      // 
-      this.PanelViewELS50.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelViewELS50.Controls.Add(this.EditELS50All);
-      resources.ApplyResources(this.PanelViewELS50, "PanelViewELS50");
-      this.PanelViewELS50.Name = "PanelViewELS50";
-      // 
-      // EditELS50All
-      // 
-      this.EditELS50All.BackColor = System.Drawing.SystemColors.Window;
-      this.EditELS50All.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditELS50All, "EditELS50All");
-      this.EditELS50All.Name = "EditELS50All";
-      this.EditELS50All.ReadOnly = true;
       // 
       // TabPageSearch
       // 
@@ -664,8 +641,55 @@
       this.SelectSearchRequestAllTranslated.TabStop = true;
       this.SelectSearchRequestAllTranslated.UseVisualStyleBackColor = true;
       // 
+      // TabPageText
+      // 
+      this.TabPageText.Controls.Add(this.PanelViewRawText);
+      resources.ApplyResources(this.TabPageText, "TabPageText");
+      this.TabPageText.Name = "TabPageText";
+      this.TabPageText.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewRawText
+      // 
+      this.PanelViewRawText.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewRawText.Controls.Add(this.EditRawText);
+      resources.ApplyResources(this.PanelViewRawText, "PanelViewRawText");
+      this.PanelViewRawText.Name = "PanelViewRawText";
+      // 
+      // EditRawText
+      // 
+      this.EditRawText.BackColor = System.Drawing.SystemColors.Window;
+      this.EditRawText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditRawText, "EditRawText");
+      this.EditRawText.Name = "EditRawText";
+      this.EditRawText.ReadOnly = true;
+      // 
+      // TabPageELS50
+      // 
+      this.TabPageELS50.Controls.Add(this.PanelViewELS50);
+      resources.ApplyResources(this.TabPageELS50, "TabPageELS50");
+      this.TabPageELS50.Name = "TabPageELS50";
+      this.TabPageELS50.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewELS50
+      // 
+      this.PanelViewELS50.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewELS50.Controls.Add(this.EditELS50All);
+      resources.ApplyResources(this.PanelViewELS50, "PanelViewELS50");
+      this.PanelViewELS50.Name = "PanelViewELS50";
+      // 
+      // EditELS50All
+      // 
+      this.EditELS50All.BackColor = System.Drawing.SystemColors.Window;
+      this.EditELS50All.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.EditELS50All, "EditELS50All");
+      this.EditELS50All.Name = "EditELS50All";
+      this.EditELS50All.ReadOnly = true;
+      // 
       // PanelNavigation
       // 
+      this.PanelNavigation.Controls.Add(this.SelectRenderAllVerses);
+      this.PanelNavigation.Controls.Add(this.ActionNextVerse);
+      this.PanelNavigation.Controls.Add(this.ActionPreviousVerse);
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
@@ -686,6 +710,30 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
+      // 
+      // SelectRenderAllVerses
+      // 
+      resources.ApplyResources(this.SelectRenderAllVerses, "SelectRenderAllVerses");
+      this.SelectRenderAllVerses.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.RenderAllChapterVerses;
+      this.SelectRenderAllVerses.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "RenderAllChapterVerses", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectRenderAllVerses.Name = "SelectRenderAllVerses";
+      this.SelectRenderAllVerses.UseVisualStyleBackColor = true;
+      // 
+      // ActionNextVerse
+      // 
+      resources.ApplyResources(this.ActionNextVerse, "ActionNextVerse");
+      this.ActionNextVerse.FlatAppearance.BorderSize = 0;
+      this.ActionNextVerse.Name = "ActionNextVerse";
+      this.ActionNextVerse.UseVisualStyleBackColor = true;
+      this.ActionNextVerse.Click += new System.EventHandler(this.ActionNextVerse_Click);
+      // 
+      // ActionPreviousVerse
+      // 
+      resources.ApplyResources(this.ActionPreviousVerse, "ActionPreviousVerse");
+      this.ActionPreviousVerse.FlatAppearance.BorderSize = 0;
+      this.ActionPreviousVerse.Name = "ActionPreviousVerse";
+      this.ActionPreviousVerse.UseVisualStyleBackColor = true;
+      this.ActionPreviousVerse.Click += new System.EventHandler(this.ActionPreviousVerse_Click);
       // 
       // EditChapterMemo
       // 
@@ -878,13 +926,14 @@
             this.Sep4,
             this.ActionPreferences,
             this.ActionViewVerses,
+            this.ActionViewFilters,
             this.ActionViewTranslations,
+            this.ActionViewSearch,
+            this.toolStripSeparator18,
             this.ActionViewRawText,
             this.ActionViewELS50,
-            this.toolStripSeparator10,
-            this.ActionViewSearch,
-            this.ActionGoToReference,
             this.toolStripSeparator4,
+            this.ActionGoToReference,
             this.ActionRefresh,
             this.toolStripSeparator9,
             this.ActionCloseWindows,
@@ -901,16 +950,6 @@
             this.ActionSettings});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
-      // 
-      // ActionViewSearch
-      // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
-      this.ActionViewSearch.Name = "ActionViewSearch";
-      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionExit
       // 
@@ -941,11 +980,6 @@
       this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
       // ActionViewVerses
       // 
       this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -956,6 +990,16 @@
       this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
+      // ActionViewFilters
+      // 
+      this.ActionViewFilters.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewFilters, "ActionViewFilters");
+      this.ActionViewFilters.Name = "ActionViewFilters";
+      this.ActionViewFilters.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewFilters.Click += new System.EventHandler(this.ActionViewFilters_Click);
+      this.ActionViewFilters.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewFilters.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
       // ActionViewTranslations
       // 
       this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -965,6 +1009,21 @@
       this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
       this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionViewSearch
+      // 
+      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
+      this.ActionViewSearch.Name = "ActionViewSearch";
+      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
+      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // toolStripSeparator18
+      // 
+      this.toolStripSeparator18.Name = "toolStripSeparator18";
+      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
       // 
       // ActionViewRawText
       // 
@@ -1631,12 +1690,9 @@
       this.PanelMainCenter.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
       this.TabPageVerses.ResumeLayout(false);
+      this.TabPageFilter.ResumeLayout(false);
       this.TabPageTranslations.ResumeLayout(false);
       this.PanelViewTranslations.ResumeLayout(false);
-      this.TabPageText.ResumeLayout(false);
-      this.PanelViewRawText.ResumeLayout(false);
-      this.TabPageELS50.ResumeLayout(false);
-      this.PanelViewELS50.ResumeLayout(false);
       this.TabPageSearch.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
       this.PanelSearchResultsOuter.ResumeLayout(false);
@@ -1651,6 +1707,10 @@
       this.SelectSearchTypeTranslation.PerformLayout();
       this.SelectSearchTypeVerses.ResumeLayout(false);
       this.SelectSearchTypeVerses.PerformLayout();
+      this.TabPageText.ResumeLayout(false);
+      this.PanelViewRawText.ResumeLayout(false);
+      this.TabPageELS50.ResumeLayout(false);
+      this.PanelViewELS50.ResumeLayout(false);
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
@@ -1797,7 +1857,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
@@ -1846,6 +1905,13 @@
     private RadioButton SelectSearchTranslationIncludeComments;
     private RadioButton SelectSearchTranslationOnlyComments;
     private RadioButton SelectSearchTranslationOnlyTranslations;
+    public Button ActionNextVerse;
+    public Button ActionPreviousVerse;
+    private CheckBox SelectRenderAllVerses;
+    private TabPage TabPageFilter;
+    private ToolStripButton ActionViewFilters;
+    public Panel PanelViewFilters;
+    private ToolStripSeparator toolStripSeparator18;
   }
 }
 

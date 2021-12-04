@@ -36,6 +36,8 @@ partial class MainForm
 
   // TODO update keys
 
+  static private ViewMode[] RotateIgnoreViews = new[] { ViewMode.Text, ViewMode.ELS50 };
+
   /// <summary>
   /// Process the command key.
   /// </summary>
@@ -63,32 +65,35 @@ partial class MainForm
         return true;
       // Change view
       case Keys.Control | Keys.Shift | Keys.Tab:
-        SetView(Settings.CurrentView.Previous());
+        SetView(Settings.CurrentView.Previous(RotateIgnoreViews));
         return true;
       case Keys.Control | Keys.Tab:
-        SetView(Settings.CurrentView.Next());
+        SetView(Settings.CurrentView.Next(RotateIgnoreViews));
         return true;
       // View
       case Keys.F1:
         ActionViewVerses.PerformClick();
         return true;
       case Keys.F2:
-        ActionViewTranslations.PerformClick();
+        ActionViewFilters.PerformClick();
         return true;
       case Keys.F3:
-        ActionViewRawText.PerformClick();
+        ActionViewTranslations.PerformClick();
         return true;
       case Keys.F4:
-        ActionViewELS50.PerformClick();
-        return true;
-      case Keys.F5:
         if ( Program.Settings.CurrentView != ViewMode.Search )
           ActionViewSearch.PerformClick();
         else
           RotateSearchTab();
         return true;
-      // Actions
+      case Keys.F5:
+        ActionViewRawText.PerformClick();
+        return true;
       case Keys.F6:
+        ActionViewELS50.PerformClick();
+        return true;
+      // Actions
+      case Keys.F7:
       case Keys.Shift | Keys.Control | Keys.F:
         ActionGoToReference.PerformClick();
         return true;
@@ -122,8 +127,36 @@ partial class MainForm
       case Keys.Alt | Keys.I:
         ActionInformation.ShowDropDown();
         return true;
+      // Verse navigation
+      case Keys.Alt | Keys.Left:
+        GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+        break;
+      case Keys.Alt | Keys.Right:
+        GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
+        break;
+      // Scrolling bounds
+      case Keys.Alt | Keys.Home:
+        if ( ActiveControl is TextBox ) return false;
+        switch ( Program.Settings.CurrentView )
+        {
+          case ViewMode.Verses:
+            return scroll(PanelViewVerses, 0, false);
+          case ViewMode.Search:
+            return scroll(PanelSearchResults, 0, false);
+        }
+        break;
+      case Keys.Alt | Keys.End:
+        if ( ActiveControl is TextBox ) return false;
+        switch ( Program.Settings.CurrentView )
+        {
+          case ViewMode.Verses:
+            return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
+          case ViewMode.Search:
+            return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
+        }
+        break;
       // Scrolling small
-      case Keys.Control | Keys.Up:
+      case Keys.Alt | Keys.Up:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
         {
@@ -133,7 +166,7 @@ partial class MainForm
             return scroll(PanelSearchResults, -ScrollIncrement, true);
         }
         break;
-      case Keys.Control | Keys.Down:
+      case Keys.Alt | Keys.Down:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
         {
@@ -144,7 +177,7 @@ partial class MainForm
         }
         break;
       // Scrolling large
-      case Keys.PageUp:
+      case Keys.Alt | Keys.PageUp:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
         {
@@ -154,7 +187,7 @@ partial class MainForm
             return scroll(PanelSearchResults, -PanelViewVerses.Height, true);
         }
         break;
-      case Keys.PageDown:
+      case Keys.Alt | Keys.PageDown:
         if ( ActiveControl is TextBox ) return false;
         switch ( Program.Settings.CurrentView )
         {
@@ -162,27 +195,6 @@ partial class MainForm
             return scroll(PanelViewVerses, PanelViewVerses.Height, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, PanelViewVerses.Height, true);
-        }
-        break;
-      // Scrolling bounds
-      case Keys.Control | Keys.Home:
-        if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
-        {
-          case ViewMode.Verses:
-            return scroll(PanelViewVerses, 0, false);
-          case ViewMode.Search:
-            return scroll(PanelSearchResults, 0, false);
-        }
-        break;
-      case Keys.Control | Keys.End:
-        if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
-        {
-          case ViewMode.Verses:
-            return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
-          case ViewMode.Search:
-            return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
         }
         break;
     }

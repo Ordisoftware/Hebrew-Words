@@ -272,5 +272,8 @@
     <Setting Name="BackupFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">%USER_APP_DOCUMENTS%\Backup</Value>
     </Setting>
+    <Setting Name="RenderAllChapterVerses" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

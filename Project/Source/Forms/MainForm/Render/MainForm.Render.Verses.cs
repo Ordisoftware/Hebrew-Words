@@ -24,22 +24,23 @@ partial class MainForm
     Globals.ChronoRendering.Restart();
     try
     {
-      PanelViewVerses.Visible = false;
+      if ( SelectRenderAllVerses.Checked ) PanelViewVerses.Visible = false;
       while ( PanelViewVerses.Controls.Count > 0 )
         PanelViewVerses.Controls[0].Dispose();
-      SetFormDisabled(true);
-      CurrentReference.Verse = null;
+      if ( SelectRenderAllVerses.Checked ) SetFormDisabled(true);
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
       if ( itemBook == null || itemChapter == null ) return;
       EditELS50.Text = itemChapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
-      var references = from book in ApplicationDatabase.Instance.Books
-                       from chapter in book.Chapters
-                       from verse in chapter.Verses
-                       where book.Number == itemBook.Number
-                          && chapter.Number == itemChapter.Number
-                       select new ReferenceItem(book, chapter, verse);
+      var references = SelectRenderAllVerses.Checked
+                       ? from book in ApplicationDatabase.Instance.Books
+                         from chapter in book.Chapters
+                         from verse in chapter.Verses
+                         where book.Number == itemBook.Number
+                            && chapter.Number == itemChapter.Number
+                         select new ReferenceItem(book, chapter, verse)
+                       : new List<ReferenceItem> { CurrentReference };
       var wordcontrol = new WordControl { Width = Program.Settings.WordControlWidth };
       const int widthLabel = 40;
       const int mX = 50;
@@ -84,7 +85,6 @@ partial class MainForm
         panel = new Panel();
         label = new Label
         {
-          Tag = reference,
           Location = new Point(x + dx_delta, y + deltaDiv4),
           AutoSize = false,
           Width = widthLabel,
@@ -118,6 +118,7 @@ partial class MainForm
         }
         if ( emptyline ) y -= dy;
         editComment = new TextBoxEx();
+        editComment.Tag = reference;  // TODO reorg Tags using panel to get ref
         label.Tag = editComment;
         if ( verseLineCount > 1 )
         {
@@ -129,7 +130,6 @@ partial class MainForm
         x = width - dx_MarginX_2;
         editComment.Width = widthWords - delta;
         editComment.Height = heightComment;
-        editComment.Tag = reference;
         editComment.BackColor = Color.Honeydew;
         editComment.Text = reference.Verse.Comment;
         editComment.Enter += EditVerseComment_Enter;
@@ -142,7 +142,8 @@ partial class MainForm
         panel.Height = y;
         yPanel += y;
         PanelViewVerses.Controls.Add(panel);
-        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
+        if ( SelectRenderAllVerses.Checked )
+          LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
       }
     }
     catch ( Exception ex )
@@ -151,11 +152,15 @@ partial class MainForm
     }
     finally
     {
-      LabelProgress.Refresh();
+      if ( SelectRenderAllVerses.Checked )
+        LabelProgress.Refresh();
       IsRendering = false;
-      PanelViewVerses.Visible = true;
-      LabelProgress.Text = "";
-      SetFormDisabled(false);
+      if ( SelectRenderAllVerses.Checked )
+      {
+        PanelViewVerses.Visible = true;
+        LabelProgress.Text = "";
+        SetFormDisabled(false);
+      }
       Globals.ChronoRendering.Stop();
       Settings.BenchmarkRendering = Globals.ChronoRendering.ElapsedMilliseconds;
     }
