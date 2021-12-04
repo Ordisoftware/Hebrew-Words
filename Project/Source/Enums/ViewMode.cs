@@ -26,14 +26,14 @@ public enum ViewMode
   Verses,
 
   /// <summary>
-  /// Filters panel.
+  /// Translation panel.
   /// </summary>
-  Filters,
+  Translation,
 
   /// <summary>
-  /// Translations panel.
+  /// Verse filtered panel.
   /// </summary>
-  Translations,
+  VerseFiltered,
 
   /// <summary>
   /// Search panel.

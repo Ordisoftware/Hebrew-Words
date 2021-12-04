@@ -34,8 +34,8 @@ partial class MainForm
   {
     if ( Globals.IsLoadingData || IsGoToRunning ) return;
     Refresh();
-    RenderVersesRaw();
-    RenderVersesFiltered();
+    RenderVerses();
+    RenderVerseFiltered();
     RenderTranslation();
     RenderRawText();
     RenderELS50();

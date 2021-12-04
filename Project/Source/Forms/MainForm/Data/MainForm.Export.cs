@@ -78,7 +78,7 @@ partial class MainForm
           SetFormDisabled(false);
         }
         break;
-      case ViewMode.Translations:
+      case ViewMode.Translation:
         SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditTranslations.SaveFile(SaveFileDialogRTF.FileName);

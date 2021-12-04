@@ -75,10 +75,10 @@ partial class MainForm
         ActionViewVerses.PerformClick();
         return true;
       case Keys.F2:
-        ActionViewFilters.PerformClick();
+        ActionViewTranslations.PerformClick();
         return true;
       case Keys.F3:
-        ActionViewTranslations.PerformClick();
+        ActionViewVerseFiltered.PerformClick();
         return true;
       case Keys.F4:
         if ( Program.Settings.CurrentView != ViewMode.Search )
@@ -129,10 +129,16 @@ partial class MainForm
         return true;
       // Verse navigation
       case Keys.Alt | Keys.Left:
-        GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+        if ( Settings.CurrentView == ViewMode.Verses
+          || Settings.CurrentView == ViewMode.Translation
+          || Settings.CurrentView == ViewMode.Text )
+          GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
         break;
       case Keys.Alt | Keys.Right:
-        GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
+        if ( Settings.CurrentView == ViewMode.Verses
+          || Settings.CurrentView == ViewMode.Translation
+          || Settings.CurrentView == ViewMode.Text )
+          GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
         break;
       // Scrolling bounds
       case Keys.Alt | Keys.Home:
