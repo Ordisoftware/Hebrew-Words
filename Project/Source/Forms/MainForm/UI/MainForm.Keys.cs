@@ -97,6 +97,10 @@ partial class MainForm
       case Keys.Shift | Keys.Control | Keys.F:
         ActionGoToReference.PerformClick();
         return true;
+      case Keys.F8:
+      case Keys.Control | Keys.R:
+        ActionRefresh.PerformClick();
+        return true;
       case Keys.Alt | Keys.F:
         ActionViewSearch.PerformClick();
         return true;

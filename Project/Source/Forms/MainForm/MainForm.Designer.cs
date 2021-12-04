@@ -42,9 +42,16 @@
       this.EditTranslations = new System.Windows.Forms.RichTextBox();
       this.TabPageVerseFiltered = new System.Windows.Forms.TabPage();
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
-      this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
+      this.LabelInfoFilterNote = new System.Windows.Forms.Label();
+      this.LabelInfoFilterVerse = new System.Windows.Forms.Label();
+      this.LabelInfoFilterChapter = new System.Windows.Forms.Label();
+      this.LabelInfoFilterBook = new System.Windows.Forms.Label();
+      this.ActionGoFromVerseFilteredToVersesPanel = new System.Windows.Forms.Button();
+      this.ActionApplyFilterVerse = new System.Windows.Forms.Button();
       this.ActionClearFilterVerse = new System.Windows.Forms.Button();
+      this.ActionApplyFilterChapter = new System.Windows.Forms.Button();
+      this.ActionApplyFilterBook = new System.Windows.Forms.Button();
       this.ActionClearFilterChapter = new System.Windows.Forms.Button();
       this.ActionClearFilterBook = new System.Windows.Forms.Button();
       this.EditFilterVerse = new System.Windows.Forms.TextBox();
@@ -234,6 +241,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -368,15 +376,17 @@
       this.PanelViewVerseFiltered.Controls.Add(this.PanelViewVerseFilters);
       this.PanelViewVerseFiltered.Name = "PanelViewVerseFiltered";
       // 
-      // PanelViewVerseFilteredSingle
-      // 
-      this.PanelViewVerseFilteredSingle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelViewVerseFilteredSingle, "PanelViewVerseFilteredSingle");
-      this.PanelViewVerseFilteredSingle.Name = "PanelViewVerseFilteredSingle";
-      // 
       // PanelViewVerseFilters
       // 
+      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterNote);
+      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterVerse);
+      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterChapter);
+      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterBook);
+      this.PanelViewVerseFilters.Controls.Add(this.ActionGoFromVerseFilteredToVersesPanel);
+      this.PanelViewVerseFilters.Controls.Add(this.ActionApplyFilterVerse);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterVerse);
+      this.PanelViewVerseFilters.Controls.Add(this.ActionApplyFilterChapter);
+      this.PanelViewVerseFilters.Controls.Add(this.ActionApplyFilterBook);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterChapter);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterBook);
       this.PanelViewVerseFilters.Controls.Add(this.EditFilterVerse);
@@ -393,6 +403,46 @@
       resources.ApplyResources(this.PanelViewVerseFilters, "PanelViewVerseFilters");
       this.PanelViewVerseFilters.Name = "PanelViewVerseFilters";
       // 
+      // LabelInfoFilterNote
+      // 
+      resources.ApplyResources(this.LabelInfoFilterNote, "LabelInfoFilterNote");
+      this.LabelInfoFilterNote.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoFilterNote.Name = "LabelInfoFilterNote";
+      // 
+      // LabelInfoFilterVerse
+      // 
+      resources.ApplyResources(this.LabelInfoFilterVerse, "LabelInfoFilterVerse");
+      this.LabelInfoFilterVerse.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoFilterVerse.Name = "LabelInfoFilterVerse";
+      // 
+      // LabelInfoFilterChapter
+      // 
+      resources.ApplyResources(this.LabelInfoFilterChapter, "LabelInfoFilterChapter");
+      this.LabelInfoFilterChapter.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoFilterChapter.Name = "LabelInfoFilterChapter";
+      // 
+      // LabelInfoFilterBook
+      // 
+      resources.ApplyResources(this.LabelInfoFilterBook, "LabelInfoFilterBook");
+      this.LabelInfoFilterBook.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoFilterBook.Name = "LabelInfoFilterBook";
+      // 
+      // ActionGoFromVerseFilteredToVersesPanel
+      // 
+      resources.ApplyResources(this.ActionGoFromVerseFilteredToVersesPanel, "ActionGoFromVerseFilteredToVersesPanel");
+      this.ActionGoFromVerseFilteredToVersesPanel.FlatAppearance.BorderSize = 0;
+      this.ActionGoFromVerseFilteredToVersesPanel.Name = "ActionGoFromVerseFilteredToVersesPanel";
+      this.ActionGoFromVerseFilteredToVersesPanel.UseVisualStyleBackColor = true;
+      this.ActionGoFromVerseFilteredToVersesPanel.Click += new System.EventHandler(this.ActionGoFromVerseFilteredToVersesPanel_Click);
+      // 
+      // ActionApplyFilterVerse
+      // 
+      this.ActionApplyFilterVerse.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionApplyFilterVerse, "ActionApplyFilterVerse");
+      this.ActionApplyFilterVerse.Name = "ActionApplyFilterVerse";
+      this.ActionApplyFilterVerse.UseVisualStyleBackColor = true;
+      this.ActionApplyFilterVerse.Click += new System.EventHandler(this.UpdateFilters);
+      // 
       // ActionClearFilterVerse
       // 
       this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
@@ -400,6 +450,22 @@
       this.ActionClearFilterVerse.Name = "ActionClearFilterVerse";
       this.ActionClearFilterVerse.UseVisualStyleBackColor = true;
       this.ActionClearFilterVerse.Click += new System.EventHandler(this.ActionClearFilterVerse_Click);
+      // 
+      // ActionApplyFilterChapter
+      // 
+      this.ActionApplyFilterChapter.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionApplyFilterChapter, "ActionApplyFilterChapter");
+      this.ActionApplyFilterChapter.Name = "ActionApplyFilterChapter";
+      this.ActionApplyFilterChapter.UseVisualStyleBackColor = true;
+      this.ActionApplyFilterChapter.Click += new System.EventHandler(this.UpdateFilters);
+      // 
+      // ActionApplyFilterBook
+      // 
+      this.ActionApplyFilterBook.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionApplyFilterBook, "ActionApplyFilterBook");
+      this.ActionApplyFilterBook.Name = "ActionApplyFilterBook";
+      this.ActionApplyFilterBook.UseVisualStyleBackColor = true;
+      this.ActionApplyFilterBook.Click += new System.EventHandler(this.UpdateFilters);
       // 
       // ActionClearFilterChapter
       // 
@@ -1847,6 +1913,13 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // PanelViewVerseFilteredSingle
+      // 
+      resources.ApplyResources(this.PanelViewVerseFilteredSingle, "PanelViewVerseFilteredSingle");
+      this.PanelViewVerseFilteredSingle.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelViewVerseFilteredSingle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelViewVerseFilteredSingle.Name = "PanelViewVerseFilteredSingle";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2112,7 +2185,15 @@
     private Label LabelFilterBook;
     private Label LabelFilterChapter;
     private Label LabelFilterVerse;
-    private Panel PanelViewVerseFilteredSingle;
+    private Button ActionGoFromVerseFilteredToVersesPanel;
+    private Label LabelInfoFilterVerse;
+    private Label LabelInfoFilterChapter;
+    private Label LabelInfoFilterBook;
+    private Label LabelInfoFilterNote;
+    public Button ActionApplyFilterVerse;
+    public Button ActionApplyFilterChapter;
+    public Button ActionApplyFilterBook;
+    public Panel PanelViewVerseFilteredSingle;
   }
 }
 

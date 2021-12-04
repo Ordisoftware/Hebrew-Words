@@ -131,8 +131,8 @@ static partial class AppTranslations
     },
     [ViewMode.VerseFiltered] = new TranslationsDictionary
     {
-      [Language.EN] = "Tanak Verses Filtered",
-      [Language.FR] = "Versets du Tanak filtrés"
+      [Language.EN] = "Tanak Verse Filtered",
+      [Language.FR] = "Verset du Tanak filtré"
     },
     [ViewMode.Translation] = new TranslationsDictionary
     {
