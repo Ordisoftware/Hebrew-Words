@@ -17,8 +17,11 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  public void AddCurrentToHistory()
+  public void MoveVerseBindingSourceAndAddCurrentToHistory()
   {
+    int pos = CurrentReference.Verse.Number - 1;
+    if ( pos != VersesBindingSource.Position )
+      VersesBindingSource.Position = pos;
     History.Add(CurrentReference);
     UpdateHistory();
   }

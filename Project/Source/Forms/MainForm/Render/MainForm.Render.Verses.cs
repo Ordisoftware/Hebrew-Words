@@ -172,7 +172,7 @@ partial class MainForm
     control.BackColor = Color.AliceBlue;
     if ( IsComboBoxChanging ) return;
     CurrentReference = new ReferenceItem((ReferenceItem)( (Control)sender ).Tag);
-    AddCurrentToHistory();
+    MoveVerseBindingSourceAndAddCurrentToHistory();
   }
 
   private void EditVerseComment_Leave(object sender, EventArgs e)

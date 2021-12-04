@@ -575,4 +575,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
     <value>Seulement les translations</value>
   </data>
+  <data name="SelectRenderAllVerses.Text" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="ActionViewFilters.ToolTipText" xml:space="preserve">
+    <value>Filtrer les versets (F2)</value>
+  </data>
+  <data name="ActionViewFilters.Text" xml:space="preserve">
+    <value>Filtrer les versets</value>
+  </data>
 </root>

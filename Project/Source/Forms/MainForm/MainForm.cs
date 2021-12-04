@@ -822,6 +822,11 @@ partial class MainForm : Form
   private bool NeedUpdateCurrentReference;
   private bool UpdateCurrentReferenceMutex;
 
+  private void SelectRenderAllVerses_CheckedChanged(object sender, EventArgs e)
+  {
+    ActionRefresh.PerformClick();
+  }
+
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( TextBoxMutex ) return;
@@ -831,6 +836,14 @@ partial class MainForm : Form
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
     NeedUpdateCurrentReference = true;
+  }
+
+  private void SelectVerse_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( IsGoToRunning ) return;
+    if ( IsRendering ) return;
+    if ( Globals.IsExiting ) return;
+    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, ( (VerseRow)SelectVerse.SelectedItem ).Number);
   }
 
   private void BookRowBindingSource_PositionChanged(object sender, EventArgs e)
@@ -1344,16 +1357,6 @@ partial class MainForm : Form
               value += HebrewAlphabet.ValuesSimple[index];
             }
     DisplayManager.Show(value.ToString());
-  }
-
-  private void ActionPreviousVerse_Click(object sender, EventArgs e)
-  {
-    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
-  }
-
-  private void ActionNextVerse_Click(object sender, EventArgs e)
-  {
-    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
   }
 
 }

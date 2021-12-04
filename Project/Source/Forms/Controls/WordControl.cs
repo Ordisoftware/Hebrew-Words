@@ -54,7 +54,8 @@ partial class WordControl : UserControl
     EditTranslation.BackColor = Color.AliceBlue;
     EditTranslation.SelectionStart = 0;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
-    MainForm.Instance.AddCurrentToHistory();
+    MainForm.Instance.CurrentReference = Reference;
+    MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }
 
   private void EditTranslation_Leave(object sender, EventArgs e)
