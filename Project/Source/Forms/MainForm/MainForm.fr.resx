@@ -596,4 +596,16 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="LabelFilterVerse.Text" xml:space="preserve">
     <value>Verset</value>
   </data>
+  <data name="LabelInfoFilterBook.Text" xml:space="preserve">
+    <value>Filtre sur la transcription du nom hébreu, le nom commun, la traduction, la lettrique et le mémo</value>
+  </data>
+  <data name="LabelInfoFilterChapter.Text" xml:space="preserve">
+    <value>Filtre sur le title et le mémo</value>
+  </data>
+  <data name="LabelInfoFilterVerse.Text" xml:space="preserve">
+    <value>Filtre que la traduction et le commentaire</value>
+  </data>
+  <data name="LabelInfoFilterNote.Text" xml:space="preserve">
+    <value>Note : Les filtres sont cumulatifs sans casse ni signes, appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête</value>
+  </data>
 </root>

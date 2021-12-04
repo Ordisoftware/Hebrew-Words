@@ -441,7 +441,7 @@ partial class MainForm : Form
     ActionSave.PerformClick();
     if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
     SetView(ViewMode.VerseFiltered);
-    GoTo(CurrentReference);
+    UpdateFilters(null, null);
   }
 
   /// <summary>
@@ -1367,9 +1367,16 @@ partial class MainForm : Form
 
   private void UpdateFilters(object sender, EventArgs e)
   {
+    var temp = Cursor;
     Cursor = Cursors.WaitCursor;
-    try { CreateFilterDataSource(); }
-    finally { Cursor = Cursors.Default; }
+    try
+    {
+      CreateFilterDataSource();
+    }
+    finally
+    {
+      Cursor = temp;
+    }
   }
 
   private void ActionClearFilterBook_Click(object sender, EventArgs e)
@@ -1423,12 +1430,13 @@ partial class MainForm : Form
     if ( EditFilterBook.Text != string.Empty )
       books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
                             || b.CommonName.RawContains(EditFilterBook.Text)
+                            || b.Translation.RawContains(EditFilterBook.Text)
                             || b.Lettriq.RawContains(EditFilterBook.Text)
-                            || b.Memo.RawContains(EditFilterBook.Text)
-                            || b.Translation.RawContains(EditFilterBook.Text));
+                            || b.Memo.RawContains(EditFilterBook.Text));
     if ( EditFilterChapter.Text != string.Empty )
       books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
                                                 || c.Memo.RawContains(EditFilterChapter.Text)));
+
     if ( EditFilterVerse.Text != string.Empty )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
                                                                   || v.Comment.RawContains(EditFilterVerse.Text))));
