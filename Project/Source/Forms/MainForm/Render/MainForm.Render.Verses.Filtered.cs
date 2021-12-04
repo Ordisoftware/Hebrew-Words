@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVersesFiltered()
+  private void RenderVerseFiltered()
   {
     if ( IsRendering ) return;
     IsRendering = true;
@@ -27,7 +27,7 @@ partial class MainForm
       references.Add(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
                                        ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                        ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
-      RenderVerses(PanelViewFiltersVerse, references);
+      RenderVerses(PanelViewVerseFilteredSingle, references);
     }
     catch ( Exception ex )
     {

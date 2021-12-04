@@ -72,16 +72,16 @@ partial class MainForm
         }
       },
       {
-        ViewMode.Filters,
+        ViewMode.VerseFiltered,
         new ViewConnector
         {
-          MenuItem = ActionViewFilters,
-          Panel = PanelViewFilters,
-          Focused = PanelViewFilters
+          MenuItem = ActionViewVerseFiltered,
+          Panel = PanelViewVerseFiltered,
+          Focused = PanelViewVerseFiltered
         }
       },
       {
-        ViewMode.Translations,
+        ViewMode.Translation,
         new ViewConnector
         {
           MenuItem = ActionViewTranslations,
@@ -123,14 +123,14 @@ partial class MainForm
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
     ViewPanels[view].Focused?.Focus();
-    PanelNavigation.Visible = view != ViewMode.Filters && view != ViewMode.Search;
+    PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
     Program.Settings.CurrentView = view;
     LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
-    ActionCopyToClipboard.Enabled = view == ViewMode.Translations;
+    ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
     ActionExportBook.Enabled = view == ViewMode.Verses
                             || view == ViewMode.ELS50;
     ActionExportChapter.Enabled = view == ViewMode.Verses
-                               || view == ViewMode.Translations
+                               || view == ViewMode.Translation
                                || view == ViewMode.Text;
     SelectBook.Enabled = view != ViewMode.Search;
     LabelSelectBook.Enabled = SelectBook.Enabled;
@@ -140,7 +140,7 @@ partial class MainForm
     EditChapterMemo.Enabled = ActionExportChapter.Enabled;
     LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
     ActionSearchVerse.Enabled = view == ViewMode.Verses
-                             || view == ViewMode.Translations
+                             || view == ViewMode.Translation
                              || view == ViewMode.Text;
     Refresh();
   }

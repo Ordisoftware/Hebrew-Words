@@ -98,7 +98,7 @@ partial class MainForm
             ( label.Parent.Controls[1] as WordControl )?.Focus();
         }
         break;
-      case ViewMode.Translations:
+      case ViewMode.Translation:
         string strTr = reference.Verse.Number + ". ";
         searchRef(EditTranslations, strTr, line => line.StartsWith(strTr));
         break;

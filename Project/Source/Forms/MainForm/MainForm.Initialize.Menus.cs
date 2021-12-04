@@ -76,7 +76,7 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.Filters ) )
+      if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
       {
         var reference = (ReferenceItem)( (Control)control.Tag ).Tag;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,

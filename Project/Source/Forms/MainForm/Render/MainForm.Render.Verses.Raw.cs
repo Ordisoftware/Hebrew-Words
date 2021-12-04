@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVersesRaw()
+  private void RenderVerses()
   {
     if ( IsRendering ) return;
     IsRendering = true;

@@ -209,8 +209,8 @@ partial class MainForm : Form
     if ( refresh )
     {
       Refresh();
-      RenderVersesRaw();
-      RenderVersesFiltered();
+      RenderVerses();
+      RenderVerseFiltered();
       UpdatePagingCount();
       RenderSearch();
       var reference = Instance.CurrentReference;
@@ -439,8 +439,8 @@ partial class MainForm : Form
   private void ActionViewFilters_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Filters ) return;
-    SetView(ViewMode.Filters);
+    if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
+    SetView(ViewMode.VerseFiltered);
     GoTo(CurrentReference);
   }
 
@@ -452,8 +452,8 @@ partial class MainForm : Form
   private void ActionViewTranslations_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Translations ) return;
-    SetView(ViewMode.Translations);
+    if ( Settings.CurrentView == ViewMode.Translation ) return;
+    SetView(ViewMode.Translation);
     RenderTranslation();
     GoTo(CurrentReference);
   }
@@ -579,7 +579,7 @@ partial class MainForm : Form
   {
     switch ( Settings.CurrentView )
     {
-      case ViewMode.Translations:
+      case ViewMode.Translation:
         Clipboard.SetText(EditTranslations.Text);
         break;
       case ViewMode.Text:
@@ -1486,7 +1486,7 @@ partial class MainForm : Form
 
   private void SelectFilterVerse_SelectedIndexChanged(object sender, EventArgs e)
   {
-    RenderVersesFiltered();
+    RenderVerseFiltered();
   }
 
   #endregion
