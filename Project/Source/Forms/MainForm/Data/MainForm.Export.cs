@@ -55,8 +55,7 @@ partial class MainForm
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        DisplayManager.ShowWarning("Not implemented.");
-        break;
+        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
     }
   }
 
@@ -94,8 +93,7 @@ partial class MainForm
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        DisplayManager.ShowWarning("Not implemented.");
-        break;
+        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
     }
   }
 
@@ -123,6 +121,8 @@ partial class MainForm
       if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
       ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
     }
+    else
+      throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
   }
 
 }

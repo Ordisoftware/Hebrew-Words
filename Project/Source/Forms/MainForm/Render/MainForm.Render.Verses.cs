@@ -142,7 +142,7 @@ partial class MainForm
         panel.Height = y;
         yPanel += y;
         PanelViewVerses.Controls.Add(panel);
-        LabelProgress.Text = $"Rendering {controlsCount} controls for {CurrentReference.Chapter.Verses.Count} verses...";
+        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
       }
     }
     catch ( Exception ex )

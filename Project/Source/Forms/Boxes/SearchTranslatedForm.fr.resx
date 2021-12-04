@@ -172,4 +172,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Références trouvées</value>
   </data>
+  <data name="LabelReference.Text" xml:space="preserve">
+    <value>Référence</value>
+  </data>
 </root>

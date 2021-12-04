@@ -142,10 +142,13 @@
   <data name="LabelVerseHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 13</value>
   </data>
-  <data name="LabelVerseHelp.Text" xml:space="preserve">
-    <value>Utilisez 0 pour aller au premier verset non traduit</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Atteindre référence</value>
+  </data>
+  <data name="EditFilterChaptersWithTitle.Text" xml:space="preserve">
+    <value>Chapitres avec titre</value>
+  </data>
+  <data name="EditFilterVersesTranslated.Text" xml:space="preserve">
+    <value>Versets traduits</value>
   </data>
 </root>

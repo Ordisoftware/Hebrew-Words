@@ -24,12 +24,17 @@ class ApplicationDatabase : SQLiteDatabase
   static public readonly string VersesTableName = nameof(ChapterRow.Verses);
   static public readonly string WordsTableName = nameof(VerseRow.Words);
 
-  static new public ApplicationDatabase Instance { get; protected set; }
+  static public ApplicationDatabase Instance { get; protected set; }
 
   static ApplicationDatabase()
   {
+    Restart();
+  }
+
+  static internal void Restart()
+  {
+    Instance?.Close();
     Instance = new ApplicationDatabase();
-    SQLiteDatabase.Instance = Instance;
   }
 
   public List<BookRow> Books { get; private set; }
@@ -95,6 +100,10 @@ class ApplicationDatabase : SQLiteDatabase
       }
       OnDataLoaded(book.Name);
     }
+  }
+
+  protected override void CreateBindingInstances()
+  {
     BooksAsBindingList = new BindingListView<BookRow>(Books);
   }
 
@@ -194,10 +203,11 @@ class ApplicationDatabase : SQLiteDatabase
         strELS50 = "";
       }
       var books = Enums.GetValues<TanakBook>();
-      LoadingForm.Instance.Initialize(SysTranslations.ProgressCreatingData.GetLang(), books.Count + 1, quantify: false);
+      string msg = SysTranslations.CreatingData.GetLang() + " {0}";
+      LoadingForm.Instance.Initialize(SysTranslations.CreatingData.GetLang(), books.Count + 1, quantify: false);
       foreach ( TanakBook bookid in books )
       {
-        LoadingForm.Instance.DoProgress(operation: "Creating book: " + bookid);
+        LoadingForm.Instance.DoProgress(operation: string.Format(msg, bookid));
         string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
         if ( !File.Exists(filePath) )
         {
@@ -275,20 +285,20 @@ class ApplicationDatabase : SQLiteDatabase
         }
       }
       if ( chapter != null ) nextChapter();
+      msg = SysTranslations.SavingData.GetLang() + " {0}";
       LoadingForm.Instance.Initialize("", 5, quantify: false);
       BeginTransaction();
       try
       {
-        string msg = SysTranslations.ProgressSavingData.GetLang();
-        LoadingForm.Instance.DoProgress(operation: msg + BooksTableName);
+        LoadingForm.Instance.DoProgress(operation: string.Format(msg, BooksTableName));
         Connection.InsertAll(Books);
-        LoadingForm.Instance.DoProgress(operation: msg + ChaptersTableName);
+        LoadingForm.Instance.DoProgress(operation: string.Format(msg, ChaptersTableName));
         Connection.InsertAll(Chapters);
-        LoadingForm.Instance.DoProgress(operation: msg + VersesTableName);
+        LoadingForm.Instance.DoProgress(operation: string.Format(msg, VersesTableName));
         Connection.InsertAll(Verses);
-        LoadingForm.Instance.DoProgress(operation: msg + WordsTableName);
+        LoadingForm.Instance.DoProgress(operation: string.Format(msg, WordsTableName));
         Connection.InsertAll(Words);
-        LoadingForm.Instance.DoProgress(operation: "Finishing...");
+        LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
         Commit();
       }
       catch

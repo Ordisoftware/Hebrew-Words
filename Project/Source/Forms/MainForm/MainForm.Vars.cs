@@ -81,7 +81,4 @@ partial class MainForm
 
   private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
 
-  public ApplicationDatabase DBApp = ApplicationDatabase.Instance;
-  public HebrewDatabase DBHebrew = HebrewDatabase.Instance;
-
 }

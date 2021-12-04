@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 static partial class AppTranslations
@@ -37,8 +37,14 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary AskToRestoreBooksCommonNames = new()
   {
-    { Language.EN, "Restore default books common names?" },
-    { Language.FR, "Restaurer les noms communs par défaut des livres ?" }
+    [Language.EN] = "Restore default books common names?",
+    [Language.FR] = "Restaurer les noms communs par défaut des livres ?"
+  };
+
+  static public readonly TranslationsDictionary Rendering = new()
+  {
+    [Language.EN] = "Rendering {0} controls for {1} verses...",
+    [Language.FR] = "Fourniture de {0} contrôles pour {1} versets..."
   };
 
   static public readonly TranslationsDictionary ImportLinesCountMismatch = new()

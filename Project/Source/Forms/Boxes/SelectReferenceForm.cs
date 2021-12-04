@@ -32,7 +32,6 @@ partial class SelectReferenceForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    MainForm.Instance.Cursor = Cursors.WaitCursor;
     FilterModified = new()
     {
       { EditFilterBook, false },

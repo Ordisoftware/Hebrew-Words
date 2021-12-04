@@ -127,9 +127,6 @@
   <data name="LabelFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 13</value>
   </data>
-  <data name="LabelFirst.Text" xml:space="preserve">
-    <value>Seules les {0} premières peuvent être affichées.</value>
-  </data>
   <data name="LabelEscape.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 13</value>
   </data>

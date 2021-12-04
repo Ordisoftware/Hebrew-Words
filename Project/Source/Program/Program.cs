@@ -90,6 +90,9 @@ static partial class Program
       {
         Settings.SetFirstAndUpgradeFlagsOff();
         Settings.FirstLaunch = true;
+        Settings.VacuumAtStartup = true;
+        if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
+          Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
       }
       // Check language
       if ( Settings.LanguageSelected == Language.None )
