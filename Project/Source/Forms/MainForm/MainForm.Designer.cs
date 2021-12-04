@@ -44,6 +44,7 @@
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
+      this.ActionGoFromVerseFilteredToVersesPanel = new System.Windows.Forms.Button();
       this.ActionClearFilterVerse = new System.Windows.Forms.Button();
       this.ActionClearFilterChapter = new System.Windows.Forms.Button();
       this.ActionClearFilterBook = new System.Windows.Forms.Button();
@@ -376,6 +377,7 @@
       // 
       // PanelViewVerseFilters
       // 
+      this.PanelViewVerseFilters.Controls.Add(this.ActionGoFromVerseFilteredToVersesPanel);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterVerse);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterChapter);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterBook);
@@ -392,6 +394,14 @@
       this.PanelViewVerseFilters.Controls.Add(this.LabelFilterVerse);
       resources.ApplyResources(this.PanelViewVerseFilters, "PanelViewVerseFilters");
       this.PanelViewVerseFilters.Name = "PanelViewVerseFilters";
+      // 
+      // ActionGoFromVerseFilteredToVersesPanel
+      // 
+      resources.ApplyResources(this.ActionGoFromVerseFilteredToVersesPanel, "ActionGoFromVerseFilteredToVersesPanel");
+      this.ActionGoFromVerseFilteredToVersesPanel.FlatAppearance.BorderSize = 0;
+      this.ActionGoFromVerseFilteredToVersesPanel.Name = "ActionGoFromVerseFilteredToVersesPanel";
+      this.ActionGoFromVerseFilteredToVersesPanel.UseVisualStyleBackColor = true;
+      this.ActionGoFromVerseFilteredToVersesPanel.Click += new System.EventHandler(this.ActionGoFromVerseFilteredToVersesPanel_Click);
       // 
       // ActionClearFilterVerse
       // 
@@ -2113,6 +2123,7 @@
     private Label LabelFilterChapter;
     private Label LabelFilterVerse;
     private Panel PanelViewVerseFilteredSingle;
+    private Button ActionGoFromVerseFilteredToVersesPanel;
   }
 }
 

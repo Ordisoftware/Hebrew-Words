@@ -1489,6 +1489,14 @@ partial class MainForm : Form
     RenderVerseFiltered();
   }
 
+  private void ActionGoFromVerseFilteredToVersesPanel_Click(object sender, EventArgs e)
+  {
+    SetView(ViewMode.Verses);
+    GoTo(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+                                       ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                                       ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
+  }
+
   #endregion
 
 }

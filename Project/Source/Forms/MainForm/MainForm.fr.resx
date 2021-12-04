@@ -263,7 +263,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Préférences</value>
   </data>
   <data name="ActionPreferences.ToolTipText" xml:space="preserve">
-    <value>Préférences (F8)</value>
+    <value>Préférences (F9)</value>
   </data>
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
@@ -320,19 +320,19 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Voir le texte original</value>
   </data>
   <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
-    <value>Voir le texte original (F3)</value>
+    <value>Voir le texte original (F5)</value>
   </data>
   <data name="ActionViewELS50.Text" xml:space="preserve">
     <value>Voir la liste des ELS50</value>
   </data>
   <data name="ActionViewELS50.ToolTipText" xml:space="preserve">
-    <value>Voir la liste des ELS50 (F4)</value>
+    <value>Voir la liste des ELS50 (F6)</value>
   </data>
   <data name="ActionViewSearch.Text" xml:space="preserve">
     <value>Chercher un mot</value>
   </data>
   <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
-    <value>Chercher un mot (F5)</value>
+    <value>Chercher un mot (F4, Atl+F)</value>
   </data>
   <data name="ActionGoToReference.Text" xml:space="preserve">
     <value>Aller à la référence</value>
@@ -341,7 +341,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Rafraichir la vue</value>
   </data>
   <data name="ActionRefresh.ToolTipText" xml:space="preserve">
-    <value>Rafraichir la vue</value>
+    <value>Rafraichir la vue (F8, Ctrl+R)</value>
   </data>
   <data name="ActionCloseWindows.Text" xml:space="preserve">
     <value>Fermer toutes les fenêtres de recherche des traduits</value>
@@ -525,7 +525,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Compter le nombre d'occurrences de la racine</value>
   </data>
   <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
-    <value>Aller à la référence (Alt+F)</value>
+    <value>Aller à la référence (F7, Maj+Ctrl+F)</value>
   </data>
   <data name="ActionShowGrammarGuide2.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
@@ -578,10 +578,22 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectRenderAllVerses.Text" xml:space="preserve">
     <value>Tous</value>
   </data>
-  <data name="ActionViewFilters.ToolTipText" xml:space="preserve">
-    <value>Filtrer les versets (F2)</value>
+  <data name="LabelFilterBook.Text" xml:space="preserve">
+    <value>Livre</value>
   </data>
-  <data name="ActionViewFilters.Text" xml:space="preserve">
+  <data name="LabelFilterChapter.Text" xml:space="preserve">
+    <value>Chapitre</value>
+  </data>
+  <data name="EditFilterChaptersWithTitle.Text" xml:space="preserve">
+    <value>Chapitre avec titre</value>
+  </data>
+  <data name="ActionViewVerseFiltered.Text" xml:space="preserve">
     <value>Filtrer les versets</value>
+  </data>
+  <data name="ActionViewVerseFiltered.ToolTipText" xml:space="preserve">
+    <value>Filtrer les versets (F3)</value>
+  </data>
+  <data name="LabelFilterVerse.Text" xml:space="preserve">
+    <value>Verset</value>
   </data>
 </root>
