@@ -209,7 +209,8 @@ partial class MainForm : Form
     if ( refresh )
     {
       Refresh();
-      RenderVerses();
+      RenderVersesRaw();
+      RenderVersesFiltered();
       UpdatePagingCount();
       RenderSearch();
       var reference = Instance.CurrentReference;
@@ -439,7 +440,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     if ( Settings.CurrentView == ViewMode.Filters ) return;
-    SetView(ViewMode.Verses);
+    SetView(ViewMode.Filters);
     GoTo(CurrentReference);
   }
 
