@@ -41,6 +41,7 @@
       System.Windows.Forms.Label LabelOnlineSearch;
       System.Windows.Forms.Label LabelAutoSaveDelay;
       System.Windows.Forms.Label LabelBackupCount;
+      System.Windows.Forms.Label LabelWordtranslateLinesCount;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -110,21 +111,25 @@
       this.LabelInfoHistoryCount = new System.Windows.Forms.Label();
       this.LabelInfoBookmarksCount = new System.Windows.Forms.Label();
       this.LabelInfoWordControlWidth = new System.Windows.Forms.Label();
+      this.LabelInfoWordtranslateLinesCount = new System.Windows.Forms.Label();
       this.LabelInfoCommentLinesCount = new System.Windows.Forms.Label();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       this.EditSearchMinRefForDialog = new System.Windows.Forms.NumericUpDown();
       this.EditSearchDisplayMaxRef = new System.Windows.Forms.NumericUpDown();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
+      this.EditWordtranslateLinesCount = new System.Windows.Forms.NumericUpDown();
       this.EditCommentLinesCount = new System.Windows.Forms.NumericUpDown();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.GroupBoxHebrewWordClickShift = new System.Windows.Forms.GroupBox();
       this.GroupBoxHebrewWordClickShift4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShift0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift1 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift3 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickAlt = new System.Windows.Forms.GroupBox();
       this.GroupBoxHebrewWordClickShiftCtrl4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShiftCtrl0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl1 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl3 = new System.Windows.Forms.RadioButton();
@@ -140,11 +145,13 @@
       this.GroupBoxTranslatedItemDoubleClick3 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl = new System.Windows.Forms.GroupBox();
       this.GroupBoxHebrewWordClickCtrl4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickCtrl0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl1 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl3 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
       this.GroupBoxHebrewWordClick4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClick0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick1 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick3 = new System.Windows.Forms.RadioButton();
@@ -158,10 +165,6 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.GroupBoxHebrewWordClick0 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickShift0 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickShiftCtrl0 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickCtrl0 = new System.Windows.Forms.RadioButton();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -173,6 +176,7 @@
       LabelOnlineSearch = new System.Windows.Forms.Label();
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
       LabelBackupCount = new System.Windows.Forms.Label();
+      LabelWordtranslateLinesCount = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.TabPagePaths.SuspendLayout();
       this.TabPageStartup.SuspendLayout();
@@ -189,6 +193,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordtranslateLinesCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).BeginInit();
       this.TabPageTools.SuspendLayout();
       this.GroupBoxHebrewWordClickShift.SuspendLayout();
@@ -253,6 +258,11 @@
       // 
       resources.ApplyResources(LabelBackupCount, "LabelBackupCount");
       LabelBackupCount.Name = "LabelBackupCount";
+      // 
+      // LabelWordtranslateLinesCount
+      // 
+      resources.ApplyResources(LabelWordtranslateLinesCount, "LabelWordtranslateLinesCount");
+      LabelWordtranslateLinesCount.Name = "LabelWordtranslateLinesCount";
       // 
       // DialogColor
       // 
@@ -766,6 +776,7 @@
       this.TabPageRendering.Controls.Add(this.LabelInfoHistoryCount);
       this.TabPageRendering.Controls.Add(this.LabelInfoBookmarksCount);
       this.TabPageRendering.Controls.Add(this.LabelInfoWordControlWidth);
+      this.TabPageRendering.Controls.Add(this.LabelInfoWordtranslateLinesCount);
       this.TabPageRendering.Controls.Add(this.LabelInfoCommentLinesCount);
       this.TabPageRendering.Controls.Add(this.EditWordControlWidth);
       this.TabPageRendering.Controls.Add(LabelWordControlWidth);
@@ -777,6 +788,8 @@
       this.TabPageRendering.Controls.Add(LabelHistoryCount);
       this.TabPageRendering.Controls.Add(this.EditBookmarksCount);
       this.TabPageRendering.Controls.Add(LabelBookmarksCount);
+      this.TabPageRendering.Controls.Add(this.EditWordtranslateLinesCount);
+      this.TabPageRendering.Controls.Add(LabelWordtranslateLinesCount);
       this.TabPageRendering.Controls.Add(this.EditCommentLinesCount);
       this.TabPageRendering.Controls.Add(LabelCommentaryLinesCount);
       resources.ApplyResources(this.TabPageRendering, "TabPageRendering");
@@ -811,6 +824,12 @@
       resources.ApplyResources(this.LabelInfoWordControlWidth, "LabelInfoWordControlWidth");
       this.LabelInfoWordControlWidth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoWordControlWidth.Name = "LabelInfoWordControlWidth";
+      // 
+      // LabelInfoWordtranslateLinesCount
+      // 
+      resources.ApplyResources(this.LabelInfoWordtranslateLinesCount, "LabelInfoWordtranslateLinesCount");
+      this.LabelInfoWordtranslateLinesCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoWordtranslateLinesCount.Name = "LabelInfoWordtranslateLinesCount";
       // 
       // LabelInfoCommentLinesCount
       // 
@@ -859,6 +878,12 @@
       resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
       this.EditBookmarksCount.Name = "EditBookmarksCount";
       // 
+      // EditWordtranslateLinesCount
+      // 
+      resources.ApplyResources(this.EditWordtranslateLinesCount, "EditWordtranslateLinesCount");
+      this.EditWordtranslateLinesCount.Name = "EditWordtranslateLinesCount";
+      this.EditWordtranslateLinesCount.ValueChanged += new System.EventHandler(this.EditWordtranslateLinesCount_ValueChanged);
+      // 
       // EditCommentLinesCount
       // 
       resources.ApplyResources(this.EditCommentLinesCount, "EditCommentLinesCount");
@@ -903,6 +928,13 @@
       this.GroupBoxHebrewWordClickShift4.TabStop = true;
       this.GroupBoxHebrewWordClickShift4.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClickShift0
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShift0, "GroupBoxHebrewWordClickShift0");
+      this.GroupBoxHebrewWordClickShift0.Name = "GroupBoxHebrewWordClickShift0";
+      this.GroupBoxHebrewWordClickShift0.TabStop = true;
+      this.GroupBoxHebrewWordClickShift0.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClickShift1
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClickShift1, "GroupBoxHebrewWordClickShift1");
@@ -935,31 +967,38 @@
       this.GroupBoxHebrewWordClickAlt.Name = "GroupBoxHebrewWordClickAlt";
       this.GroupBoxHebrewWordClickAlt.TabStop = false;
       // 
-      // GroupBoxHebrewWordClickAlt4
+      // GroupBoxHebrewWordClickShiftCtrl4
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl4, "GroupBoxHebrewWordClickAlt4");
-      this.GroupBoxHebrewWordClickShiftCtrl4.Name = "GroupBoxHebrewWordClickAlt4";
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl4, "GroupBoxHebrewWordClickShiftCtrl4");
+      this.GroupBoxHebrewWordClickShiftCtrl4.Name = "GroupBoxHebrewWordClickShiftCtrl4";
       this.GroupBoxHebrewWordClickShiftCtrl4.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl4.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickAlt1
+      // GroupBoxHebrewWordClickShiftCtrl0
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl1, "GroupBoxHebrewWordClickAlt1");
-      this.GroupBoxHebrewWordClickShiftCtrl1.Name = "GroupBoxHebrewWordClickAlt1";
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl0, "GroupBoxHebrewWordClickShiftCtrl0");
+      this.GroupBoxHebrewWordClickShiftCtrl0.Name = "GroupBoxHebrewWordClickShiftCtrl0";
+      this.GroupBoxHebrewWordClickShiftCtrl0.TabStop = true;
+      this.GroupBoxHebrewWordClickShiftCtrl0.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxHebrewWordClickShiftCtrl1
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl1, "GroupBoxHebrewWordClickShiftCtrl1");
+      this.GroupBoxHebrewWordClickShiftCtrl1.Name = "GroupBoxHebrewWordClickShiftCtrl1";
       this.GroupBoxHebrewWordClickShiftCtrl1.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl1.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickAlt2
+      // GroupBoxHebrewWordClickShiftCtrl2
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl2, "GroupBoxHebrewWordClickAlt2");
-      this.GroupBoxHebrewWordClickShiftCtrl2.Name = "GroupBoxHebrewWordClickAlt2";
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl2, "GroupBoxHebrewWordClickShiftCtrl2");
+      this.GroupBoxHebrewWordClickShiftCtrl2.Name = "GroupBoxHebrewWordClickShiftCtrl2";
       this.GroupBoxHebrewWordClickShiftCtrl2.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl2.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickAlt3
+      // GroupBoxHebrewWordClickShiftCtrl3
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl3, "GroupBoxHebrewWordClickAlt3");
-      this.GroupBoxHebrewWordClickShiftCtrl3.Name = "GroupBoxHebrewWordClickAlt3";
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl3, "GroupBoxHebrewWordClickShiftCtrl3");
+      this.GroupBoxHebrewWordClickShiftCtrl3.Name = "GroupBoxHebrewWordClickShiftCtrl3";
       this.GroupBoxHebrewWordClickShiftCtrl3.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl3.UseVisualStyleBackColor = true;
       // 
@@ -1057,6 +1096,13 @@
       this.GroupBoxHebrewWordClickCtrl4.TabStop = true;
       this.GroupBoxHebrewWordClickCtrl4.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClickCtrl0
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl0, "GroupBoxHebrewWordClickCtrl0");
+      this.GroupBoxHebrewWordClickCtrl0.Name = "GroupBoxHebrewWordClickCtrl0";
+      this.GroupBoxHebrewWordClickCtrl0.TabStop = true;
+      this.GroupBoxHebrewWordClickCtrl0.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClickCtrl1
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl1, "GroupBoxHebrewWordClickCtrl1");
@@ -1095,6 +1141,13 @@
       this.GroupBoxHebrewWordClick4.Name = "GroupBoxHebrewWordClick4";
       this.GroupBoxHebrewWordClick4.TabStop = true;
       this.GroupBoxHebrewWordClick4.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxHebrewWordClick0
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick0, "GroupBoxHebrewWordClick0");
+      this.GroupBoxHebrewWordClick0.Name = "GroupBoxHebrewWordClick0";
+      this.GroupBoxHebrewWordClick0.TabStop = true;
+      this.GroupBoxHebrewWordClick0.UseVisualStyleBackColor = true;
       // 
       // GroupBoxHebrewWordClick1
       // 
@@ -1182,34 +1235,6 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
-      // GroupBoxHebrewWordClick0
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick0, "GroupBoxHebrewWordClick0");
-      this.GroupBoxHebrewWordClick0.Name = "GroupBoxHebrewWordClick0";
-      this.GroupBoxHebrewWordClick0.TabStop = true;
-      this.GroupBoxHebrewWordClick0.UseVisualStyleBackColor = true;
-      // 
-      // GroupBoxHebrewWordClickShift0
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShift0, "GroupBoxHebrewWordClickShift0");
-      this.GroupBoxHebrewWordClickShift0.Name = "GroupBoxHebrewWordClickShift0";
-      this.GroupBoxHebrewWordClickShift0.TabStop = true;
-      this.GroupBoxHebrewWordClickShift0.UseVisualStyleBackColor = true;
-      // 
-      // GroupBoxHebrewWordClickAlt0
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl0, "GroupBoxHebrewWordClickAlt0");
-      this.GroupBoxHebrewWordClickShiftCtrl0.Name = "GroupBoxHebrewWordClickAlt0";
-      this.GroupBoxHebrewWordClickShiftCtrl0.TabStop = true;
-      this.GroupBoxHebrewWordClickShiftCtrl0.UseVisualStyleBackColor = true;
-      // 
-      // GroupBoxHebrewWordClickCtrl0
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl0, "GroupBoxHebrewWordClickCtrl0");
-      this.GroupBoxHebrewWordClickCtrl0.Name = "GroupBoxHebrewWordClickCtrl0";
-      this.GroupBoxHebrewWordClickCtrl0.TabStop = true;
-      this.GroupBoxHebrewWordClickCtrl0.UseVisualStyleBackColor = true;
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1247,6 +1272,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordtranslateLinesCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).EndInit();
       this.TabPageTools.ResumeLayout(false);
       this.TabPageTools.PerformLayout();
@@ -1388,5 +1414,7 @@
     private RadioButton GroupBoxHebrewWordClickShift0;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl0;
     private RadioButton GroupBoxHebrewWordClickCtrl0;
+    private Label LabelInfoWordtranslateLinesCount;
+    private NumericUpDown EditWordtranslateLinesCount;
   }
 }

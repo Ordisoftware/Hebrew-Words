@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -19,9 +19,12 @@ partial class MainForm
 
   public void MoveVerseBindingSourceAndAddCurrentToHistory()
   {
-    int pos = CurrentReference.Verse.Number - 1;
-    if ( pos != VersesBindingSource.Position )
-      VersesBindingSource.Position = pos;
+    if ( Settings.CurrentView == ViewMode.Verses )
+    {
+      int pos = CurrentReference.Verse.Number - 1;
+      if ( pos != VersesBindingSource.Position )
+        VersesBindingSource.Position = pos;
+    }
     History.Add(CurrentReference);
     UpdateHistory();
   }

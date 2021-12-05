@@ -17,11 +17,35 @@ namespace Ordisoftware.Hebrew.Words;
 partial class WordControl : UserControl
 {
 
+  static internal bool ResetTextHeight = true;
+  static private int TextHeight;
+  static private int EditHeight;
+  static private int TotalHeight;
+
   public ReferenceItem Reference { get; private set; }
 
   public WordControl()
   {
     InitializeComponent();
+    int linesCount = Program.Settings.VerseWordTranslationLinesCount;
+    if ( linesCount > 1 )
+    {
+      if ( ResetTextHeight )
+      {
+        int height = EditTranslation.Height;
+        ResetTextHeight = false;
+        using Graphics g = EditTranslation.CreateGraphics();
+        TextHeight = TextRenderer.MeasureText(g, "Text", EditTranslation.Font).Height;
+        EditHeight = TextHeight * ( linesCount + 1 ) - 3;
+        EditTranslation.Height = EditHeight;
+        TotalHeight = Height + EditHeight - height;
+      }
+      EditTranslation.Multiline = true;
+      EditTranslation.WordWrap = true;
+      EditTranslation.ScrollBars = ScrollBars.Vertical;
+      EditTranslation.Height = EditHeight;
+      Height = TotalHeight;
+    }
   }
 
   public WordControl(ReferenceItem reference) : this()

@@ -65,7 +65,6 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.LabelHebrew);
       this.Controls.Add(this.EditTranslation);
-      this.MaximumSize = new System.Drawing.Size(500, 55);
       this.MinimumSize = new System.Drawing.Size(150, 55);
       this.Name = "WordControl";
       this.Size = new System.Drawing.Size(200, 55);

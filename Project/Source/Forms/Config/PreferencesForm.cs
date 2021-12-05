@@ -333,6 +333,11 @@ partial class PreferencesForm : Form
     MenuSelectOnlineVerseURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
   }
 
+  private void EditWordtranslateLinesCount_ValueChanged(object sender, EventArgs e)
+  {
+    WordControl.ResetTextHeight = true;
+  }
+
   #endregion
 
 }

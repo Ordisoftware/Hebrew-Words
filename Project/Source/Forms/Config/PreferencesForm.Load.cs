@@ -45,6 +45,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditAutoBackupCount.Value = Program.Settings.BackupCount);
     SystemManager.TryCatch(() => EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay);
     SystemManager.TryCatch(() => EditCommentLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
+    SystemManager.TryCatch(() => EditWordtranslateLinesCount.Value = Program.Settings.VerseWordTranslationLinesCount);
     SystemManager.TryCatch(() => EditWordControlWidth.Value = Program.Settings.WordControlWidth);
     SystemManager.TryCatch(() => EditBookmarksCount.Value = Program.Settings.BookmarksCount);
     SystemManager.TryCatch(() => EditHistoryCount.Value = Program.Settings.HistoryCount);

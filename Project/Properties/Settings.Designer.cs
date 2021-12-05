@@ -1185,5 +1185,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SearchTranslationRadioButtonIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int VerseWordTranslationLinesCount {
+            get {
+                return ((int)(this["VerseWordTranslationLinesCount"]));
+            }
+            set {
+                this["VerseWordTranslationLinesCount"] = value;
+            }
+        }
     }
 }
