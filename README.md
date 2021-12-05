@@ -164,6 +164,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add verse navigator in the verses view panel.
 - Add Alt + Left and Right to navigate between verses.
 - Add option to render only current verse or all of the chapter.
+- Add option to set word translation text-box number of lines.
 - Add filter verses view panel.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
