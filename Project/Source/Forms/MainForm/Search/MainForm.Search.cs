@@ -31,8 +31,8 @@ partial class MainForm
 
   private void UpdatePagingCount()
   {
-    PagingCount = SearchResultsCount / Program.Settings.FoundReferencesViewable;
-    if ( SearchResultsCount % Program.Settings.FoundReferencesViewable > 0 )
+    PagingCount = SearchResultsCount / Settings.FoundReferencesViewable;
+    if ( SearchResultsCount % Settings.FoundReferencesViewable > 0 )
       PagingCount++;
     PagingCurrent = PagingCount == 0 ? 0 : 1;
   }

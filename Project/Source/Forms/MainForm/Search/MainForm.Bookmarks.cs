@@ -21,13 +21,13 @@ partial class MainForm
   {
     try
     {
-      if ( Program.Settings.AutoSortBookmarks )
+      if ( Settings.AutoSortBookmarks )
         Bookmarks.Sort();
       while ( ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
         ActionBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
-      var bookmarkMaster = new ReferenceItem(Program.Settings.BookmarkMasterBook,
-                                             Program.Settings.BookmarkMasterChapter,
-                                             Program.Settings.BookmarkMasterVerse);
+      var bookmarkMaster = new ReferenceItem(Settings.BookmarkMasterBook,
+                                             Settings.BookmarkMasterChapter,
+                                             Settings.BookmarkMasterVerse);
       void bookmarkClicked(object sender, MouseEventArgs e)
       {
         if ( e.Button != MouseButtons.Right ) return;
@@ -35,9 +35,9 @@ partial class MainForm
         var menuitem = (ToolStripMenuItem)sender;
         if ( menuitem.Tag as ReferenceItem == bookmarkMaster )
         {
-          Program.Settings.BookmarkMasterBook = 1;
-          Program.Settings.BookmarkMasterChapter = 1;
-          Program.Settings.BookmarkMasterVerse = 1;
+          Settings.BookmarkMasterBook = 1;
+          Settings.BookmarkMasterChapter = 1;
+          Settings.BookmarkMasterVerse = 1;
           UpdateBookmarks();
         }
         else
@@ -64,7 +64,7 @@ partial class MainForm
       ActionClearBookmarks.Enabled = Bookmarks.Count > 0
                                   && ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
       ActionSortBookmarks.Enabled = Bookmarks.Count > 0
-                                 && !Program.Settings.AutoSortBookmarks;
+                                 && !Settings.AutoSortBookmarks;
     }
     catch ( Exception ex )
     {

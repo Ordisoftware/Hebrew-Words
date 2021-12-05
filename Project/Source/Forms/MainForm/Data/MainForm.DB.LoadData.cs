@@ -61,12 +61,12 @@ partial class MainForm : Form
       {
         Bookmarks.Load(UpdateBookmarks);
         History.Load(UpdateHistory);
-        if ( Program.Settings.OpenLastViewAtStartup )
-          SetView(Program.Settings.CurrentView, true);
+        if ( Settings.OpenLastViewAtStartup )
+          SetView(Settings.CurrentView, true);
         else
         {
           SetView(ViewMode.Verses, true);
-          Program.Settings.CurrentSearchTypeTab = 0;
+          Settings.CurrentSearchTypeTab = 0;
         }
       }
       catch ( Exception ex )

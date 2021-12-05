@@ -20,7 +20,7 @@ partial class MainForm : Form
   /*private void CreateConcordances()
   {
     int count = 0;
-    using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+    using ( var connection = new OdbcConnection(Settings.ConnectionString) )
     {
       connection.Open();
       var command = new OdbcCommand("select count(*) FROM StrongConcordances", connection);

@@ -754,10 +754,9 @@
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeVerses);
-      this.SelectSearchType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "CurrentSearchTypeTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Name = "SelectSearchType";
-      this.SelectSearchType.SelectedIndex = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.CurrentSearchTypeTab;
+      this.SelectSearchType.SelectedIndex = 0;
       this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
       // 
       // SelectSearchTypeHebrew
@@ -799,6 +798,7 @@
       this.SelectSearchTranslationOnlyComments.Name = "SelectSearchTranslationOnlyComments";
       this.SelectSearchTranslationOnlyComments.TabStop = true;
       this.SelectSearchTranslationOnlyComments.UseVisualStyleBackColor = true;
+      this.SelectSearchTranslationOnlyComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
       // SelectSearchTranslationOnlyTranslations
       // 
@@ -806,6 +806,7 @@
       this.SelectSearchTranslationOnlyTranslations.Name = "SelectSearchTranslationOnlyTranslations";
       this.SelectSearchTranslationOnlyTranslations.TabStop = true;
       this.SelectSearchTranslationOnlyTranslations.UseVisualStyleBackColor = true;
+      this.SelectSearchTranslationOnlyTranslations.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
       // SelectSearchTranslationIncludeComments
       // 
@@ -813,6 +814,7 @@
       this.SelectSearchTranslationIncludeComments.Name = "SelectSearchTranslationIncludeComments";
       this.SelectSearchTranslationIncludeComments.TabStop = true;
       this.SelectSearchTranslationIncludeComments.UseVisualStyleBackColor = true;
+      this.SelectSearchTranslationIncludeComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
       // LabelSearchTranslationHelp
       // 
@@ -844,18 +846,21 @@
       resources.ApplyResources(this.SelectSearchRequestAllUntranslated, "SelectSearchRequestAllUntranslated");
       this.SelectSearchRequestAllUntranslated.Name = "SelectSearchRequestAllUntranslated";
       this.SelectSearchRequestAllUntranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllUntranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
       // 
       // SelectSearchRequestAllPartiallyTranslated
       // 
       resources.ApplyResources(this.SelectSearchRequestAllPartiallyTranslated, "SelectSearchRequestAllPartiallyTranslated");
       this.SelectSearchRequestAllPartiallyTranslated.Name = "SelectSearchRequestAllPartiallyTranslated";
       this.SelectSearchRequestAllPartiallyTranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllPartiallyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
       // 
       // SelectSearchRequestAllFullyTranslated
       // 
       resources.ApplyResources(this.SelectSearchRequestAllFullyTranslated, "SelectSearchRequestAllFullyTranslated");
       this.SelectSearchRequestAllFullyTranslated.Name = "SelectSearchRequestAllFullyTranslated";
       this.SelectSearchRequestAllFullyTranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllFullyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
       // 
       // SelectSearchRequestAllTranslated
       // 
@@ -864,6 +869,7 @@
       this.SelectSearchRequestAllTranslated.Name = "SelectSearchRequestAllTranslated";
       this.SelectSearchRequestAllTranslated.TabStop = true;
       this.SelectSearchRequestAllTranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
       // 
       // TabPageText
       // 

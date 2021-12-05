@@ -132,10 +132,10 @@ partial class MainForm : Form
 
   private void DoStartGoTo()
   {
-    if ( Program.Settings.GoToMasterBookmarkAtStartup )
-      GoTo(Program.Settings.BookmarkMasterBook,
-           Program.Settings.BookmarkMasterChapter,
-           Program.Settings.BookmarkMasterVerse,
+    if ( Settings.GoToMasterBookmarkAtStartup )
+      GoTo(Settings.BookmarkMasterBook,
+           Settings.BookmarkMasterChapter,
+           Settings.BookmarkMasterVerse,
            true);
     else
       GoTo(1, 1, 1, true);

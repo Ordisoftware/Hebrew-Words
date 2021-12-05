@@ -97,7 +97,7 @@ partial class MainForm
       {
         Cursor = Cursors.Default;
       }
-      if ( SearchResultsCount > Program.Settings.FoundReferencesToOpenDialog )
+      if ( SearchResultsCount > Settings.FoundReferencesToOpenDialog )
       {
         SearchResults = SelectSearchResultsForm.Run(SearchResults);
         if ( SearchResults?.Any() != true )

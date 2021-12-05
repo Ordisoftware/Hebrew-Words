@@ -30,10 +30,10 @@ partial class MainForm
         PanelSearchResults.Controls[0].Dispose();
       if ( SearchResults == null || SearchResultsCount == 0 )
         return;
-      if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+      if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(true);
-      var results = SearchResults.Skip(( PagingCurrent - 1 ) * Program.Settings.FoundReferencesViewable)
-                                 .Take(Program.Settings.FoundReferencesViewable);
+      var results = SearchResults.Skip(( PagingCurrent - 1 ) * Settings.FoundReferencesViewable)
+                                 .Take(Settings.FoundReferencesViewable);
       const int referenceSize = 160;
       const int marginX = 10;
       const int marginY = 10;
@@ -121,7 +121,7 @@ partial class MainForm
     finally
     {
       IsRendering = false;
-      if ( Program.Settings.FoundReferencesViewable > PagingCountDisableForm )
+      if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(false);
       PanelSearchResults.Visible = true;
       PanelSearchResults.Focus();

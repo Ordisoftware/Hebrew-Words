@@ -81,7 +81,7 @@ partial class MainForm
         ActionViewVerseFiltered.PerformClick();
         return true;
       case Keys.F4:
-        if ( Program.Settings.CurrentView != ViewMode.Search )
+        if ( Settings.CurrentView != ViewMode.Search )
           ActionViewSearch.PerformClick();
         else
           RotateSearchTab();
@@ -147,7 +147,7 @@ partial class MainForm
       // Scrolling bounds
       case Keys.Alt | Keys.Home:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, 0, false);
@@ -157,7 +157,7 @@ partial class MainForm
         break;
       case Keys.Alt | Keys.End:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
@@ -168,7 +168,7 @@ partial class MainForm
       // Scrolling small
       case Keys.Alt | Keys.Up:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, -ScrollIncrement, true);
@@ -178,7 +178,7 @@ partial class MainForm
         break;
       case Keys.Alt | Keys.Down:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, ScrollIncrement, true);
@@ -189,7 +189,7 @@ partial class MainForm
       // Scrolling large
       case Keys.Alt | Keys.PageUp:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, -PanelViewVerses.Height, true);
@@ -199,7 +199,7 @@ partial class MainForm
         break;
       case Keys.Alt | Keys.PageDown:
         if ( ActiveControl is TextBox ) return false;
-        switch ( Program.Settings.CurrentView )
+        switch ( Settings.CurrentView )
         {
           case ViewMode.Verses:
             return scroll(PanelViewVerses, PanelViewVerses.Height, true);

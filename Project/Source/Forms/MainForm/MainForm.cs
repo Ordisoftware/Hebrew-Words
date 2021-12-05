@@ -425,11 +425,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewVerses_Click(object sender, EventArgs e)
   {
-    // TODO move all view clicks in setview
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Verses ) return;
     SetView(ViewMode.Verses);
-    GoTo(CurrentReference);
   }
 
   /// <summary>
@@ -439,10 +435,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewFilters_Click(object sender, EventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
     SetView(ViewMode.VerseFiltered);
-    UpdateFilters(null, null);
   }
 
   /// <summary>
@@ -452,11 +445,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewTranslations_Click(object sender, EventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Translation ) return;
     SetView(ViewMode.Translation);
-    RenderTranslation();
-    GoTo(CurrentReference);
   }
 
   /// <summary>
@@ -466,12 +455,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewSearch_Click(object sender, EventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Search )
-      RotateSearchTab();
-    else
-      SetView(ViewMode.Search);
-    SelectSearchType_Selected(null, null);
+    SetView(ViewMode.Search);
   }
 
   /// <summary>
@@ -481,10 +465,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewRawText_Click(object sender, EventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.Text ) return;
     SetView(ViewMode.Text);
-    GoTo(CurrentReference);
   }
 
   /// <summary>
@@ -494,8 +475,6 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewELS50_Click(object sender, EventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.ELS50 ) return;
     SetView(ViewMode.ELS50);
   }
 
@@ -506,6 +485,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectSearchType_Selected(object sender, TabControlEventArgs e)
   {
+    Settings.CurrentSearchTypeTab = SelectSearchType.SelectedIndex;
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {
       ActiveControl = EditLetters;
@@ -673,7 +653,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenBackupPath_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Program.Settings.GetBackupDirectory());
+    SystemManager.RunShell(Settings.GetBackupDirectory());
   }
 
   /// <summary>
@@ -807,6 +787,11 @@ partial class MainForm : Form
     ImportVerseForm.Run(reference);
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionImportConcordances for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionImportConcordances_Click(object sender, EventArgs e)
   {
     new ImportStrongForm().ShowDialog();
@@ -821,35 +806,67 @@ partial class MainForm : Form
   private bool NeedUpdateCurrentReference;
   private bool UpdateCurrentReferenceMutex;
 
+  /// <summary>
+  /// Event handler. Called by SelectRenderAllVerses for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void SelectRenderAllVerses_CheckedChanged(object sender, EventArgs e)
   {
     ActionRefresh.PerformClick();
   }
 
+  /// <summary>
+  /// Event handler. Called by SelectBook for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( TextBoxMutex ) return;
     DisableChapterPos = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by SelectChapter for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
     NeedUpdateCurrentReference = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by SelectVerse for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void SelectVerse_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( IsGoToRunning ) return;
     if ( IsRendering ) return;
     if ( Globals.IsExiting ) return;
-    GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, ( (VerseRow)SelectVerse.SelectedItem ).Number);
+    GoTo(CurrentReference.Book.Number,
+         CurrentReference.Chapter.Number,
+         ( (VerseRow)SelectVerse.SelectedItem ).Number);
   }
 
+  /// <summary>
+  /// Event handler. Called by BookRowBindingSource for position changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void BookRowBindingSource_PositionChanged(object sender, EventArgs e)
   {
     UpdateCurrentReference();
   }
 
+  /// <summary>
+  /// Event handler. Called by ChaptersBindingSource for position changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ChaptersBindingSource_PositionChanged(object sender, EventArgs e)
   {
     if ( DisableChapterPos )
@@ -858,16 +875,31 @@ partial class MainForm : Form
       UpdateCurrentReference();
   }
 
+  /// <summary>
+  /// Event handler. Called by BookRowBindingSource for list changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">List changed event information.</param>
   private void BookRowBindingSource_ListChanged(object sender, ListChangedEventArgs e)
   {
     NeedUpdateCurrentReference = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by ChaptersBindingSource for list changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">List changed event information.</param>
   private void ChaptersBindingSource_ListChanged(object sender, ListChangedEventArgs e)
   {
     NeedUpdateCurrentReference = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by EditDbTextBox for enter events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void EditDbTextBox_Enter(object sender, EventArgs e)
   {
     var control = (Control)sender;
@@ -875,6 +907,11 @@ partial class MainForm : Form
     TextBoxMutex = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by EditDbTextBox for leave events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void EditDbTextBox_Leave(object sender, EventArgs e)
   {
     var control = (Control)sender;
@@ -882,6 +919,9 @@ partial class MainForm : Form
     TextBoxMutex = false;
   }
 
+  /// <summary>
+  /// Updates the current reference.
+  /// </summary>
   private void UpdateCurrentReference()
   {
     if ( Globals.IsLoadingData ) return;
@@ -1007,6 +1047,11 @@ partial class MainForm : Form
     ActionBookmarks.ShowDropDown();
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionAddBookmark for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionAddBookmark_Click(object sender, EventArgs e)
   {
     Bookmarks.Add(SelectReferenceForm.Run());
@@ -1015,7 +1060,354 @@ partial class MainForm : Form
 
   #endregion
 
+  #region View verses
+
+  /// <summary>
+  /// Event handler. Called by PanelViewVerses for mouse click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
+  {
+    PanelViewVerses.Focus();
+    GoTo(CurrentReference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionEditBookMemo for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionEditBookMemo_Click(object sender, EventArgs e)
+  {
+    var form = new EditMemoForm();
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name ?? string.Empty;
+    form.TextBox.Text = CurrentReference.Book.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
+      CurrentReference.Book.Memo = form.TextBox.Text;
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionEditChapterMemo for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionEditChapterMemo_Click(object sender, EventArgs e)
+  {
+    var form = new EditMemoForm();
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name
+               + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
+               + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number
+              ?? string.Empty;
+    form.TextBox.Text = CurrentReference.Chapter.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
+      EditChapterMemo.Text = form.TextBox.Text;
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyWordTranslation for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Translation);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyUnicodeChars for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Original);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyFontChars for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyFontChars_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference.Word.Hebrew);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSearchTranslated for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchTranslated_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is WordControl control )
+      SearchTranslatedForm.Run(control);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSearchWordInDatabase for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
+  {
+    SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
+  }
+
+  /// <summary>
+  /// Go to bookmark.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void GoToBookmark(object sender, EventArgs e)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.ELS50
+      || Settings.CurrentView == ViewMode.Search )
+      SetView(ViewMode.Verses);
+    GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+  }
+
+  #endregion
+
+  #region Verses Filtered
+
+  private Dictionary<TextBox, bool> FilterModified;
+
+  /// <summary>
+  /// Updates the filters.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void UpdateFilters(object sender, EventArgs e)
+  {
+    var temp = Cursor;
+    Cursor = Cursors.WaitCursor;
+    try
+    {
+      CreateFilterDataSource();
+    }
+    finally
+    {
+      Cursor = temp;
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionClearFilterBook for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearFilterBook_Click(object sender, EventArgs e)
+  {
+    EditFilterBook.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionClearFilterChapter for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearFilterChapter_Click(object sender, EventArgs e)
+  {
+    EditFilterChapter.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionClearFilterVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearFilterVerse_Click(object sender, EventArgs e)
+  {
+    EditFilterVerse.Text = string.Empty;
+    UpdateFilters(sender, e);
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditFilter for text changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditFilter_TextChanged(object sender, EventArgs e)
+  {
+    FilterModified[(TextBox)sender] = true;
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditFilterBook for key up events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Key event information.</param>
+  private void EditFilterBook_KeyUp(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Enter && FilterModified[(TextBox)sender] )
+    {
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditFilter for leave events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditFilter_Leave(object sender, EventArgs e)
+  {
+    if ( FilterModified[(TextBox)sender] )
+    {
+      FilterModified[(TextBox)sender] = false;
+      UpdateFilters(sender, e);
+    }
+  }
+
+  /// <summary>
+  /// Creates filter data source.
+  /// </summary>
+  private void CreateFilterDataSource()
+  {
+    var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
+    if ( EditFilterChaptersWithTitle.Checked )
+      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
+    if ( EditFilterVersesTranslated.Checked )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
+    if ( EditFilterBook.Text != string.Empty )
+      books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
+                            || b.CommonName.RawContains(EditFilterBook.Text)
+                            || b.Translation.RawContains(EditFilterBook.Text)
+                            || b.Lettriq.RawContains(EditFilterBook.Text)
+                            || b.Memo.RawContains(EditFilterBook.Text));
+    if ( EditFilterChapter.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
+                                                || c.Memo.RawContains(EditFilterChapter.Text)));
+
+    if ( EditFilterVerse.Text != string.Empty )
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                                  || v.Comment.RawContains(EditFilterVerse.Text))));
+    var list = books.ToList();
+    SelectFilterBook.DataSource = new BindingList<BookRow>(list);
+    if ( list.Count == 0 )
+    {
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectFilterBook for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    string id = ( SelectFilterBook.SelectedItem as BookRow )?.ID;
+    if ( id == null )
+    {
+      SelectFilterChapter.DataSource = null;
+      SelectFilterVerse.DataSource = null;
+      return;
+    }
+    var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
+    if ( EditFilterChaptersWithTitle.Checked )
+      chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
+    if ( EditFilterVersesTranslated.Checked )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+    if ( EditFilterChapter.Text != string.Empty )
+      chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
+                                  || c.Memo.RawContains(EditFilterChapter.Text));
+    if ( EditFilterVerse.Text != string.Empty )
+      chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+                                                    || v.Comment.RawContains(EditFilterVerse.Text)));
+    var list = chapters.ToList();
+    SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
+    if ( list.Count == 0 )
+      SelectFilterVerse.DataSource = null;
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectFilterChapter for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    string id = ( SelectFilterChapter.SelectedItem as ChapterRow )?.ID;
+    if ( id == null )
+    {
+      SelectFilterVerse.DataSource = null;
+      return;
+    }
+    var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
+    if ( EditFilterVersesTranslated.Checked )
+      verses = verses.Where(v => v.HasTranslation);
+    if ( EditFilterVerse.Text != string.Empty )
+      verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
+                              || v.Comment.RawContains(EditFilterVerse.Text));
+    SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectFilterVerse for selected index changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectFilterVerse_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    RenderVerseFiltered();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionGoFromVerseFilteredToVersesPanel for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionGoFromVerseFilteredToVersesPanel_Click(object sender, EventArgs e)
+  {
+    SetView(ViewMode.Verses);
+    GoTo(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+                           ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                           ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
+  }
+
+  /// <summary>
+  /// Event handler. Called by LabelInfoFilterVerses for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.FilterVersesNotice.GetLang());
+  }
+
+  #endregion
+
   #region View search
+
+  /// <summary>
+  /// Event handler. Called by SelectSearchTranslationOnlyTranslations for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchTranslationOnlyTranslations_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.SearchTranslationRadioButtonIndex = ( sender as RadioButton )?.TabIndex ?? 0;
+  }
+
+  /// <summary>
+  /// Event handler. Called by SelectSearchRequestAllTranslated for checked changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void SelectSearchRequestAllTranslated_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.SearchVerseRadioButtonIndex = ( sender as RadioButton )?.TabIndex ?? 0;
+  }
 
   /// <summary>
   /// Event handler. Called by PanelLetterSearch for key press events.
@@ -1072,6 +1464,11 @@ partial class MainForm : Form
     RenderSearch();
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionSearchInAddAll for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionSearchInAddAll_Click(object sender, EventArgs e)
   {
     EditSearchInTorah.Checked = true;
@@ -1079,6 +1476,11 @@ partial class MainForm : Form
     EditSearchInKetouvim.Checked = true;
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionSearchInRemoveAll for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionSearchInRemoveAll_Click(object sender, EventArgs e)
   {
     EditSearchInTorah.Checked = false;
@@ -1242,78 +1644,7 @@ partial class MainForm : Form
 
   #endregion
 
-  #region View verses
-
-  /// <summary>
-  /// Event handler. Called by PanelViewVerses for mouse click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
-  {
-    PanelViewVerses.Focus();
-    GoTo(CurrentReference);
-  }
-
-  private void ActionEditBookMemo_Click(object sender, EventArgs e)
-  {
-    var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name ?? string.Empty;
-    form.TextBox.Text = CurrentReference.Book.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      CurrentReference.Book.Memo = form.TextBox.Text;
-  }
-
-  private void ActionEditChapterMemo_Click(object sender, EventArgs e)
-  {
-    var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name
-               + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
-               + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number
-              ?? string.Empty;
-    form.TextBox.Text = CurrentReference.Chapter.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      EditChapterMemo.Text = form.TextBox.Text;
-  }
-
-  private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
-  {
-    Clipboard.SetText(CurrentReference.Word.Translation);
-  }
-
-  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
-  {
-    Clipboard.SetText(CurrentReference.Word.Original);
-  }
-
-  private void ActionCopyFontChars_Click(object sender, EventArgs e)
-  {
-    Clipboard.SetText(CurrentReference.Word.Hebrew);
-  }
-
-  private void ActionSearchTranslated_Click(object sender, EventArgs e)
-  {
-    if ( ActiveControl is WordControl control )
-      SearchTranslatedForm.Run(control);
-  }
-
-  private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
-  {
-    SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
-  }
-
-  private void GoToBookmark(object sender, EventArgs e)
-  {
-    ActionSave.PerformClick();
-    if ( Program.Settings.CurrentView == ViewMode.ELS50
-      || Program.Settings.CurrentView == ViewMode.Search )
-      SetView(ViewMode.Verses);
-    GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
-  }
-
-  #endregion
+  #region Temp and Tests
 
   /*private WordControl GetWordControl(object sender)
   {
@@ -1333,6 +1664,11 @@ partial class MainForm : Form
     return control;
   }*/
 
+  /// <summary>
+  /// Calculates the sum value of torah letters.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
   {
     long value = 0;
@@ -1352,155 +1688,5 @@ partial class MainForm : Form
     DisplayManager.Show(value.ToString());
   }
 
-  #region Verses Filtered
-
-  private Dictionary<TextBox, bool> FilterModified;
-
-  private void UpdateFilters(object sender, EventArgs e)
-  {
-    var temp = Cursor;
-    Cursor = Cursors.WaitCursor;
-    try
-    {
-      CreateFilterDataSource();
-    }
-    finally
-    {
-      Cursor = temp;
-    }
-  }
-
-  private void ActionClearFilterBook_Click(object sender, EventArgs e)
-  {
-    EditFilterBook.Text = string.Empty;
-    UpdateFilters(sender, e);
-  }
-
-  private void ActionClearFilterChapter_Click(object sender, EventArgs e)
-  {
-    EditFilterChapter.Text = string.Empty;
-    UpdateFilters(sender, e);
-  }
-
-  private void ActionClearFilterVerse_Click(object sender, EventArgs e)
-  {
-    EditFilterVerse.Text = string.Empty;
-    UpdateFilters(sender, e);
-  }
-
-  private void EditFilter_TextChanged(object sender, EventArgs e)
-  {
-    FilterModified[(TextBox)sender] = true;
-  }
-
-  private void EditFilterBook_KeyUp(object sender, KeyEventArgs e)
-  {
-    if ( e.KeyCode == Keys.Enter && FilterModified[(TextBox)sender] )
-    {
-      FilterModified[(TextBox)sender] = false;
-      UpdateFilters(sender, e);
-    }
-  }
-
-  private void EditFilter_Leave(object sender, EventArgs e)
-  {
-    if ( FilterModified[(TextBox)sender] )
-    {
-      FilterModified[(TextBox)sender] = false;
-      UpdateFilters(sender, e);
-    }
-  }
-
-  private void CreateFilterDataSource()
-  {
-    var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
-    if ( EditFilterChaptersWithTitle.Checked )
-      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
-    if ( EditFilterVersesTranslated.Checked )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
-    if ( EditFilterBook.Text != string.Empty )
-      books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
-                            || b.CommonName.RawContains(EditFilterBook.Text)
-                            || b.Translation.RawContains(EditFilterBook.Text)
-                            || b.Lettriq.RawContains(EditFilterBook.Text)
-                            || b.Memo.RawContains(EditFilterBook.Text));
-    if ( EditFilterChapter.Text != string.Empty )
-      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
-                                                || c.Memo.RawContains(EditFilterChapter.Text)));
-
-    if ( EditFilterVerse.Text != string.Empty )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
-                                                                  || v.Comment.RawContains(EditFilterVerse.Text))));
-    var list = books.ToList();
-    SelectFilterBook.DataSource = new BindingList<BookRow>(list);
-    if ( list.Count == 0 )
-    {
-      SelectFilterChapter.DataSource = null;
-      SelectFilterVerse.DataSource = null;
-    }
-  }
-
-  private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    string id = ( SelectFilterBook.SelectedItem as BookRow )?.ID;
-    if ( id == null )
-    {
-      SelectFilterChapter.DataSource = null;
-      SelectFilterVerse.DataSource = null;
-      return;
-    }
-    var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
-    if ( EditFilterChaptersWithTitle.Checked )
-      chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
-    if ( EditFilterVersesTranslated.Checked )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
-    if ( EditFilterChapter.Text != string.Empty )
-      chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
-                                  || c.Memo.RawContains(EditFilterChapter.Text));
-    if ( EditFilterVerse.Text != string.Empty )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
-                                                    || v.Comment.RawContains(EditFilterVerse.Text)));
-    var list = chapters.ToList();
-    SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
-    if ( list.Count == 0 )
-      SelectFilterVerse.DataSource = null;
-  }
-
-  private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    string id = ( SelectFilterChapter.SelectedItem as ChapterRow )?.ID;
-    if ( id == null )
-    {
-      SelectFilterVerse.DataSource = null;
-      return;
-    }
-    var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
-    if ( EditFilterVersesTranslated.Checked )
-      verses = verses.Where(v => v.HasTranslation);
-    if ( EditFilterVerse.Text != string.Empty )
-      verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
-                              || v.Comment.RawContains(EditFilterVerse.Text));
-    SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
-  }
-
-  private void SelectFilterVerse_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    RenderVerseFiltered();
-  }
-
-  private void ActionGoFromVerseFilteredToVersesPanel_Click(object sender, EventArgs e)
-  {
-    SetView(ViewMode.Verses);
-    GoTo(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
-                                       ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                                       ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
-  }
-
-  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
-  {
-    DisplayManager.ShowInformation(AppTranslations.FilterVersesNotice.GetLang());
-  }
-
   #endregion
-
 }
