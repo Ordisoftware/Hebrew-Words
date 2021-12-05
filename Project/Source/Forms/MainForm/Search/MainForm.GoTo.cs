@@ -48,6 +48,7 @@ partial class MainForm
     if ( Globals.IsExiting ) return;
     if ( IsGoToRunning ) return;
     IsGoToRunning = true;
+    NeedUpdateCurrentReference = false;
     bool updated = false;
     try
     {
