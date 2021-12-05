@@ -39,7 +39,7 @@ partial class MainForm
     int wordsCount = ( width - marginX ) / dx;
     int widthWords = wordsCount * dx;
     int widthWord = Settings.WordControlWidth;
-    int verseLineCount = Settings.VerseCommentaryLinesCount;
+    int commentLineCount = Settings.VerseCommentaryLinesCount;
     int textHeight;
     var textboxTemp = new TextBoxEx();
     using Graphics g = textboxTemp.CreateGraphics();
@@ -52,7 +52,7 @@ partial class MainForm
     int dx_marginX = dx + marginX;
     int dx_MarginX_2 = dx + marginX + 2;
     int minx_dx_delta = minx + dx + delta;
-    int heightComment = textHeight * ( verseLineCount + 1 ) - 3;
+    int heightComment = textHeight * ( commentLineCount + 1 ) - 3;
     int dy_marginY_commentHeight = dy + marginY + heightComment;
     int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
     int yPanel = 0;
@@ -98,7 +98,7 @@ partial class MainForm
       editComment = new();
       editComment.Tag = reference;  // TODO reorg Tags using panel to get ref
       label.Tag = editComment;
-      if ( verseLineCount > 1 )
+      if ( commentLineCount > 1 )
       {
         editComment.Multiline = true;
         editComment.WordWrap = true;

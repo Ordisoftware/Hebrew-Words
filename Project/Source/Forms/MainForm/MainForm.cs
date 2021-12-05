@@ -847,9 +847,11 @@ partial class MainForm : Form
     if ( IsGoToRunning ) return;
     if ( IsRendering ) return;
     if ( Globals.IsExiting ) return;
-    GoTo(CurrentReference.Book.Number,
-         CurrentReference.Chapter.Number,
-         ( (VerseRow)SelectVerse.SelectedItem ).Number);
+    var reference = new ReferenceItem(CurrentReference.Book.Number,
+                                      CurrentReference.Chapter.Number,
+                                      ( (VerseRow)SelectVerse.SelectedItem ).Number);
+    if ( reference != CurrentReference )
+      GoTo(reference);
   }
 
   /// <summary>

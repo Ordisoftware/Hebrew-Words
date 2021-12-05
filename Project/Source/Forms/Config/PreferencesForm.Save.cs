@@ -45,6 +45,7 @@ partial class PreferencesForm
     Program.Settings.BackupCount = (int)EditAutoBackupCount.Value;
     Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
     Program.Settings.VerseCommentaryLinesCount = (int)EditCommentLinesCount.Value;
+    Program.Settings.VerseWordTranslationLinesCount = (int)EditWordtranslateLinesCount.Value;
     Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
     Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
     Program.Settings.HistoryCount = (int)EditHistoryCount.Value;

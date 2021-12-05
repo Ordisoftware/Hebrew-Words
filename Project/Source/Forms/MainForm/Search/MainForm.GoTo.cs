@@ -45,8 +45,8 @@ partial class MainForm
   public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
   {
     if ( reference == null ) return;
-    if ( IsGoToRunning ) return;
     if ( Globals.IsExiting ) return;
+    if ( IsGoToRunning ) return;
     IsGoToRunning = true;
     bool updated = false;
     try
