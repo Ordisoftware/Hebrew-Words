@@ -596,4 +596,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="LabelFilterVerse.Text" xml:space="preserve">
     <value>Verset</value>
   </data>
+  <data name="EditFilterVersesTranslated.Text" xml:space="preserve">
+    <value>Versets traduits</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Conserver</value>
+  </data>
 </root>

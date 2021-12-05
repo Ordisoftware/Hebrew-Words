@@ -124,24 +124,17 @@ partial class MainForm
         RotateSearchTab();
       return;
     }
-    if ( first )
-    {
-      UpdateFilters(null, null);
-      SelectSearchType.SelectedIndex = Settings.CurrentSearchTypeTab;
-      var radio1 = SelectSearchTypeTranslation.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchTranslationRadioButtonIndex);
-      if ( radio1 != null ) radio1.Checked = true;
-      var radio2 = SelectSearchTypeVerses.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchVerseRadioButtonIndex);
-      if ( radio2 != null ) radio2.Checked = true;
-    }
-    else
-      ActionSave.PerformClick();
+    checkFirst();
     ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
     ViewPanels[Settings.CurrentView].Panel.Parent = null;
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
-    if ( view != ViewMode.Search ) ViewPanels[view].Focused?.Focus();
+    if ( view != ViewMode.Verses && !Settings.RenderAllChapterVersesKeep )
+      Settings.RenderAllChapterVerses = false;
+    if ( view != ViewMode.Search )
+      ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
-    UpdateButtons();
+    updateButtons();
     Refresh();
     switch ( view )
     {
@@ -158,7 +151,25 @@ partial class MainForm
         break;
     }
     //
-    void UpdateButtons()
+    void checkFirst()
+    {
+      if ( first )
+      {
+        UpdateFilters(null, null);
+        SelectSearchType.SelectedIndex = Settings.CurrentSearchTypeTab;
+        setRadio(SelectSearchTypeTranslation, Settings.SearchTranslationRadioButtonIndex);
+        setRadio(SelectSearchTypeVerses, Settings.SearchVerseRadioButtonIndex);
+        void setRadio(TabPage page, int index)
+        {
+          var radio = page.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == index);
+          if ( radio != null ) radio.Checked = true;
+        }
+      }
+      else
+        ActionSave.PerformClick();
+    }
+    //
+    void updateButtons()
     {
       LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       //

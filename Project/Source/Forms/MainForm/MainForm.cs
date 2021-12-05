@@ -1692,4 +1692,9 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void EditSearchPaging_TextChanged(object sender, EventArgs e)
+  {
+
+  }
 }

@@ -114,6 +114,7 @@
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
@@ -672,6 +673,7 @@
       this.EditSearchPaging.Name = "EditSearchPaging";
       this.EditSearchPaging.ReadOnly = true;
       this.EditSearchPaging.TabStop = false;
+      this.EditSearchPaging.TextChanged += new System.EventHandler(this.EditSearchPaging_TextChanged);
       // 
       // EditSearchInKetouvim
       // 
@@ -919,6 +921,7 @@
       // 
       this.PanelNavigation.Controls.Add(this.ComboBoxNavigatorVerse);
       this.PanelNavigation.Controls.Add(this.SelectVerse);
+      this.PanelNavigation.Controls.Add(this.checkBox1);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVerses);
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
@@ -977,6 +980,14 @@
       this.BooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
       this.BooksBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BookRowBindingSource_ListChanged);
       this.BooksBindingSource.PositionChanged += new System.EventHandler(this.BookRowBindingSource_PositionChanged);
+      // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.RenderAllChapterVersesKeep;
+      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "RenderAllChapterVersesKeep", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
       // 
       // SelectRenderAllVerses
       // 
@@ -2182,6 +2193,7 @@
     public Panel PanelViewVerseFilteredSingle;
     private ToolStripSeparator toolStripSeparator10;
     private Button LabelInfoFilterVerses;
+    private CheckBox checkBox1;
   }
 }
 

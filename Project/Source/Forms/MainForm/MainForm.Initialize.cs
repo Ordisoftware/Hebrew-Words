@@ -179,6 +179,8 @@ partial class MainForm : Form
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
     DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
+    if ( !Settings.RenderAllChapterVersesKeep )
+      Settings.RenderAllChapterVerses = false;
     Globals.IsExiting = true;
     Globals.IsSessionEnding = true;
     Globals.AllowClose = true;

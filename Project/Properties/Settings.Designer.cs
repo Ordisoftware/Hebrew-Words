@@ -1197,5 +1197,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["VerseWordTranslationLinesCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RenderAllChapterVersesKeep {
+            get {
+                return ((bool)(this["RenderAllChapterVersesKeep"]));
+            }
+            set {
+                this["RenderAllChapterVersesKeep"] = value;
+            }
+        }
     }
 }
