@@ -29,17 +29,17 @@ partial class MainForm
   {
     SystemManager.TryCatchManage(() =>
     {
-      if ( Program.Settings.BackupCount == 0 ) return;
+      if ( Settings.BackupCount == 0 ) return;
       const string partBackup = "AutoBackup ";
       string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
       string filter = partBackup + partFilename + "*" + Globals.DatabaseFileExtension;
-      var list = GetFiles(Program.Settings.GetBackupDirectory(), filter).OrderBy(f => f.Name).ToList();
-      while ( list.Count >= Program.Settings.BackupCount )
+      var list = GetFiles(Settings.GetBackupDirectory(), filter).OrderBy(f => f.Name).ToList();
+      while ( list.Count >= Settings.BackupCount )
       {
         File.Delete(list[0].FullName);
         list.RemoveAt(0);
       }
-      string partPath = Path.Combine(Program.Settings.GetBackupDirectory(), partBackup);
+      string partPath = Path.Combine(Settings.GetBackupDirectory(), partBackup);
       var date = DateTime.Now;
       string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
                                      date.Year, date.Month, date.Day,

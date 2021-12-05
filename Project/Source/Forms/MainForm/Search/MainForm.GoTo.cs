@@ -78,7 +78,7 @@ partial class MainForm
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView )
       RenderAll();
     // 
-    switch ( Program.Settings.CurrentView )
+    switch ( Settings.CurrentView )
     {
       case ViewMode.Verses:
         var label = PanelViewVerses.GetAll<Label>()

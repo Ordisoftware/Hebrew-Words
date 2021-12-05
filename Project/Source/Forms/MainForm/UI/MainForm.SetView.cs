@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -117,32 +118,69 @@ partial class MainForm
         }
       }
     };
-    if ( Program.Settings.CurrentView == view && !first ) return;
-    ViewPanels[Program.Settings.CurrentView].MenuItem.Checked = false;
-    ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
+    if ( Settings.CurrentView == view && !first )
+    {
+      if ( Settings.CurrentView == ViewMode.Search )
+        RotateSearchTab();
+      return;
+    }
+    if ( first )
+    {
+      UpdateFilters(null, null);
+      SelectSearchType.SelectedIndex = Settings.CurrentSearchTypeTab;
+      var radio1 = SelectSearchTypeTranslation.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchTranslationRadioButtonIndex);
+      if ( radio1 != null ) radio1.Checked = true;
+      var radio2 = SelectSearchTypeVerses.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchVerseRadioButtonIndex);
+      if ( radio2 != null ) radio2.Checked = true;
+    }
+    else
+      ActionSave.PerformClick();
+    ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
+    ViewPanels[Settings.CurrentView].Panel.Parent = null;
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
-    ViewPanels[view].Focused?.Focus();
-    PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
-    Program.Settings.CurrentView = view;
-    LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
-    ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
-    ActionExportBook.Enabled = view == ViewMode.Verses
-                            || view == ViewMode.ELS50;
-    ActionExportChapter.Enabled = view == ViewMode.Verses
-                               || view == ViewMode.Translation
-                               || view == ViewMode.Text;
-    SelectBook.Enabled = view != ViewMode.Search;
-    LabelSelectBook.Enabled = SelectBook.Enabled;
-    SelectChapter.Enabled = ActionExportChapter.Enabled;
-    EditBookTranslation.Enabled = ActionExportChapter.Enabled;
-    EditChapterTitle.Enabled = ActionExportChapter.Enabled;
-    EditChapterMemo.Enabled = ActionExportChapter.Enabled;
-    LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
-    ActionSearchVerse.Enabled = view == ViewMode.Verses
-                             || view == ViewMode.Translation
-                             || view == ViewMode.Text;
+    if ( view != ViewMode.Search ) ViewPanels[view].Focused?.Focus();
+    Settings.CurrentView = view;
+    UpdateButtons();
     Refresh();
+    switch ( view )
+    {
+      case ViewMode.Verses:
+      case ViewMode.Text:
+        GoTo(CurrentReference);
+        break;
+      case ViewMode.Translation:
+        RenderTranslation();
+        GoTo(CurrentReference);
+        break;
+      case ViewMode.Search:
+        SelectSearchType_Selected(null, null);
+        break;
+    }
+    //
+    void UpdateButtons()
+    {
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
+      //
+      PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      //
+      ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
+      //
+      ActionExportBook.Enabled = view == ViewMode.Verses || view == ViewMode.ELS50;
+      SelectBook.Enabled = view != ViewMode.Search;
+      LabelSelectBook.Enabled = SelectBook.Enabled;
+      //
+      ActionExportChapter.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
+      SelectChapter.Enabled = ActionExportChapter.Enabled;
+      LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
+      //
+      EditBookTranslation.Enabled = ActionExportBook.Enabled;
+      EditChapterTitle.Enabled = ActionExportChapter.Enabled;
+      EditChapterMemo.Enabled = ActionExportChapter.Enabled;
+      ActionEditBookMemo.Enabled = ActionExportChapter.Enabled;
+      //
+      ActionSearchVerse.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
+    }
   }
 
 }

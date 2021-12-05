@@ -1161,5 +1161,29 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["VerseLabelClickAction"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SearchVerseRadioButtonIndex {
+            get {
+                return ((int)(this["SearchVerseRadioButtonIndex"]));
+            }
+            set {
+                this["SearchVerseRadioButtonIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SearchTranslationRadioButtonIndex {
+            get {
+                return ((int)(this["SearchTranslationRadioButtonIndex"]));
+            }
+            set {
+                this["SearchTranslationRadioButtonIndex"] = value;
+            }
+        }
     }
 }

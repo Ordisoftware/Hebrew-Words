@@ -21,7 +21,7 @@ partial class MainForm
   {
     while ( container.Controls.Count > 0 )
       container.Controls[0].Dispose();
-    var wordcontrol = new WordControl { Width = Program.Settings.WordControlWidth };
+    var wordcontrol = new WordControl { Width = Settings.WordControlWidth };
     const int widthLabel = 40;
     const int mX = 50;
     const int mY = 50;
@@ -38,8 +38,8 @@ partial class MainForm
     int minx = x;
     int wordsCount = ( width - marginX ) / dx;
     int widthWords = wordsCount * dx;
-    int widthWord = Program.Settings.WordControlWidth;
-    int verseLineCount = Program.Settings.VerseCommentaryLinesCount;
+    int widthWord = Settings.WordControlWidth;
+    int verseLineCount = Settings.VerseCommentaryLinesCount;
     int textHeight;
     var textboxTemp = new TextBoxEx();
     using Graphics g = textboxTemp.CreateGraphics();
@@ -170,7 +170,7 @@ partial class MainForm
           label.ContextMenuStrip?.Show(label, new Point(0, label.Height));
           break;
         case VerseLabelClickAction.OnlineRead:
-          HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
+          HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
                                         control.Reference.Book.Number,
                                         control.Reference.Chapter.Number,
                                         control.Reference.Verse.Number);

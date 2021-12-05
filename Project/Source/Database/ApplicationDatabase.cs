@@ -85,7 +85,7 @@ class ApplicationDatabase : SQLiteDatabase
     Words.Clear();
     foreach ( var book in Books )
     {
-      OnLoadingData(book.Name);
+      OnLoadingData(SysTranslations.LoadingDataDetailed.GetLang(book.Name));
       book.Chapters.AddRange(Connection.Table<ChapterRow>().Where(chapter => chapter.BookID == book.ID));
       Chapters.AddRange(book.Chapters);
       foreach ( var chapter in book.Chapters )

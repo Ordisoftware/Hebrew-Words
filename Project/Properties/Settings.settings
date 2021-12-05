@@ -287,5 +287,11 @@
     <Setting Name="VerseLabelClickAction" Type="Ordisoftware.Hebrew.Words.VerseLabelClickAction" Scope="User">
       <Value Profile="(Default)">ContextMenu</Value>
     </Setting>
+    <Setting Name="SearchVerseRadioButtonIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SearchTranslationRadioButtonIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

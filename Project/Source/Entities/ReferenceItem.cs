@@ -137,7 +137,12 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   public int CompareTo(ReferenceItem other)
   {
     if ( other == null )
-      return 1;
+    {
+      if ( Book == null && Chapter == null && Verse == null )
+        return 0;
+      else
+        return 1;
+    }
     else
     {
       if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )

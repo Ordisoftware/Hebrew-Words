@@ -20,7 +20,7 @@ partial class MainForm
   private void DoExportBook()
   {
     var book = CurrentReference.Book;
-    switch ( Program.Settings.CurrentView )
+    switch ( Settings.CurrentView )
     {
       case ViewMode.Verses:
         SaveFileDialogMSWord.FileName = book.Name + ".docx";
@@ -51,11 +51,11 @@ partial class MainForm
         SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
+        throw new AdvancedNotImplementedException(Settings.CurrentView);
     }
   }
 
@@ -63,7 +63,7 @@ partial class MainForm
   {
     var book = CurrentReference.Book;
     var chapter = CurrentReference.Chapter;
-    switch ( Program.Settings.CurrentView )
+    switch ( Settings.CurrentView )
     {
       case ViewMode.Verses:
         SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
@@ -82,18 +82,18 @@ partial class MainForm
         SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       case ViewMode.Text:
         SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditRawText.SaveFile(SaveFileDialogRTF.FileName);
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
+        throw new AdvancedNotImplementedException(Settings.CurrentView);
     }
   }
 
@@ -101,7 +101,7 @@ partial class MainForm
   {
     var menuitem = (ToolStripMenuItem)sender;
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-    if ( control is LinkLabel && Program.Settings.CurrentView == ViewMode.Search )
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
       var reference = (ReferenceItem)control.Tag;
       var book = reference.Book;
@@ -112,7 +112,7 @@ partial class MainForm
       ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
     }
     else
-    if ( control is Label && Program.Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
     {
       var book = CurrentReference.Book;
       var chapter = CurrentReference.Chapter;
@@ -122,7 +122,7 @@ partial class MainForm
       ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
     }
     else
-      throw new AdvancedNotImplementedException(Program.Settings.CurrentView);
+      throw new AdvancedNotImplementedException(Settings.CurrentView);
   }
 
 }
