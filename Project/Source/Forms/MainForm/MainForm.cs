@@ -813,6 +813,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectRenderAllVerses_CheckedChanged(object sender, EventArgs e)
   {
+    SelectRenderAllVersesKeep.Enabled = SelectRenderAllVerses.Checked;
     ActionRefresh.PerformClick();
   }
 
@@ -1692,4 +1693,9 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void EditSearchPaging_TextChanged(object sender, EventArgs e)
+  {
+
+  }
 }

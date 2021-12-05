@@ -124,24 +124,15 @@ partial class MainForm
         RotateSearchTab();
       return;
     }
-    if ( first )
-    {
-      UpdateFilters(null, null);
-      SelectSearchType.SelectedIndex = Settings.CurrentSearchTypeTab;
-      var radio1 = SelectSearchTypeTranslation.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchTranslationRadioButtonIndex);
-      if ( radio1 != null ) radio1.Checked = true;
-      var radio2 = SelectSearchTypeVerses.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == Settings.SearchVerseRadioButtonIndex);
-      if ( radio2 != null ) radio2.Checked = true;
-    }
-    else
-      ActionSave.PerformClick();
+    checkFirst();
     ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
     ViewPanels[Settings.CurrentView].Panel.Parent = null;
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
-    if ( view != ViewMode.Search ) ViewPanels[view].Focused?.Focus();
+    if ( view != ViewMode.Search )
+      ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
-    UpdateButtons();
+    updateButtons();
     Refresh();
     switch ( view )
     {
@@ -158,11 +149,33 @@ partial class MainForm
         break;
     }
     //
-    void UpdateButtons()
+    void checkFirst()
     {
-      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
-      //
+      if ( first )
+      {
+        UpdateFilters(null, null);
+        SelectSearchType.SelectedIndex = Settings.CurrentSearchTypeTab;
+        setRadio(SelectSearchTypeTranslation, Settings.SearchTranslationRadioButtonIndex);
+        setRadio(SelectSearchTypeVerses, Settings.SearchVerseRadioButtonIndex);
+        void setRadio(TabPage page, int index)
+        {
+          var radio = page.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == index);
+          if ( radio != null ) radio.Checked = true;
+        }
+      }
+      else
+      {
+        ActionSave.PerformClick();
+        if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
+          if ( view == ViewMode.VerseFiltered || view == ViewMode.Search )
+            Settings.RenderAllChapterVerses = false;
+      }
+    }
+    //
+    void updateButtons()
+    {
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
       //
