@@ -129,8 +129,6 @@ partial class MainForm
     ViewPanels[Settings.CurrentView].Panel.Parent = null;
     ViewPanels[view].MenuItem.Checked = true;
     ViewPanels[view].Panel.Parent = PanelMainCenter;
-    if ( view != ViewMode.Verses && !Settings.RenderAllChapterVersesKeep )
-      Settings.RenderAllChapterVerses = false;
     if ( view != ViewMode.Search )
       ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
@@ -166,14 +164,18 @@ partial class MainForm
         }
       }
       else
+      {
         ActionSave.PerformClick();
+        if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
+          if ( view == ViewMode.VerseFiltered || view == ViewMode.Search )
+            Settings.RenderAllChapterVerses = false;
+      }
     }
     //
     void updateButtons()
     {
-      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
-      //
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
       //

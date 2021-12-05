@@ -128,6 +128,7 @@ partial class MainForm : Form
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
+    SelectRenderAllVersesKeep.Enabled = SelectRenderAllVerses.Checked;
   }
 
   private void DoStartGoTo()
@@ -179,7 +180,7 @@ partial class MainForm : Form
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
     DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-    if ( !Settings.RenderAllChapterVersesKeep )
+    if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
       Settings.RenderAllChapterVerses = false;
     Globals.IsExiting = true;
     Globals.IsSessionEnding = true;
