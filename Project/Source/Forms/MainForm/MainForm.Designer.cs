@@ -109,6 +109,7 @@
       this.PanelViewELS50 = new System.Windows.Forms.Panel();
       this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.PanelNavigation = new System.Windows.Forms.Panel();
+      this.ActionSelectRenderAllVersesKeepHelp = new System.Windows.Forms.Button();
       this.ComboBoxNavigatorVerse = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -673,7 +674,6 @@
       this.EditSearchPaging.Name = "EditSearchPaging";
       this.EditSearchPaging.ReadOnly = true;
       this.EditSearchPaging.TabStop = false;
-      this.EditSearchPaging.TextChanged += new System.EventHandler(this.EditSearchPaging_TextChanged);
       // 
       // EditSearchInKetouvim
       // 
@@ -919,6 +919,7 @@
       // 
       // PanelNavigation
       // 
+      this.PanelNavigation.Controls.Add(this.ActionSelectRenderAllVersesKeepHelp);
       this.PanelNavigation.Controls.Add(this.ComboBoxNavigatorVerse);
       this.PanelNavigation.Controls.Add(this.SelectVerse);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVersesKeep);
@@ -943,6 +944,15 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
+      // 
+      // ActionSelectRenderAllVersesKeepHelp
+      // 
+      this.ActionSelectRenderAllVersesKeepHelp.AllowDrop = true;
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
+      this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
+      this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
       // 
       // ComboBoxNavigatorVerse
       // 
@@ -2194,6 +2204,7 @@
     private ToolStripSeparator toolStripSeparator10;
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
+    private Button ActionSelectRenderAllVersesKeepHelp;
   }
 }
 
