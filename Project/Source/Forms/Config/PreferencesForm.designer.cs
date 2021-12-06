@@ -118,8 +118,8 @@
       this.EditSearchDisplayMaxRef = new System.Windows.Forms.NumericUpDown();
       this.EditHistoryCount = new System.Windows.Forms.NumericUpDown();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
-      this.EditWordtranslateLinesCount = new System.Windows.Forms.NumericUpDown();
-      this.EditCommentLinesCount = new System.Windows.Forms.NumericUpDown();
+      this.EditWordTranslateLinesCount = new System.Windows.Forms.NumericUpDown();
+      this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.GroupBoxHebrewWordClickShift = new System.Windows.Forms.GroupBox();
       this.GroupBoxHebrewWordClickShift4 = new System.Windows.Forms.RadioButton();
@@ -193,8 +193,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordtranslateLinesCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordTranslateLinesCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
       this.TabPageTools.SuspendLayout();
       this.GroupBoxHebrewWordClickShift.SuspendLayout();
       this.GroupBoxHebrewWordClickAlt.SuspendLayout();
@@ -676,13 +676,17 @@
       // 
       // EditAutoSaveDelay
       // 
+      this.EditAutoSaveDelay.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditAutoSaveDelay, "EditAutoSaveDelay");
       this.EditAutoSaveDelay.Name = "EditAutoSaveDelay";
+      this.EditAutoSaveDelay.ReadOnly = true;
       // 
       // EditAutoBackupCount
       // 
+      this.EditAutoBackupCount.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditAutoBackupCount, "EditAutoBackupCount");
       this.EditAutoBackupCount.Name = "EditAutoBackupCount";
+      this.EditAutoBackupCount.ReadOnly = true;
       // 
       // EditVolume
       // 
@@ -788,9 +792,9 @@
       this.TabPageRendering.Controls.Add(LabelHistoryCount);
       this.TabPageRendering.Controls.Add(this.EditBookmarksCount);
       this.TabPageRendering.Controls.Add(LabelBookmarksCount);
-      this.TabPageRendering.Controls.Add(this.EditWordtranslateLinesCount);
+      this.TabPageRendering.Controls.Add(this.EditWordTranslateLinesCount);
       this.TabPageRendering.Controls.Add(LabelWordtranslateLinesCount);
-      this.TabPageRendering.Controls.Add(this.EditCommentLinesCount);
+      this.TabPageRendering.Controls.Add(this.EditCommentaryLinesCount);
       this.TabPageRendering.Controls.Add(LabelCommentaryLinesCount);
       resources.ApplyResources(this.TabPageRendering, "TabPageRendering");
       this.TabPageRendering.Name = "TabPageRendering";
@@ -839,6 +843,7 @@
       // 
       // EditWordControlWidth
       // 
+      this.EditWordControlWidth.BackColor = System.Drawing.SystemColors.Window;
       this.EditWordControlWidth.Increment = new decimal(new int[] {
             5,
             0,
@@ -846,9 +851,11 @@
             0});
       resources.ApplyResources(this.EditWordControlWidth, "EditWordControlWidth");
       this.EditWordControlWidth.Name = "EditWordControlWidth";
+      this.EditWordControlWidth.ReadOnly = true;
       // 
       // EditSearchMinRefForDialog
       // 
+      this.EditSearchMinRefForDialog.BackColor = System.Drawing.SystemColors.Window;
       this.EditSearchMinRefForDialog.Increment = new decimal(new int[] {
             5,
             0,
@@ -856,9 +863,11 @@
             0});
       resources.ApplyResources(this.EditSearchMinRefForDialog, "EditSearchMinRefForDialog");
       this.EditSearchMinRefForDialog.Name = "EditSearchMinRefForDialog";
+      this.EditSearchMinRefForDialog.ReadOnly = true;
       // 
       // EditSearchDisplayMaxRef
       // 
+      this.EditSearchDisplayMaxRef.BackColor = System.Drawing.SystemColors.Window;
       this.EditSearchDisplayMaxRef.Increment = new decimal(new int[] {
             5,
             0,
@@ -866,28 +875,37 @@
             0});
       resources.ApplyResources(this.EditSearchDisplayMaxRef, "EditSearchDisplayMaxRef");
       this.EditSearchDisplayMaxRef.Name = "EditSearchDisplayMaxRef";
+      this.EditSearchDisplayMaxRef.ReadOnly = true;
       this.EditSearchDisplayMaxRef.ValueChanged += new System.EventHandler(this.EditMaxRefCount_ValueChanged);
       // 
       // EditHistoryCount
       // 
+      this.EditHistoryCount.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditHistoryCount, "EditHistoryCount");
       this.EditHistoryCount.Name = "EditHistoryCount";
+      this.EditHistoryCount.ReadOnly = true;
       // 
       // EditBookmarksCount
       // 
+      this.EditBookmarksCount.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditBookmarksCount, "EditBookmarksCount");
       this.EditBookmarksCount.Name = "EditBookmarksCount";
+      this.EditBookmarksCount.ReadOnly = true;
       // 
-      // EditWordtranslateLinesCount
+      // EditWordTranslateLinesCount
       // 
-      resources.ApplyResources(this.EditWordtranslateLinesCount, "EditWordtranslateLinesCount");
-      this.EditWordtranslateLinesCount.Name = "EditWordtranslateLinesCount";
-      this.EditWordtranslateLinesCount.ValueChanged += new System.EventHandler(this.EditWordtranslateLinesCount_ValueChanged);
+      this.EditWordTranslateLinesCount.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditWordTranslateLinesCount, "EditWordTranslateLinesCount");
+      this.EditWordTranslateLinesCount.Name = "EditWordTranslateLinesCount";
+      this.EditWordTranslateLinesCount.ReadOnly = true;
+      this.EditWordTranslateLinesCount.ValueChanged += new System.EventHandler(this.EditWordtranslateLinesCount_ValueChanged);
       // 
-      // EditCommentLinesCount
+      // EditCommentaryLinesCount
       // 
-      resources.ApplyResources(this.EditCommentLinesCount, "EditCommentLinesCount");
-      this.EditCommentLinesCount.Name = "EditCommentLinesCount";
+      this.EditCommentaryLinesCount.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
+      this.EditCommentaryLinesCount.Name = "EditCommentaryLinesCount";
+      this.EditCommentaryLinesCount.ReadOnly = true;
       // 
       // TabPageTools
       // 
@@ -1272,8 +1290,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordtranslateLinesCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentLinesCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditWordTranslateLinesCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
       this.TabPageTools.ResumeLayout(false);
       this.TabPageTools.PerformLayout();
       this.GroupBoxHebrewWordClickShift.ResumeLayout(false);
@@ -1355,7 +1373,7 @@
     private NumericUpDown EditSearchDisplayMaxRef;
     private NumericUpDown EditHistoryCount;
     private NumericUpDown EditBookmarksCount;
-    private NumericUpDown EditCommentLinesCount;
+    private NumericUpDown EditCommentaryLinesCount;
     private TabPage TabPageTools;
     private Button ActionOnlineSearchHelp;
     private Button ActionOnlineVerseHelp;
@@ -1415,6 +1433,6 @@
     private RadioButton GroupBoxHebrewWordClickShiftCtrl0;
     private RadioButton GroupBoxHebrewWordClickCtrl0;
     private Label LabelInfoWordtranslateLinesCount;
-    private NumericUpDown EditWordtranslateLinesCount;
+    private NumericUpDown EditWordTranslateLinesCount;
   }
 }

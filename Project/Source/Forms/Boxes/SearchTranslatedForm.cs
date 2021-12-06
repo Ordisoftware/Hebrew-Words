@@ -52,7 +52,6 @@ partial class SearchTranslatedForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    MaximumSize = new Size(MaximumSize.Width, Screen.PrimaryScreen.WorkingArea.Height);
     EditDistinct.Checked = Program.Settings.SearchTranslatedFormFilterDistinct;
   }
 

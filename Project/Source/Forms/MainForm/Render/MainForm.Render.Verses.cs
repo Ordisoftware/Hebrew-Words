@@ -36,7 +36,7 @@ partial class MainForm
     int y = delta;
     int minx = x;
     int wordsCount = ( width - marginX ) / dx;
-    int widthWords = wordsCount * dx;
+    int widthwords = wordsCount * dx;
     int widthWord = Settings.WordControlWidth;
     int commentLineCount = Settings.VerseCommentaryLinesCount;
     int textHeight;
@@ -51,9 +51,12 @@ partial class MainForm
     int dx_marginX = dx + marginX;
     int dx_MarginX_2 = dx + marginX + 2;
     int minx_dx_delta = minx + dx + delta;
+    int width_moins_dx_marginX = width - dx_marginX;
+    int width_moins_dx_marginX_widthWord = width_moins_dx_marginX + widthWord;
     int heightComment = textHeight * ( commentLineCount + 1 ) - 3;
     int dy_marginY_commentHeight = dy + marginY + heightComment;
-    int widthWords_widthLabel_delta = widthWords + widthLabel + delta;
+    int widthwords_widthLabel_delta = widthwords + widthLabel + delta;
+    int panelsize = container.ClientSize.Width - deltaMul2;
     int yPanel = 0;
     int controlsCount = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
     foreach ( var reference in references )
@@ -87,8 +90,8 @@ partial class MainForm
         x -= dx;
         if ( x < delta )
         {
-          if ( x < minx_dx_delta ) minx = x;
-          x = width - dx_marginX;
+          if ( x < minx_dx_delta ) minx = x + dx;
+          x = width_moins_dx_marginX;
           y += dy;
           emptyline = true;
         }
@@ -103,9 +106,8 @@ partial class MainForm
         editComment.WordWrap = true;
         editComment.ScrollBars = ScrollBars.Vertical;
       }
-      editComment.Location = new Point(width - widthWords_widthLabel_delta, y + dy_delta);
-      x = width - dx_MarginX_2;
-      editComment.Width = widthWords - delta;
+      editComment.Location = new Point(minx, y + dy_delta);
+      editComment.Width = width_moins_dx_marginX_widthWord - minx;
       editComment.Height = heightComment;
       editComment.BackColor = Color.Honeydew;
       editComment.Text = reference.Verse.Comment;
@@ -115,7 +117,7 @@ partial class MainForm
       panel.Controls.Add(editComment);
       y += dy_marginY_commentHeight;
       panel.Location = new Point(0, yPanel);
-      panel.Width = container.ClientSize.Width - deltaMul2;
+      panel.Width = panelsize;
       panel.Height = y;
       yPanel += y;
       container.Controls.Add(panel);

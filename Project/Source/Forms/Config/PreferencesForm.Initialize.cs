@@ -94,8 +94,8 @@ partial class PreferencesForm
     setInterval(EditAutoBackupCount, LabelInfoAutoBackupCount, AutoBackupCountInterval);
     setInterval(EditAutoSaveDelay, LabelInfoAutoSaveDelay, AutoSaveDelayInterval);
     setInterval(EditBookmarksCount, LabelInfoBookmarksCount, BookmarksCountInterval);
-    setInterval(EditCommentLinesCount, LabelInfoCommentLinesCount, CommentLinesCountInterval);
-    setInterval(EditWordtranslateLinesCount, LabelInfoWordtranslateLinesCount, WordTranslationLinesCountInterval);
+    setInterval(EditCommentaryLinesCount, LabelInfoCommentLinesCount, CommentLinesCountInterval);
+    setInterval(EditWordTranslateLinesCount, LabelInfoWordtranslateLinesCount, WordTranslationLinesCountInterval);
     setInterval(EditHistoryCount, LabelInfoHistoryCount, HistoryCountInterval);
     setInterval(EditSearchDisplayMaxRef, LabelInfoSearchDisplayMaxRef, SearchDisplayMaxRefInterval);
     setInterval(EditSearchMinRefForDialog, LabelInfoSearchMinRefForDialog, SearchMinRefForDialogInterval);

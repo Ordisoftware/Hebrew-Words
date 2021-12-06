@@ -52,6 +52,7 @@ partial class MainForm : Form
   {
     if ( Globals.IsExiting ) return;
     Settings.Retrieve();
+    PreviousWindowsState = WindowState; // TODO move in settings helper and update calendar & letters
     Program.UpdateLocalization();
     StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
     Globals.ChronoStartingApp.Stop();

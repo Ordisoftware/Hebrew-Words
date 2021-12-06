@@ -91,6 +91,9 @@ partial class MainForm : Form
     DoFormClosed(sender, e);
   }
 
+  private bool PreviousWindowsStateToggle = true;
+  private FormWindowState PreviousWindowsState;
+
   /// <summary>
   /// Event handler. Called by MainForm for windows changed events.
   /// </summary>
@@ -101,8 +104,41 @@ partial class MainForm : Form
     if ( !Visible ) return;
     if ( !Globals.IsReady ) return;
     if ( Globals.IsExiting ) return;
-    if ( WindowState != FormWindowState.Normal ) return;
-    EditScreenNone.PerformClick();
+    if ( PreviousWindowsStateToggle )
+    {
+      PreviousWindowsStateToggle = false;
+      return;
+    }
+    if ( WindowState == FormWindowState.Normal )
+    {
+      if ( PreviousWindowsState != WindowState )
+        if ( !SelectRenderAllVerses.Checked )
+          ActionRefresh.PerformClick();
+        else
+          EditScreenNone.PerformClick();
+    }
+    else
+    if ( WindowState == FormWindowState.Maximized )
+    {
+      if ( PreviousWindowsState != WindowState )
+        if ( !SelectRenderAllVerses.Checked )
+          ActionRefresh.PerformClick();
+    }
+    PreviousWindowsState = WindowState;
+    PreviousWindowsStateToggle = true;
+  }
+
+  private int ResizeBeginWidth;
+
+  private void MainForm_ResizeBegin(object sender, EventArgs e)
+  {
+    ResizeBeginWidth = ClientSize.Width;
+  }
+
+  private void MainForm_ResizeEnd(object sender, EventArgs e)
+  {
+    if ( !SelectRenderAllVerses.Checked && ResizeBeginWidth != ClientSize.Width )
+      ActionRefresh.PerformClick();
   }
 
   /// <summary>
@@ -525,9 +561,7 @@ partial class MainForm : Form
     int book = CurrentReference.Book.Number;
     int chapter = CurrentReference.Chapter.Number;
     int verse = CurrentReference.Verse?.Number ?? 1;
-    RenderAll();
-    RenderSearch();
-    GoTo(book, chapter, verse);
+    GoTo(book, chapter, verse, true);
   }
 
   /// <summary>

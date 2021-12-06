@@ -43,6 +43,7 @@ partial class PreferencesForm
 
   static private bool First;
   static private bool LanguageChanged;
+  static private int TranslateLinesCountPrevious;
   static private int CommentaryLinesCountPrevious;
   static private int WordControlWidthPrevious;
   static private int MaxrefCountPrevious;

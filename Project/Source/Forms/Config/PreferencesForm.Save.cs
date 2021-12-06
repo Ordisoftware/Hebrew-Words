@@ -44,8 +44,8 @@ partial class PreferencesForm
     Program.Settings.OpenVerseOnlineURL = EditOnlineVerseURL.Text;
     Program.Settings.BackupCount = (int)EditAutoBackupCount.Value;
     Program.Settings.AutoSaveDelay = (int)EditAutoSaveDelay.Value;
-    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentLinesCount.Value;
-    Program.Settings.VerseWordTranslationLinesCount = (int)EditWordtranslateLinesCount.Value;
+    Program.Settings.VerseCommentaryLinesCount = (int)EditCommentaryLinesCount.Value;
+    Program.Settings.VerseWordTranslationLinesCount = (int)EditWordTranslateLinesCount.Value;
     Program.Settings.WordControlWidth = (int)EditWordControlWidth.Value;
     Program.Settings.BookmarksCount = (int)EditBookmarksCount.Value;
     Program.Settings.HistoryCount = (int)EditHistoryCount.Value;
@@ -91,7 +91,8 @@ partial class PreferencesForm
       MainForm.Instance.TimerAutoSave.Interval = Program.Settings.AutoSaveDelay * 60 * 1000;
     // End
     Program.Settings.Store();
-    UpdateViewRequired = CommentaryLinesCountPrevious != (int)EditCommentLinesCount.Value
+    UpdateViewRequired = TranslateLinesCountPrevious != (int)EditWordTranslateLinesCount.Value
+                      || CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
                       || WordControlWidthPrevious != (int)EditWordControlWidth.Value
                       || MaxrefCountPrevious != (int)EditSearchDisplayMaxRef.Value;
   }
