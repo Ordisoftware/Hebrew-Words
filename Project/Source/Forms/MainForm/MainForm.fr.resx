@@ -117,11 +117,69 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EditFilterBook.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditFilterVersesTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="EditFilterVersesTranslated.Text" xml:space="preserve">
+    <value>Versets traduits</value>
+  </data>
+  <data name="EditFilterChaptersWithTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="EditFilterChaptersWithTitle.Text" xml:space="preserve">
+    <value>Chapitre avec titre</value>
+  </data>
+  <data name="LabelFilterBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="LabelFilterBook.Text" xml:space="preserve">
+    <value>Livre</value>
+  </data>
+  <data name="LabelFilterChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="LabelFilterChapter.Text" xml:space="preserve">
+    <value>Chapitre</value>
+  </data>
+  <data name="LabelFilterVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="LabelFilterVerse.Text" xml:space="preserve">
+    <value>Verset</value>
+  </data>
+  <data name="EditSearchInNeviim.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionNavigateSearchFirst.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="SelectSearchTypeHebrew.Text" xml:space="preserve">
     <value>Hébreu</value>
   </data>
   <data name="SelectSearchTypeTranslation.Text" xml:space="preserve">
     <value>Traduction</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 17</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
+    <value>Seulement les commentaires</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 17</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
+    <value>Seulement les translations</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
+    <value>Inclure les commentaires</value>
   </data>
   <data name="LabelSearchTranslationHelp.Text" xml:space="preserve">
     <value>Vous pouvez chercher une ou plusieurs expression(s).
@@ -135,7 +193,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectSearchTypeVerses.Text" xml:space="preserve">
     <value>Versets</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SelectSearchRequestAllUntranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
   </data>
@@ -160,47 +217,50 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectSearchRequestAllTranslated.Text" xml:space="preserve">
     <value>Tous les versets traduits</value>
   </data>
-  <data name="LabelChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 15</value>
+  <data name="PanelViewELS50.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxNavigator1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectRenderAllVersesKeep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="SelectRenderAllVersesKeep.Text" xml:space="preserve">
+    <value>Conserver</value>
+  </data>
+  <data name="SelectRenderAllVerses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 17</value>
+  </data>
+  <data name="SelectRenderAllVerses.Text" xml:space="preserve">
+    <value>Tous</value>
   </data>
   <data name="LabelChapterMemo.Text" xml:space="preserve">
-    <value>Mémo du chapitre</value>
+    <value>Ch. Mémo</value>
   </data>
-  <data name="LabelBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 15</value>
+  <data name="LabelSelectVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
   </data>
-  <data name="LabelBookTranslation.Text" xml:space="preserve">
-    <value>Traduction</value>
+  <data name="LabelSelectVerse.Text" xml:space="preserve">
+    <value>Verset</value>
   </data>
   <data name="LabelChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 15</value>
+    <value>28, 13</value>
   </data>
   <data name="LabelChapterTitle.Text" xml:space="preserve">
     <value>Titre</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 15</value>
-  </data>
-  <data name="LabelChapterELS50.Text" xml:space="preserve">
-    <value>Verset ELS50 du chapitre</value>
-  </data>
   <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
+    <value>30, 13</value>
   </data>
   <data name="LabelSelectBook.Text" xml:space="preserve">
     <value>Livre</value>
   </data>
   <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 15</value>
+    <value>46, 13</value>
   </data>
   <data name="LabelSelectChapter.Text" xml:space="preserve">
     <value>Chapitre</value>
-  </data>
-  <data name="ActionViewVerses.Text" xml:space="preserve">
-    <value>Voir les versets</value>
-  </data>
-  <data name="ActionViewVerses.ToolTipText" xml:space="preserve">
-    <value>Voir les versets (F1)</value>
   </data>
   <data name="ActionExit.Text" xml:space="preserve">
     <value>Quitter</value>
@@ -208,113 +268,35 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionExit.ToolTipText" xml:space="preserve">
     <value>Quitter</value>
   </data>
-  <data name="ActionAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 6</value>
-  </data>
-  <data name="ActionWebCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionWebReleaseNotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 6</value>
-  </data>
-  <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionWebQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 6</value>
-  </data>
-  <data name="ActionWebHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 6</value>
-  </data>
-  <data name="ActionWebTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionWebYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionWebLinkedIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 6</value>
-  </data>
-  <data name="ActionDownloadHebrewCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
-  <data name="ActionDownloadHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 22</value>
-  </data>
   <data name="ActionPreferences.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
   <data name="ActionPreferences.ToolTipText" xml:space="preserve">
     <value>Préférences (F9)</value>
   </data>
-  <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+  <data name="ActionViewVerses.Text" xml:space="preserve">
+    <value>Voir les versets</value>
   </data>
-  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
-    <value>Position de l'écran</value>
-  </data>
-  <data name="EditScreenNone.Text" xml:space="preserve">
-    <value>Libre</value>
-  </data>
-  <data name="EditScreenTopLeft.Text" xml:space="preserve">
-    <value>Haut gauche</value>
-  </data>
-  <data name="EditScreenTopRight.Text" xml:space="preserve">
-    <value>Haut droit</value>
-  </data>
-  <data name="EditScreenBottomLeft.Text" xml:space="preserve">
-    <value>Bas gauche</value>
-  </data>
-  <data name="EditScreenBottomRight.Text" xml:space="preserve">
-    <value>Bas droit</value>
-  </data>
-  <data name="EditScreenCenter.Text" xml:space="preserve">
-    <value>Centrer</value>
-  </data>
-  <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="ActionResetWinSettings.Text" xml:space="preserve">
-    <value>Réinitialiser les paramètres de fenêtre</value>
-  </data>
-  <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="EditShowTips.Text" xml:space="preserve">
-    <value>Afficher les astuces des menus</value>
-  </data>
-  <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="EditConfirmClosing.Text" xml:space="preserve">
-    <value>Confirmer la fermeture de l'application</value>
+  <data name="ActionViewVerses.ToolTipText" xml:space="preserve">
+    <value>Voir les versets (F1)</value>
   </data>
   <data name="ActionViewTranslations.Text" xml:space="preserve">
     <value>Voir la traduction</value>
   </data>
   <data name="ActionViewTranslations.ToolTipText" xml:space="preserve">
     <value>Voir la traduction (F2)</value>
+  </data>
+  <data name="ActionViewVerseFiltered.Text" xml:space="preserve">
+    <value>Filtrer les versets</value>
+  </data>
+  <data name="ActionViewVerseFiltered.ToolTipText" xml:space="preserve">
+    <value>Filtrer les versets (F3)</value>
+  </data>
+  <data name="ActionViewSearch.Text" xml:space="preserve">
+    <value>Chercher un mot</value>
+  </data>
+  <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
+    <value>Chercher un mot (F4, Atl+F)</value>
   </data>
   <data name="ActionViewRawText.Text" xml:space="preserve">
     <value>Voir le texte original</value>
@@ -326,16 +308,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Voir la liste des ELS50</value>
   </data>
   <data name="ActionViewELS50.ToolTipText" xml:space="preserve">
-    <value>Voir la liste des ELS50 (F6)</value>
-  </data>
-  <data name="ActionViewSearch.Text" xml:space="preserve">
-    <value>Chercher un mot</value>
-  </data>
-  <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
-    <value>Chercher un mot (F4, Atl+F)</value>
+    <value>Voir la liste des versets ELS50 (F6)</value>
   </data>
   <data name="ActionGoToReference.Text" xml:space="preserve">
     <value>Aller à la référence</value>
+  </data>
+  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
+    <value>Aller à la référence (F7, Maj+Ctrl+F)</value>
   </data>
   <data name="ActionRefresh.Text" xml:space="preserve">
     <value>Rafraichir la vue</value>
@@ -354,6 +333,54 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionCopyToClipboard.ToolTipText" xml:space="preserve">
     <value>Copier dans le presse-papier</value>
+  </data>
+  <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionNew.Text" xml:space="preserve">
+    <value>Nouvelle base de données</value>
+  </data>
+  <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionRestore.Text" xml:space="preserve">
+    <value>Restaurer base de données</value>
+  </data>
+  <data name="ActionBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionBackup.Text" xml:space="preserve">
+    <value>Archiver base de données</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionVacuum.Text" xml:space="preserve">
+    <value>Optimiser la base de données</value>
+  </data>
+  <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionOpenBackupPath.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'archivage</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export</value>
+  </data>
+  <data name="ActionSave.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="ActionSave.ToolTipText" xml:space="preserve">
+    <value>Sauvegarder (Ctrl+S)</value>
   </data>
   <data name="MenuHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 22</value>
@@ -391,215 +418,268 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 6</value>
   </data>
-  <data name="ActionGoToBookmarkMaster.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 22</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
+    <value>Signet principal</value>
   </data>
   <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 6</value>
   </data>
+  <data name="ActionViewBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
   <data name="ActionViewBooksBoard.Text" xml:space="preserve">
     <value>Tableau des livres</value>
+  </data>
+  <data name="ActionViewParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="ActionViewParashotBoard.Text" xml:space="preserve">
+    <value>Tableau des Parashot</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="ActionOpenCalculator.Text" xml:space="preserve">
+    <value>Calculatrice</value>
+  </data>
+  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
   <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
     <value>Statistiques du Tanak</value>
   </data>
-  <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+  <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
   </data>
-  <data name="ActionNew.Text" xml:space="preserve">
-    <value>Nouvelle base de données</value>
+  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
+    <value>Position de l'écran</value>
   </data>
-  <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+  <data name="EditScreenNone.Text" xml:space="preserve">
+    <value>Libre</value>
   </data>
-  <data name="ActionRestore.Text" xml:space="preserve">
-    <value>Restaurer base de données</value>
+  <data name="EditScreenTopLeft.Text" xml:space="preserve">
+    <value>Haut gauche</value>
   </data>
-  <data name="ActionBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+  <data name="EditScreenTopRight.Text" xml:space="preserve">
+    <value>Haut droit</value>
   </data>
-  <data name="ActionBackup.Text" xml:space="preserve">
-    <value>Archiver base de données</value>
+  <data name="EditScreenBottomLeft.Text" xml:space="preserve">
+    <value>Bas gauche</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 6</value>
+  <data name="EditScreenBottomRight.Text" xml:space="preserve">
+    <value>Bas droit</value>
   </data>
-  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+  <data name="EditScreenCenter.Text" xml:space="preserve">
+    <value>Centrer</value>
   </data>
-  <data name="ActionVacuum.Text" xml:space="preserve">
-    <value>Optimiser la base de données</value>
+  <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 6</value>
+  <data name="ActionResetWinSettings.Text" xml:space="preserve">
+    <value>Réinitialiser les paramètres de fenêtre</value>
   </data>
-  <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+  <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 6</value>
   </data>
-  <data name="ActionOpenBackupPath.Text" xml:space="preserve">
-    <value>Ouvrir le dossier d'archivage</value>
+  <data name="ActionShowKeyboardNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
   </data>
-  <data name="ActionSave.Text" xml:space="preserve">
-    <value>Sauvegarder</value>
+  <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
+    <value>Notice des raccourcis clavier</value>
   </data>
-  <data name="ActionSave.ToolTipText" xml:space="preserve">
-    <value>Sauvegarder (Ctrl+S)</value>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 6</value>
+  </data>
+  <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
+  </data>
+  <data name="EditShowTips.Text" xml:space="preserve">
+    <value>Afficher les astuces des menus</value>
+  </data>
+  <data name="EditUseAdvancedDialogBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
+  </data>
+  <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
+    <value>Boites de dialogues avancées</value>
+  </data>
+  <data name="EditSoundsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
+  </data>
+  <data name="EditSoundsEnabled.Text" xml:space="preserve">
+    <value>Activer les sons</value>
+  </data>
+  <data name="EditShowSuccessDialogs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
+  </data>
+  <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
+    <value>Boîtes de dialogue de réussite à la place des sons</value>
+  </data>
+  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 6</value>
+  </data>
+  <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 22</value>
+  </data>
+  <data name="EditConfirmClosing.Text" xml:space="preserve">
+    <value>Confirmer la fermeture de l'application</value>
+  </data>
+  <data name="SaveFileDialogMSWord.Filter" xml:space="preserve">
+    <value>Fichiers MSWord (*.docx)|*.docx</value>
+  </data>
+  <data name="SaveFileDialogDB.Filter" xml:space="preserve">
+    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  </data>
+  <data name="OpenFileDialogDB.Filter" xml:space="preserve">
+    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  </data>
+  <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
+    <value>Fichiers Rich Text Format (*.rtf)|*.rtf</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 154</value>
+    <value>238, 154</value>
   </data>
-  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+  <data name="ContextMenuStripVerse.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionVerseReadOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
   </data>
   <data name="ActionVerseReadOnline.Text" xml:space="preserve">
     <value>Lire en ligne</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
+    <value>234, 6</value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="ActionCopyTranslation.Text" xml:space="preserve">
     <value>Copier la traduction</value>
   </data>
   <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="ActionExportVerse.Text" xml:space="preserve">
     <value>Export vers fichier MS Word</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
+    <value>234, 6</value>
   </data>
-  <data name="ActionSetAsBookmarkMaster.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+  <data name="ActionSetAsBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="ActionSetAsBookmarkMain.Text" xml:space="preserve">
+    <value>Définir comme signet principal</value>
   </data>
   <data name="ActionAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="ActionAddToBookmarks.Text" xml:space="preserve">
     <value>Ajouter aux signets</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
+    <value>234, 6</value>
   </data>
   <data name="ActionImportConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Console d'import</value>
   </data>
+  <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 254</value>
+  </data>
+  <data name="ActionWordSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
+  </data>
   <data name="ActionWordSearchOnline.Text" xml:space="preserve">
     <value>Recherche en ligne</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
+  </data>
+  <data name="ActionSearchTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
     <value>Recherche traduction</value>
   </data>
+  <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
+  </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
     <value>Recherche dans la base de données</value>
   </data>
-  <data name="ActionCopyFontChars.Text" xml:space="preserve">
-    <value>Copier les caractères de la fonte Hebrew</value>
+  <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
   </data>
-  <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
-    <value>Copier les caractères unicodes</value>
-  </data>
-  <data name="ActionCopyWordTranslation.Text" xml:space="preserve">
-    <value>Copier la traduction</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionViewParashotBoard.Text" xml:space="preserve">
-    <value>Tableau des Parashot</value>
-  </data>
-  <data name="ActionCountOccurences.Text" xml:space="preserve">
-    <value>Compter le nombre exact d'occurrences</value>
-  </data>
-  <data name="ActionCountRootOccurences.Text" xml:space="preserve">
-    <value>Compter le nombre d'occurrences de la racine</value>
-  </data>
-  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
-    <value>Aller à la référence (F7, Maj+Ctrl+F)</value>
+  <data name="ActionShowGrammarGuide2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
   <data name="ActionShowGrammarGuide2.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
-  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
-    <value>Signet principal</value>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
   </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
-    <value>Ouvrir le dossier d'export</value>
+  <data name="ActionOpenHebrewLetters2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="ActionSetAsBookmarkMain.Text" xml:space="preserve">
-    <value>Définir comme signet principal</value>
+  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
   </data>
-  <data name="OpenFileDialogDB.Filter" xml:space="preserve">
-    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  <data name="ActionCountOccurences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="SaveFileDialogDB.Filter" xml:space="preserve">
-    <value>Fichiers SQLite (*.sqlite)|*.sqlite</value>
+  <data name="ActionCountOccurences.Text" xml:space="preserve">
+    <value>Compter le nombre exact d'occurrences</value>
   </data>
-  <data name="SaveFileDialogMSWord.Filter" xml:space="preserve">
-    <value>Fichiers MSWord (*.docx)|*.docx</value>
+  <data name="ActionCountRootOccurences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
-    <value>Fichiers Rich Text Format (*.rtf)|*.rtf</value>
+  <data name="ActionCountRootOccurences.Text" xml:space="preserve">
+    <value>Compter le nombre d'occurrences de la racine</value>
   </data>
-  <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
-    <value>Boites de dialogues avancées</value>
+  <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 6</value>
   </data>
-  <data name="ActionOpenCalculator.Text" xml:space="preserve">
-    <value>Calculatrice</value>
+  <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="EditSoundsEnabled.Text" xml:space="preserve">
-    <value>Activer les sons</value>
+  <data name="ActionCopyFontChars.Text" xml:space="preserve">
+    <value>Copier les caractères de la fonte Hebrew</value>
   </data>
-  <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
-    <value>Notice des raccourcis clavier</value>
+  <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
-    <value>Boîtes de dialogue de réussite à la place des sons</value>
+  <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
+    <value>Copier les caractères unicodes</value>
   </data>
-  <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
-    <value>Inclure les commentaires</value>
+  <data name="ActionCopyWordTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
-    <value>Seulement les commentaires</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
-    <value>Seulement les translations</value>
-  </data>
-  <data name="SelectRenderAllVerses.Text" xml:space="preserve">
-    <value>Tous</value>
-  </data>
-  <data name="LabelFilterBook.Text" xml:space="preserve">
-    <value>Livre</value>
-  </data>
-  <data name="LabelFilterChapter.Text" xml:space="preserve">
-    <value>Chapitre</value>
-  </data>
-  <data name="EditFilterChaptersWithTitle.Text" xml:space="preserve">
-    <value>Chapitre avec titre</value>
-  </data>
-  <data name="ActionViewVerseFiltered.Text" xml:space="preserve">
-    <value>Filtrer les versets</value>
-  </data>
-  <data name="ActionViewVerseFiltered.ToolTipText" xml:space="preserve">
-    <value>Filtrer les versets (F3)</value>
-  </data>
-  <data name="LabelFilterVerse.Text" xml:space="preserve">
-    <value>Verset</value>
-  </data>
-  <data name="EditFilterVersesTranslated.Text" xml:space="preserve">
-    <value>Versets traduits</value>
-  </data>
-  <data name="SelectRenderAllVersesKeep.Text" xml:space="preserve">
-    <value>Conserver</value>
+  <data name="ActionCopyWordTranslation.Text" xml:space="preserve">
+    <value>Copier la traduction</value>
   </data>
 </root>

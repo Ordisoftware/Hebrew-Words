@@ -109,6 +109,7 @@
       this.PanelViewELS50 = new System.Windows.Forms.Panel();
       this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.PanelNavigation = new System.Windows.Forms.Panel();
+      this.EditELS50HScrollBar = new System.Windows.Forms.HScrollBar();
       this.comboBoxNavigator2 = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -124,6 +125,7 @@
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
+      this.LabelSelectVerse = new System.Windows.Forms.Label();
       this.LabelChapterTitle = new System.Windows.Forms.Label();
       this.ActionEditBookMemo = new System.Windows.Forms.Button();
       this.ActionEditChapterMemo = new System.Windows.Forms.Button();
@@ -133,7 +135,7 @@
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
       this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
-      this.EditELS50 = new System.Windows.Forms.TextBox();
+      this.EditELS50 = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterELS50 = new System.Windows.Forms.Label();
       this.LabelSelectBook = new System.Windows.Forms.Label();
       this.LabelSelectChapter = new System.Windows.Forms.Label();
@@ -923,6 +925,7 @@
       // 
       // PanelNavigation
       // 
+      this.PanelNavigation.Controls.Add(this.EditELS50HScrollBar);
       this.PanelNavigation.Controls.Add(this.comboBoxNavigator2);
       this.PanelNavigation.Controls.Add(this.comboBoxNavigator1);
       this.PanelNavigation.Controls.Add(this.ActionSelectRenderAllVersesKeepHelp);
@@ -933,6 +936,7 @@
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
+      this.PanelNavigation.Controls.Add(this.LabelSelectVerse);
       this.PanelNavigation.Controls.Add(this.LabelChapterTitle);
       this.PanelNavigation.Controls.Add(this.ActionEditBookMemo);
       this.PanelNavigation.Controls.Add(this.ActionEditChapterMemo);
@@ -950,6 +954,16 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
+      // 
+      // EditELS50HScrollBar
+      // 
+      resources.ApplyResources(this.EditELS50HScrollBar, "EditELS50HScrollBar");
+      this.EditELS50HScrollBar.LargeChange = 20;
+      this.EditELS50HScrollBar.Maximum = 0;
+      this.EditELS50HScrollBar.Minimum = -100;
+      this.EditELS50HScrollBar.Name = "EditELS50HScrollBar";
+      this.EditELS50HScrollBar.SmallChange = 10;
+      this.EditELS50HScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.EditELS50HScrollBar_Scroll);
       // 
       // comboBoxNavigator2
       // 
@@ -1002,9 +1016,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      this.ActionSelectRenderAllVersesKeepHelp.AllowDrop = true;
-      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1070,6 +1083,11 @@
       // 
       resources.ApplyResources(this.LabelBookTranslation, "LabelBookTranslation");
       this.LabelBookTranslation.Name = "LabelBookTranslation";
+      // 
+      // LabelSelectVerse
+      // 
+      resources.ApplyResources(this.LabelSelectVerse, "LabelSelectVerse");
+      this.LabelSelectVerse.Name = "LabelSelectVerse";
       // 
       // LabelChapterTitle
       // 
@@ -1151,9 +1169,11 @@
       resources.ApplyResources(this.EditELS50, "EditELS50");
       this.EditELS50.BackColor = System.Drawing.Color.LightYellow;
       this.EditELS50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditELS50.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditELS50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "ELS50", true));
       this.EditELS50.Name = "EditELS50";
       this.EditELS50.ReadOnly = true;
+      this.EditELS50.TextChanged += new System.EventHandler(this.EditELS50_TextChanged);
       // 
       // LabelChapterELS50
       // 
@@ -2099,7 +2119,7 @@
     private System.Windows.Forms.TabPage TabPageText;
     private System.Windows.Forms.TabPage TabPageTranslations;
     private System.Windows.Forms.TabPage TabPageVerses;
-    private System.Windows.Forms.TextBox EditELS50;
+    private Ordisoftware.Core.TextBoxEx EditELS50;
     private System.Windows.Forms.TextBox EditSearchPaging;
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
@@ -2240,6 +2260,8 @@
     private ToolTip ToolTipSearchResult;
     private ComboBoxNavigator comboBoxNavigator2;
     private ComboBoxNavigator comboBoxNavigator1;
+    private Label LabelSelectVerse;
+    private HScrollBar EditELS50HScrollBar;
   }
 }
 
