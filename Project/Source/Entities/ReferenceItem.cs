@@ -92,6 +92,7 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   {
     try
     {
+      // TODO set in bounds in out of ranges ?
       Book = ApplicationDatabase.Instance.Books.SingleOrDefault(b => b.Number == book);
       Chapter = ( Book?.Chapters[chapter - 1] );
       Verse = verse == 0 ? null : ( Chapter?.Verses[verse - 1] );
