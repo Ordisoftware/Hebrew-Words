@@ -27,51 +27,6 @@ partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceIt
   public VerseRow Verse { get; set; }
   public WordRow Word { get; set; }
 
-  public override string ToString()
-  {
-    return ( Book?.Name ?? NULL ) + " " +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
-
-  public string ToStringFull()
-  {
-    return ( Book?.Name ?? NULL ) + " (" +
-           ( Book?.CommonName ?? NULL ) + ") " +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
-
-  public string ToStringOnlyNumbers()
-  {
-    return ( Book?.Number.ToString() ?? NULL ) + "." +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
-
-  public string ToStringOnlyNumbersWordIncluded()
-  {
-    return ( Book?.Number.ToString() ?? NULL ) + "." +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL ) + ":" +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
-
-  public override int GetHashCode()
-  {
-    return ( Book?.Number.GetHashCode() ?? 0 )
-         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( Verse?.Number.GetHashCode() ?? 0 );
-  }
-
-  public int GetHashCodeWordIncluded()
-  {
-    return ( Book?.Number.GetHashCode() ?? 0 )
-         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( Verse?.Number.GetHashCode() ?? 0 )
-         ^ ( Word?.Number.GetHashCode() ?? 0 );
-  }
-
   private ReferenceItem()
   {
   }

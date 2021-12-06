@@ -20,6 +20,25 @@ namespace Ordisoftware.Hebrew.Words;
 partial class ReferenceItem
 {
 
+  #region GetHashCode
+
+  public override int GetHashCode()
+  {
+    return ( Book?.Number.GetHashCode() ?? 0 )
+         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( Verse?.Number.GetHashCode() ?? 0 );
+  }
+
+  public int GetHashCodeWordIncluded()
+  {
+    return ( Book?.Number.GetHashCode() ?? 0 )
+         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( Verse?.Number.GetHashCode() ?? 0 )
+         ^ ( Word?.Number.GetHashCode() ?? 0 );
+  }
+
+  #endregion
+
   #region Overloads
 
   public static bool operator ==(ReferenceItem left, ReferenceItem right)
