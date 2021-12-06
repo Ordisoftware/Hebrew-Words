@@ -1016,8 +1016,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);

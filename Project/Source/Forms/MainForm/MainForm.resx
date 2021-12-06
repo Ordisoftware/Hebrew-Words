@@ -2597,6 +2597,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;comboBoxNavigator1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ActionSelectRenderAllVersesKeepHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="ActionSelectRenderAllVersesKeepHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
