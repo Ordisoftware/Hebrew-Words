@@ -243,6 +243,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -2214,6 +2215,7 @@
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
     private Label LabelTitleReferenceName;
+    private ToolTip ToolTipSearchResult;
   }
 }
 
