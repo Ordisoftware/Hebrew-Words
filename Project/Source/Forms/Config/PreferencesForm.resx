@@ -361,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 73</value>
+    <value>20, 70</value>
   </data>
   <data name="LabelOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 13</value>
@@ -394,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 23</value>
+    <value>20, 20</value>
   </data>
   <data name="LabelOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -1978,7 +1978,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 365</value>
+    <value>18, 458</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>490, 18</value>
@@ -2008,7 +2008,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 345</value>
+    <value>20, 438</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -2041,7 +2041,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 365</value>
+    <value>515, 458</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -3842,10 +3842,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOnlineSearchHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 40</value>
+    <value>498, 34</value>
   </data>
   <data name="ActionOnlineSearchHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 19</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3885,10 +3885,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOnlineVerseHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 90</value>
+    <value>498, 84</value>
   </data>
   <data name="ActionOnlineVerseHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 19</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3929,10 +3929,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 40</value>
+    <value>461, 34</value>
   </data>
   <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 19</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3973,10 +3973,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 90</value>
+    <value>461, 84</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 19</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3994,10 +3994,10 @@
     <value>9</value>
   </data>
   <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 92</value>
+    <value>23, 88</value>
   </data>
   <data name="EditOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 20</value>
+    <value>427, 20</value>
   </data>
   <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4015,10 +4015,10 @@
     <value>11</value>
   </data>
   <data name="EditOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 42</value>
+    <value>23, 38</value>
   </data>
   <data name="EditOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 20</value>
+    <value>427, 20</value>
   </data>
   <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

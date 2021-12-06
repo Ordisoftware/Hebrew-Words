@@ -53,4 +53,14 @@ static partial class AppTranslations
 
   };
 
+  static public readonly TranslationsDictionary RenderAllVersesKeepNotice = new()
+  {
+
+    [Language.EN] = "If keep rendering all verses in the chapter is unchecked, this option will be disabled by switching to the filter and search verse views, and thus only one verse will be displayed again. Closing the app will not retain the option to view all verses." + Globals.NL2 +
+                    "These two options allow the application to run faster if the machine is not powerful enough or if it is personal preference.",
+
+    [Language.FR] = "Si conserver le rendu de tous les versets du chapitre est décoché, cette option sera désactivée en basculant vers les vues de filtrage et de recherche de versets, et ainsi un seul verset sera à nouveau affiché. La fermeture de l'application ne conservera pas l'option d'affichage de tous les versets." + Globals.NL2 +
+                    "Ces deux options permettent une exécution plus rapide de l'application en cas de machine pas assez puissante ou de préférence personnelle."
+  };
+
 }

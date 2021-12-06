@@ -799,12 +799,133 @@ partial class MainForm : Form
 
   #endregion
 
-  #region Navigation Combo-boxes
+  #region Bookmarks and History
+
+  /// <summary>
+  /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+    {
+      var reference = (ReferenceItem)control.Tag;
+      Settings.BookmarkMasterBook = reference.Book.Number;
+      Settings.BookmarkMasterChapter = reference.Chapter.Number;
+      Settings.BookmarkMasterVerse = reference.Verse.Number;
+    }
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    {
+      Settings.BookmarkMasterBook = CurrentReference.Book.Number;
+      Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
+      Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
+    }
+    Settings.Store();
+    UpdateBookmarks();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionAddToBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionAddToBookmarks_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    ReferenceItem reference = null;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+    {
+      reference = (ReferenceItem)control.Tag;
+      reference = new ReferenceItem(reference.Book.Number,
+                                    reference.Chapter.Number,
+                                    reference.Verse.Number);
+    }
+    else
+    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    {
+      int index = Convert.ToInt32(control.Text) - 1;
+      reference = new ReferenceItem(CurrentReference.Book.Number,
+                                    CurrentReference.Chapter.Number,
+                                    CurrentReference.Chapter.Verses[index].Number);
+    }
+    Bookmarks.Add(reference);
+    UpdateBookmarks();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionClearHistory for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearHistory_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
+    History.Clear();
+    UpdateHistory();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionClearBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionClearBookmarks_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
+    Settings.BookmarkMasterBook = 1;
+    Settings.BookmarkMasterChapter = 1;
+    Settings.BookmarkMasterVerse = 1;
+    Bookmarks.Clear();
+    Settings.Store();
+    UpdateBookmarks();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionSortBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSortBookmarks_Click(object sender, EventArgs e)
+  {
+    Bookmarks.Sort();
+    UpdateBookmarks();
+    ActionBookmarks.ShowDropDown();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionAddBookmark for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionAddBookmark_Click(object sender, EventArgs e)
+  {
+    Bookmarks.Add(SelectReferenceForm.Run());
+    UpdateBookmarks();
+  }
+
+  #endregion
+
+  #region View Verses Navigation
 
   private bool TextBoxMutex;
   private bool DisableChapterPos;
   private bool NeedUpdateCurrentReference;
   private bool UpdateCurrentReferenceMutex;
+
+  /// <summary>
+  /// Event handler. Called by ActionSelectRenderAllVersesKeepHelp for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionSelectRenderAllVersesKeepHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.RenderAllVersesKeepNotice.GetLang());
+  }
 
   /// <summary>
   /// Event handler. Called by SelectRenderAllVerses for checked changed events.
@@ -953,118 +1074,7 @@ partial class MainForm : Form
 
   #endregion
 
-  #region Bookmarks and History
-
-  /// <summary>
-  /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
-  {
-    var menuitem = (ToolStripMenuItem)sender;
-    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-    {
-      var reference = (ReferenceItem)control.Tag;
-      Settings.BookmarkMasterBook = reference.Book.Number;
-      Settings.BookmarkMasterChapter = reference.Chapter.Number;
-      Settings.BookmarkMasterVerse = reference.Verse.Number;
-    }
-    else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-    {
-      Settings.BookmarkMasterBook = CurrentReference.Book.Number;
-      Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-      Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
-    }
-    Settings.Store();
-    UpdateBookmarks();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionAddToBookmarks for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionAddToBookmarks_Click(object sender, EventArgs e)
-  {
-    var menuitem = (ToolStripMenuItem)sender;
-    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-    ReferenceItem reference = null;
-    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-    {
-      reference = (ReferenceItem)control.Tag;
-      reference = new ReferenceItem(reference.Book.Number,
-                                    reference.Chapter.Number,
-                                    reference.Verse.Number);
-    }
-    else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
-    {
-      int index = Convert.ToInt32(control.Text) - 1;
-      reference = new ReferenceItem(CurrentReference.Book.Number,
-                                    CurrentReference.Chapter.Number,
-                                    CurrentReference.Chapter.Verses[index].Number);
-    }
-    Bookmarks.Add(reference);
-    UpdateBookmarks();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionClearHistory for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionClearHistory_Click(object sender, EventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
-    History.Clear();
-    UpdateHistory();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionClearBookmarks for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionClearBookmarks_Click(object sender, EventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
-    Settings.BookmarkMasterBook = 1;
-    Settings.BookmarkMasterChapter = 1;
-    Settings.BookmarkMasterVerse = 1;
-    Bookmarks.Clear();
-    Settings.Store();
-    UpdateBookmarks();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionSortBookmarks for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionSortBookmarks_Click(object sender, EventArgs e)
-  {
-    Bookmarks.Sort();
-    UpdateBookmarks();
-    ActionBookmarks.ShowDropDown();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionAddBookmark for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionAddBookmark_Click(object sender, EventArgs e)
-  {
-    Bookmarks.Add(SelectReferenceForm.Run());
-    UpdateBookmarks();
-  }
-
-  #endregion
-
-  #region View verses
+  #region View Verses Interaction
 
   /// <summary>
   /// Event handler. Called by PanelViewVerses for mouse click events.
@@ -1391,7 +1401,7 @@ partial class MainForm : Form
 
   #endregion
 
-  #region View search
+  #region View Search
 
   /// <summary>
   /// Event handler. Called by SelectSearchTranslationOnlyTranslations for checked changed events.
@@ -1694,8 +1704,4 @@ partial class MainForm : Form
 
   #endregion
 
-  private void EditSearchPaging_TextChanged(object sender, EventArgs e)
-  {
-
-  }
 }
