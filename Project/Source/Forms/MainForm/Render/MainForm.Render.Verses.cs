@@ -96,7 +96,7 @@ partial class MainForm
       }
       if ( emptyline ) y -= dy;
       editComment = new();
-      editComment.Tag = reference;  // TODO reorg Tags using panel to get ref
+      editComment.Tag = reference;  // TODO reorg Tags using panel to get ref - Create a control
       label.Tag = editComment;
       if ( commentLineCount > 1 )
       {

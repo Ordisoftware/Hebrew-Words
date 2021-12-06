@@ -22,7 +22,7 @@ partial class SearchTranslatedForm : Form
   static public void Run(WordControl sender)
   {
     if ( sender == null || sender.Reference == null ) return;
-    var form = Forms.Find(f => f.WordControl.Reference.EqualsWord(sender.Reference));
+    var form = Forms.Find(f => f.WordControl.Reference.EqualsWordIncluded(sender.Reference));
     if ( form != null )
     {
       if ( form.WindowState == FormWindowState.Minimized )

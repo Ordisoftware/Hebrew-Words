@@ -242,6 +242,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1154,8 +1155,9 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelTitle.Controls.Add(this.LabelProgress);
+      this.PanelTitle.Controls.Add(this.LabelTitleReferenceName);
       this.PanelTitle.Controls.Add(this.LabelTitle);
+      this.PanelTitle.Controls.Add(this.LabelProgress);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
@@ -1931,6 +1933,12 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // LabelTitleReferenceName
+      // 
+      this.LabelTitleReferenceName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelTitleReferenceName, "LabelTitleReferenceName");
+      this.LabelTitleReferenceName.Name = "LabelTitleReferenceName";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2205,6 +2213,7 @@
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
+    private Label LabelTitleReferenceName;
   }
 }
 

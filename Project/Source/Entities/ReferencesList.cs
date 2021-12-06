@@ -87,7 +87,7 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
         return;
       var items = new List<string>();
       foreach ( var item in Items )
-        items.Add(item.ToStringNumbers());
+        items.Add(item.ToStringOnlyNumbers());
       File.WriteAllLines(FilePath, items);
     }
     catch ( Exception ex )

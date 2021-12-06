@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
+partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
   const string NULL = "(null)";
@@ -42,28 +42,46 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
            ( Verse?.Number.ToString() ?? NULL );
   }
 
-  public string ToStringNumbers()
+  public string ToStringOnlyNumbers()
   {
     return ( Book?.Number.ToString() ?? NULL ) + "." +
            ( Chapter?.Number.ToString() ?? NULL ) + "." +
            ( Verse?.Number.ToString() ?? NULL );
   }
 
+  public string ToStringOnlyNumbersWordIncluded()
+  {
+    return ( Book?.Number.ToString() ?? NULL ) + "." +
+           ( Chapter?.Number.ToString() ?? NULL ) + "." +
+           ( Verse?.Number.ToString() ?? NULL ) + ":" +
+           ( Verse?.Number.ToString() ?? NULL );
+  }
+
+  public override int GetHashCode()
+  {
+    return ( Book?.Number.GetHashCode() ?? 0 )
+         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( Verse?.Number.GetHashCode() ?? 0 );
+  }
+
+  public int GetHashCodeWordIncluded()
+  {
+    return ( Book?.Number.GetHashCode() ?? 0 )
+         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+         ^ ( Verse?.Number.GetHashCode() ?? 0 )
+         ^ ( Word?.Number.GetHashCode() ?? 0 );
+  }
+
   private ReferenceItem()
   {
   }
 
-  public ReferenceItem(BookRow book,
-                       ChapterRow chapter,
-                       VerseRow verse)
+  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse)
   : this(book, chapter, verse, null)
   {
   }
 
-  public ReferenceItem(BookRow book,
-                       ChapterRow chapter,
-                       VerseRow verse,
-                       WordRow word)
+  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse, WordRow word)
   {
     Book = book;
     Chapter = chapter;
@@ -71,8 +89,7 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
     Word = word;
   }
 
-  public ReferenceItem(ReferenceItem reference,
-                       WordRow word)
+  public ReferenceItem(ReferenceItem reference, WordRow word)
   : this(reference)
   {
     Word = word;
@@ -92,116 +109,15 @@ class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
   {
     try
     {
-      // TODO set in bounds in out of ranges ?
-      Book = ApplicationDatabase.Instance.Books.SingleOrDefault(b => b.Number == book);
-      Chapter = ( Book?.Chapters[chapter - 1] );
-      Verse = verse == 0 ? null : ( Chapter?.Verses[verse - 1] );
-      Word = word == 0 ? null : ( Verse?.Words[word - 1] );
+      Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
+      Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
+      Verse = Chapter.Verses?.Find(v => v.Number == verse);
+      Word = Verse?.Words?.Find(w => w.Number == word);
     }
     catch ( Exception ex )
     {
-      throw new Exception($"Error with reference: {book}.{chapter}.{verse}:{word}{Globals.NL2}{ex.Message}");
+      throw new Exception(AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message), ex);
     }
-  }
-
-  static public bool Equals(ReferenceItem x, ReferenceItem y)
-  {
-    return x != null
-        && y != null
-        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-  }
-
-  public override bool Equals(object obj)
-  {
-    return Equals(this, obj as ReferenceItem);
-  }
-
-  public bool Equals(ReferenceItem other)
-  {
-    return Equals(this, other);
-  }
-
-  public bool EqualsWord(ReferenceItem y)
-  {
-    return Equals(y) && ( Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
-  }
-
-  public override int GetHashCode()
-  {
-    return ( Book?.Number.GetHashCode() ?? 0 )
-         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( Verse?.Number.GetHashCode() ?? 0 );
-  }
-
-  public int CompareTo(ReferenceItem other)
-  {
-    if ( other == null )
-    {
-      if ( Book == null && Chapter == null && Verse == null )
-        return 0;
-      else
-        return 1;
-    }
-    else
-    {
-      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
-        && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
-        && ( Verse?.Number ?? 0 ) == ( other.Verse?.Number ?? 0 ) )
-        return 0;
-      else
-      if ( ( Book?.Number ?? 0 ) < ( other.Book?.Number ?? 0 ) )
-        return -1;
-      else
-      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
-        && ( Chapter?.Number ?? 0 ) < ( other.Chapter?.Number ?? 0 ) )
-        return -1;
-      else
-      if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
-        && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
-        && ( Verse?.Number ?? 0 ) < ( other.Verse?.Number ?? 0 ) )
-        return -1;
-      else
-        return 1;
-    }
-
-  }
-
-  public static bool operator ==(ReferenceItem left, ReferenceItem right)
-  {
-    if ( left is null )
-      return right is null;
-    else
-      return left.CompareTo(right) == 0;
-  }
-
-  public static bool operator !=(ReferenceItem left, ReferenceItem right)
-  {
-    if ( left is null )
-      return right is not null;
-    else
-      return left.CompareTo(right) != 0;
-  }
-
-  public static bool operator <(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) < 0;
-  }
-
-  public static bool operator <=(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) <= 0;
-  }
-
-  public static bool operator >(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) > 0;
-  }
-
-  public static bool operator >=(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) >= 0;
   }
 
 }

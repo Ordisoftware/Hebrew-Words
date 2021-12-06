@@ -1,5 +1,4 @@
-﻿
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -12,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -132,7 +131,7 @@ partial class MainForm
     if ( view != ViewMode.Search )
       ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
-    updateButtons();
+    updateControls();
     Refresh();
     switch ( view )
     {
@@ -172,10 +171,9 @@ partial class MainForm
       }
     }
     //
-    void updateButtons()
+    void updateControls()
     {
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
-      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
       //
