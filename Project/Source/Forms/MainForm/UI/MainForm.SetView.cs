@@ -173,7 +173,10 @@ partial class MainForm
     //
     void updateControls()
     {
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
+      LabelTitle.Refresh();
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      PanelMain.Refresh();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
       //

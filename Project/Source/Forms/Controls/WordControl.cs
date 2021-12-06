@@ -35,7 +35,7 @@ partial class WordControl : UserControl
         int height = EditTranslation.Height;
         ResetTextHeight = false;
         using Graphics g = EditTranslation.CreateGraphics();
-        TextHeight = TextRenderer.MeasureText(g, "Text", EditTranslation.Font).Height;
+        TextHeight = TextRenderer.MeasureText(g, "A", EditTranslation.Font).Height;
         EditHeight = TextHeight * ( linesCount + 1 ) - 3;
         EditTranslation.Height = EditHeight;
         TotalHeight = Height + EditHeight - height;

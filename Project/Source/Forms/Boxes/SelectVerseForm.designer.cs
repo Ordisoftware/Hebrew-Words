@@ -45,8 +45,9 @@ namespace Ordisoftware.Hebrew.Words
       this.panel1 = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
+      this.ActionHelp = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -78,7 +79,21 @@ namespace Ordisoftware.Hebrew.Words
       // EditVerseNumber
       // 
       resources.ApplyResources(this.EditVerseNumber, "EditVerseNumber");
+      this.EditVerseNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
       this.EditVerseNumber.Name = "EditVerseNumber";
+      // 
+      // ActionHelp
+      // 
+      this.ActionHelp.AllowDrop = true;
+      this.ActionHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.UseVisualStyleBackColor = true;
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
       // SelectVerseForm
       // 
@@ -86,6 +101,7 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionHelp);
       this.Controls.Add(this.EditVerseNumber);
       this.Controls.Add(this.LabelVerse);
       this.Controls.Add(this.panel1);
@@ -95,7 +111,7 @@ namespace Ordisoftware.Hebrew.Words
       this.Name = "SelectVerseForm";
       this.ShowInTaskbar = false;
       this.panel1.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -123,6 +139,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
     public NumericUpDown EditVerseNumber;
+    private Button ActionHelp;
   }
 
 }

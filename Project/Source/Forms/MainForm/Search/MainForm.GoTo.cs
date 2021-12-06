@@ -70,13 +70,20 @@ partial class MainForm
       IsGoToRunning = false;
     }
     if ( reference.Verse == null )
-    {
-      var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation);
-      reference.Verse = found ?? reference.Chapter?.Verses[0];
-    }
+      if ( reference.Chapter.Verses.Find(v => v.Number == 1).HasTranslation )
+      {
+        var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation);
+        reference.Verse = found ?? reference.Chapter?.Verses.Find(v => v.Number == 1);
+      }
+      else
+      {
+        var found = CurrentReference.Chapter?.Verses?.Find(v => v.HasTranslation);
+        reference.Verse = found ?? reference.Chapter?.Verses.Find(v => v.Number == 1);
+      }
     CurrentReference = new ReferenceItem(reference);
     MoveVerseBindingSourceAndAddCurrentToHistory();
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringFull() ?? String.Empty;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringFull().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Refresh();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView )
       RenderAll();
     // 

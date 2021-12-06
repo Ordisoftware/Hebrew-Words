@@ -137,8 +137,9 @@
       this.LabelSelectChapter = new System.Windows.Forms.Label();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
-      this.LabelProgress = new System.Windows.Forms.Label();
+      this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelProgress = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
@@ -242,7 +243,6 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1161,17 +1161,23 @@
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
-      // LabelProgress
+      // LabelTitleReferenceName
       // 
-      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelProgress, "LabelProgress");
-      this.LabelProgress.Name = "LabelProgress";
+      this.LabelTitleReferenceName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelTitleReferenceName, "LabelTitleReferenceName");
+      this.LabelTitleReferenceName.Name = "LabelTitleReferenceName";
       // 
       // LabelTitle
       // 
       this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
+      // 
+      // LabelProgress
+      // 
+      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelProgress, "LabelProgress");
+      this.LabelProgress.Name = "LabelProgress";
       // 
       // TimerTooltip
       // 
@@ -1932,12 +1938,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // LabelTitleReferenceName
-      // 
-      this.LabelTitleReferenceName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelTitleReferenceName, "LabelTitleReferenceName");
-      this.LabelTitleReferenceName.Name = "LabelTitleReferenceName";
       // 
       // MainForm
       // 

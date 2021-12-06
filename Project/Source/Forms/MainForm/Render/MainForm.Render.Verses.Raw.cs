@@ -51,7 +51,7 @@ partial class MainForm
       IsRendering = false;
       if ( SelectRenderAllVerses.Checked )
       {
-        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count);
+        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count).ToUpper();
         LabelProgress.Refresh();
         PanelViewVerses.Visible = true;
         LabelProgress.Text = "";
