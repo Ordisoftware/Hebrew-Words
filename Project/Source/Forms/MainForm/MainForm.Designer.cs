@@ -147,21 +147,20 @@
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
-      this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
+      this.SepExit = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
       this.ActionViewVerseFiltered = new System.Windows.Forms.ToolStripButton();
       this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+      this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
       this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
       this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCloseWindows = new System.Windows.Forms.ToolStripButton();
-      this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyToClipboardOld = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionDatabase = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +172,7 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,9 +193,12 @@
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionImportConcordances = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionImportConcordances = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -248,6 +250,9 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.SeparatorImportConcordances = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCloseWindowsOld = new System.Windows.Forms.ToolStripButton();
+      this.sep5 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1234,30 +1239,30 @@
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionExit,
-            this.Sep4,
+            this.SepExit,
             this.ActionPreferences,
+            this.ActionBookmarks,
+            this.Sep1,
             this.ActionViewVerses,
             this.ActionViewTranslations,
             this.ActionViewVerseFiltered,
             this.ActionViewSearch,
-            this.toolStripSeparator18,
+            this.Sep2,
             this.ActionViewRawText,
             this.ActionViewELS50,
-            this.toolStripSeparator4,
+            this.Sep3,
             this.ActionGoToReference,
             this.ActionRefresh,
-            this.toolStripSeparator9,
-            this.ActionCloseWindows,
-            this.ActionCopyToClipboard,
+            this.Sep4,
+            this.ActionCloseWindowsOld,
+            this.ActionCopyToClipboardOld,
             this.toolStripSeparator7,
             this.ActionDatabase,
             this.ActionSave,
-            this.toolStripSeparator1,
-            this.ActionBookmarks,
+            this.sep5,
             this.ActionTools,
             this.ActionWebLinks,
             this.ActionInformation,
-            this.ActionImportConcordances,
             this.ActionSettings});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -1274,11 +1279,11 @@
       this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       this.ActionExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ActionExit_MouseUp);
       // 
-      // Sep4
+      // SepExit
       // 
-      this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep4.Name = "Sep4";
-      resources.ApplyResources(this.Sep4, "Sep4");
+      this.SepExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.SepExit.Name = "SepExit";
+      resources.ApplyResources(this.SepExit, "SepExit");
       // 
       // ActionPreferences
       // 
@@ -1331,10 +1336,10 @@
       this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator18
+      // Sep2
       // 
-      this.toolStripSeparator18.Name = "toolStripSeparator18";
-      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+      this.Sep2.Name = "Sep2";
+      resources.ApplyResources(this.Sep2, "Sep2");
       // 
       // ActionViewRawText
       // 
@@ -1356,10 +1361,10 @@
       this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator4
+      // Sep3
       // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      this.Sep3.Name = "Sep3";
+      resources.ApplyResources(this.Sep3, "Sep3");
       // 
       // ActionGoToReference
       // 
@@ -1381,30 +1386,20 @@
       this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator9
+      // Sep4
       // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      this.Sep4.Name = "Sep4";
+      resources.ApplyResources(this.Sep4, "Sep4");
       // 
-      // ActionCloseWindows
+      // ActionCopyToClipboardOld
       // 
-      this.ActionCloseWindows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
-      this.ActionCloseWindows.Name = "ActionCloseWindows";
-      this.ActionCloseWindows.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
-      this.ActionCloseWindows.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionCloseWindows.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionCopyToClipboard
-      // 
-      this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
-      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
-      this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
-      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      this.ActionCopyToClipboardOld.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCopyToClipboardOld, "ActionCopyToClipboardOld");
+      this.ActionCopyToClipboardOld.Name = "ActionCopyToClipboardOld";
+      this.ActionCopyToClipboardOld.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCopyToClipboardOld.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      this.ActionCopyToClipboardOld.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionCopyToClipboardOld.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator7
       // 
@@ -1483,10 +1478,10 @@
       this.ActionSave.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionSave.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator1
+      // Sep1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.Sep1.Name = "Sep1";
+      resources.ApplyResources(this.Sep1, "Sep1");
       // 
       // ActionBookmarks
       // 
@@ -1568,7 +1563,12 @@
             this.ActionOpenHebrewLetters,
             this.ActionOpenCalculator,
             this.toolStripSeparator16,
-            this.ActionViewBibleStatistics});
+            this.ActionViewBibleStatistics,
+            this.toolStripSeparator19,
+            this.ActionCloseWindows,
+            this.ActionCopyToClipboard,
+            this.SeparatorImportConcordances,
+            this.ActionImportConcordances});
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
       // 
@@ -1624,6 +1624,29 @@
       this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
       this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
       // 
+      // toolStripSeparator19
+      // 
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      // 
+      // ActionCopyToClipboard
+      // 
+      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
+      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      // 
+      // ActionCloseWindows
+      // 
+      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
+      this.ActionCloseWindows.Name = "ActionCloseWindows";
+      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
+      // 
+      // ActionImportConcordances
+      // 
+      resources.ApplyResources(this.ActionImportConcordances, "ActionImportConcordances");
+      this.ActionImportConcordances.Name = "ActionImportConcordances";
+      this.ActionImportConcordances.Click += new System.EventHandler(this.ActionImportConcordances_Click);
+      // 
       // ActionWebLinks
       // 
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
@@ -1637,13 +1660,6 @@
       this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionInformation.Name = "ActionInformation";
       this.ActionInformation.Padding = new System.Windows.Forms.Padding(5);
-      // 
-      // ActionImportConcordances
-      // 
-      this.ActionImportConcordances.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionImportConcordances, "ActionImportConcordances");
-      this.ActionImportConcordances.Name = "ActionImportConcordances";
-      this.ActionImportConcordances.Click += new System.EventHandler(this.ActionImportConcordances_Click);
       // 
       // ActionSettings
       // 
@@ -1982,6 +1998,26 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // SeparatorImportConcordances
+      // 
+      this.SeparatorImportConcordances.Name = "SeparatorImportConcordances";
+      resources.ApplyResources(this.SeparatorImportConcordances, "SeparatorImportConcordances");
+      // 
+      // ActionCloseWindowsOld
+      // 
+      this.ActionCloseWindowsOld.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCloseWindowsOld, "ActionCloseWindowsOld");
+      this.ActionCloseWindowsOld.Name = "ActionCloseWindowsOld";
+      this.ActionCloseWindowsOld.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCloseWindowsOld.Click += new System.EventHandler(this.ActionCloseWindows_Click);
+      this.ActionCloseWindowsOld.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionCloseWindowsOld.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // sep5
+      // 
+      this.sep5.Name = "sep5";
+      resources.ApplyResources(this.sep5, "sep5");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2124,10 +2160,9 @@
     private Ordisoftware.Core.TextBoxEx EditELS50;
     private System.Windows.Forms.TextBox EditSearchPaging;
     private System.Windows.Forms.Timer TimerTooltip;
-    private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
+    private System.Windows.Forms.ToolStripButton ActionCopyToClipboardOld;
     private System.Windows.Forms.ToolStripButton ActionExit;
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
-    private System.Windows.Forms.ToolStripButton ActionImportConcordances;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripButton ActionViewELS50;
     private System.Windows.Forms.ToolStripButton ActionViewRawText;
@@ -2170,11 +2205,11 @@
     private System.Windows.Forms.ToolStripMenuItem MenuHistory;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
-    private System.Windows.Forms.ToolStripSeparator Sep4;
+    private System.Windows.Forms.ToolStripSeparator SepExit;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripSeparator Sep1;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
@@ -2182,12 +2217,12 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
     public Ordisoftware.Hebrew.LettersControl EditLetters;
@@ -2196,7 +2231,6 @@
     public System.Windows.Forms.TabControl SelectSearchType;
     public System.Windows.Forms.TabPage SelectSearchTypeHebrew;
     public System.Windows.Forms.Timer TimerAutoSave;
-    public System.Windows.Forms.ToolStripButton ActionCloseWindows;
     public System.Windows.Forms.ToolStripButton ActionSave;
     public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
     public System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
@@ -2226,7 +2260,7 @@
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
     public Panel PanelViewVerseFiltered;
-    private ToolStripSeparator toolStripSeparator18;
+    private ToolStripSeparator Sep2;
     private ComboBox SelectVerse;
     private ComboBoxNavigator ComboBoxNavigatorVerse;
     private BindingSource FilterBooksBindingSource;
@@ -2264,6 +2298,13 @@
     private HScrollBar EditELS50HScrollBar;
     internal CheckBox SelectRenderAllVerses;
     internal ToolStripButton ActionRefresh;
+    private ToolStripSeparator toolStripSeparator19;
+    private ToolStripMenuItem ActionCopyToClipboard;
+    private ToolStripMenuItem ActionImportConcordances;
+    private ToolStripSeparator SeparatorImportConcordances;
+    private ToolStripSeparator sep5;
+    private ToolStripButton ActionCloseWindowsOld;
+    internal ToolStripMenuItem ActionCloseWindows;
   }
 }
 

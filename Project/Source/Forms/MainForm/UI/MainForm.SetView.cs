@@ -178,7 +178,7 @@ partial class MainForm
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
       PanelMain.Refresh();
       //
-      ActionCopyToClipboard.Enabled = view == ViewMode.Translation;
+      ActionCopyToClipboardOld.Enabled = view == ViewMode.Translation;
       //
       ActionExportBook.Enabled = view == ViewMode.Verses || view == ViewMode.ELS50;
       SelectBook.Enabled = view != ViewMode.Search;
