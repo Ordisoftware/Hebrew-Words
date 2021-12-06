@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditReturn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 7</value>
+    <value>122, 7</value>
   </data>
   <data name="EditReturn.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 17</value>
@@ -193,7 +193,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 3</value>
+    <value>186, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -220,10 +220,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 428</value>
+    <value>10, 323</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 28</value>
+    <value>264, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -254,15 +254,15 @@
   </metadata>
   <data name="ActionUseTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAGuSURBVDhPtVLZSkJRFL0PfUIT1WPvBZWERdpDYW9NNlBB
-        IM0ZZTZA32FzRNCoRhF9hU8l+pCWQ2F0r2WjNyVidc7uNoC3kKAFi3XW3mevc7ls4d8wOdwLq3kAFvMg
-        KfdKK22UcE4NmfggnXkxBYUz+yiY3EWu1fnJHOsusif2kDV9CEtPFyn3vP5xJ2/cDo3NBSGfDUduZZxK
-        j/BLT1+8jiNw/wpTZxupLxrHifio8AHh6APqHAEI2eMOcNxcBHEXCeH+Msw0jNjlOWKSiPZWI6QrEeeh
-        EEKBwDvPzmimessPIctiJ1My50blkgdVK15ULntQuuAFXhJoMTbjKS4jen0DUYoySpBEkWZ0G76vAO2i
-        GzWrHhjWvEy90LIwjuamRtJEMom4LBOfn2WqUUDm2HtAse0I5fPH0C64SYtsx1RvbKgnVYNu/VvAT/gt
-        QM+/IGdsR7HqaDc2KadU1PCfqJl1weAMonrTDz2jjnM7iCpnBLqDGPq7O0jJszrv87u126eoWPOwJcvI
-        KGP79LFpKRwZ6Pu+iWpUx+hQP0bMw4xmUu6VVtpI/7W/QxDeAHIZ7sUEm35yAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAa5JREFUOE+1UtlKQlEUvQ99QhPVY+8FlYRF2kNhb002UEEgzRllNkDfYXNE0KhG
+        EX2FTyX6kJZDYXSvZaM3JWJ1zu42gLeQoAWLddbeZ69zuWzh3zA53AureQAW8yAp90orbZRwTg2Z+CCd
+        eTEFhTP7KJjcRa7V+ckc6y6yJ/aQNX0IS08XKfe8/nEnb9wOjc0FIZ8NR25lnEqP8EtPX7yOI3D/ClNn
+        G6kvGseJ+KjwAeHoA+ocAQjZ4w5w3FwEcRcJ4f4yzDSM2OU5YpKI9lYjpCsR56EQQoHAO8/OaKZ6yw8h
+        y2InUzLnRuWSB1UrXlQue1C64AVeEmgxNuMpLiN6fQNRijJKkESRZnQbvq8A7aIbNaseGNa8TL3QsjCO
+        5qZG0kQyibgsE5+fZapRQObYe0Cx7Qjl88fQLrhJi2zHVG9sqCdVg279W8BP+C1Az78gZ2xHsepoNzYp
+        p1TU8J+omXXB4AyietMPPaOOczuIKmcEuoMY+rs7SMmzOu/zu7Xbp6hY87Aly8goY/v0sWkpHBno+76J
+        alTH6FA/RszDjGZS7pVW2kj/tb9DEN4AchnuxQSbfnIAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionUseTranslation.Size" type="System.Drawing.Size, System.Drawing">
@@ -273,16 +273,16 @@
   </data>
   <data name="ActionAddTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAHGSURBVDhPpZLNSxthEIfn4H9g6YdYT/4HbXI1axGMRqsm
-        2yRF7KEHC55MtDmIXgQpVKkgEYyHXmzTmo30nvZgD6V+INieNCZZW1F2tYpJ3c2ulF/3fROpBKMpPvAw
-        7+zOzM4uS9emfugD7oYWUDMYx53BBcs4bg8wpUutCc7DHl4G1T6PYy9r4MfxKX7m/kC2YvJAw4b6GxtK
-        roxZbO9n4YylQTeDEhh+Tyd6Hvvg83Rhd2cH25kM5HT6YlMp3iNEk6Dq/hhPTNOEz+uFYZg4PDyCqu5D
-        uVAVqqLwnoY3m2zAPE8YHrebR8M0oOkaTrSCmq5DzxvI502uaZ0ZjtIBoigWT5XRGJVBN4qv4O5oh/eR
-        iIftbTwvJZzoxf1hgm2EYLec+9yHZikHuhX4t0E5Ip+ewR8hRNYJ338FMPuN8PQ1wTH1BGSfXoFTkvHg
-        XQqNzOgWhLdJOLgZCO+PIYwSwsuEV1+JD5xcIsysElpfEoiqqmzW/3TvMptfENZ2B3jzGWt7ITj5gApw
-        WYUTi4TRj4UNWGS5a7zCAU0jJHXPEMYShC9yiEeWs+vFkiupY8XsiS3WNiwWm+sKtyuDFZ//Nv/VXAai
-        vw81CKls+mj+AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAcZJREFUOE+lks1LG2EQh+fgf2Dph1hP/gdtcjVrEYxGqybbJEXsoQcLnky0OYhe
+        BClUqSARjIdebNOajfSe9mAPpX4g2J40JllbUXa1ikndza6UX/d9E6kEoyk+8DDv7M7Mzi5L16Z+6APu
+        hhZQMxjHncEFyzhuDzClS60JzsMeXgbVPo9jL2vgx/Epfub+QLZi8kDDhvobG0qujFls72fhjKVBN4MS
+        GH5PJ3oe++DzdGF3ZwfbmQzkdPpiUyneI0SToOr+GE9M04TP64VhmDg8PIKq7kO5UBWqovCehjebbMA8
+        Txget5tHwzSg6RpOtIKarkPPG8jnTa5pnRmO0gGiKBZPldEYlUE3iq/g7miH95GIh+1tPC8lnOjF/WGC
+        bYRgt5z73IdmKQe6Ffi3QTkin57BHyFE1gnffwUw+43w9DXBMfUEZJ9egVOS8eBdCo3M6BaEt0k4uBkI
+        748hjBLCy4RXX4kPnFwizKwSWl8SiKqqbNb/dO8ym18Q1nYHePMZa3shOPmACnBZhROLhNGPhQ1YZLlr
+        vMIBTSMkdc8QxhKEL3KIR5az68WSK6ljxeyJLdY2LBab6wq3K4MVn/82/9VcBqK/DzUIqWz6aP4AAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="ActionAddTranslation.Size" type="System.Drawing.Size, System.Drawing">
@@ -296,17 +296,16 @@
   </data>
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
-        GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
-        sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
-        eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
-        94QefRPVvOhqw5g7rYRftSrqmzU0NjfQ+ClLds7cE3r0TVTz/IaFlKt/wSEnxJHXX3F04BuakkJ1ztwT
-        evRNVJO8bsnL+sCXoIztRh34Xcdy5bPqnLkn9OibqObZtdbowGypBBEGqMian5tVnTP3hB59E9U4V09H
-        B4IgwNbWH1VCiOibe0KPvolqEldORQeKxaKSRRjivfwFixWBRRFibmZGvdOjb6Iau3P3wF6Wl4T52v1O
-        ZX3QN1ENF+npghL20jz8HcdHVnBMVvPwitpNeMX9B55ctpAeSqgjqaynKiP/up6fQyGXV+X5ebh+CRND
-        DuibqObBRasU77TQ29GC3ksnVcVl9XX8W3H53ic9+iYacVjWif8o+pJY7C81a0AShQAVCwAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAfFJREFUOE+Vks1LVFEYxue/aCtE4aoWZXk1Ilr0b0SCVFQYBFpt2lXQJsfu3Gyi
+        DxNSRMdxvGPeO19qZg3de0apwFWii3HM2gzTxvDpPOccr4a46Acv733f83teZjGxg0g4DmzbBrtZHcyb
+        OxfGB2+fx2DPWbztbsPde/fhuu+Qybiqc+ae7/Tom6hmoPscRHkeqakc0lM+Hj56jIWPZXxY+KQ6Z+75
+        To++iWpe3TqDsWwOO8TtfthPk1Fx3oEefRPVvLzZjtFJTwlrq2tYr1bxo1aLijP3hB59E9W86GrDmDut
+        hF+1KuqbNTQ2N9D4KUt2ztwTevRNVPP8hoWUq3/BISfEkddfcXTgG5qSQnXO3BN69E1Uk7xuycv6wJeg
+        jO1GHfhdx3Lls+qcuSf06Juo5tm11ujAbKkEEQaoyJqfm1WdM/eEHn0T1ThXT0cHgiDA1tYfVUKI6Jt7
+        Qo++iWoSV05FB4rFopJFGOK9/AWLFYFFEWJuZka906Nvohq7c/fAXpaXhPna/U5lfdA3UQ0X6emCEvbS
+        PPwdx0dWcExW8/CK2k14xf0Hnly2kB5KqCOprKcqI/+6np9DIZdX5fl5uH4JE0MO6Juo5sFFqxTvtNDb
+        0YLeSydVxWX1dfxbcfneJz36JhpxWNaJ/yj6kljsLzVrQBKFABULAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
@@ -320,13 +319,13 @@
   </data>
   <data name="ActionReachReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEXSURBVDhP3ZBPSwJRFMXPV1HctGrhFxBNx42EW1eBH6B9
-        JKaUWm0DNQRrkxC1cSdU0B80glApa3TVYpBxIfgNTvfNPNuMQm79weHxLueee9/DmmOU0Dy6BmPHmOjS
-        akgATWuPWRVSQleXl6MmyjRuFcFwAVQBX1aeL6MUs7fOJg1tXYxqtmZVDibb/LST7I8TNO0zlp/Bzs8O
-        c00wfoobbfcSlYk9e5fVV/yp3AErcp6/ge/jNI0TUNu9GLLBkx3hxTcc1Qdgreeq/gHmWmAkg3tt9xLK
-        4DEuE9TbY/IP6rwcSpgJHtyBoX20xOZ33YsJiIJzqYArS5ofwGgeQ6n5RP9HbXTYluYCpnLdcKurMd9o
-        07mtI8Av7YSLTz/D1/EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAARdJREFUOE/dkE9LAlEUxc9XUdy0auEXEE3HjYRbV4EfoH0kppRabQM1BGuTELVx
+        J1TQHzSCUClrdNVikHEh+A1O980824xCbv3B4fEu555738OaY5TQPLoGY8eY6NJqSABNa49ZFVJCV5eX
+        oybKNG4VwXABVAFfVp4voxSzt84mDW1djGq2ZlUOJtv8tJPsjxM07TOWn8HOzw5zTTB+ihtt9xKViT17
+        l9VX/KncAStynr+B7+M0jRNQ270YssGTHeHFNxzVB2Ct56r+AeZaYCSDe233EsrgMS4T1Ntj8g/qvBxK
+        mAke3IGhfbTE5nfdiwmIgnOpgCtLmh/AaB5DqflE/0dtdNiW5gKmct1wq6sx32jTua0jwC/thItPP8PX
+        8QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionReachReference.Size" type="System.Drawing.Size, System.Drawing">
@@ -351,7 +350,7 @@
     <value>0, 0</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 300</value>
+    <value>264, 195</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -378,7 +377,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 310</value>
+    <value>264, 205</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -408,7 +407,7 @@
     <value>0, 84</value>
   </data>
   <data name="LabelHebrewWordSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 24</value>
+    <value>264, 24</value>
   </data>
   <data name="LabelHebrewWordSource.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -468,7 +467,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 44</value>
+    <value>204, 44</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -504,7 +503,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 44</value>
+    <value>171, 44</value>
   </data>
   <data name="ActionDelLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -537,7 +536,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="ActionDelFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 44</value>
+    <value>229, 44</value>
   </data>
   <data name="ActionDelFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -597,7 +596,7 @@
     <value>3, 7</value>
   </data>
   <data name="EditHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 35</value>
+    <value>258, 35</value>
   </data>
   <data name="EditHebrew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -624,7 +623,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 108</value>
+    <value>264, 108</value>
   </data>
   <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -650,11 +649,8 @@
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
   </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 1000</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>200, 400</value>
+    <value>300, 400</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

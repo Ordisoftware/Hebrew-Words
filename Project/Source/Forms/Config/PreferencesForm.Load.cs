@@ -44,8 +44,8 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditOnlineVerseURL.Text = Program.Settings.OpenVerseOnlineURL);
     SystemManager.TryCatch(() => EditAutoBackupCount.Value = Program.Settings.BackupCount);
     SystemManager.TryCatch(() => EditAutoSaveDelay.Value = Program.Settings.AutoSaveDelay);
-    SystemManager.TryCatch(() => EditCommentLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
-    SystemManager.TryCatch(() => EditWordtranslateLinesCount.Value = Program.Settings.VerseWordTranslationLinesCount);
+    SystemManager.TryCatch(() => EditCommentaryLinesCount.Value = Program.Settings.VerseCommentaryLinesCount);
+    SystemManager.TryCatch(() => EditWordTranslateLinesCount.Value = Program.Settings.VerseWordTranslationLinesCount);
     SystemManager.TryCatch(() => EditWordControlWidth.Value = Program.Settings.WordControlWidth);
     SystemManager.TryCatch(() => EditBookmarksCount.Value = Program.Settings.BookmarksCount);
     SystemManager.TryCatch(() => EditHistoryCount.Value = Program.Settings.HistoryCount);
@@ -89,7 +89,8 @@ partial class PreferencesForm
     //
     if ( First )
     {
-      CommentaryLinesCountPrevious = (int)EditCommentLinesCount.Value;
+      TranslateLinesCountPrevious = (int)EditWordTranslateLinesCount.Value;
+      CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
       MaxrefCountPrevious = (int)EditSearchDisplayMaxRef.Value;
       First = false;

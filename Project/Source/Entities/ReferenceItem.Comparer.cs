@@ -19,11 +19,7 @@ class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
 
   public bool Equals(ReferenceItem x, ReferenceItem y)
   {
-    return x != null
-        && y != null
-        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
+    return x == y;
   }
 
   public int GetHashCode(ReferenceItem obj)

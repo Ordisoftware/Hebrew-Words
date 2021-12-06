@@ -1993,6 +1993,8 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
       this.Load += new System.EventHandler(this.MainForm_Load);
       this.Shown += new System.EventHandler(this.MainForm_Shown);
+      this.ResizeBegin += new System.EventHandler(this.MainForm_ResizeBegin);
+      this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
       this.ClientSizeChanged += new System.EventHandler(this.MainForm_WindowsChanged);
       this.LocationChanged += new System.EventHandler(this.MainForm_WindowsChanged);
       this.PanelMain.ResumeLayout(false);
@@ -2127,7 +2129,6 @@
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
     private System.Windows.Forms.ToolStripButton ActionImportConcordances;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
-    private System.Windows.Forms.ToolStripButton ActionRefresh;
     private System.Windows.Forms.ToolStripButton ActionViewELS50;
     private System.Windows.Forms.ToolStripButton ActionViewRawText;
     private System.Windows.Forms.ToolStripButton ActionViewSearch;
@@ -2222,7 +2223,6 @@
     private RadioButton SelectSearchTranslationIncludeComments;
     private RadioButton SelectSearchTranslationOnlyComments;
     private RadioButton SelectSearchTranslationOnlyTranslations;
-    private CheckBox SelectRenderAllVerses;
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
     public Panel PanelViewVerseFiltered;
@@ -2262,6 +2262,8 @@
     private ComboBoxNavigator comboBoxNavigator1;
     private Label LabelSelectVerse;
     private HScrollBar EditELS50HScrollBar;
+    internal CheckBox SelectRenderAllVerses;
+    internal ToolStripButton ActionRefresh;
   }
 }
 
