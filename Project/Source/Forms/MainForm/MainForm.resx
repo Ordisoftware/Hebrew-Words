@@ -303,7 +303,7 @@
   <data name="LabelInfoFilterVerses.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        vQAADr0BR/uQrQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
         KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
         qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
         l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
@@ -349,7 +349,7 @@
   <data name="ActionGoFromVerseFilteredToVersesPanel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAaNJREFUOE+dkklLQlEcxd8uLYgWDV/Ab9Ai6lNltakcsLKkMpqIRtu1SNtEPnXT
+        vQAADr0BR/uQrQAAAaNJREFUOE+dkklLQlEcxd8uLYgWDV/Ab9Ai6lNltakcsLKkMpqIRtu1SNtEPnXT
         sKkQgufKhSY0vFIbfE7lfLr/q4LSq8gD59174P4Od3iCZvLkuG/Kix6LB90WkY2/u7rGA2KIFXrZxCEl
         sHXzyr39h+vriCFW6DKL8Nx+YGAvjEFH3SE+Du2r5RBbG4J4mwWxQofBjVbVzlhBWyswGI0YHhmD03WE
         UDgMg8kM/ej3fOh0IRgMckYzSQXsQ5KfZDxFY7iXZdw9PEJ+jqrmu0cZkUiEM9WC2g6sczaMG0wQfT7E
@@ -779,13 +779,13 @@
     <value>Top, Left, Right</value>
   </data>
   <metadata name="FilterVersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>413, 66</value>
+    <value>413, 95</value>
   </metadata>
   <metadata name="FilterChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>207, 66</value>
+    <value>207, 95</value>
   </metadata>
   <metadata name="FilterBooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 66</value>
+    <value>17, 95</value>
   </metadata>
   <data name="SelectFilterVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 163</value>
@@ -2471,6 +2471,114 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;PanelMainOuter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="comboBoxNavigator2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>505, 56</value>
+  </metadata>
+  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>342, 56</value>
+  </metadata>
+  <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 78</value>
+  </data>
+  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 23</value>
+  </data>
+  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
+    <value>SelectChapter</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="comboBoxNavigator2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 108</value>
+  </data>
+  <data name="comboBoxNavigator2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="comboBoxNavigator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 25</value>
+  </data>
+  <data name="comboBoxNavigator2.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator2.Name" xml:space="preserve">
+    <value>comboBoxNavigator2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator2.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator2.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBoxNavigator1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectBook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 10</value>
+  </data>
+  <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 23</value>
+  </data>
+  <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
+    <value>SelectBook</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="comboBoxNavigator1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 40</value>
+  </data>
+  <data name="comboBoxNavigator1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="comboBoxNavigator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 25</value>
+  </data>
+  <data name="comboBoxNavigator1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator1.Name" xml:space="preserve">
+    <value>comboBoxNavigator1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator1.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator1.Parent" xml:space="preserve">
+    <value>PanelNavigation</value>
+  </data>
+  <data name="&gt;&gt;comboBoxNavigator1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="ActionSelectRenderAllVersesKeepHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -2512,19 +2620,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionSelectRenderAllVersesKeepHelp.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ComboBoxNavigatorVerse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 38</value>
-  </metadata>
-  <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 36</value>
-  </metadata>
-  <metadata name="BooksBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>16, 37</value>
+    <value>684, 56</value>
   </metadata>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>558, 109</value>
@@ -2545,7 +2647,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="ComboBoxNavigatorVerse.Location" type="System.Drawing.Point, System.Drawing">
     <value>612, 109</value>
@@ -2569,7 +2671,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ComboBoxNavigatorVerse.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SelectRenderAllVersesKeep.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2599,7 +2701,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;SelectRenderAllVersesKeep.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="SelectRenderAllVerses.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2626,13 +2728,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;SelectRenderAllVerses.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditChapterMemo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="EditChapterMemo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
     <value>558, 78</value>
@@ -2659,7 +2761,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LabelChapterMemo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2692,7 +2794,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelChapterMemo.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LabelBookTranslation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2725,7 +2827,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelBookTranslation.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LabelChapterTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2758,7 +2860,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelChapterTitle.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionEditBookMemo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2814,7 +2916,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionEditBookMemo.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="ActionEditChapterMemo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2873,7 +2975,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionEditChapterMemo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2934,7 +3036,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionELS50CopyToClipboard.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="ActionExportChapter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2993,7 +3095,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionExportChapter.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="ActionExportBook.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3052,7 +3154,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionExportBook.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="ActionSearchVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3107,40 +3209,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;ActionSearchVerse.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="SelectBook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 10</value>
-  </data>
-  <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 24</value>
-  </data>
-  <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
-    <value>SelectBook</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
-    <value>PanelNavigation</value>
-  </data>
-  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditBookTranslation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 40</value>
   </data>
   <data name="EditBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 22</value>
+    <value>258, 21</value>
   </data>
   <data name="EditBookTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3155,16 +3233,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="EditChapterTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 108</value>
   </data>
   <data name="EditChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 22</value>
+    <value>258, 21</value>
   </data>
   <data name="EditChapterTitle.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3179,7 +3257,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="EditELS50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3209,31 +3287,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;EditELS50.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="SelectChapter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 78</value>
-  </data>
-  <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 24</value>
-  </data>
-  <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Name" xml:space="preserve">
-    <value>SelectChapter</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.Parent" xml:space="preserve">
-    <value>PanelNavigation</value>
-  </data>
-  <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="LabelChapterELS50.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3266,7 +3320,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelChapterELS50.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="LabelSelectBook.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3299,7 +3353,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelSelectBook.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="LabelSelectChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3332,7 +3386,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>PanelNavigation</value>
   </data>
   <data name="&gt;&gt;LabelSelectChapter.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>24</value>
   </data>
   <data name="PanelNavigation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -3539,10 +3593,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>2</value>
   </data>
   <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>105, 9</value>
+    <value>280, 17</value>
   </metadata>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>11, 6</value>
+    <value>179, 17</value>
   </metadata>
   <data name="ToolStrip.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5156,34 +5210,34 @@ A verse is founded if the translation of one of its words contains an expression
     <value>3</value>
   </data>
   <metadata name="SaveFileDialogMSWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>982, 11</value>
+    <value>163, 56</value>
   </metadata>
   <data name="SaveFileDialogMSWord.Filter" xml:space="preserve">
     <value>Word DOCX files (*.docx)|*.docx</value>
   </data>
   <metadata name="SaveFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>845, 10</value>
+    <value>17, 56</value>
   </metadata>
   <data name="SaveFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
   <metadata name="OpenFileDialogDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>695, 9</value>
+    <value>897, 17</value>
   </metadata>
   <data name="OpenFileDialogDB.Filter" xml:space="preserve">
     <value>SQLite files (*.sqlite)|*.sqlite</value>
   </data>
   <metadata name="SaveFileDialogRTF.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>987, 42</value>
+    <value>1016, 56</value>
   </metadata>
   <data name="SaveFileDialogRTF.Filter" xml:space="preserve">
     <value>Rich Text Format files (*.rtf)|*.rtf</value>
   </data>
   <metadata name="TimerAutoSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>221, 11</value>
+    <value>401, 17</value>
   </metadata>
   <metadata name="ContextMenuStripVerse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>353, 10</value>
+    <value>535, 17</value>
   </metadata>
   <data name="ActionVerseReadOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5335,7 +5389,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="ContextMenuStripWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>523, 9</value>
+    <value>716, 17</value>
   </metadata>
   <data name="ActionWordSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5592,10 +5646,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>526, 39</value>
+    <value>850, 56</value>
   </metadata>
-  <metadata name="ToolTipSearchVerseInChapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>606, 66</value>
+  <metadata name="ToolTipSearchResult.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -6254,10 +6308,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;WordsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ToolTipSearchVerseInChapter.Name" xml:space="preserve">
-    <value>ToolTipSearchVerseInChapter</value>
+  <data name="&gt;&gt;ToolTipSearchResult.Name" xml:space="preserve">
+    <value>ToolTipSearchResult</value>
   </data>
-  <data name="&gt;&gt;ToolTipSearchVerseInChapter.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolTipSearchResult.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

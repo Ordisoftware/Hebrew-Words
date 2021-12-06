@@ -244,6 +244,8 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.comboBoxNavigator1 = new Ordisoftware.Core.ComboBoxNavigator();
+      this.comboBoxNavigator2 = new Ordisoftware.Core.ComboBoxNavigator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -921,6 +923,8 @@
       // 
       // PanelNavigation
       // 
+      this.PanelNavigation.Controls.Add(this.comboBoxNavigator2);
+      this.PanelNavigation.Controls.Add(this.comboBoxNavigator1);
       this.PanelNavigation.Controls.Add(this.ActionSelectRenderAllVersesKeepHelp);
       this.PanelNavigation.Controls.Add(this.ComboBoxNavigatorVerse);
       this.PanelNavigation.Controls.Add(this.SelectVerse);
@@ -1940,6 +1944,24 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // comboBoxNavigator1
+      // 
+      resources.ApplyResources(this.comboBoxNavigator1, "comboBoxNavigator1");
+      this.comboBoxNavigator1.ComboBox = this.SelectBook;
+      this.comboBoxNavigator1.KeepFocus = false;
+      this.comboBoxNavigator1.Name = "comboBoxNavigator1";
+      this.comboBoxNavigator1.SelectedIndex = -1;
+      this.comboBoxNavigator1.SelectedItem = null;
+      // 
+      // comboBoxNavigator2
+      // 
+      resources.ApplyResources(this.comboBoxNavigator2, "comboBoxNavigator2");
+      this.comboBoxNavigator2.ComboBox = this.SelectChapter;
+      this.comboBoxNavigator2.KeepFocus = false;
+      this.comboBoxNavigator2.Name = "comboBoxNavigator2";
+      this.comboBoxNavigator2.SelectedIndex = -1;
+      this.comboBoxNavigator2.SelectedItem = null;
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2216,6 +2238,8 @@
     private Button ActionSelectRenderAllVersesKeepHelp;
     private Label LabelTitleReferenceName;
     private ToolTip ToolTipSearchResult;
+    private ComboBoxNavigator comboBoxNavigator2;
+    private ComboBoxNavigator comboBoxNavigator1;
   }
 }
 
