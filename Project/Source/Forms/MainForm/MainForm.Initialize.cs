@@ -31,11 +31,18 @@ partial class MainForm : Form
     Interlocks.Take();
     new Task(InitializeIconsAndSound).Start();
     new Task(InitializeDialogsDirectory).Start();
+    new Task(() => Bookmarks = new Bookmarks(Program.BookmarksFilePath)).Start();
+    new Task(() => History = new History(Program.HistoryFilePath)).Start();
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
-    SystemEvents.SessionEnding += SessionEnding;
     CurrentReference = new ReferenceItem(null, null, null, null);
+    ActionGoToBookmarkMain.Click += GoToBookmark;
+    SystemEvents.SessionEnding += SessionEnding;
+    EditELS50HScrollBar.Minimum = -100;
+    EditELS50HScrollBar.Maximum = 0;
+    EditELS50HScrollBar.LargeChange = 20;
+    EditELS50HScrollBar.SmallChange = 10;
   }
 
   /// <summary>
@@ -71,8 +78,8 @@ partial class MainForm : Form
   private void DoFormShown(object sender, EventArgs e)
   {
     if ( Globals.IsExiting ) return;
-    Refresh();
     this.InitDropDowns();
+    Refresh();
     DoBackupDB();
     LoadData();
     TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;

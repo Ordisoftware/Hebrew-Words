@@ -49,9 +49,6 @@ partial class MainForm : Form
   {
     InitializeComponent();
     DoConstructor();
-    Bookmarks = new Bookmarks(Program.BookmarksFilePath);
-    History = new History(Program.HistoryFilePath);
-    ActionGoToBookmarkMain.Click += GoToBookmark;
   }
 
   /// <summary>
@@ -1063,7 +1060,6 @@ partial class MainForm : Form
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1/* TODO ???? 1*/);
       if ( referenceOld == referenceNew ) return;
       ActionSave.PerformClick();
-      //RenderAll();
       GoTo(referenceNew, true);
     }
     finally
@@ -1072,6 +1068,36 @@ partial class MainForm : Form
       NeedUpdateCurrentReference = false;
       UpdateCurrentReferenceMutex = false;
     }
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditELS50 for text changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void EditELS50_TextChanged(object sender, EventArgs e)
+  {
+    EditELS50HScrollBar.Value = EditELS50HScrollBar.Maximum;
+    EditELS50HScrollBar.Enabled = TextRenderer.MeasureText(EditELS50.Text, EditELS50.Font).Width > EditELS50.Width;
+  }
+
+  /// <summary>
+  /// Event handler. Called by EditELS50HScrollBar for scroll events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Scroll event information.</param>
+  private void EditELS50HScrollBar_Scroll(object sender, ScrollEventArgs e)
+  {
+    EditELS50.SelectionLength = 0;
+    if ( EditELS50HScrollBar.Value >= -EditELS50HScrollBar.LargeChange )
+      EditELS50.SelectionStart = EditELS50.Text.Length;
+    else
+    if ( EditELS50HScrollBar.Value <= EditELS50HScrollBar.Minimum + EditELS50HScrollBar.LargeChange )
+      EditELS50.SelectionStart = 0;
+    else
+      EditELS50.SelectionStart = EditELS50.Text.Length
+                               - ( EditELS50.Text.Length * EditELS50HScrollBar.Value / EditELS50HScrollBar.Minimum );
+    EditELS50.ScrollToCaret();
   }
 
   #endregion

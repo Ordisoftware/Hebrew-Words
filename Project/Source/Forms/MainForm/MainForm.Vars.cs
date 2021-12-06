@@ -54,8 +54,8 @@ partial class MainForm
   /// </summary>
   private int PreviousSeachPagingPosition = -1;
 
-  private Bookmarks Bookmarks { get; init; }
-  private History History { get; init; }
+  internal Bookmarks Bookmarks { get; private set; }
+  internal History History { get; private set; }
 
   private int BookmarksMenuFirstIndex;
 
