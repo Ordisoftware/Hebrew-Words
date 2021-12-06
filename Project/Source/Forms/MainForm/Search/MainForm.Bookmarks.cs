@@ -58,7 +58,7 @@ partial class MainForm
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;
           item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionAddToBookmarks.Image;
+          item.Image = ActionGoToBookmarks.Image;
         }
       }
       ActionClearBookmarks.Enabled = Bookmarks.Count > 0

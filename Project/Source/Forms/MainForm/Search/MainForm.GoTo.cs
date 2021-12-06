@@ -111,6 +111,7 @@ partial class MainForm
           else
           {
             showToolTip("Aucun verset à compléter.");
+            reference = CurrentReference;
             return null;
           }
         }
@@ -125,6 +126,7 @@ partial class MainForm
           else
           {
             showToolTip("Aucun verset avec traduction complète.");
+            reference = CurrentReference;
             return null;
           }
         }

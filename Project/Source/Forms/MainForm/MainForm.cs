@@ -879,7 +879,7 @@ partial class MainForm : Form
                                     reference.Verse.Number);
     }
     else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
     {
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1241,7 +1241,8 @@ partial class MainForm : Form
   private void GoToBookmark(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.ELS50
+    if ( Settings.CurrentView == ViewMode.VerseFiltered
+      || Settings.CurrentView == ViewMode.ELS50
       || Settings.CurrentView == ViewMode.Search )
       SetView(ViewMode.Verses);
     GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
@@ -1766,4 +1767,22 @@ partial class MainForm : Form
 
   #endregion
 
+  private void ContextMenuStripVerse_Opening(object sender, CancelEventArgs e)
+  {
+    ReferenceItem reference;
+    var contextmenu = sender as ContextMenuStrip;
+    var control = contextmenu?.SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+      reference = (ReferenceItem)control.Tag;
+    else
+    if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      reference = (ReferenceItem)( (Control)control.Tag ).Tag;
+    else
+      return;
+    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
+                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
+                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
+    ActionAddToBookmarks.Enabled = !Bookmarks.Contains(reference);
+
+  }
 }

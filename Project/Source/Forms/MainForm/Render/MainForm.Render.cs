@@ -32,7 +32,9 @@ partial class MainForm
 
   private void RenderAll()
   {
-    if ( Globals.IsLoadingData || IsGoToRunning ) return;
+    if ( Globals.IsLoadingData ) return;
+    if ( Globals.IsExiting ) return;
+    if ( IsGoToRunning ) return;
     Refresh();
     RenderVerses();
     RenderVerseFiltered();

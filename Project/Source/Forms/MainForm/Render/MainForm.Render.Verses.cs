@@ -59,8 +59,11 @@ partial class MainForm
     int panelsize = container.ClientSize.Width - deltaMul2;
     int yPanel = 0;
     int controlsCount = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
+    var panels = new Panel[references.Count()];
     foreach ( var reference in references )
     {
+      if ( reference.Verse.Number >= 102 ) ;
+      x = width - dx - marginX;
       y = deltaMul2;
       panel = new Panel();
       label = new Label
@@ -120,8 +123,9 @@ partial class MainForm
       panel.Width = panelsize;
       panel.Height = y;
       yPanel += y;
-      container.Controls.Add(panel);
+      panels[reference.Verse.Number - 1] = panel;
     }
+    container.Controls.AddRange(panels);
     return controlsCount;
   }
 
