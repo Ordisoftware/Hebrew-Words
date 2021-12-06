@@ -72,7 +72,7 @@ partial class SelectSearchResultsForm : Form
       }
       int textHeight;
       using var graphics = SelectBooks.CreateGraphics();
-      textHeight = TextRenderer.MeasureText(graphics, "Text", SelectBooks.Font).Height + 4;
+      textHeight = TextRenderer.MeasureText(graphics, "A", SelectBooks.Font).Height + 4;
       Height = Height - ClientSize.Height
              + SelectBooks.Location.Y
              + SelectBooks.Items.Count * textHeight + SelectBooks.Height - SelectBooks.ClientSize.Height

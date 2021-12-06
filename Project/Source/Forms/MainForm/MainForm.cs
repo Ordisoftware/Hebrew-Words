@@ -522,6 +522,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionRefresh_Click(object sender, EventArgs e)
   {
+    if ( !Globals.IsReady ) return;
+    if ( Globals.IsExiting ) return;
     ActionSave.PerformClick();
     int book = CurrentReference.Book.Number;
     int chapter = CurrentReference.Chapter.Number;
@@ -1055,14 +1057,14 @@ partial class MainForm : Form
     UpdateCurrentReferenceMutex = true;
     try
     {
-      var old = new ReferenceItem(CurrentReference);
-      CurrentReference = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
+      var referenceOld = new ReferenceItem(CurrentReference);
+      var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                                           1);
-      if ( old == CurrentReference ) return;
+                                           ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1/* TODO ???? 1*/);
+      if ( referenceOld == referenceNew ) return;
       ActionSave.PerformClick();
-      RenderAll();
-      GoTo(CurrentReference);
+      //RenderAll();
+      GoTo(referenceNew, true);
     }
     finally
     {

@@ -19,9 +19,8 @@ partial class MainForm
 
   private int RenderVerses(Panel container, IEnumerable<ReferenceItem> references)
   {
-    while ( container.Controls.Count > 0 )
-      container.Controls[0].Dispose();
     var wordcontrol = new WordControl { Width = Settings.WordControlWidth };
+    while ( container.Controls.Count > 0 ) container.Controls[0].Dispose();
     const int widthLabel = 40;
     const int mX = 50;
     const int mY = 50;
@@ -43,7 +42,7 @@ partial class MainForm
     int textHeight;
     var textboxTemp = new TextBoxEx();
     using Graphics g = textboxTemp.CreateGraphics();
-    textHeight = TextRenderer.MeasureText(g, "Text", textboxTemp.Font).Height;
+    textHeight = TextRenderer.MeasureText(g, "A", textboxTemp.Font).Height;
     Panel panel;
     Label label;
     TextBoxEx editComment;
@@ -96,7 +95,7 @@ partial class MainForm
       }
       if ( emptyline ) y -= dy;
       editComment = new();
-      editComment.Tag = reference;  // TODO reorg Tags using panel to get ref
+      editComment.Tag = reference;  // TODO reorg Tags using panel to get ref - Create a control
       label.Tag = editComment;
       if ( commentLineCount > 1 )
       {

@@ -109,12 +109,16 @@
       this.PanelViewELS50 = new System.Windows.Forms.Panel();
       this.EditELS50All = new System.Windows.Forms.RichTextBox();
       this.PanelNavigation = new System.Windows.Forms.Panel();
+      this.comboBoxNavigator2 = new Ordisoftware.Core.ComboBoxNavigator();
+      this.SelectChapter = new System.Windows.Forms.ComboBox();
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.comboBoxNavigator1 = new Ordisoftware.Core.ComboBoxNavigator();
+      this.SelectBook = new System.Windows.Forms.ComboBox();
       this.ActionSelectRenderAllVersesKeepHelp = new System.Windows.Forms.Button();
       this.ComboBoxNavigatorVerse = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectRenderAllVersesKeep = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
@@ -127,18 +131,17 @@
       this.ActionExportChapter = new System.Windows.Forms.Button();
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
-      this.SelectBook = new System.Windows.Forms.ComboBox();
       this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
       this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditELS50 = new System.Windows.Forms.TextBox();
-      this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.LabelChapterELS50 = new System.Windows.Forms.Label();
       this.LabelSelectBook = new System.Windows.Forms.Label();
       this.LabelSelectChapter = new System.Windows.Forms.Label();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
-      this.LabelProgress = new System.Windows.Forms.Label();
+      this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelProgress = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
@@ -242,6 +245,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -272,9 +276,9 @@
       this.TabPageELS50.SuspendLayout();
       this.PanelViewELS50.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
@@ -919,6 +923,8 @@
       // 
       // PanelNavigation
       // 
+      this.PanelNavigation.Controls.Add(this.comboBoxNavigator2);
+      this.PanelNavigation.Controls.Add(this.comboBoxNavigator1);
       this.PanelNavigation.Controls.Add(this.ActionSelectRenderAllVersesKeepHelp);
       this.PanelNavigation.Controls.Add(this.ComboBoxNavigatorVerse);
       this.PanelNavigation.Controls.Add(this.SelectVerse);
@@ -944,6 +950,55 @@
       this.PanelNavigation.Controls.Add(this.LabelSelectChapter);
       resources.ApplyResources(this.PanelNavigation, "PanelNavigation");
       this.PanelNavigation.Name = "PanelNavigation";
+      // 
+      // comboBoxNavigator2
+      // 
+      resources.ApplyResources(this.comboBoxNavigator2, "comboBoxNavigator2");
+      this.comboBoxNavigator2.ComboBox = this.SelectChapter;
+      this.comboBoxNavigator2.KeepFocus = false;
+      this.comboBoxNavigator2.Name = "comboBoxNavigator2";
+      this.comboBoxNavigator2.SelectedIndex = -1;
+      this.comboBoxNavigator2.SelectedItem = null;
+      // 
+      // SelectChapter
+      // 
+      this.SelectChapter.DataSource = this.ChaptersBindingSource;
+      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectChapter.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.Name = "SelectChapter";
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
+      // 
+      // ChaptersBindingSource
+      // 
+      this.ChaptersBindingSource.DataMember = "Chapters";
+      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
+      this.ChaptersBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.ChaptersBindingSource_ListChanged);
+      this.ChaptersBindingSource.PositionChanged += new System.EventHandler(this.ChaptersBindingSource_PositionChanged);
+      // 
+      // BooksBindingSource
+      // 
+      this.BooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      this.BooksBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BookRowBindingSource_ListChanged);
+      this.BooksBindingSource.PositionChanged += new System.EventHandler(this.BookRowBindingSource_PositionChanged);
+      // 
+      // comboBoxNavigator1
+      // 
+      resources.ApplyResources(this.comboBoxNavigator1, "comboBoxNavigator1");
+      this.comboBoxNavigator1.ComboBox = this.SelectBook;
+      this.comboBoxNavigator1.KeepFocus = false;
+      this.comboBoxNavigator1.Name = "comboBoxNavigator1";
+      this.comboBoxNavigator1.SelectedIndex = -1;
+      this.comboBoxNavigator1.SelectedItem = null;
+      // 
+      // SelectBook
+      // 
+      this.SelectBook.DataSource = this.BooksBindingSource;
+      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectBook.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.Name = "SelectBook";
+      this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
@@ -977,19 +1032,6 @@
       // 
       this.VersesBindingSource.DataMember = "Verses";
       this.VersesBindingSource.DataSource = this.ChaptersBindingSource;
-      // 
-      // ChaptersBindingSource
-      // 
-      this.ChaptersBindingSource.DataMember = "Chapters";
-      this.ChaptersBindingSource.DataSource = this.BooksBindingSource;
-      this.ChaptersBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.ChaptersBindingSource_ListChanged);
-      this.ChaptersBindingSource.PositionChanged += new System.EventHandler(this.ChaptersBindingSource_PositionChanged);
-      // 
-      // BooksBindingSource
-      // 
-      this.BooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
-      this.BooksBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BookRowBindingSource_ListChanged);
-      this.BooksBindingSource.PositionChanged += new System.EventHandler(this.BookRowBindingSource_PositionChanged);
       // 
       // SelectRenderAllVersesKeep
       // 
@@ -1082,15 +1124,6 @@
       this.ActionSearchVerse.UseVisualStyleBackColor = true;
       this.ActionSearchVerse.Click += new System.EventHandler(this.ActionSearchVerse_Click);
       // 
-      // SelectBook
-      // 
-      this.SelectBook.DataSource = this.BooksBindingSource;
-      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.SelectBook, "SelectBook");
-      this.SelectBook.FormattingEnabled = true;
-      this.SelectBook.Name = "SelectBook";
-      this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
-      // 
       // EditBookTranslation
       // 
       this.EditBookTranslation.BackColor = System.Drawing.Color.LightYellow;
@@ -1122,15 +1155,6 @@
       this.EditELS50.Name = "EditELS50";
       this.EditELS50.ReadOnly = true;
       // 
-      // SelectChapter
-      // 
-      this.SelectChapter.DataSource = this.ChaptersBindingSource;
-      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.SelectChapter, "SelectChapter");
-      this.SelectChapter.FormattingEnabled = true;
-      this.SelectChapter.Name = "SelectChapter";
-      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
-      // 
       // LabelChapterELS50
       // 
       resources.ApplyResources(this.LabelChapterELS50, "LabelChapterELS50");
@@ -1154,22 +1178,29 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelTitle.Controls.Add(this.LabelProgress);
+      this.PanelTitle.Controls.Add(this.LabelTitleReferenceName);
       this.PanelTitle.Controls.Add(this.LabelTitle);
+      this.PanelTitle.Controls.Add(this.LabelProgress);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
-      // LabelProgress
+      // LabelTitleReferenceName
       // 
-      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelProgress, "LabelProgress");
-      this.LabelProgress.Name = "LabelProgress";
+      this.LabelTitleReferenceName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelTitleReferenceName, "LabelTitleReferenceName");
+      this.LabelTitleReferenceName.Name = "LabelTitleReferenceName";
       // 
       // LabelTitle
       // 
       this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
+      // 
+      // LabelProgress
+      // 
+      this.LabelProgress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelProgress, "LabelProgress");
+      this.LabelProgress.Name = "LabelProgress";
       // 
       // TimerTooltip
       // 
@@ -1979,9 +2010,9 @@
       this.PanelViewELS50.ResumeLayout(false);
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
@@ -2205,6 +2236,10 @@
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
+    private Label LabelTitleReferenceName;
+    private ToolTip ToolTipSearchResult;
+    private ComboBoxNavigator comboBoxNavigator2;
+    private ComboBoxNavigator comboBoxNavigator1;
   }
 }
 

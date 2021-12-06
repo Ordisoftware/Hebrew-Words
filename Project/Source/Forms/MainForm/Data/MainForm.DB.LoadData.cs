@@ -95,11 +95,15 @@ partial class MainForm : Form
       LoadingForm.Instance.Initialize("", Enums.GetValues<TanakBook>().Count + 1 + 1 + 1, quantify: false);
       ApplicationDatabase.Instance.LoadingData += OnLoadingData;
       ApplicationDatabase.Instance.Open();
-      ApplicationDatabase.Instance.LoadAll();
+      var created = ApplicationDatabase.Instance.LoadAll(false);
       ApplicationDatabase.Instance.LoadingData -= OnLoadingData;
-      LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
-      BooksBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
-      SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+      if ( created )
+      {
+        ReLoadData();
+        completed();
+      }
+      else
+        completed();
       //if ( NeedUpgradeForConcordances ) ImportWordsConcordances();
     }
     finally
@@ -107,6 +111,13 @@ partial class MainForm : Form
       Globals.IsLoadingData = false;
       LoadingForm.Instance.Hide();
       SetFormDisabled(false);
+    }
+    //
+    void completed()
+    {
+      LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
+      BooksBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+      SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     }
     //
     void OnLoadingData(string caption)

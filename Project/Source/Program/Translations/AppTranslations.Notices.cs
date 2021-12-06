@@ -17,23 +17,16 @@ namespace Ordisoftware.Hebrew.Words;
 static partial class AppTranslations
 {
 
-  static public readonly TranslationsDictionary ImportNotice = new()
+  static public readonly TranslationsDictionary FindVerseNotice = new()
   {
-    [Language.EN] = "This console allows for example to import an MS Word verse table." + Globals.NL2 +
-                    "This table must first be converted to text with | as a separator." + Globals.NL2 +
-                    "The import text must be presented in groups of two lines:" + Globals.NL +
-                    "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
-                    "- A second containing a list of translations." + Globals.NL2 +
-                    "There can be as many groups of two lines as necessary." + Globals.NL2 +
-                    "Imported translation fields can be edited in the result grid.",
 
-    [Language.FR] = "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
-                    "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL2 +
-                    "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
-                    "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
-                    "- Une deuxième contenant une liste de traductions." + Globals.NL2 +
-                    "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL2 +
-                    "Les champs de traduction importés peuvent être édités dans la grille du résultat."
+    [Language.EN] = "Use 0 to go to the first:" + Globals.NL2 +
+                    "- Verse not translated or partially translated if verse 1 is completely translated." + Globals.NL2 +
+                    "- First verse translated or partially translated if verse 1 is not even partially translated.",
+
+    [Language.FR] = "Utilisez 0 pour aller au premier :" + Globals.NL2 +
+                    "- Verset non traduit ou partiellement traduit si le verset 1 est complètement traduit." + Globals.NL2 +
+                    "- Premier verset traduit ou partiellement traduit si le verset 1 n'est pas traduit même partiellement."
   };
 
   static public readonly TranslationsDictionary FilterVersesNotice = new()
@@ -57,10 +50,29 @@ static partial class AppTranslations
   {
 
     [Language.EN] = "If keep rendering all verses in the chapter is unchecked, this option will be disabled by switching to the filter and search verse views, and thus only one verse will be displayed again. Closing the app will not retain the option to view all verses." + Globals.NL2 +
-                    "These two options allow the application to run faster if the machine is not powerful enough or if it is personal preference.",
+                    "This allow allows the application to run faster if the machine is not powerful enough or if it is personal preference.",
 
     [Language.FR] = "Si conserver le rendu de tous les versets du chapitre est décoché, cette option sera désactivée en basculant vers les vues de filtrage et de recherche de versets, et ainsi un seul verset sera à nouveau affiché. La fermeture de l'application ne conservera pas l'option d'affichage de tous les versets." + Globals.NL2 +
-                    "Ces deux options permettent une exécution plus rapide de l'application en cas de machine pas assez puissante ou de préférence personnelle."
+                    "Cela permet une exécution plus rapide de l'application en cas de machine pas assez puissante ou de préférence personnelle."
+  };
+
+  static public readonly TranslationsDictionary ImportNotice = new()
+  {
+    [Language.EN] = "This console allows for example to import an MS Word verse table." + Globals.NL2 +
+                    "This table must first be converted to text with | as a separator." + Globals.NL2 +
+                    "The import text must be presented in groups of two lines:" + Globals.NL +
+                    "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
+                    "- A second containing a list of translations." + Globals.NL2 +
+                    "There can be as many groups of two lines as necessary." + Globals.NL2 +
+                    "Imported translation fields can be edited in the result grid.",
+
+    [Language.FR] = "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
+                    "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL2 +
+                    "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
+                    "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
+                    "- Une deuxième contenant une liste de traductions." + Globals.NL2 +
+                    "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL2 +
+                    "Les champs de traduction importés peuvent être édités dans la grille du résultat."
   };
 
 }

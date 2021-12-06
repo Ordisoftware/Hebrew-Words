@@ -143,7 +143,7 @@ class ApplicationDatabase : SQLiteDatabase
     }
   }
 
-  protected override void CreateDataIfNotExist(bool reset = false)
+  protected override bool CreateDataIfNotExist(bool reset = false)
   {
     long countBooks = Connection.GetRowsCount(BooksTableName);
     long countChapters = Connection.GetRowsCount(ChaptersTableName);
@@ -170,11 +170,13 @@ class ApplicationDatabase : SQLiteDatabase
       try
       {
         FillFromFiles();
+        return true;
       }
       finally
       {
         LoadingForm.Instance.Hide();
       }
+    return false;
   }
 
   private void FillFromFiles()

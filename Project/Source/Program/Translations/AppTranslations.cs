@@ -25,7 +25,7 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary AskToCreateNewDatabase = new()
   {
-    [Language.EN] = "Do you want to create a new database wich will replace the actual?",
+    [Language.EN] = "Do you want to create a new database which will replace the actual?",
     [Language.FR] = "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?"
   };
 
@@ -45,6 +45,36 @@ static partial class AppTranslations
   {
     [Language.EN] = "Rendering {0} controls for {1} verses...",
     [Language.FR] = "Fourniture de {0} contrôles pour {1} versets..."
+  };
+
+  static public readonly TranslationsDictionary ReferenceError = new()
+  {
+    [Language.EN] = $"Error with reference: {{0}}{Globals.NL2}{{1}}",
+    [Language.FR] = $"Erreur avec la référence : {{0}}{Globals.NL2}{{1}}"
+  };
+
+  static public readonly TranslationsDictionary SelectedBookItemIsNull = new()
+  {
+    [Language.EN] = $"Book index error: selected item is null.",
+    [Language.FR] = $"Erreur d'index de livre : l'item sélectionné est null."
+  };
+
+  static public readonly TranslationsDictionary ChapterBookItemIsNull = new()
+  {
+    [Language.EN] = $"Chapter index error: selected item is null.",
+    [Language.FR] = $"Erreur d'index de chapitre : l'item sélectionné est null."
+  };
+
+  static public readonly TranslationsDictionary VerseBookItemIsNull = new()
+  {
+    [Language.EN] = $"Verse index error: selected item is null.",
+    [Language.FR] = $"Erreur d'index de verset: l'item sélectionné est null."
+  };
+
+  static public readonly TranslationsDictionary WordBookItemIsNull = new()
+  {
+    [Language.EN] = $"Word index error: selected item is null.",
+    [Language.FR] = $"Erreur d'index de mot: l'item sélectionné est null."
   };
 
   static public readonly TranslationsDictionary ImportLinesCountMismatch = new()
