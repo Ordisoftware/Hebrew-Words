@@ -64,7 +64,7 @@ partial class SearchTranslatedForm : Form
     Mutex = true;
     EditHebrew.Text = sender.LabelHebrew.Text;
     Mutex = false;
-    Text = sender.Reference.ToString() + " #" + sender.Reference.Word.Number;
+    Text = sender.Reference.ToStringWordIncluded();
     UpdateResult();
     ActiveControl = ListView;
     if ( ListView.Items.Count > 0 )
@@ -261,7 +261,7 @@ partial class SearchTranslatedForm : Form
                        where check(word.Hebrew) && word.Translation.Length > 0
                        select new ReferenceItem(book, chapter, verse, word);
       if ( EditDistinct.Checked )
-        references = references.Distinct(new WordTranslationComparer());
+        references = references.Distinct(new ReferenceItem.WordTranslationComparer());
       foreach ( var item in references )
       {
         var itemList = new ListViewItem(item.ToString()) { Tag = item };

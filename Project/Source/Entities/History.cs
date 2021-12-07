@@ -1,5 +1,4 @@
-﻿using System.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -20,8 +19,7 @@ class History : ReferencesList
 
   public override void Add(ReferenceItem reference)
   {
-    if ( reference == null ) return;
-    if ( Program.Settings.HistoryCount < 1 )
+    if ( reference == null ||Program.Settings.HistoryCount < 1 )
       return;
     foreach ( var item in Items.Where(item => item.Equals(reference)).ToList() )
       Items.Remove(item);

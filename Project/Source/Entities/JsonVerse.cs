@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-
-namespace Ordisoftware.Hebrew.Words
+﻿namespace Ordisoftware.Hebrew.Words
 {
   static public partial class JsonHelper
   {
@@ -17,7 +13,6 @@ namespace Ordisoftware.Hebrew.Words
 namespace Ordisoftware.Hebrew.Words.Json.Verse
 {
   using System;
-  using System.Collections.Generic;
 
   using System.Globalization;
   using Newtonsoft.Json;

@@ -87,7 +87,7 @@ partial class MainForm
     //
     if ( SearchResults != null )
     {
-      SearchResults = SearchResults.Distinct(new ReferenceItemComparer());
+      SearchResults = SearchResults.Distinct(new ReferenceItem.ReferenceComparer());
       Cursor = Cursors.WaitCursor;
       try
       {

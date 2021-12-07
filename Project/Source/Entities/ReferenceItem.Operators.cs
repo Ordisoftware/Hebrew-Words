@@ -23,97 +23,70 @@ partial class ReferenceItem
   #region GetHashCode
 
   public override int GetHashCode()
-  {
-    return ( Book?.Number.GetHashCode() ?? 0 )
-         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( Verse?.Number.GetHashCode() ?? 0 );
-  }
+    => ( Book?.Number.GetHashCode() ?? 0 )
+     ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+     ^ ( Verse?.Number.GetHashCode() ?? 0 );
 
   public int GetHashCodeWordIncluded()
-  {
-    return ( Book?.Number.GetHashCode() ?? 0 )
-         ^ ( Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( Verse?.Number.GetHashCode() ?? 0 )
-         ^ ( Word?.Number.GetHashCode() ?? 0 );
-  }
+    => ( Book?.Number.GetHashCode() ?? 0 )
+     ^ ( Chapter?.Number.GetHashCode() ?? 0 )
+     ^ ( Verse?.Number.GetHashCode() ?? 0 )
+     ^ ( Word?.Number.GetHashCode() ?? 0 );
 
   #endregion
 
   #region Overloads
 
   public static bool operator ==(ReferenceItem left, ReferenceItem right)
-  {
-    if ( left is null )
-      return right is null;
-    else
-      return left.CompareTo(right) == 0;
-  }
+    => left is null
+       ? right is null
+       : left.CompareTo(right) == 0;
 
   public static bool operator !=(ReferenceItem left, ReferenceItem right)
-  {
-    if ( left is null )
-      return right is not null;
-    else
-      return left.CompareTo(right) != 0;
-  }
+    => left is null
+       ? right is not null
+       : left.CompareTo(right) != 0;
 
   public static bool operator <(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) < 0;
-  }
+    => left is null
+       ? right is not null
+       : left.CompareTo(right) < 0;
 
   public static bool operator <=(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) <= 0;
-  }
+    => left is null
+       ? right is null
+       : left.CompareTo(right) <= 0;
 
   public static bool operator >(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) > 0;
-  }
+    => left is null
+       ? false
+       : left.CompareTo(right) > 0;
 
   public static bool operator >=(ReferenceItem left, ReferenceItem right)
-  {
-    return left.CompareTo(right) >= 0;
-  }
+    => left is null
+       ? right is null
+       : left.CompareTo(right) >= 0;
 
   #endregion
 
   #region Equals
 
   static public bool Equals(ReferenceItem x, ReferenceItem y)
-  {
-    return x != null
-        && y != null
-        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 );
-  }
+    => x == y;
 
   public override bool Equals(object obj)
-  {
-    return Equals(this, obj as ReferenceItem);
-  }
+    => obj is ReferenceItem reference
+       ? this == reference
+       : false;
 
   public bool Equals(ReferenceItem other)
-  {
-    return Equals(this, other);
-  }
+    => this == other;
 
   static public bool EqualsWordIncluded(ReferenceItem x, ReferenceItem y)
-  {
-    return x != null
-        && y != null
-        && ( x.Book?.Number ?? 0 ) == ( y.Book?.Number ?? 0 )
-        && ( x.Chapter?.Number ?? 0 ) == ( y.Chapter?.Number ?? 0 )
-        && ( x.Verse?.Number ?? 0 ) == ( y.Verse?.Number ?? 0 )
-        && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
-  }
+    => x == y && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
 
   public bool EqualsWordIncluded(ReferenceItem y)
-  {
-    return EqualsWordIncluded(this, y);
-  }
+    => EqualsWordIncluded(this, y);
 
   #endregion
 

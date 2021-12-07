@@ -504,7 +504,6 @@
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Entities\Bookmarks.cs" />
-    <Compile Include="Source\Entities\WordTranslationComparer.cs" />
     <Compile Include="Source\Entities\ReferenceItem.Comparer.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSearchResultsForm.cs">
       <SubType>Form</SubType>
