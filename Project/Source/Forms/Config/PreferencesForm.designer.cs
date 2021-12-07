@@ -122,17 +122,19 @@
       this.EditCommentaryLinesCount = new System.Windows.Forms.NumericUpDown();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.GroupBoxHebrewWordClickShift = new System.Windows.Forms.GroupBox();
-      this.GroupBoxHebrewWordClickShift4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShift5 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift1 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickShift2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShift3 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShift2 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShift4 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickAlt = new System.Windows.Forms.GroupBox();
-      this.GroupBoxHebrewWordClickShiftCtrl4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShiftCtrl5 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl1 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickShiftCtrl2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickShiftCtrl3 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShiftCtrl2 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickShiftCtrl4 = new System.Windows.Forms.RadioButton();
       this.GroupBoxVerseLabelClick = new System.Windows.Forms.GroupBox();
       this.GroupBoxVerseLabelClick4 = new System.Windows.Forms.RadioButton();
       this.GroupBoxVerseLabelClick1 = new System.Windows.Forms.RadioButton();
@@ -144,17 +146,19 @@
       this.GroupBoxTranslatedItemDoubleClick2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxTranslatedItemDoubleClick3 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl = new System.Windows.Forms.GroupBox();
-      this.GroupBoxHebrewWordClickCtrl4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickCtrl5 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl1 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClickCtrl2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClickCtrl3 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickCtrl2 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClickCtrl4 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick = new System.Windows.Forms.GroupBox();
-      this.GroupBoxHebrewWordClick4 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClick5 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick0 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick1 = new System.Windows.Forms.RadioButton();
-      this.GroupBoxHebrewWordClick2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxHebrewWordClick3 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClick2 = new System.Windows.Forms.RadioButton();
+      this.GroupBoxHebrewWordClick4 = new System.Windows.Forms.RadioButton();
       this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
@@ -930,21 +934,22 @@
       // 
       // GroupBoxHebrewWordClickShift
       // 
-      this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift4);
+      this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift5);
       this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift0);
       this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift1);
-      this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift2);
       this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift3);
+      this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift2);
+      this.GroupBoxHebrewWordClickShift.Controls.Add(this.GroupBoxHebrewWordClickShift4);
       resources.ApplyResources(this.GroupBoxHebrewWordClickShift, "GroupBoxHebrewWordClickShift");
       this.GroupBoxHebrewWordClickShift.Name = "GroupBoxHebrewWordClickShift";
       this.GroupBoxHebrewWordClickShift.TabStop = false;
       // 
-      // GroupBoxHebrewWordClickShift4
+      // GroupBoxHebrewWordClickShift5
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShift4, "GroupBoxHebrewWordClickShift4");
-      this.GroupBoxHebrewWordClickShift4.Name = "GroupBoxHebrewWordClickShift4";
-      this.GroupBoxHebrewWordClickShift4.TabStop = true;
-      this.GroupBoxHebrewWordClickShift4.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShift5, "GroupBoxHebrewWordClickShift5");
+      this.GroupBoxHebrewWordClickShift5.Name = "GroupBoxHebrewWordClickShift5";
+      this.GroupBoxHebrewWordClickShift5.TabStop = true;
+      this.GroupBoxHebrewWordClickShift5.UseVisualStyleBackColor = true;
       // 
       // GroupBoxHebrewWordClickShift0
       // 
@@ -960,13 +965,6 @@
       this.GroupBoxHebrewWordClickShift1.TabStop = true;
       this.GroupBoxHebrewWordClickShift1.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickShift2
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShift2, "GroupBoxHebrewWordClickShift2");
-      this.GroupBoxHebrewWordClickShift2.Name = "GroupBoxHebrewWordClickShift2";
-      this.GroupBoxHebrewWordClickShift2.TabStop = true;
-      this.GroupBoxHebrewWordClickShift2.UseVisualStyleBackColor = true;
-      // 
       // GroupBoxHebrewWordClickShift3
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClickShift3, "GroupBoxHebrewWordClickShift3");
@@ -974,23 +972,38 @@
       this.GroupBoxHebrewWordClickShift3.TabStop = true;
       this.GroupBoxHebrewWordClickShift3.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClickShift2
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShift2, "GroupBoxHebrewWordClickShift2");
+      this.GroupBoxHebrewWordClickShift2.Name = "GroupBoxHebrewWordClickShift2";
+      this.GroupBoxHebrewWordClickShift2.TabStop = true;
+      this.GroupBoxHebrewWordClickShift2.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxHebrewWordClickShift4
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShift4, "GroupBoxHebrewWordClickShift4");
+      this.GroupBoxHebrewWordClickShift4.Name = "GroupBoxHebrewWordClickShift4";
+      this.GroupBoxHebrewWordClickShift4.TabStop = true;
+      this.GroupBoxHebrewWordClickShift4.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClickAlt
       // 
-      this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl4);
+      this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl5);
       this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl0);
       this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl1);
-      this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl2);
       this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl3);
+      this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl2);
+      this.GroupBoxHebrewWordClickAlt.Controls.Add(this.GroupBoxHebrewWordClickShiftCtrl4);
       resources.ApplyResources(this.GroupBoxHebrewWordClickAlt, "GroupBoxHebrewWordClickAlt");
       this.GroupBoxHebrewWordClickAlt.Name = "GroupBoxHebrewWordClickAlt";
       this.GroupBoxHebrewWordClickAlt.TabStop = false;
       // 
-      // GroupBoxHebrewWordClickShiftCtrl4
+      // GroupBoxHebrewWordClickShiftCtrl5
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl4, "GroupBoxHebrewWordClickShiftCtrl4");
-      this.GroupBoxHebrewWordClickShiftCtrl4.Name = "GroupBoxHebrewWordClickShiftCtrl4";
-      this.GroupBoxHebrewWordClickShiftCtrl4.TabStop = true;
-      this.GroupBoxHebrewWordClickShiftCtrl4.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl5, "GroupBoxHebrewWordClickShiftCtrl5");
+      this.GroupBoxHebrewWordClickShiftCtrl5.Name = "GroupBoxHebrewWordClickShiftCtrl5";
+      this.GroupBoxHebrewWordClickShiftCtrl5.TabStop = true;
+      this.GroupBoxHebrewWordClickShiftCtrl5.UseVisualStyleBackColor = true;
       // 
       // GroupBoxHebrewWordClickShiftCtrl0
       // 
@@ -1006,6 +1019,13 @@
       this.GroupBoxHebrewWordClickShiftCtrl1.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl1.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClickShiftCtrl3
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl3, "GroupBoxHebrewWordClickShiftCtrl3");
+      this.GroupBoxHebrewWordClickShiftCtrl3.Name = "GroupBoxHebrewWordClickShiftCtrl3";
+      this.GroupBoxHebrewWordClickShiftCtrl3.TabStop = true;
+      this.GroupBoxHebrewWordClickShiftCtrl3.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClickShiftCtrl2
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl2, "GroupBoxHebrewWordClickShiftCtrl2");
@@ -1013,12 +1033,12 @@
       this.GroupBoxHebrewWordClickShiftCtrl2.TabStop = true;
       this.GroupBoxHebrewWordClickShiftCtrl2.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickShiftCtrl3
+      // GroupBoxHebrewWordClickShiftCtrl4
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl3, "GroupBoxHebrewWordClickShiftCtrl3");
-      this.GroupBoxHebrewWordClickShiftCtrl3.Name = "GroupBoxHebrewWordClickShiftCtrl3";
-      this.GroupBoxHebrewWordClickShiftCtrl3.TabStop = true;
-      this.GroupBoxHebrewWordClickShiftCtrl3.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClickShiftCtrl4, "GroupBoxHebrewWordClickShiftCtrl4");
+      this.GroupBoxHebrewWordClickShiftCtrl4.Name = "GroupBoxHebrewWordClickShiftCtrl4";
+      this.GroupBoxHebrewWordClickShiftCtrl4.TabStop = true;
+      this.GroupBoxHebrewWordClickShiftCtrl4.UseVisualStyleBackColor = true;
       // 
       // GroupBoxVerseLabelClick
       // 
@@ -1098,21 +1118,22 @@
       // 
       // GroupBoxHebrewWordClickCtrl
       // 
-      this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl4);
+      this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl5);
       this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl0);
       this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl1);
-      this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl2);
       this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl3);
+      this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl2);
+      this.GroupBoxHebrewWordClickCtrl.Controls.Add(this.GroupBoxHebrewWordClickCtrl4);
       resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl, "GroupBoxHebrewWordClickCtrl");
       this.GroupBoxHebrewWordClickCtrl.Name = "GroupBoxHebrewWordClickCtrl";
       this.GroupBoxHebrewWordClickCtrl.TabStop = false;
       // 
-      // GroupBoxHebrewWordClickCtrl4
+      // GroupBoxHebrewWordClickCtrl5
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl4, "GroupBoxHebrewWordClickCtrl4");
-      this.GroupBoxHebrewWordClickCtrl4.Name = "GroupBoxHebrewWordClickCtrl4";
-      this.GroupBoxHebrewWordClickCtrl4.TabStop = true;
-      this.GroupBoxHebrewWordClickCtrl4.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl5, "GroupBoxHebrewWordClickCtrl5");
+      this.GroupBoxHebrewWordClickCtrl5.Name = "GroupBoxHebrewWordClickCtrl5";
+      this.GroupBoxHebrewWordClickCtrl5.TabStop = true;
+      this.GroupBoxHebrewWordClickCtrl5.UseVisualStyleBackColor = true;
       // 
       // GroupBoxHebrewWordClickCtrl0
       // 
@@ -1128,13 +1149,6 @@
       this.GroupBoxHebrewWordClickCtrl1.TabStop = true;
       this.GroupBoxHebrewWordClickCtrl1.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClickCtrl2
-      // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl2, "GroupBoxHebrewWordClickCtrl2");
-      this.GroupBoxHebrewWordClickCtrl2.Name = "GroupBoxHebrewWordClickCtrl2";
-      this.GroupBoxHebrewWordClickCtrl2.TabStop = true;
-      this.GroupBoxHebrewWordClickCtrl2.UseVisualStyleBackColor = true;
-      // 
       // GroupBoxHebrewWordClickCtrl3
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl3, "GroupBoxHebrewWordClickCtrl3");
@@ -1142,23 +1156,38 @@
       this.GroupBoxHebrewWordClickCtrl3.TabStop = true;
       this.GroupBoxHebrewWordClickCtrl3.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClickCtrl2
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl2, "GroupBoxHebrewWordClickCtrl2");
+      this.GroupBoxHebrewWordClickCtrl2.Name = "GroupBoxHebrewWordClickCtrl2";
+      this.GroupBoxHebrewWordClickCtrl2.TabStop = true;
+      this.GroupBoxHebrewWordClickCtrl2.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxHebrewWordClickCtrl4
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClickCtrl4, "GroupBoxHebrewWordClickCtrl4");
+      this.GroupBoxHebrewWordClickCtrl4.Name = "GroupBoxHebrewWordClickCtrl4";
+      this.GroupBoxHebrewWordClickCtrl4.TabStop = true;
+      this.GroupBoxHebrewWordClickCtrl4.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClick
       // 
-      this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick4);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick5);
       this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick0);
       this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick1);
-      this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick2);
       this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick3);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick2);
+      this.GroupBoxHebrewWordClick.Controls.Add(this.GroupBoxHebrewWordClick4);
       resources.ApplyResources(this.GroupBoxHebrewWordClick, "GroupBoxHebrewWordClick");
       this.GroupBoxHebrewWordClick.Name = "GroupBoxHebrewWordClick";
       this.GroupBoxHebrewWordClick.TabStop = false;
       // 
-      // GroupBoxHebrewWordClick4
+      // GroupBoxHebrewWordClick5
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick4, "GroupBoxHebrewWordClick4");
-      this.GroupBoxHebrewWordClick4.Name = "GroupBoxHebrewWordClick4";
-      this.GroupBoxHebrewWordClick4.TabStop = true;
-      this.GroupBoxHebrewWordClick4.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClick5, "GroupBoxHebrewWordClick5");
+      this.GroupBoxHebrewWordClick5.Name = "GroupBoxHebrewWordClick5";
+      this.GroupBoxHebrewWordClick5.TabStop = true;
+      this.GroupBoxHebrewWordClick5.UseVisualStyleBackColor = true;
       // 
       // GroupBoxHebrewWordClick0
       // 
@@ -1174,6 +1203,13 @@
       this.GroupBoxHebrewWordClick1.TabStop = true;
       this.GroupBoxHebrewWordClick1.UseVisualStyleBackColor = true;
       // 
+      // GroupBoxHebrewWordClick3
+      // 
+      resources.ApplyResources(this.GroupBoxHebrewWordClick3, "GroupBoxHebrewWordClick3");
+      this.GroupBoxHebrewWordClick3.Name = "GroupBoxHebrewWordClick3";
+      this.GroupBoxHebrewWordClick3.TabStop = true;
+      this.GroupBoxHebrewWordClick3.UseVisualStyleBackColor = true;
+      // 
       // GroupBoxHebrewWordClick2
       // 
       resources.ApplyResources(this.GroupBoxHebrewWordClick2, "GroupBoxHebrewWordClick2");
@@ -1181,12 +1217,12 @@
       this.GroupBoxHebrewWordClick2.TabStop = true;
       this.GroupBoxHebrewWordClick2.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxHebrewWordClick3
+      // GroupBoxHebrewWordClick4
       // 
-      resources.ApplyResources(this.GroupBoxHebrewWordClick3, "GroupBoxHebrewWordClick3");
-      this.GroupBoxHebrewWordClick3.Name = "GroupBoxHebrewWordClick3";
-      this.GroupBoxHebrewWordClick3.TabStop = true;
-      this.GroupBoxHebrewWordClick3.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxHebrewWordClick4, "GroupBoxHebrewWordClick4");
+      this.GroupBoxHebrewWordClick4.Name = "GroupBoxHebrewWordClick4";
+      this.GroupBoxHebrewWordClick4.TabStop = true;
+      this.GroupBoxHebrewWordClick4.UseVisualStyleBackColor = true;
       // 
       // ActionOnlineSearchHelp
       // 
@@ -1399,25 +1435,25 @@
     private Label LabelInfoWordControlWidth;
     private Label LabelInfoCommentLinesCount;
     private GroupBox GroupBoxHebrewWordClickAlt;
-    private RadioButton GroupBoxHebrewWordClickShiftCtrl4;
+    private RadioButton GroupBoxHebrewWordClickShiftCtrl5;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl1;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl2;
-    private RadioButton GroupBoxHebrewWordClickShiftCtrl3;
+    private RadioButton GroupBoxHebrewWordClickShiftCtrl4;
     private GroupBox GroupBoxHebrewWordClickShift;
-    private RadioButton GroupBoxHebrewWordClickShift4;
+    private RadioButton GroupBoxHebrewWordClickShift5;
     private RadioButton GroupBoxHebrewWordClickShift1;
     private RadioButton GroupBoxHebrewWordClickShift2;
-    private RadioButton GroupBoxHebrewWordClickShift3;
+    private RadioButton GroupBoxHebrewWordClickShift4;
     private GroupBox GroupBoxHebrewWordClickCtrl;
-    private RadioButton GroupBoxHebrewWordClickCtrl4;
+    private RadioButton GroupBoxHebrewWordClickCtrl5;
     private RadioButton GroupBoxHebrewWordClickCtrl1;
     private RadioButton GroupBoxHebrewWordClickCtrl2;
-    private RadioButton GroupBoxHebrewWordClickCtrl3;
+    private RadioButton GroupBoxHebrewWordClickCtrl4;
     private GroupBox GroupBoxHebrewWordClick;
-    private RadioButton GroupBoxHebrewWordClick4;
+    private RadioButton GroupBoxHebrewWordClick5;
     private RadioButton GroupBoxHebrewWordClick1;
     private RadioButton GroupBoxHebrewWordClick2;
-    private RadioButton GroupBoxHebrewWordClick3;
+    private RadioButton GroupBoxHebrewWordClick4;
     private GroupBox GroupBoxTranslatedItemDoubleClick;
     private RadioButton GroupBoxTranslatedItemDoubleClick4;
     private RadioButton GroupBoxTranslatedItemDoubleClick1;
@@ -1434,5 +1470,9 @@
     private RadioButton GroupBoxHebrewWordClickCtrl0;
     private Label LabelInfoWordtranslateLinesCount;
     private NumericUpDown EditWordTranslateLinesCount;
+    private RadioButton GroupBoxHebrewWordClickShift3;
+    private RadioButton GroupBoxHebrewWordClickShiftCtrl3;
+    private RadioButton GroupBoxHebrewWordClickCtrl3;
+    private RadioButton GroupBoxHebrewWordClick3;
   }
 }

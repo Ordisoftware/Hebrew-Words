@@ -20,5 +20,6 @@ public enum HebrewWordClickAction
   ContextMenu,
   OnlineSearch,
   SearchTranslated,
+  SearchInDatabase,
   HebrewLetters
 }

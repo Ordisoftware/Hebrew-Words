@@ -124,7 +124,7 @@ public partial class WordControl : UserControl
           HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickAction.SearchTranslated:
-          // TODO create an event assigned by mainform ?
+          // TODO create an event assigned by main form ?
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickAction.HebrewLetters:
