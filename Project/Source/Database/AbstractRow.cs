@@ -15,48 +15,55 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using System;
+using System.ComponentModel;
 using SQLite;
-using SQLiteNetExtensions.Attributes;
 
 [Serializable]
-[Table("Verses")]
-public partial class VerseRow : AbstractRow
+public abstract class AbstractRow : INotifyPropertyChanged
 {
 
-  [ForeignKey(typeof(ChapterRow))]
-  [NotNull]
-  public string ChapterID
+  [field: NonSerialized]
+  public event PropertyChangedEventHandler PropertyChanged;
+
+  protected void NotifyPropertyChanged(string p)
   {
-    get => _ChapterID;
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    ApplicationDatabase.Instance.AddToModified(this);
+  }
+
+  protected string FormatCount(int count)
+    => count switch
+    {
+      >= 100 => Number.ToString("000"),
+      >= 10 => Number.ToString("00"),
+      _ => Number.ToString()
+    };
+
+  [PrimaryKey]
+  [NotNull]
+  public string ID
+  {
+    get => _ID;
     set
     {
-      if ( _ChapterID == value ) return;
-      _ChapterID = value;
-      NotifyPropertyChanged(nameof(ChapterID));
+      if ( _ID == value ) return;
+      _ID = value;
+      NotifyPropertyChanged(nameof(ID));
     }
   }
-  private string _ChapterID;
+  private string _ID;
 
   [NotNull]
-  public string Comment
+  public int Number
   {
-    get => _Comment;
+    get => _Number;
     set
     {
-      if ( _Comment == value ) return;
-      _Comment = value;
-      NotifyPropertyChanged(nameof(Comment));
+      if ( _Number == value ) return;
+      _Number = value;
+      NotifyPropertyChanged(nameof(Number));
     }
   }
-  private string _Comment;
-
-  public List<WordRow> Words { get; } = new();
-
-  public override string ToString()
-  {
-    string str = FormatCount(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
-    if ( HasTranslation ) str += $" - {Translation}";
-    return str;
-  }
+  private int _Number;
 
 }

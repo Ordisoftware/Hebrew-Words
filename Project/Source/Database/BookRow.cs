@@ -16,49 +16,12 @@ namespace Ordisoftware.Hebrew.Words;
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using SQLite;
 
 [Serializable]
 [Table("Books")]
-public class BookRow : INotifyPropertyChanged
+public class BookRow : AbstractRow
 {
-
-  [field: NonSerialized]
-  public event PropertyChangedEventHandler PropertyChanged;
-
-  protected void NotifyPropertyChanged(string p)
-  {
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
-    ApplicationDatabase.Instance.AddToModified(this);
-  }
-
-  [PrimaryKey]
-  [NotNull]
-  public string ID
-  {
-    get => _ID;
-    set
-    {
-      if ( _ID == value ) return;
-      _ID = value;
-      NotifyPropertyChanged(nameof(ID));
-    }
-  }
-  private string _ID;
-
-  [NotNull]
-  public int Number
-  {
-    get => _Number;
-    set
-    {
-      if ( _Number == value ) return;
-      _Number = value;
-      NotifyPropertyChanged(nameof(Number));
-    }
-  }
-  private int _Number;
 
   [NotNull]
   public string Original
@@ -155,16 +118,7 @@ public class BookRow : INotifyPropertyChanged
 
   public override string ToString()
   {
-    int nb = ApplicationDatabase.Instance.Books.Count;
-    string str;
-    if ( nb >= 100 )
-      str = Number.ToString("000");
-    else
-    if ( nb >= 10 )
-      str = Number.ToString("00");
-    else
-      str = Number.ToString();
-    str += ". " + Name;
+    string str = $"{FormatCount(ApplicationDatabase.Instance.Books.Count)}. {Name}";
     if ( CommonName.Length > 0 ) str += $" ({CommonName})";
     if ( Translation.Length > 0 ) str += $" - {Translation}";
     return str;

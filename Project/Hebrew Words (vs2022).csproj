@@ -396,6 +396,7 @@
     </Compile>
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
     <Compile Include="Source\Database\VerseRow.Logic.cs" />
+    <Compile Include="Source\Database\AbstractRow.cs" />
     <Compile Include="Source\Database\WordRow.cs" />
     <Compile Include="Source\Database\VerseRow.cs" />
     <Compile Include="Source\Database\ChapterRow.cs" />

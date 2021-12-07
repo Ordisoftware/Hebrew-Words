@@ -15,37 +15,13 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using System;
-using System.ComponentModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Words")]
-public class WordRow : INotifyPropertyChanged
+public class WordRow : AbstractRow
 {
-
-  [field: NonSerialized]
-  public event PropertyChangedEventHandler PropertyChanged;
-
-  protected void NotifyPropertyChanged(string p)
-  {
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
-    ApplicationDatabase.Instance.AddToModified(this);
-  }
-
-  [PrimaryKey]
-  [NotNull]
-  public string ID
-  {
-    get => _ID;
-    set
-    {
-      if ( _ID == value ) return;
-      _ID = value;
-      NotifyPropertyChanged(nameof(ID));
-    }
-  }
-  private string _ID;
 
   [ForeignKey(typeof(VerseRow))]
   [NotNull]
@@ -60,19 +36,6 @@ public class WordRow : INotifyPropertyChanged
     }
   }
   private string _VerseID;
-
-  [NotNull]
-  public int Number
-  {
-    get => _Number;
-    set
-    {
-      if ( _Number == value ) return;
-      _Number = value;
-      NotifyPropertyChanged(nameof(Number));
-    }
-  }
-  private int _Number;
 
   [NotNull]
   public string Original
