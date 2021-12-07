@@ -25,7 +25,6 @@ partial class MainForm
     try
     {
       UpdateSearchButtons();
-      UpdatePagingCount();
       PanelSearchResults.Visible = false;
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.DisposeAllControls();
