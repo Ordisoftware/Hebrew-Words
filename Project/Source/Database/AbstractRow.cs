@@ -31,7 +31,7 @@ public abstract class AbstractRow : INotifyPropertyChanged
     ApplicationDatabase.Instance.AddToModified(this);
   }
 
-  protected string FormatCount(int count)
+  protected string FormatNumber(int count)
     => count switch
     {
       >= 100 => Number.ToString("000"),

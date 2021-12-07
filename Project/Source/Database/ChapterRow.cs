@@ -81,7 +81,7 @@ public class ChapterRow : AbstractRow
 
   public override string ToString()
   {
-    string str = FormatCount(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID).Chapters.Count);
+    string str = FormatNumber(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID).Chapters.Count);
     if ( Title.Length > 0 ) str += $" - {Title}";
     return str;
   }
