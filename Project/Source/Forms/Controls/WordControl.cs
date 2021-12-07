@@ -56,7 +56,7 @@ public partial class WordControl : UserControl
 
   public new bool Focus()
   {
-    if ( MainForm.Instance.IsRendering ) return false;
+    if ( Globals.IsRendering ) return false;
     EditTranslation.Focus();
     return true;
   }
@@ -68,10 +68,14 @@ public partial class WordControl : UserControl
 
   private void EditTranslation_Enter(object sender, EventArgs e)
   {
-    if ( MainForm.Instance.IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     EditTranslation.BackColor = Color.AliceBlue;
     EditTranslation.SelectionStart = 0;
+
+    // TODO instance var here instead accessing mainform ?
     if ( MainForm.Instance.IsComboBoxChanging ) return;
+
+    // TODO create an event in versecontrol assigned by mainform and call it using parent
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }
@@ -120,6 +124,7 @@ public partial class WordControl : UserControl
           HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickAction.SearchTranslated:
+          // TODO create an event assigned by mainform ?
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickAction.HebrewLetters:

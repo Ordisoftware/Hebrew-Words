@@ -19,8 +19,8 @@ partial class MainForm
 
   private void RenderVerses()
   {
-    if ( IsRendering ) return;
-    IsRendering = true;
+    if ( Globals.IsRendering ) return;
+    Globals.IsRendering = true;
     Globals.ChronoRendering.Restart();
     try
     {
@@ -50,7 +50,7 @@ partial class MainForm
     }
     finally
     {
-      IsRendering = false;
+      Globals.IsRendering = false;
       if ( SelectRenderAllVerses.Checked )
       {
         PanelViewVerses.Visible = true;

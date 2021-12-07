@@ -19,8 +19,8 @@ partial class MainForm
 
   private void RenderSearch()
   {
-    if ( IsRendering ) return;
-    IsRendering = true;
+    if ( Globals.IsRendering ) return;
+    Globals.IsRendering = true;
     try
     {
       UpdateSearchButtons();
@@ -120,7 +120,7 @@ partial class MainForm
     }
     finally
     {
-      IsRendering = false;
+      Globals.IsRendering = false;
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(false);
       PanelSearchResults.Visible = true;

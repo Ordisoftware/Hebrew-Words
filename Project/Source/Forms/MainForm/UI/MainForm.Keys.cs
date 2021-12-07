@@ -57,7 +57,7 @@ partial class MainForm
         ActionExit.PerformClick();
         return true;
       case Keys.Escape:
-        if ( IsRendering ) Globals.CancelRequired = true;
+        if ( Globals.IsRendering ) Globals.CancelRequired = true;
         break;
       // System tools
       case Keys.F9:

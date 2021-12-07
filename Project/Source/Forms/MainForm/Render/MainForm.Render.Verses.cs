@@ -39,12 +39,10 @@ partial class MainForm
     if ( count == 1 )
       render(references[0]);
     else
-    {
       for ( int i = count - 1; i >= 0; i-- ) render(references[i]);
-      int commentMargin = ( (VerseControl)container.Controls[0] ).WordControls.Min(c => c.Left) + dummy.Padding.Left;
-      foreach ( VerseControl panel in container.Controls )
-        panel.PanelCommentLeft.Width = commentMargin;
-    }
+    int commentMargin = ( (VerseControl)container.Controls[0] ).WordControls.Min(c => c.Left) + dummy.Padding.Left;
+    foreach ( VerseControl panel in container.Controls )
+      panel.PanelCommentLeft.Width = commentMargin;
     //
     void render(ReferenceItem reference)
     {
