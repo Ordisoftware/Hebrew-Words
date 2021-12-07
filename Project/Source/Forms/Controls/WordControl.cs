@@ -27,8 +27,8 @@ partial class WordControl : UserControl
   public WordControl()
   {
     InitializeComponent();
-    int linesCount = Program.Settings.VerseWordTranslationLinesCount;
-    if ( linesCount > 1 )
+    // TODO optimize using static liune count assigned at startup and on prefs changed
+    if ( !Globals.IsVisualStudioDesigner && Program.Settings.VerseWordTranslationLinesCount > 1 )
     {
       if ( ResetTextHeight )
       {
@@ -36,7 +36,7 @@ partial class WordControl : UserControl
         ResetTextHeight = false;
         using Graphics g = EditTranslation.CreateGraphics();
         TextHeight = TextRenderer.MeasureText(g, "A", EditTranslation.Font).Height;
-        EditHeight = TextHeight * ( linesCount + 1 ) - 3;
+        EditHeight = TextHeight * ( Program.Settings.VerseWordTranslationLinesCount + 1 ) - 3;
         EditTranslation.Height = EditHeight;
         TotalHeight = Height + EditHeight - height;
       }

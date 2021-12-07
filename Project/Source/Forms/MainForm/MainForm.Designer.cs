@@ -37,6 +37,7 @@
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageVerses = new System.Windows.Forms.TabPage();
       this.PanelViewVerses = new System.Windows.Forms.Panel();
+      this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
       this.TabPageTranslations = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
       this.EditTranslations = new System.Windows.Forms.RichTextBox();
@@ -254,12 +255,18 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.wordControl1 = new Ordisoftware.Hebrew.Words.WordControl();
+      this.wordControl2 = new Ordisoftware.Hebrew.Words.WordControl();
+      this.wordControl3 = new Ordisoftware.Hebrew.Words.WordControl();
+      this.wordControl4 = new Ordisoftware.Hebrew.Words.WordControl();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
       this.PanelMainCenter.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageVerses.SuspendLayout();
+      this.PanelViewVerses.SuspendLayout();
+      this.flowLayoutPanel1.SuspendLayout();
       this.TabPageTranslations.SuspendLayout();
       this.PanelViewTranslations.SuspendLayout();
       this.TabPageVerseFiltered.SuspendLayout();
@@ -348,8 +355,18 @@
       // 
       resources.ApplyResources(this.PanelViewVerses, "PanelViewVerses");
       this.PanelViewVerses.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelViewVerses.Controls.Add(this.flowLayoutPanel1);
       this.PanelViewVerses.Name = "PanelViewVerses";
       this.PanelViewVerses.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelViewVerses_MouseClick);
+      // 
+      // flowLayoutPanel1
+      // 
+      this.flowLayoutPanel1.Controls.Add(this.wordControl1);
+      this.flowLayoutPanel1.Controls.Add(this.wordControl2);
+      this.flowLayoutPanel1.Controls.Add(this.wordControl3);
+      this.flowLayoutPanel1.Controls.Add(this.wordControl4);
+      resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+      this.flowLayoutPanel1.Name = "flowLayoutPanel1";
       // 
       // TabPageTranslations
       // 
@@ -2026,6 +2043,26 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // wordControl1
+      // 
+      resources.ApplyResources(this.wordControl1, "wordControl1");
+      this.wordControl1.Name = "wordControl1";
+      // 
+      // wordControl2
+      // 
+      resources.ApplyResources(this.wordControl2, "wordControl2");
+      this.wordControl2.Name = "wordControl2";
+      // 
+      // wordControl3
+      // 
+      resources.ApplyResources(this.wordControl3, "wordControl3");
+      this.wordControl3.Name = "wordControl3";
+      // 
+      // wordControl4
+      // 
+      resources.ApplyResources(this.wordControl4, "wordControl4");
+      this.wordControl4.Name = "wordControl4";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2047,6 +2084,8 @@
       this.PanelMainCenter.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
       this.TabPageVerses.ResumeLayout(false);
+      this.PanelViewVerses.ResumeLayout(false);
+      this.flowLayoutPanel1.ResumeLayout(false);
       this.TabPageTranslations.ResumeLayout(false);
       this.PanelViewTranslations.ResumeLayout(false);
       this.TabPageVerseFiltered.ResumeLayout(false);
@@ -2314,6 +2353,11 @@
     private ToolStripButton ActionCloseWindowsOld;
     internal ToolStripMenuItem ActionCloseWindows;
     private ToolStripMenuItem ActionAddToBookmarks;
+    private FlowLayoutPanel flowLayoutPanel1;
+    private WordControl wordControl1;
+    private WordControl wordControl2;
+    private WordControl wordControl3;
+    private WordControl wordControl4;
   }
 }
 

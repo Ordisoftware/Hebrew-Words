@@ -40,7 +40,7 @@ partial class MainForm
                             && chapter.Number == itemChapter.Number
                          select new ReferenceItem(book, chapter, verse)
                        : new List<ReferenceItem> { CurrentReference };
-      controlsCount = RenderVerses(PanelViewVerses, references);
+      controlsCount = RenderVerses(PanelViewVerses, references.ToList());
     }
     catch ( Exception ex )
     {

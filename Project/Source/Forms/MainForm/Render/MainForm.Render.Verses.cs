@@ -17,10 +17,11 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private int RenderVerses(Panel container, IEnumerable<ReferenceItem> references)
+  private int RenderVerses(Panel container, List<ReferenceItem> references)
   {
-    var wordcontrol = new WordControl { Width = Settings.WordControlWidth };
     while ( container.Controls.Count > 0 ) container.Controls[0].Dispose();
+    int widthWord = Settings.WordControlWidth;
+    var wordcontrol = new WordControl { Width = widthWord };
     const int widthLabel = 40;
     const int mX = 50;
     const int mY = 50;
@@ -37,12 +38,11 @@ partial class MainForm
     int minx = x;
     int wordsCount = ( width - marginX ) / dx;
     int widthwords = wordsCount * dx;
-    int widthWord = Settings.WordControlWidth;
     int commentLineCount = Settings.VerseCommentaryLinesCount;
     int textHeight;
     var textboxTemp = new TextBoxEx();
     using Graphics g = textboxTemp.CreateGraphics();
-    textHeight = TextRenderer.MeasureText(g, "A", textboxTemp.Font).Height;
+    textHeight = TextRenderer.MeasureText(g, "A", textboxTemp.Font).Height; // TODO optimize using static assigned at startup
     Panel panel;
     Label label;
     TextBoxEx editComment;
@@ -57,12 +57,11 @@ partial class MainForm
     int dy_marginY_commentHeight = dy + marginY + heightComment;
     int widthwords_widthLabel_delta = widthwords + widthLabel + delta;
     int panelsize = container.ClientSize.Width - deltaMul2;
-    int yPanel = 0;
-    int controlsCount = references.Count() * 2 + references.Select(r => r.Verse.Words.Count).Sum();
-    var panels = new Panel[references.Count()];
+    int countReferences = references.Count;
+    int indexPanel = countReferences;
+    var panels = new Panel[countReferences];
     foreach ( var reference in references )
     {
-      if ( reference.Verse.Number >= 102 ) ;
       x = width - dx - marginX;
       y = deltaMul2;
       panel = new Panel();
@@ -119,14 +118,12 @@ partial class MainForm
       editComment.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
       panel.Controls.Add(editComment);
       y += dy_marginY_commentHeight;
-      panel.Location = new Point(0, yPanel);
-      panel.Width = panelsize;
       panel.Height = y;
-      yPanel += y;
-      panels[reference.Verse.Number - 1] = panel;
+      panel.Dock = DockStyle.Top;
+      panels[--indexPanel] = panel;
     }
     container.Controls.AddRange(panels);
-    return controlsCount;
+    return countReferences * 2 + references.Select(r => r.Verse.Words.Count).Sum(); // TODO optimize using counters
   }
 
   private void EditVerseComment_Enter(object sender, EventArgs e)
