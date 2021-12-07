@@ -407,17 +407,6 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionStartHebrewLetters for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
-  {
-    HebrewTools.OpenHebrewLetters(( ActiveControl as WordControl )?.Reference.Word.Hebrew ?? "",
-                                  Settings.HebrewLettersExe);
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionOpenCalculator for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -963,7 +952,6 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectRenderAllVerses_CheckedChanged(object sender, EventArgs e)
   {
-    SelectRenderAllVersesKeep.Enabled = SelectRenderAllVerses.Checked;
     ActionRefresh.PerformClick();
   }
 
@@ -1185,7 +1173,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(CurrentReference.Word.Translation);
+    Clipboard.SetText(CurrentReference?.Word?.Translation);
   }
 
   /// <summary>
@@ -1195,7 +1183,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(CurrentReference.Word.Original);
+    Clipboard.SetText(CurrentReference?.Word?.Original);
   }
 
   /// <summary>
@@ -1205,7 +1193,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyFontChars_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(CurrentReference.Word.Hebrew);
+    Clipboard.SetText(CurrentReference?.Word?.Hebrew);
   }
 
   /// <summary>
@@ -1215,8 +1203,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchTranslated_Click(object sender, EventArgs e)
   {
-    if ( ActiveControl is WordControl control )
-      SearchTranslatedForm.Run(control);
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      SearchTranslatedForm.Run(controlWord);
   }
 
   /// <summary>
@@ -1224,9 +1212,21 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionSearchWordInDatabase_Click(object sender, EventArgs e)
+  private void ActionSearchWord_Click(object sender, EventArgs e)
   {
-    SearchHebrewWord(( (WordControl)ActiveControl ).Reference.Word.Hebrew);
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      SearchHebrewWord(controlWord.Reference?.Word?.Hebrew);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionStartHebrewLetters for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      HebrewTools.OpenHebrewLetters(controlWord.Reference?.Word?.Hebrew, Settings.HebrewLettersExe);
   }
 
   /// <summary>
@@ -1517,7 +1517,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionSearchWord_Click(object sender, EventArgs e)
+  private void ActionSearchRun_Click(object sender, EventArgs e)
   {
     CreateSearchResults();
   }

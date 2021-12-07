@@ -192,6 +192,9 @@
   <data name="EditChapterTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="EditChapterTranslation.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;EditChapterTranslation.Name" xml:space="preserve">
     <value>EditChapterTranslation</value>
   </data>
@@ -2216,6 +2219,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="EditChapterOriginal.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="EditChapterOriginal.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;EditChapterOriginal.Name" xml:space="preserve">
     <value>EditChapterOriginal</value>
   </data>
@@ -2293,6 +2299,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="EditChapterELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="EditChapterELS50.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;EditChapterELS50.Name" xml:space="preserve">
     <value>EditChapterELS50</value>
@@ -2695,13 +2704,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>804, 111</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 17</value>
+    <value>65, 17</value>
   </data>
   <data name="SelectRenderAllVersesKeep.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Text" xml:space="preserve">
-    <value>Keep</value>
+    <value>Keep All</value>
   </data>
   <data name="&gt;&gt;SelectRenderAllVersesKeep.Name" xml:space="preserve">
     <value>SelectRenderAllVersesKeep</value>
@@ -3198,37 +3207,37 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;EditChapterTitle.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="EditELS50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditELS50Single.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="EditELS50.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditELS50Single.Font" type="System.Drawing.Font, System.Drawing">
     <value>Hebrew, 14.2499981pt</value>
   </data>
-  <data name="EditELS50.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditELS50Single.Location" type="System.Drawing.Point, System.Drawing">
     <value>565, 10</value>
   </data>
-  <data name="EditELS50.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditELS50Single.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 35</value>
   </data>
-  <data name="EditELS50.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditELS50Single.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="EditELS50.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="EditELS50Single.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="EditELS50.WordWrap" type="System.Boolean, mscorlib">
+  <data name="EditELS50Single.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;EditELS50.Name" xml:space="preserve">
-    <value>EditELS50</value>
+  <data name="&gt;&gt;EditELS50Single.Name" xml:space="preserve">
+    <value>EditELS50Single</value>
   </data>
-  <data name="&gt;&gt;EditELS50.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
     <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditELS50.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
-  <data name="&gt;&gt;EditELS50.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditELS50Single.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
   <data name="LabelChapterELS50.AutoSize" type="System.Boolean, mscorlib">

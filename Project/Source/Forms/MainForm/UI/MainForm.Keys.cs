@@ -131,6 +131,15 @@ partial class MainForm
       case Keys.Alt | Keys.I:
         ActionInformation.ShowDropDown();
         return true;
+      // Context menus
+      case Keys.Control | Keys.T:
+        if ( ActiveControl is VerseControl )
+          ActionSearchTranslated.PerformClick();
+        break;
+      case Keys.Control | Keys.K:
+        if ( ActiveControl is VerseControl )
+          ActionSearchWord.PerformClick();
+        break;
       // Verse navigation
       case Keys.Alt | Keys.Left:
         if ( Settings.CurrentView == ViewMode.ChapterVerses

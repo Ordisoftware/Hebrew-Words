@@ -20,8 +20,6 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
-  const string NULL = "(null)";
-
   public BookRow Book { get; set; }
   public ChapterRow Chapter { get; set; }
   public VerseRow Verse { get; set; }

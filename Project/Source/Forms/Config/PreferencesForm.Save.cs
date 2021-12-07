@@ -55,26 +55,30 @@ partial class PreferencesForm
     if ( GroupBoxHebrewWordClick0.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClick1.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.OnlineSearch;
     if ( GroupBoxHebrewWordClick2.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.SearchTranslated;
-    if ( GroupBoxHebrewWordClick3.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.HebrewLetters;
-    if ( GroupBoxHebrewWordClick4.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.Nothing;
+    if ( GroupBoxHebrewWordClick3.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.SearchInDatabase;
+    if ( GroupBoxHebrewWordClick4.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.HebrewLetters;
+    if ( GroupBoxHebrewWordClick5.Checked ) Program.Settings.HebrewWordClickAction = HebrewWordClickAction.Nothing;
     // Word click action 2
     if ( GroupBoxHebrewWordClickShift0.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClickShift1.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.OnlineSearch;
     if ( GroupBoxHebrewWordClickShift2.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.SearchTranslated;
-    if ( GroupBoxHebrewWordClickShift3.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.HebrewLetters;
-    if ( GroupBoxHebrewWordClickShift4.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.Nothing;
+    if ( GroupBoxHebrewWordClickShift3.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.SearchInDatabase;
+    if ( GroupBoxHebrewWordClickShift4.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.HebrewLetters;
+    if ( GroupBoxHebrewWordClickShift5.Checked ) Program.Settings.HebrewWordShiftClickAction = HebrewWordClickAction.Nothing;
     // Word click action 3
     if ( GroupBoxHebrewWordClickCtrl0.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClickCtrl1.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.OnlineSearch;
     if ( GroupBoxHebrewWordClickCtrl2.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.SearchTranslated;
-    if ( GroupBoxHebrewWordClickCtrl3.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.HebrewLetters;
-    if ( GroupBoxHebrewWordClickCtrl4.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.Nothing;
+    if ( GroupBoxHebrewWordClickCtrl3.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.SearchInDatabase;
+    if ( GroupBoxHebrewWordClickCtrl4.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.HebrewLetters;
+    if ( GroupBoxHebrewWordClickCtrl5.Checked ) Program.Settings.HebrewWordCtrlClickAction = HebrewWordClickAction.Nothing;
     // Word click action 4
     if ( GroupBoxHebrewWordClickShiftCtrl0.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClickShiftCtrl1.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.OnlineSearch;
     if ( GroupBoxHebrewWordClickShiftCtrl2.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.SearchTranslated;
-    if ( GroupBoxHebrewWordClickShiftCtrl3.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.HebrewLetters;
-    if ( GroupBoxHebrewWordClickShiftCtrl4.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.Nothing;
+    if ( GroupBoxHebrewWordClickShiftCtrl3.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.SearchInDatabase;
+    if ( GroupBoxHebrewWordClickShiftCtrl4.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.HebrewLetters;
+    if ( GroupBoxHebrewWordClickShiftCtrl5.Checked ) Program.Settings.HebrewWordShiftCtrlClickAction = HebrewWordClickAction.Nothing;
     // Translated double clock
     if ( GroupBoxTranslatedItemDoubleClick1.Checked ) Program.Settings.TranslatedItemDoubleClickAction = TranslatedItemDoubleClickAction.UseTranslation;
     if ( GroupBoxTranslatedItemDoubleClick2.Checked ) Program.Settings.TranslatedItemDoubleClickAction = TranslatedItemDoubleClickAction.AddTranslation;

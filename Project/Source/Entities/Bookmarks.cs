@@ -1,5 +1,4 @@
-﻿using System.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -20,11 +19,9 @@ class Bookmarks : ReferencesList
 
   public override void Add(ReferenceItem reference)
   {
-    if ( reference == null ) return;
-    if ( Program.Settings.BookmarksCount < 1 )
+    if ( reference == null || Program.Settings.BookmarksCount < 1 || Items.Any(item => item.Equals(reference)) )
       return;
-    if ( Items.Any(item => item.Equals(reference)) ) return;
-    Items.Add(reference);
+    Items.Add(new ReferenceItem(reference));
     while ( Items.Count > Program.Settings.BookmarksCount )
       Items.RemoveAt(0);
     Save();

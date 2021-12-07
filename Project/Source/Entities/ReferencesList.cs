@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Linq;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -17,23 +18,21 @@ namespace Ordisoftware.Hebrew.Words;
 abstract class ReferencesList : IEnumerable<ReferenceItem>
 {
 
+  private bool Mutex;
+
   protected readonly List<ReferenceItem> Items = new();
 
-  protected string FilePath;
+  protected readonly string FilePath;
 
-  public int Count { get { return Items.Count; } }
+  public int Count => Items.Count;
 
-  public ReferenceItem this[int index] { get { return Items[index]; } }
+  public ReferenceItem this[int index] => Items[index];
 
-  IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator()
-  {
-    return Items.GetEnumerator();
-  }
+  IEnumerator<ReferenceItem> IEnumerable<ReferenceItem>.GetEnumerator() => Items.GetEnumerator();
 
-  IEnumerator IEnumerable.GetEnumerator()
-  {
-    return Items.GetEnumerator();
-  }
+  IEnumerator IEnumerable.GetEnumerator() => Items.GetEnumerator();
+
+  public abstract void Add(ReferenceItem reference);
 
   public void Clear()
   {
@@ -44,21 +43,17 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
   public void Sort()
   {
     Items.Sort();
+    Save();
   }
-
-  public abstract void Add(ReferenceItem reference);
 
   public void Load(Action actionAfter)
   {
     Items.Clear();
-    if ( !File.Exists(FilePath) )
-      return;
+    if ( !File.Exists(FilePath) ) return;
     try
     {
-      foreach ( string item in File.ReadLines(FilePath) )
+      foreach ( var item in File.ReadLines(FilePath).Where(item => item.Length != 0 && item.Count(c => c == '.') == 2) )
       {
-        if ( item.Length == 0 || item.Count(c => c == '.') != 2 )
-          continue;
         var parts = item.Split('.');
         SystemManager.TryCatch(() => Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),
                                                                  Convert.ToInt32(parts[1]),
@@ -75,16 +70,12 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
     }
   }
 
-  private bool Mutex;
-
   public void Save()
   {
-    if ( Mutex ) return;
+    if ( Globals.IsLoadingData || Mutex ) return;
     Mutex = true;
     try
     {
-      if ( Globals.IsLoadingData )
-        return;
       var items = new List<string>();
       foreach ( var item in Items )
         items.Add(item.ToStringOnlyNumbers());
@@ -104,4 +95,5 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
   {
     FilePath = filePath;
   }
+
 }

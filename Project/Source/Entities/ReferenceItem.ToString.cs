@@ -20,34 +20,24 @@ namespace Ordisoftware.Hebrew.Words;
 partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
+  const string Null = "(null)";
+
   public override string ToString()
-  {
-    return ( Book?.Name ?? NULL ) + " " +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
+    => $"{Book?.Name ?? Null} {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
+
+  public string ToStringWordIncluded()
+    => $"{ToString()}:{Word?.Number.ToString() ?? Null}";
 
   public string ToStringFull()
-  {
-    return ( Book?.Name ?? NULL ) + " (" +
-           ( Book?.CommonName ?? NULL ) + ") " +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
+    => $"{Book?.Name ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
+
+  public string ToStringFullWordIncluded()
+    => $"{ToStringFull()}:{Word?.Number.ToString() ?? Null}";
 
   public string ToStringOnlyNumbers()
-  {
-    return ( Book?.Number.ToString() ?? NULL ) + "." +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
+    => $"{Book?.Number.ToString() ?? Null}.{Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
   public string ToStringOnlyNumbersWordIncluded()
-  {
-    return ( Book?.Number.ToString() ?? NULL ) + "." +
-           ( Chapter?.Number.ToString() ?? NULL ) + "." +
-           ( Verse?.Number.ToString() ?? NULL ) + ":" +
-           ( Verse?.Number.ToString() ?? NULL );
-  }
+    => $"{ToStringOnlyNumbers()}:{Word?.Number.ToString() ?? Null}";
 
 }

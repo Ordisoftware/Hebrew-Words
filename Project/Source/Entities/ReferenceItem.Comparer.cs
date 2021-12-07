@@ -11,22 +11,35 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-class ReferenceItemComparer : IEqualityComparer<ReferenceItem>
+/// <summary>
+/// Provides reference item
+/// </summary>
+partial class ReferenceItem
 {
 
-  public bool Equals(ReferenceItem x, ReferenceItem y)
+  public class ReferenceComparer : IEqualityComparer<ReferenceItem>
   {
-    return x == y;
+
+    public bool Equals(ReferenceItem x, ReferenceItem y)
+      => x == y;
+
+    public int GetHashCode(ReferenceItem obj)
+      => obj?.GetHashCode() ?? 0;
+
   }
 
-  public int GetHashCode(ReferenceItem obj)
+  public class WordTranslationComparer : IEqualityComparer<ReferenceItem>
   {
-    return ( obj?.Book?.Number.GetHashCode() ?? 0 )
-         ^ ( obj?.Chapter?.Number.GetHashCode() ?? 0 )
-         ^ ( obj?.Verse?.Number.GetHashCode() ?? 0 );
+
+    public bool Equals(ReferenceItem x, ReferenceItem y)
+      => x != null && y != null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
+
+    public int GetHashCode(ReferenceItem obj)
+      => obj?.Word?.Translation.GetHashCode() ?? 0;
+
   }
 
 }

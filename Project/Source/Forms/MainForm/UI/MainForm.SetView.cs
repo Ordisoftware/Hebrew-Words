@@ -138,7 +138,6 @@ partial class MainForm
     {
       case ViewMode.ChapterVerses:
       case ViewMode.ChapterOriginal:
-        break;
       case ViewMode.ChapterTranslation:
         break;
       case ViewMode.Search:

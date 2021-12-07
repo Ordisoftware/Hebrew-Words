@@ -16,37 +16,13 @@ namespace Ordisoftware.Hebrew.Words;
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Chapters")]
-public class ChapterRow : INotifyPropertyChanged
+public class ChapterRow : AbstractRow
 {
-
-  [field: NonSerialized]
-  public event PropertyChangedEventHandler PropertyChanged;
-
-  protected void NotifyPropertyChanged(string p)
-  {
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
-    ApplicationDatabase.Instance.AddToModified(this);
-  }
-
-  [PrimaryKey]
-  [NotNull]
-  public string ID
-  {
-    get => _ID;
-    set
-    {
-      if ( _ID == value ) return;
-      _ID = value;
-      NotifyPropertyChanged(nameof(ID));
-    }
-  }
-  private string _ID;
 
   [ForeignKey(typeof(BookRow))]
   [NotNull]
@@ -61,19 +37,6 @@ public class ChapterRow : INotifyPropertyChanged
     }
   }
   private string _BookID;
-
-  [NotNull]
-  public int Number
-  {
-    get => _Number;
-    set
-    {
-      if ( _Number == value ) return;
-      _Number = value;
-      NotifyPropertyChanged(nameof(Number));
-    }
-  }
-  private int _Number;
 
   [NotNull]
   public string Title
@@ -118,15 +81,7 @@ public class ChapterRow : INotifyPropertyChanged
 
   public override string ToString()
   {
-    int nb = ApplicationDatabase.Instance.Books.Find(book => book.ID == BookID).Chapters.Count;
-    string str;
-    if ( nb >= 100 )
-      str = Number.ToString("000");
-    else
-    if ( nb >= 10 )
-      str = Number.ToString("00");
-    else
-      str = Number.ToString();
+    string str = FormatNumber(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID).Chapters.Count);
     if ( Title.Length > 0 ) str += $" - {Title}";
     return str;
   }

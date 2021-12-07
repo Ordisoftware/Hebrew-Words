@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EditFilterBook.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EditFilterVersesTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
   </data>
@@ -227,7 +227,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>74, 17</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Text" xml:space="preserve">
-    <value>Conserver</value>
+    <value>Conserver Tous</value>
   </data>
   <data name="SelectRenderAllVerses.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 17</value>
