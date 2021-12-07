@@ -137,6 +137,7 @@ partial class MainForm : Form
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
     SelectRenderAllVersesKeep.Enabled = SelectRenderAllVerses.Checked;
+    PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
   }
 
   private void DoStartGoTo()

@@ -17,18 +17,25 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  public void RenderELS50()
+  public void RenderChapterTranslation(bool isGrouped = false)
   {
-    EditELS50All.Clear();
-    if ( CurrentReference.Chapter == null ) return;
-    foreach ( var chapter in CurrentReference.Book.Chapters )
+    RenderText(EditChapterTranslation, false, isGrouped, () =>
     {
-      AddTextRightAligned(EditELS50All, HebrewFont12, chapter.ELS50);
-      AddTextRightAligned(EditELS50All, LatinFont10, " :" + chapter.Number);
-      EditELS50All.AppendText(Environment.NewLine);
-    }
-    EditELS50All.SelectionStart = 0;
-    EditELS50All.Focus();
-  }
+      var builder = new StringBuilder();
+      foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
+      {
+        builder.Append(verse.Number).Append(". ").Append(verse.Translation);
+        if ( verse.Comment.Length > 0 )
+        {
+          builder.AppendLine();
+          builder.AppendLine();
+          builder.Append(verse.Comment);
+        }
+        builder.AppendLine();
+        builder.AppendLine();
+      }
+      EditChapterTranslation.Text = builder.ToString();
+    });
+  } 
 
 }

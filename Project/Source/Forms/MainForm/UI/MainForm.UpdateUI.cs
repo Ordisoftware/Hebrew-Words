@@ -31,7 +31,10 @@ partial class MainForm
     get
     {
       var cp = base.CreateParams;
-      if ( Settings.WindowsDoubleBufferingEnabled )
+      if ( Settings.WindowsDoubleBufferingEnabled
+        && Settings.CurrentView != ViewMode.ChapterTranslation
+        && Settings.CurrentView != ViewMode.ChapterOriginal
+        && Settings.CurrentView != ViewMode.BookELS50 )
       {
         cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
         //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN

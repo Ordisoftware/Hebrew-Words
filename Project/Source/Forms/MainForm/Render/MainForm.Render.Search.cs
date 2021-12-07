@@ -17,17 +17,18 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderSearch()
+  private void RenderSearch(bool isGrouped = false)
   {
-    if ( Globals.IsRendering ) return;
+    if ( !isGrouped && !CanRender ) return;
+    bool tempRendering = Globals.IsRendering;
     Globals.IsRendering = true;
     try
     {
       UpdateSearchButtons();
+      UpdatePagingCount();
       PanelSearchResults.Visible = false;
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
-      while ( PanelSearchResults.Controls.Count > 0 )
-        PanelSearchResults.Controls[0].Dispose();
+      PanelSearchResults.DisposeAllControls();
       if ( SearchResults == null || SearchResultsCount == 0 )
         return;
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
@@ -64,7 +65,7 @@ partial class MainForm
         {
           if ( e.Button == MouseButtons.Left )
           {
-            SetView(ViewMode.Verses);
+            SetView(ViewMode.ChapterVerses);
             GoTo((ReferenceItem)( (Control)sender ).Tag);
           }
         };
@@ -120,7 +121,7 @@ partial class MainForm
     }
     finally
     {
-      Globals.IsRendering = false;
+      Globals.IsRendering = tempRendering;
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(false);
       PanelSearchResults.Visible = true;
@@ -140,7 +141,7 @@ partial class MainForm
 
   private void LabelMouseClick(object sender, EventArgs e)
   {
-    SetView(ViewMode.Verses);
+    SetView(ViewMode.ChapterVerses);
     var item = (ReferenceItem)( (Control)sender ).Tag;
     GoTo(item);
   }

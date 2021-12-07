@@ -63,7 +63,7 @@ partial class MainForm
     var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
     {
       {
-        ViewMode.Verses,
+        ViewMode.ChapterVerses,
         new ViewConnector
         {
           MenuItem = ActionViewVerses,
@@ -81,30 +81,30 @@ partial class MainForm
         }
       },
       {
-        ViewMode.Translation,
+        ViewMode.ChapterTranslation,
         new ViewConnector
         {
           MenuItem = ActionViewTranslations,
           Panel = PanelViewTranslations,
-          Focused = EditTranslations
+          Focused = EditChapterTranslation
         }
       },
       {
-        ViewMode.Text,
+        ViewMode.ChapterOriginal,
         new ViewConnector
         {
           MenuItem = ActionViewRawText,
-          Panel = PanelViewRawText,
-          Focused = EditRawText
+          Panel = PanelViewOriginalText,
+          Focused = EditChapterOriginal
         }
       },
       {
-        ViewMode.ELS50,
+        ViewMode.BookELS50,
         new ViewConnector
         {
           MenuItem = ActionViewELS50,
           Panel = PanelViewELS50,
-          Focused = EditELS50All
+          Focused = EditChapterELS50
         }
       },
       {
@@ -133,15 +133,13 @@ partial class MainForm
     Settings.CurrentView = view;
     updateControls();
     Refresh();
+    SetTanakItemFocus();
     switch ( view )
     {
-      case ViewMode.Verses:
-      case ViewMode.Text:
-        GoTo(CurrentReference);
+      case ViewMode.ChapterVerses:
+      case ViewMode.ChapterOriginal:
         break;
-      case ViewMode.Translation:
-        RenderTranslation();
-        GoTo(CurrentReference);
+      case ViewMode.ChapterTranslation:
         break;
       case ViewMode.Search:
         SelectSearchType_Selected(null, null);
@@ -175,25 +173,31 @@ partial class MainForm
     {
       LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       LabelTitle.Refresh();
+      //
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
       PanelMain.Refresh();
       //
-      ActionCopyToClipboardOld.Enabled = view == ViewMode.Translation;
+      SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
+      ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
+      ActionExportBook.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.BookELS50;
+      ActionExportChapter.Enabled = PanelNavigation.Visible;
       //
-      ActionExportBook.Enabled = view == ViewMode.Verses || view == ViewMode.ELS50;
-      SelectBook.Enabled = view != ViewMode.Search;
+      SelectBook.Enabled = PanelNavigation.Visible;
+      SelectBookNavigator.Enabled = SelectBook.Enabled;
       LabelSelectBook.Enabled = SelectBook.Enabled;
+      EditBookTranslation.Enabled = SelectBook.Enabled;
+      ActionEditBookMemo.Enabled = SelectBook.Enabled;
       //
-      ActionExportChapter.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
-      SelectChapter.Enabled = ActionExportChapter.Enabled;
-      LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
+      SelectChapter.Enabled = PanelNavigation.Visible;
+      SelectChapterNavigator.Enabled = SelectChapter.Enabled;
+      LabelSelectChapter.Enabled = SelectChapter.Enabled;
+      EditChapterTitle.Enabled = SelectChapter.Enabled;
+      EditChapterMemo.Enabled = SelectChapter.Enabled;
       //
-      EditBookTranslation.Enabled = ActionExportBook.Enabled;
-      EditChapterTitle.Enabled = ActionExportChapter.Enabled;
-      EditChapterMemo.Enabled = ActionExportChapter.Enabled;
-      ActionEditBookMemo.Enabled = ActionExportChapter.Enabled;
-      //
-      ActionSearchVerse.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
+      SelectVerse.Enabled = PanelNavigation.Visible && view != ViewMode.BookELS50;
+      SelectVerseNavigator.Enabled = SelectVerse.Enabled;
+      LabelSelectVerse.Enabled = SelectVerse.Enabled;
+      ActionSearchVerse.Enabled = SelectVerse.Enabled;
     }
   }
 

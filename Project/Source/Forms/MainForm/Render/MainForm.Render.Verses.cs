@@ -19,15 +19,7 @@ partial class MainForm
 
   private void RenderVerses(Panel container, List<ReferenceItem> references)
   {
-    container.SuspendLayout();
-    try
-    {
-      while ( container.Controls.Count > 0 ) container.Controls[0].Dispose();
-    }
-    finally
-    {
-      container.ResumeLayout();
-    }
+    container.DisposeAllControls();
     var dummy = new VerseControl();
     int dy = dummy.Padding.Top + dummy.Padding.Bottom + dummy.Padding.Bottom;
     int widthWord = Program.Settings.WordControlWidth;

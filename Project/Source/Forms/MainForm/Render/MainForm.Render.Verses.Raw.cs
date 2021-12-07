@@ -17,9 +17,10 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVerses()
+  private void RenderChapterVerses(bool isGrouped = false)
   {
-    if ( Globals.IsRendering ) return;
+    if ( !isGrouped && !CanRender ) return;
+    bool tempRendering = Globals.IsRendering;
     Globals.IsRendering = true;
     Globals.ChronoRendering.Restart();
     try
@@ -29,8 +30,8 @@ partial class MainForm
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
       if ( itemBook == null || itemChapter == null ) return;
-      EditELS50.Text = itemChapter.ELS50;
-      EditELS50.SelectionStart = EditELS50.TextLength;
+      EditELS50Single.Text = itemChapter.ELS50;
+      EditELS50Single.SelectionStart = EditELS50Single.TextLength;
       var references = SelectRenderAllVerses.Checked
                  ? ( from book in ApplicationDatabase.Instance.Books
                      from chapter in book.Chapters
@@ -50,7 +51,7 @@ partial class MainForm
     }
     finally
     {
-      Globals.IsRendering = false;
+      Globals.IsRendering = tempRendering;
       if ( SelectRenderAllVerses.Checked )
       {
         PanelViewVerses.Visible = true;

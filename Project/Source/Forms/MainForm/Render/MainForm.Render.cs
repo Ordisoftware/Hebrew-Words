@@ -11,36 +11,37 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
 {
 
-  private void AddTextRightAligned(RichTextBox control, Font font, string str)
-  {
-    AddTextRightAligned(control, font, str, SystemColors.ControlText);
-  }
+  private bool CanRender
+    => Globals.IsReady && !Globals.IsLoadingData && !Globals.IsExiting && !Globals.IsRendering && !IsGoToRunning;
 
-  private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
+  private void RenderAll(bool onlySizeDependent = false)
   {
-    control.SelectionFont = font;
-    control.SelectionColor = color;
-    control.SelectedText = str;
-    control.SelectionAlignment = HorizontalAlignment.Right;
-  }
-
-  private void RenderAll()
-  {
-    if ( Globals.IsLoadingData ) return;
-    if ( Globals.IsExiting ) return;
-    if ( IsGoToRunning ) return;
-    Refresh();
-    RenderVerses();
-    RenderVerseFiltered();
-    RenderTranslation();
-    RenderRawText();
-    RenderELS50();
+    if ( !CanRender ) return;
+    Globals.IsRendering = true;
+    try
+    {
+      Refresh();
+      RenderChapterVerses(true);
+      RenderVerseFiltered(true);
+      if ( onlySizeDependent )
+        RenderSearch(true);
+      else
+      {
+        RenderChapterTranslation(true);
+        RenderChapterOriginal(true);
+        RenderChapterELS50(true);
+      }
+    }
+    finally
+    {
+      Globals.IsRendering = false;
+    }
   }
 
 }

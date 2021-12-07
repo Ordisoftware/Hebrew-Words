@@ -19,7 +19,7 @@ partial class MainForm
 
   public void MoveVerseBindingSourceAndAddCurrentToHistory()
   {
-    if ( Settings.CurrentView == ViewMode.Verses )
+    if ( Settings.CurrentView == ViewMode.ChapterVerses )
     {
       int pos = CurrentReference.Verse.Number - 1;
       if ( pos != VersesBindingSource.Position )

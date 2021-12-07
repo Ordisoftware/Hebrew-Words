@@ -36,7 +36,7 @@ partial class MainForm
 
   // TODO update keys
 
-  private static readonly ViewMode[] RotateIgnoreViews = new[] { ViewMode.Text, ViewMode.ELS50 };
+  private static readonly ViewMode[] RotateIgnoreViews = new[] { ViewMode.ChapterOriginal, ViewMode.BookELS50 };
 
   /// <summary>
   /// Process the command key.
@@ -133,15 +133,15 @@ partial class MainForm
         return true;
       // Verse navigation
       case Keys.Alt | Keys.Left:
-        if ( Settings.CurrentView == ViewMode.Verses
-          || Settings.CurrentView == ViewMode.Translation
-          || Settings.CurrentView == ViewMode.Text )
+        if ( Settings.CurrentView == ViewMode.ChapterVerses
+          || Settings.CurrentView == ViewMode.ChapterTranslation
+          || Settings.CurrentView == ViewMode.ChapterOriginal )
           GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
         break;
       case Keys.Alt | Keys.Right:
-        if ( Settings.CurrentView == ViewMode.Verses
-          || Settings.CurrentView == ViewMode.Translation
-          || Settings.CurrentView == ViewMode.Text )
+        if ( Settings.CurrentView == ViewMode.ChapterVerses
+          || Settings.CurrentView == ViewMode.ChapterTranslation
+          || Settings.CurrentView == ViewMode.ChapterOriginal )
           GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
         break;
       // Scrolling bounds
@@ -149,7 +149,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, 0, false);
           case ViewMode.Search:
             return scroll(PanelSearchResults, 0, false);
@@ -159,7 +159,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
           case ViewMode.Search:
             return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
@@ -170,7 +170,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, -ScrollIncrement, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, -ScrollIncrement, true);
@@ -180,7 +180,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, ScrollIncrement, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, ScrollIncrement, true);
@@ -191,7 +191,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, -PanelViewVerses.Height, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, -PanelViewVerses.Height, true);
@@ -201,7 +201,7 @@ partial class MainForm
         if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
-          case ViewMode.Verses:
+          case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, PanelViewVerses.Height, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, PanelViewVerses.Height, true);

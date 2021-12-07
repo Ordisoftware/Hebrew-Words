@@ -17,21 +17,24 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  public void RenderRawText()
+  public void RenderChapterOriginal(bool isGrouped = false)
   {
-    EditRawText.Clear();
-    if ( CurrentReference.Chapter == null ) return;
-    foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
+    RenderText(EditChapterOriginal, false, isGrouped, () =>
     {
-      string str = "";
-      foreach ( WordRow word in verse.Words )
-        str = word.Hebrew + " " + str;
-      AddTextRightAligned(EditRawText, HebrewFont12, str);
-      AddTextRightAligned(EditRawText, LatinFont10, ":" + verse.Number);
-      EditRawText.AppendText(Environment.NewLine + Environment.NewLine);
-    }
-    EditRawText.SelectionStart = 0;
-    EditRawText.Focus();
+      var box = new RichTextBoxEx();
+      var builder = new StringBuilder();
+      foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
+      {
+        for ( int index = verse.Words.Count - 1; index >= 0; index-- )
+          builder.Append(verse.Words[index].Hebrew).Append(" ");
+        AddTextRightAligned(box, HebrewFont12, builder.ToString());
+        AddTextRightAligned(box, LatinFont10, ":" + verse.Number);
+        box.AppendText(Environment.NewLine);
+        box.AppendText(Environment.NewLine);
+        builder.Clear();
+      }
+      EditChapterOriginal.Rtf = box.Rtf;
+    });
   }
 
 }

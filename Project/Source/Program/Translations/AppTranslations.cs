@@ -135,7 +135,7 @@ static partial class AppTranslations
 
   static public readonly NullSafeDictionary<ViewMode, TranslationsDictionary> ViewPanelTitle = new()
   {
-    [ViewMode.Verses] = new TranslationsDictionary
+    [ViewMode.ChapterVerses] = new TranslationsDictionary
     {
       [Language.EN] = "Tanak Verses",
       [Language.FR] = "Versets du Tanak"
@@ -145,17 +145,17 @@ static partial class AppTranslations
       [Language.EN] = "Tanak Verse Filtered",
       [Language.FR] = "Verset du Tanak filtré"
     },
-    [ViewMode.Translation] = new TranslationsDictionary
+    [ViewMode.ChapterTranslation] = new TranslationsDictionary
     {
       [Language.EN] = "Tanak Translation",
       [Language.FR] = "Traduction du Tanak"
     },
-    [ViewMode.Text] = new TranslationsDictionary
+    [ViewMode.ChapterOriginal] = new TranslationsDictionary
     {
       [Language.EN] = "Tanak Hebrew Text",
       [Language.FR] = "Texte Hébreu du Tanak"
     },
-    [ViewMode.ELS50] = new TranslationsDictionary
+    [ViewMode.BookELS50] = new TranslationsDictionary
     {
       [Language.EN] = "Tanak ELS50 Verses",
       [Language.FR] = "Versets ELS50 du Tanak"

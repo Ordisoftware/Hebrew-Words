@@ -17,9 +17,10 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVerseFiltered()
+  private void RenderVerseFiltered(bool isGrouped = false)
   {
-    if ( Globals.IsRendering ) return;
+    if ( !isGrouped && !CanRender ) return;
+    bool tempRendering = Globals.IsRendering;
     Globals.IsRendering = true;
     try
     {
@@ -35,7 +36,7 @@ partial class MainForm
     }
     finally
     {
-      Globals.IsRendering = false;
+      Globals.IsRendering = tempRendering;
     }
   }
 
