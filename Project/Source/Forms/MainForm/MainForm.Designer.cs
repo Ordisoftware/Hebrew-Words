@@ -254,6 +254,7 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.PanelTitleInner = new System.Windows.Forms.Panel();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -292,6 +293,7 @@
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      this.PanelTitleInner.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -1204,9 +1206,7 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelTitle.Controls.Add(this.LabelTitleReferenceName);
-      this.PanelTitle.Controls.Add(this.LabelTitle);
-      this.PanelTitle.Controls.Add(this.LabelProgress);
+      this.PanelTitle.Controls.Add(this.PanelTitleInner);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
@@ -2026,6 +2026,15 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // PanelTitleInner
+      // 
+      this.PanelTitleInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelTitleInner.Controls.Add(this.LabelTitleReferenceName);
+      this.PanelTitleInner.Controls.Add(this.LabelTitle);
+      this.PanelTitleInner.Controls.Add(this.LabelProgress);
+      resources.ApplyResources(this.PanelTitleInner, "PanelTitleInner");
+      this.PanelTitleInner.Name = "PanelTitleInner";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2085,6 +2094,7 @@
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      this.PanelTitleInner.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -2314,6 +2324,7 @@
     private ToolStripButton ActionCloseWindowsOld;
     internal ToolStripMenuItem ActionCloseWindows;
     private ToolStripMenuItem ActionAddToBookmarks;
+    private Panel PanelTitleInner;
   }
 }
 
