@@ -111,6 +111,8 @@ public partial class VerseControl : UserControl
   {
     EditComment.BackColor = Color.AliceBlue;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
+
+    // TODO create an event assigned by mainform
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }

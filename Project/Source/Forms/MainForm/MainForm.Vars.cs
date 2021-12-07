@@ -40,11 +40,6 @@ partial class MainForm
   public bool IsComboBoxChanging { get; private set; }
 
   /// <summary>
-  /// Indicates if rendering view is in running.
-  /// </summary>
-  public bool IsRendering { get; private set; }
-
-  /// <summary>
   /// Indicates if GoTo is running.
   /// </summary>
   private bool IsGoToRunning;
