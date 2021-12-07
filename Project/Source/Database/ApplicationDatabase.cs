@@ -102,7 +102,7 @@ class ApplicationDatabase : SQLiteDatabase
     }
   }
 
-  protected override void CreateBindingInstances()
+  protected override void CreateBindingLists()
   {
     OnLoadingData(SysTranslations.BindingData.GetLang());
     BooksAsBindingList = new BindingListView<BookRow>(Books);
