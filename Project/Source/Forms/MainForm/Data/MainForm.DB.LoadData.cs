@@ -65,7 +65,7 @@ partial class MainForm : Form
           SetView(Settings.CurrentView, true);
         else
         {
-          SetView(ViewMode.Verses, true);
+          SetView(ViewMode.ChapterVerses, true);
           Settings.CurrentSearchTypeTab = 0;
         }
       }

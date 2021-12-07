@@ -241,11 +241,7 @@ partial class MainForm : Form
     InitializeDialogsDirectory();
     if ( refresh )
     {
-      Refresh();
-      RenderVerses();
-      RenderVerseFiltered();
-      UpdatePagingCount();
-      RenderSearch();
+      RenderAll(true);
       var reference = Instance.CurrentReference;
       int verse = reference.Verse == null ? 1 : reference.Verse.Number;
       GoTo(reference.Book.Number, reference.Chapter.Number, verse);
@@ -442,7 +438,7 @@ partial class MainForm : Form
     var reference = BibleStatisticsForm.Run();
     if ( reference != null )
     {
-      SetView(ViewMode.Verses);
+      SetView(ViewMode.ChapterVerses);
       GoTo(reference);
     }
   }
@@ -458,7 +454,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewVerses_Click(object sender, EventArgs e)
   {
-    SetView(ViewMode.Verses);
+    SetView(ViewMode.ChapterVerses);
   }
 
   /// <summary>
@@ -478,7 +474,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewTranslations_Click(object sender, EventArgs e)
   {
-    SetView(ViewMode.Translation);
+    SetView(ViewMode.ChapterTranslation);
   }
 
   /// <summary>
@@ -498,7 +494,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewRawText_Click(object sender, EventArgs e)
   {
-    SetView(ViewMode.Text);
+    SetView(ViewMode.ChapterOriginal);
   }
 
   /// <summary>
@@ -508,7 +504,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewELS50_Click(object sender, EventArgs e)
   {
-    SetView(ViewMode.ELS50);
+    SetView(ViewMode.BookELS50);
   }
 
   /// <summary>
@@ -593,14 +589,14 @@ partial class MainForm : Form
   {
     switch ( Settings.CurrentView )
     {
-      case ViewMode.Translation:
-        Clipboard.SetText(EditTranslations.Text);
+      case ViewMode.ChapterTranslation:
+        Clipboard.SetText(EditChapterTranslation.Text);
         break;
-      case ViewMode.Text:
-        Clipboard.SetText(EditRawText.Text);
+      case ViewMode.ChapterOriginal:
+        Clipboard.SetText(EditChapterOriginal.Text);
         break;
-      case ViewMode.ELS50:
-        Clipboard.SetText(EditELS50All.Text);
+      case ViewMode.BookELS50:
+        Clipboard.SetText(EditChapterELS50.Text);
         break;
       default:
         throw new AdvancedNotImplementedException(Settings.CurrentView);
@@ -783,7 +779,7 @@ partial class MainForm : Form
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
     else
-    if ( control is Label label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       var reference = ( (VerseControl)label.Parent.Parent ).Reference;
       var verse = reference.Verse;
@@ -810,7 +806,7 @@ partial class MainForm : Form
                                     reference.Verse.Number);
     }
     else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -851,7 +847,7 @@ partial class MainForm : Form
       Settings.BookmarkMasterVerse = reference.Verse.Number;
     }
     else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       Settings.BookmarkMasterBook = CurrentReference.Book.Number;
       Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
@@ -879,7 +875,7 @@ partial class MainForm : Form
                                     reference.Verse.Number);
     }
     else
-    if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    if ( control is Label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
     {
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1242,9 +1238,9 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     if ( Settings.CurrentView == ViewMode.VerseFiltered
-      || Settings.CurrentView == ViewMode.ELS50
+      || Settings.CurrentView == ViewMode.BookELS50
       || Settings.CurrentView == ViewMode.Search )
-      SetView(ViewMode.Verses);
+      SetView(ViewMode.ChapterVerses);
     GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
   }
 
@@ -1446,7 +1442,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionGoFromVerseFilteredToVersesPanel_Click(object sender, EventArgs e)
   {
-    SetView(ViewMode.Verses);
+    SetView(ViewMode.ChapterVerses);
     GoTo(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
                            ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                            ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
@@ -1775,7 +1771,7 @@ partial class MainForm : Form
     if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       reference = (ReferenceItem)control.Tag;
     else
-    if ( control is Label label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
       reference = ( (VerseControl)label.Parent.Parent ).Reference;
     else
       return;

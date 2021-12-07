@@ -91,7 +91,7 @@ static partial class Program
         Settings.SetFirstAndUpgradeFlagsOff();
         Settings.FirstLaunch = true;
         Settings.VacuumAtStartup = true;
-        Settings.CurrentView = ViewMode.Verses;
+        Settings.CurrentView = ViewMode.ChapterVerses;
         if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
           Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
       }
@@ -232,9 +232,9 @@ static partial class Program
         TextBoxEx.Relocalize();
         AboutBox.Instance.AboutBox_Shown(null, null);
         GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-        MainForm.Instance.RenderTranslation();
-        MainForm.Instance.RenderRawText();
-        MainForm.Instance.RenderELS50();
+        MainForm.Instance.RenderChapterTranslation();
+        MainForm.Instance.RenderChapterOriginal();
+        MainForm.Instance.RenderChapterELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
       }
       task?.Wait();

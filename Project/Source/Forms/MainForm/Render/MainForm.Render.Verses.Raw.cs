@@ -17,9 +17,10 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void RenderVerses()
+  private void RenderChapterVerses(bool isGrouped = false)
   {
-    if ( Globals.IsRendering ) return;
+    if ( !isGrouped && !CanRender ) return;
+    bool tempRendering = Globals.IsRendering;
     Globals.IsRendering = true;
     Globals.ChronoRendering.Restart();
     try
@@ -50,7 +51,7 @@ partial class MainForm
     }
     finally
     {
-      Globals.IsRendering = false;
+      Globals.IsRendering = tempRendering;
       if ( SelectRenderAllVerses.Checked )
       {
         PanelViewVerses.Visible = true;

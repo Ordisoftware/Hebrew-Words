@@ -137,12 +137,12 @@ partial class MainForm
           int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
           int x = 5;
           int y = 5;
-          if ( Settings.CurrentView == ViewMode.Verses )
+          if ( Settings.CurrentView == ViewMode.ChapterVerses )
           {
             x = PanelViewVerses.PreferredSize.Width - 5 - width;
             panel = PanelViewVerses;
           }
-          if ( Settings.CurrentView == ViewMode.Translation )
+          if ( Settings.CurrentView == ViewMode.ChapterTranslation )
           {
             panel = PanelViewTranslations;
           }
@@ -158,7 +158,7 @@ partial class MainForm
     {
       switch ( Settings.CurrentView )
       {
-        case ViewMode.Verses:
+        case ViewMode.ChapterVerses:
           var label = PanelViewVerses.GetAll<Label>()
                                      .FirstOrDefault(label => label.Text == reference.Verse?.Number.ToString());
           if ( label != null )
@@ -172,13 +172,13 @@ partial class MainForm
               panel.WordControls.FirstOrDefault()?.Focus();
           }
           break;
-        case ViewMode.Translation:
+        case ViewMode.ChapterTranslation:
           string strTr = reference.Verse.Number + ". ";
-          searchRef(EditTranslations, strTr, line => line.StartsWith(strTr));
+          searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr));
           break;
-        case ViewMode.Text:
+        case ViewMode.ChapterOriginal:
           string strSrc = ":" + reference.Verse.Number;
-          searchRef(EditRawText, strSrc, line => line.EndsWith(strSrc));
+          searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc));
           break;
       }
       // Search reference in text box

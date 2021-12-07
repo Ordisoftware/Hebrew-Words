@@ -17,25 +17,17 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  public void RenderTranslation()
+  private void AddTextRightAligned(RichTextBox control, Font font, string str)
   {
-    EditTranslations.Visible = false;
-    EditTranslations.Clear();
-    if ( CurrentReference.Chapter == null ) return;
-    foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
-    {
-      string str = verse.Number + ". ";
-      EditTranslations.SelectedText = str + verse.Translation;
-      if ( verse.Comment.Length > 0 )
-      {
-        EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
-        EditTranslations.SelectedText = verse.Comment;
-      }
-      EditTranslations.SelectedText = Environment.NewLine + Environment.NewLine;
-    }
-    EditTranslations.SelectionStart = 0;
-    EditTranslations.Visible = true;
-    EditTranslations.Focus();
+    AddTextRightAligned(control, font, str, SystemColors.ControlText);
+  }
+
+  private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
+  {
+    control.SelectionFont = font;
+    control.SelectionColor = color;
+    control.SelectionAlignment = HorizontalAlignment.Right;
+    control.AppendText(str);
   }
 
 }

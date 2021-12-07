@@ -22,7 +22,7 @@ partial class MainForm
     var book = CurrentReference.Book;
     switch ( Settings.CurrentView )
     {
-      case ViewMode.Verses:
+      case ViewMode.ChapterVerses:
         SaveFileDialogMSWord.FileName = book.Name + ".docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         var form = new ExportingForm();
@@ -47,10 +47,10 @@ partial class MainForm
           form.Close();
         }
         break;
-      case ViewMode.ELS50:
+      case ViewMode.BookELS50:
         SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-        EditELS50All.SaveFile(SaveFileDialogRTF.FileName);
+        EditChapterELS50.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
@@ -65,7 +65,7 @@ partial class MainForm
     var chapter = CurrentReference.Chapter;
     switch ( Settings.CurrentView )
     {
-      case ViewMode.Verses:
+      case ViewMode.ChapterVerses:
         SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         SetFormDisabled(true);
@@ -78,17 +78,17 @@ partial class MainForm
           SetFormDisabled(false);
         }
         break;
-      case ViewMode.Translation:
+      case ViewMode.ChapterTranslation:
         SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-        EditTranslations.SaveFile(SaveFileDialogRTF.FileName);
+        EditChapterTranslation.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
-      case ViewMode.Text:
+      case ViewMode.ChapterOriginal:
         SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-        EditRawText.SaveFile(SaveFileDialogRTF.FileName);
+        EditChapterOriginal.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
@@ -112,7 +112,7 @@ partial class MainForm
       ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
     }
     else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       var book = CurrentReference.Book;
       var chapter = CurrentReference.Chapter;

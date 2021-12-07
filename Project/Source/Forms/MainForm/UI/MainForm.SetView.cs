@@ -63,7 +63,7 @@ partial class MainForm
     var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
     {
       {
-        ViewMode.Verses,
+        ViewMode.ChapterVerses,
         new ViewConnector
         {
           MenuItem = ActionViewVerses,
@@ -81,30 +81,30 @@ partial class MainForm
         }
       },
       {
-        ViewMode.Translation,
+        ViewMode.ChapterTranslation,
         new ViewConnector
         {
           MenuItem = ActionViewTranslations,
           Panel = PanelViewTranslations,
-          Focused = EditTranslations
+          Focused = EditChapterTranslation
         }
       },
       {
-        ViewMode.Text,
+        ViewMode.ChapterOriginal,
         new ViewConnector
         {
           MenuItem = ActionViewRawText,
-          Panel = PanelViewRawText,
-          Focused = EditRawText
+          Panel = PanelViewOriginalText,
+          Focused = EditChapterOriginal
         }
       },
       {
-        ViewMode.ELS50,
+        ViewMode.BookELS50,
         new ViewConnector
         {
           MenuItem = ActionViewELS50,
           Panel = PanelViewELS50,
-          Focused = EditELS50All
+          Focused = EditChapterELS50
         }
       },
       {
@@ -135,12 +135,12 @@ partial class MainForm
     Refresh();
     switch ( view )
     {
-      case ViewMode.Verses:
-      case ViewMode.Text:
+      case ViewMode.ChapterVerses:
+      case ViewMode.ChapterOriginal:
         GoTo(CurrentReference);
         break;
-      case ViewMode.Translation:
-        RenderTranslation();
+      case ViewMode.ChapterTranslation:
+        RenderChapterTranslation();
         GoTo(CurrentReference);
         break;
       case ViewMode.Search:
@@ -175,25 +175,33 @@ partial class MainForm
     {
       LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(view).ToUpper();
       LabelTitle.Refresh();
+      //
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
       PanelMain.Refresh();
       //
-      ActionCopyToClipboardOld.Enabled = view == ViewMode.Translation;
+      SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
+      ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
+      ActionExportBook.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.BookELS50;
+      ActionExportChapter.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
       //
-      ActionExportBook.Enabled = view == ViewMode.Verses || view == ViewMode.ELS50;
-      SelectBook.Enabled = view != ViewMode.Search;
+      SelectBook.Enabled = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      SelectBookNavigator.Enabled = SelectBook.Enabled;
       LabelSelectBook.Enabled = SelectBook.Enabled;
       //
-      ActionExportChapter.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
       SelectChapter.Enabled = ActionExportChapter.Enabled;
+      SelectChapterNavigator.Enabled = SelectChapter.Enabled;
       LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
+      //
+      SelectVerse.Enabled = ActionExportChapter.Enabled;
+      SelectVerseNavigator.Enabled = SelectChapter.Enabled;
+      LabelSelectVerse.Enabled = ActionExportChapter.Enabled;
       //
       EditBookTranslation.Enabled = ActionExportBook.Enabled;
       EditChapterTitle.Enabled = ActionExportChapter.Enabled;
       EditChapterMemo.Enabled = ActionExportChapter.Enabled;
       ActionEditBookMemo.Enabled = ActionExportChapter.Enabled;
       //
-      ActionSearchVerse.Enabled = view == ViewMode.Verses || view == ViewMode.Translation || view == ViewMode.Text;
+      ActionSearchVerse.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
     }
   }
 

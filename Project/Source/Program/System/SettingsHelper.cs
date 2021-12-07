@@ -55,7 +55,7 @@ static class SettingsHelper
     DisplayManager.ShowSuccessDialogs = false;
     settings.ApplicationVolume = 100;
     MediaMixer.SetApplicationVolume(Globals.ProcessId, settings.ApplicationVolume);
-    MainForm.SetView(ViewMode.Verses);
+    MainForm.SetView(ViewMode.ChapterVerses);
     settings.Store();
   }
 

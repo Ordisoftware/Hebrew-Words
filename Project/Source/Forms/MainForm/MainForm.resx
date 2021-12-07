@@ -177,34 +177,31 @@
   <data name="&gt;&gt;TabPageVerses.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="EditChapterTranslation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditTranslations.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditChapterTranslation.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="EditTranslations.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditChapterTranslation.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="EditTranslations.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditChapterTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>928, 409</value>
   </data>
-  <data name="EditTranslations.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditChapterTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="EditTranslations.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;EditChapterTranslation.Name" xml:space="preserve">
+    <value>EditChapterTranslation</value>
   </data>
-  <data name="&gt;&gt;EditTranslations.Name" xml:space="preserve">
-    <value>EditTranslations</value>
+  <data name="&gt;&gt;EditChapterTranslation.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditTranslations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditTranslations.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditChapterTranslation.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
   </data>
-  <data name="&gt;&gt;EditTranslations.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditChapterTranslation.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelViewTranslations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2207,58 +2204,55 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;TabPageSearch.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="EditChapterOriginal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditRawText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditChapterOriginal.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="EditRawText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditChapterOriginal.Size" type="System.Drawing.Size, System.Drawing">
     <value>928, 409</value>
   </data>
-  <data name="EditRawText.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditChapterOriginal.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="EditRawText.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;EditChapterOriginal.Name" xml:space="preserve">
+    <value>EditChapterOriginal</value>
   </data>
-  <data name="&gt;&gt;EditRawText.Name" xml:space="preserve">
-    <value>EditRawText</value>
+  <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditRawText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
+    <value>PanelViewOriginalText</value>
   </data>
-  <data name="&gt;&gt;EditRawText.Parent" xml:space="preserve">
-    <value>PanelViewRawText</value>
-  </data>
-  <data name="&gt;&gt;EditRawText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditChapterOriginal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelViewRawText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewOriginalText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelViewRawText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewOriginalText.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="PanelViewRawText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelViewOriginalText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelViewRawText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewOriginalText.Size" type="System.Drawing.Size, System.Drawing">
     <value>948, 429</value>
   </data>
-  <data name="PanelViewRawText.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelViewOriginalText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;PanelViewRawText.Name" xml:space="preserve">
-    <value>PanelViewRawText</value>
+  <data name="&gt;&gt;PanelViewOriginalText.Name" xml:space="preserve">
+    <value>PanelViewOriginalText</value>
   </data>
-  <data name="&gt;&gt;PanelViewRawText.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewOriginalText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelViewRawText.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewOriginalText.Parent" xml:space="preserve">
     <value>TabPageText</value>
   </data>
-  <data name="&gt;&gt;PanelViewRawText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewOriginalText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="TabPageText.Location" type="System.Drawing.Point, System.Drawing">
@@ -2288,31 +2282,28 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="EditELS50All.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="EditChapterELS50.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditELS50All.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditChapterELS50.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="EditELS50All.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditChapterELS50.Size" type="System.Drawing.Size, System.Drawing">
     <value>928, 409</value>
   </data>
-  <data name="EditELS50All.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditChapterELS50.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="EditELS50All.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;EditChapterELS50.Name" xml:space="preserve">
+    <value>EditChapterELS50</value>
   </data>
-  <data name="&gt;&gt;EditELS50All.Name" xml:space="preserve">
-    <value>EditELS50All</value>
+  <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditELS50All.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditELS50All.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
   </data>
-  <data name="&gt;&gt;EditELS50All.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditChapterELS50.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelViewELS50.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2495,7 +2486,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;EditELS50HScrollBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="comboBoxNavigator2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="SelectChapterNavigator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <metadata name="ChaptersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -2525,31 +2516,31 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;SelectChapter.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="comboBoxNavigator2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectChapterNavigator.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 108</value>
   </data>
-  <data name="comboBoxNavigator2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SelectChapterNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBoxNavigator2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectChapterNavigator.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 25</value>
   </data>
-  <data name="comboBoxNavigator2.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectChapterNavigator.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator2.Name" xml:space="preserve">
-    <value>comboBoxNavigator2</value>
+  <data name="&gt;&gt;SelectChapterNavigator.Name" xml:space="preserve">
+    <value>SelectChapterNavigator</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator2.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
     <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectChapterNavigator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="comboBoxNavigator1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="SelectBookNavigator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
@@ -2573,28 +2564,28 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="comboBoxNavigator1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectBookNavigator.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 40</value>
   </data>
-  <data name="comboBoxNavigator1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SelectBookNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBoxNavigator1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectBookNavigator.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 25</value>
   </data>
-  <data name="comboBoxNavigator1.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectBookNavigator.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator1.Name" xml:space="preserve">
-    <value>comboBoxNavigator1</value>
+  <data name="&gt;&gt;SelectBookNavigator.Name" xml:space="preserve">
+    <value>SelectBookNavigator</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
     <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
-  <data name="&gt;&gt;comboBoxNavigator1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectBookNavigator.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="ActionSelectRenderAllVersesKeepHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -2643,7 +2634,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionSelectRenderAllVersesKeepHelp.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ComboBoxNavigatorVerse.AutoSize" type="System.Boolean, mscorlib">
+  <data name="SelectVerseNavigator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <metadata name="VersesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -2670,28 +2661,28 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;SelectVerse.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ComboBoxNavigatorVerse.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectVerseNavigator.Location" type="System.Drawing.Point, System.Drawing">
     <value>619, 108</value>
   </data>
-  <data name="ComboBoxNavigatorVerse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SelectVerseNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="ComboBoxNavigatorVerse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectVerseNavigator.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 25</value>
   </data>
-  <data name="ComboBoxNavigatorVerse.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectVerseNavigator.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;ComboBoxNavigatorVerse.Name" xml:space="preserve">
-    <value>ComboBoxNavigatorVerse</value>
+  <data name="&gt;&gt;SelectVerseNavigator.Name" xml:space="preserve">
+    <value>SelectVerseNavigator</value>
   </data>
-  <data name="&gt;&gt;ComboBoxNavigatorVerse.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
     <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;ComboBoxNavigatorVerse.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
   </data>
-  <data name="&gt;&gt;ComboBoxNavigatorVerse.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectVerseNavigator.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="SelectRenderAllVersesKeep.AutoSize" type="System.Boolean, mscorlib">

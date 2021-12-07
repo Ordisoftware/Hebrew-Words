@@ -23,12 +23,12 @@ public enum ViewMode
   /// <summary>
   /// Verses panel.
   /// </summary>
-  Verses,
+  ChapterVerses,
 
   /// <summary>
   /// Translation panel.
   /// </summary>
-  Translation,
+  ChapterTranslation,
 
   /// <summary>
   /// Verse filtered panel.
@@ -43,11 +43,11 @@ public enum ViewMode
   /// <summary>
   /// Source text panel.
   /// </summary>
-  Text,
+  ChapterOriginal,
 
   /// <summary>
   /// ELS50 verses panel.
   /// </summary>
-  ELS50
+  BookELS50
 
 }

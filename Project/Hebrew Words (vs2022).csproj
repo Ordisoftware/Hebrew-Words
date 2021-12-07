@@ -456,6 +456,9 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Text.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Verses.Raw.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,7 +550,7 @@
     <Compile Include="Source\Forms\MainForm\Search\MainForm.Search.Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Translation.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Text.Translation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.cs">
@@ -556,10 +559,10 @@
     <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Verses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.ELS50.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Text.ELS50.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.RawText.cs">
+    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Text.Original.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectVerseForm.cs">
