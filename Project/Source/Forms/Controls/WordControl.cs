@@ -14,7 +14,7 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class WordControl : UserControl
+public partial class WordControl : UserControl
 {
 
   static internal bool ResetTextHeight = true;
@@ -27,18 +27,17 @@ partial class WordControl : UserControl
   public WordControl()
   {
     InitializeComponent();
-    // TODO optimize using static liune count assigned at startup and on prefs changed
-    if ( !Globals.IsVisualStudioDesigner && Program.Settings.VerseWordTranslationLinesCount > 1 )
+    if ( Program.Settings.VerseWordTranslationLinesCount > 1 )
     {
       if ( ResetTextHeight )
       {
-        int height = EditTranslation.Height;
-        ResetTextHeight = false;
         using Graphics g = EditTranslation.CreateGraphics();
+        int heightOld = EditTranslation.Height;
         TextHeight = TextRenderer.MeasureText(g, "A", EditTranslation.Font).Height;
         EditHeight = TextHeight * ( Program.Settings.VerseWordTranslationLinesCount + 1 ) - 3;
         EditTranslation.Height = EditHeight;
-        TotalHeight = Height + EditHeight - height;
+        TotalHeight = Height + EditHeight - heightOld;
+        ResetTextHeight = false;
       }
       EditTranslation.Multiline = true;
       EditTranslation.WordWrap = true;

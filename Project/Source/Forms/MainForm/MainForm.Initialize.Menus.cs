@@ -56,9 +56,10 @@ partial class MainForm : Form
     // Word search online
     ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
-      if ( ActiveControl is not WordControl ) return;
-      var menuitem = (ToolStripMenuItem)sender;
-      string word = ( (WordControl)ActiveControl ).Reference.Word.Hebrew;
+      var menuitem = sender as ToolStripMenuItem;
+      var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
+      var control = contextmenu?.SourceControl?.Parent as WordControl;
+      string word = control?.Reference.Word.Hebrew ?? string.Empty;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
     });
     // Verse read online
@@ -76,9 +77,9 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      if ( control is Label label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
       {
-        var reference = (ReferenceItem)( (Control)control.Tag ).Tag;
+        var reference = ( (VerseControl)label.Parent.Parent ).Reference;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,
                                       reference.Book.Number,
                                       reference.Chapter.Number,

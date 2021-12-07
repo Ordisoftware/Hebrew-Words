@@ -783,9 +783,9 @@ partial class MainForm : Form
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
     else
-    if ( control is Label && Settings.CurrentView == ViewMode.Verses )
+    if ( control is Label label && Settings.CurrentView == ViewMode.Verses )
     {
-      var reference = (ReferenceItem)( (Control)control.Tag ).Tag;
+      var reference = ( (VerseControl)label.Parent.Parent ).Reference;
       var verse = reference.Verse;
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
@@ -1775,8 +1775,8 @@ partial class MainForm : Form
     if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       reference = (ReferenceItem)control.Tag;
     else
-    if ( control is Label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
-      reference = (ReferenceItem)( (Control)control.Tag ).Tag;
+    if ( control is Label label && ( Settings.CurrentView == ViewMode.Verses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      reference = ( (VerseControl)label.Parent.Parent ).Reference;
     else
       return;
     ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number

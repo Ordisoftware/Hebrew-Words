@@ -121,131 +121,11 @@
   <data name="PanelViewVerses.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="wordControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 3</value>
-  </data>
-  <data name="wordControl1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>150, 55</value>
-  </data>
-  <data name="wordControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 55</value>
-  </data>
-  <data name="wordControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;wordControl1.Name" xml:space="preserve">
-    <value>wordControl1</value>
-  </data>
-  <data name="&gt;&gt;wordControl1.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.WordControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;wordControl1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;wordControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="wordControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 3</value>
-  </data>
-  <data name="wordControl2.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>150, 55</value>
-  </data>
-  <data name="wordControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 55</value>
-  </data>
-  <data name="wordControl2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;wordControl2.Name" xml:space="preserve">
-    <value>wordControl2</value>
-  </data>
-  <data name="&gt;&gt;wordControl2.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.WordControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;wordControl2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;wordControl2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="wordControl3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 3</value>
-  </data>
-  <data name="wordControl3.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>150, 55</value>
-  </data>
-  <data name="wordControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 55</value>
-  </data>
-  <data name="wordControl3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;wordControl3.Name" xml:space="preserve">
-    <value>wordControl3</value>
-  </data>
-  <data name="&gt;&gt;wordControl3.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.WordControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;wordControl3.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;wordControl3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="wordControl4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 64</value>
-  </data>
-  <data name="wordControl4.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>150, 55</value>
-  </data>
-  <data name="wordControl4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 55</value>
-  </data>
-  <data name="wordControl4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;wordControl4.Name" xml:space="preserve">
-    <value>wordControl4</value>
-  </data>
-  <data name="&gt;&gt;wordControl4.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.WordControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;wordControl4.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;wordControl4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>RightToLeft</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 62</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>749, 228</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>PanelViewVerses</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="PanelViewVerses.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelViewVerses.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -394,7 +274,7 @@
     <value>10, 270</value>
   </data>
   <data name="PanelViewVerseFilteredSingle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
+    <value>0, 10, 0, 10</value>
   </data>
   <data name="PanelViewVerseFilteredSingle.Size" type="System.Drawing.Size, System.Drawing">
     <value>928, 149</value>
@@ -4849,7 +4729,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCloseWindows.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAd9JREFUOE+dkE9IG0EYxfdUrQd7KKQIwdAi8SRW4p9YC0VJsTUGpIheDHjQi3gQ
+        vAAADrwBlbxySQAAAd9JREFUOE+dkE9IG0EYxfdUrQd7KKQIwdAi8SRW4p9YC0VJsTUGpIheDHjQi3gQ
         TAWrSK0J4kksHsTetYXQS5qk9SJFVNRFcjCJKMhuoodmVWwiajd/XvebrGDQhOCDH8PMe99jZjitY2n1
         yaef0Ix784byWsevZY5Emy++U8xtH2M+DyhHeZpjBY8/evB9N4pnn3egn91BeQ7IpxzlaY4VPBpzY1m4
         xNsFAa2LAixfs0M+5ShPc6ygaNSN+4jmWEHhyA92EAj44Q8E4A8Gs6P4lCPRXEaBKIgQxNCdiKEwxPAh
@@ -4872,7 +4752,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionCopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAfFJREFUOE+Vks1LVFEYxue/aCtE4aoWZXk1Ilr0b0SCVFQYBFpt2lXQJsfu3Gyi
+        vAAADrwBlbxySQAAAfFJREFUOE+Vks1LVFEYxue/aCtE4aoWZXk1Ilr0b0SCVFQYBFpt2lXQJsfu3Gyi
         DxNSRMdxvGPeO19qZg3de0apwFWii3HM2gzTxvDpPOccr4a46Acv733f83teZjGxg0g4DmzbBrtZHcyb
         OxfGB2+fx2DPWbztbsPde/fhuu+Qybiqc+ae7/Tom6hmoPscRHkeqakc0lM+Hj56jIWPZXxY+KQ6Z+75
         To++iWpe3TqDsWwOO8TtfthPk1Fx3oEefRPVvLzZjtFJTwlrq2tYr1bxo1aLijP3hB59E9W86GrDmDut
@@ -5472,7 +5352,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionGoToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
+        vAAADrwBlbxySQAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
         URd+LGo3ulBBRVx0067ciGCmhKxF+xvSaWbGr4QuCq3N472TuLCQcXzgcO/cOc/L3OG4nKKGFLSHFXwf
         7CYVVrylY2eoLfXwdZn8cAIOdkj6a52HqIE62N/ih3KPjKeKjLsS9jY47o9TaimPJe+uoT2+j9b8AM1f
         g+at5vf7EcyWGvsA67O/rJAV4s/gI7LhOrJyFc9szqEGG8oHWPLnJXQh6FE3eruC3taAHqoV55+Q70Wb

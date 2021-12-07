@@ -21,7 +21,6 @@ partial class MainForm
   {
     if ( IsRendering ) return;
     IsRendering = true;
-    int controlsCount = 0;
     Globals.ChronoRendering.Restart();
     try
     {
@@ -33,14 +32,17 @@ partial class MainForm
       EditELS50.Text = itemChapter.ELS50;
       EditELS50.SelectionStart = EditELS50.TextLength;
       var references = SelectRenderAllVerses.Checked
-                       ? from book in ApplicationDatabase.Instance.Books
-                         from chapter in book.Chapters
-                         from verse in chapter.Verses
-                         where book.Number == itemBook.Number
-                            && chapter.Number == itemChapter.Number
-                         select new ReferenceItem(book, chapter, verse)
-                       : new List<ReferenceItem> { CurrentReference };
-      controlsCount = RenderVerses(PanelViewVerses, references.ToList());
+                 ? ( from book in ApplicationDatabase.Instance.Books
+                     from chapter in book.Chapters
+                     from verse in chapter.Verses
+                     where book.Number == itemBook.Number
+                        && chapter.Number == itemChapter.Number
+                     select new ReferenceItem(book, chapter, verse) ).ToList()
+                 : new List<ReferenceItem> { CurrentReference };
+      int controlsCount = references.Count * 2 + references.Select(r => r.Verse.Words.Count).Sum();
+      LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count).ToUpper();
+      LabelProgress.Refresh();
+      RenderVerses(PanelViewVerses, references);
     }
     catch ( Exception ex )
     {
@@ -51,8 +53,6 @@ partial class MainForm
       IsRendering = false;
       if ( SelectRenderAllVerses.Checked )
       {
-        LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, CurrentReference.Chapter.Verses.Count).ToUpper();
-        LabelProgress.Refresh();
         PanelViewVerses.Visible = true;
         LabelProgress.Text = "";
         SetFormDisabled(false);
