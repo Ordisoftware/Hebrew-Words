@@ -19,50 +19,22 @@ partial class MainForm
 
   public void RenderChapterOriginal(bool isGrouped = false)
   {
-    if ( !isGrouped && !CanRender ) return;
-    if ( EditChapterOriginal.Tag is ReferenceItem reference
-      && CurrentReference?.Book == reference.Book && CurrentReference?.Chapter == reference.Chapter )
+    RenderText(EditChapterOriginal, false, isGrouped, () =>
     {
-      if ( CurrentReference?.Verse != reference.Verse ) moveCaret();
-      return;
-    }
-    bool tempRendering = Globals.IsRendering;
-    Globals.IsRendering = true;
-    EditChapterOriginal.BeginUpdate();
-    try
-    {
-      EditChapterOriginal.Clear();
-      EditChapterOriginal.Tag = CurrentReference;
-      if ( CurrentReference?.Chapter?.Verses != null )
+      var box = new RichTextBoxEx();
+      var builder = new StringBuilder();
+      foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
-        var builder = new StringBuilder();
-        var box = new RichTextBoxEx();
-        foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
-        {
-          for ( int index = verse.Words.Count - 1; index >= 0; index-- )
-            builder.Append(verse.Words[index].Hebrew).Append(" ");
-          AddTextRightAligned(box, HebrewFont12, builder.ToString());
-          AddTextRightAligned(box, LatinFont10, ":" + verse.Number);
-          box.AppendText(Environment.NewLine);
-          box.AppendText(Environment.NewLine);
-          builder.Clear();
-        }
-        EditChapterOriginal.Rtf = box.Rtf;
+        for ( int index = verse.Words.Count - 1; index >= 0; index-- )
+          builder.Append(verse.Words[index].Hebrew).Append(" ");
+        AddTextRightAligned(box, HebrewFont12, builder.ToString());
+        AddTextRightAligned(box, LatinFont10, ":" + verse.Number);
+        box.AppendText(Environment.NewLine);
+        box.AppendText(Environment.NewLine);
+        builder.Clear();
       }
-    }
-    finally
-    {
-      Globals.IsRendering = tempRendering;
-      EditChapterOriginal.EndUpdate();
-      EditChapterOriginal.Focus();
-      EditChapterOriginal.Refresh();
-      moveCaret();
-    }
-    void moveCaret()
-    {
-      // TODO 
-      EditChapterOriginal.SelectionStart = 0;
-    }
+      EditChapterOriginal.Rtf = box.Rtf;
+    });
   }
 
 }

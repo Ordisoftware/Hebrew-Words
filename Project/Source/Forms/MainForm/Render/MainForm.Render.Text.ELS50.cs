@@ -19,45 +19,17 @@ partial class MainForm
 
   public void RenderChapterELS50(bool isGrouped = false)
   {
-    if ( !isGrouped && !CanRender ) return;
-    if ( EditChapterELS50.Tag is ReferenceItem reference
-      && CurrentReference?.Book == reference.Book )
+    RenderText(EditChapterELS50, false, isGrouped, () =>
     {
-      if ( CurrentReference?.Chapter != reference.Chapter ) moveCaret();
-      return;
-    }
-    bool tempRendering = Globals.IsRendering;
-    Globals.IsRendering = true;
-    EditChapterELS50.BeginUpdate();
-    try
-    {
-      EditChapterELS50.Clear();
-      EditChapterELS50.Tag = CurrentReference;
-      if ( CurrentReference?.Book?.Chapters != null )
+      var box = new RichTextBoxEx();
+      foreach ( var chapter in CurrentReference.Book.Chapters )
       {
-        var box = new RichTextBoxEx();
-        foreach ( var chapter in CurrentReference.Book.Chapters )
-        {
-          AddTextRightAligned(box, HebrewFont12, chapter.ELS50);
-          AddTextRightAligned(box, LatinFont10, " :" + chapter.Number);
-          box.AppendText(Environment.NewLine);
-        }
-        EditChapterELS50.Rtf = box.Rtf;
+        AddTextRightAligned(box, HebrewFont12, chapter.ELS50);
+        AddTextRightAligned(box, LatinFont10, " :" + chapter.Number);
+        box.AppendText(Environment.NewLine);
       }
-    }
-    finally
-    {
-      Globals.IsRendering = tempRendering;
-      EditChapterELS50.EndUpdate();
-      EditChapterELS50.Refresh();
-      EditChapterELS50.Focus();
-      moveCaret();
-    }
-    void moveCaret()
-    {
-      // TODO 
-      EditChapterELS50.SelectionStart = 0;
-    }
+      EditChapterELS50.Rtf = box.Rtf;
+    });
   }
 
 }

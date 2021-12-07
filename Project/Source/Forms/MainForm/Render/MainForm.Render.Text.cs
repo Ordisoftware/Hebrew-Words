@@ -17,17 +17,51 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
-  private void AddTextRightAligned(RichTextBox control, Font font, string str)
+  private void RenderText(RichTextBoxEx textbox, bool isChapterElseBook, bool isGrouped, Action render)
   {
-    AddTextRightAligned(control, font, str, SystemColors.ControlText);
+    if ( !isGrouped && !CanRender ) return;
+    var chapter = CurrentReference?.Chapter;
+    var verse = CurrentReference?.Verse;
+    if ( textbox.Tag is ReferenceItem reference
+      && CurrentReference?.Book == reference.Book
+      && isChapterElseBook
+      && chapter == reference.Chapter )
+    {
+      if ( ( isChapterElseBook && verse != reference.Verse ) || chapter != reference.Chapter )
+        SetTanakItemFocus();
+      return;
+    }
+    bool tempRendering = Globals.IsRendering;
+    Globals.IsRendering = true;
+    textbox.BeginUpdate();
+    try
+    {
+      textbox.Clear();
+      textbox.Tag = CurrentReference;
+      if ( ( isChapterElseBook && chapter?.Verses != null ) || chapter != null )
+        render?.Invoke();
+    }
+    finally
+    {
+      Globals.IsRendering = tempRendering;
+      textbox.EndUpdate();
+      textbox.Refresh();
+      textbox.Focus();
+      SetTanakItemFocus();
+    }
   }
 
-  private void AddTextRightAligned(RichTextBox control, Font font, string str, Color color)
+  private void AddTextRightAligned(RichTextBox textbox, Font font, string str)
   {
-    control.SelectionFont = font;
-    control.SelectionColor = color;
-    control.SelectionAlignment = HorizontalAlignment.Right;
-    control.AppendText(str);
+    AddTextRightAligned(textbox, font, str, SystemColors.ControlText);
+  }
+
+  private void AddTextRightAligned(RichTextBox textbox, Font font, string str, Color color)
+  {
+    textbox.SelectionFont = font;
+    textbox.SelectionColor = color;
+    textbox.SelectionAlignment = HorizontalAlignment.Right;
+    textbox.AppendText(str);
   }
 
 }

@@ -30,8 +30,8 @@ partial class MainForm
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
       if ( itemBook == null || itemChapter == null ) return;
-      EditELS50.Text = itemChapter.ELS50;
-      EditELS50.SelectionStart = EditELS50.TextLength;
+      EditELS50Single.Text = itemChapter.ELS50;
+      EditELS50Single.SelectionStart = EditELS50Single.TextLength;
       var references = SelectRenderAllVerses.Checked
                  ? ( from book in ApplicationDatabase.Instance.Books
                      from chapter in book.Chapters

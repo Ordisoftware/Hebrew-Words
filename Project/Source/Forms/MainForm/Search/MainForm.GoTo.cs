@@ -61,7 +61,7 @@ partial class MainForm
     LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringFull().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
-    setFocus();
+    SetTanakItemFocus();
     //
     // Check combo boxes
     // 
@@ -151,49 +151,47 @@ partial class MainForm
         }
       }
     }
-    //
-    // Set focus
-    // 
-    void setFocus()
+  }
+
+  /// <summary>
+  /// Sets Tanak item focus.
+  /// </summary>
+  void SetTanakItemFocus()
+  {
+    if ( CurrentReference == null ) return;
+    switch ( Settings.CurrentView )
     {
-      switch ( Settings.CurrentView )
-      {
-        case ViewMode.ChapterVerses:
-          var label = PanelViewVerses.GetAll<Label>()
-                                     .FirstOrDefault(label => label.Text == reference.Verse?.Number.ToString());
-          if ( label != null )
-          {
-            var panel = label.Parent.Parent as VerseControl;
-            PanelViewVerses.Focus();
-            PanelViewVerses.ScrollControlIntoView(panel);
-            if ( reference.Word != null )
-              panel.WordControls.FirstOrDefault(c => c.Reference.Word == reference.Word).Focus();
-            else
-              panel.WordControls.FirstOrDefault()?.Focus();
-          }
-          break;
-        case ViewMode.ChapterTranslation:
-          string strTr = reference.Verse.Number + ". ";
-          searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr));
-          break;
-        case ViewMode.ChapterOriginal:
-          string strSrc = ":" + reference.Verse.Number;
-          searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc));
-          break;
-      }
-      // Search reference in text box
-      static void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
-      {
-        foreach ( string line in textbox.Lines )
-          if ( check(line) )
-          {
-            textbox.SelectionStart = textbox.Find(str);
-            textbox.SelectionLength = 0;
-            textbox.ScrollToCaret();
-            textbox.Focus();
-            break;
-          }
-      }
+      case ViewMode.ChapterVerses:
+        var control = PanelViewVerses.Controls.OfType<VerseControl>()
+                                     .FirstOrDefault(c => (int)c.LabelVerseNumber.Tag == CurrentReference.Verse?.Number);
+        if ( control != null )
+        {
+          PanelViewVerses.Focus();
+          PanelViewVerses.ScrollControlIntoView(control);
+          if ( CurrentReference.Word != null )
+            control.WordControls.FirstOrDefault(c => c.Reference.Word == CurrentReference.Word).Focus();
+          else
+            control.WordControls.FirstOrDefault()?.Focus();
+        }
+        break;
+      case ViewMode.ChapterTranslation:
+        string strTr = CurrentReference.Verse.Number + ". ";
+        searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr));
+        break;
+      case ViewMode.ChapterOriginal:
+        string strSrc = ":" + CurrentReference.Verse.Number;
+        searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc));
+        break;
+      case ViewMode.BookELS50:
+        string strELS = ":" + CurrentReference.Chapter.Number;
+        searchRef(EditChapterELS50, strELS, line => line.EndsWith(strELS));
+        break;
+    }
+    //
+    static void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
+    {
+      int pos = textbox.Lines.Where(line => check(line)).Select((_, index) => index).FirstOrDefault();
+      textbox.Find(str, textbox.GetFirstCharIndexFromLine(pos), RichTextBoxFinds.None);
     }
   }
 

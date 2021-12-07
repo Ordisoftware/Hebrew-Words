@@ -749,7 +749,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionELS50CopyToClipboard_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(EditELS50.Text);
+    Clipboard.SetText(EditELS50Single.Text);
   }
 
   /// <summary>
@@ -1108,7 +1108,7 @@ partial class MainForm : Form
   private void EditELS50_TextChanged(object sender, EventArgs e)
   {
     EditELS50HScrollBar.Value = EditELS50HScrollBar.Maximum;
-    EditELS50HScrollBar.Enabled = TextRenderer.MeasureText(EditELS50.Text, EditELS50.Font).Width > EditELS50.Width;
+    EditELS50HScrollBar.Enabled = TextRenderer.MeasureText(EditELS50Single.Text, EditELS50Single.Font).Width > EditELS50Single.Width;
   }
 
   /// <summary>
@@ -1118,16 +1118,16 @@ partial class MainForm : Form
   /// <param name="e">Scroll event information.</param>
   private void EditELS50HScrollBar_Scroll(object sender, ScrollEventArgs e)
   {
-    EditELS50.SelectionLength = 0;
+    EditELS50Single.SelectionLength = 0;
     if ( EditELS50HScrollBar.Value >= -EditELS50HScrollBar.LargeChange )
-      EditELS50.SelectionStart = EditELS50.Text.Length;
+      EditELS50Single.SelectionStart = EditELS50Single.Text.Length;
     else
     if ( EditELS50HScrollBar.Value <= EditELS50HScrollBar.Minimum + EditELS50HScrollBar.LargeChange )
-      EditELS50.SelectionStart = 0;
+      EditELS50Single.SelectionStart = 0;
     else
-      EditELS50.SelectionStart = EditELS50.Text.Length
-                               - ( EditELS50.Text.Length * EditELS50HScrollBar.Value / EditELS50HScrollBar.Minimum );
-    EditELS50.ScrollToCaret();
+      EditELS50Single.SelectionStart = EditELS50Single.Text.Length
+                               - ( EditELS50Single.Text.Length * EditELS50HScrollBar.Value / EditELS50HScrollBar.Minimum );
+    EditELS50Single.ScrollToCaret();
   }
 
   #endregion

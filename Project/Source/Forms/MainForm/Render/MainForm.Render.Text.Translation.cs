@@ -19,51 +19,23 @@ partial class MainForm
 
   public void RenderChapterTranslation(bool isGrouped = false)
   {
-    if ( !isGrouped && !CanRender ) return;
-    if ( EditChapterTranslation.Tag is ReferenceItem reference
-      && CurrentReference?.Book == reference.Book && CurrentReference?.Chapter == reference.Chapter )
+    RenderText(EditChapterTranslation, false, isGrouped, () =>
     {
-      if ( CurrentReference?.Verse != reference.Verse ) moveCaret();
-      return;
-    }
-    bool tempRendering = Globals.IsRendering;
-    Globals.IsRendering = true;
-    EditChapterTranslation.BeginUpdate();
-    try
-    {
-      EditChapterTranslation.Clear();
-      EditChapterTranslation.Tag = CurrentReference;
-      if ( CurrentReference?.Chapter?.Verses != null )
+      var builder = new StringBuilder();
+      foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
-        var builder = new StringBuilder();
-        foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
+        builder.Append(verse.Number).Append(". ").Append(verse.Translation);
+        if ( verse.Comment.Length > 0 )
         {
-          builder.Append(verse.Number).Append(". ").Append(verse.Translation);
-          if ( verse.Comment.Length > 0 )
-          {
-            builder.AppendLine();
-            builder.AppendLine();
-            builder.Append(verse.Comment);
-          }
           builder.AppendLine();
           builder.AppendLine();
+          builder.Append(verse.Comment);
         }
-        EditChapterTranslation.Text = builder.ToString();
+        builder.AppendLine();
+        builder.AppendLine();
       }
-    }
-    finally
-    {
-      Globals.IsRendering = tempRendering;
-      EditChapterTranslation.EndUpdate();
-      EditChapterTranslation.Refresh();
-      EditChapterTranslation.Focus();
-      moveCaret();
-    }
-    void moveCaret()
-    {
-      // TODO 
-      EditChapterTranslation.SelectionStart = 0;
-    }
-  }
+      EditChapterTranslation.Text = builder.ToString();
+    });
+  } 
 
 }

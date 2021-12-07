@@ -133,15 +133,13 @@ partial class MainForm
     Settings.CurrentView = view;
     updateControls();
     Refresh();
+    SetTanakItemFocus();
     switch ( view )
     {
       case ViewMode.ChapterVerses:
       case ViewMode.ChapterOriginal:
-        GoTo(CurrentReference);
         break;
       case ViewMode.ChapterTranslation:
-        RenderChapterTranslation();
-        GoTo(CurrentReference);
         break;
       case ViewMode.Search:
         SelectSearchType_Selected(null, null);
@@ -182,26 +180,24 @@ partial class MainForm
       SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
       ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
       ActionExportBook.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.BookELS50;
-      ActionExportChapter.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
+      ActionExportChapter.Enabled = PanelNavigation.Visible;
       //
-      SelectBook.Enabled = view != ViewMode.VerseFiltered && view != ViewMode.Search;
+      SelectBook.Enabled = PanelNavigation.Visible;
       SelectBookNavigator.Enabled = SelectBook.Enabled;
       LabelSelectBook.Enabled = SelectBook.Enabled;
+      EditBookTranslation.Enabled = SelectBook.Enabled;
+      ActionEditBookMemo.Enabled = SelectBook.Enabled;
       //
-      SelectChapter.Enabled = ActionExportChapter.Enabled;
+      SelectChapter.Enabled = PanelNavigation.Visible;
       SelectChapterNavigator.Enabled = SelectChapter.Enabled;
-      LabelSelectChapter.Enabled = ActionExportChapter.Enabled;
+      LabelSelectChapter.Enabled = SelectChapter.Enabled;
+      EditChapterTitle.Enabled = SelectChapter.Enabled;
+      EditChapterMemo.Enabled = SelectChapter.Enabled;
       //
-      SelectVerse.Enabled = ActionExportChapter.Enabled;
-      SelectVerseNavigator.Enabled = SelectChapter.Enabled;
-      LabelSelectVerse.Enabled = ActionExportChapter.Enabled;
-      //
-      EditBookTranslation.Enabled = ActionExportBook.Enabled;
-      EditChapterTitle.Enabled = ActionExportChapter.Enabled;
-      EditChapterMemo.Enabled = ActionExportChapter.Enabled;
-      ActionEditBookMemo.Enabled = ActionExportChapter.Enabled;
-      //
-      ActionSearchVerse.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
+      SelectVerse.Enabled = PanelNavigation.Visible && view != ViewMode.BookELS50;
+      SelectVerseNavigator.Enabled = SelectVerse.Enabled;
+      LabelSelectVerse.Enabled = SelectVerse.Enabled;
+      ActionSearchVerse.Enabled = SelectVerse.Enabled;
     }
   }
 

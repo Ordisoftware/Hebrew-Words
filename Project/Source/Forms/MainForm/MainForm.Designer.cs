@@ -135,7 +135,7 @@
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
       this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
-      this.EditELS50 = new Ordisoftware.Core.TextBoxEx();
+      this.EditELS50Single = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterELS50 = new System.Windows.Forms.Label();
       this.LabelSelectBook = new System.Windows.Forms.Label();
       this.LabelSelectChapter = new System.Windows.Forms.Label();
@@ -958,7 +958,7 @@
       this.PanelNavigation.Controls.Add(this.SelectBook);
       this.PanelNavigation.Controls.Add(this.EditBookTranslation);
       this.PanelNavigation.Controls.Add(this.EditChapterTitle);
-      this.PanelNavigation.Controls.Add(this.EditELS50);
+      this.PanelNavigation.Controls.Add(this.EditELS50Single);
       this.PanelNavigation.Controls.Add(this.SelectChapter);
       this.PanelNavigation.Controls.Add(this.LabelChapterELS50);
       this.PanelNavigation.Controls.Add(this.LabelSelectBook);
@@ -1177,14 +1177,14 @@
       // 
       // EditELS50
       // 
-      resources.ApplyResources(this.EditELS50, "EditELS50");
-      this.EditELS50.BackColor = System.Drawing.Color.LightYellow;
-      this.EditELS50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditELS50.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditELS50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "ELS50", true));
-      this.EditELS50.Name = "EditELS50";
-      this.EditELS50.ReadOnly = true;
-      this.EditELS50.TextChanged += new System.EventHandler(this.EditELS50_TextChanged);
+      resources.ApplyResources(this.EditELS50Single, "EditELS50");
+      this.EditELS50Single.BackColor = System.Drawing.Color.LightYellow;
+      this.EditELS50Single.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditELS50Single.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditELS50Single.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "ELS50", true));
+      this.EditELS50Single.Name = "EditELS50";
+      this.EditELS50Single.ReadOnly = true;
+      this.EditELS50Single.TextChanged += new System.EventHandler(this.EditELS50_TextChanged);
       // 
       // LabelChapterELS50
       // 
@@ -2178,7 +2178,7 @@
     private System.Windows.Forms.TabPage TabPageText;
     private System.Windows.Forms.TabPage TabPageTranslations;
     private System.Windows.Forms.TabPage TabPageVerses;
-    private Ordisoftware.Core.TextBoxEx EditELS50;
+    private Ordisoftware.Core.TextBoxEx EditELS50Single;
     private System.Windows.Forms.TextBox EditSearchPaging;
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboardOld;

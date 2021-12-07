@@ -39,6 +39,7 @@ public partial class VerseControl : UserControl
     Dock = DockStyle.Top;
     Reference = reference;
     LabelVerseNumber.Text = reference.Verse.Number.ToString();
+    LabelVerseNumber.Tag = reference.Verse.Number;
     LabelVerseNumber.ContextMenuStrip = menuVerse;
     WordControls = new WordControl[reference.Verse.Words.Count];
     int count = reference.Verse.Words.Count;
