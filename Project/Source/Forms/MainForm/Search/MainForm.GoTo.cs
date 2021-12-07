@@ -111,6 +111,7 @@ partial class MainForm
           else
           {
             showToolTip("Aucun verset à compléter.");
+            reference = CurrentReference;
             return null;
           }
         }
@@ -125,6 +126,7 @@ partial class MainForm
           else
           {
             showToolTip("Aucun verset avec traduction complète.");
+            reference = CurrentReference;
             return null;
           }
         }
@@ -161,14 +163,13 @@ partial class MainForm
                                      .FirstOrDefault(label => label.Text == reference.Verse?.Number.ToString());
           if ( label != null )
           {
+            var panel = label.Parent.Parent as VerseControl;
             PanelViewVerses.Focus();
-            PanelViewVerses.ScrollControlIntoView(label.Parent);
+            PanelViewVerses.ScrollControlIntoView(panel);
             if ( reference.Word != null )
-              PanelViewVerses.GetAll<WordControl>()
-                             .FirstOrDefault(wordcontrol => wordcontrol.Reference.Word == reference.Word)?
-                             .Focus();
+              panel.WordControls.FirstOrDefault(c => c.Reference.Word == reference.Word).Focus();
             else
-              ( label.Parent.Controls[1] as WordControl )?.Focus();
+              panel.WordControls.FirstOrDefault()?.Focus();
           }
           break;
         case ViewMode.Translation:

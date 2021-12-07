@@ -37,7 +37,7 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
-  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 205, 5);
+  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 210, 5);
 
   static private readonly Properties.Settings Settings = Program.Settings;
 

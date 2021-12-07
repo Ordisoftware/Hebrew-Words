@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
+public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
   const string NULL = "(null)";

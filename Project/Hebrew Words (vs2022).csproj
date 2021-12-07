@@ -444,6 +444,12 @@
     <Compile Include="Source\Forms\Config\StatisticsForm.designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Controls\VerseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\VerseControl.Designer.cs">
+      <DependentUpon>VerseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -719,6 +725,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Controls\VerseControl.resx">
+      <DependentUpon>VerseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportStrongForm.resx">
       <DependentUpon>ImportStrongForm.cs</DependentUpon>

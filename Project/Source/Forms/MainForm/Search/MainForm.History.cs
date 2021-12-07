@@ -44,7 +44,7 @@ partial class MainForm
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionAddToBookmarks.Image;
+          item.Image = ActionGoToBookmarks.Image;
         }
       }
       ActionClearHistory.Enabled = History.Count > 0;
