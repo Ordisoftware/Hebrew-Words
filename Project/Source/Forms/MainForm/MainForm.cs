@@ -1000,7 +1000,7 @@ partial class MainForm : Form
   private void SelectVerse_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( IsGoToRunning ) return;
-    if ( IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     if ( Globals.IsExiting ) return;
     if ( NeedUpdateCurrentReference ) return;
     var reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1639,7 +1639,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateFirst_Click(object sender, EventArgs e)
   {
-    if ( IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     PagingCurrent = 1;
     RenderSearch();
   }
@@ -1651,7 +1651,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigatePrevious_Click(object sender, EventArgs e)
   {
-    if ( IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     PagingCurrent--;
     RenderSearch();
   }
@@ -1663,7 +1663,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateNext_Click(object sender, EventArgs e)
   {
-    if ( IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     PagingCurrent++;
     RenderSearch();
   }
@@ -1675,7 +1675,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchNavigateLast_Click(object sender, EventArgs e)
   {
-    if ( IsRendering ) return;
+    if ( Globals.IsRendering ) return;
     PagingCurrent = PagingCount;
     RenderSearch();
   }

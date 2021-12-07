@@ -19,8 +19,8 @@ partial class MainForm
 
   private void RenderVerseFiltered()
   {
-    if ( IsRendering ) return;
-    IsRendering = true;
+    if ( Globals.IsRendering ) return;
+    Globals.IsRendering = true;
     try
     {
       var references = new List<ReferenceItem>();
@@ -35,7 +35,7 @@ partial class MainForm
     }
     finally
     {
-      IsRendering = false;
+      Globals.IsRendering = false;
     }
   }
 
