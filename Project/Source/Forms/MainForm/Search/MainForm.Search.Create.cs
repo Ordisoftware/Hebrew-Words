@@ -30,9 +30,9 @@ partial class MainForm
     bool checkWordTranslation(WordRow row) => checkWordNoHebrew(row.Translation.ToLower().RemoveDiacritics());
     bool checkVerseComment(VerseRow row) => checkWordNoHebrew(row.Comment.ToLower().RemoveDiacritics());
     bool checkWordNoHebrew(string str)
-      => SearchWord1.Contains(",")
-         ? SearchWord1.Split(',').Select(item => item.Trim()).Any(item => item.Length >= 2 && str.Contains(item))
-         : str.Contains(SearchWord1);
+      => SearchWord1.RawContains(",")
+         ? SearchWord1.Split(',').Select(item => item.Trim()).Any(item => item.Length >= 2 && str.RawContains(item))
+         : str.RawContains(SearchWord1);
     //
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {
