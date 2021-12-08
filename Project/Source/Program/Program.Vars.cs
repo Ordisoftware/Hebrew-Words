@@ -78,12 +78,12 @@ static partial class Program
     => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
 
   static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
-    = JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
 
   static public readonly Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
-    = JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
 
   static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
-    = JsonHelper.LoadBook(BibleJsonFilePath);
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadBook(BibleJsonFilePath);
 
 }

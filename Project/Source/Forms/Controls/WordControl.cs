@@ -17,9 +17,12 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class WordControl : UserControl
 {
 
+  static private readonly Properties.Settings Settings = Program.Settings;
+
   static internal bool ResetTextHeight = true;
-  static private int TextHeight;
-  static private int EditHeight;
+  static private int TranslationTextHeight;
+  static private int TranslationEditHeight;
+  static private int HebrewTextHeight;
   static private int TotalHeight;
 
   public ReferenceItem Reference { get; private set; }
@@ -27,24 +30,11 @@ public partial class WordControl : UserControl
   public WordControl()
   {
     InitializeComponent();
-    if ( Program.Settings.VerseWordTranslationLinesCount > 1 )
-    {
-      if ( ResetTextHeight )
-      {
-        using Graphics g = EditTranslation.CreateGraphics();
-        int heightOld = EditTranslation.Height;
-        TextHeight = TextRenderer.MeasureText(g, "A", EditTranslation.Font).Height;
-        EditHeight = TextHeight * ( Program.Settings.VerseWordTranslationLinesCount + 1 ) - 3;
-        EditTranslation.Height = EditHeight;
-        TotalHeight = Height + EditHeight - heightOld;
-        ResetTextHeight = false;
-      }
-      EditTranslation.Multiline = true;
-      EditTranslation.WordWrap = true;
-      EditTranslation.ScrollBars = ScrollBars.Vertical;
-      EditTranslation.Height = EditHeight;
-      Height = TotalHeight;
-    }
+    if ( Globals.IsVisualStudioDesigner ) return;
+    if ( LabelHebrew.Font.Size != Settings.FontSizeHebrew )
+      LabelHebrew.Font = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
+    if ( EditTranslation.Font.Size != Settings.FontSizeTranslation )
+      EditTranslation.Font = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
   }
 
   public WordControl(ReferenceItem reference) : this()
@@ -52,6 +42,34 @@ public partial class WordControl : UserControl
     Reference = reference;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
+  }
+
+  private void WordControl_Load(object sender, EventArgs e)
+  {
+    if ( ResetTextHeight || Settings.VerseWordTranslationLinesCount > 1 )
+    {
+      if ( ResetTextHeight )
+      {
+        using Graphics graphicsHebrew = LabelHebrew.CreateGraphics();
+        HebrewTextHeight = TextRenderer.MeasureText(graphicsHebrew, "lq", LabelHebrew.Font).Height;
+        using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
+        TranslationTextHeight = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
+        TranslationEditHeight = TranslationTextHeight * ( Settings.VerseWordTranslationLinesCount + 1 ) - 5;
+        TotalHeight = HebrewTextHeight + TranslationEditHeight + 5;
+        if ( Settings.VerseWordTranslationLinesCount > 1 )
+          TotalHeight += 6;
+        ResetTextHeight = false;
+      }
+      if ( Settings.VerseWordTranslationLinesCount > 1 )
+      {
+        EditTranslation.Multiline = Settings.VerseWordTranslationLinesCount > 1;
+        EditTranslation.ScrollBars = ScrollBars.Vertical;
+        EditTranslation.WordWrap = true;
+      }
+    }
+    EditTranslation.Height = TranslationEditHeight;
+    LabelHebrew.Height = HebrewTextHeight;
+    Height = TotalHeight;
   }
 
   public new bool Focus()
@@ -102,15 +120,15 @@ public partial class WordControl : UserControl
     EditTranslation.Focus();
     if ( e.Button != MouseButtons.Left ) return;
     if ( ModifierKeys == ( Keys.Shift | Keys.Control ) )
-      process(Program.Settings.HebrewWordShiftCtrlClickAction);
+      process(Settings.HebrewWordShiftCtrlClickAction);
     else
     if ( ModifierKeys == Keys.Control )
-      process(Program.Settings.HebrewWordCtrlClickAction);
+      process(Settings.HebrewWordCtrlClickAction);
     else
     if ( ModifierKeys == Keys.Shift )
-      process(Program.Settings.HebrewWordShiftClickAction);
+      process(Settings.HebrewWordShiftClickAction);
     else
-      process(Program.Settings.HebrewWordClickAction);
+      process(Settings.HebrewWordClickAction);
     //
     void process(HebrewWordClickAction value)
     {
@@ -121,14 +139,14 @@ public partial class WordControl : UserControl
           break;
         case HebrewWordClickAction.OnlineSearch:
           string word = Reference.Word.Hebrew;
-          HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+          HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickAction.SearchTranslated:
           // TODO create an event assigned by main form ?
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickAction.HebrewLetters:
-          HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Program.Settings.HebrewLettersExe);
+          HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Settings.HebrewLettersExe);
           break;
         case HebrewWordClickAction.Nothing:
           break;

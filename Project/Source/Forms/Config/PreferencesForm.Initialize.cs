@@ -26,7 +26,7 @@ partial class PreferencesForm
   /// </summary>
   private void DoFormLoad()
   {
-    SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+    SaveSettingsDialog.InitialDirectory = Settings.GetExportDirectory();
     OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
     SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
     OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
@@ -100,6 +100,9 @@ partial class PreferencesForm
     setInterval(EditSearchDisplayMaxRef, LabelInfoSearchDisplayMaxRef, SearchDisplayMaxRefInterval);
     setInterval(EditSearchMinRefForDialog, LabelInfoSearchMinRefForDialog, SearchMinRefForDialogInterval);
     setInterval(EditWordControlWidth, LabelInfoWordControlWidth, WordControlWidthInterval);
+    setInterval(EditFontSizeHebrew, LabelFontSizeHebrewInfo, FontSizeHebrewInterval);
+    setInterval(EditFontSizeTranslation, LabelFontSizeTranslationInfo, FontSizeTranslationInterval);
+    setInterval(EditFontSizeCommentary, LabelFontSizeCommentaryInfo, FontSizeCommentaryInterval);
     //
     static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
     {

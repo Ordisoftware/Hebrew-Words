@@ -20,32 +20,8 @@ partial class MainForm
   private void RenderVerses(Panel container, List<ReferenceItem> references)
   {
     container.DisposeAllControls();
-    var dummy = new VerseControl();
-    int dy = dummy.Padding.Top + dummy.Padding.Bottom + dummy.Padding.Bottom;
-    int widthWord = Program.Settings.WordControlWidth;
-    int countLines = Program.Settings.VerseCommentaryLinesCount;
-    int count = references.Count;
-    if ( count == 0 )
-      return;
-    else
-    if ( count == 1 )
-      render(references[0]);
-    else
-      for ( int i = count - 1; i >= 0; i-- ) render(references[i]);
-    int commentMargin = ( (VerseControl)container.Controls[0] ).WordControls.Min(c => c.Left) + dummy.Padding.Left;
-    foreach ( VerseControl panel in container.Controls )
-      panel.PanelCommentLeft.Width = commentMargin;
-    //
-    void render(ReferenceItem reference)
-    {
-      var panel = new VerseControl(reference, widthWord, countLines, ContextMenuStripVerse, ContextMenuStripWord);
-      container.Controls.Add(panel);
-      if ( panel.WordControls.Length > 0 )
-      {
-        var last = panel.WordControls[panel.WordControls.Length - 1];
-        panel.Height = last.Top + last.Height + panel.EditComment.Height + dy;
-      }
-    }
+    if ( references.Count > 0 )
+      references.ForEach(reference => new VerseControl(container, reference));
   }
 
 }

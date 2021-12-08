@@ -42,6 +42,9 @@
       System.Windows.Forms.Label LabelAutoSaveDelay;
       System.Windows.Forms.Label LabelBackupCount;
       System.Windows.Forms.Label LabelWordtranslateLinesCount;
+      System.Windows.Forms.Label LabelFontSizeHebrew;
+      System.Windows.Forms.Label LabelFontSizeTranslation;
+      System.Windows.Forms.Label LabelFontSizeComentary;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -110,9 +113,15 @@
       this.LabelInfoSearchDisplayMaxRef = new System.Windows.Forms.Label();
       this.LabelInfoHistoryCount = new System.Windows.Forms.Label();
       this.LabelInfoBookmarksCount = new System.Windows.Forms.Label();
+      this.LabelFontSizeCommentaryInfo = new System.Windows.Forms.Label();
+      this.LabelFontSizeTranslationInfo = new System.Windows.Forms.Label();
+      this.LabelFontSizeHebrewInfo = new System.Windows.Forms.Label();
       this.LabelInfoWordControlWidth = new System.Windows.Forms.Label();
       this.LabelInfoWordtranslateLinesCount = new System.Windows.Forms.Label();
       this.LabelInfoCommentLinesCount = new System.Windows.Forms.Label();
+      this.EditFontSizeCommentary = new System.Windows.Forms.NumericUpDown();
+      this.EditFontSizeTranslation = new System.Windows.Forms.NumericUpDown();
+      this.EditFontSizeHebrew = new System.Windows.Forms.NumericUpDown();
       this.EditWordControlWidth = new System.Windows.Forms.NumericUpDown();
       this.EditSearchMinRefForDialog = new System.Windows.Forms.NumericUpDown();
       this.EditSearchDisplayMaxRef = new System.Windows.Forms.NumericUpDown();
@@ -169,6 +178,7 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -181,6 +191,9 @@
       LabelAutoSaveDelay = new System.Windows.Forms.Label();
       LabelBackupCount = new System.Windows.Forms.Label();
       LabelWordtranslateLinesCount = new System.Windows.Forms.Label();
+      LabelFontSizeHebrew = new System.Windows.Forms.Label();
+      LabelFontSizeTranslation = new System.Windows.Forms.Label();
+      LabelFontSizeComentary = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.TabPagePaths.SuspendLayout();
       this.TabPageStartup.SuspendLayout();
@@ -192,6 +205,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabControl.SuspendLayout();
       this.TabPageRendering.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeTranslation)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeHebrew)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).BeginInit();
@@ -267,6 +283,21 @@
       // 
       resources.ApplyResources(LabelWordtranslateLinesCount, "LabelWordtranslateLinesCount");
       LabelWordtranslateLinesCount.Name = "LabelWordtranslateLinesCount";
+      // 
+      // LabelFontSizeHebrew
+      // 
+      resources.ApplyResources(LabelFontSizeHebrew, "LabelFontSizeHebrew");
+      LabelFontSizeHebrew.Name = "LabelFontSizeHebrew";
+      // 
+      // LabelFontSizeTranslation
+      // 
+      resources.ApplyResources(LabelFontSizeTranslation, "LabelFontSizeTranslation");
+      LabelFontSizeTranslation.Name = "LabelFontSizeTranslation";
+      // 
+      // LabelFontSizeComentary
+      // 
+      resources.ApplyResources(LabelFontSizeComentary, "LabelFontSizeComentary");
+      LabelFontSizeComentary.Name = "LabelFontSizeComentary";
       // 
       // DialogColor
       // 
@@ -783,10 +814,19 @@
       this.TabPageRendering.Controls.Add(this.LabelInfoSearchDisplayMaxRef);
       this.TabPageRendering.Controls.Add(this.LabelInfoHistoryCount);
       this.TabPageRendering.Controls.Add(this.LabelInfoBookmarksCount);
+      this.TabPageRendering.Controls.Add(this.LabelFontSizeCommentaryInfo);
+      this.TabPageRendering.Controls.Add(this.LabelFontSizeTranslationInfo);
+      this.TabPageRendering.Controls.Add(this.LabelFontSizeHebrewInfo);
       this.TabPageRendering.Controls.Add(this.LabelInfoWordControlWidth);
       this.TabPageRendering.Controls.Add(this.LabelInfoWordtranslateLinesCount);
       this.TabPageRendering.Controls.Add(this.LabelInfoCommentLinesCount);
+      this.TabPageRendering.Controls.Add(this.EditFontSizeCommentary);
+      this.TabPageRendering.Controls.Add(this.EditFontSizeTranslation);
+      this.TabPageRendering.Controls.Add(this.EditFontSizeHebrew);
       this.TabPageRendering.Controls.Add(this.EditWordControlWidth);
+      this.TabPageRendering.Controls.Add(LabelFontSizeComentary);
+      this.TabPageRendering.Controls.Add(LabelFontSizeTranslation);
+      this.TabPageRendering.Controls.Add(LabelFontSizeHebrew);
       this.TabPageRendering.Controls.Add(LabelWordControlWidth);
       this.TabPageRendering.Controls.Add(this.EditSearchMinRefForDialog);
       this.TabPageRendering.Controls.Add(LabelMinRefCount);
@@ -827,6 +867,24 @@
       this.LabelInfoBookmarksCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoBookmarksCount.Name = "LabelInfoBookmarksCount";
       // 
+      // LabelFontSizeCommentaryInfo
+      // 
+      resources.ApplyResources(this.LabelFontSizeCommentaryInfo, "LabelFontSizeCommentaryInfo");
+      this.LabelFontSizeCommentaryInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelFontSizeCommentaryInfo.Name = "LabelFontSizeCommentaryInfo";
+      // 
+      // LabelFontSizeTranslationInfo
+      // 
+      resources.ApplyResources(this.LabelFontSizeTranslationInfo, "LabelFontSizeTranslationInfo");
+      this.LabelFontSizeTranslationInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelFontSizeTranslationInfo.Name = "LabelFontSizeTranslationInfo";
+      // 
+      // LabelFontSizeHebrewInfo
+      // 
+      resources.ApplyResources(this.LabelFontSizeHebrewInfo, "LabelFontSizeHebrewInfo");
+      this.LabelFontSizeHebrewInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelFontSizeHebrewInfo.Name = "LabelFontSizeHebrewInfo";
+      // 
       // LabelInfoWordControlWidth
       // 
       resources.ApplyResources(this.LabelInfoWordControlWidth, "LabelInfoWordControlWidth");
@@ -844,6 +902,45 @@
       resources.ApplyResources(this.LabelInfoCommentLinesCount, "LabelInfoCommentLinesCount");
       this.LabelInfoCommentLinesCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoCommentLinesCount.Name = "LabelInfoCommentLinesCount";
+      // 
+      // EditFontSizeCommentary
+      // 
+      this.EditFontSizeCommentary.BackColor = System.Drawing.SystemColors.Window;
+      this.EditFontSizeCommentary.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      resources.ApplyResources(this.EditFontSizeCommentary, "EditFontSizeCommentary");
+      this.EditFontSizeCommentary.Name = "EditFontSizeCommentary";
+      this.EditFontSizeCommentary.ReadOnly = true;
+      this.EditFontSizeCommentary.ValueChanged += new System.EventHandler(this.EditRenderVerseControl_ValueChanged);
+      // 
+      // EditFontSizeTranslation
+      // 
+      this.EditFontSizeTranslation.BackColor = System.Drawing.SystemColors.Window;
+      this.EditFontSizeTranslation.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      resources.ApplyResources(this.EditFontSizeTranslation, "EditFontSizeTranslation");
+      this.EditFontSizeTranslation.Name = "EditFontSizeTranslation";
+      this.EditFontSizeTranslation.ReadOnly = true;
+      this.EditFontSizeTranslation.ValueChanged += new System.EventHandler(this.EditRenderWordControl_ValueChanged);
+      // 
+      // EditFontSizeHebrew
+      // 
+      this.EditFontSizeHebrew.BackColor = System.Drawing.SystemColors.Window;
+      this.EditFontSizeHebrew.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      resources.ApplyResources(this.EditFontSizeHebrew, "EditFontSizeHebrew");
+      this.EditFontSizeHebrew.Name = "EditFontSizeHebrew";
+      this.EditFontSizeHebrew.ReadOnly = true;
+      this.EditFontSizeHebrew.ValueChanged += new System.EventHandler(this.EditRenderWordControl_ValueChanged);
       // 
       // EditWordControlWidth
       // 
@@ -902,7 +999,7 @@
       resources.ApplyResources(this.EditWordTranslateLinesCount, "EditWordTranslateLinesCount");
       this.EditWordTranslateLinesCount.Name = "EditWordTranslateLinesCount";
       this.EditWordTranslateLinesCount.ReadOnly = true;
-      this.EditWordTranslateLinesCount.ValueChanged += new System.EventHandler(this.EditWordtranslateLinesCount_ValueChanged);
+      this.EditWordTranslateLinesCount.ValueChanged += new System.EventHandler(this.EditRenderWordControl_ValueChanged);
       // 
       // EditCommentaryLinesCount
       // 
@@ -910,6 +1007,7 @@
       resources.ApplyResources(this.EditCommentaryLinesCount, "EditCommentaryLinesCount");
       this.EditCommentaryLinesCount.Name = "EditCommentaryLinesCount";
       this.EditCommentaryLinesCount.ReadOnly = true;
+      this.EditCommentaryLinesCount.ValueChanged += new System.EventHandler(this.EditRenderVerseControl_ValueChanged);
       // 
       // TabPageTools
       // 
@@ -1321,6 +1419,9 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageRendering.ResumeLayout(false);
       this.TabPageRendering.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeTranslation)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeHebrew)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).EndInit();
@@ -1474,5 +1575,12 @@
     private RadioButton GroupBoxHebrewWordClickShiftCtrl3;
     private RadioButton GroupBoxHebrewWordClickCtrl3;
     private RadioButton GroupBoxHebrewWordClick3;
+    private Label LabelFontSizeHebrewInfo;
+    private NumericUpDown EditFontSizeHebrew;
+    private Label LabelFontSizeTranslationInfo;
+    private NumericUpDown EditFontSizeTranslation;
+    private Label LabelFontSizeCommentaryInfo;
+    private NumericUpDown EditFontSizeCommentary;
+    private ToolTip toolTip1;
   }
 }

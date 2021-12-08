@@ -26,9 +26,6 @@
     <Setting Name="ShowTips" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Words.ViewMode" Scope="User">
-      <Value Profile="(Default)">Verses</Value>
-    </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -298,6 +295,18 @@
     </Setting>
     <Setting Name="RenderAllChapterVersesKeep" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Words.ViewMode" Scope="User">
+      <Value Profile="(Default)">ChapterVerses</Value>
+    </Setting>
+    <Setting Name="FontSizeHebrew" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="FontSizeTranslation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="FontSizeCommentary" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
     </Setting>
   </Settings>
 </SettingsFile>

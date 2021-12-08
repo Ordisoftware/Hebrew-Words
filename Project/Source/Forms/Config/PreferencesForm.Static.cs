@@ -21,6 +21,8 @@ namespace Ordisoftware.Hebrew.Words;
 partial class PreferencesForm
 {
 
+  static private readonly Properties.Settings Settings = Program.Settings;
+
   static public int TabIndexApplication { get; private set; }
   static public int TabIndexStartup { get; private set; }
   static public int TabIndexRendering { get; private set; }
@@ -38,8 +40,9 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
   static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 210, 5);
-
-  static private readonly Properties.Settings Settings = Program.Settings;
+  static public readonly (int, int, int, int) FontSizeHebrewInterval = (12, 24, 16, 1);
+  static public readonly (int, int, int, int) FontSizeTranslationInterval = (8, 16, 10, 1);
+  static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 8, 1);
 
   static private bool First;
   static private bool LanguageChanged;
@@ -48,6 +51,9 @@ partial class PreferencesForm
   static private int WordControlWidthPrevious;
   static private int MaxrefCountPrevious;
   static private bool UpdateViewRequired;
+  static private int FontSizeHebrewPrevious;
+  static private int FontSizeTranslationPrevious;
+  static private int FontSizeCommentaryPrevious;
 
   static public bool Reseted { get; private set; }
   static private bool DoReset;
