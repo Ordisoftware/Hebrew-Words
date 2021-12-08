@@ -92,7 +92,7 @@ public partial class VerseControl : UserControl
     switch ( Program.Settings.VerseLabelClickAction )
     {
       case VerseLabelClickAction.ContextMenu:
-        LabelVerseNumber.ContextMenuStrip?.Show(Cursor.Position);
+        LabelVerseNumber.ContextMenuStrip?.Show(LabelVerseNumber, e.Location);
         break;
       case VerseLabelClickAction.OnlineRead:
         HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
