@@ -647,8 +647,8 @@
       // 
       // ActionSearchInRemoveAll
       // 
-      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchInRemoveAll, "ActionSearchInRemoveAll");
+      this.ActionSearchInRemoveAll.FlatAppearance.BorderSize = 0;
       this.ActionSearchInRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionSearchInRemoveAll.Name = "ActionSearchInRemoveAll";
       this.ActionSearchInRemoveAll.UseVisualStyleBackColor = true;
@@ -656,8 +656,8 @@
       // 
       // ActionSearchInAddAll
       // 
-      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchInAddAll, "ActionSearchInAddAll");
+      this.ActionSearchInAddAll.FlatAppearance.BorderSize = 0;
       this.ActionSearchInAddAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionSearchInAddAll.Name = "ActionSearchInAddAll";
       this.ActionSearchInAddAll.UseVisualStyleBackColor = true;
@@ -989,8 +989,8 @@
       // 
       this.SelectChapter.DataSource = this.ChaptersBindingSource;
       this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectChapter.FormattingEnabled = true;
       resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.FormattingEnabled = true;
       this.SelectChapter.Name = "SelectChapter";
       this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectChapter_SelectedIndexChanged);
       // 
@@ -1020,8 +1020,8 @@
       // 
       this.SelectBook.DataSource = this.BooksBindingSource;
       this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectBook.FormattingEnabled = true;
       resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.FormattingEnabled = true;
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 

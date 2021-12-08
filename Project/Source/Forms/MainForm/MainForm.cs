@@ -770,7 +770,7 @@ partial class MainForm : Form
     else
     if ( control is Label label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
-      var reference = ( (VerseControl)label.Parent.Parent ).Reference;
+      var reference = ( (VerseControl)label.Parent ).Reference;
       var verse = reference.Verse;
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
     }
@@ -1772,7 +1772,7 @@ partial class MainForm : Form
       reference = (ReferenceItem)control.Tag;
     else
     if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
-      reference = ( (VerseControl)label.Parent.Parent ).Reference;
+      reference = ( (VerseControl)label.Parent ).Reference;
     else
       return;
     ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number

@@ -79,7 +79,7 @@ partial class MainForm : Form
       else
       if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
       {
-        var reference = ( (VerseControl)label.Parent.Parent ).Reference;
+        var reference = ( (VerseControl)label.Parent ).Reference;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,
                                       reference.Book.Number,
                                       reference.Chapter.Number,

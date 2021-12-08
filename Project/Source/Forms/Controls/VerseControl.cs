@@ -80,7 +80,7 @@ public partial class VerseControl : UserControl
     LabelVerseNumber.ForeColor = Color.DarkBlue;
   }
 
-  private void LabelVerseNumber_MouseDown(object sender, EventArgs e)
+  private void LabelVerseNumber_MouseDown(object sender, MouseEventArgs e)
   {
     if ( WordControls.Length > 0 && !WordControls.Any(c => c.EditTranslation.Focused) )
       WordControls[0].Focus();
@@ -92,7 +92,7 @@ public partial class VerseControl : UserControl
     switch ( Program.Settings.VerseLabelClickAction )
     {
       case VerseLabelClickAction.ContextMenu:
-        LabelVerseNumber.ContextMenuStrip?.Show(LabelVerseNumber, new Point(0, LabelVerseNumber.Height));
+        LabelVerseNumber.ContextMenuStrip?.Show(Cursor.Position);
         break;
       case VerseLabelClickAction.OnlineRead:
         HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
