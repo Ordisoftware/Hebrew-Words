@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ImportResults" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Ordisoftware.Hebrew.Words.ImportResults, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+	<TypeInfo>Ordisoftware.Hebrew.Words.ImportWordMatch, Ordisoftware.Hebrew.Words, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

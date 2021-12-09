@@ -11,26 +11,26 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class ImportVerseForm : Form
 {
 
-  private const char ElementsSeparator = '|';
+  private readonly char[] ElementsSeparator = { '|', '\t' };
 
-  private readonly ImportverseResults ImportResults = new();
+  private readonly List<ImportWordMatch> WordMatches = new();
 
   private void DoAnalyse()
   {
+    IsResultValid = false;
     var foundWords = new List<string>();
     var foundTranslation = new List<string>();
     DataGridView.DataSource = null;
-    ImportResults.Clear();
+    WordMatches.Clear();
     var lines = EditSource.Lines.Where(line => line.Length > 0).ToList();
     if ( lines.Count % 2 != 0 )
     {
-      IsResultValid = false;
       DisplayManager.ShowError(AppTranslations.ImportLinesCountMismatch.GetLang(lines.Count));
       return;
     }
@@ -48,7 +48,6 @@ partial class ImportVerseForm : Form
         || lineTranslationElements.Length == 0
         || lineHebrewElements.Length != lineTranslationElements.Length )
       {
-        IsResultValid = false;
         DisplayManager.ShowError(AppTranslations.ImportItemsCountMismatch.GetLang(lineHebrewElements.Length,
                                                                                   lineTranslationElements.Length));
         return;
@@ -59,7 +58,6 @@ partial class ImportVerseForm : Form
     var wordsReference = Reference.Verse.Words;
     if ( foundWords.Count != wordsReference.Count )
     {
-      IsResultValid = false;
       DisplayManager.ShowError(AppTranslations.ImportWordsCountMismatch.GetLang(wordsReference.Count,
                                                                                 foundWords.Count));
       return;
@@ -68,21 +66,21 @@ partial class ImportVerseForm : Form
     {
       if ( foundWords[index] != wordsReference[index].Hebrew )
       {
-        IsResultValid = false;
         DisplayManager.ShowError(AppTranslations.ImportWordMismatch.GetLang(wordsReference[index].Hebrew,
                                                                             foundWords[index]));
         return;
       }
-      var item = new ImportVerseResult
+      var item = new ImportWordMatch
       {
+        Number = wordsReference[index].Number,
         Hebrew = wordsReference[index].Hebrew,
         CurrentTranslation = wordsReference[index].Translation,
         ImportedTranslation = foundTranslation[index]
       };
-      ImportResults.Add(item);
+      WordMatches.Add(item);
     }
     IsResultValid = true;
-    DataGridView.DataSource = ImportResults;
+    DataGridView.DataSource = WordMatches;
   }
 
 }

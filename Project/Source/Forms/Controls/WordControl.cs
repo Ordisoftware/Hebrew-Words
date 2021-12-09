@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class WordControl : UserControl
 {
 
-  private class MetricsItem
+  private sealed class MetricsItem
   {
     public int TotalHeight;
     public int EditTranslationHeight;
@@ -29,7 +29,7 @@ public partial class WordControl : UserControl
 
   static private readonly MetricsItem Metrics = new();
 
-  static internal bool ResetMetricsRequired = true;
+  static internal bool ResetMetricsRequired { get; set; } = true;
 
   public ReferenceItem Reference { get; init; }
 

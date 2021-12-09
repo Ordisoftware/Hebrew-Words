@@ -48,7 +48,7 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBooks ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
@@ -200,7 +200,7 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditBooksForm_FormClosing);
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBooks ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
       this.ContextMenuStripResults.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();

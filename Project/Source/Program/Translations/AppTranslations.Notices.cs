@@ -59,7 +59,7 @@ static partial class AppTranslations
   static public readonly TranslationsDictionary ImportNotice = new()
   {
     [Language.EN] = "This console allows for example to import an MS Word verse table." + Globals.NL2 +
-                    "This table must first be converted to text with | as a separator." + Globals.NL2 +
+                    "This table must first be converted to text with | as a separator or a tab." + Globals.NL2 +
                     "The import text must be presented in groups of two lines:" + Globals.NL +
                     "- A first containing a list of Hebrew words according to the Hebrew.ttf font," + Globals.NL +
                     "- A second containing a list of translations." + Globals.NL2 +
@@ -67,7 +67,7 @@ static partial class AppTranslations
                     "Imported translation fields can be edited in the result grid.",
 
     [Language.FR] = "Cette console permet par exemple d'importer un tableau de verset MS Word." + Globals.NL2 +
-                    "Ce tableau doit préalablement être convertit en texte avec | comme séparateur." + Globals.NL2 +
+                    "Ce tableau doit préalablement être convertit en texte avec | comme séparateur ou une tabulation." + Globals.NL2 +
                     "Le texte d'import doit ainsi se présenter par groupe de deux lignes :" + Globals.NL +
                     "- Une première contenant une liste de mots hébreux selon la police Hebrew.ttf," + Globals.NL +
                     "- Une deuxième contenant une liste de traductions." + Globals.NL2 +

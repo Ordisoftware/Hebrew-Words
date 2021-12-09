@@ -11,19 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-class ImportVerseResult
+public class ImportWordMatch
 {
+  public int Number { get; set; }
   public string Hebrew { get; set; }
   public string CurrentTranslation { get; set; }
   public string ImportedTranslation { get; set; }
-}
-
-class ImportverseResults : List<ImportVerseResult>
-{
-  public ImportverseResults() { }
-  public ImportverseResults(int capacity) : base(capacity) { }
-  public ImportverseResults(IEnumerable<ImportVerseResult> collection) : base(collection) { }
 }

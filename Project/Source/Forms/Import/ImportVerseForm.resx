@@ -157,7 +157,7 @@
     <value>EditSource</value>
   </data>
   <data name="&gt;&gt;EditSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSource.Parent" xml:space="preserve">
     <value>PanelMain.Panel1</value>
@@ -193,7 +193,7 @@
     <value>Current translation</value>
   </data>
   <data name="ColumnCurrentTranslation.Width" type="System.Int32, mscorlib">
-    <value>250</value>
+    <value>300</value>
   </data>
   <metadata name="ColumnImportedTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -201,7 +201,7 @@
   <data name="ColumnImportedTranslation.HeaderText" xml:space="preserve">
     <value>Imported translation</value>
   </data>
-  <metadata name="importResultsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="WordMatchesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -269,18 +269,18 @@
   </data>
   <data name="ActionHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAldJREFUOE9dj8tPE2EUxecvQKStCSbixp0sfMWV1g0BRImx+CgtNI0hoGJgAQsi
+        voKaKAkYxaJglYdEQJ1pu0IXCoQ0aWqLIK19aLEhSGSBKxNldfzO12lRbnLzzT3nd04yyuYx1nhcW6u1
+        3/lWFVvE8uVNXUdyA0D/EmOq9ZZud/jg7AnBPbUE7+wqPOFV+fKmTp+cHtkooFh8aQKDM8voeptGeXcY
+        O1unYGqalC9v6vTJZUtyBYWiWfvwAw1DMexqm8F1zxfhbQxv6vTJkWdOWJl/bn8RRfNYAgduBlB8zS9D
+        04k17GidxmR8Td67r/qlT448c0JWlAKb+qf3/TIO3w3BLPbgraAMVD6Yw54bAVT1zst7X0dA+uTIMydk
+        RTHYNLR5FlHaPYuyex9R0hXGkU697HYQke+/ZMGhOyHJcMkzJwuMdg0XRpOodH3K7bGeeZSIsnexnzLc
+        MJJA2f05HH+Y8ckzJwtMdg9sAzGc7o/gVF9mLY8jOCpKOJe9KVSIb8ujBemRI8+cLNhm19at7ihqBhOw
+        PYvJtT6NwdIXRYVrASdE2Vn355xHjjxzssBY9WTc3OFH/ehXnHuehHM4AcdQHGdEiMOXN3X65MgzJwvE
+        FPF/HANxNL7+hvPjKdQJqHY4KQv48qZOnxx55rIFSr65pbHQ6UPdSBItviU0a2lcfLWI+rGUfHlTp0+O
+        PHO5AjF5FA02FeWdQTSpaVx5s4L2iRX58qZOXw/nMfRvAYfifsPJ/pdGm7peUK0iu7yp09c5OZsLslMk
+        dq9YwtnlTf2/AaD8BbJ1NdC1E7hwAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -302,7 +302,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHelp.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionHelp.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -335,7 +335,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionAnalyse.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionAnalyse.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -368,7 +368,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -398,33 +398,33 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 628</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>772, 28</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -432,9 +432,6 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>
@@ -466,10 +463,10 @@
   <data name="&gt;&gt;ColumnImportedTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;importResultsBindingSource.Name" xml:space="preserve">
-    <value>importResultsBindingSource</value>
+  <data name="&gt;&gt;WordMatchesBindingSource.Name" xml:space="preserve">
+    <value>WordMatchesBindingSource</value>
   </data>
-  <data name="&gt;&gt;importResultsBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;WordMatchesBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

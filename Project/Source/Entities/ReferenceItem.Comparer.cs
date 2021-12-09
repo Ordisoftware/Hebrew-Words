@@ -17,27 +17,27 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-partial class ReferenceItem
+sealed partial class ReferenceItem
 {
 
-  public class ReferenceComparer : IEqualityComparer<ReferenceItem>
+  public sealed class ReferenceComparer : IEqualityComparer<ReferenceItem>
   {
 
-    public bool Equals(ReferenceItem x, ReferenceItem y)
+    bool IEqualityComparer<ReferenceItem>.Equals(ReferenceItem x, ReferenceItem y)
       => x == y;
 
-    public int GetHashCode(ReferenceItem obj)
+    int IEqualityComparer<ReferenceItem>.GetHashCode(ReferenceItem obj)
       => obj?.GetHashCode() ?? 0;
 
   }
 
-  public class WordTranslationComparer : IEqualityComparer<ReferenceItem>
+  public sealed class WordTranslationComparer : IEqualityComparer<ReferenceItem>
   {
 
-    public bool Equals(ReferenceItem x, ReferenceItem y)
+    bool IEqualityComparer<ReferenceItem>.Equals(ReferenceItem x, ReferenceItem y)
       => x != null && y != null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
 
-    public int GetHashCode(ReferenceItem obj)
+    int IEqualityComparer<ReferenceItem>.GetHashCode(ReferenceItem obj)
       => obj?.Word?.Translation.GetHashCode() ?? 0;
 
   }
