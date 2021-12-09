@@ -20,11 +20,11 @@ public partial class VerseControl : UserControl
   private class MetricsItem
   {
     public int ControlWidth;
+    public int WordControlsPerLine;
+    public int LabelVerseNumberWidth;
     public int EditCommentaryTextHeight;
     public int EditCommentaryHeight;
-    public int LabelVerseNumberWidth;
     public int EditCommentaryMarginLeft;
-    public int WordControlsPerLine;
     public Font LabelVerseNumberFont;
     public Font EditCommentaryFont;
   }
@@ -35,9 +35,9 @@ public partial class VerseControl : UserControl
 
   static internal bool ResetMetricsRequired;
 
-  public WordControl[] WordControls { get; init; }
-
   public ReferenceItem Reference { get; init; }
+
+  public WordControl[] WordControls { get; init; }
 
   public VerseControl()
   {
@@ -81,6 +81,7 @@ public partial class VerseControl : UserControl
 
   public void ResetMetrics()
   {
+    ResetMetricsRequired = false;
     foreach ( var container in MetricsCollection.Keys )
       ResetMetrics(container);
   }
