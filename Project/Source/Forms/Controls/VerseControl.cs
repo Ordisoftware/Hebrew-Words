@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseControl : UserControl
 {
 
-  private class MetricsItem
+  private sealed class MetricsItem
   {
     public int ControlWidth;
     public int WordControlsPerLine;
@@ -33,7 +33,7 @@ public partial class VerseControl : UserControl
 
   static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = new();
 
-  static internal bool ResetMetricsRequired;
+  static internal bool ResetMetricsRequired { get; set; }
 
   public ReferenceItem Reference { get; init; }
 
@@ -119,7 +119,7 @@ public partial class VerseControl : UserControl
       WordControls[index] = control;
     }
     PanelWords.Controls.AddRange(WordControls);
-    return control.Height;
+    return control?.Height ?? 0;
   }
 
   private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)
