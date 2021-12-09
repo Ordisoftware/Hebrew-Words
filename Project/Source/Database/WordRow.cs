@@ -38,7 +38,6 @@ public class WordRow : AbstractRow
   private string _VerseID;
 
   [NotNull]
-  [DefaultValue("")]
   public string Original
   {
     get => _Original;
@@ -49,10 +48,9 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Original));
     }
   }
-  private string _Original;
+  private string _Original = string.Empty;
 
   [NotNull]
-  [DefaultValue("")]
   public string Hebrew
   {
     get => _Hebrew;
@@ -63,10 +61,9 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew;
+  private string _Hebrew = string.Empty;
 
   [NotNull]
-  [DefaultValue("")]
   public string Translation
   {
     get => _Translation;
@@ -77,6 +74,6 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation;
+  private string _Translation = string.Empty;
 
 }

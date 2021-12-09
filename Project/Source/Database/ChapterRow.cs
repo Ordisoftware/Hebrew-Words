@@ -39,7 +39,6 @@ public class ChapterRow : AbstractRow
   private string _BookID;
 
   [NotNull]
-  [DefaultValue("")]
   public string Title
   {
     get => _Title;
@@ -50,10 +49,9 @@ public class ChapterRow : AbstractRow
       NotifyPropertyChanged(nameof(Title));
     }
   }
-  private string _Title;
+  private string _Title = string.Empty;
 
   [NotNull]
-  [DefaultValue("")]
   public string Memo
   {
     get => _Memo;
@@ -64,10 +62,9 @@ public class ChapterRow : AbstractRow
       NotifyPropertyChanged(nameof(Memo));
     }
   }
-  private string _Memo;
+  private string _Memo = string.Empty;
 
   [NotNull]
-  [DefaultValue("")]
   public string ELS50
   {
     get => _ELS50;
@@ -78,7 +75,7 @@ public class ChapterRow : AbstractRow
       NotifyPropertyChanged(nameof(ELS50));
     }
   }
-  private string _ELS50;
+  private string _ELS50 = string.Empty;
 
   public List<VerseRow> Verses { get; } = new();
 
