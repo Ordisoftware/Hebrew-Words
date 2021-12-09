@@ -34,7 +34,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Original));
     }
   }
-  private string _Original;
+  private string _Original = string.Empty;
 
   [NotNull]
   public string Hebrew
@@ -47,7 +47,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew;
+  private string _Hebrew = string.Empty;
 
   [NotNull]
   public string Name
@@ -60,7 +60,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Name));
     }
   }
-  private string _Name;
+  private string _Name = string.Empty;
 
   [NotNull]
   public string CommonName
@@ -73,7 +73,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(CommonName));
     }
   }
-  private string _CommonName;
+  private string _CommonName = string.Empty;
 
   [NotNull]
   public string Translation
@@ -86,7 +86,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation;
+  private string _Translation = string.Empty;
 
   [NotNull]
   public string Lettriq
@@ -99,7 +99,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Lettriq));
     }
   }
-  private string _Lettriq;
+  private string _Lettriq = string.Empty;
 
   [NotNull]
   public string Memo
@@ -112,7 +112,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Memo));
     }
   }
-  private string _Memo;
+  private string _Memo = string.Empty;
 
   public List<ChapterRow> Chapters { get; } = new();
 

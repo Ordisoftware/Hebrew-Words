@@ -48,7 +48,7 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Original));
     }
   }
-  private string _Original;
+  private string _Original = string.Empty;
 
   [NotNull]
   public string Hebrew
@@ -61,7 +61,7 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew;
+  private string _Hebrew = string.Empty;
 
   [NotNull]
   public string Translation
@@ -74,6 +74,6 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation;
+  private string _Translation = string.Empty;
 
 }

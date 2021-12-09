@@ -194,7 +194,6 @@ class ApplicationDatabase : SQLiteDatabase
       string strELS50 = "";
       void nextChapter()
       {
-        chapter.ELS50 = "";
         book.Chapters.Add(chapter);
         Chapters.Add(chapter);
         strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
@@ -219,15 +218,12 @@ class ApplicationDatabase : SQLiteDatabase
         }
         string[] filecontent = File.ReadAllLines(filePath);
         book = new();
-        book.ID = Guid.NewGuid().ToString();
+        //book.ID = Guid.NewGuid().ToString();
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
         book.Hebrew = BooksNames.Hebrew[bookid];
         book.Name = bookid.ToString().Replace("_", " ");
         book.CommonName = BooksNames.Common.GetLang(bookid);
-        book.Translation = "";
-        book.Lettriq = "";
-        book.Memo = "";
         Books.Add(book);
         int countChapters = 0;
         int countVerses = 0;
@@ -240,11 +236,8 @@ class ApplicationDatabase : SQLiteDatabase
             if ( chapter != null ) nextChapter();
             countVerses = 0;
             chapter = new();
-            chapter.ID = Guid.NewGuid().ToString();
             chapter.BookID = book.ID;
             chapter.Number = ++countChapters;
-            chapter.Title = "";
-            chapter.Memo = "";
           }
           else
           {
@@ -256,10 +249,8 @@ class ApplicationDatabase : SQLiteDatabase
             {
               countWords = 0;
               verse = new();
-              verse.ID = Guid.NewGuid().ToString();
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
-              verse.Comment = "";
               listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
@@ -274,12 +265,10 @@ class ApplicationDatabase : SQLiteDatabase
               if ( listWordsHebrew[i].Length > 0 )
               {
                 word = new();
-                word.ID = Guid.NewGuid().ToString();
                 word.VerseID = verse.ID;
                 word.Number = ++countWords;
                 word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
                 word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
-                word.Translation = "";
                 verse.Words.Add(word);
                 Words.Add(word);
                 strELS50 = listWordsHebrew[i] + strELS50;

@@ -17,20 +17,27 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseControl : UserControl
 {
 
+  private class MetricsItem
+  {
+    public int ControlWidth;
+    public int WordControlsPerLine;
+    public int LabelVerseNumberWidth;
+    public int EditCommentaryTextHeight;
+    public int EditCommentaryHeight;
+    public int EditCommentaryMarginLeft;
+    public Font LabelVerseNumberFont;
+    public Font EditCommentaryFont;
+  }
+
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static internal bool ResetMetricsRequired = true;
-  static int EditCommentaryTextHeight;
-  static int EditCommentaryHeight;
-  static int LabelVerseNumberWidth;
-  static int EditCommentaryMarginLeft;
-  static int WordControlsPerLine;
-  static Font LabelVerseNumberFont;
-  static Font EditCommentaryFont;
+  static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = new();
 
-  public WordControl[] WordControls { get; init; }
+  static internal bool ResetMetricsRequired;
 
   public ReferenceItem Reference { get; init; }
+
+  public WordControl[] WordControls { get; init; }
 
   public VerseControl()
   {
@@ -41,44 +48,62 @@ public partial class VerseControl : UserControl
   {
     Reference = reference;
     WordControls = new WordControl[reference.Verse.Words.Count];
-    Width = container.ClientSize.Width;
-    if ( ResetMetricsRequired ) ResetMetrics(container);   // TODO update ResetTextHeight after win resized & maximized
+    MetricsItem metrics;
+    if ( !MetricsCollection.ContainsKey(container) )
+    {
+      metrics = new MetricsItem();
+      MetricsCollection.Add(container, metrics);
+      ResetMetrics(container);
+    }
+    else
+      metrics = MetricsCollection[container];
+    if ( ResetMetricsRequired ) ResetMetrics();
     if ( Settings.VerseCommentaryLinesCount > 1 )
     {
       EditCommentary.Multiline = true;
       EditCommentary.WordWrap = true;
       EditCommentary.ScrollBars = ScrollBars.Vertical;
-      PanelComment.Height = EditCommentaryHeight;
+      PanelComment.Height = metrics.EditCommentaryHeight;
     }
-    int numberOfLines = WordControls.Length / WordControlsPerLine;
-    if ( WordControls.Length % WordControlsPerLine > 0 ) numberOfLines++;
-    LabelVerseNumber.Font = LabelVerseNumberFont;
+    int numberOfLines = WordControls.Length / metrics.WordControlsPerLine;
+    if ( WordControls.Length % metrics.WordControlsPerLine > 0 ) numberOfLines++;
+    LabelVerseNumber.Font = metrics.LabelVerseNumberFont;
     LabelVerseNumber.Text = reference.Verse.Number.ToString();
-    LabelVerseNumber.Width = LabelVerseNumberWidth;
+    LabelVerseNumber.Width = metrics.LabelVerseNumberWidth;
     LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
-    EditCommentary.Font = EditCommentaryFont;
+    EditCommentary.Font = metrics.EditCommentaryFont;
     EditCommentary.Text = reference.Verse.Comment;
     EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
-    PanelCommentLeft.Width = EditCommentaryMarginLeft;
+    PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
     Height = Padding.Top + Padding.Left + Padding.Bottom + CreateWordControls() * numberOfLines + EditCommentary.Height;
+    Width = metrics.ControlWidth;
+  }
+
+  public void ResetMetrics()
+  {
+    ResetMetricsRequired = false;
+    foreach ( var container in MetricsCollection.Keys )
+      ResetMetrics(container);
   }
 
   public void ResetMetrics(Panel container)
   {
+    var metrics = MetricsCollection[container];
+    int widthHScroll = new VScrollBar().Width;
+    int width = container.ClientSize.Width - widthHScroll / 2 - container.Padding.Left - container.Padding.Right;
+    //
+    metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
     using var graphicsNumber = LabelVerseNumber.CreateGraphics();
+    metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
+    //
+    metrics.ControlWidth = width;
+    metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
+    //
+    metrics.EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
     using var graphicsCommentary = EditCommentary.CreateGraphics();
-    LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", LabelVerseNumber.Font).Width + 10;
-    int width = container.ClientSize.Width + new VScrollBar().Width
-              - container.Padding.Left - container.Padding.Right
-              - Padding.Left - Padding.Right
-              - LabelVerseNumberWidth;
-    WordControlsPerLine = width / Settings.WordControlWidth;
-    EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", EditCommentary.Font).Height;
-    EditCommentaryHeight = EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
-    EditCommentaryMarginLeft = width + Padding.Left - Settings.WordControlWidth * WordControlsPerLine;
-    LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
-    EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
-    ResetMetricsRequired = false;
+    metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", metrics.EditCommentaryFont).Height;
+    metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
+    metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
   }
 
   private int CreateWordControls()
@@ -141,8 +166,6 @@ public partial class VerseControl : UserControl
   {
     EditCommentary.BackColor = Color.AliceBlue;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
-
-    // TODO create an event assigned by mainform
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }

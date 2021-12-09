@@ -17,13 +17,19 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class WordControl : UserControl
 {
 
+  private class MetricsItem
+  {
+    public int TotalHeight;
+    public int EditTranslationHeight;
+    public Font LabelHebrewFont;
+    public Font EditTranslationFont;
+  }
+
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  static private readonly MetricsItem Metrics = new();
+
   static internal bool ResetMetricsRequired = true;
-  static private int EditTranslationHeight;
-  static private int TotalHeight;
-  static Font LabelHebrewFont;
-  static Font EditTranslationFont;
 
   public ReferenceItem Reference { get; init; }
 
@@ -41,11 +47,11 @@ public partial class WordControl : UserControl
       EditTranslation.Multiline = true;
       EditTranslation.WordWrap = true;
       EditTranslation.ScrollBars = ScrollBars.Vertical;
-      EditTranslation.Height = EditTranslationHeight;
+      EditTranslation.Height = Metrics.EditTranslationHeight;
     }
-    Height = TotalHeight;
-    LabelHebrew.Font = LabelHebrewFont;
-    EditTranslation.Font = EditTranslationFont;
+    Height = Metrics.TotalHeight;
+    LabelHebrew.Font = Metrics.LabelHebrewFont;
+    EditTranslation.Font = Metrics.EditTranslationFont;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
   }
@@ -53,13 +59,15 @@ public partial class WordControl : UserControl
   public void ResetMetrics()
   {
     ResetMetricsRequired = false;
-    LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
-    EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+    Metrics.LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
+    Metrics.EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+    using Graphics graphicsHebrew = LabelHebrew.CreateGraphics();
+    int heightHebrew = TextRenderer.MeasureText(graphicsHebrew, "ql", Metrics.LabelHebrewFont).Height;
     using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
-    int height = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
-    EditTranslationHeight = height * ( Settings.VerseWordTranslationLinesCount + 1 );
-    TotalHeight = LabelHebrew.Height + EditTranslationHeight + 5;
-    if ( Settings.VerseWordTranslationLinesCount > 1 ) TotalHeight += 10;
+    int heightTranslation = TextRenderer.MeasureText(graphicsTranslation, "A", Metrics.EditTranslationFont).Height;
+    Metrics.EditTranslationHeight = heightTranslation * ( Settings.VerseWordTranslationLinesCount + 1 );
+    Metrics.TotalHeight = heightHebrew + Metrics.EditTranslationHeight + 5;
+    if ( Settings.VerseWordTranslationLinesCount > 1 ) Metrics.TotalHeight += 10;
   }
 
   public new bool Focus()
@@ -128,7 +136,6 @@ public partial class WordControl : UserControl
           HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickAction.SearchTranslated:
-          // TODO create an event assigned by main form ?
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickAction.HebrewLetters:
