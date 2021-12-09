@@ -119,7 +119,7 @@ partial class MainForm : Form
     if ( !auto ) DoStartGoTo();
     ActionSave.PerformClick();
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
-    SelectBook.DropDownHeight = height * ( SelectBook.Items.Count + 1 );
+    SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
     FilterModified = new()
     {
       { EditFilterBook, false },
