@@ -38,12 +38,11 @@
       this.LabelHebrew.AutoSize = true;
       this.LabelHebrew.Dock = System.Windows.Forms.DockStyle.Right;
       this.LabelHebrew.Font = new System.Drawing.Font("Hebrew", 16F);
-      this.LabelHebrew.Location = new System.Drawing.Point(106, 5);
+      this.LabelHebrew.Location = new System.Drawing.Point(150, 5);
       this.LabelHebrew.Name = "LabelHebrew";
-      this.LabelHebrew.Size = new System.Drawing.Size(44, 31);
+      this.LabelHebrew.Size = new System.Drawing.Size(0, 31);
       this.LabelHebrew.TabIndex = 0;
       this.LabelHebrew.TabStop = true;
-      this.LabelHebrew.Text = "lq";
       this.LabelHebrew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.LabelHebrew.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
@@ -71,7 +70,6 @@
       this.Name = "WordControl";
       this.Padding = new System.Windows.Forms.Padding(10, 5, 0, 5);
       this.Size = new System.Drawing.Size(150, 65);
-      this.Load += new System.EventHandler(this.WordControl_Load);
       this.Click += new System.EventHandler(this.WordControl_Click);
       this.Enter += new System.EventHandler(this.EditTranslation_Enter);
       this.Leave += new System.EventHandler(this.EditTranslation_Leave);

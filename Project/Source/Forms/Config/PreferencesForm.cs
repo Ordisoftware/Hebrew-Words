@@ -335,12 +335,12 @@ partial class PreferencesForm : Form
 
   private void EditRenderWordControl_ValueChanged(object sender, EventArgs e)
   {
-    WordControl.ResetTextHeight = true;
+    WordControl.ResetVisual = true;
   }
 
   private void EditRenderVerseControl_ValueChanged(object sender, EventArgs e)
   {
-    VerseControl.ResetTextHeight = true;
+    VerseControl.ResetVisual = true;
   }
 
   #endregion

@@ -24,11 +24,11 @@ partial class MainForm
     Globals.IsRendering = true;
     try
     {
-      var references = new List<ReferenceItem>();
-      references.Add(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
-                                       ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                                       ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
-      RenderVerses(PanelViewVerseFilteredSingle, references);
+      PanelViewVerseFilteredSingle.DisposeAllControls();
+      var reference = new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+                                        ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                                        ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1);
+      new VerseControl(PanelViewVerseFilteredSingle, reference);
     }
     catch ( Exception ex )
     {

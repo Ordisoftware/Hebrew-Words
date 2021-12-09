@@ -56,7 +56,7 @@
       this.PanelComment.Margin = new System.Windows.Forms.Padding(0);
       this.PanelComment.Name = "PanelComment";
       this.PanelComment.Size = new System.Drawing.Size(330, 20);
-      this.PanelComment.TabIndex = 0;
+      this.PanelComment.TabIndex = 2;
       // 
       // EditCommentary
       // 
@@ -68,7 +68,7 @@
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);
       this.EditCommentary.Name = "EditCommentary";
       this.EditCommentary.Size = new System.Drawing.Size(320, 20);
-      this.EditCommentary.TabIndex = 2;
+      this.EditCommentary.TabIndex = 0;
       this.EditCommentary.Enter += new System.EventHandler(this.EditComment_Enter);
       this.EditCommentary.Leave += new System.EventHandler(this.EditComment_Leave);
       // 
@@ -78,7 +78,7 @@
       this.PanelCommentLeft.Location = new System.Drawing.Point(0, 0);
       this.PanelCommentLeft.Name = "PanelCommentLeft";
       this.PanelCommentLeft.Size = new System.Drawing.Size(10, 20);
-      this.PanelCommentLeft.TabIndex = 3;
+      this.PanelCommentLeft.TabIndex = 1;
       // 
       // LabelVerseNumber
       // 
@@ -90,7 +90,7 @@
       this.LabelVerseNumber.Name = "LabelVerseNumber";
       this.LabelVerseNumber.Padding = new System.Windows.Forms.Padding(10, 7, 0, 0);
       this.LabelVerseNumber.Size = new System.Drawing.Size(50, 60);
-      this.LabelVerseNumber.TabIndex = 2;
+      this.LabelVerseNumber.TabIndex = 0;
       this.LabelVerseNumber.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelVerseNumber_MouseClick);
       this.LabelVerseNumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelVerseNumber_MouseDown);
       this.LabelVerseNumber.MouseEnter += new System.EventHandler(this.LabelVerseNumber_MouseEnter);

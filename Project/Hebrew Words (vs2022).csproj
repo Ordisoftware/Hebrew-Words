@@ -556,9 +556,6 @@
     <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Verses.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\Render\MainForm.Render.Text.ELS50.cs">
       <SubType>Form</SubType>
     </Compile>

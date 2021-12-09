@@ -19,22 +19,38 @@ public partial class WordControl : UserControl
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static internal bool ResetTextHeight = true;
-  static private int TranslationTextHeight;
+  static internal bool ResetVisual = true;
   static private int TranslationEditHeight;
-  static private int HebrewTextHeight;
   static private int TotalHeight;
+  static Font LabelHebrewFont;
+  static Font EditTranslationFont;
 
   public ReferenceItem Reference { get; private set; }
 
   public WordControl()
   {
     InitializeComponent();
-    if ( Globals.IsVisualStudioDesigner ) return;
-    if ( LabelHebrew.Font.Size != Settings.FontSizeHebrew )
-      LabelHebrew.Font = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
-    if ( EditTranslation.Font.Size != Settings.FontSizeTranslation )
-      EditTranslation.Font = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+    if ( ResetVisual )
+    {
+      LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
+      EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+      using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
+      int height = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
+      TranslationEditHeight = height * ( Settings.VerseWordTranslationLinesCount + 1 );
+      TotalHeight = LabelHebrew.Height + TranslationEditHeight + 5;
+      if ( Settings.VerseWordTranslationLinesCount > 1 ) TotalHeight += 10;
+      ResetVisual = false;
+    }
+    if ( Settings.VerseWordTranslationLinesCount > 1 )
+    {
+      EditTranslation.Multiline = true;
+      EditTranslation.WordWrap = true;
+      EditTranslation.ScrollBars = ScrollBars.Vertical;
+      EditTranslation.Height = TranslationEditHeight;
+    }
+    Height = TotalHeight;
+    LabelHebrew.Font = LabelHebrewFont;
+    EditTranslationFont = EditTranslationFont;
   }
 
   public WordControl(ReferenceItem reference) : this()
@@ -42,34 +58,6 @@ public partial class WordControl : UserControl
     Reference = reference;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
-  }
-
-  private void WordControl_Load(object sender, EventArgs e)
-  {
-    if ( ResetTextHeight || Settings.VerseWordTranslationLinesCount > 1 )
-    {
-      if ( ResetTextHeight )
-      {
-        using Graphics graphicsHebrew = LabelHebrew.CreateGraphics();
-        HebrewTextHeight = TextRenderer.MeasureText(graphicsHebrew, "lq", LabelHebrew.Font).Height;
-        using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
-        TranslationTextHeight = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
-        TranslationEditHeight = TranslationTextHeight * ( Settings.VerseWordTranslationLinesCount + 1 ) - 5;
-        TotalHeight = HebrewTextHeight + TranslationEditHeight + 5;
-        if ( Settings.VerseWordTranslationLinesCount > 1 )
-          TotalHeight += 6;
-        ResetTextHeight = false;
-      }
-      if ( Settings.VerseWordTranslationLinesCount > 1 )
-      {
-        EditTranslation.Multiline = Settings.VerseWordTranslationLinesCount > 1;
-        EditTranslation.ScrollBars = ScrollBars.Vertical;
-        EditTranslation.WordWrap = true;
-      }
-    }
-    EditTranslation.Height = TranslationEditHeight;
-    LabelHebrew.Height = HebrewTextHeight;
-    Height = TotalHeight;
   }
 
   public new bool Focus()
@@ -89,11 +77,7 @@ public partial class WordControl : UserControl
     if ( Globals.IsRendering ) return;
     EditTranslation.BackColor = Color.AliceBlue;
     EditTranslation.SelectionStart = 0;
-
-    // TODO instance var here instead accessing mainform ?
     if ( MainForm.Instance.IsComboBoxChanging ) return;
-
-    // TODO create an event in versecontrol assigned by mainform and call it using parent
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }

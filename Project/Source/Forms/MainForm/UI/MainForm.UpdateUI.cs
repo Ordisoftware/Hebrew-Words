@@ -31,7 +31,6 @@ partial class MainForm
     get
     {
       var cp = base.CreateParams;
-      cp.Style |= 0x00200000; //WS_VSCROLL;
       if ( Settings.WindowsDoubleBufferingEnabled
         && Settings.CurrentView != ViewMode.ChapterTranslation
         && Settings.CurrentView != ViewMode.ChapterOriginal

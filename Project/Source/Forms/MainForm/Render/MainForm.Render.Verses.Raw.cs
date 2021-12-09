@@ -47,7 +47,9 @@ partial class MainForm
         PanelViewVerses.Visible = false;
         SetFormDisabled(true);
       }
-      RenderVerses(PanelViewVerses, references);
+      PanelViewVerses.DisposeAllControls();
+      if ( references.Count > 0 )
+        references.ForEach(reference => new VerseControl(PanelViewVerses, reference));
     }
     catch ( Exception ex )
     {
