@@ -24,6 +24,7 @@ public class BookRow : AbstractRow
 {
 
   [NotNull]
+  [DefaultValue("")]
   public string Original
   {
     get => _Original;
@@ -37,6 +38,7 @@ public class BookRow : AbstractRow
   private string _Original;
 
   [NotNull]
+  [DefaultValue("")]
   public string Hebrew
   {
     get => _Hebrew;
@@ -50,6 +52,7 @@ public class BookRow : AbstractRow
   private string _Hebrew;
 
   [NotNull]
+  [DefaultValue("")]
   public string Name
   {
     get => _Name;
@@ -63,6 +66,7 @@ public class BookRow : AbstractRow
   private string _Name;
 
   [NotNull]
+  [DefaultValue("")]
   public string CommonName
   {
     get => _CommonName;
@@ -76,6 +80,7 @@ public class BookRow : AbstractRow
   private string _CommonName;
 
   [NotNull]
+  [DefaultValue("")]
   public string Translation
   {
     get => _Translation;
@@ -89,6 +94,7 @@ public class BookRow : AbstractRow
   private string _Translation;
 
   [NotNull]
+  [DefaultValue("")]
   public string Lettriq
   {
     get => _Lettriq;
@@ -102,6 +108,7 @@ public class BookRow : AbstractRow
   private string _Lettriq;
 
   [NotNull]
+  [DefaultValue("")]
   public string Memo
   {
     get => _Memo;

@@ -39,6 +39,7 @@ public class ChapterRow : AbstractRow
   private string _BookID;
 
   [NotNull]
+  [DefaultValue("")]
   public string Title
   {
     get => _Title;
@@ -52,6 +53,7 @@ public class ChapterRow : AbstractRow
   private string _Title;
 
   [NotNull]
+  [DefaultValue("")]
   public string Memo
   {
     get => _Memo;
@@ -65,6 +67,7 @@ public class ChapterRow : AbstractRow
   private string _Memo;
 
   [NotNull]
+  [DefaultValue("")]
   public string ELS50
   {
     get => _ELS50;

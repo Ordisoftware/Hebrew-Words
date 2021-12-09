@@ -38,6 +38,7 @@ public class WordRow : AbstractRow
   private string _VerseID;
 
   [NotNull]
+  [DefaultValue("")]
   public string Original
   {
     get => _Original;
@@ -51,6 +52,7 @@ public class WordRow : AbstractRow
   private string _Original;
 
   [NotNull]
+  [DefaultValue("")]
   public string Hebrew
   {
     get => _Hebrew;
@@ -64,6 +66,7 @@ public class WordRow : AbstractRow
   private string _Hebrew;
 
   [NotNull]
+  [DefaultValue("")]
   public string Translation
   {
     get => _Translation;

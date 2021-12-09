@@ -38,6 +38,7 @@ public partial class VerseRow : AbstractRow
   private string _ChapterID;
 
   [NotNull]
+  [DefaultValue("")]
   public string Comment
   {
     get => _Comment;
