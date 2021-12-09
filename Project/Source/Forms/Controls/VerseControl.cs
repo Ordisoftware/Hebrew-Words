@@ -89,22 +89,21 @@ public partial class VerseControl : UserControl
   public void ResetMetrics(Panel container)
   {
     var metrics = MetricsCollection[container];
-    using var graphicsNumber = LabelVerseNumber.CreateGraphics();
-    using var graphicsCommentary = EditCommentary.CreateGraphics();
-    metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", LabelVerseNumber.Font).Width + 10;
     int widthHScroll = new VScrollBar().Width;
-    int delta = 5 + container.Padding.Left + container.Padding.Right;
-    int width = container.ClientSize.Width
-              - delta * 2
-              - Padding.Left - Padding.Right
-              - metrics.LabelVerseNumberWidth;
-    metrics.ControlWidth = container.ClientSize.Width - widthHScroll - delta;
-    metrics.WordControlsPerLine = width / Settings.WordControlWidth;
-    metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", EditCommentary.Font).Height;
-    metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
-    metrics.EditCommentaryMarginLeft = width + Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
+    int width = container.ClientSize.Width - widthHScroll / 4 - container.Padding.Left - container.Padding.Right;
+    //
     metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
+    using var graphicsNumber = LabelVerseNumber.CreateGraphics();
+    metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
+    //
+    metrics.ControlWidth = width;
+    metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
+    //
     metrics.EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
+    using var graphicsCommentary = EditCommentary.CreateGraphics();
+    metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", metrics.EditCommentaryFont).Height;
+    metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
+    metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
   }
 
   private int CreateWordControls()
@@ -167,8 +166,6 @@ public partial class VerseControl : UserControl
   {
     EditCommentary.BackColor = Color.AliceBlue;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
-
-    // TODO create an event assigned by mainform
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }

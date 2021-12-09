@@ -61,10 +61,12 @@ public partial class WordControl : UserControl
     ResetMetricsRequired = false;
     Metrics.LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
     Metrics.EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+    using Graphics graphicsHebrew = LabelHebrew.CreateGraphics();
+    int heightHebrew = TextRenderer.MeasureText(graphicsHebrew, "ql", Metrics.LabelHebrewFont).Height;
     using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
-    int height = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
-    Metrics.EditTranslationHeight = height * ( Settings.VerseWordTranslationLinesCount + 1 );
-    Metrics.TotalHeight = LabelHebrew.Height + Metrics.EditTranslationHeight + 5;
+    int heightTranslation = TextRenderer.MeasureText(graphicsTranslation, "A", Metrics.EditTranslationFont).Height;
+    Metrics.EditTranslationHeight = heightTranslation * ( Settings.VerseWordTranslationLinesCount + 1 );
+    Metrics.TotalHeight = heightHebrew + Metrics.EditTranslationHeight + 5;
     if ( Settings.VerseWordTranslationLinesCount > 1 ) Metrics.TotalHeight += 10;
   }
 
