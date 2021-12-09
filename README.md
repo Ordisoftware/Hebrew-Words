@@ -132,6 +132,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### Soon
 
+- Add theming.
 - Add bookmarks backup/restore.
 - Add book memo and chapter title/memo in DOCX export.
 - Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
@@ -165,6 +166,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add Alt + Left and Right to navigate between verses.
 - Add option to render only current verse or all of the chapter.
 - Add option to set word translation text-box number of lines.
+- Add options to set fonts size.
 - Add filter verses view panel.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
