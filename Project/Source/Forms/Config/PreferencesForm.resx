@@ -151,7 +151,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelWordControlWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>17</value>
   </data>
   <metadata name="LabelMinRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -184,7 +184,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMinRefCount.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>19</value>
   </data>
   <metadata name="LabelMaxRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -217,7 +217,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMaxRefCount.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>21</value>
   </data>
   <metadata name="LabelHistoryCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -250,7 +250,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelHistoryCount.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>23</value>
   </data>
   <metadata name="LabelBookmarksCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -283,7 +283,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelBookmarksCount.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>25</value>
   </data>
   <metadata name="LabelCommentaryLinesCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -316,7 +316,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>29</value>
   </data>
   <metadata name="LabelBackupPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -514,7 +514,106 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelWordtranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>27</value>
+  </data>
+  <metadata name="LabelFontSizeHebrew.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelFontSizeHebrew.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeHebrew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeHebrew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 20</value>
+  </data>
+  <data name="LabelFontSizeHebrew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="LabelFontSizeHebrew.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelFontSizeHebrew.Text" xml:space="preserve">
+    <value>Hebrew font size</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrew.Name" xml:space="preserve">
+    <value>LabelFontSizeHebrew</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrew.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrew.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <metadata name="LabelFontSizeTranslation.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelFontSizeTranslation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeTranslation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 70</value>
+  </data>
+  <data name="LabelFontSizeTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="LabelFontSizeTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelFontSizeTranslation.Text" xml:space="preserve">
+    <value>Translation font size</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslation.Name" xml:space="preserve">
+    <value>LabelFontSizeTranslation</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslation.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslation.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <metadata name="LabelFontSizeComentary.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelFontSizeComentary.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeComentary.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeComentary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 120</value>
+  </data>
+  <data name="LabelFontSizeComentary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 13</value>
+  </data>
+  <data name="LabelFontSizeComentary.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelFontSizeComentary.Text" xml:space="preserve">
+    <value>Commentary font size</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeComentary.Name" xml:space="preserve">
+    <value>LabelFontSizeComentary</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeComentary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeComentary.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeComentary.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>662, 19</value>
@@ -2460,6 +2559,105 @@
   <data name="&gt;&gt;LabelInfoBookmarksCount.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="LabelFontSizeCommentaryInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 142</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LabelFontSizeCommentaryInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeCommentaryInfo.Name" xml:space="preserve">
+    <value>LabelFontSizeCommentaryInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeCommentaryInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeCommentaryInfo.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeCommentaryInfo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 92</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LabelFontSizeTranslationInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslationInfo.Name" xml:space="preserve">
+    <value>LabelFontSizeTranslationInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslationInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslationInfo.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeTranslationInfo.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 42</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LabelFontSizeHebrewInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrewInfo.Name" xml:space="preserve">
+    <value>LabelFontSizeHebrewInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrewInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrewInfo.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSizeHebrewInfo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="LabelInfoWordControlWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2491,7 +2689,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoWordControlWidth.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="LabelInfoWordtranslateLinesCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2524,7 +2722,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="LabelInfoCommentLinesCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2557,7 +2755,70 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoCommentLinesCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
+  </data>
+  <data name="EditFontSizeCommentary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 138</value>
+  </data>
+  <data name="EditFontSizeCommentary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditFontSizeCommentary.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeCommentary.Name" xml:space="preserve">
+    <value>EditFontSizeCommentary</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeCommentary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeCommentary.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeCommentary.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="EditFontSizeTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 88</value>
+  </data>
+  <data name="EditFontSizeTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditFontSizeTranslation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeTranslation.Name" xml:space="preserve">
+    <value>EditFontSizeTranslation</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeTranslation.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeTranslation.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditFontSizeHebrew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 38</value>
+  </data>
+  <data name="EditFontSizeHebrew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditFontSizeHebrew.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeHebrew.Name" xml:space="preserve">
+    <value>EditFontSizeHebrew</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeHebrew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeHebrew.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;EditFontSizeHebrew.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 38</value>
@@ -2578,7 +2839,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="EditSearchMinRefForDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 378</value>
@@ -2599,7 +2860,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditSearchMinRefForDialog.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>18</value>
   </data>
   <data name="EditSearchDisplayMaxRef.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 328</value>
@@ -2620,7 +2881,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditSearchDisplayMaxRef.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>20</value>
   </data>
   <data name="EditHistoryCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 258</value>
@@ -2641,7 +2902,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditHistoryCount.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>22</value>
   </data>
   <data name="EditBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 208</value>
@@ -2662,7 +2923,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditBookmarksCount.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>24</value>
   </data>
   <data name="EditWordTranslateLinesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 88</value>
@@ -2683,7 +2944,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditWordTranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>26</value>
   </data>
   <data name="EditCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 138</value>
@@ -2704,7 +2965,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>28</value>
   </data>
   <data name="TabPageRendering.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -4257,6 +4518,9 @@
   <data name="&gt;&gt;MenuSelectOnlineVerseURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>423, 57</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4319,6 +4583,12 @@
   </data>
   <data name="&gt;&gt;OpenThemeDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

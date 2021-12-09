@@ -163,7 +163,7 @@ partial class MainForm
     {
       case ViewMode.ChapterVerses:
         var control = PanelViewVerses.Controls.OfType<VerseControl>()
-                                     .FirstOrDefault(c => (int)c.LabelVerseNumber.Tag == CurrentReference.Verse?.Number);
+                                     .FirstOrDefault(c => c.Reference.Verse.Number == CurrentReference.Verse?.Number);
         if ( control != null )
         {
           PanelViewVerses.Focus();

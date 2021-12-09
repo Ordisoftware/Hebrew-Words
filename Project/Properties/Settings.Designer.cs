@@ -121,18 +121,6 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Verses")]
-        public global::Ordisoftware.Hebrew.Words.ViewMode CurrentView {
-            get {
-                return ((global::Ordisoftware.Hebrew.Words.ViewMode)(this["CurrentView"]));
-            }
-            set {
-                this["CurrentView"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool UpgradeRequired {
             get {
@@ -1207,6 +1195,54 @@ namespace Ordisoftware.Hebrew.Words.Properties {
             }
             set {
                 this["RenderAllChapterVersesKeep"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ChapterVerses")]
+        public global::Ordisoftware.Hebrew.Words.ViewMode CurrentView {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.ViewMode)(this["CurrentView"]));
+            }
+            set {
+                this["CurrentView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16")]
+        public int FontSizeHebrew {
+            get {
+                return ((int)(this["FontSizeHebrew"]));
+            }
+            set {
+                this["FontSizeHebrew"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int FontSizeTranslation {
+            get {
+                return ((int)(this["FontSizeTranslation"]));
+            }
+            set {
+                this["FontSizeTranslation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public int FontSizeCommentary {
+            get {
+                return ((int)(this["FontSizeCommentary"]));
+            }
+            set {
+                this["FontSizeCommentary"] = value;
             }
         }
     }

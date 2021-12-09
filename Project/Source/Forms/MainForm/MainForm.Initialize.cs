@@ -188,11 +188,11 @@ partial class MainForm : Form
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
     DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-    if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
-      Settings.RenderAllChapterVerses = false;
     Globals.IsExiting = true;
     Globals.IsSessionEnding = true;
     Globals.AllowClose = true;
+    if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
+      Settings.RenderAllChapterVerses = false;
     SystemManager.TryCatch(Settings.Store);
     Interlocks.Release();
     TimerTooltip.Stop();

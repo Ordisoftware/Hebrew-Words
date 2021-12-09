@@ -36,12 +36,12 @@
       this.PanelMainCenter = new System.Windows.Forms.Panel();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageVerses = new System.Windows.Forms.TabPage();
-      this.PanelViewVerses = new System.Windows.Forms.Panel();
+      this.PanelViewVerses = new Ordisoftware.Core.ScrollablePanel();
       this.TabPageTranslations = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
       this.EditChapterTranslation = new Ordisoftware.Core.RichTextBoxEx();
       this.TabPageVerseFiltered = new System.Windows.Forms.TabPage();
-      this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
+      this.PanelViewVerseFiltered = new Ordisoftware.Core.ScrollablePanel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
       this.LabelInfoFilterVerses = new System.Windows.Forms.Button();
@@ -266,15 +266,15 @@
       this.TabPageVerseFiltered.SuspendLayout();
       this.PanelViewVerseFiltered.SuspendLayout();
       this.PanelViewVerseFilters.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).BeginInit();
       this.TabPageSearch.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
@@ -285,15 +285,15 @@
       this.TabPageELS50.SuspendLayout();
       this.PanelViewELS50.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.PanelTitleInner.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -2065,16 +2065,16 @@
       this.PanelViewVerseFiltered.ResumeLayout(false);
       this.PanelViewVerseFilters.ResumeLayout(false);
       this.PanelViewVerseFilters.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).EndInit();
       this.TabPageSearch.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
       this.PanelSearchResultsOuter.ResumeLayout(false);
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -2088,16 +2088,16 @@
       this.PanelViewELS50.ResumeLayout(false);
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.PanelTitleInner.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -2132,8 +2132,8 @@
     private System.Windows.Forms.ComboBox SelectBook;
     private System.Windows.Forms.ComboBox SelectChapter;
     private System.Windows.Forms.ComboBox SelectSearchInBook;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStripVerse;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStripWord;
+    internal System.Windows.Forms.ContextMenuStrip ContextMenuStripVerse;
+    internal System.Windows.Forms.ContextMenuStrip ContextMenuStripWord;
     private System.Windows.Forms.Label LabelBookTranslation;
     private System.Windows.Forms.Label LabelChapterELS50;
     private System.Windows.Forms.Label LabelChapterMemo;
@@ -2248,7 +2248,7 @@
     private ToolStripMenuItem ActionOpenExportFolder;
     public Ordisoftware.Hebrew.LettersControl EditLetters;
     public System.Windows.Forms.Button ActionSearchRun;
-    public System.Windows.Forms.Panel PanelViewVerses;
+    public Ordisoftware.Core.ScrollablePanel PanelViewVerses;
     public System.Windows.Forms.TabControl SelectSearchType;
     public System.Windows.Forms.TabPage SelectSearchTypeHebrew;
     public System.Windows.Forms.Timer TimerAutoSave;
@@ -2280,7 +2280,7 @@
     private RadioButton SelectSearchTranslationOnlyTranslations;
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
-    public Panel PanelViewVerseFiltered;
+    public Ordisoftware.Core.ScrollablePanel PanelViewVerseFiltered;
     private ToolStripSeparator Sep2;
     private ComboBox SelectVerse;
     private ComboBoxNavigator SelectVerseNavigator;

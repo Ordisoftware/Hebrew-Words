@@ -47,7 +47,20 @@ partial class MainForm
         PanelViewVerses.Visible = false;
         SetFormDisabled(true);
       }
-      RenderVerses(PanelViewVerses, references);
+      PanelViewVerses.DisposeAllControls();
+      if ( references.Count > 0 )
+      {
+        int y = 0;
+        var controls = new VerseControl[references.Count];
+        for ( int index = 0; index < references.Count; index++ )
+        {
+          var control = new VerseControl(PanelViewVerses, references[index]);
+          control.Top = y;
+          y += control.Height;
+          controls[index] = control;
+        }
+        PanelViewVerses.Controls.AddRange(controls);
+      }
     }
     catch ( Exception ex )
     {
