@@ -36,12 +36,12 @@
       this.PanelMainCenter = new System.Windows.Forms.Panel();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageVerses = new System.Windows.Forms.TabPage();
-      this.PanelViewVerses = new System.Windows.Forms.Panel();
+      this.PanelViewVerses = new Ordisoftware.Core.ScrollablePanel();
       this.TabPageTranslations = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
       this.EditChapterTranslation = new Ordisoftware.Core.RichTextBoxEx();
       this.TabPageVerseFiltered = new System.Windows.Forms.TabPage();
-      this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
+      this.PanelViewVerseFiltered = new Ordisoftware.Core.ScrollablePanel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
       this.LabelInfoFilterVerses = new System.Windows.Forms.Button();
@@ -2248,7 +2248,7 @@
     private ToolStripMenuItem ActionOpenExportFolder;
     public Ordisoftware.Hebrew.LettersControl EditLetters;
     public System.Windows.Forms.Button ActionSearchRun;
-    public System.Windows.Forms.Panel PanelViewVerses;
+    public Ordisoftware.Core.ScrollablePanel PanelViewVerses;
     public System.Windows.Forms.TabControl SelectSearchType;
     public System.Windows.Forms.TabPage SelectSearchTypeHebrew;
     public System.Windows.Forms.Timer TimerAutoSave;
@@ -2280,7 +2280,7 @@
     private RadioButton SelectSearchTranslationOnlyTranslations;
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
-    public Panel PanelViewVerseFiltered;
+    public Ordisoftware.Core.ScrollablePanel PanelViewVerseFiltered;
     private ToolStripSeparator Sep2;
     private ComboBox SelectVerse;
     private ComboBoxNavigator SelectVerseNavigator;

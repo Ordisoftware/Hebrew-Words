@@ -14,6 +14,9 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+/// <summary>
+/// The application's main window.
+/// </summary>
 partial class MainForm
 {
 
@@ -22,6 +25,9 @@ partial class MainForm
   /// </summary>
   private readonly Properties.Settings Settings = Program.Settings;
 
+  /// <summary>
+  /// Indicates the user parashot table.
+  /// </summary>
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
   /// <summary>
@@ -49,31 +55,79 @@ partial class MainForm
   /// </summary>
   private int PreviousSeachPagingPosition = -1;
 
-  internal Bookmarks Bookmarks { get; private set; }
-  internal History History { get; private set; }
-
+  /// <summary>
+  /// Indicates bookmarks menu item first index.
+  /// </summary>
   private int BookmarksMenuFirstIndex;
 
+  /// <summary>
+  /// Indicates the bookmarks.
+  /// </summary>
+  private Bookmarks Bookmarks;
+
+  /// <summary>
+  /// Indicates the history.
+  /// </summary>
+  private History History;
+
+  /// <summary>
+  /// Indicates the search results.
+  /// </summary>
   private IEnumerable<ReferenceItem> SearchResults;
 
+  /// <summary>
+  /// Indicates the number of search results.
+  /// </summary>
   public int SearchResultsCount { get; private set; }
 
+  /// <summary>
+  /// Indicates the paging count disable form.
+  /// </summary>
   private readonly int PagingCountDisableForm = 50;
+
+  /// <summary>
+  /// Indicates the current paging.
+  /// </summary>
   private int PagingCurrent;
+
+  /// <summary>
+  /// Indicates the paging count.
+  /// </summary>
   private int PagingCount;
 
+  /// <summary>
+  /// Indicates the check word delegate.
+  /// </summary>
   private Func<WordRow, bool> CheckWord;
+
+  /// <summary>
+  /// Indicates the check verse delegate.
+  /// </summary>
   private Func<VerseRow, bool> CheckVerse;
 
+  /// <summary>
+  /// Indicates the first search word (no final letter).
+  /// </summary>
   private string SearchWord1;
+
+  /// <summary>
+  /// Indicates the second search word (with final letter).
+  /// </summary>
   private string SearchWord2;
 
+  /// <summary>
+  /// Indicates the hebrew font 12.
+  /// </summary>
   private readonly Font HebrewFont12 = new("Hebrew", 12f);
 
+  /// <summary>
+  /// Indicates the latin font 10.
+  /// </summary>
   private readonly Font LatinFont10 = new("Verdana", 10f);
 
+  /// <summary>
+  /// The latin font 8.
+  /// </summary>
   private readonly Font LatinFont8 = new("Verdana", 8f);
-
-  private readonly Font VerseNumberFont = new("Calibri", 13f, FontStyle.Bold);
 
 }

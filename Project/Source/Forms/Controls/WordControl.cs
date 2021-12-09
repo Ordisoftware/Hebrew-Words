@@ -19,45 +19,47 @@ public partial class WordControl : UserControl
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static internal bool ResetVisual = true;
-  static private int TranslationEditHeight;
+  static internal bool ResetMetricsRequired = true;
+  static private int EditTranslationHeight;
   static private int TotalHeight;
   static Font LabelHebrewFont;
   static Font EditTranslationFont;
 
-  public ReferenceItem Reference { get; private set; }
+  public ReferenceItem Reference { get; init; }
 
   public WordControl()
   {
     InitializeComponent();
-    if ( ResetVisual )
-    {
-      LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
-      EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
-      using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
-      int height = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
-      TranslationEditHeight = height * ( Settings.VerseWordTranslationLinesCount + 1 );
-      TotalHeight = LabelHebrew.Height + TranslationEditHeight + 5;
-      if ( Settings.VerseWordTranslationLinesCount > 1 ) TotalHeight += 10;
-      ResetVisual = false;
-    }
-    if ( Settings.VerseWordTranslationLinesCount > 1 )
-    {
-      EditTranslation.Multiline = true;
-      EditTranslation.WordWrap = true;
-      EditTranslation.ScrollBars = ScrollBars.Vertical;
-      EditTranslation.Height = TranslationEditHeight;
-    }
-    Height = TotalHeight;
-    LabelHebrew.Font = LabelHebrewFont;
-    EditTranslationFont = EditTranslationFont;
   }
 
   public WordControl(ReferenceItem reference) : this()
   {
     Reference = reference;
+    if ( ResetMetricsRequired ) ResetMetrics();
+    if ( Settings.VerseWordTranslationLinesCount > 1 )
+    {
+      EditTranslation.Multiline = true;
+      EditTranslation.WordWrap = true;
+      EditTranslation.ScrollBars = ScrollBars.Vertical;
+      EditTranslation.Height = EditTranslationHeight;
+    }
+    Height = TotalHeight;
+    LabelHebrew.Font = LabelHebrewFont;
+    EditTranslation.Font = EditTranslationFont;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
+  }
+
+  public void ResetMetrics()
+  {
+    ResetMetricsRequired = false;
+    LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
+    EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
+    using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
+    int height = TextRenderer.MeasureText(graphicsTranslation, "A", EditTranslation.Font).Height;
+    EditTranslationHeight = height * ( Settings.VerseWordTranslationLinesCount + 1 );
+    TotalHeight = LabelHebrew.Height + EditTranslationHeight + 5;
+    if ( Settings.VerseWordTranslationLinesCount > 1 ) TotalHeight += 10;
   }
 
   public new bool Focus()

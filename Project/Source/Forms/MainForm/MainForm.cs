@@ -546,6 +546,8 @@ partial class MainForm : Form
     int book = CurrentReference.Book.Number;
     int chapter = CurrentReference.Chapter.Number;
     int verse = CurrentReference.Verse?.Number ?? 1;
+    VerseControl.ResetMetricsRequired = true;
+    WordControl.ResetMetricsRequired = true;
     GoTo(book, chapter, verse, true);
   }
 

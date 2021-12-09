@@ -19,86 +19,82 @@ public partial class VerseControl : UserControl
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static internal bool ResetVisual = true;
-  static int CommentaryTextHeight;
-  static int CommentaryHeight;
-  static int NumberWidth;
-  static int CommentMarginLeft;
+  static internal bool ResetMetricsRequired = true;
+  static int EditCommentaryTextHeight;
+  static int EditCommentaryHeight;
+  static int LabelVerseNumberWidth;
+  static int EditCommentaryMarginLeft;
   static int WordControlsPerLine;
   static Font LabelVerseNumberFont;
   static Font EditCommentaryFont;
 
-  public readonly WordControl[] WordControls;
+  public WordControl[] WordControls { get; init; }
 
-  public readonly ReferenceItem Reference;
+  public ReferenceItem Reference { get; init; }
 
   public VerseControl()
   {
     InitializeComponent();
   }
 
-  public VerseControl(Panel container, ReferenceItem reference)
+  public VerseControl(Panel container, ReferenceItem reference) : this()
   {
-    InitializeComponent();
     Reference = reference;
-    WordControls = new WordControl[reference?.Verse?.Words?.Count ?? 0];
-    if ( ResetVisual ) // TODO update ResetTextHeight after win resized & maximized
-    {
-      using var graphicsNumber = LabelVerseNumber.CreateGraphics();
-      using var graphicsCommentary = EditCommentary.CreateGraphics();
-      NumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", LabelVerseNumber.Font).Width + 10;
-      int width = container.ClientSize.Width - container.Padding.Left - container.Padding.Right - Padding.Left - Padding.Right - NumberWidth;
-      WordControlsPerLine = width / Settings.WordControlWidth;
-      CommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", EditCommentary.Font).Height;
-      CommentaryHeight = CommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
-      CommentMarginLeft = width + Padding.Left - Settings.WordControlWidth * WordControlsPerLine;
-      LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
-      EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
-      ResetVisual = false;
-    }
+    WordControls = new WordControl[reference.Verse.Words.Count];
+    Width = container.ClientSize.Width;
+    if ( ResetMetricsRequired ) ResetMetrics(container);   // TODO update ResetTextHeight after win resized & maximized
     if ( Settings.VerseCommentaryLinesCount > 1 )
     {
       EditCommentary.Multiline = true;
       EditCommentary.WordWrap = true;
       EditCommentary.ScrollBars = ScrollBars.Vertical;
-      PanelComment.Height = CommentaryHeight;
+      PanelComment.Height = EditCommentaryHeight;
     }
-    int numberOfLines = reference.Verse.Words.Count / WordControlsPerLine;
-    if ( reference.Verse.Words.Count % WordControlsPerLine > 0 ) numberOfLines++;
-    LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
+    int numberOfLines = WordControls.Length / WordControlsPerLine;
+    if ( WordControls.Length % WordControlsPerLine > 0 ) numberOfLines++;
     LabelVerseNumber.Font = LabelVerseNumberFont;
-    EditCommentaryFont = EditCommentaryFont;
-    if ( reference != null && reference.Verse != null )
-    {
-      LabelVerseNumber.Text = reference.Verse.Number.ToString();
-      LabelVerseNumber.Tag = reference.Verse.Number;
-    }
-    int count = Reference.Verse.Words.Count;
-    int wordControlWidth = Program.Settings.WordControlWidth;
-    WordControl wordcontrol = null;
-    for ( int indexWord = 0; indexWord < count; indexWord++ )
-    {
-      wordcontrol = new WordControl(new ReferenceItem(Reference, Reference.Verse.Words[indexWord]));
-      wordcontrol.LabelHebrew.ContextMenuStrip = MainForm.Instance.ContextMenuStripWord;
-      wordcontrol.Width = wordControlWidth;
-      WordControls[indexWord] = wordcontrol;
-    }
-    PanelWords.Controls.AddRange(WordControls);
-    LabelVerseNumber.Width = NumberWidth;
-    EditCommentary.Text = Reference.Verse.Comment;
-    EditCommentary.DataBindings.Add("Text", Reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
-    PanelCommentLeft.Width = CommentMarginLeft;
-    if ( wordcontrol != null )
-      Height = Padding.Top + Padding.Left + Padding.Bottom
-             + wordcontrol.Height * numberOfLines
-             + EditCommentary.Height;
-    Dock = DockStyle.Top;
-    container.Controls.Add(this);
-    BringToFront();
+    LabelVerseNumber.Text = reference.Verse.Number.ToString();
+    LabelVerseNumber.Width = LabelVerseNumberWidth;
+    LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
+    EditCommentary.Font = EditCommentaryFont;
+    EditCommentary.Text = reference.Verse.Comment;
+    EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
+    PanelCommentLeft.Width = EditCommentaryMarginLeft;
+    Height = Padding.Top + Padding.Left + Padding.Bottom + CreateWordControls() * numberOfLines + EditCommentary.Height;
   }
 
-  private void VerseControl_Load(object sender, EventArgs e)
+  public void ResetMetrics(Panel container)
   {
+    using var graphicsNumber = LabelVerseNumber.CreateGraphics();
+    using var graphicsCommentary = EditCommentary.CreateGraphics();
+    LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", LabelVerseNumber.Font).Width + 10;
+    int width = container.ClientSize.Width + new VScrollBar().Width
+              - container.Padding.Left - container.Padding.Right
+              - Padding.Left - Padding.Right
+              - LabelVerseNumberWidth;
+    WordControlsPerLine = width / Settings.WordControlWidth;
+    EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", EditCommentary.Font).Height;
+    EditCommentaryHeight = EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
+    EditCommentaryMarginLeft = width + Padding.Left - Settings.WordControlWidth * WordControlsPerLine;
+    LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
+    EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
+    ResetMetricsRequired = false;
+  }
+
+  private int CreateWordControls()
+  {
+    WordControl control = null;
+    int width = Settings.WordControlWidth;
+    int count = WordControls.Length;
+    for ( int index = 0; index < count; index++ )
+    {
+      control = new WordControl(new ReferenceItem(Reference, Reference.Verse.Words[index]));
+      control.LabelHebrew.ContextMenuStrip = MainForm.Instance.ContextMenuStripWord;
+      control.Width = width;
+      WordControls[index] = control;
+    }
+    PanelWords.Controls.AddRange(WordControls);
+    return control.Height;
   }
 
   private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)

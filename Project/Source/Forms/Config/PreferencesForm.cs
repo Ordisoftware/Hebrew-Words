@@ -335,12 +335,12 @@ partial class PreferencesForm : Form
 
   private void EditRenderWordControl_ValueChanged(object sender, EventArgs e)
   {
-    WordControl.ResetVisual = true;
+    WordControl.ResetMetricsRequired = true;
   }
 
   private void EditRenderVerseControl_ValueChanged(object sender, EventArgs e)
   {
-    VerseControl.ResetVisual = true;
+    VerseControl.ResetMetricsRequired = true;
   }
 
   #endregion
