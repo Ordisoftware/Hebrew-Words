@@ -90,7 +90,7 @@ public partial class VerseControl : UserControl
   {
     var metrics = MetricsCollection[container];
     int widthHScroll = new VScrollBar().Width;
-    int width = container.ClientSize.Width - widthHScroll / 4 - container.Padding.Left - container.Padding.Right;
+    int width = container.ClientSize.Width - widthHScroll / 2 - container.Padding.Left - container.Padding.Right;
     //
     metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
     using var graphicsNumber = LabelVerseNumber.CreateGraphics();
