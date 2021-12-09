@@ -32,24 +32,24 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportVerseForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelMain = new System.Windows.Forms.SplitContainer();
-      this.EditSource = new System.Windows.Forms.TextBox();
+      this.EditSource = new Ordisoftware.Core.TextBoxEx();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnCurrentTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnImportedTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.importResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.WordMatchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionAnalyse = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.importResultsBindingSource ) ).BeginInit();
-      this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordMatchesBindingSource)).BeginInit();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -73,6 +73,7 @@
       // 
       // EditSource
       // 
+      this.EditSource.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditSource, "EditSource");
       this.EditSource.Name = "EditSource";
       this.EditSource.TextChanged += new System.EventHandler(this.EditSource_TextChanged);
@@ -88,7 +89,7 @@
             this.ColumnHebrew,
             this.ColumnCurrentTranslation,
             this.ColumnImportedTranslation});
-      this.DataGridView.DataSource = this.importResultsBindingSource;
+      this.DataGridView.DataSource = this.WordMatchesBindingSource;
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.RowHeadersVisible = false;
@@ -98,7 +99,7 @@
       // 
       this.ColumnHebrew.DataPropertyName = "Hebrew";
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
@@ -118,18 +119,18 @@
       resources.ApplyResources(this.ColumnImportedTranslation, "ColumnImportedTranslation");
       this.ColumnImportedTranslation.Name = "ColumnImportedTranslation";
       // 
-      // importResultsBindingSource
+      // WordMatchesBindingSource
       // 
-      this.importResultsBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.ImportverseResults);
+      this.WordMatchesBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.ImportWordMatch);
       // 
-      // panel1
+      // PanelBottom
       // 
-      this.panel1.Controls.Add(this.ActionHelp);
-      this.panel1.Controls.Add(this.ActionAnalyse);
-      this.panel1.Controls.Add(this.ActionOK);
-      this.panel1.Controls.Add(this.ActionCancel);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      this.PanelBottom.Controls.Add(this.ActionHelp);
+      this.PanelBottom.Controls.Add(this.ActionAnalyse);
+      this.PanelBottom.Controls.Add(this.ActionOK);
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionHelp
       // 
@@ -164,37 +165,38 @@
       this.CancelButton = this.ActionCancel;
       this.ClientSize = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ImportVerseFormSize;
       this.Controls.Add(this.PanelMain);
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "ImportVerseFormSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.Name = "ImportVerseForm";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportVerseForm_FormClosed);
+      this.Load += new System.EventHandler(this.ImportVerseForm_Load);
       this.Shown += new System.EventHandler(this.ImportVerseForm_Shown);
       this.PanelMain.Panel1.ResumeLayout(false);
       this.PanelMain.Panel1.PerformLayout();
       this.PanelMain.Panel2.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.importResultsBindingSource ) ).EndInit();
-      this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordMatchesBindingSource)).EndInit();
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.SplitContainer PanelMain;
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.TextBox EditSource;
+    private Ordisoftware.Core.TextBoxEx EditSource;
     private System.Windows.Forms.Button ActionAnalyse;
     private System.Windows.Forms.DataGridView DataGridView;
-    private System.Windows.Forms.BindingSource importResultsBindingSource;
+    private System.Windows.Forms.BindingSource WordMatchesBindingSource;
     private System.Windows.Forms.Button ActionHelp;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCurrentTranslation;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ColumnImportedTranslation;
+    private DataGridViewTextBoxColumn ColumnHebrew;
+    private DataGridViewTextBoxColumn ColumnCurrentTranslation;
+    private DataGridViewTextBoxColumn ColumnImportedTranslation;
   }
 }

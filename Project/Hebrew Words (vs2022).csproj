@@ -451,6 +451,7 @@
     <Compile Include="Source\Forms\Controls\VerseControl.Designer.cs">
       <DependentUpon>VerseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Entities\ImportWordMatch.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -490,11 +491,7 @@
     <Compile Include="Source\Forms\Boxes\SelectReferenceForm.designer.cs">
       <DependentUpon>SelectReferenceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Import\ImportVerseResults.cs" />
     <Compile Include="Source\Forms\Import\ImportVerseForm.Analyse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Import\ImportVerseForm.Ghost.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Import\ImportVerseForm.cs">
@@ -816,7 +813,7 @@
     <None Include="Licenses\MPL 2.0.rtf" />
     <None Include="Packages.config" />
     <None Include="Properties\DataSources\BookRow.datasource" />
-    <None Include="Properties\DataSources\ImportResults.datasource" />
+    <None Include="Properties\DataSources\ImportWordMatch.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

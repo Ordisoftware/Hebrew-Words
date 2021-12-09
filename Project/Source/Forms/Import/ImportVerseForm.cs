@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class ImportVerseForm : Form
@@ -20,20 +20,14 @@ partial class ImportVerseForm : Form
   static public void Run(ReferenceItem reference)
   {
     var form = new ImportVerseForm(reference);
-    var result = form.ShowDialog();
-    if ( result == DialogResult.Cancel )
-      ; //TODO cancel changes form.DataSet.RejectChanges();
-    else
-    {
-      // TODO apply
-      //if ( form.DataSet.HasChanges() )
-      //{
-      //  MainForm.Instance.TableAdapterManager.UpdateAll(form.DataSet);
-      //  foreach ( WordControl control in MainForm.Instance.PanelViewVerses.Controls.OfType<WordControl>() )
-      //    control.EditTranslation.Text = control.Reference.Word.Translation;
-      //}
-      MainForm.Instance.ActionSave.PerformClick();
-    }
+    if ( form.ShowDialog() != DialogResult.OK ) return;
+    var pairs = from word in reference.Verse.Words
+                from wordNew in form.WordMatches
+                where word.Number == wordNew.Number
+                select (word, wordNew);
+    foreach ( var pair in pairs )
+      pair.word.Translation = pair.wordNew.ImportedTranslation;
+    MainForm.Instance.ActionSave.PerformClick();
   }
 
   private bool IsResultValid;
@@ -45,19 +39,21 @@ partial class ImportVerseForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     ActiveControl = EditSource;
-    this.CenterToMainFormElseScreen();
   }
 
-  private ImportVerseForm(ReferenceItem reference)
+  private ImportVerseForm(ReferenceItem reference) : this()
   {
     Text += " - " + reference.ToString();
     Reference = reference;
-    CreateGhost();
+  }
+
+  private void ImportVerseForm_Load(object sender, EventArgs e)
+  {
+    this.CenterToMainFormElseScreen();
   }
 
   private void ImportVerseForm_FormClosed(object sender, FormClosedEventArgs e)
   {
-    DeleteGhost();
     SystemManager.TryCatch(Program.Settings.Save);
   }
 
@@ -101,9 +97,9 @@ partial class ImportVerseForm : Form
   private void ActionOK_Click(object sender, EventArgs e)
   {
     var wordsReference = Reference.Verse.Words;
-    for ( int index = 0; index < ImportResults.Count; index++ )
-      if ( ImportResults[index].Hebrew == wordsReference[index].Hebrew )
-        wordsReference[index].Translation = ImportResults[index].ImportedTranslation;
+    for ( int index = 0; index < WordMatches.Count; index++ )
+      if ( WordMatches[index].Hebrew == wordsReference[index].Hebrew )
+        wordsReference[index].Translation = WordMatches[index].ImportedTranslation;
     Close();
   }
 

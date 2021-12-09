@@ -92,12 +92,12 @@ static partial class AppTranslations
   {
     [Language.EN] = "Incorrect elements." + Globals.NL2 +
                     "Words count: {0}" + Globals.NL +
-                    "Translations count: {1}" + Globals.NL +
+                    "Translations count: {1}" + Globals.NL2 +
                     "Must be equal.",
 
     [Language.FR] = "Elements incorrects." + Globals.NL2 +
                     "Nombre de mots: {0}" + Globals.NL +
-                    "Nombre de translations: {1}" + Globals.NL +
+                    "Nombre de translations: {1}" + Globals.NL2 +
                     "Doit être égal."
   };
 
@@ -110,7 +110,7 @@ static partial class AppTranslations
 
     [Language.FR] = "Elements incorrects." + Globals.NL2 +
                     "Nombre de mots du verset: {0}" + Globals.NL +
-                    "Nombre de mots importés: {1}" + Globals.NL + Globals.NL +
+                    "Nombre de mots importés: {1}" + Globals.NL2 +
                     "Doit être égal."
   };
 

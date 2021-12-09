@@ -183,11 +183,8 @@
   </data>
   <data name="LabelSearchTranslationHelp.Text" xml:space="preserve">
     <value>Vous pouvez chercher une ou plusieurs expression(s).
-
 Chaque expression doit contenir au moins deux lettres.
-
 Les expressions sont séparées par une virgule.
-
 Un verset est trouvé si la traduction d'un de ses mots contient une expression.</value>
   </data>
   <data name="SelectSearchTypeVerses.Text" xml:space="preserve">
