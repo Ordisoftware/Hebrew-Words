@@ -158,13 +158,13 @@
     <value>310, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copier le nom phonétique avec la traduction</value>
+    <value>Copier les caractères latins</value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 22</value>
   </data>
   <data name="ActionCopyFontChars.Text" xml:space="preserve">
-    <value>Copier les caractères de la fonte Hebrew</value>
+    <value>Copier les caractères hébreux</value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 22</value>

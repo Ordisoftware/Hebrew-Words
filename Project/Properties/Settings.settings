@@ -135,7 +135,7 @@
       <Value Profile="(Default)">492, 266</Value>
     </Setting>
     <Setting Name="EditBooksFormClientSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">692, 666</Value>
+      <Value Profile="(Default)">684, 661</Value>
     </Setting>
     <Setting Name="GoToMasterBookmarkAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

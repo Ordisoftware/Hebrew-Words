@@ -1614,7 +1614,7 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
+    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(HebrewTools.RemoveNumberingAndDiacritics(word).Word, false);
     EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
   }
 

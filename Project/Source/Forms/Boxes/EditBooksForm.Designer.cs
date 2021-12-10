@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
-      this.EditBooks = new System.Windows.Forms.DataGridView();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,34 +48,27 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
+      this.EditBooks = new System.Windows.Forms.DataGridView();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
       this.SuspendLayout();
-      // 
-      // EditBooks
-      // 
-      this.EditBooks.AllowUserToAddRows = false;
-      this.EditBooks.AllowUserToDeleteRows = false;
-      this.EditBooks.AllowUserToResizeRows = false;
-      resources.ApplyResources(this.EditBooks, "EditBooks");
-      this.EditBooks.ContextMenuStrip = this.ContextMenuStripResults;
-      this.EditBooks.MultiSelect = false;
-      this.EditBooks.Name = "EditBooks";
-      this.EditBooks.RowHeadersVisible = false;
-      this.EditBooks.RowTemplate.Height = 28;
-      this.EditBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.EditBooks.ShowCellToolTips = false;
-      this.EditBooks.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
-      this.EditBooks.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditBooks_CellMouseDown);
       // 
       // ContextMenuStripResults
       // 
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
-            this.ActionSearchWord,
             this.toolStripSeparator2,
+            this.ActionSearchWord,
+            this.toolStripSeparator5,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator1,
             this.ActionCopyName,
@@ -92,7 +85,6 @@
       // 
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
-      this.ActionSearchOnline.Click += new System.EventHandler(this.ActionSearchOnline_Click);
       // 
       // ActionSearchWord
       // 
@@ -184,6 +176,73 @@
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
+      // EditBooks
+      // 
+      this.EditBooks.AllowUserToAddRows = false;
+      this.EditBooks.AllowUserToDeleteRows = false;
+      this.EditBooks.AllowUserToResizeRows = false;
+      this.EditBooks.AutoGenerateColumns = false;
+      resources.ApplyResources(this.EditBooks, "EditBooks");
+      this.EditBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnNumber,
+            this.ColumnHebrew,
+            this.ColumnName,
+            this.ColumnTranslation});
+      this.EditBooks.ContextMenuStrip = this.ContextMenuStripResults;
+      this.EditBooks.DataSource = this.BookRowBindingSource;
+      this.EditBooks.MultiSelect = false;
+      this.EditBooks.Name = "EditBooks";
+      this.EditBooks.RowHeadersVisible = false;
+      this.EditBooks.RowTemplate.Height = 28;
+      this.EditBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.EditBooks.ShowCellToolTips = false;
+      this.EditBooks.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
+      this.EditBooks.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditBooks_CellMouseDown);
+      // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // ColumnNumber
+      // 
+      this.ColumnNumber.DataPropertyName = "Number";
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
+      this.ColumnNumber.Name = "ColumnNumber";
+      this.ColumnNumber.ReadOnly = true;
+      this.ColumnNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnHebrew
+      // 
+      this.ColumnHebrew.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
+      this.ColumnHebrew.Name = "ColumnHebrew";
+      this.ColumnHebrew.ReadOnly = true;
+      this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnName
+      // 
+      this.ColumnName.DataPropertyName = "Name";
+      resources.ApplyResources(this.ColumnName, "ColumnName");
+      this.ColumnName.Name = "ColumnName";
+      this.ColumnName.ReadOnly = true;
+      this.ColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnTranslation
+      // 
+      this.ColumnTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnTranslation.DataPropertyName = "Translation";
+      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
+      this.ColumnTranslation.Name = "ColumnTranslation";
+      this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // BookRowBindingSource
+      // 
+      this.BookRowBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      // 
       // EditBooksForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -200,17 +259,17 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditBooksForm_FormClosing);
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
       this.ContextMenuStripResults.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.PanelMain.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
 
     #endregion
-    private System.Windows.Forms.DataGridView EditBooks;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripResults;
@@ -228,5 +287,12 @@
     private System.Windows.Forms.LinkLabel ActionRestoreCommonNames;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem ActionOpen;
+    private BindingSource BookRowBindingSource;
+    private DataGridView EditBooks;
+    private DataGridViewTextBoxColumn ColumnNumber;
+    private DataGridViewTextBoxColumn ColumnHebrew;
+    private DataGridViewTextBoxColumn ColumnName;
+    private DataGridViewTextBoxColumn ColumnTranslation;
+    private ToolStripSeparator toolStripSeparator5;
   }
 }
