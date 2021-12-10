@@ -25,6 +25,21 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
   public VerseRow Verse { get; set; }
   public WordRow Word { get; set; }
 
+  private void Initialize(int book, int chapter, int verse, int word)
+  {
+    try
+    {
+      Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
+      Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
+      Verse = Chapter.Verses?.Find(v => v.Number == verse);
+      Word = Verse?.Words?.Find(w => w.Number == word);
+    }
+    catch ( Exception ex )
+    {
+      throw new Exception(AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message), ex);
+    }
+  }
+
   private ReferenceItem()
   {
   }
@@ -60,17 +75,13 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
 
   public ReferenceItem(int book, int chapter, int verse, int word)
   {
-    try
-    {
-      Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
-      Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
-      Verse = Chapter.Verses?.Find(v => v.Number == verse);
-      Word = Verse?.Words?.Find(w => w.Number == word);
-    }
-    catch ( Exception ex )
-    {
-      throw new Exception(AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message), ex);
-    }
+    Initialize(book, chapter, verse, word);
+  }
+
+  public ReferenceItem(string reference)
+  {
+    int[] items = reference.Split('.').Select(int.Parse).ToArray();
+    Initialize(items[0], items[1], items[2], 0);
   }
 
 }

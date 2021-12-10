@@ -44,23 +44,18 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.LabelFilterVerse = new System.Windows.Forms.Label();
-      this.LabelFilterChapter = new System.Windows.Forms.Label();
-      this.SelectFilterBook = new System.Windows.Forms.ComboBox();
+      this.LabelVerse = new System.Windows.Forms.Label();
+      this.LabelChapter = new System.Windows.Forms.Label();
+      this.SelectBook = new System.Windows.Forms.ComboBox();
       this.FilterBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.LabelFilterBook = new System.Windows.Forms.Label();
-      this.SelectFilterChapter = new System.Windows.Forms.ComboBox();
+      this.LabelBook = new System.Windows.Forms.Label();
+      this.SelectChapter = new System.Windows.Forms.ComboBox();
       this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.SelectFilterVerse = new System.Windows.Forms.ComboBox();
+      this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
-      this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
-      this.EditFilterBook = new System.Windows.Forms.TextBox();
-      this.EditFilterChapter = new System.Windows.Forms.TextBox();
-      this.EditFilterVerse = new System.Windows.Forms.TextBox();
-      this.ActionClearFilterBook = new System.Windows.Forms.Button();
-      this.ActionClearFilterChapter = new System.Windows.Forms.Button();
-      this.ActionClearFilterVerse = new System.Windows.Forms.Button();
+      this.EditReference = new System.Windows.Forms.TextBox();
+      this.LabelReference = new System.Windows.Forms.Label();
+      this.LabelReferenceInfo = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
@@ -88,145 +83,93 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
-      // LabelFilterVerse
+      // LabelVerse
       // 
-      resources.ApplyResources(this.LabelFilterVerse, "LabelFilterVerse");
-      this.LabelFilterVerse.Name = "LabelFilterVerse";
+      resources.ApplyResources(this.LabelVerse, "LabelVerse");
+      this.LabelVerse.Name = "LabelVerse";
       // 
-      // LabelFilterChapter
+      // LabelChapter
       // 
-      resources.ApplyResources(this.LabelFilterChapter, "LabelFilterChapter");
-      this.LabelFilterChapter.Name = "LabelFilterChapter";
+      resources.ApplyResources(this.LabelChapter, "LabelChapter");
+      this.LabelChapter.Name = "LabelChapter";
       // 
-      // SelectFilterBook
+      // SelectBook
       // 
-      this.SelectFilterBook.DataSource = this.FilterBooksBindingSource;
-      this.SelectFilterBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectFilterBook.DropDownWidth = 500;
-      this.SelectFilterBook.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectFilterBook, "SelectFilterBook");
-      this.SelectFilterBook.Name = "SelectFilterBook";
-      this.SelectFilterBook.SelectedIndexChanged += new System.EventHandler(this.SelectFilterBook_SelectedIndexChanged);
+      resources.ApplyResources(this.SelectBook, "SelectBook");
+      this.SelectBook.DataSource = this.FilterBooksBindingSource;
+      this.SelectBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectBook.DropDownWidth = 500;
+      this.SelectBook.FormattingEnabled = true;
+      this.SelectBook.Name = "SelectBook";
       // 
       // FilterBooksBindingSource
       // 
       this.FilterBooksBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
       // 
-      // LabelFilterBook
+      // LabelBook
       // 
-      resources.ApplyResources(this.LabelFilterBook, "LabelFilterBook");
-      this.LabelFilterBook.Name = "LabelFilterBook";
+      resources.ApplyResources(this.LabelBook, "LabelBook");
+      this.LabelBook.Name = "LabelBook";
       // 
-      // SelectFilterChapter
+      // SelectChapter
       // 
-      this.SelectFilterChapter.DataSource = this.FilterChaptersBindingSource;
-      this.SelectFilterChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectFilterChapter.DropDownWidth = 500;
-      this.SelectFilterChapter.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectFilterChapter, "SelectFilterChapter");
-      this.SelectFilterChapter.Name = "SelectFilterChapter";
-      this.SelectFilterChapter.SelectedIndexChanged += new System.EventHandler(this.SelectFilterChapter_SelectedIndexChanged);
+      resources.ApplyResources(this.SelectChapter, "SelectChapter");
+      this.SelectChapter.DataSource = this.FilterChaptersBindingSource;
+      this.SelectChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectChapter.DropDownWidth = 500;
+      this.SelectChapter.FormattingEnabled = true;
+      this.SelectChapter.Name = "SelectChapter";
       // 
       // FilterChaptersBindingSource
       // 
       this.FilterChaptersBindingSource.DataMember = "Chapters";
       this.FilterChaptersBindingSource.DataSource = this.FilterBooksBindingSource;
       // 
-      // SelectFilterVerse
+      // SelectVerse
       // 
-      this.SelectFilterVerse.DataSource = this.FilterVersesBindingSource;
-      this.SelectFilterVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectFilterVerse.DropDownWidth = 500;
-      this.SelectFilterVerse.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectFilterVerse, "SelectFilterVerse");
-      this.SelectFilterVerse.Name = "SelectFilterVerse";
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
+      this.SelectVerse.DataSource = this.FilterVersesBindingSource;
+      this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectVerse.DropDownWidth = 500;
+      this.SelectVerse.FormattingEnabled = true;
+      this.SelectVerse.Name = "SelectVerse";
       // 
       // FilterVersesBindingSource
       // 
       this.FilterVersesBindingSource.DataMember = "Verses";
       this.FilterVersesBindingSource.DataSource = this.FilterChaptersBindingSource;
       // 
-      // EditFilterChaptersWithTitle
+      // EditReference
       // 
-      resources.ApplyResources(this.EditFilterChaptersWithTitle, "EditFilterChaptersWithTitle");
-      this.EditFilterChaptersWithTitle.Name = "EditFilterChaptersWithTitle";
-      this.EditFilterChaptersWithTitle.UseVisualStyleBackColor = true;
-      this.EditFilterChaptersWithTitle.CheckedChanged += new System.EventHandler(this.UpdateFilters);
+      resources.ApplyResources(this.EditReference, "EditReference");
+      this.EditReference.Name = "EditReference";
       // 
-      // EditFilterVersesTranslated
+      // LabelReference
       // 
-      resources.ApplyResources(this.EditFilterVersesTranslated, "EditFilterVersesTranslated");
-      this.EditFilterVersesTranslated.Name = "EditFilterVersesTranslated";
-      this.EditFilterVersesTranslated.UseVisualStyleBackColor = true;
-      this.EditFilterVersesTranslated.CheckedChanged += new System.EventHandler(this.UpdateFilters);
+      resources.ApplyResources(this.LabelReference, "LabelReference");
+      this.LabelReference.Name = "LabelReference";
       // 
-      // EditFilterBook
+      // LabelReferenceInfo
       // 
-      resources.ApplyResources(this.EditFilterBook, "EditFilterBook");
-      this.EditFilterBook.Name = "EditFilterBook";
-      this.EditFilterBook.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
-      this.EditFilterBook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
-      this.EditFilterBook.Leave += new System.EventHandler(this.EditFilter_Leave);
-      // 
-      // EditFilterChapter
-      // 
-      resources.ApplyResources(this.EditFilterChapter, "EditFilterChapter");
-      this.EditFilterChapter.Name = "EditFilterChapter";
-      this.EditFilterChapter.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
-      this.EditFilterChapter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
-      this.EditFilterChapter.Leave += new System.EventHandler(this.EditFilter_Leave);
-      // 
-      // EditFilterVerse
-      // 
-      resources.ApplyResources(this.EditFilterVerse, "EditFilterVerse");
-      this.EditFilterVerse.Name = "EditFilterVerse";
-      this.EditFilterVerse.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
-      this.EditFilterVerse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
-      this.EditFilterVerse.Leave += new System.EventHandler(this.EditFilter_Leave);
-      // 
-      // ActionClearFilterBook
-      // 
-      resources.ApplyResources(this.ActionClearFilterBook, "ActionClearFilterBook");
-      this.ActionClearFilterBook.FlatAppearance.BorderSize = 0;
-      this.ActionClearFilterBook.Name = "ActionClearFilterBook";
-      this.ActionClearFilterBook.UseVisualStyleBackColor = true;
-      this.ActionClearFilterBook.Click += new System.EventHandler(this.ActionClearFilterBook_Click);
-      // 
-      // ActionClearFilterChapter
-      // 
-      resources.ApplyResources(this.ActionClearFilterChapter, "ActionClearFilterChapter");
-      this.ActionClearFilterChapter.FlatAppearance.BorderSize = 0;
-      this.ActionClearFilterChapter.Name = "ActionClearFilterChapter";
-      this.ActionClearFilterChapter.UseVisualStyleBackColor = true;
-      this.ActionClearFilterChapter.Click += new System.EventHandler(this.ActionClearFilterChapter_Click);
-      // 
-      // ActionClearFilterVerse
-      // 
-      resources.ApplyResources(this.ActionClearFilterVerse, "ActionClearFilterVerse");
-      this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
-      this.ActionClearFilterVerse.Name = "ActionClearFilterVerse";
-      this.ActionClearFilterVerse.UseVisualStyleBackColor = true;
-      this.ActionClearFilterVerse.Click += new System.EventHandler(this.ActionClearFilterVerse_Click);
+      resources.ApplyResources(this.LabelReferenceInfo, "LabelReferenceInfo");
+      this.LabelReferenceInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelReferenceInfo.Name = "LabelReferenceInfo";
       // 
       // SelectReferenceForm
       // 
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.ActionClearFilterVerse);
-      this.Controls.Add(this.ActionClearFilterChapter);
-      this.Controls.Add(this.ActionClearFilterBook);
-      this.Controls.Add(this.EditFilterVerse);
-      this.Controls.Add(this.EditFilterChapter);
-      this.Controls.Add(this.EditFilterBook);
-      this.Controls.Add(this.EditFilterVersesTranslated);
-      this.Controls.Add(this.EditFilterChaptersWithTitle);
-      this.Controls.Add(this.SelectFilterVerse);
-      this.Controls.Add(this.SelectFilterChapter);
-      this.Controls.Add(this.SelectFilterBook);
-      this.Controls.Add(this.LabelFilterBook);
-      this.Controls.Add(this.LabelFilterChapter);
-      this.Controls.Add(this.LabelFilterVerse);
+      this.Controls.Add(this.LabelReferenceInfo);
+      this.Controls.Add(this.EditReference);
+      this.Controls.Add(this.SelectVerse);
+      this.Controls.Add(this.SelectChapter);
+      this.Controls.Add(this.SelectBook);
+      this.Controls.Add(this.LabelBook);
+      this.Controls.Add(this.LabelChapter);
+      this.Controls.Add(this.LabelReference);
+      this.Controls.Add(this.LabelVerse);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -262,23 +205,18 @@ namespace Ordisoftware.Hebrew.Words
     /// <summary>
     /// The label.
     /// </summary>
-    private System.Windows.Forms.Label LabelFilterVerse;
-    private Label LabelFilterChapter;
-    private ComboBox SelectFilterBook;
-    private Label LabelFilterBook;
-    private ComboBox SelectFilterChapter;
-    private ComboBox SelectFilterVerse;
-    private CheckBox EditFilterChaptersWithTitle;
-    private CheckBox EditFilterVersesTranslated;
-    private TextBox EditFilterBook;
-    private TextBox EditFilterChapter;
-    private TextBox EditFilterVerse;
+    private System.Windows.Forms.Label LabelVerse;
+    private Label LabelChapter;
+    private ComboBox SelectBook;
+    private Label LabelBook;
+    private ComboBox SelectChapter;
+    private ComboBox SelectVerse;
     private BindingSource FilterBooksBindingSource;
     private BindingSource FilterChaptersBindingSource;
     private BindingSource FilterVersesBindingSource;
-    public Button ActionClearFilterBook;
-    public Button ActionClearFilterChapter;
-    public Button ActionClearFilterVerse;
+    private TextBox EditReference;
+    private Label LabelReference;
+    private Label LabelReferenceInfo;
   }
 
 }
