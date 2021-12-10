@@ -32,11 +32,7 @@ partial class MainForm
   /// </summary>
   public void GoTo(string reference, bool forceUpdateView = false)
   {
-    SystemManager.TryCatch(() =>
-    {
-      int[] items = reference.Split('.').Select(int.Parse).ToArray();
-      GoTo(new ReferenceItem(items[0], items[1], items[2]), forceUpdateView);
-    });
+    GoTo(reference, forceUpdateView);
   }
 
   private Panel LastToolTipPanel;
