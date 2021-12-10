@@ -1589,12 +1589,12 @@
             this.ActionShowGrammarGuide,
             this.toolStripSeparator13,
             this.ActionOpenHebrewLetters,
-            this.ActionOpenCalculator,
             this.toolStripSeparator16,
-            this.ActionViewBibleStatistics,
-            this.toolStripSeparator19,
-            this.ActionCloseWindows,
             this.ActionCopyToClipboard,
+            this.ActionCloseWindows,
+            this.toolStripSeparator19,
+            this.ActionViewBibleStatistics,
+            this.ActionOpenCalculator,
             this.SeparatorImportConcordances,
             this.ActionImportConcordances});
       this.ActionTools.Name = "ActionTools";
