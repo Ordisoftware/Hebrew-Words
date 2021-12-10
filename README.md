@@ -200,6 +200,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Change web check update to use GitHub as an alternative if author's website is down.
+- Improve and add search options.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
@@ -235,12 +236,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
 - Add open book menu item in the edit books information form.
 - Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
-
-> IN PROGRESS
-- Change selection controls in the go to reference form.
-- Improve open Hebrew Letters for the current word when focused on the verses view.
-- Improve search to find words in chapters translated title.
-- Add search in comments
 
 #### 2020.09.01 - Version 2.5
 
