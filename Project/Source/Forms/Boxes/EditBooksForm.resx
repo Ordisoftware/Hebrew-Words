@@ -325,7 +325,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -420,6 +420,21 @@
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Translation</value>
   </data>
+  <metadata name="ColumnHasMemo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnHasMemo.Width" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <metadata name="ColumnMemo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnMemo.HeaderText" xml:space="preserve">
+    <value>Memo</value>
+  </data>
+  <data name="ColumnMemo.Width" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
   <metadata name="BookRowBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>215, 18</value>
   </metadata>
@@ -433,7 +448,7 @@
     <value>664, 603</value>
   </data>
   <data name="EditBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditBooks.Name" xml:space="preserve">
     <value>EditBooks</value>
@@ -570,11 +585,17 @@
   <data name="&gt;&gt;ActionOpen.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
-    <value>BookRowBindingSource</value>
+  <data name="&gt;&gt;ColumnHasMemo.Name" xml:space="preserve">
+    <value>ColumnHasMemo</value>
   </data>
-  <data name="&gt;&gt;BookRowBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ColumnHasMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Name" xml:space="preserve">
+    <value>ColumnMemo</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
     <value>ColumnNumber</value>
@@ -599,6 +620,12 @@
   </data>
   <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
+    <value>BookRowBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BookRowBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>

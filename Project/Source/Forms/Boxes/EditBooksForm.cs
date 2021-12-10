@@ -14,11 +14,15 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+using Equin.ApplicationFramework;
+
 partial class EditBooksForm : Form
 {
 
   private BookRow SelectedBook
-    => EditBooks.SelectedRows.Count == 1 ? (BookRow)EditBooks.SelectedRows[0].DataBoundItem : null;
+    => DataGridView.SelectedRows.Count == 1
+       ? ( DataGridView.SelectedRows[0].DataBoundItem as ObjectView<BookRow> ).Object
+       : null;
 
   public EditBooksForm()
   {
@@ -38,8 +42,8 @@ partial class EditBooksForm : Form
 
   private void EditBooksForm_Load(object sender, EventArgs e)
   {
-    EditBooks.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
-    ActiveControl = EditBooks;
+    DataGridView.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+    ActiveControl = DataGridView;
   }
 
   private void ActionClose_Click(object sender, EventArgs e)
@@ -47,15 +51,54 @@ partial class EditBooksForm : Form
     Close();
   }
 
-  private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+  private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == 3 ) e.Value = ( (string)e.Value ).Trim();
   }
 
-  private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+  private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
   {
     if ( e.Button == MouseButtons.Right && e.RowIndex != -1 )
-      EditBooks.Rows[e.RowIndex].Selected = true;
+      DataGridView.Rows[e.RowIndex].Selected = true;
+  }
+
+  private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( e.RowIndex < 0 || e.ColumnIndex < 0 )
+      DataGridView.ClearSelection();
+    else
+    if ( DataGridView[e.ColumnIndex, e.RowIndex].Value == DBNull.Value )
+      DataGridView.ClearSelection();
+  }
+
+  private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( DataGridView.ReadOnly ) return;
+    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
+    using var form = new EditMemoForm();
+    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+    form.TextBox.Text = SelectedBook.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
+    {
+      SelectedBook.Memo = form.TextBox.Text;
+      DataGridView.RefreshEdit();
+    }
+  }
+
+  private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+  {
+    DataGridView.BeginEdit(false);
+  }
+
+  private void DataGridView_KeyDown(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
+      DataGridView.BeginEdit(false);
+    else
+      return;
+    e.Handled = true;
+    e.SuppressKeyPress = true;
   }
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
@@ -65,7 +108,7 @@ partial class EditBooksForm : Form
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[ColumnHebrew.Index].Value, Program.Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(SelectedBook.Hebrew, Program.Settings.HebrewLettersExe);
   }
 
   private void ActionSearchWord_Click(object sender, EventArgs e)
@@ -83,8 +126,8 @@ partial class EditBooksForm : Form
 
   private void ActionCopyName_Click(object sender, EventArgs e)
   {
-    string name = (string)EditBooks.SelectedRows[0].Cells[ColumnName.Index].Value;
-    string tranlation = (string)EditBooks.SelectedRows[0].Cells[ColumnTranslation.Index].Value;
+    string name = SelectedBook.Name;
+    string tranlation = SelectedBook.Translation;
     if ( tranlation.Length > 0 )
       name += $" ({tranlation})";
     Clipboard.SetText(name);

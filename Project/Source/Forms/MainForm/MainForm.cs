@@ -379,7 +379,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     new EditBooksForm().ShowDialog();
-    //GoTo(CurrentReference);
+    GoTo(CurrentReference);
     ActionSave.PerformClick();
   }
 

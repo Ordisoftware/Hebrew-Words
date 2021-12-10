@@ -31,6 +31,8 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,16 +51,18 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.PanelMain = new System.Windows.Forms.Panel();
-      this.EditBooks = new System.Windows.Forms.DataGridView();
-      this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
@@ -179,36 +183,72 @@
       // 
       // PanelMain
       // 
-      this.PanelMain.Controls.Add(this.EditBooks);
+      this.PanelMain.Controls.Add(this.DataGridView);
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // EditBooks
       // 
-      this.EditBooks.AllowUserToAddRows = false;
-      this.EditBooks.AllowUserToDeleteRows = false;
-      this.EditBooks.AllowUserToResizeRows = false;
-      this.EditBooks.AutoGenerateColumns = false;
-      resources.ApplyResources(this.EditBooks, "EditBooks");
-      this.EditBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.DataGridView.AllowUserToAddRows = false;
+      this.DataGridView.AllowUserToDeleteRows = false;
+      this.DataGridView.AllowUserToResizeRows = false;
+      this.DataGridView.AutoGenerateColumns = false;
+      this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.DataGridView, "EditBooks");
+      this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
             this.ColumnHebrew,
             this.ColumnName,
-            this.ColumnTranslation});
-      this.EditBooks.ContextMenuStrip = this.ContextMenuStripResults;
-      this.EditBooks.DataSource = this.BookRowBindingSource;
-      this.EditBooks.MultiSelect = false;
-      this.EditBooks.Name = "EditBooks";
-      this.EditBooks.RowHeadersVisible = false;
-      this.EditBooks.RowTemplate.Height = 28;
-      this.EditBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.EditBooks.ShowCellToolTips = false;
-      this.EditBooks.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BooksDataGridView_CellFormatting);
-      this.EditBooks.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditBooks_CellMouseDown);
+            this.ColumnTranslation,
+            this.ColumnHasMemo,
+            this.ColumnMemo});
+      this.DataGridView.ContextMenuStrip = this.ContextMenuStripResults;
+      this.DataGridView.DataSource = this.BookRowBindingSource;
+      this.DataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+      this.DataGridView.EnableHeadersVisualStyles = false;
+      this.DataGridView.MultiSelect = false;
+      this.DataGridView.Name = "EditBooks";
+      this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.RowTemplate.Height = 28;
+      this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.DataGridView.ShowCellToolTips = false;
+      this.DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
+      this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
+      this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
+      this.DataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGridView_CellFormatting);
+      this.DataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_CellMouseDown);
+      this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
-      // BookRowBindingSource
+      // ColumnHasMemo
       // 
-      this.BookRowBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      this.ColumnHasMemo.DataPropertyName = "HasMemo";
+      resources.ApplyResources(this.ColumnHasMemo, "ColumnHasMemo");
+      this.ColumnHasMemo.Name = "ColumnHasMemo";
+      this.ColumnHasMemo.ReadOnly = true;
+      this.ColumnHasMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+      // 
+      // ColumnMemo
+      // 
+      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnMemo.DataPropertyName = "Memo";
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
+      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle3;
+      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
+      this.ColumnMemo.Name = "ColumnMemo";
+      this.ColumnMemo.ReadOnly = true;
+      this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+      this.ColumnMemo.Text = "...";
+      this.ColumnMemo.UseColumnTextForButtonValue = true;
       // 
       // ColumnNumber
       // 
@@ -221,9 +261,9 @@
       // ColumnHebrew
       // 
       this.ColumnHebrew.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
       this.ColumnHebrew.ReadOnly = true;
@@ -244,6 +284,10 @@
       this.ColumnTranslation.Name = "ColumnTranslation";
       this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
+      // BookRowBindingSource
+      // 
+      this.BookRowBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      // 
       // EditBooksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -261,7 +305,7 @@
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditBooks)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).EndInit();
       this.ResumeLayout(false);
 
@@ -285,12 +329,14 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem ActionOpen;
     private BindingSource BookRowBindingSource;
-    private DataGridView EditBooks;
+    private DataGridView DataGridView;
     private ToolStripSeparator toolStripSeparator5;
     private Button ActionClose;
     private DataGridViewTextBoxColumn ColumnNumber;
     private DataGridViewTextBoxColumn ColumnHebrew;
     private DataGridViewTextBoxColumn ColumnName;
     private DataGridViewTextBoxColumn ColumnTranslation;
+    private DataGridViewCheckBoxColumn ColumnHasMemo;
+    private DataGridViewButtonColumn ColumnMemo;
   }
 }
