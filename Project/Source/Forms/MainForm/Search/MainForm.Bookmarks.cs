@@ -31,9 +31,10 @@ partial class MainForm
       void bookmarkClicked(object sender, MouseEventArgs e)
       {
         if ( e.Button != MouseButtons.Right ) return;
-        // bug reentrance (?) if ( !DisplayManager.QueryYesNo(AppTranslations.DeleteBookmark.GetLang()) ) return;
         var menuitem = (ToolStripMenuItem)sender;
-        if ( menuitem.Tag as ReferenceItem == bookmarkMaster )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang((ReferenceItem)menuitem.Tag)) )
+          return;
+        if ( menuitem == ActionGoToBookmarkMain )
         {
           Settings.BookmarkMasterBook = 1;
           Settings.BookmarkMasterChapter = 1;

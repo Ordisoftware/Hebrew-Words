@@ -19,6 +19,7 @@ public partial class VerseControl : UserControl
 
   private sealed class MetricsItem
   {
+    public int DeltaHeight;
     public int ControlWidth;
     public int WordControlsPerLine;
     public int LabelVerseNumberWidth;
@@ -75,7 +76,7 @@ public partial class VerseControl : UserControl
     EditCommentary.Text = reference.Verse.Comment;
     EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
     PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
-    Height = Padding.Top + Padding.Left + Padding.Bottom + CreateWordControls() * numberOfLines + EditCommentary.Height;
+    Height = metrics.DeltaHeight + +CreateWordControls() * numberOfLines + EditCommentary.Height;
     Width = metrics.ControlWidth;
   }
 
@@ -88,22 +89,20 @@ public partial class VerseControl : UserControl
 
   public void ResetMetrics(Panel container)
   {
+    using var graphicsNumber = LabelVerseNumber.CreateGraphics();
+    using var graphicsCommentary = EditCommentary.CreateGraphics();
     var metrics = MetricsCollection[container];
     int widthHScroll = new VScrollBar().Width;
     int width = container.ClientSize.Width - widthHScroll / 2 - container.Padding.Left - container.Padding.Right;
-    //
     metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
-    using var graphicsNumber = LabelVerseNumber.CreateGraphics();
     metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
-    //
     metrics.ControlWidth = width;
     metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
-    //
     metrics.EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
-    using var graphicsCommentary = EditCommentary.CreateGraphics();
     metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", metrics.EditCommentaryFont).Height;
     metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
     metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
+    metrics.DeltaHeight = Padding.Top + Padding.Left + Padding.Bottom + PanelComment.Padding.Top;
   }
 
   private int CreateWordControls()

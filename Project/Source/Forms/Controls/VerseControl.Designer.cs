@@ -55,6 +55,7 @@
       this.PanelComment.Location = new System.Drawing.Point(5, 60);
       this.PanelComment.Margin = new System.Windows.Forms.Padding(0);
       this.PanelComment.Name = "PanelComment";
+      this.PanelComment.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
       this.PanelComment.Size = new System.Drawing.Size(340, 20);
       this.PanelComment.TabIndex = 2;
       // 
@@ -64,7 +65,7 @@
       this.EditCommentary.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Fill;
       this.EditCommentary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.EditCommentary.Location = new System.Drawing.Point(10, 0);
+      this.EditCommentary.Location = new System.Drawing.Point(10, 10);
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);
       this.EditCommentary.Name = "EditCommentary";
       this.EditCommentary.Size = new System.Drawing.Size(330, 20);
@@ -75,9 +76,9 @@
       // PanelCommentLeft
       // 
       this.PanelCommentLeft.Dock = System.Windows.Forms.DockStyle.Left;
-      this.PanelCommentLeft.Location = new System.Drawing.Point(0, 0);
+      this.PanelCommentLeft.Location = new System.Drawing.Point(0, 10);
       this.PanelCommentLeft.Name = "PanelCommentLeft";
-      this.PanelCommentLeft.Size = new System.Drawing.Size(10, 20);
+      this.PanelCommentLeft.Size = new System.Drawing.Size(10, 10);
       this.PanelCommentLeft.TabIndex = 1;
       // 
       // LabelVerseNumber
