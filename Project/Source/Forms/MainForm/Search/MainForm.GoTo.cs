@@ -20,7 +20,12 @@ partial class MainForm
 {
 
   /// <summary>
-  /// Go to a book > chapter > verse reference.
+  /// Indicates the last rendered panel having a render tool-tip.
+  /// </summary>
+  private Panel LastToolTipPanel;
+
+  /// <summary>
+  /// Goes to a book > chapter > verse reference.
   /// </summary>
   public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
   {
@@ -28,17 +33,15 @@ partial class MainForm
   }
 
   /// <summary>
-  /// Go to a book.chapter.verse reference.
+  /// Goes to a book.chapter.verse reference.
   /// </summary>
   public void GoTo(string reference, bool forceUpdateView = false)
   {
     GoTo(reference, forceUpdateView);
   }
 
-  private Panel LastToolTipPanel;
-
   /// <summary>
-  /// Go to a reference instance.
+  /// Goes to a reference instance.
   /// </summary>
   public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
   {
@@ -132,7 +135,7 @@ partial class MainForm
           Panel panel = null;
           int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
           int x = 5;
-          int y = 5;
+          const int y = 5;
           if ( Settings.CurrentView == ViewMode.ChapterVerses )
           {
             x = PanelViewVerses.PreferredSize.Width - 5 - width;
@@ -165,7 +168,7 @@ partial class MainForm
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
           if ( CurrentReference.Word != null )
-            control.WordControls.FirstOrDefault(c => c.Reference.Word == CurrentReference.Word).Focus();
+            Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word).Focus();
           else
             control.WordControls.FirstOrDefault()?.Focus();
         }

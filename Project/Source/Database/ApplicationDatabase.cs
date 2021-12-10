@@ -153,7 +153,7 @@ class ApplicationDatabase : SQLiteDatabase
     {
       foreach ( BookRow book in Books )
       {
-        TanakBook enumBook = (TanakBook)( book.Number );
+        TanakBook enumBook = (TanakBook)book.Number;
         book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
         book.Hebrew = BooksNames.Hebrew[enumBook];
         if ( book.Original.Length == 0 )

@@ -114,6 +114,8 @@ public class BookRow : AbstractRow
   }
   private string _Memo = string.Empty;
 
+  public bool HasMemo => !Memo.IsNullOrEmpty();
+
   public List<ChapterRow> Chapters { get; } = new();
 
   public override string ToString()

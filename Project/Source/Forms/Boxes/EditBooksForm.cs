@@ -14,147 +14,152 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+using Equin.ApplicationFramework;
+
 partial class EditBooksForm : Form
 {
 
-  static public bool Run()
-  {
-    var form = new EditBooksForm();
-    form.ShowDialog();
-    return form.UpdateViewRequired;
-  }
+  private BookRow SelectedBook
+    => DataGridView.SelectedRows.Count == 1
+       ? ( DataGridView.SelectedRows[0].DataBoundItem as ObjectView<BookRow> ).Object
+       : null;
 
-  private bool UpdateViewRequired;
-
-  private EditBooksForm()
+  public EditBooksForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     int index = 0;
-    //void action(object sender, EventArgs e)
-    //{
-    //  var menuitem = (ToolStripMenuItem)sender;
-    //  var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //  string strOriginal = ( (BookRow)row ).Original;
-    //  foreach ( string item in strOriginal.Split(' ') )
-    //    SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item));
-    //}
-    //foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-    //{
-    //  if ( item.Name == "-" )
-    //    ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
-    //  else
-    //    ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-    //}
+    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
+      if ( item.Name == "-" )
+        ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
+      else
+        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem((sender, e) =>
+        {
+          var menuitem = (ToolStripMenuItem)sender;
+          HebrewTools.OpenHebrewLetters(SelectedBook?.Original, Program.Settings.HebrewLettersExe);
+        }));
   }
 
   private void EditBooksForm_Load(object sender, EventArgs e)
   {
-    // TODO bind EditBooks.DataSource = MainForm.Instance.BooksBindingSource;
-    ActiveControl = EditBooks;
+    DataGridView.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+    ActiveControl = DataGridView;
   }
 
-  private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
+  private void ActionClose_Click(object sender, EventArgs e)
   {
-    Validate();
-    //MainForm.Instance.BooksBindingSource.EndEdit();
-    //UpdateViewRequired = ApplicationDatabase.Instance.HasChanges();
-    //MainForm.Instance.TableAdapterManager.UpdateAll(ApplicationDatabase.Instance);
+    Close();
   }
 
-  private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+  private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
-    if ( e.ColumnIndex == 3 )
-      e.Value = ( (string)e.Value ).Trim();
+    if ( e.ColumnIndex == 3 ) e.Value = ( (string)e.Value ).Trim();
   }
 
-  private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+  private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
   {
-    if ( e.Button == MouseButtons.Right )
+    if ( e.Button == MouseButtons.Right && e.RowIndex != -1 )
+      DataGridView.Rows[e.RowIndex].Selected = true;
+  }
+
+  private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( e.RowIndex < 0 || e.ColumnIndex < 0 )
+      DataGridView.ClearSelection();
+    else
+    if ( DataGridView[e.ColumnIndex, e.RowIndex].Value == DBNull.Value )
+      DataGridView.ClearSelection();
+  }
+
+  private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( DataGridView.ReadOnly ) return;
+    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
+    using var form = new EditMemoForm();
+    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+    form.TextBox.Text = SelectedBook.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
     {
-      int rowSelected = e.RowIndex;
-      if ( e.RowIndex != -1 )
-      {
-        //TODO remove? EditBooks.ClearSelection();
-        EditBooks.Rows[rowSelected].Selected = true;
-        //TODO remove? BooksBindingSource.Position = e.RowIndex;
-      }
+      SelectedBook.Memo = form.TextBox.Text;
+      DataGridView.RefreshEdit();
     }
+  }
+
+  private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+  {
+    DataGridView.BeginEdit(false);
+  }
+
+  private void DataGridView_KeyDown(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
+      DataGridView.BeginEdit(false);
+    else
+      return;
+    e.Handled = true;
+    e.SuppressKeyPress = true;
   }
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
   {
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //string word = ( (BookRow)row ).Hebrew;
-    //HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, word);
+    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, SelectedBook?.Hebrew);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewLetters((string)EditBooks.SelectedRows[0].Cells[1].Value, Program.Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(SelectedBook.Hebrew, Program.Settings.HebrewLettersExe);
   }
 
   private void ActionSearchWord_Click(object sender, EventArgs e)
   {
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //MainForm.Instance.SearchHebrewWord(( (BookRow)row ).Hebrew);
+    MainForm.Instance.SearchHebrewWord(SelectedBook?.Hebrew);
+    Close();
+  }
 
-    // TODO form to select one word from multiple having more than 1 char
-
+  private void ActionOpen_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.SetView(ViewMode.ChapterVerses);
+    MainForm.Instance.GoTo(SelectedBook?.Number ?? 1, 1, 1);
     Close();
   }
 
   private void ActionCopyName_Click(object sender, EventArgs e)
   {
-    string strName = (string)EditBooks.SelectedRows[0].Cells[2].Value;
-    if ( strName.StartsWith("a ") ) strName = strName.Substring(2, strName.Length - 2);
-    else
-    if ( strName.StartsWith("b ") ) strName = strName.Substring(2, strName.Length - 2);
-    string strCommonName = (string)EditBooks.SelectedRows[0].Cells[3].Value;
-    if ( strCommonName.Length > 0 )
-      strName += " (" + strCommonName + ")";
-    string strTranlation = (string)EditBooks.SelectedRows[0].Cells[4].Value;
-    if ( strTranlation.Length > 0 )
-      strName += " - " + strTranlation;
-    Clipboard.SetText(strName);
+    string name = SelectedBook.Name;
+    string tranlation = SelectedBook.Translation;
+    if ( tranlation.Length > 0 )
+      name += $" ({tranlation})";
+    Clipboard.SetText(name);
   }
 
   private void ActionCopyFontChars_Click(object sender, EventArgs e)
   {
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //Clipboard.SetText(( (BookRow)row ).Hebrew);
+    Clipboard.SetText(SelectedBook?.Hebrew);
   }
 
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //Clipboard.SetText(( (BookRow)row ).Original);
+    Clipboard.SetText(SelectedBook?.Original);
   }
 
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
-    //var form = new EditMemoForm();
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //var book = (BookRow)row;
-    //form.Text += book.Name;
-    //form.TextBox.Text = book.Memo;
-    //form.TextBox.SelectionStart = 0;
-    //if ( form.ShowDialog() == DialogResult.OK )
-    //  book.Memo = form.TextBox.Text;
+    var form = new EditMemoForm();
+    var book = SelectedBook;
+    if ( SelectedBook == null ) return;
+    form.Text += book.Name;
+    form.TextBox.Text = book.Memo;
+    form.TextBox.SelectionStart = 0;
+    if ( form.ShowDialog() == DialogResult.OK )
+      book.Memo = form.TextBox.Text;
   }
 
   private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    //if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-    //  foreach ( BookRow book in ApplicationDatabase.Instance.Books.Rows )
-    //    book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
-  }
-
-  private void ActionOpen_Click(object sender, EventArgs e)
-  {
-    //var row = ( (System.Data.DataRowView)EditBooks.SelectedRows[0].DataBoundItem ).Row;
-    //MainForm.Instance.GoTo(( (BookRow)row ).Number, 1, 1);
-    //Close();
+    if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
+      foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
+        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number ));
   }
 
 }

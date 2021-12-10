@@ -14,8 +14,6 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Equin.ApplicationFramework;
-
 partial class BibleStatisticsForm : Form
 {
 
@@ -70,7 +68,7 @@ partial class BibleStatisticsForm : Form
     foreach ( BookRow book in ApplicationDatabase.Instance.Books )
     {
       var stat = new BookStatistic() { Book = book };
-      CountersBooks.Add(( (TanakBook)book.Number ) - 1, stat);
+      CountersBooks.Add((TanakBook)book.Number, stat);
       foreach ( ChapterRow chapter in book.Chapters )
       {
         stat.CountChapters++;
@@ -169,7 +167,7 @@ partial class BibleStatisticsForm : Form
   {
     try
     {
-      var book = (TanakBook)( ( SelectBook.SelectedItem as BookRow )?.Number - 1 );
+      var book = (TanakBook)( ( SelectBook.SelectedItem as BookRow )?.Number );
       CountersSelected = new BookStatistic();
       CountersSelected.CountChapters += CountersBooks[book].CountChapters;
       CountersSelected.CountVerses += CountersBooks[book].CountVerses;
@@ -186,14 +184,14 @@ partial class BibleStatisticsForm : Form
   {
     var label = (Label)sender;
     label.Cursor = Cursors.Hand;
-    label.ForeColor = System.Drawing.Color.DarkRed;
+    label.ForeColor = Color.DarkRed;
   }
 
   private void LabelMiddleValue_MouseLeave(object sender, EventArgs e)
   {
     var label = (Label)sender;
     label.Cursor = Cursors.Hand;
-    label.ForeColor = System.Drawing.SystemColors.ControlText;
+    label.ForeColor = SystemColors.ControlText;
   }
 
   private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)

@@ -378,7 +378,7 @@ partial class MainForm : Form
   private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( !EditBooksForm.Run() ) return;
+    new EditBooksForm().ShowDialog();
     GoTo(CurrentReference);
     ActionSave.PerformClick();
   }
@@ -1614,7 +1614,7 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
+    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(HebrewTools.RemoveNumberingAndDiacritics(word).Word, false);
     EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
   }
 
