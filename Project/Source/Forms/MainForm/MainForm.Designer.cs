@@ -193,12 +193,12 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorImportConcordances = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -1634,28 +1634,16 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
-      // ActionOpenCalculator
-      // 
-      this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
-      this.ActionOpenCalculator.Name = "ActionOpenCalculator";
-      this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
-      // 
       // toolStripSeparator16
       // 
       this.toolStripSeparator16.Name = "toolStripSeparator16";
       resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
-      // ActionViewBibleStatistics
+      // ActionCopyToClipboard
       // 
-      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
-      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
-      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
-      // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
+      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
       // 
       // ActionCloseWindows
       // 
@@ -1663,11 +1651,23 @@
       this.ActionCloseWindows.Name = "ActionCloseWindows";
       this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
       // 
-      // ActionCopyToClipboard
+      // toolStripSeparator19
       // 
-      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
-      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
-      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      // 
+      // ActionViewBibleStatistics
+      // 
+      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
+      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
+      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
+      // 
+      // ActionOpenCalculator
+      // 
+      this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
+      this.ActionOpenCalculator.Name = "ActionOpenCalculator";
+      this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
       // 
       // SeparatorImportConcordances
       // 
