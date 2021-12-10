@@ -17,16 +17,10 @@ namespace Ordisoftware.Hebrew.Words;
 partial class EditBooksForm : Form
 {
 
-  static public bool Run()
-  {
-    var form = new EditBooksForm();
-    form.ShowDialog();
-    return form.UpdateViewRequired;
-  }
+  private BookRow SelectedBook
+    => EditBooks.SelectedRows.Count == 1 ? (BookRow)EditBooks.SelectedRows[0].DataBoundItem : null;
 
-  private bool UpdateViewRequired;
-
-  private EditBooksForm()
+  public EditBooksForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
@@ -35,14 +29,11 @@ partial class EditBooksForm : Form
       if ( item.Name == "-" )
         ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
       else
-        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-    //
-    void action(object sender, EventArgs e)
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-      HebrewTools.OpenHebrewLetters(book.Original, Program.Settings.HebrewLettersExe);
-    }
+        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem((sender, e) =>
+        {
+          var menuitem = (ToolStripMenuItem)sender;
+          HebrewTools.OpenHebrewLetters(SelectedBook?.Original, Program.Settings.HebrewLettersExe);
+        }));
   }
 
   private void EditBooksForm_Load(object sender, EventArgs e)
@@ -51,9 +42,9 @@ partial class EditBooksForm : Form
     ActiveControl = EditBooks;
   }
 
-  private void EditBooksForm_FormClosing(object sender, FormClosingEventArgs e)
+  private void ActionClose_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionSave.PerformClick();
+    Close();
   }
 
   private void BooksDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -63,22 +54,13 @@ partial class EditBooksForm : Form
 
   private void EditBooks_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
   {
-    if ( e.Button == MouseButtons.Right )
-    {
-      int rowSelected = e.RowIndex;
-      if ( e.RowIndex != -1 )
-      {
-        //TODO remove? EditBooks.ClearSelection();
-        EditBooks.Rows[rowSelected].Selected = true;
-        //TODO remove? BooksBindingSource.Position = e.RowIndex;
-      }
-    }
+    if ( e.Button == MouseButtons.Right && e.RowIndex != -1 )
+      EditBooks.Rows[e.RowIndex].Selected = true;
   }
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
   {
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, book.Hebrew);
+    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, SelectedBook?.Hebrew);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -88,43 +70,41 @@ partial class EditBooksForm : Form
 
   private void ActionSearchWord_Click(object sender, EventArgs e)
   {
+    MainForm.Instance.SearchHebrewWord(SelectedBook?.Hebrew);
     Close();
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-    MainForm.Instance.SearchHebrewWord(book.Hebrew);
   }
 
   private void ActionOpen_Click(object sender, EventArgs e)
   {
+    MainForm.Instance.SetView(ViewMode.ChapterVerses);
+    MainForm.Instance.GoTo(SelectedBook?.Number ?? 1, 1, 1);
     Close();
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-    MainForm.Instance.GoTo(book.Number, 1, 1);
   }
 
   private void ActionCopyName_Click(object sender, EventArgs e)
   {
-    string strCommonName = (string)EditBooks.SelectedRows[0].Cells[ColumnName.Index].Value;
-    string strTranlation = (string)EditBooks.SelectedRows[0].Cells[ColumnTranslation.Index].Value;
-    if ( strTranlation.Length > 0 )
-      strCommonName += $" ({strTranlation})";
-    Clipboard.SetText(strCommonName);
+    string name = (string)EditBooks.SelectedRows[0].Cells[ColumnName.Index].Value;
+    string tranlation = (string)EditBooks.SelectedRows[0].Cells[ColumnTranslation.Index].Value;
+    if ( tranlation.Length > 0 )
+      name += $" ({tranlation})";
+    Clipboard.SetText(name);
   }
 
   private void ActionCopyFontChars_Click(object sender, EventArgs e)
   {
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-    Clipboard.SetText(book.Hebrew);
+    Clipboard.SetText(SelectedBook?.Hebrew);
   }
 
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
-    Clipboard.SetText(book.Original);
+    Clipboard.SetText(SelectedBook?.Original);
   }
 
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
     var form = new EditMemoForm();
-    var book = (BookRow)EditBooks.SelectedRows[0].DataBoundItem;
+    var book = SelectedBook;
+    if ( SelectedBook == null ) return;
     form.Text += book.Name;
     form.TextBox.Text = book.Memo;
     form.TextBox.SelectionStart = 0;
@@ -135,8 +115,8 @@ partial class EditBooksForm : Form
   private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-      foreach ( var book in ApplicationDatabase.Instance.Books )
-        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number - 1 ));
+      foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
+        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number ));
   }
 
 }

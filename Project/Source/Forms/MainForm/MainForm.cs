@@ -378,8 +378,8 @@ partial class MainForm : Form
   private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( !EditBooksForm.Run() ) return;
-    GoTo(CurrentReference);
+    new EditBooksForm().ShowDialog();
+    //GoTo(CurrentReference);
     ActionSave.PerformClick();
   }
 

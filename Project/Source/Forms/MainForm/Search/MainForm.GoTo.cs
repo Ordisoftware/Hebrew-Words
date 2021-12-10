@@ -135,7 +135,7 @@ partial class MainForm
           Panel panel = null;
           int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
           int x = 5;
-          int y = 5;
+          const int y = 5;
           if ( Settings.CurrentView == ViewMode.ChapterVerses )
           {
             x = PanelViewVerses.PreferredSize.Width - 5 - width;
@@ -168,7 +168,7 @@ partial class MainForm
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
           if ( CurrentReference.Word != null )
-            control.WordControls.FirstOrDefault(c => c.Reference.Word == CurrentReference.Word).Focus();
+            Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word).Focus();
           else
             control.WordControls.FirstOrDefault()?.Focus();
         }

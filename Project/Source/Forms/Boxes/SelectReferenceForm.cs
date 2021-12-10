@@ -42,8 +42,6 @@ partial class SelectReferenceForm : Form
                                ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
 
-  private readonly Dictionary<TextBox, bool> FilterModified;
-
   private SelectReferenceForm()
   {
     InitializeComponent();
