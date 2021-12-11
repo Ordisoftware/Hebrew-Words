@@ -25,7 +25,7 @@ public class WordRow : AbstractRow
 
   [ForeignKey(typeof(VerseRow))]
   [NotNull]
-  public string VerseID
+  public Guid VerseID
   {
     get => _VerseID;
     set
@@ -35,7 +35,7 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(VerseID));
     }
   }
-  private string _VerseID;
+  private Guid _VerseID;
 
   [NotNull]
   public string Original

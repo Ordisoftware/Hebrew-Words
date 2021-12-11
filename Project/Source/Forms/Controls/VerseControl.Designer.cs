@@ -34,6 +34,7 @@
       this.EditCommentary = new Ordisoftware.Core.TextBoxEx();
       this.PanelCommentLeft = new System.Windows.Forms.Panel();
       this.LabelVerseNumber = new System.Windows.Forms.Label();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelComment.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -44,7 +45,7 @@
       this.PanelWords.Location = new System.Drawing.Point(5, 20);
       this.PanelWords.Margin = new System.Windows.Forms.Padding(0);
       this.PanelWords.Name = "PanelWords";
-      this.PanelWords.Size = new System.Drawing.Size(340, 40);
+      this.PanelWords.Size = new System.Drawing.Size(340, 59);
       this.PanelWords.TabIndex = 1;
       // 
       // PanelComment
@@ -52,17 +53,17 @@
       this.PanelComment.Controls.Add(this.EditCommentary);
       this.PanelComment.Controls.Add(this.PanelCommentLeft);
       this.PanelComment.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.PanelComment.Location = new System.Drawing.Point(5, 60);
+      this.PanelComment.Location = new System.Drawing.Point(5, 79);
       this.PanelComment.Margin = new System.Windows.Forms.Padding(0);
       this.PanelComment.Name = "PanelComment";
-      this.PanelComment.Size = new System.Drawing.Size(340, 20);
+      this.PanelComment.Size = new System.Drawing.Size(340, 21);
       this.PanelComment.TabIndex = 2;
       // 
       // EditCommentary
       // 
       this.EditCommentary.BackColor = System.Drawing.Color.Honeydew;
       this.EditCommentary.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Top;
       this.EditCommentary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.EditCommentary.Location = new System.Drawing.Point(10, 0);
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);
@@ -77,7 +78,7 @@
       this.PanelCommentLeft.Dock = System.Windows.Forms.DockStyle.Left;
       this.PanelCommentLeft.Location = new System.Drawing.Point(0, 0);
       this.PanelCommentLeft.Name = "PanelCommentLeft";
-      this.PanelCommentLeft.Size = new System.Drawing.Size(10, 20);
+      this.PanelCommentLeft.Size = new System.Drawing.Size(10, 21);
       this.PanelCommentLeft.TabIndex = 1;
       // 
       // LabelVerseNumber
@@ -89,23 +90,32 @@
       this.LabelVerseNumber.Margin = new System.Windows.Forms.Padding(0);
       this.LabelVerseNumber.Name = "LabelVerseNumber";
       this.LabelVerseNumber.Padding = new System.Windows.Forms.Padding(10, 7, 0, 0);
-      this.LabelVerseNumber.Size = new System.Drawing.Size(50, 60);
+      this.LabelVerseNumber.Size = new System.Drawing.Size(50, 80);
       this.LabelVerseNumber.TabIndex = 0;
       this.LabelVerseNumber.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelVerseNumber_MouseClick);
       this.LabelVerseNumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelVerseNumber_MouseDown);
       this.LabelVerseNumber.MouseEnter += new System.EventHandler(this.LabelVerseNumber_MouseEnter);
       this.LabelVerseNumber.MouseLeave += new System.EventHandler(this.LabelVerseNumber_MouseLeave);
       // 
+      // PanelSeparator
+      // 
+      this.PanelSeparator.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.PanelSeparator.Location = new System.Drawing.Point(5, 69);
+      this.PanelSeparator.Name = "PanelSeparator";
+      this.PanelSeparator.Size = new System.Drawing.Size(340, 10);
+      this.PanelSeparator.TabIndex = 3;
+      // 
       // VerseControl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelWords);
       this.Controls.Add(this.PanelComment);
       this.Controls.Add(this.LabelVerseNumber);
       this.Name = "VerseControl";
       this.Padding = new System.Windows.Forms.Padding(5, 20, 5, 20);
-      this.Size = new System.Drawing.Size(400, 100);
+      this.Size = new System.Drawing.Size(400, 120);
       this.PanelComment.ResumeLayout(false);
       this.PanelComment.PerformLayout();
       this.ResumeLayout(false);
@@ -118,5 +128,6 @@
     private Panel PanelComment;
     internal Panel PanelCommentLeft;
     public Label LabelVerseNumber;
+    private Panel PanelSeparator;
   }
 }

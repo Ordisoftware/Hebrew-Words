@@ -38,9 +38,9 @@ class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<BookRow> Books { get; private set; }
-  public List<ChapterRow> Chapters { get; } = new();
-  public List<VerseRow> Verses { get; } = new();
-  public List<WordRow> Words { get; } = new();
+  public List<ChapterRow> Chapters { get; private set; } = new();
+  public List<VerseRow> Verses { get; private set; } = new();
+  public List<WordRow> Words { get; private set; } = new();
 
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }
 
@@ -79,33 +79,34 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoLoadAll()
   {
-    Books = Connection.Table<BookRow>().ToList();
-    Chapters.Clear();
-    Verses.Clear();
-    Words.Clear();
-    foreach ( var book in Books )
+    Books = new(Connection.Table<BookRow>());
+    OnLoadingData(SysTranslations.LoadingData.GetLang());
+    Parallel.ForEach(Books, (book) =>
     {
-      OnLoadingData(SysTranslations.LoadingDataDetailed.GetLang(book.Name));
-      book.Chapters.AddRange(Connection.Table<ChapterRow>().Where(chapter => chapter.BookID == book.ID));
-      Chapters.AddRange(book.Chapters);
-      foreach ( var chapter in book.Chapters )
+      string idBook = book.ID.ToString();
+      book.Chapters.AddRange(Connection.Query<ChapterRow>("SELECT * FROM Chapters WHERE BookID = ?", idBook));
+      Parallel.ForEach(book.Chapters, (chapter) =>
       {
-        chapter.Verses.AddRange(Connection.Table<VerseRow>().Where(verse => verse.ChapterID == chapter.ID));
-        Verses.AddRange(chapter.Verses);
-        foreach ( var verse in chapter.Verses )
+        string idChapter = chapter.ID.ToString();
+        chapter.Verses.AddRange(Connection.Query<VerseRow>("SELECT * FROM Verses WHERE ChapterID = ?", idChapter));
+        Parallel.ForEach(chapter.Verses, (verse) =>
         {
-          verse.Words.AddRange(Connection.Table<WordRow>().Where(word => word.VerseID == verse.ID));
-          Words.AddRange(verse.Words);
-        }
-      }
-      OnDataLoaded(book.Name);
-    }
+          string idVerse = verse.ID.ToString();
+          verse.Words.AddRange(Connection.Query<WordRow>("SELECT * FROM Words WHERE VerseID = ?", idVerse));
+        });
+      });
+    });
+    Chapters = Books.SelectMany(b => b.Chapters).ToList();
+    Verses = Chapters.SelectMany(c => c.Verses).ToList();
+    Words = Verses.SelectMany(v => v.Words).ToList();
+    OnDataLoaded(SysTranslations.DataLoaded.GetLang());
   }
 
   protected override void CreateBindingLists()
   {
     OnLoadingData(SysTranslations.BindingData.GetLang());
     BooksAsBindingList = new BindingListView<BookRow>(Books);
+    OnDataLoaded(SysTranslations.DataBinded.GetLang());
   }
 
   protected override void DoSaveAll()
@@ -218,7 +219,6 @@ class ApplicationDatabase : SQLiteDatabase
         }
         string[] filecontent = File.ReadAllLines(filePath);
         book = new();
-        //book.ID = Guid.NewGuid().ToString();
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
         book.Hebrew = BooksNames.Hebrew[bookid];

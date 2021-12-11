@@ -61,13 +61,8 @@ public partial class WordControl : UserControl
     ResetMetricsRequired = false;
     Metrics.LabelHebrewFont = new Font(LabelHebrew.Font.FontFamily, Settings.FontSizeHebrew);
     Metrics.EditTranslationFont = new Font(EditTranslation.Font.FontFamily, Settings.FontSizeTranslation);
-    using Graphics graphicsHebrew = LabelHebrew.CreateGraphics();
-    int heightHebrew = TextRenderer.MeasureText(graphicsHebrew, "ql", Metrics.LabelHebrewFont).Height;
-    using Graphics graphicsTranslation = EditTranslation.CreateGraphics();
-    int heightTranslation = TextRenderer.MeasureText(graphicsTranslation, "A", Metrics.EditTranslationFont).Height;
-    Metrics.EditTranslationHeight = heightTranslation * ( Settings.VerseWordTranslationLinesCount + 1 );
-    Metrics.TotalHeight = heightHebrew + Metrics.EditTranslationHeight + 5;
-    if ( Settings.VerseWordTranslationLinesCount > 1 ) Metrics.TotalHeight += 10;
+    Metrics.EditTranslationHeight = Metrics.EditTranslationFont.Height * Settings.VerseWordTranslationLinesCount + Metrics.EditTranslationFont.Height / 2;
+    Metrics.TotalHeight = Padding.Top + Metrics.LabelHebrewFont.Height - 3 + Metrics.EditTranslationHeight + Padding.Bottom + 10;
   }
 
   public new bool Focus()

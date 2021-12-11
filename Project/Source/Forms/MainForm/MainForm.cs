@@ -1381,13 +1381,13 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectFilterBook.SelectedItem as BookRow )?.ID;
-    if ( id == null )
+    if ( SelectFilterBook.SelectedItem == null )
     {
       SelectFilterChapter.DataSource = null;
       SelectFilterVerse.DataSource = null;
       return;
     }
+    Guid id = ( (BookRow)SelectFilterBook.SelectedItem ).ID;
     var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
     if ( EditFilterChaptersWithTitle.Checked )
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
@@ -1412,12 +1412,12 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    string id = ( SelectFilterChapter.SelectedItem as ChapterRow )?.ID;
-    if ( id == null )
+    if ( SelectFilterChapter.SelectedItem == null )
     {
       SelectFilterVerse.DataSource = null;
       return;
     }
+    Guid id = ( (ChapterRow)SelectFilterChapter.SelectedItem ).ID;
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);

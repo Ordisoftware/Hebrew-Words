@@ -21,7 +21,7 @@ partial class MainForm
   {
     if ( Settings.CurrentView == ViewMode.ChapterVerses )
     {
-      int pos = CurrentReference.Verse.Number - 1;
+      int pos = CurrentReference.Verse?.Number - 1 ?? -1;
       if ( pos != VersesBindingSource.Position )
         VersesBindingSource.Position = pos;
     }
@@ -33,14 +33,14 @@ partial class MainForm
   {
     try
     {
-      while ( MenuHistory.DropDownItems.Count > 1 )
-        MenuHistory.DropDownItems.RemoveAt(1);
+      while ( ActionHistory.DropDownItems.Count > 1 )
+        ActionHistory.DropDownItems.RemoveAt(1);
       if ( History.Count > 0 )
       {
-        MenuHistory.DropDownItems.Add("-");
+        ActionHistory.DropDownItems.Add("-");
         foreach ( var reference in History )
         {
-          ToolStripMenuItem item = (ToolStripMenuItem)MenuHistory.DropDownItems.Add(reference.ToStringFull());
+          ToolStripMenuItem item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringFull());
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.ImageScaling = ToolStripItemImageScaling.None;

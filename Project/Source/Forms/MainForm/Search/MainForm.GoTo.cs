@@ -48,12 +48,25 @@ partial class MainForm
     if ( reference == null ) return;
     if ( Globals.IsExiting ) return;
     if ( IsGoToRunning ) return;
+    if ( reference.EqualsWordIncluded(CurrentReference) )
+    {
+      SetTanakItemFocus();
+      return;
+    }
     bool updated = false;
-    IsGoToRunning = true;
     NeedUpdateCurrentReference = false;
-    if ( LastToolTipPanel != null ) ToolTipSearchResult.Hide(LastToolTipPanel);
+    if ( LastToolTipPanel != null )
+      ToolTipSearchResult.Hide(LastToolTipPanel);
     LastToolTipPanel = null;
-    checkComboBoxes();
+    IsGoToRunning = true;
+    try
+    {
+      checkComboBoxes();
+    }
+    finally
+    {
+      IsGoToRunning = false;
+    }
     checkVerse();
     CurrentReference = new ReferenceItem(reference);
     MoveVerseBindingSourceAndAddCurrentToHistory();
@@ -66,24 +79,17 @@ partial class MainForm
     // 
     void checkComboBoxes()
     {
-      try
+      if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
       {
-        if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
-        {
-          var item = SelectBook.Items.AsIEnumerable<ObjectView<BookRow>>()
-                                     .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
-          SelectBook.SelectedItem = item ?? throw new SystemException(AppTranslations.SelectedBookItemIsNull.GetLang());
-          updated = true;
-        }
-        if ( SelectChapter.SelectedIndex != reference.Chapter?.Number - 1 )
-        {
-          SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
-          updated = true;
-        }
+        var item = SelectBook.Items.AsIEnumerable<ObjectView<BookRow>>()
+                                   .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
+        SelectBook.SelectedItem = item ?? throw new SystemException(AppTranslations.SelectedBookItemIsNull.GetLang());
+        updated = true;
       }
-      finally
+      if ( SelectChapter.SelectedIndex != reference.Chapter?.Number - 1 )
       {
-        IsGoToRunning = false;
+        SelectChapter.SelectedIndex = reference?.Chapter?.Number - 1 ?? -1;
+        updated = true;
       }
     }
     //
@@ -99,7 +105,7 @@ partial class MainForm
       // Do check verse
       VerseRow doCheckVerse()
       {
-        if ( reference.Chapter.Verses.Find(v => v.Number == 1).IsFullyTranslated )
+        if ( reference.Chapter?.Verses.Find(v => v.Number == 1).IsFullyTranslated ?? false )
         {
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
           if ( found != null )
