@@ -14,8 +14,6 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.ComponentModel;
 using SQLite;
 
 [Serializable]
@@ -27,6 +25,7 @@ public abstract class AbstractRow : INotifyPropertyChanged
 
   protected void NotifyPropertyChanged(string p)
   {
+    if ( !ApplicationDatabase.Instance.Loaded || !ApplicationDatabase.Instance.BindingsEnabled ) return;
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
     ApplicationDatabase.Instance.AddToModified(this);
   }
@@ -40,7 +39,6 @@ public abstract class AbstractRow : INotifyPropertyChanged
     };
 
   [PrimaryKey]
-  [NotNull]
   public Guid ID
   {
     get => _ID;

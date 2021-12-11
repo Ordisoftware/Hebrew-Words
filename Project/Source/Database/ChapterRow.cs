@@ -14,18 +14,15 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using System;
-using System.Collections.Generic;
 using SQLite;
-using SQLiteNetExtensions.Attributes;
 
 [Serializable]
 [Table("Chapters")]
 public class ChapterRow : AbstractRow
 {
 
-  [ForeignKey(typeof(BookRow))]
   [NotNull]
+  [Indexed]
   public Guid BookID
   {
     get => _BookID;

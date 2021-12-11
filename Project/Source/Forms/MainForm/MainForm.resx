@@ -2994,7 +2994,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionEditBookMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAvlJREFUSEu9lOlLVGEYxecPCupLRCmipF/SSTTDUsvMBZNSSM2l0tQ0C7ekFCVJ
+        vAAADrwBlbxySQAAAvlJREFUSEu9lOlLVGEYxecPCupLRCmipF/SSTTDUsvMBZNSSM2l0tQ0C7ekFCVJ
         ww8jOUZEC1mKYbuis7s1Y7NokBaTlqZz7+m8KozaNMnFunA+3eec3/Nuj+q/fN2N0dDcvLitet4Ug7V4
         lUpTnQd8bYLHmQx8iAVsR5WJ3pWMzw2431DsBbTWngOmG7DQvwcLvTuw2LdTkYRXZMBRj47G9YDqHAKu
         Y344C/MD6fg+mKFIwisy4Khe2aa1eAHIJaAO0mgyZHMcYElQJOEVGXBU+QBMVUEaOgD5fTAwuF+RhFdk
@@ -3046,7 +3046,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionEditChapterMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAvlJREFUSEu9lOlLVGEYxecPCupLRCmipF/SSTTDUsvMBZNSSM2l0tQ0C7ekFCVJ
+        vAAADrwBlbxySQAAAvlJREFUSEu9lOlLVGEYxecPCupLRCmipF/SSTTDUsvMBZNSSM2l0tQ0C7ekFCVJ
         ww8jOUZEC1mKYbuis7s1Y7NokBaTlqZz7+m8KozaNMnFunA+3eec3/Nuj+q/fN2N0dDcvLitet4Ug7V4
         lUpTnQd8bYLHmQx8iAVsR5WJ3pWMzw2431DsBbTWngOmG7DQvwcLvTuw2LdTkYRXZMBRj47G9YDqHAKu
         Y344C/MD6fg+mKFIwisy4Khe2aa1eAHIJaAO0mgyZHMcYElQJOEVGXBU+QBMVUEaOgD5fTAwuF+RhFdk
@@ -3098,7 +3098,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionELS50CopyToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAABJxJREFUSEudlftPW2Ucxvk/1Owf8Gd/NS6yTENi1BlvMVOYOJmbJhqncW6ZS7Zl
+        vAAADrwBlbxySQAABJxJREFUSEudlftPW2Ucxvk/1Owf8Gd/NS6yTENi1BlvMVOYOJmbJhqncW6ZS7Zl
         LnM6LhsLlHJvC3QDhqCSsQxaaE8p9N7S0lJ64dpCC7SnLTx+vy9naTBrQnySJ8D7Ps/n+57TnkPZYZTJ
         ZDBpNGJkZATDw8OQzGbkcjko24fXZmAc0lAjZv5SCVuH6uG2WzBjd8FIAxbCiwiFFmAymcWa2yaJzLM8
         d5mh4A5qK5XEo5sfYqi2Bo9un8KDW5XQXzuB9qZazM1HYJasmDCaYJg0Y8pkgccfpr06keEsd0SXGMxS
@@ -3154,7 +3154,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionExportChapter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABYdJREFUSEullWtQlFUYx1cbnZw+pJOWqfnBpj5U46hfmmmatHEmK1MRuYiGl4DU
+        vAAADrwBlbxySQAABYdJREFUSEullWtQlFUYx1cbnZw+pJOWqfnBpj5U46hfmmmatHEmK1MRuYiGl4DU
         SVPRAC+1gBdA5CY3AQFJ7iIse4XFhYVlYXcRTEUBDal2vCGKN1BE+3XeF0St1GZ6Zn5zzvs+z3n+5zzP
         e3YVz7L29nZqa2vJzcmRsYq59G7Q/d/tRnc3lepDHEyMIDcthpz9ERTkZZOdk4fD4eB8x2+cP9+BzWbj
         5+xc2SfFSLHSGlNpFjdvdD9b2Fp9lIuGH+myH+SiJZmbdfHoivPovH6bpsYm7DaHSG6n8VgjV7puyj4p
@@ -3214,7 +3214,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionExportBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABYdJREFUSEullWtQlFUYx1cbnZw+pJOWqfnBpj5U46hfmmmatHEmK1MRuYiGl4DU
+        vAAADrwBlbxySQAABYdJREFUSEullWtQlFUYx1cbnZw+pJOWqfnBpj5U46hfmmmatHEmK1MRuYiGl4DU
         SVPRAC+1gBdA5CY3AQFJ7iIse4XFhYVlYXcRTEUBDal2vCGKN1BE+3XeF0St1GZ6Zn5zzvs+z3n+5zzP
         e3YVz7L29nZqa2vJzcmRsYq59G7Q/d/tRnc3lepDHEyMIDcthpz9ERTkZZOdk4fD4eB8x2+cP9+BzWbj
         5+xc2SfFSLHSGlNpFjdvdD9b2Fp9lIuGH+myH+SiJZmbdfHoivPovH6bpsYm7DaHSG6n8VgjV7puyj4p
@@ -3274,7 +3274,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionSearchVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABJhJREFUSEuNVelT2lcU9V/rpNN+bWfapiYSjURRcI9LjKLsYFR2EEUkyI4bGrcE
+        vAAADrwBlbxySQAABJhJREFUSEuNVelT2lcU9V/rpNN+bWfapiYSjURRcI9LjKLsYFR2EEUkyI4bGrcE
         UUEFbdMk1draNJ+N1aY61ubr6X1PArFC6Z15M/Cbc9+5y7n3lfzbFhaX0PlQikcDg5DJlZDLlBBWiRAK
         RZCB/C9MQQtHJtA/aER8LYHIxBQcw05IJA1wudxZ51A4UhRT0FLpNJpb2iGpb0KVSIzbggqU3hYgFotn
         nbdSBTArOUxBOzk5Qf+AAYnkJtLpHfTKFHjYJcXp6Z9Z58KY0+IEZ2dn6OlVQKHSQNv3CJXCKtRRpO/e
@@ -3844,7 +3844,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Preferences</value>
   </data>
   <data name="ActionPreferences.ToolTipText" xml:space="preserve">
-    <value>Preferences (F8)</value>
+    <value>Preferences (F9)</value>
   </data>
   <data name="ActionSortBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3864,10 +3864,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionSortBookmarks.Text" xml:space="preserve">
-    <value>Sort bookmarks</value>
+    <value>Sort</value>
   </data>
   <data name="ActionAddBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3888,10 +3888,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionAddBookmark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionAddBookmark.Text" xml:space="preserve">
-    <value>Add a bookmark</value>
+    <value>Add</value>
   </data>
   <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3912,13 +3912,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionClearBookmarks.Text" xml:space="preserve">
-    <value>Empty bookmarks list</value>
+    <value>Empty</value>
   </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 6</value>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
   </data>
   <data name="ActionGoToBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3939,13 +3939,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
     <value>Main</value>
   </data>
-  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 6</value>
+  <data name="SeparatorBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
   </data>
   <data name="ActionBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4008,40 +4008,43 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionClearHistory.Text" xml:space="preserve">
     <value>Empty</value>
   </data>
+  <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -4223,10 +4226,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>46, 46</value>
   </data>
   <data name="ActionViewSearch.Text" xml:space="preserve">
-    <value>Search a word</value>
+    <value>Search</value>
   </data>
   <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
-    <value>Search a word (F4, Alt+F)</value>
+    <value>Search (F4, Alt+F)</value>
   </data>
   <data name="Sep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
@@ -4667,10 +4670,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>46, 46</value>
   </data>
   <data name="ActionSave.Text" xml:space="preserve">
-    <value>Save mofifications</value>
+    <value>Save</value>
   </data>
   <data name="ActionSave.ToolTipText" xml:space="preserve">
-    <value>Save mofifications (Ctrl+S)</value>
+    <value>Save (Ctrl+S)</value>
   </data>
   <data name="sep5.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
@@ -4878,6 +4881,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionCopyToClipboard.Text" xml:space="preserve">
     <value>Copy current view to the clipboard</value>
+  </data>
+  <data name="ActionCloseWindows.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionCloseWindows.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5899,10 +5905,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionClearBookmarks.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
-    <value>toolStripSeparator8</value>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionGoToBookmarkMain.Name" xml:space="preserve">
@@ -5911,10 +5917,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionGoToBookmarkMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
-    <value>toolStripSeparator12</value>
+  <data name="&gt;&gt;SeparatorBookmarks.Name" xml:space="preserve">
+    <value>SeparatorBookmarks</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
+  <data name="&gt;&gt;SeparatorBookmarks.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHistory.Name" xml:space="preserve">
@@ -5928,6 +5934,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionClearHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SeparatorHistory.Name" xml:space="preserve">
+    <value>SeparatorHistory</value>
+  </data>
+  <data name="&gt;&gt;SeparatorHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep1.Name" xml:space="preserve">
     <value>Sep1</value>
@@ -6109,12 +6121,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator16.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
-    <value>ActionCopyToClipboard</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionViewBibleStatistics.Name" xml:space="preserve">
     <value>ActionViewBibleStatistics</value>
   </data>
@@ -6132,6 +6138,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
+    <value>ActionCopyToClipboard</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyToClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCloseWindows.Name" xml:space="preserve">
     <value>ActionCloseWindows</value>

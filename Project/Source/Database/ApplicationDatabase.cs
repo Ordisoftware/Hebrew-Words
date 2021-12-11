@@ -49,15 +49,16 @@ class ApplicationDatabase : SQLiteDatabase
     AutoLoadAllAtOpen = false;
   }
 
-  protected override void Vacuum()
+  protected override void Vacuum(bool force = false)
   {
-    if ( Program.Settings.VacuumAtStartup )
+    var settings = Program.Settings;
+    if ( settings.VacuumAtStartup || force )
     {
-      var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone, Program.Settings.VacuumAtStartupDaysInterval);
-      if ( Program.Settings.VacuumLastDone != dateNew )
+      var dateNew = Connection.Optimize(settings.VacuumLastDone, settings.VacuumAtStartupDaysInterval, force);
+      if ( settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
-        Program.Settings.VacuumLastDone = dateNew;
+        settings.VacuumLastDone = dateNew;
       }
     }
   }
@@ -84,15 +85,15 @@ class ApplicationDatabase : SQLiteDatabase
     Parallel.ForEach(Books, (book) =>
     {
       string idBook = book.ID.ToString();
-      book.Chapters.AddRange(Connection.Query<ChapterRow>("SELECT * FROM Chapters WHERE BookID = ?", idBook));
+      book.Chapters.AddRange(Connection.DeferredQuery<ChapterRow>("SELECT * FROM Chapters WHERE BookID = ?", idBook));
       Parallel.ForEach(book.Chapters, (chapter) =>
       {
         string idChapter = chapter.ID.ToString();
-        chapter.Verses.AddRange(Connection.Query<VerseRow>("SELECT * FROM Verses WHERE ChapterID = ?", idChapter));
+        chapter.Verses.AddRange(Connection.DeferredQuery<VerseRow>("SELECT * FROM Verses WHERE ChapterID = ?", idChapter));
         Parallel.ForEach(chapter.Verses, (verse) =>
         {
           string idVerse = verse.ID.ToString();
-          verse.Words.AddRange(Connection.Query<WordRow>("SELECT * FROM Words WHERE VerseID = ?", idVerse));
+          verse.Words.AddRange(Connection.DeferredQuery<WordRow>("SELECT * FROM Words WHERE VerseID = ?", idVerse));
         });
       });
     });
@@ -170,6 +171,7 @@ class ApplicationDatabase : SQLiteDatabase
                                           onAbort: () => Environment.Exit(-1)) == DialogResult.Yes ) )
       try
       {
+        LoadingForm.Instance.Initialize(SysTranslations.CreatingData.GetLang(), 3 + 1, quantify: false);
         FillFromFiles();
         return true;
       }
@@ -207,10 +209,9 @@ class ApplicationDatabase : SQLiteDatabase
       }
       var books = Enums.GetValues<TanakBook>();
       string msg = SysTranslations.CreatingData.GetLang() + " {0}";
-      LoadingForm.Instance.Initialize(SysTranslations.CreatingData.GetLang(), books.Count + 1, quantify: false);
+      LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
       foreach ( TanakBook bookid in books )
       {
-        LoadingForm.Instance.DoProgress(operation: string.Format(msg, bookid));
         string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
         if ( !File.Exists(filePath) )
         {
@@ -277,21 +278,17 @@ class ApplicationDatabase : SQLiteDatabase
         }
       }
       if ( chapter != null ) nextChapter();
-      msg = SysTranslations.SavingData.GetLang() + " {0}";
-      LoadingForm.Instance.Initialize("", 5, quantify: false);
       BeginTransaction();
       try
       {
-        LoadingForm.Instance.DoProgress(operation: string.Format(msg, BooksTableName));
+        LoadingForm.Instance.DoProgress(operation: SysTranslations.SavingData.GetLang());
         Connection.InsertAll(Books);
-        LoadingForm.Instance.DoProgress(operation: string.Format(msg, ChaptersTableName));
         Connection.InsertAll(Chapters);
-        LoadingForm.Instance.DoProgress(operation: string.Format(msg, VersesTableName));
         Connection.InsertAll(Verses);
-        LoadingForm.Instance.DoProgress(operation: string.Format(msg, WordsTableName));
         Connection.InsertAll(Words);
         LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
         Commit();
+        Vacuum(true);
       }
       catch
       {

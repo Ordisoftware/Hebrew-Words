@@ -65,6 +65,7 @@ class ApplicationStatistics
   {
     get
     {
+      return ""; // TODO remove
       if ( UpdateDBMemorySizeRequired )
         try
         {

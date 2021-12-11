@@ -34,7 +34,6 @@ partial class MainForm : Form
     actionBeforeRestart?.Invoke();
     ApplicationDatabase.Restart();
     LoadData();
-    DoStartGoTo();
   }
 
   /// <summary>
