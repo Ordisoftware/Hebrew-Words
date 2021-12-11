@@ -179,6 +179,7 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -690,6 +691,7 @@
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
+      this.TabPageApplication.Controls.Add(this.checkBox1);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
@@ -1387,6 +1389,12 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1582,5 +1590,6 @@
     private Label LabelFontSizeCommentaryInfo;
     private NumericUpDown EditFontSizeCommentary;
     private ToolTip toolTip1;
+    private CheckBox checkBox1;
   }
 }

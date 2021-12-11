@@ -157,6 +157,8 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToBookmarkMain = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionHistory = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
       this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
@@ -185,14 +187,13 @@
       this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorImportConcordances = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -249,9 +250,6 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionHistory = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1351,6 +1349,20 @@
       this.toolStripSeparator12.Name = "toolStripSeparator12";
       resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
+      // ActionHistory
+      // 
+      this.ActionHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionHistory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionClearHistory});
+      resources.ApplyResources(this.ActionHistory, "ActionHistory");
+      this.ActionHistory.Name = "ActionHistory";
+      this.ActionHistory.Padding = new System.Windows.Forms.Padding(5);
+      // 
+      // ActionClearHistory
+      // 
+      resources.ApplyResources(this.ActionClearHistory, "ActionClearHistory");
+      this.ActionClearHistory.Name = "ActionClearHistory";
+      // 
       // Sep1
       // 
       this.Sep1.Name = "Sep1";
@@ -1537,14 +1549,12 @@
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
             this.ActionShowGrammarGuide,
-            this.toolStripSeparator13,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
-            this.ActionCopyToClipboard,
-            this.toolStripSeparator19,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
             this.toolStripSeparator1,
+            this.ActionCopyToClipboard,
             this.ActionCloseWindows,
             this.SeparatorImportConcordances,
             this.ActionImportConcordances});
@@ -1574,11 +1584,6 @@
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
-      // toolStripSeparator13
-      // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
-      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
-      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
@@ -1596,17 +1601,6 @@
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
       // 
-      // ActionCloseWindows
-      // 
-      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
-      this.ActionCloseWindows.Name = "ActionCloseWindows";
-      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
-      // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
-      // 
       // ActionViewBibleStatistics
       // 
       resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
@@ -1619,6 +1613,17 @@
       resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
       this.ActionOpenCalculator.Name = "ActionOpenCalculator";
       this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionCloseWindows
+      // 
+      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
+      this.ActionCloseWindows.Name = "ActionCloseWindows";
+      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
       // 
       // SeparatorImportConcordances
       // 
@@ -1989,25 +1994,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-      // 
-      // ActionHistory
-      // 
-      this.ActionHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.ActionHistory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionClearHistory});
-      resources.ApplyResources(this.ActionHistory, "ActionHistory");
-      this.ActionHistory.Name = "ActionHistory";
-      this.ActionHistory.Padding = new System.Windows.Forms.Padding(5);
-      // 
-      // ActionClearHistory
-      // 
-      resources.ApplyResources(this.ActionClearHistory, "ActionClearHistory");
-      this.ActionClearHistory.Name = "ActionClearHistory";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2199,7 +2185,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
     private System.Windows.Forms.ToolStripSeparator Sep1;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -2284,7 +2269,6 @@
     private HScrollBar EditELS50HScrollBar;
     internal CheckBox SelectRenderAllVerses;
     internal ToolStripButton ActionRefresh;
-    private ToolStripSeparator toolStripSeparator19;
     private ToolStripMenuItem ActionCopyToClipboard;
     private ToolStripMenuItem ActionImportConcordances;
     private ToolStripSeparator SeparatorImportConcordances;
