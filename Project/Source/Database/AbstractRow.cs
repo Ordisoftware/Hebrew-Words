@@ -41,7 +41,7 @@ public abstract class AbstractRow : INotifyPropertyChanged
 
   [PrimaryKey]
   [NotNull]
-  public string ID
+  public Guid ID
   {
     get => _ID;
     set
@@ -51,7 +51,7 @@ public abstract class AbstractRow : INotifyPropertyChanged
       NotifyPropertyChanged(nameof(ID));
     }
   }
-  private string _ID = Guid.NewGuid().ToString();
+  private Guid _ID = Guid.NewGuid();
 
   [NotNull]
   public int Number

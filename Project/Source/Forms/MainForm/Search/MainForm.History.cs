@@ -21,7 +21,7 @@ partial class MainForm
   {
     if ( Settings.CurrentView == ViewMode.ChapterVerses )
     {
-      int pos = CurrentReference.Verse.Number - 1;
+      int pos = CurrentReference.Verse?.Number - 1 ?? -1;
       if ( pos != VersesBindingSource.Position )
         VersesBindingSource.Position = pos;
     }

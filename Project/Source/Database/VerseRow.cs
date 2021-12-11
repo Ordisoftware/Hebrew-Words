@@ -25,7 +25,7 @@ public partial class VerseRow : AbstractRow
 
   [ForeignKey(typeof(ChapterRow))]
   [NotNull]
-  public string ChapterID
+  public Guid ChapterID
   {
     get => _ChapterID;
     set
@@ -35,7 +35,7 @@ public partial class VerseRow : AbstractRow
       NotifyPropertyChanged(nameof(ChapterID));
     }
   }
-  private string _ChapterID;
+  private Guid _ChapterID;
 
   [NotNull]
   public string Comment

@@ -63,7 +63,7 @@
       // 
       this.EditCommentary.BackColor = System.Drawing.Color.Honeydew;
       this.EditCommentary.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Top;
       this.EditCommentary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.EditCommentary.Location = new System.Drawing.Point(10, 0);
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);

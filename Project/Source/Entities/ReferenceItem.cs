@@ -31,7 +31,7 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
     {
       Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
       Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
-      Verse = Chapter.Verses?.Find(v => v.Number == verse);
+      Verse = Chapter?.Verses?.Find(v => v.Number == verse);
       Word = Verse?.Words?.Find(w => w.Number == word);
     }
     catch ( Exception ex )

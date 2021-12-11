@@ -26,7 +26,7 @@ public class ChapterRow : AbstractRow
 
   [ForeignKey(typeof(BookRow))]
   [NotNull]
-  public string BookID
+  public Guid BookID
   {
     get => _BookID;
     set
@@ -36,7 +36,7 @@ public class ChapterRow : AbstractRow
       NotifyPropertyChanged(nameof(BookID));
     }
   }
-  private string _BookID;
+  private Guid _BookID;
 
   [NotNull]
   public string Title

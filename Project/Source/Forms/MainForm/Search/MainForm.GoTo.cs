@@ -88,7 +88,7 @@ partial class MainForm
       }
       if ( SelectChapter.SelectedIndex != reference.Chapter?.Number - 1 )
       {
-        SelectChapter.SelectedIndex = reference.Chapter.Number - 1;
+        SelectChapter.SelectedIndex = reference?.Chapter?.Number - 1 ?? -1;
         updated = true;
       }
     }
@@ -105,7 +105,7 @@ partial class MainForm
       // Do check verse
       VerseRow doCheckVerse()
       {
-        if ( reference.Chapter.Verses.Find(v => v.Number == 1).IsFullyTranslated )
+        if ( reference.Chapter?.Verses.Find(v => v.Number == 1).IsFullyTranslated ?? false )
         {
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
           if ( found != null )

@@ -86,15 +86,18 @@ class ApplicationDatabase : SQLiteDatabase
     foreach ( var book in Books )
     {
       OnLoadingData(SysTranslations.LoadingDataDetailed.GetLang(book.Name));
-      book.Chapters.AddRange(Connection.Table<ChapterRow>().Where(chapter => chapter.BookID == book.ID));
+      string idBook = book.ID.ToString();
+      book.Chapters.AddRange(Connection.Query<ChapterRow>("SELECT * FROM Chapters WHERE BookID = ?", idBook));
       Chapters.AddRange(book.Chapters);
       foreach ( var chapter in book.Chapters )
       {
-        chapter.Verses.AddRange(Connection.Table<VerseRow>().Where(verse => verse.ChapterID == chapter.ID));
+        string idChapter = chapter.ID.ToString();
+        chapter.Verses.AddRange(Connection.Query<VerseRow>("SELECT * FROM Verses WHERE ChapterID = ?", idChapter));
         Verses.AddRange(chapter.Verses);
         foreach ( var verse in chapter.Verses )
         {
-          verse.Words.AddRange(Connection.Table<WordRow>().Where(word => word.VerseID == verse.ID));
+          string idVerse = verse.ID.ToString();
+          verse.Words.AddRange(Connection.Query<WordRow>("SELECT * FROM Words WHERE VerseID = ?", idVerse));
           Words.AddRange(verse.Words);
         }
       }
@@ -218,7 +221,6 @@ class ApplicationDatabase : SQLiteDatabase
         }
         string[] filecontent = File.ReadAllLines(filePath);
         book = new();
-        //book.ID = Guid.NewGuid().ToString();
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
         book.Hebrew = BooksNames.Hebrew[bookid];
