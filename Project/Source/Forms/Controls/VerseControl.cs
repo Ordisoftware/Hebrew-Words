@@ -103,7 +103,7 @@ public partial class VerseControl : UserControl
     metrics.ControlWidth = width;
     metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
     metrics.EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
-    metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", metrics.EditCommentaryFont).Height;
+    metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", metrics.EditCommentaryFont).Height;
     metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * Settings.VerseCommentaryLinesCount + 5;
     metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
     metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
