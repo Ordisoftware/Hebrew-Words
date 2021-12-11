@@ -92,11 +92,12 @@ partial class MainForm : Form
     try
     {
       //process(DataSet.StrongConcordances, StrongConcordancesTableAdapter);
-      LoadingForm.Instance.Initialize("", Enums.GetValues<TanakBook>().Count + 1 + 1 + 1, quantify: false);
+      LoadingForm.Instance.Initialize("", 3 + 1, quantify: false);
       ApplicationDatabase.Instance.LoadingData += OnLoadingData;
       ApplicationDatabase.Instance.Open();
       var created = ApplicationDatabase.Instance.LoadAll(false);
       ApplicationDatabase.Instance.LoadingData -= OnLoadingData;
+      LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
       if ( created )
       {
         ReLoadData();
@@ -115,7 +116,6 @@ partial class MainForm : Form
     //
     void completed()
     {
-      LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
       BooksBindingSource.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
       SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     }
