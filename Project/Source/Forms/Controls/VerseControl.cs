@@ -64,19 +64,23 @@ public partial class VerseControl : UserControl
       EditCommentary.Multiline = true;
       EditCommentary.WordWrap = true;
       EditCommentary.ScrollBars = ScrollBars.Vertical;
-      PanelComment.Height = metrics.EditCommentaryHeight;
+      EditCommentary.Height = metrics.EditCommentaryHeight;
     }
-    int numberOfLines = WordControls.Length / metrics.WordControlsPerLine;
-    if ( WordControls.Length % metrics.WordControlsPerLine > 0 ) numberOfLines++;
-    LabelVerseNumber.Font = metrics.LabelVerseNumberFont;
-    LabelVerseNumber.Text = reference.Verse.Number.ToString();
-    LabelVerseNumber.Width = metrics.LabelVerseNumberWidth;
-    LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
-    EditCommentary.Font = metrics.EditCommentaryFont;
-    EditCommentary.Text = reference.Verse.Comment;
-    EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
-    PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
-    Height = metrics.DeltaHeight + +CreateWordControls() * numberOfLines + EditCommentary.Height;
+    if ( metrics.WordControlsPerLine != 0 )
+    {
+      int numberOfLines = WordControls.Length / metrics.WordControlsPerLine;
+      if ( WordControls.Length % metrics.WordControlsPerLine > 0 ) numberOfLines++;
+      LabelVerseNumber.Font = metrics.LabelVerseNumberFont;
+      LabelVerseNumber.Text = reference.Verse.Number.ToString();
+      LabelVerseNumber.Width = metrics.LabelVerseNumberWidth;
+      LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
+      EditCommentary.Font = metrics.EditCommentaryFont;
+      EditCommentary.Text = reference.Verse.Comment;
+      EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
+      PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
+      PanelComment.Height = PanelSeparator.Height + metrics.EditCommentaryHeight;
+      Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelComment.Height;
+    }
     Width = metrics.ControlWidth;
   }
 
@@ -100,9 +104,9 @@ public partial class VerseControl : UserControl
     metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
     metrics.EditCommentaryFont = new Font(EditCommentary.Font.FontFamily, Settings.FontSizeCommentary);
     metrics.EditCommentaryTextHeight = TextRenderer.MeasureText(graphicsCommentary, "A", metrics.EditCommentaryFont).Height;
-    metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * ( Settings.VerseCommentaryLinesCount + 1 ) - 5;
+    metrics.EditCommentaryHeight = metrics.EditCommentaryTextHeight * Settings.VerseCommentaryLinesCount + 5;
     metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
-    metrics.DeltaHeight = Padding.Top + Padding.Left + Padding.Bottom + PanelComment.Padding.Top;
+    metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 
   private int CreateWordControls()

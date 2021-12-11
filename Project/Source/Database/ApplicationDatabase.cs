@@ -79,7 +79,7 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoLoadAll()
   {
-    Books = Connection.Table<BookRow>().ToList();
+    Books = new(Connection.Table<BookRow>());
     Chapters.Clear();
     Verses.Clear();
     Words.Clear();
