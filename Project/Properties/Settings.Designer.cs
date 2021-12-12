@@ -1293,5 +1293,137 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["CommentLineRemovePrefix"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GoToLastVerseAtStartup {
+            get {
+                return ((bool)(this["GoToLastVerseAtStartup"]));
+            }
+            set {
+                this["GoToLastVerseAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int LastReferenceBook {
+            get {
+                return ((int)(this["LastReferenceBook"]));
+            }
+            set {
+                this["LastReferenceBook"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int LastReferenceChapter {
+            get {
+                return ((int)(this["LastReferenceChapter"]));
+            }
+            set {
+                this["LastReferenceChapter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int LastReferenceVerse {
+            get {
+                return ((int)(this["LastReferenceVerse"]));
+            }
+            set {
+                this["LastReferenceVerse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int LastReferenceWord {
+            get {
+                return ((int)(this["LastReferenceWord"]));
+            }
+            set {
+                this["LastReferenceWord"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightYellow")]
+        public global::System.Drawing.Color ThemeNavigatorItems {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeNavigatorItems"]));
+            }
+            set {
+                this["ThemeNavigatorItems"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        public global::System.Drawing.Color ThemeCurrentControl {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeCurrentControl"]));
+            }
+            set {
+                this["ThemeCurrentControl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Honeydew")]
+        public global::System.Drawing.Color ThemeCommentaryBack {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeCommentaryBack"]));
+            }
+            set {
+                this["ThemeCommentaryBack"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightYellow")]
+        public global::System.Drawing.Color ThemeSearchLettersBack {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeSearchLettersBack"]));
+            }
+            set {
+                this["ThemeSearchLettersBack"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        public global::System.Drawing.Color ThemeSearchWordBack {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeSearchWordBack"]));
+            }
+            set {
+                this["ThemeSearchWordBack"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Window")]
+        public global::System.Drawing.Color ThemeTranslationBack {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeTranslationBack"]));
+            }
+            set {
+                this["ThemeTranslationBack"] = value;
+            }
+        }
     }
 }

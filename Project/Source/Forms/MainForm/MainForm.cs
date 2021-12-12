@@ -114,8 +114,8 @@ partial class MainForm : Form
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
           ActionRefresh.PerformClick();
-        else
-          EditScreenNone.PerformClick();
+      if ( PreviousWindowsState == FormWindowState.Normal )
+        EditScreenNone.PerformClick();
     }
     else
     if ( WindowState == FormWindowState.Maximized )
@@ -149,6 +149,7 @@ partial class MainForm : Form
     Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
     ToolStrip.Enabled = !disabled;
     PanelNavigation.Enabled = !disabled;
+    EditChapterMemo.Multiline = !disabled;
     PanelMainCenter.Enabled = !disabled;
     Refresh();
   }
@@ -233,21 +234,36 @@ partial class MainForm : Form
   private void ActionPreferences_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
+    Settings.Store();
     bool refresh = PreferencesForm.Run();
-    InitializeDialogsDirectory();
     UpdateBookmarks();
     UpdateHistory();
     InitializeSpecialMenus();
     InitializeDialogsDirectory();
     if ( refresh )
-    {
-      var reference = Instance.CurrentReference;
-      BooksBindingSource.ResetBindings(false);
-      RenderAll(true);
-      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      int word = reference.Word == null ? 1 : reference.Word.Number;
-      GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
-    }
+      try
+      {
+        Cursor = Cursors.WaitCursor;
+        var reference = Instance.CurrentReference;
+        BooksBindingSource.ResetBindings(false);
+        ChaptersBindingSource.ResetBindings(false);
+        VersesBindingSource.ResetBindings(false);
+        WordsBindingSource.ResetBindings(false);
+        FilterBooksBindingSource.ResetBindings(false);
+        FilterChaptersBindingSource.ResetBindings(false);
+        FilterVersesBindingSource.ResetBindings(false);
+        CreateFilterDataSource();
+        SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+        UpdateCurrentReference();
+        RenderAll(true);
+        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+        int word = reference.Word == null ? 1 : reference.Word.Number;
+        GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
   }
 
   #endregion

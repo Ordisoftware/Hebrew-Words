@@ -81,6 +81,7 @@ public partial class VerseControl : UserControl
       PanelComment.Height = metrics.EditCommentaryHeight;
       Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
     }
+    EditCommentary.BackColor = Settings.ThemeCommentaryBack;
     Width = metrics.ControlWidth;
   }
 
@@ -165,7 +166,7 @@ public partial class VerseControl : UserControl
 
   private void EditComment_Enter(object sender, EventArgs e)
   {
-    EditCommentary.BackColor = Color.AliceBlue;
+    EditCommentary.BackColor = Settings.ThemeCurrentControl;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
@@ -173,7 +174,7 @@ public partial class VerseControl : UserControl
 
   private void EditComment_Leave(object sender, EventArgs e)
   {
-    EditCommentary.BackColor = Color.Honeydew;
+    EditCommentary.BackColor = Settings.ThemeCommentaryBack;
     EditCommentary.Text = CheckComment(EditCommentary.Text);
   }
 

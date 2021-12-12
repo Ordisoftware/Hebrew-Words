@@ -97,4 +97,65 @@ partial class PreferencesForm
     config.SaveAs(SaveSettingsDialog.FileName);
   }
 
+
+  private void DoOpenTheme()
+  {
+    SystemManager.TryCatch(() => OpenThemeDialog.InitialDirectory = Settings.GetExportDirectory());
+    if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
+    var items = new NullSafeOfStringDictionary<string>();
+    if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
+    TabPageTheme.Controls.OfType<Panel>().ToList().ForEach(panel =>
+    {
+      string name = panel.Name.Substring(4);
+      if ( items.ContainsKey(name) )
+        panel.BackColor = ColorTranslator.FromHtml(items[name]);
+    });
+    SaveColors();
+    MainForm.Instance.InitializeTheme();
+  }
+
+  private void DoSaveTheme()
+  {
+    SystemManager.TryCatch(() =>
+    {
+      SaveThemeDialog.InitialDirectory = Settings.GetExportDirectory();
+      SaveThemeDialog.FileName = "Theme.ini";
+    });
+    if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
+    var items = new List<string>();
+    TabPageTheme.Controls.OfType<Panel>().ToList().ForEach(panel => items.Add(makeLine(panel)));
+    File.WriteAllLines(SaveThemeDialog.FileName, items);
+    //
+    static string makeLine(Panel panel)
+    {
+      return panel.Name.Substring(4) + "=" + ColorTranslator.ToHtml(panel.BackColor);
+    }
+  }
+
+  private void SetThemePastel()
+  {
+    EditThemeNavigatorItems.BackColor = Color.LightYellow;
+    EditThemeCurrentControl.BackColor = Color.AliceBlue;
+    EditThemeTranslationBack.BackColor = SystemColors.Window;
+    EditThemeCommentaryBack.BackColor = Color.Honeydew;
+    EditThemeSearchLettersBack.BackColor = Color.LightYellow;
+    EditThemeSearchWordBack.BackColor = Color.AliceBlue;
+    SaveColors();
+    MainForm.Instance.InitializeTheme();
+    UpdateViewRequired = true;
+  }
+
+  private void SetThemeSystem()
+  {
+    EditThemeNavigatorItems.BackColor = SystemColors.Window;
+    EditThemeCurrentControl.BackColor = SystemColors.Window;
+    EditThemeTranslationBack.BackColor = SystemColors.Window;
+    EditThemeCommentaryBack.BackColor = SystemColors.Window;
+    EditThemeSearchLettersBack.BackColor = SystemColors.Control;
+    EditThemeSearchWordBack.BackColor = SystemColors.Window;
+    SaveColors();
+    MainForm.Instance.InitializeTheme();
+    UpdateViewRequired = true;
+  }
+
 }

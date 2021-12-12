@@ -197,6 +197,18 @@ partial class PreferencesForm : Form
 
   #region Startup
 
+  private void EditGoToMasterBookmarkAtStartup_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditGoToMasterBookmarkAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
+      EditGoToLastVerseAtStartup.Checked = false;
+  }
+
+  private void EditGoToLastVerseAtStartup_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditGoToMasterBookmarkAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
+      EditGoToMasterBookmarkAtStartup.Checked = false;
+  }
+
   private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
   {
     EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
@@ -376,6 +388,41 @@ partial class PreferencesForm : Form
     for ( int index = 0; index < verses.Count; index++ )
       verses[index].Comment = VerseControl.CheckComment(verses[index].Comment);
     MainForm.Instance.ActionSave.PerformClick();
+  }
+
+  #endregion
+
+  #region Theme
+
+  private void EditColor_Click(object sender, EventArgs e)
+  {
+    var panel = (Panel)sender;
+    DialogColor.Color = panel.BackColor;
+    if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+    panel.BackColor = DialogColor.Color;
+    SaveColors();
+    MainForm.Instance.InitializeTheme();
+    UpdateViewRequired = true;
+  }
+
+  private void ActionOpenTheme_Click(object sender, EventArgs e)
+  {
+    DoOpenTheme();
+  }
+
+  private void ActionSaveTheme_Click(object sender, EventArgs e)
+  {
+    DoSaveTheme();
+  }
+
+  private void ActionUseColorsPastel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    SetThemePastel();
+  }
+
+  private void ActionUseColorsSystem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    SetThemeSystem();
   }
 
   #endregion

@@ -93,16 +93,19 @@ partial class PreferencesForm
       form.ShowDialog();
     }
     MainForm.Instance.InitializeDialogsDirectory();
-    UpdateViewRequired = TranslateLinesCountPrevious != (int)form.EditWordTranslateLinesCount.Value
-                      || CommentaryLinesCountPrevious != (int)form.EditCommentaryLinesCount.Value
-                      || WordControlWidthPrevious != (int)form.EditWordControlWidth.Value
-                      || MaxrefCountPrevious != (int)form.EditSearchDisplayMaxRef.Value
-                      || FontSizeHebrewPrevious != (int)form.EditFontSizeHebrew.Value
-                      || FontSizeTranslationPrevious != (int)form.EditFontSizeTranslation.Value
-                      || FontSizeCommentaryPrevious != (int)form.EditFontSizeCommentary.Value
-                      || BookNameHebrewWithCommonNamePrevious != form.EditBookNameHebrewWithCommonName.Checked;
+    var result = Reseted
+              || UpdateViewRequired
+              || lang != Settings.LanguageSelected
+              || TranslateLinesCountPrevious != (int)form.EditWordTranslateLinesCount.Value
+              || CommentaryLinesCountPrevious != (int)form.EditCommentaryLinesCount.Value
+              || WordControlWidthPrevious != (int)form.EditWordControlWidth.Value
+              || MaxrefCountPrevious != (int)form.EditSearchDisplayMaxRef.Value
+              || FontSizeHebrewPrevious != (int)form.EditFontSizeHebrew.Value
+              || FontSizeTranslationPrevious != (int)form.EditFontSizeTranslation.Value
+              || FontSizeCommentaryPrevious != (int)form.EditFontSizeCommentary.Value
+              || BookNameHebrewWithCommonNamePrevious != form.EditBookNameHebrewWithCommonName.Checked;
     form.Dispose();
-    return Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
+    return result;
   }
 
 }

@@ -69,6 +69,10 @@ partial class MainForm
     }
     checkVerse();
     CurrentReference = new ReferenceItem(reference);
+    Settings.LastReferenceBook = CurrentReference.Book.Number;
+    Settings.LastReferenceChapter = CurrentReference.Chapter.Number;
+    Settings.LastReferenceVerse = CurrentReference.Verse.Number;
+    Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
     MoveVerseBindingSourceAndAddCurrentToHistory();
     LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();

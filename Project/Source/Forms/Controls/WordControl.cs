@@ -52,6 +52,7 @@ public partial class WordControl : UserControl
     Height = Metrics.TotalHeight;
     LabelHebrew.Font = Metrics.LabelHebrewFont;
     EditTranslation.Font = Metrics.EditTranslationFont;
+    EditTranslation.BackColor = Settings.ThemeTranslationBack;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
   }
@@ -80,7 +81,7 @@ public partial class WordControl : UserControl
   private void EditTranslation_Enter(object sender, EventArgs e)
   {
     if ( Globals.IsRendering ) return;
-    EditTranslation.BackColor = Color.AliceBlue;
+    EditTranslation.BackColor = Settings.ThemeCurrentControl;
     EditTranslation.SelectionStart = 0;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
     MainForm.Instance.CurrentReference = Reference;
@@ -89,7 +90,7 @@ public partial class WordControl : UserControl
 
   private void EditTranslation_Leave(object sender, EventArgs e)
   {
-    EditTranslation.BackColor = SystemColors.Window;
+    EditTranslation.BackColor = Settings.ThemeTranslationBack;
   }
 
   private void LabelHebrew_MouseEnter(object sender, EventArgs e)

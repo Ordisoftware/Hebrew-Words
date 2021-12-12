@@ -58,6 +58,11 @@ partial class PreferencesForm
     Settings.CommentLineAddPrefix = EditCommentLineAddPrefix.Checked;
     Settings.CommentLineRemovePrefix = EditCommentLineRemovePrefix.Checked;
     Settings.CommentLinePrefix = EditCommentLinePrefix.Text;
+    Settings.GoToMasterBookmarkAtStartup = EditGoToMasterBookmarkAtStartup.Checked;
+    Settings.GoToMasterBookmarkAtStartup = EditGoToMasterBookmarkAtStartup.Checked;
+    Settings.GoToLastVerseAtStartup = EditGoToLastVerseAtStartup.Checked;
+    Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
+    SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClick1.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.OnlineSearch;
@@ -103,6 +108,16 @@ partial class PreferencesForm
     // End
     Settings.PreferencesFormSelectedTabIndex = TabControl.SelectedIndex;
     Settings.Store();
+  }
+
+  private void SaveColors()
+  {
+    Settings.ThemeNavigatorItems = EditThemeNavigatorItems.BackColor;
+    Settings.ThemeCurrentControl = EditThemeCurrentControl.BackColor;
+    Settings.ThemeTranslationBack = EditThemeTranslationBack.BackColor;
+    Settings.ThemeCommentaryBack = EditThemeCommentaryBack.BackColor;
+    Settings.ThemeSearchLettersBack = EditThemeSearchLettersBack.BackColor;
+    Settings.ThemeSearchWordBack = EditThemeSearchWordBack.BackColor;
   }
 
 }
