@@ -188,7 +188,7 @@ partial class MainForm
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
           if ( CurrentReference.Word != null )
-            Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word).Focus();
+            Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word)?.Focus();
           else
             control.WordControls.FirstOrDefault()?.Focus();
         }

@@ -84,6 +84,7 @@ public partial class WordControl : UserControl
     EditTranslation.BackColor = Settings.ThemeCurrentControl;
     EditTranslation.SelectionStart = 0;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
+    if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }

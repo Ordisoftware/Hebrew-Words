@@ -52,11 +52,11 @@ partial class MainForm
     }
     switch ( keyData )
     {
-      // System tools
+      // System
       case Keys.F9:
         ActionPreferences.PerformClick();
         return true;
-      // Change view
+      // ROtate view
       case Keys.Control | Keys.Shift | Keys.Tab:
         SetView(Settings.CurrentView.Previous(RotateIgnoreViews));
         return true;
@@ -74,6 +74,7 @@ partial class MainForm
         ActionViewVerseFiltered.PerformClick();
         return true;
       case Keys.F4:
+      case Keys.Alt | Keys.F:
         if ( Settings.CurrentView != ViewMode.Search )
           ActionViewSearch.PerformClick();
         else
@@ -93,9 +94,6 @@ partial class MainForm
       case Keys.F8:
       case Keys.Control | Keys.R:
         ActionRefresh.PerformClick();
-        return true;
-      case Keys.Alt | Keys.F:
-        ActionViewSearch.PerformClick();
         return true;
       case Keys.Control | Keys.F:
         ActionSearchVerse.PerformClick();
@@ -141,73 +139,81 @@ partial class MainForm
         if ( Settings.CurrentView == ViewMode.ChapterVerses
           || Settings.CurrentView == ViewMode.ChapterTranslation
           || Settings.CurrentView == ViewMode.ChapterOriginal )
+          // TODO check verse number 0 and Count - 1
           GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
         break;
       case Keys.Alt | Keys.Right:
         if ( Settings.CurrentView == ViewMode.ChapterVerses
           || Settings.CurrentView == ViewMode.ChapterTranslation
           || Settings.CurrentView == ViewMode.ChapterOriginal )
+          // TODO check verse number 0 and Count - 1
           GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
         break;
       // Scrolling bounds
       case Keys.Alt | Keys.Home:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, 0, false);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, 0, false);
           case ViewMode.Search:
             return scroll(PanelSearchResults, 0, false);
         }
         break;
       case Keys.Alt | Keys.End:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, PanelViewVerseFiltered.DisplayRectangle.Height, false);
           case ViewMode.Search:
             return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
         }
         break;
       // Scrolling small
       case Keys.Alt | Keys.Up:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, -ScrollIncrement, true);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, -ScrollIncrement, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, -ScrollIncrement, true);
         }
         break;
       case Keys.Alt | Keys.Down:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, ScrollIncrement, true);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, ScrollIncrement, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, ScrollIncrement, true);
         }
         break;
       // Scrolling large
       case Keys.Alt | Keys.PageUp:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, -PanelViewVerses.Height, true);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, -PanelViewVerseFiltered.Height, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, -PanelViewVerses.Height, true);
         }
         break;
       case Keys.Alt | Keys.PageDown:
-        if ( ActiveControl is TextBox ) return false;
         switch ( Settings.CurrentView )
         {
           case ViewMode.ChapterVerses:
             return scroll(PanelViewVerses, PanelViewVerses.Height, true);
+          case ViewMode.VerseFiltered:
+            return scroll(PanelViewVerseFiltered, PanelViewVerseFiltered.Height, true);
           case ViewMode.Search:
             return scroll(PanelSearchResults, PanelViewVerses.Height, true);
         }
