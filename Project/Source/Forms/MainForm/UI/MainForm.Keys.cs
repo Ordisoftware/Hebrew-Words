@@ -52,13 +52,6 @@ partial class MainForm
     }
     switch ( keyData )
     {
-      // System close
-      case Keys.Alt | Keys.Control | Keys.F4:
-        ActionExit.PerformClick();
-        return true;
-      case Keys.Escape:
-        if ( Globals.IsRendering ) Globals.CancelRequired = true;
-        break;
       // System tools
       case Keys.F9:
         ActionPreferences.PerformClick();
@@ -116,6 +109,9 @@ partial class MainForm
         return true;
       case Keys.Alt | Keys.B:
         ActionBookmarks.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.H:
+        ActionHistory.ShowDropDown();
         return true;
       case Keys.Alt | Keys.T:
         ActionTools.ShowDropDown();
