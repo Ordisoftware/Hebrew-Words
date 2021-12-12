@@ -2908,7 +2908,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>23</value>
   </data>
   <data name="LabelBookTranslation.Text" xml:space="preserve">
-    <value>Traduction</value>
+    <value>Translation</value>
   </data>
   <data name="&gt;&gt;LabelBookTranslation.Name" xml:space="preserve">
     <value>LabelBookTranslation</value>

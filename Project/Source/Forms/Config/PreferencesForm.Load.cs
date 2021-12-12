@@ -104,6 +104,10 @@ partial class PreferencesForm
       CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
       MaxrefCountPrevious = (int)EditSearchDisplayMaxRef.Value;
+      FontSizeHebrewPrevious = (int)EditFontSizeHebrew.Value;
+      FontSizeTranslationPrevious = (int)EditFontSizeTranslation.Value;
+      FontSizeCommentaryPrevious = (int)EditFontSizeCommentary.Value;
+      BookNameHebrewWithCommonNamePrevious = EditBookNameHebrewWithCommonName.Checked;
       First = false;
     }
     // Special

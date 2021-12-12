@@ -241,10 +241,12 @@ partial class MainForm : Form
     InitializeDialogsDirectory();
     if ( refresh )
     {
-      RenderAll(true);
       var reference = Instance.CurrentReference;
+      BooksBindingSource.ResetBindings(false);
+      RenderAll(true);
       int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+      int word = reference.Word == null ? 1 : reference.Word.Number;
+      GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
     }
   }
 

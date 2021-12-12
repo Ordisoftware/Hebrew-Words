@@ -46,14 +46,15 @@ partial class PreferencesForm
 
   static private bool First;
   static private bool LanguageChanged;
+  static private bool UpdateViewRequired;
   static private int TranslateLinesCountPrevious;
   static private int CommentaryLinesCountPrevious;
   static private int WordControlWidthPrevious;
   static private int MaxrefCountPrevious;
-  static private bool UpdateViewRequired;
   static private int FontSizeHebrewPrevious;
   static private int FontSizeTranslationPrevious;
   static private int FontSizeCommentaryPrevious;
+  static private bool BookNameHebrewWithCommonNamePrevious;
 
   static public bool Reseted { get; private set; }
   static private bool DoReset;

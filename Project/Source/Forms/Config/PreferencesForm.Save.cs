@@ -109,6 +109,7 @@ partial class PreferencesForm
                       || FontSizeHebrewPrevious != (int)EditFontSizeHebrew.Value
                       || FontSizeTranslationPrevious != (int)EditFontSizeTranslation.Value
                       || FontSizeCommentaryPrevious != (int)EditFontSizeCommentary.Value
+                      || BookNameHebrewWithCommonNamePrevious != EditBookNameHebrewWithCommonName.Checked
     ;
   }
 
