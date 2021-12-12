@@ -54,6 +54,10 @@ partial class PreferencesForm
     Settings.FontSizeHebrew = (int)EditFontSizeHebrew.Value;
     Settings.FontSizeTranslation = (int)EditFontSizeTranslation.Value;
     Settings.FontSizeCommentary = (int)EditFontSizeCommentary.Value;
+    Settings.BookNameHebrewWithCommonName = EditBookNameHebrewWithCommonName.Checked;
+    Settings.CommentLineAddPrefix = EditCommentLineAddPrefix.Checked;
+    Settings.CommentLineRemovePrefix = EditCommentLineRemovePrefix.Checked;
+    Settings.CommentLinePrefix = EditCommentLinePrefix.Text;
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClick1.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.OnlineSearch;

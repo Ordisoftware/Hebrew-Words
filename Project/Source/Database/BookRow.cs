@@ -119,7 +119,7 @@ public class BookRow : AbstractRow
   public override string ToString()
   {
     string str = $"{FormatNumber(ApplicationDatabase.Instance.Books.Count)}. {Name}";
-    if ( CommonName.Length > 0 ) str += $" ({CommonName})";
+    if ( CommonName.Length > 0 && Program.Settings.BookNameHebrewWithCommonName ) str += $" ({CommonName})";
     if ( Translation.Length > 0 ) str += $" - {Translation}";
     return str;
   }

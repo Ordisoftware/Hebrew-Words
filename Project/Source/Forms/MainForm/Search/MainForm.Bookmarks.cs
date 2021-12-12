@@ -47,14 +47,14 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringFull();
+      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
       {
         foreach ( var reference in Bookmarks )
         {
-          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringFull());
+          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;

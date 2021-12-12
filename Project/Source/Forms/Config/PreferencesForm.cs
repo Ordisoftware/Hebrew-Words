@@ -100,7 +100,7 @@ partial class PreferencesForm : Form
 
   #endregion
 
-  #region Export and import
+  #region Export and Import Settings
 
   private void ActionExportSettings_Click(object sender, EventArgs e)
   {
@@ -341,6 +341,41 @@ partial class PreferencesForm : Form
   private void EditRenderVerseControl_ValueChanged(object sender, EventArgs e)
   {
     VerseControl.ResetMetricsRequired = true;
+  }
+
+  #endregion
+
+  #region Comment Prefixes
+
+  private void EditCommentLineAddPrefix_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
+      EditCommentLineRemovePrefix.Checked = false;
+    EditCommentLinePrefix.Enabled = EditCommentLineAddPrefix.Checked || EditCommentLineRemovePrefix.Checked;
+    ActionCheckAllComments.Enabled = EditCommentLinePrefix.Enabled;
+  }
+
+  private void EditCommentLineRemovePrefix_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
+      EditCommentLineAddPrefix.Checked = false;
+    EditCommentLinePrefix.Enabled = EditCommentLineAddPrefix.Checked || EditCommentLineRemovePrefix.Checked;
+    ActionCheckAllComments.Enabled = EditCommentLinePrefix.Enabled;
+  }
+
+  private void ActionCheckAllComments_Click(object sender, EventArgs e)
+  {
+    string msg = EditCommentLineAddPrefix.Checked
+                 ? AppTranslations.CommentPrefixAddAll.GetLang(EditCommentLinePrefix.Text)
+                 : AppTranslations.CommentPrefixRemoveAll.GetLang(EditCommentLinePrefix.Text);
+    if ( !DisplayManager.QueryYesNo(msg) ) return;
+    Settings.CommentLineAddPrefix = EditCommentLineAddPrefix.Checked;
+    Settings.CommentLineRemovePrefix = EditCommentLineRemovePrefix.Checked;
+    Settings.CommentLinePrefix = EditCommentLinePrefix.Text;
+    var verses = ApplicationDatabase.Instance.Verses;
+    for ( int index = 0; index < verses.Count; index++ )
+      verses[index].Comment = VerseControl.CheckComment(verses[index].Comment);
+    MainForm.Instance.ActionSave.PerformClick();
   }
 
   #endregion

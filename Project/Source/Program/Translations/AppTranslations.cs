@@ -77,6 +77,24 @@ static partial class AppTranslations
     [Language.FR] = $"Erreur d'index de mot: l'item sélectionné est null."
   };
 
+  static public readonly TranslationsDictionary CommentPrefixAddAll = new()
+  {
+    [Language.EN] = "Update all line prefixes of all comments according to the selected option?" + Globals.NL2 +
+                    "Add: {0}",
+
+    [Language.FR] = "Mettre à jour tous les préfixes des lignes de tous les commentaires en fonction de l'option sélectionnée ?" + Globals.NL2 +
+                    "Ajouter : {0}"
+  };
+
+  static public readonly TranslationsDictionary CommentPrefixRemoveAll = new()
+  {
+    [Language.EN] = "Update all line prefixes of all comments according to the selected option?" + Globals.NL2 +
+                    "Remove: {0}",
+
+    [Language.FR] = "Mettre à jour tous les préfixes des lignes de tous les commentaires en fonction de l'option sélectionnée ?" + Globals.NL2 +
+                    "Enlever : {0}"
+  };
+
   static public readonly TranslationsDictionary ImportLinesCountMismatch = new()
   {
     [Language.EN] = "Incorrect elements." + Globals.NL2 +

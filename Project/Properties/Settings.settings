@@ -308,5 +308,17 @@
     <Setting Name="FontSizeCommentary" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">8</Value>
     </Setting>
+    <Setting Name="BookNameHebrewWithCommonName" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CommentLinePrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">• </Value>
+    </Setting>
+    <Setting Name="CommentLineAddPrefix" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CommentLineRemovePrefix" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
