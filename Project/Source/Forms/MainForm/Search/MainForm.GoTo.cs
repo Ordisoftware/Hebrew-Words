@@ -27,27 +27,29 @@ partial class MainForm
   /// <summary>
   /// Goes to a book > chapter > verse reference.
   /// </summary>
-  public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false)
+  public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false, bool setViewChapterVerses = false)
   {
-    GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView);
+    GoTo(new ReferenceItem(book, chapter, verse), forceUpdateView, setViewChapterVerses);
   }
 
   /// <summary>
   /// Goes to a book.chapter.verse reference.
   /// </summary>
-  public void GoTo(string reference, bool forceUpdateView = false)
+  public void GoTo(string reference, bool forceUpdateView = false, bool setViewChapterVerses = false)
   {
-    GoTo(reference, forceUpdateView);
+    GoTo(new ReferenceItem(reference), forceUpdateView, setViewChapterVerses);
   }
 
   /// <summary>
   /// Goes to a reference instance.
   /// </summary>
-  public void GoTo(ReferenceItem reference, bool forceUpdateView = false)
+  public void GoTo(ReferenceItem reference, bool forceUpdateView = false, bool setViewChapterVerses = false)
   {
     if ( reference == null ) return;
     if ( Globals.IsExiting ) return;
     if ( IsGoToRunning ) return;
+    if ( setViewChapterVerses )
+      SetView(ViewMode.ChapterVerses);
     if ( reference.EqualsWordIncluded(CurrentReference) )
     {
       SetTanakItemFocus();
@@ -69,6 +71,10 @@ partial class MainForm
     }
     checkVerse();
     CurrentReference = new ReferenceItem(reference);
+    Settings.LastReferenceBook = CurrentReference.Book.Number;
+    Settings.LastReferenceChapter = CurrentReference.Chapter.Number;
+    Settings.LastReferenceVerse = CurrentReference.Verse.Number;
+    Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
     MoveVerseBindingSourceAndAddCurrentToHistory();
     LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();

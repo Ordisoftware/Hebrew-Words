@@ -119,8 +119,7 @@ partial class EditBooksForm : Form
 
   private void ActionOpen_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.SetView(ViewMode.ChapterVerses);
-    MainForm.Instance.GoTo(SelectedBook?.Number ?? 1, 1, 1);
+    MainForm.Instance.GoTo(SelectedBook?.Number ?? 1, 1, 1, false, true);
     Close();
   }
 

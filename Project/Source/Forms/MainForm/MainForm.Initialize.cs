@@ -43,6 +43,7 @@ partial class MainForm : Form
     EditELS50HScrollBar.Maximum = 0;
     EditELS50HScrollBar.LargeChange = 20;
     EditELS50HScrollBar.SmallChange = 10;
+    InitializeTheme();
   }
 
   /// <summary>
@@ -88,37 +89,6 @@ partial class MainForm : Form
     if ( TimerAutoSave.Enabled )
       TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
     Globals.IsReady = true;
-    bool auto = false;
-    if ( SystemManager.CommandLineOptions != null )
-      try
-      {
-        var options = ApplicationCommandLine.Instance;
-        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
-        {
-          auto = true;
-          GoTo(options.ReferenceToGo);
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchWord) )
-        {
-          auto = true;
-          DoStartGoTo();
-          // TODO recup code Letters
-          SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
-        {
-          auto = true;
-          DoStartGoTo();
-          SearchTranslatedWord(options.SearchTranslated);
-        }
-      }
-      catch
-      {
-      }
-    if ( !auto ) DoStartGoTo();
-    ActionSave.PerformClick();
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
     SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
     FilterModified = new()
@@ -142,12 +112,22 @@ partial class MainForm : Form
     PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
   }
 
+  /// <summary>
+  /// Do start go to reference.
+  /// </summary>
   private void DoStartGoTo()
   {
     if ( Settings.GoToMasterBookmarkAtStartup )
       GoTo(Settings.BookmarkMasterBook,
            Settings.BookmarkMasterChapter,
            Settings.BookmarkMasterVerse,
+           true);
+    else
+    if ( Settings.GoToMasterBookmarkAtStartup )
+      GoTo(new ReferenceItem(Settings.LastReferenceBook,
+                             Settings.LastReferenceChapter,
+                             Settings.LastReferenceVerse,
+                             Settings.LastReferenceWord),
            true);
     else
       GoTo(1, 1, 1, true);
@@ -164,7 +144,38 @@ partial class MainForm : Form
       Application.DoEvents();
       Thread.Sleep(500);
     }
-    // COmmand lines actions here
+    bool auto = false;
+    if ( SystemManager.CommandLineOptions != null )
+      try
+      {
+        var options = ApplicationCommandLine.Instance;
+        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
+        {
+          auto = true;
+          GoTo(options.ReferenceToGo);
+        }
+        else
+        if ( !string.IsNullOrEmpty(options.SearchWord) )
+        {
+          auto = true;
+          DoStartGoTo();
+          var word = HebrewAlphabet.ContainsUnicode(options.SearchWord)
+                     ? HebrewAlphabet.ToHebrewFont(options.SearchWord)
+                     : HebrewAlphabet.OnlyHebrewFont(options.SearchWord);
+          SearchHebrewWord(word);
+        }
+        else
+        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
+        {
+          auto = true;
+          DoStartGoTo();
+          SearchTranslatedWord(options.SearchTranslated);
+        }
+      }
+      catch
+      {
+      }
+    if ( !auto ) DoStartGoTo();
   }
 
   /// <summary>
@@ -196,7 +207,7 @@ partial class MainForm : Form
     Globals.AllowClose = true;
     if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
       Settings.RenderAllChapterVerses = false;
-    SystemManager.TryCatch(Settings.Store);
+    Settings.Store();
     Interlocks.Release();
     TimerTooltip.Stop();
     FormsHelper.CloseAll();
@@ -255,6 +266,22 @@ partial class MainForm : Form
     SoundItem.Initialize();
     SystemManager.TryCatch(() => new SoundPlayer(Globals.EmptySoundFilePath).Play());
     SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
+  }
+
+  /// <summary>
+  /// Sets colors.
+  /// </summary>
+  internal void InitializeTheme()
+  {
+    // Navigator items
+    EditBookTranslation.BackColor = Settings.ThemeNavigatorItems;
+    EditChapterTitle.BackColor = Settings.ThemeNavigatorItems;
+    EditELS50Single.BackColor = Settings.ThemeNavigatorItems;
+    EditChapterMemo.BackColor = Settings.ThemeNavigatorItems;
+    // Letters control
+    EditLetters.LettersBackColor = Settings.ThemeSearchLettersBack;
+    EditLetters.InputBackColor = Settings.ThemeSearchWordBack;
+    EditSearchTranslation.BackColor = Settings.ThemeSearchWordBack;
   }
 
 }

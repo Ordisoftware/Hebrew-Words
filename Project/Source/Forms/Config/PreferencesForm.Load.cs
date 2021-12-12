@@ -58,6 +58,10 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCommentLineAddPrefix.Checked = Settings.CommentLineAddPrefix);
     SystemManager.TryCatch(() => EditCommentLinePrefix.Text = Settings.CommentLinePrefix);
     SystemManager.TryCatch(() => EditCommentLineRemovePrefix.Checked = Settings.CommentLineRemovePrefix);
+    SystemManager.TryCatch(() => EditGoToMasterBookmarkAtStartup.Checked = Settings.GoToMasterBookmarkAtStartup);
+    SystemManager.TryCatch(() => EditGoToLastVerseAtStartup.Checked = Settings.GoToLastVerseAtStartup);
+    SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
+    LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
     GroupBoxHebrewWordClick1.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.OnlineSearch;
@@ -115,6 +119,16 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
     // System
     EditLogEnabled.Enabled = DebugManager.Enabled;
+  }
+
+  private void LoadColors()
+  {
+    SystemManager.TryCatch(() => EditThemeNavigatorItems.BackColor = Settings.ThemeNavigatorItems);
+    SystemManager.TryCatch(() => EditThemeCurrentControl.BackColor = Settings.ThemeCurrentControl);
+    SystemManager.TryCatch(() => EditThemeTranslationBack.BackColor = Settings.ThemeTranslationBack);
+    SystemManager.TryCatch(() => EditThemeCommentaryBack.BackColor = Settings.ThemeCommentaryBack);
+    SystemManager.TryCatch(() => EditThemeSearchLettersBack.BackColor = Settings.ThemeSearchLettersBack);
+    SystemManager.TryCatch(() => EditThemeSearchWordBack.BackColor = Settings.ThemeSearchWordBack);
   }
 
 }

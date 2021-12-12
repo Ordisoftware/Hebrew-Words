@@ -320,5 +320,38 @@
     <Setting Name="CommentLineRemovePrefix" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="GoToLastVerseAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LastReferenceBook" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LastReferenceChapter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LastReferenceVerse" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LastReferenceWord" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ThemeNavigatorItems" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightYellow</Value>
+    </Setting>
+    <Setting Name="ThemeCurrentControl" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AliceBlue</Value>
+    </Setting>
+    <Setting Name="ThemeCommentaryBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Honeydew</Value>
+    </Setting>
+    <Setting Name="ThemeSearchLettersBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightYellow</Value>
+    </Setting>
+    <Setting Name="ThemeSearchWordBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AliceBlue</Value>
+    </Setting>
+    <Setting Name="ThemeTranslationBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Window</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

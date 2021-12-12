@@ -38,19 +38,11 @@ partial class BibleStatisticsForm : Form
   private BibleStatisticsForm()
   {
     InitializeComponent();
-    MainForm.Instance.SetFormDisabled(true);
-    try
-    {
-      InitializeCounters();
-      InitializeMiddle();
-      InitializeOccurences();
-      SelectBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
-      SelectBook.DisplayMember = "Name";
-    }
-    finally
-    {
-      MainForm.Instance.SetFormDisabled(false);
-    }
+    InitializeCounters();
+    InitializeMiddle();
+    InitializeOccurences();
+    SelectBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+    SelectBook.DisplayMember = "Name";
   }
 
   private void ActionClose_Click(object sender, EventArgs e)
@@ -75,14 +67,14 @@ partial class BibleStatisticsForm : Form
         foreach ( VerseRow verse in chapter.Verses )
         {
           stat.CountVerses++;
-          foreach ( var hebrew in verse.Words.Select(word => word.Hebrew) )
+          foreach ( var word in verse.Words )
           {
             stat.CountWords++;
-            stat.CountLetters += hebrew.Length;
-            if ( hebrew.Length > LabelLongestWordValue.Text.Length )
+            stat.CountLetters += word.Hebrew.Length;
+            if ( word.Hebrew.Length > LabelLongestWordValue.Text.Length )
             {
-              LabelLongestWordValue.Text = hebrew;
-              LabelLongestReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
+              LabelLongestWordValue.Text = word.Hebrew;
+              LabelLongestReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number, word.Number);
             }
           }
         }
@@ -129,15 +121,15 @@ partial class BibleStatisticsForm : Form
     foreach ( var book in books )
       foreach ( var chapter in book.Chapters )
         foreach ( var verse in chapter.Verses )
-          foreach ( var hebrew in verse.Words.Select(word => word.Hebrew) )
-            foreach ( char letter in hebrew )
+          foreach ( var word in verse.Words )
+            foreach ( char letter in word.Hebrew )
             {
               index++;
               if ( index == lcount )
               {
-                LabelMiddleReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number);
+                LabelMiddleReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number, word.Number);
                 LabelMiddleReferenceValue.Text = LabelMiddleReferenceValue.Tag.ToString();
-                LabelMiddleWordValue.Text = hebrew;
+                LabelMiddleWordValue.Text = word.Hebrew;
                 LabelMiddleLetterValue.Text = letter.ToString();
                 return;
               }

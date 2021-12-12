@@ -114,8 +114,8 @@ partial class MainForm : Form
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
           ActionRefresh.PerformClick();
-        else
-          EditScreenNone.PerformClick();
+      if ( PreviousWindowsState == FormWindowState.Normal )
+        EditScreenNone.PerformClick();
     }
     else
     if ( WindowState == FormWindowState.Maximized )
@@ -149,6 +149,7 @@ partial class MainForm : Form
     Cursor = disabled ? Cursors.WaitCursor : Cursors.Default;
     ToolStrip.Enabled = !disabled;
     PanelNavigation.Enabled = !disabled;
+    EditChapterMemo.Multiline = !disabled;
     PanelMainCenter.Enabled = !disabled;
     Refresh();
   }
@@ -233,21 +234,36 @@ partial class MainForm : Form
   private void ActionPreferences_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
+    Settings.Store();
     bool refresh = PreferencesForm.Run();
-    InitializeDialogsDirectory();
     UpdateBookmarks();
     UpdateHistory();
     InitializeSpecialMenus();
     InitializeDialogsDirectory();
     if ( refresh )
-    {
-      var reference = Instance.CurrentReference;
-      BooksBindingSource.ResetBindings(false);
-      RenderAll(true);
-      int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      int word = reference.Word == null ? 1 : reference.Word.Number;
-      GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
-    }
+      try
+      {
+        Cursor = Cursors.WaitCursor;
+        var reference = Instance.CurrentReference;
+        BooksBindingSource.ResetBindings(false);
+        ChaptersBindingSource.ResetBindings(false);
+        VersesBindingSource.ResetBindings(false);
+        WordsBindingSource.ResetBindings(false);
+        FilterBooksBindingSource.ResetBindings(false);
+        FilterChaptersBindingSource.ResetBindings(false);
+        FilterVersesBindingSource.ResetBindings(false);
+        CreateFilterDataSource();
+        SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+        UpdateCurrentReference();
+        RenderAll(true);
+        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
+        int word = reference.Word == null ? 1 : reference.Word.Number;
+        GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
   }
 
   #endregion
@@ -1100,7 +1116,7 @@ partial class MainForm : Form
     UpdateCurrentReferenceMutex = true;
     try
     {
-      var referenceOld = new ReferenceItem(CurrentReference);
+      var referenceOld = CurrentReference == null ? null : new ReferenceItem(CurrentReference);
       var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1/* TODO ???? 1*/);
@@ -1640,8 +1656,9 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(HebrewTools.RemoveNumberingAndDiacritics(word).Word, false);
+    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
     EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
+    ActionSearchRun.PerformClick();
   }
 
   /// <summary>
@@ -1652,8 +1669,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
-    EditLetters.TextBox.Text = word;
-    EditLetters.TextBox.SelectionStart = EditSearchTranslation.Text.Length;
+    EditSearchTranslation.Text = word;
+    ActionSearchRun.PerformClick();
   }
 
   /// <summary>
