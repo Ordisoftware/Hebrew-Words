@@ -132,7 +132,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### Soon
 
-- Add theming.
 - Add bookmarks backup/restore.
 - Add book memo and chapter title/memo in DOCX export.
 - Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
@@ -144,7 +143,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to change fonts size.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
-- Database updated to support internal strong concordance popup menus in the future.
+- Database update to support internal strong concordance popup menus in the future.
 
 #### Later
 
@@ -190,6 +189,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add keyboard shortcuts notice in windows settings menu.
 - Add and change many shortcuts.
 - Add sounds to clipboard actions.
+- Add theming options.
+- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable message boxes sounds.
 - Add option to enable or disable success dialogs.
@@ -212,6 +213,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Fix error message when several SearchTranslatedForm are opened.
 - Fix error message when typing in the comment boxes.
 - Fix edit books information form : modifications are not saved since an old version.
+- Many fixes and improvements.
 - Replace simple internal command line parser by CommandLineParser NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).
 - Add debugger and serilog tracing (exception information form with GitHub issue creation).
@@ -223,19 +225,14 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add common code written since more than one year for Calendar.
 - Files and code refactoring.
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
-- Nuget SQLitePCLRaw.bundle_green must remain `v2.0.4`.
-- Update to Framework .NET 4.7.2 and supported Windows only 7 SP1 or higher.
-- Update setup.
+- Upgrade to Visual Studio 2022 and C# 10.
+- Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
+- Update setup for Framework .NET 4.8
 - Update web links.
 - Update help.
-- Upgrade to Visual Studio 2022 and C# 10.
-- Update setup for Framework .NET 4.8
 
 > TO CHECK
-- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
-- Add keyboard shortcuts to open the books names editor, Hebrew Letters and Shorashon.
-- Add open book menu item in the edit books information form.
-- Add some context menu items in the edit books information form to search online, copy to clipboard and edit memo.
+- Command line options
 
 #### 2020.09.01 - Version 2.5
 
