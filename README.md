@@ -187,8 +187,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 #### In progress - Version 3.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
-- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
 - Optimize overall performances.
+- Speed up data loading at startup.
+- Speed up application startup when viewing a single verse.
 - Add verse navigator in the verses view panel.
 - Add Alt + Left and Right to navigate between verses.
 - Add option to render only current verse or all of the chapter.
@@ -197,10 +198,10 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add filter verses view panel.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
-- Add source Hebrew word in the search translated form.
+- Add original word in the search translated form.
 - Add Ctrl+T shortcut to open the translated form the focused Hebrew word.
 - Add Ctrl+K shortcut to open the search view for the focused Hebrew word.
-- Add "Add translation (to a word)" action in the search translated form, in addition to the "use" action.
+- Add "Add translation (to a word)" action in the search translated form, in addition to the "Use" action.
 - Add "Add a bookmark" menu item.
 - Add "Sort bookmarks" menu item.
 - Add auto sort bookmarks option.
@@ -210,7 +211,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add options to filter the books in the go to reference form.
 - Add new input panel from Hebrew Letters v4+.
 - Add new advanced text-box for future undo/redo.
-- Add link to *hebrew.ch* shorashim database.
 - Add menu for web links.
 - Add optimize database menu.
 - Add usage statistics form in tools menu.
@@ -231,13 +231,13 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add check update from about box.
 - Add command line options.
 - Change web check update to use GitHub as an alternative if author's website is down.
-- Improve and add search options.
+- Improve search options.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
 - Improve exception form to view log.
-- Improve message boxes.
 - Improve about box to dynamically display the list of dependencies and media used.
+- Improve message boxes.
 - Improve UI/UX.
 - Fix drop down menus shown on another monitor instead of the same screen.
 - Fix error message when several SearchTranslatedForm are opened.
@@ -246,15 +246,13 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Many fixes and improvements.
 - Replace simple internal command line parser by CommandLineParser NuGet package.
 - Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).
-- Add debugger and serilog tracing (exception information form with GitHub issue creation).
+- Add custom debugger and serilog tracing for exception information with GitHub issue creation.
 - The application now permanently lock database file while running.
-- The application now automatically creates the ODBC DSN in the Windows registry.
 - Move online providers values from code to files in the application documents folder.
 - Move Tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
-- Add common code written since more than one year for Calendar.
+- Add common code written since two years for Hebrew Calendar and Hebrew Letters.
 - Files and code refactoring.
-- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
 - Update setup for Framework .NET 4.8
