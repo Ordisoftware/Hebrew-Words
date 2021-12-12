@@ -94,7 +94,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 #### Why all verses of a chapter are not rendered?
 
-Due to Windows Forms limatations inherited fron 16-bits APIs, chapters having more than 100 verses cannot be fully rendered.
+Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100-150 verses cannot be fully rendered.
 
 In this case, one verse at a time should be used.
 
