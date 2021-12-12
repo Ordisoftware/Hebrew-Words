@@ -30,11 +30,11 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
     try
     {
       Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
-      if ( Book == null ) throw new Exception("Book not found: " + book);
+      //if ( Book == null ) throw new Exception("Book not found: " + book);
       Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
-      if ( Chapter == null ) throw new Exception("Chapter not found: " + chapter);
+      //if ( Chapter == null ) throw new Exception("Chapter not found: " + chapter);
       Verse = Chapter?.Verses?.Find(v => v.Number == verse);
-      if ( Verse == null ) throw new Exception("Verse not found: " + verse);
+      //if ( Verse == null ) throw new Exception("Verse not found: " + verse);
       Word = word == 0 ? null : Verse?.Words?.Find(w => w.Number == word);
     }
     catch ( Exception ex )

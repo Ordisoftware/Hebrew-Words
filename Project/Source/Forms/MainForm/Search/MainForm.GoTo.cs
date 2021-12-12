@@ -136,15 +136,15 @@ partial class MainForm
         }
         else
         {
-          var found = CurrentReference.Chapter?.Verses?.Find(v => v.IsFullyTranslated);
+          var found = CurrentReference.Chapter?.Verses?.Find(v => v.HasTranslation);
           if ( found != null )
           {
-            showToolTip("Premier verset complètement traduit.");
+            showToolTip("Premier verset traduit.");
             return found;
           }
           else
           {
-            showToolTip("Aucun verset avec traduction complète.");
+            showToolTip("Aucun verset avec traduction.");
             reference = CurrentReference;
             return null;
           }
