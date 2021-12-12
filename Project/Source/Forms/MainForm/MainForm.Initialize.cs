@@ -89,37 +89,6 @@ partial class MainForm : Form
     if ( TimerAutoSave.Enabled )
       TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
     Globals.IsReady = true;
-    bool auto = false;
-    if ( SystemManager.CommandLineOptions != null )
-      try
-      {
-        var options = ApplicationCommandLine.Instance;
-        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
-        {
-          auto = true;
-          GoTo(options.ReferenceToGo);
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchWord) )
-        {
-          auto = true;
-          DoStartGoTo();
-          // TODO recup code Letters
-          SearchHebrewWord(HebrewAlphabet.ToHebrewFont(options.SearchWord));
-        }
-        else
-        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
-        {
-          auto = true;
-          DoStartGoTo();
-          SearchTranslatedWord(options.SearchTranslated);
-        }
-      }
-      catch
-      {
-      }
-    if ( !auto ) DoStartGoTo();
-    ActionSave.PerformClick();
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
     SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
     FilterModified = new()
@@ -175,7 +144,38 @@ partial class MainForm : Form
       Application.DoEvents();
       Thread.Sleep(500);
     }
-    // COmmand lines actions here
+    bool auto = false;
+    if ( SystemManager.CommandLineOptions != null )
+      try
+      {
+        var options = ApplicationCommandLine.Instance;
+        if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
+        {
+          auto = true;
+          GoTo(options.ReferenceToGo);
+        }
+        else
+        if ( !string.IsNullOrEmpty(options.SearchWord) )
+        {
+          auto = true;
+          DoStartGoTo();
+          var word = HebrewAlphabet.ContainsUnicode(options.SearchWord)
+                     ? HebrewAlphabet.ToHebrewFont(options.SearchWord)
+                     : HebrewAlphabet.OnlyHebrewFont(options.SearchWord);
+          SearchHebrewWord(word);
+        }
+        else
+        if ( !string.IsNullOrEmpty(options.SearchTranslated) )
+        {
+          auto = true;
+          DoStartGoTo();
+          SearchTranslatedWord(options.SearchTranslated);
+        }
+      }
+      catch
+      {
+      }
+    if ( !auto ) DoStartGoTo();
   }
 
   /// <summary>

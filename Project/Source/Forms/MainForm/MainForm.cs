@@ -1116,7 +1116,7 @@ partial class MainForm : Form
     UpdateCurrentReferenceMutex = true;
     try
     {
-      var referenceOld = new ReferenceItem(CurrentReference);
+      var referenceOld = CurrentReference == null ? null : new ReferenceItem(CurrentReference);
       var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1/* TODO ???? 1*/);
@@ -1656,8 +1656,9 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(HebrewTools.RemoveNumberingAndDiacritics(word).Word, false);
+    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
     EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
+    ActionSearchRun.PerformClick();
   }
 
   /// <summary>
@@ -1668,8 +1669,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeTranslation;
-    EditLetters.TextBox.Text = word;
-    EditLetters.TextBox.SelectionStart = EditSearchTranslation.Text.Length;
+    EditSearchTranslation.Text = word;
+    ActionSearchRun.PerformClick();
   }
 
   /// <summary>

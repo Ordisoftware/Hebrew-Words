@@ -129,17 +129,22 @@ static partial class Program
       server.EndWaitForConnection(ar);
       if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
       if ( !Globals.IsReady ) return;
+      Language lang = Settings.LanguageSelected;
+      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
       var form = MainForm.Instance;
       var cmd = ApplicationCommandLine.Instance;
-      Action action = command switch
-      {
-        nameof(cmd.ShowMainForm) => () => form.Popup(),
-        nameof(cmd.ReferenceToGo) => () => form.GoTo(cmd.ReferenceToGo),
-        nameof(cmd.SearchWord) => () => form.SearchHebrewWord(cmd.SearchWord),
-        nameof(cmd.SearchTranslated) => () => form.SearchTranslatedWord(cmd.SearchTranslated),
-        _ => null
-      };
-      if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
+      if ( cmd == null ) return;
+      Action action = null;
+      if ( cmd.ShowMainForm ) action = () => form.Popup();
+      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) action = () => form.GoTo(cmd.ReferenceToGo, false, true);
+      if ( !cmd.SearchWord.IsNullOrEmpty() ) action = () => form.SearchHebrewWord(cmd.SearchWord);
+      if ( !cmd.SearchTranslated.IsNullOrEmpty() ) action = () => form.SearchTranslatedWord(cmd.SearchTranslated);
+      if ( action != null )
+        SystemManager.TryCatch(() =>
+        {
+          form.ToolStrip.SyncUI(() => MainForm.Instance.Popup());
+          form.ToolStrip.SyncUI(action);
+        });
     }
     finally
     {
@@ -158,8 +163,9 @@ static partial class Program
     if ( cmd == null ) return;
     if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
     if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
-    if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.ReferenceToGo));
-    if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend(nameof(cmd.SearchTranslated));
+    if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend($"--verse {cmd.ReferenceToGo}");
+    if ( !cmd.SearchWord.IsNullOrEmpty() ) SystemManager.IPCSend($"--word {cmd.SearchWord}");
+    if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend($"--translated {cmd.SearchTranslated}");
   }
 
   /// <summary>
