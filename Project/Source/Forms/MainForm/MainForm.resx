@@ -2902,7 +2902,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>0, 41</value>
   </data>
   <data name="LabelBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 15</value>
+    <value>68, 15</value>
   </data>
   <data name="LabelBookTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -4008,43 +4008,43 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="ActionClearHistory.Text" xml:space="preserve">
     <value>Empty</value>
   </data>
   <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>105, 6</value>
   </data>
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -4818,7 +4818,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionViewBibleStatistics.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+S</value>
+    <value>Ctrl+Alt+S</value>
   </data>
   <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
