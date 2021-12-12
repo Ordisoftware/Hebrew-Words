@@ -168,6 +168,7 @@ public partial class VerseControl : UserControl
   {
     EditCommentary.BackColor = Settings.ThemeCurrentControl;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
+    if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
     MainForm.Instance.CurrentReference = Reference;
     MainForm.Instance.MoveVerseBindingSourceAndAddCurrentToHistory();
   }
