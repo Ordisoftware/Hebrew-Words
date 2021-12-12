@@ -124,6 +124,7 @@ partial class MainForm
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
           if ( found != null )
           {
+            // TODO translate
             showToolTip("Premier verset à compléter.");
             return found;
           }
