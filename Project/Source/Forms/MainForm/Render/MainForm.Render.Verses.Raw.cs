@@ -54,10 +54,9 @@ partial class MainForm
         var controls = new VerseControl[references.Count];
         for ( int index = 0; index < references.Count; index++ )
         {
-          var control = new VerseControl(PanelViewVerses, references[index]);
-          control.Top = y;
-          y += control.Height;
+          var control = new VerseControl(PanelViewVerses, references[index]) { Top = y };
           controls[index] = control;
+          y += control.Height;
         }
         PanelViewVerses.Controls.AddRange(controls);
       }

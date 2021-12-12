@@ -57,6 +57,10 @@ partial class ReferenceItem
        ? right is null
        : left.CompareTo(right) <= 0;
 
+
+  [SuppressMessage("Style", "IDE0075:Simplifier l’expression conditionnelle", Justification = "Opinion")]
+  [SuppressMessage("Simplification", "RCS1104:Simplify conditional expression.", Justification = "Opinion")]
+  [SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "Opinion")]
   public static bool operator >(ReferenceItem left, ReferenceItem right)
     => left is null
        ? false
@@ -74,6 +78,9 @@ partial class ReferenceItem
   static public bool Equals(ReferenceItem x, ReferenceItem y)
     => x == y;
 
+  [SuppressMessage("Style", "IDE0075:Simplifier l’expression conditionnelle", Justification = "Opinion")]
+  [SuppressMessage("Simplification", "RCS1104:Simplify conditional expression.", Justification = "Opinion")]
+  [SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "Opinion")]
   public override bool Equals(object obj)
     => obj is ReferenceItem reference
        ? this == reference

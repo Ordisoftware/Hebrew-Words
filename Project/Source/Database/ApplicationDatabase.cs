@@ -208,7 +208,6 @@ class ApplicationDatabase : SQLiteDatabase
         strELS50 = "";
       }
       var books = Enums.GetValues<TanakBook>();
-      string msg = SysTranslations.CreatingData.GetLang() + " {0}";
       LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
       foreach ( TanakBook bookid in books )
       {

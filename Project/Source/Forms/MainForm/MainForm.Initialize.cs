@@ -123,7 +123,7 @@ partial class MainForm : Form
            Settings.BookmarkMasterVerse,
            true);
     else
-    if ( Settings.GoToMasterBookmarkAtStartup )
+    if ( Settings.GoToLastVerseAtStartup )
       GoTo(new ReferenceItem(Settings.LastReferenceBook,
                              Settings.LastReferenceChapter,
                              Settings.LastReferenceVerse,

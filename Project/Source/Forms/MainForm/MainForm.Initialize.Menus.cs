@@ -56,7 +56,7 @@ partial class MainForm : Form
     // Word search online
     ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
-      var menuitem = sender as ToolStripMenuItem;
+      if ( sender is not ToolStripMenuItem menuitem ) return;
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
       var control = contextmenu?.SourceControl?.Parent as WordControl;
       string word = control?.Reference.Word.Hebrew ?? string.Empty;

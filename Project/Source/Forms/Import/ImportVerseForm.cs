@@ -25,8 +25,8 @@ partial class ImportVerseForm : Form
                 from wordNew in form.WordMatches
                 where word.Number == wordNew.Number
                 select (word, wordNew);
-    foreach ( var pair in pairs )
-      pair.word.Translation = pair.wordNew.ImportedTranslation;
+    foreach ( var (word, wordNew) in pairs )
+      word.Translation = wordNew.ImportedTranslation;
     MainForm.Instance.ActionSave.PerformClick();
   }
 

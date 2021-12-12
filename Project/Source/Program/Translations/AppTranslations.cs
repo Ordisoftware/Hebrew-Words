@@ -55,26 +55,26 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary SelectedBookItemIsNull = new()
   {
-    [Language.EN] = $"Book index error: selected item is null.",
-    [Language.FR] = $"Erreur d'index de livre : l'item sélectionné est null."
+    [Language.EN] = "Book index error: selected item is null.",
+    [Language.FR] = "Erreur d'index de livre : l'item sélectionné est null."
   };
 
   static public readonly TranslationsDictionary ChapterBookItemIsNull = new()
   {
-    [Language.EN] = $"Chapter index error: selected item is null.",
-    [Language.FR] = $"Erreur d'index de chapitre : l'item sélectionné est null."
+    [Language.EN] = "Chapter index error: selected item is null.",
+    [Language.FR] = "Erreur d'index de chapitre : l'item sélectionné est null."
   };
 
   static public readonly TranslationsDictionary VerseBookItemIsNull = new()
   {
-    [Language.EN] = $"Verse index error: selected item is null.",
-    [Language.FR] = $"Erreur d'index de verset: l'item sélectionné est null."
+    [Language.EN] = "Verse index error: selected item is null.",
+    [Language.FR] = "Erreur d'index de verset: l'item sélectionné est null."
   };
 
   static public readonly TranslationsDictionary WordBookItemIsNull = new()
   {
-    [Language.EN] = $"Word index error: selected item is null.",
-    [Language.FR] = $"Erreur d'index de mot: l'item sélectionné est null."
+    [Language.EN] = "Word index error: selected item is null.",
+    [Language.FR] = "Erreur d'index de mot: l'item sélectionné est null."
   };
 
   static public readonly TranslationsDictionary CommentPrefixAddAll = new()
