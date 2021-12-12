@@ -101,16 +101,8 @@ partial class PreferencesForm
     if ( MainForm.Instance.TimerAutoSave.Enabled )
       MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
     // End
+    Settings.PreferencesFormSelectedTabIndex = TabControl.SelectedIndex;
     Settings.Store();
-    UpdateViewRequired = TranslateLinesCountPrevious != (int)EditWordTranslateLinesCount.Value
-                      || CommentaryLinesCountPrevious != (int)EditCommentaryLinesCount.Value
-                      || WordControlWidthPrevious != (int)EditWordControlWidth.Value
-                      || MaxrefCountPrevious != (int)EditSearchDisplayMaxRef.Value
-                      || FontSizeHebrewPrevious != (int)EditFontSizeHebrew.Value
-                      || FontSizeTranslationPrevious != (int)EditFontSizeTranslation.Value
-                      || FontSizeCommentaryPrevious != (int)EditFontSizeCommentary.Value
-                      || BookNameHebrewWithCommonNamePrevious != EditBookNameHebrewWithCommonName.Checked
-    ;
   }
 
 }

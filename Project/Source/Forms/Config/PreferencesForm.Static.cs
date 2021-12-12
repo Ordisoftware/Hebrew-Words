@@ -93,10 +93,16 @@ partial class PreferencesForm
       form.ShowDialog();
     }
     MainForm.Instance.InitializeDialogsDirectory();
-    bool result = Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
-    Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
+    UpdateViewRequired = TranslateLinesCountPrevious != (int)form.EditWordTranslateLinesCount.Value
+                      || CommentaryLinesCountPrevious != (int)form.EditCommentaryLinesCount.Value
+                      || WordControlWidthPrevious != (int)form.EditWordControlWidth.Value
+                      || MaxrefCountPrevious != (int)form.EditSearchDisplayMaxRef.Value
+                      || FontSizeHebrewPrevious != (int)form.EditFontSizeHebrew.Value
+                      || FontSizeTranslationPrevious != (int)form.EditFontSizeTranslation.Value
+                      || FontSizeCommentaryPrevious != (int)form.EditFontSizeCommentary.Value
+                      || BookNameHebrewWithCommonNamePrevious != form.EditBookNameHebrewWithCommonName.Checked;
     form.Dispose();
-    return result;
+    return Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
   }
 
 }
