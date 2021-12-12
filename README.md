@@ -123,9 +123,11 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | F1 | Chapter verses view |
 | F2 | Chapter translation view |
 | F3 | Filter verses view |
-| F4 | Search in database view |
+| F4 or Alt + F | Search in database view |
 | F5 | Original Hebrew text view |
 | F6 | ELS50 verses view |
+| F7 or Shift + Ctrl + F | Go to reference |
+| F9 or Ctrl + R | Refresh |
 | Ctrl + B | Books board |
 | Ctrl + B | Parashot boars |
 | Ctrl + Alt + S | Tanak's statistics |
@@ -135,8 +137,9 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | Ctrl + T | See already translated for the focused Hebrew word |
 | Ctrl + K | Search in database for the focused Hebrew word |
 | Ctrl + F | Find verse in current chapter |
-| Ctrl + Alt + F | Go to reference |
 | Ctrl + S | Save changes |
+| Alt + Left | Previous verse |
+| Alt + Right | Next verse |
 | Alt + Home | Reach the beginning of the view |
 | Alt + End | Reach the ending of the view |
 | Alt + PageUp | Scroll the view up |
