@@ -33,16 +33,16 @@ A libre and open-source software written in C# that helps for the literal word-f
 ## Functionalities
 
 - Translate verses word-for-word.
-- Left mouse click on a word to open online strong's concordance or Hebrew Letters or search already translated.
-- Right mouse click on a word to open context menu with more options like search verses having the word.
-- Left mouse click on a verse number to open online text with contextual strong's concordances.
-- Right mouse click on a verse number to open context menu with more options like bookmarks.
+- Contextual menu for a word to search online its definition, to see already translated, to search it in database, or to study it in Hebrew Letters.
+- Contextual menu for a verse to read it online, to manage bookmarks, to export, or to import.
 - MS Word export of a book or a chapter or a verse.
-- Determine the Equidistant Letter Sequence of 50 for Tav.
-- Search Hebrew or translated words with filters.
-- Grammar guide.
+- Determine hidden verses of kabalah according to the Equidistant Letter Sequence of 50 for Tav.
+- Search the Tanak for Hebrew or translated words with filters.
+- Window showing a board of editable books.
+- Window showing a board of parashot with descriptions.
+- Window showing some Tanak's Statistics.
+- Window showing a grammar guide.
 - Links to various online resources.
-- Show some statistics.
 - English, French.
 
 ## Review
@@ -92,30 +92,60 @@ The refresh view button of the menu at the top redraws the entire form.
 
 Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
+#### What are command-line options?
+
+- Change interface language (does not change the meanings of letters unless restoring them):
+
+  `Ordisoftware.Hebrew.Letters.exe --lang [en|fr]`
+
+- Go to a reference like "1.1.1" or "bereshit 1.1":
+
+  `Ordisoftware.Hebrew.Letters.exe --verse [reference]` 
+
+- Search a word in the database"`בראשית`" and "`ty>arb`":
+
+  `Ordisoftware.Hebrew.Letters.exe --word [word]` 
+
+- Search a translation in the database"`בראשית`" and "`ty>arb`":
+
+  `Ordisoftware.Hebrew.Letters.exe --translated [word]` 
+
+  All diacritics are removed and if the word can't be processed it is set to empty.
+
+  If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
+
 ## Keyboard shortcuts
 
 | Keys | Actions |
 |-|-|
-| F1 | Verses view |
-| F2 | Translation view |
-| F3 | Hebrew text view |
-| F4 | ELS50 verses view |
-| F5 | Search view |
-| Ctrl + B | Open the books names editor |
-| Ctrl + H | Open Hebrew Letters |
-| Ctrl + T | Open translated form for the focused Hebrew word |
-| Ctrl + K | Open search panel for the focused Hebrew word |
+| Ctrl + Tab | Next view |
+| Shift + Ctrl + Tab | Previous view |
+| F1 | Chapter verses view |
+| F2 | Chapter translation view |
+| F3 | Filter verses view |
+| F4 | Search in database view |
+| F5 | Original Hebrew text view |
+| F6 | ELS50 verses view |
+| Ctrl + B | Books board |
+| Ctrl + B | Parashot boars |
+| Ctrl + Alt + S | Tanak's statistics |
+| Alt + C | Calculator |
 | Ctrl + G | Open the grammar guide |
-| Ctrl + F | Find verse number in current chapter (0 for first untranslated) |
-| Ctrl + Alt + F | Find reference |
+| Ctrl + H | Open Hebrew Letters |
+| Ctrl + T | See already translated for the focused Hebrew word |
+| Ctrl + K | Search in database for the focused Hebrew word |
+| Ctrl + F | Find verse in current chapter |
+| Ctrl + Alt + F | Go to reference |
 | Ctrl + S | Save changes |
-| Ctrl + Back | Cancel changes |
-| Ctrl + Home | Reach the beginning of the view |
-| Ctrl + End | Reach the ending of the view |
-| Ctrl + Up | Scroll the view up (fine) |
-| Ctrl + Down | Scroll the view down (fine) |
-| PageUp | Scroll the view up |
-| PageDown | Scroll the view down |
+| Alt + Home | Reach the beginning of the view |
+| Alt + End | Reach the ending of the view |
+| Alt + PageUp | Scroll the view up |
+| Alt + PageDown | Scroll the view down |
+| Alt + Up | Fine scroll the view up |
+| Alt + Down | Fine scroll the view down |
+| Alt + B | Bookmarks menu |
+| Alt + H | History menu |
+| Alt + D | Database menu |
 | Alt + T | Tools menu |
 | Alt + L | Web links menu |
 | Alt + S | Settings menu |
@@ -126,24 +156,19 @@ Yes, because implementing features requires a lot of Windows resources that depe
 | F11 | Usage statistics window |
 | F12 | About |
 | Alt + F4 (or Escape) | Close window |
-| Ctrl + Alt + F4 | Exit application |
 
 ## Future improvements
 
 #### Soon
 
-- Add bookmarks backup/restore.
-- Add book memo and chapter title/memo in DOCX export.
-- Add book name/translation/memo and chapter number/title/memo in RTF (translation) export.
-- Add menu to open a batch export form.
+- Add bookmarks backup and restore.
 - Add count the number of a word occurrences.
-- Add option to go to last reference on startup.
-- Add option to choose double-click action on a word in the search translated form.
 - Add word occurrences calculator button in the search panel.
-- Add option to change fonts size.
+- Add title and memo of book and chapter in DOCX export.
+- Add book name/translation/memo and chapter number/title/memo in RTF export.
+- Add menu to open a batch export form to select books or chapters to export.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
-- Database update to support internal strong concordance popup menus in the future.
 
 #### Later
 
@@ -190,7 +215,8 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add and change many shortcuts.
 - Add sounds to clipboard actions.
 - Add theming options.
-- Add option to open the last verse else the master bookmark else the first verse of the Tanak.
+- Add options to choose mouse actions on words and verses.
+- Add option to go at startup to the previous verse else the main bookmark else the first verse of the Tanak.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable message boxes sounds.
 - Add option to enable or disable success dialogs.
@@ -200,6 +226,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Add option to auto optimize database at startup once a week.
 - Add show usage statistics from about box.
 - Add check update from about box.
+- Add command line options.
 - Change web check update to use GitHub as an alternative if author's website is down.
 - Improve and add search options.
 - Improve check update to allow auto update or direct download or open app web page.
@@ -230,9 +257,6 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update setup for Framework .NET 4.8
 - Update web links.
 - Update help.
-
-> TO CHECK
-- Command line options
 
 #### 2020.09.01 - Version 2.5
 
