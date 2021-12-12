@@ -56,9 +56,14 @@ partial class MainForm
   private int PreviousSeachPagingPosition = -1;
 
   /// <summary>
-  /// Indicates bookmarks menu item first index.
+  /// Indicates bookmark menu item first index.
   /// </summary>
-  private int BookmarksMenuFirstIndex;
+  private int BookmarkMenuIndex;
+
+  /// <summary>
+  /// Indicates history menu item first index.
+  /// </summary>
+  private int HistoryIndexMenu;
 
   /// <summary>
   /// Indicates the bookmarks.

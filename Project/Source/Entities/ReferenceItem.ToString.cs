@@ -31,8 +31,16 @@ partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceIt
   public string ToStringFull()
     => $"{Book?.Name ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
+  public string ToStringBasedOnPrefs()
+    => Program.Settings.BookNameHebrewWithCommonName
+       ? ToStringFull()
+       : ToString();
+
   public string ToStringFullWordIncluded()
     => $"{ToStringFull()}:{Word?.Number.ToString() ?? Null}";
+
+  public string ToStringBasedOnPrefsWordIncluded()
+    => $"{ToStringBasedOnPrefs()}:{Word?.Number.ToString() ?? Null}";
 
   public string ToStringOnlyNumbers()
     => $"{Book?.Number.ToString() ?? Null}.{Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";

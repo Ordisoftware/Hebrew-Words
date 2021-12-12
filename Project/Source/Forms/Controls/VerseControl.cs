@@ -23,7 +23,6 @@ public partial class VerseControl : UserControl
     public int ControlWidth;
     public int WordControlsPerLine;
     public int LabelVerseNumberWidth;
-    //public int EditCommentaryTextHeight;
     public int EditCommentaryHeight;
     public int EditCommentaryMarginLeft;
     public Font LabelVerseNumberFont;
@@ -175,6 +174,38 @@ public partial class VerseControl : UserControl
   private void EditComment_Leave(object sender, EventArgs e)
   {
     EditCommentary.BackColor = Color.Honeydew;
+    EditCommentary.Text = CheckComment(EditCommentary.Text);
+  }
+
+  static public string CheckComment(string value)
+  {
+    if ( Program.Settings.CommentLinePrefix.Length == 0 ) return value;
+    var lines = value.SplitKeepEmptyLines(Globals.NL);
+    bool changed = false;
+    if ( Program.Settings.CommentLineAddPrefix )
+    {
+      for ( int index = 0; index < lines.Length; index++ )
+      {
+        if ( lines[index].Length != 0 && !lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
+          lines[index] = Program.Settings.CommentLinePrefix + lines[index];
+        changed = true;
+      }
+      if ( changed )
+        value = string.Join(Globals.NL, lines);
+    }
+    else
+    if ( Program.Settings.CommentLineRemovePrefix )
+    {
+      for ( int index = 0; index < lines.Length; index++ )
+      {
+        if ( lines[index].Length != 0 && lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
+          lines[index] = lines[index].Substring(Program.Settings.CommentLinePrefix.Length);
+        changed = true;
+      }
+      if ( changed )
+        value = string.Join(Globals.NL, lines);
+    }
+    return value;
   }
 
 }

@@ -70,10 +70,18 @@ partial class MainForm
     checkVerse();
     CurrentReference = new ReferenceItem(reference);
     MoveVerseBindingSourceAndAddCurrentToHistory();
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringFull().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
-    SetTanakItemFocus();
+    IsGoToRunning = true;
+    try
+    {
+      SetTanakItemFocus();
+    }
+    finally
+    {
+      IsGoToRunning = false;
+    }
     //
     // Check combo boxes
     // 

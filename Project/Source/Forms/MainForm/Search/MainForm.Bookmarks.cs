@@ -23,8 +23,8 @@ partial class MainForm
     {
       if ( Settings.AutoSortBookmarks )
         Bookmarks.Sort();
-      while ( ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex )
-        ActionBookmarks.DropDownItems.RemoveAt(BookmarksMenuFirstIndex);
+      while ( ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex )
+        ActionBookmarks.DropDownItems.RemoveAt(BookmarkMenuIndex);
       var bookmarkMaster = new ReferenceItem(Settings.BookmarkMasterBook,
                                              Settings.BookmarkMasterChapter,
                                              Settings.BookmarkMasterVerse);
@@ -47,14 +47,14 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringFull();
+      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( Bookmarks.Count > 0 )
       {
         foreach ( var reference in Bookmarks )
         {
-          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringFull());
+          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;
@@ -62,10 +62,9 @@ partial class MainForm
           item.Image = ActionGoToBookmarks.Image;
         }
       }
-      ActionClearBookmarks.Enabled = Bookmarks.Count > 0
-                                  && ActionBookmarks.DropDownItems.Count > BookmarksMenuFirstIndex;
-      ActionSortBookmarks.Enabled = Bookmarks.Count > 0
-                                 && !Settings.AutoSortBookmarks;
+      ActionClearBookmarks.Enabled = Bookmarks.Count > 0 && ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex;
+      ActionSortBookmarks.Enabled = Bookmarks.Count > 0 && !Settings.AutoSortBookmarks;
+      SeparatorBookmarks.Visible = Bookmarks.Count > 0;
     }
     catch ( Exception ex )
     {

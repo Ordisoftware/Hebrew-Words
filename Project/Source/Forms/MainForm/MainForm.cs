@@ -241,10 +241,12 @@ partial class MainForm : Form
     InitializeDialogsDirectory();
     if ( refresh )
     {
-      RenderAll(true);
       var reference = Instance.CurrentReference;
+      BooksBindingSource.ResetBindings(false);
+      RenderAll(true);
       int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-      GoTo(reference.Book.Number, reference.Chapter.Number, verse);
+      int word = reference.Word == null ? 1 : reference.Word.Number;
+      GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
     }
   }
 
@@ -819,7 +821,31 @@ partial class MainForm : Form
 
   #endregion
 
-  #region Bookmarks and History
+  #region ContextMenu Verse
+
+  /// <summary>
+  /// Event handler. Called by ContextMenuStripVerse for opening events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ContextMenuStripVerse_Opening(object sender, CancelEventArgs e)
+  {
+    ReferenceItem reference;
+    var contextmenu = sender as ContextMenuStrip;
+    var control = contextmenu?.SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+      reference = (ReferenceItem)control.Tag;
+    else
+    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      reference = ( (VerseControl)label.Parent ).Reference;
+    else
+      return;
+    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
+                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
+                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
+    ActionAddToBookmarks.Enabled = !Bookmarks.Contains(reference);
+
+  }
 
   /// <summary>
   /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
@@ -1765,22 +1791,4 @@ partial class MainForm : Form
 
   #endregion
 
-  private void ContextMenuStripVerse_Opening(object sender, CancelEventArgs e)
-  {
-    ReferenceItem reference;
-    var contextmenu = sender as ContextMenuStrip;
-    var control = contextmenu?.SourceControl;
-    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      reference = (ReferenceItem)control.Tag;
-    else
-    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
-      reference = ( (VerseControl)label.Parent ).Reference;
-    else
-      return;
-    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
-                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
-                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
-    ActionAddToBookmarks.Enabled = !Bookmarks.Contains(reference);
-
-  }
 }

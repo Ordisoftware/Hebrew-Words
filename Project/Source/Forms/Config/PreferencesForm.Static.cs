@@ -46,14 +46,15 @@ partial class PreferencesForm
 
   static private bool First;
   static private bool LanguageChanged;
+  static private bool UpdateViewRequired;
   static private int TranslateLinesCountPrevious;
   static private int CommentaryLinesCountPrevious;
   static private int WordControlWidthPrevious;
   static private int MaxrefCountPrevious;
-  static private bool UpdateViewRequired;
   static private int FontSizeHebrewPrevious;
   static private int FontSizeTranslationPrevious;
   static private int FontSizeCommentaryPrevious;
+  static private bool BookNameHebrewWithCommonNamePrevious;
 
   static public bool Reseted { get; private set; }
   static private bool DoReset;
@@ -92,10 +93,16 @@ partial class PreferencesForm
       form.ShowDialog();
     }
     MainForm.Instance.InitializeDialogsDirectory();
-    bool result = Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
-    Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
+    UpdateViewRequired = TranslateLinesCountPrevious != (int)form.EditWordTranslateLinesCount.Value
+                      || CommentaryLinesCountPrevious != (int)form.EditCommentaryLinesCount.Value
+                      || WordControlWidthPrevious != (int)form.EditWordControlWidth.Value
+                      || MaxrefCountPrevious != (int)form.EditSearchDisplayMaxRef.Value
+                      || FontSizeHebrewPrevious != (int)form.EditFontSizeHebrew.Value
+                      || FontSizeTranslationPrevious != (int)form.EditFontSizeTranslation.Value
+                      || FontSizeCommentaryPrevious != (int)form.EditFontSizeCommentary.Value
+                      || BookNameHebrewWithCommonNamePrevious != form.EditBookNameHebrewWithCommonName.Checked;
     form.Dispose();
-    return result;
+    return Reseted || UpdateViewRequired || lang != Settings.LanguageSelected;
   }
 
 }

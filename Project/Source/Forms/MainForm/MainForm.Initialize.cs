@@ -69,7 +69,8 @@ partial class MainForm : Form
     }
     Globals.ChronoStartingApp.Start();
     UpdateSearchButtons();
-    BookmarksMenuFirstIndex = ActionBookmarks.DropDownItems.Count;
+    BookmarkMenuIndex = ActionBookmarks.DropDownItems.Count;
+    HistoryIndexMenu = ActionHistory.DropDownItems.Count;
     DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
   }
 

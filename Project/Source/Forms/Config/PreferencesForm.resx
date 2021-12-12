@@ -448,7 +448,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -481,7 +481,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelBackupCount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="LabelWordtranslateLinesCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -688,7 +688,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 573</value>
+    <value>10, 578</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>579, 28</value>
@@ -833,7 +833,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottomSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 568</value>
+    <value>10, 573</value>
   </data>
   <data name="PanelBottomSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>579, 5</value>
@@ -1097,7 +1097,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPagePaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 529</value>
+    <value>571, 534</value>
   </data>
   <data name="TabPagePaths.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1647,90 +1647,6 @@
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="EditBackupFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 88</value>
-  </data>
-  <data name="EditBackupFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 20</value>
-  </data>
-  <data name="EditBackupFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EditBackupFolder.Name" xml:space="preserve">
-    <value>EditBackupFolder</value>
-  </data>
-  <data name="&gt;&gt;EditBackupFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditBackupFolder.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;EditBackupFolder.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="EditExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 38</value>
-  </data>
-  <data name="EditExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 20</value>
-  </data>
-  <data name="EditExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditExportFolder.Name" xml:space="preserve">
-    <value>EditExportFolder</value>
-  </data>
-  <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;EditExportFolder.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 158</value>
-  </data>
-  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 20</value>
-  </data>
-  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
-    <value>EditCalculatorPath</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 208</value>
-  </data>
-  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 20</value>
-  </data>
-  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
-    <value>EditHebrewLettersPath</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
   <data name="EditAutoOpenExportedFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1759,7 +1675,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportedFile.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1789,7 +1705,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditAutoSortBookmarks.Name" xml:space="preserve">
     <value>EditAutoSortBookmarks</value>
@@ -1954,7 +1870,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 529</value>
+    <value>571, 534</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2074,7 +1990,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastDBOptimizeDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 493</value>
+    <value>134, 498</value>
   </data>
   <data name="LabelLastDBOptimizeDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2113,7 +2029,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastDBOptimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 493</value>
+    <value>20, 498</value>
   </data>
   <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -2146,7 +2062,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastStartupCheckDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 473</value>
+    <value>134, 478</value>
   </data>
   <data name="LabelLastStartupCheckDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2185,7 +2101,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastStartupCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 473</value>
+    <value>20, 478</value>
   </data>
   <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -2382,6 +2298,322 @@
   <data name="&gt;&gt;LabelInfoOptimizeDatabaseIntervalInfo.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Name" xml:space="preserve">
+    <value>ActionCheckAllComments</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Name" xml:space="preserve">
+    <value>EditCommentLinePrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Name" xml:space="preserve">
+    <value>LabelInfoAutoSaveDelay</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoSaveDelay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Name" xml:space="preserve">
+    <value>LabelInfoAutoBackupCount</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoAutoBackupCount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
+    <value>EditAutoSaveDelay</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSaveDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSaveDelay.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EditAutoBackupCount.Name" xml:space="preserve">
+    <value>EditAutoBackupCount</value>
+  </data>
+  <data name="&gt;&gt;EditAutoBackupCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoBackupCount.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditAutoBackupCount.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
+    <value>EditVolume</value>
+  </data>
+  <data name="&gt;&gt;EditVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditVolume.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Name" xml:space="preserve">
+    <value>LabelVolume</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;LabelVolumeValue.Name" xml:space="preserve">
+    <value>LabelVolumeValue</value>
+  </data>
+  <data name="&gt;&gt;LabelVolumeValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelVolumeValue.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Name" xml:space="preserve">
+    <value>ActionSelectLangEN</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
+    <value>ActionSelectLangFR</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.Name" xml:space="preserve">
+    <value>EditWindowsDoubleBufferingEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Name" xml:space="preserve">
+    <value>EditCommentLineRemovePrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Name" xml:space="preserve">
+    <value>EditCommentLineAddPrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Name" xml:space="preserve">
+    <value>EditBookNameHebrewWithCommonName</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;EditWebLinksMenuEnabled.Name" xml:space="preserve">
+    <value>EditWebLinksMenuEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditWebLinksMenuEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWebLinksMenuEnabled.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;EditDebuggerEnabled.Name" xml:space="preserve">
+    <value>EditDebuggerEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditDebuggerEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditDebuggerEnabled.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;EditUsageStatisticsEnabled.Name" xml:space="preserve">
+    <value>EditUsageStatisticsEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditUsageStatisticsEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUsageStatisticsEnabled.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;EditLogEnabled.Name" xml:space="preserve">
+    <value>EditLogEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditLogEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditLogEnabled.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="TabPageApplication.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 534</value>
+  </data>
+  <data name="TabPageApplication.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPageApplication.Text" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="&gt;&gt;TabPageApplication.Name" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;TabPageApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageApplication.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageApplication.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionCheckAllComments.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionCheckAllComments.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAAZZJREFUOE+Vk2lSwkAQhecu/lZUfnkC9Uiud3A9AAqURUJicQH/6xkABQmbLCV7
+        CM9+M0nUAsviq3o1M0n36+6pRJHHQqFruy6sfB65X7L1ajsO8q7b1MGrYMB/NBoNWLadCVN+w8qkWCqj
+        WH5FScSVZ5JKp/Va9zxYjpMN075hm+TtrYJKpYqqiCvP5D6Twcz39Z6dyLhWmGrgrKRa81Dz6rGq755+
+        /vzygkz2QYyy+syRw1RDzjYGdXFvNJuxeP4cDPW7n1j5PwyarTZa7Y9Y7XYXve4Ic/HYPlbYEhHbcVcb
+        9Dp9rW6np9dBfwZMgOSpwnVZaROyZMCWiD82Gg18jIcBIPnJE5PMFeYel0egI9k8Uti/NFXIoeyvSgq7
+        rLwAptINYcdhqiEySEggq+2di84kuaiwI6Yk4DRj47BkEI1AWO1WTG6k8sGFSV7MpfrUx2QiLsKSQfQh
+        RSSkKhWxCBYI5nMEgdyLwPgw1cAfaR0YH6YaUnd3T/y6+E9wHN4JxT3bjSXvGcf4MDVmQ5RcQ4wXlPoC
+        YyeAQfid7FcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionCheckAllComments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionCheckAllComments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 409</value>
+  </data>
+  <data name="ActionCheckAllComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionCheckAllComments.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Name" xml:space="preserve">
+    <value>ActionCheckAllComments</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckAllComments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditCommentLinePrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 412</value>
+  </data>
+  <data name="EditCommentLinePrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditCommentLinePrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Name" xml:space="preserve">
+    <value>EditCommentLinePrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="LabelInfoAutoSaveDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2413,7 +2645,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelInfoAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="LabelInfoAutoBackupCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2446,7 +2678,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelInfoAutoBackupCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 298</value>
@@ -2467,7 +2699,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditAutoBackupCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 248</value>
@@ -2488,7 +2720,10 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoBackupCount.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
+  </data>
+  <data name="EditVolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="EditVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2497,7 +2732,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 486</value>
+    <value>18, 491</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>490, 18</value>
@@ -2515,7 +2750,10 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
+  </data>
+  <data name="LabelVolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2527,7 +2765,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 466</value>
+    <value>20, 471</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -2548,7 +2786,10 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
+  </data>
+  <data name="LabelVolumeValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2560,7 +2801,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 486</value>
+    <value>515, 491</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -2581,7 +2822,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2622,7 +2863,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2665,7 +2906,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2695,37 +2936,97 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditCommentLineRemovePrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditCommentLineRemovePrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 381</value>
+  <data name="EditCommentLineRemovePrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 390</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 17</value>
+  <data name="EditCommentLineRemovePrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 17</value>
   </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCommentLineRemovePrefix.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Display the Hebrew name of a book with its common name in parentheses</value>
+  <data name="EditCommentLineRemovePrefix.Text" xml:space="preserve">
+    <value>Automatically remove this prefix to each commentary line</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Name" xml:space="preserve">
+    <value>EditCommentLineRemovePrefix</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.Parent" xml:space="preserve">
     <value>TabPageApplication</value>
   </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;EditCommentLineRemovePrefix.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 370</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 17</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Text" xml:space="preserve">
+    <value>Automatically add this prefix to each commentary line</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Name" xml:space="preserve">
+    <value>EditCommentLineAddPrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLineAddPrefix.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 340</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>374, 17</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.Text" xml:space="preserve">
+    <value>Display the Hebrew name of a book with its common name in parentheses</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Name" xml:space="preserve">
+    <value>EditBookNameHebrewWithCommonName</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditBookNameHebrewWithCommonName.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2755,7 +3056,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2785,7 +3086,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2815,7 +3116,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2845,34 +3146,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="TabPageApplication.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 529</value>
-  </data>
-  <data name="TabPageApplication.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TabPageApplication.Text" xml:space="preserve">
-    <value>Application</value>
-  </data>
-  <data name="&gt;&gt;TabPageApplication.Name" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;TabPageApplication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageApplication.Parent" xml:space="preserve">
-    <value>TabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPageApplication.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>22</value>
   </data>
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
@@ -3124,7 +3398,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageRendering.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 529</value>
+    <value>571, 534</value>
   </data>
   <data name="TabPageRendering.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -3144,6 +3418,93 @@
   <data name="&gt;&gt;TabPageRendering.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift5</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShift</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 236</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 135</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift.Text" xml:space="preserve">
+    <value>Shift+Click on a hebrew word action</value>
+  </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickShift.Name" xml:space="preserve">
     <value>GroupBoxHebrewWordClickShift</value>
   </data>
@@ -3155,6 +3516,93 @@
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickShift.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl5</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickShiftCtrl4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickAlt</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickAlt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickAlt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 382</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickAlt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 135</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickAlt.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickAlt.Text" xml:space="preserve">
+    <value>Shift+Ctrl on a hebrew word action</value>
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.Name" xml:space="preserve">
     <value>GroupBoxHebrewWordClickAlt</value>
@@ -3168,6 +3616,69 @@
   <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Name" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Parent" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Name" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Parent" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Name" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Parent" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Name" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Parent" xml:space="preserve">
+    <value>GroupBoxVerseLabelClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxVerseLabelClick3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 125</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 100</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
+    <value>Click on verse label action</value>
+  </data>
   <data name="&gt;&gt;GroupBoxVerseLabelClick.Name" xml:space="preserve">
     <value>GroupBoxVerseLabelClick</value>
   </data>
@@ -3179,6 +3690,69 @@
   </data>
   <data name="&gt;&gt;GroupBoxVerseLabelClick.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Name" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Parent" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Name" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Parent" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Name" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Parent" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Name" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Parent" xml:space="preserve">
+    <value>GroupBoxTranslatedItemDoubleClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 125</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 100</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
+    <value>Double-Click on translated item action</value>
   </data>
   <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.Name" xml:space="preserve">
     <value>GroupBoxTranslatedItemDoubleClick</value>
@@ -3192,6 +3766,93 @@
   <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl5</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClickCtrl</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 382</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 135</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl.Text" xml:space="preserve">
+    <value>Ctrl+Click on a hebrew word action</value>
+  </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.Name" xml:space="preserve">
     <value>GroupBoxHebrewWordClickCtrl</value>
   </data>
@@ -3203,6 +3864,93 @@
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick5</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick0</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick0.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick2</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Name" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick4</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Parent" xml:space="preserve">
+    <value>GroupBoxHebrewWordClick</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxHebrewWordClick4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 236</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 135</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Click on a hebrew word action</value>
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClick.Name" xml:space="preserve">
     <value>GroupBoxHebrewWordClick</value>
@@ -3216,6 +3964,37 @@
   <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="ActionOnlineSearchHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 35</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;ActionOnlineSearchHelp.Name" xml:space="preserve">
     <value>ActionOnlineSearchHelp</value>
   </data>
@@ -3227,6 +4006,37 @@
   </data>
   <data name="&gt;&gt;ActionOnlineSearchHelp.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 85</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionOnlineVerseHelp.Name" xml:space="preserve">
     <value>ActionOnlineVerseHelp</value>
@@ -3240,6 +4050,38 @@
   <data name="&gt;&gt;ActionOnlineVerseHelp.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="ActionSelectOnlineSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAqdJREFUOE+NketLk2EYxkd9iKIo7aD4tU9BBSUERdCXDlCUpwqiv6DAqA8ettrh
+        3TSXM0mnTjdrWtmblIy0gy433awtOmIeCiN1zqltiZqCqR9+vTtgkUhd8OOB576um/t+Htmf2qy169Yr
+        7bNrr9gJs+7Kczao7LMJ0n3Msrw2qJ4FMura6Zy0Aa0Sbczj5l3Izsm6NuJUrYGYdaniNE8C8pZ+Zhlj
+        mte4R+HWJ6jsHea+r4hxrAhOD/Eax9ImCdpmXcadd/RMwZeZSfrmi2kec9H4TUlDcDuXO89wvCWHN1PZ
+        nBbdxOscmbFoVBvVj3+Kn6d56APP+E/eLmTjmtvDg8ltmIMrOeEUSaqZ48CzCzzyl7NS5fwRi0a1Sf2U
+        4p4FHGNwfwSMxVVUlovUVNu4fdOGaK2nvvYeYo2IWCty11qLxVyNxVKTHGmwWdPMOc8CBmnnEoMB/6Af
+        l9uLq+MV7g4vHWFeeKJ0RM9hf4ASYwWRBlsEB4WBsyhuNTP1PUQoGCQYDP2TiYkJSssr62WJ2ta5oy1N
+        VBQVM9A/gLnaiqnSQsUyhGtVkudr/2B0isRLVkvijQ+UGQrp7emlwdbESGCUwDKEaw22Rrq6eyktM0XW
+        SIoX7MFSfT6furvxvPQyNOTD6WzH2ebC0eb+jdOFb2iIl5LnY1cP5aaq6DtI2nlRe32sUCegFzQUaNTk
+        abQo1fnkqvRkqwqRq6+hFApQC/lotPkIugLkcqUjlo9ox6rzN/Vr8lz+1XovK66+kXbMYth8CJ/5CN6C
+        fXWSJ/x1f7JVIiqlQoFKLkcjz5XOXLKylPhNe2FGiNBv2k9mtpYchYpchXKRWFwmS0tNIz1Gako6h4+e
+        os+4i/dFyRH6jLs5eOw0KSkZpKWmLxKLR/T3eP+BLPkXcuM5Qo5fBrgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 35</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;ActionSelectOnlineSearch.Name" xml:space="preserve">
     <value>ActionSelectOnlineSearch</value>
   </data>
@@ -3251,6 +4093,38 @@
   </data>
   <data name="&gt;&gt;ActionSelectOnlineSearch.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAqdJREFUOE+NketLk2EYxkd9iKIo7aD4tU9BBSUERdCXDlCUpwqiv6DAqA8ettrh
+        3TSXM0mnTjdrWtmblIy0gy433awtOmIeCiN1zqltiZqCqR9+vTtgkUhd8OOB576um/t+Htmf2qy169Yr
+        7bNrr9gJs+7Kczao7LMJ0n3Msrw2qJ4FMura6Zy0Aa0Sbczj5l3Izsm6NuJUrYGYdaniNE8C8pZ+Zhlj
+        mte4R+HWJ6jsHea+r4hxrAhOD/Eax9ImCdpmXcadd/RMwZeZSfrmi2kec9H4TUlDcDuXO89wvCWHN1PZ
+        nBbdxOscmbFoVBvVj3+Kn6d56APP+E/eLmTjmtvDg8ltmIMrOeEUSaqZ48CzCzzyl7NS5fwRi0a1Sf2U
+        4p4FHGNwfwSMxVVUlovUVNu4fdOGaK2nvvYeYo2IWCty11qLxVyNxVKTHGmwWdPMOc8CBmnnEoMB/6Af
+        l9uLq+MV7g4vHWFeeKJ0RM9hf4ASYwWRBlsEB4WBsyhuNTP1PUQoGCQYDP2TiYkJSssr62WJ2ta5oy1N
+        VBQVM9A/gLnaiqnSQsUyhGtVkudr/2B0isRLVkvijQ+UGQrp7emlwdbESGCUwDKEaw22Rrq6eyktM0XW
+        SIoX7MFSfT6furvxvPQyNOTD6WzH2ebC0eb+jdOFb2iIl5LnY1cP5aaq6DtI2nlRe32sUCegFzQUaNTk
+        abQo1fnkqvRkqwqRq6+hFApQC/lotPkIugLkcqUjlo9ox6rzN/Vr8lz+1XovK66+kXbMYth8CJ/5CN6C
+        fXWSJ/x1f7JVIiqlQoFKLkcjz5XOXLKylPhNe2FGiNBv2k9mtpYchYpchXKRWFwmS0tNIz1Gako6h4+e
+        os+4i/dFyRH6jLs5eOw0KSkZpKWmLxKLR/T3eP+BLPkXcuM5Qo5fBrgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 85</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.Name" xml:space="preserve">
     <value>ActionSelectOnlineVerseURL</value>
@@ -3264,6 +4138,15 @@
   <data name="&gt;&gt;ActionSelectOnlineVerseURL.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 88</value>
+  </data>
+  <data name="EditOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>458, 20</value>
+  </data>
+  <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Name" xml:space="preserve">
     <value>EditOnlineVerseURL</value>
   </data>
@@ -3275,6 +4158,15 @@
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="EditOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 38</value>
+  </data>
+  <data name="EditOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>458, 20</value>
+  </data>
+  <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
     <value>EditOnlineSearch</value>
@@ -3295,7 +4187,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 529</value>
+    <value>571, 534</value>
   </data>
   <data name="TabPageTools.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3325,7 +4217,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>579, 558</value>
+    <value>579, 563</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3882,105 +4774,6 @@
   <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift0.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickShift.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 236</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 135</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickShift.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickShift.Text" xml:space="preserve">
-    <value>Shift+Click on a hebrew word action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShift</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShift.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="GroupBoxHebrewWordClickShift5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4178,105 +4971,6 @@
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickShift4.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl0.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickShiftCtrl4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickAlt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickAlt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 382</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickAlt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 135</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickAlt.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickAlt.Text" xml:space="preserve">
-    <value>Shift+Ctrl on a hebrew word action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickAlt</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickAlt.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4476,81 +5170,6 @@
   <data name="&gt;&gt;GroupBoxHebrewWordClickShiftCtrl4.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Name" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick4.Parent" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Name" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick1.Parent" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Name" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick2.Parent" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Name" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick3.Parent" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 125</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 100</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
-    <value>Click on verse label action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick.Name" xml:space="preserve">
-    <value>GroupBoxVerseLabelClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxVerseLabelClick.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="GroupBoxVerseLabelClick4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4681,81 +5300,6 @@
     <value>GroupBoxVerseLabelClick</value>
   </data>
   <data name="&gt;&gt;GroupBoxVerseLabelClick3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Name" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.Parent" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Name" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.Parent" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Name" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.Parent" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Name" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.Parent" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 125</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 100</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
-    <value>Double-Click on translated item action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.Name" xml:space="preserve">
-    <value>GroupBoxTranslatedItemDoubleClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="GroupBoxTranslatedItemDoubleClick4.AutoSize" type="System.Boolean, mscorlib">
@@ -4889,105 +5433,6 @@
   </data>
   <data name="&gt;&gt;GroupBoxTranslatedItemDoubleClick3.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl0.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickCtrl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickCtrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 382</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickCtrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 135</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickCtrl.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="GroupBoxHebrewWordClickCtrl.Text" xml:space="preserve">
-    <value>Ctrl+Click on a hebrew word action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClickCtrl</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5185,105 +5630,6 @@
     <value>GroupBoxHebrewWordClickCtrl</value>
   </data>
   <data name="&gt;&gt;GroupBoxHebrewWordClickCtrl4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick5</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick5.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick0</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick0.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick0.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick1</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick1.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick3.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick2</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick2.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick4</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick4.Parent" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 236</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 135</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Click on a hebrew word action</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Name" xml:space="preserve">
-    <value>GroupBoxHebrewWordClick</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxHebrewWordClick.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClick5.AutoSize" type="System.Boolean, mscorlib">
@@ -5484,222 +5830,6 @@
   <data name="&gt;&gt;GroupBoxHebrewWordClick4.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ActionOnlineSearchHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionOnlineSearchHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOnlineSearchHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionOnlineSearchHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 34</value>
-  </data>
-  <data name="ActionOnlineSearchHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionOnlineSearchHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineSearchHelp.Name" xml:space="preserve">
-    <value>ActionOnlineSearchHelp</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineSearchHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineSearchHelp.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineSearchHelp.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 84</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionOnlineVerseHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineVerseHelp.Name" xml:space="preserve">
-    <value>ActionOnlineVerseHelp</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineVerseHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineVerseHelp.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;ActionOnlineVerseHelp.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAqdJREFUOE+NketLk2EYxkd9iKIo7aD4tU9BBSUERdCXDlCUpwqiv6DAqA8ettrh
-        3TSXM0mnTjdrWtmblIy0gy433awtOmIeCiN1zqltiZqCqR9+vTtgkUhd8OOB576um/t+Htmf2qy169Yr
-        7bNrr9gJs+7Kczao7LMJ0n3Msrw2qJ4FMura6Zy0Aa0Sbczj5l3Izsm6NuJUrYGYdaniNE8C8pZ+Zhlj
-        mte4R+HWJ6jsHea+r4hxrAhOD/Eax9ImCdpmXcadd/RMwZeZSfrmi2kec9H4TUlDcDuXO89wvCWHN1PZ
-        nBbdxOscmbFoVBvVj3+Kn6d56APP+E/eLmTjmtvDg8ltmIMrOeEUSaqZ48CzCzzyl7NS5fwRi0a1Sf2U
-        4p4FHGNwfwSMxVVUlovUVNu4fdOGaK2nvvYeYo2IWCty11qLxVyNxVKTHGmwWdPMOc8CBmnnEoMB/6Af
-        l9uLq+MV7g4vHWFeeKJ0RM9hf4ASYwWRBlsEB4WBsyhuNTP1PUQoGCQYDP2TiYkJSssr62WJ2ta5oy1N
-        VBQVM9A/gLnaiqnSQsUyhGtVkudr/2B0isRLVkvijQ+UGQrp7emlwdbESGCUwDKEaw22Rrq6eyktM0XW
-        SIoX7MFSfT6furvxvPQyNOTD6WzH2ebC0eb+jdOFb2iIl5LnY1cP5aaq6DtI2nlRe32sUCegFzQUaNTk
-        abQo1fnkqvRkqwqRq6+hFApQC/lotPkIugLkcqUjlo9ox6rzN/Vr8lz+1XovK66+kXbMYth8CJ/5CN6C
-        fXWSJ/x1f7JVIiqlQoFKLkcjz5XOXLKylPhNe2FGiNBv2k9mtpYchYpchXKRWFwmS0tNIz1Gako6h4+e
-        os+4i/dFyRH6jLs5eOw0KSkZpKWmLxKLR/T3eP+BLPkXcuM5Qo5fBrgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 34</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionSelectOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineSearch.Name" xml:space="preserve">
-    <value>ActionSelectOnlineSearch</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineSearch.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineSearch.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAqdJREFUOE+NketLk2EYxkd9iKIo7aD4tU9BBSUERdCXDlCUpwqiv6DAqA8ettrh
-        3TSXM0mnTjdrWtmblIy0gy433awtOmIeCiN1zqltiZqCqR9+vTtgkUhd8OOB576um/t+Htmf2qy169Yr
-        7bNrr9gJs+7Kczao7LMJ0n3Msrw2qJ4FMura6Zy0Aa0Sbczj5l3Izsm6NuJUrYGYdaniNE8C8pZ+Zhlj
-        mte4R+HWJ6jsHea+r4hxrAhOD/Eax9ImCdpmXcadd/RMwZeZSfrmi2kec9H4TUlDcDuXO89wvCWHN1PZ
-        nBbdxOscmbFoVBvVj3+Kn6d56APP+E/eLmTjmtvDg8ltmIMrOeEUSaqZ48CzCzzyl7NS5fwRi0a1Sf2U
-        4p4FHGNwfwSMxVVUlovUVNu4fdOGaK2nvvYeYo2IWCty11qLxVyNxVKTHGmwWdPMOc8CBmnnEoMB/6Af
-        l9uLq+MV7g4vHWFeeKJ0RM9hf4ASYwWRBlsEB4WBsyhuNTP1PUQoGCQYDP2TiYkJSssr62WJ2ta5oy1N
-        VBQVM9A/gLnaiqnSQsUyhGtVkudr/2B0isRLVkvijQ+UGQrp7emlwdbESGCUwDKEaw22Rrq6eyktM0XW
-        SIoX7MFSfT6furvxvPQyNOTD6WzH2ebC0eb+jdOFb2iIl5LnY1cP5aaq6DtI2nlRe32sUCegFzQUaNTk
-        abQo1fnkqvRkqwqRq6+hFApQC/lotPkIugLkcqUjlo9ox6rzN/Vr8lz+1XovK66+kXbMYth8CJ/5CN6C
-        fXWSJ/x1f7JVIiqlQoFKLkcjz5XOXLKylPhNe2FGiNBv2k9mtpYchYpchXKRWFwmS0tNIz1Gako6h4+e
-        os+4i/dFyRH6jLs5eOw0KSkZpKWmLxKLR/T3eP+BLPkXcuM5Qo5fBrgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 84</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionSelectOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineVerseURL.Name" xml:space="preserve">
-    <value>ActionSelectOnlineVerseURL</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineVerseURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineVerseURL.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="EditOnlineVerseURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 88</value>
-  </data>
-  <data name="EditOnlineVerseURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>427, 20</value>
-  </data>
-  <data name="EditOnlineVerseURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineVerseURL.Name" xml:space="preserve">
-    <value>EditOnlineVerseURL</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineVerseURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineVerseURL.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineVerseURL.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="EditOnlineSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 38</value>
-  </data>
-  <data name="EditOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>427, 20</value>
-  </data>
-  <data name="EditOnlineSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineSearch.Name" xml:space="preserve">
-    <value>EditOnlineSearch</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineSearch.Parent" xml:space="preserve">
-    <value>TabPageTools</value>
-  </data>
-  <data name="&gt;&gt;EditOnlineSearch.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <metadata name="SaveThemeDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>785, 19</value>
   </metadata>
@@ -5739,6 +5869,90 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>423, 57</value>
   </metadata>
+  <data name="EditBackupFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 88</value>
+  </data>
+  <data name="EditBackupFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 20</value>
+  </data>
+  <data name="EditBackupFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditBackupFolder.Name" xml:space="preserve">
+    <value>EditBackupFolder</value>
+  </data>
+  <data name="&gt;&gt;EditBackupFolder.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditBackupFolder.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;EditBackupFolder.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="EditExportFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 38</value>
+  </data>
+  <data name="EditExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 20</value>
+  </data>
+  <data name="EditExportFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditExportFolder.Name" xml:space="preserve">
+    <value>EditExportFolder</value>
+  </data>
+  <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;EditExportFolder.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 158</value>
+  </data>
+  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 20</value>
+  </data>
+  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
+    <value>EditCalculatorPath</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 208</value>
+  </data>
+  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 20</value>
+  </data>
+  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
+    <value>EditHebrewLettersPath</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5749,7 +5963,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>599, 611</value>
+    <value>599, 616</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

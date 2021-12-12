@@ -17,8 +17,34 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
+  private void UpdateHistory()
+  {
+    try
+    {
+      while ( ActionHistory.DropDownItems.Count > HistoryIndexMenu )
+        ActionHistory.DropDownItems.RemoveAt(HistoryIndexMenu);
+      if ( History.Count > 0 )
+      {
+        foreach ( var reference in History )
+        {
+          ToolStripMenuItem item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          item.Tag = reference;
+          item.Click += GoToBookmark;
+          item.ImageScaling = ToolStripItemImageScaling.None;
+          item.Image = ActionGoToBookmarks.Image;
+        }
+      }
+      ActionHistory.Enabled = History.Count > 0;
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
+
   public void MoveVerseBindingSourceAndAddCurrentToHistory()
   {
+    if ( IsGoToRunning ) return;
     if ( Settings.CurrentView == ViewMode.ChapterVerses )
     {
       int pos = CurrentReference.Verse?.Number - 1 ?? -1;
@@ -27,32 +53,6 @@ partial class MainForm
     }
     History.Add(CurrentReference);
     UpdateHistory();
-  }
-
-  private void UpdateHistory()
-  {
-    try
-    {
-      while ( ActionHistory.DropDownItems.Count > 1 )
-        ActionHistory.DropDownItems.RemoveAt(1);
-      if ( History.Count > 0 )
-      {
-        ActionHistory.DropDownItems.Add("-");
-        foreach ( var reference in History )
-        {
-          ToolStripMenuItem item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringFull());
-          item.Tag = reference;
-          item.Click += GoToBookmark;
-          item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionGoToBookmarks.Image;
-        }
-      }
-      ActionClearHistory.Enabled = History.Count > 0;
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
   }
 
 }

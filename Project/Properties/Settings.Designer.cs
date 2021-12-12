@@ -1245,5 +1245,53 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["FontSizeCommentary"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BookNameHebrewWithCommonName {
+            get {
+                return ((bool)(this["BookNameHebrewWithCommonName"]));
+            }
+            set {
+                this["BookNameHebrewWithCommonName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("• ")]
+        public string CommentLinePrefix {
+            get {
+                return ((string)(this["CommentLinePrefix"]));
+            }
+            set {
+                this["CommentLinePrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CommentLineAddPrefix {
+            get {
+                return ((bool)(this["CommentLineAddPrefix"]));
+            }
+            set {
+                this["CommentLineAddPrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CommentLineRemovePrefix {
+            get {
+                return ((bool)(this["CommentLineRemovePrefix"]));
+            }
+            set {
+                this["CommentLineRemovePrefix"] = value;
+            }
+        }
     }
 }

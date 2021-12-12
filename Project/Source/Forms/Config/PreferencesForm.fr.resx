@@ -152,7 +152,7 @@
     <value>187, 13</value>
   </data>
   <data name="LabelCommentaryLinesCount.Text" xml:space="preserve">
-    <value>Nombre de lignes pour le commentaire</value>
+    <value>Nombre de lignes du commentaire</value>
   </data>
   <data name="LabelBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
@@ -328,20 +328,11 @@
   <data name="radioButton5.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 17</value>
   </data>
-  <data name="radioButton5.Text" xml:space="preserve">
-    <value>Rien</value>
-  </data>
   <data name="radioButton6.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
   </data>
-  <data name="radioButton6.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
-  </data>
   <data name="radioButton7.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
-  </data>
-  <data name="radioButton7.Text" xml:space="preserve">
-    <value>Recherche des traduits</value>
   </data>
   <data name="GroupBoxHebrewWordClickAlt.Text" xml:space="preserve">
     <value>Alt+Clic sur mot hébreu ouvre</value>
@@ -349,20 +340,11 @@
   <data name="radioButton9.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 17</value>
   </data>
-  <data name="radioButton9.Text" xml:space="preserve">
-    <value>NothingRien</value>
-  </data>
   <data name="radioButton10.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
   </data>
-  <data name="radioButton10.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
-  </data>
   <data name="radioButton11.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
-  </data>
-  <data name="radioButton11.Text" xml:space="preserve">
-    <value>Recherche des traduits</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl.Text" xml:space="preserve">
     <value>Ctrl+Clic sur mot hébreu ouvre</value>
@@ -370,20 +352,11 @@
   <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 17</value>
   </data>
-  <data name="radioButton1.Text" xml:space="preserve">
-    <value>Rien</value>
-  </data>
   <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
   </data>
-  <data name="radioButton2.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
-  </data>
   <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
-  </data>
-  <data name="radioButton3.Text" xml:space="preserve">
-    <value>Recherche des traduits</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
     <value>Clic sur mot hébreu ouvre</value>
@@ -391,20 +364,11 @@
   <data name="SelectOpenNothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 17</value>
   </data>
-  <data name="SelectOpenNothing.Text" xml:space="preserve">
-    <value>Rien</value>
-  </data>
   <data name="SelectOpenOnlineSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
   </data>
-  <data name="SelectOpenOnlineSearch.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
-  </data>
   <data name="SelectOpenTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
-  </data>
-  <data name="SelectOpenTranslated.Text" xml:space="preserve">
-    <value>Recherche des traduits</value>
   </data>
   <data name="SaveThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
@@ -414,5 +378,116 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
+  </data>
+  <data name="LabelFontSizeTranslation.Text" xml:space="preserve">
+    <value>Taille de police de la traduction</value>
+  </data>
+  <data name="EditBookNameHebrewWithCommonName.Text" xml:space="preserve">
+    <value>Afficher le nom hébreu d'un livre avec son nom commun entre parenthèses</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Text" xml:space="preserve">
+    <value>Ajouter automatiquement ce préfixe à chaque ligne de commentaire</value>
+  </data>
+  <data name="EditCommentLineRemovePrefix.Text" xml:space="preserve">
+    <value>Supprimer automatiquement ce préfixe à chaque ligne de commentaire</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick0.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick2.Text" xml:space="preserve">
+    <value>Chercher les traduits</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick3.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick5.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl0.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift0.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShiftCtrl0.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick2.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShiftCtrl1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="LabelFontSizeHebrew.Text" xml:space="preserve">
+    <value>Taille de police hébreu</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
+    <value>Clic sur label de verset ouvre</value>
+  </data>
+  <data name="LabelFontSizeComentary.Text" xml:space="preserve">
+    <value>Taille de police du commentaire</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
+    <value>Action de double-clic sur traduit</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShiftCtrl5.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick4.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift5.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl5.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick4.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick3.Text" xml:space="preserve">
+    <value>Atteindre référence</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift3.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShiftCtrl3.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl3.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShift2.Text" xml:space="preserve">
+    <value>Chercher les traduits</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickCtrl2.Text" xml:space="preserve">
+    <value>Chercher les traduits</value>
+  </data>
+  <data name="GroupBoxHebrewWordClickShiftCtrl2.Text" xml:space="preserve">
+    <value>Chercher les traduits</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick3.Text" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="LabelWordtranslateLinesCount.Text" xml:space="preserve">
+    <value>Nombre de ligne de la traduction</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick1.Text" xml:space="preserve">
+    <value>Utiliser la traduction</value>
+  </data>
+  <data name="GroupBoxTranslatedItemDoubleClick2.Text" xml:space="preserve">
+    <value>Ajouter la traduction</value>
   </data>
 </root>

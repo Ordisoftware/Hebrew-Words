@@ -54,7 +54,10 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditFontSizeHebrew.Value = Settings.FontSizeHebrew);
     SystemManager.TryCatch(() => EditFontSizeTranslation.Value = Settings.FontSizeTranslation);
     SystemManager.TryCatch(() => EditFontSizeCommentary.Value = Settings.FontSizeCommentary);
-
+    SystemManager.TryCatch(() => EditBookNameHebrewWithCommonName.Checked = Settings.BookNameHebrewWithCommonName);
+    SystemManager.TryCatch(() => EditCommentLineAddPrefix.Checked = Settings.CommentLineAddPrefix);
+    SystemManager.TryCatch(() => EditCommentLinePrefix.Text = Settings.CommentLinePrefix);
+    SystemManager.TryCatch(() => EditCommentLineRemovePrefix.Checked = Settings.CommentLineRemovePrefix);
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
     GroupBoxHebrewWordClick1.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.OnlineSearch;
@@ -101,6 +104,10 @@ partial class PreferencesForm
       CommentaryLinesCountPrevious = (int)EditCommentaryLinesCount.Value;
       WordControlWidthPrevious = (int)EditWordControlWidth.Value;
       MaxrefCountPrevious = (int)EditSearchDisplayMaxRef.Value;
+      FontSizeHebrewPrevious = (int)EditFontSizeHebrew.Value;
+      FontSizeTranslationPrevious = (int)EditFontSizeTranslation.Value;
+      FontSizeCommentaryPrevious = (int)EditFontSizeCommentary.Value;
+      BookNameHebrewWithCommonNamePrevious = EditBookNameHebrewWithCommonName.Checked;
       First = false;
     }
     // Special
