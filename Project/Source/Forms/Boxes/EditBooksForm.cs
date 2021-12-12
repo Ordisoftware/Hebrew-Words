@@ -21,7 +21,7 @@ partial class EditBooksForm : Form
 
   private BookRow SelectedBook
     => DataGridView.SelectedRows.Count == 1
-       ? ( DataGridView.SelectedRows[0].DataBoundItem as ObjectView<BookRow> ).Object
+       ? ( (ObjectView<BookRow>)DataGridView.SelectedRows[0].DataBoundItem ).Object
        : null;
 
   public EditBooksForm()
@@ -35,7 +35,6 @@ partial class EditBooksForm : Form
       else
         ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem((sender, e) =>
         {
-          var menuitem = (ToolStripMenuItem)sender;
           HebrewTools.OpenHebrewLetters(SelectedBook?.Original, Program.Settings.HebrewLettersExe);
         }));
   }

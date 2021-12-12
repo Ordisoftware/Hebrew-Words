@@ -36,6 +36,6 @@ partial class MainForm
       }
       EditChapterTranslation.Text = builder.ToString();
     });
-  } 
+  }
 
 }

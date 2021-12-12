@@ -92,6 +92,12 @@ The refresh view button of the menu at the top redraws the entire form.
 
 Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
+#### Why all verses of a chapter are not rendered?
+
+Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100-150 verses cannot be fully rendered.
+
+In this case, one verse at a time should be used.
+
 #### What are command-line options?
 
 - Change interface language (does not change the meanings of letters unless restoring them):

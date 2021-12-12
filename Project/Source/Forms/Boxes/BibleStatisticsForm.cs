@@ -159,7 +159,7 @@ partial class BibleStatisticsForm : Form
   {
     try
     {
-      var book = (TanakBook)( ( SelectBook.SelectedItem as BookRow )?.Number );
+      var book = (TanakBook)( (BookRow)SelectBook.SelectedItem ).Number;
       CountersSelected = new BookStatistic();
       CountersSelected.CountChapters += CountersBooks[book].CountChapters;
       CountersSelected.CountVerses += CountersBooks[book].CountVerses;
