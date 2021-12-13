@@ -266,7 +266,22 @@
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
-  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
-    <value>Description</value>
+  <data name="ActionExport.Text" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="ActionShowDescription.Text" xml:space="preserve">
+    <value>Afficher la description</value>
+  </data>
+  <data name="ColumnMemo.HeaderText" xml:space="preserve">
+    <value>Mémo</value>
+  </data>
+  <data name="isLinkedToNextDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Lié</value>
+  </data>
+  <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
+    <value>Sauver comme source</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Hebrew Letters Analyse</value>
   </data>
 </root>

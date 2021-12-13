@@ -352,6 +352,7 @@
     <Compile Include="Source\Common\Hebrew\Database\Parashah.Properties.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.ToString.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotHelper.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermAnalysis.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
@@ -403,9 +404,6 @@
     <Compile Include="Source\Entities\ReferenceItem.ToString.cs" />
     <Compile Include="Source\Entities\ReferenceItem.Operators.cs" />
     <Compile Include="Source\Enums\HebrewWordClickAction.cs" />
-    <Compile Include="Source\Forms\Boxes\ParashotForm.ShowDescription.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\Boxes\ParashotForm.cs">
       <SubType>Form</SubType>
     </Compile>

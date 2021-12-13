@@ -24,6 +24,7 @@ partial class EditBooksForm : Form
        ? ( (ObjectView<BookRow>)DataGridView.SelectedRows[0].DataBoundItem ).Object
        : null;
 
+  [SuppressMessage("Simplification", "RCS1021:Convert lambda expression body to expression-body.", Justification = "Opinion")]
   public EditBooksForm()
   {
     InitializeComponent();

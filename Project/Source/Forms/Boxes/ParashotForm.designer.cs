@@ -65,13 +65,15 @@
       this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -90,8 +92,6 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -393,13 +393,15 @@
       // ContextMenuParashah
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionShowDescription,
+            this.toolStripSeparator3,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
-            this.ActionSearchOnline,
             this.toolStripSeparator1,
+            this.ActionSearchOnline,
             this.ActionShowGrammarGuide,
-            this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
+            this.ActionOpenHebrewLetters,
             this.ActionOpenHebrewWordsVerse,
             this.ActionOpenHebrewWordsSearch,
             this.MenuSeparator2,
@@ -408,11 +410,20 @@
             this.ActionCopyUnicodeChars,
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
-            this.ActionCopyLineUnicode,
-            this.toolStripMenuItem1,
-            this.ActionViewParashahInfos});
+            this.ActionCopyLineUnicode});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      // 
+      // ActionShowDescription
+      // 
+      resources.ApplyResources(this.ActionShowDescription, "ActionShowDescription");
+      this.ActionShowDescription.Name = "ActionShowDescription";
+      this.ActionShowDescription.Click += new System.EventHandler(this.ActionShowDescription_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionStudyOnline
       // 
@@ -424,15 +435,15 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
-      // ActionSearchOnline
-      // 
-      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
-      this.ActionSearchOnline.Name = "ActionSearchOnline";
-      // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionSearchOnline
+      // 
+      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
+      this.ActionSearchOnline.Name = "ActionSearchOnline";
       // 
       // ActionShowGrammarGuide
       // 
@@ -440,16 +451,16 @@
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
-      // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionOpenHebrewWordsVerse
       // 
@@ -511,42 +522,36 @@
       // bookDataGridViewTextBoxColumn
       // 
       this.bookDataGridViewTextBoxColumn.DataPropertyName = "Book";
-      resources.ApplyResources(this.bookDataGridViewTextBoxColumn, "bookDataGridViewTextBoxColumn");
       this.bookDataGridViewTextBoxColumn.Name = "bookDataGridViewTextBoxColumn";
       this.bookDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // numberDataGridViewTextBoxColumn
       // 
       this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-      resources.ApplyResources(this.numberDataGridViewTextBoxColumn, "numberDataGridViewTextBoxColumn");
       this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
       this.numberDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // nameDataGridViewTextBoxColumn
       // 
       this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-      resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
       this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
       this.nameDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // unicodeDataGridViewTextBoxColumn
       // 
       this.unicodeDataGridViewTextBoxColumn.DataPropertyName = "Unicode";
-      resources.ApplyResources(this.unicodeDataGridViewTextBoxColumn, "unicodeDataGridViewTextBoxColumn");
       this.unicodeDataGridViewTextBoxColumn.Name = "unicodeDataGridViewTextBoxColumn";
       this.unicodeDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // verseBeginDataGridViewTextBoxColumn
       // 
       this.verseBeginDataGridViewTextBoxColumn.DataPropertyName = "VerseBegin";
-      resources.ApplyResources(this.verseBeginDataGridViewTextBoxColumn, "verseBeginDataGridViewTextBoxColumn");
       this.verseBeginDataGridViewTextBoxColumn.Name = "verseBeginDataGridViewTextBoxColumn";
       this.verseBeginDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // verseEndDataGridViewTextBoxColumn
       // 
       this.verseEndDataGridViewTextBoxColumn.DataPropertyName = "VerseEnd";
-      resources.ApplyResources(this.verseEndDataGridViewTextBoxColumn, "verseEndDataGridViewTextBoxColumn");
       this.verseEndDataGridViewTextBoxColumn.Name = "verseEndDataGridViewTextBoxColumn";
       this.verseEndDataGridViewTextBoxColumn.ReadOnly = true;
       // 
@@ -561,17 +566,6 @@
       // 
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-      // 
-      // toolStripMenuItem1
-      // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      // 
-      // ActionViewParashahInfos
-      // 
-      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
-      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
       // ParashotForm
       // 
@@ -647,7 +641,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
     private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
+    private ToolStripMenuItem ActionShowDescription;
+    private ToolStripSeparator toolStripSeparator3;
   }
 }

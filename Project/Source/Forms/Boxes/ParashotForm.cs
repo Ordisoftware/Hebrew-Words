@@ -23,7 +23,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Instance { get; private set; }
 
-  static public void Run(Parashah parashah = null)
+  static public ParashotForm Run(Parashah parashah = null)
   {
     if ( Instance == null )
       Instance = new ParashotForm();
@@ -32,15 +32,13 @@ partial class ParashotForm : Form
     {
       Instance.Popup();
       Instance.Select(parashah);
-      return;
+      return Instance;
     }
-    if ( Instance != null )
-    {
-      // NOP
-      Instance.Show();
-      Instance.ForceBringToFront();
-      Instance.Select(parashah);
-    }
+    // NOP
+    Instance.Show();
+    Instance.ForceBringToFront();
+    Instance.Select(parashah);
+    return Instance;
   }
 
   public readonly Properties.Settings Settings
@@ -245,23 +243,24 @@ partial class ParashotForm : Form
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
-    /*ActionSave.PerformClick();
-    MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(HebrewDatabase.ParashotTableName);
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
-    if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
-    {
-      string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
-      DoExportTable(filePath);
-      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
-                                        Globals.KeyboardSoundFilePath);
-      if ( Settings.AutoOpenExportFolder )
-        SystemManager.RunShell(Path.GetDirectoryName(filePath));
-      if ( Settings.AutoOpenExportedFile )
-        SystemManager.RunShell(filePath);
-    }*/
-    ActiveControl = DataGridView;
+    //ActionSave.PerformClick();
+    //string name = HebrewDatabase.Instance.ParashotTableName;
+    //MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(name);
+    //for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+    //  if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+    //    MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
+    //if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
+    //{
+    //  string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+    //  DoExportTable(filePath);
+    //  DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+    //                                    Globals.KeyboardSoundFilePath);
+    //  if ( Settings.AutoOpenExportFolder )
+    //    SystemManager.RunShell(Path.GetDirectoryName(filePath));
+    //  if ( Settings.AutoOpenExportedFile )
+    //    SystemManager.RunShell(filePath);
+    //}
+    //ActiveControl = DataGridView;
   }
 
   private void DoExportTable(string filePath)
@@ -420,7 +419,7 @@ partial class ParashotForm : Form
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.GoTo(CurrentDataBoundItem.FullReferenceBegin);
+    MainForm.Instance.GoTo(CurrentDataBoundItem.FullReferenceBegin, false, true);
   }
 
   private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
@@ -453,9 +452,9 @@ partial class ParashotForm : Form
     Clipboard.SetText(CurrentDataBoundItem.ToString(false));
   }
 
-  private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+  private void ActionShowDescription_Click(object sender, EventArgs e)
   {
-    ShowParashahDescription(CurrentDataBoundItem, false);
+    MainForm.UserParashot.ShowDescription(CurrentDataBoundItem, false, () => Run(CurrentDataBoundItem));
   }
 
 }
