@@ -149,8 +149,7 @@ static partial class Program
     finally
     {
       server.Close();
-      if ( Globals.IsReady )
-        SystemManager.CreateIPCServer(IPCRequests);
+      SystemManager.CreateIPCServer(IPCRequests);
     }
   }
 
