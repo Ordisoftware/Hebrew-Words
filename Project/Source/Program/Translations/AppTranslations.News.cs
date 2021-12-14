@@ -25,61 +25,108 @@ static partial class AppTranslations
 
     ["3.0"] = new TranslationsDictionary
     {
-      [Language.EN] = "" + Globals.NL +
-                      "",
 
-      [Language.FR] = "" + Globals.NL +
-                      ""
+      [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
+                      "• Overall performances are optimized." + Globals.NL +
+                      "• Added verse navigator in the verses view panel." + Globals.NL +
+                      "• Added and improved keyboard shortcuts" + Globals.NL +
+                      "• Added option to render only current verse or all of the chapter." + Globals.NL +
+                      "• Added filter verses view panel." + Globals.NL +
+                      "• Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export." + Globals.NL +
+                      "• Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Added book name translation text box in the navigation panel." + Globals.NL +
+                      "• Added chapter title and memo text boxes in the navigation panel." + Globals.NL +
+                      "• Added buttons to edit book and chapter memos in the navigation panel." + Globals.NL +
+                      "• Added options to choose mouse actions on words and verses." + Globals.NL +
+                      "• Added menu for web links." + Globals.NL +
+                      "• Added theming options." + Globals.NL +
+                      "• Added usage statistics form in tools menu." + Globals.NL +
+                      "• Added command line options." + Globals.NL +
+                      "• Improved search options." + Globals.NL +
+                      "• Improved check update to use GitHub as an alternative if author's website is down." + Globals.NL +
+                      "• Improved check update to allow auto update or direct download or open app web page." + Globals.NL +
+                      "• Improved check update to verify the SSL certificate of the website and the checksum of the setup file." + Globals.NL +
+                      "• Improved debugger to support logging." + Globals.NL +
+                      "• Improved about box to dynamically display the list of dependencies and media used." + Globals.NL +
+                      "• Improved message boxes." + Globals.NL +
+                      "• Improved UI/UX." + Globals.NL +
+                      "• Many fixes and improvements.",
+
+      [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
+                      "• Les performances globales sont optimisées." + Globals.NL +
+                      "• Ajout du navigateur de verset dans le panneau d'affichage des versets." + Globals.NL +
+                      "• Ajout et amélioration des raccourcis clavier." + Globals.NL +
+                      "• Ajout d'une option pour afficher uniquement le verset actuel ou tout le chapitre." + Globals.NL +
+                      "• Ajout d'un panneau d'affichage des versets de filtre." + Globals.NL +
+                      "• Ajout d'un tableau de parashot avec traductions littérales, lettriqs, références de versets, outils d'étude, édition et exportation." + Globals.NL +
+                      "• Ajout de la recherche en ligne d'un mot pour plusieurs fournisseurs : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Ajout d'une zone de texte de traduction du nom du livre dans le panneau de navigation." + Globals.NL +
+                      "• Ajout de zones de texte de titre de chapitre et de mémo dans le panneau de navigation." + Globals.NL +
+                      "• Ajout de boutons pour modifier les mémos de livre et de chapitre dans le panneau de navigation." + Globals.NL +
+                      "• Ajout d'options pour choisir les actions de la souris sur les mots et les vers." + Globals.NL +
+                      "• Ajout d'un menu pour les liens Web." + Globals.NL +
+                      "• Ajout d'options de thème." + Globals.NL +
+                      "• Ajout d'un formulaire de statistiques d'utilisation dans le menu Outils." + Globals.NL +
+                      "• Ajout d'options de ligne de commande." + Globals.NL +
+                      "• Amélioration des options de recherche." + Globals.NL +
+                      "• Amélioration de la mise à jour pour utiliser GitHub comme alternative si le site Web de l'auteur est en panne." + Globals.NL +
+                      "• Amélioration de la mise à jour pour permettre la mise à jour automatique ou le téléchargement direct ou l'ouverture de la page Web de l'application." + Globals.NL +
+                      "• Amélioration de la mise à jour pour vérifier le certificat SSL du site Web et la somme de contrôle du fichier d'installation." + Globals.NL +
+                      "• Amélioration du débogueur pour prendre en charge la journalisation." + Globals.NL +
+                      "• Amélioration de la boîte à propos pour afficher dynamiquement la liste des dépendances et des médias utilisés." + Globals.NL +
+                      "• Amélioration des boîtes de messages." + Globals.NL +
+                      "• Amélioration de l'UI/UX." + Globals.NL +
+                      "• Beaucoup de correctifs et d'améliorations."
     },
 
     ["2.x"] = new TranslationsDictionary
     {
-      [Language.EN] = "Added context menu on Hebrew words and verse numbers." + Globals.NL +
-                      "Added search for translations already made of a word." + Globals.NL +
-                      "Added master bookmark used at startup." + Globals.NL +
-                      "Added bookmarks." + Globals.NL +
-                      "Added history." + Globals.NL +
-                      "Added grammar guide." + Globals.NL +
-                      "Added import verse console" + Globals.NL +
-                      "Improved UI." + Globals.NL +
-                      "Improved verses, translations and search rendering and filters." + Globals.NL +
-                      "Improved statistics." + Globals.NL +
-                      "Improved tools." + Globals.NL +
-                      "Improved settings." + Globals.NL +
-                      "Some fixes and improvements.",
+      [Language.EN] = "• Added context menu on Hebrew words and verse numbers." + Globals.NL +
+                      "• Added search for translations already made of a word." + Globals.NL +
+                      "• Added master bookmark used at startup." + Globals.NL +
+                      "• Added bookmarks." + Globals.NL +
+                      "• Added history." + Globals.NL +
+                      "• Added grammar guide." + Globals.NL +
+                      "• Added import verse console" + Globals.NL +
+                      "• Improved UI." + Globals.NL +
+                      "• Improved verses, translations and search rendering and filters." + Globals.NL +
+                      "• Improved statistics." + Globals.NL +
+                      "• Improved tools." + Globals.NL +
+                      "• Improved settings." + Globals.NL +
+                      "• Some fixes and improvements.",
 
-      [Language.FR] = "Ajout d'un menu contextuel sur les mots hébreux et les numéros de versets." + Globals.NL +
-                      "Ajout de la recherche des traductions déjà effectuées d'un mot." + Globals.NL +
-                      "Ajout du signet principal utilisé au démarrage." + Globals.NL +
-                      "Ajout de signets." + Globals.NL +
-                      "Ajout de l'histoire." + Globals.NL +
-                      "Ajout d'un guide de grammaire." + Globals.NL +
-                      "Ajout d'une console d'import de verset." + Globals.NL +
-                      "Interface utilisateur améliorée." + Globals.NL +
-                      "Versets, traductions, rendus et filtres de recherche améliorés." + Globals.NL +
-                      "Statistiques améliorées." + Globals.NL +
-                      "Outils améliorés." + Globals.NL +
-                      "Paramètres améliorés." + Globals.NL +
-                      "Quelques corrections et améliorations."
+      [Language.FR] = "• Ajout d'un menu contextuel sur les mots hébreux et les numéros de versets." + Globals.NL +
+                      "• Ajout de la recherche des traductions déjà effectuées d'un mot." + Globals.NL +
+                      "• Ajout du signet principal utilisé au démarrage." + Globals.NL +
+                      "• Ajout de signets." + Globals.NL +
+                      "• Ajout de l'histoire." + Globals.NL +
+                      "• Ajout d'un guide de grammaire." + Globals.NL +
+                      "• Ajout d'une console d'import de verset." + Globals.NL +
+                      "• Interface utilisateur améliorée." + Globals.NL +
+                      "• Versets, traductions, rendus et filtres de recherche améliorés." + Globals.NL +
+                      "• Statistiques améliorées." + Globals.NL +
+                      "• Outils améliorés." + Globals.NL +
+                      "• Paramètres améliorés." + Globals.NL +
+                      "• Quelques corrections et améliorations."
     },
 
     ["1.x"] = new TranslationsDictionary
     {
-      [Language.EN] = "Initial release." + Globals.NL +
-                      "Board of Book Names." + Globals.NL +
-                      "Translation of every word of every verse via a dedicated editing area." + Globals.NL +
-                      "Export verses, chapters and books to MS Word DOCX or RTF." + Globals.NL +
-                      "Backup and restore database." + Globals.NL +
-                      "Tools for studying verses online." + Globals.NL +
-                      "Some statistics on the content of the Tanak.",
+      [Language.EN] = "• Initial release." + Globals.NL +
+                      "• Board of Book Names." + Globals.NL +
+                      "• Translation of every word of every verse via a dedicated editing area." + Globals.NL +
+                      "• Export verses, chapters and books to MS Word DOCX or RTF." + Globals.NL +
+                      "• Backup and restore database." + Globals.NL +
+                      "• Tools for studying verses online." + Globals.NL +
+                      "• Some statistics on the content of the Tanak.",
 
-      [Language.FR] = "Version initiale." + Globals.NL +
-                      "Tableau des noms des livres." + Globals.NL +
-                      "Traduction de chaque mot de chaque verset via une zone d'édition dédiée." + Globals.NL +
-                      "Export des versets, des chapitres et des livres en MS Word DOCX ou RTF." + Globals.NL +
-                      "Backup and restore database." + Globals.NL +
-                      "Outils pour étudier les versets en ligne." + Globals.NL +
-                      "Quelques statistiques sur le contenu du Tanak."
+      [Language.FR] = "• Version initiale." + Globals.NL +
+                      "• Tableau des noms des livres." + Globals.NL +
+                      "• Traduction de chaque mot de chaque verset via une zone d'édition dédiée." + Globals.NL +
+                      "• Export des versets, des chapitres et des livres en MS Word DOCX ou RTF." + Globals.NL +
+                      "• Backup and restore database." + Globals.NL +
+                      "• Outils pour étudier les versets en ligne." + Globals.NL +
+                      "• Quelques statistiques sur le contenu du Tanak."
     },
 
   };
