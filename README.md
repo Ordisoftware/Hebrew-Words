@@ -62,7 +62,32 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Download
 
-**What's new in the latest version 3**
+**What's new in the latest version 3.0**
+
+- SQLite ODBC Driver is no more needed.
+- Overall performances are optimized.
+- Added and improved keyboard shortcuts
+- Added verse navigator in the verses view panel.
+- Added option to render only current verse or all of the chapter.
+- Added book name translation text box in the navigation panel.
+- Added chapter title and memo text boxes in the navigation panel.
+- Added buttons to edit book and chapter memos in the navigation panel.
+- Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Added filter verses view panel.
+- Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
+- Added options to choose mouse actions on words and verses.
+- Added menu for web links.
+- Added theming options.
+- Added usage statistics form in tools menu.
+- Added command line options.
+- Improved search options.
+- Improved check update to use GitHub as an alternative if author's website is down.
+- Improved check update to allow auto update or direct download or open app web page.
+- Improved check update to verify the SSL certificate of the website and the checksum of the setup file.
+- Improved debugger to support logging.
+- Improved about box to dynamically display the list of dependencies and media used.
+- Improved message boxes.
+- Many fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
