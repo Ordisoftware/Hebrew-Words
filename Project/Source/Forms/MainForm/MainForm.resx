@@ -386,6 +386,9 @@
   <data name="&gt;&gt;ActionGoFromVerseFilteredToVersesPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionApplyFilterVerse.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionApplyFilterVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -430,6 +433,9 @@
   </data>
   <data name="&gt;&gt;ActionApplyFilterVerse.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ActionClearFilterVerse.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionClearFilterVerse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -476,6 +482,9 @@
   <data name="&gt;&gt;ActionClearFilterVerse.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="ActionApplyFilterChapter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionApplyFilterChapter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -520,6 +529,9 @@
   </data>
   <data name="&gt;&gt;ActionApplyFilterChapter.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="ActionApplyFilterBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionApplyFilterBook.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -566,6 +578,9 @@
   <data name="&gt;&gt;ActionApplyFilterBook.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="ActionClearFilterChapter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionClearFilterChapter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -610,6 +625,9 @@
   </data>
   <data name="&gt;&gt;ActionClearFilterChapter.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="ActionClearFilterBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionClearFilterBook.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1261,6 +1279,9 @@
   <data name="SelectSearchPaging.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="SelectSearchPaging.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="SelectSearchPaging.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1287,6 +1308,9 @@
   </data>
   <data name="EditSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="EditSearchPaging.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="EditSearchPaging.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
@@ -1429,6 +1453,9 @@
   <data name="ActionSearchRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="ActionSearchRun.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionSearchRun.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1488,6 +1515,9 @@
   <data name="ActionNavigateSearchFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="ActionNavigateSearchFirst.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionNavigateSearchFirst.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1542,6 +1572,9 @@
   <data name="ActionSearchNavigatePrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="ActionSearchNavigatePrevious.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionSearchNavigatePrevious.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1589,6 +1622,9 @@
   </data>
   <data name="ActionSearchNavigateNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionSearchNavigateNext.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1638,6 +1674,9 @@
   </data>
   <data name="ActionSearchNavigateLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionSearchNavigateLast.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1691,6 +1730,9 @@
   </data>
   <data name="ActionSearchClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
+  </data>
+  <data name="ActionSearchClear.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ActionSearchClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -4097,32 +4139,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
