@@ -92,6 +92,8 @@ public partial class WordControl : UserControl
   private void EditTranslation_Leave(object sender, EventArgs e)
   {
     EditTranslation.BackColor = Settings.ThemeTranslationBack;
+    if ( Settings.AutoSaveOnLeaveControl && MainForm.Instance.ActionSave.Enabled )
+      MainForm.Instance.ActionSave.PerformClick();
   }
 
   private void LabelHebrew_MouseEnter(object sender, EventArgs e)

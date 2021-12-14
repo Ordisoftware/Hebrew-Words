@@ -560,13 +560,23 @@ partial class MainForm : Form
   {
     if ( !Globals.IsReady ) return;
     if ( Globals.IsExiting ) return;
-    ActionSave.PerformClick();
-    int book = CurrentReference.Book.Number;
-    int chapter = CurrentReference.Chapter.Number;
-    int verse = CurrentReference.Verse?.Number ?? 1;
-    VerseControl.ResetMetricsRequired = true;
-    WordControl.ResetMetricsRequired = true;
-    GoTo(book, chapter, verse, true);
+    ActionRefresh.Visible = false;
+    ActionRefresh.Visible = true;
+    //ToolStrip.Enabled = false;
+    try
+    {
+      ActionSave.PerformClick();
+      int book = CurrentReference.Book.Number;
+      int chapter = CurrentReference.Chapter.Number;
+      int verse = CurrentReference.Verse?.Number ?? 1;
+      VerseControl.ResetMetricsRequired = true;
+      WordControl.ResetMetricsRequired = true;
+      GoTo(book, chapter, verse, true);
+    }
+    finally
+    {
+      //ToolStrip.Enabled = true;
+    }
   }
 
   /// <summary>

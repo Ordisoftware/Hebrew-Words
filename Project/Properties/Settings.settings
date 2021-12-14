@@ -353,5 +353,8 @@
     <Setting Name="ThemeTranslationBack" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Window</Value>
     </Setting>
+    <Setting Name="AutoSaveOnLeaveControl" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

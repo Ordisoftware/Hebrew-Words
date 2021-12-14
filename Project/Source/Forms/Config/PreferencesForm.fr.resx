@@ -179,7 +179,7 @@
     <value>211, 13</value>
   </data>
   <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
-    <value>Délai pour la sauvegarde automatique (min)</value>
+    <value>Délai pour la sauvegarde automatique de toutes les modifications (min)</value>
   </data>
   <data name="LabelBackupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 13</value>
@@ -618,5 +618,14 @@
   </data>
   <data name="TabPageTheme.Text" xml:space="preserve">
     <value>Thème</value>
+  </data>
+  <data name="EditAutoSaveOnLeaveControl.Text" xml:space="preserve">
+    <value>Sauvegarder automatiquement à la sortie d'une zone d'édition</value>
+  </data>
+  <data name="TabPageEdition.Text" xml:space="preserve">
+    <value>Édition</value>
+  </data>
+  <data name="TabPageMouse.Text" xml:space="preserve">
+    <value>Souris</value>
   </data>
 </root>
