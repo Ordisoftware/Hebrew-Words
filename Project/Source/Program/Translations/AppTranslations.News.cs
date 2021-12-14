@@ -43,12 +43,10 @@ static partial class AppTranslations
                       "• Added usage statistics form in tools menu." + Globals.NL +
                       "• Added command line options." + Globals.NL +
                       "• Improved search options." + Globals.NL +
-                      "• Improved check update to use GitHub as an alternative if author's website is down." + Globals.NL +
-                      "• Improved check update to allow auto update or direct download or open app web page." + Globals.NL +
-                      "• Improved check update to verify the SSL certificate of the website and the checksum of the setup file." + Globals.NL +
-                      "• Improved debugger to support logging." + Globals.NL +
-                      "• Improved about box to dynamically display the list of dependencies and media used." + Globals.NL +
+                      "• Improved about box." + Globals.NL +
                       "• Improved message boxes." + Globals.NL +
+                      "• Improved check update." + Globals.NL +
+                      "• Improved debugger." + Globals.NL +
                       "• Many fixes and improvements.",
 
       [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
@@ -68,12 +66,10 @@ static partial class AppTranslations
                       "• Ajout d'un formulaire de statistiques d'utilisation dans le menu Outils." + Globals.NL +
                       "• Ajout d'options de ligne de commande." + Globals.NL +
                       "• Amélioration des options de recherche." + Globals.NL +
-                      "• Amélioration de la mise à jour pour utiliser GitHub comme alternative si le site Web de l'auteur est en panne." + Globals.NL +
-                      "• Amélioration de la mise à jour pour permettre la mise à jour automatique ou le téléchargement direct ou l'ouverture de la page Web de l'application." + Globals.NL +
-                      "• Amélioration de la mise à jour pour vérifier le certificat SSL du site Web et la somme de contrôle du fichier d'installation." + Globals.NL +
-                      "• Amélioration du débogueur pour prendre en charge la journalisation." + Globals.NL +
-                      "• Amélioration de la boîte à propos pour afficher dynamiquement la liste des dépendances et des médias utilisés." + Globals.NL +
+                      "• Amélioration de la boîte à propos." + Globals.NL +
                       "• Amélioration des boîtes de messages." + Globals.NL +
+                      "• Amélioration de la mise à jour." + Globals.NL +
+                      "• Amélioration du débogueur." + Globals.NL +
                       "• Beaucoup de correctifs et d'améliorations."
     },
 
