@@ -40,6 +40,7 @@ static partial class AppTranslations
                       "Added bookmarks." + Globals.NL +
                       "Added history." + Globals.NL +
                       "Added grammar guide." + Globals.NL +
+                      "Added import verse console" + Globals.NL +
                       "Improved UI." + Globals.NL +
                       "Improved verses, translations and search rendering and filters." + Globals.NL +
                       "Improved statistics." + Globals.NL +
@@ -53,6 +54,7 @@ static partial class AppTranslations
                       "Ajout de signets." + Globals.NL +
                       "Ajout de l'histoire." + Globals.NL +
                       "Ajout d'un guide de grammaire." + Globals.NL +
+                      "Ajout d'une console d'import de verset." + Globals.NL +
                       "Interface utilisateur améliorée." + Globals.NL +
                       "Versets, traductions, rendus et filtres de recherche améliorés." + Globals.NL +
                       "Statistiques améliorées." + Globals.NL +
