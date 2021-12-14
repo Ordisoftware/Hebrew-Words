@@ -19,8 +19,8 @@ partial class MainForm
 
   private void CreateSearchResults()
   {
-    ClearSearchResults();
     if ( SelectSearchInBook.SelectedItem == null ) return;
+    ClearSearchResults();
     //
     bool checkWordHebrew(WordRow row) => row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
     bool checkTranslatedAll(VerseRow verse) => verse.HasTranslation;
@@ -30,13 +30,13 @@ partial class MainForm
     bool checkWordTranslation(WordRow row) => checkWordNoHebrew(row.Translation.ToLower().RemoveDiacritics());
     bool checkVerseComment(VerseRow row) => checkWordNoHebrew(row.Comment.ToLower().RemoveDiacritics());
     bool checkWordNoHebrew(string str)
-      => SearchWord1.RawContains(",")
-         ? SearchWord1.Split(',').Select(item => item.Trim()).Any(item => item.Length >= 2 && str.RawContains(item))
+      => SearchWord1.RawContains(SearchSeparatorString)
+         ? SearchWord1.Split(SearchSeparatorChar).Select(item => item.Trim()).Any(item => item.Length >= 2 && str.RawContains(item))
          : str.RawContains(SearchWord1);
     //
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {
-      SearchWord1 = EditLetters.TextBox.Text;
+      SearchWord1 = EditSearchWord.TextBox.Text;
       SearchWord2 = HebrewAlphabet.SetFinal(SearchWord1, true);
       CheckWord = checkWordHebrew;
     }
@@ -44,9 +44,25 @@ partial class MainForm
     if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
     {
       SearchWord1 = EditSearchTranslation.Text.ToLower().RemoveDiacritics();
-      // TODO assign depending on radiogroup
-      CheckWord = checkWordTranslation;
-      CheckVerse = checkVerseComment;
+      if ( SelectSearchTranslationOnlyTranslations.Checked )
+      {
+        CheckWord = checkWordTranslation;
+        CheckVerse = null;
+      }
+      else
+      if ( SelectSearchTranslationIncludeComments.Checked )
+      {
+        CheckWord = checkWordTranslation;
+        CheckVerse = checkVerseComment;
+      }
+      else
+      if ( SelectSearchTranslationOnlyComments.Checked )
+      {
+        CheckWord = null;
+        CheckVerse = checkVerseComment;
+      }
+      else
+        throw new AdvancedNotImplementedException(nameof(SelectSearchTypeTranslation));
     }
     else
     if ( SelectSearchType.SelectedTab == SelectSearchTypeVerses )
@@ -115,6 +131,8 @@ partial class MainForm
       }
     }
     //
+    if ( SearchResultsCount == 0 )
+      ShowPanelToolTip(AppTranslations.NoSearchResultFound.GetLang());
     UpdatePagingCount();
     RenderSearch();
   }

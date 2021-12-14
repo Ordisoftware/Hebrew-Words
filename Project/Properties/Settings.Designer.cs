@@ -1425,5 +1425,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ThemeTranslationBack"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSaveOnLeaveControl {
+            get {
+                return ((bool)(this["AutoSaveOnLeaveControl"]));
+            }
+            set {
+                this["AutoSaveOnLeaveControl"] = value;
+            }
+        }
     }
 }

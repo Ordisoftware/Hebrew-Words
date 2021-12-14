@@ -124,13 +124,12 @@ partial class MainForm
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
           if ( found != null )
           {
-            // TODO translate
-            showToolTip("Premier verset à compléter.");
+            ShowPanelToolTip(AppTranslations.FirstVerseToComplete.GetLang());
             return found;
           }
           else
           {
-            showToolTip("Aucun verset à compléter.");
+            ShowPanelToolTip(AppTranslations.NoVerseToComplete.GetLang());
             reference = CurrentReference;
             return null;
           }
@@ -140,34 +139,15 @@ partial class MainForm
           var found = CurrentReference.Chapter?.Verses?.Find(v => v.HasTranslation);
           if ( found != null )
           {
-            showToolTip("Premier verset traduit.");
+            ShowPanelToolTip(AppTranslations.FirstVerseTranslated.GetLang());
             return found;
           }
           else
           {
-            showToolTip("Aucun verset avec traduction.");
+            ShowPanelToolTip(AppTranslations.NoVerseTranslated.GetLang());
             reference = CurrentReference;
             return null;
           }
-        }
-        // Show tool tip
-        void showToolTip(string str)
-        {
-          Panel panel = null;
-          int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
-          int x = 5;
-          const int y = 5;
-          if ( Settings.CurrentView == ViewMode.ChapterVerses )
-          {
-            x = PanelViewVerses.PreferredSize.Width - 5 - width;
-            panel = PanelViewVerses;
-          }
-          if ( Settings.CurrentView == ViewMode.ChapterTranslation )
-          {
-            panel = PanelViewTranslations;
-          }
-          if ( panel != null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
-          LastToolTipPanel = panel;
         }
       }
     }

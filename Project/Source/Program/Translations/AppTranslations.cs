@@ -95,6 +95,36 @@ static partial class AppTranslations
                     "Enlever : {0}"
   };
 
+  static public readonly TranslationsDictionary NoSearchResultFound = new()
+  {
+    [Language.EN] = "No result found",
+    [Language.FR] = "Aucun résultat trouvé"
+  };
+
+  static public readonly TranslationsDictionary FirstVerseToComplete = new()
+  {
+    [Language.EN] = "First verse to complete",
+    [Language.FR] = "Premier verset à compléter"
+  };
+
+  static public readonly TranslationsDictionary NoVerseToComplete = new()
+  {
+    [Language.EN] = "No verse to complete",
+    [Language.FR] = "Aucun verset à compléter"
+  };
+
+  static public readonly TranslationsDictionary FirstVerseTranslated = new()
+  {
+    [Language.EN] = "First verse translated",
+    [Language.FR] = "Premier verset traduit"
+  };
+
+  static public readonly TranslationsDictionary NoVerseTranslated = new()
+  {
+    [Language.EN] = "No verse with translation",
+    [Language.FR] = "Aucun verset avec traduction"
+  };
+
   static public readonly TranslationsDictionary ImportLinesCountMismatch = new()
   {
     [Language.EN] = "Incorrect elements." + Globals.NL2 +

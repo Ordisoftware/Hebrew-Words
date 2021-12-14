@@ -177,6 +177,8 @@ public partial class VerseControl : UserControl
   {
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
     EditCommentary.Text = CheckComment(EditCommentary.Text);
+    if ( Settings.AutoSaveOnLeaveControl && MainForm.Instance.ActionSave.Enabled )
+      MainForm.Instance.ActionSave.PerformClick();
   }
 
   static public string CheckComment(string value)

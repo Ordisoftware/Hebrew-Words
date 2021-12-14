@@ -524,8 +524,8 @@ partial class MainForm : Form
     Settings.CurrentSearchTypeTab = SelectSearchType.SelectedIndex;
     if ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew )
     {
-      ActiveControl = EditLetters;
-      EditLetters.Focus();
+      ActiveControl = EditSearchWord;
+      EditSearchWord.Focus();
     }
     else
     if ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation )
@@ -560,13 +560,23 @@ partial class MainForm : Form
   {
     if ( !Globals.IsReady ) return;
     if ( Globals.IsExiting ) return;
-    ActionSave.PerformClick();
-    int book = CurrentReference.Book.Number;
-    int chapter = CurrentReference.Chapter.Number;
-    int verse = CurrentReference.Verse?.Number ?? 1;
-    VerseControl.ResetMetricsRequired = true;
-    WordControl.ResetMetricsRequired = true;
-    GoTo(book, chapter, verse, true);
+    ActionRefresh.Visible = false;
+    ActionRefresh.Visible = true;
+    //ToolStrip.Enabled = false;
+    try
+    {
+      ActionSave.PerformClick();
+      int book = CurrentReference.Book.Number;
+      int chapter = CurrentReference.Chapter.Number;
+      int verse = CurrentReference.Verse?.Number ?? 1;
+      VerseControl.ResetMetricsRequired = true;
+      WordControl.ResetMetricsRequired = true;
+      GoTo(book, chapter, verse, true);
+    }
+    finally
+    {
+      //ToolStrip.Enabled = true;
+    }
   }
 
   /// <summary>
@@ -1573,7 +1583,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchClear_Click(object sender, EventArgs e)
   {
-    EditLetters.TextBox.Text = "";
+    EditSearchWord.TextBox.Text = "";
     EditSearchTranslation.Text = "";
     SystemManager.TryCatch(Settings.Save);
     ClearSearchResults();
@@ -1656,8 +1666,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditLetters.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
-    EditLetters.TextBox.SelectionStart = EditLetters.TextBox.Text.Length;
+    EditSearchWord.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
+    EditSearchWord.TextBox.SelectionStart = EditSearchWord.TextBox.Text.Length;
     ActionSearchRun.PerformClick();
   }
 

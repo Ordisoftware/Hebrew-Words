@@ -1163,7 +1163,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchInRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 58</value>
+    <value>28, 55</value>
   </data>
   <data name="ActionSearchInRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -1199,7 +1199,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchInAddAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 58</value>
+    <value>9, 55</value>
   </data>
   <data name="ActionSearchInAddAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -1235,7 +1235,7 @@
     <value>15</value>
   </data>
   <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 154</value>
+    <value>13, 151</value>
   </data>
   <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>365, 23</value>
@@ -1265,7 +1265,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 225</value>
+    <value>180, 224</value>
   </data>
   <data name="SelectSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 18</value>
@@ -1292,7 +1292,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 198</value>
+    <value>187, 197</value>
   </data>
   <data name="EditSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 21</value>
@@ -1331,7 +1331,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 126</value>
+    <value>13, 123</value>
   </data>
   <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 19</value>
@@ -1367,7 +1367,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 103</value>
+    <value>13, 100</value>
   </data>
   <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 19</value>
@@ -1403,7 +1403,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 80</value>
+    <value>13, 77</value>
   </data>
   <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 19</value>
@@ -1465,7 +1465,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 187</value>
+    <value>2, 186</value>
   </data>
   <data name="ActionSearchRun.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1519,7 +1519,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionNavigateSearchFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 187</value>
+    <value>97, 186</value>
   </data>
   <data name="ActionNavigateSearchFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1567,7 +1567,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 187</value>
+    <value>142, 186</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1616,7 +1616,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigateNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 187</value>
+    <value>300, 186</value>
   </data>
   <data name="ActionSearchNavigateNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1669,7 +1669,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigateLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 187</value>
+    <value>345, 186</value>
   </data>
   <data name="ActionSearchNavigateLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1725,7 +1725,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 187</value>
+    <value>47, 186</value>
   </data>
   <data name="ActionSearchClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -1769,28 +1769,31 @@
   <data name="&gt;&gt;PanelSearchFiltersRight.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditLetters.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="SelectSearchType.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
+    <value>Buttons</value>
+  </data>
+  <data name="EditSearchWord.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditLetters.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditSearchWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="EditLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 194</value>
+  <data name="EditSearchWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 191</value>
   </data>
-  <data name="EditLetters.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditSearchWord.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;EditLetters.Name" xml:space="preserve">
-    <value>EditLetters</value>
+  <data name="&gt;&gt;EditSearchWord.Name" xml:space="preserve">
+    <value>EditSearchWord</value>
   </data>
-  <data name="&gt;&gt;EditLetters.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
     <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditLetters.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
   </data>
-  <data name="&gt;&gt;EditLetters.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditSearchWord.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelSearchTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1800,7 +1803,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 194</value>
+    <value>512, 191</value>
   </data>
   <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1818,13 +1821,13 @@
     <value>0</value>
   </data>
   <data name="SelectSearchTypeHebrew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 27</value>
   </data>
   <data name="SelectSearchTypeHebrew.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <data name="SelectSearchTypeHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 214</value>
+    <value>532, 211</value>
   </data>
   <data name="SelectSearchTypeHebrew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1844,101 +1847,14 @@
   <data name="&gt;&gt;SelectSearchTypeHebrew.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="SelectSearchTranslationOnlyComments.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyComments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 120</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyComments.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
-    <value>Only comments</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Name" xml:space="preserve">
-    <value>SelectSearchTranslationOnlyComments</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Parent" xml:space="preserve">
-    <value>SelectSearchTypeTranslation</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 80</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 19</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
-    <value>Only translations</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Name" xml:space="preserve">
-    <value>SelectSearchTranslationOnlyTranslations</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Parent" xml:space="preserve">
-    <value>SelectSearchTypeTranslation</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SelectSearchTranslationIncludeComments.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchTranslationIncludeComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 100</value>
-  </data>
-  <data name="SelectSearchTranslationIncludeComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
-  </data>
-  <data name="SelectSearchTranslationIncludeComments.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
-    <value>Include comments</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Name" xml:space="preserve">
-    <value>SelectSearchTranslationIncludeComments</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Parent" xml:space="preserve">
-    <value>SelectSearchTypeTranslation</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="LabelSearchTranslationHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="LabelSearchTranslationHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 12</value>
+    <value>12, 10</value>
   </data>
   <data name="LabelSearchTranslationHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 65</value>
+    <value>484, 65</value>
   </data>
   <data name="LabelSearchTranslationHelp.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1956,22 +1872,160 @@ A verse is founded if the translation of one of its words contains an expression
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelSearchTranslationHelp.Parent" xml:space="preserve">
-    <value>SelectSearchTypeTranslation</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;LabelSearchTranslationHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 111</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
+    <value>Only comments</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Name" xml:space="preserve">
+    <value>SelectSearchTranslationOnlyComments</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyComments.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 93</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 19</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
+    <value>Include comments</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Name" xml:space="preserve">
+    <value>SelectSearchTranslationIncludeComments</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationIncludeComments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 75</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 19</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
+    <value>Only translations</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Name" xml:space="preserve">
+    <value>SelectSearchTranslationOnlyTranslations</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchTranslationOnlyTranslations.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 140</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>SelectSearchTypeTranslation</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 150</value>
+  </data>
+  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 8</value>
+  </data>
+  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
+    <value>SelectSearchTypeTranslation</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditSearchTranslation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="EditSearchTranslation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20.25pt</value>
+    <value>Microsoft Sans Serif, 23.25pt</value>
   </data>
   <data name="EditSearchTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 166</value>
+    <value>10, 158</value>
   </data>
   <data name="EditSearchTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 38</value>
+    <value>512, 43</value>
   </data>
   <data name="EditSearchTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1986,16 +2040,16 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectSearchTypeTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="SelectSearchTypeTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 27</value>
   </data>
   <data name="SelectSearchTypeTranslation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <data name="SelectSearchTypeTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 214</value>
+    <value>532, 211</value>
   </data>
   <data name="SelectSearchTypeTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2015,96 +2069,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;SelectSearchTypeTranslation.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SelectSearchRequestAllUntranslated.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchRequestAllUntranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchRequestAllUntranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 95</value>
-  </data>
-  <data name="SelectSearchRequestAllUntranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 19</value>
-  </data>
-  <data name="SelectSearchRequestAllUntranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SelectSearchRequestAllUntranslated.Text" xml:space="preserve">
-    <value>All untranslated verses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Name" xml:space="preserve">
-    <value>SelectSearchRequestAllUntranslated</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Parent" xml:space="preserve">
-    <value>SelectSearchTypeVerses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 70</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 19</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SelectSearchRequestAllPartiallyTranslated.Text" xml:space="preserve">
-    <value>All partially translated verses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Name" xml:space="preserve">
-    <value>SelectSearchRequestAllPartiallyTranslated</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Parent" xml:space="preserve">
-    <value>SelectSearchTypeVerses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 45</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 19</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectSearchRequestAllFullyTranslated.Text" xml:space="preserve">
-    <value>All fully translated verses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Name" xml:space="preserve">
-    <value>SelectSearchRequestAllFullyTranslated</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Parent" xml:space="preserve">
-    <value>SelectSearchTypeVerses</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="SelectSearchRequestAllTranslated.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2112,7 +2076,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>NoControl</value>
   </data>
   <data name="SelectSearchRequestAllTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+    <value>15, 15</value>
   </data>
   <data name="SelectSearchRequestAllTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 19</value>
@@ -2130,19 +2094,133 @@ A verse is founded if the translation of one of its words contains an expression
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SelectSearchRequestAllTranslated.Parent" xml:space="preserve">
-    <value>SelectSearchTypeVerses</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;SelectSearchRequestAllTranslated.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectSearchRequestAllUntranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchRequestAllUntranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchRequestAllUntranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 90</value>
+  </data>
+  <data name="SelectSearchRequestAllUntranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 19</value>
+  </data>
+  <data name="SelectSearchRequestAllUntranslated.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="SelectSearchRequestAllUntranslated.Text" xml:space="preserve">
+    <value>All untranslated verses</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Name" xml:space="preserve">
+    <value>SelectSearchRequestAllUntranslated</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllUntranslated.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 40</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 19</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectSearchRequestAllFullyTranslated.Text" xml:space="preserve">
+    <value>All fully translated verses</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Name" xml:space="preserve">
+    <value>SelectSearchRequestAllFullyTranslated</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllFullyTranslated.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 65</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 19</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SelectSearchRequestAllPartiallyTranslated.Text" xml:space="preserve">
+    <value>All partially translated verses</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Name" xml:space="preserve">
+    <value>SelectSearchRequestAllPartiallyTranslated</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;SelectSearchRequestAllPartiallyTranslated.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 191</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>SelectSearchTypeVerses</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="SelectSearchTypeVerses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 27</value>
   </data>
   <data name="SelectSearchTypeVerses.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="SelectSearchTypeVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 214</value>
+    <value>532, 211</value>
   </data>
   <data name="SelectSearchTypeVerses.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4019,32 +4097,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
