@@ -39,8 +39,8 @@ A libre and open-source software written in C# that helps for the literal word-f
 - Determine hidden verses of kabalah according to the Equidistant Letter Sequence of 50 for Tav.
 - Window showing a board of editable books.
 - Window showing a board of parashot with descriptions.
-- Window showing some Tanak's Statistics.
 - Window showing a grammar guide.
+- Window showing some Tanak's Statistics.
 - MS Word export of a book or a chapter or a verse.
 - Links to various online resources.
 - English, French.
