@@ -132,16 +132,21 @@ partial class MainForm
       ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
     updateControls();
-    Refresh();
-    SetTanakItemFocus();
     switch ( view )
     {
       case ViewMode.ChapterVerses:
       case ViewMode.ChapterOriginal:
       case ViewMode.ChapterTranslation:
+        SetTanakItemFocus();
+        //Refresh();
         break;
       case ViewMode.Search:
         SelectSearchType_Selected(null, null);
+        break;
+      case ViewMode.VerseFiltered:
+        VerseControl.ResetMetricsRequired = true;
+        WordControl.ResetMetricsRequired = true;
+        RenderVerseFiltered();
         break;
     }
     //
