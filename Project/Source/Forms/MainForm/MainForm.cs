@@ -1364,6 +1364,12 @@ partial class MainForm : Form
   private void EditFilter_TextChanged(object sender, EventArgs e)
   {
     FilterModified[(TextBox)sender] = true;
+    ActionApplyFilterBook.Enabled = EditFilterBook.Text != string.Empty;
+    ActionApplyFilterChapter.Enabled = EditFilterChapter.Text != string.Empty;
+    ActionApplyFilterVerse.Enabled = EditFilterVerse.Text != string.Empty;
+    ActionClearFilterBook.Enabled = EditFilterBook.Text != string.Empty;
+    ActionClearFilterChapter.Enabled = EditFilterChapter.Text != string.Empty;
+    ActionClearFilterVerse.Enabled = EditFilterVerse.Text != string.Empty;
   }
 
   /// <summary>

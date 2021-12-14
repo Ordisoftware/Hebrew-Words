@@ -92,16 +92,19 @@
       this.PanelSearchTop = new System.Windows.Forms.Panel();
       this.EditSearchWord = new Ordisoftware.Hebrew.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
-      this.SelectSearchTranslationOnlyComments = new System.Windows.Forms.RadioButton();
-      this.SelectSearchTranslationOnlyTranslations = new System.Windows.Forms.RadioButton();
-      this.SelectSearchTranslationIncludeComments = new System.Windows.Forms.RadioButton();
+      this.panel2 = new System.Windows.Forms.Panel();
       this.LabelSearchTranslationHelp = new System.Windows.Forms.Label();
+      this.SelectSearchTranslationOnlyComments = new System.Windows.Forms.RadioButton();
+      this.SelectSearchTranslationIncludeComments = new System.Windows.Forms.RadioButton();
+      this.SelectSearchTranslationOnlyTranslations = new System.Windows.Forms.RadioButton();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.EditSearchTranslation = new Ordisoftware.Core.TextBoxEx();
       this.SelectSearchTypeVerses = new System.Windows.Forms.TabPage();
-      this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
-      this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
-      this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
+      this.panel1 = new System.Windows.Forms.Panel();
       this.SelectSearchRequestAllTranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllUntranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllFullyTranslated = new System.Windows.Forms.RadioButton();
+      this.SelectSearchRequestAllPartiallyTranslated = new System.Windows.Forms.RadioButton();
       this.TabPageText = new System.Windows.Forms.TabPage();
       this.PanelViewOriginalText = new System.Windows.Forms.Panel();
       this.EditChapterOriginal = new Ordisoftware.Core.RichTextBoxEx();
@@ -251,9 +254,6 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -278,7 +278,9 @@
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
       this.SelectSearchTypeTranslation.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.SelectSearchTypeVerses.SuspendLayout();
+      this.panel1.SuspendLayout();
       this.TabPageText.SuspendLayout();
       this.PanelViewOriginalText.SuspendLayout();
       this.TabPageELS50.SuspendLayout();
@@ -293,8 +295,6 @@
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
-      this.panel1.SuspendLayout();
-      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -441,48 +441,48 @@
       // 
       // ActionApplyFilterVerse
       // 
-      this.ActionApplyFilterVerse.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionApplyFilterVerse, "ActionApplyFilterVerse");
+      this.ActionApplyFilterVerse.FlatAppearance.BorderSize = 0;
       this.ActionApplyFilterVerse.Name = "ActionApplyFilterVerse";
       this.ActionApplyFilterVerse.UseVisualStyleBackColor = true;
       this.ActionApplyFilterVerse.Click += new System.EventHandler(this.UpdateFilters);
       // 
       // ActionClearFilterVerse
       // 
-      this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionClearFilterVerse, "ActionClearFilterVerse");
+      this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
       this.ActionClearFilterVerse.Name = "ActionClearFilterVerse";
       this.ActionClearFilterVerse.UseVisualStyleBackColor = true;
       this.ActionClearFilterVerse.Click += new System.EventHandler(this.ActionClearFilterVerse_Click);
       // 
       // ActionApplyFilterChapter
       // 
-      this.ActionApplyFilterChapter.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionApplyFilterChapter, "ActionApplyFilterChapter");
+      this.ActionApplyFilterChapter.FlatAppearance.BorderSize = 0;
       this.ActionApplyFilterChapter.Name = "ActionApplyFilterChapter";
       this.ActionApplyFilterChapter.UseVisualStyleBackColor = true;
       this.ActionApplyFilterChapter.Click += new System.EventHandler(this.UpdateFilters);
       // 
       // ActionApplyFilterBook
       // 
-      this.ActionApplyFilterBook.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionApplyFilterBook, "ActionApplyFilterBook");
+      this.ActionApplyFilterBook.FlatAppearance.BorderSize = 0;
       this.ActionApplyFilterBook.Name = "ActionApplyFilterBook";
       this.ActionApplyFilterBook.UseVisualStyleBackColor = true;
       this.ActionApplyFilterBook.Click += new System.EventHandler(this.UpdateFilters);
       // 
       // ActionClearFilterChapter
       // 
-      this.ActionClearFilterChapter.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionClearFilterChapter, "ActionClearFilterChapter");
+      this.ActionClearFilterChapter.FlatAppearance.BorderSize = 0;
       this.ActionClearFilterChapter.Name = "ActionClearFilterChapter";
       this.ActionClearFilterChapter.UseVisualStyleBackColor = true;
       this.ActionClearFilterChapter.Click += new System.EventHandler(this.ActionClearFilterChapter_Click);
       // 
       // ActionClearFilterBook
       // 
-      this.ActionClearFilterBook.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionClearFilterBook, "ActionClearFilterBook");
+      this.ActionClearFilterBook.FlatAppearance.BorderSize = 0;
       this.ActionClearFilterBook.Name = "ActionClearFilterBook";
       this.ActionClearFilterBook.UseVisualStyleBackColor = true;
       this.ActionClearFilterBook.Click += new System.EventHandler(this.ActionClearFilterBook_Click);
@@ -809,12 +809,34 @@
       resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
       this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
       // 
+      // panel2
+      // 
+      this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel2.Controls.Add(this.LabelSearchTranslationHelp);
+      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyComments);
+      this.panel2.Controls.Add(this.SelectSearchTranslationIncludeComments);
+      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyTranslations);
+      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.Name = "panel2";
+      // 
+      // LabelSearchTranslationHelp
+      // 
+      resources.ApplyResources(this.LabelSearchTranslationHelp, "LabelSearchTranslationHelp");
+      this.LabelSearchTranslationHelp.Name = "LabelSearchTranslationHelp";
+      // 
       // SelectSearchTranslationOnlyComments
       // 
       resources.ApplyResources(this.SelectSearchTranslationOnlyComments, "SelectSearchTranslationOnlyComments");
       this.SelectSearchTranslationOnlyComments.Name = "SelectSearchTranslationOnlyComments";
       this.SelectSearchTranslationOnlyComments.UseVisualStyleBackColor = true;
       this.SelectSearchTranslationOnlyComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
+      // 
+      // SelectSearchTranslationIncludeComments
+      // 
+      resources.ApplyResources(this.SelectSearchTranslationIncludeComments, "SelectSearchTranslationIncludeComments");
+      this.SelectSearchTranslationIncludeComments.Name = "SelectSearchTranslationIncludeComments";
+      this.SelectSearchTranslationIncludeComments.UseVisualStyleBackColor = true;
+      this.SelectSearchTranslationIncludeComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
       // SelectSearchTranslationOnlyTranslations
       // 
@@ -825,17 +847,10 @@
       this.SelectSearchTranslationOnlyTranslations.UseVisualStyleBackColor = true;
       this.SelectSearchTranslationOnlyTranslations.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
-      // SelectSearchTranslationIncludeComments
+      // PanelSeparator
       // 
-      resources.ApplyResources(this.SelectSearchTranslationIncludeComments, "SelectSearchTranslationIncludeComments");
-      this.SelectSearchTranslationIncludeComments.Name = "SelectSearchTranslationIncludeComments";
-      this.SelectSearchTranslationIncludeComments.UseVisualStyleBackColor = true;
-      this.SelectSearchTranslationIncludeComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
-      // 
-      // LabelSearchTranslationHelp
-      // 
-      resources.ApplyResources(this.LabelSearchTranslationHelp, "LabelSearchTranslationHelp");
-      this.LabelSearchTranslationHelp.Name = "LabelSearchTranslationHelp";
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
       // 
       // EditSearchTranslation
       // 
@@ -854,26 +869,15 @@
       resources.ApplyResources(this.SelectSearchTypeVerses, "SelectSearchTypeVerses");
       this.SelectSearchTypeVerses.Name = "SelectSearchTypeVerses";
       // 
-      // SelectSearchRequestAllUntranslated
+      // panel1
       // 
-      resources.ApplyResources(this.SelectSearchRequestAllUntranslated, "SelectSearchRequestAllUntranslated");
-      this.SelectSearchRequestAllUntranslated.Name = "SelectSearchRequestAllUntranslated";
-      this.SelectSearchRequestAllUntranslated.UseVisualStyleBackColor = true;
-      this.SelectSearchRequestAllUntranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
-      // 
-      // SelectSearchRequestAllPartiallyTranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllPartiallyTranslated, "SelectSearchRequestAllPartiallyTranslated");
-      this.SelectSearchRequestAllPartiallyTranslated.Name = "SelectSearchRequestAllPartiallyTranslated";
-      this.SelectSearchRequestAllPartiallyTranslated.UseVisualStyleBackColor = true;
-      this.SelectSearchRequestAllPartiallyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
-      // 
-      // SelectSearchRequestAllFullyTranslated
-      // 
-      resources.ApplyResources(this.SelectSearchRequestAllFullyTranslated, "SelectSearchRequestAllFullyTranslated");
-      this.SelectSearchRequestAllFullyTranslated.Name = "SelectSearchRequestAllFullyTranslated";
-      this.SelectSearchRequestAllFullyTranslated.UseVisualStyleBackColor = true;
-      this.SelectSearchRequestAllFullyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
+      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel1.Controls.Add(this.SelectSearchRequestAllTranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllUntranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
       // 
       // SelectSearchRequestAllTranslated
       // 
@@ -883,6 +887,27 @@
       this.SelectSearchRequestAllTranslated.TabStop = true;
       this.SelectSearchRequestAllTranslated.UseVisualStyleBackColor = true;
       this.SelectSearchRequestAllTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
+      // 
+      // SelectSearchRequestAllUntranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllUntranslated, "SelectSearchRequestAllUntranslated");
+      this.SelectSearchRequestAllUntranslated.Name = "SelectSearchRequestAllUntranslated";
+      this.SelectSearchRequestAllUntranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllUntranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
+      // 
+      // SelectSearchRequestAllFullyTranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllFullyTranslated, "SelectSearchRequestAllFullyTranslated");
+      this.SelectSearchRequestAllFullyTranslated.Name = "SelectSearchRequestAllFullyTranslated";
+      this.SelectSearchRequestAllFullyTranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllFullyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
+      // 
+      // SelectSearchRequestAllPartiallyTranslated
+      // 
+      resources.ApplyResources(this.SelectSearchRequestAllPartiallyTranslated, "SelectSearchRequestAllPartiallyTranslated");
+      this.SelectSearchRequestAllPartiallyTranslated.Name = "SelectSearchRequestAllPartiallyTranslated";
+      this.SelectSearchRequestAllPartiallyTranslated.UseVisualStyleBackColor = true;
+      this.SelectSearchRequestAllPartiallyTranslated.CheckedChanged += new System.EventHandler(this.SelectSearchRequestAllTranslated_CheckedChanged);
       // 
       // TabPageText
       // 
@@ -2002,31 +2027,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // panel1
-      // 
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panel1.Controls.Add(this.SelectSearchRequestAllTranslated);
-      this.panel1.Controls.Add(this.SelectSearchRequestAllUntranslated);
-      this.panel1.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
-      this.panel1.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
-      // 
-      // panel2
-      // 
-      this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panel2.Controls.Add(this.LabelSearchTranslationHelp);
-      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyComments);
-      this.panel2.Controls.Add(this.SelectSearchTranslationIncludeComments);
-      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyTranslations);
-      resources.ApplyResources(this.panel2, "panel2");
-      this.panel2.Name = "panel2";
-      // 
-      // PanelSeparator
-      // 
-      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
-      this.PanelSeparator.Name = "PanelSeparator";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2069,7 +2069,11 @@
       this.PanelSearchTop.ResumeLayout(false);
       this.SelectSearchTypeTranslation.ResumeLayout(false);
       this.SelectSearchTypeTranslation.PerformLayout();
+      this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.SelectSearchTypeVerses.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.TabPageText.ResumeLayout(false);
       this.PanelViewOriginalText.ResumeLayout(false);
       this.TabPageELS50.ResumeLayout(false);
@@ -2086,10 +2090,6 @@
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
-      this.panel1.ResumeLayout(false);
-      this.panel1.PerformLayout();
-      this.panel2.ResumeLayout(false);
-      this.panel2.PerformLayout();
       this.ResumeLayout(false);
 
     }
