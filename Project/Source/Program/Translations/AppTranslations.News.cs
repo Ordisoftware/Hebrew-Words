@@ -34,7 +34,7 @@ static partial class AppTranslations
                       "• Added book name translation text box in the navigation panel." + Globals.NL +
                       "• Added chapter title and memo text boxes in the navigation panel." + Globals.NL +
                       "• Added buttons to edit book and chapter memos in the navigation panel." + Globals.NL +
-                      "• Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Added online search a word for several providers : Pealim, Sefaria, Wiktionary, Google, Bing..." + Globals.NL +
                       "• Added filter verses view panel." + Globals.NL +
                       "• Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export." + Globals.NL +
                       "• Added options to choose mouse actions on words and verses." + Globals.NL +
@@ -57,7 +57,7 @@ static partial class AppTranslations
                       "• Ajout d'une zone de texte de traduction du nom du livre dans le panneau de navigation." + Globals.NL +
                       "• Ajout de zones de texte de titre de chapitre et de mémo dans le panneau de navigation." + Globals.NL +
                       "• Ajout de boutons pour modifier les mémos de livre et de chapitre dans le panneau de navigation." + Globals.NL +
-                      "• Ajout de la recherche en ligne d'un mot pour plusieurs fournisseurs : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Ajout de la recherche en ligne d'un mot pour plusieurs fournisseurs : Pealim, Sefaria, Wiktionary, Google, Bing..." + Globals.NL +
                       "• Ajout d'un panneau d'affichage des versets de filtre." + Globals.NL +
                       "• Ajout d'un tableau de parashot avec traductions littérales, lettriqs, références de versets, outils d'étude, édition et exportation." + Globals.NL +
                       "• Ajout d'options pour choisir les actions de la souris sur les mots et les vers." + Globals.NL +
