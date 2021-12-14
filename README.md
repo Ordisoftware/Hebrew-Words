@@ -72,7 +72,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Added book name translation text box in the navigation panel.
 - Added chapter title and memo text boxes in the navigation panel.
 - Added buttons to edit book and chapter memos in the navigation panel.
-- Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
+- Added online search a word for several providers : Pealim, Sefaria, Wiktionary, Google, Bing...
 - Added filter verses view panel.
 - Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Added options to choose mouse actions on words and verses.
