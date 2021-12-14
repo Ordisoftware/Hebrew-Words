@@ -745,6 +745,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Import\ImportVerseForm.resx">
       <DependentUpon>ImportVerseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\EditBooksForm.fr.resx">
       <DependentUpon>EditBooksForm.cs</DependentUpon>
