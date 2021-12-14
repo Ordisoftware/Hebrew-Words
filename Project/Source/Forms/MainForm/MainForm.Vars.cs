@@ -120,6 +120,10 @@ partial class MainForm
   /// </summary>
   private string SearchWord2;
 
+  static public readonly string SearchSeparatorString = ",";
+
+  static public readonly char SearchSeparatorChar = ',';
+
   /// <summary>
   /// Indicates the hebrew font 12.
   /// </summary>

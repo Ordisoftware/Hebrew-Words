@@ -76,4 +76,31 @@ partial class MainForm
     }
   }
 
+  /// <summary>
+  /// Show tool tip in view panel.
+  /// </summary>
+  void ShowPanelToolTip(string str)
+  {
+    Panel panel = null;
+    int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
+    int x = 5;
+    const int y = 5;
+    switch ( Settings.CurrentView )
+    {
+      case ViewMode.ChapterVerses:
+        panel = PanelViewVerses;
+        x = panel.ClientSize.Width - 15 - width;
+        break;
+      case ViewMode.ChapterTranslation:
+        panel = PanelViewTranslations;
+        break;
+      case ViewMode.Search:
+        panel = PanelSearchResults;
+        x = panel.ClientSize.Width - 10 - width;
+        break;
+    }
+    if ( panel != null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
+    LastToolTipPanel = panel;
+  }
+
 }

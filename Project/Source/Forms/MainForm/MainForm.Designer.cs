@@ -90,7 +90,7 @@
       this.SelectSearchType = new System.Windows.Forms.TabControl();
       this.SelectSearchTypeHebrew = new System.Windows.Forms.TabPage();
       this.PanelSearchTop = new System.Windows.Forms.Panel();
-      this.EditLetters = new Ordisoftware.Hebrew.LettersControl();
+      this.EditSearchWord = new Ordisoftware.Hebrew.LettersControl();
       this.SelectSearchTypeTranslation = new System.Windows.Forms.TabPage();
       this.SelectSearchTranslationOnlyComments = new System.Windows.Forms.RadioButton();
       this.SelectSearchTranslationOnlyTranslations = new System.Windows.Forms.RadioButton();
@@ -251,6 +251,9 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -290,6 +293,8 @@
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      this.panel1.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -764,58 +769,57 @@
       // 
       // SelectSearchType
       // 
+      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeHebrew);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeTranslation);
       this.SelectSearchType.Controls.Add(this.SelectSearchTypeVerses);
-      resources.ApplyResources(this.SelectSearchType, "SelectSearchType");
       this.SelectSearchType.Name = "SelectSearchType";
       this.SelectSearchType.SelectedIndex = 0;
       this.SelectSearchType.Selected += new System.Windows.Forms.TabControlEventHandler(this.SelectSearchType_Selected);
       // 
       // SelectSearchTypeHebrew
       // 
+      this.SelectSearchTypeHebrew.BackColor = System.Drawing.SystemColors.Control;
       this.SelectSearchTypeHebrew.Controls.Add(this.PanelSearchTop);
       resources.ApplyResources(this.SelectSearchTypeHebrew, "SelectSearchTypeHebrew");
       this.SelectSearchTypeHebrew.Name = "SelectSearchTypeHebrew";
-      this.SelectSearchTypeHebrew.UseVisualStyleBackColor = true;
       // 
       // PanelSearchTop
       // 
-      this.PanelSearchTop.Controls.Add(this.EditLetters);
+      this.PanelSearchTop.Controls.Add(this.EditSearchWord);
       resources.ApplyResources(this.PanelSearchTop, "PanelSearchTop");
       this.PanelSearchTop.Name = "PanelSearchTop";
       // 
-      // EditLetters
+      // EditSearchWord
       // 
-      this.EditLetters.BackColor = System.Drawing.Color.Transparent;
-      resources.ApplyResources(this.EditLetters, "EditLetters");
-      this.EditLetters.Name = "EditLetters";
-      this.EditLetters.ShowValues = false;
-      this.EditLetters.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
-      this.EditLetters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
+      this.EditSearchWord.BackColor = System.Drawing.Color.Transparent;
+      this.EditSearchWord.ContextMenuDetailsVisible = false;
+      resources.ApplyResources(this.EditSearchWord, "EditSearchWord");
+      this.EditSearchWord.Name = "EditSearchWord";
+      this.EditSearchWord.ShowValues = false;
+      this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
+      this.EditSearchWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
       // SelectSearchTypeTranslation
       // 
-      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationOnlyComments);
-      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationOnlyTranslations);
-      this.SelectSearchTypeTranslation.Controls.Add(this.SelectSearchTranslationIncludeComments);
-      this.SelectSearchTypeTranslation.Controls.Add(this.LabelSearchTranslationHelp);
+      this.SelectSearchTypeTranslation.BackColor = System.Drawing.SystemColors.Control;
+      this.SelectSearchTypeTranslation.Controls.Add(this.panel2);
+      this.SelectSearchTypeTranslation.Controls.Add(this.PanelSeparator);
       this.SelectSearchTypeTranslation.Controls.Add(this.EditSearchTranslation);
       resources.ApplyResources(this.SelectSearchTypeTranslation, "SelectSearchTypeTranslation");
       this.SelectSearchTypeTranslation.Name = "SelectSearchTypeTranslation";
-      this.SelectSearchTypeTranslation.UseVisualStyleBackColor = true;
       // 
       // SelectSearchTranslationOnlyComments
       // 
       resources.ApplyResources(this.SelectSearchTranslationOnlyComments, "SelectSearchTranslationOnlyComments");
       this.SelectSearchTranslationOnlyComments.Name = "SelectSearchTranslationOnlyComments";
-      this.SelectSearchTranslationOnlyComments.TabStop = true;
       this.SelectSearchTranslationOnlyComments.UseVisualStyleBackColor = true;
       this.SelectSearchTranslationOnlyComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
       // SelectSearchTranslationOnlyTranslations
       // 
       resources.ApplyResources(this.SelectSearchTranslationOnlyTranslations, "SelectSearchTranslationOnlyTranslations");
+      this.SelectSearchTranslationOnlyTranslations.Checked = true;
       this.SelectSearchTranslationOnlyTranslations.Name = "SelectSearchTranslationOnlyTranslations";
       this.SelectSearchTranslationOnlyTranslations.TabStop = true;
       this.SelectSearchTranslationOnlyTranslations.UseVisualStyleBackColor = true;
@@ -825,7 +829,6 @@
       // 
       resources.ApplyResources(this.SelectSearchTranslationIncludeComments, "SelectSearchTranslationIncludeComments");
       this.SelectSearchTranslationIncludeComments.Name = "SelectSearchTranslationIncludeComments";
-      this.SelectSearchTranslationIncludeComments.TabStop = true;
       this.SelectSearchTranslationIncludeComments.UseVisualStyleBackColor = true;
       this.SelectSearchTranslationIncludeComments.CheckedChanged += new System.EventHandler(this.SelectSearchTranslationOnlyTranslations_CheckedChanged);
       // 
@@ -846,13 +849,10 @@
       // 
       // SelectSearchTypeVerses
       // 
-      this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllUntranslated);
-      this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
-      this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
-      this.SelectSearchTypeVerses.Controls.Add(this.SelectSearchRequestAllTranslated);
+      this.SelectSearchTypeVerses.BackColor = System.Drawing.SystemColors.Control;
+      this.SelectSearchTypeVerses.Controls.Add(this.panel1);
       resources.ApplyResources(this.SelectSearchTypeVerses, "SelectSearchTypeVerses");
       this.SelectSearchTypeVerses.Name = "SelectSearchTypeVerses";
-      this.SelectSearchTypeVerses.UseVisualStyleBackColor = true;
       // 
       // SelectSearchRequestAllUntranslated
       // 
@@ -2002,6 +2002,31 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // panel1
+      // 
+      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel1.Controls.Add(this.SelectSearchRequestAllTranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllUntranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllFullyTranslated);
+      this.panel1.Controls.Add(this.SelectSearchRequestAllPartiallyTranslated);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // panel2
+      // 
+      this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel2.Controls.Add(this.LabelSearchTranslationHelp);
+      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyComments);
+      this.panel2.Controls.Add(this.SelectSearchTranslationIncludeComments);
+      this.panel2.Controls.Add(this.SelectSearchTranslationOnlyTranslations);
+      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.Name = "panel2";
+      // 
+      // PanelSeparator
+      // 
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2045,7 +2070,6 @@
       this.SelectSearchTypeTranslation.ResumeLayout(false);
       this.SelectSearchTypeTranslation.PerformLayout();
       this.SelectSearchTypeVerses.ResumeLayout(false);
-      this.SelectSearchTypeVerses.PerformLayout();
       this.TabPageText.ResumeLayout(false);
       this.PanelViewOriginalText.ResumeLayout(false);
       this.TabPageELS50.ResumeLayout(false);
@@ -2062,6 +2086,10 @@
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
+      this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -2203,7 +2231,7 @@
     private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
-    public Ordisoftware.Hebrew.LettersControl EditLetters;
+    public Ordisoftware.Hebrew.LettersControl EditSearchWord;
     public System.Windows.Forms.Button ActionSearchRun;
     public System.Windows.Forms.Panel PanelViewVerses;
     public System.Windows.Forms.TabControl SelectSearchType;
@@ -2288,6 +2316,9 @@
     private ToolStripMenuItem ActionClearHistory;
     private ToolStripSeparator toolStripSeparator4;
     private ToolStripSeparator SeparatorHistory;
+    private Panel panel1;
+    private Panel panel2;
+    private Panel PanelSeparator;
   }
 }
 

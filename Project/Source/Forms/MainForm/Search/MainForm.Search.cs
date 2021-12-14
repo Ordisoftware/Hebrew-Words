@@ -42,7 +42,7 @@ partial class MainForm
     try
     {
       ActionSearchRun.Enabled = ( SelectSearchType.SelectedTab == SelectSearchTypeHebrew
-                                   && EditLetters.TextBox.Text.Length >= 2 )
+                                   && EditSearchWord.TextBox.Text.Length >= 2 )
                               || ( SelectSearchType.SelectedTab == SelectSearchTypeTranslation
                                    && EditSearchTranslation.Text.Length >= 2 )
                               || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );

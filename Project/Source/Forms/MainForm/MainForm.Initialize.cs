@@ -43,6 +43,7 @@ partial class MainForm : Form
     EditELS50HScrollBar.Maximum = 0;
     EditELS50HScrollBar.LargeChange = 20;
     EditELS50HScrollBar.SmallChange = 10;
+    EditSearchWord.ContextMenuDetailsVisible = false;
     InitializeTheme();
   }
 
@@ -279,8 +280,8 @@ partial class MainForm : Form
     EditELS50Single.BackColor = Settings.ThemeNavigatorItems;
     EditChapterMemo.BackColor = Settings.ThemeNavigatorItems;
     // Letters control
-    EditLetters.LettersBackColor = Settings.ThemeSearchLettersBack;
-    EditLetters.InputBackColor = Settings.ThemeSearchWordBack;
+    EditSearchWord.LettersBackColor = Settings.ThemeSearchLettersBack;
+    EditSearchWord.InputBackColor = Settings.ThemeSearchWordBack;
     EditSearchTranslation.BackColor = Settings.ThemeSearchWordBack;
   }
 
