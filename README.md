@@ -131,11 +131,11 @@ In this case, one verse at a time should be used.
 
   `Ordisoftware.Hebrew.Letters.exe --verse [reference]` 
 
-- Search a word in the database"`בראשית`" and "`ty>arb`":
+- Search a word in the database "`בראשית`" and "`ty>arb`":
 
   `Ordisoftware.Hebrew.Letters.exe --word [word]` 
 
-- Search a translation in the database"`בראשית`" and "`ty>arb`":
+- Search a translation in the database "`בראשית`" and "`ty>arb`":
 
   `Ordisoftware.Hebrew.Letters.exe --translated [word]` 
 
