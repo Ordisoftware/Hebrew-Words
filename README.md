@@ -81,10 +81,10 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Added usage statistics form in tools menu.
 - Added command line options.
 - Improved search options.
-- Improved check update.
 - Improved about box.
 - Improved message boxes.
-- Improved debugger to support logging.
+- Improved check update.
+- Improved debugger.
 - Many fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
