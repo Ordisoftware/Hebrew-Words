@@ -28,15 +28,15 @@ static partial class AppTranslations
 
       [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
                       "• Overall performances are optimized." + Globals.NL +
-                      "• Added verse navigator in the verses view panel." + Globals.NL +
                       "• Added and improved keyboard shortcuts" + Globals.NL +
+                      "• Added verse navigator in the verses view panel." + Globals.NL +
                       "• Added option to render only current verse or all of the chapter." + Globals.NL +
-                      "• Added filter verses view panel." + Globals.NL +
-                      "• Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export." + Globals.NL +
-                      "• Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
                       "• Added book name translation text box in the navigation panel." + Globals.NL +
                       "• Added chapter title and memo text boxes in the navigation panel." + Globals.NL +
                       "• Added buttons to edit book and chapter memos in the navigation panel." + Globals.NL +
+                      "• Added online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Added filter verses view panel." + Globals.NL +
+                      "• Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export." + Globals.NL +
                       "• Added options to choose mouse actions on words and verses." + Globals.NL +
                       "• Added menu for web links." + Globals.NL +
                       "• Added theming options." + Globals.NL +
@@ -49,20 +49,19 @@ static partial class AppTranslations
                       "• Improved debugger to support logging." + Globals.NL +
                       "• Improved about box to dynamically display the list of dependencies and media used." + Globals.NL +
                       "• Improved message boxes." + Globals.NL +
-                      "• Improved UI/UX." + Globals.NL +
                       "• Many fixes and improvements.",
 
       [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
                       "• Les performances globales sont optimisées." + Globals.NL +
-                      "• Ajout du navigateur de verset dans le panneau d'affichage des versets." + Globals.NL +
                       "• Ajout et amélioration des raccourcis clavier." + Globals.NL +
+                      "• Ajout du navigateur de verset dans le panneau d'affichage des versets." + Globals.NL +
                       "• Ajout d'une option pour afficher uniquement le verset actuel ou tout le chapitre." + Globals.NL +
-                      "• Ajout d'un panneau d'affichage des versets de filtre." + Globals.NL +
-                      "• Ajout d'un tableau de parashot avec traductions littérales, lettriqs, références de versets, outils d'étude, édition et exportation." + Globals.NL +
-                      "• Ajout de la recherche en ligne d'un mot pour plusieurs fournisseurs : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
                       "• Ajout d'une zone de texte de traduction du nom du livre dans le panneau de navigation." + Globals.NL +
                       "• Ajout de zones de texte de titre de chapitre et de mémo dans le panneau de navigation." + Globals.NL +
                       "• Ajout de boutons pour modifier les mémos de livre et de chapitre dans le panneau de navigation." + Globals.NL +
+                      "• Ajout de la recherche en ligne d'un mot pour plusieurs fournisseurs : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe." + Globals.NL +
+                      "• Ajout d'un panneau d'affichage des versets de filtre." + Globals.NL +
+                      "• Ajout d'un tableau de parashot avec traductions littérales, lettriqs, références de versets, outils d'étude, édition et exportation." + Globals.NL +
                       "• Ajout d'options pour choisir les actions de la souris sur les mots et les vers." + Globals.NL +
                       "• Ajout d'un menu pour les liens Web." + Globals.NL +
                       "• Ajout d'options de thème." + Globals.NL +
@@ -75,7 +74,6 @@ static partial class AppTranslations
                       "• Amélioration du débogueur pour prendre en charge la journalisation." + Globals.NL +
                       "• Amélioration de la boîte à propos pour afficher dynamiquement la liste des dépendances et des médias utilisés." + Globals.NL +
                       "• Amélioration des boîtes de messages." + Globals.NL +
-                      "• Amélioration de l'UI/UX." + Globals.NL +
                       "• Beaucoup de correctifs et d'améliorations."
     },
 
