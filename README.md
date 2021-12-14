@@ -81,12 +81,10 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Added usage statistics form in tools menu.
 - Added command line options.
 - Improved search options.
-- Improved check update to use GitHub as an alternative if author's website is down.
-- Improved check update to allow auto update or direct download or open app web page.
-- Improved check update to verify the SSL certificate of the website and the checksum of the setup file.
-- Improved debugger to support logging.
-- Improved about box to dynamically display the list of dependencies and media used.
+- Improved check update.
+- Improved about box.
 - Improved message boxes.
+- Improved debugger to support logging.
 - Many fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
