@@ -29,6 +29,12 @@ static partial class AppTranslations
     [Language.FR] = "Voulez-vous créer une nouvelle base de données qui remplacera l'actuelle ?"
   };
 
+  static public readonly TranslationsDictionary AskToReplaceDatabase = new()
+  {
+    [Language.EN] = "Do you want to replace the actual database with the selected backup?" + Globals.NL2 + "{0}",
+    [Language.FR] = "Voulez-vous remplacer la base de données actuelle avec l'archive sélectionnée ?" + Globals.NL2 + "{0}"
+  };
+
   static public readonly TranslationsDictionary AskToBackupDatabaseBeforeReplace = new()
   {
     [Language.EN] = "Do you want to backup database before replace it?",

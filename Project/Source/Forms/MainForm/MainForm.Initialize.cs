@@ -115,27 +115,6 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Do start go to reference.
-  /// </summary>
-  private void DoStartGoTo()
-  {
-    if ( Settings.GoToMasterBookmarkAtStartup )
-      GoTo(Settings.BookmarkMasterBook,
-           Settings.BookmarkMasterChapter,
-           Settings.BookmarkMasterVerse,
-           true);
-    else
-    if ( Settings.GoToLastVerseAtStartup )
-      GoTo(new ReferenceItem(Settings.LastReferenceBook,
-                             Settings.LastReferenceChapter,
-                             Settings.LastReferenceVerse,
-                             Settings.LastReferenceWord),
-           true);
-    else
-      GoTo(1, 1, 1, true);
-  }
-
-  /// <summary>
   /// Shows news and process command line options.
   /// </summary>
   private void ProcessNewsAndCommandLine()

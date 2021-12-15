@@ -139,7 +139,10 @@ partial class MainForm : Form
   private void MainForm_ResizeEnd(object sender, EventArgs e)
   {
     if ( !SelectRenderAllVerses.Checked && ResizeBeginWidth != ClientSize.Width )
+    {
+      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
       ActionRefresh.PerformClick();
+    }
   }
 
   /// <summary>
@@ -655,6 +658,9 @@ partial class MainForm : Form
     if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
       ActionBackup.PerformClick();
     if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
+      return;
+    string fileName = Path.GetFileNameWithoutExtension(OpenFileDialogDB.FileName);
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToReplaceDatabase.GetLang(fileName)) )
       return;
     ReLoadData(() =>
     {
