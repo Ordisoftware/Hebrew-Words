@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.EditTranslation = new Ordisoftware.Core.TextBoxEx();
       this.SuspendLayout();
