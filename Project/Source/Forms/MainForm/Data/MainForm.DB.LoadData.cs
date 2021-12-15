@@ -34,6 +34,7 @@ partial class MainForm : Form
     actionBeforeRestart?.Invoke();
     ApplicationDatabase.Restart();
     LoadData();
+    DoStartGoTo();
   }
 
   /// <summary>
@@ -46,6 +47,7 @@ partial class MainForm : Form
     {
       try
       {
+        CurrentReference = null;
         PopulateData();
       }
       catch ( Exception ex )

@@ -46,7 +46,7 @@ public partial class VerseRow : AbstractRow
       NotifyPropertyChanged(nameof(Comment));
     }
   }
-  private string _Comment = string.Empty;
+  private string _Comment;
 
   public List<WordRow> Words { get; } = new();
 

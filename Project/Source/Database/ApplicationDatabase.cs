@@ -132,17 +132,20 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void UpgradeSchema()
   {
     base.UpgradeSchema();
+    bool b = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
-      bool b = Globals.IsDatabaseUpgraded;
-      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Original), "") || b;
-      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.CommonName), "") || b;
-      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Memo), "") || b;
-      b = !Connection.CheckColumn(BooksTableName, nameof(BookRow.Lettriq), "") || b;
-      b = !Connection.CheckColumn(ChaptersTableName, nameof(ChapterRow.Title), "") || b;
-      b = !Connection.CheckColumn(ChaptersTableName, nameof(ChapterRow.Memo), "") || b;
-      Globals.IsDatabaseUpgraded = b;
+      checkColumnText(BooksTableName, nameof(BookRow.Original));
+      checkColumnText(BooksTableName, nameof(BookRow.CommonName));
+      checkColumnText(BooksTableName, nameof(BookRow.Memo));
+      checkColumnText(BooksTableName, nameof(BookRow.Lettriq));
+      checkColumnText(ChaptersTableName, nameof(ChapterRow.Title));
+      checkColumnText(ChaptersTableName, nameof(ChapterRow.Memo));
     }
+    Globals.IsDatabaseUpgraded = b;
+    //
+    void checkColumnText(string table, string column)
+      => b = !Connection.CheckColumn(table, column, "TEXT", "\"\"", true, false, false) || b;
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -261,6 +264,7 @@ class ApplicationDatabase : SQLiteDatabase
               verse.ID = Guid.NewGuid();
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
+              verse.Comment = string.Empty;
               listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
