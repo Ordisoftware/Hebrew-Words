@@ -25,6 +25,27 @@ partial class MainForm
   private Panel LastToolTipPanel;
 
   /// <summary>
+  /// Does go to reference at startup.
+  /// </summary>
+  private void DoStartGoTo()
+  {
+    if ( Settings.GoToMasterBookmarkAtStartup )
+      GoTo(Settings.BookmarkMasterBook,
+           Settings.BookmarkMasterChapter,
+           Settings.BookmarkMasterVerse,
+           true);
+    else
+    if ( Settings.GoToLastVerseAtStartup )
+      GoTo(new ReferenceItem(Settings.LastReferenceBook,
+                             Settings.LastReferenceChapter,
+                             Settings.LastReferenceVerse,
+                             Settings.LastReferenceWord),
+           true);
+    else
+      GoTo(1, 1, 1, true);
+  }
+
+  /// <summary>
   /// Goes to a book > chapter > verse reference.
   /// </summary>
   public void GoTo(int book, int chapter, int verse, bool forceUpdateView = false, bool setViewChapterVerses = false)
