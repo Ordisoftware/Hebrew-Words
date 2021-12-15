@@ -111,6 +111,7 @@ partial class MainForm : Form
     }
     if ( WindowState == FormWindowState.Normal )
     {
+      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
           ActionRefresh.PerformClick();
@@ -122,11 +123,13 @@ partial class MainForm : Form
     {
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
+        {
+          SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
           ActionRefresh.PerformClick();
+        }
     }
     PreviousWindowsState = WindowState;
     PreviousWindowsStateToggle = true;
-    SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
   }
 
   private int ResizeBeginWidth;
