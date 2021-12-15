@@ -190,7 +190,7 @@ public partial class VerseControl : UserControl
     {
       for ( int index = 0; index < lines.Length; index++ )
       {
-        if ( lines[index].Length != 0 && !lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
+        if ( !lines[index].Trim().IsEmpty() && !lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
           lines[index] = Program.Settings.CommentLinePrefix + lines[index];
         changed = true;
       }
@@ -202,7 +202,7 @@ public partial class VerseControl : UserControl
     {
       for ( int index = 0; index < lines.Length; index++ )
       {
-        if ( lines[index].Length != 0 && lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
+        if ( !lines[index].Trim().IsEmpty() && lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
           lines[index] = lines[index].Substring(Program.Settings.CommentLinePrefix.Length);
         changed = true;
       }
