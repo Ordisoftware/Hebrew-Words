@@ -92,6 +92,7 @@ partial class MainForm : Form
     Globals.IsReady = true;
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
     SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
+    SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
     FilterModified = new()
     {
       { EditFilterBook, false },

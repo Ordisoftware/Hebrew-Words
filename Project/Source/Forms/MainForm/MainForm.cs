@@ -126,6 +126,7 @@ partial class MainForm : Form
     }
     PreviousWindowsState = WindowState;
     PreviousWindowsStateToggle = true;
+    SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
   }
 
   private int ResizeBeginWidth;

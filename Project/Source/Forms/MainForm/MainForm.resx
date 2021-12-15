@@ -4139,32 +4139,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
