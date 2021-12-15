@@ -180,27 +180,12 @@
   <data name="&gt;&gt;PanelMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ColumnHebrew.HeaderText" xml:space="preserve">
-    <value>Hebrew</value>
-  </data>
-  <data name="ColumnHebrew.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
   <metadata name="ColumnCurrentTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColumnCurrentTranslation.HeaderText" xml:space="preserve">
-    <value>Current translation</value>
-  </data>
-  <data name="ColumnCurrentTranslation.Width" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
   <metadata name="ColumnImportedTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColumnImportedTranslation.HeaderText" xml:space="preserve">
-    <value>Imported translation</value>
-  </data>
   <metadata name="WordMatchesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -261,6 +246,30 @@
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ColumnHebrew.HeaderText" xml:space="preserve">
+    <value>Hebrew</value>
+  </data>
+  <data name="ColumnHebrew.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="ColumnCurrentTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnCurrentTranslation.HeaderText" xml:space="preserve">
+    <value>Current translation</value>
+  </data>
+  <data name="ColumnCurrentTranslation.Width" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <metadata name="ColumnImportedTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnImportedTranslation.HeaderText" xml:space="preserve">
+    <value>Imported translation</value>
+  </data>
+  <metadata name="WordMatchesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="ActionHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -326,7 +335,7 @@
     <value>0</value>
   </data>
   <data name="ActionAnalyse.Text" xml:space="preserve">
-    <value>Analyse</value>
+    <value>&amp;Analyse</value>
   </data>
   <data name="&gt;&gt;ActionAnalyse.Name" xml:space="preserve">
     <value>ActionAnalyse</value>
@@ -359,7 +368,7 @@
     <value>1</value>
   </data>
   <data name="ActionOK.Text" xml:space="preserve">
-    <value>Import</value>
+    <value>&amp;Import</value>
   </data>
   <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
     <value>ActionOK</value>

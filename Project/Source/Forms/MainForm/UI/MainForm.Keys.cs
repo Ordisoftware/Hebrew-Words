@@ -56,7 +56,7 @@ partial class MainForm
       case Keys.F9:
         ActionPreferences.PerformClick();
         return true;
-      // ROtate view
+      // Rotate view
       case Keys.Control | Keys.Shift | Keys.Tab:
         SetView(Settings.CurrentView.Previous(RotateIgnoreViews));
         return true;
@@ -100,6 +100,10 @@ partial class MainForm
         return true;
       case Keys.Control | Keys.S:
         ActionSave.PerformClick();
+        return true;
+      case Keys.Control | Keys.Alt | Keys.I:
+        if ( ActiveControl is VerseControl control )
+          ActionImportConsole_Click(control, null);
         return true;
       // Application menus
       case Keys.Alt | Keys.D:

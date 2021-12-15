@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActionAnalyse.Text" xml:space="preserve">
-    <value>Analyser</value>
+    <value>&amp;Analyser</value>
   </data>
   <data name="ActionOK.Text" xml:space="preserve">
-    <value>Importer</value>
+    <value>&amp;Importer</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>

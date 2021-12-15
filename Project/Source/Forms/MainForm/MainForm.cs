@@ -814,9 +814,13 @@ partial class MainForm : Form
   private void ActionImportConsole_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    var menuitem = (ToolStripMenuItem)sender;
-    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    var control = e == null ? sender as VerseControl : ( (ContextMenuStrip)ActionImportConsole.Owner ).SourceControl;
     ReferenceItem reference = null;
+    if ( control is VerseControl versecontrol )
+    {
+      reference = versecontrol.Reference;
+    }
+    else
     if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
       reference = (ReferenceItem)control.Tag;

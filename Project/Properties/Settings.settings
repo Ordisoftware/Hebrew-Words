@@ -48,7 +48,7 @@
       <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>
     </Setting>
     <Setting Name="VerseCommentaryLinesCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="BookmarksCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
@@ -291,7 +291,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="VerseWordTranslationLinesCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="RenderAllChapterVersesKeep" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -321,7 +321,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="GoToLastVerseAtStartup" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="LastReferenceBook" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>

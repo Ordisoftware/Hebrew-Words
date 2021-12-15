@@ -205,7 +205,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int VerseCommentaryLinesCount {
             get {
                 return ((int)(this["VerseCommentaryLinesCount"]));
@@ -1176,7 +1176,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int VerseWordTranslationLinesCount {
             get {
                 return ((int)(this["VerseWordTranslationLinesCount"]));
@@ -1296,7 +1296,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool GoToLastVerseAtStartup {
             get {
                 return ((bool)(this["GoToLastVerseAtStartup"]));
