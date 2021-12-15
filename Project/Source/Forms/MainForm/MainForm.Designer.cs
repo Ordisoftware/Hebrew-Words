@@ -1066,8 +1066,8 @@
       // SelectVerse
       // 
       this.SelectVerse.DataSource = this.VersesBindingSource;
-      this.SelectVerse.DisplayMember = "Number";
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectVerse.DropDownWidth = 350;
       this.SelectVerse.FormattingEnabled = true;
       resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
