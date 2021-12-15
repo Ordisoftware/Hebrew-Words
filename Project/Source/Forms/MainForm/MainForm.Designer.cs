@@ -242,7 +242,6 @@
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCountOccurences = new System.Windows.Forms.ToolStripMenuItem();
@@ -253,6 +252,8 @@
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource();
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1580,8 +1581,9 @@
             this.ActionViewBooksBoard,
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
-            this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
+            this.toolStripSeparator7,
+            this.ActionShowGrammarGuide,
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
@@ -1926,9 +1928,9 @@
             this.ActionSearchTranslated,
             this.ActionSearchWord,
             this.MenuSeparator2,
-            this.ActionShowGrammarGuide2,
-            this.toolStripSeparator3,
             this.ActionOpenHebrewLetters2,
+            this.toolStripSeparator3,
+            this.ActionShowGrammarGuide2,
             this.toolStripSeparator14,
             this.ActionCountOccurences,
             this.ActionCountRootOccurences,
@@ -1971,11 +1973,6 @@
       resources.ApplyResources(this.ActionShowGrammarGuide2, "ActionShowGrammarGuide2");
       this.ActionShowGrammarGuide2.Name = "ActionShowGrammarGuide2";
       this.ActionShowGrammarGuide2.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionOpenHebrewLetters2
       // 
@@ -2025,6 +2022,16 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
       // 
       // MainForm
       // 
@@ -2222,7 +2229,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
@@ -2318,6 +2324,8 @@
     private Panel panel1;
     private Panel panel2;
     private Panel PanelSeparator;
+    private ToolStripSeparator toolStripSeparator7;
+    private ToolStripSeparator toolStripSeparator3;
   }
 }
 
