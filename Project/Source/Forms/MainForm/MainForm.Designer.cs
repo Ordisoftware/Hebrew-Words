@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelMainOuter = new System.Windows.Forms.Panel();
@@ -58,9 +57,9 @@
       this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
       this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
       this.SelectFilterVerse = new System.Windows.Forms.ComboBox();
-      this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.FilterBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource();
+      this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource();
+      this.FilterBooksBindingSource = new System.Windows.Forms.BindingSource();
       this.SelectFilterChapter = new System.Windows.Forms.ComboBox();
       this.SelectFilterBook = new System.Windows.Forms.ComboBox();
       this.LabelFilterBook = new System.Windows.Forms.Label();
@@ -115,14 +114,14 @@
       this.EditELS50HScrollBar = new System.Windows.Forms.HScrollBar();
       this.SelectChapterNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource();
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource();
       this.SelectBookNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.ActionSelectRenderAllVersesKeepHelp = new System.Windows.Forms.Button();
       this.SelectVerseNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
-      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.VersesBindingSource = new System.Windows.Forms.BindingSource();
       this.SelectRenderAllVersesKeep = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
@@ -148,7 +147,7 @@
       this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelProgress = new System.Windows.Forms.Label();
-      this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
+      this.TimerTooltip = new System.Windows.Forms.Timer();
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.SepExit = new System.Windows.Forms.ToolStripSeparator();
@@ -224,8 +223,8 @@
       this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
       this.OpenFileDialogDB = new System.Windows.Forms.OpenFileDialog();
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
-      this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
-      this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.TimerAutoSave = new System.Windows.Forms.Timer();
+      this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip();
       this.ActionVerseReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,7 +235,7 @@
       this.ActionGoToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip();
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
@@ -252,8 +251,8 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.WordsBindingSource = new System.Windows.Forms.BindingSource();
+      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();

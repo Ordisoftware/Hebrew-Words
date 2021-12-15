@@ -74,8 +74,8 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -402,8 +402,8 @@
             this.ActionShowGrammarGuide,
             this.toolStripSeparator2,
             this.ActionOpenHebrewLetters,
-            this.ActionOpenHebrewWordsVerse,
             this.ActionOpenHebrewWordsSearch,
+            this.ActionOpenHebrewWordsVerse,
             this.MenuSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -462,17 +462,17 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
-      // ActionOpenHebrewWordsVerse
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
-      this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
-      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
-      // 
       // ActionOpenHebrewWordsSearch
       // 
       resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
       this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
       this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
+      // 
+      // ActionOpenHebrewWordsVerse
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
+      this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
+      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
       // MenuSeparator2
       // 
