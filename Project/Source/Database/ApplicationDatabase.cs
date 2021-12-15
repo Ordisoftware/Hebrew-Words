@@ -186,6 +186,8 @@ class ApplicationDatabase : SQLiteDatabase
   {
     try
     {
+      Globals.ChronoStartingApp.Stop();
+      Globals.ChronoLoadData.Stop();
       MainForm.Instance.SetFormDisabled(true);
       Books.Clear();
       Loaded = false;
@@ -219,11 +221,15 @@ class ApplicationDatabase : SQLiteDatabase
         }
         string[] filecontent = File.ReadAllLines(filePath);
         book = new();
+        book.ID = Guid.NewGuid();
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
         book.Hebrew = BooksNames.Hebrew[bookid];
         book.Name = bookid.ToString().Replace("_", " ");
         book.CommonName = BooksNames.Common.GetLang(bookid);
+        book.Translation = string.Empty;
+        book.Lettriq = string.Empty;
+        book.Memo = string.Empty;
         Books.Add(book);
         int countChapters = 0;
         int countVerses = 0;
@@ -236,8 +242,11 @@ class ApplicationDatabase : SQLiteDatabase
             if ( chapter != null ) nextChapter();
             countVerses = 0;
             chapter = new();
+            chapter.ID = Guid.NewGuid();
             chapter.BookID = book.ID;
             chapter.Number = ++countChapters;
+            chapter.Title = string.Empty;
+            chapter.Memo = string.Empty;
           }
           else
           {
@@ -249,6 +258,7 @@ class ApplicationDatabase : SQLiteDatabase
             {
               countWords = 0;
               verse = new();
+              verse.ID = Guid.NewGuid();
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
               listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
@@ -265,10 +275,12 @@ class ApplicationDatabase : SQLiteDatabase
               if ( listWordsHebrew[i].Length > 0 )
               {
                 word = new();
+                word.ID = Guid.NewGuid();
                 word.VerseID = verse.ID;
                 word.Number = ++countWords;
                 word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
                 word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
+                word.Translation = string.Empty;
                 verse.Words.Add(word);
                 Words.Add(word);
                 strELS50 = listWordsHebrew[i] + strELS50;
@@ -303,6 +315,8 @@ class ApplicationDatabase : SQLiteDatabase
     finally
     {
       MainForm.Instance.SetFormDisabled(false);
+      Globals.ChronoStartingApp.Start();
+      Globals.ChronoLoadData.Start();
     }
   }
 
