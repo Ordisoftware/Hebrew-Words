@@ -174,15 +174,13 @@
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAbdJREFUOE+dkzlrQkEUhd/vcPkTVpoiYFDSuIBip5WVCCqCjViKFvY24la4/BTB
-        MjESTIrYPHFpVNz1xDP4Ho4GQjJwGeZw7/fu3DNPsdvtD/F4/CORSLz9JVKpVN/pdD4pmUzmBf9cZ8i7
-        QtrljEAgAJvNhsPhgOPxeFGBdrsNRVHudNbqAC2JUS6Xsd/vRQGXprvdbux2O5xOJ6FLgOFwqCcyarWa
-        ADCsVquuezweHRKJRAY6gEKj0ZAg9XpdAAqFgqRrHYZCIVUCMDmfz0vJuVwOJpMJ1WoVBoMBFosF3W4X
-        y+VSBnDxGn6/H9lsVoJ4vV6MRiP0ej2oqorJZILtdnsPMJvNaDabmM1mqFQqEqRUKmG1WolCtk83wuHw
-        lw7QXDAajej3+1iv12IG1xAOlsW/usC7DgYD8bVbiDZYhtTBrQvshC3TsmsI4YvFQlzhRxc4cS2Rg9Me
-        VDQa1XUO8s5GXiGZTMLn88HlcqHT6UiAVqsluioWizKAf9V1B/P5XLgwnU6x2Wz0t8+d3o/HY7HzHIvF
-        Pvk7P6bT6Vd2cn6aH6QGg0GVO8/UteDQqDNY43A4nr8B6PK1N5dwt+EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAElSURBVDhPpZMxdoJAEIa35QIUpqSnwhdPQMER6DkAJ8BO
+        C9Ikac0tohZqcghqrGhJUgToRv/ZXbK65PnU/715j/3Z+XZmFgSUpiklSXJVIKdPvlUMuQeASixAURRU
+        17VaSf02Db0vl2r1JwuAxGNX9DiZKEfK8zxyXZeqqlKOlNUCTnIchyFRFCmXyPd99gApy71y/2nh+eWV
+        NyPCMGRonj/1HpK0BgFIiOO4T0A7QTCmzXbHVV2sAGucuFi89e0AcD5YCHtPAKDrMjEwE4JKUJ2pQYBO
+        gP/1/WNVYkIsQNt1NJvNeTMC3wRkQrJsyh5kzaBtO74FbB6NHpQrxacdAYBpDQ5x9/HJcf7RrFZrvglT
+        g4BrpKqSf6QOUHWYvvlePwshxAEeEv3DWAZCSgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
@@ -305,7 +303,7 @@
     <value>Open</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 210</value>
+    <value>181, 232</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -396,7 +394,7 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditBooks.ColumnHeadersHeight" type="System.Int32, mscorlib">
+  <data name="DataGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="ColumnNumber.HeaderText" xml:space="preserve">
@@ -438,28 +436,28 @@
   <metadata name="BookRowBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>215, 18</value>
   </metadata>
-  <data name="EditBooks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="EditBooks.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="EditBooks.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>664, 603</value>
   </data>
-  <data name="EditBooks.TabIndex" type="System.Int32, mscorlib">
+  <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;EditBooks.Name" xml:space="preserve">
-    <value>EditBooks</value>
+  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
+    <value>DataGridView</value>
   </data>
-  <data name="&gt;&gt;EditBooks.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditBooks.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
-  <data name="&gt;&gt;EditBooks.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -585,18 +583,6 @@
   <data name="&gt;&gt;ActionOpen.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnHasMemo.Name" xml:space="preserve">
-    <value>ColumnHasMemo</value>
-  </data>
-  <data name="&gt;&gt;ColumnHasMemo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnMemo.Name" xml:space="preserve">
-    <value>ColumnMemo</value>
-  </data>
-  <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
     <value>ColumnNumber</value>
   </data>
@@ -620,6 +606,18 @@
   </data>
   <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnHasMemo.Name" xml:space="preserve">
+    <value>ColumnHasMemo</value>
+  </data>
+  <data name="&gt;&gt;ColumnHasMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Name" xml:space="preserve">
+    <value>ColumnMemo</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
     <value>BookRowBindingSource</value>

@@ -31,8 +31,8 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,12 +52,12 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -187,7 +187,7 @@
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
-      // EditBooks
+      // DataGridView
       // 
       this.DataGridView.AllowUserToAddRows = false;
       this.DataGridView.AllowUserToDeleteRows = false;
@@ -202,7 +202,7 @@
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
       dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
       this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-      resources.ApplyResources(this.DataGridView, "EditBooks");
+      resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
             this.ColumnHebrew,
@@ -215,7 +215,7 @@
       this.DataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.DataGridView.EnableHeadersVisualStyles = false;
       this.DataGridView.MultiSelect = false;
-      this.DataGridView.Name = "EditBooks";
+      this.DataGridView.Name = "DataGridView";
       this.DataGridView.RowHeadersVisible = false;
       this.DataGridView.RowTemplate.Height = 28;
       this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -226,29 +226,6 @@
       this.DataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGridView_CellFormatting);
       this.DataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_CellMouseDown);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
-      // 
-      // ColumnHasMemo
-      // 
-      this.ColumnHasMemo.DataPropertyName = "HasMemo";
-      resources.ApplyResources(this.ColumnHasMemo, "ColumnHasMemo");
-      this.ColumnHasMemo.Name = "ColumnHasMemo";
-      this.ColumnHasMemo.ReadOnly = true;
-      this.ColumnHasMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-      // 
-      // ColumnMemo
-      // 
-      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnMemo.DataPropertyName = "Memo";
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle3;
-      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
-      this.ColumnMemo.Name = "ColumnMemo";
-      this.ColumnMemo.ReadOnly = true;
-      this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-      this.ColumnMemo.Text = "...";
-      this.ColumnMemo.UseColumnTextForButtonValue = true;
       // 
       // ColumnNumber
       // 
@@ -283,6 +260,29 @@
       resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
       this.ColumnTranslation.Name = "ColumnTranslation";
       this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnHasMemo
+      // 
+      this.ColumnHasMemo.DataPropertyName = "HasMemo";
+      this.ColumnHasMemo.Name = "ColumnHasMemo";
+      this.ColumnHasMemo.ReadOnly = true;
+      this.ColumnHasMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+      resources.ApplyResources(this.ColumnHasMemo, "ColumnHasMemo");
+      // 
+      // ColumnMemo
+      // 
+      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnMemo.DataPropertyName = "Memo";
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
+      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle3;
+      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
+      this.ColumnMemo.Name = "ColumnMemo";
+      this.ColumnMemo.ReadOnly = true;
+      this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+      this.ColumnMemo.Text = "...";
+      this.ColumnMemo.UseColumnTextForButtonValue = true;
       // 
       // BookRowBindingSource
       // 
