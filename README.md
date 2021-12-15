@@ -158,7 +158,8 @@ In this case, one verse at a time should be used.
 | F7 or Shift + Ctrl + F | Go to reference |
 | F9 or Ctrl + R | Refresh |
 | Ctrl + B | Books board |
-| Ctrl + B | Parashot boars |
+| Ctrl + B | Parashot board |
+| Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
 | Ctrl + G | Open the grammar guide |
@@ -261,6 +262,7 @@ In this case, one verse at a time should be used.
 - Add command line options.
 - Change web check update to use GitHub as an alternative if author's website is down.
 - Improve search options.
+- Improve import console.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.
