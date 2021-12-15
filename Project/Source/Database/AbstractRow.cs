@@ -49,7 +49,7 @@ public abstract class AbstractRow : INotifyPropertyChanged
       NotifyPropertyChanged(nameof(ID));
     }
   }
-  private Guid _ID = Guid.NewGuid();
+  private Guid _ID;
 
   [NotNull]
   public int Number

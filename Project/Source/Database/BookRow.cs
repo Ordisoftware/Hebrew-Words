@@ -32,7 +32,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Original));
     }
   }
-  private string _Original = string.Empty;
+  private string _Original;
 
   [NotNull]
   public string Hebrew
@@ -45,7 +45,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew = string.Empty;
+  private string _Hebrew;
 
   [NotNull]
   public string Name
@@ -58,7 +58,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Name));
     }
   }
-  private string _Name = string.Empty;
+  private string _Name;
 
   [NotNull]
   public string CommonName
@@ -71,7 +71,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(CommonName));
     }
   }
-  private string _CommonName = string.Empty;
+  private string _CommonName;
 
   [NotNull]
   public string Translation
@@ -84,7 +84,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation = string.Empty;
+  private string _Translation;
 
   [NotNull]
   public string Lettriq
@@ -97,7 +97,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Lettriq));
     }
   }
-  private string _Lettriq = string.Empty;
+  private string _Lettriq;
 
   [NotNull]
   public string Memo
@@ -110,7 +110,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Memo));
     }
   }
-  private string _Memo = string.Empty;
+  private string _Memo;
 
   public bool HasMemo => !Memo.IsNullOrEmpty();
 

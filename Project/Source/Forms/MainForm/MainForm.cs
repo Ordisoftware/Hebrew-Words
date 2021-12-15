@@ -1020,6 +1020,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     if ( TextBoxMutex ) return;
     DisableChapterPos = true;
   }
@@ -1031,6 +1032,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     NeedUpdateCurrentReference = true;
   }
 
@@ -1042,6 +1044,7 @@ partial class MainForm : Form
   private void SelectVerse_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( IsGoToRunning ) return;
+    if ( Globals.IsLoadingData ) return;
     if ( Globals.IsRendering ) return;
     if ( Globals.IsExiting ) return;
     if ( NeedUpdateCurrentReference ) return;
@@ -1059,6 +1062,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void BookRowBindingSource_PositionChanged(object sender, EventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     UpdateCurrentReference();
   }
 
@@ -1069,6 +1073,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ChaptersBindingSource_PositionChanged(object sender, EventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     if ( DisableChapterPos )
       DisableChapterPos = false;
     else
@@ -1082,6 +1087,7 @@ partial class MainForm : Form
   /// <param name="e">List changed event information.</param>
   private void BookRowBindingSource_ListChanged(object sender, ListChangedEventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     NeedUpdateCurrentReference = true;
   }
 
@@ -1092,6 +1098,7 @@ partial class MainForm : Form
   /// <param name="e">List changed event information.</param>
   private void ChaptersBindingSource_ListChanged(object sender, ListChangedEventArgs e)
   {
+    if ( Globals.IsLoadingData ) return;
     NeedUpdateCurrentReference = true;
   }
 
