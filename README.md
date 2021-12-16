@@ -125,7 +125,7 @@ In this case, one verse at a time should be used.
 
 When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
 
-When disabled, top menu painting may cause latency.
+When disabled, top menu painting may cause latency, and dynamic controls can be generated slowly the larger the number.
 
 #### What are command-line options?
 
