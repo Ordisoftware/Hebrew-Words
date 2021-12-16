@@ -1302,6 +1302,11 @@ partial class MainForm : Form
   {
     if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
       HebrewTools.OpenHebrewLetters(controlWord.Reference?.Word?.Hebrew, Settings.HebrewLettersExe);
+    else
+    if ( Settings.CurrentView == ViewMode.Search && !EditSearchWord.InputText.IsEmpty() )
+      HebrewTools.OpenHebrewLetters(EditSearchWord.InputText, Settings.HebrewLettersExe);
+    else
+      HebrewTools.OpenHebrewLetters(string.Empty, Settings.HebrewLettersExe);
   }
 
   /// <summary>

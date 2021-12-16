@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelMainOuter = new System.Windows.Forms.Panel();
@@ -57,9 +58,9 @@
       this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
       this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
       this.SelectFilterVerse = new System.Windows.Forms.ComboBox();
-      this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource();
-      this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource();
-      this.FilterBooksBindingSource = new System.Windows.Forms.BindingSource();
+      this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.FilterBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectFilterChapter = new System.Windows.Forms.ComboBox();
       this.SelectFilterBook = new System.Windows.Forms.ComboBox();
       this.LabelFilterBook = new System.Windows.Forms.Label();
@@ -114,14 +115,14 @@
       this.EditELS50HScrollBar = new System.Windows.Forms.HScrollBar();
       this.SelectChapterNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectChapter = new System.Windows.Forms.ComboBox();
-      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource();
-      this.BooksBindingSource = new System.Windows.Forms.BindingSource();
+      this.ChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectBookNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectBook = new System.Windows.Forms.ComboBox();
       this.ActionSelectRenderAllVersesKeepHelp = new System.Windows.Forms.Button();
       this.SelectVerseNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectVerse = new System.Windows.Forms.ComboBox();
-      this.VersesBindingSource = new System.Windows.Forms.BindingSource();
+      this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectRenderAllVersesKeep = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
@@ -147,7 +148,7 @@
       this.LabelTitleReferenceName = new System.Windows.Forms.Label();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelProgress = new System.Windows.Forms.Label();
-      this.TimerTooltip = new System.Windows.Forms.Timer();
+      this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.SepExit = new System.Windows.Forms.ToolStripSeparator();
@@ -189,8 +190,9 @@
       this.ActionViewBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,8 +225,8 @@
       this.SaveFileDialogDB = new System.Windows.Forms.SaveFileDialog();
       this.OpenFileDialogDB = new System.Windows.Forms.OpenFileDialog();
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
-      this.TimerAutoSave = new System.Windows.Forms.Timer();
-      this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip();
+      this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
+      this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionVerseReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -235,14 +237,15 @@
       this.ActionGoToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCountOccurences = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCountRootOccurences = new System.Windows.Forms.ToolStripMenuItem();
@@ -250,10 +253,9 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.WordsBindingSource = new System.Windows.Forms.BindingSource();
-      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.ActionSearchWordOpenInLetters = new System.Windows.Forms.Button();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -629,6 +631,7 @@
       // 
       // PanelSearchFiltersRight
       // 
+      this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchWordOpenInLetters);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInRemoveAll);
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchInAddAll);
       this.PanelSearchFiltersRight.Controls.Add(this.SelectSearchInBook);
@@ -1612,17 +1615,22 @@
       this.toolStripSeparator6.Name = "toolStripSeparator6";
       resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
       // 
-      // ActionShowGrammarGuide
-      // 
-      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
-      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
-      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
       // toolStripSeparator16
       // 
@@ -1968,17 +1976,22 @@
       this.MenuSeparator2.Name = "MenuSeparator2";
       resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
-      // ActionShowGrammarGuide2
-      // 
-      resources.ApplyResources(this.ActionShowGrammarGuide2, "ActionShowGrammarGuide2");
-      this.ActionShowGrammarGuide2.Name = "ActionShowGrammarGuide2";
-      this.ActionShowGrammarGuide2.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
       // ActionOpenHebrewLetters2
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
       this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
       this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
+      // ActionShowGrammarGuide2
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide2, "ActionShowGrammarGuide2");
+      this.ActionShowGrammarGuide2.Name = "ActionShowGrammarGuide2";
+      this.ActionShowGrammarGuide2.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
       // toolStripSeparator14
       // 
@@ -2023,15 +2036,13 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // toolStripSeparator3
+      // ActionSearchWordOpenInLetters
       // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-      // 
-      // toolStripSeparator7
-      // 
-      this.toolStripSeparator7.Name = "toolStripSeparator7";
-      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      this.ActionSearchWordOpenInLetters.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchWordOpenInLetters, "ActionSearchWordOpenInLetters");
+      this.ActionSearchWordOpenInLetters.Name = "ActionSearchWordOpenInLetters";
+      this.ActionSearchWordOpenInLetters.UseVisualStyleBackColor = true;
+      this.ActionSearchWordOpenInLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // MainForm
       // 
@@ -2326,6 +2337,7 @@
     private Panel PanelSeparator;
     private ToolStripSeparator toolStripSeparator7;
     private ToolStripSeparator toolStripSeparator3;
+    private Button ActionSearchWordOpenInLetters;
   }
 }
 
