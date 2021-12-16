@@ -121,6 +121,12 @@ Due to Windows Forms limitation inherited from 16-bits APIs, chapters having mor
 
 In this case, one verse at a time should be used.
 
+#### What is the Windows double-buffering?
+
+When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
+
+When disabled, top menu painting may cause latency.
+
 #### What are command-line options?
 
 - Change interface language (does not change the meanings of letters unless restoring them):
@@ -214,7 +220,7 @@ In this case, one verse at a time should be used.
 
 ## Changelog
 
-#### In progress - Version 3.0
+#### In progress for early 2022 - Version 3.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
@@ -287,7 +293,7 @@ In this case, one verse at a time should be used.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
 - Update setup for Framework .NET 4.8
-- Update application's icons.
+- Update hebrew applications' icons.
 - Update web links.
 - Update help.
 
