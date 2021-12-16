@@ -387,6 +387,7 @@ partial class ParashotForm : Form
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
   {
+    if ( e.RowIndex < 0 || e.ColumnIndex < 0 ) return;
     DataGridView.BeginEdit(false);
   }
 
