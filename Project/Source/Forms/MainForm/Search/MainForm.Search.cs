@@ -47,6 +47,7 @@ partial class MainForm
                                    && EditSearchTranslation.Text.Length >= 2 )
                               || ( SelectSearchType.SelectedTab == SelectSearchTypeVerses );
       ActionSearchClear.Enabled = ActionSearchRun.Enabled;
+      ActionSearchWordOpenInLetters.Enabled = ActionSearchRun.Enabled;
       ActionNavigateSearchFirst.Enabled = SearchResultsCount > 0 && PagingCurrent != 1;
       ActionSearchNavigatePrevious.Enabled = SearchResultsCount > 0 && PagingCurrent > 1;
       ActionSearchNavigateNext.Enabled = SearchResultsCount > 0 && PagingCurrent < PagingCount;
