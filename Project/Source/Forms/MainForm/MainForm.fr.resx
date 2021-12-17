@@ -584,7 +584,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>318, 22</value>
   </data>
   <data name="ActionWordSearchOnline.Text" xml:space="preserve">
-    <value>Recherche en ligne</value>
+    <value>Chercher en ligne</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 6</value>
@@ -593,13 +593,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>318, 22</value>
   </data>
   <data name="ActionSearchTranslated.Text" xml:space="preserve">
-    <value>Recherche traduction</value>
+    <value>Chercher les traduits</value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>318, 22</value>
   </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
-    <value>Recherche dans la base de données</value>
+    <value>Chercher dans la base de données</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 6</value>

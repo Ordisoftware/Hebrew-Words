@@ -73,6 +73,7 @@
       this.PanelViewSearchSeparator = new System.Windows.Forms.Panel();
       this.PanelSearchFilters = new System.Windows.Forms.Panel();
       this.PanelSearchFiltersRight = new System.Windows.Forms.Panel();
+      this.ActionSearchWordOpenInLetters = new System.Windows.Forms.Button();
       this.ActionSearchInRemoveAll = new System.Windows.Forms.Button();
       this.ActionSearchInAddAll = new System.Windows.Forms.Button();
       this.SelectSearchInBook = new System.Windows.Forms.ComboBox();
@@ -191,7 +192,6 @@
       this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
@@ -242,20 +242,18 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCountOccurences = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCountRootOccurences = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCountOccurences = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCountRootOccurences = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
-      this.ActionSearchWordOpenInLetters = new System.Windows.Forms.Button();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -648,6 +646,14 @@
       this.PanelSearchFiltersRight.Controls.Add(this.ActionSearchClear);
       resources.ApplyResources(this.PanelSearchFiltersRight, "PanelSearchFiltersRight");
       this.PanelSearchFiltersRight.Name = "PanelSearchFiltersRight";
+      // 
+      // ActionSearchWordOpenInLetters
+      // 
+      this.ActionSearchWordOpenInLetters.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSearchWordOpenInLetters, "ActionSearchWordOpenInLetters");
+      this.ActionSearchWordOpenInLetters.Name = "ActionSearchWordOpenInLetters";
+      this.ActionSearchWordOpenInLetters.UseVisualStyleBackColor = true;
+      this.ActionSearchWordOpenInLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // ActionSearchInRemoveAll
       // 
@@ -1584,9 +1590,8 @@
             this.ActionViewBooksBoard,
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
-            this.ActionOpenHebrewLetters,
-            this.toolStripSeparator7,
             this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
@@ -1620,11 +1625,6 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
-      // toolStripSeparator7
-      // 
-      this.toolStripSeparator7.Name = "toolStripSeparator7";
-      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
       // 
       // ActionShowGrammarGuide
       // 
@@ -1935,17 +1935,16 @@
             this.toolStripSeparator10,
             this.ActionSearchTranslated,
             this.ActionSearchWord,
-            this.MenuSeparator2,
-            this.ActionOpenHebrewLetters2,
-            this.toolStripSeparator3,
+            this.toolStripSeparator8,
             this.ActionShowGrammarGuide2,
+            this.ActionOpenHebrewLetters2,
             this.toolStripSeparator14,
-            this.ActionCountOccurences,
-            this.ActionCountRootOccurences,
-            this.MenuSeparator1,
             this.ActionCopyFontChars,
             this.ActionCopyUnicodeChars,
-            this.ActionCopyWordTranslation});
+            this.ActionCopyWordTranslation,
+            this.toolStripSeparator9,
+            this.ActionCountOccurences,
+            this.ActionCountRootOccurences});
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
@@ -1971,21 +1970,16 @@
       this.ActionSearchWord.Name = "ActionSearchWord";
       this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWord_Click);
       // 
-      // MenuSeparator2
+      // toolStripSeparator8
       // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
       // ActionOpenHebrewLetters2
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
       this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
       this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionShowGrammarGuide2
       // 
@@ -1997,21 +1991,6 @@
       // 
       this.toolStripSeparator14.Name = "toolStripSeparator14";
       resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
-      // 
-      // ActionCountOccurences
-      // 
-      resources.ApplyResources(this.ActionCountOccurences, "ActionCountOccurences");
-      this.ActionCountOccurences.Name = "ActionCountOccurences";
-      // 
-      // ActionCountRootOccurences
-      // 
-      resources.ApplyResources(this.ActionCountRootOccurences, "ActionCountRootOccurences");
-      this.ActionCountRootOccurences.Name = "ActionCountRootOccurences";
-      // 
-      // MenuSeparator1
-      // 
-      this.MenuSeparator1.Name = "MenuSeparator1";
-      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       // 
       // ActionCopyFontChars
       // 
@@ -2031,18 +2010,25 @@
       this.ActionCopyWordTranslation.Name = "ActionCopyWordTranslation";
       this.ActionCopyWordTranslation.Click += new System.EventHandler(this.ActionCopyWordTranslation_Click);
       // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
+      // ActionCountOccurences
+      // 
+      resources.ApplyResources(this.ActionCountOccurences, "ActionCountOccurences");
+      this.ActionCountOccurences.Name = "ActionCountOccurences";
+      // 
+      // ActionCountRootOccurences
+      // 
+      resources.ApplyResources(this.ActionCountRootOccurences, "ActionCountRootOccurences");
+      this.ActionCountRootOccurences.Name = "ActionCountRootOccurences";
+      // 
       // WordsBindingSource
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // ActionSearchWordOpenInLetters
-      // 
-      this.ActionSearchWordOpenInLetters.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSearchWordOpenInLetters, "ActionSearchWordOpenInLetters");
-      this.ActionSearchWordOpenInLetters.Name = "ActionSearchWordOpenInLetters";
-      this.ActionSearchWordOpenInLetters.UseVisualStyleBackColor = true;
-      this.ActionSearchWordOpenInLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // MainForm
       // 
@@ -2230,8 +2216,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripMenuItem ActionViewBibleStatistics;
     private System.Windows.Forms.ToolStripMenuItem ActionViewBooksBoard;
-    private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
-    private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     private System.Windows.Forms.ToolStripSeparator SepExit;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
@@ -2335,8 +2321,6 @@
     private Panel panel1;
     private Panel panel2;
     private Panel PanelSeparator;
-    private ToolStripSeparator toolStripSeparator7;
-    private ToolStripSeparator toolStripSeparator3;
     private Button ActionSearchWordOpenInLetters;
   }
 }

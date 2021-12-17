@@ -161,4 +161,9 @@ partial class EditBooksForm : Form
         book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number ));
   }
 
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    Program.GrammarGuideForm.Popup();
+  }
+
 }

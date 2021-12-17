@@ -192,7 +192,7 @@
     <value>313, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
-    <value>Recherche en ligne</value>
+    <value>Chercher en ligne</value>
   </data>
   <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -216,13 +216,13 @@
     <value>313, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words Verset</value>
+    <value>Aller au premier verset</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Hebrew Words Recherche</value>
+    <value>Chercher dans la base de données</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -280,8 +280,5 @@
   </data>
   <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
     <value>Sauver comme source</value>
-  </data>
-  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
-    <value>Hebrew Letters Analyse</value>
   </data>
 </root>

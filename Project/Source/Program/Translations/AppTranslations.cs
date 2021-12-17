@@ -217,7 +217,7 @@ static partial class AppTranslations
     [ViewMode.Search] = new TranslationsDictionary
     {
       [Language.EN] = "Search in the Tanak",
-      [Language.FR] = "Recherche dans le Tanak"
+      [Language.FR] = "Chercher dans le Tanak"
     }
   };
 
