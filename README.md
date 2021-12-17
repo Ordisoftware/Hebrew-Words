@@ -293,7 +293,7 @@ When disabled, top menu painting may cause latency, and dynamic controls can be 
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
 - Update setup for Framework .NET 4.8
-- Update hebrew applications' icons.
+- Update Hebrew applications' icons.
 - Update web links.
 - Update help.
 
