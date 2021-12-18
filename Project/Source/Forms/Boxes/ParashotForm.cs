@@ -59,6 +59,9 @@ partial class ParashotForm : Form
     InitializeMenu();
     Icon = Globals.MainForm.Icon;
     ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
+    // NOP
+    // NOP
+    // NOP
     DataGridView.Visible = false;
     this.InitDropDowns();
   }
@@ -190,6 +193,7 @@ partial class ParashotForm : Form
 
   private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
   {
+    Timer.Stop();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -331,6 +335,20 @@ partial class ParashotForm : Form
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
 
+  private void BindingSource_DataSourceChanged(object sender, EventArgs e)
+  {
+    if ( DataGridView.DataSource == null ) return;
+    if ( HebrewDatabase.Instance.Parashot == null ) return;
+    UpdateStats();
+  }
+
+  private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+  {
+    e.ThrowException = false; // TODO Investigate error on Dispose
+    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
+    //e.Exception.Manage();
+  }
+
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
   {
     if ( e.Control && e.KeyCode == Keys.S )
@@ -342,13 +360,6 @@ partial class ParashotForm : Form
       return;
     e.Handled = true;
     e.SuppressKeyPress = true;
-  }
-
-  private void BindingSource_DataSourceChanged(object sender, EventArgs e)
-  {
-    if ( DataGridView.DataSource == null ) return;
-    if ( HebrewDatabase.Instance.Parashot == null ) return;
-    UpdateStats();
   }
 
   private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -456,12 +467,6 @@ partial class ParashotForm : Form
   private void ActionShowDescription_Click(object sender, EventArgs e)
   {
     MainForm.UserParashot.ShowDescription(CurrentDataBoundItem, false, () => Run(CurrentDataBoundItem));
-  }
-
-  private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
-  {
-    DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-    e.Exception.Manage();
   }
 
 }
