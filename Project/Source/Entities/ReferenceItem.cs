@@ -36,7 +36,8 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
     }
     catch ( Exception ex )
     {
-      throw new Exception(AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message), ex);
+      string msg = AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message);
+      throw new ArgumentException(msg, ex);
     }
   }
 
@@ -80,7 +81,30 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
 
   public ReferenceItem(string reference)
   {
-    int[] items = reference.Split('.').Select(int.Parse).ToArray();
+    int[] items = null;
+    int countSpaces = reference.Count(c => c == ' ');
+    int countPoints = reference.Count(c => c == '.');
+    if ( countSpaces == 0 && countPoints == 2 )
+      items = reference.Split('.').Select(int.Parse).ToArray();
+    else
+    if ( ( countSpaces == 1 || countSpaces == 2 ) && countPoints == 1 )
+      try
+      {
+        items = new int[3];
+        var parts1 = reference.Split(' ');
+        var parts2 = parts1.Last().Split('.');
+        items[1] = int.Parse(parts2[0]);
+        items[2] = int.Parse(parts2[1]);
+        string book = countSpaces == 1 ? parts1[0] : parts1[0] + " " + parts1[1];
+        items[0] = ApplicationDatabase.Instance.Books.First(b => b.Name.RawContains(book)
+                                                              || b.CommonName.RawContains(book)).Number;
+      }
+      catch ( Exception ex )
+      {
+        throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference), ex);
+      }
+    else
+      throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
     Initialize(items[0], items[1], items[2], 0);
   }
 
