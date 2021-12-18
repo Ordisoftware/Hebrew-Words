@@ -1142,7 +1142,7 @@ partial class MainForm : Form
       var referenceOld = CurrentReference == null ? null : new ReferenceItem(CurrentReference);
       var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                                           ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1/* TODO ???? 1*/);
+                                           ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
       if ( referenceOld == referenceNew ) return;
       ActionSave.PerformClick();
       GoTo(referenceNew, true);

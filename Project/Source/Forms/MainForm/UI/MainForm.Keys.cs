@@ -34,6 +34,13 @@ partial class MainForm
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
   }
 
+  private static readonly ViewMode[] NagigableViews = new[]
+  {
+    ViewMode.ChapterVerses,
+    ViewMode.ChapterTranslation,
+    ViewMode.ChapterOriginal
+  };
+
   /// <summary>
   /// Process the command key.
   /// </summary>
@@ -135,19 +142,41 @@ partial class MainForm
           ActionSearchWord.PerformClick();
         break;
       // Verse navigation
+      case Keys.Shift | Keys.Alt | Keys.Up:
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Chapter.Number > 1 )
+          {
+            var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number - 1);
+            if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
+          }
+        break;
+      case Keys.Shift | Keys.Alt | Keys.Down:
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
+          {
+            var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
+            if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.First()));
+          }
+        break;
+      case Keys.Shift | Keys.Alt | Keys.Left:
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Verse.Number > 1 )
+            GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
+        break;
+      case Keys.Shift | Keys.Alt | Keys.Right:
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+        break;
       case Keys.Alt | Keys.Left:
-        if ( Settings.CurrentView == ViewMode.ChapterVerses
-          || Settings.CurrentView == ViewMode.ChapterTranslation
-          || Settings.CurrentView == ViewMode.ChapterOriginal )
-          // TODO check verse number 0 and Count - 1
-          GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Verse.Number > 1 )
+            GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
         break;
       case Keys.Alt | Keys.Right:
-        if ( Settings.CurrentView == ViewMode.ChapterVerses
-          || Settings.CurrentView == ViewMode.ChapterTranslation
-          || Settings.CurrentView == ViewMode.ChapterOriginal )
-          // TODO check verse number 0 and Count - 1
-          GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
+        if ( NagigableViews.Contains(Settings.CurrentView) )
+          if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
         break;
       // Scrolling bounds
       case Keys.Alt | Keys.Home:

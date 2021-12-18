@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
+sealed public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<ReferenceItem>
 {
 
   public BookRow Book { get; set; }
