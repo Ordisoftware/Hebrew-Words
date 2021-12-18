@@ -176,6 +176,10 @@ When disabled, top menu painting may cause latency, and dynamic controls can be 
 | Ctrl + S | Save changes |
 | Alt + Left | Previous verse |
 | Alt + Right | Next verse |
+| Shift + Alt + Left | First verse |
+| Shift + Alt + Right | Next verse |
+| Shift + Alt + Up | Last verse of previous chapter |
+| Shift + Alt + Down | First verse of next chapter |
 | Alt + Home | Reach the beginning of the view |
 | Alt + End | Reach the ending of the view |
 | Alt + PageUp | Scroll the view up |

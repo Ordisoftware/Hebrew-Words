@@ -154,17 +154,6 @@
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.ToolStripSeparatorExit = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewVerseFiltered = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
-      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionBookmarks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAddBookmark = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -177,6 +166,16 @@
       this.ActionHistory = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorHistory = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGoToReference = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewVerses = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewTranslations = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewVerseFiltered = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewSearch = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewRawText = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewELS50 = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionDatabase = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,6 +186,7 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
+      this.ActionRefresh = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -1058,8 +1058,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
       this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1337,101 +1337,6 @@
       this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // ActionViewVerses
-      // 
-      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
-      this.ActionViewVerses.Name = "ActionViewVerses";
-      this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
-      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionViewTranslations
-      // 
-      this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewTranslations, "ActionViewTranslations");
-      this.ActionViewTranslations.Name = "ActionViewTranslations";
-      this.ActionViewTranslations.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
-      this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionViewVerseFiltered
-      // 
-      this.ActionViewVerseFiltered.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewVerseFiltered, "ActionViewVerseFiltered");
-      this.ActionViewVerseFiltered.Name = "ActionViewVerseFiltered";
-      this.ActionViewVerseFiltered.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewVerseFiltered.Click += new System.EventHandler(this.ActionViewFilters_Click);
-      this.ActionViewVerseFiltered.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewVerseFiltered.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionViewSearch
-      // 
-      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
-      this.ActionViewSearch.Name = "ActionViewSearch";
-      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
-      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // toolStripSeparator17
-      // 
-      this.toolStripSeparator17.Name = "toolStripSeparator17";
-      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
-      // 
-      // ActionViewRawText
-      // 
-      this.ActionViewRawText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewRawText, "ActionViewRawText");
-      this.ActionViewRawText.Name = "ActionViewRawText";
-      this.ActionViewRawText.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewRawText.Click += new System.EventHandler(this.ActionViewRawText_Click);
-      this.ActionViewRawText.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewRawText.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionViewELS50
-      // 
-      this.ActionViewELS50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewELS50, "ActionViewELS50");
-      this.ActionViewELS50.Name = "ActionViewELS50";
-      this.ActionViewELS50.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
-      this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // toolStripSeparator18
-      // 
-      this.toolStripSeparator18.Name = "toolStripSeparator18";
-      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
-      // 
-      // ActionGoToReference
-      // 
-      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
-      this.ActionGoToReference.Name = "ActionGoToReference";
-      this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
-      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // ActionRefresh
-      // 
-      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
-      this.ActionRefresh.Name = "ActionRefresh";
-      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
-      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
-      // 
-      // toolStripSeparator13
-      // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
-      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
-      // 
       // ActionBookmarks
       // 
       this.ActionBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1512,6 +1417,91 @@
       this.SeparatorHistory.Name = "SeparatorHistory";
       resources.ApplyResources(this.SeparatorHistory, "SeparatorHistory");
       // 
+      // ActionGoToReference
+      // 
+      this.ActionGoToReference.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionGoToReference, "ActionGoToReference");
+      this.ActionGoToReference.Name = "ActionGoToReference";
+      this.ActionGoToReference.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionGoToReference.Click += new System.EventHandler(this.ActionGoToVerse_Click);
+      this.ActionGoToReference.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionGoToReference.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // toolStripSeparator13
+      // 
+      this.toolStripSeparator13.Name = "toolStripSeparator13";
+      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+      // 
+      // ActionViewVerses
+      // 
+      this.ActionViewVerses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewVerses, "ActionViewVerses");
+      this.ActionViewVerses.Name = "ActionViewVerses";
+      this.ActionViewVerses.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewVerses.Click += new System.EventHandler(this.ActionViewVerses_Click);
+      this.ActionViewVerses.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewVerses.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionViewTranslations
+      // 
+      this.ActionViewTranslations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewTranslations, "ActionViewTranslations");
+      this.ActionViewTranslations.Name = "ActionViewTranslations";
+      this.ActionViewTranslations.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewTranslations.Click += new System.EventHandler(this.ActionViewTranslations_Click);
+      this.ActionViewTranslations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewTranslations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionViewVerseFiltered
+      // 
+      this.ActionViewVerseFiltered.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewVerseFiltered, "ActionViewVerseFiltered");
+      this.ActionViewVerseFiltered.Name = "ActionViewVerseFiltered";
+      this.ActionViewVerseFiltered.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewVerseFiltered.Click += new System.EventHandler(this.ActionViewFilters_Click);
+      this.ActionViewVerseFiltered.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewVerseFiltered.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionViewSearch
+      // 
+      this.ActionViewSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewSearch, "ActionViewSearch");
+      this.ActionViewSearch.Name = "ActionViewSearch";
+      this.ActionViewSearch.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewSearch.Click += new System.EventHandler(this.ActionViewSearch_Click);
+      this.ActionViewSearch.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewSearch.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // toolStripSeparator17
+      // 
+      this.toolStripSeparator17.Name = "toolStripSeparator17";
+      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
+      // 
+      // ActionViewRawText
+      // 
+      this.ActionViewRawText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewRawText, "ActionViewRawText");
+      this.ActionViewRawText.Name = "ActionViewRawText";
+      this.ActionViewRawText.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewRawText.Click += new System.EventHandler(this.ActionViewRawText_Click);
+      this.ActionViewRawText.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewRawText.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionViewELS50
+      // 
+      this.ActionViewELS50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewELS50, "ActionViewELS50");
+      this.ActionViewELS50.Name = "ActionViewELS50";
+      this.ActionViewELS50.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewELS50.Click += new System.EventHandler(this.ActionViewELS50_Click);
+      this.ActionViewELS50.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewELS50.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // toolStripSeparator18
+      // 
+      this.toolStripSeparator18.Name = "toolStripSeparator18";
+      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+      // 
       // ActionDatabase
       // 
       this.ActionDatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1583,6 +1573,16 @@
       this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
       this.ActionSave.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionSave.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      // 
+      // ActionRefresh
+      // 
+      this.ActionRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionRefresh, "ActionRefresh");
+      this.ActionRefresh.Name = "ActionRefresh";
+      this.ActionRefresh.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionRefresh.Click += new System.EventHandler(this.ActionRefresh_Click);
+      this.ActionRefresh.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionRefresh.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator20
       // 
