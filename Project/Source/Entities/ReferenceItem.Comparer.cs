@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-sealed partial class ReferenceItem
+public partial class ReferenceItem
 {
 
   public sealed class ReferenceComparer : IEqualityComparer<ReferenceItem>

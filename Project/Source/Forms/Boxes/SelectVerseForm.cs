@@ -35,7 +35,7 @@ partial class SelectVerseForm : Form
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    DisplayManager.ShowInformation(AppTranslations.FindVerseNotice.GetLang());
+    DisplayManager.ShowInformation(AppTranslations.SearchVerseNotice.GetLang());
   }
 
 }

@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// <summary>
 /// Provides reference item
 /// </summary>
-partial class ReferenceItem
+public partial class ReferenceItem
 {
 
   #region GetHashCode

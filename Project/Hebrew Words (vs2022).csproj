@@ -401,6 +401,7 @@
     <Compile Include="Source\Database\BookRow.cs" />
     <Compile Include="Source\Entities\JsonStrong.cs" />
     <Compile Include="Source\Entities\JsonVerse.cs" />
+    <Compile Include="Source\Entities\ReferenceItem.Initialize.cs" />
     <Compile Include="Source\Entities\ReferenceItem.ToString.cs" />
     <Compile Include="Source\Entities\ReferenceItem.Operators.cs" />
     <Compile Include="Source\Enums\HebrewWordClickAction.cs" />

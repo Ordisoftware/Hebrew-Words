@@ -25,47 +25,30 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
   public VerseRow Verse { get; set; }
   public WordRow Word { get; set; }
 
-  private void Initialize(int book, int chapter, int verse, int word)
-  {
-    try
-    {
-      Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
-      Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
-      Verse = Chapter?.Verses?.Find(v => v.Number == verse);
-      Word = word == 0 ? null : Verse?.Words?.Find(w => w.Number == word);
-    }
-    catch ( Exception ex )
-    {
-      string msg = AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message);
-      throw new ArgumentException(msg, ex);
-    }
-  }
-
   private ReferenceItem()
   {
   }
 
   public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse)
-  : this(book, chapter, verse, null)
-  {
-  }
-
-  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse, WordRow word)
   {
     Book = book;
     Chapter = chapter;
     Verse = verse;
-    Word = word;
   }
 
-  public ReferenceItem(ReferenceItem reference, WordRow word)
-  : this(reference)
+  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse, WordRow word)
+  : this(book, chapter, verse)
   {
     Word = word;
   }
 
-  public ReferenceItem(ReferenceItem item)
-  : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
+  public ReferenceItem(ReferenceItem reference)
+  : this(reference.Book, reference.Chapter, reference.Verse, reference.Word)
+  {
+  }
+
+  public ReferenceItem(ReferenceItem reference, WordRow word)
+  : this(reference.Book, reference.Chapter, reference.Verse, word)
   {
   }
 
@@ -81,30 +64,7 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
 
   public ReferenceItem(string reference)
   {
-    int[] items = null;
-    int countSpaces = reference.Count(c => c == ' ');
-    int countPoints = reference.Count(c => c == '.');
-    if ( countSpaces == 0 && countPoints == 2 )
-      items = reference.Split('.').Select(int.Parse).ToArray();
-    else
-    if ( ( countSpaces == 1 || countSpaces == 2 ) && countPoints == 1 )
-      try
-      {
-        items = new int[3];
-        var parts1 = reference.Split(' ');
-        var parts2 = parts1.Last().Split('.');
-        items[1] = int.Parse(parts2[0]);
-        items[2] = int.Parse(parts2[1]);
-        string book = countSpaces == 1 ? parts1[0] : parts1[0] + " " + parts1[1];
-        items[0] = ApplicationDatabase.Instance.Books.First(b => b.Name.RawContains(book)
-                                                              || b.CommonName.RawContains(book)).Number;
-      }
-      catch ( Exception ex )
-      {
-        throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference), ex);
-      }
-    else
-      throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
+    var items = Analyze(reference);
     Initialize(items[0], items[1], items[2], 0);
   }
 
