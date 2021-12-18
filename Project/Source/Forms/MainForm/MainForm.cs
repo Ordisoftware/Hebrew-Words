@@ -569,21 +569,13 @@ partial class MainForm : Form
     if ( Globals.IsExiting ) return;
     ActionRefresh.Visible = false;
     ActionRefresh.Visible = true;
-    //ToolStrip.Enabled = false;
-    try
-    {
-      ActionSave.PerformClick();
-      int book = CurrentReference.Book.Number;
-      int chapter = CurrentReference.Chapter.Number;
-      int verse = CurrentReference.Verse?.Number ?? 1;
-      VerseControl.ResetMetricsRequired = true;
-      WordControl.ResetMetricsRequired = true;
-      GoTo(book, chapter, verse, true);
-    }
-    finally
-    {
-      //ToolStrip.Enabled = true;
-    }
+    ActionSave.PerformClick();
+    int book = CurrentReference.Book.Number;
+    int chapter = CurrentReference.Chapter.Number;
+    int verse = CurrentReference.Verse?.Number ?? 1;
+    VerseControl.ResetMetricsRequired = true;
+    WordControl.ResetMetricsRequired = true;
+    GoTo(book, chapter, verse, true);
   }
 
   /// <summary>

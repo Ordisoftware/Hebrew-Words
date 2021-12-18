@@ -23,7 +23,12 @@ partial class SelectReferenceForm : Form
     while ( true )
       try
       {
-        return Run(form);
+        var reference = Run(form);
+        if ( reference == null ) return null;
+        if ( reference.Book == null ) throw new Exception();
+        if ( reference.Chapter == null ) reference = new ReferenceItem(reference.Book.Number, 1, 1);
+        if ( reference.Verse == null ) reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
+        return reference;
       }
       catch
       {
@@ -48,6 +53,11 @@ partial class SelectReferenceForm : Form
     Icon = MainForm.Instance.Icon;
     FilterBooksBindingSource.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     ActiveControl = EditReference;
+  }
+
+  private void ActionHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.SearchReferenceNotice.GetLang());
   }
 
 }

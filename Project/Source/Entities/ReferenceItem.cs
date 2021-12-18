@@ -25,46 +25,30 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
   public VerseRow Verse { get; set; }
   public WordRow Word { get; set; }
 
-  private void Initialize(int book, int chapter, int verse, int word)
-  {
-    try
-    {
-      Book = ApplicationDatabase.Instance.Books?.SingleOrDefault(b => b.Number == book);
-      Chapter = Book?.Chapters?.Find(c => c.Number == chapter);
-      Verse = Chapter?.Verses?.Find(v => v.Number == verse);
-      Word = word == 0 ? null : Verse?.Words?.Find(w => w.Number == word);
-    }
-    catch ( Exception ex )
-    {
-      throw new Exception(AppTranslations.ReferenceError.GetLang(ToStringOnlyNumbersWordIncluded(), ex.Message), ex);
-    }
-  }
-
   private ReferenceItem()
   {
   }
 
   public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse)
-  : this(book, chapter, verse, null)
-  {
-  }
-
-  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse, WordRow word)
   {
     Book = book;
     Chapter = chapter;
     Verse = verse;
-    Word = word;
   }
 
-  public ReferenceItem(ReferenceItem reference, WordRow word)
-  : this(reference)
+  public ReferenceItem(BookRow book, ChapterRow chapter, VerseRow verse, WordRow word)
+  : this(book, chapter, verse)
   {
     Word = word;
   }
 
-  public ReferenceItem(ReferenceItem item)
-  : this(item.Book?.Number ?? 0, item.Chapter?.Number ?? 0, item.Verse?.Number ?? 0, item.Word?.Number ?? 0)
+  public ReferenceItem(ReferenceItem reference)
+  : this(reference.Book, reference.Chapter, reference.Verse, reference.Word)
+  {
+  }
+
+  public ReferenceItem(ReferenceItem reference, WordRow word)
+  : this(reference.Book, reference.Chapter, reference.Verse, word)
   {
   }
 
@@ -80,7 +64,7 @@ public partial class ReferenceItem : IEquatable<ReferenceItem>, IComparable<Refe
 
   public ReferenceItem(string reference)
   {
-    int[] items = reference.Split('.').Select(int.Parse).ToArray();
+    var items = Analyze(reference);
     Initialize(items[0], items[1], items[2], 0);
   }
 

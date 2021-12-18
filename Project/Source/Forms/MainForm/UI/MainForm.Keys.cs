@@ -34,10 +34,6 @@ partial class MainForm
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
   }
 
-  // TODO update keys
-
-  private static readonly ViewMode[] RotateIgnoreViews = new[] { ViewMode.ChapterOriginal, ViewMode.BookELS50 };
-
   /// <summary>
   /// Process the command key.
   /// </summary>
@@ -58,10 +54,10 @@ partial class MainForm
         return true;
       // Rotate view
       case Keys.Control | Keys.Shift | Keys.Tab:
-        SetView(Settings.CurrentView.Previous(RotateIgnoreViews));
+        SetView(Settings.CurrentView.Previous());
         return true;
       case Keys.Control | Keys.Tab:
-        SetView(Settings.CurrentView.Next(RotateIgnoreViews));
+        SetView(Settings.CurrentView.Next());
         return true;
       // View
       case Keys.F1:

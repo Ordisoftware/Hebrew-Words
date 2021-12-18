@@ -44,6 +44,7 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionHelp = new System.Windows.Forms.Button();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.LabelChapter = new System.Windows.Forms.Label();
       this.SelectBook = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@ namespace Ordisoftware.Hebrew.Words
       this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.EditReference = new System.Windows.Forms.TextBox();
       this.LabelReference = new System.Windows.Forms.Label();
-      this.LabelReferenceInfo = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
@@ -82,6 +82,15 @@ namespace Ordisoftware.Hebrew.Words
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionHelp
+      // 
+      this.ActionHelp.AllowDrop = true;
+      this.ActionHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.UseVisualStyleBackColor = true;
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
       // LabelVerse
       // 
@@ -149,19 +158,13 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this.LabelReference, "LabelReference");
       this.LabelReference.Name = "LabelReference";
       // 
-      // LabelReferenceInfo
-      // 
-      resources.ApplyResources(this.LabelReferenceInfo, "LabelReferenceInfo");
-      this.LabelReferenceInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelReferenceInfo.Name = "LabelReferenceInfo";
-      // 
       // SelectReferenceForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.LabelReferenceInfo);
+      this.Controls.Add(this.ActionHelp);
       this.Controls.Add(this.EditReference);
       this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
@@ -216,7 +219,7 @@ namespace Ordisoftware.Hebrew.Words
     private BindingSource FilterVersesBindingSource;
     private TextBox EditReference;
     private Label LabelReference;
-    private Label LabelReferenceInfo;
+    private Button ActionHelp;
   }
 
 }

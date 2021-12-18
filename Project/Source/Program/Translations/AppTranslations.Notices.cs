@@ -17,7 +17,21 @@ namespace Ordisoftware.Hebrew.Words;
 static partial class AppTranslations
 {
 
-  static public readonly TranslationsDictionary FindVerseNotice = new()
+  static public readonly TranslationsDictionary SearchReferenceNotice = new()
+  {
+
+    [Language.EN] = "Usage:" + Globals.NL2 +
+                    "'[Book number].[Chapter number].[Verse number]" + Globals.NL2 +
+                    "'[Book name] [Chapter number].[Verse number]" + Globals.NL2 +
+                    "The name of the book is not case sensitive and may be partial, so the first book found is taken, such as 'Kings I' for 'King'.",
+
+    [Language.FR] = "Utilisation :" + Globals.NL2 +
+                    "'[Numéro du livre].[Numéro du chapitre].[Numéro du verset]" + Globals.NL2 +
+                    "'[Nom du livre] [Numéro du chapitre].[Numéro du verset]" + Globals.NL2 +
+                    "Le nom du livre n'est pas sensible à la casse et peut être partiel, ainsi le premier livre trouvé est pris, tel que 'Rois I' pour 'Roi'.",
+  };
+
+  static public readonly TranslationsDictionary SearchVerseNotice = new()
   {
 
     [Language.EN] = "Use 0 to go to the first:" + Globals.NL2 +
