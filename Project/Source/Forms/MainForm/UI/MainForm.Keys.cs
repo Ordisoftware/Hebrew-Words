@@ -58,10 +58,10 @@ partial class MainForm
         return true;
       // Rotate view
       case Keys.Control | Keys.Shift | Keys.Tab:
-        SetView(Settings.CurrentView.Previous(RotateIgnoreViews));
+        SetView(Settings.CurrentView.Previous(/*RotateIgnoreViews*/));
         return true;
       case Keys.Control | Keys.Tab:
-        SetView(Settings.CurrentView.Next(RotateIgnoreViews));
+        SetView(Settings.CurrentView.Next(/*RotateIgnoreViews*/));
         return true;
       // View
       case Keys.F1:
