@@ -92,6 +92,8 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -398,13 +400,15 @@
             this.toolStripSeparator3,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
+            this.toolStripSeparator4,
             this.ActionOpenHebrewWordsVerse,
             this.toolStripSeparator1,
             this.ActionSearchOnline,
+            this.toolStripSeparator7,
+            this.ActionOpenHebrewLetters,
             this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator5,
             this.ActionShowGrammarGuide,
-            this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -568,6 +572,16 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -644,5 +658,7 @@
     private ToolStripMenuItem ActionShowDescription;
     private ToolStripSeparator toolStripSeparator3;
     private ToolStripSeparator toolStripSeparator5;
+    private ToolStripSeparator toolStripSeparator4;
+    private ToolStripSeparator toolStripSeparator7;
   }
 }

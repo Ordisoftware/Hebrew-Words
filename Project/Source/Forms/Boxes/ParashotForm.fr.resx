@@ -281,4 +281,7 @@
   <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
     <value>Sauver comme source</value>
   </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyser avec Hebrew Letters</value>
+  </data>
 </root>
