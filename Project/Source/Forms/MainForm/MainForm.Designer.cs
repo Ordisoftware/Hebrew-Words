@@ -255,6 +255,7 @@
       this.ActionCountRootOccurences = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
+      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -2330,6 +2331,7 @@
     private Button ActionSearchWordOpenInLetters;
     private ToolStripSeparator toolStripSeparator3;
     private ToolStripSeparator toolStripSeparator7;
+    public SaveFileDialog SaveDataBoardDialog;
   }
 }
 

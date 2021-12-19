@@ -233,10 +233,14 @@ partial class MainForm : Form
   /// </summary>
   public void InitializeDialogsDirectory()
   {
-    OpenFileDialogDB.InitialDirectory = Settings.GetBackupDirectory();
-    SaveFileDialogDB.InitialDirectory = Settings.GetBackupDirectory();
-    SaveFileDialogMSWord.InitialDirectory = Settings.GetExportDirectory();
-    SaveFileDialogRTF.InitialDirectory = Settings.GetExportDirectory();
+    string directoryBackup = Settings.GetBackupDirectory();
+    string directoryExport = Settings.GetExportDirectory();
+    OpenFileDialogDB.InitialDirectory = directoryBackup;
+    SaveFileDialogDB.InitialDirectory = directoryBackup;
+    SaveFileDialogMSWord.InitialDirectory = directoryExport;
+    SaveFileDialogRTF.InitialDirectory = directoryExport;
+    SaveDataBoardDialog.InitialDirectory = directoryExport;
+    SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
   }
 
   /// <summary>
