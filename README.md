@@ -62,7 +62,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Download
 
-**What's new in the latest version 3.0**
+**What's new in the latest version 3**
 
 - SQLite ODBC Driver is no more needed.
 - Overall performances are optimized.
