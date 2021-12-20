@@ -178,6 +178,7 @@ static class SettingsHelper
   static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
   {
     settings.SetUpgradeFlagsOff();
+    settings.FirstLaunch = false;
     settings.FirstLaunchV3_0 = false;
   }
 

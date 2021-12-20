@@ -89,7 +89,6 @@ static partial class Program
       if ( Settings.FirstLaunchV3_0 )
       {
         Settings.SetFirstAndUpgradeFlagsOff();
-        Settings.FirstLaunch = true;
         Settings.VacuumAtStartup = true;
         Settings.CurrentView = ViewMode.ChapterVerses;
         Settings.VerseCommentaryLinesCount = 5;

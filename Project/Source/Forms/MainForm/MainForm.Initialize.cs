@@ -112,6 +112,7 @@ partial class MainForm : Form
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
     PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
+    Settings.SetFirstAndUpgradeFlagsOff();
   }
 
   /// <summary>
