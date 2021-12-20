@@ -143,28 +143,6 @@
   <data name="ActionOpen.Text" xml:space="preserve">
     <value>Go to first verse</value>
   </data>
-  <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkdJREFUOE+Vk8tPE2EUxcdokGI0MW58JO7dGVm6UaMm9C8wEAy4YeFKQgiWSmkt
-        b5W+MAoYRV0okoiRPuhY1ADiK20QsYbHoqUIQoWmQMVH+PnNtA2EbuQkZ+7kzL1n7v1yP2m/2bO4p8qF
-        Ru8iu1KhMxUz35UcJVepkdJQhK1CqUmVS5JG70yqA6fh7Vlq5Wnw50FAS4NvRo34tdR4hT50Sk1VOkmV
-        S5LSmgLT80luyCF2FPaSXewjq7hP0Mf2oldsE5QKZJq8YTV3k0GPKkb+QFzEXUVOqp1hdF1Byhrv0tZi
-        5ZbDSou1mSfPkj/TVHk2jJAysHm+0PF6nBxhUHb/A3ZLMxPBEfVbGsGRYdrtNg6a3Jkd/FSfkHXeRduD
-        x4x+8hOYSlDWHcYx8J1LzmmC86sEhwOUNLZnGtyRR3nUP4aU7+JavVkoa5R3TxGJ/8YXWsbqX0TfH1X1
-        pobGDQa6pEEa3e9DGA0G1n6tcPPNPH2hFe6NLeEYT1A3ugxCr6upXTfYuclAgV5XyepSjFLnDLZADMdE
-        goeLcFuc9Go8Rr3JmHmIaRxvfUeJycZLuRf/5CxXBhdoCCZojfzl60yUF14Zs6Vt3WDzJkoVPSwvxLhu
-        NtLX6yI6G2FuOszctwhut4dynYkfUwE+W44lTQ4Y3XH1LoiF2i3iPqOHvSaZQ1ddFFRZxDg6Ki5Xqrxo
-        bGawo1Rs7DmxNF4+2k+qJkcFc/+XTw0noPOwMMlnyH5mfZQtILfTkEdXdR4XtEcKU9qWkepIyvkHRPlN
-        143H9rUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="ActionSearchWord.Text" xml:space="preserve">
-    <value>Search in database</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 6</value>
   </data>
@@ -191,22 +169,27 @@
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
-  <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
-        aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
-        C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
-        AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
-        m815MwLfBGRCsmzKHmTNoG07vgVsHo0elCvFpx0BgGkNDnH38clx/tGsVmu+CVODgGukqpJ/pA5QdZi+
-        +V4/CyHEAR4S/cNYBkJKAAAAAElFTkSuQmCC
+        vAAADrwBlbxySQAAAkdJREFUOE+Vk8tPE2EUxcdokGI0MW58JO7dGVm6UaMm9C8wEAy4YeFKQgiWSmkt
+        b5W+MAoYRV0okoiRPuhY1ADiK20QsYbHoqUIQoWmQMVH+PnNtA2EbuQkZ+7kzL1n7v1yP2m/2bO4p8qF
+        Ru8iu1KhMxUz35UcJVepkdJQhK1CqUmVS5JG70yqA6fh7Vlq5Wnw50FAS4NvRo34tdR4hT50Sk1VOkmV
+        S5LSmgLT80luyCF2FPaSXewjq7hP0Mf2oldsE5QKZJq8YTV3k0GPKkb+QFzEXUVOqp1hdF1Byhrv0tZi
+        5ZbDSou1mSfPkj/TVHk2jJAysHm+0PF6nBxhUHb/A3ZLMxPBEfVbGsGRYdrtNg6a3Jkd/FSfkHXeRduD
+        x4x+8hOYSlDWHcYx8J1LzmmC86sEhwOUNLZnGtyRR3nUP4aU7+JavVkoa5R3TxGJ/8YXWsbqX0TfH1X1
+        pobGDQa6pEEa3e9DGA0G1n6tcPPNPH2hFe6NLeEYT1A3ugxCr6upXTfYuclAgV5XyepSjFLnDLZADMdE
+        goeLcFuc9Go8Rr3JmHmIaRxvfUeJycZLuRf/5CxXBhdoCCZojfzl60yUF14Zs6Vt3WDzJkoVPSwvxLhu
+        NtLX6yI6G2FuOszctwhut4dynYkfUwE+W44lTQ4Y3XH1LoiF2i3iPqOHvSaZQ1ddFFRZxDg6Ki5Xqrxo
+        bGawo1Rs7DmxNF4+2k+qJkcFc/+XTw0noPOwMMlnyH5mfZQtILfTkEdXdR4XtEcKU9qWkepIyvkHRPlN
+        143H9rUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
   </data>
-  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
-    <value>Analyze with Hebrew Letters</value>
+  <data name="ActionSearchWord.Text" xml:space="preserve">
+    <value>Search in database</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 6</value>
@@ -239,6 +222,23 @@
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
+        C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
+        AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
+        m815MwLfBGRCsmzKHmTNoG07vgVsHo0elCvFpx0BgGkNDnH38clx/tGsVmu+CVODgGukqpJ/pA5QdZi+
+        +V4/CyHEAR4S/cNYBkJKAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 22</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyze with Hebrew Letters</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 6</value>
@@ -329,7 +329,7 @@
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 226</value>
+    <value>224, 248</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -545,9 +545,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 500</value>
   </data>
@@ -638,12 +635,6 @@
   <data name="&gt;&gt;ActionEditMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
-    <value>BookRowBindingSource</value>
-  </data>
-  <data name="&gt;&gt;BookRowBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
     <value>ColumnNumber</value>
   </data>
@@ -685,6 +676,12 @@
   </data>
   <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
+    <value>BookRowBindingSource</value>
+  </data>
+  <data name="&gt;&gt;BookRowBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>

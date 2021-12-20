@@ -52,7 +52,6 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
@@ -71,12 +71,12 @@
       // 
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpen,
-            this.ActionSearchWord,
             this.toolStripSeparator2,
             this.ActionSearchOnline,
-            this.ActionOpenHebrewLetters,
+            this.ActionSearchWord,
             this.toolStripSeparator4,
             this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewLetters,
             this.toolStripSeparator1,
             this.ActionCopyName,
             this.ActionCopyFontChars,
@@ -230,10 +230,6 @@
       this.DataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_CellMouseDown);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
-      // BookRowBindingSource
-      // 
-      this.BookRowBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
-      // 
       // ColumnNumber
       // 
       this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -301,6 +297,10 @@
       this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
       this.ColumnMemo.Text = "...";
       this.ColumnMemo.UseColumnTextForButtonValue = true;
+      // 
+      // BookRowBindingSource
+      // 
+      this.BookRowBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
       // 
       // EditBooksForm
       // 
