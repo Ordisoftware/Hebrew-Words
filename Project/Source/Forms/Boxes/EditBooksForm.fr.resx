@@ -146,7 +146,7 @@
     <value>260, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copier les caractères latins</value>
+    <value>Copier les caractères de transcription</value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
@@ -207,5 +207,8 @@
   </data>
   <data name="ColumnMemo.HeaderText" xml:space="preserve">
     <value>Mémo</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyser avec Hebrew Letters</value>
   </data>
 </root>
