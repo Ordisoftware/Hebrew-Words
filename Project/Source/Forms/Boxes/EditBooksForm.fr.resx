@@ -211,4 +211,10 @@
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Analyser avec Hebrew Letters</value>
   </data>
+  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
+    <value>Guide de grammaire</value>
+  </data>
+  <data name="ColumnLettriq.HeaderText" xml:space="preserve">
+    <value>Lettrique</value>
+  </data>
 </root>
