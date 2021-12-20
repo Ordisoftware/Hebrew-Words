@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="ContextMenuStripResults.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>26, 18</value>
+    <value>229, 23</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -138,13 +138,10 @@
 </value>
   </data>
   <data name="ActionOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionOpen.Text" xml:space="preserve">
     <value>Go to first verse</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
   </data>
   <data name="ActionSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -163,10 +160,13 @@
 </value>
   </data>
   <data name="ActionSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionSearchWord.Text" xml:space="preserve">
     <value>Search in database</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 6</value>
   </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -186,13 +186,30 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+  <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
+        C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
+        AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
+        m815MwLfBGRCsmzKHmTNoG07vgVsHo0elCvFpx0BgGkNDnH38clx/tGsVmu+CVODgGukqpJ/pA5QdZi+
+        +V4/CyHEAR4S/cNYBkJKAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 22</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyze with Hebrew Letters</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -218,30 +235,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
   </data>
-  <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
-        aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
-        C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
-        AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
-        m815MwLfBGRCsmzKHmTNoG07vgVsHo0elCvFpx0BgGkNDnH38clx/tGsVmu+CVODgGukqpJ/pA5QdZi+
-        +V4/CyHEAR4S/cNYBkJKAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
-    <value>Hebrew Letters</value>
-  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>220, 6</value>
   </data>
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -258,10 +258,10 @@
 </value>
   </data>
   <data name="ActionCopyName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copy latin chars</value>
+    <value>Copy transcription chars</value>
   </data>
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -278,7 +278,7 @@
 </value>
   </data>
   <data name="ActionCopyFontChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionCopyFontChars.Text" xml:space="preserve">
     <value>Copy hebrew chars</value>
@@ -298,13 +298,13 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copy unicode chars</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>220, 6</value>
   </data>
   <data name="ActionEditMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -323,68 +323,19 @@
 </value>
   </data>
   <data name="ActionEditMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>223, 22</value>
   </data>
   <data name="ActionEditMemo.Text" xml:space="preserve">
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 248</value>
+    <value>224, 248</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionRestoreCommonNames.Name" xml:space="preserve">
-    <value>ActionRestoreCommonNames</value>
-  </data>
-  <data name="&gt;&gt;ActionRestoreCommonNames.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRestoreCommonNames.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ActionRestoreCommonNames.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 623</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>664, 28</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -395,6 +346,7 @@
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -443,44 +395,29 @@
   <data name="&gt;&gt;ActionRestoreCommonNames.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
-    <value>DataGridView</value>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 623</value>
   </data>
-  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>664, 28</value>
   </data>
-  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 10</value>
-  </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>664, 613</value>
-  </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="DataGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>25</value>
@@ -522,7 +459,7 @@
     <value>42</value>
   </data>
   <metadata name="BookRowBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>215, 18</value>
+    <value>36, 23</value>
   </metadata>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -548,14 +485,38 @@
   <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
+  </data>
+  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>664, 613</value>
+  </data>
+  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 500</value>
@@ -593,22 +554,16 @@
   <data name="&gt;&gt;ActionSearchOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
+    <value>ActionShowGrammarGuide</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
     <value>ActionOpenHebrewLetters</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
-    <value>ActionShowGrammarGuide</value>
-  </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
@@ -647,18 +602,6 @@
   <data name="&gt;&gt;ActionEditMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnHasMemo.Name" xml:space="preserve">
-    <value>ColumnHasMemo</value>
-  </data>
-  <data name="&gt;&gt;ColumnHasMemo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnMemo.Name" xml:space="preserve">
-    <value>ColumnMemo</value>
-  </data>
-  <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
     <value>ColumnNumber</value>
   </data>
@@ -683,11 +626,29 @@
   <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ColumnHasMemo.Name" xml:space="preserve">
+    <value>ColumnHasMemo</value>
+  </data>
+  <data name="&gt;&gt;ColumnHasMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Name" xml:space="preserve">
+    <value>ColumnMemo</value>
+  </data>
+  <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
     <value>BookRowBindingSource</value>
   </data>
   <data name="&gt;&gt;BookRowBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>
