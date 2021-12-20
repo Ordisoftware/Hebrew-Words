@@ -24,20 +24,15 @@ partial class EditBooksForm : Form
        ? ( (ObjectView<BookRow>)DataGridView.SelectedRows[0].DataBoundItem ).Object
        : null;
 
-  [SuppressMessage("Simplification", "RCS1021:Convert lambda expression body to expression-body.", Justification = "Opinion")]
   public EditBooksForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    int index = 0;
-    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-      if ( item.Name == "-" )
-        ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
-      else
-        ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem((sender, e) =>
-        {
-          HebrewTools.OpenHebrewLetters(SelectedBook?.Original, Program.Settings.HebrewLettersExe);
-        }));
+    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, SelectedBook?.Hebrew);
+    });
   }
 
   private void EditBooksForm_Load(object sender, EventArgs e)
@@ -53,7 +48,8 @@ partial class EditBooksForm : Form
 
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
-    if ( e.ColumnIndex == 3 ) e.Value = ( (string)e.Value ).Trim();
+    if ( e.ColumnIndex == ColumnTranslation.Index || e.ColumnIndex == ColumnLettriq.Index )
+      e.Value = ( (string)e.Value ).Trim();
   }
 
   private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
