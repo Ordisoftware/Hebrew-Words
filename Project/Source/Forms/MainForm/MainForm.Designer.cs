@@ -240,7 +240,6 @@
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -1940,9 +1939,8 @@
       // 
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWordSearchOnline,
-            this.toolStripSeparator10,
-            this.ActionSearchTranslated,
             this.ActionSearchWord,
+            this.ActionSearchTranslated,
             this.toolStripSeparator8,
             this.ActionShowGrammarGuide2,
             this.ActionOpenHebrewLetters2,
@@ -1960,11 +1958,6 @@
       // 
       resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
       this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionSearchTranslated
       // 
@@ -2301,7 +2294,6 @@
     public Button ActionApplyFilterChapter;
     public Button ActionApplyFilterBook;
     public System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
-    private ToolStripSeparator toolStripSeparator10;
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
