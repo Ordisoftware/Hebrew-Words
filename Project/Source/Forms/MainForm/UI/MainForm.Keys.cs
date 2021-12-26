@@ -138,7 +138,6 @@ partial class MainForm
           if ( ActiveControl is VerseControl )
             ActionSearchWord.PerformClick();
           break;
-        // TODO change menuitems click get control or remove that
         case Keys.Control | Keys.W:
           if ( ActiveControl is VerseControl controlVerseWord )
             if ( controlVerseWord.ActiveControl is WordControl controlWord )
