@@ -816,7 +816,9 @@ partial class MainForm : Form
   private void ActionImportConsole_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    var control = e == null ? sender as VerseControl : ( (ContextMenuStrip)ActionImportConsole.Owner ).SourceControl;
+    var control = sender == ActionImportConsole
+                  ? ActiveControl
+                  : ( (ContextMenuStrip)ActionImportConsole.Owner ).SourceControl;
     ReferenceItem reference = null;
     if ( control is VerseControl versecontrol )
     {

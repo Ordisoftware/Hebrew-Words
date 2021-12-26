@@ -1174,7 +1174,7 @@
   <data name="ActionSearchWordOpenInLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAgVJREFUSEutlbtOQkEQhnkCEjpegJrwABS8AB1GSp5AC3qkpVEbCuy0MEY7tcA3
+        vQAADr0BR/uQrQAAAgVJREFUSEutlbtOQkEQhnkCEjpegJrwABS8AB1GSp5AC3qkpVEbCuy0MEY7tcA3
         wEJtEDResEBoECyp1nwLs5k9F6LxnOQPsDPzfzs7ZzUlT7PZNElqbbt6Wq2WWS6XicpB+BKVkIQsJAqw
         +P423e6NabfboZiInOOTE3N+fhEZR5xMCEBhvV6nPZPL5cxs9uXFEWvlctnmVCpbtiaYgxyABNHT84tJ
         p9O2GO3s7HpxxK4ljoIeKBYwHn+abDbrGdARu5Ycjk/HJUf7xAJQo7EXMqATgfC5Xa2GcjqdI+exEYBB
@@ -4196,32 +4196,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -5558,14 +5558,17 @@ A verse is founded if the translation of one of its words contains an expression
         gg==
 </value>
   </data>
+  <data name="ActionVerseReadOnline.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+O</value>
+  </data>
   <data name="ActionVerseReadOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionVerseReadOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
+    <value>211, 6</value>
   </data>
   <data name="ActionCopyTranslation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5582,7 +5585,7 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionCopyTranslation.Text" xml:space="preserve">
     <value>Copy translation</value>
@@ -5605,13 +5608,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionExportVerse.Text" xml:space="preserve">
     <value>Export to MS Word file</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
+    <value>211, 6</value>
   </data>
   <data name="ActionSetAsBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5629,7 +5632,7 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionSetAsBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionSetAsBookmarkMain.Text" xml:space="preserve">
     <value>Set as main bookmark</value>
@@ -5652,7 +5655,7 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionAddToBookmarks.Text" xml:space="preserve">
     <value>Add to bookmarks</value>
@@ -5671,13 +5674,13 @@ A verse is founded if the translation of one of its words contains an expression
 </value>
   </data>
   <data name="ActionGoToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionGoToBookmarks.Text" xml:space="preserve">
     <value>Go to bookmark</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
+    <value>211, 6</value>
   </data>
   <data name="ActionImportConsole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5694,14 +5697,17 @@ A verse is founded if the translation of one of its words contains an expression
         lAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="ActionImportConsole.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+I</value>
+  </data>
   <data name="ActionImportConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ActionImportConsole.Text" xml:space="preserve">
     <value>Import console</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 176</value>
+    <value>215, 176</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripVerse.Name" xml:space="preserve">
     <value>ContextMenuStripVerse</value>
@@ -5728,6 +5734,12 @@ A verse is founded if the translation of one of its words contains an expression
         nEjVW/1SZyz+RGVDgrYZSSUWJBZ3YMcK8HeJxRYknbdgJ/VKXdR6Yuv/w9gv3DJiGG1w/f8AAAAASUVO
         RK5CYII=
 </value>
+  </data>
+  <data name="ActionWordSearchOnline.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionWordSearchOnline.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+W</value>
   </data>
   <data name="ActionWordSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>292, 22</value>
@@ -6561,6 +6573,12 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionSearchWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
+    <value>toolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionSearchTranslated.Name" xml:space="preserve">
     <value>ActionSearchTranslated</value>
   </data>
@@ -6644,12 +6662,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;SaveDataBoardDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
-    <value>toolStripSeparator10</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
