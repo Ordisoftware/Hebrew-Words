@@ -241,6 +241,7 @@
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -255,7 +256,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1967,6 +1967,11 @@
       this.ActionSearchWord.Name = "ActionSearchWord";
       this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWord_Click);
       // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
       // ActionSearchTranslated
       // 
       resources.ApplyResources(this.ActionSearchTranslated, "ActionSearchTranslated");
@@ -2032,11 +2037,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // MainForm
       // 

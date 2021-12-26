@@ -123,11 +123,11 @@
     }
 
     #endregion
-    private FlowLayoutPanel PanelWords;
     public TextBoxEx EditCommentary;
     private Panel PanelComment;
     internal Panel PanelCommentLeft;
     public Label LabelVerseNumber;
     private Panel PanelSeparator;
+    internal FlowLayoutPanel PanelWords;
   }
 }
