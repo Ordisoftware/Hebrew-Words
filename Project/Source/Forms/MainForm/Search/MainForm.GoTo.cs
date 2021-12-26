@@ -71,7 +71,7 @@ partial class MainForm
     if ( IsGoToRunning ) return;
     if ( setViewChapterVerses )
       SetView(ViewMode.ChapterVerses);
-    if ( reference.EqualsWordIncluded(CurrentReference) )
+    if ( !forceUpdateView && reference.EqualsWordIncluded(CurrentReference) )
     {
       SetTanakItemFocus();
       return;

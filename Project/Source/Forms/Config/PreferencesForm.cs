@@ -183,6 +183,11 @@ partial class PreferencesForm : Form
       StatisticsForm.Instance.Close();
   }
 
+  private void EditBookNameHebrewWithCommonName_CheckedChanged(object sender, EventArgs e)
+  {
+    UpdateViewRequired = true;
+  }
+
   private void EditVolume_ValueChanged(object sender, EventArgs e)
   {
     MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);

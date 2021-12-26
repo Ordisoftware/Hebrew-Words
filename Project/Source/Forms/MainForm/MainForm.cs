@@ -263,9 +263,13 @@ partial class MainForm : Form
         SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
         UpdateCurrentReference();
         RenderAll(true);
-        int verse = reference.Verse == null ? 1 : reference.Verse.Number;
-        int word = reference.Word == null ? 1 : reference.Word.Number;
-        GoTo(new ReferenceItem(reference.Book.Number, reference.Chapter.Number, verse, word));
+        VerseControl.ResetMetricsRequired = true;
+        WordControl.ResetMetricsRequired = true;
+        int book = reference.Book?.Number ?? 1;
+        int chapter = reference.Chapter?.Number ?? 1;
+        int verse = reference.Verse?.Number ?? 1;
+        int word = reference.Verse?.Number ?? 1;
+        GoTo(new ReferenceItem(book, chapter, verse, word), true);
       }
       finally
       {
@@ -570,12 +574,13 @@ partial class MainForm : Form
     ActionRefresh.Visible = false;
     ActionRefresh.Visible = true;
     ActionSave.PerformClick();
-    int book = CurrentReference.Book.Number;
-    int chapter = CurrentReference.Chapter.Number;
-    int verse = CurrentReference.Verse?.Number ?? 1;
     VerseControl.ResetMetricsRequired = true;
     WordControl.ResetMetricsRequired = true;
-    GoTo(book, chapter, verse, true);
+    int book = CurrentReference.Book?.Number ?? 1;
+    int chapter = CurrentReference.Chapter?.Number ?? 1;
+    int verse = CurrentReference.Verse?.Number ?? 1;
+    int word = CurrentReference.Verse?.Number ?? 1;
+    GoTo(new ReferenceItem(book, chapter, verse, word), true);
   }
 
   /// <summary>
