@@ -1301,7 +1301,8 @@ partial class MainForm : Form
 
   private void ActionWordSearchDefault_Click(object sender, EventArgs e)
   {
-
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWord.Reference?.Word?.Hebrew);
   }
 
   /// <summary>
