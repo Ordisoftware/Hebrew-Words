@@ -466,7 +466,7 @@
     <value>142, 13</value>
   </data>
   <data name="LabelBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="LabelBackupCount.Text" xml:space="preserve">
     <value>Auto backups count to keep</value>
@@ -1143,7 +1143,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionResetHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionResetHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionResetHebrewLettersPath</value>
@@ -1183,7 +1183,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionResetCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;ActionResetCalculatorPath.Name" xml:space="preserve">
     <value>ActionResetCalculatorPath</value>
@@ -1226,7 +1226,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
     <value>ActionSelectCalculatorPath</value>
@@ -1342,7 +1342,7 @@
     <value>26, 27</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -1405,7 +1405,7 @@
     <value>406, 20</value>
   </data>
   <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
     <value>EditCalculatorPath</value>
@@ -1426,7 +1426,7 @@
     <value>406, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -1573,7 +1573,7 @@
     <value>167, 17</value>
   </data>
   <data name="EditGoToLastVerseAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditGoToLastVerseAtStartup.Text" xml:space="preserve">
     <value>Go to the last verse consulted</value>
@@ -1627,7 +1627,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditAutoBackupCount.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;EditAutoBackupCount.Name" xml:space="preserve">
     <value>EditAutoBackupCount</value>
@@ -1888,7 +1888,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditCheckUpdateAtStartupInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartupInterval.Name" xml:space="preserve">
     <value>EditCheckUpdateAtStartupInterval</value>
@@ -1912,7 +1912,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditVacuumAtStartupInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartupInterval.Name" xml:space="preserve">
     <value>EditVacuumAtStartupInterval</value>
@@ -1939,7 +1939,7 @@
     <value>283, 17</value>
   </data>
   <data name="EditVacuumAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimize database at startup every this number of days</value>
@@ -2032,7 +2032,7 @@
     <value>417, 18</value>
   </data>
   <data name="EditVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
     <value>EditVolume</value>
@@ -2245,7 +2245,7 @@
     <value>374, 17</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Text" xml:space="preserve">
     <value>Display the Hebrew name of a book with its common name in parentheses</value>
@@ -2435,7 +2435,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionCheckAllComments.TabIndex" type="System.Int32, mscorlib">
-    <value>72</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionCheckAllComments.Name" xml:space="preserve">
     <value>ActionCheckAllComments</value>
@@ -2456,7 +2456,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditCommentLinePrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditCommentLinePrefix.Name" xml:space="preserve">
     <value>EditCommentLinePrefix</value>
@@ -2510,7 +2510,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditAutoSaveDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.Name" xml:space="preserve">
     <value>EditAutoSaveDelay</value>
@@ -2537,7 +2537,7 @@
     <value>291, 17</value>
   </data>
   <data name="EditCommentLineRemovePrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="EditCommentLineRemovePrefix.Text" xml:space="preserve">
     <value>Automatically remove this prefix to each commentary line</value>
@@ -2567,7 +2567,7 @@
     <value>274, 17</value>
   </data>
   <data name="EditCommentLineAddPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="EditCommentLineAddPrefix.Text" xml:space="preserve">
     <value>Automatically add this prefix to each commentary line</value>
@@ -2765,7 +2765,7 @@
     <value>237, 17</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.Text" xml:space="preserve">
     <value>Automatically save when exiting an edit zone</value>
@@ -3080,7 +3080,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditFontSizeCommentary.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditFontSizeCommentary.Name" xml:space="preserve">
     <value>EditFontSizeCommentary</value>
@@ -3101,7 +3101,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditFontSizeTranslation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditFontSizeTranslation.Name" xml:space="preserve">
     <value>EditFontSizeTranslation</value>
@@ -3122,7 +3122,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditFontSizeHebrew.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditFontSizeHebrew.Name" xml:space="preserve">
     <value>EditFontSizeHebrew</value>
@@ -3143,7 +3143,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditWordControlWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.Name" xml:space="preserve">
     <value>EditWordControlWidth</value>
@@ -3164,7 +3164,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditSearchMinRefForDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditSearchMinRefForDialog.Name" xml:space="preserve">
     <value>EditSearchMinRefForDialog</value>
@@ -3185,7 +3185,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditSearchDisplayMaxRef.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditSearchDisplayMaxRef.Name" xml:space="preserve">
     <value>EditSearchDisplayMaxRef</value>
@@ -3206,7 +3206,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditWordTranslateLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditWordTranslateLinesCount.Name" xml:space="preserve">
     <value>EditWordTranslateLinesCount</value>
@@ -3227,7 +3227,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditCommentaryLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.Name" xml:space="preserve">
     <value>EditCommentaryLinesCount</value>
@@ -3811,7 +3811,7 @@
     <value>62, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift5.Text" xml:space="preserve">
     <value>Nothing</value>
@@ -3877,7 +3877,7 @@
     <value>125, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift1.Text" xml:space="preserve">
     <value>Default online search</value>
@@ -3910,7 +3910,7 @@
     <value>117, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift3.Text" xml:space="preserve">
     <value>Search in database</value>
@@ -3943,7 +3943,7 @@
     <value>108, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift2.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -3976,7 +3976,7 @@
     <value>97, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift4.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -4003,7 +4003,7 @@
     <value>220, 135</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift.Text" xml:space="preserve">
     <value>Shift+Click on a hebrew word action</value>
@@ -4069,7 +4069,7 @@
     <value>125, 17</value>
   </data>
   <data name="GroupBoxVerseLabelClick1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxVerseLabelClick1.Text" xml:space="preserve">
     <value>Default online search</value>
@@ -4102,7 +4102,7 @@
     <value>90, 17</value>
   </data>
   <data name="GroupBoxVerseLabelClick2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="GroupBoxVerseLabelClick2.Text" xml:space="preserve">
     <value>Context menu</value>
@@ -4162,7 +4162,7 @@
     <value>220, 100</value>
   </data>
   <data name="GroupBoxVerseLabelClick.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
     <value>Click on verse label action</value>
@@ -4195,7 +4195,7 @@
     <value>62, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClick5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClick5.Text" xml:space="preserve">
     <value>Nothing</value>
@@ -4261,7 +4261,7 @@
     <value>125, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClick1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxHebrewWordClick1.Text" xml:space="preserve">
     <value>Default online search</value>
@@ -4294,7 +4294,7 @@
     <value>117, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClick3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxHebrewWordClick3.Text" xml:space="preserve">
     <value>Search in database</value>
@@ -4327,7 +4327,7 @@
     <value>108, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClick2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxHebrewWordClick2.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -4360,7 +4360,7 @@
     <value>97, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClick4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClick4.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -4387,7 +4387,7 @@
     <value>220, 135</value>
   </data>
   <data name="GroupBoxHebrewWordClick.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
     <value>Click on a hebrew word action</value>
@@ -4420,7 +4420,7 @@
     <value>62, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl5.Text" xml:space="preserve">
     <value>Nothing</value>
@@ -4486,7 +4486,7 @@
     <value>125, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl1.Text" xml:space="preserve">
     <value>Default online search</value>
@@ -4519,7 +4519,7 @@
     <value>117, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl3.Text" xml:space="preserve">
     <value>Search in database</value>
@@ -4552,7 +4552,7 @@
     <value>108, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl2.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -4585,7 +4585,7 @@
     <value>97, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClickShiftCtrl4.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -4612,7 +4612,7 @@
     <value>220, 135</value>
   </data>
   <data name="GroupBoxHebrewWordClickAlt.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClickAlt.Text" xml:space="preserve">
     <value>Shift+Ctrl on a hebrew word action</value>
@@ -4645,7 +4645,7 @@
     <value>62, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl5.Text" xml:space="preserve">
     <value>Nothing</value>
@@ -4711,7 +4711,7 @@
     <value>125, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl1.Text" xml:space="preserve">
     <value>Default online search</value>
@@ -4744,7 +4744,7 @@
     <value>117, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl3.Text" xml:space="preserve">
     <value>Search in database</value>
@@ -4777,7 +4777,7 @@
     <value>108, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl2.Text" xml:space="preserve">
     <value>Search translated</value>
@@ -4810,7 +4810,7 @@
     <value>97, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl4.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -4837,7 +4837,7 @@
     <value>220, 135</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxHebrewWordClickCtrl.Text" xml:space="preserve">
     <value>Ctrl+Click on a hebrew word action</value>
@@ -4996,7 +4996,7 @@
     <value>220, 100</value>
   </data>
   <data name="GroupBoxTranslatedItemDoubleClick.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
     <value>Double-Click on translated item action</value>
