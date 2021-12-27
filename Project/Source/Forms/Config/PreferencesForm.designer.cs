@@ -786,6 +786,7 @@
       resources.ApplyResources(this.EditBookNameHebrewWithCommonName, "EditBookNameHebrewWithCommonName");
       this.EditBookNameHebrewWithCommonName.Name = "EditBookNameHebrewWithCommonName";
       this.EditBookNameHebrewWithCommonName.UseVisualStyleBackColor = true;
+      this.EditBookNameHebrewWithCommonName.CheckedChanged += new System.EventHandler(this.EditBookNameHebrewWithCommonName_CheckedChanged);
       // 
       // EditWebLinksMenuEnabled
       // 
