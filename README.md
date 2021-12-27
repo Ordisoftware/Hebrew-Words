@@ -32,16 +32,16 @@ A libre and open-source software written in C# that helps for the literal word-f
 
 ## Functionalities
 
-- Translate verses word-for-word.
+- Translate verses word-for-word with various help tools.
 - Contextual menu for a word to search online its definition, to see already translated, to search it in database, or to study it in Hebrew Letters.
 - Contextual menu for a verse to read it online, to manage bookmarks, to export, or to import.
 - Search the Tanak for Hebrew or translated words with filters.
-- Determine hidden verses of kabalah according to the Equidistant Letter Sequence of 50 for Tav.
+- Determine hidden verses of Pessah kabalah according to the Equidistant Letter Sequence of 50 for Tav.
 - Window showing a board of editable books.
 - Window showing a board of parashot with descriptions.
 - Window showing a grammar guide.
-- Window showing some Tanak's Statistics.
-- MS Word export of a book or a chapter or a verse.
+- Window showing some Tanak's statistics.
+- MS Word export of a book, a chapter or a verse.
 - Links to various online resources.
 - English, French.
 
