@@ -228,6 +228,7 @@
       this.SaveFileDialogRTF = new System.Windows.Forms.SaveFileDialog();
       this.TimerAutoSave = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVerseReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,9 +240,10 @@
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -256,8 +258,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1884,6 +1884,12 @@
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       this.ContextMenuStripVerse.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripVerse_Opening);
       // 
+      // ActionVerseReadDefault
+      // 
+      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
+      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
+      this.ActionVerseReadDefault.Click += new System.EventHandler(this.ActionVerseReadDefault_Click);
+      // 
       // ActionVerseReadOnline
       // 
       resources.ApplyResources(this.ActionVerseReadOnline, "ActionVerseReadOnline");
@@ -1960,21 +1966,27 @@
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
+      // ActionWordSearchDefault
+      // 
+      resources.ApplyResources(this.ActionWordSearchDefault, "ActionWordSearchDefault");
+      this.ActionWordSearchDefault.Name = "ActionWordSearchDefault";
+      this.ActionWordSearchDefault.Click += new System.EventHandler(this.ActionWordSearchDefault_Click);
+      // 
       // ActionWordSearchOnline
       // 
       resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
       this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionSearchWord
       // 
       resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
       this.ActionSearchWord.Name = "ActionSearchWord";
       this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWord_Click);
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionSearchTranslated
       // 
@@ -2041,16 +2053,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // ActionVerseReadDefault
-      // 
-      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
-      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
-      // 
-      // ActionWordSearchDefault
-      // 
-      resources.ApplyResources(this.ActionWordSearchDefault, "ActionWordSearchDefault");
-      this.ActionWordSearchDefault.Name = "ActionWordSearchDefault";
       // 
       // MainForm
       // 
