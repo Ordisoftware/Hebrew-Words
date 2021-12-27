@@ -40,7 +40,7 @@ partial class SelectReferenceForm : Form
   {
     if ( form.ShowDialog() != DialogResult.OK ) return null;
     if ( !form.EditReference.Text.IsNullOrEmpty() )
-      return new ReferenceItem(form.EditReference.Text);
+      return new ReferenceItem(form.EditReference.Text.Trim().Replace("  ", " "));
     else
       return new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
                                ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
