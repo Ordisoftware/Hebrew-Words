@@ -673,4 +673,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionOpenHebrewLetters2.Text" xml:space="preserve">
     <value>Analyser avec Hebrew letters</value>
   </data>
+  <data name="ActionVerseReadDefault.Text" xml:space="preserve">
+    <value>Lecture par défaut</value>
+  </data>
+  <data name="ActionWordSearchDefault.Text" xml:space="preserve">
+    <value>Recherche par défaut</value>
+  </data>
 </root>
