@@ -256,6 +256,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1867,6 +1869,7 @@
       // ContextMenuStripVerse
       // 
       this.ContextMenuStripVerse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionVerseReadDefault,
             this.ActionVerseReadOnline,
             this.toolStripMenuItem1,
             this.ActionCopyTranslation,
@@ -1939,9 +1942,10 @@
       // ContextMenuStripWord
       // 
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionWordSearchDefault,
             this.ActionWordSearchOnline,
-            this.ActionSearchWord,
             this.toolStripSeparator10,
+            this.ActionSearchWord,
             this.ActionSearchTranslated,
             this.toolStripSeparator8,
             this.ActionShowGrammarGuide2,
@@ -2037,6 +2041,16 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // ActionVerseReadDefault
+      // 
+      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
+      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
+      // 
+      // ActionWordSearchDefault
+      // 
+      resources.ApplyResources(this.ActionWordSearchDefault, "ActionWordSearchDefault");
+      this.ActionWordSearchDefault.Name = "ActionWordSearchDefault";
       // 
       // MainForm
       // 
@@ -2332,6 +2346,8 @@
     private ToolStripSeparator toolStripSeparator7;
     public SaveFileDialog SaveDataBoardDialog;
     private ToolStripSeparator toolStripSeparator10;
+    private ToolStripMenuItem ActionVerseReadDefault;
+    private ToolStripMenuItem ActionWordSearchDefault;
   }
 }
 

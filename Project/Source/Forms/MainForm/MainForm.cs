@@ -778,6 +778,13 @@ partial class MainForm : Form
     Clipboard.SetText(EditELS50Single.Text);
   }
 
+  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerseLabelDefault )
+      HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
+                                    controlVerseLabelDefault.Reference?.ToStringOnlyNumbers());
+  }
+
   /// <summary>
   /// Event handler. Called by ActionExportVerse for click events.
   /// </summary>
@@ -1290,6 +1297,12 @@ partial class MainForm : Form
   {
     if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
       SearchHebrewWord(controlWord.Reference?.Word?.Hebrew);
+  }
+
+  private void ActionWordSearchDefault_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl wontrolWord )
+      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, wontrolWord.Reference?.Word?.Hebrew);
   }
 
   /// <summary>

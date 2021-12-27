@@ -147,6 +147,11 @@ partial class MainForm
               ActionWordSearchOnline.DropDownItems[0].Select();
             }
           break;
+        case Keys.Shift | Keys.Control | Keys.W:
+          if ( ActiveControl is VerseControl controlVerseWordDefault )
+            if ( controlVerseWordDefault.ActiveControl is WordControl controlWordDefault )
+              HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWordDefault.Reference.Word.Hebrew);
+          break;
         case Keys.Control | Keys.O:
           if ( ActiveControl is VerseControl controlVerseLabel )
           {
@@ -154,6 +159,10 @@ partial class MainForm
             ActionVerseReadOnline.ShowDropDown();
             ActionVerseReadOnline.DropDownItems[0].Select();
           }
+          break;
+        case Keys.Shift | Keys.Control | Keys.O:
+          if ( ActiveControl is VerseControl controlVerseLabelDefault )
+            HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, controlVerseLabelDefault.Reference.ToStringOnlyNumbers());
           break;
         case Keys.Control | Keys.Alt | Keys.I:
           if ( ActiveControl is VerseControl )
