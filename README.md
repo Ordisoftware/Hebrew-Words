@@ -168,8 +168,10 @@ When disabled, top menu painting may cause latency, and dynamic controls can be 
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
-| Ctrl + G | Open the grammar guide |
 | Ctrl + H | Open Hebrew Letters |
+| Ctrl + G | Open grammar guide |
+| Ctrl + O | Open verse context menu |
+| Ctrl + W | Open word context menu |
 | Ctrl + T | See already translated for the focused Hebrew word |
 | Ctrl + K | Search in database for the focused Hebrew word |
 | Ctrl + F | Find verse in current chapter |
