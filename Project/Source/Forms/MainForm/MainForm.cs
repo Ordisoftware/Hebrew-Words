@@ -559,7 +559,8 @@ partial class MainForm : Form
   private void ActionGoToVerse_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    GoTo(SelectReferenceForm.Run());
+    SetView(ViewMode.ChapterVerses);
+    GoTo(SelectReferenceForm.Run(), true);
   }
 
   /// <summary>

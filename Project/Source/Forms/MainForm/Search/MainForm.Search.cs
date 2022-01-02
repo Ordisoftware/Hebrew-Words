@@ -57,6 +57,7 @@ partial class MainForm
       SelectSearchPaging.Minimum = SearchResultsCount == 0 ? 0 : 1;
       SelectSearchPaging.Maximum = PagingCount;
       SelectSearchPaging.Value = PagingCount == 0 ? 0 : PagingCurrent;
+      SelectSearchPaging.Enabled = SearchResultsCount > 0;
       EditSearchPaging.Text = SearchResultsCount == 0
                             ? "0"
                             : PagingCurrent + "/" + PagingCount + " (" + SearchResultsCount + ")";
