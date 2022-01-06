@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -1201,6 +1201,33 @@ partial class MainForm : Form
     edit.ScrollToCaret();
   }
 
+  private void UpdateELS50ScrollBar()
+  {
+    var edit = EditELS50Single;
+    var bar = EditELS50HScrollBar;
+    bar.Value = bar.Minimum - ( edit.SelectionStart * bar.Minimum / edit.Text.Length );
+  }
+
+  private void EditELS50Single_KeyDown(object sender, KeyEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseClick(object sender, MouseEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_DragDrop(object sender, DragEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseLeave(object sender, EventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
   #endregion
 
   #region View Verses Interaction
@@ -1863,32 +1890,5 @@ partial class MainForm : Form
   }
 
   #endregion
-
-  private void UpdateELS50ScrollBar()
-  {
-    var edit = EditELS50Single;
-    var bar = EditELS50HScrollBar;
-    bar.Value = bar.Minimum - ( edit.SelectionStart * bar.Minimum / edit.Text.Length );
-  }
-
-  private void EditELS50Single_KeyDown(object sender, KeyEventArgs e)
-  {
-    UpdateELS50ScrollBar();
-  }
-
-  private void EditELS50Single_MouseClick(object sender, MouseEventArgs e)
-  {
-    UpdateELS50ScrollBar();
-  }
-
-  private void EditELS50Single_DragDrop(object sender, DragEventArgs e)
-  {
-    UpdateELS50ScrollBar();
-  }
-
-  private void EditELS50Single_MouseLeave(object sender, EventArgs e)
-  {
-    UpdateELS50ScrollBar();
-  }
 
 }
