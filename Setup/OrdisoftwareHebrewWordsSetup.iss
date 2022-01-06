@@ -6,7 +6,7 @@
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-words"
 
 [Setup]
-AppCopyright=Copyright 2012-2021 Olivier Rogier
+AppCopyright=Copyright 2012-2022 Olivier Rogier
 AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 ;AppMutex=9117fa5b-51de-481e-9cb1-65a606d6ca69
 #include "Scripts\Setup.iss"
