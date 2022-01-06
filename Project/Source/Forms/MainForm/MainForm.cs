@@ -1188,16 +1188,17 @@ partial class MainForm : Form
   /// <param name="e">Scroll event information.</param>
   private void EditELS50HScrollBar_Scroll(object sender, ScrollEventArgs e)
   {
-    EditELS50Single.SelectionLength = 0;
-    if ( EditELS50HScrollBar.Value >= -EditELS50HScrollBar.LargeChange )
-      EditELS50Single.SelectionStart = EditELS50Single.Text.Length;
+    var edit = EditELS50Single;
+    var bar = EditELS50HScrollBar;
+    edit.SelectionLength = 0;
+    if ( bar.Value >= -bar.LargeChange )
+      edit.SelectionStart = edit.Text.Length;
     else
-    if ( EditELS50HScrollBar.Value <= EditELS50HScrollBar.Minimum + EditELS50HScrollBar.LargeChange )
-      EditELS50Single.SelectionStart = 0;
+    if ( bar.Value <= bar.Minimum + bar.LargeChange )
+      edit.SelectionStart = 0;
     else
-      EditELS50Single.SelectionStart = EditELS50Single.Text.Length
-                               - ( EditELS50Single.Text.Length * EditELS50HScrollBar.Value / EditELS50HScrollBar.Minimum );
-    EditELS50Single.ScrollToCaret();
+      edit.SelectionStart = edit.Text.Length - ( edit.Text.Length * bar.Value / bar.Minimum );
+    edit.ScrollToCaret();
   }
 
   #endregion
@@ -1862,5 +1863,32 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void UpdateELS50ScrollBar()
+  {
+    var edit = EditELS50Single;
+    var bar = EditELS50HScrollBar;
+    bar.Value = bar.Minimum - ( edit.SelectionStart * bar.Minimum / edit.Text.Length );
+  }
+
+  private void EditELS50Single_KeyDown(object sender, KeyEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseClick(object sender, MouseEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_DragDrop(object sender, DragEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseLeave(object sender, EventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
 
 }
