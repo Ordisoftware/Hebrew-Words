@@ -1061,8 +1061,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1078,11 +1078,11 @@
       // 
       // SelectVerse
       // 
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.DataSource = this.VersesBindingSource;
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectVerse.DropDownWidth = 350;
       this.SelectVerse.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
       this.SelectVerse.SelectedIndexChanged += new System.EventHandler(this.SelectVerse_SelectedIndexChanged);
       // 
