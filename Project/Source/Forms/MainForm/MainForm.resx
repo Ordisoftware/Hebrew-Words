@@ -1190,7 +1190,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchWordOpenInLetters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 24</value>
+    <value>5, 24</value>
   </data>
   <data name="ActionSearchWordOpenInLetters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1226,7 +1226,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchInRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 62</value>
+    <value>26, 62</value>
   </data>
   <data name="ActionSearchInRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -1262,7 +1262,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchInAddAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 62</value>
+    <value>7, 62</value>
   </data>
   <data name="ActionSearchInAddAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 18</value>
@@ -1298,10 +1298,10 @@
     <value>15</value>
   </data>
   <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 149</value>
+    <value>11, 149</value>
   </data>
   <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 23</value>
+    <value>345, 23</value>
   </data>
   <data name="SelectSearchInBook.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1334,7 +1334,7 @@
     <value>170, 220</value>
   </data>
   <data name="SelectSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 18</value>
+    <value>135, 18</value>
   </data>
   <data name="SelectSearchPaging.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1364,7 +1364,7 @@
     <value>177, 195</value>
   </data>
   <data name="EditSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 21</value>
+    <value>120, 21</value>
   </data>
   <data name="EditSearchPaging.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1400,7 +1400,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 126</value>
+    <value>11, 126</value>
   </data>
   <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 19</value>
@@ -1436,7 +1436,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 106</value>
+    <value>11, 106</value>
   </data>
   <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 19</value>
@@ -1472,7 +1472,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 86</value>
+    <value>11, 86</value>
   </data>
   <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 19</value>
@@ -1537,7 +1537,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 184</value>
+    <value>0, 184</value>
   </data>
   <data name="ActionSearchRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1597,13 +1597,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionNavigateSearchFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 184</value>
+    <value>109, 184</value>
   </data>
   <data name="ActionNavigateSearchFirst.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionNavigateSearchFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
+    <value>30, 42</value>
   </data>
   <data name="ActionNavigateSearchFirst.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1651,13 +1651,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 184</value>
+    <value>142, 184</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionSearchNavigatePrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
+    <value>30, 42</value>
   </data>
   <data name="ActionSearchNavigatePrevious.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1706,13 +1706,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchNavigateNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 184</value>
+    <value>302, 184</value>
   </data>
   <data name="ActionSearchNavigateNext.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionSearchNavigateNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
+    <value>30, 42</value>
   </data>
   <data name="ActionSearchNavigateNext.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1771,7 +1771,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionSearchNavigateLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
+    <value>30, 42</value>
   </data>
   <data name="ActionSearchNavigateLast.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1827,7 +1827,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 184</value>
+    <value>45, 184</value>
   </data>
   <data name="ActionSearchClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1854,10 +1854,10 @@
     <value>Fill</value>
   </data>
   <data name="PanelSearchFiltersRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>550, 0</value>
+    <value>560, 0</value>
   </data>
   <data name="PanelSearchFiltersRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 230</value>
+    <value>368, 230</value>
   </data>
   <data name="PanelSearchFiltersRight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1884,7 +1884,7 @@
     <value>0, 0</value>
   </data>
   <data name="EditSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>542, 199</value>
+    <value>552, 199</value>
   </data>
   <data name="EditSearchWord.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1908,7 +1908,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>542, 199</value>
+    <value>552, 199</value>
   </data>
   <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1929,7 +1929,7 @@
     <value>4, 27</value>
   </data>
   <data name="SelectSearchTypeHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>542, 199</value>
+    <value>552, 199</value>
   </data>
   <data name="SelectSearchTypeHebrew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2346,7 +2346,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>0, 0</value>
   </data>
   <data name="SelectSearchType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 230</value>
+    <value>560, 230</value>
   </data>
   <data name="SelectSearchType.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4212,31 +4212,31 @@ A verse is founded if the translation of one of its words contains an expression
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
