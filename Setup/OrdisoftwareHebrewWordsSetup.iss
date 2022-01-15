@@ -6,6 +6,8 @@
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-words"
 
 [Setup]
+MinVersion=0,6.1sp1
+LicenseFile=..\Project\Licenses\MPL 2.0.rtf
 AppCopyright=Copyright 2012-2022 Olivier Rogier
 AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 ;AppMutex=9117fa5b-51de-481e-9cb1-65a606d6ca69
@@ -13,12 +15,6 @@ AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 
 [Languages]
 #include "Scripts\Languages.iss"
-
-[CustomMessages]
-#include "Scripts\Messages.iss"
-
-[Tasks]
-#include "Scripts\Tasks.iss"
 
 [Dirs]
 
@@ -28,13 +24,19 @@ AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 [Files]
 #include "Scripts\Files.iss"
 
-[Icons]
-#include "Scripts\Icons.iss"
+[Run]
+#include "Scripts\Run.iss"
 
 [Registry]
 
-[Run]
-#include "Scripts\Run.iss"
+[Tasks]
+#include "Scripts\Tasks.iss"
+
+[Icons]
+#include "Scripts\Icons.iss"
+
+[CustomMessages]
+#include "Scripts\Messages.iss"
 
 [Code]
 #include "Scripts\CheckDotNetFramework.iss"
