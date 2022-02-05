@@ -366,7 +366,7 @@ partial class MainForm : Form
     bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                    ref lastdone,
                                    Settings.CheckUpdateAtStartupDaysInterval,
-                                   e == null);
+                                   e is null);
     Settings.CheckUpdateLastDone = lastdone;
     if ( exit )
     {
@@ -454,7 +454,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     var reference = BibleStatisticsForm.Run();
-    if ( reference != null )
+    if ( reference is not null )
     {
       SetView(ViewMode.ChapterVerses);
       GoTo(reference);
@@ -1154,7 +1154,7 @@ partial class MainForm : Form
     UpdateCurrentReferenceMutex = true;
     try
     {
-      var referenceOld = CurrentReference == null ? null : new ReferenceItem(CurrentReference);
+      var referenceOld = CurrentReference is null ? null : new ReferenceItem(CurrentReference);
       var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
@@ -1506,7 +1506,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectFilterBook.SelectedItem == null )
+    if ( SelectFilterBook.SelectedItem is null )
     {
       SelectFilterChapter.DataSource = null;
       SelectFilterVerse.DataSource = null;
@@ -1537,7 +1537,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectFilterChapter.SelectedItem == null )
+    if ( SelectFilterChapter.SelectedItem is null )
     {
       SelectFilterVerse.DataSource = null;
       return;

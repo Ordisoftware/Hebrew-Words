@@ -47,7 +47,7 @@ public partial class VerseControl : UserControl
   public VerseControl(Panel container, ReferenceItem reference) : this()
   {
     Reference = reference;
-    if ( reference.Verse == null ) return;
+    if ( reference.Verse is null ) return;
     WordControls = new WordControl[reference.Verse.Words.Count];
     MetricsItem metrics;
     if ( !MetricsCollection.ContainsKey(container) )

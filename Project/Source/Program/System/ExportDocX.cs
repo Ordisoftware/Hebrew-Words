@@ -44,7 +44,7 @@ static class ExportDocX
         AddBookTitle(book);
         foreach ( ChapterRow chapter in book.Chapters )
         {
-          if ( showProgress != null && showProgress() ) break;
+          if ( showProgress is not null && showProgress() ) break;
           AddChapterTitle(chapter);
           foreach ( VerseRow verse in chapter.Verses )
             AddVerse(verse, includeTranslation);

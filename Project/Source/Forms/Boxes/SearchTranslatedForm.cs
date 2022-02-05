@@ -21,9 +21,9 @@ partial class SearchTranslatedForm : Form
 
   static public void Run(WordControl sender)
   {
-    if ( sender == null || sender.Reference == null ) return;
+    if ( sender is null || sender.Reference is null ) return;
     var form = Forms.Find(f => f.WordControl.Reference.EqualsWordIncluded(sender.Reference));
-    if ( form != null )
+    if ( form is not null )
     {
       if ( form.WindowState == FormWindowState.Minimized )
         form.WindowState = FormWindowState.Normal;

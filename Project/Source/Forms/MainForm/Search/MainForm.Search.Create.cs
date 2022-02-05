@@ -19,7 +19,7 @@ partial class MainForm
 
   private void CreateSearchResults()
   {
-    if ( SelectSearchInBook.SelectedItem == null ) return;
+    if ( SelectSearchInBook.SelectedItem is null ) return;
     ClearSearchResults();
     //
     bool checkWordHebrew(WordRow row) => row.Hebrew.Contains(SearchWord1) || row.Hebrew.Contains(SearchWord2);
@@ -92,16 +92,16 @@ partial class MainForm
          where isBookSelected(book.Number) && check(verse, word)
          select new ReferenceItem(book, chapter, verse);
     //
-    if ( SearchWord1.Length >= 2 && CheckWord != null && CheckVerse != null )
+    if ( SearchWord1.Length >= 2 && CheckWord is not null && CheckVerse is not null )
       SearchResults = createSearch((verse, word) => CheckWord(word) || CheckVerse(verse));
     else
-    if ( SearchWord1.Length >= 2 && CheckVerse == null )
+    if ( SearchWord1.Length >= 2 && CheckVerse is null )
       SearchResults = createSearch((_, word) => CheckWord(word));
     else
-    if ( CheckVerse != null )
+    if ( CheckVerse is not null )
       SearchResults = createSearch((verse, _) => CheckVerse(verse));
     //
-    if ( SearchResults != null )
+    if ( SearchResults is not null )
     {
       SearchResults = SearchResults.Distinct(new ReferenceItem.ReferenceComparer());
       Cursor = Cursors.WaitCursor;

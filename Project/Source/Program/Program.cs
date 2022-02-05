@@ -135,13 +135,13 @@ static partial class Program
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
       var form = MainForm.Instance;
       var cmd = ApplicationCommandLine.Instance;
-      if ( cmd == null ) return;
+      if ( cmd is null ) return;
       Action action = null;
       if ( cmd.ShowMainForm ) action = () => form.Popup();
       if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) action = () => form.GoTo(cmd.ReferenceToGo, false, true);
       if ( !cmd.SearchWord.IsNullOrEmpty() ) action = () => form.SearchHebrewWord(cmd.SearchWord);
       if ( !cmd.SearchTranslated.IsNullOrEmpty() ) action = () => form.SearchTranslatedWord(cmd.SearchTranslated);
-      if ( action != null )
+      if ( action is not null )
         SystemManager.TryCatch(() =>
         {
           form.ToolStrip.SyncUI(() => MainForm.Instance.Popup());
@@ -161,7 +161,7 @@ static partial class Program
   static private void IPCSendCommands()
   {
     var cmd = ApplicationCommandLine.Instance;
-    if ( cmd == null ) return;
+    if ( cmd is null ) return;
     if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
     if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
     if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend($"--verse {cmd.ReferenceToGo}");
@@ -176,7 +176,7 @@ static partial class Program
   {
     try
     {
-      if ( SystemManager.CommandLineOptions == null ) return;
+      if ( SystemManager.CommandLineOptions is null ) return;
       if ( SystemManager.CommandLineOptions.ResetSettings )
       {
         SystemManager.CleanAllLocalAppSettingsFolders();

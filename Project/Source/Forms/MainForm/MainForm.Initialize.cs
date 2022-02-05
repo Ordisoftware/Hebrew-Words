@@ -127,7 +127,7 @@ partial class MainForm : Form
       Thread.Sleep(500);
     }
     bool auto = false;
-    if ( SystemManager.CommandLineOptions != null )
+    if ( SystemManager.CommandLineOptions is not null )
       try
       {
         var options = ApplicationCommandLine.Instance;

@@ -19,7 +19,7 @@ class Bookmarks : ReferencesList
 
   public override void Add(ReferenceItem reference)
   {
-    if ( reference == null || Program.Settings.BookmarksCount < 1 || Items.Any(item => item.Equals(reference)) )
+    if ( reference is null || Program.Settings.BookmarksCount < 1 || Items.Any(item => item.Equals(reference)) )
       return;
     Items.Add(new ReferenceItem(reference));
     while ( Items.Count > Program.Settings.BookmarksCount )

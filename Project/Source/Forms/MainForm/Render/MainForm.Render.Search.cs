@@ -28,7 +28,7 @@ partial class MainForm
       PanelSearchResults.Visible = false;
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.DisposeAllControls();
-      if ( SearchResults == null || SearchResultsCount == 0 )
+      if ( SearchResults is null || SearchResultsCount == 0 )
         return;
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(true);
@@ -86,7 +86,7 @@ partial class MainForm
           }
           label.Location = new Point(x, y);
           label.Click += (sender, e) => PanelSearchResults.Focus();
-          if ( CheckWord != null )
+          if ( CheckWord is not null )
             if ( CheckWord(word) )
             {
               label.Tag = new ReferenceItem(reference, word);

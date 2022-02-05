@@ -35,7 +35,7 @@ public partial class ReferenceItem
   {
 
     bool IEqualityComparer<ReferenceItem>.Equals(ReferenceItem x, ReferenceItem y)
-      => x != null && y != null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
+      => x is not null && y is not null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
 
     int IEqualityComparer<ReferenceItem>.GetHashCode(ReferenceItem obj)
       => obj?.Word?.Translation.GetHashCode() ?? 0;

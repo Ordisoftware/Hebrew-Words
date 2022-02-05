@@ -161,7 +161,7 @@ partial class MainForm
         void setRadio(TabPage page, int index)
         {
           var radio = page.Controls.OfType<RadioButton>().FirstOrDefault(c => c.TabIndex == index);
-          if ( radio != null ) radio.Checked = true;
+          if ( radio is not null ) radio.Checked = true;
         }
       }
       else

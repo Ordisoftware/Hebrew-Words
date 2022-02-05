@@ -38,7 +38,7 @@ partial class MainForm
     {
       textbox.Clear();
       textbox.Tag = CurrentReference;
-      if ( ( isChapterElseBook && chapter?.Verses != null ) || chapter != null )
+      if ( ( isChapterElseBook && chapter?.Verses is not null ) || chapter is not null )
         render?.Invoke();
     }
     finally

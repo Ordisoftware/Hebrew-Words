@@ -174,7 +174,7 @@ partial class MainForm
             if ( CurrentReference.Chapter.Number > 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number - 1);
-              if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
+              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Down:
@@ -182,7 +182,7 @@ partial class MainForm
             if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
-              if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
+              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Left:

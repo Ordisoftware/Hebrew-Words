@@ -80,7 +80,7 @@ partial class BibleStatisticsForm : Form
         }
       }
     }
-    if ( LabelLongestReferenceValue.Tag != null )
+    if ( LabelLongestReferenceValue.Tag is not null )
       LabelLongestReferenceValue.Text = ( (ReferenceItem)LabelLongestReferenceValue.Tag ).ToString();
     void count(TanakBook book, BookStatistic counters)
     {

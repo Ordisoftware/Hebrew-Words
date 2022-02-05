@@ -24,10 +24,10 @@ partial class SelectReferenceForm : Form
       try
       {
         var reference = Run(form);
-        if ( reference == null ) return null;
-        if ( reference.Book == null ) throw new Exception();
-        if ( reference.Chapter == null ) reference = new ReferenceItem(reference.Book.Number, 1, 1);
-        if ( reference.Verse == null ) reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
+        if ( reference is null ) return null;
+        if ( reference.Book is null ) throw new Exception();
+        if ( reference.Chapter is null ) reference = new ReferenceItem(reference.Book.Number, 1, 1);
+        if ( reference.Verse is null ) reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
         return reference;
       }
       catch

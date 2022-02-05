@@ -27,7 +27,7 @@ partial class MainForm
     {
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
-      if ( itemBook == null || itemChapter == null ) return;
+      if ( itemBook is null || itemChapter is null ) return;
       EditELS50Single.Text = itemChapter.ELS50;
       EditELS50Single.SelectionStart = EditELS50Single.TextLength;
       var references = SelectRenderAllVerses.Checked

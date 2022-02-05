@@ -19,7 +19,7 @@ class History : ReferencesList
 
   public override void Add(ReferenceItem reference)
   {
-    if ( reference == null || Program.Settings.HistoryCount < 1 )
+    if ( reference is null || Program.Settings.HistoryCount < 1 )
       return;
     foreach ( var item in Items.Where(item => item.Equals(reference)).ToList() )
       Items.Remove(item);

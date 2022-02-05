@@ -66,7 +66,7 @@ partial class MainForm
   /// </summary>
   public void GoTo(ReferenceItem reference, bool forceUpdateView = false, bool setViewChapterVerses = false)
   {
-    if ( reference == null ) return;
+    if ( reference is null ) return;
     if ( Globals.IsExiting ) return;
     if ( IsGoToRunning ) return;
     if ( setViewChapterVerses )
@@ -78,7 +78,7 @@ partial class MainForm
     }
     bool updated = false;
     NeedUpdateCurrentReference = false;
-    if ( LastToolTipPanel != null )
+    if ( LastToolTipPanel is not null )
       ToolTipSearchResult.Hide(LastToolTipPanel);
     LastToolTipPanel = null;
     IsGoToRunning = true;
@@ -132,7 +132,7 @@ partial class MainForm
     //
     void checkVerse()
     {
-      if ( reference.Verse == null )
+      if ( reference.Verse is null )
       {
         var found = doCheckVerse();
         reference.Verse = found ?? reference.Chapter?.Verses.Find(v => v.Number == 1);
@@ -143,7 +143,7 @@ partial class MainForm
         if ( reference.Chapter?.Verses.Find(v => v.Number == 1).IsFullyTranslated ?? false )
         {
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
-          if ( found != null )
+          if ( found is not null )
           {
             ShowPanelToolTip(AppTranslations.FirstVerseToComplete.GetLang());
             return found;
@@ -158,7 +158,7 @@ partial class MainForm
         else
         {
           var found = CurrentReference.Chapter?.Verses?.Find(v => v.HasTranslation);
-          if ( found != null )
+          if ( found is not null )
           {
             ShowPanelToolTip(AppTranslations.FirstVerseTranslated.GetLang());
             return found;
@@ -179,17 +179,17 @@ partial class MainForm
   /// </summary>
   void SetTanakItemFocus()
   {
-    if ( CurrentReference == null ) return;
+    if ( CurrentReference is null ) return;
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
         var control = PanelViewVerses.Controls.OfType<VerseControl>()
                                      .FirstOrDefault(c => c.Reference.Verse.Number == CurrentReference.Verse?.Number);
-        if ( control != null )
+        if ( control is not null )
         {
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
-          if ( CurrentReference.Word != null )
+          if ( CurrentReference.Word is not null )
             Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word)?.Focus();
           else
             control.WordControls.FirstOrDefault()?.Focus();

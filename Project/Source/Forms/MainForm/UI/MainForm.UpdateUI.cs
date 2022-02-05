@@ -99,7 +99,7 @@ partial class MainForm
         x = panel.ClientSize.Width - 10 - width;
         break;
     }
-    if ( panel != null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
+    if ( panel is not null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
     LastToolTipPanel = panel;
   }
 

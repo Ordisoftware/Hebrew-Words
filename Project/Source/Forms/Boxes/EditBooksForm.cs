@@ -142,7 +142,7 @@ partial class EditBooksForm : Form
   {
     var form = new EditMemoForm();
     var book = SelectedBook;
-    if ( SelectedBook == null ) return;
+    if ( SelectedBook is null ) return;
     form.Text += book.Name;
     form.TextBox.Text = book.Memo;
     form.TextBox.SelectionStart = 0;

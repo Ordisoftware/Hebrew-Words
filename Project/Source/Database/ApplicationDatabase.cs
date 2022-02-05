@@ -65,7 +65,7 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoClose()
   {
-    if ( Books == null ) return;
+    if ( Books is null ) return;
     if ( ClearListsOnCloseOrRelease ) Books?.Clear();
     Books = null;
   }
@@ -242,7 +242,7 @@ class ApplicationDatabase : SQLiteDatabase
           string line = item;
           if ( line.Contains("    ") )
           {
-            if ( chapter != null ) nextChapter();
+            if ( chapter is not null ) nextChapter();
             countVerses = 0;
             chapter = new();
             chapter.ID = Guid.NewGuid();
@@ -292,7 +292,7 @@ class ApplicationDatabase : SQLiteDatabase
           }
         }
       }
-      if ( chapter != null ) nextChapter();
+      if ( chapter is not null ) nextChapter();
       BeginTransaction();
       try
       {
