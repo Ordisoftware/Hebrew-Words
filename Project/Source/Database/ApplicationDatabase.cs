@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -65,7 +65,7 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoClose()
   {
-    if ( Books == null ) return;
+    if ( Books is null ) return;
     if ( ClearListsOnCloseOrRelease ) Books?.Clear();
     Books = null;
   }
@@ -242,7 +242,7 @@ class ApplicationDatabase : SQLiteDatabase
           string line = item;
           if ( line.Contains("    ") )
           {
-            if ( chapter != null ) nextChapter();
+            if ( chapter is not null ) nextChapter();
             countVerses = 0;
             chapter = new();
             chapter.ID = Guid.NewGuid();
@@ -292,7 +292,7 @@ class ApplicationDatabase : SQLiteDatabase
           }
         }
       }
-      if ( chapter != null ) nextChapter();
+      if ( chapter is not null ) nextChapter();
       BeginTransaction();
       try
       {

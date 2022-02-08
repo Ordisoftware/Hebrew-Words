@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -174,7 +174,7 @@ partial class MainForm
             if ( CurrentReference.Chapter.Number > 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number - 1);
-              if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
+              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Down:
@@ -182,7 +182,7 @@ partial class MainForm
             if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
-              if ( chapter != null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
+              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Left:

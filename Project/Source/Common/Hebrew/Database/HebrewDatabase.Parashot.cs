@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Letters.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -35,7 +35,7 @@ partial class HebrewDatabase : SQLiteDatabase
   public List<Parashah> TakeParashot(bool reload = false)
   {
     CheckConnected();
-    if ( !reload && Parashot != null ) return Parashot;
+    if ( !reload && Parashot is not null ) return Parashot;
     Interlocks.Take(ParashotTableName);
     if ( ParashotFirstTake )
     {
@@ -47,7 +47,7 @@ partial class HebrewDatabase : SQLiteDatabase
 
   public void ReleaseParashot()
   {
-    if ( Parashot == null ) return;
+    if ( Parashot is null ) return;
     Interlocks.Release(ParashotTableName);
     if ( ClearListsOnCloseOrRelease ) Parashot.Clear();
     Parashot = null;

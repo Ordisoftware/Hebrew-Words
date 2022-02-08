@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-02 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -186,7 +186,7 @@ static class HebrewTools
   /// </summary>
   static public void OpenParashahProvider(string url, Parashah parashah, bool openLinked = false)
   {
-    if ( parashah == null )
+    if ( parashah is null )
     {
       DisplayManager.Show(HebrewTranslations.ParashahNotFound.GetLang());
       return;
@@ -195,7 +195,7 @@ static class HebrewTools
     if ( openLinked && url.Contains("%") )
     {
       var linked = parashah.GetLinked();
-      if ( linked != null ) open(linked);
+      if ( linked is not null ) open(linked);
     }
     //
     void open(Parashah item)
@@ -225,6 +225,7 @@ static class HebrewTools
     string link = url.Replace("%WIKIPEDIA-EN%", OnlineCelebration.WikipediaEN[celebration])
                      .Replace("%WIKIPEDIA-FR%", OnlineCelebration.WikipediaFR[celebration])
                      .Replace("%TORAHBOX%", OnlineCelebration.TorahBox[celebration])
+                     .Replace("%CHIOURIM%", OnlineCelebration.Chiourim[celebration])
                      .Replace("%TORAHORG%", OnlineCelebration.TorahOrg[celebration])
                      .Replace("%TORAHJEWS%", OnlineCelebration.TrueTorahJews[celebration])
                      .Replace("%YESHIVACO%", OnlineCelebration.YeshivaCo[celebration])

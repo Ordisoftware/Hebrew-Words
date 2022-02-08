@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -101,8 +101,8 @@ public partial class ReferenceItem
 
   public int CompareTo(ReferenceItem other)
   {
-    if ( other == null )
-      return Book == null && Chapter == null && Verse == null ? 0 : 1;
+    if ( other is null )
+      return Book is null && Chapter is null && Verse is null ? 0 : 1;
     else
     if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
       && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )
@@ -126,8 +126,8 @@ public partial class ReferenceItem
 
   public int CompareToWordIncluded(ReferenceItem other)
   {
-    if ( other == null )
-      return Book == null && Chapter == null && Verse == null && Word == null ? 0 : 1;
+    if ( other is null )
+      return Book is null && Chapter is null && Verse is null && Word is null ? 0 : 1;
     else
     if ( ( Book?.Number ?? 0 ) == ( other.Book?.Number ?? 0 )
       && ( Chapter?.Number ?? 0 ) == ( other.Chapter?.Number ?? 0 )

@@ -42,6 +42,9 @@ URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 
+Name = (FR) Rav Nathan Mrejen
+URL = https://www.youtube.com/channel/UCx3wvPI8c-AHsRMjorGIWSw
+
 -
 
 Name = (FR) Alef Ledoroth (Rav Yakov Sitruk)
@@ -56,7 +59,7 @@ URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 Name = (FR) Sitré Haïm (Rav Yossef Hay)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
-Name = (EN) The Yeshiva (Rabbi YY Jacobson)
+Name = (EN) The Yeshiva (Rabbi Yosef Yitzchak Jacobson)
 URL = https://www.youtube.com/user/TheYeshivaNet
 
 -

@@ -1061,8 +1061,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1078,11 +1078,11 @@
       // 
       // SelectVerse
       // 
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.DataSource = this.VersesBindingSource;
       this.SelectVerse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectVerse.DropDownWidth = 350;
       this.SelectVerse.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Name = "SelectVerse";
       this.SelectVerse.SelectedIndexChanged += new System.EventHandler(this.SelectVerse_SelectedIndexChanged);
       // 
@@ -1218,7 +1218,11 @@
       this.EditELS50Single.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "ELS50", true));
       this.EditELS50Single.Name = "EditELS50Single";
       this.EditELS50Single.ReadOnly = true;
+      this.EditELS50Single.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditELS50Single_MouseClick);
       this.EditELS50Single.TextChanged += new System.EventHandler(this.EditELS50_TextChanged);
+      this.EditELS50Single.DragDrop += new System.Windows.Forms.DragEventHandler(this.EditELS50Single_DragDrop);
+      this.EditELS50Single.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditELS50Single_KeyDown);
+      this.EditELS50Single.MouseLeave += new System.EventHandler(this.EditELS50Single_MouseLeave);
       // 
       // LabelChapterELS50
       // 

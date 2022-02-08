@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -27,7 +27,7 @@ partial class MainForm
     {
       var itemBook = CurrentReference.Book;
       var itemChapter = CurrentReference.Chapter;
-      if ( itemBook == null || itemChapter == null ) return;
+      if ( itemBook is null || itemChapter is null ) return;
       EditELS50Single.Text = itemChapter.ELS50;
       EditELS50Single.SelectionStart = EditELS50Single.TextLength;
       var references = SelectRenderAllVerses.Checked

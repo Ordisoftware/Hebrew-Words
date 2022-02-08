@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Letters.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -29,7 +29,7 @@ partial class HebrewDatabase : SQLiteDatabase
   public List<TermHebrew> TakeLettriqs(bool reload = false)
   {
     CheckConnected();
-    if ( !reload && TermsHebrew != null ) return TermsHebrew;
+    if ( !reload && TermsHebrew is not null ) return TermsHebrew;
     Interlocks.Take(nameof(TermsHebrew));
     TermsHebrew = Load(Connection.Table<TermHebrew>());
     TermLettriqs = Load(Connection.Table<TermLettriq>());
@@ -43,7 +43,7 @@ partial class HebrewDatabase : SQLiteDatabase
 
   public void ReleaseLettriqs()
   {
-    if ( TermsHebrew == null && TermLettriqs == null && TermAnalyzes == null ) return;
+    if ( TermsHebrew is null && TermLettriqs is null && TermAnalyzes is null ) return;
     Interlocks.Release(nameof(TermsHebrew));
     if ( ClearListsOnCloseOrRelease )
     {

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar and Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -25,13 +25,13 @@ static class ParashotHelper
     // Prepare
     string title = HebrewTranslations.WeeklyParashah.GetLang();
     var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
-    if ( form != null )
+    if ( form is not null )
     {
       form.Popup();
       return true;
     }
     var linked = withLinked ? parashah.GetLinked(parashot) : null;
-    if ( parashah == null ) return false;
+    if ( parashah is null ) return false;
     // Message box
     var message = parashah.ToStringReadable();
     message += Globals.NL2 + linked?.ToStringReadable();
@@ -43,7 +43,7 @@ static class ParashotHelper
       AllowClose = true
     };
     // Button Open board
-    form.ActionYes.Visible = runBoard != null;
+    form.ActionYes.Visible = runBoard is not null;
     form.ActionYes.Text = SysTranslations.Board.GetLang();
     form.ActionYes.Click += async (_s, _e) =>
     {

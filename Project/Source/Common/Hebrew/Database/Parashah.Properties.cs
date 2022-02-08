@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -40,7 +40,7 @@ public partial class Parashah
   public Parashah GetLinked(List<Parashah> owner = null)
   {
     if ( !IsLinkedToNext ) return null;
-    if ( owner != null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
+    if ( owner is not null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
     var list = ParashotFactory.Instance.All.ToList();
     return list[list.FindIndex(p => p.ID == ID) + 1];
   }

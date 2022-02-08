@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -35,7 +35,7 @@ public partial class ReferenceItem
   {
 
     bool IEqualityComparer<ReferenceItem>.Equals(ReferenceItem x, ReferenceItem y)
-      => x != null && y != null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
+      => x is not null && y is not null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
 
     int IEqualityComparer<ReferenceItem>.GetHashCode(ReferenceItem obj)
       => obj?.Word?.Translation.GetHashCode() ?? 0;

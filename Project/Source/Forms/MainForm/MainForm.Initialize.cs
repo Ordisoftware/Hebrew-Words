@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Microsoft.Win32;
@@ -127,7 +127,7 @@ partial class MainForm : Form
       Thread.Sleep(500);
     }
     bool auto = false;
-    if ( SystemManager.CommandLineOptions != null )
+    if ( SystemManager.CommandLineOptions is not null )
       try
       {
         var options = ApplicationCommandLine.Instance;

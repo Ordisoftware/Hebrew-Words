@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Words.Json.Verse
 
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
-      if ( value == null )
+      if ( value is null )
       {
         serializer.Serialize(writer, null);
         return;

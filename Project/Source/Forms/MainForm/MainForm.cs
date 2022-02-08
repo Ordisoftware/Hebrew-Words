@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -366,7 +366,7 @@ partial class MainForm : Form
     bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                    ref lastdone,
                                    Settings.CheckUpdateAtStartupDaysInterval,
-                                   e == null);
+                                   e is null);
     Settings.CheckUpdateLastDone = lastdone;
     if ( exit )
     {
@@ -454,7 +454,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     var reference = BibleStatisticsForm.Run();
-    if ( reference != null )
+    if ( reference is not null )
     {
       SetView(ViewMode.ChapterVerses);
       GoTo(reference);
@@ -559,7 +559,8 @@ partial class MainForm : Form
   private void ActionGoToVerse_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    GoTo(SelectReferenceForm.Run());
+    SetView(ViewMode.ChapterVerses);
+    GoTo(SelectReferenceForm.Run(), true);
   }
 
   /// <summary>
@@ -1153,7 +1154,7 @@ partial class MainForm : Form
     UpdateCurrentReferenceMutex = true;
     try
     {
-      var referenceOld = CurrentReference == null ? null : new ReferenceItem(CurrentReference);
+      var referenceOld = CurrentReference is null ? null : new ReferenceItem(CurrentReference);
       var referenceNew = new ReferenceItem(( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number ?? 1,
                                            ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
@@ -1187,16 +1188,44 @@ partial class MainForm : Form
   /// <param name="e">Scroll event information.</param>
   private void EditELS50HScrollBar_Scroll(object sender, ScrollEventArgs e)
   {
-    EditELS50Single.SelectionLength = 0;
-    if ( EditELS50HScrollBar.Value >= -EditELS50HScrollBar.LargeChange )
-      EditELS50Single.SelectionStart = EditELS50Single.Text.Length;
+    var edit = EditELS50Single;
+    var bar = EditELS50HScrollBar;
+    edit.SelectionLength = 0;
+    if ( bar.Value >= -bar.LargeChange )
+      edit.SelectionStart = edit.Text.Length;
     else
-    if ( EditELS50HScrollBar.Value <= EditELS50HScrollBar.Minimum + EditELS50HScrollBar.LargeChange )
-      EditELS50Single.SelectionStart = 0;
+    if ( bar.Value <= bar.Minimum + bar.LargeChange )
+      edit.SelectionStart = 0;
     else
-      EditELS50Single.SelectionStart = EditELS50Single.Text.Length
-                               - ( EditELS50Single.Text.Length * EditELS50HScrollBar.Value / EditELS50HScrollBar.Minimum );
-    EditELS50Single.ScrollToCaret();
+      edit.SelectionStart = edit.Text.Length - ( edit.Text.Length * bar.Value / bar.Minimum );
+    edit.ScrollToCaret();
+  }
+
+  private void UpdateELS50ScrollBar()
+  {
+    var edit = EditELS50Single;
+    var bar = EditELS50HScrollBar;
+    bar.Value = bar.Minimum - ( edit.SelectionStart * bar.Minimum / edit.Text.Length );
+  }
+
+  private void EditELS50Single_KeyDown(object sender, KeyEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseClick(object sender, MouseEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_DragDrop(object sender, DragEventArgs e)
+  {
+    UpdateELS50ScrollBar();
+  }
+
+  private void EditELS50Single_MouseLeave(object sender, EventArgs e)
+  {
+    UpdateELS50ScrollBar();
   }
 
   #endregion
@@ -1477,7 +1506,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterBook_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectFilterBook.SelectedItem == null )
+    if ( SelectFilterBook.SelectedItem is null )
     {
       SelectFilterChapter.DataSource = null;
       SelectFilterVerse.DataSource = null;
@@ -1508,7 +1537,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void SelectFilterChapter_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectFilterChapter.SelectedItem == null )
+    if ( SelectFilterChapter.SelectedItem is null )
     {
       SelectFilterVerse.DataSource = null;
       return;

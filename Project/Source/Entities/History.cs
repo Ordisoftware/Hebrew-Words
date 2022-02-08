@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,7 +19,7 @@ class History : ReferencesList
 
   public override void Add(ReferenceItem reference)
   {
-    if ( reference == null ||Program.Settings.HistoryCount < 1 )
+    if ( reference is null || Program.Settings.HistoryCount < 1 )
       return;
     foreach ( var item in Items.Where(item => item.Equals(reference)).ToList() )
       Items.Remove(item);

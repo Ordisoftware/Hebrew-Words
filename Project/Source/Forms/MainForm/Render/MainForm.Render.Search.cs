@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -28,7 +28,7 @@ partial class MainForm
       PanelSearchResults.Visible = false;
       PanelSearchResults.AutoScrollPosition = new Point(0, 0);
       PanelSearchResults.DisposeAllControls();
-      if ( SearchResults == null || SearchResultsCount == 0 )
+      if ( SearchResults is null || SearchResultsCount == 0 )
         return;
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(true);
@@ -86,7 +86,7 @@ partial class MainForm
           }
           label.Location = new Point(x, y);
           label.Click += (sender, e) => PanelSearchResults.Focus();
-          if ( CheckWord != null )
+          if ( CheckWord is not null )
             if ( CheckWord(word) )
             {
               label.Tag = new ReferenceItem(reference, word);

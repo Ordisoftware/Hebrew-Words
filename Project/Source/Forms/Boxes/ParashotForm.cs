@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar and Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -25,7 +25,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Run(Parashah parashah = null)
   {
-    if ( Instance == null )
+    if ( Instance is null )
       Instance = new ParashotForm();
     else
     if ( Instance.Visible )
@@ -130,7 +130,7 @@ partial class ParashotForm : Form
 
   private void Select(Parashah parashah)
   {
-    if ( parashah == null ) return;
+    if ( parashah is null ) return;
     foreach ( DataGridViewRow row in DataGridView.Rows )
       if ( ( (Parashah)row.DataBoundItem ).ID == parashah.ID )
       {
@@ -342,7 +342,7 @@ partial class ParashotForm : Form
 
   private void BindingSource_DataSourceChanged(object sender, EventArgs e)
   {
-    if ( DataGridView.DataSource != null && HebrewDatabase.Instance.Parashot != null )
+    if ( DataGridView.DataSource is not null && HebrewDatabase.Instance.Parashot is not null )
       UpdateStats();
   }
 
@@ -376,7 +376,7 @@ partial class ParashotForm : Form
 
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
-    if ( e.Value == null ) return;
+    if ( e.Value is null ) return;
     if ( e.ColumnIndex == ColumnLinked.Index )
       e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
     else

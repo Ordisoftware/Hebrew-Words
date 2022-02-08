@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -99,7 +99,7 @@ partial class MainForm
         x = panel.ClientSize.Width - 10 - width;
         break;
     }
-    if ( panel != null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
+    if ( panel is not null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
     LastToolTipPanel = panel;
   }
 
