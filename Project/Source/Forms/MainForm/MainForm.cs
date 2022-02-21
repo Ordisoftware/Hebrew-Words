@@ -111,7 +111,7 @@ partial class MainForm : Form
     }
     if ( WindowState == FormWindowState.Normal )
     {
-      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
+      SelectVerse.DropDownWidth = Math.Max(ActionEditChapterMemo.Right - SelectVerse.Left + 5, 350);
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
           ActionRefresh.PerformClick();
