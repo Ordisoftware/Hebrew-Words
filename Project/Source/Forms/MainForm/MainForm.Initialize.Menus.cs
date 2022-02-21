@@ -60,7 +60,7 @@ partial class MainForm : Form
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
       var control = contextmenu?.SourceControl?.Parent as WordControl;
       string word = control?.Reference.Word.Hebrew ?? string.Empty;
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, word, Settings.CustomWebSearch);
     });
     // Verse read online
     ActionVerseReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>

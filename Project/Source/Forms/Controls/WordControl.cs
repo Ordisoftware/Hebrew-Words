@@ -132,7 +132,7 @@ public partial class WordControl : UserControl
           break;
         case HebrewWordClickAction.OnlineSearch:
           string word = Reference.Word.Hebrew;
-          HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
+          HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word, Settings.CustomWebSearch);
           break;
         case HebrewWordClickAction.SearchTranslated:
           MainForm.Instance.ActionSearchTranslated.PerformClick();
@@ -146,6 +146,11 @@ public partial class WordControl : UserControl
           throw new AdvancedNotImplementedException(value);
       }
     }
+  }
+
+  private void LabelHebrew_MouseDown(object sender, MouseEventArgs e)
+  {
+    EditTranslation.Focus();
   }
 
 }

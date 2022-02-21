@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.LabelHebrew = new System.Windows.Forms.Label();
       this.EditTranslation = new Ordisoftware.Core.TextBoxEx();
       this.SuspendLayout();
@@ -44,6 +45,7 @@
       this.LabelHebrew.TabStop = true;
       this.LabelHebrew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.LabelHebrew.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
+      this.LabelHebrew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseDown);
       this.LabelHebrew.MouseEnter += new System.EventHandler(this.LabelHebrew_MouseEnter);
       this.LabelHebrew.MouseLeave += new System.EventHandler(this.LabelHebrew_MouseLeave);
       // 
