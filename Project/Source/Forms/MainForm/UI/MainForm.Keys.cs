@@ -150,7 +150,7 @@ partial class MainForm
         case Keys.Shift | Keys.Control | Keys.W:
           if ( ActiveControl is VerseControl controlVerseWordDefault )
             if ( controlVerseWordDefault.ActiveControl is WordControl controlWordDefault )
-              HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWordDefault.Reference?.Word?.Hebrew);
+              HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWordDefault.Reference?.Word?.Hebrew, Settings.CustomWebSearch);
           break;
         case Keys.Control | Keys.O:
           if ( ActiveControl is VerseControl controlVerseLabel )

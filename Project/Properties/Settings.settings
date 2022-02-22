@@ -356,5 +356,8 @@
     <Setting Name="AutoSaveOnLeaveControl" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="CustomWebSearch" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%WORD%</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -111,7 +111,7 @@ partial class MainForm : Form
     }
     if ( WindowState == FormWindowState.Normal )
     {
-      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
+      SelectVerse.DropDownWidth = Math.Max(ActionEditChapterMemo.Right - SelectVerse.Left + 5, 350);
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
           ActionRefresh.PerformClick();
@@ -1293,7 +1293,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(CurrentReference?.Word?.Original);
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      Clipboard.SetText(controlWord.Reference?.Word?.Original);
   }
 
   /// <summary>
@@ -1303,7 +1304,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyFontChars_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(CurrentReference?.Word?.Hebrew);
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      Clipboard.SetText(controlWord.Reference?.Word?.Hebrew);
   }
 
   /// <summary>
@@ -1331,7 +1333,7 @@ partial class MainForm : Form
   private void ActionWordSearchDefault_Click(object sender, EventArgs e)
   {
     if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWord.Reference?.Word?.Hebrew);
+      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWord.Reference?.Word?.Hebrew, Settings.CustomWebSearch);
   }
 
   /// <summary>
