@@ -103,17 +103,28 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Frequently asked questions
 
+#### What code analyzers are used?
+
+- [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
+- [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
+- [F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)
+- [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
+- [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
+- [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
+
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
 The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
 
+#### What is the Windows double-buffering?
+
+When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
+
+When disabled, top menu painting may cause latency, and dynamic controls can be generated slowly the larger the number.
+
 #### What to do if there is a problem with the display?
 
 The refresh view button of the menu at the top redraws the entire form.
-
-#### The software sometimes runs slowly, is this normal?
-
-Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
 #### Why all verses of a chapter are not rendered?
 
@@ -121,11 +132,9 @@ Due to Windows Forms limitation inherited from 16-bits APIs, chapters having mor
 
 In this case, one verse at a time should be used.
 
-#### What is the Windows double-buffering?
+#### The software sometimes runs slowly, is this normal?
 
-When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
-
-When disabled, top menu painting may cause latency, and dynamic controls can be generated slowly the larger the number.
+Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
 #### What are command-line options?
 
