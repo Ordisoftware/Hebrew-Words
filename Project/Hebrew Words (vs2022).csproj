@@ -27,6 +27,7 @@
     <NoWarn>1587, 1591, 0649</NoWarn>
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Words.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +46,7 @@
           Ordisoftware*.xml
     </AllowedReferenceRelatedFileExtensions>
     <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Words.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">

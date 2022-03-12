@@ -1113,6 +1113,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">List changed event information.</param>
+  [SuppressMessage("Major Code Smell", "S4144:Methods should not have identical implementations", Justification = "N/A")]
   private void ChaptersBindingSource_ListChanged(object sender, ListChangedEventArgs e)
   {
     if ( Globals.IsLoadingData ) return;
