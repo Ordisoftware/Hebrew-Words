@@ -140,23 +140,25 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 - Change interface language (does not change the meanings of letters unless restoring them):
 
-  `Ordisoftware.Hebrew.Letters.exe --lang [en|fr]`
+  `Ordisoftware.Hebrew.Words.exe --lang [en|fr]`
 
 - Go to a reference like "1.1.1" or "bereshit 1.1":
 
-  `Ordisoftware.Hebrew.Letters.exe --verse [reference]` 
+  `Ordisoftware.Hebrew.Words.exe --verse [reference]` 
 
 - Search a word in the database "`בראשית`" and "`ty>arb`":
 
-  `Ordisoftware.Hebrew.Letters.exe --word [word]` 
+  `Ordisoftware.Hebrew.Words.exe --word [word]` 
 
 - Search a translation in the database "`בראשית`" and "`ty>arb`":
 
-  `Ordisoftware.Hebrew.Letters.exe --translated [word]` 
+  `Ordisoftware.Hebrew.Words.exe --translated [word]` 
 
   All diacritics are removed and if the word can't be processed it is set to empty.
 
   If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
+
+These options can be used to control the software when it is already running, but if this case this only works for administrator users.
 
 ## Keyboard shortcuts
 
@@ -311,6 +313,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update Hebrew applications' icons.
 - Update web links.
 - Update help.
+- Improve setup to allow installation by non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
 #### 2020.09.01 - Version 2.5
