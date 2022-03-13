@@ -235,7 +235,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 ## Changelog
 
-#### In progress for early 2022 - Version 3.0
+#### In progress for 2022 - Version 3.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
@@ -311,6 +311,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 - Update Hebrew applications' icons.
 - Update web links.
 - Update help.
+- Add Hebrew font version available on Fonts2u (can be manually installed).
 
 #### 2020.09.01 - Version 2.5
 
