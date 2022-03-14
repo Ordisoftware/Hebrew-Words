@@ -189,10 +189,10 @@ partial class MainForm
         {
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
-          if ( CurrentReference.Word is not null )
-            Array.Find(control.WordControls, c => c.Reference.Word == CurrentReference.Word)?.Focus();
+          if ( CurrentReference.Word is not null && control?.WordControls is not null )
+            Array.Find(control?.WordControls, c => c.Reference?.Word == CurrentReference.Word)?.Focus();
           else
-            control.WordControls.FirstOrDefault()?.Focus();
+            control.WordControls?.FirstOrDefault()?.Focus();
         }
         break;
       case ViewMode.ChapterTranslation:
