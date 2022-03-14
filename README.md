@@ -114,13 +114,21 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. You can manually check the latest version available online in case of problem.
+
+#### What to do if the application does not work normally despite restoring settings?
+
+Use the Start Menu link:
+
+&emsp;`Ordisoftware\Hebrew Words\Reset Hebrew Words settings`
+
+This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
 
 #### What is the Windows double-buffering?
 
 When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
 
-When disabled, top menu painting may cause latency, and dynamic controls can be generated slowly the larger the number.
+When disabled, top menu and some controls painting may cause latency, and dynamic items can be generated slowly the larger the number.
 
 #### What to do if there is a problem with the display?
 
@@ -313,6 +321,7 @@ These options can be used to control the software when it is already running, bu
 - Update Hebrew applications' icons.
 - Update web links.
 - Update help.
+- Disable IPC intercom for non-admin users.
 - Improve setup to allow installation by non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
