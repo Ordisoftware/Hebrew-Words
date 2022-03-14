@@ -54,12 +54,12 @@ namespace Ordisoftware.Hebrew.Words
       this.FilterChaptersBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectVerse = new System.Windows.Forms.ComboBox();
       this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.EditReference = new System.Windows.Forms.TextBox();
+      this.EditReference = new Ordisoftware.Core.TextBoxEx();
       this.LabelReference = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -180,9 +180,9 @@ namespace Ordisoftware.Hebrew.Words
       this.Name = "SelectReferenceForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

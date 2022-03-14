@@ -36,8 +36,8 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader1 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.columnHeader2 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,7 @@
       this.ActionDelLast = new System.Windows.Forms.Button();
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
-      this.EditHebrew = new System.Windows.Forms.TextBox();
+      this.EditHebrew = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -280,7 +280,7 @@
     private System.Windows.Forms.LinkLabel LabelReference;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Panel PanelTop;
-    private System.Windows.Forms.TextBox EditHebrew;
+    private Ordisoftware.Core.TextBoxEx EditHebrew;
     private System.Windows.Forms.CheckBox EditWholeWord;
     private System.Windows.Forms.Button ActionDelLast;
     private System.Windows.Forms.Button ActionDelFirst;
