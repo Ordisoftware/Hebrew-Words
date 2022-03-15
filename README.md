@@ -103,7 +103,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Frequently asked questions
 
-#### What code analyzers are used?
+#### What code analyzers are used in addition to Visual Studio?
 
 - [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
 - [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
