@@ -111,6 +111,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
+- [PumaScan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
 
 #### What are the differences between "only for me" and "for all users" installation?
 
