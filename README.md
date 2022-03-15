@@ -111,7 +111,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
-- [PumaScan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
+- [Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
 
 #### What are the differences between "only for me" and "for all users" installation?
 
@@ -125,7 +125,9 @@ Inter-process communication will therefore not be available for limited user acc
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. You can manually check the latest version available online in case of problem.
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it.
+
+You can manually check the latest version available online in case of problem.
 
 #### What to do if the application does not work normally despite restoring settings?
 
@@ -147,7 +149,7 @@ The refresh view button of the menu at the top redraws the entire form.
 
 #### Why all verses of a chapter are not rendered?
 
-Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100-150 verses cannot be fully rendered.
+Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100 to 150 verses cannot be fully rendered.
 
 In this case, one verse at a time should be used.
 
@@ -155,25 +157,27 @@ In this case, one verse at a time should be used.
 
 Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.
 
+In this case, one verse at a time should be used.
+
 #### What are command-line options?
 
-- Change interface language (does not change the meanings of letters unless restoring them):
+- Change interface language (does not change the database):
 
   `Ordisoftware.Hebrew.Words.exe --lang [en|fr]`
 
-- Go to a reference like "1.1.1" or "bereshit 1.1":
+- Go to a reference like "1.1.1" or "bereshit 1.1" or "genesis/genèse 1.1":
 
   `Ordisoftware.Hebrew.Words.exe --verse [reference]` 
 
-- Search a word in the database "`בראשית`" and "`ty>arb`":
+- Search a word in the database using unicode "`בראשית`" and or hebrew font "`ty>arb`":
 
   `Ordisoftware.Hebrew.Words.exe --word [word]` 
 
-- Search a translation in the database "`בראשית`" and "`ty>arb`":
+- Search a translation in the database using unicode "`בראשית`" and or hebrew font "`ty>arb`":
 
   `Ordisoftware.Hebrew.Words.exe --translated [word]` 
 
-  All diacritics are removed and if the word can't be processed it is set to empty.
+  All diacritics and case are removed, and if the word can't be processed it is set to empty.
 
   If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
 
