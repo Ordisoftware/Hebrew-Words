@@ -103,7 +103,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 ## Frequently asked questions
 
-#### What code analyzers are used?
+#### What code analyzers are used in addition to Visual Studio?
 
 - [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
 - [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
@@ -111,8 +111,9 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
+- [PumaScan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
 
-#### What are the difference between installing "only for me" and "for all users"?
+#### What are the differences between "only for me" and "for all users" installation?
 
 The first option does not need to have administrator rights and the software is installed in the `AppData\Local` user folder.
 
