@@ -101,6 +101,7 @@ static partial class Program
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
       // Check applications
+      // TODO improve check/change intercom apps paths in case of non-admin user
       string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
       string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
       string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
