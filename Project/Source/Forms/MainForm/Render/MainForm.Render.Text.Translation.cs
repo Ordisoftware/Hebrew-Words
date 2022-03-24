@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -21,7 +21,7 @@ partial class MainForm
   {
     RenderText(EditChapterTranslation, false, isGrouped, () =>
     {
-      var builder = new StringBuilder();
+      var builder = new StringBuilder(2048);
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
         builder.Append(verse.Number).Append(". ").Append(verse.Translation);

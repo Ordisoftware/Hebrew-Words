@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -21,12 +21,12 @@ partial class MainForm
   {
     if ( !isGrouped && !CanRender ) return;
     var chapter = CurrentReference?.Chapter;
-    var verse = CurrentReference?.Verse;
     if ( textbox.Tag is ReferenceItem reference
       && CurrentReference?.Book == reference.Book
       && isChapterElseBook
       && chapter == reference.Chapter )
     {
+      var verse = CurrentReference?.Verse;
       if ( ( isChapterElseBook && verse != reference.Verse ) || chapter != reference.Chapter )
         SetTanakItemFocus();
       return;
@@ -51,16 +51,16 @@ partial class MainForm
     }
   }
 
-  private void AddTextRightAligned(RichTextBox textbox, Font font, string str)
+  private void AddTextRightAligned(RichTextBoxEx textbox, Font font, string str)
   {
     AddTextRightAligned(textbox, font, str, SystemColors.ControlText);
   }
 
-  private void AddTextRightAligned(RichTextBox textbox, Font font, string str, Color color)
+  private void AddTextRightAligned(RichTextBoxEx textbox, Font font, string str, Color color)
   {
     textbox.SelectionFont = font;
     textbox.SelectionColor = color;
-    textbox.SelectionAlignment = HorizontalAlignment.Right;
+    textbox.SelectionAlignment = TextAlign.Right;
     textbox.AppendText(str);
   }
 

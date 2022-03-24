@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SearchTranslatedForm : Form
@@ -19,6 +19,7 @@ partial class SearchTranslatedForm : Form
 
   static public readonly List<SearchTranslatedForm> Forms = new();
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static public void Run(WordControl sender)
   {
     if ( sender is null || sender.Reference is null ) return;

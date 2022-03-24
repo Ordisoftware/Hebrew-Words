@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseRow
@@ -43,7 +43,7 @@ public partial class VerseRow
   {
     get
     {
-      var result = new StringBuilder();
+      var result = new StringBuilder(255);
       foreach ( var str in Words.Select(word => word.Translation.Trim()) )
         result.Append(str.Length > 0 ? str + " " : "[...] ");
       return result.ToString().Trim();

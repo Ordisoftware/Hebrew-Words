@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Xceed.Document.NET;
@@ -203,7 +203,6 @@ static class ExportDocX
       {
         var word = words[indexWord];
         string strWord = word.Hebrew;
-        string strTranslation = word.Translation;
         var cell = table.Rows[row].Cells[i];
         var pVerse = cell.Paragraphs[0].Append(strWord);
         cell.MarginTop = 5;
@@ -213,6 +212,7 @@ static class ExportDocX
         pVerse.Spacing(1);
         if ( includeTranslation )
         {
+          string strTranslation = word.Translation;
           var pTranslation = table.Rows[row + 1].Cells[i].Paragraphs[0].Append(strTranslation);
           pTranslation.Direction = Direction.LeftToRight;
           pTranslation.Alignment = Alignment.right;

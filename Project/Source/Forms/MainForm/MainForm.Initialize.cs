@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-01 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Microsoft.Win32;
@@ -88,7 +88,7 @@ partial class MainForm : Form
     LoadData();
     TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( TimerAutoSave.Enabled )
-      TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
+      TimerAutoSave.Interval = Settings.AutoSaveDelay * ( 60 * 1000 );
     Globals.IsReady = true;
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
     SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
@@ -111,7 +111,7 @@ partial class MainForm : Form
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     ApplicationDatabase.Instance.Modified += (_, _) => ActionSave.Enabled = true;
     ApplicationDatabase.Instance.Saved += _ => ActionSave.Enabled = false;
-    PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
+    PanelTitleInner.Controls.OfType<Label>().ForEach(label => label.Visible = true);
     Settings.SetFirstAndUpgradeFlagsOff();
   }
 

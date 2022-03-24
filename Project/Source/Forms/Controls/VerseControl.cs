@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseControl : UserControl
@@ -31,6 +31,7 @@ public partial class VerseControl : UserControl
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = new();
 
   static internal bool ResetMetricsRequired { get; set; }
@@ -50,14 +51,14 @@ public partial class VerseControl : UserControl
     if ( reference.Verse is null ) return;
     WordControls = new WordControl[reference.Verse.Words.Count];
     MetricsItem metrics;
-    if ( !MetricsCollection.ContainsKey(container) )
+    if ( MetricsCollection.TryGetValue(container, out var value) )
+      metrics = value;
+    else
     {
       metrics = new MetricsItem();
       MetricsCollection.Add(container, metrics);
       ResetMetrics(container);
     }
-    else
-      metrics = MetricsCollection[container];
     if ( ResetMetricsRequired ) ResetMetrics();
     if ( Settings.VerseCommentaryLinesCount > 1 )
     {
@@ -190,8 +191,9 @@ public partial class VerseControl : UserControl
     {
       for ( int index = 0; index < lines.Length; index++ )
       {
-        if ( !lines[index].Trim().IsEmpty() && !lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
-          lines[index] = Program.Settings.CommentLinePrefix + lines[index];
+        ref string line = ref lines[index];
+        if ( !line.Trim().IsEmpty() && !line.StartsWith(Program.Settings.CommentLinePrefix) )
+          line = Program.Settings.CommentLinePrefix + line;
         changed = true;
       }
       if ( changed )
@@ -202,8 +204,9 @@ public partial class VerseControl : UserControl
     {
       for ( int index = 0; index < lines.Length; index++ )
       {
-        if ( !lines[index].Trim().IsEmpty() && lines[index].StartsWith(Program.Settings.CommentLinePrefix) )
-          lines[index] = lines[index].Substring(Program.Settings.CommentLinePrefix.Length);
+        ref string line = ref lines[index];
+        if ( !line.Trim().IsEmpty() && line.StartsWith(Program.Settings.CommentLinePrefix) )
+          line = line.Substring(Program.Settings.CommentLinePrefix.Length);
         changed = true;
       }
       if ( changed )

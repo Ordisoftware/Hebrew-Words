@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -159,7 +159,7 @@ class ApplicationDatabase : SQLiteDatabase
       foreach ( BookRow book in Books )
       {
         TanakBook enumBook = (TanakBook)book.Number;
-        book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace("_", " ");
+        book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace('_', ' ');
         book.Hebrew = BooksNames.Hebrew[enumBook];
         if ( book.Original.Length == 0 )
           book.Original = BooksNames.Unicode[enumBook];
@@ -216,7 +216,7 @@ class ApplicationDatabase : SQLiteDatabase
       LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
       foreach ( TanakBook bookid in books )
       {
-        string filePath = Path.Combine(path, bookid.ToString().Replace("_", " ") + ".txt");
+        string filePath = Path.Combine(path, bookid.ToString().Replace('_', ' ') + ".txt");
         if ( !File.Exists(filePath) )
         {
           DisplayManager.ShowWarning(SysTranslations.FileNotFound.GetLang(filePath));
@@ -228,7 +228,7 @@ class ApplicationDatabase : SQLiteDatabase
         book.Number = (int)bookid;
         book.Original = BooksNames.Unicode[bookid];
         book.Hebrew = BooksNames.Hebrew[bookid];
-        book.Name = bookid.ToString().Replace("_", " ");
+        book.Name = bookid.ToString().Replace('_', ' ');
         book.CommonName = BooksNames.Common.GetLang(bookid);
         book.Translation = string.Empty;
         book.Lettriq = string.Empty;
@@ -265,30 +265,33 @@ class ApplicationDatabase : SQLiteDatabase
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
               verse.Comment = string.Empty;
-              listWordsOriginal = list[0].Replace("-", " ").Split(' ').Reverse().ToArray();
+              listWordsOriginal = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
               Verses.Add(verse);
             }
             else
             {
-              listWordsOriginal = line.Replace("-", " ").Split(' ').Reverse().ToArray();
+              listWordsOriginal = line.Replace('-', ' ').Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(line).Split(' ').ToArray();
             }
             for ( int i = 0; i < listWordsHebrew.Length; i++ )
-              if ( listWordsHebrew[i].Length > 0 )
+            {
+              ref var wordHebrew = ref listWordsHebrew[i];
+              if ( wordHebrew.Length > 0 )
               {
                 word = new();
                 word.ID = Guid.NewGuid();
                 word.VerseID = verse.ID;
                 word.Number = ++countWords;
                 word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
-                word.Hebrew = new string(listWordsHebrew[i].ToCharArray().Reverse().ToArray());
+                word.Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray());
                 word.Translation = string.Empty;
                 verse.Words.Add(word);
                 Words.Add(word);
-                strELS50 = listWordsHebrew[i] + strELS50;
+                strELS50 = wordHebrew + strELS50;
               }
+            }
           }
         }
       }

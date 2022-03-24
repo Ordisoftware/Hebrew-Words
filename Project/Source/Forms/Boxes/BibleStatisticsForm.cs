@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class BibleStatisticsForm : Form
@@ -115,10 +115,8 @@ partial class BibleStatisticsForm : Form
   {
     int lcount = (int)Math.Truncate(CountersTorah.CountLetters / 2.0);
     int index = 0;
-    var books = from book in ApplicationDatabase.Instance.Books
-                where book.Number <= BooksBounds.Torah.Max
-                select book;
-    foreach ( var book in books )
+    int max = BooksBounds.Torah.Max;
+    foreach ( var book in ApplicationDatabase.Instance.Books.Where(book => book.Number <= max) )
       foreach ( var chapter in book.Chapters )
         foreach ( var verse in chapter.Verses )
           foreach ( var word in verse.Words )
@@ -136,15 +134,17 @@ partial class BibleStatisticsForm : Form
             }
   }
 
+  [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   private void InitializeOccurences()
   {
+    int max = BooksBounds.Torah.Max;
     string getCount(Func<string, bool> check)
     {
       var query = from book in ApplicationDatabase.Instance.Books
                   from chapter in book.Chapters
                   from verse in chapter.Verses
                   from word in verse.Words
-                  where check(word.Hebrew) && book.Number <= BooksBounds.Torah.Max
+                  where check(word.Hebrew) && book.Number <= max
                   select word;
       return query.Count().ToString();
     }

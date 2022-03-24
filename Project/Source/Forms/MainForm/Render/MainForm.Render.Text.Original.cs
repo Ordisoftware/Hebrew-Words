@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -22,11 +22,11 @@ partial class MainForm
     RenderText(EditChapterOriginal, false, isGrouped, () =>
     {
       var box = new RichTextBoxEx();
-      var builder = new StringBuilder();
+      var builder = new StringBuilder(2048);
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
         for ( int index = verse.Words.Count - 1; index >= 0; index-- )
-          builder.Append(verse.Words[index].Hebrew).Append(" ");
+          builder.Append(verse.Words[index].Hebrew).Append(' ');
         AddTextRightAligned(box, HebrewFont12, builder.ToString());
         AddTextRightAligned(box, LatinFont10, ":" + verse.Number);
         box.AppendText(Environment.NewLine);

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SelectSearchResultsForm : Form
@@ -30,7 +30,7 @@ partial class SelectSearchResultsForm : Form
   private bool Mutex;
 
   private IEnumerable<ReferenceItem> References;
-  private readonly IEnumerable<ReferenceItem> OriginalReferences;
+  private readonly List<ReferenceItem> OriginalReferences;
   private int Count;
 
   private SelectSearchResultsForm()
@@ -44,7 +44,7 @@ partial class SelectSearchResultsForm : Form
   : this()
   {
     OriginalReferences = references.ToList();
-    LabelFound.Text = string.Format(LabelFound.Text, OriginalReferences.Count());
+    LabelFound.Text = string.Format(LabelFound.Text, OriginalReferences.Count);
   }
 
   private void SelectSearchResultsForm_Load(object sender, EventArgs e)
@@ -52,6 +52,7 @@ partial class SelectSearchResultsForm : Form
     CreateReferences(OriginalReferences);
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void CreateReferences(IEnumerable<ReferenceItem> references)
   {
     Initializing = true;
