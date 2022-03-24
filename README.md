@@ -230,7 +230,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Soon
 
-- Add bookmarks backup and restore.
+- Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
 - Add title and memo of book and chapter in DOCX export.

@@ -231,13 +231,14 @@
       this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVerseReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSetAsBookmarkMain = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionRemoveFromBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGoToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
@@ -258,6 +259,7 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1876,13 +1878,15 @@
             this.ActionVerseReadDefault,
             this.ActionVerseReadOnline,
             this.toolStripMenuItem1,
-            this.ActionCopyTranslation,
-            this.ActionExportVerse,
-            this.toolStripMenuItem3,
             this.ActionSetAsBookmarkMain,
             this.ActionAddToBookmarks,
+            this.ActionRemoveFromBookmarks,
+            this.toolStripSeparator12,
             this.ActionGoToBookmarks,
             this.toolStripMenuItem4,
+            this.ActionExportVerse,
+            this.ActionCopyTranslation,
+            this.toolStripMenuItem3,
             this.ActionImportConsole});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
@@ -1904,23 +1908,6 @@
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       // 
-      // ActionCopyTranslation
-      // 
-      resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
-      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
-      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
-      // 
-      // ActionExportVerse
-      // 
-      resources.ApplyResources(this.ActionExportVerse, "ActionExportVerse");
-      this.ActionExportVerse.Name = "ActionExportVerse";
-      this.ActionExportVerse.Click += new System.EventHandler(this.ActionExportVerse_Click);
-      // 
-      // toolStripMenuItem3
-      // 
-      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
-      // 
       // ActionSetAsBookmarkMain
       // 
       resources.ApplyResources(this.ActionSetAsBookmarkMain, "ActionSetAsBookmarkMain");
@@ -1933,6 +1920,12 @@
       this.ActionAddToBookmarks.Name = "ActionAddToBookmarks";
       this.ActionAddToBookmarks.Click += new System.EventHandler(this.ActionAddToBookmarks_Click);
       // 
+      // ActionRemoveFromBookmarks
+      // 
+      resources.ApplyResources(this.ActionRemoveFromBookmarks, "ActionRemoveFromBookmarks");
+      this.ActionRemoveFromBookmarks.Name = "ActionRemoveFromBookmarks";
+      this.ActionRemoveFromBookmarks.Click += new System.EventHandler(this.ActionRemoveFromBookmarks_Click);
+      // 
       // ActionGoToBookmarks
       // 
       resources.ApplyResources(this.ActionGoToBookmarks, "ActionGoToBookmarks");
@@ -1942,6 +1935,23 @@
       // 
       this.toolStripMenuItem4.Name = "toolStripMenuItem4";
       resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      // 
+      // ActionExportVerse
+      // 
+      resources.ApplyResources(this.ActionExportVerse, "ActionExportVerse");
+      this.ActionExportVerse.Name = "ActionExportVerse";
+      this.ActionExportVerse.Click += new System.EventHandler(this.ActionExportVerse_Click);
+      // 
+      // ActionCopyTranslation
+      // 
+      resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
+      this.ActionCopyTranslation.Name = "ActionCopyTranslation";
+      this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
+      // 
+      // toolStripMenuItem3
+      // 
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
       // 
       // ActionImportConsole
       // 
@@ -2057,6 +2067,11 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // toolStripSeparator12
+      // 
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
+      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
       // MainForm
       // 
@@ -2354,6 +2369,8 @@
     private ToolStripSeparator toolStripSeparator10;
     private ToolStripMenuItem ActionVerseReadDefault;
     private ToolStripMenuItem ActionWordSearchDefault;
+    private ToolStripMenuItem ActionRemoveFromBookmarks;
+    private ToolStripSeparator toolStripSeparator12;
   }
 }
 

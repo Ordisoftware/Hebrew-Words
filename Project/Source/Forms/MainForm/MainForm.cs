@@ -951,6 +951,16 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionRemoveFromBookmarks for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionRemoveFromBookmarks_Click(object sender, EventArgs e)
+  {
+    // TODO remove from master or bookmarks
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionClearHistory for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
