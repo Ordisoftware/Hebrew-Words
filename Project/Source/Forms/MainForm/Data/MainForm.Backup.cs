@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-08 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -21,7 +21,7 @@ partial class MainForm
   {
     string[] list = Directory.Exists(pathname)
                   ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
-                  : new string[0];
+                  : Array.Empty<string>();
     return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
   }
 
@@ -31,7 +31,7 @@ partial class MainForm
     {
       if ( Settings.BackupCount == 0 ) return;
       const string partBackup = "AutoBackup ";
-      string partFilename = Globals.AssemblyTitle.Replace(" ", "-");
+      string partFilename = Globals.AssemblyTitle.Replace(' ', '-');
       string filter = partBackup + partFilename + "*" + Globals.DatabaseFileExtension;
       var list = GetFiles(Settings.GetBackupDirectory(), filter).OrderBy(f => f.Name).ToList();
       while ( list.Count >= Settings.BackupCount )
@@ -39,14 +39,17 @@ partial class MainForm
         File.Delete(list[0].FullName);
         list.RemoveAt(0);
       }
-      string partPath = Path.Combine(Settings.GetBackupDirectory(), partBackup);
-      var date = DateTime.Now;
-      string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
-                                     date.Year, date.Month, date.Day,
-                                     date.Hour, date.Minute, date.Second);
       string fileSource = Path.Combine(Globals.UserDataFolderPath, partFilename + Globals.DatabaseFileExtension);
-      string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
-      if ( File.Exists(fileSource) ) File.Copy(fileSource, fileDest);
+      if ( File.Exists(fileSource) )
+      {
+        var date = DateTime.Now;
+        string strDate = string.Format("{0:00}-{1:00}-{2:00}@{3:00}h{4:00}m{5:00}s",
+                                       date.Year, date.Month, date.Day,
+                                       date.Hour, date.Minute, date.Second);
+        string partPath = Path.Combine(Settings.GetBackupDirectory(), partBackup);
+        string fileDest = partPath + partFilename + " " + strDate + Globals.DatabaseFileExtension;
+        File.Copy(fileSource, fileDest);
+      }
     });
   }
 

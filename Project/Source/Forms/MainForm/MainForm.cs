@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-01 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -20,6 +20,7 @@ using Equin.ApplicationFramework;
 /// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
+[SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
 partial class MainForm : Form
 {
 
@@ -589,6 +590,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "Collection is modified")]
   private void ActionCloseWindows_Click(object sender, EventArgs e)
   {
     bool value = Settings.CloseSearchTranslatedFormReturnToReference;
@@ -1444,12 +1446,12 @@ partial class MainForm : Form
   private void EditFilter_TextChanged(object sender, EventArgs e)
   {
     FilterModified[(TextBox)sender] = true;
-    ActionApplyFilterBook.Enabled = EditFilterBook.Text != string.Empty;
-    ActionApplyFilterChapter.Enabled = EditFilterChapter.Text != string.Empty;
-    ActionApplyFilterVerse.Enabled = EditFilterVerse.Text != string.Empty;
-    ActionClearFilterBook.Enabled = EditFilterBook.Text != string.Empty;
-    ActionClearFilterChapter.Enabled = EditFilterChapter.Text != string.Empty;
-    ActionClearFilterVerse.Enabled = EditFilterVerse.Text != string.Empty;
+    ActionApplyFilterBook.Enabled = EditFilterBook.Text.Length != 0;
+    ActionApplyFilterChapter.Enabled = EditFilterChapter.Text.Length != 0;
+    ActionApplyFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
+    ActionClearFilterBook.Enabled = EditFilterBook.Text.Length != 0;
+    ActionClearFilterChapter.Enabled = EditFilterChapter.Text.Length != 0;
+    ActionClearFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
   }
 
   /// <summary>
@@ -1490,17 +1492,17 @@ partial class MainForm : Form
       books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
     if ( EditFilterVersesTranslated.Checked )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
-    if ( EditFilterBook.Text != string.Empty )
+    if ( EditFilterBook.Text.Length != 0 )
       books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
                             || b.CommonName.RawContains(EditFilterBook.Text)
                             || b.Translation.RawContains(EditFilterBook.Text)
                             || b.Lettriq.RawContains(EditFilterBook.Text)
                             || b.Memo.RawContains(EditFilterBook.Text));
-    if ( EditFilterChapter.Text != string.Empty )
+    if ( EditFilterChapter.Text.Length != 0 )
       books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
                                                 || c.Memo.RawContains(EditFilterChapter.Text)));
 
-    if ( EditFilterVerse.Text != string.Empty )
+    if ( EditFilterVerse.Text.Length != 0 )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
                                                                   || v.Comment.RawContains(EditFilterVerse.Text))));
     var list = books.ToList();
@@ -1531,10 +1533,10 @@ partial class MainForm : Form
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
     if ( EditFilterVersesTranslated.Checked )
       chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
-    if ( EditFilterChapter.Text != string.Empty )
+    if ( EditFilterChapter.Text.Length != 0 )
       chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
                                   || c.Memo.RawContains(EditFilterChapter.Text));
-    if ( EditFilterVerse.Text != string.Empty )
+    if ( EditFilterVerse.Text.Length != 0 )
       chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
                                                     || v.Comment.RawContains(EditFilterVerse.Text)));
     var list = chapters.ToList();
@@ -1559,7 +1561,7 @@ partial class MainForm : Form
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
-    if ( EditFilterVerse.Text != string.Empty )
+    if ( EditFilterVerse.Text.Length != 0 )
       verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
                               || v.Comment.RawContains(EditFilterVerse.Text));
     SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());

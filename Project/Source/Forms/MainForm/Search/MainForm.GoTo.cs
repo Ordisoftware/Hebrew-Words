@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -189,7 +189,7 @@ partial class MainForm
         {
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
-          if ( CurrentReference is not null && CurrentReference.Word is not null && control?.WordControls is not null )
+          if ( CurrentReference?.Word is not null && control?.WordControls is not null )
             Array.Find(control?.WordControls, c => c.Reference?.Word == CurrentReference.Word)?.Focus();
           else
             control.WordControls?.FirstOrDefault()?.Focus();
@@ -209,7 +209,7 @@ partial class MainForm
         break;
     }
     //
-    static void searchRef(RichTextBox textbox, string str, Func<string, bool> check)
+    static void searchRef(RichTextBoxEx textbox, string str, Func<string, bool> check)
     {
       int pos = textbox.Lines.Where(line => check(line)).Select((_, index) => index).FirstOrDefault();
       textbox.Find(str, textbox.GetFirstCharIndexFromLine(pos), RichTextBoxFinds.None);

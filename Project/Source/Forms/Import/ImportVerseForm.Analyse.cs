@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class ImportVerseForm : Form
@@ -21,6 +21,7 @@ partial class ImportVerseForm : Form
 
   private readonly List<ImportWordMatch> WordMatches = new();
 
+  [SuppressMessage("Performance", "U2U1015:Do not index an array multiple times within a loop body", Justification = "N/A")]
   private void DoAnalyse()
   {
     IsResultValid = false;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -105,7 +105,7 @@ partial class PreferencesForm
     // Timer auto-save
     MainForm.Instance.TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( MainForm.Instance.TimerAutoSave.Enabled )
-      MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * 60 * 1000;
+      MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * ( 60 * 1000 );
     // End
     Settings.PreferencesFormSelectedTabIndex = TabControl.SelectedIndex;
     Settings.Store();
