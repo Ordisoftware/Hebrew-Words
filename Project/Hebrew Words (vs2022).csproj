@@ -772,6 +772,9 @@
     <None Include="Source\Common\Core\Globals\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Setup\OrdisoftwareHebrewWordsSetup.iss">
+      <Link>Properties\OrdisoftwareHebrewWordsSetup.iss</Link>
+    </Content>
     <Content Include="Licenses\MPL 2.0.htm" />
     <Content Include="Licenses\MPL 2.0.txt" />
   </ItemGroup>
@@ -780,7 +783,7 @@
       <Version>2.8.0</Version>
     </PackageReference>
     <PackageReference Include="DocX">
-      <Version>1.4.1</Version>
+      <Version>[1.4.1]</Version>
     </PackageReference>
     <PackageReference Include="Enums.NET">
       <Version>4.0.0</Version>
