@@ -196,8 +196,6 @@ public partial class VerseControl : UserControl
           line = Program.Settings.CommentLinePrefix + line;
         changed = true;
       }
-      if ( changed )
-        value = string.Join(Globals.NL, lines);
     }
     else
     if ( Program.Settings.CommentLineRemovePrefix )
@@ -209,9 +207,9 @@ public partial class VerseControl : UserControl
           line = line.Substring(Program.Settings.CommentLinePrefix.Length);
         changed = true;
       }
-      if ( changed )
-        value = string.Join(Globals.NL, lines);
     }
+    if ( changed )
+      value = lines.AsMultiLine();
     return value;
   }
 

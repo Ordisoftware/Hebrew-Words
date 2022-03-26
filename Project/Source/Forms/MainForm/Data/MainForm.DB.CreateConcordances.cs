@@ -142,7 +142,7 @@ partial class MainForm : Form
       LoadingForm.Instance.Hide();
     }
     var f = new ImportStrongForm();
-    f.RichTextBox.Text = string.Join(Environment.NewLine, errors.Take(10000));
+    f.RichTextBox.Text = errors.Take(10000).AsMultiLine();
     f.ShowDialog();
   }
 
