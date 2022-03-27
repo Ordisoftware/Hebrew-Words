@@ -79,10 +79,10 @@ class ApplicationStatistics
           long size4 = ApplicationDatabase.Instance.Words?.SizeOf() ?? 0;
           LoadingForm.Instance.DoProgress();
           _DBMemorySize = size1 > 0 && size2 > 0 && size3 > 0 && size4 > 0
-                          ? ( size1 + size2 + size3 + size4 ).FormatBytesSize()
-                            : size1 == 0 && size2 == 0 && size3 == 0 && size4 == 0
-                              ? SysTranslations.DatabaseTableClosed.GetLang()
-                              : "-";
+            ? ( size1 + size2 + size3 + size4 ).FormatBytesSize()
+            : size1 == 0 && size2 == 0 && size3 == 0 && size4 == 0
+              ? SysTranslations.DatabaseTableClosed.GetLang()
+              : "-";
         }
         finally
         {
@@ -118,10 +118,10 @@ class ApplicationStatistics
         UpdateDBParashotMemorySizeRequired = false;
         long size = HebrewDatabase.Instance.Parashot?.SizeOf() ?? 0;
         _DBParashotMemorySize = size > 0
-                                ? size.FormatBytesSize()
-                                  : size == 0
-                                    ? SysTranslations.DatabaseTableClosed.GetLang()
-                                    : "-";
+          ? size.FormatBytesSize()
+          : size == 0
+            ? SysTranslations.DatabaseTableClosed.GetLang()
+            : "-";
       }
       return _DBParashotMemorySize;
     }

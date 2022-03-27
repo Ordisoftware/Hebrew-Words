@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -59,9 +59,10 @@ partial class MainForm
   /// <param name="view">The view mode.</param>
   /// <param name="first">true to first.</param>
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   public void SetView(ViewMode view, bool first)
   {
-    var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
+    var viewPanels = new Dictionary<ViewMode, ViewConnector>
     {
       {
         ViewMode.ChapterVerses,
@@ -125,12 +126,12 @@ partial class MainForm
       return;
     }
     checkFirst();
-    ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
-    ViewPanels[Settings.CurrentView].Panel.Parent = null;
-    ViewPanels[view].MenuItem.Checked = true;
-    ViewPanels[view].Panel.Parent = PanelMainCenter;
+    viewPanels[Settings.CurrentView].MenuItem.Checked = false;
+    viewPanels[Settings.CurrentView].Panel.Parent = null;
+    viewPanels[view].MenuItem.Checked = true;
+    viewPanels[view].Panel.Parent = PanelMainCenter;
     if ( view != ViewMode.Search )
-      ViewPanels[view].Focused?.Focus();
+      viewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
     updateControls();
     switch ( view )

@@ -36,7 +36,7 @@ static partial class Program
       Globals.AlternativeToURL = "";
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Language lang = Settings.LanguageSelected;
+      var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       SystemManager.IPCSendCommands = IPCSendCommands;
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
@@ -133,7 +133,7 @@ static partial class Program
       server.EndWaitForConnection(ar);
       if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
       if ( !Globals.IsReady ) return;
-      Language lang = Settings.LanguageSelected;
+      var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
       var form = MainForm.Instance;
       var cmd = ApplicationCommandLine.Instance;
@@ -207,7 +207,7 @@ static partial class Program
       static void update(Form form)
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
-        ComponentResourceManager resources = new(form.GetType());
+        var resources = new ComponentResourceManager(form.GetType());
         resources.ApplyResources(form.Controls);
       }
       string lang = "en-US";

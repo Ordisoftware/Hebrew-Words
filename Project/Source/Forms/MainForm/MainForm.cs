@@ -326,19 +326,16 @@ partial class MainForm : Form
     Settings.SoundsEnabled = EditSoundsEnabled.Checked;
     DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
     DisplayManager.FormStyle = EditUseAdvancedDialogBoxes.Checked
-                               ? MessageBoxFormStyle.Advanced
-                               : MessageBoxFormStyle.System;
-    switch ( DisplayManager.FormStyle )
+      ? MessageBoxFormStyle.Advanced
+      : MessageBoxFormStyle.System;
+    DisplayManager.IconStyle = DisplayManager.FormStyle switch
     {
-      case MessageBoxFormStyle.System:
-        DisplayManager.IconStyle = EditSoundsEnabled.Checked
-                                   ? MessageBoxIconStyle.ForceInformation
-                                   : MessageBoxIconStyle.ForceNone;
-        break;
-      case MessageBoxFormStyle.Advanced:
-        DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
-        break;
-    }
+      MessageBoxFormStyle.System => EditSoundsEnabled.Checked
+        ? MessageBoxIconStyle.ForceInformation
+        : MessageBoxIconStyle.ForceNone,
+      MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
+      _ => throw new AdvancedNotImplementedException(DisplayManager.FormStyle),
+    };
   }
 
   /// <summary>
@@ -690,8 +687,7 @@ partial class MainForm : Form
   /// <summary>
   /// Event handler. Called by ActionVacuum for tick events.
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
+  [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuum_Click(object sender, EventArgs e)
   {
     Settings.VacuumLastDone = ApplicationDatabase.Instance
@@ -1484,9 +1480,11 @@ partial class MainForm : Form
     }
   }
 
+
   /// <summary>
   /// Creates filter data source.
   /// </summary>
+  [SuppressMessage("Refactoring", "GCop635:The condition of the where clause is very long and should be turned into a method.", Justification = "N/A")]
   private void CreateFilterDataSource()
   {
     var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
@@ -1529,7 +1527,7 @@ partial class MainForm : Form
       SelectFilterVerse.DataSource = null;
       return;
     }
-    Guid id = ( (BookRow)SelectFilterBook.SelectedItem ).ID;
+    var id = ( (BookRow)SelectFilterBook.SelectedItem ).ID;
     var chapters = ApplicationDatabase.Instance.Chapters.Where(chapter => chapter.BookID == id);
     if ( EditFilterChaptersWithTitle.Checked )
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
@@ -1559,7 +1557,7 @@ partial class MainForm : Form
       SelectFilterVerse.DataSource = null;
       return;
     }
-    Guid id = ( (ChapterRow)SelectFilterChapter.SelectedItem ).ID;
+    var id = ( (ChapterRow)SelectFilterChapter.SelectedItem ).ID;
     var verses = ApplicationDatabase.Instance.Verses.Where(verse => verse.ChapterID == id);
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
@@ -1751,7 +1749,6 @@ partial class MainForm : Form
   /// <summary>
   /// Search a hebrew word.
   /// </summary>
-  /// <param name="word"></param>
   public void SearchHebrewWord(string word)
   {
     SetView(ViewMode.Search);
@@ -1764,7 +1761,6 @@ partial class MainForm : Form
   /// <summary>
   /// Search a translated word.
   /// </summary>
-  /// <param name="word"></param>
   public void SearchTranslatedWord(string word)
   {
     SetView(ViewMode.Search);
@@ -1834,7 +1830,7 @@ partial class MainForm : Form
       if ( PreviousSeachPagingPosition == -1 )
         RenderSearch();
       else
-        EditSearchPaging.Text = SelectSearchPaging.Value + "/" + PagingCount + " (" + SearchResultsCount + ")";
+        EditSearchPaging.Text = $"{SelectSearchPaging.Value}/{PagingCount} ({SearchResultsCount})";
     }
   }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -107,9 +107,9 @@ partial class MainForm
       var book = reference.Book;
       var chapter = reference.Chapter;
       var verse = reference.Verse;
-      SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse).ToString() + ".docx";
+      SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse) + ".docx";
       if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse.Number);
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse.Number, true);
     }
     else
     if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
@@ -117,9 +117,9 @@ partial class MainForm
       var book = CurrentReference.Book;
       var chapter = CurrentReference.Chapter;
       int verse = Convert.ToInt32(control.Text);
-      SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse).ToString() + ".docx";
+      SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse) + ".docx";
       if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, verse);
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse, true);
     }
     else
       throw new AdvancedNotImplementedException(Settings.CurrentView);

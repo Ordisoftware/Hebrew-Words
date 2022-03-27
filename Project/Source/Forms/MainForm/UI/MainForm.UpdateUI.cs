@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -79,27 +79,28 @@ partial class MainForm
   /// <summary>
   /// Show tool tip in view panel.
   /// </summary>
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   void ShowPanelToolTip(string str)
   {
     Panel panel = null;
     int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
-    int x = 5;
-    const int y = 5;
+    int xpos = 5;
+    const int ypos = 5;
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
         panel = PanelViewVerses;
-        x = panel.ClientSize.Width - 15 - width;
+        xpos = panel.ClientSize.Width - 15 - width;
         break;
       case ViewMode.ChapterTranslation:
         panel = PanelViewTranslations;
         break;
       case ViewMode.Search:
         panel = PanelSearchResults;
-        x = panel.ClientSize.Width - 10 - width;
+        xpos = panel.ClientSize.Width - 10 - width;
         break;
     }
-    if ( panel is not null ) ToolTipSearchResult.Show(str, panel, x, y, 4000);
+    if ( panel is not null ) ToolTipSearchResult.Show(str, panel, xpos, ypos, 4000);
     LastToolTipPanel = panel;
   }
 

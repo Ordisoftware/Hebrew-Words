@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -31,13 +31,12 @@ partial class MainForm
       EditELS50Single.Text = itemChapter.ELS50;
       EditELS50Single.SelectionStart = EditELS50Single.TextLength;
       var references = SelectRenderAllVerses.Checked
-                 ? ( from book in ApplicationDatabase.Instance.Books
-                     from chapter in book.Chapters
-                     from verse in chapter.Verses
-                     where book.Number == itemBook.Number
-                        && chapter.Number == itemChapter.Number
-                     select new ReferenceItem(book, chapter, verse) ).ToList()
-                 : new List<ReferenceItem> { CurrentReference };
+        ? ( from book in ApplicationDatabase.Instance.Books
+            from chapter in book.Chapters
+            from verse in chapter.Verses
+            where book.Number == itemBook.Number && chapter.Number == itemChapter.Number
+            select new ReferenceItem(book, chapter, verse) ).ToList()
+        : new List<ReferenceItem> { CurrentReference };
       if ( SelectRenderAllVerses.Checked )
       {
         int controlsCount = references.Count * 2 + references.Select(r => r.Verse.Words.Count).Sum();
@@ -50,13 +49,13 @@ partial class MainForm
       PanelViewVerses.DisposeAllControls();
       if ( references.Count > 0 )
       {
-        int y = 0;
+        int ypos = 0;
         var controls = new VerseControl[references.Count];
         for ( int index = 0; index < references.Count; index++ )
         {
-          var control = new VerseControl(PanelViewVerses, references[index]) { Top = y };
+          var control = new VerseControl(PanelViewVerses, references[index]) { Top = ypos };
           controls[index] = control;
-          y += control.Height;
+          ypos += control.Height;
         }
         PanelViewVerses.Controls.AddRange(controls);
       }

@@ -28,7 +28,7 @@ partial class MainForm
       {
         foreach ( var reference in History )
         {
-          ToolStripMenuItem item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.ImageScaling = ToolStripItemImageScaling.None;

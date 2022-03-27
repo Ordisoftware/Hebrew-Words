@@ -32,6 +32,7 @@ static class ExportDocX
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
+  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   static public void Run(string filePath,
                          BookRow book,
                          bool includeTranslation,
@@ -85,8 +86,8 @@ static class ExportDocX
   static public void Run(string filePath,
                          BookRow book,
                          ChapterRow chapter,
-                         bool includeTranslation,
-                         int verse)
+                         int verse,
+                         bool includeTranslation)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
@@ -117,31 +118,29 @@ static class ExportDocX
   static private void AddBookTitle(BookRow book)
   {
     AddTitle(book.Hebrew, FontHebrew, 32, "Heading1");
-    if ( book.Translation.Length > 0 )
-    {
-      Table table = Document.InsertTable(1, 2);
-      table.Alignment = Alignment.right;
-      table.Design = TableDesign.None;
-      table.Rows[0].Cells[0].Width = 555;
-      table.Rows[0].Cells[1].Width = 55;
-      var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
-      paragraph.Append(book.Translation);
-      paragraph.Direction = Direction.RightToLeft;
-      paragraph.Font(FontCalibri);
-      paragraph.FontSize(16);
-      paragraph.Bold();
-      Document.InsertParagraph().AppendLine();
-    }
+    if ( book.Translation.Length == 0 ) return;
+    var table = Document.InsertTable(1, 2);
+    table.Alignment = Alignment.right;
+    table.Design = TableDesign.None;
+    table.Rows[0].Cells[0].Width = 555;
+    table.Rows[0].Cells[1].Width = 55;
+    var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
+    paragraph.Append(book.Translation);
+    paragraph.Direction = Direction.RightToLeft;
+    paragraph.Font(FontCalibri);
+    paragraph.FontSize(16);
+    paragraph.Bold();
+    Document.InsertParagraph().AppendLine();
   }
 
   static private void AddChapterTitle(ChapterRow chapter)
   {
-    AddTitle(AppTranslations.BookChapterTitle.GetLang() + " " + chapter.Number, FontCalibri, 20, "Heading2");
+    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, 20, "Heading2");
   }
 
   static private void AddTitle(string str, Font font, int size, string styleName)
   {
-    Table table = Document.InsertTable(1, 2);
+    var table = Document.InsertTable(1, 2);
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
     table.Rows[0].Cells[0].Width = 555;
@@ -159,14 +158,14 @@ static class ExportDocX
                                   int width,
                                   int marginTop,
                                   int marginBottom,
-                                  int MarginLeft,
-                                  int MarginRight)
+                                  int marginLeft,
+                                  int marginRight)
   {
     cell.Width = width;
     cell.MarginTop = marginTop;
     cell.MarginBottom = marginBottom;
-    cell.MarginLeft = MarginLeft;
-    cell.MarginRight = MarginRight;
+    cell.MarginLeft = marginLeft;
+    cell.MarginRight = marginRight;
   }
 
   static private void AddVerse(VerseRow verse, bool includeTranslation)
@@ -177,7 +176,7 @@ static class ExportDocX
     const int CountColumns = 4;
     int indexWord = countWords - 1;
     int countRows = ( (int)Math.Ceiling((double)countWords / CountColumns) ) * rowFactor;
-    Table table = Document.InsertTable(countRows, CountColumns + 1);
+    var table = Document.InsertTable(countRows, CountColumns + 1);
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
     for ( int row = 0; row < countRows; row += rowFactor )
