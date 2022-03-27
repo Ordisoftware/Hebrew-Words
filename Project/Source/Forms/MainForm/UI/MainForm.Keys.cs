@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -45,6 +45,7 @@ partial class MainForm
   /// Process the command key.
   /// </summary>
   /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
     static bool scroll(Panel panel, int y, bool abs)
@@ -174,7 +175,11 @@ partial class MainForm
             if ( CurrentReference.Chapter.Number > 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number - 1);
-              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses.Last()));
+              if ( chapter is not null )
+              {
+                var verse = chapter.Verses[chapter.Verses.Count - 1];
+                GoTo(new ReferenceItem(CurrentReference.Book, chapter, verse));
+              }
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Down:

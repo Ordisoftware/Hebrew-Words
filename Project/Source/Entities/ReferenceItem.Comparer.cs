@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -38,7 +38,7 @@ public partial class ReferenceItem
       => x is not null && y is not null && ( x.Word?.Translation ?? "" ) == ( y.Word?.Translation ?? "" );
 
     int IEqualityComparer<ReferenceItem>.GetHashCode(ReferenceItem obj)
-      => obj?.Word?.Translation.GetHashCode() ?? 0;
+      => StringComparer.Ordinal.GetHashCode(obj?.Word?.Translation ?? string.Empty);
 
   }
 

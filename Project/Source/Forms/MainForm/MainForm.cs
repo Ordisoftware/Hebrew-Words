@@ -408,7 +408,8 @@ partial class MainForm : Form
   private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    new EditBooksForm().ShowDialog();
+    using var form = new EditBooksForm();
+    form.ShowDialog();
     GoTo(CurrentReference);
     ActionSave.PerformClick();
   }
@@ -865,7 +866,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionImportConcordances_Click(object sender, EventArgs e)
   {
-    new ImportStrongForm().ShowDialog();
+    using var form = new ImportStrongForm();
+    form.ShowDialog();
   }
 
   #endregion
@@ -1263,7 +1265,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionEditBookMemo_Click(object sender, EventArgs e)
   {
-    var form = new EditMemoForm();
+    using var form = new EditMemoForm();
     form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name ?? string.Empty;
     form.TextBox.Text = CurrentReference.Book.Memo;
     form.TextBox.SelectionStart = 0;
@@ -1278,7 +1280,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
   {
-    var form = new EditMemoForm();
+    using var form = new EditMemoForm();
     form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name
                + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
                + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number

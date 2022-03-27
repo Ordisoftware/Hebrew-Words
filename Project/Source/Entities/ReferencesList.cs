@@ -1,5 +1,4 @@
-﻿using System.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -12,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 abstract class ReferencesList : IEnumerable<ReferenceItem>
@@ -52,7 +51,8 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
     if ( !File.Exists(FilePath) ) return;
     try
     {
-      foreach ( var item in File.ReadLines(FilePath).Where(item => item.Length != 0 && item.Count(c => c == '.') == 2) )
+      foreach ( var item in File.ReadLines(FilePath).Where(item => item.Length != 0
+                                                                && item.Where(c => c == '.').Take(3).Count() == 2) )
       {
         var parts = item.Split('.');
         SystemManager.TryCatch(() => Items.Add(new ReferenceItem(Convert.ToInt32(parts[0]),

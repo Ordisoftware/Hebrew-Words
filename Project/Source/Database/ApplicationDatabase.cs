@@ -42,6 +42,8 @@ class ApplicationDatabase : SQLiteDatabase
   public List<VerseRow> Verses { get; private set; } = new();
   public List<WordRow> Words { get; private set; } = new();
 
+
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
@@ -106,6 +108,7 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void CreateBindingLists()
   {
     OnLoadingData(SysTranslations.BindingData.GetLang());
+    BooksAsBindingList?.Dispose();
     BooksAsBindingList = new BindingListView<BookRow>(Books);
     OnDataLoaded(SysTranslations.DataBinded.GetLang());
   }
@@ -185,6 +188,7 @@ class ApplicationDatabase : SQLiteDatabase
     return false;
   }
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void FillFromFiles()
   {
     try

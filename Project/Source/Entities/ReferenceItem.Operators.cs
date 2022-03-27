@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -56,7 +56,6 @@ public partial class ReferenceItem
     => left is null
        ? right is null
        : left.CompareTo(right) <= 0;
-
 
   [SuppressMessage("Style", "IDE0075:Simplifier l’expression conditionnelle", Justification = "Opinion")]
   [SuppressMessage("Simplification", "RCS1104:Simplify conditional expression.", Justification = "Opinion")]

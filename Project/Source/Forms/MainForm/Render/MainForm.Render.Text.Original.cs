@@ -21,7 +21,7 @@ partial class MainForm
   {
     RenderText(EditChapterOriginal, false, isGrouped, () =>
     {
-      var box = new RichTextBoxEx();
+      using var box = new RichTextBoxEx();
       var builder = new StringBuilder(2048);
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -21,7 +21,7 @@ partial class MainForm
   {
     RenderText(EditChapterELS50, false, isGrouped, () =>
     {
-      var box = new RichTextBoxEx();
+      using var box = new RichTextBoxEx();
       foreach ( var chapter in CurrentReference.Book.Chapters )
       {
         AddTextRightAligned(box, HebrewFont12, chapter.ELS50);

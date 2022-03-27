@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -20,6 +20,7 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class ReferenceItem
 {
 
+  [SuppressMessage("Usage", "MA0015:Specify the parameter name in ArgumentException", Justification = "N/A")]
   private void Initialize(int book, int chapter, int verse, int word)
   {
     try
@@ -36,6 +37,7 @@ public partial class ReferenceItem
     }
   }
 
+  [SuppressMessage("Usage", "MA0015:Specify the parameter name in ArgumentException", Justification = "N/A")]
   private int[] Analyze(string reference)
   {
     int countSpaces = reference.Count(c => c == ' ');
@@ -48,7 +50,7 @@ public partial class ReferenceItem
       {
         var items = new int[3];
         var parts1 = reference.Split(' ');
-        var parts2 = parts1.Last().Split('.');
+        var parts2 = parts1[parts1.Length - 1].Split('.');
         items[1] = int.Parse(parts2[0]);
         items[2] = int.Parse(parts2[1]);
         string book = countSpaces == 1 ? parts1[0] : parts1[0] + " " + parts1[1];

@@ -58,6 +58,7 @@ partial class MainForm
   /// </summary>
   /// <param name="view">The view mode.</param>
   /// <param name="first">true to first.</param>
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public void SetView(ViewMode view, bool first)
   {
     var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
