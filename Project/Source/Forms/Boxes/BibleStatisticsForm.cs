@@ -59,7 +59,7 @@ partial class BibleStatisticsForm : Form
   {
     foreach ( BookRow book in ApplicationDatabase.Instance.Books )
     {
-      var stat = new BookStatistic() { Book = book };
+      var stat = new BookStatistic { Book = book };
       CountersBooks.Add((TanakBook)book.Number, stat);
       foreach ( ChapterRow chapter in book.Chapters )
       {

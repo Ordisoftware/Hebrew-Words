@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -80,7 +80,7 @@ static partial class Program
   static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
 
-  static public readonly Dictionary<string, Json.Strong.StrongItem> greekJsonStrongs
+  static public readonly Dictionary<string, Json.Strong.StrongItem> GreekJsonStrongs
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
 
   static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis

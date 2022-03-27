@@ -46,12 +46,13 @@ partial class MainForm
   /// </summary>
   /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
-    static bool scroll(Panel panel, int y, bool abs)
+    static bool scroll(Panel panel, int ypos, bool abs)
     {
       int dy = abs ? Math.Abs(panel.AutoScrollPosition.Y) : 0;
-      panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, y + dy);
+      panel.AutoScrollPosition = new Point(panel.AutoScrollPosition.X, ypos + dy);
       return true;
     }
     if ( Globals.IsReady )

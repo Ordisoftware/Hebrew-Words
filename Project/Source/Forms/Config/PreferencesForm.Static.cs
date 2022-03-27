@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -73,14 +73,11 @@ partial class PreferencesForm
   {
     First = true;
     Reseted = false;
-    Language lang = Settings.LanguageSelected;
+    var lang = Settings.LanguageSelected;
     var form = new PreferencesForm();
     if ( !MainForm.Instance.Visible )
       form.ShowInTaskbar = true;
-    if ( index >= 0 )
-      form.TabControl.SelectedIndex = index;
-    else
-      form.TabControl.SelectedIndex = Settings.PreferencesFormSelectedTabIndex;
+    form.TabControl.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
     form.ShowDialog();
     while ( LanguageChanged || DoReset )
     {

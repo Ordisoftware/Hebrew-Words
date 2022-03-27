@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class WordControl : UserControl
@@ -112,16 +112,21 @@ public partial class WordControl : UserControl
   {
     EditTranslation.Focus();
     if ( e.Button != MouseButtons.Left ) return;
-    if ( ModifierKeys == ( Keys.Shift | Keys.Control ) )
-      process(Settings.HebrewWordShiftCtrlClickAction);
-    else
-    if ( ModifierKeys == Keys.Control )
-      process(Settings.HebrewWordCtrlClickAction);
-    else
-    if ( ModifierKeys == Keys.Shift )
-      process(Settings.HebrewWordShiftClickAction);
-    else
-      process(Settings.HebrewWordClickAction);
+    switch ( ModifierKeys )
+    {
+      case Keys.Shift | Keys.Control:
+        process(Settings.HebrewWordShiftCtrlClickAction);
+        break;
+      case Keys.Control:
+        process(Settings.HebrewWordCtrlClickAction);
+        break;
+      case Keys.Shift:
+        process(Settings.HebrewWordShiftClickAction);
+        break;
+      default:
+        process(Settings.HebrewWordClickAction);
+        break;
+    }
     //
     void process(HebrewWordClickAction value)
     {

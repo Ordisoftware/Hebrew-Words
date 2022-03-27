@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -23,10 +23,10 @@ public abstract class AbstractRow : INotifyPropertyChanged
   [field: NonSerialized]
   public event PropertyChangedEventHandler PropertyChanged;
 
-  protected void NotifyPropertyChanged(string p)
+  protected void NotifyPropertyChanged(string property)
   {
     if ( !ApplicationDatabase.Instance.Loaded || !ApplicationDatabase.Instance.BindingsEnabled ) return;
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
     ApplicationDatabase.Instance.AddToModified(this);
   }
 

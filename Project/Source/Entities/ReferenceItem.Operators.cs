@@ -74,9 +74,6 @@ public partial class ReferenceItem
 
   #region Equals
 
-  static public bool Equals(ReferenceItem x, ReferenceItem y)
-    => x == y;
-
   [SuppressMessage("Style", "IDE0075:Simplifier l’expression conditionnelle", Justification = "Opinion")]
   [SuppressMessage("Simplification", "RCS1104:Simplify conditional expression.", Justification = "Opinion")]
   [SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "Opinion")]
@@ -85,14 +82,19 @@ public partial class ReferenceItem
        ? this == reference
        : false;
 
+  [SuppressMessage("Design", "GCop129:Change to an instance method, instead of taking a parameter '{0}' with the same type as the class.", Justification = "N/A")]
+  static public bool Equals(ReferenceItem instance, ReferenceItem instanceOther)
+    => instance == instanceOther;
+
   public bool Equals(ReferenceItem other)
     => this == other;
 
-  static public bool EqualsWordIncluded(ReferenceItem x, ReferenceItem y)
-    => x == y && ( x.Word?.Number ?? 0 ) == ( y.Word?.Number ?? 0 );
+  [SuppressMessage("Design", "GCop129:Change to an instance method, instead of taking a parameter '{0}' with the same type as the class.", Justification = "N/A")]
+  static public bool EqualsWordIncluded(ReferenceItem reference, ReferenceItem referenceOther)
+    => reference == referenceOther && ( reference.Word?.Number ?? 0 ) == ( referenceOther.Word?.Number ?? 0 );
 
-  public bool EqualsWordIncluded(ReferenceItem y)
-    => EqualsWordIncluded(this, y);
+  public bool EqualsWordIncluded(ReferenceItem other)
+    => EqualsWordIncluded(this, other);
 
   #endregion
 

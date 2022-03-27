@@ -34,31 +34,32 @@ partial class MainForm
       if ( Settings.FoundReferencesViewable > PagingCountDisableForm )
         SetFormDisabled(true);
       var results = SearchResults.Skip(( PagingCurrent - 1 ) * Settings.FoundReferencesViewable)
-                                 .Take(Settings.FoundReferencesViewable);
+                                 .Take(Settings.FoundReferencesViewable)
+                                 .ToList();
       const int referenceSize = 160;
       const int marginX = 10;
       const int marginY = 10;
       const int minX = marginX;
       int maxX = PanelSearchResults.ClientSize.Width - marginX;
-      int x = 0;
-      int y = 0;
+      int xpos = 0;
+      int ypos = 0;
       int xx;
       LinkLabel linklabel;
       int indexControl = 0;
-      int capacity = results.Count() * 2 + results.Select(r => r.Verse.Words.Count).Sum();
-      Control[] controls = new Control[capacity];
+      int capacity = results.Count * 2 + results.Sum(r => r.Verse.Words.Count);
+      var controls = new Control[capacity];
       foreach ( var reference in results )
       {
         Application.DoEvents();
         if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
-        x = maxX;
-        y += marginY;
+        xpos = maxX;
+        ypos += marginY;
         linklabel = new();
         linklabel.AutoSize = true;
         linklabel.Tag = reference;
         linklabel.Font = LatinFont8;
         linklabel.Text = reference.ToString();
-        linklabel.Location = new Point(x -= referenceSize, y);
+        linklabel.Location = new Point(xpos -= referenceSize, ypos);
         linklabel.ContextMenuStrip = ContextMenuStripVerse;
         linklabel.LinkColor = Color.DarkBlue;
         linklabel.LinkClicked += (sender, e) =>
@@ -70,8 +71,8 @@ partial class MainForm
           }
         };
         controls[indexControl++] = linklabel;
-        x -= marginX;
-        xx = x;
+        xpos -= marginX;
+        xx = xpos;
         Label label = null;
         foreach ( var word in reference.Verse.Words )
         {
@@ -79,13 +80,13 @@ partial class MainForm
           label.AutoSize = true;
           label.Font = HebrewFont12;
           label.Text = word.Hebrew.Trim();
-          x -= label.PreferredSize.Width;
-          if ( x < minX )
+          xpos -= label.PreferredSize.Width;
+          if ( xpos < minX )
           {
-            x = xx - label.PreferredWidth;
-            y += label.PreferredHeight;
+            xpos = xx - label.PreferredWidth;
+            ypos += label.PreferredHeight;
           }
-          label.Location = new Point(x, y);
+          label.Location = new Point(xpos, ypos);
           label.Click += (sender, e) => PanelSearchResults.Focus();
           if ( CheckWord is not null )
             if ( CheckWord(word) )
@@ -100,18 +101,16 @@ partial class MainForm
               label.ForeColor = SystemColors.ControlText;
           controls[indexControl++] = label;
         }
-        y += label.PreferredHeight + marginY;
-        if ( reference.Verse.HasTranslation )
-        {
-          label = new();
-          label.AutoSize = true;
-          label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
-          label.Text = reference.Verse.Translation;
-          label.Location = new Point(xx - label.PreferredSize.Width, y);
-          label.Click += (sender, e) => PanelSearchResults.Focus();
-          controls[indexControl++] = label;
-          y += label.PreferredHeight + marginY;
-        }
+        ypos += label.PreferredHeight + marginY;
+        if ( !reference.Verse.HasTranslation ) continue;
+        label = new();
+        label.AutoSize = true;
+        label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
+        label.Text = reference.Verse.Translation;
+        label.Location = new Point(xx - label.PreferredSize.Width, ypos);
+        label.Click += (sender, e) => PanelSearchResults.Focus();
+        controls[indexControl++] = label;
+        ypos += label.PreferredHeight + marginY;
       }
       PanelSearchResults.Controls.AddRange(controls);
     }

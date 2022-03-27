@@ -135,7 +135,7 @@ class ApplicationDatabase : SQLiteDatabase
   protected override void UpgradeSchema()
   {
     base.UpgradeSchema();
-    bool b = Globals.IsDatabaseUpgraded;
+    bool upgrade = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
       checkColumnText(BooksTableName, nameof(BookRow.Original));
@@ -145,10 +145,10 @@ class ApplicationDatabase : SQLiteDatabase
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Title));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Memo));
     }
-    Globals.IsDatabaseUpgraded = b;
+    Globals.IsDatabaseUpgraded = upgrade;
     //
     void checkColumnText(string table, string column)
-      => b = !Connection.CheckColumn(table, column, "TEXT", "\"\"", true, false, false) || b;
+      => upgrade = !Connection.CheckColumn(table, column, "TEXT", "\"\"", true, false, false) || upgrade;
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -161,7 +161,7 @@ class ApplicationDatabase : SQLiteDatabase
     {
       foreach ( BookRow book in Books )
       {
-        TanakBook enumBook = (TanakBook)book.Number;
+        var enumBook = (TanakBook)book.Number;
         book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace('_', ' ');
         book.Hebrew = BooksNames.Hebrew[enumBook];
         if ( book.Original.Length == 0 )
@@ -216,9 +216,8 @@ class ApplicationDatabase : SQLiteDatabase
         chapter.ELS50 = res;
         strELS50 = "";
       }
-      var books = Enums.GetValues<TanakBook>();
       LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
-      foreach ( TanakBook bookid in books )
+      foreach ( TanakBook bookid in Enums.GetValues<TanakBook>() )
       {
         string filePath = Path.Combine(path, bookid.ToString().Replace('_', ' ') + ".txt");
         if ( !File.Exists(filePath) )
@@ -226,7 +225,7 @@ class ApplicationDatabase : SQLiteDatabase
           DisplayManager.ShowWarning(SysTranslations.FileNotFound.GetLang(filePath));
           continue;
         }
-        string[] filecontent = File.ReadAllLines(filePath);
+        var filecontent = File.ReadAllLines(filePath);
         book = new();
         book.ID = Guid.NewGuid();
         book.Number = (int)bookid;
@@ -282,19 +281,17 @@ class ApplicationDatabase : SQLiteDatabase
             for ( int i = 0; i < listWordsHebrew.Length; i++ )
             {
               ref var wordHebrew = ref listWordsHebrew[i];
-              if ( wordHebrew.Length > 0 )
-              {
-                word = new();
-                word.ID = Guid.NewGuid();
-                word.VerseID = verse.ID;
-                word.Number = ++countWords;
-                word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
-                word.Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray());
-                word.Translation = string.Empty;
-                verse.Words.Add(word);
-                Words.Add(word);
-                strELS50 = wordHebrew + strELS50;
-              }
+              if ( wordHebrew.Length == 0 ) continue;
+              word = new();
+              word.ID = Guid.NewGuid();
+              word.VerseID = verse.ID;
+              word.Number = ++countWords;
+              word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
+              word.Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray());
+              word.Translation = string.Empty;
+              verse.Words.Add(word);
+              Words.Add(word);
+              strELS50 = wordHebrew + strELS50;
             }
           }
         }

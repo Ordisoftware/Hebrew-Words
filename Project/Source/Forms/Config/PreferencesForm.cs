@@ -383,8 +383,8 @@ partial class PreferencesForm : Form
   private void ActionCheckAllComments_Click(object sender, EventArgs e)
   {
     string msg = EditCommentLineAddPrefix.Checked
-                 ? AppTranslations.CommentPrefixAddAll.GetLang(EditCommentLinePrefix.Text)
-                 : AppTranslations.CommentPrefixRemoveAll.GetLang(EditCommentLinePrefix.Text);
+      ? AppTranslations.CommentPrefixAddAll.GetLang(EditCommentLinePrefix.Text)
+      : AppTranslations.CommentPrefixRemoveAll.GetLang(EditCommentLinePrefix.Text);
     if ( !DisplayManager.QueryYesNo(msg) ) return;
     Settings.CommentLineAddPrefix = EditCommentLineAddPrefix.Checked;
     Settings.CommentLineRemovePrefix = EditCommentLineRemovePrefix.Checked;

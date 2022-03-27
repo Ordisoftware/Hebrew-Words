@@ -43,7 +43,7 @@ partial class ImportVerseForm : Form
 
   private ImportVerseForm(ReferenceItem reference) : this()
   {
-    Text += " - " + reference.ToString();
+    Text += $" - {reference}";
     Reference = reference;
   }
 

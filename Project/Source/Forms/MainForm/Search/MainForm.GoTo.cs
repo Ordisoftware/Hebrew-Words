@@ -177,6 +177,7 @@ partial class MainForm
   /// <summary>
   /// Sets Tanak item focus.
   /// </summary>
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   void SetTanakItemFocus()
   {
     if ( CurrentReference is null ) return;
@@ -196,15 +197,15 @@ partial class MainForm
         }
         break;
       case ViewMode.ChapterTranslation:
-        string strTr = CurrentReference.Verse.Number + ". ";
+        string strTr = $"{CurrentReference.Verse.Number}. ";
         searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
         break;
       case ViewMode.ChapterOriginal:
-        string strSrc = ":" + CurrentReference.Verse.Number;
+        string strSrc = $":{CurrentReference.Verse.Number}";
         searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc, StringComparison.Ordinal));
         break;
       case ViewMode.BookELS50:
-        string strELS = ":" + CurrentReference.Chapter.Number;
+        string strELS = $":{CurrentReference.Chapter.Number}";
         searchRef(EditChapterELS50, strELS, line => line.EndsWith(strELS, StringComparison.Ordinal));
         break;
     }

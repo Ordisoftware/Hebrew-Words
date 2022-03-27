@@ -216,6 +216,7 @@ partial class MainForm : Form
   /// <summary>
   /// WndProc override.
   /// </summary>
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   protected override void WndProc(ref Message m)
   {
     switch ( m.Msg )

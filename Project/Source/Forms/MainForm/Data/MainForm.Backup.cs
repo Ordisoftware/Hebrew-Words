@@ -19,9 +19,9 @@ partial class MainForm
 
   private List<FileInfo> GetFiles(string pathname, string pattern)
   {
-    string[] list = Directory.Exists(pathname)
-                  ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
-                  : Array.Empty<string>();
+    var list = Directory.Exists(pathname)
+      ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
+      : Array.Empty<string>();
     return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
   }
 

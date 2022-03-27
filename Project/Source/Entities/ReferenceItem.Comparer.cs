@@ -20,9 +20,9 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class ReferenceItem
 {
 
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   public sealed class ReferenceComparer : IEqualityComparer<ReferenceItem>
   {
-
     bool IEqualityComparer<ReferenceItem>.Equals(ReferenceItem x, ReferenceItem y)
       => x == y;
 
@@ -31,6 +31,7 @@ public partial class ReferenceItem
 
   }
 
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   public sealed class WordTranslationComparer : IEqualityComparer<ReferenceItem>
   {
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SelectReferenceForm : Form
@@ -23,28 +23,32 @@ partial class SelectReferenceForm : Form
     while ( true )
       try
       {
-        var reference = Run(form);
-        if ( reference is null ) return null;
-        if ( reference.Book is null ) throw new Exception();
-        if ( reference.Chapter is null ) reference = new ReferenceItem(reference.Book.Number, 1, 1);
-        if ( reference.Verse is null ) reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
+        var reference = process();
+        if ( reference is null )
+          return null;
+        if ( reference.Book is null )
+          throw new KeyNotFoundException(nameof(reference.Book));
+        if ( reference.Chapter is null )
+          reference = new ReferenceItem(reference.Book.Number, 1, 1);
+        if ( reference.Verse is null )
+          reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
         return reference;
       }
       catch
       {
         DisplayManager.ShowError("Bad reference.");
       }
-  }
+    //
+    ReferenceItem process()
+    {
+      if ( form.ShowDialog() != DialogResult.OK ) return null;
+      return !form.EditReference.Text.IsNullOrEmpty()
+        ? new ReferenceItem(form.EditReference.Text.Trim().Replace("  ", " "))
+        : new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
+                            ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                            ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
+    }
 
-  static private ReferenceItem Run(SelectReferenceForm form)
-  {
-    if ( form.ShowDialog() != DialogResult.OK ) return null;
-    if ( !form.EditReference.Text.IsNullOrEmpty() )
-      return new ReferenceItem(form.EditReference.Text.Trim().Replace("  ", " "));
-    else
-      return new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
-                               ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                               ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
   }
 
   private SelectReferenceForm()
