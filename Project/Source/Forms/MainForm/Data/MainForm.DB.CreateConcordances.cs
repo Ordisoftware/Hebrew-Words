@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm : Form
@@ -141,9 +141,9 @@ partial class MainForm : Form
     {
       LoadingForm.Instance.Hide();
     }
-    var f = new ImportStrongForm();
-    f.RichTextBox.Text = errors.Take(10000).AsMultiLine();
-    f.ShowDialog();
+    using var form = new ImportStrongForm();
+    form.RichTextBox.Text = errors.Take(10000).AsMultiLine();
+    form.ShowDialog();
   }
 
   public int CommonCount<T>(IEnumerable<T> source, IEnumerable<T> sequence, IEqualityComparer<T> comparer = null)

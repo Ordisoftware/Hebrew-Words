@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class ImportVerseForm : Form
@@ -19,7 +19,7 @@ partial class ImportVerseForm : Form
 
   static public void Run(ReferenceItem reference)
   {
-    var form = new ImportVerseForm(reference);
+    using var form = new ImportVerseForm(reference);
     if ( form.ShowDialog() != DialogResult.OK ) return;
     var pairs = from word in reference.Verse.Words
                 from wordNew in form.WordMatches

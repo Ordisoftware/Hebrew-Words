@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2023-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -110,7 +110,7 @@ partial class PreferencesForm
       control.Maximum = interval.Item2;
       control.Value = interval.Item3;
       control.Increment = interval.Item4;
-      if ( label is not null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+      if ( label is not null ) label.Text = $"{interval.Item1} - {interval.Item2} ({interval.Item3})";
     }
   }
 

@@ -20,7 +20,7 @@ partial class SelectSearchResultsForm : Form
   static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
   {
     if ( references is null ) return new List<ReferenceItem>();
-    var form = new SelectSearchResultsForm(references);
+    using var form = new SelectSearchResultsForm(references);
     if ( form.ShowDialog() == DialogResult.Cancel )
       form.References = null;
     return form.References;

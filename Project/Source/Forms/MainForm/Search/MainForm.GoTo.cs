@@ -197,15 +197,15 @@ partial class MainForm
         break;
       case ViewMode.ChapterTranslation:
         string strTr = CurrentReference.Verse.Number + ". ";
-        searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr));
+        searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
         break;
       case ViewMode.ChapterOriginal:
         string strSrc = ":" + CurrentReference.Verse.Number;
-        searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc));
+        searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc, StringComparison.Ordinal));
         break;
       case ViewMode.BookELS50:
         string strELS = ":" + CurrentReference.Chapter.Number;
-        searchRef(EditChapterELS50, strELS, line => line.EndsWith(strELS));
+        searchRef(EditChapterELS50, strELS, line => line.EndsWith(strELS, StringComparison.Ordinal));
         break;
     }
     //

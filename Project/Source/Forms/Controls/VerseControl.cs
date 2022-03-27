@@ -97,7 +97,8 @@ public partial class VerseControl : UserControl
   {
     using var graphicsNumber = LabelVerseNumber.CreateGraphics();
     var metrics = MetricsCollection[container];
-    int widthHScroll = new VScrollBar().Width;
+    using var vscrollbar = new VScrollBar();
+    int widthHScroll = vscrollbar.Width;
     int width = container.ClientSize.Width - widthHScroll / 2 - container.Padding.Left - container.Padding.Right;
     metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.FontFamily, Settings.FontSizeHebrew - 2, FontStyle.Bold);
     metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
@@ -109,6 +110,7 @@ public partial class VerseControl : UserControl
     metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "<En attente>")]
   private int CreateWordControls()
   {
     WordControl control = null;
@@ -192,7 +194,7 @@ public partial class VerseControl : UserControl
       for ( int index = 0; index < lines.Length; index++ )
       {
         ref string line = ref lines[index];
-        if ( !line.Trim().IsEmpty() && !line.StartsWith(Program.Settings.CommentLinePrefix) )
+        if ( !line.Trim().IsEmpty() && !line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
           line = Program.Settings.CommentLinePrefix + line;
         changed = true;
       }
@@ -203,7 +205,7 @@ public partial class VerseControl : UserControl
       for ( int index = 0; index < lines.Length; index++ )
       {
         ref string line = ref lines[index];
-        if ( !line.Trim().IsEmpty() && line.StartsWith(Program.Settings.CommentLinePrefix) )
+        if ( !line.Trim().IsEmpty() && line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
           line = line.Substring(Program.Settings.CommentLinePrefix.Length);
         changed = true;
       }

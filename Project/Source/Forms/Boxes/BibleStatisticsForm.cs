@@ -28,7 +28,7 @@ partial class BibleStatisticsForm : Form
 
   static public ReferenceItem Run()
   {
-    var form = new BibleStatisticsForm();
+    using var form = new BibleStatisticsForm();
     form.ShowDialog();
     return form.Reference;
   }
@@ -151,7 +151,7 @@ partial class BibleStatisticsForm : Form
     LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
     LabelCountElohimValue.Text = getCount(s => HebrewAlphabet.SetFinal(s, false).Contains("myhla"));
     LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));
-    LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m"));
+    LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m", StringComparison.Ordinal));
     LabelCountMitsvahValue.Text = getCount(s => s.Contains("hvjm") || s.Contains("tvjm"));
   }
 
