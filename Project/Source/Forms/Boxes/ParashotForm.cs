@@ -199,7 +199,6 @@ partial class ParashotForm : Form
   private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
   {
     Timer.Stop();
-    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;

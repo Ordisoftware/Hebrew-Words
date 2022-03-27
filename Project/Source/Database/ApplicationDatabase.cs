@@ -153,10 +153,10 @@ class ApplicationDatabase : SQLiteDatabase
 
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
-    long countBooks = Connection.GetRowsCount(BooksTableName);
-    long countChapters = Connection.GetRowsCount(ChaptersTableName);
-    long countVerses = Connection.GetRowsCount(VersesTableName);
-    long countWords = Connection.GetRowsCount(WordsTableName);
+    long countBooks = Connection.CountRows(BooksTableName);
+    long countChapters = Connection.CountRows(ChaptersTableName);
+    long countVerses = Connection.CountRows(VersesTableName);
+    long countWords = Connection.CountRows(WordsTableName);
     if ( countBooks != 0 && Globals.IsDatabaseUpgraded )
     {
       foreach ( BookRow book in Books )
