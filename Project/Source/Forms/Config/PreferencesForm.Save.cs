@@ -106,7 +106,7 @@ partial class PreferencesForm
     // Timer auto-save
     MainForm.Instance.TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( MainForm.Instance.TimerAutoSave.Enabled )
-      MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * ( 60 * 1000 );
+      MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * Globals.MilliSecondsInOneMinute;
     // End
     Settings.PreferencesFormSelectedTabIndex = TabControl.SelectedIndex;
     Settings.Store();

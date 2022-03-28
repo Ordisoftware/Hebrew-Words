@@ -26,6 +26,7 @@ partial class MainForm : Form
   /// <summary>
   /// Does constructor
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void DoConstructor()
   {
     Interlocks.Take();
@@ -79,6 +80,7 @@ partial class MainForm : Form
   /// <summary>
   /// Does Form Shown event.
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void DoFormShown(object sender, EventArgs e)
   {
     if ( Globals.IsExiting ) return;
@@ -88,7 +90,7 @@ partial class MainForm : Form
     LoadData();
     TimerAutoSave.Enabled = Settings.AutoSaveDelay != 0;
     if ( TimerAutoSave.Enabled )
-      TimerAutoSave.Interval = Settings.AutoSaveDelay * ( 60 * 1000 );
+      TimerAutoSave.Interval = Settings.AutoSaveDelay * Globals.MilliSecondsInOneMinute;
     Globals.IsReady = true;
     int height = TextRenderer.MeasureText("A", SelectBook.Font).Height;
     SelectBook.DropDownHeight = Math.Min(600, height * ( SelectBook.Items.Count + 1 ));
@@ -101,7 +103,10 @@ partial class MainForm : Form
     };
     Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                            AppTranslations.NoticeKeyboardShortcuts,
-                                                           true, false, 340, 450, false, false);
+                                                           true, false,
+                                                           MessageBoxEx.DefaultHeightMedium,
+                                                           MessageBoxEx.DefaultHeightBig,
+                                                           false, false);
     Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
     Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
     Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);

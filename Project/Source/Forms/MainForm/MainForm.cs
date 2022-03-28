@@ -100,6 +100,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void MainForm_WindowsChanged(object sender, EventArgs e)
   {
     if ( !Visible ) return;
@@ -177,7 +178,7 @@ partial class MainForm : Form
     var item = (ToolStripItem)LastToolTip.Tag;
     var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
     LastToolTip.Tag = sender;
-    LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+    LastToolTip.Show(item.ToolTipText, ToolStrip, location, Globals.ToolTipDelay);
     TimerTooltip.Enabled = false;
   }
 

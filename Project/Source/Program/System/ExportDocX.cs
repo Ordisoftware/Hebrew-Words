@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 using Xceed.Document.NET;
 using Xceed.Words.NET;
 
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
 static class ExportDocX
 {
 

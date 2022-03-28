@@ -204,6 +204,7 @@ class ApplicationDatabase : SQLiteDatabase
       WordRow word = null;
       string path = Program.TanakFolderPath;
       string strELS50 = "";
+      int nounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.Codes, "n")];
       void nextChapter()
       {
         book.Chapters.Add(chapter);
@@ -212,7 +213,7 @@ class ApplicationDatabase : SQLiteDatabase
         int i = strELS50.Length - 1;
         while ( i >= 0 && strELS50[i] != 't' ) i--;
         string res = "";
-        for ( int p = i; p >= 0; p -= 50 ) res = strELS50[p] + res;
+        for ( int p = i; p >= 0; p -= nounValue ) res = strELS50[p] + res;
         chapter.ELS50 = res;
         strELS50 = "";
       }

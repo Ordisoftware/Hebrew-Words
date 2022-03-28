@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void RenderChapterTranslation(bool isGrouped = false)
   {
     RenderText(EditChapterTranslation, false, isGrouped, () =>
