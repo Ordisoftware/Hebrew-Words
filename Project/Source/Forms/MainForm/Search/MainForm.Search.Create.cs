@@ -62,7 +62,7 @@ partial class MainForm
         CheckVerse = checkVerseComment;
       }
       else
-        throw new AdvancedNotImplementedException(nameof(SelectSearchTypeTranslation));
+        throw new AdvNotImplementedException(nameof(SelectSearchTypeTranslation));
     }
     else
     if ( SelectSearchType.SelectedTab == SelectSearchTypeVerses )
@@ -73,7 +73,7 @@ partial class MainForm
       if ( SelectSearchRequestAllUntranslated.Checked ) CheckVerse = checkTranslatedAllUntranslated;
     }
     else
-      throw new AdvancedNotImplementedException(SelectSearchType.SelectedTab.Text);
+      throw new AdvNotImplementedException(SelectSearchType.SelectedTab.Text);
     //
     int bookSelected = ( (BookRow)SelectSearchInBook.SelectedItem ).Number;
     bool isBookSelected(int index)

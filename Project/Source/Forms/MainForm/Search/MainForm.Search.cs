@@ -60,7 +60,7 @@ partial class MainForm
       SelectSearchPaging.Enabled = SearchResultsCount > 0;
       EditSearchPaging.Text = SearchResultsCount == 0
                             ? "0"
-                            : PagingCurrent + "/" + PagingCount + " (" + SearchResultsCount + ")";
+                            : $"{PagingCurrent}/{PagingCount} ({SearchResultsCount})";
     }
     catch ( Exception ex )
     {

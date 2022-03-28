@@ -334,7 +334,7 @@ partial class MainForm : Form
         ? MessageBoxIconStyle.ForceInformation
         : MessageBoxIconStyle.ForceNone,
       MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
-      _ => throw new AdvancedNotImplementedException(DisplayManager.FormStyle),
+      _ => throw new AdvNotImplementedException(DisplayManager.FormStyle),
     };
   }
 
@@ -623,7 +623,7 @@ partial class MainForm : Form
         Clipboard.SetText(EditChapterELS50.Text);
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.CurrentView);
+        throw new AdvNotImplementedException(Settings.CurrentView);
     }
     DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
                                       Globals.ClipboardSoundFilePath);

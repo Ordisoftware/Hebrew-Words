@@ -163,7 +163,7 @@ public partial class VerseControl : UserControl
       case VerseLabelClickAction.Nothing:
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.VerseLabelClickAction);
+        throw new AdvNotImplementedException(Program.Settings.VerseLabelClickAction);
     }
   }
 

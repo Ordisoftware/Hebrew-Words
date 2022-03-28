@@ -28,7 +28,7 @@ partial class MainForm
         for ( int index = verse.Words.Count - 1; index >= 0; index-- )
           builder.Append(verse.Words[index].Hebrew).Append(' ');
         AddTextRightAligned(box, HebrewFont12, builder.ToString());
-        AddTextRightAligned(box, LatinFont10, ":" + verse.Number);
+        AddTextRightAligned(box, LatinFont10, $":{verse.Number}");
         box.AppendText(Environment.NewLine);
         box.AppendText(Environment.NewLine);
         builder.Clear();

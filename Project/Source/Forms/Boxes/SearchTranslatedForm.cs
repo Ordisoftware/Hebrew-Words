@@ -154,7 +154,7 @@ partial class SearchTranslatedForm : Form
         ActionReachReference.PerformClick();
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.TranslatedItemDoubleClickAction.ToStringFull());
+        throw new AdvNotImplementedException(Program.Settings.TranslatedItemDoubleClickAction.ToStringFull());
     }
   }
 

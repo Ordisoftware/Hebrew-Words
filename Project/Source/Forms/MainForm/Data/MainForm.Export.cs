@@ -55,7 +55,7 @@ partial class MainForm
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.CurrentView);
+        throw new AdvNotImplementedException(Settings.CurrentView);
     }
   }
 
@@ -66,7 +66,7 @@ partial class MainForm
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
-        SaveFileDialogMSWord.FileName = book.Name + " " + chapter.Number + ".docx";
+        SaveFileDialogMSWord.FileName = $"{book.Name} {chapter.Number}.docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         SetFormDisabled(true);
         try
@@ -79,21 +79,21 @@ partial class MainForm
         }
         break;
       case ViewMode.ChapterTranslation:
-        SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Translation.rtf";
+        SaveFileDialogRTF.FileName = $"{book.Name} {chapter.Number} Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditChapterTranslation.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       case ViewMode.ChapterOriginal:
-        SaveFileDialogRTF.FileName = book.Name + " " + chapter.Number + " Hebrew.rtf";
+        SaveFileDialogRTF.FileName = $"{book.Name} {chapter.Number} Hebrew.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditChapterOriginal.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.CurrentView);
+        throw new AdvNotImplementedException(Settings.CurrentView);
     }
   }
 
@@ -122,7 +122,7 @@ partial class MainForm
       ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse, true);
     }
     else
-      throw new AdvancedNotImplementedException(Settings.CurrentView);
+      throw new AdvNotImplementedException(Settings.CurrentView);
   }
 
 }
