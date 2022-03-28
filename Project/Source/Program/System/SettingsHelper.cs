@@ -191,9 +191,9 @@ static class SettingsHelper
   /// </summary>
   static internal string GetBackupDirectory(this Settings settings)
   {
-    string diectory = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-    Directory.CreateDirectory(diectory);
-    return diectory;
+    string result = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    Directory.CreateDirectory(result);
+    return result;
   }
 
 }

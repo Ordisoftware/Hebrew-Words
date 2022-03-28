@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -52,9 +52,9 @@ public partial class VerseRow : AbstractRow
 
   public override string ToString()
   {
-    string str = FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
-    if ( HasTranslation ) str += $" - {Translation}";
-    return str;
+    string result = FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
+    if ( HasTranslation ) result += $" - {Translation}";
+    return result;
   }
 
 }

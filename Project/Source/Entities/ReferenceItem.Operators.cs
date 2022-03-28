@@ -100,6 +100,7 @@ public partial class ReferenceItem
 
   #region CompareTo
 
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public int CompareTo(ReferenceItem other)
   {
     if ( other is null )
@@ -125,6 +126,7 @@ public partial class ReferenceItem
       return 1;
   }
 
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public int CompareToWordIncluded(ReferenceItem other)
   {
     if ( other is null )
