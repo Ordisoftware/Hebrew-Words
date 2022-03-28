@@ -80,6 +80,7 @@ partial class MainForm
   /// Show tool tip in view panel.
   /// </summary>
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   void ShowPanelToolTip(string str)
   {
     Panel panel = null;

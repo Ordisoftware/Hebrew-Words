@@ -26,6 +26,7 @@ partial class MainForm : Form
   /// <summary>
   /// Does constructor
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void DoConstructor()
   {
     Interlocks.Take();
@@ -79,6 +80,7 @@ partial class MainForm : Form
   /// <summary>
   /// Does Form Shown event.
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void DoFormShown(object sender, EventArgs e)
   {
     if ( Globals.IsExiting ) return;

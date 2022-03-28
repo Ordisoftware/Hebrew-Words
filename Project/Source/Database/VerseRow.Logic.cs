@@ -39,6 +39,7 @@ public partial class VerseRow
     }
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public string Translation
   {
     get
