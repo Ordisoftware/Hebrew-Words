@@ -148,7 +148,7 @@ public partial class WordControl : UserControl
         case HebrewWordClickAction.Nothing:
           break;
         default:
-          throw new AdvancedNotImplementedException(value);
+          throw new AdvNotImplementedException(value);
       }
     }
   }

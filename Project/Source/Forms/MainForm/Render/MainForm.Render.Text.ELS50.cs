@@ -25,7 +25,7 @@ partial class MainForm
       foreach ( var chapter in CurrentReference.Book.Chapters )
       {
         AddTextRightAligned(box, HebrewFont12, chapter.ELS50);
-        AddTextRightAligned(box, LatinFont10, " :" + chapter.Number);
+        AddTextRightAligned(box, LatinFont10, $" :{chapter.Number}");
         box.AppendText(Environment.NewLine);
       }
       EditChapterELS50.Rtf = box.Rtf;
