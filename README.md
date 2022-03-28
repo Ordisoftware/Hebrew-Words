@@ -315,7 +315,7 @@ These options can be used to control the software when it is already running, bu
 - Move Tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since two years for Hebrew Calendar and Hebrew Letters.
-- Files and code refactoring.
+- Massisve files and code refactoring.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
 - Update setup for Framework .NET 4.8
