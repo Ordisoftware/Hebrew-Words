@@ -271,7 +271,7 @@ partial class MainForm : Form
         int chapter = reference.Chapter?.Number ?? 1;
         int verse = reference.Verse?.Number ?? 1;
         int word = reference.Verse?.Number ?? 1;
-        GoTo(new ReferenceItem(book, chapter, verse, word), true);
+        GoToReference(new ReferenceItem(book, chapter, verse, word), true);
       }
       finally
       {
@@ -408,7 +408,7 @@ partial class MainForm : Form
     ActionSave.PerformClick();
     using var form = new EditBooksForm();
     form.ShowDialog();
-    GoTo(CurrentReference);
+    GoToReference(CurrentReference);
     ActionSave.PerformClick();
   }
 
@@ -457,7 +457,7 @@ partial class MainForm : Form
     if ( reference is not null )
     {
       SetView(ViewMode.ChapterVerses);
-      GoTo(reference);
+      GoToReference(reference);
     }
   }
 
@@ -560,7 +560,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     SetView(ViewMode.ChapterVerses);
-    GoTo(SelectReferenceForm.Run(), true);
+    GoToReference(SelectReferenceForm.Run(), true);
   }
 
   /// <summary>
@@ -581,7 +581,7 @@ partial class MainForm : Form
     int chapter = CurrentReference.Chapter?.Number ?? 1;
     int verse = CurrentReference.Verse?.Number ?? 1;
     int word = CurrentReference.Verse?.Number ?? 1;
-    GoTo(new ReferenceItem(book, chapter, verse, word), true);
+    GoToReference(new ReferenceItem(book, chapter, verse, word), true);
   }
 
   /// <summary>
@@ -869,30 +869,33 @@ partial class MainForm : Form
 
   #endregion
 
-  #region ContextMenu Verse
+  #region Menu Bookmarks and History
 
   /// <summary>
-  /// Event handler. Called by ContextMenuStripVerse for opening events.
+  /// Event handler. Called by ActionAddBookmark for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ContextMenuStripVerse_Opening(object sender, CancelEventArgs e)
+  private void ActionAddBookmark_Click(object sender, EventArgs e)
   {
-    ReferenceItem reference;
-    var contextmenu = sender as ContextMenuStrip;
-    var control = contextmenu?.SourceControl;
-    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
-      reference = (ReferenceItem)control.Tag;
-    else
-    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
-      reference = ( (VerseControl)label.Parent ).Reference;
-    else
-      return;
-    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
-                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
-                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
-    ActionAddToBookmarks.Enabled = !Bookmarks.Contains(reference);
+    BookmarkItems.Add(SelectReferenceForm.Run());
+    UpdateBookmarks();
+  }
 
+  private void ActionHistoryVerseNext_Click(object sender, EventArgs e)
+  {
+    if ( CurrentReference is null ) return;
+    var list = HistoryItems.ToList();
+    int index = list.FindIndex(( r => r.CompareTo(CurrentReference) == 0 ));
+    if ( index > 0 ) GoToReference(list[index - 1], isHistory: true);
+  }
+
+  private void ActionHistoryVerseBack_Click(object sender, EventArgs e)
+  {
+    if ( CurrentReference is null ) return;
+    var list = HistoryItems.ToList();
+    int index = list.FindIndex(( r => r.CompareTo(CurrentReference) == 0 ));
+    if ( index >= 0 && index < list.Count - 1 ) GoToReference(list[index + 1], isHistory: true);
   }
 
   /// <summary>
@@ -947,7 +950,7 @@ partial class MainForm : Form
                                     CurrentReference.Chapter.Number,
                                     CurrentReference.Chapter.Verses[index].Number);
     }
-    Bookmarks.Add(reference);
+    BookmarkItems.Add(reference);
     UpdateBookmarks();
   }
 
@@ -969,7 +972,7 @@ partial class MainForm : Form
   private void ActionClearHistory_Click(object sender, EventArgs e)
   {
     if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyHistory.GetLang()) ) return;
-    History.Clear();
+    HistoryItems.Clear();
     UpdateHistory();
   }
 
@@ -984,7 +987,7 @@ partial class MainForm : Form
     Settings.BookmarkMasterBook = 1;
     Settings.BookmarkMasterChapter = 1;
     Settings.BookmarkMasterVerse = 1;
-    Bookmarks.Clear();
+    BookmarkItems.Clear();
     Settings.Store();
     UpdateBookmarks();
   }
@@ -996,20 +999,39 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSortBookmarks_Click(object sender, EventArgs e)
   {
-    Bookmarks.Sort();
+    BookmarkItems.Sort();
     UpdateBookmarks();
     ActionBookmarks.ShowDropDown();
   }
 
   /// <summary>
-  /// Event handler. Called by ActionAddBookmark for click events.
+  /// Go to bookmark reference.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionAddBookmark_Click(object sender, EventArgs e)
+  private void GoToBookmark(object sender, EventArgs e)
   {
-    Bookmarks.Add(SelectReferenceForm.Run());
-    UpdateBookmarks();
+    ProcessGoToBookmarkOrHistory((ReferenceItem)( (ToolStripMenuItem)sender ).Tag, false);
+  }
+
+  /// <summary>
+  /// Go to history reference.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void GoToHistory(object sender, EventArgs e)
+  {
+    ProcessGoToBookmarkOrHistory((ReferenceItem)( (ToolStripMenuItem)sender ).Tag, true);
+  }
+
+  private void ProcessGoToBookmarkOrHistory(ReferenceItem reference, bool isHistory)
+  {
+    ActionSave.PerformClick();
+    if ( Settings.CurrentView == ViewMode.VerseFiltered
+      || Settings.CurrentView == ViewMode.BookELS50
+      || Settings.CurrentView == ViewMode.Search )
+      SetView(ViewMode.ChapterVerses);
+    GoToReference(reference, isHistory: isHistory);
   }
 
   #endregion
@@ -1080,7 +1102,7 @@ partial class MainForm : Form
                                       CurrentReference.Chapter.Number,
                                       ( (VerseRow)SelectVerse.SelectedItem ).Number);
     if ( reference != CurrentReference )
-      GoTo(reference);
+      GoToReference(reference);
   }
 
   /// <summary>
@@ -1172,7 +1194,7 @@ partial class MainForm : Form
                                            ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
       if ( referenceOld == referenceNew ) return;
       ActionSave.PerformClick();
-      GoTo(referenceNew, true);
+      GoToReference(referenceNew, true);
     }
     finally
     {
@@ -1252,7 +1274,7 @@ partial class MainForm : Form
   private void PanelViewVerses_MouseClick(object sender, MouseEventArgs e)
   {
     PanelViewVerses.Focus();
-    GoTo(CurrentReference);
+    GoToReference(CurrentReference);
   }
 
   /// <summary>
@@ -1365,18 +1387,27 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Go to bookmark.
+  /// Event handler. Called by ContextMenuStripVerse for opening events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void GoToBookmark(object sender, EventArgs e)
+  private void ContextMenuStripVerse_Opening(object sender, CancelEventArgs e)
   {
-    ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.VerseFiltered
-      || Settings.CurrentView == ViewMode.BookELS50
-      || Settings.CurrentView == ViewMode.Search )
-      SetView(ViewMode.ChapterVerses);
-    GoTo((ReferenceItem)( (ToolStripMenuItem)sender ).Tag);
+    ReferenceItem reference;
+    var contextmenu = sender as ContextMenuStrip;
+    var control = contextmenu?.SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+      reference = (ReferenceItem)control.Tag;
+    else
+    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      reference = ( (VerseControl)label.Parent ).Reference;
+    else
+      return;
+    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
+                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
+                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
+    ActionAddToBookmarks.Enabled = !BookmarkItems.Contains(reference);
+
   }
 
   #endregion
@@ -1586,7 +1617,7 @@ partial class MainForm : Form
   private void ActionGoFromVerseFilteredToVersesPanel_Click(object sender, EventArgs e)
   {
     SetView(ViewMode.ChapterVerses);
-    GoTo(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
+    GoToReference(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
                            ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
                            ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
   }
@@ -1744,7 +1775,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchVerse_Click(object sender, EventArgs e)
   {
-    GoTo(SelectVerseForm.Run());
+    GoToReference(SelectVerseForm.Run());
   }
 
   /// <summary>

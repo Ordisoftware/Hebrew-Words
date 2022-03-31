@@ -23,7 +23,7 @@ partial class MainForm
     try
     {
       if ( Settings.AutoSortBookmarks )
-        Bookmarks.Sort();
+        BookmarkItems.Sort();
       while ( ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex )
         ActionBookmarks.DropDownItems.RemoveAt(BookmarkMenuIndex);
       var bookmarkMaster = new ReferenceItem(Settings.BookmarkMasterBook,
@@ -44,16 +44,20 @@ partial class MainForm
         }
         else
         {
-          Bookmarks.Remove((ReferenceItem)menuitem.Tag);
+          BookmarkItems.Remove((ReferenceItem)menuitem.Tag);
           UpdateBookmarks();
         }
       }
       ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
-      if ( Bookmarks.Count > 0 )
+      if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
+        ActionGoToBookmarkMain.ReplaceFont(new Font(ActionGoToBookmarkMain.Font, FontStyle.Bold));
+      else
+        ActionGoToBookmarkMain.ReplaceFont(new Font(ActionGoToBookmarkMain.Font, FontStyle.Regular));
+      if ( BookmarkItems.Count > 0 )
       {
-        foreach ( var reference in Bookmarks )
+        foreach ( var reference in BookmarkItems )
         {
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           item.Tag = reference;
@@ -61,11 +65,13 @@ partial class MainForm
           item.MouseUp += bookmarkClicked;
           item.ImageScaling = ToolStripItemImageScaling.None;
           item.Image = ActionGoToBookmarks.Image;
+          if ( reference.CompareTo(CurrentReference) == 0 )
+            item.ReplaceFont(new Font(item.Font, FontStyle.Bold));
         }
       }
-      ActionClearBookmarks.Enabled = Bookmarks.Count > 0 && ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex;
-      ActionSortBookmarks.Enabled = Bookmarks.Count > 0 && !Settings.AutoSortBookmarks;
-      SeparatorBookmarks.Visible = Bookmarks.Count > 0;
+      ActionClearBookmarks.Enabled = BookmarkItems.Count > 0 && ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex;
+      ActionSortBookmarks.Enabled = BookmarkItems.Count > 0 && !Settings.AutoSortBookmarks;
+      SeparatorBookmarks.Visible = BookmarkItems.Count > 0;
     }
     catch ( Exception ex )
     {

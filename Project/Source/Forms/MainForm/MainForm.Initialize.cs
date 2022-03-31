@@ -32,8 +32,8 @@ partial class MainForm : Form
     Interlocks.Take();
     new Task(InitializeIconsAndSound).Start();
     new Task(InitializeDialogsDirectory).Start();
-    new Task(() => Bookmarks = new Bookmarks(Program.BookmarksFilePath)).Start();
-    new Task(() => History = new History(Program.HistoryFilePath)).Start();
+    new Task(() => BookmarkItems = new Bookmarks(Program.BookmarksFilePath)).Start();
+    new Task(() => HistoryItems = new History(Program.HistoryFilePath)).Start();
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
@@ -141,13 +141,13 @@ partial class MainForm : Form
         if ( !string.IsNullOrEmpty(options.ReferenceToGo) )
         {
           auto = true;
-          GoTo(options.ReferenceToGo);
+          GoToReference(options.ReferenceToGo);
         }
         else
         if ( !string.IsNullOrEmpty(options.SearchWord) )
         {
           auto = true;
-          DoStartGoTo();
+          DoStartGoToReference();
           var word = HebrewAlphabet.ContainsUnicode(options.SearchWord)
                      ? HebrewAlphabet.ToHebrewFont(options.SearchWord)
                      : HebrewAlphabet.OnlyHebrewFont(options.SearchWord);
@@ -157,14 +157,14 @@ partial class MainForm : Form
         if ( !string.IsNullOrEmpty(options.SearchTranslated) )
         {
           auto = true;
-          DoStartGoTo();
+          DoStartGoToReference();
           SearchTranslatedWord(options.SearchTranslated);
         }
       }
       catch
       {
       }
-    if ( !auto ) DoStartGoTo();
+    if ( !auto ) DoStartGoToReference();
   }
 
   /// <summary>

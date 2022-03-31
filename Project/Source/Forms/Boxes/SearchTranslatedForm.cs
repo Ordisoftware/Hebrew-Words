@@ -160,7 +160,7 @@ partial class SearchTranslatedForm : Form
 
   private void ReachReferencedWord(ReferenceItem reference)
   {
-    MainForm.Instance.GoTo(reference);
+    MainForm.Instance.GoToReference(reference);
   }
 
   private void ActionReachReference_Click(object sender, EventArgs e)
@@ -274,6 +274,18 @@ partial class SearchTranslatedForm : Form
     {
       Mutex = false;
     }
+  }
+
+  protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+  {
+    switch ( keyData )
+    {
+      case Keys.F8:
+      case Keys.Alt | Keys.F8:
+        MainForm.Instance.ActionCloseWindows.PerformClick();
+        return true;
+    }
+    return base.ProcessCmdKey(ref msg, keyData);
   }
 
 }

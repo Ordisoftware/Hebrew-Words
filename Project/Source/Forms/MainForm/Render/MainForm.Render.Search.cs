@@ -67,7 +67,7 @@ partial class MainForm
           if ( e.Button == MouseButtons.Left )
           {
             SetView(ViewMode.ChapterVerses);
-            GoTo((ReferenceItem)( (Control)sender ).Tag);
+            GoToReference((ReferenceItem)( (Control)sender ).Tag);
           }
         };
         controls[indexControl++] = linklabel;
@@ -142,7 +142,7 @@ partial class MainForm
   {
     SetView(ViewMode.ChapterVerses);
     var item = (ReferenceItem)( (Control)sender ).Tag;
-    GoTo(item);
+    GoToReference(item);
   }
 
 }
