@@ -19,8 +19,6 @@ using Equin.ApplicationFramework;
 partial class EditBooksForm : Form
 {
 
-  static private readonly Properties.Settings Settings = Program.Settings;
-
   private BookRow SelectedBook
     => DataGridView.SelectedRows.Count == 1
        ? ( (ObjectView<BookRow>)DataGridView.SelectedRows[0].DataBoundItem ).Object
@@ -33,7 +31,7 @@ partial class EditBooksForm : Form
     ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, SelectedBook?.Hebrew, Settings.CustomWebSearch);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, SelectedBook?.Hebrew);
     });
   }
 
@@ -101,12 +99,12 @@ partial class EditBooksForm : Form
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, SelectedBook?.Hebrew, Settings.CustomWebSearch);
+    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, SelectedBook?.Hebrew);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewLetters(SelectedBook.Hebrew, Program.Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(SelectedBook.Hebrew);
   }
 
   private void ActionSearchWord_Click(object sender, EventArgs e)
@@ -156,7 +154,7 @@ partial class EditBooksForm : Form
   {
     if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
       foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
-        book.CommonName = BooksNames.Common.GetLang((TanakBook)( book.Number ));
+        book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
   }
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)

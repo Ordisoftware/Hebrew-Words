@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -60,7 +60,7 @@ partial class MainForm : Form
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
       var control = contextmenu?.SourceControl?.Parent as WordControl;
       string word = control?.Reference.Word.Hebrew ?? string.Empty;
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, word, Settings.CustomWebSearch);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
     });
     // Verse read online
     ActionVerseReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>

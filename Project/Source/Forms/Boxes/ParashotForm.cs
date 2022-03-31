@@ -82,7 +82,7 @@ partial class ParashotForm : Form
     ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, CurrentDataBoundItem.Hebrew, Settings.CustomWebSearch);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, CurrentDataBoundItem.Hebrew);
     });
   }
 
@@ -428,7 +428,7 @@ partial class ParashotForm : Form
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewLetters(CurrentDataBoundItem.Hebrew, Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(CurrentDataBoundItem.Hebrew);
   }
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)

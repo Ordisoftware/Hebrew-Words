@@ -188,7 +188,7 @@ partial class BibleStatisticsForm : Form
 
   private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
   {
-    HebrewTools.OpenHebrewLetters(( (Label)sender ).Text, Program.Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(( (Label)sender ).Text);
   }
 
   private void LabelReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

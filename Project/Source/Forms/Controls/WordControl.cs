@@ -137,13 +137,13 @@ public partial class WordControl : UserControl
           break;
         case HebrewWordClickAction.OnlineSearch:
           string word = Reference.Word.Hebrew;
-          HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word, Settings.CustomWebSearch);
+          HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, word);
           break;
         case HebrewWordClickAction.SearchTranslated:
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
         case HebrewWordClickAction.HebrewLetters:
-          HebrewTools.OpenHebrewLetters(LabelHebrew.Text, Settings.HebrewLettersExe);
+          HebrewTools.OpenHebrewLetters(LabelHebrew.Text);
           break;
         case HebrewWordClickAction.Nothing:
           break;

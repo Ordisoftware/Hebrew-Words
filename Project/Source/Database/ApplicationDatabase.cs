@@ -163,11 +163,11 @@ class ApplicationDatabase : SQLiteDatabase
       {
         var enumBook = (TanakBook)book.Number;
         book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace('_', ' ');
-        book.Hebrew = BooksNames.Hebrew[enumBook];
+        book.Hebrew = OnlineBooks.Hebrew[enumBook];
         if ( book.Original.Length == 0 )
-          book.Original = BooksNames.Unicode[enumBook];
+          book.Original = OnlineBooks.Unicode[enumBook];
         if ( book.CommonName.Length == 0 )
-          book.CommonName = BooksNames.Common.GetLang(enumBook);
+          book.CommonName = OnlineBooks.Common.GetLang(enumBook);
       }
       SaveAll();
     }
@@ -230,10 +230,10 @@ class ApplicationDatabase : SQLiteDatabase
         book = new();
         book.ID = Guid.NewGuid();
         book.Number = (int)bookid;
-        book.Original = BooksNames.Unicode[bookid];
-        book.Hebrew = BooksNames.Hebrew[bookid];
+        book.Original = OnlineBooks.Unicode[bookid];
+        book.Hebrew = OnlineBooks.Hebrew[bookid];
         book.Name = bookid.ToString().Replace('_', ' ');
-        book.CommonName = BooksNames.Common.GetLang(bookid);
+        book.CommonName = OnlineBooks.Common.GetLang(bookid);
         book.Translation = string.Empty;
         book.Lettriq = string.Empty;
         book.Memo = string.Empty;

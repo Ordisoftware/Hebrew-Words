@@ -45,6 +45,7 @@ partial class MainForm : Form
     EditELS50HScrollBar.LargeChange = 20;
     EditELS50HScrollBar.SmallChange = 10;
     EditSearchWord.ContextMenuDetailsVisible = false;
+    HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
     InitializeTheme();
   }
 
