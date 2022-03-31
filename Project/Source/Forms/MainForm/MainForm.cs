@@ -1345,7 +1345,7 @@ partial class MainForm : Form
   private void ActionWordSearchDefault_Click(object sender, EventArgs e)
   {
     if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWord.Reference?.Word?.Hebrew, Settings.CustomWebSearch);
+      HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWord.Reference?.Word?.Hebrew);
   }
 
   /// <summary>
@@ -1356,12 +1356,12 @@ partial class MainForm : Form
   private void ActionStartHebrewLetters_Click(object sender, EventArgs e)
   {
     if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-      HebrewTools.OpenHebrewLetters(controlWord.Reference?.Word?.Hebrew, Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(controlWord.Reference?.Word?.Hebrew);
     else
     if ( Settings.CurrentView == ViewMode.Search && !EditSearchWord.InputText.IsEmpty() )
-      HebrewTools.OpenHebrewLetters(EditSearchWord.InputText, Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(EditSearchWord.InputText);
     else
-      HebrewTools.OpenHebrewLetters(string.Empty, Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(string.Empty);
   }
 
   /// <summary>
