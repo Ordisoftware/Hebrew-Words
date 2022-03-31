@@ -23,16 +23,12 @@ partial class MainForm
     RenderText(EditChapterOriginal, false, isGrouped, () =>
     {
       using var box = new RichTextBoxEx();
-      var builder = new StringBuilder(2048);
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
-        for ( int index = verse.Words.Count - 1; index >= 0; index-- )
-          builder.Append(verse.Words[index].Hebrew).Append(' ');
-        AddTextRightAligned(box, HebrewFont12, builder.ToString());
+        AddTextRightAligned(box, HebrewFont12, verse.InHebrew);
         AddTextRightAligned(box, LatinFont10, $":{verse.Number}");
         box.AppendText(Environment.NewLine);
         box.AppendText(Environment.NewLine);
-        builder.Clear();
       }
       EditChapterOriginal.Rtf = box.Rtf;
     });

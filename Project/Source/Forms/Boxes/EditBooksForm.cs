@@ -135,7 +135,7 @@ partial class EditBooksForm : Form
 
   private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
   {
-    Clipboard.SetText(SelectedBook?.Original);
+    Clipboard.SetText(SelectedBook?.Unicode);
   }
 
   private void ActionEditMemo_Click(object sender, EventArgs e)

@@ -115,9 +115,9 @@ partial class MainForm
     //
     void updateHistoryButtons()
     {
-      if ( CurrentReference == null ) return;
+      if ( CurrentReference is null ) return;
       var list = HistoryItems.ToList();
-      int index = list.FindIndex(( r => r.CompareTo(CurrentReference) == 0 ));
+      int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
       if ( index == -1 ) return;
       ActionHistoryVerseNext.Enabled = index != 0;
       ActionHistoryVerseBack.Enabled = index != list.Count - 1;
@@ -204,7 +204,7 @@ partial class MainForm
           PanelViewVerses.Focus();
           PanelViewVerses.ScrollControlIntoView(control);
           if ( CurrentReference?.Word is not null && control?.WordControls is not null )
-            Array.Find(control?.WordControls, c => c.Reference?.Word == CurrentReference?.Word)?.Focus();
+            Array.Find(control?.WordControls, c => c?.Reference?.Word == CurrentReference?.Word)?.Focus();
           else
             control.WordControls?.FirstOrDefault()?.Focus();
         }

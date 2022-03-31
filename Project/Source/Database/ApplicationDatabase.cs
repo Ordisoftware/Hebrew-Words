@@ -138,7 +138,7 @@ class ApplicationDatabase : SQLiteDatabase
     bool upgrade = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
-      checkColumnText(BooksTableName, nameof(BookRow.Original));
+      checkColumnText(BooksTableName, nameof(BookRow.Unicode));
       checkColumnText(BooksTableName, nameof(BookRow.CommonName));
       checkColumnText(BooksTableName, nameof(BookRow.Memo));
       checkColumnText(BooksTableName, nameof(BookRow.Lettriq));
@@ -164,8 +164,8 @@ class ApplicationDatabase : SQLiteDatabase
         var enumBook = (TanakBook)book.Number;
         book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace('_', ' ');
         book.Hebrew = OnlineBooks.Hebrew[enumBook];
-        if ( book.Original.Length == 0 )
-          book.Original = OnlineBooks.Unicode[enumBook];
+        if ( book.Unicode.Length == 0 )
+          book.Unicode = OnlineBooks.Unicode[enumBook];
         if ( book.CommonName.Length == 0 )
           book.CommonName = OnlineBooks.Common.GetLang(enumBook);
       }
@@ -230,7 +230,7 @@ class ApplicationDatabase : SQLiteDatabase
         book = new();
         book.ID = Guid.NewGuid();
         book.Number = (int)bookid;
-        book.Original = OnlineBooks.Unicode[bookid];
+        book.Unicode = OnlineBooks.Unicode[bookid];
         book.Hebrew = OnlineBooks.Hebrew[bookid];
         book.Name = bookid.ToString().Replace('_', ' ');
         book.CommonName = OnlineBooks.Common.GetLang(bookid);
@@ -259,7 +259,7 @@ class ApplicationDatabase : SQLiteDatabase
           {
             line = line.Replace(":", "");
             var list = line.Split('\t');
-            string[] listWordsOriginal;
+            string[] listWordsUnicode;
             string[] listWordsHebrew;
             if ( list.Length == 2 )
             {
@@ -269,14 +269,14 @@ class ApplicationDatabase : SQLiteDatabase
               verse.ChapterID = chapter.ID;
               verse.Number = ++countVerses;
               verse.Comment = string.Empty;
-              listWordsOriginal = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
+              listWordsUnicode = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
               Verses.Add(verse);
             }
             else
             {
-              listWordsOriginal = line.Replace('-', ' ').Split(' ').Reverse().ToArray();
+              listWordsUnicode = line.Replace('-', ' ').Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(line).Split(' ').ToArray();
             }
             for ( int i = 0; i < listWordsHebrew.Length; i++ )
@@ -287,7 +287,7 @@ class ApplicationDatabase : SQLiteDatabase
               word.ID = Guid.NewGuid();
               word.VerseID = verse.ID;
               word.Number = ++countWords;
-              word.Original = new string(listWordsOriginal[i].Reverse().ToArray());
+              word.Unicode = new string(listWordsUnicode[i].Reverse().ToArray());
               word.Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray());
               word.Translation = string.Empty;
               verse.Words.Add(word);
