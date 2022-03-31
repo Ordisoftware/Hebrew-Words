@@ -179,10 +179,11 @@ These options can be used to control the software when it is already running, bu
 | F2 | Chapter translation view |
 | F3 | Filter verses view |
 | F4 or Alt + F | Search in database view |
-| F5 | Original Hebrew text view |
-| F6 | ELS50 verses view |
-| F7 or Shift + Ctrl + F | Go to reference |
-| F9 or Ctrl + R | Refresh |
+| F5 or Shift + Ctrl + F | Go to reference |
+| F6 | Original Hebrew text view |
+| F7 | ELS50 verses view |
+| F8 or Ctrl + R | Refresh |
+| Alt + F8 | Close all translated windows |
 | Ctrl + B | Books board |
 | Ctrl + B | Parashot board |
 | Ctrl + Alt + I | Import console |
@@ -252,6 +253,7 @@ These options can be used to control the software when it is already running, bu
 - Optimize overall performances.
 - Speed up data loading at startup.
 - Speed up application startup when viewing a single verse.
+- Add go back and next buttons.
 - Add verse navigator in the verses view panel.
 - Add Alt + Left and Right to navigate between verses.
 - Add option to render only current verse or all of the chapter.
