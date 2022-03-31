@@ -322,6 +322,7 @@ These options can be used to control the software when it is already running, bu
 - Update Hebrew applications' icons.
 - Update web links.
 - Update help.
+- Impprove setup to select hebrew font version.
 - Disable IPC intercom for non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
