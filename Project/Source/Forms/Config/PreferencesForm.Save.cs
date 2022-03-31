@@ -64,6 +64,7 @@ partial class PreferencesForm
     Settings.GoToLastVerseAtStartup = EditGoToLastVerseAtStartup.Checked;
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.AutoSaveOnLeaveControl = EditAutoSaveOnLeaveControl.Checked;
+    Settings.LettersControlHebrewCharsInBold = EditSearchHebrewCharsInBold.Checked;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

@@ -628,4 +628,7 @@
   <data name="TabPageMouse.Text" xml:space="preserve">
     <value>Souris</value>
   </data>
+  <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
+    <value>Caractères hébreux en gras pour la recherche</value>
+  </data>
 </root>

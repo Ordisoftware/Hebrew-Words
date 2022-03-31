@@ -206,6 +206,7 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+      this.EditSearchHebrewCharsInBold = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -721,6 +722,7 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.EditSearchHebrewCharsInBold);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditVolume);
@@ -1638,6 +1640,15 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
+      // EditSearchHebrewCharsInBold
+      // 
+      resources.ApplyResources(this.EditSearchHebrewCharsInBold, "EditSearchHebrewCharsInBold");
+      this.EditSearchHebrewCharsInBold.Checked = true;
+      this.EditSearchHebrewCharsInBold.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditSearchHebrewCharsInBold.Name = "EditSearchHebrewCharsInBold";
+      this.EditSearchHebrewCharsInBold.UseVisualStyleBackColor = true;
+      this.EditSearchHebrewCharsInBold.CheckedChanged += new System.EventHandler(this.EditSearchHebrewCharsInBold_CheckedChanged);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1867,5 +1878,6 @@
     private CheckBox EditAutoSaveOnLeaveControl;
     private TabPage TabPageEdition;
     private TabPage TabPageMouse;
+    private CheckBox EditSearchHebrewCharsInBold;
   }
 }

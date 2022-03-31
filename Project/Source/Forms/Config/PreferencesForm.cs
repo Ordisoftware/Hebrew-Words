@@ -198,6 +198,11 @@ partial class PreferencesForm : Form
     DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
   }
 
+  private void EditSearchHebrewCharsInBold_CheckedChanged(object sender, EventArgs e)
+  {
+    MainForm.Instance.EditSearchWord.HebrewCharsInBold = EditSearchHebrewCharsInBold.Checked;
+  }
+
   #endregion
 
   #region Startup

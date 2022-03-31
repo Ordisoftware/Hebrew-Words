@@ -56,6 +56,7 @@ partial class MainForm : Form
   {
     if ( Globals.IsExiting ) return;
     Settings.Retrieve();
+    EditSearchWord.HebrewCharsInBold = Settings.LettersControlHebrewCharsInBold;
     PreviousWindowsState = WindowState; // TODO move in settings helper and update calendar & letters
     Program.UpdateLocalization();
     StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
