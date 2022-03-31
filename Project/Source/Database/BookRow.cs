@@ -49,19 +49,6 @@ public class BookRow : AbstractRow
   private string _Hebrew;
 
   [NotNull]
-  public string Name
-  {
-    get => _Name;
-    set
-    {
-      if ( _Name == value ) return;
-      _Name = value;
-      NotifyPropertyChanged(nameof(Name));
-    }
-  }
-  private string _Name;
-
-  [NotNull]
   public string CommonName
   {
     get => _CommonName;
@@ -115,11 +102,14 @@ public class BookRow : AbstractRow
 
   public bool HasMemo => !Memo.IsNullOrEmpty();
 
+  public string Transcription
+    => BooksBounds.Transcriptions.GetLang((TanakBook)Number);
+
   public List<ChapterRow> Chapters { get; } = new();
 
   public override string ToString()
   {
-    string str = $"{FormatNumber(ApplicationDatabase.Instance.Books.Count)}. {Name}";
+    string str = $"{FormatNumber(ApplicationDatabase.Instance.Books.Count)}. {Transcription}";
     if ( CommonName.Length > 0 && Program.Settings.BookNameHebrewWithCommonName ) str += $" ({CommonName})";
     if ( Translation.Length > 0 ) str += $" - {Translation}";
     return str;

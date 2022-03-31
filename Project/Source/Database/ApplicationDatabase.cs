@@ -138,6 +138,7 @@ class ApplicationDatabase : SQLiteDatabase
     bool upgrade = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
+      // TODO drop column name => static dictionary transcription
       checkColumnText(BooksTableName, nameof(BookRow.Unicode));
       checkColumnText(BooksTableName, nameof(BookRow.CommonName));
       checkColumnText(BooksTableName, nameof(BookRow.Memo));
@@ -161,13 +162,13 @@ class ApplicationDatabase : SQLiteDatabase
     {
       foreach ( BookRow book in Books )
       {
-        var enumBook = (TanakBook)book.Number;
-        book.Name = Enum.GetName(typeof(TanakBook), enumBook).Replace('_', ' ');
-        book.Hebrew = OnlineBooks.Hebrew[enumBook];
+        var bookNumber = (TanakBook)book.Number;
+        //book.Transcription = BooksBounds.Transcriptions.GetLang(bookNumber);
+        book.Hebrew = OnlineBooks.Hebrew[bookNumber];
         if ( book.Unicode.Length == 0 )
-          book.Unicode = OnlineBooks.Unicode[enumBook];
+          book.Unicode = OnlineBooks.Unicode[bookNumber];
         if ( book.CommonName.Length == 0 )
-          book.CommonName = OnlineBooks.Common.GetLang(enumBook);
+          book.CommonName = OnlineBooks.Common.GetLang(bookNumber);
       }
       SaveAll();
     }
@@ -218,9 +219,9 @@ class ApplicationDatabase : SQLiteDatabase
         strELS50 = "";
       }
       LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
-      foreach ( TanakBook bookid in Enums.GetValues<TanakBook>() )
+      foreach ( TanakBook bookNumber in Enums.GetValues<TanakBook>() )
       {
-        string filePath = Path.Combine(path, bookid.ToString().Replace('_', ' ') + ".txt");
+        string filePath = Path.Combine(path, bookNumber.ToString().Replace('_', ' ') + ".txt");
         if ( !File.Exists(filePath) )
         {
           DisplayManager.ShowWarning(SysTranslations.FileNotFound.GetLang(filePath));
@@ -229,11 +230,11 @@ class ApplicationDatabase : SQLiteDatabase
         var filecontent = File.ReadAllLines(filePath);
         book = new();
         book.ID = Guid.NewGuid();
-        book.Number = (int)bookid;
-        book.Unicode = OnlineBooks.Unicode[bookid];
-        book.Hebrew = OnlineBooks.Hebrew[bookid];
-        book.Name = bookid.ToString().Replace('_', ' ');
-        book.CommonName = OnlineBooks.Common.GetLang(bookid);
+        book.Number = (int)bookNumber;
+        book.Unicode = OnlineBooks.Unicode[bookNumber];
+        book.Hebrew = OnlineBooks.Hebrew[bookNumber];
+        //book.Transcription = BooksBounds.Transcriptions.GetLang(bookNumber);
+        book.CommonName = OnlineBooks.Common.GetLang(bookNumber);
         book.Translation = string.Empty;
         book.Lettriq = string.Empty;
         book.Memo = string.Empty;

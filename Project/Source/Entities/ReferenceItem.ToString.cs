@@ -23,13 +23,13 @@ public partial class ReferenceItem
   const string Null = "(null)";
 
   public override string ToString()
-    => $"{Book?.Name ?? Null} {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
+    => $"{Book?.Transcription ?? Null} {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
   public string ToStringWordIncluded()
     => $"{ToString()}:{Word?.Number.ToString() ?? Null}";
 
   public string ToStringFull()
-    => $"{Book?.Name ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
+    => $"{Book?.Transcription ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
   public string ToStringBasedOnPrefs()
     => Program.Settings.BookNameHebrewWithCommonName

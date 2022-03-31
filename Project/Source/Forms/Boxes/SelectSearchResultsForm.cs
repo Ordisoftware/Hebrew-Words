@@ -67,7 +67,7 @@ partial class SelectSearchResultsForm : Form
       SelectBooks.Items.Clear();
       foreach ( var item in query )
       {
-        var row = SelectBooks.Items.Add(ApplicationDatabase.Instance.Books.Single(book => book.Number == item.Key).Name);
+        var row = SelectBooks.Items.Add(ApplicationDatabase.Instance.Books.Single(book => book.Number == item.Key).Transcription);
         row.Tag = item.Key;
         row.SubItems.Add(item.Count.ToString());
       }

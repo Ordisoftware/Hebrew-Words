@@ -329,7 +329,7 @@
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 248</value>
+    <value>224, 226</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripResults.Name" xml:space="preserve">
     <value>ContextMenuStripResults</value>
@@ -344,7 +344,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 3</value>
+    <value>786, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -405,7 +405,7 @@
     <value>10, 623</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 28</value>
+    <value>864, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -441,13 +441,13 @@
     <value>130</value>
   </data>
   <data name="ColumnHebrew.Width" type="System.Int32, mscorlib">
-    <value>130</value>
+    <value>50</value>
   </data>
-  <data name="ColumnName.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ColumnName.MinimumWidth" type="System.Int32, mscorlib">
-    <value>100</value>
+  <metadata name="Transcription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Transcription.HeaderText" xml:space="preserve">
+    <value>Transcription</value>
   </data>
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Translation</value>
@@ -456,7 +456,7 @@
     <value>120</value>
   </data>
   <data name="ColumnTranslation.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>65</value>
   </data>
   <metadata name="ColumnLettriq.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -495,7 +495,7 @@
     <value>0, 0</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 603</value>
+    <value>864, 603</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -522,7 +522,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 613</value>
+    <value>864, 613</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -587,16 +587,16 @@
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
-    <value>ActionShowGrammarGuide</value>
-  </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
     <value>ActionOpenHebrewLetters</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
+    <value>ActionShowGrammarGuide</value>
+  </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
@@ -635,28 +635,10 @@
   <data name="&gt;&gt;ActionEditMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
-    <value>ColumnNumber</value>
+  <data name="&gt;&gt;Transcription.Name" xml:space="preserve">
+    <value>Transcription</value>
   </data>
-  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
-    <value>ColumnHebrew</value>
-  </data>
-  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
-    <value>ColumnName</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
-    <value>ColumnTranslation</value>
-  </data>
-  <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
+  <data name="&gt;&gt;Transcription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnLettriq.Name" xml:space="preserve">
@@ -676,6 +658,24 @@
   </data>
   <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
+    <value>ColumnNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnHebrew.Name" xml:space="preserve">
+    <value>ColumnHebrew</value>
+  </data>
+  <data name="&gt;&gt;ColumnHebrew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
+    <value>ColumnTranslation</value>
+  </data>
+  <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BookRowBindingSource.Name" xml:space="preserve">
     <value>BookRowBindingSource</value>

@@ -31,16 +31,16 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBooksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpen = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,13 +52,13 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Transcription = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BookRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -113,17 +113,17 @@
       this.toolStripSeparator4.Name = "toolStripSeparator4";
       resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
-      // ActionShowGrammarGuide
-      // 
-      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
-      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
-      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
       // ActionOpenHebrewLetters
       // 
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
       // toolStripSeparator1
       // 
@@ -208,7 +208,7 @@
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
             this.ColumnHebrew,
-            this.ColumnName,
+            this.Transcription,
             this.ColumnTranslation,
             this.ColumnLettriq,
             this.ColumnHasMemo,
@@ -230,43 +230,12 @@
       this.DataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_CellMouseDown);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
-      // ColumnNumber
+      // Transcription
       // 
-      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnNumber.DataPropertyName = "Number";
-      this.ColumnNumber.Frozen = true;
-      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
-      this.ColumnNumber.Name = "ColumnNumber";
-      this.ColumnNumber.ReadOnly = true;
-      this.ColumnNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnHebrew
-      // 
-      this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnHebrew.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle2;
-      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
-      this.ColumnHebrew.Name = "ColumnHebrew";
-      this.ColumnHebrew.ReadOnly = true;
-      this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnName
-      // 
-      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnName.DataPropertyName = "Name";
-      resources.ApplyResources(this.ColumnName, "ColumnName");
-      this.ColumnName.Name = "ColumnName";
-      this.ColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnTranslation
-      // 
-      this.ColumnTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnTranslation.DataPropertyName = "Translation";
-      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
-      this.ColumnTranslation.Name = "ColumnTranslation";
-      this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      this.Transcription.DataPropertyName = "Transcription";
+      resources.ApplyResources(this.Transcription, "Transcription");
+      this.Transcription.Name = "Transcription";
+      this.Transcription.ReadOnly = true;
       // 
       // ColumnLettriq
       // 
@@ -297,6 +266,36 @@
       this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
       this.ColumnMemo.Text = "...";
       this.ColumnMemo.UseColumnTextForButtonValue = true;
+      // 
+      // ColumnNumber
+      // 
+      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnNumber.DataPropertyName = "Number";
+      this.ColumnNumber.Frozen = true;
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
+      this.ColumnNumber.Name = "ColumnNumber";
+      this.ColumnNumber.ReadOnly = true;
+      this.ColumnNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnHebrew
+      // 
+      this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnHebrew.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle2;
+      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
+      this.ColumnHebrew.Name = "ColumnHebrew";
+      this.ColumnHebrew.ReadOnly = true;
+      this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnTranslation
+      // 
+      this.ColumnTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnTranslation.DataPropertyName = "Translation";
+      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
+      this.ColumnTranslation.Name = "ColumnTranslation";
+      this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
       // BookRowBindingSource
       // 
@@ -346,9 +345,10 @@
     private ToolStripMenuItem ActionOpen;
     private ToolStripSeparator toolStripSeparator2;
     private ToolStripSeparator toolStripSeparator4;
+    private DataGridViewTextBoxColumn ColumnName;
     private DataGridViewTextBoxColumn ColumnNumber;
     private DataGridViewTextBoxColumn ColumnHebrew;
-    private DataGridViewTextBoxColumn ColumnName;
+    private DataGridViewTextBoxColumn Transcription;
     private DataGridViewTextBoxColumn ColumnTranslation;
     private DataGridViewTextBoxColumn ColumnLettriq;
     private DataGridViewCheckBoxColumn ColumnHasMemo;
