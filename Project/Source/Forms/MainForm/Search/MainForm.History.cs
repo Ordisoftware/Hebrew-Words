@@ -24,18 +24,20 @@ partial class MainForm
     {
       while ( ActionHistory.DropDownItems.Count > HistoryIndexMenu )
         ActionHistory.DropDownItems.RemoveAt(HistoryIndexMenu);
-      if ( History.Count > 0 )
+      if ( HistoryItems.Count > 0 )
       {
-        foreach ( var reference in History )
+        foreach ( var reference in HistoryItems )
         {
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           item.Tag = reference;
-          item.Click += GoToBookmark;
+          item.Click += GoToHistory;
           item.ImageScaling = ToolStripItemImageScaling.None;
-          item.Image = ActionGoToBookmarks.Image;
+          item.Image = ActionGoToHistory.Image;
+          if ( reference.CompareTo(CurrentReference) == 0 )
+            item.ReplaceFont(new Font(item.Font.Name, item.Font.Size, FontStyle.Bold));
         }
       }
-      ActionHistory.Enabled = History.Count > 0;
+      ActionHistory.Enabled = HistoryItems.Count > 0;
     }
     catch ( Exception ex )
     {
@@ -43,7 +45,7 @@ partial class MainForm
     }
   }
 
-  public void MoveVerseBindingSourceAndAddCurrentToHistory()
+  public void MoveVerseBindingSourceAndAddCurrentToHistory(bool isHistory = false)
   {
     if ( IsGoToRunning ) return;
     if ( Settings.CurrentView == ViewMode.ChapterVerses )
@@ -52,8 +54,10 @@ partial class MainForm
       if ( pos != VersesBindingSource.Position )
         VersesBindingSource.Position = pos;
     }
-    History.Add(CurrentReference);
+    if ( !isHistory )
+      HistoryItems.Add(CurrentReference);
     UpdateHistory();
+    UpdateBookmarks();
   }
 
 }

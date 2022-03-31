@@ -34,7 +34,7 @@ partial class MainForm : Form
     actionBeforeRestart?.Invoke();
     ApplicationDatabase.Restart();
     LoadData();
-    DoStartGoTo();
+    DoStartGoToReference();
   }
 
   /// <summary>
@@ -60,8 +60,8 @@ partial class MainForm : Form
       }
       try
       {
-        Bookmarks.Load(UpdateBookmarks);
-        History.Load(UpdateHistory);
+        BookmarkItems.Load(UpdateBookmarks);
+        HistoryItems.Load(UpdateHistory);
         if ( Settings.OpenLastViewAtStartup )
           SetView(Settings.CurrentView, true);
         else

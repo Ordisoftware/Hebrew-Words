@@ -68,12 +68,12 @@ partial class MainForm
   /// <summary>
   /// Indicates the bookmarks.
   /// </summary>
-  private Bookmarks Bookmarks;
+  private Bookmarks BookmarkItems;
 
   /// <summary>
   /// Indicates the history.
   /// </summary>
-  private History History;
+  private History HistoryItems;
 
   /// <summary>
   /// Indicates the search results.

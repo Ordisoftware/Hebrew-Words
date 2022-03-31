@@ -329,8 +329,9 @@ partial class ParashotForm : Form
 
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
-    DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+    ColumnHebrew.DefaultCellStyle.Font?.Dispose();
     ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
+    DataGridView.ReplaceFont(new Font("Microsoft Sans Serif", (float)EditFontSize.Value));
     if ( DataGridView.Rows.Count > 0 )
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
@@ -433,7 +434,7 @@ partial class ParashotForm : Form
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.GoTo(CurrentDataBoundItem.FullReferenceBegin, false, true);
+    MainForm.Instance.GoToReference(CurrentDataBoundItem.FullReferenceBegin, false, true);
   }
 
   private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)

@@ -154,15 +154,6 @@
   <data name="LabelFilterVerse.Text" xml:space="preserve">
     <value>Verset</value>
   </data>
-  <data name="TabPageSearch.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionNavigateSearchFirst.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionSearchNavigateNext.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="SelectSearchTypeHebrew.Text" xml:space="preserve">
     <value>Hébreu</value>
   </data>
@@ -187,17 +178,11 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
     <value>Inclure les commentaires</value>
   </data>
-  <data name="SelectSearchTranslationIncludeComments.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="SelectSearchTranslationOnlyTranslations.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 19</value>
   </data>
   <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
     <value>Seulement les translations</value>
-  </data>
-  <data name="PanelSeparator.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="SelectSearchTypeVerses.Text" xml:space="preserve">
     <value>Versets</value>
@@ -225,12 +210,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="SelectSearchRequestAllPartiallyTranslated.Text" xml:space="preserve">
     <value>Tous les versets partiellement traduits</value>
-  </data>
-  <data name="PanelViewELS50.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SelectRenderAllVersesKeep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>845, 109</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 17</value>
@@ -264,9 +243,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="LabelChapterTitle.Text" xml:space="preserve">
     <value>Titre</value>
-  </data>
-  <data name="ActionEditChapterMemo.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 15</value>
@@ -349,12 +325,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 6</value>
   </data>
-  <data name="ActionGoToReference.Text" xml:space="preserve">
-    <value>Aller à la référence</value>
-  </data>
-  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
-    <value>Aller à la référence (F7, Maj+Ctrl+F)</value>
-  </data>
   <data name="ActionViewVerses.Text" xml:space="preserve">
     <value>Voir les versets</value>
   </data>
@@ -379,17 +349,23 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
     <value>Chercher un mot (F4, Atl+F)</value>
   </data>
+  <data name="ActionGoToReference.Text" xml:space="preserve">
+    <value>Aller à la référence</value>
+  </data>
+  <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
+    <value>Aller à la référence (F5, Maj+Ctrl+F)</value>
+  </data>
   <data name="ActionViewRawText.Text" xml:space="preserve">
     <value>Voir le texte original</value>
   </data>
   <data name="ActionViewRawText.ToolTipText" xml:space="preserve">
-    <value>Voir le texte original (F5)</value>
+    <value>Voir le texte original (F6)</value>
   </data>
   <data name="ActionViewELS50.Text" xml:space="preserve">
     <value>Voir la liste des ELS50</value>
   </data>
   <data name="ActionViewELS50.ToolTipText" xml:space="preserve">
-    <value>Voir la liste des versets ELS50 (F6)</value>
+    <value>Voir la liste des versets ELS50 (F7)</value>
   </data>
   <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
@@ -446,64 +422,64 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Rafraichir la vue (F8, Ctrl+R)</value>
   </data>
   <data name="ActionViewBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionViewBooksBoard.Text" xml:space="preserve">
     <value>Tableau des livres</value>
   </data>
   <data name="ActionViewParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionViewParashotBoard.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 6</value>
+    <value>383, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 6</value>
+    <value>383, 6</value>
   </data>
   <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
     <value>Statistiques du Tanak</value>
   </data>
   <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Calculatrice</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 6</value>
+    <value>383, 6</value>
   </data>
   <data name="ActionCopyToClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionCopyToClipboard.Text" xml:space="preserve">
     <value>Copier dans le presse-papier</value>
   </data>
   <data name="ActionCloseWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="ActionCloseWindows.Text" xml:space="preserve">
     <value>Fermer toutes les fenêtres de recherche des traduits</value>
   </data>
   <data name="SeparatorImportConcordances.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 6</value>
+    <value>383, 6</value>
   </data>
   <data name="ActionImportConcordances.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 22</value>
+    <value>386, 22</value>
   </data>
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 22</value>
@@ -593,7 +569,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Fichiers Rich Text Format (*.rtf)|*.rtf</value>
   </data>
   <data name="ContextMenuStripVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 198</value>
+    <value>242, 226</value>
   </data>
   <data name="ActionVerseReadDefault.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
@@ -610,21 +586,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 6</value>
   </data>
-  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
-  </data>
-  <data name="ActionCopyTranslation.Text" xml:space="preserve">
-    <value>Copier la traduction</value>
-  </data>
-  <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
-  </data>
-  <data name="ActionExportVerse.Text" xml:space="preserve">
-    <value>Export vers fichier MS Word</value>
-  </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
-  </data>
   <data name="ActionSetAsBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
@@ -637,6 +598,15 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionAddToBookmarks.Text" xml:space="preserve">
     <value>Ajouter aux signets</value>
   </data>
+  <data name="ActionRemoveFromBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="ActionRemoveFromBookmarks.Text" xml:space="preserve">
+    <value>Enlever des signets</value>
+  </data>
+  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 6</value>
+  </data>
   <data name="ActionGoToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
@@ -644,6 +614,21 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Aller au signet</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 6</value>
+  </data>
+  <data name="ActionExportVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="ActionExportVerse.Text" xml:space="preserve">
+    <value>Export vers fichier MS Word</value>
+  </data>
+  <data name="ActionCopyTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="ActionCopyTranslation.Text" xml:space="preserve">
+    <value>Copier la traduction</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 6</value>
   </data>
   <data name="ActionImportConsole.Size" type="System.Drawing.Size, System.Drawing">
@@ -733,7 +718,19 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionCountRootOccurences.Text" xml:space="preserve">
     <value>Compter le nombre d'occurrences de la racine</value>
   </data>
-  <data name="ActionRemoveFromBookmarks.Text" xml:space="preserve">
-    <value>Enlever des signets</value>
+  <data name="ActionHistoryVerseBack.Text" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="ActionHistoryVerseNext.ToolTipText" xml:space="preserve">
+    <value>Suivant (Maj+Ctrl+N)</value>
+  </data>
+  <data name="ActionHistoryVerseBack.ToolTipText" xml:space="preserve">
+    <value>Précédent (Maj+Ctrl+P)</value>
+  </data>
+  <data name="ActionHistoryVerseNext.Text" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="ActionGoToHistory.Text" xml:space="preserve">
+    <value>Aller à l'historique</value>
   </data>
 </root>

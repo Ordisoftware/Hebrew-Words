@@ -75,7 +75,7 @@ partial class MainForm
         case Keys.Control | Keys.Tab:
           SetView(Settings.CurrentView.Next());
           return true;
-        // Change view
+        // Change view and search
         case Keys.F1:
           ActionViewVerses.PerformClick();
           return true;
@@ -93,9 +93,13 @@ partial class MainForm
             RotateSearchTab();
           return true;
         case Keys.F5:
-          ActionViewRawText.PerformClick();
+        case Keys.Shift | Keys.Control | Keys.F:
+          ActionGoToReference.PerformClick();
           return true;
         case Keys.F6:
+          ActionViewRawText.PerformClick();
+          return true;
+        case Keys.F7:
           ActionViewELS50.PerformClick();
           return true;
         // Top menu system
@@ -117,10 +121,6 @@ partial class MainForm
           ActionDatabase.ShowDropDown();
           return true;
         // Top menu actions
-        case Keys.F7:
-        case Keys.Shift | Keys.Control | Keys.F:
-          ActionGoToReference.PerformClick();
-          return true;
         case Keys.F8:
         case Keys.Control | Keys.R:
           ActionRefresh.PerformClick();
@@ -179,7 +179,7 @@ partial class MainForm
               if ( chapter is not null )
               {
                 var verse = chapter.Verses[chapter.Verses.Count - 1];
-                GoTo(new ReferenceItem(CurrentReference.Book, chapter, verse));
+                GoToReference(new ReferenceItem(CurrentReference.Book, chapter, verse));
               }
             }
           break;
@@ -188,28 +188,28 @@ partial class MainForm
             if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
-              if ( chapter is not null ) GoTo(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
+              if ( chapter is not null ) GoToReference(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Left:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number > 1 )
-              GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
           break;
         case Keys.Shift | Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
-              GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
           break;
         case Keys.Alt | Keys.Left:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number > 1 )
-              GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
           break;
         case Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
-              GoTo(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
           break;
         // Scrolling bounds
         case Keys.Alt | Keys.Home:

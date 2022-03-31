@@ -115,7 +115,7 @@ partial class EditBooksForm : Form
 
   private void ActionOpen_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.GoTo(SelectedBook?.Number ?? 1, 1, 1, false, true);
+    MainForm.Instance.GoToReference(SelectedBook?.Number ?? 1, 1, 1, false, true);
     Close();
   }
 

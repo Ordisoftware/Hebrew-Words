@@ -63,6 +63,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditGoToLastVerseAtStartup.Checked = Settings.GoToLastVerseAtStartup);
     SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditAutoSaveOnLeaveControl.Checked = Settings.AutoSaveOnLeaveControl);
+    SystemManager.TryCatch(() => EditSearchHebrewCharsInBold.Checked = Settings.LettersControlHebrewCharsInBold);
     LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;

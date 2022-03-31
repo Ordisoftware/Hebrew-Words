@@ -145,7 +145,7 @@ static partial class Program
       if ( cmd is null ) return;
       Action action = null;
       if ( cmd.ShowMainForm ) action = () => form.Popup();
-      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) action = () => form.GoTo(cmd.ReferenceToGo, false, true);
+      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) action = () => form.GoToReference(cmd.ReferenceToGo, false, true);
       if ( !cmd.SearchWord.IsNullOrEmpty() ) action = () => form.SearchHebrewWord(cmd.SearchWord);
       if ( !cmd.SearchTranslated.IsNullOrEmpty() ) action = () => form.SearchTranslatedWord(cmd.SearchTranslated);
       if ( action is not null )
