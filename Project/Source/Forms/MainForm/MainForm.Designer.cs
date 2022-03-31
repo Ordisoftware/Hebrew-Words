@@ -242,10 +242,14 @@
       this.ActionRemoveFromBookmarks = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGoToHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyFontCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyUnicodeCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
@@ -266,7 +270,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.ActionGoToHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1930,9 +1933,12 @@
             this.ActionGoToBookmarks,
             this.ActionGoToHistory,
             this.toolStripMenuItem4,
-            this.ActionExportVerse,
+            this.ActionCopyFontCharsVerse,
+            this.ActionCopyUnicodeCharsVerse,
             this.ActionCopyTranslation,
             this.toolStripMenuItem3,
+            this.ActionExportVerse,
+            this.toolStripSeparator24,
             this.ActionImportConsole});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
@@ -1982,16 +1988,27 @@
       resources.ApplyResources(this.ActionGoToBookmarks, "ActionGoToBookmarks");
       this.ActionGoToBookmarks.Name = "ActionGoToBookmarks";
       // 
+      // ActionGoToHistory
+      // 
+      resources.ApplyResources(this.ActionGoToHistory, "ActionGoToHistory");
+      this.ActionGoToHistory.Name = "ActionGoToHistory";
+      // 
       // toolStripMenuItem4
       // 
       this.toolStripMenuItem4.Name = "toolStripMenuItem4";
       resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
       // 
-      // ActionExportVerse
+      // ActionCopyFontCharsVerse
       // 
-      resources.ApplyResources(this.ActionExportVerse, "ActionExportVerse");
-      this.ActionExportVerse.Name = "ActionExportVerse";
-      this.ActionExportVerse.Click += new System.EventHandler(this.ActionExportVerse_Click);
+      resources.ApplyResources(this.ActionCopyFontCharsVerse, "ActionCopyFontCharsVerse");
+      this.ActionCopyFontCharsVerse.Name = "ActionCopyFontCharsVerse";
+      this.ActionCopyFontCharsVerse.Click += new System.EventHandler(this.ActionCopyFontCharsVerse_Click);
+      // 
+      // ActionCopyUnicodeCharsVerse
+      // 
+      resources.ApplyResources(this.ActionCopyUnicodeCharsVerse, "ActionCopyUnicodeCharsVerse");
+      this.ActionCopyUnicodeCharsVerse.Name = "ActionCopyUnicodeCharsVerse";
+      this.ActionCopyUnicodeCharsVerse.Click += new System.EventHandler(this.ActionCopyUnicodeCharsVerse_Click);
       // 
       // ActionCopyTranslation
       // 
@@ -2003,6 +2020,17 @@
       // 
       this.toolStripMenuItem3.Name = "toolStripMenuItem3";
       resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      // 
+      // ActionExportVerse
+      // 
+      resources.ApplyResources(this.ActionExportVerse, "ActionExportVerse");
+      this.ActionExportVerse.Name = "ActionExportVerse";
+      this.ActionExportVerse.Click += new System.EventHandler(this.ActionExportVerse_Click);
+      // 
+      // toolStripSeparator24
+      // 
+      this.toolStripSeparator24.Name = "toolStripSeparator24";
+      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
       // ActionImportConsole
       // 
@@ -2118,11 +2146,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // ActionGoToHistory
-      // 
-      resources.ApplyResources(this.ActionGoToHistory, "ActionGoToHistory");
-      this.ActionGoToHistory.Name = "ActionGoToHistory";
       // 
       // MainForm
       // 
@@ -2429,6 +2452,9 @@
     internal ToolStripMenuItem ActionRefresh;
     private ToolStripSeparator toolStripSeparator23;
     private ToolStripMenuItem ActionGoToHistory;
+    private ToolStripMenuItem ActionCopyFontCharsVerse;
+    private ToolStripMenuItem ActionCopyUnicodeCharsVerse;
+    private ToolStripSeparator toolStripSeparator24;
   }
 }
 

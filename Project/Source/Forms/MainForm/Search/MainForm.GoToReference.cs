@@ -115,9 +115,9 @@ partial class MainForm
     //
     void updateHistoryButtons()
     {
-      if ( CurrentReference == null ) return;
+      if ( CurrentReference is null ) return;
       var list = HistoryItems.ToList();
-      int index = list.FindIndex(( r => r.CompareTo(CurrentReference) == 0 ));
+      int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
       if ( index == -1 ) return;
       ActionHistoryVerseNext.Enabled = index != 0;
       ActionHistoryVerseBack.Enabled = index != list.Count - 1;

@@ -93,6 +93,7 @@ public partial class VerseControl : UserControl
       ResetMetrics(container);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   public void ResetMetrics(Panel container)
   {
     using var graphicsNumber = LabelVerseNumber.CreateGraphics();

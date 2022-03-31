@@ -104,7 +104,7 @@ partial class MainForm : Form
                   {
                     errors.Add($"{new ReferenceItem(book, chapter, verse)}.{indexWord + 1}\t\t" +
                                $"{word.Hebrew} <=> {hebrew}\t\t" +
-                               $"{word.Original} <=> {unicode}\t\t{words[indexWord].Number} : {words[indexWord].Text}");
+                               $"{word.Unicode} <=> {unicode}\t\t{words[indexWord].Number} : {words[indexWord].Text}");
                     countBad++;
                     if ( countBad >= 4 )
                     {
@@ -118,7 +118,7 @@ partial class MainForm : Form
                 {
                   errors.Add($"{new ReferenceItem(book, chapter, verse)}.{indexWord + 1}\t\t" +
                              $"{word.Hebrew} is missing or at wrong place\t\t" +
-                             $"{word.Original} is missing or at wrong place");
+                             $"{word.Unicode} is missing or at wrong place");
                   countBad++;
                   if ( countBad >= 4 )
                   {
@@ -220,7 +220,7 @@ partial class MainForm : Form
 
 class WordWithConcordance
 {
-  public string Original;
+  public string Unicode;
   public string Hebrew;
   public string Transliteration;
   public string Concordance;

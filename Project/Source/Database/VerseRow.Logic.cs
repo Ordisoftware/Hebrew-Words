@@ -39,16 +39,17 @@ public partial class VerseRow
     }
   }
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public string Translation
-  {
-    get
+    => Words.Select(word =>
     {
-      var result = new StringBuilder(255);
-      foreach ( var str in Words.Select(word => word.Translation.Trim()) )
-        result.Append(str.Length > 0 ? str + " " : "[...] ");
-      return result.ToString().Trim();
-    }
-  }
+      var str = word.Translation.Trim();
+      return str.Length > 0 ? str + " " : "[...] ";
+    }).Reverse().AsMultiSpace();
+
+  public string InHebrew
+    => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
+
+  public string InUnicode
+    => Words.Select(word => word.Unicode).AsMultiSpace();
 
 }

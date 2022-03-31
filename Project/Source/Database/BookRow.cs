@@ -22,17 +22,18 @@ public class BookRow : AbstractRow
 {
 
   [NotNull]
-  public string Original
+  [Column("Original")]
+  public string Unicode
   {
-    get => _Original;
+    get => _Unicode;
     set
     {
-      if ( _Original == value ) return;
-      _Original = value;
-      NotifyPropertyChanged(nameof(Original));
+      if ( _Unicode == value ) return;
+      _Unicode = value;
+      NotifyPropertyChanged(nameof(Unicode));
     }
   }
-  private string _Original;
+  private string _Unicode;
 
   [NotNull]
   public string Hebrew

@@ -327,6 +327,7 @@ partial class ParashotForm : Form
     UpdateStats();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
     ColumnHebrew.DefaultCellStyle.Font?.Dispose();
