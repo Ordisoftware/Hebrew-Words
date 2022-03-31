@@ -102,6 +102,7 @@ public class BookRow : AbstractRow
 
   public bool HasMemo => !Memo.IsNullOrEmpty();
 
+  // TODO Replace Name column to drop
   public string Transcription
     => BooksBounds.Transcriptions.GetLang((TanakBook)Number);
 
