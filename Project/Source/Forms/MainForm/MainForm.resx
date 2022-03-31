@@ -4235,8 +4235,8 @@ A verse is founded if the translation of one of its words contains an expression
         pZvgE1+OkIx2+mVjINocQppqhK+yG9L91zF0cj7uaH6E5UIUsWyYKAzc2IubFYswdqyLN3lOuGvO9bxn
         XImGQzAzEiqFoy+tiiPw6nltqaTN5gTW79gDNG5C/6Vo9J3/aDhEFI2Xwtq4Drd/jcXxRNcvyHOcaC3W
         04Q7EUQEPwTvVOwOrMX1bbCcWwzzqYXoyJYK8LjvXASsTYm4mOSZTnMfJ/4qXgoOwf9ceLNwllc6VWHG
-        /oZP0F0agqvJni3jxowJZXjM5yyNX8KY8a6J5o4nHm1NnPCEpFs1H/mJbw3tiHw5jk7xvX5xGG8+l58Y
-        MNR5KJh3xeeIR17PEPzV8iNeJ54leHUZHvM5fo/n8FwqF5c/AS4NRueFkHXiAAAAAElFTkSuQmCC
+        /oZP0F0agqvJni3jxowJZXjM5yyNX8KY8a6J5o4nHm1NnPCEpFs1H3mJbw3tiHw5jk7xvX5xGG8+l5cY
+        MNR5KJh3xeeIR17PEPzV8iNeJ54leHUZHvM5fo/n8FwqF5c/ASzHRuWAcjavAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -5118,7 +5118,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAo1JREFUOE+NU0lPU1EY/VaycaE/QEElpBgXKkZFiIQoRFQIiRg2xsQYFy7VBYkF
+        vwAADr8BOAVTJAAAAo1JREFUOE+NU0lPU1EY/VaycaE/QEElpBgXKkZFiIQoRFQIiRg2xsQYFy7VBYkF
         Cq2CEjRggtGkCigkhshQxiKT2tAgC1Cwk5RBkJYWHgWKUhxy/O7rq5aFw0lO7ns375x37rn30p5ioy+6
         sB2RmjZsz2/dwEhNK3YWtCFG2+mlP0GI/wWTcxHbNKYaRbIR4s8CBrsbzcwWR3A02Ofk+YgrjfLYN/YD
         8UUqKa2EoEiDEFEFOp1edI970TMxz5TQO+mX57fkmLAuPwEJWoJ9phLHi8NMQgavphZg+ijBPL2EN7Nf
@@ -5727,6 +5727,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 6</value>
   </data>
+  <data name="toolStripSeparator12.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionGoToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -5746,10 +5749,13 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionGoToBookmarks.Text" xml:space="preserve">
     <value>Go to bookmark</value>
   </data>
+  <data name="ActionGoToBookmarks.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionGoToHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAQBJREFUOE9jGAHg1XyL/1Am6eDNUpsp/z/M+g+ioUKkgS/H8//////xP4iGChEG
+        wAAADsABataJCQAAAQBJREFUOE9jGAHg1XyL/1Am6eDNUpsp/z/M+g+ioUKkgS/H8//////xP4iGChEG
         rxZYLXo1z/T/q3lG//992Pn/79s1YBrEB4sD5aFKsYOHc633/nm9+f//rwf//37c9v/XjXgw/f/Hqf+/
         X2z8D5KHKsUJVC5MNNz65WjI/1/36v7/uBIDpj8f8Pl/oVtvK0geogw/UPh6qvD/j1tl/7+eDvn/4071
         /88nMkHhoACRJgDeLPea/v1K+f+3q+z+n+syWAuiv1+rAfrfcjpUCX7wZqXX/2dzLD5G2Ul4ArnyUXYi
@@ -5761,6 +5767,9 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionGoToHistory.Text" xml:space="preserve">
     <value>Go to history</value>
+  </data>
+  <data name="ActionGoToHistory.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 6</value>

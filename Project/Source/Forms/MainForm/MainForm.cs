@@ -779,13 +779,6 @@ partial class MainForm : Form
     Clipboard.SetText(EditELS50Single.Text);
   }
 
-  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
-  {
-    if ( ActiveControl is VerseControl controlVerseLabelDefault )
-      HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
-                                    controlVerseLabelDefault.Reference?.ToStringOnlyNumbers());
-  }
-
   /// <summary>
   /// Event handler. Called by ActionExportVerse for click events.
   /// </summary>
@@ -798,6 +791,21 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionVerseReadDefault for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerseLabelDefault )
+      HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
+                                    controlVerseLabelDefault.Reference?.ToStringOnlyNumbers());
+    else
+    if ( Settings.CurrentView == ViewMode.Search )
+      ;// TODO see ActionAddToBookmarks_Click
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionCopyFontCharsVerse for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -806,6 +814,9 @@ partial class MainForm : Form
   {
     if ( ActiveControl is VerseControl controlVerse )
       Clipboard.SetText(controlVerse.Reference?.Verse.InHebrew);
+    else
+    if ( Settings.CurrentView == ViewMode.Search )
+      ;// TODO see ActionAddToBookmarks_Click
   }
 
   /// <summary>
@@ -817,6 +828,9 @@ partial class MainForm : Form
   {
     if ( ActiveControl is VerseControl controlVerse )
       Clipboard.SetText(controlVerse.Reference?.Verse.InUnicode);
+    else
+    if ( Settings.CurrentView == ViewMode.Search )
+      ;// TODO see ActionAddToBookmarks_Click
   }
 
   /// <summary>
@@ -983,7 +997,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionRemoveFromBookmarks_Click(object sender, EventArgs e)
   {
-    // TODO remove from master or bookmarks
+    // TODO remove from master or bookmarks / see ActionAddToBookmarks_Click
   }
 
   /// <summary>
