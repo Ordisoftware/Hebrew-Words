@@ -330,9 +330,9 @@ partial class ParashotForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
+    DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
     ColumnHebrew.DefaultCellStyle.Font?.Dispose();
     ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
-    DataGridView.ReplaceFont(new Font("Microsoft Sans Serif", (float)EditFontSize.Value));
     if ( DataGridView.Rows.Count > 0 )
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
@@ -410,6 +410,7 @@ partial class ParashotForm : Form
     ActionEditMemo.PerformClick();
   }
 
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
     using var form = new EditMemoForm();
