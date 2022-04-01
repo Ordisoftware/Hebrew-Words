@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-03 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -48,6 +48,8 @@ partial class PreferencesForm
     EditVacuumAtStartup_CheckedChanged(null, null);
     EditCheckUpdateAtStartup_CheckedChanged(null, null);
     EditLogEnabled_CheckedChanged(null, null);
+    EditCommentLineAddPrefix_CheckedChanged(null, null);
+    EditCommentLineRemovePrefix_CheckedChanged(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;

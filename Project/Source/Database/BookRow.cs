@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -33,7 +33,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Unicode));
     }
   }
-  private string _Unicode;
+  private string _Unicode = string.Empty;
 
   [NotNull]
   public string Hebrew
@@ -46,7 +46,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew;
+  private string _Hebrew = string.Empty;
 
   [NotNull]
   public string CommonName
@@ -59,7 +59,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(CommonName));
     }
   }
-  private string _CommonName;
+  private string _CommonName = string.Empty;
 
   [NotNull]
   public string Translation
@@ -72,7 +72,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation;
+  private string _Translation = string.Empty;
 
   [NotNull]
   public string Lettriq
@@ -85,7 +85,7 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Lettriq));
     }
   }
-  private string _Lettriq;
+  private string _Lettriq = string.Empty;
 
   [NotNull]
   public string Memo
@@ -98,15 +98,16 @@ public class BookRow : AbstractRow
       NotifyPropertyChanged(nameof(Memo));
     }
   }
-  private string _Memo;
+  private string _Memo = string.Empty;
 
-  public bool HasMemo => !Memo.IsNullOrEmpty();
+  public bool HasMemo
+    => !Memo.IsNullOrEmpty();
 
-  // TODO Replace Name column to drop
   public string Transcription
     => BooksBounds.Transcriptions.GetLang((TanakBook)Number);
 
-  public List<ChapterRow> Chapters { get; } = new();
+  public List<ChapterRow> Chapters { get; }
+    = new();
 
   public override string ToString()
   {
@@ -115,5 +116,25 @@ public class BookRow : AbstractRow
     if ( Translation.Length > 0 ) str += $" - {Translation}";
     return str;
   }
+
+}
+
+[Serializable]
+public class BookRowWithName : BookRow
+{
+
+  [NotNull]
+  [Column("Name")]
+  public new string Transcription
+  {
+    get => _Transcription;
+    set
+    {
+      if ( _Transcription == value ) return;
+      _Transcription = value;
+      NotifyPropertyChanged(nameof(Transcription));
+    }
+  }
+  private string _Transcription = string.Empty;
 
 }

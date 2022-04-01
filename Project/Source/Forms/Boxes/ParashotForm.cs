@@ -346,9 +346,7 @@ partial class ParashotForm : Form
   private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
     e.Exception.Manage(ShowExceptionMode.None);
-    e.ThrowException = false; // TODO Investigate error on Dispose
-    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-    //e.Exception.Manage();
+    e.ThrowException = false;
   }
 
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)

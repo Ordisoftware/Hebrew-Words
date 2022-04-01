@@ -17,6 +17,12 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseRow
 {
 
+  public string InHebrew
+    => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
+
+  public string InUnicode
+    => Words.Select(word => word.Unicode).AsMultiSpace();
+
   public bool HasTranslation
     => Words.Any(word => word.Translation.Trim().Length > 0);
 
@@ -43,13 +49,7 @@ public partial class VerseRow
     => Words.Select(word =>
     {
       var str = word.Translation.Trim();
-      return str.Length > 0 ? str + " " : "[...] ";
-    }).Reverse().AsMultiSpace();
-
-  public string InHebrew
-    => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
-
-  public string InUnicode
-    => Words.Select(word => word.Unicode).AsMultiSpace();
+      return str.Length > 0 ? str : "[...]";
+    }).AsMultiSpace();
 
 }

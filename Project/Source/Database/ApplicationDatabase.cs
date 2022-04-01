@@ -138,7 +138,21 @@ class ApplicationDatabase : SQLiteDatabase
     bool upgrade = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
-      // TODO drop column name => static dictionary transcription
+      if ( Connection.CheckColumn(BooksTableName, "Name") )
+        ProcessTableUpgrade<BookRow, BookRowWithName>(
+          nameof(Books),
+          nameof(BookRowWithName),
+          (rowOld, rowNew) =>
+          {
+            rowNew.ID = rowOld.ID;
+            rowNew.Number = rowOld.Number;
+            rowNew.Unicode = rowOld.Unicode;
+            rowNew.Hebrew = rowOld.Hebrew;
+            rowNew.CommonName = rowOld.CommonName;
+            rowNew.Lettriq = rowOld.Lettriq;
+            rowNew.Translation = rowOld.Translation;
+            rowNew.Memo = rowOld.Memo;
+          });
       checkColumnText(BooksTableName, nameof(BookRow.Unicode));
       checkColumnText(BooksTableName, nameof(BookRow.CommonName));
       checkColumnText(BooksTableName, nameof(BookRow.Memo));
@@ -163,7 +177,6 @@ class ApplicationDatabase : SQLiteDatabase
       foreach ( BookRow book in Books )
       {
         var bookNumber = (TanakBook)book.Number;
-        //book.Transcription = BooksBounds.Transcriptions.GetLang(bookNumber);
         book.Hebrew = OnlineBooks.Hebrew[bookNumber];
         if ( book.Unicode.Length == 0 )
           book.Unicode = OnlineBooks.Unicode[bookNumber];
@@ -233,7 +246,6 @@ class ApplicationDatabase : SQLiteDatabase
         book.Number = (int)bookNumber;
         book.Unicode = OnlineBooks.Unicode[bookNumber];
         book.Hebrew = OnlineBooks.Hebrew[bookNumber];
-        //book.Transcription = BooksBounds.Transcriptions.GetLang(bookNumber);
         book.CommonName = OnlineBooks.Common.GetLang(bookNumber);
         book.Translation = string.Empty;
         book.Lettriq = string.Empty;

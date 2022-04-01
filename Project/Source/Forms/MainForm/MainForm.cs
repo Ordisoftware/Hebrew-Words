@@ -691,15 +691,24 @@ partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuum_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-    //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-    //ApplicationStatistics.UpdateDBFileSizeRequired = true;
-    DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+    var temp = Cursor;
+    try
+    {
+      Cursor = Cursors.WaitCursor;
+      Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                   .Connection
+                                                   .Optimize(Settings.VacuumLastDone,
+                                                             Settings.VacuumAtStartupDaysInterval,
+                                                             true);
+      HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+      //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      //ApplicationStatistics.UpdateDBFileSizeRequired = true;
+      DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+    }
+    finally
+    {
+      Cursor = temp;
+    }
   }
 
   /// <summary>

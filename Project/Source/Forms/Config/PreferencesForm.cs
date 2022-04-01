@@ -371,16 +371,18 @@ partial class PreferencesForm : Form
 
   private void EditCommentLineAddPrefix_CheckedChanged(object sender, EventArgs e)
   {
-    if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
-      EditCommentLineRemovePrefix.Checked = false;
+    if ( IsReady )
+      if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
+        EditCommentLineRemovePrefix.Checked = false;
     EditCommentLinePrefix.Enabled = EditCommentLineAddPrefix.Checked || EditCommentLineRemovePrefix.Checked;
     ActionCheckAllComments.Enabled = EditCommentLinePrefix.Enabled;
   }
 
   private void EditCommentLineRemovePrefix_CheckedChanged(object sender, EventArgs e)
   {
-    if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
-      EditCommentLineAddPrefix.Checked = false;
+    if ( IsReady )
+      if ( EditCommentLineAddPrefix.Checked && EditCommentLineRemovePrefix.Checked )
+        EditCommentLineAddPrefix.Checked = false;
     EditCommentLinePrefix.Enabled = EditCommentLineAddPrefix.Checked || EditCommentLineRemovePrefix.Checked;
     ActionCheckAllComments.Enabled = EditCommentLinePrefix.Enabled;
   }
