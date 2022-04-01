@@ -36,7 +36,7 @@ partial class SelectReferenceForm : Form
       }
       catch
       {
-        DisplayManager.ShowError("Bad reference.");
+        DisplayManager.ShowError(AppTranslations.BadReference.GetLang(form.EditReference.Text));
       }
     //
     ReferenceItem process()

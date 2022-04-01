@@ -67,7 +67,9 @@ public partial class ReferenceItem
             itemsVerse[1] = int.Parse(partVerseRef[0]);
           if ( partVerseRef.Length >= 2 )
             itemsVerse[2] = int.Parse(partVerseRef[1]);
-          string book = countSpaces == 1 ? partsAllSpaced[0] : partsAllSpaced[0] + " " + partsAllSpaced[1];
+          string book = countSpaces == 1
+            ? partsAllSpaced[0]
+            : partsAllSpaced[0] + " " + partsAllSpaced[1];
           itemsVerse[0] = getBookRef(book);
           return itemsVerse;
         }
