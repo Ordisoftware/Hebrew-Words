@@ -40,30 +40,49 @@ public partial class ReferenceItem
   [SuppressMessage("Usage", "MA0015:Specify the parameter name in ArgumentException", Justification = "N/A")]
   private int[] Analyze(string reference)
   {
-    int countSpaces = reference.Count(c => c == ' ');
-    int countPoints = reference.Count(c => c == '.');
-    if ( countSpaces == 0 && countPoints == 2 )
-      return reference.Split('.').Select(int.Parse).ToArray();
-    else
-    if ( ( countSpaces == 1 || countSpaces == 2 ) && countPoints == 1 )
-      try
+    if ( !reference.IsNullOrEmpty() )
+    {
+      reference = reference.Trim().RemoveDoubleSpaces();
+      int countSpaces = reference.Count(c => c == ' ');
+      int countPoints = reference.Count(c => c == '.');
+      if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
+        return new int[] { getBookRef(reference), 1, 1 };
+      else
+      if ( countSpaces == 0 && char.IsNumber(reference[0]) )
       {
-        var items = new int[3];
-        var parts1 = reference.Split(' ');
-        var parts2 = parts1[parts1.Length - 1].Split('.');
-        items[1] = int.Parse(parts2[0]);
-        items[2] = int.Parse(parts2[1]);
-        string book = countSpaces == 1 ? parts1[0] : parts1[0] + " " + parts1[1];
-        items[0] = ApplicationDatabase.Instance.Books.First(b => b.Transcription.RawContains(book)
-                                                              || b.CommonName.RawContains(book)).Number;
-        return items;
+        if ( countPoints == 0 )
+          return Enumerable.Append(Enumerable.Append(reference.Split('.').Select(int.Parse), 1), 1).ToArray();
+        if ( countPoints == 1 )
+          return Enumerable.Append(reference.Split('.').Select(int.Parse), 1).ToArray();
+        if ( countPoints >= 2 )
+          return reference.Split('.').Select(int.Parse).Take(3).ToArray();
       }
-      catch ( Exception ex )
+      else
+        try
+        {
+          var itemsVerse = new int[3];
+          var partsAllSpaced = reference.Split(' ');
+          var partVerseRef = partsAllSpaced[partsAllSpaced.Length - 1].Split('.');
+          if ( partVerseRef.Length >= 1 )
+            itemsVerse[1] = int.Parse(partVerseRef[0]);
+          if ( partVerseRef.Length >= 2 )
+            itemsVerse[2] = int.Parse(partVerseRef[1]);
+          string book = countSpaces == 1 ? partsAllSpaced[0] : partsAllSpaced[0] + " " + partsAllSpaced[1];
+          itemsVerse[0] = getBookRef(book);
+          return itemsVerse;
+        }
+        catch ( Exception ex )
+        {
+          throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference), ex);
+        }
+      //
+      int getBookRef(string name)
       {
-        throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference), ex);
+        return ApplicationDatabase.Instance.Books.First(b => b.Transcription.RawContains(name)
+                                                          || b.CommonName.RawContains(name)).Number;
       }
-    else
-      throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
+    }
+    throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
   }
 
 }
