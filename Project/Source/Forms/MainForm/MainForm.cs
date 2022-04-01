@@ -811,7 +811,10 @@ partial class MainForm : Form
                                     controlVerseLabelDefault.Reference?.ToStringOnlyNumbers());
     else
     if ( Settings.CurrentView == ViewMode.Search )
-      ;// TODO see ActionAddToBookmarks_Click
+      if ( sender is ToolStripMenuItem menuitem )
+        if ( ( (ContextMenuStrip)menuitem.Owner ).SourceControl is LinkLabel control )
+          HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
+                                        ( (ReferenceItem)control.Tag )?.ToStringOnlyNumbers());
   }
 
   /// <summary>
@@ -825,7 +828,9 @@ partial class MainForm : Form
       Clipboard.SetText(controlVerse.Reference?.Verse.InHebrew);
     else
     if ( Settings.CurrentView == ViewMode.Search )
-      ;// TODO see ActionAddToBookmarks_Click
+      if ( sender is ToolStripMenuItem menuitem )
+        if ( ( (ContextMenuStrip)menuitem.Owner ).SourceControl is LinkLabel control )
+          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.InHebrew);
   }
 
   /// <summary>
@@ -839,7 +844,9 @@ partial class MainForm : Form
       Clipboard.SetText(controlVerse.Reference?.Verse.InUnicode);
     else
     if ( Settings.CurrentView == ViewMode.Search )
-      ;// TODO see ActionAddToBookmarks_Click
+      if ( sender is ToolStripMenuItem menuitem )
+        if ( ( (ContextMenuStrip)menuitem.Owner ).SourceControl is LinkLabel control )
+          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.InUnicode);
   }
 
   /// <summary>
@@ -863,6 +870,30 @@ partial class MainForm : Form
       var reference = ( (VerseControl)label.Parent ).Reference;
       var verse = reference.Verse;
       Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}");
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyTranslationWithComment for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyTranslationWithComment_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+    {
+      var reference = (ReferenceItem)control.Tag;
+      var verse = reference.Verse;
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
+    }
+    else
+    if ( control is Label label && Settings.CurrentView == ViewMode.ChapterVerses )
+    {
+      var reference = ( (VerseControl)label.Parent ).Reference;
+      var verse = reference.Verse;
+      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
     }
   }
 
@@ -1006,7 +1037,26 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionRemoveFromBookmarks_Click(object sender, EventArgs e)
   {
-    // TODO remove from master or bookmarks / see ActionAddToBookmarks_Click
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    ReferenceItem reference = null;
+    if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
+    {
+      reference = (ReferenceItem)control.Tag;
+      reference = new ReferenceItem(reference.Book.Number,
+                                    reference.Chapter.Number,
+                                    reference.Verse.Number);
+    }
+    else
+    if ( control is Label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    {
+      int index = Convert.ToInt32(control.Text) - 1;
+      reference = new ReferenceItem(CurrentReference.Book.Number,
+                                    CurrentReference.Chapter.Number,
+                                    CurrentReference.Chapter.Verses[index].Number);
+    }
+    BookmarkItems.Remove(reference);
+    UpdateBookmarks();
   }
 
   /// <summary>
@@ -1452,6 +1502,7 @@ partial class MainForm : Form
                                          && Settings.BookmarkMasterChapter == reference.Chapter.Number
                                          && Settings.BookmarkMasterVerse == reference.Verse.Number );
     ActionAddToBookmarks.Enabled = !BookmarkItems.Contains(reference);
+    ActionRemoveFromBookmarks.Enabled = BookmarkItems.Contains(reference);
 
   }
 
