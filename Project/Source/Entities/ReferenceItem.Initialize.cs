@@ -47,7 +47,6 @@ public partial class ReferenceItem
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
         return new int[] { getBookRef(reference), 1, 1 };
-      else
       if ( countSpaces == 0 && char.IsNumber(reference[0]) )
       {
         if ( countPoints == 0 )
@@ -77,14 +76,14 @@ public partial class ReferenceItem
         {
           throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference), ex);
         }
-      //
-      int getBookRef(string name)
-      {
-        return ApplicationDatabase.Instance.Books.First(b => b.Transcription.RawContains(name)
-                                                          || b.CommonName.RawContains(name)).Number;
-      }
     }
     throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
+    //
+    int getBookRef(string name)
+    {
+      return ApplicationDatabase.Instance.Books.First(book => book.Transcription.RawContains(name)
+                                                           || book.CommonName.RawContains(name)).Number;
+    }
   }
 
 }
