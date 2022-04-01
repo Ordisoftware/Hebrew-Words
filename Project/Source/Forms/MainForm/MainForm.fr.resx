@@ -736,4 +736,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionCopyUnicodeCharsVerse.Text" xml:space="preserve">
     <value>Copier les caractères unicodes</value>
   </data>
+  <data name="ActionCopyTranslationWithComment.Text" xml:space="preserve">
+    <value>Copier la traduction avec commentaire</value>
+  </data>
 </root>

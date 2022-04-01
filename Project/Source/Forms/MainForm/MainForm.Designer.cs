@@ -247,6 +247,7 @@
       this.ActionCopyFontCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyTranslationWithComment = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
@@ -1936,6 +1937,7 @@
             this.ActionCopyFontCharsVerse,
             this.ActionCopyUnicodeCharsVerse,
             this.ActionCopyTranslation,
+            this.ActionCopyTranslationWithComment,
             this.toolStripMenuItem3,
             this.ActionExportVerse,
             this.toolStripSeparator24,
@@ -2015,6 +2017,12 @@
       resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
       this.ActionCopyTranslation.Name = "ActionCopyTranslation";
       this.ActionCopyTranslation.Click += new System.EventHandler(this.ActionCopyTranslation_Click);
+      // 
+      // ActionCopyTranslationWithComment
+      // 
+      resources.ApplyResources(this.ActionCopyTranslationWithComment, "ActionCopyTranslationWithComment");
+      this.ActionCopyTranslationWithComment.Name = "ActionCopyTranslationWithComment";
+      this.ActionCopyTranslationWithComment.Click += new System.EventHandler(this.ActionCopyTranslationWithComment_Click);
       // 
       // toolStripMenuItem3
       // 
@@ -2455,6 +2463,7 @@
     private ToolStripMenuItem ActionCopyFontCharsVerse;
     private ToolStripMenuItem ActionCopyUnicodeCharsVerse;
     private ToolStripSeparator toolStripSeparator24;
+    private ToolStripMenuItem ActionCopyTranslationWithComment;
   }
 }
 
