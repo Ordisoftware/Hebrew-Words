@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -47,7 +47,7 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Unicode));
     }
   }
-  private string _Unicode;
+  private string _Unicode = string.Empty;
 
   [NotNull]
   public string Hebrew
@@ -60,7 +60,7 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Hebrew));
     }
   }
-  private string _Hebrew;
+  private string _Hebrew = string.Empty;
 
   [NotNull]
   public string Translation
@@ -73,6 +73,6 @@ public class WordRow : AbstractRow
       NotifyPropertyChanged(nameof(Translation));
     }
   }
-  private string _Translation;
+  private string _Translation = string.Empty;
 
 }

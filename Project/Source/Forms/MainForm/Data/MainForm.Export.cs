@@ -23,7 +23,7 @@ partial class MainForm
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
-        SaveFileDialogMSWord.FileName = book.Name + ".docx";
+        SaveFileDialogMSWord.FileName = book.Transcription + ".docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         var form = new ExportingForm();
         SetFormDisabled(true);
@@ -48,7 +48,7 @@ partial class MainForm
         }
         break;
       case ViewMode.BookELS50:
-        SaveFileDialogRTF.FileName = book.Name + " ELS50.rtf";
+        SaveFileDialogRTF.FileName = book.Transcription + " ELS50.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditChapterELS50.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
@@ -66,7 +66,7 @@ partial class MainForm
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
-        SaveFileDialogMSWord.FileName = $"{book.Name} {chapter.Number}.docx";
+        SaveFileDialogMSWord.FileName = $"{book.Transcription} {chapter.Number}.docx";
         if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
         SetFormDisabled(true);
         try
@@ -79,14 +79,14 @@ partial class MainForm
         }
         break;
       case ViewMode.ChapterTranslation:
-        SaveFileDialogRTF.FileName = $"{book.Name} {chapter.Number} Translation.rtf";
+        SaveFileDialogRTF.FileName = $"{book.Transcription} {chapter.Number} Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditChapterTranslation.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;
       case ViewMode.ChapterOriginal:
-        SaveFileDialogRTF.FileName = $"{book.Name} {chapter.Number} Hebrew.rtf";
+        SaveFileDialogRTF.FileName = $"{book.Transcription} {chapter.Number} Hebrew.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
         EditChapterOriginal.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )

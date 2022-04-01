@@ -121,7 +121,7 @@ partial class EditBooksForm : Form
 
   private void ActionCopyName_Click(object sender, EventArgs e)
   {
-    string name = SelectedBook.Name;
+    string name = SelectedBook.Transcription;
     string tranlation = SelectedBook.Translation;
     if ( tranlation.Length > 0 )
       name += $" ({tranlation})";
@@ -143,7 +143,7 @@ partial class EditBooksForm : Form
     using var form = new EditMemoForm();
     var book = SelectedBook;
     if ( SelectedBook is null ) return;
-    form.Text += book.Name;
+    form.Text += book.Transcription;
     form.TextBox.Text = book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )

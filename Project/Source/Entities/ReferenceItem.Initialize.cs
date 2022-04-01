@@ -54,7 +54,7 @@ public partial class ReferenceItem
         items[1] = int.Parse(parts2[0]);
         items[2] = int.Parse(parts2[1]);
         string book = countSpaces == 1 ? parts1[0] : parts1[0] + " " + parts1[1];
-        items[0] = ApplicationDatabase.Instance.Books.First(b => b.Name.RawContains(book)
+        items[0] = ApplicationDatabase.Instance.Books.First(b => b.Transcription.RawContains(book)
                                                               || b.CommonName.RawContains(book)).Number;
         return items;
       }

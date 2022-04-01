@@ -691,15 +691,24 @@ partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuum_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-    //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-    //ApplicationStatistics.UpdateDBFileSizeRequired = true;
-    DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+    var temp = Cursor;
+    try
+    {
+      Cursor = Cursors.WaitCursor;
+      Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                   .Connection
+                                                   .Optimize(Settings.VacuumLastDone,
+                                                             Settings.VacuumAtStartupDaysInterval,
+                                                             true);
+      HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+      //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      //ApplicationStatistics.UpdateDBFileSizeRequired = true;
+      DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+    }
+    finally
+    {
+      Cursor = temp;
+    }
   }
 
   /// <summary>
@@ -1321,7 +1330,7 @@ partial class MainForm : Form
   private void ActionEditBookMemo_Click(object sender, EventArgs e)
   {
     using var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name ?? string.Empty;
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Transcription ?? string.Empty;
     form.TextBox.Text = CurrentReference.Book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
@@ -1336,7 +1345,7 @@ partial class MainForm : Form
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
   {
     using var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Name
+    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Transcription
                + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
                + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number
               ?? string.Empty;
@@ -1560,7 +1569,7 @@ partial class MainForm : Form
     if ( EditFilterVersesTranslated.Checked )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
     if ( EditFilterBook.Text.Length != 0 )
-      books = books.Where(b => b.Name.RawContains(EditFilterBook.Text)
+      books = books.Where(b => b.Transcription.RawContains(EditFilterBook.Text)
                             || b.CommonName.RawContains(EditFilterBook.Text)
                             || b.Translation.RawContains(EditFilterBook.Text)
                             || b.Lettriq.RawContains(EditFilterBook.Text)
