@@ -97,7 +97,7 @@ partial class MainForm : Form
                   int nc = CommonCount(word.Hebrew, hebrew);
                   if ( word.Hebrew == hebrew || nc >= Math.Min(word.Hebrew.Length, hebrew.Length) - 1 )
                   {
-                    // TODO update fields
+                    // update fields
                     countBad = 0;
                   }
                   else
@@ -133,7 +133,7 @@ partial class MainForm : Form
           }
         }
       }
-      // TODO update TableAdapterManager.UpdateAll(DataSet);
+      // TableAdapterManager.UpdateAll(DataSet);
     }
     catch ( Exception ex )
     {

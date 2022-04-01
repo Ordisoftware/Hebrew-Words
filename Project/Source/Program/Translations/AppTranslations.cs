@@ -101,6 +101,12 @@ static partial class AppTranslations
                     "Enlever : {0}"
   };
 
+  static public readonly TranslationsDictionary BadReference = new()
+  {
+    [Language.EN] = "Incorrect reference: {0}",
+    [Language.FR] = "Référence incorrecte : {0}"
+  };
+
   static public readonly TranslationsDictionary NoSearchResultFound = new()
   {
     [Language.EN] = "No result found",
