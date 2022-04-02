@@ -561,8 +561,13 @@ partial class MainForm : Form
   private void ActionGoToVerse_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    SetView(ViewMode.ChapterVerses);
-    GoToReference(SelectReferenceForm.Run(), true);
+    var reference = SelectReferenceForm.Run();
+    if ( reference is null ) return;
+    if ( Settings.CurrentView == ViewMode.Search
+      || Settings.CurrentView == ViewMode.VerseFiltered
+      || Settings.CurrentView == ViewMode.BookELS50 )
+      SetView(ViewMode.ChapterVerses);
+    GoToReference(reference, true);
   }
 
   /// <summary>

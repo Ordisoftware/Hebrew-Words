@@ -83,14 +83,14 @@ partial class MainForm
           ActionViewTranslations.PerformClick();
           return true;
         case Keys.F3:
-          ActionViewVerseFiltered.PerformClick();
-          return true;
-        case Keys.F4:
         case Keys.Alt | Keys.F:
           if ( Settings.CurrentView != ViewMode.Search )
             ActionViewSearch.PerformClick();
           else
             RotateSearchTab();
+          return true;
+        case Keys.F4:
+          ActionViewVerseFiltered.PerformClick();
           return true;
         case Keys.F5:
         case Keys.Shift | Keys.Control | Keys.F:

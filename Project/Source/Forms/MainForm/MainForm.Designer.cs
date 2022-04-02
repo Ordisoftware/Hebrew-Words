@@ -163,10 +163,10 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToBookmarkMain = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorBookmarks = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHistory = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionClearHistory = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorHistory = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHistoryVerseBack = new System.Windows.Forms.ToolStripButton();
       this.ActionHistoryVerseNext = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -1314,8 +1314,8 @@
             this.ActionViewVerses,
             this.ActionViewTranslations,
             this.toolStripSeparator21,
-            this.ActionViewVerseFiltered,
             this.ActionViewSearch,
+            this.ActionViewVerseFiltered,
             this.ActionGoToReference,
             this.toolStripSeparator17,
             this.ActionViewRawText,
@@ -1419,6 +1419,11 @@
       this.SeparatorBookmarks.Name = "SeparatorBookmarks";
       resources.ApplyResources(this.SeparatorBookmarks, "SeparatorBookmarks");
       // 
+      // toolStripSeparator19
+      // 
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      // 
       // ActionHistory
       // 
       this.ActionHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1439,11 +1444,6 @@
       // 
       this.SeparatorHistory.Name = "SeparatorHistory";
       resources.ApplyResources(this.SeparatorHistory, "SeparatorHistory");
-      // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
       // ActionHistoryVerseBack
       // 
@@ -1636,16 +1636,16 @@
             this.ActionViewBooksBoard,
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
-            this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
+            this.ActionShowGrammarGuide,
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
             this.toolStripSeparator1,
-            this.ActionCopyToClipboard,
             this.toolStripSeparator22,
             this.ActionCloseWindows,
             this.toolStripSeparator23,
+            this.ActionCopyToClipboard,
             this.ActionRefresh,
             this.SeparatorImportConcordances,
             this.ActionImportConcordances});
