@@ -202,7 +202,7 @@ partial class BibleStatisticsForm : Form
     addCountOne("Aharon", "]rha", s => s.Contains("nrha"));
     addCountOne("Mitsvah", "vjm", s => s.Contains("hvjm") || s.Contains("tvjm"));
     addCountOne("Shalom", "mvl>", s => s.Contains("mvl>"));
-    addCountOne("Hébreu", "yrbi", s => s.Contains("yrbi"));
+    addCountOne("ʿIbrai", "yrbi", s => s.Contains("yrbi"));
     addCountOne("Kodesh", ">dq", s => s.Contains(">dq"));
     addCountOne("Shabat", "tb>", s => s.Contains("tb>"));
     addCountOne("Yehoudi", "ydvhy", s => s.Contains("ydvhy"));
@@ -266,7 +266,7 @@ partial class BibleStatisticsForm : Form
     {
       var linklabel = new LinkLabel()
       {
-        LinkBehavior = LinkBehavior.NeverUnderline,
+        LinkBehavior = LinkBehavior.HoverUnderline,
         TextAlign = ContentAlignment.TopLeft,
         LinkColor = Color.Navy,
         ActiveLinkColor = Color.MediumBlue,

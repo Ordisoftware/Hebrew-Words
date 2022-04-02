@@ -137,7 +137,7 @@
       // 
       this.LabelMiddleReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelMiddleReferenceValue, "LabelMiddleReferenceValue");
-      this.LabelMiddleReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+      this.LabelMiddleReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.LabelMiddleReferenceValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelMiddleReferenceValue.Name = "LabelMiddleReferenceValue";
       this.LabelMiddleReferenceValue.TabStop = true;
@@ -194,7 +194,7 @@
       // 
       this.LabelLongestReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelLongestReferenceValue, "LabelLongestReferenceValue");
-      this.LabelLongestReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+      this.LabelLongestReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.LabelLongestReferenceValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelLongestReferenceValue.Name = "LabelLongestReferenceValue";
       this.LabelLongestReferenceValue.TabStop = true;
