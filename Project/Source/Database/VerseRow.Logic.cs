@@ -17,18 +17,40 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseRow
 {
 
+  /// <summary>
+  /// Indicates the text of the word using the Hebrew font.
+  /// </summary>
   public string InHebrew
     => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
 
+  /// <summary>
+  /// Indicates the text of the word using Unicode codes.
+  /// </summary>
   public string InUnicode
     => Words.Select(word => word.Unicode).AsMultiSpace();
 
+  /// <summary>
+  /// Indicates if the verse has at least one word translated.
+  /// </summary>
   public bool HasTranslation
     => Words.Any(word => word.Translation.Trim().Length > 0);
 
+  /// <summary>
+  /// Indicates if all the words of the verse are translated.
+  /// </summary>
   public bool IsFullyTranslated
     => Words.All(word => word.Translation.Trim().Length > 0);
 
+  /// <summary>
+  /// Indicates if all the words of the verse are not translated.
+  /// </summary>
+  /// <returns>True if none or not all words are translated.</returns>
+  public bool IsFullyUntranslated
+    => Words.All(word => word.Translation.Trim().Length == 0);
+
+  /// <summary>
+  /// Indicates if at least one word is not translated while one is.
+  /// </summary>
   public bool IsPartiallyTranslated
   {
     get
@@ -45,6 +67,9 @@ public partial class VerseRow
     }
   }
 
+  /// <summary>
+  /// Indicates the translation sentence of the verse with [...] in place of the untranslated words.
+  /// </summary>
   public string Translation
     => Words.Select(word =>
     {

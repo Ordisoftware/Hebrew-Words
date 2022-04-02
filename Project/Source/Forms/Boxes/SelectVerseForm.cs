@@ -19,7 +19,7 @@ partial class SelectVerseForm : Form
 
   static public ReferenceItem Run()
   {
-    var form = new SelectVerseForm();
+    using var form = new SelectVerseForm();
     form.EditVerseNumber.Maximum = MainForm.Instance.CurrentReference.Chapter.Verses.Count;
     if ( form.ShowDialog() != DialogResult.OK ) return null;
     return new ReferenceItem(MainForm.Instance.CurrentReference.Book.Number,
@@ -36,6 +36,12 @@ partial class SelectVerseForm : Form
   private void ActionHelp_Click(object sender, EventArgs e)
   {
     DisplayManager.ShowInformation(AppTranslations.SearchReferenceNotice.GetLang());
+  }
+
+  private void SelectVerseFromFirstToLast_Click(object sender, EventArgs e)
+  {
+    if ( sender is RadioButton control )
+      control.Checked = true;
   }
 
 }

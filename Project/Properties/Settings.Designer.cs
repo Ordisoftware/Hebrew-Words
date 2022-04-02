@@ -1486,5 +1486,89 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["VerseHebrewCharsInBold"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVerseFromFirstToLast {
+            get {
+                return ((bool)(this["SelectVerseFromFirstToLast"]));
+            }
+            set {
+                this["SelectVerseFromFirstToLast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVerseFromLastToFirst {
+            get {
+                return ((bool)(this["SelectVerseFromLastToFirst"]));
+            }
+            set {
+                this["SelectVerseFromLastToFirst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVerseFromCurrentToFirst {
+            get {
+                return ((bool)(this["SelectVerseFromCurrentToFirst"]));
+            }
+            set {
+                this["SelectVerseFromCurrentToFirst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectVerseFromCurrentToLast {
+            get {
+                return ((bool)(this["SelectVerseFromCurrentToLast"]));
+            }
+            set {
+                this["SelectVerseFromCurrentToLast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVerseTranslated {
+            get {
+                return ((bool)(this["SelectVerseTranslated"]));
+            }
+            set {
+                this["SelectVerseTranslated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectVerseFullyTranslated {
+            get {
+                return ((bool)(this["SelectVerseFullyTranslated"]));
+            }
+            set {
+                this["SelectVerseFullyTranslated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectVerseTakeFirstElseLast {
+            get {
+                return ((bool)(this["SelectVerseTakeFirstElseLast"]));
+            }
+            set {
+                this["SelectVerseTakeFirstElseLast"] = value;
+            }
+        }
     }
 }

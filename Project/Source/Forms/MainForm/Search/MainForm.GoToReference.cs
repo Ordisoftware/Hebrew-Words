@@ -61,9 +61,11 @@ partial class MainForm
     GoToReference(new ReferenceItem(reference), forceUpdateView, setViewChapterVerses, isHistory);
   }
 
+
   /// <summary>
   /// Goes to a reference instance.
   /// </summary>
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public void GoToReference(ReferenceItem reference, bool forceUpdateView = false, bool setViewChapterVerses = false, bool isHistory = false)
   {
     if ( reference is null ) return;
@@ -148,41 +150,67 @@ partial class MainForm
       if ( reference.Verse is null )
       {
         var found = doCheckVerse();
-        reference.Verse = found ?? reference.Chapter?.Verses.Find(v => v.Number == 1);
+        reference.Verse = found ?? CurrentReference.Verse;
       }
       // Do check verse
       VerseRow doCheckVerse()
       {
-        if ( reference.Chapter?.Verses.Find(v => v.Number == 1).IsFullyTranslated ?? false )
+        if ( CurrentReference.Verse is null || CurrentReference.Verse is null ) return null;
+        VerseRow result;
+        IEnumerable<VerseRow> verses = reference.Chapter?.Verses;
+        // Slicing SelectVerseFromFirstToLast
+        if ( Settings.SelectVerseFromLastToFirst )
         {
-          var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
-          if ( found is not null )
-          {
-            ShowPanelToolTip(AppTranslations.FirstVerseToComplete.GetLang());
-            return found;
-          }
-          else
-          {
-            ShowPanelToolTip(AppTranslations.NoVerseToComplete.GetLang());
-            reference = CurrentReference;
-            return null;
-          }
+          verses = verses.Reverse();
         }
         else
+        if ( Settings.SelectVerseFromCurrentToFirst )
         {
-          var found = CurrentReference.Chapter?.Verses?.Find(v => v.HasTranslation);
-          if ( found is not null )
+          int indexCurrent = CurrentReference.Verse.Number;
+          verses = verses.TakeWhile(v => v.Number != indexCurrent).Reverse();
+        }
+        else
+        if ( Settings.SelectVerseFromCurrentToLast )
+        {
+          int indexCurrent = CurrentReference.Verse.Number;
+          verses = verses.SkipUntil(v => v.Number == indexCurrent);
+        }
+        else
+        if ( !Settings.SelectVerseFromFirstToLast )
+          throw new AdvNotImplementedException(nameof(SelectVerseForm) + " slice option.");
+        // Filtering translated
+        if ( Settings.SelectVerseTranslated )
+        {
+          if ( Settings.SelectVerseFullyTranslated )
           {
-            ShowPanelToolTip(AppTranslations.FirstVerseTranslated.GetLang());
-            return found;
+            result = Settings.SelectVerseTakeFirstElseLast
+              ? verses.FirstOrDefault(v => v.IsFullyTranslated)
+              : verses.LastOrDefault(v => v.IsFullyTranslated);
           }
           else
           {
-            ShowPanelToolTip(AppTranslations.NoVerseTranslated.GetLang());
-            reference = CurrentReference;
-            return null;
+            result = Settings.SelectVerseTakeFirstElseLast
+              ? verses.FirstOrDefault(v => v.IsPartiallyTranslated)
+              : verses.LastOrDefault(v => v.IsPartiallyTranslated);
           }
         }
+        else // Untranslated
+        {
+          if ( Settings.SelectVerseFullyTranslated )
+          {
+            result = Settings.SelectVerseTakeFirstElseLast
+              ? verses.FirstOrDefault(v => v.IsFullyUntranslated)
+              : verses.LastOrDefault(v => v.IsFullyUntranslated);
+          }
+          else
+          {
+            result = Settings.SelectVerseTakeFirstElseLast
+              ? verses.FirstOrDefault(v => !v.IsFullyTranslated)
+              : verses.LastOrDefault(v => !v.IsFullyTranslated);
+          }
+        }
+        if ( result is null ) ShowPanelToolTip(AppTranslations.NoSearchResultFound.GetLang());
+        return result;
       }
     }
   }

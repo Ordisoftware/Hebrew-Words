@@ -45,9 +45,17 @@ namespace Ordisoftware.Hebrew.Words
       this.panel1 = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
-      this.ActionHelp = new System.Windows.Forms.Button();
+      this.PanelOptions = new System.Windows.Forms.Panel();
+      this.SelectVerseFromFirstToLast = new System.Windows.Forms.RadioButton();
+      this.SelectVerseFromCurrentToLast = new System.Windows.Forms.RadioButton();
+      this.SelectVerseTakeFirstElseLast = new System.Windows.Forms.CheckBox();
+      this.SelectVerseTranslated = new System.Windows.Forms.CheckBox();
+      this.SelectVerseFullyTranslated = new System.Windows.Forms.CheckBox();
+      this.SelectVerseFromLastToFirst = new System.Windows.Forms.RadioButton();
+      this.SelectVerseFromCurrentToFirst = new System.Windows.Forms.RadioButton();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
+      this.PanelOptions.SuspendLayout();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -86,14 +94,83 @@ namespace Ordisoftware.Hebrew.Words
             -2147483648});
       this.EditVerseNumber.Name = "EditVerseNumber";
       // 
-      // ActionHelp
+      // PanelOptions
       // 
-      this.ActionHelp.AllowDrop = true;
-      this.ActionHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
-      this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.UseVisualStyleBackColor = true;
-      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      resources.ApplyResources(this.PanelOptions, "PanelOptions");
+      this.PanelOptions.Controls.Add(this.SelectVerseFromFirstToLast);
+      this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToLast);
+      this.PanelOptions.Controls.Add(this.SelectVerseTakeFirstElseLast);
+      this.PanelOptions.Controls.Add(this.SelectVerseTranslated);
+      this.PanelOptions.Controls.Add(this.SelectVerseFullyTranslated);
+      this.PanelOptions.Controls.Add(this.SelectVerseFromLastToFirst);
+      this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToFirst);
+      this.PanelOptions.Name = "PanelOptions";
+      // 
+      // SelectVerseFromFirstToLast
+      // 
+      resources.ApplyResources(this.SelectVerseFromFirstToLast, "SelectVerseFromFirstToLast");
+      this.SelectVerseFromFirstToLast.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseFromFirstToLast;
+      this.SelectVerseFromFirstToLast.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseFromFirstToLast", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseFromFirstToLast.Name = "SelectVerseFromFirstToLast";
+      this.SelectVerseFromFirstToLast.TabStop = true;
+      this.SelectVerseFromFirstToLast.UseVisualStyleBackColor = true;
+      this.SelectVerseFromFirstToLast.Click += new System.EventHandler(this.SelectVerseFromFirstToLast_Click);
+      // 
+      // SelectVerseFromCurrentToLast
+      // 
+      resources.ApplyResources(this.SelectVerseFromCurrentToLast, "SelectVerseFromCurrentToLast");
+      this.SelectVerseFromCurrentToLast.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseFromCurrentToLast;
+      this.SelectVerseFromCurrentToLast.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseFromCurrentToLast", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseFromCurrentToLast.Name = "SelectVerseFromCurrentToLast";
+      this.SelectVerseFromCurrentToLast.TabStop = true;
+      this.SelectVerseFromCurrentToLast.UseVisualStyleBackColor = true;
+      this.SelectVerseFromCurrentToLast.Click += new System.EventHandler(this.SelectVerseFromFirstToLast_Click);
+      // 
+      // SelectVerseTakeFirstElseLast
+      // 
+      resources.ApplyResources(this.SelectVerseTakeFirstElseLast, "SelectVerseTakeFirstElseLast");
+      this.SelectVerseTakeFirstElseLast.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseTakeFirstElseLast;
+      this.SelectVerseTakeFirstElseLast.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.SelectVerseTakeFirstElseLast.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseTakeFirstElseLast", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseTakeFirstElseLast.Name = "SelectVerseTakeFirstElseLast";
+      this.SelectVerseTakeFirstElseLast.UseVisualStyleBackColor = true;
+      // 
+      // SelectVerseTranslated
+      // 
+      resources.ApplyResources(this.SelectVerseTranslated, "SelectVerseTranslated");
+      this.SelectVerseTranslated.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseTranslated;
+      this.SelectVerseTranslated.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseTranslated", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseTranslated.Name = "SelectVerseTranslated";
+      this.SelectVerseTranslated.UseVisualStyleBackColor = true;
+      // 
+      // SelectVerseFullyTranslated
+      // 
+      resources.ApplyResources(this.SelectVerseFullyTranslated, "SelectVerseFullyTranslated");
+      this.SelectVerseFullyTranslated.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseFullyTranslated;
+      this.SelectVerseFullyTranslated.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.SelectVerseFullyTranslated.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseFullyTranslated", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseFullyTranslated.Name = "SelectVerseFullyTranslated";
+      this.SelectVerseFullyTranslated.UseVisualStyleBackColor = true;
+      // 
+      // SelectVerseFromLastToFirst
+      // 
+      resources.ApplyResources(this.SelectVerseFromLastToFirst, "SelectVerseFromLastToFirst");
+      this.SelectVerseFromLastToFirst.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseFromLastToFirst;
+      this.SelectVerseFromLastToFirst.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseFromLastToFirst", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseFromLastToFirst.Name = "SelectVerseFromLastToFirst";
+      this.SelectVerseFromLastToFirst.TabStop = true;
+      this.SelectVerseFromLastToFirst.UseVisualStyleBackColor = true;
+      this.SelectVerseFromLastToFirst.Click += new System.EventHandler(this.SelectVerseFromFirstToLast_Click);
+      // 
+      // SelectVerseFromCurrentToFirst
+      // 
+      resources.ApplyResources(this.SelectVerseFromCurrentToFirst, "SelectVerseFromCurrentToFirst");
+      this.SelectVerseFromCurrentToFirst.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseFromCurrentToFirst;
+      this.SelectVerseFromCurrentToFirst.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseFromCurrentToFirst", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseFromCurrentToFirst.Name = "SelectVerseFromCurrentToFirst";
+      this.SelectVerseFromCurrentToFirst.TabStop = true;
+      this.SelectVerseFromCurrentToFirst.UseVisualStyleBackColor = true;
+      this.SelectVerseFromCurrentToFirst.Click += new System.EventHandler(this.SelectVerseFromFirstToLast_Click);
       // 
       // SelectVerseForm
       // 
@@ -101,7 +178,7 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.ActionHelp);
+      this.Controls.Add(this.PanelOptions);
       this.Controls.Add(this.EditVerseNumber);
       this.Controls.Add(this.LabelVerse);
       this.Controls.Add(this.panel1);
@@ -112,6 +189,8 @@ namespace Ordisoftware.Hebrew.Words
       this.ShowInTaskbar = false;
       this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
+      this.PanelOptions.ResumeLayout(false);
+      this.PanelOptions.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -139,7 +218,14 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private System.Windows.Forms.Label LabelVerse;
     public NumericUpDown EditVerseNumber;
-    private Button ActionHelp;
+    private RadioButton SelectVerseFromFirstToLast;
+    private RadioButton SelectVerseFromLastToFirst;
+    private RadioButton SelectVerseFromCurrentToFirst;
+    private RadioButton SelectVerseFromCurrentToLast;
+    private CheckBox SelectVerseTranslated;
+    private CheckBox SelectVerseFullyTranslated;
+    private Panel PanelOptions;
+    private CheckBox SelectVerseTakeFirstElseLast;
   }
 
 }

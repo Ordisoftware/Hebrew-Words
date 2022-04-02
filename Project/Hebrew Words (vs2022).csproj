@@ -675,6 +675,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ParashotForm.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.fr.resx">
+      <DependentUpon>SelectVerseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -733,9 +736,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectSearchResultsForm.resx">
       <DependentUpon>SelectSearchResultsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.fr.resx">
-      <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.resx">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
