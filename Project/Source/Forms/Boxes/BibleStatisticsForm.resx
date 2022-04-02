@@ -811,13 +811,13 @@
     <value>23, 618</value>
   </data>
   <data name="LabelInfoFrequent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 13</value>
+    <value>249, 13</value>
   </data>
   <data name="LabelInfoFrequent.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="LabelInfoFrequent.Text" xml:space="preserve">
-    <value>** Strict reference with no particle or root variant</value>
+    <value>** Strict occurences with no particle nor root variant</value>
   </data>
   <data name="&gt;&gt;LabelInfoFrequent.Name" xml:space="preserve">
     <value>LabelInfoFrequent</value>
