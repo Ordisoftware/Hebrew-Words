@@ -121,9 +121,12 @@
   <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 5</value>
+    <value>258, 3</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -150,8 +153,11 @@
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 5</value>
+    <value>339, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -178,10 +184,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 63</value>
+    <value>10, 173</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 35</value>
+    <value>414, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -196,13 +202,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="LabelVerse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="LabelVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 11</value>
+    <value>181, 117</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -223,10 +232,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditVerseNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 30</value>
+    <value>183, 138</value>
   </data>
   <data name="EditVerseNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -244,50 +253,151 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditVerseNumber.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="ActionHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="PanelOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="ActionHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
+  <data name="EditFullTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="ActionHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditFullTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 27</value>
+  <data name="EditFullTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 20</value>
   </data>
-  <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+  <data name="EditFullTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 17</value>
   </data>
-  <data name="ActionHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="EditFullTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
-    <value>ActionHelp</value>
+  <data name="EditFullTranslated.Text" xml:space="preserve">
+    <value>Traduction complète, sinon partielle</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;EditFullTranslated.Name" xml:space="preserve">
+    <value>EditFullTranslated</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditFullTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFullTranslated.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditFullTranslated.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 17</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.Text" xml:space="preserve">
+    <value>Depuis le début ou la fin, sinon depuis le verset actuel vers le début ou vers la fin</value>
+  </data>
+  <data name="&gt;&gt;EditFromStartOrEndElseVerse.Name" xml:space="preserve">
+    <value>EditFromStartOrEndElseVerse</value>
+  </data>
+  <data name="&gt;&gt;EditFromStartOrEndElseVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFromStartOrEndElseVerse.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditFromStartOrEndElseVerse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectFirstTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectFirstTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectFirstTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 65</value>
+  </data>
+  <data name="SelectFirstTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="SelectFirstTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SelectFirstTranslated.Text" xml:space="preserve">
+    <value>Premier verset traduit, sinon le dernier</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstTranslated.Name" xml:space="preserve">
+    <value>SelectFirstTranslated</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstTranslated.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstTranslated.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectFirstNotTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectFirstNotTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectFirstNotTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="SelectFirstNotTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="SelectFirstNotTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="SelectFirstNotTranslated.Text" xml:space="preserve">
+    <value>Premier verset non traduit, sinon le dernier</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstNotTranslated.Name" xml:space="preserve">
+    <value>SelectFirstNotTranslated</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstNotTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstNotTranslated.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectFirstNotTranslated.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 90</value>
+  </data>
+  <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -296,13 +406,16 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>174, 98</value>
+    <value>434, 211</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Find verse</value>
+    <value>Select verse</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SelectVerseForm</value>

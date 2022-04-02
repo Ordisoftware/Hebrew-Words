@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 5</value>
+    <value>408, 3</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 5</value>
+    <value>489, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -178,10 +178,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 216</value>
+    <value>10, 238</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 35</value>
+    <value>564, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -221,7 +221,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 176</value>
+    <value>532, 196</value>
   </data>
   <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -248,7 +248,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 110</value>
+    <value>20, 120</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -278,7 +278,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 60</value>
+    <value>20, 70</value>
   </data>
   <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -308,10 +308,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 30</value>
+    <value>23, 40</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 21</value>
+    <value>535, 21</value>
   </data>
   <data name="SelectBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -335,7 +335,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+    <value>20, 20</value>
   </data>
   <data name="LabelBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -365,10 +365,10 @@
     <value>195, 17</value>
   </metadata>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 80</value>
+    <value>23, 90</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 21</value>
+    <value>535, 21</value>
   </data>
   <data name="SelectChapter.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -392,10 +392,10 @@
     <value>399, 18</value>
   </metadata>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 130</value>
+    <value>23, 140</value>
   </data>
   <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 21</value>
+    <value>535, 21</value>
   </data>
   <data name="SelectVerse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -416,10 +416,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="EditReference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 180</value>
+    <value>23, 200</value>
   </data>
   <data name="EditReference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>523, 20</value>
+    <value>503, 20</value>
   </data>
   <data name="EditReference.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -428,7 +428,7 @@
     <value>EditReference</value>
   </data>
   <data name="&gt;&gt;EditReference.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditReference.Parent" xml:space="preserve">
     <value>$this</value>
@@ -443,7 +443,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelReference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 160</value>
+    <value>20, 180</value>
   </data>
   <data name="LabelReference.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -473,7 +473,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 251</value>
+    <value>584, 276</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

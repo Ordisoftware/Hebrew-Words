@@ -34,7 +34,7 @@ partial class MainForm
           item.ImageScaling = ToolStripItemImageScaling.None;
           item.Image = ActionGoToHistory.Image;
           if ( reference.CompareTo(CurrentReference) == 0 )
-            item.ReplaceFont(new Font(item.Font.Name, item.Font.Size, FontStyle.Bold));
+            item.Font = new Font(item.Font.Name, item.Font.Size, FontStyle.Bold);
         }
       }
       ActionHistory.Enabled = HistoryItems.Count > 0;

@@ -33,9 +33,15 @@ partial class SelectVerseForm : Form
     EditVerseNumber.Select(0, 1);
   }
 
-  private void ActionHelp_Click(object sender, EventArgs e)
+  private void EditVerseNumber_ValueChanged(object sender, EventArgs e)
   {
-    DisplayManager.ShowInformation(AppTranslations.SearchVerseNotice.GetLang());
+    PanelOptions.Enabled = EditVerseNumber.Value == 0;
+  }
+
+  private void SelectFirstTranslatedOrNot_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( sender is RadioButton button && !button.Checked )
+      button.Checked = true;
   }
 
 }

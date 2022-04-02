@@ -279,9 +279,9 @@ partial class ParashotForm : Form
 
   private void ActionReset_Click(object sender, EventArgs e)
   {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
+    if ( !DisplayManager.QueryYesNo(HebrewTranslations.AskToResetParashot.GetLang()) ) return;
     int index = DataGridView.CurrentRow.Index;
-    MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true);
+    MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true, false, true);
     BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
     DataGridView.Rows[index].Selected = true;
     DataGridView.FirstDisplayedScrollingRowIndex = index;
@@ -327,11 +327,9 @@ partial class ParashotForm : Form
     UpdateStats();
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
     DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
-    ColumnHebrew.DefaultCellStyle.Font?.Dispose();
     ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
     if ( DataGridView.Rows.Count > 0 )
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;

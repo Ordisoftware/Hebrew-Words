@@ -52,9 +52,9 @@ partial class MainForm
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
-        ActionGoToBookmarkMain.ReplaceFont(new Font(ActionGoToBookmarkMain.Font, FontStyle.Bold));
+        ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Bold);
       else
-        ActionGoToBookmarkMain.ReplaceFont(new Font(ActionGoToBookmarkMain.Font, FontStyle.Regular));
+        ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Regular);
       if ( BookmarkItems.Count > 0 )
       {
         foreach ( var reference in BookmarkItems )
@@ -66,7 +66,7 @@ partial class MainForm
           item.ImageScaling = ToolStripItemImageScaling.None;
           item.Image = ActionGoToBookmarks.Image;
           if ( reference.CompareTo(CurrentReference) == 0 )
-            item.ReplaceFont(new Font(item.Font, FontStyle.Bold));
+            item.Font = new Font(item.Font, FontStyle.Bold);
         }
       }
       ActionClearBookmarks.Enabled = BookmarkItems.Count > 0 && ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex;

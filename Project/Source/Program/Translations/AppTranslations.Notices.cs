@@ -31,18 +31,6 @@ static partial class AppTranslations
                     "Le nom du livre n'est pas sensible à la casse et peut être partiel, ainsi le premier livre trouvé est pris, tel que 'Rois I' pour 'Roi'.",
   };
 
-  static public readonly TranslationsDictionary SearchVerseNotice = new()
-  {
-
-    [Language.EN] = "Use 0 to go to the first:" + Globals.NL2 +
-                    "- Verse not translated or partially translated if verse 1 is completely translated." + Globals.NL2 +
-                    "- First verse translated or partially translated if verse 1 is not even partially translated.",
-
-    [Language.FR] = "Utilisez 0 pour aller au premier :" + Globals.NL2 +
-                    "- Verset non traduit ou partiellement traduit si le verset 1 est complètement traduit." + Globals.NL2 +
-                    "- Premier verset traduit ou partiellement traduit si le verset 1 n'est pas traduit même partiellement."
-  };
-
   static public readonly TranslationsDictionary FilterVersesNotice = new()
   {
 

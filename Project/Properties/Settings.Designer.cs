@@ -1486,5 +1486,53 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["VerseHebrewCharsInBold"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectVerseFromStartOrEndElseVerse {
+            get {
+                return ((bool)(this["SelectVerseFromStartOrEndElseVerse"]));
+            }
+            set {
+                this["SelectVerseFromStartOrEndElseVerse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVerseFullTranslated {
+            get {
+                return ((bool)(this["SelectVerseFullTranslated"]));
+            }
+            set {
+                this["SelectVerseFullTranslated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectFirstNotTranslated {
+            get {
+                return ((bool)(this["SelectFirstNotTranslated"]));
+            }
+            set {
+                this["SelectFirstNotTranslated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectFirstTranslated {
+            get {
+                return ((bool)(this["SelectFirstTranslated"]));
+            }
+            set {
+                this["SelectFirstTranslated"] = value;
+            }
+        }
     }
 }

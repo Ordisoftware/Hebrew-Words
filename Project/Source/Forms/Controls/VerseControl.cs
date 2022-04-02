@@ -101,12 +101,10 @@ public partial class VerseControl : UserControl
     using var vscrollbar = new VScrollBar();
     int widthHScroll = vscrollbar.Width;
     int width = container.ClientSize.Width - widthHScroll / 2 - container.Padding.Left - container.Padding.Right;
-    metrics.LabelVerseNumberFont?.Dispose();
     metrics.LabelVerseNumberFont = new Font(LabelVerseNumber.Font.Name, Settings.FontSizeHebrew - 2, FontStyle.Bold);
     metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
     metrics.ControlWidth = width;
     metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
-    metrics.EditCommentaryFont?.Dispose();
     metrics.EditCommentaryFont = new Font(EditCommentary.Font.Name, Settings.FontSizeCommentary);
     metrics.EditCommentaryHeight = metrics.EditCommentaryFont.Height * Settings.VerseCommentaryLinesCount + metrics.EditCommentaryFont.Height / 2;
     metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
