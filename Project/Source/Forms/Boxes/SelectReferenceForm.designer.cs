@@ -57,9 +57,9 @@ namespace Ordisoftware.Hebrew.Words
       this.EditReference = new Ordisoftware.Core.TextBoxEx();
       this.LabelReference = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -151,6 +151,7 @@ namespace Ordisoftware.Hebrew.Words
       // EditReference
       // 
       resources.ApplyResources(this.EditReference, "EditReference");
+      this.EditReference.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditReference.Name = "EditReference";
       // 
       // LabelReference
@@ -180,9 +181,9 @@ namespace Ordisoftware.Hebrew.Words
       this.Name = "SelectReferenceForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -217,9 +218,9 @@ namespace Ordisoftware.Hebrew.Words
     private BindingSource FilterBooksBindingSource;
     private BindingSource FilterChaptersBindingSource;
     private BindingSource FilterVersesBindingSource;
-    private TextBox EditReference;
     private Label LabelReference;
     private Button ActionHelp;
+    private TextBoxEx EditReference;
   }
 
 }

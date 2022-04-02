@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 static partial class AppTranslations
@@ -111,30 +111,6 @@ static partial class AppTranslations
   {
     [Language.EN] = "No result found",
     [Language.FR] = "Aucun résultat trouvé"
-  };
-
-  static public readonly TranslationsDictionary FirstVerseToComplete = new()
-  {
-    [Language.EN] = "First verse to complete",
-    [Language.FR] = "Premier verset à compléter"
-  };
-
-  static public readonly TranslationsDictionary NoVerseToComplete = new()
-  {
-    [Language.EN] = "No verse to complete",
-    [Language.FR] = "Aucun verset à compléter"
-  };
-
-  static public readonly TranslationsDictionary FirstVerseTranslated = new()
-  {
-    [Language.EN] = "First verse translated",
-    [Language.FR] = "Premier verset traduit"
-  };
-
-  static public readonly TranslationsDictionary NoVerseTranslated = new()
-  {
-    [Language.EN] = "No verse with translation",
-    [Language.FR] = "Aucun verset avec traduction"
   };
 
   static public readonly TranslationsDictionary ImportLinesCountMismatch = new()

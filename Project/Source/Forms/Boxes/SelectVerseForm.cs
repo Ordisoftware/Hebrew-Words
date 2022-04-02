@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2022 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SelectVerseForm : Form
@@ -35,7 +35,13 @@ partial class SelectVerseForm : Form
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    DisplayManager.ShowInformation(AppTranslations.SearchVerseNotice.GetLang());
+    DisplayManager.ShowInformation(AppTranslations.SearchReferenceNotice.GetLang());
+  }
+
+  private void SelectVerseFromFirstToLast_Click(object sender, EventArgs e)
+  {
+    if ( sender is RadioButton control )
+      control.Checked = true;
   }
 
 }

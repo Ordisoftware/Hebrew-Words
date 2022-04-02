@@ -61,9 +61,7 @@ public partial class WordControl : UserControl
   public void ResetMetrics()
   {
     ResetMetricsRequired = false;
-    Metrics.LabelHebrewFont?.Dispose();
     Metrics.LabelHebrewFont = new Font(LabelHebrew.Font.Name, Settings.FontSizeHebrew);
-    Metrics.EditTranslationFont?.Dispose();
     Metrics.EditTranslationFont = new Font(EditTranslation.Font.Name, Settings.FontSizeTranslation);
     Metrics.EditTranslationHeight = Metrics.EditTranslationFont.Height * Settings.VerseWordTranslationLinesCount + Metrics.EditTranslationFont.Height / 2;
     Metrics.TotalHeight = Padding.Top + Metrics.LabelHebrewFont.Height - 3 + Metrics.EditTranslationHeight + Padding.Bottom + 10;
