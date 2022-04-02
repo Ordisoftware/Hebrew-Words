@@ -45,28 +45,21 @@
       this.LabelMiddleWordValue = new System.Windows.Forms.Label();
       this.LabelMiddleWord = new System.Windows.Forms.Label();
       this.LabelMiddleReference = new System.Windows.Forms.Label();
-      this.GroupBoxOccurences = new System.Windows.Forms.GroupBox();
-      this.LabelCountTorahValue = new System.Windows.Forms.Label();
-      this.LabelCountMitsvahValue = new System.Windows.Forms.Label();
-      this.LabelCountMoshehValue = new System.Windows.Forms.Label();
-      this.LabelCountYHVHValue = new System.Windows.Forms.Label();
-      this.LabelCountElohimValue = new System.Windows.Forms.Label();
-      this.LabelCountTorah = new System.Windows.Forms.Label();
-      this.LabelCountMitsvah = new System.Windows.Forms.Label();
-      this.LabelCountMosheh = new System.Windows.Forms.Label();
-      this.LabelCountYHVH = new System.Windows.Forms.Label();
-      this.LabelCountElohim = new System.Windows.Forms.Label();
+      this.GroupBoxOccurencesTorah = new System.Windows.Forms.GroupBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.LabelLongestReferenceValue = new System.Windows.Forms.LinkLabel();
       this.LabelLongestWordValue = new System.Windows.Forms.Label();
       this.LabelLongestWord = new System.Windows.Forms.Label();
       this.LabelLongestWordReference = new System.Windows.Forms.Label();
+      this.GroupBoxOccurencesAll = new System.Windows.Forms.GroupBox();
+      this.LabelInfoOccurences = new System.Windows.Forms.Label();
+      this.GroupBoxMostFrequentWords = new System.Windows.Forms.GroupBox();
+      this.LabelInfoFrequent = new System.Windows.Forms.Label();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
       this.GroupBoxBook.SuspendLayout();
       this.GroupBoxMiddle.SuspendLayout();
-      this.GroupBoxOccurences.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -142,7 +135,10 @@
       // 
       // LabelMiddleReferenceValue
       // 
+      this.LabelMiddleReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelMiddleReferenceValue, "LabelMiddleReferenceValue");
+      this.LabelMiddleReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+      this.LabelMiddleReferenceValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelMiddleReferenceValue.Name = "LabelMiddleReferenceValue";
       this.LabelMiddleReferenceValue.TabStop = true;
       this.LabelMiddleReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
@@ -178,71 +174,11 @@
       resources.ApplyResources(this.LabelMiddleReference, "LabelMiddleReference");
       this.LabelMiddleReference.Name = "LabelMiddleReference";
       // 
-      // GroupBoxOccurences
+      // GroupBoxOccurencesTorah
       // 
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountTorahValue);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountMitsvahValue);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountMoshehValue);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountYHVHValue);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountElohimValue);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountTorah);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountMitsvah);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountMosheh);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountYHVH);
-      this.GroupBoxOccurences.Controls.Add(this.LabelCountElohim);
-      resources.ApplyResources(this.GroupBoxOccurences, "GroupBoxOccurences");
-      this.GroupBoxOccurences.Name = "GroupBoxOccurences";
-      this.GroupBoxOccurences.TabStop = false;
-      // 
-      // LabelCountTorahValue
-      // 
-      resources.ApplyResources(this.LabelCountTorahValue, "LabelCountTorahValue");
-      this.LabelCountTorahValue.Name = "LabelCountTorahValue";
-      // 
-      // LabelCountMitsvahValue
-      // 
-      resources.ApplyResources(this.LabelCountMitsvahValue, "LabelCountMitsvahValue");
-      this.LabelCountMitsvahValue.Name = "LabelCountMitsvahValue";
-      // 
-      // LabelCountMoshehValue
-      // 
-      resources.ApplyResources(this.LabelCountMoshehValue, "LabelCountMoshehValue");
-      this.LabelCountMoshehValue.Name = "LabelCountMoshehValue";
-      // 
-      // LabelCountYHVHValue
-      // 
-      resources.ApplyResources(this.LabelCountYHVHValue, "LabelCountYHVHValue");
-      this.LabelCountYHVHValue.Name = "LabelCountYHVHValue";
-      // 
-      // LabelCountElohimValue
-      // 
-      resources.ApplyResources(this.LabelCountElohimValue, "LabelCountElohimValue");
-      this.LabelCountElohimValue.Name = "LabelCountElohimValue";
-      // 
-      // LabelCountTorah
-      // 
-      resources.ApplyResources(this.LabelCountTorah, "LabelCountTorah");
-      this.LabelCountTorah.Name = "LabelCountTorah";
-      // 
-      // LabelCountMitsvah
-      // 
-      resources.ApplyResources(this.LabelCountMitsvah, "LabelCountMitsvah");
-      this.LabelCountMitsvah.Name = "LabelCountMitsvah";
-      // 
-      // LabelCountMosheh
-      // 
-      resources.ApplyResources(this.LabelCountMosheh, "LabelCountMosheh");
-      this.LabelCountMosheh.Name = "LabelCountMosheh";
-      // 
-      // LabelCountYHVH
-      // 
-      resources.ApplyResources(this.LabelCountYHVH, "LabelCountYHVH");
-      this.LabelCountYHVH.Name = "LabelCountYHVH";
-      // 
-      // LabelCountElohim
-      // 
-      resources.ApplyResources(this.LabelCountElohim, "LabelCountElohim");
-      this.LabelCountElohim.Name = "LabelCountElohim";
+      resources.ApplyResources(this.GroupBoxOccurencesTorah, "GroupBoxOccurencesTorah");
+      this.GroupBoxOccurencesTorah.Name = "GroupBoxOccurencesTorah";
+      this.GroupBoxOccurencesTorah.TabStop = false;
       // 
       // groupBox1
       // 
@@ -256,7 +192,10 @@
       // 
       // LabelLongestReferenceValue
       // 
+      this.LabelLongestReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelLongestReferenceValue, "LabelLongestReferenceValue");
+      this.LabelLongestReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+      this.LabelLongestReferenceValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelLongestReferenceValue.Name = "LabelLongestReferenceValue";
       this.LabelLongestReferenceValue.TabStop = true;
       this.LabelLongestReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
@@ -279,22 +218,50 @@
       resources.ApplyResources(this.LabelLongestWordReference, "LabelLongestWordReference");
       this.LabelLongestWordReference.Name = "LabelLongestWordReference";
       // 
-      // StatisticsForm
+      // GroupBoxOccurencesAll
+      // 
+      resources.ApplyResources(this.GroupBoxOccurencesAll, "GroupBoxOccurencesAll");
+      this.GroupBoxOccurencesAll.Name = "GroupBoxOccurencesAll";
+      this.GroupBoxOccurencesAll.TabStop = false;
+      // 
+      // LabelInfoOccurences
+      // 
+      resources.ApplyResources(this.LabelInfoOccurences, "LabelInfoOccurences");
+      this.LabelInfoOccurences.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoOccurences.Name = "LabelInfoOccurences";
+      // 
+      // GroupBoxMostFrequentWords
+      // 
+      resources.ApplyResources(this.GroupBoxMostFrequentWords, "GroupBoxMostFrequentWords");
+      this.GroupBoxMostFrequentWords.Name = "GroupBoxMostFrequentWords";
+      this.GroupBoxMostFrequentWords.TabStop = false;
+      // 
+      // LabelInfoFrequent
+      // 
+      resources.ApplyResources(this.LabelInfoFrequent, "LabelInfoFrequent");
+      this.LabelInfoFrequent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoFrequent.Name = "LabelInfoFrequent";
+      // 
+      // BibleStatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.GroupBoxOccurences);
+      this.Controls.Add(this.GroupBoxMostFrequentWords);
+      this.Controls.Add(this.GroupBoxOccurencesAll);
+      this.Controls.Add(this.GroupBoxOccurencesTorah);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.GroupBoxMiddle);
       this.Controls.Add(this.panel1);
+      this.Controls.Add(this.LabelInfoFrequent);
+      this.Controls.Add(this.LabelInfoOccurences);
       this.Controls.Add(this.GroupBoxBook);
       this.Controls.Add(this.GroupBoxTorah);
       this.Controls.Add(this.GroupBoxAllBooks);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "StatisticsForm";
+      this.Name = "BibleStatisticsForm";
       this.ShowInTaskbar = false;
       this.GroupBoxAllBooks.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
@@ -302,11 +269,10 @@
       this.GroupBoxBook.ResumeLayout(false);
       this.GroupBoxMiddle.ResumeLayout(false);
       this.GroupBoxMiddle.PerformLayout();
-      this.GroupBoxOccurences.ResumeLayout(false);
-      this.GroupBoxOccurences.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -328,21 +294,15 @@
     private System.Windows.Forms.LinkLabel LabelMiddleReferenceValue;
     private System.Windows.Forms.Label LabelMiddleLetterValue;
     private System.Windows.Forms.Label LabelMiddleWordValue;
-    private System.Windows.Forms.GroupBox GroupBoxOccurences;
-    private System.Windows.Forms.Label LabelCountYHVHValue;
-    private System.Windows.Forms.Label LabelCountElohimValue;
-    private System.Windows.Forms.Label LabelCountYHVH;
-    private System.Windows.Forms.Label LabelCountElohim;
-    private System.Windows.Forms.Label LabelCountTorahValue;
-    private System.Windows.Forms.Label LabelCountTorah;
-    private System.Windows.Forms.Label LabelCountMoshehValue;
-    private System.Windows.Forms.Label LabelCountMosheh;
-    private System.Windows.Forms.Label LabelCountMitsvahValue;
-    private System.Windows.Forms.Label LabelCountMitsvah;
+    private System.Windows.Forms.GroupBox GroupBoxOccurencesTorah;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.LinkLabel LabelLongestReferenceValue;
     private System.Windows.Forms.Label LabelLongestWordValue;
     private System.Windows.Forms.Label LabelLongestWord;
     private System.Windows.Forms.Label LabelLongestWordReference;
+    private GroupBox GroupBoxOccurencesAll;
+    private Label LabelInfoOccurences;
+    private GroupBox GroupBoxMostFrequentWords;
+    private Label LabelInfoFrequent;
   }
 }

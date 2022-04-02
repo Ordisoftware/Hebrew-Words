@@ -37,12 +37,21 @@ partial class BibleStatisticsForm : Form
 
   private BibleStatisticsForm()
   {
-    InitializeComponent();
-    InitializeCounters();
-    InitializeMiddle();
-    InitializeOccurences();
-    SelectBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
-    SelectBook.DisplayMember = "Name";
+    var temp = MainForm.Instance.Cursor;
+    MainForm.Instance.Cursor = Cursors.WaitCursor;
+    try
+    {
+      InitializeComponent();
+      InitializeCounters();
+      InitializeMiddle();
+      InitializeOccurences();
+      SelectBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+      SelectBook.DisplayMember = "Name";
+    }
+    finally
+    {
+      MainForm.Instance.Cursor = temp;
+    }
   }
 
   private void ActionClose_Click(object sender, EventArgs e)
@@ -134,27 +143,6 @@ partial class BibleStatisticsForm : Form
             }
   }
 
-  [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
-  private void InitializeOccurences()
-  {
-    int max = BooksBounds.Torah.Max;
-    string getCount(Func<string, bool> check)
-    {
-      var query = from book in ApplicationDatabase.Instance.Books
-                  from chapter in book.Chapters
-                  from verse in chapter.Verses
-                  from word in verse.Words
-                  where check(word.Hebrew) && book.Number <= max
-                  select word;
-      return query.Count().ToString();
-    }
-    LabelCountTorahValue.Text = getCount(s => s.Contains("hrvt"));
-    LabelCountElohimValue.Text = getCount(s => HebrewAlphabet.SetFinal(s, false).Contains("myhla"));
-    LabelCountYHVHValue.Text = getCount(s => s.Contains("hvhy"));
-    LabelCountMoshehValue.Text = getCount(s => s.EndsWith("h>m", StringComparison.Ordinal));
-    LabelCountMitsvahValue.Text = getCount(s => s.Contains("hvjm") || s.Contains("tvjm"));
-  }
-
   private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
   {
     try
@@ -195,6 +183,132 @@ partial class BibleStatisticsForm : Form
   {
     Reference = (ReferenceItem)( (LinkLabel)sender ).Tag;
     Close();
+  }
+
+  private List<(string Key, int Count)> OccurencesMostFrequent;
+
+  [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
+  private void InitializeOccurences()
+  {
+    int max = BooksBounds.Torah.Max;
+    // Specific words
+    int xpos = 15;
+    int ypos = 25;
+    addCountOne("Torah", "hrvt", s => s.Contains("hrvt"));
+    addCountOne("Israël", "lar>y", s => s.Contains("lar>y"));
+    addCountOne("Elohim", "myhla", s => s.Contains("myhla"));
+    addCountOne("YHVH", "hvhy", s => s.Contains("hvhy"));
+    addCountOne("Mosheh", "h>m", s => s.Contains("h>m"));
+    addCountOne("Aharon", "]rha", s => s.Contains("nrha"));
+    addCountOne("Mitsvah", "vjm", s => s.Contains("hvjm") || s.Contains("tvjm"));
+    addCountOne("Shalom", "mvl>", s => s.Contains("mvl>"));
+    addCountOne("Hébreu", "yrbi", s => s.Contains("yrbi"));
+    addCountOne("Kodesh", ">dq", s => s.Contains(">dq"));
+    addCountOne("Shabat", "tb>", s => s.Contains("tb>"));
+    addCountOne("Yehoudi", "ydvhy", s => s.Contains("ydvhy"));
+    addCountOne("Ahavah", "hbha", s => s.Contains("hbha"));
+    addCountOne("Kosher", "r>k", s => s.Contains("r>k"));
+    // Most frequent words
+    if ( OccurencesMostFrequent is null )
+    {
+      var query = from word in ApplicationDatabase.Instance.Words
+                  group word by word.Hebrew into grouping
+                  select new
+                  {
+                    grouping.Key,
+                    Count = grouping.Count()
+                  };
+      OccurencesMostFrequent = query.OrderByDescending(item => item.Count)
+                                    .Take(40)
+                                    .Select(item => (item.Key, item.Count))
+                                    .ToList();
+    }
+    xpos = 15;
+    ypos = 25;
+    for ( int index = 0; index < OccurencesMostFrequent.Count; index += 10 )
+    {
+      foreach ( var item in OccurencesMostFrequent.Skip(index).Take(10) )
+      {
+        addControls(GroupBoxMostFrequentWords, item.Key, item.Key, item.Count, true);
+        ypos += 20;
+      }
+      xpos += 180;
+      ypos = 25;
+    }
+    //
+    void addCountOne(string caption, string hebrew, Func<string, bool> check)
+    {
+      var query1 = from book in ApplicationDatabase.Instance.Books
+                   from chapter in book.Chapters
+                   from verse in chapter.Verses
+                   from word in verse.Words
+                   where book.Number <= max
+                      && chapter.BookID == book.ID
+                      && verse.ChapterID == chapter.ID
+                      && word.VerseID == verse.ID
+                      && check(HebrewAlphabet.SetFinal(word.Hebrew, false))
+                   select word;
+      var query2 = from book in ApplicationDatabase.Instance.Books
+                   from chapter in book.Chapters
+                   from verse in chapter.Verses
+                   from word in verse.Words
+                   where chapter.BookID == book.ID
+                      && verse.ChapterID == chapter.ID
+                      && word.VerseID == verse.ID
+                      && check(HebrewAlphabet.SetFinal(word.Hebrew, false))
+                   select word;
+      addControls(GroupBoxOccurencesTorah, caption, hebrew, query1.Count());
+      addControls(GroupBoxOccurencesAll, caption, hebrew, query2.Count());
+      ypos += 20;
+    }
+    //
+    void addControls(GroupBox group, string caption, string hebrew, int value, bool isHebrew = false)
+    {
+      var linklabel = new LinkLabel()
+      {
+        LinkBehavior = LinkBehavior.NeverUnderline,
+        TextAlign = ContentAlignment.TopLeft,
+        LinkColor = Color.Navy,
+        ActiveLinkColor = Color.MediumBlue,
+        AutoSize = true,
+        Left = xpos,
+        Top = ypos,
+        Text = caption
+      };
+      if ( isHebrew )
+      {
+        linklabel.Font = new Font("Hebrew", 12);
+        linklabel.Top -= 5;
+      }
+      linklabel.Click += (_, _) =>
+      {
+        Close();
+        if ( group == GroupBoxOccurencesTorah )
+        {
+          Program.Settings.SearchInTorah = true;
+          Program.Settings.SearchInKetouvim = false;
+          Program.Settings.SearchInNeviim = false;
+        }
+        else
+        {
+          Program.Settings.SearchInTorah = true;
+          Program.Settings.SearchInKetouvim = true;
+          Program.Settings.SearchInNeviim = true;
+        }
+        MainForm.Instance.SearchHebrewWord(hebrew);
+      };
+      var labelValue = new Label()
+      {
+        AutoSize = false,
+        Size = new Size(50, 13),
+        Left = xpos + 60,
+        Top = ypos,
+        TextAlign = ContentAlignment.TopRight,
+        Text = value.ToString()
+      };
+      group.Controls.Add(linklabel);
+      group.Controls.Add(labelValue);
+    }
   }
 
 }
