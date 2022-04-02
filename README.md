@@ -295,6 +295,7 @@ These options can be used to control the software when it is already running, bu
 - Add check update from about box.
 - Add command line options.
 - Change web check update to use GitHub as an alternative if author's website is down.
+- Improve select verse with more options.
 - Improve search options.
 - Improve import console.
 - Improve check update to allow auto update or direct download or open app web page.
