@@ -148,7 +148,7 @@
   <data name="LabelMiddleReference.Text" xml:space="preserve">
     <value>Verset :</value>
   </data>
-  <data name="GroupBoxOccurences.Text" xml:space="preserve">
+  <data name="GroupBoxOccurencesTorah.Text" xml:space="preserve">
     <value>Occurences de la Torah</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -157,5 +157,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques</value>
+  </data>
+  <data name="GroupBoxOccurencesAll.Text" xml:space="preserve">
+    <value>Occurences du Tanak</value>
+  </data>
+  <data name="LabelInfoOccurences.Text" xml:space="preserve">
+    <value>* Ceci n'est qu'une approximation basée sur les mots contenant la partie principale du terme spécifique</value>
+  </data>
+  <data name="LabelInfoFrequent.Text" xml:space="preserve">
+    <value>** Référence stricte sans particule ni variante de racine</value>
+  </data>
+  <data name="GroupBoxMostFrequentWords.Text" xml:space="preserve">
+    <value>Mots les plus fréquents</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Mot le plus long</value>
   </data>
 </root>

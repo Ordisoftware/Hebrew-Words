@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SelectVerseForm : Form
@@ -42,6 +42,21 @@ partial class SelectVerseForm : Form
   {
     if ( sender is RadioButton control )
       control.Checked = true;
+  }
+
+  private void EditVerseNumber_ValueChanged(object sender, EventArgs e)
+  {
+    PanelOptions.Enabled = EditVerseNumber.Text.Length != 0 && EditVerseNumber.Value == 0;
+  }
+
+  private void EditVerseNumber_KeyPress(object sender, KeyPressEventArgs e)
+  {
+    EditVerseNumber_ValueChanged(sender, e);
+  }
+
+  private void EditVerseNumber_KeyUp(object sender, KeyEventArgs e)
+  {
+    EditVerseNumber_ValueChanged(sender, e);
   }
 
 }

@@ -177,8 +177,8 @@ These options can be used to control the software when it is already running, bu
 | Shift + Ctrl + Tab | Previous view |
 | F1 | Chapter verses view |
 | F2 | Chapter translation view |
-| F3 | Filter verses view |
-| F4 or Alt + F | Search in database view |
+| F5 or Alt + F | Search in database view |
+| F4 | Filter verses view |
 | F5 or Shift + Ctrl + F | Go to reference |
 | F6 | Original Hebrew text view |
 | F7 | ELS50 verses view |
@@ -295,6 +295,8 @@ These options can be used to control the software when it is already running, bu
 - Add check update from about box.
 - Add command line options.
 - Change web check update to use GitHub as an alternative if author's website is down.
+- Improve statistics about the Bible.
+- Improve select verse with more options.
 - Improve search options.
 - Improve import console.
 - Improve check update to allow auto update or direct download or open app web page.

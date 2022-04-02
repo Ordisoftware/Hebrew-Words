@@ -75,13 +75,13 @@ partial class MainForm
     else
       throw new AdvNotImplementedException(SelectSearchType.SelectedTab.Text);
     //
-    int bookSelected = ( (BookRow)SelectSearchInBook.SelectedItem ).Number;
+    int bookSelected = Settings.SearchInBookSelectedNumber;
     bool isBookSelected(int index)
     {
-      return ( EditSearchInTorah.Checked && index <= BooksBounds.Torah.Max )
-          || ( EditSearchInNeviim.Checked && index >= BooksBounds.Neviim.Min && index <= BooksBounds.Neviim.Max )
-          || ( EditSearchInKetouvim.Checked && index >= BooksBounds.Ketouvim.Min )
-          || ( SelectSearchInBook.Enabled && index == bookSelected );
+      return ( Settings.SearchInTorah && index <= BooksBounds.Torah.Max )
+          || ( Settings.SearchInNeviim && index >= BooksBounds.Neviim.Min && index <= BooksBounds.Neviim.Max )
+          || ( Settings.SearchInKetouvim && index >= BooksBounds.Ketouvim.Min )
+          || ( index == bookSelected && !Settings.SearchInTorah && !Settings.SearchInNeviim && !Settings.SearchInKetouvim );
     }
     //
     IEnumerable<ReferenceItem> createSearch(Func<VerseRow, WordRow, bool> check)
@@ -89,7 +89,11 @@ partial class MainForm
          from chapter in book.Chapters
          from verse in chapter.Verses
          from word in verse.Words
-         where isBookSelected(book.Number) && check(verse, word)
+         where isBookSelected(book.Number)
+            && chapter.BookID == book.ID
+            && verse.ChapterID == chapter.ID
+            && word.VerseID == verse.ID
+            && check(verse, word)
          select new ReferenceItem(book, chapter, verse);
     //
     if ( SearchWord1.Length >= 2 && CheckWord is not null && CheckVerse is not null )

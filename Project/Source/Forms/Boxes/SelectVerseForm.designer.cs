@@ -93,6 +93,8 @@ namespace Ordisoftware.Hebrew.Words
             0,
             -2147483648});
       this.EditVerseNumber.Name = "EditVerseNumber";
+      this.EditVerseNumber.ValueChanged += new System.EventHandler(this.EditVerseNumber_ValueChanged);
+      this.EditVerseNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditVerseNumber_KeyUp);
       // 
       // PanelOptions
       // 

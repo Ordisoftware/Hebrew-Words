@@ -341,13 +341,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Filtrer les versets</value>
   </data>
   <data name="ActionViewVerseFiltered.ToolTipText" xml:space="preserve">
-    <value>Filtrer les versets (F3)</value>
+    <value>Filtrer les versets (F4)</value>
   </data>
   <data name="ActionViewSearch.Text" xml:space="preserve">
     <value>Chercher un mot</value>
   </data>
   <data name="ActionViewSearch.ToolTipText" xml:space="preserve">
-    <value>Chercher un mot (F4, Atl+F)</value>
+    <value>Chercher un mot (F3, Atl+F)</value>
   </data>
   <data name="ActionGoToReference.Text" xml:space="preserve">
     <value>Aller à la référence</value>
@@ -464,7 +464,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>386, 22</value>
   </data>
   <data name="ActionCopyToClipboard.Text" xml:space="preserve">
-    <value>Copier dans le presse-papier</value>
+    <value>Copier la vue dans le presse-papier</value>
   </data>
   <data name="ActionCloseWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>386, 22</value>
