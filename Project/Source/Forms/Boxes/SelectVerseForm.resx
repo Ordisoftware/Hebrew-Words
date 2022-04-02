@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 3</value>
+    <value>118, 3</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 3</value>
+    <value>199, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -184,10 +184,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 173</value>
+    <value>10, 183</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 28</value>
+    <value>274, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 117</value>
+    <value>111, 125</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -235,7 +235,7 @@
     <value>1</value>
   </data>
   <data name="EditVerseNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 138</value>
+    <value>113, 145</value>
   </data>
   <data name="EditVerseNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -265,16 +265,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditFullTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
+    <value>0, 35</value>
   </data>
   <data name="EditFullTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 17</value>
+    <value>177, 17</value>
   </data>
   <data name="EditFullTranslated.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="EditFullTranslated.Text" xml:space="preserve">
-    <value>Traduction complète, sinon partielle</value>
+    <value>Complete translation, else partial</value>
   </data>
   <data name="&gt;&gt;EditFullTranslated.Name" xml:space="preserve">
     <value>EditFullTranslated</value>
@@ -288,8 +288,11 @@
   <data name="&gt;&gt;EditFullTranslated.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditFromStartOrEndElseVerse.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="EditFromStartOrEndElseVerse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
   </data>
   <data name="EditFromStartOrEndElseVerse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -298,13 +301,16 @@
     <value>0, 0</value>
   </data>
   <data name="EditFromStartOrEndElseVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>407, 17</value>
+    <value>263, 30</value>
   </data>
   <data name="EditFromStartOrEndElseVerse.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="EditFromStartOrEndElseVerse.Text" xml:space="preserve">
-    <value>Depuis le début ou la fin, sinon depuis le verset actuel vers le début ou vers la fin</value>
+    <value>From the beginning or the end, otherwise from the current verse to the beginning or to the end</value>
+  </data>
+  <data name="EditFromStartOrEndElseVerse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
   </data>
   <data name="&gt;&gt;EditFromStartOrEndElseVerse.Name" xml:space="preserve">
     <value>EditFromStartOrEndElseVerse</value>
@@ -325,16 +331,16 @@
     <value>NoControl</value>
   </data>
   <data name="SelectFirstTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 65</value>
+    <value>0, 80</value>
   </data>
   <data name="SelectFirstTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 17</value>
+    <value>184, 17</value>
   </data>
   <data name="SelectFirstTranslated.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="SelectFirstTranslated.Text" xml:space="preserve">
-    <value>Premier verset traduit, sinon le dernier</value>
+    <value>First verse translated, else the last</value>
   </data>
   <data name="&gt;&gt;SelectFirstTranslated.Name" xml:space="preserve">
     <value>SelectFirstTranslated</value>
@@ -355,16 +361,16 @@
     <value>NoControl</value>
   </data>
   <data name="SelectFirstNotTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 45</value>
+    <value>0, 60</value>
   </data>
   <data name="SelectFirstNotTranslated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 17</value>
+    <value>196, 17</value>
   </data>
   <data name="SelectFirstNotTranslated.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="SelectFirstNotTranslated.Text" xml:space="preserve">
-    <value>Premier verset non traduit, sinon le dernier</value>
+    <value>First untranslated verse, else the last</value>
   </data>
   <data name="&gt;&gt;SelectFirstNotTranslated.Name" xml:space="preserve">
     <value>SelectFirstNotTranslated</value>
@@ -382,7 +388,7 @@
     <value>13, 13</value>
   </data>
   <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 90</value>
+    <value>268, 100</value>
   </data>
   <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -406,7 +412,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 211</value>
+    <value>294, 221</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

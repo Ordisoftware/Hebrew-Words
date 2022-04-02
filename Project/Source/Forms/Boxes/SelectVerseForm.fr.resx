@@ -130,4 +130,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Atteindre verset</value>
   </data>
+  <data name="EditFromStartOrEndElseVerse.Text" xml:space="preserve">
+    <value>Depuis le début ou la fin, sinon depuis le verset actuel vers le début ou vers la fin</value>
+  </data>
+  <data name="EditFullTranslated.Text" xml:space="preserve">
+    <value>Traduction complète, sinon partielle</value>
+  </data>
+  <data name="SelectFirstNotTranslated.Text" xml:space="preserve">
+    <value>Premier verset non traduit, sinon le dernier</value>
+  </data>
+  <data name="SelectFirstTranslated.Text" xml:space="preserve">
+    <value>Premier verset traduit, sinon le dernier</value>
+  </data>
 </root>

@@ -153,6 +153,14 @@ partial class MainForm
       // Do check verse
       VerseRow doCheckVerse()
       {
+        // TODO use settings to process search verse
+
+        //SelectVerseFromStartOrEndElseVerse
+
+        //SelectVerseFullTranslated
+
+        //SelectFirstNotTranslated or SelectFirstTranslated
+
         if ( reference.Chapter?.Verses.Find(v => v.Number == 1).IsFullyTranslated ?? false )
         {
           var found = CurrentReference.Chapter?.Verses?.Find(v => !v.HasTranslation || v.IsPartiallyTranslated);
