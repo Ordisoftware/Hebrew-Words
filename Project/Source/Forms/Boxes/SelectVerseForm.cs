@@ -44,4 +44,19 @@ partial class SelectVerseForm : Form
       control.Checked = true;
   }
 
+  private void EditVerseNumber_ValueChanged(object sender, EventArgs e)
+  {
+    PanelOptions.Enabled = EditVerseNumber.Value == 0;
+  }
+
+  private void EditVerseNumber_KeyPress(object sender, KeyPressEventArgs e)
+  {
+    EditVerseNumber_ValueChanged(sender, e);
+  }
+
+  private void EditVerseNumber_KeyUp(object sender, KeyEventArgs e)
+  {
+    EditVerseNumber_ValueChanged(sender, e);
+  }
+
 }
