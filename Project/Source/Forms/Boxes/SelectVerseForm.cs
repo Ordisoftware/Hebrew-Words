@@ -46,7 +46,7 @@ partial class SelectVerseForm : Form
 
   private void EditVerseNumber_ValueChanged(object sender, EventArgs e)
   {
-    PanelOptions.Enabled = EditVerseNumber.Value == 0;
+    PanelOptions.Enabled = EditVerseNumber.Text.Length != 0 && EditVerseNumber.Value == 0;
   }
 
   private void EditVerseNumber_KeyPress(object sender, KeyPressEventArgs e)
