@@ -225,12 +225,14 @@ static partial class Program
       {
         MessageBoxEx.CloseAll();
         AboutBox.Instance.Hide();
+        //StatisticsForm.Instance.Hide();
       }
       else
         update(MainForm.Instance);
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      new Infralution.Localization.CultureManager().ManagedControl = BibleStatisticsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
       foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )

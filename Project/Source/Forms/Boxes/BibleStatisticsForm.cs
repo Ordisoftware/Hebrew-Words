@@ -41,6 +41,7 @@ partial class BibleStatisticsForm : Form
 
   private BibleStatisticsForm()
   {
+    Icon = Globals.MainForm.Icon;
     var temp = MainForm.Instance.Cursor;
     MainForm.Instance.Cursor = Cursors.WaitCursor;
     try
