@@ -464,13 +464,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>386, 22</value>
   </data>
   <data name="ActionCopyToClipboard.Text" xml:space="preserve">
-    <value>Copier la vue dans le presse-papier</value>
+    <value>Copier la vue</value>
   </data>
   <data name="ActionCloseWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>386, 22</value>
   </data>
   <data name="ActionCloseWindows.Text" xml:space="preserve">
-    <value>Fermer toutes les fenêtres de recherche des traduits</value>
+    <value>Fermer les fenêtres des traduits</value>
   </data>
   <data name="SeparatorImportConcordances.Size" type="System.Drawing.Size, System.Drawing">
     <value>383, 6</value>
