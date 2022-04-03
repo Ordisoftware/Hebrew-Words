@@ -195,8 +195,8 @@
       this.ActionViewBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -259,8 +259,8 @@
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -270,10 +270,10 @@
       this.ActionCountOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCountRootOccurencesTorah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCountRootOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.ActionCountRootOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1455,6 +1455,8 @@
       this.ActionHistoryVerseBack.Name = "ActionHistoryVerseBack";
       this.ActionHistoryVerseBack.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.ActionHistoryVerseBack.Click += new System.EventHandler(this.ActionHistoryVerseBack_Click);
+      this.ActionHistoryVerseBack.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionHistoryVerseBack.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionHistoryVerseNext
       // 
@@ -1463,6 +1465,8 @@
       this.ActionHistoryVerseNext.Name = "ActionHistoryVerseNext";
       this.ActionHistoryVerseNext.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.ActionHistoryVerseNext.Click += new System.EventHandler(this.ActionHistoryVerseNext_Click);
+      this.ActionHistoryVerseNext.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionHistoryVerseNext.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator13
       // 
@@ -1671,17 +1675,17 @@
       this.toolStripSeparator6.Name = "toolStripSeparator6";
       resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
       // 
-      // ActionOpenHebrewLetters
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
       // ActionShowGrammarGuide
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // toolStripSeparator16
       // 
@@ -2058,8 +2062,8 @@
             this.ActionSearchTranslated,
             this.ActionSearchWord,
             this.toolStripSeparator8,
-            this.ActionOpenHebrewLetters2,
             this.ActionShowGrammarGuide2,
+            this.ActionOpenHebrewLetters2,
             this.toolStripSeparator14,
             this.ActionCopyFontChars,
             this.ActionCopyUnicodeChars,
@@ -2106,17 +2110,17 @@
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
-      // ActionOpenHebrewLetters2
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
-      this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
-      this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
       // ActionShowGrammarGuide2
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide2, "ActionShowGrammarGuide2");
       this.ActionShowGrammarGuide2.Name = "ActionShowGrammarGuide2";
       this.ActionShowGrammarGuide2.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
+      // ActionOpenHebrewLetters2
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
+      this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
+      this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // toolStripSeparator14
       // 
@@ -2168,15 +2172,15 @@
       resources.ApplyResources(this.ActionCountRootOccurencesTorah, "ActionCountRootOccurencesTorah");
       this.ActionCountRootOccurencesTorah.Name = "ActionCountRootOccurencesTorah";
       // 
-      // WordsBindingSource
-      // 
-      this.WordsBindingSource.DataMember = "Words";
-      this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
       // ActionCountRootOccurencesTanak
       // 
       resources.ApplyResources(this.ActionCountRootOccurencesTanak, "ActionCountRootOccurencesTanak");
       this.ActionCountRootOccurencesTanak.Name = "ActionCountRootOccurencesTanak";
+      // 
+      // WordsBindingSource
+      // 
+      this.WordsBindingSource.DataMember = "Words";
+      this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
       // MainForm
       // 

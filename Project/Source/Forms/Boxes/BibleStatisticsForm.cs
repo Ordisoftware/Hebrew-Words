@@ -26,17 +26,22 @@ partial class BibleStatisticsForm : Form
     public int CountLetters;
   }
 
-  static public ReferenceItem Run()
-  {
-    using var form = new BibleStatisticsForm();
-    form.ShowDialog();
-    return form.Reference;
-  }
+  static internal BibleStatisticsForm Instance { get; private set; }
 
-  private ReferenceItem Reference;
+  static public void Run()
+  {
+    if ( Instance is null )
+      Instance = new BibleStatisticsForm();
+    else
+    if ( Instance.Visible )
+      Instance.Popup();
+    Instance.Show();
+    Instance.ForceBringToFront();
+  }
 
   private BibleStatisticsForm()
   {
+    Icon = Globals.MainForm.Icon;
     var temp = MainForm.Instance.Cursor;
     MainForm.Instance.Cursor = Cursors.WaitCursor;
     try
@@ -54,14 +59,22 @@ partial class BibleStatisticsForm : Form
     }
   }
 
+  private void BibleStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    e.Cancel = true;
+    Hide();
+  }
+
   private void ActionClose_Click(object sender, EventArgs e)
   {
     Close();
   }
 
   private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = new();
+
   private readonly BookStatistic CountersAll = new();
   private readonly BookStatistic CountersTorah = new();
+
   private BookStatistic CountersSelected = new();
 
   private void InitializeCounters()
@@ -181,11 +194,13 @@ partial class BibleStatisticsForm : Form
 
   private void LabelReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    Reference = (ReferenceItem)( (LinkLabel)sender ).Tag;
-    Close();
+    var reference = (ReferenceItem)( (LinkLabel)sender ).Tag;
+    MainForm.Instance.SetView(ViewMode.ChapterVerses);
+    MainForm.Instance.GoToReference(reference);
   }
 
-  private List<(string Key, int Count)> OccurencesMostFrequent;
+  private List<(string Key, int Count)> OccurencesMostFrequentTorah;
+  private List<(string Key, int Count)> OccurencesMostFrequentTanak;
 
   [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   private void InitializeOccurences()
@@ -197,6 +212,8 @@ partial class BibleStatisticsForm : Form
     addCountOne("Torah", "hrvt", s => s.Contains("hrvt"));
     addCountOne("Israël", "lar>y", s => s.Contains("lar>y"));
     addCountOne("Elohim", "myhla", s => s.Contains("myhla"));
+    addCountOne("Good", "bvu", s => s.Contains("bvu"));
+    addCountOne("Bad", "ir", s => s.Contains("ir"));
     addCountOne("YHVH", "hvhy", s => s.Contains("hvhy"));
     addCountOne("King/Advisor", "klm", s => s.Contains("klm"));
     addCountOne("Talk/Assert", "rma", s => s.Contains("rma"));
@@ -213,32 +230,72 @@ partial class BibleStatisticsForm : Form
     addCountOne("Ahavah (fondness)", "hbha", s => s.Contains("hbha"));
     addCountOne("Kosher (suitable)", "r>k", s => s.Contains("r>k"));
     addCountOne("Yehoudi (operating)", "ydvhy", s => s.Contains("ydvhy"));
-    // Most frequent words
-    if ( OccurencesMostFrequent is null )
+    // Most frequent words Tanak
+    addMostTorah();
+    addMostTanak();
+    //
+    void addMost(Action createQuery, ref List<(string Key, int Count)> result, GroupBox groupbox)
     {
-      var query = from word in ApplicationDatabase.Instance.Words
-                  group word by word.Hebrew into grouping
-                  select new
-                  {
-                    grouping.Key,
-                    Count = grouping.Count()
-                  };
-      OccurencesMostFrequent = query.OrderByDescending(item => item.Count)
-                                    .Take(40)
-                                    .Select(item => (item.Key, item.Count))
-                                    .ToList();
-    }
-    xpos = 15;
-    ypos = 25;
-    for ( int index = 0; index < OccurencesMostFrequent.Count; index += 10 )
-    {
-      foreach ( var item in OccurencesMostFrequent.Skip(index).Take(10) )
-      {
-        addControls(GroupBoxMostFrequentWords, item.Key, item.Key, item.Count, true);
-        ypos += 20;
-      }
-      xpos += 170;
+      if ( result is null ) createQuery();
+      xpos = 15;
       ypos = 25;
+      for ( int index = 0; index < result.Count; index += 10 )
+      {
+        foreach ( var item in result.Skip(index).Take(10) )
+        {
+          addControls(groupbox, item.Key, item.Key, item.Count, true);
+          ypos += 16;
+        }
+        xpos += 165;
+        ypos = 25;
+      }
+    }
+    //
+    void addMostTorah()
+    {
+      addMost(() =>
+      {
+        var query = from book in ApplicationDatabase.Instance.Books
+                    from chapter in book.Chapters
+                    from verse in chapter.Verses
+                    from word in verse.Words
+                    where book.Number <= max
+                       && chapter.BookID == book.ID
+                       && verse.ChapterID == chapter.ID
+                       && word.VerseID == verse.ID
+                    group word by word.Hebrew into grouping
+                    select new
+                    {
+                      grouping.Key,
+                      Count = grouping.Count()
+                    };
+        OccurencesMostFrequentTorah = query.OrderByDescending(item => item.Count)
+                                           .Take(40)
+                                           .Select(item => (item.Key, item.Count))
+                                           .ToList();
+      },
+      ref OccurencesMostFrequentTorah,
+      GroupBoxMostFrequentWordsTorah);
+    }
+    //
+    void addMostTanak()
+    {
+      addMost(() =>
+      {
+        var query = from word in ApplicationDatabase.Instance.Words
+                    group word by word.Hebrew into grouping
+                    select new
+                    {
+                      grouping.Key,
+                      Count = grouping.Count()
+                    };
+        OccurencesMostFrequentTanak = query.OrderByDescending(item => item.Count)
+                                           .Take(40)
+                                           .Select(item => (item.Key, item.Count))
+                                           .ToList();
+      },
+      ref OccurencesMostFrequentTanak,
+      GroupBoxMostFrequentWordsTanak);
     }
     //
     void addCountOne(string caption, string hebrew, Func<string, bool> check)
@@ -264,7 +321,7 @@ partial class BibleStatisticsForm : Form
                    select word;
       addControls(GroupBoxOccurencesTorah, caption, hebrew, query1.Count());
       addControls(GroupBoxOccurencesAll, caption, hebrew, query2.Count());
-      ypos += 16;
+      ypos += 14;
     }
     //
     void addControls(GroupBox group, string caption, string hebrew, int value, bool isHebrew = false)
@@ -287,7 +344,6 @@ partial class BibleStatisticsForm : Form
       }
       linklabel.Click += (_, _) =>
       {
-        Close();
         if ( group == GroupBoxOccurencesTorah )
         {
           Program.Settings.SearchInTorah = true;

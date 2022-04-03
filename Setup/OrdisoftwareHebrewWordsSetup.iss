@@ -23,6 +23,7 @@ AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 
 [Files]
 #include "Scripts\Files.iss"
+#include "Scripts\FilesHebrewFont.iss"
 
 [Run]
 #include "Scripts\Run.iss"

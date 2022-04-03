@@ -105,4 +105,29 @@ partial class MainForm
     LastToolTipPanel = panel;
   }
 
+  //
+  // Update history buttons
+  //
+  void UpdateHistoryButtons()
+  {
+    if ( CurrentReference is null )
+    {
+      ActionHistoryVerseNext.Enabled = false;
+      ActionHistoryVerseBack.Enabled = false;
+      return;
+    }
+    var list = HistoryItems.ToList();
+    int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
+    if ( index == -1 )
+    {
+      ActionHistoryVerseNext.Enabled = false;
+      ActionHistoryVerseBack.Enabled = false;
+      return;
+    }
+    var view = Settings.CurrentView;
+    bool canHistoryMove = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
+    ActionHistoryVerseNext.Enabled = canHistoryMove && index != 0;
+    ActionHistoryVerseBack.Enabled = canHistoryMove && index != list.Count - 1;
+  }
+
 }
