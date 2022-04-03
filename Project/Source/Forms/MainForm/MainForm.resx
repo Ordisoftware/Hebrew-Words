@@ -4214,32 +4214,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -4742,7 +4742,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionBackup.Text" xml:space="preserve">
     <value>Backup database</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
   <data name="ActionVacuum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6476,10 +6476,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionBackup.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
+  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
+    <value>toolStripSeparator22</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionVacuum.Name" xml:space="preserve">
@@ -6572,18 +6572,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCloseWindows.Name" xml:space="preserve">
-    <value>ActionCloseWindows</value>
-  </data>
-  <data name="&gt;&gt;ActionCloseWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
-    <value>toolStripSeparator23</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionCopyToClipboard.Name" xml:space="preserve">
     <value>ActionCopyToClipboard</value>
   </data>
@@ -6594,6 +6582,18 @@ A verse is founded if the translation of one of its words contains an expression
     <value>ActionRefresh</value>
   </data>
   <data name="&gt;&gt;ActionRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
+    <value>toolStripSeparator23</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCloseWindows.Name" xml:space="preserve">
+    <value>ActionCloseWindows</value>
+  </data>
+  <data name="&gt;&gt;ActionCloseWindows.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SeparatorImportConcordances.Name" xml:space="preserve">
