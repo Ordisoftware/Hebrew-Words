@@ -139,8 +139,8 @@ partial class MainForm
       case ViewMode.ChapterVerses:
       case ViewMode.ChapterOriginal:
       case ViewMode.ChapterTranslation:
+      case ViewMode.BookELS50:
         SetTanakItemFocus();
-        //Refresh();
         break;
       case ViewMode.Search:
         SelectSearchType_Selected(null, null);
@@ -185,7 +185,7 @@ partial class MainForm
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
       SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
-      ActionExportBook.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.BookELS50;
+      ActionExportBook.Enabled = PanelNavigation.Visible;
       ActionExportChapter.Enabled = PanelNavigation.Visible;
       //
       SelectBook.Enabled = PanelNavigation.Visible;
