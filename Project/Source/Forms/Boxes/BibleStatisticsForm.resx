@@ -781,7 +781,7 @@
     <value>37</value>
   </data>
   <data name="GroupBoxMostFrequentWords.Text" xml:space="preserve">
-    <value>Most frequent words **</value>
+    <value>Tanak's most frequent words **</value>
   </data>
   <data name="&gt;&gt;GroupBoxMostFrequentWords.Name" xml:space="preserve">
     <value>GroupBoxMostFrequentWords</value>
@@ -811,13 +811,13 @@
     <value>23, 618</value>
   </data>
   <data name="LabelInfoFrequent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 13</value>
+    <value>249, 13</value>
   </data>
   <data name="LabelInfoFrequent.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="LabelInfoFrequent.Text" xml:space="preserve">
-    <value>** Strict reference with no particle or root variant</value>
+    <value>** Strict occurences with no particle nor root variant</value>
   </data>
   <data name="&gt;&gt;LabelInfoFrequent.Name" xml:space="preserve">
     <value>LabelInfoFrequent</value>
@@ -839,6 +839,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>711, 670</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

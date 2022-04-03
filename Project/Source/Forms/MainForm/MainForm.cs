@@ -1413,38 +1413,6 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionCopyWordTranslation for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
-  {
-    Clipboard.SetText(CurrentReference?.Word?.Translation);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionCopyUnicodeChars for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
-  {
-    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-      Clipboard.SetText(controlWord.Reference?.Word?.Unicode);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionCopyFontChars for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionCopyFontChars_Click(object sender, EventArgs e)
-  {
-    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-      Clipboard.SetText(controlWord.Reference?.Word?.Hebrew);
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionSearchTranslated for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -1511,6 +1479,86 @@ partial class MainForm : Form
     ActionAddToBookmarks.Enabled = !BookmarkItems.Contains(reference);
     ActionRemoveFromBookmarks.Enabled = BookmarkItems.Contains(reference);
 
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyWordTranslation for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyWordTranslation_Click(object sender, EventArgs e)
+  {
+    Clipboard.SetText(CurrentReference?.Word?.Translation);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyUnicodeChars for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      Clipboard.SetText(controlWord.Reference?.Word?.Unicode);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCopyFontChars for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCopyFontChars_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+      Clipboard.SetText(controlWord.Reference?.Word?.Hebrew);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCountOccurencesTorah for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCountOccurencesTorah_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+    {
+      string str = controlWord.Reference?.Word?.Unicode;
+      int max = BooksBounds.Torah.Max;
+      var query = from book in ApplicationDatabase.Instance.Books
+                  from chapter in book.Chapters
+                  from verse in chapter.Verses
+                  from word in verse.Words
+                  where book.Number <= max
+                     && chapter.BookID == book.ID
+                     && verse.ChapterID == chapter.ID
+                     && word.VerseID == verse.ID
+                     && word.Unicode == str
+                  select word;
+      DisplayManager.Show($"Number of {str} occurrences in Torah is {query.Count()}");
+    }
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionCountOccurencesTanak for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionCountOccurencesTanak_Click(object sender, EventArgs e)
+  {
+    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
+    {
+      string str = controlWord.Reference?.Word?.Unicode;
+      var query = from book in ApplicationDatabase.Instance.Books
+                  from chapter in book.Chapters
+                  from verse in chapter.Verses
+                  from word in verse.Words
+                  where chapter.BookID == book.ID
+                     && verse.ChapterID == chapter.ID
+                     && word.VerseID == verse.ID
+                     && word.Unicode == str
+                  select word;
+      DisplayManager.Show($"Number of {str} occurrences in Tanak is {query.Count()}");
+    }
   }
 
   #endregion

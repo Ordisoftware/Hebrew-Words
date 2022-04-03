@@ -165,10 +165,10 @@
     <value>* Ceci n'est qu'une approximation basée sur les mots contenant la partie principale du terme spécifique</value>
   </data>
   <data name="LabelInfoFrequent.Text" xml:space="preserve">
-    <value>** Référence stricte sans particule ni variante de racine</value>
+    <value>** Occurences strictes sans particule ni variante de racine</value>
   </data>
   <data name="GroupBoxMostFrequentWords.Text" xml:space="preserve">
-    <value>Mots les plus fréquents</value>
+    <value>Mots les plus fréquents du Tanak</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Mot le plus long</value>
