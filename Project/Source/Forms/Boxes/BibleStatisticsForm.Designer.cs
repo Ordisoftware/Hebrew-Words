@@ -30,14 +30,11 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibleStatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
-      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
-      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();
@@ -55,6 +52,9 @@
       this.LabelInfoOccurences = new System.Windows.Forms.Label();
       this.GroupBoxMostFrequentWords = new System.Windows.Forms.GroupBox();
       this.LabelInfoFrequent = new System.Windows.Forms.Label();
+      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
+      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
+      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
@@ -69,11 +69,6 @@
       resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
-      // 
-      // StatAllBooks
-      // 
-      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
-      this.StatAllBooks.Name = "StatAllBooks";
       // 
       // panel1
       // 
@@ -95,11 +90,6 @@
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
-      // StatTorah
-      // 
-      resources.ApplyResources(this.StatTorah, "StatTorah");
-      this.StatTorah.Name = "StatTorah";
-      // 
       // GroupBoxBook
       // 
       this.GroupBoxBook.Controls.Add(this.SelectBook);
@@ -115,11 +105,6 @@
       resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
-      // 
-      // StatBook
-      // 
-      resources.ApplyResources(this.StatBook, "StatBook");
-      this.StatBook.Name = "StatBook";
       // 
       // GroupBoxMiddle
       // 
@@ -241,6 +226,21 @@
       resources.ApplyResources(this.LabelInfoFrequent, "LabelInfoFrequent");
       this.LabelInfoFrequent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoFrequent.Name = "LabelInfoFrequent";
+      // 
+      // StatBook
+      // 
+      resources.ApplyResources(this.StatBook, "StatBook");
+      this.StatBook.Name = "StatBook";
+      // 
+      // StatTorah
+      // 
+      resources.ApplyResources(this.StatTorah, "StatTorah");
+      this.StatTorah.Name = "StatTorah";
+      // 
+      // StatAllBooks
+      // 
+      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
+      this.StatAllBooks.Name = "StatAllBooks";
       // 
       // BibleStatisticsForm
       // 

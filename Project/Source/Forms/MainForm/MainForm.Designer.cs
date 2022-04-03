@@ -245,6 +245,7 @@
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeCharsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyTranslationWithComment = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -265,11 +266,14 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyWordTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCountOccurences = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCountRootOccurences = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCountOccurencesTorah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCountOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCountRootOccurencesTorah = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.ActionCountRootOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1635,8 +1639,8 @@
             this.ActionViewBooksBoard,
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
-            this.ActionOpenHebrewLetters,
             this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
@@ -1929,6 +1933,7 @@
             this.toolStripMenuItem4,
             this.ActionCopyFontCharsVerse,
             this.ActionCopyUnicodeCharsVerse,
+            this.toolStripSeparator5,
             this.ActionCopyTranslation,
             this.ActionCopyTranslationWithComment,
             this.toolStripMenuItem3,
@@ -2005,6 +2010,11 @@
       this.ActionCopyUnicodeCharsVerse.Name = "ActionCopyUnicodeCharsVerse";
       this.ActionCopyUnicodeCharsVerse.Click += new System.EventHandler(this.ActionCopyUnicodeCharsVerse_Click);
       // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
       // ActionCopyTranslation
       // 
       resources.ApplyResources(this.ActionCopyTranslation, "ActionCopyTranslation");
@@ -2055,8 +2065,11 @@
             this.ActionCopyUnicodeChars,
             this.ActionCopyWordTranslation,
             this.toolStripSeparator9,
-            this.ActionCountOccurences,
-            this.ActionCountRootOccurences});
+            this.ActionCountOccurencesTorah,
+            this.ActionCountOccurencesTanak,
+            this.toolStripSeparator25,
+            this.ActionCountRootOccurencesTorah,
+            this.ActionCountRootOccurencesTanak});
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
@@ -2133,20 +2146,37 @@
       this.toolStripSeparator9.Name = "toolStripSeparator9";
       resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
-      // ActionCountOccurences
+      // ActionCountOccurencesTorah
       // 
-      resources.ApplyResources(this.ActionCountOccurences, "ActionCountOccurences");
-      this.ActionCountOccurences.Name = "ActionCountOccurences";
+      resources.ApplyResources(this.ActionCountOccurencesTorah, "ActionCountOccurencesTorah");
+      this.ActionCountOccurencesTorah.Name = "ActionCountOccurencesTorah";
+      this.ActionCountOccurencesTorah.Click += new System.EventHandler(this.ActionCountOccurencesTorah_Click);
       // 
-      // ActionCountRootOccurences
+      // ActionCountOccurencesTanak
       // 
-      resources.ApplyResources(this.ActionCountRootOccurences, "ActionCountRootOccurences");
-      this.ActionCountRootOccurences.Name = "ActionCountRootOccurences";
+      resources.ApplyResources(this.ActionCountOccurencesTanak, "ActionCountOccurencesTanak");
+      this.ActionCountOccurencesTanak.Name = "ActionCountOccurencesTanak";
+      this.ActionCountOccurencesTanak.Click += new System.EventHandler(this.ActionCountOccurencesTanak_Click);
+      // 
+      // toolStripSeparator25
+      // 
+      this.toolStripSeparator25.Name = "toolStripSeparator25";
+      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
+      // 
+      // ActionCountRootOccurencesTorah
+      // 
+      resources.ApplyResources(this.ActionCountRootOccurencesTorah, "ActionCountRootOccurencesTorah");
+      this.ActionCountRootOccurencesTorah.Name = "ActionCountRootOccurencesTorah";
       // 
       // WordsBindingSource
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // ActionCountRootOccurencesTanak
+      // 
+      resources.ApplyResources(this.ActionCountRootOccurencesTanak, "ActionCountRootOccurencesTanak");
+      this.ActionCountRootOccurencesTanak.Name = "ActionCountRootOccurencesTanak";
       // 
       // MainForm
       // 
@@ -2314,8 +2344,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyWordTranslation;
-    private System.Windows.Forms.ToolStripMenuItem ActionCountOccurences;
-    private System.Windows.Forms.ToolStripMenuItem ActionCountRootOccurences;
+    private System.Windows.Forms.ToolStripMenuItem ActionCountOccurencesTorah;
+    private System.Windows.Forms.ToolStripMenuItem ActionCountRootOccurencesTorah;
     private System.Windows.Forms.ToolStripMenuItem ActionExportVerse;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMain;
     private System.Windows.Forms.ToolStripMenuItem ActionImportConsole;
@@ -2456,6 +2486,10 @@
     private ToolStripSeparator toolStripSeparator24;
     private ToolStripMenuItem ActionCopyTranslationWithComment;
     private ToolStripSeparator toolStripSeparator22;
+    private ToolStripSeparator toolStripSeparator5;
+    private ToolStripMenuItem ActionCountOccurencesTanak;
+    private ToolStripSeparator toolStripSeparator25;
+    private ToolStripMenuItem ActionCountRootOccurencesTanak;
   }
 }
 

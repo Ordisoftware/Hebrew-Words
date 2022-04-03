@@ -168,7 +168,7 @@
     <value>** Occurences strictes sans particule ni variante de racine</value>
   </data>
   <data name="GroupBoxMostFrequentWords.Text" xml:space="preserve">
-    <value>Mots les plus fréquents</value>
+    <value>Mots les plus fréquents du Tanak</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Mot le plus long</value>

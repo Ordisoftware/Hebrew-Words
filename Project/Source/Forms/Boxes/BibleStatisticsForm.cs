@@ -193,21 +193,26 @@ partial class BibleStatisticsForm : Form
     int max = BooksBounds.Torah.Max;
     // Specific words
     int xpos = 15;
-    int ypos = 25;
+    int ypos = 20;
     addCountOne("Torah", "hrvt", s => s.Contains("hrvt"));
     addCountOne("Israël", "lar>y", s => s.Contains("lar>y"));
     addCountOne("Elohim", "myhla", s => s.Contains("myhla"));
     addCountOne("YHVH", "hvhy", s => s.Contains("hvhy"));
+    addCountOne("King/Advisor", "klm", s => s.Contains("klm"));
+    addCountOne("Talk/Assert", "rma", s => s.Contains("rma"));
+    addCountOne("Adam", "mda", s => s.Contains("mda"));
+    addCountOne("Abram", "mrba", s => s.Contains("mrba"));
+    addCountOne("Abraham", "mhrba", s => s.Contains("mhrba"));
     addCountOne("Mosheh", "h>m", s => s.Contains("h>m"));
-    addCountOne("Aharon", "]rha", s => s.Contains("nrha"));
+    addCountOne("Aharon", "nrha", s => s.Contains("nrha"));
     addCountOne("Mitsvah", "vjm", s => s.Contains("hvjm") || s.Contains("tvjm"));
     addCountOne("Shalom", "mvl>", s => s.Contains("mvl>"));
     addCountOne("ʿIbrai", "yrbi", s => s.Contains("yrbi"));
     addCountOne("Kodesh", ">dq", s => s.Contains(">dq"));
     addCountOne("Shabat", "tb>", s => s.Contains("tb>"));
-    addCountOne("Yehoudi", "ydvhy", s => s.Contains("ydvhy"));
-    addCountOne("Ahavah", "hbha", s => s.Contains("hbha"));
-    addCountOne("Kosher", "r>k", s => s.Contains("r>k"));
+    addCountOne("Ahavah (fondness)", "hbha", s => s.Contains("hbha"));
+    addCountOne("Kosher (suitable)", "r>k", s => s.Contains("r>k"));
+    addCountOne("Yehoudi (operating)", "ydvhy", s => s.Contains("ydvhy"));
     // Most frequent words
     if ( OccurencesMostFrequent is null )
     {
@@ -232,7 +237,7 @@ partial class BibleStatisticsForm : Form
         addControls(GroupBoxMostFrequentWords, item.Key, item.Key, item.Count, true);
         ypos += 20;
       }
-      xpos += 180;
+      xpos += 170;
       ypos = 25;
     }
     //
@@ -259,7 +264,7 @@ partial class BibleStatisticsForm : Form
                    select word;
       addControls(GroupBoxOccurencesTorah, caption, hebrew, query1.Count());
       addControls(GroupBoxOccurencesAll, caption, hebrew, query2.Count());
-      ypos += 20;
+      ypos += 16;
     }
     //
     void addControls(GroupBox group, string caption, string hebrew, int value, bool isHebrew = false)
@@ -301,7 +306,7 @@ partial class BibleStatisticsForm : Form
       {
         AutoSize = false,
         Size = new Size(50, 13),
-        Left = xpos + 60,
+        Left = xpos + 80,
         Top = ypos,
         TextAlign = ContentAlignment.TopRight,
         Text = value.ToString()
