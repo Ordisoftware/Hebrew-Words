@@ -259,8 +259,8 @@
       this.ActionSearchTranslated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -1455,6 +1455,8 @@
       this.ActionHistoryVerseBack.Name = "ActionHistoryVerseBack";
       this.ActionHistoryVerseBack.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.ActionHistoryVerseBack.Click += new System.EventHandler(this.ActionHistoryVerseBack_Click);
+      this.ActionHistoryVerseBack.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionHistoryVerseBack.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionHistoryVerseNext
       // 
@@ -1463,6 +1465,8 @@
       this.ActionHistoryVerseNext.Name = "ActionHistoryVerseNext";
       this.ActionHistoryVerseNext.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.ActionHistoryVerseNext.Click += new System.EventHandler(this.ActionHistoryVerseNext_Click);
+      this.ActionHistoryVerseNext.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionHistoryVerseNext.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator13
       // 
@@ -2106,17 +2110,17 @@
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
-      // ActionOpenHebrewLetters2
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
-      this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
-      this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
       // ActionShowGrammarGuide2
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide2, "ActionShowGrammarGuide2");
       this.ActionShowGrammarGuide2.Name = "ActionShowGrammarGuide2";
       this.ActionShowGrammarGuide2.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
+      // ActionOpenHebrewLetters2
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
+      this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
+      this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
       // 
       // toolStripSeparator14
       // 

@@ -963,6 +963,10 @@ partial class MainForm : Form
   private void ActionHistoryVerseNext_Click(object sender, EventArgs e)
   {
     if ( CurrentReference is null ) return;
+    if ( Settings.CurrentView != ViewMode.ChapterVerses
+      && Settings.CurrentView != ViewMode.ChapterTranslation
+      && Settings.CurrentView != ViewMode.ChapterOriginal )
+      SetView(ViewMode.ChapterVerses);
     var list = HistoryItems.ToList();
     int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
     if ( index > 0 ) GoToReference(list[index - 1], isHistory: true);
@@ -972,8 +976,8 @@ partial class MainForm : Form
   {
     if ( CurrentReference is null ) return;
     if ( Settings.CurrentView != ViewMode.ChapterVerses
-      || Settings.CurrentView != ViewMode.ChapterTranslation
-      || Settings.CurrentView != ViewMode.ChapterOriginal )
+      && Settings.CurrentView != ViewMode.ChapterTranslation
+      && Settings.CurrentView != ViewMode.ChapterOriginal )
       SetView(ViewMode.ChapterVerses);
     var list = HistoryItems.ToList();
     int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);

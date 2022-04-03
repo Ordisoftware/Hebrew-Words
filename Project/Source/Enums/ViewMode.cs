@@ -31,14 +31,14 @@ public enum ViewMode
   ChapterTranslation,
 
   /// <summary>
-  /// Verse filtered panel.
-  /// </summary>
-  VerseFiltered,
-
-  /// <summary>
   /// Search panel.
   /// </summary>
   Search,
+
+  /// <summary>
+  /// Verse filtered panel.
+  /// </summary>
+  VerseFiltered,
 
   /// <summary>
   /// Source text panel.

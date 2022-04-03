@@ -183,8 +183,8 @@ partial class MainForm
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
       PanelMain.Refresh();
       //
-      SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
       ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
+      SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
       ActionExportBook.Enabled = view == ViewMode.ChapterVerses || view == ViewMode.BookELS50;
       ActionExportChapter.Enabled = PanelNavigation.Visible;
       //
@@ -204,6 +204,8 @@ partial class MainForm
       SelectVerseNavigator.Enabled = SelectVerse.Enabled;
       LabelSelectVerse.Enabled = SelectVerse.Enabled;
       ActionSearchVerse.Enabled = SelectVerse.Enabled;
+      //
+      UpdateHistoryButtons();
     }
   }
 
