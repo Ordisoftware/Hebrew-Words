@@ -455,12 +455,7 @@ partial class MainForm : Form
   private void ActionViewBibleStatistics_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    var reference = BibleStatisticsForm.Run();
-    if ( reference is not null )
-    {
-      SetView(ViewMode.ChapterVerses);
-      GoToReference(reference);
-    }
+    BibleStatisticsForm.Run();
   }
 
   #endregion
@@ -976,6 +971,10 @@ partial class MainForm : Form
   private void ActionHistoryVerseBack_Click(object sender, EventArgs e)
   {
     if ( CurrentReference is null ) return;
+    if ( Settings.CurrentView != ViewMode.ChapterVerses
+      || Settings.CurrentView != ViewMode.ChapterTranslation
+      || Settings.CurrentView != ViewMode.ChapterOriginal )
+      SetView(ViewMode.ChapterVerses);
     var list = HistoryItems.ToList();
     int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
     if ( index >= 0 && index < list.Count - 1 ) GoToReference(list[index + 1], isHistory: true);

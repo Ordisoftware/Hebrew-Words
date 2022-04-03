@@ -117,17 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 25</value>
-  </data>
-  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
     <value>StatAllBooks</value>
   </data>
@@ -140,12 +129,14 @@
   <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="GroupBoxAllBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 15</value>
+    <value>189, 15</value>
   </data>
   <data name="GroupBoxAllBooks.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 100</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupBoxAllBooks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -162,9 +153,66 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxAllBooks.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
+  </data>
+  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 25</value>
+  </data>
+  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
+  </data>
+  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
+    <value>StatAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
+    <value>GroupBoxAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 632</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 28</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -195,29 +243,41 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;StatTorah.Name" xml:space="preserve">
+    <value>StatTorah</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 632</value>
+  <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>691, 28</value>
+  <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
+    <value>GroupBoxTorah</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+  <data name="&gt;&gt;StatTorah.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="GroupBoxTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 15</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="GroupBoxTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 100</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="GroupBoxTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxTorah.Text" xml:space="preserve">
+    <value>Torah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTorah.Name" xml:space="preserve">
+    <value>GroupBoxTorah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTorah.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;GroupBoxTorah.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="StatTorah.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 25</value>
@@ -240,29 +300,53 @@
   <data name="&gt;&gt;StatTorah.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBoxTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 15</value>
+  <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
+    <value>SelectBook</value>
   </data>
-  <data name="GroupBoxTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 100</value>
+  <data name="&gt;&gt;SelectBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBoxTorah.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;SelectBook.Parent" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Name" xml:space="preserve">
+    <value>StatBook</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupBoxTorah.Text" xml:space="preserve">
-    <value>Torah</value>
+  <data name="GroupBoxBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 126</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTorah.Name" xml:space="preserve">
-    <value>GroupBoxTorah</value>
+  <data name="GroupBoxBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 100</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTorah.Type" xml:space="preserve">
+  <data name="GroupBoxBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxBook.Text" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.Name" xml:space="preserve">
+    <value>GroupBoxBook</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTorah.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxBook.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTorah.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;GroupBoxBook.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 25</value>
@@ -306,29 +390,101 @@
   <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupBoxBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 126</value>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Name" xml:space="preserve">
+    <value>LabelMiddleReferenceValue</value>
   </data>
-  <data name="GroupBoxBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 100</value>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBoxBook.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBoxBook.Text" xml:space="preserve">
-    <value>Book</value>
+  <data name="&gt;&gt;LabelMiddleLetter.Name" xml:space="preserve">
+    <value>LabelMiddleLetter</value>
   </data>
-  <data name="&gt;&gt;GroupBoxBook.Name" xml:space="preserve">
-    <value>GroupBoxBook</value>
+  <data name="&gt;&gt;LabelMiddleLetter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxBook.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelMiddleLetter.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleLetter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleLetterValue.Name" xml:space="preserve">
+    <value>LabelMiddleLetterValue</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleLetterValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleLetterValue.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleLetterValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWordValue.Name" xml:space="preserve">
+    <value>LabelMiddleWordValue</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWordValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWordValue.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWordValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWord.Name" xml:space="preserve">
+    <value>LabelMiddleWord</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWord.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleWord.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReference.Name" xml:space="preserve">
+    <value>LabelMiddleReference</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReference.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReference.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 237</value>
+  </data>
+  <data name="GroupBoxMiddle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 110</value>
+  </data>
+  <data name="GroupBoxMiddle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxMiddle.Text" xml:space="preserve">
+    <value>Middle of the Torah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.Name" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxBook.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxMiddle.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxBook.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;GroupBoxMiddle.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="LabelMiddleReferenceValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -516,30 +672,6 @@
   <data name="&gt;&gt;LabelMiddleReference.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="GroupBoxMiddle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 237</value>
-  </data>
-  <data name="GroupBoxMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 110</value>
-  </data>
-  <data name="GroupBoxMiddle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupBoxMiddle.Text" xml:space="preserve">
-    <value>Middle of the Torah</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Name" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="GroupBoxOccurencesTorah.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 15</value>
   </data>
@@ -563,6 +695,78 @@
   </data>
   <data name="&gt;&gt;GroupBoxOccurencesTorah.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Name" xml:space="preserve">
+    <value>LabelLongestReferenceValue</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestReferenceValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.Name" xml:space="preserve">
+    <value>LabelLongestWordValue</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Name" xml:space="preserve">
+    <value>LabelLongestWord</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWord.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Name" xml:space="preserve">
+    <value>LabelLongestWordReference</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LabelLongestWordReference.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 237</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 110</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Longest word</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="LabelLongestReferenceValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -687,30 +891,6 @@
   <data name="&gt;&gt;LabelLongestWordReference.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 237</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 110</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Longest word</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="GroupBoxOccurencesAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 15</value>
   </data>
@@ -733,7 +913,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxOccurencesAll.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="LabelInfoOccurences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -771,28 +951,28 @@
   <data name="&gt;&gt;LabelInfoOccurences.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="GroupBoxMostFrequentWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 358</value>
+  <data name="GroupBoxMostFrequentWordsTanak.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="GroupBoxMostFrequentWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>673, 231</value>
+  <data name="GroupBoxMostFrequentWordsTanak.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="GroupBoxMostFrequentWords.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupBoxMostFrequentWordsTanak.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="GroupBoxMostFrequentWordsTanak.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
-  <data name="GroupBoxMostFrequentWords.Text" xml:space="preserve">
-    <value>Tanak's most frequent words **</value>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTanak.Name" xml:space="preserve">
+    <value>GroupBoxMostFrequentWordsTanak</value>
   </data>
-  <data name="&gt;&gt;GroupBoxMostFrequentWords.Name" xml:space="preserve">
-    <value>GroupBoxMostFrequentWords</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMostFrequentWords.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTanak.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxMostFrequentWords.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTanak.Parent" xml:space="preserve">
+    <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;GroupBoxMostFrequentWords.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTanak.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="LabelInfoFrequent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -831,6 +1011,102 @@
   <data name="&gt;&gt;LabelInfoFrequent.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="GroupBoxMostFrequentWordsTorah.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GroupBoxMostFrequentWordsTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GroupBoxMostFrequentWordsTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="GroupBoxMostFrequentWordsTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTorah.Name" xml:space="preserve">
+    <value>GroupBoxMostFrequentWordsTorah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTorah.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMostFrequentWordsTorah.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabControl1.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
+    <value>Buttons</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Torah's most frequent words **</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Tanak's most frequent words **</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 358</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>673, 230</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -840,9 +1116,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>711, 670</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
@@ -850,7 +1123,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Statistics</value>
+    <value>Statistics about the Torah and the Tanak</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>BibleStatisticsForm</value>

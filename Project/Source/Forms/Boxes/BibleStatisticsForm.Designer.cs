@@ -30,11 +30,14 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibleStatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
+      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
+      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
       this.SelectBook = new System.Windows.Forms.ComboBox();
+      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();
@@ -50,17 +53,21 @@
       this.LabelLongestWordReference = new System.Windows.Forms.Label();
       this.GroupBoxOccurencesAll = new System.Windows.Forms.GroupBox();
       this.LabelInfoOccurences = new System.Windows.Forms.Label();
-      this.GroupBoxMostFrequentWords = new System.Windows.Forms.GroupBox();
+      this.GroupBoxMostFrequentWordsTanak = new System.Windows.Forms.GroupBox();
       this.LabelInfoFrequent = new System.Windows.Forms.Label();
-      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
-      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
-      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
+      this.GroupBoxMostFrequentWordsTorah = new System.Windows.Forms.GroupBox();
+      this.tabControl1 = new System.Windows.Forms.TabControl();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
       this.GroupBoxBook.SuspendLayout();
       this.GroupBoxMiddle.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      this.tabControl1.SuspendLayout();
+      this.tabPage1.SuspendLayout();
+      this.tabPage2.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -69,6 +76,11 @@
       resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
+      // 
+      // StatAllBooks
+      // 
+      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
+      this.StatAllBooks.Name = "StatAllBooks";
       // 
       // panel1
       // 
@@ -90,6 +102,11 @@
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
+      // StatTorah
+      // 
+      resources.ApplyResources(this.StatTorah, "StatTorah");
+      this.StatTorah.Name = "StatTorah";
+      // 
       // GroupBoxBook
       // 
       this.GroupBoxBook.Controls.Add(this.SelectBook);
@@ -105,6 +122,11 @@
       resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
+      // 
+      // StatBook
+      // 
+      resources.ApplyResources(this.StatBook, "StatBook");
+      this.StatBook.Name = "StatBook";
       // 
       // GroupBoxMiddle
       // 
@@ -215,11 +237,11 @@
       this.LabelInfoOccurences.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoOccurences.Name = "LabelInfoOccurences";
       // 
-      // GroupBoxMostFrequentWords
+      // GroupBoxMostFrequentWordsTanak
       // 
-      resources.ApplyResources(this.GroupBoxMostFrequentWords, "GroupBoxMostFrequentWords");
-      this.GroupBoxMostFrequentWords.Name = "GroupBoxMostFrequentWords";
-      this.GroupBoxMostFrequentWords.TabStop = false;
+      resources.ApplyResources(this.GroupBoxMostFrequentWordsTanak, "GroupBoxMostFrequentWordsTanak");
+      this.GroupBoxMostFrequentWordsTanak.Name = "GroupBoxMostFrequentWordsTanak";
+      this.GroupBoxMostFrequentWordsTanak.TabStop = false;
       // 
       // LabelInfoFrequent
       // 
@@ -227,28 +249,41 @@
       this.LabelInfoFrequent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoFrequent.Name = "LabelInfoFrequent";
       // 
-      // StatBook
+      // GroupBoxMostFrequentWordsTorah
       // 
-      resources.ApplyResources(this.StatBook, "StatBook");
-      this.StatBook.Name = "StatBook";
+      resources.ApplyResources(this.GroupBoxMostFrequentWordsTorah, "GroupBoxMostFrequentWordsTorah");
+      this.GroupBoxMostFrequentWordsTorah.Name = "GroupBoxMostFrequentWordsTorah";
+      this.GroupBoxMostFrequentWordsTorah.TabStop = false;
       // 
-      // StatTorah
+      // tabControl1
       // 
-      resources.ApplyResources(this.StatTorah, "StatTorah");
-      this.StatTorah.Name = "StatTorah";
+      resources.ApplyResources(this.tabControl1, "tabControl1");
+      this.tabControl1.Controls.Add(this.tabPage1);
+      this.tabControl1.Controls.Add(this.tabPage2);
+      this.tabControl1.Name = "tabControl1";
+      this.tabControl1.SelectedIndex = 0;
       // 
-      // StatAllBooks
+      // tabPage1
       // 
-      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
-      this.StatAllBooks.Name = "StatAllBooks";
+      this.tabPage1.Controls.Add(this.GroupBoxMostFrequentWordsTorah);
+      resources.ApplyResources(this.tabPage1, "tabPage1");
+      this.tabPage1.Name = "tabPage1";
+      this.tabPage1.UseVisualStyleBackColor = true;
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.GroupBoxMostFrequentWordsTanak);
+      resources.ApplyResources(this.tabPage2, "tabPage2");
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.UseVisualStyleBackColor = true;
       // 
       // BibleStatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.GroupBoxMostFrequentWords);
       this.Controls.Add(this.GroupBoxOccurencesAll);
+      this.Controls.Add(this.GroupBoxTorah);
       this.Controls.Add(this.GroupBoxOccurencesTorah);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.GroupBoxMiddle);
@@ -256,13 +291,12 @@
       this.Controls.Add(this.LabelInfoFrequent);
       this.Controls.Add(this.LabelInfoOccurences);
       this.Controls.Add(this.GroupBoxBook);
-      this.Controls.Add(this.GroupBoxTorah);
       this.Controls.Add(this.GroupBoxAllBooks);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+      this.Controls.Add(this.tabControl1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "BibleStatisticsForm";
-      this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BibleStatisticsForm_FormClosing);
       this.GroupBoxAllBooks.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.GroupBoxTorah.ResumeLayout(false);
@@ -271,6 +305,9 @@
       this.GroupBoxMiddle.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      this.tabControl1.ResumeLayout(false);
+      this.tabPage1.ResumeLayout(false);
+      this.tabPage2.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -302,7 +339,11 @@
     private System.Windows.Forms.Label LabelLongestWordReference;
     private GroupBox GroupBoxOccurencesAll;
     private Label LabelInfoOccurences;
-    private GroupBox GroupBoxMostFrequentWords;
+    private GroupBox GroupBoxMostFrequentWordsTanak;
     private Label LabelInfoFrequent;
+    private GroupBox GroupBoxMostFrequentWordsTorah;
+    private TabControl tabControl1;
+    private TabPage tabPage1;
+    private TabPage tabPage2;
   }
 }
