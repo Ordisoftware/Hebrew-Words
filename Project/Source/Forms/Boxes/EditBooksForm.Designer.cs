@@ -54,7 +54,7 @@
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Transcription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnTranscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -63,8 +63,8 @@
       this.ContextMenuStripResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ContextMenuStripResults
@@ -198,7 +198,7 @@
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -208,7 +208,7 @@
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
             this.ColumnHebrew,
-            this.Transcription,
+            this.ColumnTranscription,
             this.ColumnTranslation,
             this.ColumnLettriq,
             this.ColumnHasMemo,
@@ -245,7 +245,7 @@
       this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnHebrew.DataPropertyName = "Hebrew";
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
@@ -254,10 +254,10 @@
       // 
       // Transcription
       // 
-      this.Transcription.DataPropertyName = "Transcription";
-      resources.ApplyResources(this.Transcription, "Transcription");
-      this.Transcription.Name = "Transcription";
-      this.Transcription.ReadOnly = true;
+      this.ColumnTranscription.DataPropertyName = "Transcription";
+      resources.ApplyResources(this.ColumnTranscription, "Transcription");
+      this.ColumnTranscription.Name = "Transcription";
+      this.ColumnTranscription.ReadOnly = true;
       // 
       // ColumnTranslation
       // 
@@ -318,8 +318,8 @@
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BookRowBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BookRowBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -345,10 +345,9 @@
     private ToolStripMenuItem ActionOpen;
     private ToolStripSeparator toolStripSeparator2;
     private ToolStripSeparator toolStripSeparator4;
-    private DataGridViewTextBoxColumn ColumnName;
     private DataGridViewTextBoxColumn ColumnNumber;
     private DataGridViewTextBoxColumn ColumnHebrew;
-    private DataGridViewTextBoxColumn Transcription;
+    private DataGridViewTextBoxColumn ColumnTranscription;
     private DataGridViewTextBoxColumn ColumnTranslation;
     private DataGridViewTextBoxColumn ColumnLettriq;
     private DataGridViewCheckBoxColumn ColumnHasMemo;
