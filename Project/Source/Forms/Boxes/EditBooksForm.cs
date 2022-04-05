@@ -72,7 +72,7 @@ partial class EditBooksForm : Form
     if ( DataGridView.ReadOnly ) return;
     if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
     using var form = new EditMemoForm();
-    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnMemo.Index].Value;
     form.TextBox.Text = SelectedBook.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
