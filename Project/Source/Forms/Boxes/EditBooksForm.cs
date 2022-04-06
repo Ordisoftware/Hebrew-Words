@@ -49,7 +49,10 @@ partial class EditBooksForm : Form
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == ColumnTranslation.Index || e.ColumnIndex == ColumnLettriq.Index )
-      e.Value = ( (string)e.Value ).Trim();
+      if ( e.Value is null || e.Value == DBNull.Value )
+        e.Value = string.Empty;
+      else
+        e.Value = ( (string)e.Value ).Trim();
   }
 
   private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
