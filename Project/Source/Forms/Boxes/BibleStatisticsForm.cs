@@ -241,9 +241,9 @@ partial class BibleStatisticsForm : Form
       ypos = 25;
       for ( int index = 0; index < result.Count; index += 10 )
       {
-        foreach ( var item in result.Skip(index).Take(10) )
+        foreach ( var (Key, Count) in result.Skip(index).Take(10) )
         {
-          addControls(groupbox, item.Key, item.Key, item.Count, true);
+          addControls(groupbox, Key, Key, Count, true);
           ypos += 16;
         }
         xpos += 165;
