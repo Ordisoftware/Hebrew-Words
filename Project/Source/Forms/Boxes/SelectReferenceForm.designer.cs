@@ -44,7 +44,6 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionHelp = new System.Windows.Forms.Button();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.LabelChapter = new System.Windows.Forms.Label();
       this.SelectBook = new System.Windows.Forms.ComboBox();
@@ -82,15 +81,6 @@ namespace Ordisoftware.Hebrew.Words
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // ActionHelp
-      // 
-      this.ActionHelp.AllowDrop = true;
-      this.ActionHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
-      this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.UseVisualStyleBackColor = true;
-      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
       // LabelVerse
       // 
@@ -165,7 +155,6 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.ActionHelp);
       this.Controls.Add(this.EditReference);
       this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
@@ -219,7 +208,6 @@ namespace Ordisoftware.Hebrew.Words
     private BindingSource FilterChaptersBindingSource;
     private BindingSource FilterVersesBindingSource;
     private Label LabelReference;
-    private Button ActionHelp;
     private TextBoxEx EditReference;
   }
 

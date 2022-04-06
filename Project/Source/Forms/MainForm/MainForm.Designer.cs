@@ -274,6 +274,7 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1576,6 +1577,7 @@
             this.ActionRestore,
             this.ActionBackup,
             this.toolStripSeparator22,
+            this.ActionDatabaseClean,
             this.ActionVacuum,
             this.ActionOpenBackupPath,
             this.toolStripSeparator2,
@@ -2182,6 +2184,12 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // ActionDatabaseClean
+      // 
+      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
+      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
+      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2494,6 +2502,7 @@
     private ToolStripMenuItem ActionCountOccurencesTanak;
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
+    private ToolStripMenuItem ActionDatabaseClean;
   }
 }
 

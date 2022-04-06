@@ -33,11 +33,6 @@ partial class SelectVerseForm : Form
     EditVerseNumber.Select(0, 1);
   }
 
-  private void ActionHelp_Click(object sender, EventArgs e)
-  {
-    DisplayManager.ShowInformation(AppTranslations.SearchReferenceNotice.GetLang());
-  }
-
   private void SelectVerseFromFirstToLast_Click(object sender, EventArgs e)
   {
     if ( sender is RadioButton control )
