@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -21,11 +21,12 @@ using SQLite;
 public class BookRow : AbstractRow
 {
 
+  // Obsolete: Value comes from a dictionary.
   [NotNull]
   [Column("Original")]
   public string Unicode
   {
-    get => _Unicode;
+    get => BookInfos.Unicode[(TanakBook)Number];
     set
     {
       if ( _Unicode == value ) return;
@@ -35,10 +36,11 @@ public class BookRow : AbstractRow
   }
   private string _Unicode = string.Empty;
 
+  // Obsolete: Value comes from a dictionary.
   [NotNull]
   public string Hebrew
   {
-    get => _Hebrew;
+    get => BookInfos.Hebrew[(TanakBook)Number];
     set
     {
       if ( _Hebrew == value ) return;
@@ -48,10 +50,26 @@ public class BookRow : AbstractRow
   }
   private string _Hebrew = string.Empty;
 
+  // Obsolete: Value comes from a dictionary.
+  [NotNull]
+  [Column("Name")]
+  public string Transcription
+  {
+    get => BookInfos.Transcriptions.GetLang((TanakBook)Number);
+    set
+    {
+      if ( _Transcription == value ) return;
+      _Transcription = value;
+      NotifyPropertyChanged(nameof(Transcription));
+    }
+  }
+  private string _Transcription = string.Empty;
+
+  // Obsolete: Value comes from a dictionary.
   [NotNull]
   public string CommonName
   {
-    get => _CommonName;
+    get => BookInfos.Common.GetLang((TanakBook)Number);
     set
     {
       if ( _CommonName == value ) return;
@@ -60,19 +78,6 @@ public class BookRow : AbstractRow
     }
   }
   private string _CommonName = string.Empty;
-
-  [NotNull]
-  public string Translation
-  {
-    get => _Translation;
-    set
-    {
-      if ( _Translation == value ) return;
-      _Translation = value;
-      NotifyPropertyChanged(nameof(Translation));
-    }
-  }
-  private string _Translation = string.Empty;
 
   [NotNull]
   public string Lettriq
@@ -86,6 +91,19 @@ public class BookRow : AbstractRow
     }
   }
   private string _Lettriq = string.Empty;
+
+  [NotNull]
+  public string Translation
+  {
+    get => _Translation;
+    set
+    {
+      if ( _Translation == value ) return;
+      _Translation = value;
+      NotifyPropertyChanged(nameof(Translation));
+    }
+  }
+  private string _Translation = string.Empty;
 
   [NotNull]
   public string Memo
@@ -103,9 +121,6 @@ public class BookRow : AbstractRow
   public bool HasMemo
     => !Memo.IsNullOrEmpty();
 
-  public string Transcription
-    => BooksBounds.Transcriptions.GetLang((TanakBook)Number);
-
   public List<ChapterRow> Chapters { get; }
     = new();
 
@@ -116,25 +131,5 @@ public class BookRow : AbstractRow
     if ( Translation.Length > 0 ) str += $" - {Translation}";
     return str;
   }
-
-}
-
-[Serializable]
-public class BookRowWithName : BookRow
-{
-
-  [NotNull]
-  [Column("Name")]
-  public new string Transcription
-  {
-    get => _Transcription;
-    set
-    {
-      if ( _Transcription == value ) return;
-      _Transcription = value;
-      NotifyPropertyChanged(nameof(Transcription));
-    }
-  }
-  private string _Transcription = string.Empty;
 
 }

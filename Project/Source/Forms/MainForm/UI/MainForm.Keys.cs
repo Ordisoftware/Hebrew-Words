@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -74,6 +74,13 @@ partial class MainForm
           return true;
         case Keys.Control | Keys.Tab:
           SetView(Settings.CurrentView.Next());
+          return true;
+        // Navigate in history
+        case Keys.Control | Keys.Shift | Keys.P:
+          ActionSearchNavigatePrevious.PerformClick();
+          return true;
+        case Keys.Control | Keys.Shift | Keys.N:
+          ActionHistoryVerseNext.PerformClick();
           return true;
         // Change view and search
         case Keys.F1:

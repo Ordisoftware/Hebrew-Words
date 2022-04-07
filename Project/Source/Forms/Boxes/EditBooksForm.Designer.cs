@@ -53,14 +53,15 @@
       this.ActionRestoreCommonNames = new System.Windows.Forms.LinkLabel();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Transcription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CommonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ContextMenuResults.SuspendLayout();
       this.panel1.SuspendLayout();
       this.PanelMain.SuspendLayout();
@@ -182,7 +183,6 @@
       this.ActionRestoreCommonNames.LinkColor = System.Drawing.Color.Navy;
       this.ActionRestoreCommonNames.Name = "ActionRestoreCommonNames";
       this.ActionRestoreCommonNames.TabStop = true;
-      this.ActionRestoreCommonNames.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionRestoreCommonNames_LinkClicked);
       // 
       // PanelMain
       // 
@@ -213,6 +213,7 @@
             this.ColumnNumber,
             this.ColumnHebrew,
             this.Transcription,
+            this.CommonName,
             this.ColumnTranslation,
             this.ColumnLettriq,
             this.ColumnHasMemo,
@@ -243,6 +244,10 @@
       this.DataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_CellMouseDown);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
+      // 
       // ColumnNumber
       // 
       this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -267,11 +272,21 @@
       // 
       // Transcription
       // 
+      this.Transcription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.Transcription.DataPropertyName = "Transcription";
       resources.ApplyResources(this.Transcription, "Transcription");
       this.Transcription.Name = "Transcription";
       this.Transcription.ReadOnly = true;
       this.Transcription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // CommonName
+      // 
+      this.CommonName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.CommonName.DataPropertyName = "CommonName";
+      resources.ApplyResources(this.CommonName, "CommonName");
+      this.CommonName.Name = "CommonName";
+      this.CommonName.ReadOnly = true;
+      this.CommonName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
       // ColumnTranslation
       // 
@@ -312,10 +327,6 @@
       this.ColumnMemo.Text = "...";
       this.ColumnMemo.UseColumnTextForButtonValue = true;
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.BookRow);
-      // 
       // EditBooksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -324,10 +335,8 @@
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.panel1);
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "EditBooksFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "EditBooksForm";
-      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.EditBooksForm_Load);
       this.ContextMenuResults.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
@@ -364,6 +373,7 @@
     private DataGridViewTextBoxColumn ColumnNumber;
     private DataGridViewTextBoxColumn ColumnHebrew;
     private DataGridViewTextBoxColumn Transcription;
+    private DataGridViewTextBoxColumn CommonName;
     private DataGridViewTextBoxColumn ColumnTranslation;
     private DataGridViewTextBoxColumn ColumnLettriq;
     private DataGridViewCheckBoxColumn ColumnHasMemo;

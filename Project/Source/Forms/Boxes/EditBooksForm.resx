@@ -246,7 +246,7 @@
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAgVJREFUOE+Vks+LEmEYx/1fAv+BfphbRnToIv4FIuGClFQUCNsPD52spEvr7jg1
+        vAAADrwBlbxySQAAAgVJREFUOE+Vks+LEmEYx/1fAv+BfphbRnToIv4FIuGClFQUCNsPD52spEvr7jg1
         GxUltAfbadbGbcfZbS+1thdB8eDBS4Qggp70oOC3+b7vOy5L7KEPPLzzPu/n+/AOM4HTKOo6NE0DV9U6
         nY+Prn8pPbyG0oMr+LSyhMdPnsK2v6FSscXKPfs8p0dfRSUfVq6icfQD5o4La6eG5y9e4rB+hJ+Hv8TK
         Pfs8p0dfRSXvM5exVXXhU9BeQ3u1gXXdECv3PvToq6jk3f1L+PzVEcJ8Pv/NdTQaodVqYTqdij7hGT36
@@ -267,7 +267,7 @@
   <data name="ActionCopyFontChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAaRJREFUOE+VkktOwlAYhdmLS/BZNMY4cMIijCREjYomJviYOFODEwFLVYyaSiIT
+        vAAADrwBlbxySQAAAaRJREFUOE+VkktOwlAYhdmLS/BZNMY4cMIijCREjYomJviYOFODEwFLVYyaSiIT
         qYDl0QIyURQG7oCBG2AH/N5zHw2NMvBL/vQ+vnPSBgKjSBsG6bpOeMqj0TwcLD1n9xcpuzdPj7EgHR4d
         k21XqVSy+RN7nOMeHnwZFZixBfrqvJFVqVOh4tLp2Tm1Pzr03v7kT+xxjnt48GVUcL87R/lynRRJ/Yr0
         y4w32CvgwZdRwd3OLD29OFwYDAbfvV6PrxX9fp+fYw0PvowKbreDlLdrXEaYHfEQiMfjFI1G+RrAgy+S
@@ -286,7 +286,7 @@
   <data name="ActionCopyUnicodeChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAZlJREFUOE+Vkk1LAlEUhv0v/YQ+bCwiWvQ3IkGaqCgI7GPTroIW5tg4lVFRQm5y
+        vAAADrwBlbxySQAAAZlJREFUOE+Vkk1LAlEUhv0v/YQ+bCwiWvQ3IkGaqCgI7GPTroIW5tg4lVFRQm5y
         UhvNmdHcpOWmretW/gpP970foxYGPXC499z7vMerGBpF2rLINE3CKo9Gc7+3+JTdXaDszhw9xCO0f3BI
         jvNCpZLDV/Q4xz08+DIquIvP02f7jeyKT4WKR8cnp9R6b1Oz9cFX9DjHPTz4Miq43Z6lfNknhWFekHme
         CQq9Ah58GRXcbM3Q47Mrlb+BB19GBdebEco7VS50u11cUqfT4T3QdZ2azSbfw4MvkpKrDY1sp/8CyOxY
@@ -385,6 +385,9 @@
   <data name="ActionRestoreCommonNames.Text" xml:space="preserve">
     <value>Restore default common names</value>
   </data>
+  <data name="ActionRestoreCommonNames.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;ActionRestoreCommonNames.Name" xml:space="preserve">
     <value>ActionRestoreCommonNames</value>
   </data>
@@ -444,6 +447,24 @@
   </data>
   <data name="Transcription.HeaderText" xml:space="preserve">
     <value>Transcription</value>
+  </data>
+  <data name="Transcription.MinimumWidth" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="Transcription.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <metadata name="CommonName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CommonName.HeaderText" xml:space="preserve">
+    <value>CommonName</value>
+  </data>
+  <data name="CommonName.MinimumWidth" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="CommonName.Width" type="System.Int32, mscorlib">
+    <value>130</value>
   </data>
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Translation</value>
@@ -631,6 +652,12 @@
   <data name="&gt;&gt;ActionEditMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
     <value>ColumnNumber</value>
   </data>
@@ -647,6 +674,12 @@
     <value>Transcription</value>
   </data>
   <data name="&gt;&gt;Transcription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CommonName.Name" xml:space="preserve">
+    <value>CommonName</value>
+  </data>
+  <data name="&gt;&gt;CommonName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
@@ -672,12 +705,6 @@
   </data>
   <data name="&gt;&gt;ColumnMemo.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditBooksForm</value>

@@ -186,6 +186,7 @@
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -274,7 +275,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1609,6 +1609,12 @@
       this.toolStripSeparator22.Name = "toolStripSeparator22";
       resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
       // 
+      // ActionDatabaseClean
+      // 
+      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
+      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
+      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
+      // 
       // ActionVacuum
       // 
       resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
@@ -2183,12 +2189,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // ActionDatabaseClean
-      // 
-      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
-      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
-      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
       // 
       // MainForm
       // 

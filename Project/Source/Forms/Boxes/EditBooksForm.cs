@@ -153,12 +153,13 @@ partial class EditBooksForm : Form
       book.Memo = form.TextBox.Text;
   }
 
-  private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  {
-    if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-      foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
-        book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
-  }
+  // TODO remove obsolete code here and in BookRow.cs
+  //private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  //{
+  //  if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
+  //    foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
+  //      book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
+  //}
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
