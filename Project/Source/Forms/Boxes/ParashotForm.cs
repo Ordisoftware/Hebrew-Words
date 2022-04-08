@@ -58,11 +58,11 @@ partial class ParashotForm : Form
     InitializeComponent();
     InitializeMenu();
     Icon = Globals.MainForm.Icon;
+    DataGridView.Visible = false;
     ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
     // NOP
     // NOP
     // NOP
-    DataGridView.Visible = false;
     this.InitDropDowns();
   }
 
