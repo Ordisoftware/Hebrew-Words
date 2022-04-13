@@ -143,7 +143,7 @@ partial class MainForm
       // Do check verse
       VerseRow doCheckVerse()
       {
-        if ( CurrentReference.Verse is null || CurrentReference.Verse is null ) return null;
+        if ( CurrentReference.Verse is null || reference.Verse is null ) return null;
         VerseRow result;
         IEnumerable<VerseRow> verses = reference.Chapter?.Verses;
         // Slicing SelectVerseFromFirstToLast

@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void CreateSearchResults()
   {
     if ( SelectSearchInBook.SelectedItem is null ) return;

@@ -24,6 +24,7 @@ public class BookRow : AbstractRow
   // Obsolete: Value comes from a dictionary.
   [NotNull]
   [Column("Original")]
+  [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string Unicode
   {
     get => BookInfos.Unicode[(TanakBook)Number];
@@ -38,6 +39,7 @@ public class BookRow : AbstractRow
 
   // Obsolete: Value comes from a dictionary.
   [NotNull]
+  [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string Hebrew
   {
     get => BookInfos.Hebrew[(TanakBook)Number];
@@ -53,6 +55,7 @@ public class BookRow : AbstractRow
   // Obsolete: Value comes from a dictionary.
   [NotNull]
   [Column("Name")]
+  [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string Transcription
   {
     get => BookInfos.Transcriptions.GetLang((TanakBook)Number);
@@ -67,6 +70,7 @@ public class BookRow : AbstractRow
 
   // Obsolete: Value comes from a dictionary.
   [NotNull]
+  [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string CommonName
   {
     get => BookInfos.Common.GetLang((TanakBook)Number);
