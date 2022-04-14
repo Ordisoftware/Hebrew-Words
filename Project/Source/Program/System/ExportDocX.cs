@@ -139,12 +139,21 @@ static class ExportDocX
     bool hasSubtitle = book.Transcription.Length != 0 && book.Translation.Length != 0;
     AddTitle(book.Hebrew, FontHebrew, 32, "Heading1", !hasSubtitle);
     if ( hasSubtitle )
-      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, 24, "Heading1");
+      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, 20, "Heading1");
   }
 
   static private void AddChapterTitle(ChapterRow chapter)
   {
-    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, 20, "Heading2");
+    bool hasSubtitle = chapter.Title.Length != 0 || chapter.Memo.Length != 0;
+    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, 20, "Heading2", !hasSubtitle);
+    if ( chapter.Title.Length != 0 )
+      AddTitle(chapter.Title, FontCalibri, 15, "Heading2", chapter.Memo.Length == 0);
+    if ( chapter.Memo.Length != 0 )
+    {
+      AddMemo(chapter.Memo);
+      Document.InsertParagraph().AppendLine();
+    }
+    Document.InsertParagraph("").AppendLine();
   }
 
   static private void AddTitle(string str, Font font, int size, string styleName, bool blankline = true)
@@ -156,14 +165,17 @@ static class ExportDocX
     table.Rows[0].Cells[0].Width = CellCommentWidth;
     table.Rows[0].Cells[1].Width = CellVerseWidth;
     var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
-    paragraph.StyleName = styleName;
+    if ( !styleName.IsNullOrEmpty() ) paragraph.StyleName = styleName;
     paragraph.Append(str);
     paragraph.Direction = Direction.RightToLeft;
     paragraph.Font(font);
+    paragraph.Color(Color.Black);
     paragraph.FontSize(size);
     paragraph.SpacingBefore(0);
     paragraph.SpacingAfter(0);
-    if ( blankline ) Document.InsertParagraph().AppendLine();
+    paragraph.LineSpacingBefore = 0;
+    paragraph.LineSpacingAfter = 0;
+    if ( blankline ) Document.InsertParagraph("").AppendLine();
   }
 
   static private void SetCellSize(Cell cell,
@@ -196,12 +208,13 @@ static class ExportDocX
     {
       var cellVerse = table.Rows[row].Cells[WordColumnCount];
       cellVerse.Width = CellVerseWidth;
-      cellVerse.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_wave, BorderSize.one, 1, Color.Gray));
-      if ( includeTranslation )
-      {
-        var cellTranslation = table.Rows[row + 1].Cells[WordColumnCount];
-        cellTranslation.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_wave, BorderSize.one, 1, Color.Gray));
-      }
+      // T O D O option for line style verse & comment
+      //cellVerse.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_double, BorderSize.one, 1, Color.Gray));
+      //if ( includeTranslation )
+      //{
+      //  var cellTranslation = table.Rows[row + 1].Cells[WordColumnCount];
+      //  cellTranslation.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_double, BorderSize.one, 1, Color.Gray));
+      //}
       if ( row == 0 )
       {
         var pVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
@@ -232,11 +245,17 @@ static class ExportDocX
         }
       }
     }
-    if ( verse.Comment.Length > 0 )
+    AddMemo(verse.Comment);
+    Document.InsertParagraph().AppendLine();
+  }
+
+  private static void AddMemo(string text)
+  {
+    if ( text.Length > 0 )
     {
-      var lines = verse.Comment.SplitNoEmptyLines();
+      var lines = text.SplitNoEmptyLines();
       Document.InsertParagraph("").FontSize(8);
-      table = Document.InsertTable(1, 2);
+      var table = Document.InsertTable(1, 2);
       table.Alignment = Alignment.right;
       table.Design = TableDesign.None;
       var cellComment = table.Rows[0].Cells[0];
@@ -258,7 +277,6 @@ static class ExportDocX
         paragraph.Alignment = Alignment.both;
       }
     }
-    Document.InsertParagraph().AppendLine();
   }
 
 }

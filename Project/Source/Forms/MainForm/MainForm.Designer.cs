@@ -253,6 +253,7 @@
       this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionImportConsoleAuto = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -275,7 +276,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.ActionImportConsoleAuto = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1221,7 +1221,7 @@
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true));
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -2063,6 +2063,12 @@
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
+      // ActionImportConsoleAuto
+      // 
+      resources.ApplyResources(this.ActionImportConsoleAuto, "ActionImportConsoleAuto");
+      this.ActionImportConsoleAuto.Name = "ActionImportConsoleAuto";
+      this.ActionImportConsoleAuto.Click += new System.EventHandler(this.ActionImportConsole_Click);
+      // 
       // ContextMenuStripWord
       // 
       this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2191,12 +2197,6 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
-      // 
-      // ActionImportConsoleAuto
-      // 
-      resources.ApplyResources(this.ActionImportConsoleAuto, "ActionImportConsoleAuto");
-      this.ActionImportConsoleAuto.Name = "ActionImportConsoleAuto";
-      this.ActionImportConsoleAuto.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
       // MainForm
       // 
