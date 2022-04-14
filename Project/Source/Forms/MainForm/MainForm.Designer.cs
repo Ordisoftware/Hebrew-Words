@@ -275,6 +275,7 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.ActionImportConsoleAuto = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1951,7 +1952,8 @@
             this.toolStripMenuItem3,
             this.ActionExportVerse,
             this.toolStripSeparator24,
-            this.ActionImportConsole});
+            this.ActionImportConsole,
+            this.ActionImportConsoleAuto});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       this.ContextMenuStripVerse.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripVerse_Opening);
@@ -2189,6 +2191,12 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // ActionImportConsoleAuto
+      // 
+      resources.ApplyResources(this.ActionImportConsoleAuto, "ActionImportConsoleAuto");
+      this.ActionImportConsoleAuto.Name = "ActionImportConsoleAuto";
+      this.ActionImportConsoleAuto.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
       // MainForm
       // 
@@ -2503,6 +2511,7 @@
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
     private ToolStripMenuItem ActionDatabaseClean;
+    private ToolStripMenuItem ActionImportConsoleAuto;
   }
 }
 

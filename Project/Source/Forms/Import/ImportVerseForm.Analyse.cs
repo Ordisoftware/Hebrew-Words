@@ -24,6 +24,7 @@ partial class ImportVerseForm : Form
   [SuppressMessage("Performance", "U2U1015:Do not index an array multiple times within a loop body", Justification = "N/A")]
   private void DoAnalyse()
   {
+    // TODO trim numbers from all first lines in addition to spaces and tabs
     IsResultValid = false;
     var foundWords = new List<string>();
     var foundTranslation = new List<string>();

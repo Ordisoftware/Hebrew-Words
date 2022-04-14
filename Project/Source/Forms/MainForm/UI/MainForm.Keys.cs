@@ -205,7 +205,7 @@ partial class MainForm
           break;
         case Keys.Shift | Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
-            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
           break;
         case Keys.Alt | Keys.Left:
@@ -215,7 +215,7 @@ partial class MainForm
           break;
         case Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
-            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
           break;
         // Scrolling bounds

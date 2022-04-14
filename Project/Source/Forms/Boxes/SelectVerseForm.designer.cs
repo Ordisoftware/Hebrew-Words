@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew.Words
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectVerseForm));
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
@@ -50,11 +51,14 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectVerseFromCurrentToLast = new System.Windows.Forms.RadioButton();
       this.SelectVerseTakeFirstElseLast = new System.Windows.Forms.CheckBox();
       this.SelectVerseTranslated = new System.Windows.Forms.CheckBox();
+      this.SelectVerseWithoutComment = new System.Windows.Forms.CheckBox();
       this.SelectVerseFullyTranslated = new System.Windows.Forms.CheckBox();
       this.SelectVerseFromLastToFirst = new System.Windows.Forms.RadioButton();
       this.SelectVerseFromCurrentToFirst = new System.Windows.Forms.RadioButton();
+      this.LabelSearchText = new System.Windows.Forms.Label();
+      this.EditSearchText = new Ordisoftware.Core.TextBoxEx();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
       this.PanelOptions.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -93,7 +97,7 @@ namespace Ordisoftware.Hebrew.Words
             0,
             -2147483648});
       this.EditVerseNumber.Name = "EditVerseNumber";
-      this.EditVerseNumber.ValueChanged += new System.EventHandler(this.EditVerseNumber_ValueChanged);
+      this.EditVerseNumber.ValueChanged += new System.EventHandler(this.Edit_Changed);
       this.EditVerseNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditVerseNumber_KeyUp);
       // 
       // PanelOptions
@@ -103,6 +107,7 @@ namespace Ordisoftware.Hebrew.Words
       this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToLast);
       this.PanelOptions.Controls.Add(this.SelectVerseTakeFirstElseLast);
       this.PanelOptions.Controls.Add(this.SelectVerseTranslated);
+      this.PanelOptions.Controls.Add(this.SelectVerseWithoutComment);
       this.PanelOptions.Controls.Add(this.SelectVerseFullyTranslated);
       this.PanelOptions.Controls.Add(this.SelectVerseFromLastToFirst);
       this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToFirst);
@@ -145,6 +150,16 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectVerseTranslated.Name = "SelectVerseTranslated";
       this.SelectVerseTranslated.UseVisualStyleBackColor = true;
       // 
+      // SelectVerseWithoutComment
+      // 
+      resources.ApplyResources(this.SelectVerseWithoutComment, "SelectVerseWithoutComment");
+      this.SelectVerseWithoutComment.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVerseWithoutComment;
+      this.SelectVerseWithoutComment.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVerseWithoutComment", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectVerseWithoutComment.Name = "SelectVerseWithoutComment";
+      this.SelectVerseWithoutComment.UseVisualStyleBackColor = true;
+      this.SelectVerseWithoutComment.CheckedChanged += new System.EventHandler(this.SelectVerseWithoutComment_CheckedChanged);
+      this.SelectVerseWithoutComment.Click += new System.EventHandler(this.SelectVerseWithoutComment_Click);
+      // 
       // SelectVerseFullyTranslated
       // 
       resources.ApplyResources(this.SelectVerseFullyTranslated, "SelectVerseFullyTranslated");
@@ -174,13 +189,27 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectVerseFromCurrentToFirst.UseVisualStyleBackColor = true;
       this.SelectVerseFromCurrentToFirst.Click += new System.EventHandler(this.SelectVerseFromFirstToLast_Click);
       // 
+      // LabelSearchText
+      // 
+      resources.ApplyResources(this.LabelSearchText, "LabelSearchText");
+      this.LabelSearchText.Name = "LabelSearchText";
+      // 
+      // EditSearchText
+      // 
+      this.EditSearchText.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditSearchText, "EditSearchText");
+      this.EditSearchText.Name = "EditSearchText";
+      this.EditSearchText.TextChanged += new System.EventHandler(this.Edit_Changed);
+      // 
       // SelectVerseForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.LabelSearchText);
       this.Controls.Add(this.PanelOptions);
+      this.Controls.Add(this.EditSearchText);
       this.Controls.Add(this.EditVerseNumber);
       this.Controls.Add(this.LabelVerse);
       this.Controls.Add(this.panel1);
@@ -189,8 +218,9 @@ namespace Ordisoftware.Hebrew.Words
       this.MinimizeBox = false;
       this.Name = "SelectVerseForm";
       this.ShowInTaskbar = false;
+      this.Load += new System.EventHandler(this.SelectVerseForm_Load);
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
       this.ResumeLayout(false);
@@ -228,6 +258,9 @@ namespace Ordisoftware.Hebrew.Words
     private CheckBox SelectVerseFullyTranslated;
     private Panel PanelOptions;
     private CheckBox SelectVerseTakeFirstElseLast;
+    private CheckBox SelectVerseWithoutComment;
+    private TextBoxEx EditSearchText;
+    private Label LabelSearchText;
   }
 
 }

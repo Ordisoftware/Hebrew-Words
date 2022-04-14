@@ -33,25 +33,44 @@ partial class SelectVerseForm : Form
     EditVerseNumber.Select(0, 1);
   }
 
+  private void SelectVerseForm_Load(object sender, EventArgs e)
+  {
+    SelectVerseWithoutComment_Click(null, null);
+  }
+
+  private void Edit_Changed(object sender, EventArgs e)
+  {
+    PanelOptions.Enabled = EditVerseNumber.Text.Length != 0
+                        && EditSearchText.Text.Length == 0
+                        && EditVerseNumber.Value == 0;
+  }
+
   private void SelectVerseFromFirstToLast_Click(object sender, EventArgs e)
   {
     if ( sender is RadioButton control )
       control.Checked = true;
   }
 
-  private void EditVerseNumber_ValueChanged(object sender, EventArgs e)
-  {
-    PanelOptions.Enabled = EditVerseNumber.Text.Length != 0 && EditVerseNumber.Value == 0;
-  }
-
   private void EditVerseNumber_KeyPress(object sender, KeyPressEventArgs e)
   {
-    EditVerseNumber_ValueChanged(sender, e);
+    Edit_Changed(sender, e);
   }
 
   private void EditVerseNumber_KeyUp(object sender, KeyEventArgs e)
   {
-    EditVerseNumber_ValueChanged(sender, e);
+    Edit_Changed(sender, e);
+  }
+
+  private void SelectVerseWithoutComment_CheckedChanged(object sender, EventArgs e)
+  {
+    SelectVerseTranslated.Enabled = Program.Settings.SelectVerseTranslated;
+    SelectVerseFullyTranslated.Enabled = Program.Settings.SelectVerseFullyTranslated;
+  }
+
+  private void SelectVerseWithoutComment_Click(object sender, EventArgs e)
+  {
+    SelectVerseTranslated.Enabled = !Program.Settings.SelectVerseWithoutComment;
+    SelectVerseFullyTranslated.Enabled = !Program.Settings.SelectVerseWithoutComment;
   }
 
 }

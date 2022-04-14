@@ -931,7 +931,7 @@ partial class MainForm : Form
                                     CurrentReference.Chapter.Number,
                                     CurrentReference.Chapter.Verses[index].Number);
     }
-    ImportVerseForm.Run(reference);
+    ImportVerseForm.Run(reference, sender == ActionImportConsoleAuto);
   }
 
   /// <summary>

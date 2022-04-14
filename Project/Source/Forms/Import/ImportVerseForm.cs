@@ -17,9 +17,19 @@ namespace Ordisoftware.Hebrew.Words;
 partial class ImportVerseForm : Form
 {
 
-  static public void Run(ReferenceItem reference)
+  static public void Run(ReferenceItem reference, bool isAutoFromClipboard)
   {
     using var form = new ImportVerseForm(reference);
+    if ( isAutoFromClipboard )
+    {
+      string str = Clipboard.GetText();
+      if ( !str.IsNullOrEmpty() )
+      {
+        // TODO replace unicode chars by hebrew font chars
+        form.EditSource.Text = str;
+        form.ActionAnalyse.PerformClick();
+      }
+    }
     if ( form.ShowDialog() != DialogResult.OK ) return;
     var pairs = from word in reference.Verse.Words
                 from wordNew in form.WordMatches
