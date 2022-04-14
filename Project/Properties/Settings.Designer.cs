@@ -1582,5 +1582,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SelectVerseWithoutComment"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ExportWordPrintFullReference {
+            get {
+                return ((bool)(this["ExportWordPrintFullReference"]));
+            }
+            set {
+                this["ExportWordPrintFullReference"] = value;
+            }
+        }
     }
 }
