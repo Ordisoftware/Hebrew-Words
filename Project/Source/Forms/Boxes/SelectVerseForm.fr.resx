@@ -155,4 +155,10 @@
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="LabelSearchText.Text" xml:space="preserve">
+    <value>Chercher dans les traductions et commentaires</value>
+  </data>
+  <data name="SelectVerseWithoutComment.Text" xml:space="preserve">
+    <value>Sans commentaire, sinon ne pas considérer</value>
+  </data>
 </root>

@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Words
       this.LabelSearchText = new System.Windows.Forms.Label();
       this.EditSearchText = new Ordisoftware.Core.TextBoxEx();
       this.panel1.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
       this.PanelOptions.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -220,7 +220,7 @@ namespace Ordisoftware.Hebrew.Words
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectVerseForm_Load);
       this.panel1.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
       this.ResumeLayout(false);
