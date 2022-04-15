@@ -49,7 +49,10 @@ partial class EditBooksForm : Form
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == ColumnTranslation.Index || e.ColumnIndex == ColumnLettriq.Index )
-      e.Value = ( (string)e.Value ).Trim();
+      if ( e.Value is null || e.Value == DBNull.Value )
+        e.Value = string.Empty;
+      else
+        e.Value = ( (string)e.Value ).Trim();
   }
 
   private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -72,7 +75,7 @@ partial class EditBooksForm : Form
     if ( DataGridView.ReadOnly ) return;
     if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
     using var form = new EditMemoForm();
-    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnMemo.Index].Value;
     form.TextBox.Text = SelectedBook.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
@@ -150,12 +153,13 @@ partial class EditBooksForm : Form
       book.Memo = form.TextBox.Text;
   }
 
-  private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  {
-    if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-      foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
-        book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
-  }
+  // TODO remove obsolete code here and in BookRow.cs
+  //private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  //{
+  //  if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
+  //    foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
+  //      book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
+  //}
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {

@@ -186,6 +186,7 @@
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -252,6 +253,7 @@
       this.ActionExportVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConsole = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionImportConsoleAuto = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -1219,7 +1221,7 @@
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true));
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -1576,6 +1578,7 @@
             this.ActionRestore,
             this.ActionBackup,
             this.toolStripSeparator22,
+            this.ActionDatabaseClean,
             this.ActionVacuum,
             this.ActionOpenBackupPath,
             this.toolStripSeparator2,
@@ -1606,6 +1609,12 @@
       // 
       this.toolStripSeparator22.Name = "toolStripSeparator22";
       resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+      // 
+      // ActionDatabaseClean
+      // 
+      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
+      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
+      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
       // 
       // ActionVacuum
       // 
@@ -1943,7 +1952,8 @@
             this.toolStripMenuItem3,
             this.ActionExportVerse,
             this.toolStripSeparator24,
-            this.ActionImportConsole});
+            this.ActionImportConsole,
+            this.ActionImportConsoleAuto});
       this.ContextMenuStripVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripVerse, "ContextMenuStripVerse");
       this.ContextMenuStripVerse.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripVerse_Opening);
@@ -2052,6 +2062,12 @@
       resources.ApplyResources(this.ActionImportConsole, "ActionImportConsole");
       this.ActionImportConsole.Name = "ActionImportConsole";
       this.ActionImportConsole.Click += new System.EventHandler(this.ActionImportConsole_Click);
+      // 
+      // ActionImportConsoleAuto
+      // 
+      resources.ApplyResources(this.ActionImportConsoleAuto, "ActionImportConsoleAuto");
+      this.ActionImportConsoleAuto.Name = "ActionImportConsoleAuto";
+      this.ActionImportConsoleAuto.Click += new System.EventHandler(this.ActionImportConsole_Click);
       // 
       // ContextMenuStripWord
       // 
@@ -2494,6 +2510,8 @@
     private ToolStripMenuItem ActionCountOccurencesTanak;
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
+    private ToolStripMenuItem ActionDatabaseClean;
+    private ToolStripMenuItem ActionImportConsoleAuto;
   }
 }
 

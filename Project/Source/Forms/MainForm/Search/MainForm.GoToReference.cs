@@ -143,7 +143,7 @@ partial class MainForm
       // Do check verse
       VerseRow doCheckVerse()
       {
-        if ( CurrentReference.Verse is null || CurrentReference.Verse is null ) return null;
+        if ( CurrentReference.Verse is null ) return null;
         VerseRow result;
         IEnumerable<VerseRow> verses = reference.Chapter?.Verses;
         // Slicing SelectVerseFromFirstToLast
@@ -166,6 +166,14 @@ partial class MainForm
         else
         if ( !Settings.SelectVerseFromFirstToLast )
           throw new AdvNotImplementedException(nameof(SelectVerseForm) + " slice option.");
+        // Filtering translated
+        if ( Settings.SelectVerseWithoutComment )
+        {
+          result = Settings.SelectVerseTakeFirstElseLast
+            ? verses.FirstOrDefault(v => v.Comment.Length < 10) // TODO option for min comment length
+            : verses.LastOrDefault(v => v.Comment.Length < 10);
+        }
+        else
         // Filtering translated
         if ( Settings.SelectVerseTranslated )
         {

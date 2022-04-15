@@ -931,7 +931,7 @@ partial class MainForm : Form
                                     CurrentReference.Chapter.Number,
                                     CurrentReference.Chapter.Verses[index].Number);
     }
-    ImportVerseForm.Run(reference);
+    ImportVerseForm.Run(reference, sender == ActionImportConsoleAuto);
   }
 
   /// <summary>
@@ -2088,5 +2088,13 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void ActionDatabaseClean_Click(object sender, EventArgs e)
+  {
+    // TODO create a form with checkboxes binded to settings
+    // trim all fields spaces and new lines
+    // process comments prefix
+    // replace all words translation new lines by a space
+  }
 
 }

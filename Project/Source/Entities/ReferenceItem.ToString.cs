@@ -48,4 +48,7 @@ public partial class ReferenceItem
   public string ToStringOnlyNumbersWordIncluded()
     => $"{ToStringOnlyNumbers()}:{Word?.Number.ToString() ?? Null}";
 
+  public string ToStringOnlyNumbersNoBook()
+    => $"{Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
+
 }

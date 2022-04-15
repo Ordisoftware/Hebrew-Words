@@ -59,9 +59,4 @@ partial class SelectReferenceForm : Form
     ActiveControl = EditReference;
   }
 
-  private void ActionHelp_Click(object sender, EventArgs e)
-  {
-    DisplayManager.ShowInformation(AppTranslations.SearchReferenceNotice.GetLang());
-  }
-
 }

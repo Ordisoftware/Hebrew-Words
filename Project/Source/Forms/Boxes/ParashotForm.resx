@@ -808,17 +808,17 @@
   </data>
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVDhPlZLPixJhGMf9XwL/gX6YW0Z06CL+BSLhgpRU
-        FAjbDw+drKRL6+44NRsVJbQH22nWxm3H2W0vtbYXQfHgwUuEIIKe9KDgt/m+7zsuS+yhDzy88z7v5/vw
-        DjOB0yjqOjRNA1fVOp2Pj65/KT28htKDK/i0soTHT57Ctr+hUrHFyj37PKdHX0UlH1auonH0A+aOC2un
-        hucvXuKwfoSfh7/Eyj37PKdHX0Ul7zOXsVV14VPQXkN7tYF13RAr9z706Kuo5N39S/j81RHCfD7/zXU0
-        GqHVamE6nYo+4Rk9+ioqeXtvCVv2rtIkpmkilUqhXq+rjoQefRWVvLkbhmnLG5DZbIZ4PI50Oo1EIiH2
-        PvToq6hk407Ym3w8oNlsIhaLodvtIhgMotPpqBPewAF9FZUYty+eGJDJZJDNZtHr9RCNRpHP59WJHEBf
-        RSV6OrQY0O/3EQqFYBiGGJLL5RCJRESf0KOvopLirQuLAaVSCclkUrxGu91Go9EQt2Cf0KOvohItdTyg
-        XC7DdV3x+fyyLEv0+RnNag30VVTChrW7LwYMh0NMJhPx7P8T4/EYg8HgD5+3ne//Dli/GYa1WRRDzKoj
-        quL9uk7Nxb67J8qp7cGuHWB7Uwd9FZU8uxE+KKTCWF0+j9XkOVEFr9aWT1bBO1/zPPoquuCMV2f/o+h7
-        BAJ/AVzPM5jspRqwAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAgVJREFUOE+Vks+LEmEYx/1fAv+BfphbRnToIv4FIuGClFQUCNsPD52spEvr7jg1
+        GxUltAfbadbGbcfZbS+1thdB8eDBS4Qggp70oOC3+b7vOy5L7KEPPLzzPu/n+/AOM4HTKOo6NE0DV9U6
+        nY+Prn8pPbyG0oMr+LSyhMdPnsK2v6FSscXKPfs8p0dfRSUfVq6icfQD5o4La6eG5y9e4rB+hJ+Hv8TK
+        Pfs8p0dfRSXvM5exVXXhU9BeQ3u1gXXdECv3PvToq6jk3f1L+PzVEcJ8Pv/NdTQaodVqYTqdij7hGT36
+        Kip5e28JW/au0iSmaSKVSqFer6uOhB59FZW8uRuGacsbkNlshng8jnQ6jUQiIfY+9OirqGTjTtibfDyg
+        2WwiFouh2+0iGAyi0+moE97AAX0VlRi3L54YkMlkkM1m0ev1EI1Gkc/n1YkcQF9FJXo6tBjQ7/cRCoVg
+        GIYYksvlEIlERJ/Qo6+ikuKtC4sBpVIJyWRSvEa73Uaj0RC3YJ/Qo6+iEi11PKBcLsN1XfH5/LIsS/T5
+        Gc1qDfRVVMKGtbsvBgyHQ0wmE/Hs/xPj8RiDweAPn7ed7/8OWL8ZhrVZFEPMqiOq4v26Ts3Fvrsnyqnt
+        wa4dYHtTB30VlTy7ET4opMJYXT6P1eQ5UQWv1pZPVsE7X/M8+iq64IxXZ/+j6HsEAn8BXM8zmOylGrAA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionCopyName.Size" type="System.Drawing.Size, System.Drawing">
@@ -829,15 +829,15 @@
   </data>
   <data name="ActionCopyHebrewChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGkSURBVDhPlZJLTsJQGIXZi0vwWTTGOHDCIowkRI2KJib4
-        mDhTgxMBS1WMmkoiE6mA5dECMlEUBu6AgRtgB/zecx8NjTLwS/70Pr5z0gYCo0gbBum6TnjKo9E8HCw9
-        Z/cXKbs3T4+xIB0eHZNtV6lUsvkTe5zjHh58GRWYsQX66ryRValToeLS6dk5tT869N7+5E/scY57ePBl
-        VHC/O0f5cp0USf2K9MuMN9gr4MGXUcHdziw9vThcGAwG371ej68V/X6fn2MND76MCm63g5S3a1xGmB3x
-        EIjH4xSNRvkawIMvkpKbLY0sW7wBguyIQqEQX5umyfcoAvDg86Ais6mxZlEAqtWqV4KgGgAPvkhKrjdm
-        fAWQu92u700U8OCLpMRYn/YKEFShv0rgwRdJSXptyiuAiAAGqJLhT4AvkhI94i+ArAqA+iRglV2CL6MC
-        HBRqTS4Mo357oNZF5/V3wcWqRoVcmpdYZYdPif11HbdOzXqDj+M2yHZbVMwZBF9GBSfLWisZ0SgRnqTE
-        ygSfJJtU2D9Jdp9iHnwZ9RhjM/6Pgc8IBH4AVXkksIcoePgAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAaRJREFUOE+VkktOwlAYhdmLS/BZNMY4cMIijCREjYomJviYOFODEwFLVYyaSiIT
+        qYDl0QIyURQG7oCBG2AH/N5zHw2NMvBL/vQ+vnPSBgKjSBsG6bpOeMqj0TwcLD1n9xcpuzdPj7EgHR4d
+        k21XqVSy+RN7nOMeHnwZFZixBfrqvJFVqVOh4tLp2Tm1Pzr03v7kT+xxjnt48GVUcL87R/lynRRJ/Yr0
+        y4w32CvgwZdRwd3OLD29OFwYDAbfvV6PrxX9fp+fYw0PvowKbreDlLdrXEaYHfEQiMfjFI1G+RrAgy+S
+        kpstjSxbvAGC7IhCoRBfm6bJ9ygC8ODzoCKzqbFmUQCq1apXgqAaAA++SEquN2Z8BZC73a7vTRTw4Iuk
+        xFif9goQVKG/SuDBF0lJem3KK4CIAAaokuFPgC+SEj3iL4CsCoD6JGCVXYIvowIcFGpNLgyjfnug1kXn
+        9XfBxapGhVyal1hlh0+J/XUdt07NeoOP4zbIdltUzBkEX0YFJ8taKxnRKBGepMTKBJ8km1TYP0l2n2Ie
+        fBn1GGMz/o+BzwgEfgBVeSSwhyh4+AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionCopyHebrewChars.Size" type="System.Drawing.Size, System.Drawing">
@@ -848,15 +848,15 @@
   </data>
   <data name="ActionCopyUnicodeChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVDhPlZJNSwJRFIb9L/2EPmwsIlr0NyJBmqgoCOxj
-        066CFubYOJVRUUJuclIbzZnR3KTlpq3rVv4KT/e9H6MWBj1wuPfc+7zHqxgaRdqyyDRNwiqPRnO/t/iU
-        3V2g7M4cPcQjtH9wSI7zQqWSw1f0OMc9PPgyKriLz9Nn+43sik+FikfHJ6fUem9Ts/XBV/Q4xz08+DIq
-        uN2epXzZJ4VhXpB5ngkKvQIefBkV3GzN0OOzK5W/gQdfRgXXmxHKO1UudLtdXFKn0+E90HWdms0m38OD
-        L5KSqw2NbKf/AsjsWHbDA+DBF0lJZl1jk/sD1CsSiQTvw+Fw8CJ48EVScrk2PTQAn4gAu+KFXgEPPg8q
-        rNXw0AB2xFc1ZBB48HlQkdanggHq+Qp8jZ8vgC+SEjM2egDAb2DbNt/bZY/gi6QEB4VqnQuD9Hq9L7kN
-        9kX39feAsxWNCrk0H2KXXV4l9td1PZ/qfo2X69XI8RpUzFkEX0YFR0taw4hplIxOUnJ5gpfBKhUdLoPd
-        p5gHX0YDxliN/6PgM0Khb2nfL0wAW47jAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAZlJREFUOE+Vkk1LAlEUhv0v/YQ+bCwiWvQ3IkGaqCgI7GPTroIW5tg4lVFRQm5y
+        UhvNmdHcpOWmretW/gpP970foxYGPXC499z7vMerGBpF2rLINE3CKo9Gc7+3+JTdXaDszhw9xCO0f3BI
+        jvNCpZLDV/Q4xz08+DIquIvP02f7jeyKT4WKR8cnp9R6b1Oz9cFX9DjHPTz4Miq43Z6lfNknhWFekHme
+        CQq9Ah58GRXcbM3Q47Mrlb+BB19GBdebEco7VS50u11cUqfT4T3QdZ2azSbfw4MvkpKrDY1sp/8CyOxY
+        dsMD4MEXSUlmXWOT+wPUKxKJBO/D4XDwInjwRVJyuTY9NACfiAC74oVeAQ8+Dyqs1fDQAHbEVzVkEHjw
+        eVCR1qeCAer5CnyNny+AL5ISMzZ6AMBvYNs239tlj+CLpAQHhWqdC4P0er0vuQ32Rff194CzFY0KuTQf
+        YpddXiX213U9n+p+jZfr1cjxGlTMWQRfRgVHS1rDiGmUjE5ScnmCl8EqFR0ug92nmAdfRgPGWI3/o+Az
+        QqFvad8vTABbjuMAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
@@ -1146,16 +1146,16 @@
   <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
-    <value>ActionOpenHebrewLetters</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
     <value>ActionShowGrammarGuide</value>
   </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
+    <value>ActionOpenHebrewLetters</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -74,6 +74,13 @@ partial class MainForm
           return true;
         case Keys.Control | Keys.Tab:
           SetView(Settings.CurrentView.Next());
+          return true;
+        // Navigate in history
+        case Keys.Control | Keys.Shift | Keys.P:
+          ActionSearchNavigatePrevious.PerformClick();
+          return true;
+        case Keys.Control | Keys.Shift | Keys.N:
+          ActionHistoryVerseNext.PerformClick();
           return true;
         // Change view and search
         case Keys.F1:
@@ -198,7 +205,7 @@ partial class MainForm
           break;
         case Keys.Shift | Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
-            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
           break;
         case Keys.Alt | Keys.Left:
@@ -208,7 +215,7 @@ partial class MainForm
           break;
         case Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
-            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count - 1 )
+            if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
           break;
         // Scrolling bounds

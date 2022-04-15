@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -138,32 +138,16 @@ class ApplicationDatabase : SQLiteDatabase
     bool upgrade = Globals.IsDatabaseUpgraded;
     if ( Connection.CheckTable(BooksTableName) )
     {
-      if ( Connection.CheckColumn(BooksTableName, "Name") )
-        ProcessTableUpgrade<BookRow, BookRowWithName>(
-          nameof(Books),
-          nameof(BookRowWithName),
-          (rowOld, rowNew) =>
-          {
-            rowNew.ID = rowOld.ID;
-            rowNew.Number = rowOld.Number;
-            rowNew.Unicode = rowOld.Unicode;
-            rowNew.Hebrew = rowOld.Hebrew;
-            rowNew.CommonName = rowOld.CommonName;
-            rowNew.Lettriq = rowOld.Lettriq;
-            rowNew.Translation = rowOld.Translation;
-            rowNew.Memo = rowOld.Memo;
-          });
-      checkColumnText(BooksTableName, nameof(BookRow.Unicode));
       checkColumnText(BooksTableName, nameof(BookRow.CommonName));
-      checkColumnText(BooksTableName, nameof(BookRow.Memo));
       checkColumnText(BooksTableName, nameof(BookRow.Lettriq));
+      checkColumnText(BooksTableName, nameof(BookRow.Memo));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Title));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Memo));
     }
     Globals.IsDatabaseUpgraded = upgrade;
     //
     void checkColumnText(string table, string column)
-      => upgrade = !Connection.CheckColumn(table, column, "TEXT", "\"\"", true, false, false) || upgrade;
+      => upgrade = !Connection.CheckColumn(table, column, "TEXT", "''", true) || upgrade;
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -177,11 +161,10 @@ class ApplicationDatabase : SQLiteDatabase
       foreach ( BookRow book in Books )
       {
         var bookNumber = (TanakBook)book.Number;
-        book.Hebrew = OnlineBooks.Hebrew[bookNumber];
-        if ( book.Unicode.Length == 0 )
-          book.Unicode = OnlineBooks.Unicode[bookNumber];
-        if ( book.CommonName.Length == 0 )
-          book.CommonName = OnlineBooks.Common.GetLang(bookNumber);
+        book.Unicode = BookInfos.Unicode[bookNumber];
+        book.Hebrew = BookInfos.Hebrew[bookNumber];
+        book.Transcription = BookInfos.Transcriptions.GetLang(bookNumber);
+        book.CommonName = BookInfos.Common.GetLang(bookNumber);
       }
       SaveAll();
     }
@@ -244,9 +227,10 @@ class ApplicationDatabase : SQLiteDatabase
         book = new();
         book.ID = Guid.NewGuid();
         book.Number = (int)bookNumber;
-        book.Unicode = OnlineBooks.Unicode[bookNumber];
-        book.Hebrew = OnlineBooks.Hebrew[bookNumber];
-        book.CommonName = OnlineBooks.Common.GetLang(bookNumber);
+        book.Unicode = BookInfos.Unicode[bookNumber];
+        book.Hebrew = BookInfos.Hebrew[bookNumber];
+        book.Transcription = BookInfos.Transcriptions.GetLang(bookNumber);
+        book.CommonName = BookInfos.Common.GetLang(bookNumber);
         book.Translation = string.Empty;
         book.Lettriq = string.Empty;
         book.Memo = string.Empty;

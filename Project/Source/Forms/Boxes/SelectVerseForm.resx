@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 3</value>
+    <value>44, 3</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 3</value>
+    <value>125, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -184,13 +184,13 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 228</value>
+    <value>10, 308</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 28</value>
+    <value>244, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="LabelVerse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -214,7 +214,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 173</value>
+    <value>98, 253</value>
   </data>
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -235,13 +235,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelVerse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditVerseNumber.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="EditVerseNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 192</value>
+    <value>98, 272</value>
   </data>
   <data name="EditVerseNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -259,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditVerseNumber.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="PanelOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -312,6 +312,18 @@
   <data name="&gt;&gt;SelectVerseTranslated.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Name" xml:space="preserve">
+    <value>SelectVerseWithoutComment</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;SelectVerseFullyTranslated.Name" xml:space="preserve">
     <value>SelectVerseFullyTranslated</value>
   </data>
@@ -322,7 +334,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFullyTranslated.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromLastToFirst.Name" xml:space="preserve">
     <value>SelectVerseFromLastToFirst</value>
@@ -334,7 +346,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromLastToFirst.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromCurrentToFirst.Name" xml:space="preserve">
     <value>SelectVerseFromCurrentToFirst</value>
@@ -346,16 +358,16 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromCurrentToFirst.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
   <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 150</value>
+    <value>244, 175</value>
   </data>
   <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
     <value>PanelOptions</value>
@@ -367,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SelectVerseFromFirstToLast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +424,7 @@
     <value>162, 17</value>
   </data>
   <data name="SelectVerseFromCurrentToLast.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SelectVerseFromCurrentToLast.Text" xml:space="preserve">
     <value>From current verse to the last</value>
@@ -442,7 +454,7 @@
     <value>182, 17</value>
   </data>
   <data name="SelectVerseTakeFirstElseLast.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="SelectVerseTakeFirstElseLast.Text" xml:space="preserve">
     <value>Take the nearst, else the farthest</value>
@@ -472,7 +484,7 @@
     <value>168, 17</value>
   </data>
   <data name="SelectVerseTranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="SelectVerseTranslated.Text" xml:space="preserve">
     <value>Translated, else not translated</value>
@@ -489,6 +501,36 @@
   <data name="&gt;&gt;SelectVerseTranslated.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SelectVerseWithoutComment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectVerseWithoutComment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectVerseWithoutComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 150</value>
+  </data>
+  <data name="SelectVerseWithoutComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 17</value>
+  </data>
+  <data name="SelectVerseWithoutComment.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="SelectVerseWithoutComment.Text" xml:space="preserve">
+    <value>Without comment, else don't consider</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Name" xml:space="preserve">
+    <value>SelectVerseWithoutComment</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectVerseWithoutComment.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="SelectVerseFullyTranslated.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -502,7 +544,7 @@
     <value>110, 17</value>
   </data>
   <data name="SelectVerseFullyTranslated.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="SelectVerseFullyTranslated.Text" xml:space="preserve">
     <value>Fully, else partially</value>
@@ -517,7 +559,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFullyTranslated.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="SelectVerseFromLastToFirst.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -547,7 +589,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromLastToFirst.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="SelectVerseFromCurrentToFirst.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -577,7 +619,58 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectVerseFromCurrentToFirst.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="LabelSearchText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSearchText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSearchText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 195</value>
+  </data>
+  <data name="LabelSearchText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="LabelSearchText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelSearchText.Text" xml:space="preserve">
+    <value>Search in translations and comments</value>
+  </data>
+  <data name="&gt;&gt;LabelSearchText.Name" xml:space="preserve">
+    <value>LabelSearchText</value>
+  </data>
+  <data name="&gt;&gt;LabelSearchText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSearchText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelSearchText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditSearchText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 215</value>
+  </data>
+  <data name="EditSearchText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 20</value>
+  </data>
+  <data name="EditSearchText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditSearchText.Name" xml:space="preserve">
+    <value>EditSearchText</value>
+  </data>
+  <data name="&gt;&gt;EditSearchText.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditSearchText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditSearchText.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -586,7 +679,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>234, 266</value>
+    <value>264, 346</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

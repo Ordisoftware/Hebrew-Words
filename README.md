@@ -227,6 +227,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Soon
 
+- Add search history.
 - Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
@@ -235,6 +236,7 @@ These options can be used to control the software when it is already running, bu
 - Add menu to open a batch export form to select books or chapters to export.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
+- Add options to theme MSWord export.
 
 #### Later
 
@@ -299,6 +301,7 @@ These options can be used to control the software when it is already running, bu
 - Improve select verse with more options.
 - Improve search options.
 - Improve import console.
+- Improve MSWord export.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Improve debugger to support logging.

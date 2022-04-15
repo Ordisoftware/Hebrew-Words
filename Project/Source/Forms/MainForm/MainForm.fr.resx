@@ -135,7 +135,6 @@
   <data name="PanelViewVerseFilteredSingle.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelInfoFilterVerses.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -169,6 +168,7 @@
   <data name="EditFilterBook.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EditFilterVersesTranslated.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 263</value>
   </data>
@@ -1128,5 +1128,11 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="ActionDatabaseClean.Text" xml:space="preserve">
+    <value>Nettoyage de la base de données</value>
+  </data>
+  <data name="ActionImportConsoleAuto.Text" xml:space="preserve">
+    <value>Console d'import auto</value>
   </data>
 </root>

@@ -203,12 +203,14 @@ partial class BibleStatisticsForm : Form
   private List<(string Key, int Count)> OccurencesMostFrequentTanak;
 
   [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "<En attente>")]
   private void InitializeOccurences()
   {
     int max = BooksBounds.Torah.Max;
     // Specific words
     int xpos = 15;
     int ypos = 20;
+    // TODO use txt files
     addCountOne("Torah", "hrvt", s => s.Contains("hrvt"));
     addCountOne("Israël", "lar>y", s => s.Contains("lar>y"));
     addCountOne("Elohim", "myhla", s => s.Contains("myhla"));
@@ -241,9 +243,9 @@ partial class BibleStatisticsForm : Form
       ypos = 25;
       for ( int index = 0; index < result.Count; index += 10 )
       {
-        foreach ( var item in result.Skip(index).Take(10) )
+        foreach ( var (Key, Count) in result.Skip(index).Take(10) )
         {
-          addControls(groupbox, item.Key, item.Key, item.Count, true);
+          addControls(groupbox, Key, Key, Count, true);
           ypos += 16;
         }
         xpos += 165;

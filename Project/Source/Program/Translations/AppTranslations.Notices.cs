@@ -17,18 +17,6 @@ namespace Ordisoftware.Hebrew.Words;
 static partial class AppTranslations
 {
 
-  static public readonly TranslationsDictionary SearchReferenceNotice = new()
-  {
-
-    [Language.EN] = "Use 0 to go to the first:" + Globals.NL2 +
-                    "- Verse not translated or partially translated if verse 1 is completely translated." + Globals.NL2 +
-                    "- First verse translated or partially translated if verse 1 is not even partially translated.",
-
-    [Language.FR] = "Utilisez 0 pour aller au premier :" + Globals.NL2 +
-                    "- Verset non traduit ou partiellement traduit si le verset 1 est complètement traduit." + Globals.NL2 +
-                    "- Premier verset traduit ou partiellement traduit si le verset 1 n'est pas traduit même partiellement."
-  };
-
   static public readonly TranslationsDictionary FilterVersesNotice = new()
   {
 
