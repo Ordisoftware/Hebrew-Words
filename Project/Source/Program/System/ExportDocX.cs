@@ -21,11 +21,14 @@ using Xceed.Words.NET;
 static class ExportDocX
 {
 
+  // TODO add options to theme MSWord export
+  // TODO add option to convert " in '«•' and '•»' (utiliser un bool alternatif depuis le premier rencontré)
+
   /// <summary>
   /// The document.
   /// </summary>
   /// <remarks>
-  /// Measures in float or double are in inch: 100f = 1 inch.
+  /// Measures in float or double are in inch: 100f = 1 inch = 2.54cm.
   /// </remarks>
   static private DocX Document;
 
@@ -33,32 +36,55 @@ static class ExportDocX
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
-  static private readonly int TableWidth = 450;
-  static private readonly int WordColumnCount = 4;
-  static private readonly int CellVerseWidth = 55;
-  static private readonly int CellCommentWidth = TableWidth - CellVerseWidth;
+  static private float DocumentMargin = 75.0f;
+  static private bool DocumentDifferentOddAndEvenPages = true;
 
+  static private string Heading1 = "Heading1";
+  static private int Heading1TextSize = 32;
+  static private int Heading1TextSizeSub = 24;
+
+  static private string Heading2 = "Heading2";
+  static private int Heading2TextSize = 20;
+  static private int Heading2TextSizeSub = 15;
+
+  static private int TableWidth = 450;
+  static private int WordColumnCount = 4;
+  static private int CellVerseWidth = 55;
+  static private int CellCommentWidth = TableWidth - CellVerseWidth;
+
+  static private int MemoCellMargin = 8;
+  static private int MemoTextSpacing = 5;
+  static private int MemoTextSize = 10;
+
+  static private int CellVerseMarginLeft = 5;
+  static private int CellVerseMarginRight = 0;
+  static private bool VerseRefTextInBold = true;
+  static private int VerseRefTextSize = 12;
+  static private int WordHebrewTextSize = 16;
+  static private int WordTranslationTextSize = 10;
+  static private int WordTextSpacing = 10;
+
+  /// <summary>
+  /// Exports a book to MS Word file.
+  /// </summary>
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
-  static public void Run(string filePath,
-                         BookRow book,
-                         bool includeTranslation,
-                         Func<bool> showProgress)
+  static public void Run(string filePath, BookRow book, bool withTranslation, bool withMemo, Func<bool> showProgress)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
         SetPageMargins();
-        AddBookTitle(book);
+        AddBookTitle(book, true);
         foreach ( ChapterRow chapter in book.Chapters )
         {
           if ( showProgress is not null && showProgress() ) break;
-          AddChapterTitle(chapter);
+          AddChapterTitle(chapter, withMemo);
           foreach ( VerseRow verse in chapter.Verses )
           {
             string strref = Program.Settings.ExportWordPrintFullReference
               ? new ReferenceItem(book.Number, chapter.Number, verse.Number).ToStringOnlyNumbersNoBook()
               : verse.Number.ToString();
-            AddVerse(verse, includeTranslation, strref);
+            AddVerse(verse, withTranslation, withMemo, strref);
           }
         }
         Document.Save();
@@ -71,23 +97,23 @@ static class ExportDocX
       }
   }
 
-  static public void Run(string filePath,
-                         BookRow book,
-                         ChapterRow chapter,
-                         bool includeTranslation)
+  /// <summary>
+  /// Exports a chapter to MS Word file.
+  /// </summary>
+  static public void Run(string filePath, BookRow book, ChapterRow chapter, bool withTranslation, bool withMemo)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
         SetPageMargins();
-        AddBookTitle(book);
-        AddChapterTitle(chapter);
+        AddBookTitle(book, withMemo);
+        AddChapterTitle(chapter, withMemo);
         foreach ( VerseRow verse in chapter.Verses )
         {
           string strref = Program.Settings.ExportWordPrintFullReference
             ? new ReferenceItem(book.Number, chapter.Number, verse.Number).ToStringOnlyNumbersNoBook()
             : verse.Number.ToString();
-          AddVerse(verse, includeTranslation, strref);
+          AddVerse(verse, withTranslation, withMemo, strref);
         }
         Document.Save();
         if ( Program.Settings.AutoOpenExportedFile )
@@ -99,22 +125,21 @@ static class ExportDocX
       }
   }
 
-  static public void Run(string filePath,
-                         BookRow book,
-                         ChapterRow chapter,
-                         int verse,
-                         bool includeTranslation)
+  /// <summary>
+  /// Exports a verse to a MS Word file without book and chapter memos.
+  /// </summary>
+  static public void Run(string filePath, BookRow book, ChapterRow chapter, int verse, bool withTranslation, bool withMemo)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
         SetPageMargins();
-        AddBookTitle(book);
-        AddChapterTitle(chapter);
+        AddBookTitle(book, false);
+        AddChapterTitle(chapter, false);
         string strref = Program.Settings.ExportWordPrintFullReference
           ? new ReferenceItem(book.Number, chapter.Number, verse).ToStringOnlyNumbersNoBook()
           : verse.ToString();
-        AddVerse(chapter.Verses[verse - 1], includeTranslation, strref);
+        AddVerse(chapter.Verses[verse - 1], withTranslation, withMemo, strref);
         Document.Save();
         if ( Program.Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
@@ -125,38 +150,58 @@ static class ExportDocX
       }
   }
 
+  /// <summary>
+  /// Sets the MS Word document page margins.
+  /// </summary>
   static private void SetPageMargins()
   {
-    Document.MarginTop = 75.0f;
-    Document.MarginBottom = 75.0f;
-    Document.MarginLeft = 75.0f;
-    Document.MarginRight = 75.0f;
-    Document.DifferentOddAndEvenPages = true;
+    Document.MarginTop = DocumentMargin;
+    Document.MarginBottom = DocumentMargin;
+    Document.MarginLeft = DocumentMargin;
+    Document.MarginRight = DocumentMargin;
+    Document.DifferentOddAndEvenPages = DocumentDifferentOddAndEvenPages;
   }
 
-  static private void AddBookTitle(BookRow book)
+  /// <summary>
+  /// Adds a book title and memo tables.
+  /// </summary>
+  static private void AddBookTitle(BookRow book, bool withMemo)
   {
-    bool hasSubtitle = book.Transcription.Length != 0 && book.Translation.Length != 0;
-    AddTitle(book.Hebrew, FontHebrew, 32, "Heading1", !hasSubtitle);
-    if ( hasSubtitle )
-      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, 20, "Heading1");
+    AddTitle(book.Hebrew, FontHebrew, Heading1TextSize, Heading1);
+    if ( book.Transcription.Length != 0 && book.Translation.Length != 0 )
+      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1);
+    Document.InsertParagraph();
+    Document.InsertParagraph();
+    if ( withMemo && book.Memo.Length != 0 )
+    {
+      AddMemo(book.Memo);
+      Document.InsertParagraph();
+      Document.InsertParagraph();
+    }
   }
 
-  static private void AddChapterTitle(ChapterRow chapter)
+  /// <summary>
+  /// Adds a chapter title and memo tables.
+  /// </summary>
+  static private void AddChapterTitle(ChapterRow chapter, bool withMemo)
   {
-    bool hasSubtitle = chapter.Title.Length != 0 || chapter.Memo.Length != 0;
-    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, 20, "Heading2", !hasSubtitle);
+    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, Heading2TextSize, Heading2);
     if ( chapter.Title.Length != 0 )
-      AddTitle(chapter.Title, FontCalibri, 15, "Heading2", chapter.Memo.Length == 0);
-    if ( chapter.Memo.Length != 0 )
+      AddTitle(chapter.Title, FontCalibri, Heading2TextSizeSub, Heading2);
+    Document.InsertParagraph();
+    Document.InsertParagraph();
+    if ( withMemo && chapter.Memo.Length != 0 )
     {
       AddMemo(chapter.Memo);
-      Document.InsertParagraph().AppendLine();
+      Document.InsertParagraph();
+      Document.InsertParagraph();
     }
-    Document.InsertParagraph("").AppendLine();
   }
 
-  static private void AddTitle(string str, Font font, int size, string styleName, bool blankline = true)
+  /// <summary>
+  /// Adds a title paragraph.
+  /// </summary>
+  static private void AddTitle(string str, Font font, int size, string styleName)
   {
     if ( str.IsNullOrEmpty() ) return;
     var table = Document.InsertTable(1, 2);
@@ -165,7 +210,8 @@ static class ExportDocX
     table.Rows[0].Cells[0].Width = CellCommentWidth;
     table.Rows[0].Cells[1].Width = CellVerseWidth;
     var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
-    if ( !styleName.IsNullOrEmpty() ) paragraph.StyleName = styleName;
+    if ( !styleName.IsNullOrEmpty() )
+      paragraph.StyleName = styleName;
     paragraph.Append(str);
     paragraph.Direction = Direction.RightToLeft;
     paragraph.Font(font);
@@ -175,28 +221,15 @@ static class ExportDocX
     paragraph.SpacingAfter(0);
     paragraph.LineSpacingBefore = 0;
     paragraph.LineSpacingAfter = 0;
-    if ( blankline ) Document.InsertParagraph("").AppendLine();
   }
 
-  static private void SetCellSize(Cell cell,
-                                  int width,
-                                  int marginTop,
-                                  int marginBottom,
-                                  int marginLeft,
-                                  int marginRight)
+  /// <summary>
+  /// Adds a verse table with words and translations, and memo table.
+  /// </summary>
+  static private void AddVerse(VerseRow verse, bool withTranslation, bool withMemo, string fullref)
   {
-    cell.Width = width;
-    cell.MarginTop = marginTop;
-    cell.MarginBottom = marginBottom;
-    cell.MarginLeft = marginLeft;
-    cell.MarginRight = marginRight;
-  }
-
-  static private void AddVerse(VerseRow verse, bool includeTranslation, string fullref)
-  {
-    // TODO add option to prefs
     string strVerseRef = fullref ?? verse.Number.ToString();
-    int rowFactor = Convert.ToInt32(includeTranslation) + 1;
+    int rowFactor = Convert.ToInt32(withTranslation) + 1;
     int countWords = verse.Words.Count;
     int indexWord = countWords - 1;
     int countRows = ( (int)Math.Ceiling((double)countWords / WordColumnCount) ) * rowFactor;
@@ -208,74 +241,88 @@ static class ExportDocX
     {
       var cellVerse = table.Rows[row].Cells[WordColumnCount];
       cellVerse.Width = CellVerseWidth;
-      // T O D O option for line style verse & comment
-      //cellVerse.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_double, BorderSize.one, 1, Color.Gray));
-      //if ( includeTranslation )
-      //{
-      //  var cellTranslation = table.Rows[row + 1].Cells[WordColumnCount];
-      //  cellTranslation.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_double, BorderSize.one, 1, Color.Gray));
-      //}
+      cellVerse.MarginLeft = CellVerseMarginLeft;
+      cellVerse.MarginRight = CellVerseMarginRight;
       if ( row == 0 )
       {
-        var pVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
-        pVerseRef.Font(FontCalibri);
-        pVerseRef.FontSize(14);
-        pVerseRef.Bold();
+        var paragraphVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
+        paragraphVerseRef.KeepWithNextParagraph(true);
+        paragraphVerseRef.Font(FontCalibri);
+        paragraphVerseRef.FontSize(VerseRefTextSize);
+        if ( VerseRefTextInBold ) paragraphVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();
       for ( int i = 3; i >= 0 && indexWord >= 0; i--, indexWord-- )
       {
-        var word = words[indexWord];
-        string strWord = word.Hebrew;
         var cell = table.Rows[row].Cells[i];
-        cell.MarginTop = 5;
-        var pWord = cell.Paragraphs[0].Append(strWord);
-        pWord.Alignment = Alignment.right;
-        pWord.Font(FontHebrew);
-        pWord.FontSize(16);
-        pWord.Spacing(1);
-        if ( includeTranslation )
+        cell.VerticalAlignment = VerticalAlignment.Center;
+        var word = words[indexWord];
+        var paragraphWord = cell.Paragraphs[0].Append(word.Hebrew);
+        paragraphWord.KeepWithNextParagraph(true);
+        paragraphWord.Alignment = Alignment.right;
+        paragraphWord.Font(FontHebrew);
+        paragraphWord.FontSize(WordHebrewTextSize);
+        paragraphWord.Spacing(1);
+        if ( withTranslation )
         {
-          string strTranslation = word.Translation;
-          var pTranslation = table.Rows[row + 1].Cells[i].Paragraphs[0].Append(strTranslation);
-          pTranslation.Alignment = Alignment.right;
-          pTranslation.Font(FontCalibri);
-          pTranslation.FontSize(10);
+          var paragraphTranslation = table.Rows[row + 1].Cells[i].Paragraphs[0].Append(word.Translation);
+          paragraphTranslation.KeepWithNextParagraph(true);
+          paragraphTranslation.Alignment = Alignment.right;
+          paragraphTranslation.Font(FontCalibri);
+          paragraphTranslation.FontSize(WordTranslationTextSize);
+          paragraphTranslation.SpacingAfter(WordTextSpacing);
         }
+        else
+          paragraphWord.SpacingAfter(WordTextSpacing);
       }
     }
-    AddMemo(verse.Comment);
-    Document.InsertParagraph().AppendLine();
+    if ( withMemo && verse.Comment.Length > 0 )
+    {
+      Document.InsertParagraph();
+      AddMemo(verse.Comment);
+      Document.InsertParagraph();
+    }
+    else
+      Document.InsertParagraph();
+    Document.InsertParagraph();
   }
 
+  /// <summary>
+  /// Add a memo table.
+  /// </summary>
   private static void AddMemo(string text)
   {
-    if ( text.Length > 0 )
+    var lines = text.SplitNoEmptyLines();
+    var table = Document.InsertTable(1, 2);
+    table.Alignment = Alignment.right;
+    table.Design = TableDesign.None;
+    var cellComment = table.Rows[0].Cells[0];
+    cellComment.Width = CellCommentWidth;
+    cellComment.MarginLeft = MemoCellMargin;
+    cellComment.MarginRight = MemoCellMargin;
+    cellComment.MarginTop = MemoCellMargin;
+    cellComment.MarginBottom = MemoCellMargin;
+    cellComment.SetBorder(TableCellBorderType.Top, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
+    cellComment.SetBorder(TableCellBorderType.Bottom, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
+    cellComment.SetBorder(TableCellBorderType.Left, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
+    cellComment.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
+    var cellVerse = table.Rows[0].Cells[1];
+    cellVerse.Width = CellVerseWidth;
+    cellVerse.MarginLeft = MemoCellMargin;
+    cellVerse.MarginRight = MemoCellMargin;
+    cellVerse.MarginTop = MemoCellMargin;
+    cellVerse.MarginBottom = MemoCellMargin;
+    table.Rows[0].Cells[0].RemoveParagraphAt(0);
+    for ( int index = 0, indexEnd = lines.Length - 1; index <= indexEnd; index++ )
     {
-      var lines = text.SplitNoEmptyLines();
-      Document.InsertParagraph("").FontSize(8);
-      var table = Document.InsertTable(1, 2);
-      table.Alignment = Alignment.right;
-      table.Design = TableDesign.None;
-      var cellComment = table.Rows[0].Cells[0];
-      cellComment.Width = CellCommentWidth;
-      cellComment.SetBorder(TableCellBorderType.Top, new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Gray));
-      cellComment.SetBorder(TableCellBorderType.Left, new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Gray));
-      cellComment.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Gray));
-      cellComment.SetBorder(TableCellBorderType.Bottom, new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Gray));
-      var cellVerse = table.Rows[0].Cells[1];
-      cellVerse.Width = CellVerseWidth;
-      table.Rows[0].Cells[0].RemoveParagraphAt(0);
-      foreach ( string line in lines )
-      {
-        var paragraph = table.Rows[0].Cells[0].InsertParagraph(line);
-        paragraph.Font(FontCalibri);
-        paragraph.FontSize(10);
-        paragraph.SpacingBefore(5);
-        paragraph.SpacingAfter(5);
-        paragraph.Alignment = Alignment.both;
-      }
+      string line = lines[index];
+      var paragraph = table.Rows[0].Cells[0].InsertParagraph(line);
+      paragraph.Font(FontCalibri);
+      paragraph.FontSize(MemoTextSize);
+      paragraph.Alignment = Alignment.both;
+      if ( index != 0 ) paragraph.SpacingBefore(MemoTextSpacing);
+      if ( index != indexEnd ) paragraph.SpacingAfter(MemoTextSpacing);
     }
   }
 

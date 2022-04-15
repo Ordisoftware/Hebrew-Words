@@ -39,7 +39,7 @@ partial class MainForm
             Application.DoEvents();
             return form.CancelRequired;
           }
-          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, showProgress);
+          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, true, true, showProgress);
         }
         finally
         {
@@ -71,7 +71,7 @@ partial class MainForm
         SetFormDisabled(true);
         try
         {
-          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true);
+          ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, true, true);
         }
         finally
         {
@@ -109,7 +109,7 @@ partial class MainForm
       var verse = reference.Verse;
       SaveFileDialogMSWord.FileName = new ReferenceItem(book, chapter, verse) + ".docx";
       if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse.Number, true);
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse.Number, true, true);
     }
     else
     if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
@@ -119,7 +119,7 @@ partial class MainForm
       int verse = Convert.ToInt32(control.Text);
       SaveFileDialogMSWord.FileName = new ReferenceItem(book.Number, chapter.Number, verse) + ".docx";
       if ( SaveFileDialogMSWord.ShowDialog() == DialogResult.Cancel ) return;
-      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse, true);
+      ExportDocX.Run(SaveFileDialogMSWord.FileName, book, chapter, verse, true, true);
     }
     else
       throw new AdvNotImplementedException(Settings.CurrentView);
