@@ -163,13 +163,13 @@ static class ExportDocX
   }
 
   /// <summary>
-  /// Adds a book title and memo tables.
+  /// Adds a book's title and memo tables.
   /// </summary>
   static private void AddBookTitle(BookRow book, bool withMemo)
   {
-    AddTitle(book.Hebrew, FontHebrew, Heading1TextSize, Heading1);
+    AddTitle(book.Hebrew, FontHebrew, Heading1TextSize, Heading1).Alignment = Alignment.center;
     if ( book.Transcription.Length != 0 && book.Translation.Length != 0 )
-      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1);
+      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
     Document.InsertParagraph();
     Document.InsertParagraph();
     if ( withMemo && book.Memo.Length != 0 )
@@ -181,7 +181,7 @@ static class ExportDocX
   }
 
   /// <summary>
-  /// Adds a chapter title and memo tables.
+  /// Adds a chapter's title and memo tables.
   /// </summary>
   static private void AddChapterTitle(ChapterRow chapter, bool withMemo)
   {
@@ -199,11 +199,11 @@ static class ExportDocX
   }
 
   /// <summary>
-  /// Adds a title paragraph.
+  /// Adds a title's paragraph.
   /// </summary>
-  static private void AddTitle(string str, Font font, int size, string styleName)
+  static private Paragraph AddTitle(string str, Font font, int size, string styleName)
   {
-    if ( str.IsNullOrEmpty() ) return;
+    if ( str.IsNullOrEmpty() ) str = SysTranslations.EmptySlot.GetLang();
     var table = Document.InsertTable(1, 2);
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
@@ -221,10 +221,11 @@ static class ExportDocX
     paragraph.SpacingAfter(0);
     paragraph.LineSpacingBefore = 0;
     paragraph.LineSpacingAfter = 0;
+    return paragraph;
   }
 
   /// <summary>
-  /// Adds a verse table with words and translations, and memo table.
+  /// Adds a verse's words with translations and memo tables.
   /// </summary>
   static private void AddVerse(VerseRow verse, bool withTranslation, bool withMemo, string fullref)
   {
@@ -237,6 +238,8 @@ static class ExportDocX
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
     table.AutoFit = AutoFit.Contents;
+    foreach ( var paragraph in table.Paragraphs )
+      paragraph.KeepWithNextParagraph(true);
     for ( int row = 0; row < countRows; row += rowFactor )
     {
       var cellVerse = table.Rows[row].Cells[WordColumnCount];
@@ -246,28 +249,25 @@ static class ExportDocX
       if ( row == 0 )
       {
         var paragraphVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
-        paragraphVerseRef.KeepWithNextParagraph(true);
         paragraphVerseRef.Font(FontCalibri);
         paragraphVerseRef.FontSize(VerseRefTextSize);
         if ( VerseRefTextInBold ) paragraphVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();
-      for ( int i = 3; i >= 0 && indexWord >= 0; i--, indexWord-- )
+      for ( int column = 3; column >= 0 && indexWord >= 0; column--, indexWord-- )
       {
-        var cell = table.Rows[row].Cells[i];
+        var cell = table.Rows[row].Cells[column];
         cell.VerticalAlignment = VerticalAlignment.Center;
         var word = words[indexWord];
         var paragraphWord = cell.Paragraphs[0].Append(word.Hebrew);
-        paragraphWord.KeepWithNextParagraph(true);
         paragraphWord.Alignment = Alignment.right;
         paragraphWord.Font(FontHebrew);
         paragraphWord.FontSize(WordHebrewTextSize);
         paragraphWord.Spacing(1);
         if ( withTranslation )
         {
-          var paragraphTranslation = table.Rows[row + 1].Cells[i].Paragraphs[0].Append(word.Translation);
-          paragraphTranslation.KeepWithNextParagraph(true);
+          var paragraphTranslation = table.Rows[row + 1].Cells[column].Paragraphs[0].Append(word.Translation);
           paragraphTranslation.Alignment = Alignment.right;
           paragraphTranslation.Font(FontCalibri);
           paragraphTranslation.FontSize(WordTranslationTextSize);
