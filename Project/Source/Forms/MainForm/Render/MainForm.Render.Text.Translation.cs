@@ -20,7 +20,7 @@ partial class MainForm
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void RenderChapterTranslation(bool isGrouped = false)
   {
-    RenderText(EditChapterTranslation, false, isGrouped, () =>
+    RenderText(TextBoxTranslations, false, isGrouped, () =>
     {
       var builder = new StringBuilder(2048);
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
@@ -35,7 +35,7 @@ partial class MainForm
         builder.AppendLine();
         builder.AppendLine();
       }
-      EditChapterTranslation.Text = builder.ToString();
+      TextBoxTranslations.Text = builder.ToString();
     });
   }
 
