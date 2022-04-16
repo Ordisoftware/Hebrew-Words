@@ -2091,15 +2091,8 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    // TODO create a normalize texts form with check boxes binded to settings :
-    // - trim spaces and empty lines at start and end of translations and comments
-    // - remove all empty lines
-    // - replace new lines in word translations by a space
-    // - remove multiple spaces
-    // - remove multiple empty lines
-    // - normalize comments prefix
-    // - titleize first word translation of verse if not empty
-    // - enforce dot at the end of the last word's translation if not empty
+    if ( new NormalizeTextsForm().ShowDialog() != DialogResult.OK ) return;
+    // TODO normalize texts
   }
 
 }

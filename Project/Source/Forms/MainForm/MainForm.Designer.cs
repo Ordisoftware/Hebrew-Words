@@ -197,8 +197,6 @@
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -277,6 +275,8 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1580,6 +1580,8 @@
             this.ActionBackup,
             this.toolStripSeparator22,
             this.ActionVacuum,
+            this.toolStripSeparator26,
+            this.ActionNormalizeTexts,
             this.toolStripSeparator2,
             this.ActionOpenBackupPath,
             this.ActionOpenExportFolder});
@@ -1651,8 +1653,6 @@
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
-            this.toolStripSeparator26,
-            this.ActionNormalizeTexts,
             this.toolStripSeparator1,
             this.ActionCopyToClipboard,
             this.ActionRefresh,
@@ -1691,17 +1691,6 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
-      // 
-      // toolStripSeparator26
-      // 
-      this.toolStripSeparator26.Name = "toolStripSeparator26";
-      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
-      // 
-      // ActionNormalizeTexts
-      // 
-      resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
-      this.ActionNormalizeTexts.Name = "ActionNormalizeTexts";
-      this.ActionNormalizeTexts.Click += new System.EventHandler(this.ActionNormalizeTexts_Click);
       // 
       // toolStripSeparator16
       // 
@@ -2204,6 +2193,17 @@
       // 
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
+      // 
+      // toolStripSeparator26
+      // 
+      this.toolStripSeparator26.Name = "toolStripSeparator26";
+      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      // 
+      // ActionNormalizeTexts
+      // 
+      resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
+      this.ActionNormalizeTexts.Name = "ActionNormalizeTexts";
+      this.ActionNormalizeTexts.Click += new System.EventHandler(this.ActionNormalizeTexts_Click);
       // 
       // MainForm
       // 
