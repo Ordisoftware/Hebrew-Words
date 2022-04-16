@@ -1129,8 +1129,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="ActionDatabaseClean.Text" xml:space="preserve">
-    <value>Nettoyage de la base de données</value>
+  <data name="ActionNormalizeTexts.Text" xml:space="preserve">
+    <value>Normaliser les textes</value>
   </data>
   <data name="ActionImportConsoleAuto.Text" xml:space="preserve">
     <value>Console d'import auto</value>

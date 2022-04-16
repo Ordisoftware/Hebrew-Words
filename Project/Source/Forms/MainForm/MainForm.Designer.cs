@@ -186,10 +186,9 @@
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
@@ -198,6 +197,8 @@
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -1578,10 +1579,9 @@
             this.ActionRestore,
             this.ActionBackup,
             this.toolStripSeparator22,
-            this.ActionDatabaseClean,
             this.ActionVacuum,
-            this.ActionOpenBackupPath,
             this.toolStripSeparator2,
+            this.ActionOpenBackupPath,
             this.ActionOpenExportFolder});
       resources.ApplyResources(this.ActionDatabase, "ActionDatabase");
       this.ActionDatabase.Name = "ActionDatabase";
@@ -1610,28 +1610,22 @@
       this.toolStripSeparator22.Name = "toolStripSeparator22";
       resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
       // 
-      // ActionDatabaseClean
-      // 
-      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
-      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
-      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
-      // 
       // ActionVacuum
       // 
       resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
       this.ActionVacuum.Name = "ActionVacuum";
       this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
       // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
       // ActionOpenBackupPath
       // 
       resources.ApplyResources(this.ActionOpenBackupPath, "ActionOpenBackupPath");
       this.ActionOpenBackupPath.Name = "ActionOpenBackupPath";
       this.ActionOpenBackupPath.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
-      // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionOpenExportFolder
       // 
@@ -1657,6 +1651,8 @@
             this.toolStripSeparator16,
             this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
+            this.toolStripSeparator26,
+            this.ActionNormalizeTexts,
             this.toolStripSeparator1,
             this.ActionCopyToClipboard,
             this.ActionRefresh,
@@ -1695,6 +1691,17 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionStartHebrewLetters_Click);
+      // 
+      // toolStripSeparator26
+      // 
+      this.toolStripSeparator26.Name = "toolStripSeparator26";
+      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      // 
+      // ActionNormalizeTexts
+      // 
+      resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
+      this.ActionNormalizeTexts.Name = "ActionNormalizeTexts";
+      this.ActionNormalizeTexts.Click += new System.EventHandler(this.ActionNormalizeTexts_Click);
       // 
       // toolStripSeparator16
       // 
@@ -2510,8 +2517,9 @@
     private ToolStripMenuItem ActionCountOccurencesTanak;
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
-    private ToolStripMenuItem ActionDatabaseClean;
     private ToolStripMenuItem ActionImportConsoleAuto;
+    private ToolStripSeparator toolStripSeparator26;
+    private ToolStripMenuItem ActionNormalizeTexts;
   }
 }
 
