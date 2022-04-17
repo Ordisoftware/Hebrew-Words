@@ -81,7 +81,7 @@ partial class MainForm
       case ViewMode.ChapterTranslation:
         SaveFileDialogRTF.FileName = $"{book.Transcription} {chapter.Number} Translation.rtf";
         if ( SaveFileDialogRTF.ShowDialog() == DialogResult.Cancel ) return;
-        EditChapterTranslation.SaveFile(SaveFileDialogRTF.FileName);
+        TextBoxTranslations.SaveFile(SaveFileDialogRTF.FileName);
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(SaveFileDialogRTF.FileName);
         break;

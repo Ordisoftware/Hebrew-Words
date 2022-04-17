@@ -88,7 +88,7 @@ partial class MainForm
         {
           MenuItem = ActionViewTranslations,
           Panel = PanelViewTranslations,
-          Focused = EditChapterTranslation
+          Focused = TextBoxTranslations
         }
       },
       {

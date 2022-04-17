@@ -617,7 +617,7 @@ partial class MainForm : Form
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterTranslation:
-        Clipboard.SetText(EditChapterTranslation.Text);
+        Clipboard.SetText(TextBoxTranslations.Text);
         break;
       case ViewMode.ChapterOriginal:
         Clipboard.SetText(EditChapterOriginal.Text);
@@ -703,8 +703,8 @@ partial class MainForm : Form
                                                              Settings.VacuumAtStartupDaysInterval,
                                                              true);
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-      //ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-      //ApplicationStatistics.UpdateDBFileSizeRequired = true;
+      // TODO ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      // TODO ApplicationStatistics.UpdateDBFileSizeRequired = true;
       DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
     }
     finally
@@ -752,6 +752,12 @@ partial class MainForm : Form
   private void TimerAutoSave_Tick(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
+  }
+
+  private void ActionNormalizeTexts_Click(object sender, EventArgs e)
+  {
+    if ( new NormalizeTextsForm().ShowDialog() != DialogResult.OK ) return;
+    // TODO normalize texts
   }
 
   #endregion
@@ -2088,13 +2094,5 @@ partial class MainForm : Form
   }
 
   #endregion
-
-  private void ActionDatabaseClean_Click(object sender, EventArgs e)
-  {
-    // TODO create a form with checkboxes binded to settings
-    // trim all fields spaces and new lines
-    // process comments prefix
-    // replace all words translation new lines by a space
-  }
 
 }

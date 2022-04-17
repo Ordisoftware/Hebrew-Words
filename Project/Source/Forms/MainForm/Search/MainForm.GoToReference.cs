@@ -235,7 +235,7 @@ partial class MainForm
         break;
       case ViewMode.ChapterTranslation:
         string strTr = $"{CurrentReference.Verse.Number}. ";
-        searchRef(EditChapterTranslation, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
+        searchRef(TextBoxTranslations, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
         break;
       case ViewMode.ChapterOriginal:
         string strSrc = $":{CurrentReference.Verse.Number}";

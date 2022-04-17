@@ -39,7 +39,7 @@
       this.PanelViewVerses = new System.Windows.Forms.Panel();
       this.TabPageTranslations = new System.Windows.Forms.TabPage();
       this.PanelViewTranslations = new System.Windows.Forms.Panel();
-      this.EditChapterTranslation = new Ordisoftware.Core.RichTextBoxEx();
+      this.TextBoxTranslations = new Ordisoftware.Core.RichTextBoxEx();
       this.TabPageVerseFiltered = new System.Windows.Forms.TabPage();
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
@@ -186,10 +186,11 @@
       this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionDatabaseClean = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
@@ -287,15 +288,15 @@
       this.TabPageVerseFiltered.SuspendLayout();
       this.PanelViewVerseFiltered.SuspendLayout();
       this.PanelViewVerseFilters.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).BeginInit();
       this.TabPageSearch.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
@@ -308,15 +309,15 @@
       this.TabPageELS50.SuspendLayout();
       this.PanelViewELS50.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.PanelTitleInner.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -386,18 +387,18 @@
       // PanelViewTranslations
       // 
       this.PanelViewTranslations.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelViewTranslations.Controls.Add(this.EditChapterTranslation);
+      this.PanelViewTranslations.Controls.Add(this.TextBoxTranslations);
       resources.ApplyResources(this.PanelViewTranslations, "PanelViewTranslations");
       this.PanelViewTranslations.Name = "PanelViewTranslations";
       // 
-      // EditChapterTranslation
+      // TextBoxTranslations
       // 
-      this.EditChapterTranslation.BackColor = System.Drawing.SystemColors.Window;
-      this.EditChapterTranslation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.EditChapterTranslation, "EditChapterTranslation");
-      this.EditChapterTranslation.Name = "EditChapterTranslation";
-      this.EditChapterTranslation.ReadOnly = true;
-      this.EditChapterTranslation.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
+      this.TextBoxTranslations.BackColor = System.Drawing.SystemColors.Window;
+      this.TextBoxTranslations.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.TextBoxTranslations, "TextBoxTranslations");
+      this.TextBoxTranslations.Name = "TextBoxTranslations";
+      this.TextBoxTranslations.ReadOnly = true;
+      this.TextBoxTranslations.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
       // 
       // TabPageVerseFiltered
       // 
@@ -1578,10 +1579,11 @@
             this.ActionRestore,
             this.ActionBackup,
             this.toolStripSeparator22,
-            this.ActionDatabaseClean,
             this.ActionVacuum,
-            this.ActionOpenBackupPath,
+            this.toolStripSeparator26,
+            this.ActionNormalizeTexts,
             this.toolStripSeparator2,
+            this.ActionOpenBackupPath,
             this.ActionOpenExportFolder});
       resources.ApplyResources(this.ActionDatabase, "ActionDatabase");
       this.ActionDatabase.Name = "ActionDatabase";
@@ -1610,28 +1612,33 @@
       this.toolStripSeparator22.Name = "toolStripSeparator22";
       resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
       // 
-      // ActionDatabaseClean
-      // 
-      resources.ApplyResources(this.ActionDatabaseClean, "ActionDatabaseClean");
-      this.ActionDatabaseClean.Name = "ActionDatabaseClean";
-      this.ActionDatabaseClean.Click += new System.EventHandler(this.ActionDatabaseClean_Click);
-      // 
       // ActionVacuum
       // 
       resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
       this.ActionVacuum.Name = "ActionVacuum";
       this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
       // 
-      // ActionOpenBackupPath
+      // toolStripSeparator26
       // 
-      resources.ApplyResources(this.ActionOpenBackupPath, "ActionOpenBackupPath");
-      this.ActionOpenBackupPath.Name = "ActionOpenBackupPath";
-      this.ActionOpenBackupPath.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
+      this.toolStripSeparator26.Name = "toolStripSeparator26";
+      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      // 
+      // ActionNormalizeTexts
+      // 
+      resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
+      this.ActionNormalizeTexts.Name = "ActionNormalizeTexts";
+      this.ActionNormalizeTexts.Click += new System.EventHandler(this.ActionNormalizeTexts_Click);
       // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
+      // ActionOpenBackupPath
+      // 
+      resources.ApplyResources(this.ActionOpenBackupPath, "ActionOpenBackupPath");
+      this.ActionOpenBackupPath.Name = "ActionOpenBackupPath";
+      this.ActionOpenBackupPath.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
       // 
       // ActionOpenExportFolder
       // 
@@ -2225,16 +2232,16 @@
       this.PanelViewVerseFiltered.ResumeLayout(false);
       this.PanelViewVerseFilters.ResumeLayout(false);
       this.PanelViewVerseFilters.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).EndInit();
       this.TabPageSearch.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
       this.PanelSearchResultsOuter.ResumeLayout(false);
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -2251,16 +2258,16 @@
       this.PanelViewELS50.ResumeLayout(false);
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.PanelTitleInner.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -2329,7 +2336,7 @@
     private System.Windows.Forms.RadioButton SelectSearchRequestAllUntranslated;
     private Ordisoftware.Core.RichTextBoxEx EditChapterELS50;
     private Ordisoftware.Core.RichTextBoxEx EditChapterOriginal;
-    private Ordisoftware.Core.RichTextBoxEx EditChapterTranslation;
+    private Ordisoftware.Core.RichTextBoxEx TextBoxTranslations;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogDB;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogMSWord;
     private System.Windows.Forms.SaveFileDialog SaveFileDialogRTF;
@@ -2510,8 +2517,9 @@
     private ToolStripMenuItem ActionCountOccurencesTanak;
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
-    private ToolStripMenuItem ActionDatabaseClean;
     private ToolStripMenuItem ActionImportConsoleAuto;
+    private ToolStripSeparator toolStripSeparator26;
+    private ToolStripMenuItem ActionNormalizeTexts;
   }
 }
 
