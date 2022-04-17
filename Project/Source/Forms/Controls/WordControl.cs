@@ -93,7 +93,9 @@ public partial class WordControl : UserControl
   private void EditTranslation_Leave(object sender, EventArgs e)
   {
     EditTranslation.BackColor = Settings.ThemeTranslationBack;
-    EditTranslation.Text = EditTranslation.Text.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
+    EditTranslation.Text = EditTranslation.Text.SanitizeAndTrimEmptyLinesAndSpaces();
+    if ( Reference.Word.Number == Reference.Verse.Words.Count && !EditTranslation.Text.EndsWith(".") )
+      EditTranslation.Text += ".";
     if ( Settings.AutoSaveOnLeaveControl && MainForm.Instance.ActionSave.Enabled )
       MainForm.Instance.ActionSave.PerformClick();
   }

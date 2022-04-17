@@ -42,7 +42,7 @@ public partial class ReferenceItem
   {
     if ( !reference.IsNullOrEmpty() )
     {
-      reference = reference.Trim().SanitizeEmptyLinesAndSpaces();
+      reference = reference.SanitizeAndTrimEmptyLinesAndSpaces().Replace(" ", "");
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )

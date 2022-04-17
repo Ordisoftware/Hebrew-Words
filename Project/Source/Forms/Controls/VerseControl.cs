@@ -187,9 +187,9 @@ public partial class VerseControl : UserControl
 
   static public string CheckComment(string value)
   {
-    value = value.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
+    value = value.SanitizeAndTrimEmptyLinesAndSpaces();
     if ( Program.Settings.CommentLinePrefix.Length == 0 ) return value;
-    var lines = value.SplitKeepEmptyLines(Globals.NL);
+    var lines = value.SplitKeepEmptyLines();
     bool changed = false;
     for ( int index = 0; index < lines.Length; index++ )
     {

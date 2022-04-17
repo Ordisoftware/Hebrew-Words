@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -72,17 +72,7 @@ partial class EditBooksForm : Form
 
   private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
   {
-    if ( DataGridView.ReadOnly ) return;
-    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
-    using var form = new EditMemoForm();
-    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnMemo.Index].Value;
-    form.TextBox.Text = SelectedBook.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-    {
-      SelectedBook.Memo = form.TextBox.Text;
-      DataGridView.RefreshEdit();
-    }
+    ActionEditMemo.PerformClick();
   }
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -150,16 +140,8 @@ partial class EditBooksForm : Form
     form.TextBox.Text = book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
-      book.Memo = form.TextBox.Text;
+      book.Memo = form.TextBox.Text.Replace("\n", Globals.NL).SanitizeAndTrimEmptyLinesAndSpaces();
   }
-
-  // TODO remove obsolete code here and in BookRow.cs
-  //private void ActionRestoreCommonNames_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  //{
-  //  if ( DisplayManager.QueryYesNo(AppTranslations.AskToRestoreBooksCommonNames.GetLang()) )
-  //    foreach ( var book in ApplicationDatabase.Instance.Books.OrderBy(b => b.Number) )
-  //      book.CommonName = OnlineBooks.Common.GetLang((TanakBook)( book.Number ));
-  //}
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {

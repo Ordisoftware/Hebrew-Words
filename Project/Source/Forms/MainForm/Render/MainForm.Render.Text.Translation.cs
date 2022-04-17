@@ -21,9 +21,7 @@ partial class MainForm
   {
     RenderText(TextBoxTranslations, false, isGrouped, () =>
     {
-      TextBoxTranslations.Text = EditExportUseHebrewFontElseUnicodeChars.Checked
-        ? CurrentReference.Chapter.TranslationWithComments
-        : CurrentReference.Chapter.TranslationWithComments;
+      TextBoxTranslations.Text = CurrentReference.Chapter.TranslationWithComments;
     });
   }
 

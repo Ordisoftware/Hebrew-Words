@@ -1421,7 +1421,7 @@ partial class MainForm : Form
     form.TextBox.Text = CurrentReference.Book.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
-      CurrentReference.Book.Memo = form.TextBox.Text;
+      CurrentReference.Book.Memo = form.TextBox.Text.Replace("\n", Globals.NL).SanitizeAndTrimEmptyLinesAndSpaces();
   }
 
   /// <summary>
@@ -1439,7 +1439,7 @@ partial class MainForm : Form
     form.TextBox.Text = CurrentReference.Chapter.Memo;
     form.TextBox.SelectionStart = 0;
     if ( form.ShowDialog() == DialogResult.OK )
-      EditChapterMemo.Text = form.TextBox.Text;
+      EditChapterMemo.Text = form.TextBox.Text.Replace("\n", Globals.NL).SanitizeAndTrimEmptyLinesAndSpaces();
   }
 
   /// <summary>
