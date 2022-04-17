@@ -116,6 +116,7 @@ public class BookRow : AbstractRow
     set
     {
       if ( _Memo == value ) return;
+
       _Memo = value;
       NotifyPropertyChanged(nameof(Memo));
     }
