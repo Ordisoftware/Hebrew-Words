@@ -31,16 +31,16 @@ partial class MainForm
   {
     if ( Settings.GoToMasterBookmarkAtStartup )
       GoToReference(Settings.BookmarkMasterBook,
-           Settings.BookmarkMasterChapter,
-           Settings.BookmarkMasterVerse,
-           true);
+                    Settings.BookmarkMasterChapter,
+                    Settings.BookmarkMasterVerse,
+                    true);
     else
     if ( Settings.GoToLastVerseAtStartup )
       GoToReference(new ReferenceItem(Settings.LastReferenceBook,
-                             Settings.LastReferenceChapter,
-                             Settings.LastReferenceVerse,
-                             Settings.LastReferenceWord),
-           true);
+                                      Settings.LastReferenceChapter,
+                                      Settings.LastReferenceVerse,
+                                      Settings.LastReferenceWord),
+                    true);
     else
       GoToReference(1, 1, 1, true);
   }
@@ -48,7 +48,13 @@ partial class MainForm
   /// <summary>
   /// Goes to a book > chapter > verse reference.
   /// </summary>
-  public void GoToReference(int book, int chapter, int verse, bool forceUpdateView = false, bool setViewChapterVerses = false, bool isHistory = false)
+  public void GoToReference(
+    int book,
+    int chapter,
+    int verse,
+    bool forceUpdateView = false,
+    bool setViewChapterVerses = false,
+    bool isHistory = false)
   {
     GoToReference(new ReferenceItem(book, chapter, verse), forceUpdateView, setViewChapterVerses, isHistory);
   }
@@ -56,7 +62,11 @@ partial class MainForm
   /// <summary>
   /// Goes to a book.chapter.verse reference.
   /// </summary>
-  public void GoToReference(string reference, bool forceUpdateView = false, bool setViewChapterVerses = false, bool isHistory = false)
+  public void GoToReference(
+    string reference,
+    bool forceUpdateView = false,
+    bool setViewChapterVerses = false,
+    bool isHistory = false)
   {
     GoToReference(new ReferenceItem(reference), forceUpdateView, setViewChapterVerses, isHistory);
   }
@@ -66,7 +76,11 @@ partial class MainForm
   /// Goes to a reference instance.
   /// </summary>
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
-  public void GoToReference(ReferenceItem reference, bool forceUpdateView = false, bool setViewChapterVerses = false, bool isHistory = false)
+  public void GoToReference(
+    ReferenceItem reference,
+    bool forceUpdateView = false,
+    bool setViewChapterVerses = false,
+    bool isHistory = false)
   {
     if ( reference is null ) return;
     if ( Globals.IsExiting ) return;
@@ -119,8 +133,9 @@ partial class MainForm
     {
       if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
       {
-        var item = SelectBook.Items.AsIEnumerable<ObjectView<BookRow>>()
-                                   .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
+        var item = SelectBook.Items
+                             .AsIEnumerable<ObjectView<BookRow>>()
+                             .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
         SelectBook.SelectedItem = item ?? throw new SystemException(AppTranslations.SelectedBookItemIsNull.GetLang());
         updated = true;
       }
@@ -221,7 +236,8 @@ partial class MainForm
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
-        var control = PanelViewVerses.Controls.OfType<VerseControl>()
+        var control = PanelViewVerses.Controls
+                                     .OfType<VerseControl>()
                                      .FirstOrDefault(c => c.Reference.Verse.Number == CurrentReference.Verse?.Number);
         if ( control is not null )
         {
@@ -234,15 +250,15 @@ partial class MainForm
         }
         break;
       case ViewMode.ChapterTranslation:
-        string strTr = $"{CurrentReference.Verse.Number}. ";
+        string strTr = $"{CurrentReference.Verse.NumberFormatted}. ";
         searchRef(TextBoxTranslations, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
         break;
       case ViewMode.ChapterOriginal:
-        string strSrc = $":{CurrentReference.Verse.Number}";
+        string strSrc = $":{CurrentReference.Verse.NumberFormatted}";
         searchRef(EditChapterOriginal, strSrc, line => line.EndsWith(strSrc, StringComparison.Ordinal));
         break;
       case ViewMode.BookELS50:
-        string strELS = $":{CurrentReference.Chapter.Number}";
+        string strELS = $":{CurrentReference.Chapter.NumberFormatted}";
         searchRef(EditChapterELS50, strELS, line => line.EndsWith(strELS, StringComparison.Ordinal));
         break;
     }

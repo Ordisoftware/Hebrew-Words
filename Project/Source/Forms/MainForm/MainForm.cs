@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -617,13 +617,34 @@ partial class MainForm : Form
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterTranslation:
-        Clipboard.SetText(TextBoxTranslations.Text);
+        if ( EditIncludeOriginalText.Checked )
+          if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
+            if ( EditIncludeComment.Checked )
+              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslationWithComments);
+            else
+              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslation);
+          else
+          if ( EditIncludeComment.Checked )
+            Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslationWithComments);
+          else
+            Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslation);
+        else
+          if ( EditIncludeComment.Checked )
+          Clipboard.SetText(CurrentReference.Chapter.TranslationWithComments);
+        else
+          Clipboard.SetText(CurrentReference.Chapter.Translation);
         break;
       case ViewMode.ChapterOriginal:
-        Clipboard.SetText(EditChapterOriginal.Text);
+        if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
+          Clipboard.SetText(CurrentReference.Chapter.AsHebrewWithNumber);
+        else
+          Clipboard.SetText(CurrentReference.Chapter.AsUnicodeWithNumber);
         break;
       case ViewMode.BookELS50:
-        Clipboard.SetText(EditChapterELS50.Text);
+        if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
+          Clipboard.SetText(CurrentReference.Book.ELS50AsHebrewWithNumber);
+        else
+          Clipboard.SetText(CurrentReference.Book.ELS50AsUnicodeWithNumber);
         break;
       default:
         throw new AdvNotImplementedException(Settings.CurrentView);

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Ordisoftware.Hebrew.Words.Properties;
@@ -48,6 +48,9 @@ static class SettingsHelper
     MainForm.EditConfirmClosing.Checked = true;
     MainForm.EditShowTips.Checked = true;
     MainForm.EditSoundsEnabled.Checked = true;
+    MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = true;
+    MainForm.EditIncludeOriginalText.Checked = true;
+    MainForm.EditIncludeComment.Checked = true;
     DisplayManager.AdvancedFormUseSounds = true;
     MainForm.EditUseAdvancedDialogBoxes.Checked = true;
     DisplayManager.FormStyle = MessageBoxFormStyle.Advanced;
@@ -79,7 +82,8 @@ static class SettingsHelper
       MainForm.Width = settings.MainFormWidth >= MainForm.MinimumSize.Width && settings.MainFormWidth <= area.Width
         ? settings.MainFormWidth
         : MainForm.MinimumSize.Width;
-      MainForm.Height = settings.MainFormHeight >= MainForm.MinimumSize.Height && settings.MainFormHeight <= area.Height
+      MainForm.Height = settings.MainFormHeight >= MainForm.MinimumSize.Height
+                     && settings.MainFormHeight <= area.Height
         ? settings.MainFormHeight
         : MainForm.MinimumSize.Height;
       MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
@@ -98,6 +102,9 @@ static class SettingsHelper
       MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
       DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
+      MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = settings.ExportUseHebrewFontElseUnicodeChars;
+      MainForm.EditIncludeOriginalText.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
+      MainForm.EditIncludeComment.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
@@ -152,6 +159,9 @@ static class SettingsHelper
       settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
+      settings.ExportUseHebrewFontElseUnicodeChars = MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked;
+      settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeOriginalText.Checked;
+      settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeComment.Checked;
       SystemManager.TryCatch(settings.Save);
     }
     finally

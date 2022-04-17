@@ -1135,4 +1135,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionImportConsoleAuto.Text" xml:space="preserve">
     <value>Console d'import auto</value>
   </data>
+  <data name="EditExportUseHebrewFontElseUnicodeChars.Text" xml:space="preserve">
+    <value>Utiliser la fonte Hebrew sinon Unicode pour les exports</value>
+  </data>
+  <data name="EditIncludeComment.Text" xml:space="preserve">
+    <value>Inclure le commentaire lors de la copie d'une traduction de chapitre dans le presse-papiers</value>
+  </data>
+  <data name="EditIncludeOriginalText.Text" xml:space="preserve">
+    <value>Inclure le texte original lors de la copie d'une traduction de chapitre dans le presse-papiers</value>
+  </data>
 </root>

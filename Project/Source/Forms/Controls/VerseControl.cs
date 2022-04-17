@@ -187,33 +187,36 @@ public partial class VerseControl : UserControl
 
   static public string CheckComment(string value)
   {
+    value = value.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
     if ( Program.Settings.CommentLinePrefix.Length == 0 ) return value;
     var lines = value.SplitKeepEmptyLines(Globals.NL);
     bool changed = false;
-    if ( Program.Settings.CommentLineAddPrefix )
+    for ( int index = 0; index < lines.Length; index++ )
     {
-      for ( int index = 0; index < lines.Length; index++ )
+      ref string line = ref lines[index];
+      if ( !line.IsEmpty() )
       {
-        ref string line = ref lines[index];
-        if ( !line.Trim().IsEmpty() && !line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
-          line = Program.Settings.CommentLinePrefix + line;
-        changed = true;
+        if ( Program.Settings.CommentLineAddPrefix )
+        {
+          if ( !line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
+            line = Program.Settings.CommentLinePrefix + line;
+          changed = true;
+        }
+        else
+        if ( Program.Settings.CommentLineRemovePrefix )
+        {
+          if ( line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
+            line = line.Substring(Program.Settings.CommentLinePrefix.Length);
+          changed = true;
+        }
+        if ( !line.EndsWith(".") )
+        {
+          line += ".";
+          changed = true;
+        }
       }
     }
-    else
-    if ( Program.Settings.CommentLineRemovePrefix )
-    {
-      for ( int index = 0; index < lines.Length; index++ )
-      {
-        ref string line = ref lines[index];
-        if ( !line.Trim().IsEmpty() && line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
-          line = line.Substring(Program.Settings.CommentLinePrefix.Length);
-        changed = true;
-      }
-    }
-    if ( changed )
-      value = lines.AsMultiLine();
-    return value;
+    return changed ? lines.AsMultiLine() : value;
   }
 
 }

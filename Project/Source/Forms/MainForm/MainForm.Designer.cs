@@ -223,6 +223,9 @@
       this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditIncludeOriginalText = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditExportUseHebrewFontElseUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
@@ -277,6 +280,7 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.EditIncludeComment = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -288,15 +292,15 @@
       this.TabPageVerseFiltered.SuspendLayout();
       this.PanelViewVerseFiltered.SuspendLayout();
       this.PanelViewVerseFilters.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
       this.TabPageSearch.SuspendLayout();
       this.PanelViewSearch.SuspendLayout();
       this.PanelSearchResultsOuter.SuspendLayout();
       this.PanelSearchFilters.SuspendLayout();
       this.PanelSearchFiltersRight.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).BeginInit();
       this.SelectSearchType.SuspendLayout();
       this.SelectSearchTypeHebrew.SuspendLayout();
       this.PanelSearchTop.SuspendLayout();
@@ -309,15 +313,15 @@
       this.TabPageELS50.SuspendLayout();
       this.PanelViewELS50.SuspendLayout();
       this.PanelNavigation.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).BeginInit();
       this.PanelTitle.SuspendLayout();
       this.PanelTitleInner.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -1784,6 +1788,10 @@
             this.Sep7,
             this.ActionShowKeyboardNotice,
             this.toolStripSeparator11,
+            this.EditIncludeOriginalText,
+            this.EditIncludeComment,
+            this.EditExportUseHebrewFontElseUnicodeChars,
+            this.toolStripSeparator27,
             this.EditShowTips,
             this.EditUseAdvancedDialogBoxes,
             this.EditSoundsEnabled,
@@ -1869,6 +1877,25 @@
       // 
       this.toolStripSeparator11.Name = "toolStripSeparator11";
       resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
+      // EditIncludeOriginalText
+      // 
+      this.EditIncludeOriginalText.Checked = true;
+      this.EditIncludeOriginalText.CheckOnClick = true;
+      this.EditIncludeOriginalText.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditIncludeOriginalText, "EditIncludeOriginalText");
+      this.EditIncludeOriginalText.Name = "EditIncludeOriginalText";
+      // 
+      // EditExportUseHebrewFontElseUnicodeChars
+      // 
+      this.EditExportUseHebrewFontElseUnicodeChars.CheckOnClick = true;
+      resources.ApplyResources(this.EditExportUseHebrewFontElseUnicodeChars, "EditExportUseHebrewFontElseUnicodeChars");
+      this.EditExportUseHebrewFontElseUnicodeChars.Name = "EditExportUseHebrewFontElseUnicodeChars";
+      // 
+      // toolStripSeparator27
+      // 
+      this.toolStripSeparator27.Name = "toolStripSeparator27";
+      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
       // 
       // EditShowTips
       // 
@@ -2205,6 +2232,14 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // EditIncludeComment
+      // 
+      this.EditIncludeComment.Checked = true;
+      this.EditIncludeComment.CheckOnClick = true;
+      this.EditIncludeComment.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditIncludeComment, "EditIncludeComment");
+      this.EditIncludeComment.Name = "EditIncludeComment";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2232,16 +2267,16 @@
       this.PanelViewVerseFiltered.ResumeLayout(false);
       this.PanelViewVerseFilters.ResumeLayout(false);
       this.PanelViewVerseFilters.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterVersesBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterChaptersBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.FilterBooksBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterVersesBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).EndInit();
       this.TabPageSearch.ResumeLayout(false);
       this.PanelViewSearch.ResumeLayout(false);
       this.PanelSearchResultsOuter.ResumeLayout(false);
       this.PanelSearchFilters.ResumeLayout(false);
       this.PanelSearchFiltersRight.ResumeLayout(false);
       this.PanelSearchFiltersRight.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.SelectSearchPaging ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SelectSearchPaging)).EndInit();
       this.SelectSearchType.ResumeLayout(false);
       this.SelectSearchTypeHebrew.ResumeLayout(false);
       this.PanelSearchTop.ResumeLayout(false);
@@ -2258,16 +2293,16 @@
       this.PanelViewELS50.ResumeLayout(false);
       this.PanelNavigation.ResumeLayout(false);
       this.PanelNavigation.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ChaptersBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BooksBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.VersesBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ChaptersBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BooksBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.VersesBindingSource)).EndInit();
       this.PanelTitle.ResumeLayout(false);
       this.PanelTitleInner.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.WordsBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -2406,33 +2441,33 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
-    public Ordisoftware.Hebrew.LettersControl EditSearchWord;
-    public System.Windows.Forms.Button ActionSearchRun;
-    public System.Windows.Forms.Panel PanelViewVerses;
-    public System.Windows.Forms.TabControl SelectSearchType;
-    public System.Windows.Forms.TabPage SelectSearchTypeHebrew;
-    public System.Windows.Forms.Timer TimerAutoSave;
-    public System.Windows.Forms.ToolStripButton ActionSave;
-    public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
-    public System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
+    internal Ordisoftware.Hebrew.LettersControl EditSearchWord;
+    internal System.Windows.Forms.Button ActionSearchRun;
+    internal System.Windows.Forms.Panel PanelViewVerses;
+    internal System.Windows.Forms.TabControl SelectSearchType;
+    internal System.Windows.Forms.TabPage SelectSearchTypeHebrew;
+    internal System.Windows.Forms.Timer TimerAutoSave;
+    internal System.Windows.Forms.ToolStripButton ActionSave;
+    internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
+    internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     private ToolStripDropDownButton ActionSettings;
     private ToolStripMenuItem MenuitemScreenPosition;
-    public ToolStripMenuItem EditScreenNone;
-    public ToolStripMenuItem EditScreenTopLeft;
-    public ToolStripMenuItem EditScreenTopRight;
-    public ToolStripMenuItem EditScreenBottomLeft;
-    public ToolStripMenuItem EditScreenBottomRight;
-    public ToolStripMenuItem EditScreenCenter;
+    internal ToolStripMenuItem EditScreenNone;
+    internal ToolStripMenuItem EditScreenTopLeft;
+    internal ToolStripMenuItem EditScreenTopRight;
+    internal ToolStripMenuItem EditScreenBottomLeft;
+    internal ToolStripMenuItem EditScreenBottomRight;
+    internal ToolStripMenuItem EditScreenCenter;
     private ToolStripMenuItem ActionResetWinSettings;
     private ToolStripSeparator Sep7;
     private ToolStripMenuItem ActionShowKeyboardNotice;
     private ToolStripSeparator toolStripSeparator11;
-    public ToolStripMenuItem EditShowTips;
-    public ToolStripMenuItem EditUseAdvancedDialogBoxes;
-    public ToolStripMenuItem EditSoundsEnabled;
-    public ToolStripMenuItem EditShowSuccessDialogs;
+    internal ToolStripMenuItem EditShowTips;
+    internal ToolStripMenuItem EditUseAdvancedDialogBoxes;
+    internal ToolStripMenuItem EditSoundsEnabled;
+    internal ToolStripMenuItem EditShowSuccessDialogs;
     private ToolStripSeparator toolStripSeparator15;
-    public ToolStripMenuItem EditConfirmClosing;
+    internal ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashotBoard;
     private ToolStripMenuItem ActionOpenCalculator;
     private RadioButton SelectSearchTranslationIncludeComments;
@@ -2440,7 +2475,7 @@
     private RadioButton SelectSearchTranslationOnlyTranslations;
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
-    public System.Windows.Forms.Panel PanelViewVerseFiltered;
+    internal System.Windows.Forms.Panel PanelViewVerseFiltered;
     private ToolStripSeparator toolStripSeparator17;
     private ComboBox SelectVerse;
     private ComboBoxNavigator SelectVerseNavigator;
@@ -2448,9 +2483,9 @@
     private BindingSource FilterChaptersBindingSource;
     private BindingSource FilterVersesBindingSource;
     private Panel PanelViewVerseFilters;
-    public Button ActionClearFilterVerse;
-    public Button ActionClearFilterChapter;
-    public Button ActionClearFilterBook;
+    internal Button ActionClearFilterVerse;
+    internal Button ActionClearFilterChapter;
+    internal Button ActionClearFilterBook;
     private TextBox EditFilterVerse;
     private TextBox EditFilterChapter;
     private TextBox EditFilterBook;
@@ -2463,10 +2498,10 @@
     private Label LabelFilterChapter;
     private Label LabelFilterVerse;
     private Button ActionGoFromVerseFilteredToVersesPanel;
-    public Button ActionApplyFilterVerse;
-    public Button ActionApplyFilterChapter;
-    public Button ActionApplyFilterBook;
-    public System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
+    internal Button ActionApplyFilterVerse;
+    internal Button ActionApplyFilterChapter;
+    internal Button ActionApplyFilterBook;
+    internal System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
@@ -2495,7 +2530,7 @@
     private Button ActionSearchWordOpenInLetters;
     private ToolStripSeparator toolStripSeparator3;
     private ToolStripSeparator toolStripSeparator7;
-    public SaveFileDialog SaveDataBoardDialog;
+    internal SaveFileDialog SaveDataBoardDialog;
     private ToolStripSeparator toolStripSeparator10;
     private ToolStripMenuItem ActionVerseReadDefault;
     private ToolStripMenuItem ActionWordSearchDefault;
@@ -2520,6 +2555,10 @@
     private ToolStripMenuItem ActionImportConsoleAuto;
     private ToolStripSeparator toolStripSeparator26;
     private ToolStripMenuItem ActionNormalizeTexts;
+    internal ToolStripMenuItem EditExportUseHebrewFontElseUnicodeChars;
+    private ToolStripSeparator toolStripSeparator27;
+    internal ToolStripMenuItem EditIncludeOriginalText;
+    internal ToolStripMenuItem EditIncludeComment;
   }
 }
 

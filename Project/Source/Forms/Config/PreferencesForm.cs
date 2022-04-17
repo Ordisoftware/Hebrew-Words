@@ -400,6 +400,7 @@ partial class PreferencesForm : Form
     for ( int index = 0; index < verses.Count; index++ )
       verses[index].Comment = VerseControl.CheckComment(verses[index].Comment);
     MainForm.Instance.ActionSave.PerformClick();
+    // TODO improve to call ActionNormalizeTexts.PerformClick and move code
   }
 
   #endregion

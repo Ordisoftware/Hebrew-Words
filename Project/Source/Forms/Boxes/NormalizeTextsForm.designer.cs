@@ -51,6 +51,10 @@ namespace Ordisoftware.Hebrew.Words
       this.checkBox6 = new System.Windows.Forms.CheckBox();
       this.checkBox7 = new System.Windows.Forms.CheckBox();
       this.checkBox8 = new System.Windows.Forms.CheckBox();
+      this.checkBox9 = new System.Windows.Forms.CheckBox();
+      this.checkBox10 = new System.Windows.Forms.CheckBox();
+      this.checkBox11 = new System.Windows.Forms.CheckBox();
+      this.ActionPreferences = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -123,12 +127,42 @@ namespace Ordisoftware.Hebrew.Words
       this.checkBox8.Name = "checkBox8";
       this.checkBox8.UseVisualStyleBackColor = true;
       // 
+      // checkBox9
+      // 
+      resources.ApplyResources(this.checkBox9, "checkBox9");
+      this.checkBox9.Name = "checkBox9";
+      this.checkBox9.UseVisualStyleBackColor = true;
+      // 
+      // checkBox10
+      // 
+      resources.ApplyResources(this.checkBox10, "checkBox10");
+      this.checkBox10.Name = "checkBox10";
+      this.checkBox10.UseVisualStyleBackColor = true;
+      // 
+      // checkBox11
+      // 
+      resources.ApplyResources(this.checkBox11, "checkBox11");
+      this.checkBox11.Name = "checkBox11";
+      this.checkBox11.UseVisualStyleBackColor = true;
+      // 
+      // ActionPreferences
+      // 
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
+      this.ActionPreferences.FlatAppearance.BorderSize = 0;
+      this.ActionPreferences.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionPreferences.Name = "ActionPreferences";
+      this.ActionPreferences.UseVisualStyleBackColor = true;
+      // 
       // NormalizeTextsForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionPreferences);
+      this.Controls.Add(this.checkBox10);
+      this.Controls.Add(this.checkBox11);
+      this.Controls.Add(this.checkBox9);
       this.Controls.Add(this.checkBox5);
       this.Controls.Add(this.checkBox6);
       this.Controls.Add(this.checkBox7);
@@ -173,6 +207,10 @@ namespace Ordisoftware.Hebrew.Words
     private CheckBox checkBox6;
     private CheckBox checkBox7;
     private CheckBox checkBox8;
+    private CheckBox checkBox9;
+    private CheckBox checkBox10;
+    private CheckBox checkBox11;
+    private Button ActionPreferences;
   }
 
 }
