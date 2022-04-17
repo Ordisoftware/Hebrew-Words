@@ -11,31 +11,19 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
 {
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void RenderChapterTranslation(bool isGrouped = false)
   {
     RenderText(TextBoxTranslations, false, isGrouped, () =>
     {
-      var builder = new StringBuilder(2048);
-      foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
-      {
-        builder.Append(verse.Number).Append(". ").Append(verse.Translation);
-        if ( verse.Comment.Length > 0 )
-        {
-          builder.AppendLine();
-          builder.AppendLine();
-          builder.Append(verse.Comment);
-        }
-        builder.AppendLine();
-        builder.AppendLine();
-      }
-      TextBoxTranslations.Text = builder.ToString();
+      TextBoxTranslations.Text = EditExportUseHebrewFontElseUnicodeChars.Checked
+        ? CurrentReference.Chapter.TranslationWithComments
+        : CurrentReference.Chapter.TranslationWithComments;
     });
   }
 

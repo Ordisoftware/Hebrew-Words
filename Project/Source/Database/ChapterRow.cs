@@ -11,14 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
 
 [Serializable]
 [Table("Chapters")]
-public class ChapterRow : AbstractRow
+public partial class ChapterRow : AbstractRow
 {
 
   [NotNull]
@@ -62,25 +62,28 @@ public class ChapterRow : AbstractRow
   private string _Memo = string.Empty;
 
   [NotNull]
+  [Column("ELS50")]
   public string ELS50
   {
-    get => _ELS50;
+    get => _ELS50AsHebrew;
     set
     {
-      if ( _ELS50 == value ) return;
-      _ELS50 = value;
+      if ( _ELS50AsHebrew == value ) return;
+      _ELS50AsHebrew = value;
       NotifyPropertyChanged(nameof(ELS50));
     }
   }
-  private string _ELS50 = string.Empty;
+  private string _ELS50AsHebrew = string.Empty;
+
+  public string ELS50AsHebrewWithNumber
+    => $"{_ELS50AsHebrew} :{NumberFormatted}";
+
+  public string ELS50AsUnicode
+    => HebrewAlphabet.ToUnicode(_ELS50AsHebrew);
+
+  public string ELS50AsUnicodeWithNumber
+    => $"{ELS50AsUnicode} :{NumberFormatted}";
 
   public List<VerseRow> Verses { get; } = new();
-
-  public override string ToString()
-  {
-    string result = FormatNumber(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID).Chapters.Count);
-    if ( Title.Length > 0 ) result += $" - {Title}";
-    return result;
-  }
 
 }

@@ -4214,32 +4214,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -5431,7 +5431,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="MenuitemScreenPosition.Text" xml:space="preserve">
     <value>Screen position</value>
@@ -5454,13 +5454,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="ActionResetWinSettings.Text" xml:space="preserve">
     <value>Reset window settings</value>
   </data>
   <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 6</value>
+    <value>431, 6</value>
   </data>
   <data name="ActionShowKeyboardNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5478,31 +5478,40 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionShowKeyboardNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
     <value>Keyboard shortcuts notice</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 6</value>
+    <value>431, 6</value>
   </data>
-  <data name="EditExportUnicodeCharsElseHebrewFont.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="EditExportUnicodeCharsElseHebrewFont.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 22</value>
   </data>
-  <data name="EditExportUnicodeCharsElseHebrewFont.Text" xml:space="preserve">
+  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Text" xml:space="preserve">
+    <value>Include original text while copying a chapter translation to clipboard</value>
+  </data>
+  <data name="EditExportUseHebrewFontElseUnicodeChars.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditExportUseHebrewFontElseUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 22</value>
+  </data>
+  <data name="EditExportUseHebrewFontElseUnicodeChars.Text" xml:space="preserve">
     <value>Use Hebrew font else Unicode chars for exports</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 6</value>
+    <value>431, 6</value>
   </data>
   <data name="EditShowTips.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="EditShowTips.Text" xml:space="preserve">
     <value>Show menu tips</value>
@@ -5511,7 +5520,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
     <value>Advanced dialogs</value>
@@ -5520,7 +5529,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditSoundsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="EditSoundsEnabled.Text" xml:space="preserve">
     <value>Dialogs with sounds</value>
@@ -5529,19 +5538,19 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditShowSuccessDialogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
     <value>Success dialogs instead of sounds</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 6</value>
+    <value>431, 6</value>
   </data>
   <data name="EditConfirmClosing.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 22</value>
+    <value>434, 22</value>
   </data>
   <data name="EditConfirmClosing.Text" xml:space="preserve">
     <value>Confirm application closing</value>
@@ -6801,12 +6810,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;Sep7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditExportUnicodeCharsElseHebrewFont.Name" xml:space="preserve">
-    <value>EditExportUnicodeCharsElseHebrewFont</value>
-  </data>
-  <data name="&gt;&gt;EditExportUnicodeCharsElseHebrewFont.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionShowKeyboardNotice.Name" xml:space="preserve">
     <value>ActionShowKeyboardNotice</value>
   </data>
@@ -6817,6 +6820,24 @@ A verse is founded if the translation of one of its words contains an expression
     <value>toolStripSeparator11</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Name" xml:space="preserve">
+    <value>EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard</value>
+  </data>
+  <data name="&gt;&gt;EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportUseHebrewFontElseUnicodeChars.Name" xml:space="preserve">
+    <value>EditExportUseHebrewFontElseUnicodeChars</value>
+  </data>
+  <data name="&gt;&gt;EditExportUseHebrewFontElseUnicodeChars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator27.Name" xml:space="preserve">
+    <value>toolStripSeparator27</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator27.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditShowTips.Name" xml:space="preserve">
@@ -7130,12 +7151,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;SaveDataBoardDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator27.Name" xml:space="preserve">
-    <value>toolStripSeparator27</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

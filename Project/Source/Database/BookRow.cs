@@ -18,10 +18,12 @@ using SQLite;
 
 [Serializable]
 [Table("Books")]
-public class BookRow : AbstractRow
+public partial class BookRow : AbstractRow
 {
 
-  // Obsolete: Value comes from a dictionary.
+  /// <summary>
+  /// Obsolete: Value comes from a dictionary.
+  /// </summary>
   [NotNull]
   [Column("Original")]
   [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
@@ -37,7 +39,9 @@ public class BookRow : AbstractRow
   }
   private string _Unicode = string.Empty;
 
-  // Obsolete: Value comes from a dictionary.
+  /// <summary>
+  /// Obsolete: Value comes from a dictionary.
+  /// </summary>
   [NotNull]
   [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string Hebrew
@@ -52,7 +56,9 @@ public class BookRow : AbstractRow
   }
   private string _Hebrew = string.Empty;
 
-  // Obsolete: Value comes from a dictionary.
+  /// <summary>
+  /// Obsolete: Value comes from a dictionary.
+  /// </summary>
   [NotNull]
   [Column("Name")]
   [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
@@ -68,7 +74,9 @@ public class BookRow : AbstractRow
   }
   private string _Transcription = string.Empty;
 
-  // Obsolete: Value comes from a dictionary.
+  /// <summary>
+  /// Obsolete: Value comes from a dictionary.
+  /// </summary>
   [NotNull]
   [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "N/A")]
   public string CommonName
@@ -128,13 +136,5 @@ public class BookRow : AbstractRow
 
   public List<ChapterRow> Chapters { get; }
     = new();
-
-  public override string ToString()
-  {
-    string str = $"{FormatNumber(ApplicationDatabase.Instance.Books.Count)}. {Transcription}";
-    if ( CommonName.Length > 0 && Program.Settings.BookNameHebrewWithCommonName ) str += $" ({CommonName})";
-    if ( Translation.Length > 0 ) str += $" - {Translation}";
-    return str;
-  }
 
 }

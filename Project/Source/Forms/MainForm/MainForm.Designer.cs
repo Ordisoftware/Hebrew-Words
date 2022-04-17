@@ -221,9 +221,11 @@
       this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
-      this.EditExportUnicodeCharsElseHebrewFont = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditIncludeOriginalText = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditExportUseHebrewFontElseUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
@@ -278,7 +280,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1786,7 +1787,8 @@
             this.Sep7,
             this.ActionShowKeyboardNotice,
             this.toolStripSeparator11,
-            this.EditExportUnicodeCharsElseHebrewFont,
+            this.EditIncludeOriginalText,
+            this.EditExportUseHebrewFontElseUnicodeChars,
             this.toolStripSeparator27,
             this.EditShowTips,
             this.EditUseAdvancedDialogBoxes,
@@ -1863,13 +1865,6 @@
       this.Sep7.Name = "Sep7";
       resources.ApplyResources(this.Sep7, "Sep7");
       // 
-      // EditExportUnicodeCharsElseHebrewFont
-      // 
-      this.EditExportUnicodeCharsElseHebrewFont.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.ExportUnicodeCharsElseHebrewFont;
-      this.EditExportUnicodeCharsElseHebrewFont.CheckOnClick = true;
-      resources.ApplyResources(this.EditExportUnicodeCharsElseHebrewFont, "EditExportUnicodeCharsElseHebrewFont");
-      this.EditExportUnicodeCharsElseHebrewFont.Name = "EditExportUnicodeCharsElseHebrewFont";
-      // 
       // ActionShowKeyboardNotice
       // 
       resources.ApplyResources(this.ActionShowKeyboardNotice, "ActionShowKeyboardNotice");
@@ -1880,6 +1875,25 @@
       // 
       this.toolStripSeparator11.Name = "toolStripSeparator11";
       resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
+      // EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard
+      // 
+      this.EditIncludeOriginalText.Checked = true;
+      this.EditIncludeOriginalText.CheckOnClick = true;
+      this.EditIncludeOriginalText.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditIncludeOriginalText, "EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard");
+      this.EditIncludeOriginalText.Name = "EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard";
+      // 
+      // EditExportUseHebrewFontElseUnicodeChars
+      // 
+      this.EditExportUseHebrewFontElseUnicodeChars.CheckOnClick = true;
+      resources.ApplyResources(this.EditExportUseHebrewFontElseUnicodeChars, "EditExportUseHebrewFontElseUnicodeChars");
+      this.EditExportUseHebrewFontElseUnicodeChars.Name = "EditExportUseHebrewFontElseUnicodeChars";
+      // 
+      // toolStripSeparator27
+      // 
+      this.toolStripSeparator27.Name = "toolStripSeparator27";
+      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
       // 
       // EditShowTips
       // 
@@ -2216,11 +2230,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // toolStripSeparator27
-      // 
-      this.toolStripSeparator27.Name = "toolStripSeparator27";
-      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2422,33 +2431,33 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
-    public Ordisoftware.Hebrew.LettersControl EditSearchWord;
-    public System.Windows.Forms.Button ActionSearchRun;
-    public System.Windows.Forms.Panel PanelViewVerses;
-    public System.Windows.Forms.TabControl SelectSearchType;
-    public System.Windows.Forms.TabPage SelectSearchTypeHebrew;
-    public System.Windows.Forms.Timer TimerAutoSave;
-    public System.Windows.Forms.ToolStripButton ActionSave;
-    public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
-    public System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
+    internal Ordisoftware.Hebrew.LettersControl EditSearchWord;
+    internal System.Windows.Forms.Button ActionSearchRun;
+    internal System.Windows.Forms.Panel PanelViewVerses;
+    internal System.Windows.Forms.TabControl SelectSearchType;
+    internal System.Windows.Forms.TabPage SelectSearchTypeHebrew;
+    internal System.Windows.Forms.Timer TimerAutoSave;
+    internal System.Windows.Forms.ToolStripButton ActionSave;
+    internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
+    internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     private ToolStripDropDownButton ActionSettings;
     private ToolStripMenuItem MenuitemScreenPosition;
-    public ToolStripMenuItem EditScreenNone;
-    public ToolStripMenuItem EditScreenTopLeft;
-    public ToolStripMenuItem EditScreenTopRight;
-    public ToolStripMenuItem EditScreenBottomLeft;
-    public ToolStripMenuItem EditScreenBottomRight;
-    public ToolStripMenuItem EditScreenCenter;
+    internal ToolStripMenuItem EditScreenNone;
+    internal ToolStripMenuItem EditScreenTopLeft;
+    internal ToolStripMenuItem EditScreenTopRight;
+    internal ToolStripMenuItem EditScreenBottomLeft;
+    internal ToolStripMenuItem EditScreenBottomRight;
+    internal ToolStripMenuItem EditScreenCenter;
     private ToolStripMenuItem ActionResetWinSettings;
     private ToolStripSeparator Sep7;
     private ToolStripMenuItem ActionShowKeyboardNotice;
     private ToolStripSeparator toolStripSeparator11;
-    public ToolStripMenuItem EditShowTips;
-    public ToolStripMenuItem EditUseAdvancedDialogBoxes;
-    public ToolStripMenuItem EditSoundsEnabled;
-    public ToolStripMenuItem EditShowSuccessDialogs;
+    internal ToolStripMenuItem EditShowTips;
+    internal ToolStripMenuItem EditUseAdvancedDialogBoxes;
+    internal ToolStripMenuItem EditSoundsEnabled;
+    internal ToolStripMenuItem EditShowSuccessDialogs;
     private ToolStripSeparator toolStripSeparator15;
-    public ToolStripMenuItem EditConfirmClosing;
+    internal ToolStripMenuItem EditConfirmClosing;
     internal ToolStripMenuItem ActionViewParashotBoard;
     private ToolStripMenuItem ActionOpenCalculator;
     private RadioButton SelectSearchTranslationIncludeComments;
@@ -2456,7 +2465,7 @@
     private RadioButton SelectSearchTranslationOnlyTranslations;
     private TabPage TabPageVerseFiltered;
     private ToolStripButton ActionViewVerseFiltered;
-    public System.Windows.Forms.Panel PanelViewVerseFiltered;
+    internal System.Windows.Forms.Panel PanelViewVerseFiltered;
     private ToolStripSeparator toolStripSeparator17;
     private ComboBox SelectVerse;
     private ComboBoxNavigator SelectVerseNavigator;
@@ -2464,9 +2473,9 @@
     private BindingSource FilterChaptersBindingSource;
     private BindingSource FilterVersesBindingSource;
     private Panel PanelViewVerseFilters;
-    public Button ActionClearFilterVerse;
-    public Button ActionClearFilterChapter;
-    public Button ActionClearFilterBook;
+    internal Button ActionClearFilterVerse;
+    internal Button ActionClearFilterChapter;
+    internal Button ActionClearFilterBook;
     private TextBox EditFilterVerse;
     private TextBox EditFilterChapter;
     private TextBox EditFilterBook;
@@ -2479,10 +2488,10 @@
     private Label LabelFilterChapter;
     private Label LabelFilterVerse;
     private Button ActionGoFromVerseFilteredToVersesPanel;
-    public Button ActionApplyFilterVerse;
-    public Button ActionApplyFilterChapter;
-    public Button ActionApplyFilterBook;
-    public System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
+    internal Button ActionApplyFilterVerse;
+    internal Button ActionApplyFilterChapter;
+    internal Button ActionApplyFilterBook;
+    internal System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
@@ -2511,7 +2520,7 @@
     private Button ActionSearchWordOpenInLetters;
     private ToolStripSeparator toolStripSeparator3;
     private ToolStripSeparator toolStripSeparator7;
-    public SaveFileDialog SaveDataBoardDialog;
+    internal SaveFileDialog SaveDataBoardDialog;
     private ToolStripSeparator toolStripSeparator10;
     private ToolStripMenuItem ActionVerseReadDefault;
     private ToolStripMenuItem ActionWordSearchDefault;
@@ -2536,8 +2545,9 @@
     private ToolStripMenuItem ActionImportConsoleAuto;
     private ToolStripSeparator toolStripSeparator26;
     private ToolStripMenuItem ActionNormalizeTexts;
-    public ToolStripMenuItem EditExportUnicodeCharsElseHebrewFont;
+    internal ToolStripMenuItem EditExportUseHebrewFontElseUnicodeChars;
     private ToolStripSeparator toolStripSeparator27;
+    internal ToolStripMenuItem EditIncludeOriginalText;
   }
 }
 

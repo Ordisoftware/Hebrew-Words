@@ -50,11 +50,4 @@ public partial class VerseRow : AbstractRow
 
   public List<WordRow> Words { get; } = new();
 
-  public override string ToString()
-  {
-    string result = FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
-    if ( HasTranslation ) result += $" - {Translation}";
-    return result;
-  }
-
 }

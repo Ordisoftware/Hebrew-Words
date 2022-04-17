@@ -395,10 +395,10 @@
     <Setting Name="ExportWordPrintFullReference" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ExportUnicodeCharsElseHebrewFont" Type="System.Boolean" Scope="User">
+    <Setting Name="ExportUseHebrewFontElseUnicodeChars" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ExportUseHebrewFontElseUnicodeChars" Type="System.Boolean" Scope="User">
+    <Setting Name="IncludeOriginalTextWhileCopyingChapterTranslationToClipboard" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

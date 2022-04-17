@@ -11,13 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
 {
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void RenderChapterOriginal(bool isGrouped = false)
   {
     RenderText(EditChapterOriginal, false, isGrouped, () =>
@@ -26,9 +25,8 @@ partial class MainForm
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
         AddTextRightAligned(box, HebrewFont12, verse.InHebrew);
-        AddTextRightAligned(box, LatinFont10, $":{verse.Number}");
-        box.AppendText(Environment.NewLine);
-        box.AppendText(Environment.NewLine);
+        AddTextRightAligned(box, LatinFont10, $" :{verse.NumberFormatted}");
+        box.AppendText(Globals.NL2);
       }
       EditChapterOriginal.Rtf = box.Rtf;
     });

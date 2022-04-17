@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -25,8 +25,8 @@ partial class MainForm
       foreach ( var chapter in CurrentReference.Book.Chapters )
       {
         AddTextRightAligned(box, HebrewFont12, chapter.ELS50);
-        AddTextRightAligned(box, LatinFont10, $" :{chapter.Number}");
-        box.AppendText(Environment.NewLine);
+        AddTextRightAligned(box, LatinFont10, $" :{chapter.NumberFormatted}");
+        box.AppendText(Globals.NL);
       }
       EditChapterELS50.Rtf = box.Rtf;
     });

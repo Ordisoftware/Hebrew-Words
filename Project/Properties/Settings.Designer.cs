@@ -1598,24 +1598,24 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ExportUnicodeCharsElseHebrewFont {
-            get {
-                return ((bool)(this["ExportUnicodeCharsElseHebrewFont"]));
-            }
-            set {
-                this["ExportUnicodeCharsElseHebrewFont"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ExportUseHebrewFontElseUnicodeChars {
             get {
                 return ((bool)(this["ExportUseHebrewFontElseUnicodeChars"]));
             }
             set {
                 this["ExportUseHebrewFontElseUnicodeChars"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IncludeOriginalTextWhileCopyingChapterTranslationToClipboard {
+            get {
+                return ((bool)(this["IncludeOriginalTextWhileCopyingChapterTranslationToClipboard"]));
+            }
+            set {
+                this["IncludeOriginalTextWhileCopyingChapterTranslationToClipboard"] = value;
             }
         }
     }
