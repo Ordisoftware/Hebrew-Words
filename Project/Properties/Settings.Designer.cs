@@ -1618,5 +1618,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["IncludeOriginalTextWhileCopyingChapterTranslationToClipboard"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IncludeCommentWhileCopyingChapterTranslationToClipboard {
+            get {
+                return ((bool)(this["IncludeCommentWhileCopyingChapterTranslationToClipboard"]));
+            }
+            set {
+                this["IncludeCommentWhileCopyingChapterTranslationToClipboard"] = value;
+            }
+        }
     }
 }

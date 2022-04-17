@@ -280,6 +280,7 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.EditIncludeComment = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1788,6 +1789,7 @@
             this.ActionShowKeyboardNotice,
             this.toolStripSeparator11,
             this.EditIncludeOriginalText,
+            this.EditIncludeComment,
             this.EditExportUseHebrewFontElseUnicodeChars,
             this.toolStripSeparator27,
             this.EditShowTips,
@@ -1876,13 +1878,13 @@
       this.toolStripSeparator11.Name = "toolStripSeparator11";
       resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
       // 
-      // EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard
+      // EditIncludeOriginalText
       // 
       this.EditIncludeOriginalText.Checked = true;
       this.EditIncludeOriginalText.CheckOnClick = true;
       this.EditIncludeOriginalText.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditIncludeOriginalText, "EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard");
-      this.EditIncludeOriginalText.Name = "EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard";
+      resources.ApplyResources(this.EditIncludeOriginalText, "EditIncludeOriginalText");
+      this.EditIncludeOriginalText.Name = "EditIncludeOriginalText";
       // 
       // EditExportUseHebrewFontElseUnicodeChars
       // 
@@ -2230,6 +2232,14 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // EditIncludeComment
+      // 
+      this.EditIncludeComment.Checked = true;
+      this.EditIncludeComment.CheckOnClick = true;
+      this.EditIncludeComment.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditIncludeComment, "EditIncludeComment");
+      this.EditIncludeComment.Name = "EditIncludeComment";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2548,6 +2558,7 @@
     internal ToolStripMenuItem EditExportUseHebrewFontElseUnicodeChars;
     private ToolStripSeparator toolStripSeparator27;
     internal ToolStripMenuItem EditIncludeOriginalText;
+    internal ToolStripMenuItem EditIncludeComment;
   }
 }
 

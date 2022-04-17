@@ -619,11 +619,20 @@ partial class MainForm : Form
       case ViewMode.ChapterTranslation:
         if ( EditIncludeOriginalText.Checked )
           if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
-            Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslationWithComments);
+            if ( EditIncludeComment.Checked )
+              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslationWithComments);
+            else
+              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslation);
           else
+          if ( EditIncludeComment.Checked )
             Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslationWithComments);
+          else
+            Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslation);
         else
+          if ( EditIncludeComment.Checked )
           Clipboard.SetText(CurrentReference.Chapter.TranslationWithComments);
+        else
+          Clipboard.SetText(CurrentReference.Chapter.Translation);
         break;
       case ViewMode.ChapterOriginal:
         if ( EditExportUseHebrewFontElseUnicodeChars.Checked )

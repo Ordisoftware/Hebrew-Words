@@ -50,6 +50,7 @@ static class SettingsHelper
     MainForm.EditSoundsEnabled.Checked = true;
     MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = true;
     MainForm.EditIncludeOriginalText.Checked = true;
+    MainForm.EditIncludeComment.Checked = true;
     DisplayManager.AdvancedFormUseSounds = true;
     MainForm.EditUseAdvancedDialogBoxes.Checked = true;
     DisplayManager.FormStyle = MessageBoxFormStyle.Advanced;
@@ -103,6 +104,7 @@ static class SettingsHelper
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
       MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = settings.ExportUseHebrewFontElseUnicodeChars;
       MainForm.EditIncludeOriginalText.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
+      MainForm.EditIncludeComment.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
@@ -159,6 +161,7 @@ static class SettingsHelper
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
       settings.ExportUseHebrewFontElseUnicodeChars = MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked;
       settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeOriginalText.Checked;
+      settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeComment.Checked;
       SystemManager.TryCatch(settings.Save);
     }
     finally

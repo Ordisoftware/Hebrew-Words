@@ -4214,32 +4214,32 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXmSURBVFhHzZd7UFRlGMaZ0eyPsss0rTP9U9nFUgRBLkpy
+        kzAJNQslydm8lYY2lZeSi4GMecmZnHHCJtllAbkIcl9gBfMGIwwOpimKCoXiXthdruLKLrDu0/ueg2Wt
+        ybL6R+/Mb863Z7/3eZ7znd3v7Lr8H2qsR0xFuXvcYbjHHoZHfCXcYlVw3VyBKQ8Ja7DmtDhVPfuIdvY1
+        nidd7IXApI1luNBtw9kOKzH0kFjR2AMhBPk8JdrZ1/OctMFgxedHOvHqVyU4rR/C6go9oom1KufgXtZo
+        0FuFlWAf0c6+JDyhTjeEtZVGvLa+BKc0A1hdpkN0+d985iD39rBGrXbwbgCJaGdfkqkxFajRDGKNyohJ
+        G0px8oYFq0rbCR2kRVpEFTAaB9EKPdzLGtXqAbA++4h29iUEOHp9EKvKxQBHWi34uLgdS0jM2eJe1vjl
+        mgMB3GiCqnUAy5UGvEEByn83Y2mhFosPaYblRl/cyxoVf1jA+uwj2tmXxD1GheJmM6QlBry5sRRFV/sR
+        la9DZJ4GYZlqBKe1IUjhGDyXe7iXNYqa+8H67CPa2ZcQIO+yGVHFBkymALmX+hF5SIeIXOdvAfeyRm6T
+        2YEAtPFkNt5GZKEeUzaV4sAFExblaQkNFuSoEZ41OriHe1kjs9FE+8AIAabRBPlvtxGRr4crBZCdNeH9
+        gxSAroLhq4mg1w4x3MOwhvycCazPPqKdfUloq8S+MyYszNVj6telSG7ow3vZWnzwb/FRwL2sse/MLd6K
+        HxzAgybsOW3CvBw93CjAnvo+hGdqsYAEWMQZuJc19tTfAuuzj2hnXxJPmrCz9ibCstrh/o0SO0/1Ym6G
+        hgQ0mOck3MsarMv67CPa2ZcQIKnmJuZktmPaZiWSqnsRmk4CB+hr6CTc+3aGFltr+iiA8DD67wDT41WI
+        PdaLkAw9PChA7NEehCg0Qog5ThKSroO/woiEo3RR8VUjB9hQ1YOgNB08Y5TYUNmNoFQ1ZivUFGT0BCu0
+        8JMbsS01DZWFuzE57sSDA3hRgHUV3fBPbRcCrCvvgn+KGoEyNYLkoyOQ8JO1w+9nNVDzIVAnxZS4Yw8O
+        4E0B1pR1I4ACTKcAq5UUwAlzJkCuhVdKJ5JTdgCabECbi23fx48QYIsKK0u6EKCgALFKrCjuRMAoAgTK
+        NYKxv1yHGTIjQlOuoDc7CBiqI05DnRU+cgBpkRjAiwJICx0PwKa+sg54ynrgltKHSfstyE9ZD5z/AdB/
+        B5t+B8zn96Flr3sBeY0RLf9ZQoAlBR0IHA6wJN9IV3R/w3vhK58h70BBWgwaFJGwKV6CRTYRfenTyTgf
+        1tZoDBFWfRGM6bNgkHnAkOoFTapvo1rhl0PeQiCJDwWIyDMKAbwpQESuQfgw3c/0XnjZfWSdaEufDbTs
+        Aqy05JZaYLAZ1rYEOqwRsLYlwjbYApulnt6vhvnSVhh+mmki7yfFAN+qsOCgkZ7nFCBOSU8zxwLwCvjJ
+        9ZiVosOV1DlA7VzcuboMA5eXY6BpJR0/FRHGyynMSphqF6El2aOLfD0I4ZcyBTiMsGwD7QN6+MSV0Zas
+        JwONQwTSKsyUG+CaYqJ7vxHW2nmwXtsOS+MyWC6uEKHx0LUduFW9ELXbph4nz5nEC8RjQgDfhEqEZnUi
+        OMMIn/gKhGZ20C8bPdHuEIFpBvgqehC4/zpsJ+fjjvpHmC9IiWXDSDF4Yy9uVi7C2LEu3uQ54a451/Oe
+        caVqDsHMSKgSjr60Ko7Aq+e1pYo2mxNYv3030LQJA5ei0X/+o+EQUhovhaVpHW7/Govjia5fkOc40Vqs
+        pwl3IpgIeQjeqdwVVIfrSTCfWwzTqYXozAkU4HH/uUhYmhNxcY9nBs19nPireCk4BP9z4c3CWV7pUoYb
+        Bho/QU9ZKK4me7aOGzMmjOExnzM3fQlD5rtGmjueeLQ1ccITkh7lfCQlvmXbHvVyHJ3ie/3iMN58Likx
+        wNZ1KIR3xeeIR17PEPzV8iNeJ54leHUZHvM5fo/n8FwqF5c/Afc8RpGFhd3zAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -5486,14 +5486,23 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
     <value>431, 6</value>
   </data>
-  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="EditIncludeOriginalText.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditIncludeOriginalText.Size" type="System.Drawing.Size, System.Drawing">
     <value>434, 22</value>
   </data>
-  <data name="EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Text" xml:space="preserve">
+  <data name="EditIncludeOriginalText.Text" xml:space="preserve">
     <value>Include original text while copying a chapter translation to clipboard</value>
+  </data>
+  <data name="EditIncludeComment.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="EditIncludeComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 22</value>
+  </data>
+  <data name="EditIncludeComment.Text" xml:space="preserve">
+    <value>Include comment while copying a chapter translation to clipboard</value>
   </data>
   <data name="EditExportUseHebrewFontElseUnicodeChars.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -6822,10 +6831,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Name" xml:space="preserve">
-    <value>EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard</value>
+  <data name="&gt;&gt;EditIncludeOriginalText.Name" xml:space="preserve">
+    <value>EditIncludeOriginalText</value>
   </data>
-  <data name="&gt;&gt;EditIncludeOiginalTextWhileCopyingChapterTranslationToClipboard.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditIncludeOriginalText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditExportUseHebrewFontElseUnicodeChars.Name" xml:space="preserve">
@@ -7151,6 +7160,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;SaveDataBoardDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditIncludeComment.Name" xml:space="preserve">
+    <value>EditIncludeComment</value>
+  </data>
+  <data name="&gt;&gt;EditIncludeComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
