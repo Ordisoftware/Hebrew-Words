@@ -198,7 +198,9 @@ These options can be used to control the software when it is already running, bu
 | Ctrl + F | Find verse in current chapter |
 | Ctrl + S | Save changes |
 | Alt + Left | Previous verse |
-| Alt + Right | Next verse |
+| Alt + Right | Next verse in single verse, translation and original views |
+| Alt + Home | First verse in single verse, translation and original views |
+| Alt + End | Last verse |
 | Shift + Alt + Left | First verse |
 | Shift + Alt + Right | Next verse |
 | Shift + Alt + Up | Last verse of previous chapter |
