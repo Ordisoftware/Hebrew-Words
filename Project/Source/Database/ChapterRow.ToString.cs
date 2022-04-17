@@ -49,13 +49,13 @@ public partial class ChapterRow
     => Verses.Select(verse => verse.Number + " : " + Globals.NL2 + verse.Comment).AsMultiDoubleLine();
 
   public string HebrewWithTranslationWithComments
-    => Verses.Select(verse => $"{verse.NumberFormatted}:" + verse.AsHebrew + Globals.NL2 +
+    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew + Globals.NL2 +
                               ( verse.Comment.Length == 0
                                 ? verse.Translation
                                 : verse.Translation + Globals.NL2 + verse.Comment )).AsMultiDoubleLine();
 
   public string UnicodeWithTranslationWithComments
-    => Verses.Select(verse => $"{verse.NumberFormatted}:" + verse.AsUnicode + Globals.NL2 +
+    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode + Globals.NL2 +
                               ( verse.Comment.Length == 0
                                 ? verse.Translation
                                 : verse.Translation + Globals.NL2 + verse.Comment )).AsMultiDoubleLine();
