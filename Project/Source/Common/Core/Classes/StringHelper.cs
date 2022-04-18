@@ -21,12 +21,6 @@ static partial class StringHelper
 {
 
   /// <summary>
-  /// RegEx to replace multiple empty lines by one.
-  /// </summary>
-  static private readonly Regex RegExReplaceMultipleEmptyLines
-    = new("[\r\n]+", RegexOptions.None, TimeSpan.FromSeconds(1));
-
-  /// <summary>
   /// RegEx to replace multiple spaces by one.
   /// </summary>
   static private readonly Regex RegExReplaceMultipleSpaces
@@ -102,46 +96,80 @@ static partial class StringHelper
     => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
 
   /// <summary>
-  /// Replace all double and more contiguous empty lines by one.
+  /// Replaces all double and more contiguous empty lines by one.
+  /// Also replace \n alone by Windows NewLine.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string SanitizeEmptyLines(this string str)
-    => RegExReplaceMultipleEmptyLines.Replace(str, Globals.NL);
+  {
+    if ( str.IsNullOrEmpty() ) return str;
+    if ( str.IndexOf('\n') >= 0 && !str.Contains(Globals.NL) )
+      str = str.Replace("\n", Globals.NL);
+    var lines = str.SplitKeepEmptyLines();
+    var result = new List<string>();
+    bool isPreviousEmpty = false;
+    for ( int index = 0; index < lines.Length; index++ )
+    {
+      ref string line = ref lines[index];
+      bool isEmpty = line.IsNullOrEmpty();
+      if ( isEmpty )
+      {
+        if ( !isPreviousEmpty )
+        {
+          result.Add(line);
+          isPreviousEmpty = true;
+        }
+      }
+      else
+      {
+        result.Add(line);
+        isPreviousEmpty = false;
+      }
+    }
+    return result.AsMultiLine();
+  }
 
   /// <summary>
-  /// Replace all double and more contiguous spaces by one.
+  /// Replaces all double and more contiguous spaces by one.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string SanitizeSpaces(this string str)
     => RegExReplaceMultipleSpaces.Replace(str, " ");
 
   /// <summary>
-  /// Replace all double and more contiguous empty lines as well as spaces by one.
+  /// Replaces all double and more contiguous empty lines as well as spaces by one.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string SanitizeEmptyLinesAndSpaces(this string str)
     => str.SanitizeSpaces().SanitizeEmptyLines();
 
   /// <summary>
-  /// Remove all starting and ending empty lines.
+  /// Removes all starting and ending empty lines.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimEmptyLines(this string str)
     => str.Trim(EmptyLineCharArray);
 
   /// <summary>
-  /// Remove all starting and ending spaces.
+  /// Removes all starting and ending spaces.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimSpaces(this string str)
     => str.Trim(' ');
 
   /// <summary>
-  /// Remove all starting and ending empty lines and spaces.
+  /// Removes all starting and ending empty lines and spaces.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimEmptyLinesAndSpaces(this string str)
     => str.Trim(EmptyLineAndSpaceCharArray);
+
+  /// <summary>
+  /// Sanitizes and trims empty lines and spaces a string.
+  /// </summary>
+  /// <param name="str"></param>
+  static public string SanitizeAndTrimEmptyLinesAndSpaces(this string str)
+    => str.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
 
   /// <summary>
   /// Trims any first and last char.
@@ -270,7 +298,7 @@ static partial class StringHelper
     => string.Join(withSpaceAfter ? ", " : ",", list.Select(o => o.ToString()));
 
   /// <summary>
-  /// Creates a multi-newlined string from a string enumeration.
+  /// Creates a multi-newlines string from a string enumeration.
   /// </summary>
   /// <returns>
   /// A string.
@@ -280,7 +308,7 @@ static partial class StringHelper
     => string.Join(Globals.NL, list);
 
   /// <summary>
-  /// Creates a multi-newlined string from a string enumeration.
+  /// Creates a multi-newlines string from a string enumeration.
   /// </summary>
   /// <returns>
   /// A string.

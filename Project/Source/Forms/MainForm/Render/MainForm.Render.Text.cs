@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -63,6 +63,43 @@ partial class MainForm
     textbox.SelectionColor = color;
     textbox.SelectionAlignment = TextAlign.Right;
     textbox.AppendText(str);
+  }
+
+  private string GetChapterTranslationText(bool forceUnicode = false)
+  {
+    if ( EditIncludeOriginalText.Checked )
+
+      if ( forceUnicode || !EditExportUseHebrewFontElseUnicodeChars.Checked )
+        if ( EditIncludeComment.Checked )
+          return CurrentReference.Chapter.UnicodeWithTranslationWithComments;
+        else
+          return CurrentReference.Chapter.UnicodeWithTranslation;
+      else
+      if ( EditIncludeComment.Checked )
+        return CurrentReference.Chapter.HebrewWithTranslationWithComments;
+      else
+        return CurrentReference.Chapter.HebrewWithTranslation;
+    else
+    if ( EditIncludeComment.Checked )
+      return CurrentReference.Chapter.TranslationWithComments;
+    else
+      return CurrentReference.Chapter.Translation;
+  }
+
+  private string GetChapterOriginalText()
+  {
+    if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
+      return CurrentReference.Chapter.AsHebrewWithNumber;
+    else
+      return CurrentReference.Chapter.AsUnicodeWithNumber;
+  }
+
+  private string GetBookELS50Text()
+  {
+    if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
+      return CurrentReference.Book.ELS50AsHebrewWithNumber;
+    else
+      return CurrentReference.Book.ELS50AsUnicodeWithNumber;
   }
 
 }

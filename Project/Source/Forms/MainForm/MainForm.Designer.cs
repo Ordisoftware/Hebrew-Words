@@ -224,6 +224,7 @@
       this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.EditIncludeOriginalText = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditIncludeComment = new System.Windows.Forms.ToolStripMenuItem();
       this.EditExportUseHebrewFontElseUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
@@ -280,7 +281,6 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.EditIncludeComment = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1226,7 +1226,7 @@
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true));
+      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -1885,6 +1885,16 @@
       this.EditIncludeOriginalText.CheckState = System.Windows.Forms.CheckState.Checked;
       resources.ApplyResources(this.EditIncludeOriginalText, "EditIncludeOriginalText");
       this.EditIncludeOriginalText.Name = "EditIncludeOriginalText";
+      this.EditIncludeOriginalText.Click += new System.EventHandler(this.EditChapterTranslationOption_Click);
+      // 
+      // EditIncludeComment
+      // 
+      this.EditIncludeComment.Checked = true;
+      this.EditIncludeComment.CheckOnClick = true;
+      this.EditIncludeComment.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditIncludeComment, "EditIncludeComment");
+      this.EditIncludeComment.Name = "EditIncludeComment";
+      this.EditIncludeComment.Click += new System.EventHandler(this.EditChapterTranslationOption_Click);
       // 
       // EditExportUseHebrewFontElseUnicodeChars
       // 
@@ -2232,14 +2242,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // EditIncludeComment
-      // 
-      this.EditIncludeComment.Checked = true;
-      this.EditIncludeComment.CheckOnClick = true;
-      this.EditIncludeComment.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditIncludeComment, "EditIncludeComment");
-      this.EditIncludeComment.Name = "EditIncludeComment";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2388,7 +2390,6 @@
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.ToolStripButton ActionExit;
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
-    private System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripButton ActionViewELS50;
     private System.Windows.Forms.ToolStripButton ActionViewRawText;
     private System.Windows.Forms.ToolStripButton ActionViewSearch;
@@ -2559,6 +2560,7 @@
     private ToolStripSeparator toolStripSeparator27;
     internal ToolStripMenuItem EditIncludeOriginalText;
     internal ToolStripMenuItem EditIncludeComment;
+    internal ToolStripButton ActionPreferences;
   }
 }
 

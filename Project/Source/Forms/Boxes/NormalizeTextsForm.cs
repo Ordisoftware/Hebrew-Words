@@ -22,4 +22,9 @@ partial class NormalizeTextsForm : Form
     InitializeComponent();
   }
 
+  private void ActionOpenPreferences_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.ActionPreferences.PerformClick();
+  }
+
 }

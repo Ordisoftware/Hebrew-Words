@@ -352,6 +352,11 @@ partial class MainForm : Form
     DisplayManager.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
   }
 
+  private void EditChapterTranslationOption_Click(object sender, EventArgs e)
+  {
+    ActionRefresh.PerformClick();
+  }
+
   #endregion
 
   #region Menu Information
@@ -617,34 +622,13 @@ partial class MainForm : Form
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterTranslation:
-        if ( EditIncludeOriginalText.Checked )
-          if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
-            if ( EditIncludeComment.Checked )
-              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslationWithComments);
-            else
-              Clipboard.SetText(CurrentReference.Chapter.HebrewWithTranslation);
-          else
-          if ( EditIncludeComment.Checked )
-            Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslationWithComments);
-          else
-            Clipboard.SetText(CurrentReference.Chapter.UnicodeWithTranslation);
-        else
-          if ( EditIncludeComment.Checked )
-          Clipboard.SetText(CurrentReference.Chapter.TranslationWithComments);
-        else
-          Clipboard.SetText(CurrentReference.Chapter.Translation);
+        Clipboard.SetText(GetChapterTranslationText());
         break;
       case ViewMode.ChapterOriginal:
-        if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
-          Clipboard.SetText(CurrentReference.Chapter.AsHebrewWithNumber);
-        else
-          Clipboard.SetText(CurrentReference.Chapter.AsUnicodeWithNumber);
+        Clipboard.SetText(GetChapterOriginalText());
         break;
       case ViewMode.BookELS50:
-        if ( EditExportUseHebrewFontElseUnicodeChars.Checked )
-          Clipboard.SetText(CurrentReference.Book.ELS50AsHebrewWithNumber);
-        else
-          Clipboard.SetText(CurrentReference.Book.ELS50AsUnicodeWithNumber);
+        Clipboard.SetText(GetBookELS50Text());
         break;
       default:
         throw new AdvNotImplementedException(Settings.CurrentView);
@@ -724,8 +708,8 @@ partial class MainForm : Form
                                                              Settings.VacuumAtStartupDaysInterval,
                                                              true);
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-      // TODO ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-      // TODO ApplicationStatistics.UpdateDBFileSizeRequired = true;
+      ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      ApplicationStatistics.UpdateDBFileSizeRequired = true;
       DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
     }
     finally
@@ -777,7 +761,8 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    if ( new NormalizeTextsForm().ShowDialog() != DialogResult.OK ) return;
+    using var form = new NormalizeTextsForm();
+    if ( form.ShowDialog() != DialogResult.OK ) return;
     // TODO normalize texts
   }
 
@@ -1307,6 +1292,8 @@ partial class MainForm : Form
     var control = (Control)sender;
     control.BackColor = Color.LightYellow;
     TextBoxMutex = false;
+    if ( Settings.AutoSaveOnLeaveControl )
+      MainForm.Instance.ActionSave_Click(MainForm.Instance.ActionSave, EventArgs.Empty);
   }
 
   /// <summary>
@@ -1416,12 +1403,9 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionEditBookMemo_Click(object sender, EventArgs e)
   {
-    using var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Transcription ?? string.Empty;
-    form.TextBox.Text = CurrentReference.Book.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      CurrentReference.Book.Memo = form.TextBox.Text;
+    if ( CurrentReference is null ) return;
+    if ( EditMemoForm.Run(CurrentReference.Book.Transcription, CurrentReference.Book.Memo, out var memo) )
+      CurrentReference.Book.Memo = memo;
   }
 
   /// <summary>
@@ -1431,15 +1415,13 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
   {
-    using var form = new EditMemoForm();
-    form.Text += ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Transcription
-               + " " + AppTranslations.BookChapterTitle.GetLang().ToLower()
-               + " " + ( SelectChapter.SelectedItem as ChapterRow )?.Number
-              ?? string.Empty;
-    form.TextBox.Text = CurrentReference.Chapter.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      EditChapterMemo.Text = form.TextBox.Text;
+    if ( CurrentReference is null ) return;
+    string title = string.Join(" ",
+                               CurrentReference.Book.Transcription,
+                               AppTranslations.BookChapterTitle.GetLang().ToLower(),
+                               CurrentReference.Chapter.Number);
+    if ( EditMemoForm.Run(title, CurrentReference.Chapter.Memo, out var memo) )
+      CurrentReference.Chapter.Memo = memo;
   }
 
   /// <summary>

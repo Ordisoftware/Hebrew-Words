@@ -36,33 +36,33 @@ static class ExportDocX
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
-  static private float DocumentMargin = 75.0f;
-  static private bool DocumentDifferentOddAndEvenPages = true;
+  static private readonly float DocumentMargin = 75.0f;
+  static private readonly bool DocumentDifferentOddAndEvenPages = true;
 
-  static private string Heading1 = "Heading1";
-  static private int Heading1TextSize = 32;
-  static private int Heading1TextSizeSub = 24;
+  static private readonly string Heading1 = "Heading1";
+  static private readonly int Heading1TextSize = 32;
+  static private readonly int Heading1TextSizeSub = 24;
 
-  static private string Heading2 = "Heading2";
-  static private int Heading2TextSize = 20;
-  static private int Heading2TextSizeSub = 15;
+  static private readonly string Heading2 = "Heading2";
+  static private readonly int Heading2TextSize = 20;
+  static private readonly int Heading2TextSizeSub = 15;
 
-  static private int TableWidth = 450;
-  static private int WordColumnCount = 4;
-  static private int CellVerseWidth = 55;
-  static private int CellCommentWidth = TableWidth - CellVerseWidth;
+  static private readonly int TableWidth = 450;
+  static private readonly int WordColumnCount = 4;
+  static private readonly int CellVerseWidth = 55;
+  static private readonly int CellCommentWidth = TableWidth - CellVerseWidth;
 
-  static private int MemoCellMargin = 8;
-  static private int MemoTextSpacing = 5;
-  static private int MemoTextSize = 10;
+  static private readonly int MemoCellMargin = 8;
+  static private readonly int MemoTextSpacing = 5;
+  static private readonly int MemoTextSize = 10;
 
-  static private int CellVerseMarginLeft = 5;
-  static private int CellVerseMarginRight = 0;
-  static private bool VerseRefTextInBold = true;
-  static private int VerseRefTextSize = 12;
-  static private int WordHebrewTextSize = 16;
-  static private int WordTranslationTextSize = 10;
-  static private int WordTextSpacing = 10;
+  static private readonly int CellVerseMarginLeft = 5;
+  static private readonly int CellVerseMarginRight = 0;
+  static private readonly bool VerseRefTextInBold = true;
+  static private readonly int VerseRefTextSize = 12;
+  static private readonly int WordHebrewTextSize = 16;
+  static private readonly int WordTranslationTextSize = 10;
+  static private readonly int WordTextSpacing = 10;
 
   /// <summary>
   /// Exports a book to MS Word file.

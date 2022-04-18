@@ -1610,24 +1610,48 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool IncludeOriginalTextWhileCopyingChapterTranslationToClipboard {
+        public bool IncludeOriginalTextInChapterTranslation {
             get {
-                return ((bool)(this["IncludeOriginalTextWhileCopyingChapterTranslationToClipboard"]));
+                return ((bool)(this["IncludeOriginalTextInChapterTranslation"]));
             }
             set {
-                this["IncludeOriginalTextWhileCopyingChapterTranslationToClipboard"] = value;
+                this["IncludeOriginalTextInChapterTranslation"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IncludeCommentWhileCopyingChapterTranslationToClipboard {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IncludeCommentInChapterTranslation {
             get {
-                return ((bool)(this["IncludeCommentWhileCopyingChapterTranslationToClipboard"]));
+                return ((bool)(this["IncludeCommentInChapterTranslation"]));
             }
             set {
-                this["IncludeCommentWhileCopyingChapterTranslationToClipboard"] = value;
+                this["IncludeCommentInChapterTranslation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point EditMemoFormLastLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["EditMemoFormLastLocation"]));
+            }
+            set {
+                this["EditMemoFormLastLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size EditMemoFormLastSize {
+            get {
+                return ((global::System.Drawing.Size)(this["EditMemoFormLastSize"]));
+            }
+            set {
+                this["EditMemoFormLastSize"] = value;
             }
         }
     }

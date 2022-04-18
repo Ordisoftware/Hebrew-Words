@@ -77,7 +77,7 @@ partial class MainForm
           return true;
         // Navigate in history
         case Keys.Control | Keys.Shift | Keys.P:
-          ActionSearchNavigatePrevious.PerformClick();
+          ActionHistoryVerseBack.PerformClick();
           return true;
         case Keys.Control | Keys.Shift | Keys.N:
           ActionHistoryVerseNext.PerformClick();
@@ -145,7 +145,10 @@ partial class MainForm
           break;
         case Keys.Control | Keys.K:
           if ( ActiveControl is VerseControl )
+          {
             ActionSearchWord.PerformClick();
+            return true;
+          }
           break;
         case Keys.Control | Keys.W:
           if ( ActiveControl is VerseControl controlVerseWord )
@@ -154,12 +157,16 @@ partial class MainForm
               ContextMenuStripWord.Show(controlWord.LabelHebrew, controlWord.LabelHebrew.Width, 5);
               ActionWordSearchOnline.ShowDropDown();
               ActionWordSearchOnline.DropDownItems[0].Select();
+              return true;
             }
           break;
         case Keys.Shift | Keys.Control | Keys.W:
           if ( ActiveControl is VerseControl controlVerseWordDefault )
             if ( controlVerseWordDefault.ActiveControl is WordControl controlWordDefault )
+            {
               HebrewTools.OpenWordProvider(Settings.SearchOnlineURL, controlWordDefault.Reference?.Word?.Hebrew);
+              return true;
+            }
           break;
         case Keys.Control | Keys.O:
           if ( ActiveControl is VerseControl controlVerseLabel )
@@ -167,6 +174,7 @@ partial class MainForm
             ContextMenuStripVerse.Show(controlVerseLabel.LabelVerseNumber, controlVerseLabel.LabelVerseNumber.Width, 5);
             ActionVerseReadOnline.ShowDropDown();
             ActionVerseReadOnline.DropDownItems[0].Select();
+            return true;
           }
           break;
         case Keys.Shift | Keys.Control | Keys.O:
@@ -175,7 +183,10 @@ partial class MainForm
           break;
         case Keys.Control | Keys.Alt | Keys.I:
           if ( ActiveControl is VerseControl )
+          {
             ActionImportConsole.PerformClick();
+            return true;
+          }
           return true;
         // Verse navigation
         case Keys.Shift | Keys.Alt | Keys.Up:
@@ -187,6 +198,7 @@ partial class MainForm
               {
                 var verse = chapter.Verses[chapter.Verses.Count - 1];
                 GoToReference(new ReferenceItem(CurrentReference.Book, chapter, verse));
+                return true;
               }
             }
           break;
@@ -195,7 +207,11 @@ partial class MainForm
             if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
-              if ( chapter is not null ) GoToReference(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
+              if ( chapter is not null )
+              {
+                GoToReference(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));
+                return true;
+              }
             }
           break;
         case Keys.Shift | Keys.Alt | Keys.Left:
@@ -206,39 +222,64 @@ partial class MainForm
         case Keys.Shift | Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
+            {
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              return true;
+            }
           break;
         case Keys.Alt | Keys.Left:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number > 1 )
+            {
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number - 1);
+              return true;
+            }
           break;
         case Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
+            {
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Verse.Number + 1);
+              return true;
+            }
           break;
         // Scrolling bounds
         case Keys.Alt | Keys.Home:
           switch ( Settings.CurrentView )
           {
             case ViewMode.ChapterVerses:
-              return scroll(PanelViewVerses, 0, false);
+              if ( SelectRenderAllVerses.Checked )
+                scroll(PanelViewVerses, 0, false);
+              else
+                GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
+              return true;
             case ViewMode.VerseFiltered:
               return scroll(PanelViewVerseFiltered, 0, false);
             case ViewMode.Search:
               return scroll(PanelSearchResults, 0, false);
+            case ViewMode.ChapterTranslation:
+            case ViewMode.ChapterOriginal:
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
+              return true;
           }
           break;
         case Keys.Alt | Keys.End:
           switch ( Settings.CurrentView )
           {
             case ViewMode.ChapterVerses:
-              return scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
+              if ( SelectRenderAllVerses.Checked )
+                scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
+              else
+                GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              return true;
             case ViewMode.VerseFiltered:
               return scroll(PanelViewVerseFiltered, PanelViewVerseFiltered.DisplayRectangle.Height, false);
             case ViewMode.Search:
               return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
+            case ViewMode.ChapterTranslation:
+            case ViewMode.ChapterOriginal:
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              return true;
           }
           break;
         // Scrolling small

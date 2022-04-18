@@ -34,7 +34,7 @@ public partial class VerseRow
   public string Translation
     => Words.Select(word =>
     {
-      var str = word.Translation.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
+      var str = word.Translation;
       return str.Length > 0 ? str : "[...]";
     }).AsMultiSpace();
 

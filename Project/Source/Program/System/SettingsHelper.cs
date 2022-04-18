@@ -103,8 +103,11 @@ static class SettingsHelper
       DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
       MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = settings.ExportUseHebrewFontElseUnicodeChars;
-      MainForm.EditIncludeOriginalText.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
-      MainForm.EditIncludeComment.Checked = settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard;
+      MainForm.EditIncludeOriginalText.Checked = settings.IncludeOriginalTextInChapterTranslation;
+      MainForm.EditIncludeComment.Checked = settings.IncludeOriginalTextInChapterTranslation;
+      //
+      EditMemoForm.LastLocation = settings.EditMemoFormLastLocation;
+      EditMemoForm.LastSize = settings.EditMemoFormLastSize;
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
@@ -160,8 +163,11 @@ static class SettingsHelper
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
       settings.ExportUseHebrewFontElseUnicodeChars = MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked;
-      settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeOriginalText.Checked;
-      settings.IncludeOriginalTextWhileCopyingChapterTranslationToClipboard = MainForm.EditIncludeComment.Checked;
+      settings.IncludeOriginalTextInChapterTranslation = MainForm.EditIncludeOriginalText.Checked;
+      settings.IncludeOriginalTextInChapterTranslation = MainForm.EditIncludeComment.Checked;
+      //
+      settings.EditMemoFormLastLocation = EditMemoForm.LastLocation;
+      settings.EditMemoFormLastSize = EditMemoForm.LastSize;
       SystemManager.TryCatch(settings.Save);
     }
     finally
