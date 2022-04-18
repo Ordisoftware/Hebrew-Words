@@ -306,7 +306,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="FontSizeCommentary" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">8</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="BookNameHebrewWithCommonName" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

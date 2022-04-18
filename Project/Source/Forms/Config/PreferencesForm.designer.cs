@@ -95,6 +95,7 @@
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.LabelInfoOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.EditSearchHebrewCharsInBold = new System.Windows.Forms.CheckBox();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
@@ -206,7 +207,7 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-      this.EditSearchHebrewCharsInBold = new System.Windows.Forms.CheckBox();
+      this.ActionResetRendering = new System.Windows.Forms.Button();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -739,6 +740,15 @@
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       // 
+      // EditSearchHebrewCharsInBold
+      // 
+      resources.ApplyResources(this.EditSearchHebrewCharsInBold, "EditSearchHebrewCharsInBold");
+      this.EditSearchHebrewCharsInBold.Checked = true;
+      this.EditSearchHebrewCharsInBold.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditSearchHebrewCharsInBold.Name = "EditSearchHebrewCharsInBold";
+      this.EditSearchHebrewCharsInBold.UseVisualStyleBackColor = true;
+      this.EditSearchHebrewCharsInBold.CheckedChanged += new System.EventHandler(this.EditSearchHebrewCharsInBold_CheckedChanged);
+      // 
       // EditVolume
       // 
       resources.ApplyResources(this.EditVolume, "EditVolume");
@@ -945,6 +955,7 @@
       // 
       this.TabPageRendering.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageRendering.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageRendering.Controls.Add(this.ActionResetRendering);
       this.TabPageRendering.Controls.Add(this.LabelInfoSearchMinRefForDialog);
       this.TabPageRendering.Controls.Add(this.LabelInfoSearchDisplayMaxRef);
       this.TabPageRendering.Controls.Add(this.LabelFontSizeCommentaryInfo);
@@ -1640,14 +1651,14 @@
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
       // 
-      // EditSearchHebrewCharsInBold
+      // ActionResetRendering
       // 
-      resources.ApplyResources(this.EditSearchHebrewCharsInBold, "EditSearchHebrewCharsInBold");
-      this.EditSearchHebrewCharsInBold.Checked = true;
-      this.EditSearchHebrewCharsInBold.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSearchHebrewCharsInBold.Name = "EditSearchHebrewCharsInBold";
-      this.EditSearchHebrewCharsInBold.UseVisualStyleBackColor = true;
-      this.EditSearchHebrewCharsInBold.CheckedChanged += new System.EventHandler(this.EditSearchHebrewCharsInBold_CheckedChanged);
+      this.ActionResetRendering.AllowDrop = true;
+      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetRendering, "ActionResetRendering");
+      this.ActionResetRendering.Name = "ActionResetRendering";
+      this.ActionResetRendering.UseVisualStyleBackColor = true;
+      this.ActionResetRendering.Click += new System.EventHandler(this.ActionResetRendering_Click);
       // 
       // PreferencesForm
       // 
@@ -1879,5 +1890,6 @@
     private TabPage TabPageEdition;
     private TabPage TabPageMouse;
     private CheckBox EditSearchHebrewCharsInBold;
+    private Button ActionResetRendering;
   }
 }
