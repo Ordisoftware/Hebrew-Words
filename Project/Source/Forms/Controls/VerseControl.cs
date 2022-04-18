@@ -209,7 +209,7 @@ public partial class VerseControl : UserControl
             line = line.Substring(Program.Settings.CommentLinePrefix.Length);
           changed = true;
         }
-        if ( !line.EndsWith(".") )
+        if ( !line.EndsWith(".", StringComparison.Ordinal) )
         {
           line += ".";
           changed = true;

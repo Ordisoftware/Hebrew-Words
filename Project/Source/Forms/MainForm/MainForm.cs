@@ -761,7 +761,8 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    if ( new NormalizeTextsForm().ShowDialog() != DialogResult.OK ) return;
+    using var form = new NormalizeTextsForm();
+    if ( form.ShowDialog() != DialogResult.OK ) return;
     // TODO normalize texts
   }
 
@@ -1415,9 +1416,10 @@ partial class MainForm : Form
   private void ActionEditChapterMemo_Click(object sender, EventArgs e)
   {
     if ( CurrentReference is null ) return;
-    string title = CurrentReference.Book.Transcription + " " +
-                   AppTranslations.BookChapterTitle.GetLang().ToLower() + " " +
-                   CurrentReference.Chapter.Number;
+    string title = string.Join(" ",
+                               CurrentReference.Book.Transcription,
+                               AppTranslations.BookChapterTitle.GetLang().ToLower(),
+                               CurrentReference.Chapter.Number);
     if ( EditMemoForm.Run(title, CurrentReference.Chapter.Memo, out var memo) )
       CurrentReference.Chapter.Memo = memo;
   }

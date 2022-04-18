@@ -94,7 +94,8 @@ public partial class WordControl : UserControl
   {
     EditTranslation.BackColor = Settings.ThemeTranslationBack;
     EditTranslation.Text = EditTranslation.Text.SanitizeAndTrimEmptyLinesAndSpaces();
-    if ( Reference.Word.Number == Reference.Verse.Words.Count && !EditTranslation.Text.EndsWith(".") )
+    if ( Reference.Word.Number == Reference.Verse.Words.Count 
+      && !EditTranslation.Text.EndsWith(".", StringComparison.Ordinal) )
       EditTranslation.Text += ".";
     if ( Settings.AutoSaveOnLeaveControl )
       MainForm.Instance.ActionSave.PerformClick();

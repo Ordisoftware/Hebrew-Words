@@ -20,7 +20,7 @@ public partial class ChapterRow
   public override string ToString()
   {
     return Title.Length > 0
-      ? NumberFormatted + $" - {Title}"
+      ? NumberFormatted + $". {Title}"
       : NumberFormatted;
   }
 
@@ -46,22 +46,22 @@ public partial class ChapterRow
     => Verses.Select(verse => verse.ToStringWithComment()).AsMultiDoubleLine();
 
   public string OnlyComments
-    => Verses.Select(verse => verse.Number + " : " + Globals.NL2 + verse.Comment).AsMultiDoubleLine();
+    => Verses.Select(verse => $"{verse.Number} :{Globals.NL2}{verse.Comment}").AsMultiDoubleLine();
 
   public string HebrewWithTranslation
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew + Globals.NL2 + verse.Translation).AsMultiDoubleLine();
+    => Verses.Select(verse => $"{verse.NumberFormatted}: {verse.AsHebrew}{Globals.NL2}{verse.Translation}").AsMultiDoubleLine();
 
   public string HebrewWithTranslationWithComments
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew + Globals.NL2 +
+    => Verses.Select(verse => $"{verse.NumberFormatted}: {verse.AsHebrew}{Globals.NL2}" +
                               ( verse.Comment.Length == 0
                                 ? verse.Translation
                                 : verse.Translation + Globals.NL2 + verse.Comment )).AsMultiDoubleLine();
 
   public string UnicodeWithTranslation
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode + Globals.NL2 + verse.Translation).AsMultiDoubleLine();
+    => Verses.Select(verse => $"{verse.NumberFormatted}: {verse.AsUnicode}{Globals.NL2}{verse.Translation}").AsMultiDoubleLine();
 
   public string UnicodeWithTranslationWithComments
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode + Globals.NL2 +
+    => Verses.Select(verse => $"{verse.NumberFormatted}: {verse.AsUnicode}{Globals.NL2}" +
                               ( verse.Comment.Length == 0
                                 ? verse.Translation
                                 : verse.Translation + Globals.NL2 + verse.Comment )).AsMultiDoubleLine();
