@@ -49,7 +49,7 @@ public partial class ChapterRow
     => Verses.Select(verse => verse.Number + " : " + Globals.NL2 + verse.Comment).AsMultiDoubleLine();
 
   public string HebrewWithTranslation
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew).AsMultiDoubleLine();
+    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew + Globals.NL2 + verse.Translation).AsMultiDoubleLine();
 
   public string HebrewWithTranslationWithComments
     => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsHebrew + Globals.NL2 +
@@ -58,7 +58,7 @@ public partial class ChapterRow
                                 : verse.Translation + Globals.NL2 + verse.Comment )).AsMultiDoubleLine();
 
   public string UnicodeWithTranslation
-    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode).AsMultiDoubleLine();
+    => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode + Globals.NL2 + verse.Translation).AsMultiDoubleLine();
 
   public string UnicodeWithTranslationWithComments
     => Verses.Select(verse => $"{verse.NumberFormatted}: " + verse.AsUnicode + Globals.NL2 +

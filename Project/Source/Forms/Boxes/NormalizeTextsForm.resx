@@ -148,7 +148,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -178,6 +178,48 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionOpenPreferences.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOpenPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIbSURBVDhPtZJNTxNRGIW76BZNUJf9BRpNXBE3/gL/gklj
+        okUrFmuNQgu2hSltp7Ri3BVjQgQJG23HIhKDaNWotdSPFq2GFRaBSmJw/3KfOyPRhUvf5CRvznnOndvp
+        uP7XuM1srpDJjglix7Ojf487aWatVCa3qfbORNKU7e1fWux4ZDCwFP4cd9xIlu4XLZl/vCCxIUMmJqbk
+        Y+OTFjseGUzcSJTo2FV7OoaM1Fbp4SNptdZkdfWbtNtbMjs3r8WORwYDS8eu2rNH6WhkMCZWaU5eV6py
+        Z3JakumMmKPX9Y5HBgPrdPS4+yPRYnggKvnx27JUey+Td2cUGJcLgYta7HhkMLDhwdjuu+gID1yTTXXN
+        1tp3efK0LOlMTnqDIfF4PD7EboykZfFZWTHrmqVDlwMOXO2PSL2+LG8qb+X5i1eSMkelT3kq24fY8chg
+        YOnQ1Qf4e3oXL13u07+3Uq3JvYIlwdAVGU4ktdjxyGBg6fw+gGsc6uo6dr4nEFRPqErt3QcpWCUZSZkS
+        jQ1L8cGs9shgYOk4Xf0i9geCoR9T0zPSbK7IkoIby02pNz5rseORwcDScbp69vq6/Qv5/C0NnOk+J2M3
+        bsqXrytaKfV34pHBwNKxq/ZwlcPeU6df+s76f6r9BIX1jbYWOx4ZDKzT2R2uwgsh4CM5ctLrLVNE7HhO
+        BgP716fMYHAqX1in0kGl447Y8chgnLLLtQO2/aYYQruMeQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenPreferences.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOpenPreferences.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="ActionOpenPreferences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionOpenPreferences.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenPreferences.Name" xml:space="preserve">
+    <value>ActionOpenPreferences</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenPreferences.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenPreferences.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenPreferences.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -202,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -229,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -259,7 +301,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +331,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="checkBox4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -319,7 +361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox4.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="checkBox5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +391,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox5.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="checkBox6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -379,7 +421,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox6.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="checkBox7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -409,7 +451,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox7.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="checkBox8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -439,7 +481,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox8.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="checkBox9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -469,7 +511,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox9.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="checkBox10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -499,7 +541,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox10.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="checkBox11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -529,52 +571,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox11.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionPreferences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ActionPreferences.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
-        O4qU2JSAJsZUrFFqYkxitGIujVBny/3tcyw6cOgPC37W+tbO7u7x/a/xpzO5bDqbl5XZ8dzo3+NPOdl8
-        ysl8M/t0POno6OinFTseGQwshT/HvxFLbL6oVLX7+o2iG3EViyV1ep+t2PHIYGDpuFV3pmLx5KD2qq7h
-        cKTBYKDJ5Idq9V0rdjwyGFg6btWdE0YXVx9FVa3Vtd9s6dn2jpJOWk4mZ3c8MhhYr2PHH1ldz0XWoioU
-        tvSx/UnbpbIBHysYXLZixyODgTU6foupyNq6Ds01h6OR9t425KSzWgqFNTMzcx2xxxOO9hoNw4wtS4cu
-        B5x5GFlVt9vTh2ZT797vy7y2VoxnslOIHY8MBpYOXXvAwuJS8d79Ffv3NlttPTcvHQo/4LGs2PHIYGDp
-        /D6Aa5y7cvXajcVgyPxCS+12R5VqTYmUo2g0psrLmvXIYGDpeF37EKeDy+HvpZ2y+v0D81gd9Xp9dT2x
-        45HBwNLxunZOzgXubhUKTy0wF5hX/smmvnw9sEqZfyceGQwsHbfqDlc5P3v7TjkwvzA2+2UK48OJFTse
-        GQys1zkersKDEPCRXLg5e6tEEbHjeRkM7F+fMoPBqXxh00ZnjS55Yscjg/HKPt8vP8vX6xDYbTcAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionPreferences.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionPreferences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>491, 2</value>
-  </data>
-  <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionPreferences.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
-    <value>ActionPreferences</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionPreferences.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

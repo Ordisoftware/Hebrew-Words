@@ -250,7 +250,9 @@ partial class MainForm
         }
         break;
       case ViewMode.ChapterTranslation:
-        string strTr = $"{CurrentReference.Verse.NumberFormatted}. ";
+        string strTr = EditIncludeOriginalText.Checked
+          ? $"{CurrentReference.Verse.NumberFormatted}: "
+          : $"{CurrentReference.Verse.NumberFormatted}. ";
         searchRef(TextBoxTranslations, strTr, line => line.StartsWith(strTr, StringComparison.Ordinal));
         break;
       case ViewMode.ChapterOriginal:

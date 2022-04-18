@@ -5431,7 +5431,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="MenuitemScreenPosition.Text" xml:space="preserve">
     <value>Screen position</value>
@@ -5454,13 +5454,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="ActionResetWinSettings.Text" xml:space="preserve">
     <value>Reset window settings</value>
   </data>
   <data name="Sep7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 6</value>
+    <value>320, 6</value>
   </data>
   <data name="ActionShowKeyboardNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5478,49 +5478,49 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionShowKeyboardNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
     <value>Keyboard shortcuts notice</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 6</value>
+    <value>320, 6</value>
   </data>
   <data name="EditIncludeOriginalText.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditIncludeOriginalText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditIncludeOriginalText.Text" xml:space="preserve">
-    <value>Include original text while copying a chapter translation to clipboard</value>
+    <value>Include original text in chapter translation</value>
   </data>
   <data name="EditIncludeComment.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditIncludeComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditIncludeComment.Text" xml:space="preserve">
-    <value>Include comment while copying a chapter translation to clipboard</value>
+    <value>Include comments in chapter translation</value>
   </data>
   <data name="EditExportUseHebrewFontElseUnicodeChars.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditExportUseHebrewFontElseUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditExportUseHebrewFontElseUnicodeChars.Text" xml:space="preserve">
     <value>Use Hebrew font else Unicode chars for exports</value>
   </data>
   <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 6</value>
+    <value>320, 6</value>
   </data>
   <data name="EditShowTips.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditShowTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditShowTips.Text" xml:space="preserve">
     <value>Show menu tips</value>
@@ -5529,7 +5529,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
     <value>Advanced dialogs</value>
@@ -5538,7 +5538,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditSoundsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditSoundsEnabled.Text" xml:space="preserve">
     <value>Dialogs with sounds</value>
@@ -5547,19 +5547,19 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="EditShowSuccessDialogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
     <value>Success dialogs instead of sounds</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 6</value>
+    <value>320, 6</value>
   </data>
   <data name="EditConfirmClosing.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="EditConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>323, 22</value>
   </data>
   <data name="EditConfirmClosing.Text" xml:space="preserve">
     <value>Confirm application closing</value>

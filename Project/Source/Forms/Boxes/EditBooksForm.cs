@@ -133,14 +133,9 @@ partial class EditBooksForm : Form
 
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
-    using var form = new EditMemoForm();
-    var book = SelectedBook;
     if ( SelectedBook is null ) return;
-    form.Text += book.Transcription;
-    form.TextBox.Text = book.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-      book.Memo = form.TextBox.Text.Replace("\n", Globals.NL).SanitizeAndTrimEmptyLinesAndSpaces();
+    if ( EditMemoForm.Run(SelectedBook.Transcription, SelectedBook.Memo, out var memo) )
+      SelectedBook.Memo = memo;
   }
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)

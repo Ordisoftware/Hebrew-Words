@@ -77,7 +77,7 @@ partial class MainForm
           return true;
         // Navigate in history
         case Keys.Control | Keys.Shift | Keys.P:
-          ActionSearchNavigatePrevious.PerformClick();
+          ActionHistoryVerseBack.PerformClick();
           return true;
         case Keys.Control | Keys.Shift | Keys.N:
           ActionHistoryVerseNext.PerformClick();

@@ -1139,9 +1139,9 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Utiliser la fonte Hebrew sinon Unicode pour les exports</value>
   </data>
   <data name="EditIncludeComment.Text" xml:space="preserve">
-    <value>Inclure le commentaire lors de la copie d'une traduction de chapitre dans le presse-papiers</value>
+    <value>Inclure commentaires dans traduction chapitre</value>
   </data>
   <data name="EditIncludeOriginalText.Text" xml:space="preserve">
-    <value>Inclure le texte original lors de la copie d'une traduction de chapitre dans le presse-papiers</value>
+    <value>Inclure texte original dans traduction chapitre</value>
   </data>
 </root>

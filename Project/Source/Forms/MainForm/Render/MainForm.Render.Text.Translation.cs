@@ -17,11 +17,12 @@ namespace Ordisoftware.Hebrew.Words;
 partial class MainForm
 {
 
+  [SuppressMessage("Roslynator", "RCS1021:Convert lambda expression body to expression body.", Justification = "Opinion")]
   public void RenderChapterTranslation(bool isGrouped = false)
   {
     RenderText(TextBoxTranslations, false, isGrouped, () =>
     {
-      TextBoxTranslations.Text = CurrentReference.Chapter.TranslationWithComments;
+      TextBoxTranslations.Text = GetChapterTranslationText(true);
     });
   }
 
