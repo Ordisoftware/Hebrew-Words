@@ -708,8 +708,8 @@ partial class MainForm : Form
                                                              Settings.VacuumAtStartupDaysInterval,
                                                              true);
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
-      // TODO ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-      // TODO ApplicationStatistics.UpdateDBFileSizeRequired = true;
+      ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      ApplicationStatistics.UpdateDBFileSizeRequired = true;
       DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
     }
     finally
@@ -1291,6 +1291,8 @@ partial class MainForm : Form
     var control = (Control)sender;
     control.BackColor = Color.LightYellow;
     TextBoxMutex = false;
+    if ( Settings.AutoSaveOnLeaveControl )
+      MainForm.Instance.ActionSave_Click(MainForm.Instance.ActionSave, EventArgs.Empty);
   }
 
   /// <summary>

@@ -1226,7 +1226,7 @@
       this.EditChapterTitle.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditChapterTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true));
+      this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);

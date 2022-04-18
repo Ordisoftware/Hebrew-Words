@@ -96,7 +96,7 @@ public partial class WordControl : UserControl
     EditTranslation.Text = EditTranslation.Text.SanitizeAndTrimEmptyLinesAndSpaces();
     if ( Reference.Word.Number == Reference.Verse.Words.Count && !EditTranslation.Text.EndsWith(".") )
       EditTranslation.Text += ".";
-    if ( Settings.AutoSaveOnLeaveControl && MainForm.Instance.ActionSave.Enabled )
+    if ( Settings.AutoSaveOnLeaveControl )
       MainForm.Instance.ActionSave.PerformClick();
   }
 
