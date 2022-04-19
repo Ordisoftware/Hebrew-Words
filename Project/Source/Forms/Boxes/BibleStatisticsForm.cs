@@ -391,7 +391,7 @@ partial class BibleStatisticsForm : Form
                    select word;
       addControls(GroupBoxOccurencesTorah, caption, hebrew, query1.Count());
       addControls(GroupBoxOccurencesAll, caption, hebrew, query2.Count());
-      ypos += 14;
+      ypos += 15;
     }
     //
     void addControls(GroupBox group, string caption, string hebrew, int value, bool isHebrew = false)
