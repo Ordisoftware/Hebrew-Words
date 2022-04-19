@@ -187,7 +187,7 @@
       this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
@@ -1584,7 +1584,7 @@
             this.ActionBackup,
             this.toolStripSeparator22,
             this.ActionVacuum,
-            this.toolStripSeparator26,
+            this.SeparatorActionNormalizeTexts,
             this.ActionNormalizeTexts,
             this.toolStripSeparator2,
             this.ActionOpenBackupPath,
@@ -1622,10 +1622,10 @@
       this.ActionVacuum.Name = "ActionVacuum";
       this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
       // 
-      // toolStripSeparator26
+      // SeparatorActionNormalizeTexts
       // 
-      this.toolStripSeparator26.Name = "toolStripSeparator26";
-      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      this.SeparatorActionNormalizeTexts.Name = "SeparatorActionNormalizeTexts";
+      resources.ApplyResources(this.SeparatorActionNormalizeTexts, "SeparatorActionNormalizeTexts");
       // 
       // ActionNormalizeTexts
       // 
@@ -2554,7 +2554,7 @@
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
     private ToolStripMenuItem ActionImportConsoleAuto;
-    private ToolStripSeparator toolStripSeparator26;
+    private ToolStripSeparator SeparatorActionNormalizeTexts;
     private ToolStripMenuItem ActionNormalizeTexts;
     internal ToolStripMenuItem EditExportUseHebrewFontElseUnicodeChars;
     private ToolStripSeparator toolStripSeparator27;

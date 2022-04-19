@@ -123,6 +123,7 @@
       this.TabPageEdition = new System.Windows.Forms.TabPage();
       this.EditAutoSaveOnLeaveControl = new System.Windows.Forms.CheckBox();
       this.TabPageRendering = new System.Windows.Forms.TabPage();
+      this.ActionResetRendering = new System.Windows.Forms.Button();
       this.LabelInfoSearchMinRefForDialog = new System.Windows.Forms.Label();
       this.LabelInfoSearchDisplayMaxRef = new System.Windows.Forms.Label();
       this.LabelFontSizeCommentaryInfo = new System.Windows.Forms.Label();
@@ -207,7 +208,6 @@
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-      this.ActionResetRendering = new System.Windows.Forms.Button();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -743,8 +743,6 @@
       // EditSearchHebrewCharsInBold
       // 
       resources.ApplyResources(this.EditSearchHebrewCharsInBold, "EditSearchHebrewCharsInBold");
-      this.EditSearchHebrewCharsInBold.Checked = true;
-      this.EditSearchHebrewCharsInBold.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditSearchHebrewCharsInBold.Name = "EditSearchHebrewCharsInBold";
       this.EditSearchHebrewCharsInBold.UseVisualStyleBackColor = true;
       this.EditSearchHebrewCharsInBold.CheckedChanged += new System.EventHandler(this.EditSearchHebrewCharsInBold_CheckedChanged);
@@ -982,6 +980,15 @@
       this.TabPageRendering.Controls.Add(LabelCommentaryLinesCount);
       resources.ApplyResources(this.TabPageRendering, "TabPageRendering");
       this.TabPageRendering.Name = "TabPageRendering";
+      // 
+      // ActionResetRendering
+      // 
+      this.ActionResetRendering.AllowDrop = true;
+      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetRendering, "ActionResetRendering");
+      this.ActionResetRendering.Name = "ActionResetRendering";
+      this.ActionResetRendering.UseVisualStyleBackColor = true;
+      this.ActionResetRendering.Click += new System.EventHandler(this.ActionResetRendering_Click);
       // 
       // LabelInfoSearchMinRefForDialog
       // 
@@ -1650,15 +1657,6 @@
       // 
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
-      // 
-      // ActionResetRendering
-      // 
-      this.ActionResetRendering.AllowDrop = true;
-      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionResetRendering, "ActionResetRendering");
-      this.ActionResetRendering.Name = "ActionResetRendering";
-      this.ActionResetRendering.UseVisualStyleBackColor = true;
-      this.ActionResetRendering.Click += new System.EventHandler(this.ActionResetRendering_Click);
       // 
       // PreferencesForm
       // 

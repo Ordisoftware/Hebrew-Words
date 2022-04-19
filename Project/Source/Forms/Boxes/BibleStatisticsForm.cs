@@ -57,6 +57,11 @@ partial class BibleStatisticsForm : Form
     {
       MainForm.Instance.Cursor = temp;
     }
+    ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    {
+      if ( sender is not ToolStripMenuItem menuitem ) return;
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, LastLabelClicked.Text);
+    });
   }
 
   private void BibleStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,17 +98,25 @@ partial class BibleStatisticsForm : Form
           {
             stat.CountWords++;
             stat.CountLetters += word.Hebrew.Length;
-            if ( word.Hebrew.Length > LabelLongestWordValue.Text.Length )
+            if ( word.Hebrew.Length > LabelLongestWordTanakValue.Text.Length )
             {
-              LabelLongestWordValue.Text = word.Hebrew;
-              LabelLongestReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number, word.Number);
+              LabelLongestWordTanakValue.Text = word.Hebrew;
+              LabelLongestTanakReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number, word.Number);
             }
+            if ( book.Number <= 5 )
+              if ( word.Hebrew.Length > LabelLongestWordTorahValue.Text.Length )
+              {
+                LabelLongestWordTorahValue.Text = word.Hebrew;
+                LabelLongestTorahReferenceValue.Tag = new ReferenceItem(book.Number, chapter.Number, verse.Number, word.Number);
+              }
           }
         }
       }
     }
-    if ( LabelLongestReferenceValue.Tag is not null )
-      LabelLongestReferenceValue.Text = ( (ReferenceItem)LabelLongestReferenceValue.Tag ).ToString();
+    if ( LabelLongestTanakReferenceValue.Tag is not null )
+      LabelLongestTanakReferenceValue.Text = ( (ReferenceItem)LabelLongestTanakReferenceValue.Tag ).ToString();
+    if ( LabelLongestTorahReferenceValue.Tag is not null )
+      LabelLongestTorahReferenceValue.Text = ( (ReferenceItem)LabelLongestTorahReferenceValue.Tag ).ToString();
     void count(TanakBook book, BookStatistic counters)
     {
       try
@@ -187,9 +200,12 @@ partial class BibleStatisticsForm : Form
     label.ForeColor = SystemColors.ControlText;
   }
 
-  private void LabelMiddleValue_MouseClick(object sender, MouseEventArgs e)
+  private Label LastLabelClicked;
+
+  private void LabelHebrew_MouseClick(object sender, MouseEventArgs e)
   {
-    HebrewTools.OpenHebrewLetters(( (Label)sender ).Text);
+    LastLabelClicked = sender as Label;
+    ContextMenuStripWord.Show(LastLabelClicked, new Point(0, LastLabelClicked.Height));
   }
 
   private void LabelReferenceValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -201,6 +217,8 @@ partial class BibleStatisticsForm : Form
 
   private List<(string Key, int Count)> OccurencesMostFrequentTorah;
   private List<(string Key, int Count)> OccurencesMostFrequentTanak;
+  private List<(string Key, int Count)> OccurencesLessFrequentTorah;
+  private List<(string Key, int Count)> OccurencesLessFrequentTanak;
 
   [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "<En attente>")]
@@ -235,8 +253,10 @@ partial class BibleStatisticsForm : Form
     // Most frequent words Tanak
     addMostTorah();
     addMostTanak();
+    addLessTorah();
+    addLessTanak();
     //
-    void addMost(Action createQuery, ref List<(string Key, int Count)> result, GroupBox groupbox)
+    void addMostOrLess(Action createQuery, ref List<(string Key, int Count)> result, GroupBox groupbox)
     {
       if ( result is null ) createQuery();
       xpos = 15;
@@ -255,7 +275,7 @@ partial class BibleStatisticsForm : Form
     //
     void addMostTorah()
     {
-      addMost(() =>
+      addMostOrLess(() =>
       {
         var query = from book in ApplicationDatabase.Instance.Books
                     from chapter in book.Chapters
@@ -282,7 +302,7 @@ partial class BibleStatisticsForm : Form
     //
     void addMostTanak()
     {
-      addMost(() =>
+      addMostOrLess(() =>
       {
         var query = from word in ApplicationDatabase.Instance.Words
                     group word by word.Hebrew into grouping
@@ -298,6 +318,54 @@ partial class BibleStatisticsForm : Form
       },
       ref OccurencesMostFrequentTanak,
       GroupBoxMostFrequentWordsTanak);
+    }
+    //
+    // TODO test
+    void addLessTorah()
+    {
+      addMostOrLess(() =>
+      {
+        var query = from book in ApplicationDatabase.Instance.Books
+                    from chapter in book.Chapters
+                    from verse in chapter.Verses
+                    from word in verse.Words
+                    where book.Number <= max
+                       && chapter.BookID == book.ID
+                       && verse.ChapterID == chapter.ID
+                       && word.VerseID == verse.ID
+                    group word by word.Hebrew into grouping
+                    select new
+                    {
+                      grouping.Key,
+                      Count = grouping.Count()
+                    };
+        OccurencesLessFrequentTorah = query.OrderBy(item => item.Count)
+                                           .Take(40)
+                                           .Select(item => (item.Key, item.Count))
+                                           .ToList();
+      },
+      ref OccurencesLessFrequentTorah,
+      GroupBoxLessFrequentWordsTorah);
+    }
+    //
+    void addLessTanak()
+    {
+      addMostOrLess(() =>
+      {
+        var query = from word in ApplicationDatabase.Instance.Words
+                    group word by word.Hebrew into grouping
+                    select new
+                    {
+                      grouping.Key,
+                      Count = grouping.Count()
+                    };
+        OccurencesLessFrequentTanak = query.OrderBy(item => item.Count)
+                                           .Take(40)
+                                           .Select(item => (item.Key, item.Count))
+                                           .ToList();
+      },
+      ref OccurencesLessFrequentTanak,
+      GroupBoxLessFrequentWordsTanak);
     }
     //
     void addCountOne(string caption, string hebrew, Func<string, bool> check)
@@ -344,22 +412,24 @@ partial class BibleStatisticsForm : Form
         linklabel.Font = new Font("Hebrew", 12);
         linklabel.Top -= 5;
       }
-      linklabel.Click += (_, _) =>
-      {
-        if ( group == GroupBoxOccurencesTorah )
-        {
-          Program.Settings.SearchInTorah = true;
-          Program.Settings.SearchInKetouvim = false;
-          Program.Settings.SearchInNeviim = false;
-        }
-        else
-        {
-          Program.Settings.SearchInTorah = true;
-          Program.Settings.SearchInKetouvim = true;
-          Program.Settings.SearchInNeviim = true;
-        }
-        MainForm.Instance.SearchHebrewWord(hebrew);
-      };
+      linklabel.Click += isHebrew
+        ? (_s, _e) => LabelHebrew_MouseClick(_s, (MouseEventArgs)_e)
+        : (_, _) =>
+          {
+            if ( group == GroupBoxOccurencesTorah )
+            {
+              Program.Settings.SearchInTorah = true;
+              Program.Settings.SearchInKetouvim = false;
+              Program.Settings.SearchInNeviim = false;
+            }
+            else
+            {
+              Program.Settings.SearchInTorah = true;
+              Program.Settings.SearchInKetouvim = true;
+              Program.Settings.SearchInNeviim = true;
+            }
+            MainForm.Instance.SearchHebrewWord(hebrew);
+          };
       var labelValue = new Label()
       {
         AutoSize = false,
@@ -372,6 +442,21 @@ partial class BibleStatisticsForm : Form
       group.Controls.Add(linklabel);
       group.Controls.Add(labelValue);
     }
+  }
+
+  private void ActionWordSearchDefault_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenWordProvider(Program.Settings.SearchOnlineURL, LastLabelClicked.Text);
+  }
+
+  private void ActionSearchWord_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.SearchHebrewWord(LastLabelClicked.Text);
+  }
+
+  private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewLetters(LastLabelClicked.Text);
   }
 
 }

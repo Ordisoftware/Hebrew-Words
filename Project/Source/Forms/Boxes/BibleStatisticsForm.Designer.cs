@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibleStatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
       this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
@@ -40,6 +41,14 @@
       this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
+      this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionWordSearchDefault = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWordSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();
       this.LabelMiddleLetterValue = new System.Windows.Forms.Label();
       this.LabelMiddleWordValue = new System.Windows.Forms.Label();
@@ -47,10 +56,14 @@
       this.LabelMiddleReference = new System.Windows.Forms.Label();
       this.GroupBoxOccurencesTorah = new System.Windows.Forms.GroupBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.LabelLongestReferenceValue = new System.Windows.Forms.LinkLabel();
-      this.LabelLongestWordValue = new System.Windows.Forms.Label();
-      this.LabelLongestWord = new System.Windows.Forms.Label();
-      this.LabelLongestWordReference = new System.Windows.Forms.Label();
+      this.LabelLongestTorahReferenceValue = new System.Windows.Forms.LinkLabel();
+      this.LabelLongestWordTorahValue = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.LabelLongestTorahWordReference = new System.Windows.Forms.Label();
+      this.LabelLongestTanakReferenceValue = new System.Windows.Forms.LinkLabel();
+      this.LabelLongestWordTanakValue = new System.Windows.Forms.Label();
+      this.LabelLongestTanakWord = new System.Windows.Forms.Label();
+      this.LabelLongestTorahWord = new System.Windows.Forms.Label();
       this.GroupBoxOccurencesAll = new System.Windows.Forms.GroupBox();
       this.LabelInfoOccurences = new System.Windows.Forms.Label();
       this.GroupBoxMostFrequentWordsTanak = new System.Windows.Forms.GroupBox();
@@ -58,16 +71,23 @@
       this.GroupBoxMostFrequentWordsTorah = new System.Windows.Forms.GroupBox();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.GroupBoxLessFrequentWordsTorah = new System.Windows.Forms.GroupBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.tabPage4 = new System.Windows.Forms.TabPage();
+      this.GroupBoxLessFrequentWordsTanak = new System.Windows.Forms.GroupBox();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
       this.GroupBoxBook.SuspendLayout();
       this.GroupBoxMiddle.SuspendLayout();
+      this.ContextMenuStripWord.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
+      this.tabPage3.SuspendLayout();
       this.tabPage2.SuspendLayout();
+      this.tabPage4.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -144,11 +164,63 @@
       // 
       this.LabelMiddleReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelMiddleReferenceValue, "LabelMiddleReferenceValue");
+      this.LabelMiddleReferenceValue.ContextMenuStrip = this.ContextMenuStripWord;
       this.LabelMiddleReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.LabelMiddleReferenceValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelMiddleReferenceValue.Name = "LabelMiddleReferenceValue";
       this.LabelMiddleReferenceValue.TabStop = true;
       this.LabelMiddleReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
+      // 
+      // ContextMenuStripWord
+      // 
+      this.ContextMenuStripWord.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionWordSearchDefault,
+            this.ActionWordSearchOnline,
+            this.toolStripSeparator10,
+            this.ActionSearchWord,
+            this.toolStripSeparator8,
+            this.ActionOpenHebrewLetters2,
+            this.toolStripSeparator14});
+      this.ContextMenuStripWord.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
+      // 
+      // ActionWordSearchDefault
+      // 
+      resources.ApplyResources(this.ActionWordSearchDefault, "ActionWordSearchDefault");
+      this.ActionWordSearchDefault.Name = "ActionWordSearchDefault";
+      this.ActionWordSearchDefault.Click += new System.EventHandler(this.ActionWordSearchDefault_Click);
+      // 
+      // ActionWordSearchOnline
+      // 
+      resources.ApplyResources(this.ActionWordSearchOnline, "ActionWordSearchOnline");
+      this.ActionWordSearchOnline.Name = "ActionWordSearchOnline";
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
+      // ActionSearchWord
+      // 
+      resources.ApplyResources(this.ActionSearchWord, "ActionSearchWord");
+      this.ActionSearchWord.Name = "ActionSearchWord";
+      this.ActionSearchWord.Click += new System.EventHandler(this.ActionSearchWord_Click);
+      // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
+      // ActionOpenHebrewLetters2
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
+      this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
+      this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
+      // 
+      // toolStripSeparator14
+      // 
+      this.toolStripSeparator14.Name = "toolStripSeparator14";
+      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
       // LabelMiddleLetter
       // 
@@ -159,7 +231,7 @@
       // 
       resources.ApplyResources(this.LabelMiddleLetterValue, "LabelMiddleLetterValue");
       this.LabelMiddleLetterValue.Name = "LabelMiddleLetterValue";
-      this.LabelMiddleLetterValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelMiddleValue_MouseClick);
+      this.LabelMiddleLetterValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
       this.LabelMiddleLetterValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
       this.LabelMiddleLetterValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
       // 
@@ -167,7 +239,7 @@
       // 
       resources.ApplyResources(this.LabelMiddleWordValue, "LabelMiddleWordValue");
       this.LabelMiddleWordValue.Name = "LabelMiddleWordValue";
-      this.LabelMiddleWordValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelMiddleValue_MouseClick);
+      this.LabelMiddleWordValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
       this.LabelMiddleWordValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
       this.LabelMiddleWordValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
       // 
@@ -189,41 +261,75 @@
       // 
       // groupBox1
       // 
-      this.groupBox1.Controls.Add(this.LabelLongestReferenceValue);
-      this.groupBox1.Controls.Add(this.LabelLongestWordValue);
-      this.groupBox1.Controls.Add(this.LabelLongestWord);
-      this.groupBox1.Controls.Add(this.LabelLongestWordReference);
+      this.groupBox1.Controls.Add(this.LabelLongestTorahReferenceValue);
+      this.groupBox1.Controls.Add(this.LabelLongestWordTorahValue);
+      this.groupBox1.Controls.Add(this.label2);
+      this.groupBox1.Controls.Add(this.LabelLongestTorahWordReference);
+      this.groupBox1.Controls.Add(this.LabelLongestTanakReferenceValue);
+      this.groupBox1.Controls.Add(this.LabelLongestWordTanakValue);
+      this.groupBox1.Controls.Add(this.LabelLongestTanakWord);
+      this.groupBox1.Controls.Add(this.LabelLongestTorahWord);
       resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
       // 
-      // LabelLongestReferenceValue
+      // LabelLongestTorahReferenceValue
       // 
-      this.LabelLongestReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.LabelLongestReferenceValue, "LabelLongestReferenceValue");
-      this.LabelLongestReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.LabelLongestReferenceValue.LinkColor = System.Drawing.Color.Navy;
-      this.LabelLongestReferenceValue.Name = "LabelLongestReferenceValue";
-      this.LabelLongestReferenceValue.TabStop = true;
-      this.LabelLongestReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
+      this.LabelLongestTorahReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelLongestTorahReferenceValue, "LabelLongestTorahReferenceValue");
+      this.LabelLongestTorahReferenceValue.ContextMenuStrip = this.ContextMenuStripWord;
+      this.LabelLongestTorahReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.LabelLongestTorahReferenceValue.LinkColor = System.Drawing.Color.Navy;
+      this.LabelLongestTorahReferenceValue.Name = "LabelLongestTorahReferenceValue";
+      this.LabelLongestTorahReferenceValue.TabStop = true;
+      this.LabelLongestTorahReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
       // 
-      // LabelLongestWordValue
+      // LabelLongestWordTorahValue
       // 
-      resources.ApplyResources(this.LabelLongestWordValue, "LabelLongestWordValue");
-      this.LabelLongestWordValue.Name = "LabelLongestWordValue";
-      this.LabelLongestWordValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelMiddleValue_MouseClick);
-      this.LabelLongestWordValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
-      this.LabelLongestWordValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
+      resources.ApplyResources(this.LabelLongestWordTorahValue, "LabelLongestWordTorahValue");
+      this.LabelLongestWordTorahValue.Name = "LabelLongestWordTorahValue";
+      this.LabelLongestWordTorahValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
+      this.LabelLongestWordTorahValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
+      this.LabelLongestWordTorahValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
       // 
-      // LabelLongestWord
+      // label2
       // 
-      resources.ApplyResources(this.LabelLongestWord, "LabelLongestWord");
-      this.LabelLongestWord.Name = "LabelLongestWord";
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
       // 
-      // LabelLongestWordReference
+      // LabelLongestTorahWordReference
       // 
-      resources.ApplyResources(this.LabelLongestWordReference, "LabelLongestWordReference");
-      this.LabelLongestWordReference.Name = "LabelLongestWordReference";
+      resources.ApplyResources(this.LabelLongestTorahWordReference, "LabelLongestTorahWordReference");
+      this.LabelLongestTorahWordReference.Name = "LabelLongestTorahWordReference";
+      // 
+      // LabelLongestTanakReferenceValue
+      // 
+      this.LabelLongestTanakReferenceValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelLongestTanakReferenceValue, "LabelLongestTanakReferenceValue");
+      this.LabelLongestTanakReferenceValue.ContextMenuStrip = this.ContextMenuStripWord;
+      this.LabelLongestTanakReferenceValue.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.LabelLongestTanakReferenceValue.LinkColor = System.Drawing.Color.Navy;
+      this.LabelLongestTanakReferenceValue.Name = "LabelLongestTanakReferenceValue";
+      this.LabelLongestTanakReferenceValue.TabStop = true;
+      this.LabelLongestTanakReferenceValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelReferenceValue_LinkClicked);
+      // 
+      // LabelLongestWordTanakValue
+      // 
+      resources.ApplyResources(this.LabelLongestWordTanakValue, "LabelLongestWordTanakValue");
+      this.LabelLongestWordTanakValue.Name = "LabelLongestWordTanakValue";
+      this.LabelLongestWordTanakValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LabelHebrew_MouseClick);
+      this.LabelLongestWordTanakValue.MouseEnter += new System.EventHandler(this.LabelMiddleValue_MouseEnter);
+      this.LabelLongestWordTanakValue.MouseLeave += new System.EventHandler(this.LabelMiddleValue_MouseLeave);
+      // 
+      // LabelLongestTanakWord
+      // 
+      resources.ApplyResources(this.LabelLongestTanakWord, "LabelLongestTanakWord");
+      this.LabelLongestTanakWord.Name = "LabelLongestTanakWord";
+      // 
+      // LabelLongestTorahWord
+      // 
+      resources.ApplyResources(this.LabelLongestTorahWord, "LabelLongestTorahWord");
+      this.LabelLongestTorahWord.Name = "LabelLongestTorahWord";
       // 
       // GroupBoxOccurencesAll
       // 
@@ -259,7 +365,9 @@
       // 
       resources.ApplyResources(this.tabControl1, "tabControl1");
       this.tabControl1.Controls.Add(this.tabPage1);
+      this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Controls.Add(this.tabPage2);
+      this.tabControl1.Controls.Add(this.tabPage4);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       // 
@@ -270,12 +378,38 @@
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.UseVisualStyleBackColor = true;
       // 
+      // tabPage3
+      // 
+      this.tabPage3.Controls.Add(this.GroupBoxLessFrequentWordsTorah);
+      resources.ApplyResources(this.tabPage3, "tabPage3");
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxLessFrequentWordsTorah
+      // 
+      resources.ApplyResources(this.GroupBoxLessFrequentWordsTorah, "GroupBoxLessFrequentWordsTorah");
+      this.GroupBoxLessFrequentWordsTorah.Name = "GroupBoxLessFrequentWordsTorah";
+      this.GroupBoxLessFrequentWordsTorah.TabStop = false;
+      // 
       // tabPage2
       // 
       this.tabPage2.Controls.Add(this.GroupBoxMostFrequentWordsTanak);
       resources.ApplyResources(this.tabPage2, "tabPage2");
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // tabPage4
+      // 
+      this.tabPage4.Controls.Add(this.GroupBoxLessFrequentWordsTanak);
+      resources.ApplyResources(this.tabPage4, "tabPage4");
+      this.tabPage4.Name = "tabPage4";
+      this.tabPage4.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxLessFrequentWordsTanak
+      // 
+      resources.ApplyResources(this.GroupBoxLessFrequentWordsTanak, "GroupBoxLessFrequentWordsTanak");
+      this.GroupBoxLessFrequentWordsTanak.Name = "GroupBoxLessFrequentWordsTanak";
+      this.GroupBoxLessFrequentWordsTanak.TabStop = false;
       // 
       // BibleStatisticsForm
       // 
@@ -303,11 +437,14 @@
       this.GroupBoxBook.ResumeLayout(false);
       this.GroupBoxMiddle.ResumeLayout(false);
       this.GroupBoxMiddle.PerformLayout();
+      this.ContextMenuStripWord.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
+      this.tabPage3.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
+      this.tabPage4.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -333,10 +470,10 @@
     private System.Windows.Forms.Label LabelMiddleWordValue;
     private System.Windows.Forms.GroupBox GroupBoxOccurencesTorah;
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.LinkLabel LabelLongestReferenceValue;
-    private System.Windows.Forms.Label LabelLongestWordValue;
-    private System.Windows.Forms.Label LabelLongestWord;
-    private System.Windows.Forms.Label LabelLongestWordReference;
+    private System.Windows.Forms.LinkLabel LabelLongestTanakReferenceValue;
+    private System.Windows.Forms.Label LabelLongestWordTanakValue;
+    private System.Windows.Forms.Label LabelLongestTanakWord;
+    private System.Windows.Forms.Label LabelLongestTorahWord;
     private GroupBox GroupBoxOccurencesAll;
     private Label LabelInfoOccurences;
     private GroupBox GroupBoxMostFrequentWordsTanak;
@@ -345,5 +482,21 @@
     private TabControl tabControl1;
     private TabPage tabPage1;
     private TabPage tabPage2;
+    private TabPage tabPage3;
+    private TabPage tabPage4;
+    private GroupBox GroupBoxLessFrequentWordsTorah;
+    private GroupBox GroupBoxLessFrequentWordsTanak;
+    internal ContextMenuStrip ContextMenuStripWord;
+    private ToolStripMenuItem ActionWordSearchDefault;
+    private ToolStripMenuItem ActionWordSearchOnline;
+    private ToolStripSeparator toolStripSeparator10;
+    private ToolStripMenuItem ActionSearchWord;
+    private ToolStripSeparator toolStripSeparator8;
+    private ToolStripMenuItem ActionOpenHebrewLetters2;
+    private ToolStripSeparator toolStripSeparator14;
+    private LinkLabel LabelLongestTorahReferenceValue;
+    private Label LabelLongestWordTorahValue;
+    private Label label2;
+    private Label LabelLongestTorahWordReference;
   }
 }

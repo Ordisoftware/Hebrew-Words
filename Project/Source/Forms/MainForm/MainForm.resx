@@ -4774,7 +4774,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionVacuum.Text" xml:space="preserve">
     <value>Optimize database</value>
   </data>
-  <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
   <data name="ActionNormalizeTexts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6615,10 +6615,10 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionVacuum.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator26.Name" xml:space="preserve">
-    <value>toolStripSeparator26</value>
+  <data name="&gt;&gt;SeparatorActionNormalizeTexts.Name" xml:space="preserve">
+    <value>SeparatorActionNormalizeTexts</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator26.Type" xml:space="preserve">
+  <data name="&gt;&gt;SeparatorActionNormalizeTexts.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionNormalizeTexts.Name" xml:space="preserve">

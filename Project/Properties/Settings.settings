@@ -363,10 +363,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="BoardsHebrewCharsInBold" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="VerseHebrewCharsInBold" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SelectVerseFromFirstToLast" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
