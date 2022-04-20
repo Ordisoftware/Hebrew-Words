@@ -17,38 +17,30 @@ namespace Ordisoftware.Hebrew.Words;
 partial class SelectReferenceForm : Form
 {
 
+  static private ReferenceItem LastReference = new ReferenceItem(1, 1, 1);
+
   static public ReferenceItem Run()
   {
     using var form = new SelectReferenceForm();
     while ( true )
       try
       {
-        var reference = process();
-        if ( reference is null )
+        if ( form.ShowDialog() != DialogResult.OK ) return null;
+        LastReference = new ReferenceItem(form.EditReference.Text);
+        if ( LastReference is null )
           return null;
-        if ( reference.Book is null )
-          throw new KeyNotFoundException(nameof(reference.Book));
-        if ( reference.Chapter is null )
-          reference = new ReferenceItem(reference.Book.Number, 1, 1);
-        if ( reference.Verse is null )
-          reference = new ReferenceItem(reference.Book.Number, reference.Chapter.Number, 1);
-        return reference;
+        if ( LastReference.Book is null )
+          throw new KeyNotFoundException(nameof(LastReference.Book));
+        if ( LastReference.Chapter is null )
+          LastReference = new ReferenceItem(LastReference.Book.Number, 1, 1);
+        if ( LastReference.Verse is null )
+          LastReference = new ReferenceItem(LastReference.Book.Number, LastReference.Chapter.Number, 1);
+        return LastReference;
       }
       catch
       {
         DisplayManager.ShowError(AppTranslations.BadReference.GetLang(form.EditReference.Text));
       }
-    //
-    ReferenceItem process()
-    {
-      if ( form.ShowDialog() != DialogResult.OK ) return null;
-      return !form.EditReference.Text.IsNullOrEmpty()
-        ? new ReferenceItem(form.EditReference.Text.Trim().Replace("  ", " "))
-        : new ReferenceItem(( form.SelectBook.SelectedItem as BookRow )?.Number ?? 1,
-                            ( form.SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                            ( form.SelectVerse.SelectedItem as VerseRow )?.Number ?? 1);
-    }
-
   }
 
   private SelectReferenceForm()
@@ -57,6 +49,23 @@ partial class SelectReferenceForm : Form
     Icon = MainForm.Instance.Icon;
     FilterBooksBindingSource.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
     ActiveControl = EditReference;
+    EditReference.Text = LastReference.ToString();
+    SelectBook.SelectedIndex = LastReference.Book.Number - 1;
+    SelectChapter.SelectedIndex = LastReference.Chapter.Number - 1;
+    SelectVerse.SelectedIndex = LastReference.Verse.Number - 1;
+  }
+
+  private void SelectBook_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( !Created ) return;
+    EditReference.Text = new ReferenceItem(( SelectBook.SelectedItem as BookRow )?.Number ?? 1,
+                                           ( SelectChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                                           ( SelectVerse.SelectedItem as VerseRow )?.Number ?? 1).ToString();
+  }
+
+  private void ActionHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(AppTranslations.SelectVerseNotice.GetLang());
   }
 
 }

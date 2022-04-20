@@ -197,6 +197,7 @@
       this.ActionViewBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
@@ -1663,6 +1664,7 @@
             this.ActionViewBooksBoard,
             this.ActionViewParashotBoard,
             this.toolStripSeparator6,
+            this.ActionShowTranscriptionGuide,
             this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
@@ -1694,6 +1696,12 @@
       // 
       this.toolStripSeparator6.Name = "toolStripSeparator6";
       resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
       // 
       // ActionShowGrammarGuide
       // 
@@ -2561,6 +2569,7 @@
     internal ToolStripMenuItem EditIncludeOriginalText;
     internal ToolStripMenuItem EditIncludeComment;
     internal ToolStripButton ActionPreferences;
+    private ToolStripMenuItem ActionShowTranscriptionGuide;
   }
 }
 
