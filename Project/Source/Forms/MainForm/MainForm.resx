@@ -4973,13 +4973,13 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionShowTranscriptionGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFwSURBVDhPY6AakMtZ3yufu9YCymWQz1m/Si5nXSiUix+A
-        FAI1/AdpAvFBBoH4cjlrH0nnrpUBKyIEQJqRDZHNWX8MmU8UQNYEw0R7A6QZ5FyoRtJshoUBzDaSDQHZ
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFySURBVDhPY6AakMtZ3yufu9YCymWQz1m/Si5nXSiUix+A
+        FAI1/AdpAvFBBoH4cjlrHknnrpUBKyIEQJqRDZHNWX8MmU8UQNYEw0R7A6QZ5FyoRtJshoUBzDaSDQHZ
         DAowsCZoTMAMAcUOiL/+5MP/Ji1n/2vUnvqvWXf6f+nKG/9B4nCACHmIK6DegRugXnPqv+/Ei//////6
         37j5zH+tulMIAyAuWBeKHmDI6cKk5cx/38kX/8/Y9+C/WevZ/7oNp1FdAAIbjs/fDMJQLgp49ubjfy+g
-        C7q33QMboIfNALtWmUeObTKPQOzM+d6bQXywBBA49Zz/HzPnCtAL//+bAl2D0wD7Ntm/Lp1KHxw7FN/A
-        MEhOvebkf6Pm0/8T5l4DG6DfiBQGMAAywLlD8QcQf3dslfll3y7z06lV4RtIzn/KJXAMpC++8T9j8c3/
-        akADPSdewjTkzdc3MpcfnTIFecGxTfHL/deXNKBStAAMDACRg+7h4CLPmAAAAABJRU5ErkJggg==
+        C7q33QMboIfNALtWmUeObTKPQOzM+d6bQXywBBA49Zz/HzPnCtAL//+bAl2D0wD7Ntm/Lp1KHxw6FN/A
+        MEhOvebkf6Pm0/8T5l4DG6DfiBQGMAAywKld4Ydzh+J3xxbpX/bt0j+dWhS+geT8p1wCx0D64hv/Mxbf
+        /K8GNNBz4iVMQ958fSNz+dEpU5AXHFoVv9x/fUkDKkULwMAAAIOv7tP7DR7CAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionShowTranscriptionGuide.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -4989,7 +4989,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionShowTranscriptionGuide.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+G</value>
+    <value>Ctrl+L</value>
   </data>
   <data name="ActionShowTranscriptionGuide.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 22</value>

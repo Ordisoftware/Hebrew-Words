@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -61,9 +61,9 @@ static partial class Program
     get
     {
       return _TranscriptionGuideForm ??= new HTMLBrowserForm(HebrewTranslations.TranscriptionGuideTitle,
-                                                       HebrewGlobals.HebrewTranscriptionGuideFilePath,
-                                                       nameof(Settings.GrammarGuideFormLocation),
-                                                       nameof(Settings.GrammarGuideFormSize));
+                                                       HebrewGlobals.TranscriptionGuideFilePath,
+                                                       nameof(Settings.TranscriptionGuideFormLocation),
+                                                       nameof(Settings.TranscriptionGuideFormSize));
     }
   }
   static private HTMLBrowserForm _TranscriptionGuideForm;
@@ -75,7 +75,7 @@ static partial class Program
     get
     {
       return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                       HebrewGlobals.HebrewGrammarGuideFilePath,
+                                                       HebrewGlobals.GrammarGuideFilePath,
                                                        nameof(Settings.GrammarGuideFormLocation),
                                                        nameof(Settings.GrammarGuideFormSize));
     }
