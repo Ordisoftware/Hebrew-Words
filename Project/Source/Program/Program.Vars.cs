@@ -54,6 +54,20 @@ static partial class Program
   => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
   /// <summary>
+  /// Indicates the transcription guide form.
+  /// </summary>
+  static public HTMLBrowserForm TranscriptionGuideForm
+  {
+    get
+    {
+      return _TranscriptionGuideForm ??= new HTMLBrowserForm(HebrewTranslations.TranscriptionGuideTitle,
+                                                       HebrewGlobals.HebrewTranscriptionGuideFilePath,
+                                                       nameof(Settings.GrammarGuideFormLocation),
+                                                       nameof(Settings.GrammarGuideFormSize));
+    }
+  }
+  static private HTMLBrowserForm _TranscriptionGuideForm;
+  /// <summary>
   /// Indicates the grammar guide form.
   /// </summary>
   static public HTMLBrowserForm GrammarGuideForm

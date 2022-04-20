@@ -4970,6 +4970,33 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 6</value>
   </data>
+  <data name="ActionShowTranscriptionGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFwSURBVDhPY6AakMtZ3yufu9YCymWQz1m/Si5nXSiUix+A
+        FAI1/AdpAvFBBoH4cjlrH0nnrpUBKyIEQJqRDZHNWX8MmU8UQNYEw0R7A6QZ5FyoRtJshoUBzDaSDQHZ
+        DAowsCZoTMAMAcUOiL/+5MP/Ji1n/2vUnvqvWXf6f+nKG/9B4nCACHmIK6DegRugXnPqv+/Ei//////6
+        37j5zH+tulMIAyAuWBeKHmDI6cKk5cx/38kX/8/Y9+C/WevZ/7oNp1FdAAIbjs/fDMJQLgp49ubjfy+g
+        C7q33QMboIfNALtWmUeObTKPQOzM+d6bQXywBBA49Zz/HzPnCtAL//+bAl2D0wD7Ntm/Lp1KHxw7FN/A
+        MEhOvebkf6Pm0/8T5l4DG6DfiBQGMAAywLlD8QcQf3dslfll3y7z06lV4RtIzn/KJXAMpC++8T9j8c3/
+        akADPSdewjTkzdc3MpcfnTIFecGxTfHL/deXNKBStAAMDACRg+7h4CLPmAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionShowTranscriptionGuide.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowTranscriptionGuide.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionShowTranscriptionGuide.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+G</value>
+  </data>
+  <data name="ActionShowTranscriptionGuide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="ActionShowTranscriptionGuide.Text" xml:space="preserve">
+    <value>Transcription guide</value>
+  </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -6674,6 +6701,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowTranscriptionGuide.Name" xml:space="preserve">
+    <value>ActionShowTranscriptionGuide</value>
+  </data>
+  <data name="&gt;&gt;ActionShowTranscriptionGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
     <value>ActionShowGrammarGuide</value>
