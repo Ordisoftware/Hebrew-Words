@@ -436,10 +436,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
   {
-    if ( Program.TranscriptionGuideForm.WindowState == FormWindowState.Minimized )
-      Program.TranscriptionGuideForm.WindowState = FormWindowState.Normal;
-    Program.TranscriptionGuideForm.Show();
-    Program.TranscriptionGuideForm.BringToFront();
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
   }
 
   /// <summary>
@@ -449,10 +446,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
-      Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
-    Program.GrammarGuideForm.Show();
-    Program.GrammarGuideForm.BringToFront();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
   /// <summary>

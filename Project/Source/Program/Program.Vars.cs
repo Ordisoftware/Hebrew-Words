@@ -61,12 +61,13 @@ static partial class Program
     get
     {
       return _TranscriptionGuideForm ??= new HTMLBrowserForm(HebrewTranslations.TranscriptionGuideTitle,
-                                                       HebrewGlobals.TranscriptionGuideFilePath,
-                                                       nameof(Settings.TranscriptionGuideFormLocation),
-                                                       nameof(Settings.TranscriptionGuideFormSize));
+                                                             HebrewGlobals.TranscriptionGuideFilePath,
+                                                             nameof(Settings.TranscriptionGuideFormLocation),
+                                                             nameof(Settings.TranscriptionGuideFormSize));
     }
   }
   static private HTMLBrowserForm _TranscriptionGuideForm;
+
   /// <summary>
   /// Indicates the grammar guide form.
   /// </summary>

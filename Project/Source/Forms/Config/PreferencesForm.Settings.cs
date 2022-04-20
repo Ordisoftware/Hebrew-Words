@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using System.Configuration;
@@ -44,6 +44,8 @@ partial class PreferencesForm
     Settings.BenchmarkStartingApp = starttime;
     Settings.BenchmarkLoadData = loadtime;
     Settings.RestoreMainForm();
+    Program.TranscriptionGuideForm.CenterToMainFormElseScreen();
+    Program.GrammarGuideForm.CenterToMainFormElseScreen();
     SystemManager.TryCatch(Settings.Store);
     DoReset = true;
     Reseted = true;

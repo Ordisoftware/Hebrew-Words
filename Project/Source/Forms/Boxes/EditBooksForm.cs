@@ -140,7 +140,7 @@ partial class EditBooksForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    Program.GrammarGuideForm.Popup();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
 }
