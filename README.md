@@ -190,6 +190,7 @@ These options can be used to control the software when it is already running, bu
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
 | Ctrl + H | Open Hebrew Letters |
+| Ctrl + L | Open transcription guide |
 | Ctrl + G | Open grammar guide |
 | Ctrl + O | Open verse context menu |
 | Ctrl + W | Open word context menu |
@@ -281,6 +282,7 @@ These options can be used to control the software when it is already running, bu
 - Add new input panel from Hebrew Letters v4+.
 - Add new advanced text-box for future undo/redo.
 - Add menu for web links.
+- Add transcription guide in Tools menu.
 - Add optimize database menu.
 - Add usage statistics form in tools menu.
 - Add keyboard shortcuts notice in windows settings menu.
