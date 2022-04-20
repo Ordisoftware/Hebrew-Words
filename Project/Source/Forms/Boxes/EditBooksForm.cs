@@ -72,6 +72,8 @@ partial class EditBooksForm : Form
 
   private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
   {
+    if ( DataGridView.ReadOnly ) return;
+    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
     ActionEditMemo.PerformClick();
   }
 

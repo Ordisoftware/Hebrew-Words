@@ -142,17 +142,17 @@
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 6</value>
   </data>
-  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 22</value>
-  </data>
-  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
-    <value>Analyser avec Hebrew Letters</value>
-  </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 22</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyser avec Hebrew Letters</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 6</value>
@@ -184,7 +184,7 @@
   <data name="ActionEditMemo.Text" xml:space="preserve">
     <value>Editer le mémo</value>
   </data>
-  <data name="ContextMenuStripResults.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenuResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 226</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
@@ -202,15 +202,11 @@
   <data name="ColumnHebrew.HeaderText" xml:space="preserve">
     <value>Hébreu</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ColumnHebrew.Width" type="System.Int32, mscorlib">
-    <value>130</value>
+  <data name="ColumnCommonName.HeaderText" xml:space="preserve">
+    <value>Nom commun</value>
   </data>
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Traduction</value>
-  </data>
-  <data name="ColumnTranslation.Width" type="System.Int32, mscorlib">
-    <value>120</value>
   </data>
   <data name="ColumnLettriq.HeaderText" xml:space="preserve">
     <value>Lettrique</value>
@@ -223,6 +219,6 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
 </root>
