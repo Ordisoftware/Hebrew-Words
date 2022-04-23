@@ -240,7 +240,6 @@ These options can be used to control the software when it is already running, bu
 - Add menu to open a batch export form to select books or chapters to export.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
-- Add options to theme MSWord export.
 
 #### Later
 
@@ -288,7 +287,8 @@ These options can be used to control the software when it is already running, bu
 - Add keyboard shortcuts notice in windows settings menu.
 - Add and change many shortcuts.
 - Add sounds to clipboard actions.
-- Add theming options.
+- Add color theming options.
+- Add option to theme MSWord export (font sizes).
 - Add options to choose mouse actions on words and verses.
 - Add option to go at startup to the previous verse else the main bookmark else the first verse of the Tanak.
 - Add option to enable or disable the web links menu.
