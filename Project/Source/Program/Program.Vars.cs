@@ -53,36 +53,6 @@ static partial class Program
   static public string HistoryFilePath
   => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
-  /// <summary>
-  /// Indicates the transcription guide form.
-  /// </summary>
-  static public HTMLBrowserForm TranscriptionGuideForm
-  {
-    get
-    {
-      return _TranscriptionGuideForm ??= new HTMLBrowserForm(HebrewTranslations.TranscriptionGuideTitle,
-                                                             HebrewGlobals.TranscriptionGuideFilePath,
-                                                             nameof(Settings.TranscriptionGuideFormLocation),
-                                                             nameof(Settings.TranscriptionGuideFormSize));
-    }
-  }
-  static private HTMLBrowserForm _TranscriptionGuideForm;
-
-  /// <summary>
-  /// Indicates the grammar guide form.
-  /// </summary>
-  static public HTMLBrowserForm GrammarGuideForm
-  {
-    get
-    {
-      return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                       HebrewGlobals.GrammarGuideFilePath,
-                                                       nameof(Settings.GrammarGuideFormLocation),
-                                                       nameof(Settings.GrammarGuideFormSize));
-    }
-  }
-  static private HTMLBrowserForm _GrammarGuideForm;
-
   static public string HebrewStrongsJsonFilePath
     => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
 
