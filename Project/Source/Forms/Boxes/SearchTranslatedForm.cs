@@ -42,7 +42,7 @@ partial class SearchTranslatedForm : Form
       Program.Settings.SearchTranslatedFormLocation = new Point(form.Location.X, form.Location.Y);
       SystemManager.TryCatch(Program.Settings.Save);
     }
-    MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
+    MainForm.Instance.ActionCloseTranslatedWindows.Enabled = Forms.Count > 0;
   }
 
   private readonly WordControl WordControl;
@@ -84,7 +84,7 @@ partial class SearchTranslatedForm : Form
   private void SearchTranslatedForm_FormClosed(object sender, FormClosedEventArgs e)
   {
     Forms.Remove(this);
-    MainForm.Instance.ActionCloseWindows.Enabled = Forms.Count > 0;
+    MainForm.Instance.ActionCloseTranslatedWindows.Enabled = Forms.Count > 0;
     Program.Settings.SearchTranslatedFormLocation = new Point(Location.X, Location.Y);
     Program.Settings.SearchTranslatedFormFilterDistinct = EditDistinct.Checked;
     SystemManager.TryCatch(Program.Settings.Save);
@@ -282,7 +282,7 @@ partial class SearchTranslatedForm : Form
     {
       case Keys.F8:
       case Keys.Alt | Keys.F8:
-        MainForm.Instance.ActionCloseWindows.PerformClick();
+        MainForm.Instance.ActionCloseTranslatedWindows.PerformClick();
         return true;
     }
     return base.ProcessCmdKey(ref msg, keyData);

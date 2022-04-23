@@ -182,9 +182,9 @@
       this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSave = new System.Windows.Forms.ToolStripButton();
       this.ActionDatabase = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionNew = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionRestore = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionBackup = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionDatabaseNew = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionDatabaseRestore = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionDatabaseBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
@@ -194,8 +194,8 @@
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionViewBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
@@ -207,13 +207,13 @@
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRefresh = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCloseWindows = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCloseTranslatedWindows = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorImportConcordances = new System.Windows.Forms.ToolStripSeparator();
       this.ActionImportConcordances = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
-      this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
@@ -1580,9 +1580,9 @@
       // 
       this.ActionDatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionNew,
-            this.ActionRestore,
-            this.ActionBackup,
+            this.ActionDatabaseNew,
+            this.ActionDatabaseRestore,
+            this.ActionDatabaseBackup,
             this.toolStripSeparator22,
             this.ActionVacuum,
             this.SeparatorActionNormalizeTexts,
@@ -1594,23 +1594,23 @@
       this.ActionDatabase.Name = "ActionDatabase";
       this.ActionDatabase.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       // 
-      // ActionNew
+      // ActionDatabaseNew
       // 
-      resources.ApplyResources(this.ActionNew, "ActionNew");
-      this.ActionNew.Name = "ActionNew";
-      this.ActionNew.Click += new System.EventHandler(this.ActionNew_Click);
+      resources.ApplyResources(this.ActionDatabaseNew, "ActionDatabaseNew");
+      this.ActionDatabaseNew.Name = "ActionDatabaseNew";
+      this.ActionDatabaseNew.Click += new System.EventHandler(this.ActionNew_Click);
       // 
-      // ActionRestore
+      // ActionDatabaseRestore
       // 
-      resources.ApplyResources(this.ActionRestore, "ActionRestore");
-      this.ActionRestore.Name = "ActionRestore";
-      this.ActionRestore.Click += new System.EventHandler(this.ActionRestore_Click);
+      resources.ApplyResources(this.ActionDatabaseRestore, "ActionDatabaseRestore");
+      this.ActionDatabaseRestore.Name = "ActionDatabaseRestore";
+      this.ActionDatabaseRestore.Click += new System.EventHandler(this.ActionRestore_Click);
       // 
-      // ActionBackup
+      // ActionDatabaseBackup
       // 
-      resources.ApplyResources(this.ActionBackup, "ActionBackup");
-      this.ActionBackup.Name = "ActionBackup";
-      this.ActionBackup.Click += new System.EventHandler(this.ActionBackup_Click);
+      resources.ApplyResources(this.ActionDatabaseBackup, "ActionDatabaseBackup");
+      this.ActionDatabaseBackup.Name = "ActionDatabaseBackup";
+      this.ActionDatabaseBackup.Click += new System.EventHandler(this.ActionBackup_Click);
       // 
       // toolStripSeparator22
       // 
@@ -1661,8 +1661,8 @@
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewBooksBoard,
-            this.ActionViewParashotBoard,
+            this.ActionBooksBoard,
+            this.ActionParashotBoard,
             this.toolStripSeparator6,
             this.ActionShowTranscriptionGuide,
             this.ActionShowGrammarGuide,
@@ -1674,23 +1674,23 @@
             this.ActionCopyToClipboard,
             this.ActionRefresh,
             this.toolStripSeparator23,
-            this.ActionCloseWindows,
+            this.ActionCloseTranslatedWindows,
             this.SeparatorImportConcordances,
             this.ActionImportConcordances});
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       // 
-      // ActionViewBooksBoard
+      // ActionBooksBoard
       // 
-      resources.ApplyResources(this.ActionViewBooksBoard, "ActionViewBooksBoard");
-      this.ActionViewBooksBoard.Name = "ActionViewBooksBoard";
-      this.ActionViewBooksBoard.Click += new System.EventHandler(this.ActionViewBooksTranslation_Click);
+      resources.ApplyResources(this.ActionBooksBoard, "ActionBooksBoard");
+      this.ActionBooksBoard.Name = "ActionBooksBoard";
+      this.ActionBooksBoard.Click += new System.EventHandler(this.ActionBooksBoard_Click);
       // 
-      // ActionViewParashotBoard
+      // ActionParashotBoard
       // 
-      resources.ApplyResources(this.ActionViewParashotBoard, "ActionViewParashotBoard");
-      this.ActionViewParashotBoard.Name = "ActionViewParashotBoard";
-      this.ActionViewParashotBoard.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      resources.ApplyResources(this.ActionParashotBoard, "ActionParashotBoard");
+      this.ActionParashotBoard.Name = "ActionParashotBoard";
+      this.ActionParashotBoard.Click += new System.EventHandler(this.ActionParashotBoard_Click);
       // 
       // toolStripSeparator6
       // 
@@ -1755,11 +1755,11 @@
       this.toolStripSeparator23.Name = "toolStripSeparator23";
       resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
       // 
-      // ActionCloseWindows
+      // ActionCloseTranslatedWindows
       // 
-      resources.ApplyResources(this.ActionCloseWindows, "ActionCloseWindows");
-      this.ActionCloseWindows.Name = "ActionCloseWindows";
-      this.ActionCloseWindows.Click += new System.EventHandler(this.ActionCloseWindows_Click);
+      resources.ApplyResources(this.ActionCloseTranslatedWindows, "ActionCloseTranslatedWindows");
+      this.ActionCloseTranslatedWindows.Name = "ActionCloseTranslatedWindows";
+      this.ActionCloseTranslatedWindows.Click += new System.EventHandler(this.ActionCloseTranslatedWindows_Click);
       // 
       // SeparatorImportConcordances
       // 
@@ -1791,7 +1791,7 @@
       this.ActionSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuitemScreenPosition,
+            this.ActionScreenPosition,
             this.ActionResetWinSettings,
             this.Sep7,
             this.ActionShowKeyboardNotice,
@@ -1810,17 +1810,17 @@
       this.ActionSettings.Name = "ActionSettings";
       this.ActionSettings.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
       // 
-      // MenuitemScreenPosition
+      // ActionScreenPosition
       // 
-      this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ActionScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditScreenNone,
             this.EditScreenTopLeft,
             this.EditScreenTopRight,
             this.EditScreenBottomLeft,
             this.EditScreenBottomRight,
             this.EditScreenCenter});
-      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
-      this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
+      resources.ApplyResources(this.ActionScreenPosition, "ActionScreenPosition");
+      this.ActionScreenPosition.Name = "ActionScreenPosition";
       // 
       // EditScreenNone
       // 
@@ -2409,7 +2409,7 @@
     private System.Windows.Forms.ToolStripDropDownButton ActionTools;
     private System.Windows.Forms.ToolStripMenuItem ActionAddBookmark;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarks;
-    private System.Windows.Forms.ToolStripMenuItem ActionBackup;
+    private System.Windows.Forms.ToolStripMenuItem ActionDatabaseBackup;
     private System.Windows.Forms.ToolStripMenuItem ActionClearBookmarks;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyTranslation;
@@ -2420,12 +2420,12 @@
     private System.Windows.Forms.ToolStripMenuItem ActionExportVerse;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMain;
     private System.Windows.Forms.ToolStripMenuItem ActionImportConsole;
-    private System.Windows.Forms.ToolStripMenuItem ActionNew;
+    private System.Windows.Forms.ToolStripMenuItem ActionDatabaseNew;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters2;
     private System.Windows.Forms.ToolStripMenuItem ActionVerseReadOnline;
-    private System.Windows.Forms.ToolStripMenuItem ActionRestore;
+    private System.Windows.Forms.ToolStripMenuItem ActionDatabaseRestore;
     private System.Windows.Forms.ToolStripMenuItem ActionWordSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchWord;
     private System.Windows.Forms.ToolStripMenuItem ActionSetAsBookmarkMain;
@@ -2434,7 +2434,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionSortBookmarks;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
     private System.Windows.Forms.ToolStripMenuItem ActionViewBibleStatistics;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewBooksBoard;
+    private System.Windows.Forms.ToolStripMenuItem ActionBooksBoard;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     private System.Windows.Forms.ToolStripSeparator ToolStripSeparatorExit;
@@ -2460,7 +2460,7 @@
     internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
     internal System.Windows.Forms.ToolStripMenuItem ActionSearchTranslated;
     private ToolStripDropDownButton ActionSettings;
-    private ToolStripMenuItem MenuitemScreenPosition;
+    private ToolStripMenuItem ActionScreenPosition;
     internal ToolStripMenuItem EditScreenNone;
     internal ToolStripMenuItem EditScreenTopLeft;
     internal ToolStripMenuItem EditScreenTopRight;
@@ -2477,7 +2477,7 @@
     internal ToolStripMenuItem EditShowSuccessDialogs;
     private ToolStripSeparator toolStripSeparator15;
     internal ToolStripMenuItem EditConfirmClosing;
-    internal ToolStripMenuItem ActionViewParashotBoard;
+    internal ToolStripMenuItem ActionParashotBoard;
     private ToolStripMenuItem ActionOpenCalculator;
     private RadioButton SelectSearchTranslationIncludeComments;
     private RadioButton SelectSearchTranslationOnlyComments;
@@ -2525,7 +2525,7 @@
     private ToolStripMenuItem ActionImportConcordances;
     private ToolStripSeparator SeparatorImportConcordances;
     private ToolStripSeparator toolStripSeparator20;
-    internal ToolStripMenuItem ActionCloseWindows;
+    internal ToolStripMenuItem ActionCloseTranslatedWindows;
     private ToolStripMenuItem ActionAddToBookmarks;
     private Panel PanelTitleInner;
     private ToolStripSeparator toolStripSeparator1;

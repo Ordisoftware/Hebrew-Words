@@ -406,11 +406,11 @@ partial class MainForm : Form
   #region Menu Tools
 
   /// <summary>
-  /// Event handler. Called by ActionViewBooksTranslation for click events.
+  /// Event handler. Called by ActionBooksBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewBooksTranslation_Click(object sender, EventArgs e)
+  private void ActionBooksBoard_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
     using var form = new EditBooksForm();
@@ -420,11 +420,11 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewParashot for click events.
+  /// Event handler. Called by ActionParashotBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewParashot_Click(object sender, EventArgs e)
+  private void ActionParashotBoard_Click(object sender, EventArgs e)
   {
     ParashotForm.Run();
   }
@@ -599,12 +599,12 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionCloseWindows for click events.
+  /// Event handler. Called by ActionCloseTranslatedWindows for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "Collection is modified")]
-  private void ActionCloseWindows_Click(object sender, EventArgs e)
+  private void ActionCloseTranslatedWindows_Click(object sender, EventArgs e)
   {
     bool value = Settings.CloseSearchTranslatedFormReturnToReference;
     try
@@ -657,7 +657,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
-      ActionBackup.PerformClick();
+      ActionDatabaseBackup.PerformClick();
     if ( !DisplayManager.QueryYesNo(AppTranslations.AskToCreateNewDatabase.GetLang()) )
       return;
     ReLoadData(() => File.Delete(Path.Combine(Globals.UserDataFolderPath, Globals.ApplicationDatabaseFileName)));
@@ -672,7 +672,7 @@ partial class MainForm : Form
   {
     ActionSave.PerformClick();
     if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
-      ActionBackup.PerformClick();
+      ActionDatabaseBackup.PerformClick();
     if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
       return;
     string fileName = Path.GetFileNameWithoutExtension(OpenFileDialogDB.FileName);
