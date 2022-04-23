@@ -1702,5 +1702,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["MethodNoticeFormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Medium")]
+        public global::Ordisoftware.Hebrew.Words.ExportDocumentTheme ExportDocumentTheme {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.ExportDocumentTheme)(this["ExportDocumentTheme"]));
+            }
+            set {
+                this["ExportDocumentTheme"] = value;
+            }
+        }
     }
 }

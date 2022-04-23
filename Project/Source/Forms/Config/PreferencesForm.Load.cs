@@ -64,6 +64,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditAutoSaveOnLeaveControl.Checked = Settings.AutoSaveOnLeaveControl);
     SystemManager.TryCatch(() => EditSearchHebrewCharsInBold.Checked = Settings.LettersControlHebrewCharsInBold);
+    SystemManager.TryCatch(() => SelectExportDocumentTheme.SelectedIndex = (int)Settings.ExportDocumentTheme);
     LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;

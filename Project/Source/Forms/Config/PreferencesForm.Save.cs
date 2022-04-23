@@ -65,6 +65,7 @@ partial class PreferencesForm
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.AutoSaveOnLeaveControl = EditAutoSaveOnLeaveControl.Checked;
     Settings.LettersControlHebrewCharsInBold = EditSearchHebrewCharsInBold.Checked;
+    Settings.ExportDocumentTheme = (ExportDocumentTheme)SelectExportDocumentTheme.SelectedIndex;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

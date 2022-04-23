@@ -11,14 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2015-06 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Xceed.Document.NET;
 using Xceed.Words.NET;
 
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-static class ExportDocX
+static partial class ExportDocX
 {
 
   // TODO add options to theme MSWord export
@@ -31,38 +31,6 @@ static class ExportDocX
   /// Measures in float or double are in inch: 100f = 1 inch = 2.54cm.
   /// </remarks>
   static private DocX Document;
-
-  //static private read-only Font FontVerdana = new("Verdana");
-  static private readonly Font FontHebrew = new("Hebrew");
-  static private readonly Font FontCalibri = new("Calibri");
-
-  static private readonly float DocumentMargin = 75.0f;
-  static private readonly bool DocumentDifferentOddAndEvenPages = true;
-
-  static private readonly string Heading1 = "Heading1";
-  static private readonly int Heading1TextSize = 32;
-  static private readonly int Heading1TextSizeSub = 24;
-
-  static private readonly string Heading2 = "Heading2";
-  static private readonly int Heading2TextSize = 20;
-  static private readonly int Heading2TextSizeSub = 15;
-
-  static private readonly int TableWidth = 450;
-  static private readonly int WordColumnCount = 4;
-  static private readonly int CellVerseWidth = 55;
-  static private readonly int CellCommentWidth = TableWidth - CellVerseWidth;
-
-  static private readonly int MemoCellMargin = 8;
-  static private readonly int MemoTextSpacing = 5;
-  static private readonly int MemoTextSize = 10;
-
-  static private readonly int CellVerseMarginLeft = 5;
-  static private readonly int CellVerseMarginRight = 0;
-  static private readonly bool VerseRefTextInBold = true;
-  static private readonly int VerseRefTextSize = 12;
-  static private readonly int WordHebrewTextSize = 16;
-  static private readonly int WordTranslationTextSize = 10;
-  static private readonly int WordTextSpacing = 10;
 
   /// <summary>
   /// Exports a book to MS Word file.
@@ -255,7 +223,7 @@ static class ExportDocX
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();
-      for ( int column = 3; column >= 0 && indexWord >= 0; column--, indexWord-- )
+      for ( int column = WordColumnCount - 1; column >= 0 && indexWord >= 0; column--, indexWord-- )
       {
         var cell = table.Rows[row].Cells[column];
         cell.VerticalAlignment = VerticalAlignment.Center;

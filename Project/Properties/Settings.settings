@@ -422,5 +422,8 @@
     <Setting Name="MethodNoticeFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">542, 666</Value>
     </Setting>
+    <Setting Name="ExportDocumentTheme" Type="Ordisoftware.Hebrew.Words.ExportDocumentTheme" Scope="User">
+      <Value Profile="(Default)">Medium</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

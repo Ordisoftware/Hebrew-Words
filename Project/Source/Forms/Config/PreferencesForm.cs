@@ -253,7 +253,7 @@ partial class PreferencesForm : Form
   private void EditDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( !IsReady ) return;
-    Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)SelectDataExportFileFormat.SelectedItem ).Key;
   }
 
   private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
@@ -264,7 +264,7 @@ partial class PreferencesForm : Form
   private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( !IsReady ) return;
-    Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+    Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)SelectImageExportFileFormat.SelectedItem ).Key;
   }
 
   #endregion

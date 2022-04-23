@@ -121,8 +121,8 @@ partial class PreferencesForm
   /// </summary>
   private void LoadExportFileFormats()
   {
-    EditDataExportFileFormat.Fill(Program.BoardExportTargets, Settings.ExportDataPreferredTarget);
-    EditImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
+    SelectDataExportFileFormat.Fill(Program.BoardExportTargets, Settings.ExportDataPreferredTarget);
+    SelectImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
   }
 
 }

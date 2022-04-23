@@ -57,12 +57,14 @@
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
-      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.SelectExportDocumentTheme = new System.Windows.Forms.ComboBox();
+      this.SelectImageExportFileFormat = new System.Windows.Forms.ComboBox();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
-      this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.SelectDataExportFileFormat = new System.Windows.Forms.ComboBox();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
+      this.LabelExportDocumentTheme = new System.Windows.Forms.Label();
       this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
       this.LabelCalculatorPath = new System.Windows.Forms.Label();
       this.ActionResetBackupFolder = new System.Windows.Forms.Button();
@@ -393,13 +395,15 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPagePaths.Controls.Add(this.EditImageExportFileFormat);
+      this.TabPagePaths.Controls.Add(this.SelectExportDocumentTheme);
+      this.TabPagePaths.Controls.Add(this.SelectImageExportFileFormat);
       this.TabPagePaths.Controls.Add(LabelBackupPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.LabelDataExportFileFormat);
-      this.TabPagePaths.Controls.Add(this.EditDataExportFileFormat);
+      this.TabPagePaths.Controls.Add(this.SelectDataExportFileFormat);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
+      this.TabPagePaths.Controls.Add(this.LabelExportDocumentTheme);
       this.TabPagePaths.Controls.Add(this.LabelImageExportFileFormat);
       this.TabPagePaths.Controls.Add(this.LabelCalculatorPath);
       this.TabPagePaths.Controls.Add(this.ActionResetBackupFolder);
@@ -416,14 +420,25 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
-      // EditImageExportFileFormat
+      // SelectExportDocumentTheme
       // 
-      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditImageExportFileFormat.FormattingEnabled = true;
-      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
-      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
-      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
-      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
+      this.SelectExportDocumentTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectExportDocumentTheme.FormattingEnabled = true;
+      this.SelectExportDocumentTheme.Items.AddRange(new object[] {
+            resources.GetString("SelectExportDocumentTheme.Items"),
+            resources.GetString("SelectExportDocumentTheme.Items1"),
+            resources.GetString("SelectExportDocumentTheme.Items2")});
+      resources.ApplyResources(this.SelectExportDocumentTheme, "SelectExportDocumentTheme");
+      this.SelectExportDocumentTheme.Name = "SelectExportDocumentTheme";
+      // 
+      // SelectImageExportFileFormat
+      // 
+      this.SelectImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectImageExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectImageExportFileFormat, "SelectImageExportFileFormat");
+      this.SelectImageExportFileFormat.Name = "SelectImageExportFileFormat";
+      this.SelectImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
+      this.SelectImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
       // 
       // LabelExportFolder
       // 
@@ -443,14 +458,14 @@
       resources.ApplyResources(this.LabelDataExportFileFormat, "LabelDataExportFileFormat");
       this.LabelDataExportFileFormat.Name = "LabelDataExportFileFormat";
       // 
-      // EditDataExportFileFormat
+      // SelectDataExportFileFormat
       // 
-      this.EditDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditDataExportFileFormat.FormattingEnabled = true;
-      resources.ApplyResources(this.EditDataExportFileFormat, "EditDataExportFileFormat");
-      this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
-      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
-      this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
+      this.SelectDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectDataExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectDataExportFileFormat, "SelectDataExportFileFormat");
+      this.SelectDataExportFileFormat.Name = "SelectDataExportFileFormat";
+      this.SelectDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
+      this.SelectDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
       // 
       // ActionSelectExportFolder
       // 
@@ -459,6 +474,11 @@
       this.ActionSelectExportFolder.Name = "ActionSelectExportFolder";
       this.ActionSelectExportFolder.UseVisualStyleBackColor = true;
       this.ActionSelectExportFolder.Click += new System.EventHandler(this.ActionSelectExportFolder_Click);
+      // 
+      // LabelExportDocumentTheme
+      // 
+      resources.ApplyResources(this.LabelExportDocumentTheme, "LabelExportDocumentTheme");
+      this.LabelExportDocumentTheme.Name = "LabelExportDocumentTheme";
       // 
       // LabelImageExportFileFormat
       // 
@@ -1750,8 +1770,8 @@
     private TextBoxEx EditExportFolder;
     private TextBoxEx EditCalculatorPath;
     private TextBoxEx EditHebrewLettersPath;
-    private ComboBox EditImageExportFileFormat;
-    private ComboBox EditDataExportFileFormat;
+    private ComboBox SelectImageExportFileFormat;
+    private ComboBox SelectDataExportFileFormat;
     private Label LabelImageExportFileFormat;
     private Label LabelDataExportFileFormat;
     private CheckBox EditAutoOpenExportedFile;
@@ -1889,5 +1909,7 @@
     private TabPage TabPageMouse;
     private CheckBox EditSearchHebrewCharsInBold;
     private Button ActionResetRendering;
+    private ComboBox SelectExportDocumentTheme;
+    private Label LabelExportDocumentTheme;
   }
 }

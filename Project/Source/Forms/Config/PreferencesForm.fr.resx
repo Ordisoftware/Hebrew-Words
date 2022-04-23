@@ -631,4 +631,16 @@
   <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
     <value>Caractères hébreux en gras pour la recherche</value>
   </data>
+  <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
+    <value>Petit</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items1" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items2" xml:space="preserve">
+    <value>Large</value>
+  </data>
+  <data name="LabelExportDocumentTheme.Text" xml:space="preserve">
+    <value>Thème d'export de document</value>
+  </data>
 </root>
