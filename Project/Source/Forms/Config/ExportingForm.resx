@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 2</value>
+    <value>186, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -154,10 +154,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
+    <value>10, 78</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 28</value>
+    <value>264, 28</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -175,10 +175,10 @@
     <value>0</value>
   </data>
   <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 43</value>
+    <value>25, 45</value>
   </data>
   <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 16</value>
+    <value>238, 14</value>
   </data>
   <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -199,13 +199,13 @@
     <value>True</value>
   </data>
   <data name="Label.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="Label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 17</value>
+    <value>22, 20</value>
   </data>
   <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 18</value>
+    <value>114, 16</value>
   </data>
   <data name="Label.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -235,7 +235,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 118</value>
+    <value>284, 116</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -259,7 +259,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>267, 118</value>
+    <value>284, 116</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

@@ -264,123 +264,6 @@
   <data name="PanelOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;SelectVerseFromFirstToLast.Name" xml:space="preserve">
-    <value>SelectVerseFromFirstToLast</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromFirstToLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromFirstToLast.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromFirstToLast.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToLast.Name" xml:space="preserve">
-    <value>SelectVerseFromCurrentToLast</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToLast.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToLast.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTakeFirstElseLast.Name" xml:space="preserve">
-    <value>SelectVerseTakeFirstElseLast</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTakeFirstElseLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTakeFirstElseLast.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTakeFirstElseLast.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTranslated.Name" xml:space="preserve">
-    <value>SelectVerseTranslated</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTranslated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTranslated.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseTranslated.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseWithoutComment.Name" xml:space="preserve">
-    <value>SelectVerseWithoutComment</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseWithoutComment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseWithoutComment.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseWithoutComment.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFullyTranslated.Name" xml:space="preserve">
-    <value>SelectVerseFullyTranslated</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFullyTranslated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFullyTranslated.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFullyTranslated.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromLastToFirst.Name" xml:space="preserve">
-    <value>SelectVerseFromLastToFirst</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromLastToFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromLastToFirst.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromLastToFirst.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToFirst.Name" xml:space="preserve">
-    <value>SelectVerseFromCurrentToFirst</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToFirst.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;SelectVerseFromCurrentToFirst.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 175</value>
-  </data>
-  <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="SelectVerseFromFirstToLast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -620,6 +503,27 @@
   </data>
   <data name="&gt;&gt;SelectVerseFromCurrentToFirst.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 175</value>
+  </data>
+  <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="LabelSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
