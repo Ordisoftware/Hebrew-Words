@@ -230,7 +230,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Soon
 
-- Add normalize texte.
+- Add filters on all translated books or chapters.
 - Add search history.
 - Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
 - Add count the number of a word occurrences.
@@ -283,7 +283,8 @@ These options can be used to control the software when it is already running, bu
 - Add menu for web links.
 - Add transcription guide in Tools menu.
 - Add optimize database menu.
-- Add usage statistics form in tools menu.
+- Add normalize texts in Database menu.
+- Add usage statistics form in Tools menu.
 - Add keyboard shortcuts notice in windows settings menu.
 - Add and change many shortcuts.
 - Add sounds to clipboard actions.
