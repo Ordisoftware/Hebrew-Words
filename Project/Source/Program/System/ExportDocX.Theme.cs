@@ -15,32 +15,18 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using Xceed.Document.NET;
-using Xceed.Words.NET;
 
-public enum ExportDocumentTheme
-{
-  Small,
-  Medium,
-  Large
-}
-
-[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
 static partial class ExportDocX
 {
 
-  static public ExportDocumentTheme Theme => Program.Settings.ExportDocumentTheme;
-
   //static private read-only Font FontVerdana = new("Verdana");
-  static private readonly float DocumentMargin = 75.0f;
-
-  static private readonly bool DocumentDifferentOddAndEvenPages = true;
 
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
   static private readonly int TableWidth = 450;
 
-  static private readonly int CellCommentWidth = TableWidth - CellVerseWidth;
+  static private readonly int CellCommentWidth = TableWidth - ExportDocXTheming.CellVerseWidth;
 
   static private readonly int MemoCellMargin = 8;
   static private readonly int MemoTextSpacing = 5;
@@ -52,75 +38,6 @@ static partial class ExportDocX
 
   static private string Heading1 = "Heading1";
 
-  static private int Heading1TextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 20,
-    ExportDocumentTheme.Medium => 28,
-    ExportDocumentTheme.Large => 32
-  };
-  static private int Heading1TextSizeSub => Theme switch
-  {
-    ExportDocumentTheme.Small => 16,
-    ExportDocumentTheme.Medium => 22,
-    ExportDocumentTheme.Large => 24
-  };
-
   static private string Heading2 = "Heading2";
-
-  static private int Heading2TextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 16,
-    ExportDocumentTheme.Medium => 18,
-    ExportDocumentTheme.Large => 20
-  };
-
-  static private int Heading2TextSizeSub => Theme switch
-  {
-    ExportDocumentTheme.Small => 12,
-    ExportDocumentTheme.Medium => 14,
-    ExportDocumentTheme.Large => 16
-  };
-
-  static private int WordColumnCount => Theme switch
-  {
-    ExportDocumentTheme.Small => 5,
-    ExportDocumentTheme.Medium => 5,
-    ExportDocumentTheme.Large => 4
-  };
-
-  static private int CellVerseWidth => Theme switch
-  {
-    ExportDocumentTheme.Small => 40,
-    ExportDocumentTheme.Medium => 50,
-    ExportDocumentTheme.Large => 55
-  };
-
-  static private int WordHebrewTextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 12,
-    ExportDocumentTheme.Medium => 14,
-    ExportDocumentTheme.Large => 18
-  };
-
-  static private int VerseRefTextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 8,
-    ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
-  };
-
-  static private int WordTranslationTextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 8,
-    ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
-  };
-
-  static private int MemoTextSize => Theme switch
-  {
-    ExportDocumentTheme.Small => 8,
-    ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
-  };
 
 }

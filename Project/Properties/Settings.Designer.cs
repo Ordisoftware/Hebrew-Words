@@ -1714,5 +1714,65 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ExportDocumentTheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportDocumentDifferentOddAndEvenPages {
+            get {
+                return ((bool)(this["ExportDocumentDifferentOddAndEvenPages"]));
+            }
+            set {
+                this["ExportDocumentDifferentOddAndEvenPages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public float ExportDocumentMarginTop {
+            get {
+                return ((float)(this["ExportDocumentMarginTop"]));
+            }
+            set {
+                this["ExportDocumentMarginTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public float ExportDocumentMarginLeft {
+            get {
+                return ((float)(this["ExportDocumentMarginLeft"]));
+            }
+            set {
+                this["ExportDocumentMarginLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public float ExportDocumentMarginRight {
+            get {
+                return ((float)(this["ExportDocumentMarginRight"]));
+            }
+            set {
+                this["ExportDocumentMarginRight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public float ExportDocumentMarginBottom {
+            get {
+                return ((float)(this["ExportDocumentMarginBottom"]));
+            }
+            set {
+                this["ExportDocumentMarginBottom"] = value;
+            }
+        }
     }
 }

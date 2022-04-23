@@ -224,7 +224,7 @@
     <value>Fichiers EXE (*.exe)|*.exe</value>
   </data>
   <data name="TabPagePaths.Text" xml:space="preserve">
-    <value>Chemins</value>
+    <value>Chemins &amp; Export</value>
   </data>
   <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>

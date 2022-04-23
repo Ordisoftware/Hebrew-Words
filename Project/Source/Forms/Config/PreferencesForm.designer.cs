@@ -447,8 +447,8 @@
       // 
       // ActionResetExportFolder
       // 
-      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetExportFolder, "ActionResetExportFolder");
+      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
       this.ActionResetExportFolder.Name = "ActionResetExportFolder";
       this.ActionResetExportFolder.UseVisualStyleBackColor = true;
       this.ActionResetExportFolder.Click += new System.EventHandler(this.ActionResetExportFolder_Click);
@@ -469,8 +469,8 @@
       // 
       // ActionSelectExportFolder
       // 
-      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectExportFolder, "ActionSelectExportFolder");
+      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
       this.ActionSelectExportFolder.Name = "ActionSelectExportFolder";
       this.ActionSelectExportFolder.UseVisualStyleBackColor = true;
       this.ActionSelectExportFolder.Click += new System.EventHandler(this.ActionSelectExportFolder_Click);
@@ -492,32 +492,32 @@
       // 
       // ActionResetBackupFolder
       // 
-      this.ActionResetBackupFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetBackupFolder, "ActionResetBackupFolder");
+      this.ActionResetBackupFolder.FlatAppearance.BorderSize = 0;
       this.ActionResetBackupFolder.Name = "ActionResetBackupFolder";
       this.ActionResetBackupFolder.UseVisualStyleBackColor = true;
       this.ActionResetBackupFolder.Click += new System.EventHandler(this.ActionResetBackupFolder_Click);
       // 
       // ActionResetHebrewLettersPath
       // 
-      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetHebrewLettersPath, "ActionResetHebrewLettersPath");
+      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionResetHebrewLettersPath.Name = "ActionResetHebrewLettersPath";
       this.ActionResetHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionResetHebrewLettersPath.Click += new System.EventHandler(this.ActionResetHebrewLettersPath_Click);
       // 
       // ActionResetCalculatorPath
       // 
-      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetCalculatorPath, "ActionResetCalculatorPath");
+      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
       this.ActionResetCalculatorPath.Name = "ActionResetCalculatorPath";
       this.ActionResetCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionResetCalculatorPath.Click += new System.EventHandler(this.ActionResetCalculatorPath_Click);
       // 
       // ActionSelectCalculatorPath
       // 
-      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectCalculatorPath, "ActionSelectCalculatorPath");
+      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectCalculatorPath.Name = "ActionSelectCalculatorPath";
       this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
@@ -529,49 +529,49 @@
       // 
       // ActionSelectBackupFolder
       // 
-      this.ActionSelectBackupFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupFolder, "ActionSelectBackupFolder");
+      this.ActionSelectBackupFolder.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupFolder.Name = "ActionSelectBackupFolder";
       this.ActionSelectBackupFolder.UseVisualStyleBackColor = true;
       this.ActionSelectBackupFolder.Click += new System.EventHandler(this.ActionSelectBackupFolder_Click);
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
       // EditBackupFolder
       // 
+      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
       this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
       this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
       this.EditBackupFolder.Name = "EditBackupFolder";
       this.EditBackupFolder.ReadOnly = true;
       // 
       // EditExportFolder
       // 
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
       this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
       this.EditExportFolder.Name = "EditExportFolder";
       this.EditExportFolder.ReadOnly = true;
       // 
       // EditCalculatorPath
       // 
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
       this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
       this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
       this.EditCalculatorPath.Name = "EditCalculatorPath";
       this.EditCalculatorPath.ReadOnly = true;
       // 
       // EditHebrewLettersPath
       // 
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
       this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
@@ -1004,8 +1004,8 @@
       // ActionResetRendering
       // 
       this.ActionResetRendering.AllowDrop = true;
-      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetRendering, "ActionResetRendering");
+      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
       this.ActionResetRendering.Name = "ActionResetRendering";
       this.ActionResetRendering.UseVisualStyleBackColor = true;
       this.ActionResetRendering.Click += new System.EventHandler(this.ActionResetRendering_Click);
@@ -1616,8 +1616,8 @@
       // ActionOnlineSearchHelp
       // 
       this.ActionOnlineSearchHelp.AllowDrop = true;
-      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
+      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
       this.ActionOnlineSearchHelp.Name = "ActionOnlineSearchHelp";
       this.ActionOnlineSearchHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineSearchHelp.Click += new System.EventHandler(this.ActionOnlineSearchHelp_Click);
@@ -1625,8 +1625,8 @@
       // ActionOnlineVerseHelp
       // 
       this.ActionOnlineVerseHelp.AllowDrop = true;
-      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
       this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
       this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
@@ -1634,8 +1634,8 @@
       // ActionSelectOnlineSearch
       // 
       this.ActionSelectOnlineSearch.AllowDrop = true;
-      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
+      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
       this.ActionSelectOnlineSearch.Name = "ActionSelectOnlineSearch";
       this.ActionSelectOnlineSearch.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineSearch.Click += new System.EventHandler(this.ActionSelectOnlineSearch_Click);
@@ -1643,8 +1643,8 @@
       // ActionSelectOnlineVerseURL
       // 
       this.ActionSelectOnlineVerseURL.AllowDrop = true;
-      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
+      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);

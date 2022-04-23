@@ -425,5 +425,20 @@
     <Setting Name="ExportDocumentTheme" Type="Ordisoftware.Hebrew.Words.ExportDocumentTheme" Scope="User">
       <Value Profile="(Default)">Medium</Value>
     </Setting>
+    <Setting Name="ExportDocumentDifferentOddAndEvenPages" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginTop" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginLeft" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginRight" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginBottom" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
