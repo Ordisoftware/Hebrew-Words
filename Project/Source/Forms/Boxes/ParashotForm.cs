@@ -423,7 +423,7 @@ partial class ParashotForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    Program.GrammarGuideForm.Popup();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -469,6 +469,11 @@ partial class ParashotForm : Form
   private void ActionShowDescription_Click(object sender, EventArgs e)
   {
     MainForm.UserParashot.ShowDescription(CurrentDataBoundItem, false, () => Run(CurrentDataBoundItem));
+  }
+
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
   }
 
 }

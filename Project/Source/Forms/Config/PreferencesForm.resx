@@ -151,7 +151,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelWordControlWidth.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <metadata name="LabelMinRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -184,7 +184,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMinRefCount.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <metadata name="LabelMaxRefCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -217,7 +217,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelMaxRefCount.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <metadata name="LabelHistoryCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -316,7 +316,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <metadata name="LabelBackupPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -514,7 +514,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelWordtranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <metadata name="LabelFontSizeHebrew.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -547,7 +547,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeHebrew.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <metadata name="LabelFontSizeTranslation.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -580,7 +580,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeTranslation.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <metadata name="LabelFontSizeComentary.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -613,7 +613,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeComentary.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>662, 19</value>
@@ -2842,6 +2842,49 @@
   <data name="&gt;&gt;TabPageEdition.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="ActionResetRendering.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionResetRendering.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAkVJREFUOE+VU0toU1EQPQsXLgSLumi7ceNGwaakdlWKH1ptqykVf0VTIg1q1BhT
+        iYUogmI1L422SU0arU2axLSKX/yBil1YLagoakE34kKXghs3Ci7G8+59hjStoAcO7725M3NnzsxDKZpD
+        WN5owFgbwu1tMUggBzk4CmmP47vl8nc0nkLdsWuQ0+OQzQP41JWGGLcg+eeQvqeQdWEcbwphwnEG36yQ
+        6TBvyz2DDL/m8wvE1okTdX7E+h9qW/QVxM+EdLXpiCKsCaPNMwRJTUCy71j2ReW4kCzfEsXP9BtIkvbV
+        3UiogFlQRtasDOKmWXrDUaRaDCxtMCDhe5DQY4gzpZJWsBW7ijDRHMEv9zDER6H8NyDL2tFKcw1ZSc61
+        3gvsGMSPwHWVqAA7jZJ9QX6AeK9OPyyG8xzkyiTbZCttMUwpY1MY5+MPIEM8iFHtgbcQjtGlDkuwKoDk
+        BbaSfQ/pumNd5GO/aY4t8xKyNYGvSxxwcwdmVLH+LMb5qNhNHfo5KfpqHy/7zz3hwnD+/Kwi55FmvwW0
+        RLB4e1wHVK6Ao2oneqidTrCLo7vEBPZOBDZGMejPQvbntaBOVmf67OElfZyEl0L7LkMS1MD7R8hqN4I9
+        XI7aQ9jQyyry5h5waUY/QrrvQ+pPwj32CDJC+wiFzkxRyM+Q1l5MqgTEArOc+iPY5OHyHMhA9nIjfUy2
+        Q899UXAMErkL8bC6fXx3sbLyatTqcA2z5/nWs5SwuXC4I6mSFdvnkP+MMm7l7D/Qf2DmDwTgN8YuBQeJ
+        9GwkAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionResetRendering.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionResetRendering.Location" type="System.Drawing.Point, System.Drawing">
+    <value>466, 12</value>
+  </data>
+  <data name="ActionResetRendering.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionResetRendering.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionResetRendering.Name" xml:space="preserve">
+    <value>ActionResetRendering</value>
+  </data>
+  <data name="&gt;&gt;ActionResetRendering.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionResetRendering.Parent" xml:space="preserve">
+    <value>TabPageRendering</value>
+  </data>
+  <data name="&gt;&gt;ActionResetRendering.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="LabelInfoSearchMinRefForDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2873,7 +2916,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoSearchMinRefForDialog.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelInfoSearchDisplayMaxRef.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2906,7 +2949,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoSearchDisplayMaxRef.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelFontSizeCommentaryInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2939,7 +2982,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeCommentaryInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelFontSizeTranslationInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2972,7 +3015,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeTranslationInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LabelFontSizeHebrewInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3005,7 +3048,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelFontSizeHebrewInfo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="LabelInfoWordControlWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3038,7 +3081,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoWordControlWidth.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="LabelInfoWordtranslateLinesCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3071,7 +3114,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelInfoCommentLinesCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3104,7 +3147,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;LabelInfoCommentLinesCount.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditFontSizeCommentary.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 150</value>
@@ -3125,7 +3168,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditFontSizeCommentary.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditFontSizeTranslation.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 95</value>
@@ -3146,7 +3189,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditFontSizeTranslation.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditFontSizeHebrew.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 40</value>
@@ -3167,7 +3210,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditFontSizeHebrew.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditWordControlWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 40</value>
@@ -3188,7 +3231,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditWordControlWidth.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditSearchMinRefForDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 275</value>
@@ -3209,7 +3252,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditSearchMinRefForDialog.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditSearchDisplayMaxRef.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 220</value>
@@ -3230,7 +3273,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditSearchDisplayMaxRef.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="EditWordTranslateLinesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 95</value>
@@ -3251,7 +3294,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditWordTranslateLinesCount.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="EditCommentaryLinesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 150</value>
@@ -3272,7 +3315,7 @@
     <value>TabPageRendering</value>
   </data>
   <data name="&gt;&gt;EditCommentaryLinesCount.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="TabPageRendering.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>

@@ -430,16 +430,23 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionShowGrammarGuide for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    if ( Program.GrammarGuideForm.WindowState == FormWindowState.Minimized )
-      Program.GrammarGuideForm.WindowState = FormWindowState.Normal;
-    Program.GrammarGuideForm.Show();
-    Program.GrammarGuideForm.BringToFront();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
   /// <summary>
@@ -1780,8 +1787,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.ChapterVerses);
     GoToReference(new ReferenceItem(( SelectFilterBook.SelectedItem as BookRow )?.Number ?? 1,
-                           ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
-                           ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
+                                    ( SelectFilterChapter.SelectedItem as ChapterRow )?.Number ?? 1,
+                                    ( SelectFilterVerse.SelectedItem as VerseRow )?.Number ?? 1));
   }
 
   /// <summary>

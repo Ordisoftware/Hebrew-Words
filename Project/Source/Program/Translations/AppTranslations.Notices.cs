@@ -11,22 +11,41 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 static partial class AppTranslations
 {
 
+  static public readonly TranslationsDictionary SelectVerseNotice = new()
+  {
+
+    [Language.EN] = "Search a book using its number, transcription or common name (English/French without case or signs)." + Globals.NL2 +
+                    "Samples:" + Globals.NL2 +
+                    "    bereshit 1.1" + Globals.NL +
+                    "    judges 10.2" + Globals.NL +
+                    "    tehilim 3" + Globals.NL +
+                    "    1.2.3",
+
+    [Language.FR] = "Chercher un livre par son numéro, transcription ou nom commun (anglais/français sans casse ni signes)." + Globals.NL2 +
+                    "Examples:" + Globals.NL2 +
+                    "    bereshit 1.1" + Globals.NL +
+                    "    juges 10.2" + Globals.NL +
+                    "    psaume 3" + Globals.NL +
+                    "    1.2.3"
+
+  };
+
   static public readonly TranslationsDictionary FilterVersesNotice = new()
   {
 
-    [Language.EN] = "Filter books on the transcription of the Hebrew name, the common name, the translation, the lettriq and the memo." + Globals.NL2 +
+    [Language.EN] = "Filter books on any number, transcription, common name, translation, lettriq and memo." + Globals.NL2 +
                     "Filter chapters on the title and the memo." + Globals.NL2 +
                     "Filter verses on the translation and the comment." + Globals.NL2 +
                     "Only one word or sentence per filter." + Globals.NL2 +
                     "The filters are cumulative without case or signs, press Enter or exit the input box to start the query.",
 
-    [Language.FR] = "Filtre les livres sur la transcription du nom hébreu, le nom commun, la traduction, la lettrique et le mémo." + Globals.NL2 +
+    [Language.FR] = "Filtre les livres sur toute transcription, nom commun, traduction, lettrique et mémo." + Globals.NL2 +
                     "Filtre les chapitres sur le titre et le mémo." + Globals.NL2 +
                     "Filtre les versets sur la traduction et le commentaire." + Globals.NL2 +
                     "Un seul mot ou phrase par filtre." + Globals.NL2 +

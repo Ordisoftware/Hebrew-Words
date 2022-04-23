@@ -171,9 +171,15 @@
     <value>Mot le plus long</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Mots les plus fréquents de la Torah **</value>
+    <value>Plus fréquents de la Torah **</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>Mots les plus fréquents du Tanak **</value>
+    <value>Plus fréquents du Tanak **</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Moins fréquents de la Torah **</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Moins fréquents du Tanak **</value>
   </data>
 </root>

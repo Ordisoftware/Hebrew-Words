@@ -365,6 +365,18 @@ partial class PreferencesForm : Form
     VerseControl.ResetMetricsRequired = true;
   }
 
+  private void ActionResetRendering_Click(object sender, EventArgs e)
+  {
+    EditWordControlWidth.Value = WordControlWidthInterval.Item3;
+    EditWordTranslateLinesCount.Value = WordTranslationLinesCountInterval.Item3;
+    EditCommentaryLinesCount.Value = CommentLinesCountInterval.Item3;
+    EditFontSizeHebrew.Value = FontSizeHebrewInterval.Item3;
+    EditFontSizeTranslation.Value = FontSizeTranslationInterval.Item3;
+    EditFontSizeCommentary.Value = FontSizeCommentaryInterval.Item3;
+    EditSearchDisplayMaxRef.Value = SearchDisplayMaxRefInterval.Item3;
+    EditSearchMinRefForDialog.Value = SearchMinRefForDialogInterval.Item3;
+  }
+
   #endregion
 
   #region Comment Prefixes

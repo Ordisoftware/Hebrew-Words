@@ -42,7 +42,7 @@ public partial class ReferenceItem
   {
     if ( !reference.IsNullOrEmpty() )
     {
-      reference = reference.SanitizeAndTrimEmptyLinesAndSpaces().Replace(" ", "");
+      reference = reference.SanitizeAndTrimEmptyLinesAndSpaces();
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
@@ -80,10 +80,12 @@ public partial class ReferenceItem
     throw new ArgumentException(AppTranslations.ReferenceError.GetLang(reference));
     //
     int getBookRef(string name)
-    {
-      return ApplicationDatabase.Instance.Books.First(book => book.Transcription.RawContains(name)
-                                                           || book.CommonName.RawContains(name)).Number;
-    }
+      => ApplicationDatabase.Instance
+                            .Books
+                            .First(book => BookInfos.Transcriptions[Language.EN][(TanakBook)book.Number].RawContains(name)
+                                        || BookInfos.Transcriptions[Language.FR][(TanakBook)book.Number].RawContains(name)
+                                        || BookInfos.Common[Language.EN][(TanakBook)book.Number].RawContains(name)
+                                        || BookInfos.Common[Language.FR][(TanakBook)book.Number].RawContains(name)).Number;
   }
 
 }

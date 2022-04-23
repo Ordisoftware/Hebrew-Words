@@ -190,6 +190,7 @@ These options can be used to control the software when it is already running, bu
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
 | Ctrl + H | Open Hebrew Letters |
+| Ctrl + L | Open transcription guide |
 | Ctrl + G | Open grammar guide |
 | Ctrl + O | Open verse context menu |
 | Ctrl + W | Open word context menu |
@@ -229,6 +230,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Soon
 
+- Add normalize texte.
 - Add search history.
 - Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
 - Add count the number of a word occurrences.
@@ -280,6 +282,7 @@ These options can be used to control the software when it is already running, bu
 - Add new input panel from Hebrew Letters v4+.
 - Add new advanced text-box for future undo/redo.
 - Add menu for web links.
+- Add transcription guide in Tools menu.
 - Add optimize database menu.
 - Add usage statistics form in tools menu.
 - Add keyboard shortcuts notice in windows settings menu.
@@ -324,14 +327,14 @@ These options can be used to control the software when it is already running, bu
 - Move Tanak text files in Documents in a dedicated folder.
 - Add books common names field in the database and in the edit books information form.
 - Add common code written since two years for Hebrew Calendar and Hebrew Letters.
-- Massisve files and code refactoring.
+- Massive files and code refactoring.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.
 - Update setup for Framework .NET 4.8
 - Update Hebrew applications' icons.
 - Update web links.
 - Update help.
-- Impprove setup to select hebrew font version.
+- Improve setup to select hebrew font version.
 - Disable IPC intercom for non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 

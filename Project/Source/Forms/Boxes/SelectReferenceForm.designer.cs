@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Words
       this.FilterVersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.EditReference = new Ordisoftware.Core.TextBoxEx();
       this.LabelReference = new System.Windows.Forms.Label();
+      this.ActionHelp = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.FilterBooksBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FilterChaptersBindingSource)).BeginInit();
@@ -100,6 +101,7 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectBook.DropDownWidth = 500;
       this.SelectBook.FormattingEnabled = true;
       this.SelectBook.Name = "SelectBook";
+      this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // FilterBooksBindingSource
       // 
@@ -118,6 +120,7 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectChapter.DropDownWidth = 500;
       this.SelectChapter.FormattingEnabled = true;
       this.SelectChapter.Name = "SelectChapter";
+      this.SelectChapter.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // FilterChaptersBindingSource
       // 
@@ -132,6 +135,7 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectVerse.DropDownWidth = 500;
       this.SelectVerse.FormattingEnabled = true;
       this.SelectVerse.Name = "SelectVerse";
+      this.SelectVerse.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
       // 
       // FilterVersesBindingSource
       // 
@@ -149,12 +153,22 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this.LabelReference, "LabelReference");
       this.LabelReference.Name = "LabelReference";
       // 
+      // ActionHelp
+      // 
+      this.ActionHelp.AllowDrop = true;
+      this.ActionHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.UseVisualStyleBackColor = true;
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      // 
       // SelectReferenceForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionHelp);
       this.Controls.Add(this.EditReference);
       this.Controls.Add(this.SelectVerse);
       this.Controls.Add(this.SelectChapter);
@@ -209,6 +223,7 @@ namespace Ordisoftware.Hebrew.Words
     private BindingSource FilterVersesBindingSource;
     private Label LabelReference;
     private TextBoxEx EditReference;
+    private Button ActionHelp;
   }
 
 }

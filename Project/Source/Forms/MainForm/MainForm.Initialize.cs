@@ -47,6 +47,11 @@ partial class MainForm : Form
     EditSearchWord.ContextMenuDetailsVisible = false;
     HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
     InitializeTheme();
+    if ( !Globals.IsDebugExecutable ) // TODO remove when ready
+    {
+      ActionNormalizeTexts.Visible = false;
+      SeparatorActionNormalizeTexts.Visible = false;
+    }
   }
 
   /// <summary>
