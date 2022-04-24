@@ -38,8 +38,8 @@
       this.ActionCancel = new System.Windows.Forms.Button();
       this.LabelCount = new System.Windows.Forms.Label();
       this.SelectBooks = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.columnHeader2 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.EditOnlyWithTranslation = new System.Windows.Forms.CheckBox();
       this.EditOnlyWithoutTranslation = new System.Windows.Forms.CheckBox();
       this.ActionAddAll = new System.Windows.Forms.Button();

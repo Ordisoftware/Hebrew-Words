@@ -130,9 +130,6 @@
   <data name="LabelMinRefCount.Text" xml:space="preserve">
     <value>Références min pour ouvrir le dialogue de recherche</value>
   </data>
-  <data name="LabelMinRefCount.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="LabelMaxRefCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 13</value>
   </data>
@@ -306,9 +303,6 @@
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
-  </data>
-  <data name="LabelInfoOptimizeDatabaseIntervalInfo.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 13</value>
@@ -622,7 +616,7 @@
   <data name="EditAutoSaveOnLeaveControl.Text" xml:space="preserve">
     <value>Sauvegarder automatiquement à la sortie d'une zone d'édition</value>
   </data>
-  <data name="TabPageEdition.Text" xml:space="preserve">
+  <data name="TabPageEditing.Text" xml:space="preserve">
     <value>Édition</value>
   </data>
   <data name="TabPageMouse.Text" xml:space="preserve">
@@ -630,5 +624,38 @@
   </data>
   <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
     <value>Caractères hébreux en gras pour la recherche</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
+    <value>Petit</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items1" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items2" xml:space="preserve">
+    <value>Large</value>
+  </data>
+  <data name="LabelExportDocumentTheme.Text" xml:space="preserve">
+    <value>Thème du document</value>
+  </data>
+  <data name="TabPageExport.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="LabelDocumentMargins.Text" xml:space="preserve">
+    <value>Marges du document haut, bas, gauche et droite en millimètres</value>
+  </data>
+  <data name="EditExportDocumentOverrideWordColumnsCount.Text" xml:space="preserve">
+    <value>Remplacer le calcul automatique du nombre de mots hébreux par ligne dans le document</value>
+  </data>
+  <data name="EditExportDocumentLandscape.Text" xml:space="preserve">
+    <value>Document en paysage, sinon portrait</value>
+  </data>
+  <data name="EditExportDocumentDifferentOddAndEvenPages.Text" xml:space="preserve">
+    <value>Pages paires et impaires différentes</value>
+  </data>
+  <data name="EditDifferentFirstPage.Text" xml:space="preserve">
+    <value>Première page différente</value>
+  </data>
+  <data name="LabelDocumentSize.Text" xml:space="preserve">
+    <value>Largeur et hauteur du document en millimètres</value>
   </data>
 </root>

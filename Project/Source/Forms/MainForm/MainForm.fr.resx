@@ -727,19 +727,19 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
-  <data name="ActionNew.Text" xml:space="preserve">
+  <data name="ActionDatabaseNew.Text" xml:space="preserve">
     <value>Nouvelle base de données</value>
   </data>
   <data name="ActionRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
-  <data name="ActionRestore.Text" xml:space="preserve">
+  <data name="ActionDatabaseRestore.Text" xml:space="preserve">
     <value>Restaurer base de données</value>
   </data>
   <data name="ActionBackup.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
-  <data name="ActionBackup.Text" xml:space="preserve">
+  <data name="ActionDatabaseBackup.Text" xml:space="preserve">
     <value>Archiver base de données</value>
   </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
@@ -769,13 +769,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionViewBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionViewBooksBoard.Text" xml:space="preserve">
+  <data name="ActionBooksBoard.Text" xml:space="preserve">
     <value>Tableau des livres</value>
   </data>
   <data name="ActionViewParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionViewParashotBoard.Text" xml:space="preserve">
+  <data name="ActionParashotBoard.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
@@ -826,7 +826,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionCloseWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionCloseWindows.Text" xml:space="preserve">
+  <data name="ActionCloseTranslatedWindows.Text" xml:space="preserve">
     <value>Fermer les fenêtres des traduits</value>
   </data>
   <data name="SeparatorImportConcordances.Size" type="System.Drawing.Size, System.Drawing">
@@ -856,7 +856,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 22</value>
   </data>
-  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
+  <data name="ActionScreenPosition.Text" xml:space="preserve">
     <value>Position de l'écran</value>
   </data>
   <data name="ActionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">

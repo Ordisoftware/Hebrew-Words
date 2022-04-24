@@ -22,7 +22,7 @@ partial class MainForm : Form
   /// </summary>
   private void ReLoadData(Action actionBeforeRestart = null)
   {
-    ActionCloseWindows.PerformClick();
+    ActionCloseTranslatedWindows.PerformClick();
     ActionSearchClear.PerformClick();
     PanelViewVerses.AutoScrollPosition = new Point(0, 0);
     PanelSearchResults.AutoScrollPosition = new Point(0, 0);

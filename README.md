@@ -230,7 +230,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Soon
 
-- Add normalize texte.
+- Add filters on all translated books or chapters.
 - Add search history.
 - Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
 - Add count the number of a word occurrences.
@@ -240,7 +240,6 @@ These options can be used to control the software when it is already running, bu
 - Add menu to open a batch export form to select books or chapters to export.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
-- Add options to theme MSWord export.
 
 #### Later
 
@@ -284,11 +283,13 @@ These options can be used to control the software when it is already running, bu
 - Add menu for web links.
 - Add transcription guide in Tools menu.
 - Add optimize database menu.
-- Add usage statistics form in tools menu.
+- Add normalize texts in Database menu.
+- Add usage statistics form in Tools menu.
 - Add keyboard shortcuts notice in windows settings menu.
 - Add and change many shortcuts.
 - Add sounds to clipboard actions.
-- Add theming options.
+- Add color theming options.
+- Add option to theme MSWord export (font sizes).
 - Add options to choose mouse actions on words and verses.
 - Add option to go at startup to the previous verse else the main bookmark else the first verse of the Tanak.
 - Add option to enable or disable the web links menu.

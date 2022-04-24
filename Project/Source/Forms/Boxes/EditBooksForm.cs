@@ -14,14 +14,12 @@
 /// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using Equin.ApplicationFramework;
-
 partial class EditBooksForm : Form
 {
 
   private BookRow SelectedBook
     => DataGridView.SelectedRows.Count == 1
-       ? ( (ObjectView<BookRow>)DataGridView.SelectedRows[0].DataBoundItem ).Object
+       ? (BookRow)DataGridView.SelectedRows[0].DataBoundItem
        : null;
 
   public EditBooksForm()
@@ -37,7 +35,8 @@ partial class EditBooksForm : Form
 
   private void EditBooksForm_Load(object sender, EventArgs e)
   {
-    DataGridView.DataSource = ApplicationDatabase.Instance.BooksAsBindingList;
+    BindingSource.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
+    BindingSource.Position = MainForm.Instance.BooksBindingSource.Position;
     ActiveControl = DataGridView;
   }
 

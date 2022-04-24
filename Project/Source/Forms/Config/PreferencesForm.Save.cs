@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -65,6 +65,19 @@ partial class PreferencesForm
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.AutoSaveOnLeaveControl = EditAutoSaveOnLeaveControl.Checked;
     Settings.LettersControlHebrewCharsInBold = EditSearchHebrewCharsInBold.Checked;
+    Settings.ExportDocumentTheme = (ExportDocumentTheme)SelectExportDocumentTheme.SelectedIndex;
+    Settings.ExportDocumentPageWidth = (int)EditPageWidth.Value;
+    Settings.ExportDocumentPageHeight = (int)EditPageHeight.Value;
+    Settings.ExportDocumentMarginTop = (int)EditDocumentMarginTop.Value;
+    Settings.ExportDocumentMarginLeft = (int)EditDocumentMarginTop.Value;
+    Settings.ExportDocumentMarginRight = (int)EditDocumentMarginTop.Value;
+    Settings.ExportDocumentMarginBottom = (int)EditDocumentMarginTop.Value;
+    Settings.ExportDocumentMarginHeader = (int)EditDocumentMarginHeader.Value;
+    Settings.ExportDocumentMarginFooter = (int)EditDocumentMarginFooter.Value;
+    Settings.ExportDocumentLandscape = EditExportDocumentLandscape.Checked;
+    Settings.ExportDocumentDifferentOddAndEvenPages = EditExportDocumentDifferentOddAndEvenPages.Checked;
+    Settings.ExportDocumentOverrideWordColumnsCount = EditExportDocumentOverrideWordColumnsCount.Checked;
+    Settings.ExportDocumentWordColumnsCount = (int)EditDocumentWordColumnsCount.Value;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

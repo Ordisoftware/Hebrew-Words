@@ -117,6 +117,11 @@ partial class PreferencesForm : Form
     DoResetSettings();
   }
 
+  private void EditExportDocumentOverrideWordColumnsCount_CheckedChanged(object sender, EventArgs e)
+  {
+    EditDocumentWordColumnsCount.Enabled = EditExportDocumentOverrideWordColumnsCount.Checked;
+  }
+
   #endregion
 
   #region Language
@@ -253,7 +258,7 @@ partial class PreferencesForm : Form
   private void EditDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( !IsReady ) return;
-    Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)SelectDataExportFileFormat.SelectedItem ).Key;
   }
 
   private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
@@ -264,7 +269,12 @@ partial class PreferencesForm : Form
   private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( !IsReady ) return;
-    Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+    Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)SelectImageExportFileFormat.SelectedItem ).Key;
+  }
+
+  private void SelectPageSize_Click(object sender, EventArgs e)
+  {
+    MenuPredefinedPageSizes.Show(SelectPageSize, new Point(0, SelectPageSize.Height));
   }
 
   #endregion
@@ -451,5 +461,59 @@ partial class PreferencesForm : Form
   }
 
   #endregion
+
+  private void ActionSetPageSizeA5_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 148;
+    EditPageHeight.Value = 218;
+  }
+
+  private void ActionSetPageSizeA4_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 210;
+    EditPageHeight.Value = 297;
+  }
+
+  private void ActionSetPageSizePocket_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 108;
+    EditPageHeight.Value = 175;
+  }
+
+  private void ActionSetPageSizeDigest_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 140;
+    EditPageHeight.Value = 216;
+  }
+
+  private void ActionSetPageSizeRoman_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 152;
+    EditPageHeight.Value = 229;
+  }
+
+  private void ActionSetPageSizeRoyal_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 156;
+    EditPageHeight.Value = 234;
+  }
+
+  private void ActionSetPageSizeCrownQuarto_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 189;
+    EditPageHeight.Value = 246;
+  }
+
+  private void ActionSetPageSizeExecutive_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 178;
+    EditPageHeight.Value = 254;
+  }
+
+  private void ActionSetPageSizeUSLetter_Click(object sender, EventArgs e)
+  {
+    EditPageWidth.Value = 216;
+    EditPageHeight.Value = 279;
+  }
 
 }

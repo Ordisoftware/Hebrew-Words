@@ -57,13 +57,9 @@
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
-      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
-      this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
-      this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
-      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
       this.LabelCalculatorPath = new System.Windows.Forms.Label();
       this.ActionResetBackupFolder = new System.Windows.Forms.Button();
       this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
@@ -76,6 +72,14 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.LabelDocumentMargins = new System.Windows.Forms.Label();
+      this.LabelDocumentMarginIntervalInfo = new System.Windows.Forms.Label();
+      this.SelectExportDocumentTheme = new System.Windows.Forms.ComboBox();
+      this.SelectImageExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
+      this.SelectDataExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.LabelExportDocumentTheme = new System.Windows.Forms.Label();
+      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.TabPageStartup = new System.Windows.Forms.TabPage();
@@ -120,7 +124,7 @@
       this.LabelInfoHistoryCount = new System.Windows.Forms.Label();
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.LabelInfoBookmarksCount = new System.Windows.Forms.Label();
-      this.TabPageEdition = new System.Windows.Forms.TabPage();
+      this.TabPageEditing = new System.Windows.Forms.TabPage();
       this.EditAutoSaveOnLeaveControl = new System.Windows.Forms.CheckBox();
       this.TabPageRendering = new System.Windows.Forms.TabPage();
       this.ActionResetRendering = new System.Windows.Forms.Button();
@@ -196,6 +200,26 @@
       this.GroupBoxTranslatedItemDoubleClick1 = new System.Windows.Forms.RadioButton();
       this.GroupBoxTranslatedItemDoubleClick2 = new System.Windows.Forms.RadioButton();
       this.GroupBoxTranslatedItemDoubleClick3 = new System.Windows.Forms.RadioButton();
+      this.TabPageExport = new System.Windows.Forms.TabPage();
+      this.SelectPageSize = new System.Windows.Forms.Button();
+      this.EditPageHeight = new System.Windows.Forms.NumericUpDown();
+      this.EditPageWidth = new System.Windows.Forms.NumericUpDown();
+      this.LabelDocumentSize = new System.Windows.Forms.Label();
+      this.LabelPageWidthIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelPageHeightIntervalInfo = new System.Windows.Forms.Label();
+      this.EditDocumentMarginFooter = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentMarginRight = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentMarginHeader = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentMarginLeft = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentMarginBottom = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentWordColumnsCount = new System.Windows.Forms.NumericUpDown();
+      this.EditDocumentMarginTop = new System.Windows.Forms.NumericUpDown();
+      this.EditDifferentFirstPage = new System.Windows.Forms.CheckBox();
+      this.EditExportDocumentDifferentOddAndEvenPages = new System.Windows.Forms.CheckBox();
+      this.EditExportDocumentLandscape = new System.Windows.Forms.CheckBox();
+      this.EditExportDocumentOverrideWordColumnsCount = new System.Windows.Forms.CheckBox();
+      this.LabelDocumentWordColumnsCountIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelDocumentMarginHFIntervalInfo = new System.Windows.Forms.Label();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
@@ -207,7 +231,16 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuSelectOnlineVerseURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+      this.MenuPredefinedPageSizes = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionSetPageSizeA5 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeA4 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizePocket = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeDigest = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeRoman = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeRoyal = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -236,7 +269,7 @@
       this.TabPageBookmarks.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
-      this.TabPageEdition.SuspendLayout();
+      this.TabPageEditing.SuspendLayout();
       this.TabPageRendering.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeTranslation)).BeginInit();
@@ -254,7 +287,18 @@
       this.GroupBoxHebrewWordClickAlt.SuspendLayout();
       this.GroupBoxHebrewWordClickCtrl.SuspendLayout();
       this.GroupBoxTranslatedItemDoubleClick.SuspendLayout();
+      this.TabPageExport.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPageHeight)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPageWidth)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginFooter)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginRight)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginHeader)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginLeft)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginBottom)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentWordColumnsCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginTop)).BeginInit();
       this.TabPageTools.SuspendLayout();
+      this.MenuPredefinedPageSizes.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelWordControlWidth
@@ -393,14 +437,10 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPagePaths.Controls.Add(this.EditImageExportFileFormat);
       this.TabPagePaths.Controls.Add(LabelBackupPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
-      this.TabPagePaths.Controls.Add(this.LabelDataExportFileFormat);
-      this.TabPagePaths.Controls.Add(this.EditDataExportFileFormat);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
-      this.TabPagePaths.Controls.Add(this.LabelImageExportFileFormat);
       this.TabPagePaths.Controls.Add(this.LabelCalculatorPath);
       this.TabPagePaths.Controls.Add(this.ActionResetBackupFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewLettersPath);
@@ -416,15 +456,6 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
-      // EditImageExportFileFormat
-      // 
-      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditImageExportFileFormat.FormattingEnabled = true;
-      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
-      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
-      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
-      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
-      // 
       // LabelExportFolder
       // 
       resources.ApplyResources(this.LabelExportFolder, "LabelExportFolder");
@@ -432,38 +463,19 @@
       // 
       // ActionResetExportFolder
       // 
-      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetExportFolder, "ActionResetExportFolder");
+      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
       this.ActionResetExportFolder.Name = "ActionResetExportFolder";
       this.ActionResetExportFolder.UseVisualStyleBackColor = true;
       this.ActionResetExportFolder.Click += new System.EventHandler(this.ActionResetExportFolder_Click);
       // 
-      // LabelDataExportFileFormat
-      // 
-      resources.ApplyResources(this.LabelDataExportFileFormat, "LabelDataExportFileFormat");
-      this.LabelDataExportFileFormat.Name = "LabelDataExportFileFormat";
-      // 
-      // EditDataExportFileFormat
-      // 
-      this.EditDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditDataExportFileFormat.FormattingEnabled = true;
-      resources.ApplyResources(this.EditDataExportFileFormat, "EditDataExportFileFormat");
-      this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
-      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
-      this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
-      // 
       // ActionSelectExportFolder
       // 
-      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectExportFolder, "ActionSelectExportFolder");
+      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
       this.ActionSelectExportFolder.Name = "ActionSelectExportFolder";
       this.ActionSelectExportFolder.UseVisualStyleBackColor = true;
       this.ActionSelectExportFolder.Click += new System.EventHandler(this.ActionSelectExportFolder_Click);
-      // 
-      // LabelImageExportFileFormat
-      // 
-      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
-      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
       // 
       // LabelCalculatorPath
       // 
@@ -472,32 +484,32 @@
       // 
       // ActionResetBackupFolder
       // 
-      this.ActionResetBackupFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetBackupFolder, "ActionResetBackupFolder");
+      this.ActionResetBackupFolder.FlatAppearance.BorderSize = 0;
       this.ActionResetBackupFolder.Name = "ActionResetBackupFolder";
       this.ActionResetBackupFolder.UseVisualStyleBackColor = true;
       this.ActionResetBackupFolder.Click += new System.EventHandler(this.ActionResetBackupFolder_Click);
       // 
       // ActionResetHebrewLettersPath
       // 
-      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetHebrewLettersPath, "ActionResetHebrewLettersPath");
+      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionResetHebrewLettersPath.Name = "ActionResetHebrewLettersPath";
       this.ActionResetHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionResetHebrewLettersPath.Click += new System.EventHandler(this.ActionResetHebrewLettersPath_Click);
       // 
       // ActionResetCalculatorPath
       // 
-      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetCalculatorPath, "ActionResetCalculatorPath");
+      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
       this.ActionResetCalculatorPath.Name = "ActionResetCalculatorPath";
       this.ActionResetCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionResetCalculatorPath.Click += new System.EventHandler(this.ActionResetCalculatorPath_Click);
       // 
       // ActionSelectCalculatorPath
       // 
-      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectCalculatorPath, "ActionSelectCalculatorPath");
+      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectCalculatorPath.Name = "ActionSelectCalculatorPath";
       this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
@@ -509,51 +521,106 @@
       // 
       // ActionSelectBackupFolder
       // 
-      this.ActionSelectBackupFolder.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectBackupFolder, "ActionSelectBackupFolder");
+      this.ActionSelectBackupFolder.FlatAppearance.BorderSize = 0;
       this.ActionSelectBackupFolder.Name = "ActionSelectBackupFolder";
       this.ActionSelectBackupFolder.UseVisualStyleBackColor = true;
       this.ActionSelectBackupFolder.Click += new System.EventHandler(this.ActionSelectBackupFolder_Click);
       // 
       // ActionSelectHebrewLettersPath
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
       // EditBackupFolder
       // 
+      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
       this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
       this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
       this.EditBackupFolder.Name = "EditBackupFolder";
       this.EditBackupFolder.ReadOnly = true;
       // 
       // EditExportFolder
       // 
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
       this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
       this.EditExportFolder.Name = "EditExportFolder";
       this.EditExportFolder.ReadOnly = true;
       // 
       // EditCalculatorPath
       // 
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
       this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
       this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
       this.EditCalculatorPath.Name = "EditCalculatorPath";
       this.EditCalculatorPath.ReadOnly = true;
       // 
       // EditHebrewLettersPath
       // 
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
       this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // LabelDocumentMargins
+      // 
+      resources.ApplyResources(this.LabelDocumentMargins, "LabelDocumentMargins");
+      this.LabelDocumentMargins.Name = "LabelDocumentMargins";
+      // 
+      // LabelDocumentMarginIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelDocumentMarginIntervalInfo, "LabelDocumentMarginIntervalInfo");
+      this.LabelDocumentMarginIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelDocumentMarginIntervalInfo.Name = "LabelDocumentMarginIntervalInfo";
+      // 
+      // SelectExportDocumentTheme
+      // 
+      this.SelectExportDocumentTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectExportDocumentTheme.FormattingEnabled = true;
+      this.SelectExportDocumentTheme.Items.AddRange(new object[] {
+            resources.GetString("SelectExportDocumentTheme.Items"),
+            resources.GetString("SelectExportDocumentTheme.Items1"),
+            resources.GetString("SelectExportDocumentTheme.Items2")});
+      resources.ApplyResources(this.SelectExportDocumentTheme, "SelectExportDocumentTheme");
+      this.SelectExportDocumentTheme.Name = "SelectExportDocumentTheme";
+      // 
+      // SelectImageExportFileFormat
+      // 
+      this.SelectImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectImageExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectImageExportFileFormat, "SelectImageExportFileFormat");
+      this.SelectImageExportFileFormat.Name = "SelectImageExportFileFormat";
+      this.SelectImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
+      this.SelectImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
+      // 
+      // LabelDataExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelDataExportFileFormat, "LabelDataExportFileFormat");
+      this.LabelDataExportFileFormat.Name = "LabelDataExportFileFormat";
+      // 
+      // SelectDataExportFileFormat
+      // 
+      this.SelectDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectDataExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectDataExportFileFormat, "SelectDataExportFileFormat");
+      this.SelectDataExportFileFormat.Name = "SelectDataExportFileFormat";
+      this.SelectDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
+      this.SelectDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
+      // 
+      // LabelExportDocumentTheme
+      // 
+      resources.ApplyResources(this.LabelExportDocumentTheme, "LabelExportDocumentTheme");
+      this.LabelExportDocumentTheme.Name = "LabelExportDocumentTheme";
+      // 
+      // LabelImageExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
+      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
       // 
       // EditAutoOpenExportedFile
       // 
@@ -724,8 +791,6 @@
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageApplication.Controls.Add(this.EditSearchHebrewCharsInBold);
-      this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
-      this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
@@ -878,12 +943,13 @@
       this.TabControl.Controls.Add(this.TabPageApplication);
       this.TabControl.Controls.Add(this.TabPageStartup);
       this.TabControl.Controls.Add(this.TabPageBookmarks);
-      this.TabControl.Controls.Add(this.TabPageEdition);
+      this.TabControl.Controls.Add(this.TabPageEditing);
       this.TabControl.Controls.Add(this.TabPageRendering);
       this.TabControl.Controls.Add(this.TabPageTheme);
       this.TabControl.Controls.Add(this.TabPageMouse);
-      this.TabControl.Controls.Add(this.TabPageTools);
+      this.TabControl.Controls.Add(this.TabPageExport);
       this.TabControl.Controls.Add(this.TabPagePaths);
+      this.TabControl.Controls.Add(this.TabPageTools);
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
@@ -928,20 +994,20 @@
       this.LabelInfoBookmarksCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoBookmarksCount.Name = "LabelInfoBookmarksCount";
       // 
-      // TabPageEdition
+      // TabPageEditing
       // 
-      this.TabPageEdition.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageEdition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageEdition.Controls.Add(this.ActionCheckAllComments);
-      this.TabPageEdition.Controls.Add(this.EditCommentLineAddPrefix);
-      this.TabPageEdition.Controls.Add(this.EditCommentLineRemovePrefix);
-      this.TabPageEdition.Controls.Add(this.EditCommentLinePrefix);
-      this.TabPageEdition.Controls.Add(this.EditAutoSaveOnLeaveControl);
-      this.TabPageEdition.Controls.Add(LabelAutoSaveDelay);
-      this.TabPageEdition.Controls.Add(this.LabelInfoAutoSaveDelay);
-      this.TabPageEdition.Controls.Add(this.EditAutoSaveDelay);
-      resources.ApplyResources(this.TabPageEdition, "TabPageEdition");
-      this.TabPageEdition.Name = "TabPageEdition";
+      this.TabPageEditing.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageEditing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageEditing.Controls.Add(this.ActionCheckAllComments);
+      this.TabPageEditing.Controls.Add(this.EditCommentLineAddPrefix);
+      this.TabPageEditing.Controls.Add(this.EditCommentLineRemovePrefix);
+      this.TabPageEditing.Controls.Add(this.EditCommentLinePrefix);
+      this.TabPageEditing.Controls.Add(this.EditAutoSaveOnLeaveControl);
+      this.TabPageEditing.Controls.Add(LabelAutoSaveDelay);
+      this.TabPageEditing.Controls.Add(this.LabelInfoAutoSaveDelay);
+      this.TabPageEditing.Controls.Add(this.EditAutoSaveDelay);
+      resources.ApplyResources(this.TabPageEditing, "TabPageEditing");
+      this.TabPageEditing.Name = "TabPageEditing";
       // 
       // EditAutoSaveOnLeaveControl
       // 
@@ -984,8 +1050,8 @@
       // ActionResetRendering
       // 
       this.ActionResetRendering.AllowDrop = true;
-      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetRendering, "ActionResetRendering");
+      this.ActionResetRendering.FlatAppearance.BorderSize = 0;
       this.ActionResetRendering.Name = "ActionResetRendering";
       this.ActionResetRendering.UseVisualStyleBackColor = true;
       this.ActionResetRendering.Click += new System.EventHandler(this.ActionResetRendering_Click);
@@ -1578,6 +1644,207 @@
       this.GroupBoxTranslatedItemDoubleClick3.TabStop = true;
       this.GroupBoxTranslatedItemDoubleClick3.UseVisualStyleBackColor = true;
       // 
+      // TabPageExport
+      // 
+      this.TabPageExport.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageExport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageExport.Controls.Add(this.SelectPageSize);
+      this.TabPageExport.Controls.Add(this.EditPageHeight);
+      this.TabPageExport.Controls.Add(this.EditPageWidth);
+      this.TabPageExport.Controls.Add(this.LabelDocumentSize);
+      this.TabPageExport.Controls.Add(this.LabelPageWidthIntervalInfo);
+      this.TabPageExport.Controls.Add(this.LabelPageHeightIntervalInfo);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginFooter);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginRight);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginHeader);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginLeft);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginBottom);
+      this.TabPageExport.Controls.Add(this.EditDocumentWordColumnsCount);
+      this.TabPageExport.Controls.Add(this.EditDocumentMarginTop);
+      this.TabPageExport.Controls.Add(this.EditAutoOpenExportedFile);
+      this.TabPageExport.Controls.Add(this.EditDifferentFirstPage);
+      this.TabPageExport.Controls.Add(this.EditExportDocumentDifferentOddAndEvenPages);
+      this.TabPageExport.Controls.Add(this.EditExportDocumentLandscape);
+      this.TabPageExport.Controls.Add(this.EditExportDocumentOverrideWordColumnsCount);
+      this.TabPageExport.Controls.Add(this.EditAutoOpenExportFolder);
+      this.TabPageExport.Controls.Add(this.LabelDataExportFileFormat);
+      this.TabPageExport.Controls.Add(this.SelectDataExportFileFormat);
+      this.TabPageExport.Controls.Add(this.LabelDocumentMargins);
+      this.TabPageExport.Controls.Add(this.LabelExportDocumentTheme);
+      this.TabPageExport.Controls.Add(this.LabelDocumentWordColumnsCountIntervalInfo);
+      this.TabPageExport.Controls.Add(this.LabelImageExportFileFormat);
+      this.TabPageExport.Controls.Add(this.LabelDocumentMarginHFIntervalInfo);
+      this.TabPageExport.Controls.Add(this.LabelDocumentMarginIntervalInfo);
+      this.TabPageExport.Controls.Add(this.SelectImageExportFileFormat);
+      this.TabPageExport.Controls.Add(this.SelectExportDocumentTheme);
+      resources.ApplyResources(this.TabPageExport, "TabPageExport");
+      this.TabPageExport.Name = "TabPageExport";
+      // 
+      // SelectPageSize
+      // 
+      this.SelectPageSize.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.SelectPageSize, "SelectPageSize");
+      this.SelectPageSize.Name = "SelectPageSize";
+      this.SelectPageSize.UseVisualStyleBackColor = true;
+      this.SelectPageSize.Click += new System.EventHandler(this.SelectPageSize_Click);
+      // 
+      // EditPageHeight
+      // 
+      this.EditPageHeight.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditPageHeight, "EditPageHeight");
+      this.EditPageHeight.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditPageHeight.Name = "EditPageHeight";
+      this.EditPageHeight.ReadOnly = true;
+      // 
+      // EditPageWidth
+      // 
+      this.EditPageWidth.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditPageWidth, "EditPageWidth");
+      this.EditPageWidth.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditPageWidth.Name = "EditPageWidth";
+      this.EditPageWidth.ReadOnly = true;
+      // 
+      // LabelDocumentSize
+      // 
+      resources.ApplyResources(this.LabelDocumentSize, "LabelDocumentSize");
+      this.LabelDocumentSize.Name = "LabelDocumentSize";
+      // 
+      // LabelPageWidthIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelPageWidthIntervalInfo, "LabelPageWidthIntervalInfo");
+      this.LabelPageWidthIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelPageWidthIntervalInfo.Name = "LabelPageWidthIntervalInfo";
+      // 
+      // LabelPageHeightIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelPageHeightIntervalInfo, "LabelPageHeightIntervalInfo");
+      this.LabelPageHeightIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelPageHeightIntervalInfo.Name = "LabelPageHeightIntervalInfo";
+      // 
+      // EditDocumentMarginFooter
+      // 
+      this.EditDocumentMarginFooter.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginFooter, "EditDocumentMarginFooter");
+      this.EditDocumentMarginFooter.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginFooter.Name = "EditDocumentMarginFooter";
+      this.EditDocumentMarginFooter.ReadOnly = true;
+      // 
+      // EditDocumentMarginRight
+      // 
+      this.EditDocumentMarginRight.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginRight, "EditDocumentMarginRight");
+      this.EditDocumentMarginRight.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginRight.Name = "EditDocumentMarginRight";
+      this.EditDocumentMarginRight.ReadOnly = true;
+      // 
+      // EditDocumentMarginHeader
+      // 
+      this.EditDocumentMarginHeader.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginHeader, "EditDocumentMarginHeader");
+      this.EditDocumentMarginHeader.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginHeader.Name = "EditDocumentMarginHeader";
+      this.EditDocumentMarginHeader.ReadOnly = true;
+      // 
+      // EditDocumentMarginLeft
+      // 
+      this.EditDocumentMarginLeft.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginLeft, "EditDocumentMarginLeft");
+      this.EditDocumentMarginLeft.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginLeft.Name = "EditDocumentMarginLeft";
+      this.EditDocumentMarginLeft.ReadOnly = true;
+      // 
+      // EditDocumentMarginBottom
+      // 
+      this.EditDocumentMarginBottom.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginBottom, "EditDocumentMarginBottom");
+      this.EditDocumentMarginBottom.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginBottom.Name = "EditDocumentMarginBottom";
+      this.EditDocumentMarginBottom.ReadOnly = true;
+      // 
+      // EditDocumentWordColumnsCount
+      // 
+      this.EditDocumentWordColumnsCount.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentWordColumnsCount, "EditDocumentWordColumnsCount");
+      this.EditDocumentWordColumnsCount.Name = "EditDocumentWordColumnsCount";
+      this.EditDocumentWordColumnsCount.ReadOnly = true;
+      // 
+      // EditDocumentMarginTop
+      // 
+      this.EditDocumentMarginTop.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDocumentMarginTop, "EditDocumentMarginTop");
+      this.EditDocumentMarginTop.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+      this.EditDocumentMarginTop.Name = "EditDocumentMarginTop";
+      this.EditDocumentMarginTop.ReadOnly = true;
+      // 
+      // EditDifferentFirstPage
+      // 
+      resources.ApplyResources(this.EditDifferentFirstPage, "EditDifferentFirstPage");
+      this.EditDifferentFirstPage.Name = "EditDifferentFirstPage";
+      this.EditDifferentFirstPage.UseVisualStyleBackColor = true;
+      // 
+      // EditExportDocumentDifferentOddAndEvenPages
+      // 
+      resources.ApplyResources(this.EditExportDocumentDifferentOddAndEvenPages, "EditExportDocumentDifferentOddAndEvenPages");
+      this.EditExportDocumentDifferentOddAndEvenPages.Name = "EditExportDocumentDifferentOddAndEvenPages";
+      this.EditExportDocumentDifferentOddAndEvenPages.UseVisualStyleBackColor = true;
+      // 
+      // EditExportDocumentLandscape
+      // 
+      resources.ApplyResources(this.EditExportDocumentLandscape, "EditExportDocumentLandscape");
+      this.EditExportDocumentLandscape.Name = "EditExportDocumentLandscape";
+      this.EditExportDocumentLandscape.UseVisualStyleBackColor = true;
+      // 
+      // EditExportDocumentOverrideWordColumnsCount
+      // 
+      resources.ApplyResources(this.EditExportDocumentOverrideWordColumnsCount, "EditExportDocumentOverrideWordColumnsCount");
+      this.EditExportDocumentOverrideWordColumnsCount.Name = "EditExportDocumentOverrideWordColumnsCount";
+      this.EditExportDocumentOverrideWordColumnsCount.UseVisualStyleBackColor = true;
+      this.EditExportDocumentOverrideWordColumnsCount.CheckedChanged += new System.EventHandler(this.EditExportDocumentOverrideWordColumnsCount_CheckedChanged);
+      // 
+      // LabelDocumentWordColumnsCountIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelDocumentWordColumnsCountIntervalInfo, "LabelDocumentWordColumnsCountIntervalInfo");
+      this.LabelDocumentWordColumnsCountIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelDocumentWordColumnsCountIntervalInfo.Name = "LabelDocumentWordColumnsCountIntervalInfo";
+      // 
+      // LabelDocumentMarginHFIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelDocumentMarginHFIntervalInfo, "LabelDocumentMarginHFIntervalInfo");
+      this.LabelDocumentMarginHFIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelDocumentMarginHFIntervalInfo.Name = "LabelDocumentMarginHFIntervalInfo";
+      // 
       // TabPageTools
       // 
       this.TabPageTools.BackColor = System.Drawing.SystemColors.Window;
@@ -1596,8 +1863,8 @@
       // ActionOnlineSearchHelp
       // 
       this.ActionOnlineSearchHelp.AllowDrop = true;
-      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOnlineSearchHelp, "ActionOnlineSearchHelp");
+      this.ActionOnlineSearchHelp.FlatAppearance.BorderSize = 0;
       this.ActionOnlineSearchHelp.Name = "ActionOnlineSearchHelp";
       this.ActionOnlineSearchHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineSearchHelp.Click += new System.EventHandler(this.ActionOnlineSearchHelp_Click);
@@ -1605,8 +1872,8 @@
       // ActionOnlineVerseHelp
       // 
       this.ActionOnlineVerseHelp.AllowDrop = true;
-      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
       this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
       this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
       this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
@@ -1614,8 +1881,8 @@
       // ActionSelectOnlineSearch
       // 
       this.ActionSelectOnlineSearch.AllowDrop = true;
-      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectOnlineSearch, "ActionSelectOnlineSearch");
+      this.ActionSelectOnlineSearch.FlatAppearance.BorderSize = 0;
       this.ActionSelectOnlineSearch.Name = "ActionSelectOnlineSearch";
       this.ActionSelectOnlineSearch.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineSearch.Click += new System.EventHandler(this.ActionSelectOnlineSearch_Click);
@@ -1623,8 +1890,8 @@
       // ActionSelectOnlineVerseURL
       // 
       this.ActionSelectOnlineVerseURL.AllowDrop = true;
-      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
+      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
@@ -1657,6 +1924,76 @@
       // 
       this.MenuSelectOnlineVerseURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseURL, "MenuSelectOnlineVerseURL");
+      // 
+      // MenuPredefinedPageSizes
+      // 
+      this.MenuPredefinedPageSizes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionSetPageSizeA5,
+            this.ActionSetPageSizeA4,
+            this.ActionSetPageSizePocket,
+            this.ActionSetPageSizeDigest,
+            this.ActionSetPageSizeRoman,
+            this.ActionSetPageSizeRoyal,
+            this.ActionSetPageSizeCrownQuarto,
+            this.ActionSetPageSizeExecutive,
+            this.ActionSetPageSizeUSLetter});
+      this.MenuPredefinedPageSizes.Name = "MenuSelectMoonDayTextFormat";
+      this.MenuPredefinedPageSizes.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuPredefinedPageSizes, "MenuPredefinedPageSizes");
+      // 
+      // ActionSetPageSizeA5
+      // 
+      this.ActionSetPageSizeA5.Name = "ActionSetPageSizeA5";
+      resources.ApplyResources(this.ActionSetPageSizeA5, "ActionSetPageSizeA5");
+      this.ActionSetPageSizeA5.Click += new System.EventHandler(this.ActionSetPageSizeA5_Click);
+      // 
+      // ActionSetPageSizeA4
+      // 
+      this.ActionSetPageSizeA4.Name = "ActionSetPageSizeA4";
+      resources.ApplyResources(this.ActionSetPageSizeA4, "ActionSetPageSizeA4");
+      this.ActionSetPageSizeA4.Click += new System.EventHandler(this.ActionSetPageSizeA4_Click);
+      // 
+      // ActionSetPageSizePocket
+      // 
+      this.ActionSetPageSizePocket.Name = "ActionSetPageSizePocket";
+      resources.ApplyResources(this.ActionSetPageSizePocket, "ActionSetPageSizePocket");
+      this.ActionSetPageSizePocket.Click += new System.EventHandler(this.ActionSetPageSizePocket_Click);
+      // 
+      // ActionSetPageSizeDigest
+      // 
+      this.ActionSetPageSizeDigest.Name = "ActionSetPageSizeDigest";
+      resources.ApplyResources(this.ActionSetPageSizeDigest, "ActionSetPageSizeDigest");
+      this.ActionSetPageSizeDigest.Click += new System.EventHandler(this.ActionSetPageSizeDigest_Click);
+      // 
+      // ActionSetPageSizeRoman
+      // 
+      this.ActionSetPageSizeRoman.Name = "ActionSetPageSizeRoman";
+      resources.ApplyResources(this.ActionSetPageSizeRoman, "ActionSetPageSizeRoman");
+      this.ActionSetPageSizeRoman.Click += new System.EventHandler(this.ActionSetPageSizeRoman_Click);
+      // 
+      // ActionSetPageSizeRoyal
+      // 
+      this.ActionSetPageSizeRoyal.Name = "ActionSetPageSizeRoyal";
+      resources.ApplyResources(this.ActionSetPageSizeRoyal, "ActionSetPageSizeRoyal");
+      this.ActionSetPageSizeRoyal.Click += new System.EventHandler(this.ActionSetPageSizeRoyal_Click);
+      // 
+      // ActionSetPageSizeCrownQuarto
+      // 
+      this.ActionSetPageSizeCrownQuarto.Name = "ActionSetPageSizeCrownQuarto";
+      resources.ApplyResources(this.ActionSetPageSizeCrownQuarto, "ActionSetPageSizeCrownQuarto");
+      this.ActionSetPageSizeCrownQuarto.Click += new System.EventHandler(this.ActionSetPageSizeCrownQuarto_Click);
+      // 
+      // ActionSetPageSizeExecutive
+      // 
+      this.ActionSetPageSizeExecutive.Name = "ActionSetPageSizeExecutive";
+      resources.ApplyResources(this.ActionSetPageSizeExecutive, "ActionSetPageSizeExecutive");
+      this.ActionSetPageSizeExecutive.Click += new System.EventHandler(this.ActionSetPageSizeExecutive_Click);
+      // 
+      // ActionSetPageSizeUSLetter
+      // 
+      this.ActionSetPageSizeUSLetter.Name = "ActionSetPageSizeUSLetter";
+      resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
+      this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
       // 
       // PreferencesForm
       // 
@@ -1692,8 +2029,8 @@
       this.TabPageBookmarks.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
-      this.TabPageEdition.ResumeLayout(false);
-      this.TabPageEdition.PerformLayout();
+      this.TabPageEditing.ResumeLayout(false);
+      this.TabPageEditing.PerformLayout();
       this.TabPageRendering.ResumeLayout(false);
       this.TabPageRendering.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).EndInit();
@@ -1719,8 +2056,20 @@
       this.GroupBoxHebrewWordClickCtrl.PerformLayout();
       this.GroupBoxTranslatedItemDoubleClick.ResumeLayout(false);
       this.GroupBoxTranslatedItemDoubleClick.PerformLayout();
+      this.TabPageExport.ResumeLayout(false);
+      this.TabPageExport.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPageHeight)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPageWidth)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginFooter)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginRight)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginHeader)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginLeft)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginBottom)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentWordColumnsCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginTop)).EndInit();
       this.TabPageTools.ResumeLayout(false);
       this.TabPageTools.PerformLayout();
+      this.MenuPredefinedPageSizes.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -1750,8 +2099,8 @@
     private TextBoxEx EditExportFolder;
     private TextBoxEx EditCalculatorPath;
     private TextBoxEx EditHebrewLettersPath;
-    private ComboBox EditImageExportFileFormat;
-    private ComboBox EditDataExportFileFormat;
+    private ComboBox SelectImageExportFileFormat;
+    private ComboBox SelectDataExportFileFormat;
     private Label LabelImageExportFileFormat;
     private Label LabelDataExportFileFormat;
     private CheckBox EditAutoOpenExportedFile;
@@ -1858,7 +2207,6 @@
     private NumericUpDown EditFontSizeTranslation;
     private Label LabelFontSizeCommentaryInfo;
     private NumericUpDown EditFontSizeCommentary;
-    private ToolTip toolTip1;
     private CheckBox EditBookNameHebrewWithCommonName;
     private CheckBox EditCommentLineAddPrefix;
     private TextBox EditCommentLinePrefix;
@@ -1885,9 +2233,43 @@
     private Label label4;
     public Panel EditThemeTranslationBack;
     private CheckBox EditAutoSaveOnLeaveControl;
-    private TabPage TabPageEdition;
+    private TabPage TabPageEditing;
     private TabPage TabPageMouse;
     private CheckBox EditSearchHebrewCharsInBold;
     private Button ActionResetRendering;
+    private ComboBox SelectExportDocumentTheme;
+    private Label LabelExportDocumentTheme;
+    private Label LabelDocumentMargins;
+    private Label LabelDocumentMarginIntervalInfo;
+    private TabPage TabPageExport;
+    private NumericUpDown EditDocumentMarginTop;
+    private CheckBox EditExportDocumentOverrideWordColumnsCount;
+    private CheckBox EditExportDocumentLandscape;
+    private NumericUpDown EditDocumentWordColumnsCount;
+    private Label LabelDocumentWordColumnsCountIntervalInfo;
+    private NumericUpDown EditDocumentMarginRight;
+    private NumericUpDown EditDocumentMarginLeft;
+    private NumericUpDown EditDocumentMarginBottom;
+    private CheckBox EditExportDocumentDifferentOddAndEvenPages;
+    private NumericUpDown EditPageHeight;
+    private NumericUpDown EditPageWidth;
+    private Label LabelDocumentSize;
+    private Label LabelPageHeightIntervalInfo;
+    private CheckBox EditDifferentFirstPage;
+    private NumericUpDown EditDocumentMarginFooter;
+    private NumericUpDown EditDocumentMarginHeader;
+    private Label LabelDocumentMarginHFIntervalInfo;
+    private Label LabelPageWidthIntervalInfo;
+    private Button SelectPageSize;
+    private ContextMenuStrip MenuPredefinedPageSizes;
+    private ToolStripMenuItem ActionSetPageSizeA5;
+    private ToolStripMenuItem ActionSetPageSizeA4;
+    private ToolStripMenuItem ActionSetPageSizePocket;
+    private ToolStripMenuItem ActionSetPageSizeDigest;
+    private ToolStripMenuItem ActionSetPageSizeRoman;
+    private ToolStripMenuItem ActionSetPageSizeRoyal;
+    private ToolStripMenuItem ActionSetPageSizeCrownQuarto;
+    private ToolStripMenuItem ActionSetPageSizeExecutive;
+    private ToolStripMenuItem ActionSetPageSizeUSLetter;
   }
 }
