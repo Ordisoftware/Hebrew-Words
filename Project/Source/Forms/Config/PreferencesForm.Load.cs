@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -65,6 +65,19 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditAutoSaveOnLeaveControl.Checked = Settings.AutoSaveOnLeaveControl);
     SystemManager.TryCatch(() => EditSearchHebrewCharsInBold.Checked = Settings.LettersControlHebrewCharsInBold);
     SystemManager.TryCatch(() => SelectExportDocumentTheme.SelectedIndex = (int)Settings.ExportDocumentTheme);
+    SystemManager.TryCatch(() => EditPageWidth.Value = Settings.ExportDocumentPageWidth);
+    SystemManager.TryCatch(() => EditPageHeight.Value = Settings.ExportDocumentPageHeight);
+    SystemManager.TryCatch(() => EditDocumentMarginTop.Value = Settings.ExportDocumentMarginTop);
+    SystemManager.TryCatch(() => EditDocumentMarginBottom.Value = Settings.ExportDocumentMarginBottom);
+    SystemManager.TryCatch(() => EditDocumentMarginLeft.Value = Settings.ExportDocumentMarginLeft);
+    SystemManager.TryCatch(() => EditDocumentMarginRight.Value = Settings.ExportDocumentMarginRight);
+    SystemManager.TryCatch(() => EditDocumentMarginHeader.Value = Settings.ExportDocumentMarginHeader);
+    SystemManager.TryCatch(() => EditDocumentMarginFooter.Value = Settings.ExportDocumentMarginFooter);
+    SystemManager.TryCatch(() => EditExportDocumentLandscape.Checked = Settings.ExportDocumentLandscape);
+    SystemManager.TryCatch(() => EditExportDocumentDifferentOddAndEvenPages.Checked = Settings.ExportDocumentDifferentOddAndEvenPages);
+    SystemManager.TryCatch(() => EditExportDocumentOverrideWordColumnsCount.Checked = Settings.ExportDocumentOverrideWordColumnsCount);
+    SystemManager.TryCatch(() => EditDocumentWordColumnsCount.Value = Settings.ExportDocumentWordColumnsCount);
+
     LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;

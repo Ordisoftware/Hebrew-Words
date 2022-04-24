@@ -426,19 +426,43 @@
       <Value Profile="(Default)">Medium</Value>
     </Setting>
     <Setting Name="ExportDocumentDifferentOddAndEvenPages" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginRight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginBottom" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="ExportDocumentWordColumnsCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ExportDocumentOverrideWordColumnsCount" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ExportDocumentMarginTop" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">75</Value>
+    <Setting Name="ExportDocumentLandscape" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ExportDocumentMarginLeft" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">75</Value>
+    <Setting Name="ExportDocumentPageWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2100</Value>
     </Setting>
-    <Setting Name="ExportDocumentMarginRight" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">75</Value>
+    <Setting Name="ExportDocumentPageHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2970</Value>
     </Setting>
-    <Setting Name="ExportDocumentMarginBottom" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">75</Value>
+    <Setting Name="ExportDocumentMarginHeader" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">130</Value>
+    </Setting>
+    <Setting Name="ExportDocumentMarginFooter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">130</Value>
+    </Setting>
+    <Setting Name="ExportDocumentDifferentFirstPage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -451,7 +451,6 @@
     <Compile Include="Source\Enums\ExportDocumentTheme.cs" />
     <Compile Include="Source\Program\System\ExportDocX.Generate.cs" />
     <Compile Include="Source\Program\System\ExportDocX.Theming.cs" />
-    <Compile Include="Source\Program\System\ExportDocX.Theme.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.Notices.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
     <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />

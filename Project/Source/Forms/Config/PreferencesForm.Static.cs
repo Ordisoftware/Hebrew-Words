@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -23,27 +23,38 @@ partial class PreferencesForm
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  // Tab pages indexes
   static public int TabIndexApplication { get; private set; }
-  static public int TabIndexStartup { get; private set; }
-  static public int TabIndexRendering { get; private set; }
-  static public int TabIndexTools { get; private set; }
+  static public int TabIndexBookmarks { get; private set; }
+  static public int TabIndexEditing { get; private set; }
+  static public int TabIndexExport { get; private set; }
+  static public int TabIndexMouse { get; private set; }
   static public int TabIndexPaths { get; private set; }
+  static public int TabIndexRendering { get; private set; }
+  static public int TabIndexStartup { get; private set; }
+  static public int TabIndexTheme { get; private set; }
+  static public int TabIndexTools { get; private set; }
 
-  // Intervals Min, Max, Default, Increment
-  static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
+  // Numeric intervals as (Min, Max, Default, Increment)
   static public readonly (int, int, int, int) AutoBackupCountInterval = (0, 30, 5, 1);
   static public readonly (int, int, int, int) AutoSaveDelayInterval = (0, 15, 5, 1);
   static public readonly (int, int, int, int) BookmarksCountInterval = (0, 50, 20, 1);
-  static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
-
-  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 210, 5);
-  static public readonly (int, int, int, int) WordTranslationLinesCountInterval = (1, 5, 1, 1);
+  static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
   static public readonly (int, int, int, int) CommentLinesCountInterval = (1, 20, 2, 1);
+  static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 10, 1);
   static public readonly (int, int, int, int) FontSizeHebrewInterval = (12, 24, 16, 1);
   static public readonly (int, int, int, int) FontSizeTranslationInterval = (8, 16, 10, 1);
-  static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 10, 1);
+  static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
+  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 210, 5);
+  static public readonly (int, int, int, int) WordTranslationLinesCountInterval = (1, 5, 1, 1);
+  static public readonly (int, int, int, int) DocumentMarginInterval = (0, 50, 20, 1);
+  static public readonly (int, int, int, int) DocumentMarginHFInterval = (0, 40, 13, 1);
+  static public readonly (int, int, int, int) DocumentWordColumnsCountInterval = (4, 12, 5, 1);
+  static public readonly (int, int, int, int) DocumentPageWidthInterval = (26, 1000, 210, 1);
+  static public readonly (int, int, int, int) DocumentPageHeightInterval = (37, 1414, 297, 1);
+  //static public readonly (int, int, int, int) PrintingMarginInterval = (10, 160, 60, 10);
 
   static private bool First;
   static private bool LanguageChanged;
@@ -58,16 +69,22 @@ partial class PreferencesForm
   static private bool BookNameHebrewWithCommonNamePrevious;
 
   static public bool Reseted { get; private set; }
+
   static private bool DoReset;
 
   static PreferencesForm()
   {
     using var form = new PreferencesForm();
     TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
-    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
-    TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
-    TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
+    TabIndexBookmarks = form.TabControl.TabPages.IndexOf(form.TabPageBookmarks);
+    TabIndexEditing = form.TabControl.TabPages.IndexOf(form.TabPageEditing);
+    TabIndexExport = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
+    TabIndexMouse = form.TabControl.TabPages.IndexOf(form.TabPageMouse);
     TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
+    TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
+    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
+    TabIndexTheme = form.TabControl.TabPages.IndexOf(form.TabPageTheme);
+    TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
   }
 
   static public bool Run(int index = -1)

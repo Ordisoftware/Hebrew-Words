@@ -20,14 +20,24 @@ static partial class ExportDocX
 {
 
   /// <summary>
-  /// Sets the MS Word document page margins.
+  /// Sets the MS Word document page properties like orientation and margins.
   /// </summary>
-  static private void SetPageMargins()
+  static private void SetPageProperties()
   {
-    Document.MarginTop = Program.Settings.ExportDocumentMarginTop;
-    Document.MarginBottom = Program.Settings.ExportDocumentMarginBottom;
-    Document.MarginLeft = Program.Settings.ExportDocumentMarginLeft;
-    Document.MarginRight = Program.Settings.ExportDocumentMarginRight;
+    //Settings.ExportDocumentPageWidth = 156;
+    //Settings.ExportDocumentPageHeight = 234;
+    Document.PageLayout.Orientation = Program.Settings.ExportDocumentLandscape
+      ? Orientation.Landscape
+      : Orientation.Portrait;
+    Document.PageWidth = (int)( Program.Settings.ExportDocumentPageWidth / 0.0352778 ) / 10;
+    Document.PageHeight = (int)( Program.Settings.ExportDocumentPageHeight / 0.0352778 ) / 10;
+    Document.MarginTop = (int)( Program.Settings.ExportDocumentMarginTop / 0.0352778 ) / 10; ;
+    Document.MarginBottom = (int)( Program.Settings.ExportDocumentMarginBottom / 0.0352778 ) / 10; ;
+    Document.MarginLeft = (int)( Program.Settings.ExportDocumentMarginLeft / 0.0352778 ) / 10; ;
+    Document.MarginRight = (int)( Program.Settings.ExportDocumentMarginRight / 0.0352778 ) / 10; ;
+    Document.MarginHeader = (int)( Program.Settings.ExportDocumentMarginHeader / 0.0352778 ) / 10; ;
+    Document.MarginFooter = (int)( Program.Settings.ExportDocumentMarginFooter / 0.0352778 ) / 10; ;
+    Document.DifferentFirstPage = Program.Settings.ExportDocumentDifferentFirstPage;
     Document.DifferentOddAndEvenPages = Program.Settings.ExportDocumentDifferentOddAndEvenPages;
   }
 
@@ -36,9 +46,9 @@ static partial class ExportDocX
   /// </summary>
   static private void AddBookTitle(BookRow book, bool withMemo)
   {
-    AddTitle(book.Hebrew, FontHebrew, ExportDocXTheming.Heading1TextSize, Heading1).Alignment = Alignment.center;
+    AddTitle(book.Hebrew, FontHebrew, Heading1TextSize, Heading1).Alignment = Alignment.center;
     if ( book.Transcription.Length != 0 && book.Translation.Length != 0 )
-      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, ExportDocXTheming.Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
+      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
     Document.InsertParagraph();
     Document.InsertParagraph();
     if ( withMemo && book.Memo.Length != 0 )
@@ -54,9 +64,9 @@ static partial class ExportDocX
   /// </summary>
   static private void AddChapterTitle(ChapterRow chapter, bool withMemo)
   {
-    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, ExportDocXTheming.Heading2TextSize, Heading2);
+    AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, Heading2TextSize, Heading2);
     if ( chapter.Title.Length != 0 )
-      AddTitle(chapter.Title, FontCalibri, ExportDocXTheming.Heading2TextSizeSub, Heading2);
+      AddTitle(chapter.Title, FontCalibri, Heading2TextSizeSub, Heading2);
     Document.InsertParagraph();
     Document.InsertParagraph();
     if ( withMemo && chapter.Memo.Length != 0 )
@@ -77,7 +87,7 @@ static partial class ExportDocX
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
     table.Rows[0].Cells[0].Width = CellCommentWidth;
-    table.Rows[0].Cells[1].Width = ExportDocXTheming.CellVerseWidth;
+    table.Rows[0].Cells[1].Width = CellVerseWidth;
     var paragraph = table.Rows[0].Cells[0].Paragraphs[0];
     if ( !styleName.IsNullOrEmpty() )
       paragraph.StyleName = styleName;
@@ -102,8 +112,8 @@ static partial class ExportDocX
     int rowFactor = Convert.ToInt32(withTranslation) + 1;
     int countWords = verse.Words.Count;
     int indexWord = countWords - 1;
-    int countRows = ( (int)Math.Ceiling((double)countWords / ExportDocXTheming.WordColumnCount) ) * rowFactor;
-    var table = Document.InsertTable(countRows, ExportDocXTheming.WordColumnCount + 1);
+    int countRows = ( (int)Math.Ceiling((double)countWords / WordColumnsCount) ) * rowFactor;
+    var table = Document.InsertTable(countRows, WordColumnsCount + 1);
     table.Alignment = Alignment.right;
     table.Design = TableDesign.None;
     table.AutoFit = AutoFit.Contents;
@@ -111,20 +121,20 @@ static partial class ExportDocX
       paragraph.KeepWithNextParagraph(true);
     for ( int row = 0; row < countRows; row += rowFactor )
     {
-      var cellVerse = table.Rows[row].Cells[ExportDocXTheming.WordColumnCount];
-      cellVerse.Width = ExportDocXTheming.CellVerseWidth;
+      var cellVerse = table.Rows[row].Cells[WordColumnsCount];
+      cellVerse.Width = CellVerseWidth;
       cellVerse.MarginLeft = CellVerseMarginLeft;
       cellVerse.MarginRight = CellVerseMarginRight;
       if ( row == 0 )
       {
         var paragraphVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
         paragraphVerseRef.Font(FontCalibri);
-        paragraphVerseRef.FontSize(ExportDocXTheming.VerseRefTextSize);
+        paragraphVerseRef.FontSize(VerseRefTextSize);
         if ( VerseRefTextInBold ) paragraphVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();
-      for ( int column = ExportDocXTheming.WordColumnCount - 1; column >= 0 && indexWord >= 0; column--, indexWord-- )
+      for ( int column = WordColumnsCount - 1; column >= 0 && indexWord >= 0; column--, indexWord-- )
       {
         var cell = table.Rows[row].Cells[column];
         cell.VerticalAlignment = VerticalAlignment.Center;
@@ -132,14 +142,14 @@ static partial class ExportDocX
         var paragraphWord = cell.Paragraphs[0].Append(word.Hebrew);
         paragraphWord.Alignment = Alignment.right;
         paragraphWord.Font(FontHebrew);
-        paragraphWord.FontSize(ExportDocXTheming.WordHebrewTextSize);
+        paragraphWord.FontSize(WordHebrewTextSize);
         paragraphWord.Spacing(1);
         if ( withTranslation )
         {
           var paragraphTranslation = table.Rows[row + 1].Cells[column].Paragraphs[0].Append(word.Translation);
           paragraphTranslation.Alignment = Alignment.right;
           paragraphTranslation.Font(FontCalibri);
-          paragraphTranslation.FontSize(ExportDocXTheming.WordTranslationTextSize);
+          paragraphTranslation.FontSize(WordTranslationTextSize);
           paragraphTranslation.SpacingAfter(WordTextSpacing);
         }
         else
@@ -177,7 +187,7 @@ static partial class ExportDocX
     cellComment.SetBorder(TableCellBorderType.Left, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
     cellComment.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
     var cellVerse = table.Rows[0].Cells[1];
-    cellVerse.Width = ExportDocXTheming.CellVerseWidth;
+    cellVerse.Width = CellVerseWidth;
     cellVerse.MarginLeft = MemoCellMargin;
     cellVerse.MarginRight = MemoCellMargin;
     cellVerse.MarginTop = MemoCellMargin;
@@ -188,7 +198,7 @@ static partial class ExportDocX
       string line = lines[index];
       var paragraph = table.Rows[0].Cells[0].InsertParagraph(line);
       paragraph.Font(FontCalibri);
-      paragraph.FontSize(ExportDocXTheming.MemoTextSize);
+      paragraph.FontSize(MemoTextSize);
       paragraph.Alignment = Alignment.both;
       if ( index != 0 ) paragraph.SpacingBefore(MemoTextSpacing);
       if ( index != indexEnd ) paragraph.SpacingAfter(MemoTextSpacing);

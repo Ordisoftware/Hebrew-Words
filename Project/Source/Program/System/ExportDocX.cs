@@ -21,11 +21,10 @@ using Xceed.Words.NET;
 static partial class ExportDocX
 {
 
-  // TODO add options to theme MSWord export
   // TODO add option to convert " in '«•' and '•»' (utiliser un bool alternatif depuis le premier rencontré)
 
   /// <summary>
-  /// The document.
+  /// Indicates the DocX document.
   /// </summary>
   /// <remarks>
   /// Measures in float or double are in inch: 100f = 1 inch = 2.54cm.
@@ -41,7 +40,7 @@ static partial class ExportDocX
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
-        SetPageMargins();
+        SetPageProperties();
         AddBookTitle(book, true);
         foreach ( ChapterRow chapter in book.Chapters )
         {
@@ -77,7 +76,7 @@ static partial class ExportDocX
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
-        SetPageMargins();
+        SetPageProperties();
         AddBookTitle(book, withMemo);
         AddChapterTitle(chapter, withMemo);
         foreach ( VerseRow verse in chapter.Verses )
@@ -109,7 +108,7 @@ static partial class ExportDocX
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
-        SetPageMargins();
+        SetPageProperties();
         AddBookTitle(book, false);
         AddChapterTitle(chapter, false);
         string strref = Program.Settings.ExportWordPrintFullReference

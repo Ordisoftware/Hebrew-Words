@@ -50,6 +50,7 @@ partial class PreferencesForm
     EditLogEnabled_CheckedChanged(null, null);
     EditCommentLineAddPrefix_CheckedChanged(null, null);
     EditCommentLineRemovePrefix_CheckedChanged(null, null);
+    EditExportDocumentOverrideWordColumnsCount_CheckedChanged(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
@@ -91,20 +92,29 @@ partial class PreferencesForm
   /// </summary>
   private void LoadEditIntervals()
   {
-    setInterval(EditCheckUpdateAtStartupInterval, LabelInfoCheckUpdateAtStartup, CheckUpdateInterval);
-    setInterval(EditVacuumAtStartupInterval, LabelInfoOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
     setInterval(EditAutoBackupCount, LabelInfoAutoBackupCount, AutoBackupCountInterval);
     setInterval(EditAutoSaveDelay, LabelInfoAutoSaveDelay, AutoSaveDelayInterval);
     setInterval(EditBookmarksCount, LabelInfoBookmarksCount, BookmarksCountInterval);
+    setInterval(EditCheckUpdateAtStartupInterval, LabelInfoCheckUpdateAtStartup, CheckUpdateInterval);
     setInterval(EditCommentaryLinesCount, LabelInfoCommentLinesCount, CommentLinesCountInterval);
-    setInterval(EditWordTranslateLinesCount, LabelInfoWordtranslateLinesCount, WordTranslationLinesCountInterval);
+    setInterval(EditFontSizeCommentary, LabelFontSizeCommentaryInfo, FontSizeCommentaryInterval);
+    setInterval(EditFontSizeHebrew, LabelFontSizeHebrewInfo, FontSizeHebrewInterval);
+    setInterval(EditFontSizeTranslation, LabelFontSizeTranslationInfo, FontSizeTranslationInterval);
     setInterval(EditHistoryCount, LabelInfoHistoryCount, HistoryCountInterval);
     setInterval(EditSearchDisplayMaxRef, LabelInfoSearchDisplayMaxRef, SearchDisplayMaxRefInterval);
     setInterval(EditSearchMinRefForDialog, LabelInfoSearchMinRefForDialog, SearchMinRefForDialogInterval);
+    setInterval(EditVacuumAtStartupInterval, LabelInfoOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
     setInterval(EditWordControlWidth, LabelInfoWordControlWidth, WordControlWidthInterval);
-    setInterval(EditFontSizeHebrew, LabelFontSizeHebrewInfo, FontSizeHebrewInterval);
-    setInterval(EditFontSizeTranslation, LabelFontSizeTranslationInfo, FontSizeTranslationInterval);
-    setInterval(EditFontSizeCommentary, LabelFontSizeCommentaryInfo, FontSizeCommentaryInterval);
+    setInterval(EditDocumentMarginTop, LabelDocumentMarginIntervalInfo, DocumentMarginInterval);
+    setInterval(EditDocumentMarginBottom, LabelDocumentMarginIntervalInfo, DocumentMarginInterval);
+    setInterval(EditDocumentMarginLeft, LabelDocumentMarginIntervalInfo, DocumentMarginInterval);
+    setInterval(EditDocumentMarginRight, LabelDocumentMarginIntervalInfo, DocumentMarginInterval);
+    setInterval(EditDocumentMarginHeader, LabelDocumentMarginHFIntervalInfo, DocumentMarginHFInterval);
+    setInterval(EditDocumentMarginFooter, LabelDocumentMarginHFIntervalInfo, DocumentMarginHFInterval);
+    setInterval(EditPageWidth, LabelPageWidthIntervalInfo, DocumentPageWidthInterval);
+    setInterval(EditPageHeight, LabelPageHeightIntervalInfo, DocumentPageHeightInterval);
+    setInterval(EditDocumentWordColumnsCount, LabelDocumentWordColumnsCountIntervalInfo, DocumentWordColumnsCountInterval);
+    // TODO setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
     //
     static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
     {

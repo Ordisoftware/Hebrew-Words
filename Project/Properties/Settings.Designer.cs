@@ -1717,7 +1717,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ExportDocumentDifferentOddAndEvenPages {
             get {
                 return ((bool)(this["ExportDocumentDifferentOddAndEvenPages"]));
@@ -1729,10 +1729,10 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("75")]
-        public float ExportDocumentMarginTop {
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ExportDocumentMarginTop {
             get {
-                return ((float)(this["ExportDocumentMarginTop"]));
+                return ((int)(this["ExportDocumentMarginTop"]));
             }
             set {
                 this["ExportDocumentMarginTop"] = value;
@@ -1741,10 +1741,10 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("75")]
-        public float ExportDocumentMarginLeft {
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ExportDocumentMarginLeft {
             get {
-                return ((float)(this["ExportDocumentMarginLeft"]));
+                return ((int)(this["ExportDocumentMarginLeft"]));
             }
             set {
                 this["ExportDocumentMarginLeft"] = value;
@@ -1753,10 +1753,10 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("75")]
-        public float ExportDocumentMarginRight {
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ExportDocumentMarginRight {
             get {
-                return ((float)(this["ExportDocumentMarginRight"]));
+                return ((int)(this["ExportDocumentMarginRight"]));
             }
             set {
                 this["ExportDocumentMarginRight"] = value;
@@ -1765,13 +1765,109 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("75")]
-        public float ExportDocumentMarginBottom {
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ExportDocumentMarginBottom {
             get {
-                return ((float)(this["ExportDocumentMarginBottom"]));
+                return ((int)(this["ExportDocumentMarginBottom"]));
             }
             set {
                 this["ExportDocumentMarginBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int ExportDocumentWordColumnsCount {
+            get {
+                return ((int)(this["ExportDocumentWordColumnsCount"]));
+            }
+            set {
+                this["ExportDocumentWordColumnsCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportDocumentOverrideWordColumnsCount {
+            get {
+                return ((bool)(this["ExportDocumentOverrideWordColumnsCount"]));
+            }
+            set {
+                this["ExportDocumentOverrideWordColumnsCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportDocumentLandscape {
+            get {
+                return ((bool)(this["ExportDocumentLandscape"]));
+            }
+            set {
+                this["ExportDocumentLandscape"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2100")]
+        public int ExportDocumentPageWidth {
+            get {
+                return ((int)(this["ExportDocumentPageWidth"]));
+            }
+            set {
+                this["ExportDocumentPageWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2970")]
+        public int ExportDocumentPageHeight {
+            get {
+                return ((int)(this["ExportDocumentPageHeight"]));
+            }
+            set {
+                this["ExportDocumentPageHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("130")]
+        public int ExportDocumentMarginHeader {
+            get {
+                return ((int)(this["ExportDocumentMarginHeader"]));
+            }
+            set {
+                this["ExportDocumentMarginHeader"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("130")]
+        public int ExportDocumentMarginFooter {
+            get {
+                return ((int)(this["ExportDocumentMarginFooter"]));
+            }
+            set {
+                this["ExportDocumentMarginFooter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ExportDocumentDifferentFirstPage {
+            get {
+                return ((bool)(this["ExportDocumentDifferentFirstPage"]));
+            }
+            set {
+                this["ExportDocumentDifferentFirstPage"] = value;
             }
         }
     }
