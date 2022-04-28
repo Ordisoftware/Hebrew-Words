@@ -29,14 +29,14 @@ static partial class ExportDocX
     Document.PageLayout.Orientation = Program.Settings.ExportDocumentLandscape
       ? Orientation.Landscape
       : Orientation.Portrait;
-    Document.PageWidth = (int)( Program.Settings.ExportDocumentPageWidth / 0.0352778 ) / 10;
-    Document.PageHeight = (int)( Program.Settings.ExportDocumentPageHeight / 0.0352778 ) / 10;
-    Document.MarginTop = (int)( Program.Settings.ExportDocumentMarginTop / 0.0352778 ) / 10; ;
-    Document.MarginBottom = (int)( Program.Settings.ExportDocumentMarginBottom / 0.0352778 ) / 10; ;
-    Document.MarginLeft = (int)( Program.Settings.ExportDocumentMarginLeft / 0.0352778 ) / 10; ;
-    Document.MarginRight = (int)( Program.Settings.ExportDocumentMarginRight / 0.0352778 ) / 10; ;
-    Document.MarginHeader = (int)( Program.Settings.ExportDocumentMarginHeader / 0.0352778 ) / 10; ;
-    Document.MarginFooter = (int)( Program.Settings.ExportDocumentMarginFooter / 0.0352778 ) / 10; ;
+    Document.PageWidth = (int)( Program.Settings.ExportDocumentPageWidth / 0.0352778f / 10 );
+    Document.PageHeight = (int)( Program.Settings.ExportDocumentPageHeight / 0.0352778f / 10 );
+    Document.MarginTop = (int)( Program.Settings.ExportDocumentMarginTop / 0.0352778f / 10 );
+    Document.MarginBottom = (int)( Program.Settings.ExportDocumentMarginBottom / 0.0352778f / 10 );
+    Document.MarginLeft = (int)( Program.Settings.ExportDocumentMarginLeft / 0.0352778f / 10 );
+    Document.MarginRight = (int)( Program.Settings.ExportDocumentMarginRight / 0.0352778f / 10 );
+    Document.MarginHeader = (int)( Program.Settings.ExportDocumentMarginHeader / 0.0352778f / 10 );
+    Document.MarginFooter = (int)( Program.Settings.ExportDocumentMarginFooter / 0.0352778f / 10 );
     Document.DifferentFirstPage = Program.Settings.ExportDocumentDifferentFirstPage;
     Document.DifferentOddAndEvenPages = Program.Settings.ExportDocumentDifferentOddAndEvenPages;
   }

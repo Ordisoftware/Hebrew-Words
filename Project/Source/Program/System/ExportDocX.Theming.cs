@@ -33,8 +33,8 @@ static partial class ExportDocX
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
-  static private string Heading1 = "Heading1";
-  static private string Heading2 = "Heading2";
+  static private readonly string Heading1 = "Heading1";
+  static private readonly string Heading2 = "Heading2";
 
   static public ExportDocumentTheme Theme => Program.Settings.ExportDocumentTheme;
 
@@ -42,98 +42,112 @@ static partial class ExportDocX
   {
     ExportDocumentTheme.Small => 4,
     ExportDocumentTheme.Medium => 6,
-    ExportDocumentTheme.Large => 8
+    ExportDocumentTheme.Large => 8,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static private int MemoTextSpacing => Theme switch
   {
     ExportDocumentTheme.Small => 3,
     ExportDocumentTheme.Medium => 4,
-    ExportDocumentTheme.Large => 5
+    ExportDocumentTheme.Large => 5,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static private int WordTextSpacing => Theme switch
   {
     ExportDocumentTheme.Small => 5,
     ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 15
+    ExportDocumentTheme.Large => 15,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static private int CellVerseMarginLeft => Theme switch
   {
     ExportDocumentTheme.Small => 5,
     ExportDocumentTheme.Medium => 5,
-    ExportDocumentTheme.Large => 5
+    ExportDocumentTheme.Large => 5,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static private int CellVerseMarginRight => Theme switch
   {
     ExportDocumentTheme.Small => 0,
     ExportDocumentTheme.Medium => 0,
-    ExportDocumentTheme.Large => 0
+    ExportDocumentTheme.Large => 0,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int Heading1TextSize => Theme switch
   {
     ExportDocumentTheme.Small => 24,
     ExportDocumentTheme.Medium => 28,
-    ExportDocumentTheme.Large => 32
+    ExportDocumentTheme.Large => 32,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int Heading1TextSizeSub => Theme switch
   {
     ExportDocumentTheme.Small => 14,
     ExportDocumentTheme.Medium => 18,
-    ExportDocumentTheme.Large => 24
+    ExportDocumentTheme.Large => 24,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int Heading2TextSize => Theme switch
   {
     ExportDocumentTheme.Small => 16,
     ExportDocumentTheme.Medium => 18,
-    ExportDocumentTheme.Large => 20
+    ExportDocumentTheme.Large => 20,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int Heading2TextSizeSub => Theme switch
   {
     ExportDocumentTheme.Small => 12,
     ExportDocumentTheme.Medium => 14,
-    ExportDocumentTheme.Large => 16
+    ExportDocumentTheme.Large => 16,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int CellVerseWidth => Theme switch
   {
     ExportDocumentTheme.Small => 40,
     ExportDocumentTheme.Medium => 50,
-    ExportDocumentTheme.Large => 55
+    ExportDocumentTheme.Large => 55,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int WordHebrewTextSize => Theme switch
   {
     ExportDocumentTheme.Small => 12,
     ExportDocumentTheme.Medium => 14,
-    ExportDocumentTheme.Large => 18
+    ExportDocumentTheme.Large => 18,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int VerseRefTextSize => Theme switch
   {
     ExportDocumentTheme.Small => 8,
     ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
+    ExportDocumentTheme.Large => 12,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int WordTranslationTextSize => Theme switch
   {
     ExportDocumentTheme.Small => 8,
     ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
+    ExportDocumentTheme.Large => 12,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
   static public int MemoTextSize => Theme switch
   {
     ExportDocumentTheme.Small => 8,
     ExportDocumentTheme.Medium => 10,
-    ExportDocumentTheme.Large => 12
+    ExportDocumentTheme.Large => 12,
+    _ => throw new AdvNotImplementedException(Theme)
   };
 
 }
