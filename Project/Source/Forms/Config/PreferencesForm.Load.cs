@@ -65,6 +65,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditAutoSaveOnLeaveControl.Checked = Settings.AutoSaveOnLeaveControl);
     SystemManager.TryCatch(() => EditSearchHebrewCharsInBold.Checked = Settings.LettersControlHebrewCharsInBold);
     SystemManager.TryCatch(() => SelectExportDocumentTheme.SelectedIndex = (int)Settings.ExportDocumentTheme);
+    SystemManager.TryCatch(() => SelectExportDocumentModel.SelectedIndex = (int)Settings.ExportDocumentModel);
     SystemManager.TryCatch(() => EditPageWidth.Value = Settings.ExportDocumentPageWidth);
     SystemManager.TryCatch(() => EditPageHeight.Value = Settings.ExportDocumentPageHeight);
     SystemManager.TryCatch(() => EditDocumentMarginTop.Value = Settings.ExportDocumentMarginTop);

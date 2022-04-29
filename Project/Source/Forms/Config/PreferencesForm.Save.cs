@@ -66,6 +66,7 @@ partial class PreferencesForm
     Settings.AutoSaveOnLeaveControl = EditAutoSaveOnLeaveControl.Checked;
     Settings.LettersControlHebrewCharsInBold = EditSearchHebrewCharsInBold.Checked;
     Settings.ExportDocumentTheme = (ExportDocumentTheme)SelectExportDocumentTheme.SelectedIndex;
+    Settings.ExportDocumentModel = (ExportDocumentModel)SelectExportDocumentModel.SelectedIndex;
     Settings.ExportDocumentPageWidth = (int)EditPageWidth.Value;
     Settings.ExportDocumentPageHeight = (int)EditPageHeight.Value;
     Settings.ExportDocumentMarginTop = (int)EditDocumentMarginTop.Value;

@@ -173,7 +173,7 @@
     <value>Requête par défaut de recherche en ligne de mot</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 13</value>
+    <value>338, 13</value>
   </data>
   <data name="LabelAutoSaveDelay.Text" xml:space="preserve">
     <value>Délai pour la sauvegarde automatique de toutes les modifications (min)</value>
@@ -229,23 +229,41 @@
   <data name="LabelExportFolder.Text" xml:space="preserve">
     <value>Dossier d'exportation</value>
   </data>
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
+    <value>Calculatrice système</value>
+  </data>
+  <data name="LabelDocumentMargins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 13</value>
+  </data>
+  <data name="LabelDocumentMargins.Text" xml:space="preserve">
+    <value>Marges du document haut, bas, gauche et droite en millimètres</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
+    <value>Petit</value>
+  </data>
+  <data name="SelectExportDocumentTheme.Items1" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
   <data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 13</value>
   </data>
   <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export de données</value>
   </data>
+  <data name="LabelExportDocumentTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelExportDocumentTheme.Text" xml:space="preserve">
+    <value>Thème du document</value>
+  </data>
   <data name="LabelImageExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 13</value>
   </data>
   <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export d'images</value>
-  </data>
-  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 13</value>
-  </data>
-  <data name="LabelCalculatorPath.Text" xml:space="preserve">
-    <value>Calculatrice système</value>
   </data>
   <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 17</value>
@@ -304,6 +322,12 @@
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
+  <data name="EditSearchHebrewCharsInBold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 17</value>
+  </data>
+  <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
+    <value>Caractères hébreux en gras pour la recherche</value>
+  </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 13</value>
   </data>
@@ -315,18 +339,6 @@
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
     <value>Activer le double tampon pour le dessin des fenêtres</value>
-  </data>
-  <data name="EditCommentLineRemovePrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 17</value>
-  </data>
-  <data name="EditCommentLineRemovePrefix.Text" xml:space="preserve">
-    <value>Supprimer automatiquement ce préfixe à chaque ligne de commentaire</value>
-  </data>
-  <data name="EditCommentLineAddPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 17</value>
-  </data>
-  <data name="EditCommentLineAddPrefix.Text" xml:space="preserve">
-    <value>Ajouter automatiquement ce préfixe à chaque ligne de commentaire</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Size" type="System.Drawing.Size, System.Drawing">
     <value>378, 17</value>
@@ -358,11 +370,41 @@
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
   </data>
+  <data name="EditCommentLineRemovePrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 17</value>
+  </data>
+  <data name="EditCommentLineRemovePrefix.Text" xml:space="preserve">
+    <value>Supprimer automatiquement ce préfixe à chaque ligne de commentaire</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 17</value>
+  </data>
+  <data name="EditCommentLineAddPrefix.Text" xml:space="preserve">
+    <value>Ajouter automatiquement ce préfixe à chaque ligne de commentaire</value>
+  </data>
   <data name="EditAutoSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
   </data>
   <data name="EditAutoSortBookmarks.Text" xml:space="preserve">
     <value>Trier automatiquement les favoris</value>
+  </data>
+  <data name="TabPageBookmarks.Text" xml:space="preserve">
+    <value>Favoris</value>
+  </data>
+  <data name="TabPageEditing.Text" xml:space="preserve">
+    <value>Édition</value>
+  </data>
+  <data name="EditAutoSaveOnLeaveControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="EditAutoSaveOnLeaveControl.Text" xml:space="preserve">
+    <value>Sauvegarder automatiquement à la sortie d'une zone d'édition</value>
+  </data>
+  <data name="TabPageRendering.Text" xml:space="preserve">
+    <value>Rendu</value>
+  </data>
+  <data name="TabPageTheme.Text" xml:space="preserve">
+    <value>Thème</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 13</value>
@@ -406,11 +448,8 @@
   <data name="ActionUseColorsSystem.Text" xml:space="preserve">
     <value>Système</value>
   </data>
-  <data name="TabPageRendering.Text" xml:space="preserve">
-    <value>Rendu</value>
-  </data>
-  <data name="TabPageTools.Text" xml:space="preserve">
-    <value>Outils</value>
+  <data name="TabPageMouse.Text" xml:space="preserve">
+    <value>Souris</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift.Text" xml:space="preserve">
     <value>Maj+Clic sur mot hébreu ouvre</value>
@@ -443,6 +482,66 @@
     <value>121, 17</value>
   </data>
   <data name="GroupBoxHebrewWordClickShift2.Text" xml:space="preserve">
+    <value>Chercher les traduits</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
+    <value>Clic sur label de verset ouvre</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick4.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 17</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick2.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="GroupBoxVerseLabelClick3.Text" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
+    <value>Clic sur mot hébreu ouvre</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick5.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick0.Text" xml:space="preserve">
+    <value>Menu contextuel</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 17</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick1.Text" xml:space="preserve">
+    <value>Recherche en ligne par défaut</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick3.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="GroupBoxHebrewWordClick2.Text" xml:space="preserve">
     <value>Chercher les traduits</value>
   </data>
   <data name="GroupBoxHebrewWordClickAlt.Text" xml:space="preserve">
@@ -478,60 +577,6 @@
   <data name="GroupBoxHebrewWordClickShiftCtrl2.Text" xml:space="preserve">
     <value>Chercher les traduits</value>
   </data>
-  <data name="GroupBoxVerseLabelClick.Text" xml:space="preserve">
-    <value>Clic sur label de verset ouvre</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick4.Text" xml:space="preserve">
-    <value>Rien</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick1.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick2.Text" xml:space="preserve">
-    <value>Menu contextuel</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="GroupBoxVerseLabelClick3.Text" xml:space="preserve">
-    <value>Sélectionner</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
-    <value>Action de double-clic sur traduit</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick4.Text" xml:space="preserve">
-    <value>Rien</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 17</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick1.Text" xml:space="preserve">
-    <value>Utiliser la traduction</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 17</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick2.Text" xml:space="preserve">
-    <value>Ajouter la traduction</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
-  </data>
-  <data name="GroupBoxTranslatedItemDoubleClick3.Text" xml:space="preserve">
-    <value>Atteindre référence</value>
-  </data>
   <data name="GroupBoxHebrewWordClickCtrl.Text" xml:space="preserve">
     <value>Ctrl+Clic sur mot hébreu ouvre</value>
   </data>
@@ -565,38 +610,95 @@
   <data name="GroupBoxHebrewWordClickCtrl2.Text" xml:space="preserve">
     <value>Chercher les traduits</value>
   </data>
-  <data name="GroupBoxHebrewWordClick.Text" xml:space="preserve">
-    <value>Clic sur mot hébreu ouvre</value>
+  <data name="GroupBoxTranslatedItemDoubleClick.Text" xml:space="preserve">
+    <value>Action de double-clic sur traduit</value>
   </data>
-  <data name="GroupBoxHebrewWordClick5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupBoxTranslatedItemDoubleClick4.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 17</value>
   </data>
-  <data name="GroupBoxHebrewWordClick5.Text" xml:space="preserve">
+  <data name="GroupBoxTranslatedItemDoubleClick4.Text" xml:space="preserve">
     <value>Rien</value>
   </data>
-  <data name="GroupBoxHebrewWordClick0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
+  <data name="GroupBoxTranslatedItemDoubleClick1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
   </data>
-  <data name="GroupBoxHebrewWordClick0.Text" xml:space="preserve">
-    <value>Menu contextuel</value>
+  <data name="GroupBoxTranslatedItemDoubleClick1.Text" xml:space="preserve">
+    <value>Utiliser la traduction</value>
   </data>
-  <data name="GroupBoxHebrewWordClick1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
+  <data name="GroupBoxTranslatedItemDoubleClick2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 17</value>
   </data>
-  <data name="GroupBoxHebrewWordClick1.Text" xml:space="preserve">
-    <value>Recherche en ligne par défaut</value>
+  <data name="GroupBoxTranslatedItemDoubleClick2.Text" xml:space="preserve">
+    <value>Ajouter la traduction</value>
   </data>
-  <data name="GroupBoxHebrewWordClick3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 17</value>
+  <data name="GroupBoxTranslatedItemDoubleClick3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
   </data>
-  <data name="GroupBoxHebrewWordClick3.Text" xml:space="preserve">
-    <value>Chercher dans la base de données</value>
+  <data name="GroupBoxTranslatedItemDoubleClick3.Text" xml:space="preserve">
+    <value>Atteindre référence</value>
   </data>
-  <data name="GroupBoxHebrewWordClick2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
+  <data name="LabelDocumentSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 13</value>
   </data>
-  <data name="GroupBoxHebrewWordClick2.Text" xml:space="preserve">
-    <value>Chercher les traduits</value>
+  <data name="LabelDocumentSize.Text" xml:space="preserve">
+    <value>Largeur et hauteur du document en millimètres</value>
+  </data>
+  <data name="EditDifferentFirstPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="EditDifferentFirstPage.Text" xml:space="preserve">
+    <value>Première page différente</value>
+  </data>
+  <data name="EditExportDocumentDifferentOddAndEvenPages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 17</value>
+  </data>
+  <data name="EditExportDocumentDifferentOddAndEvenPages.Text" xml:space="preserve">
+    <value>Pages paires et impaires différentes</value>
+  </data>
+  <data name="EditExportDocumentLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 17</value>
+  </data>
+  <data name="EditExportDocumentLandscape.Text" xml:space="preserve">
+    <value>Document en paysage, sinon portrait</value>
+  </data>
+  <data name="EditExportDocumentOverrideWordColumnsCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 17</value>
+  </data>
+  <data name="EditExportDocumentOverrideWordColumnsCount.Text" xml:space="preserve">
+    <value>Remplacer le calcul automatique du nombre de mots hébreux par ligne dans le document</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Modèle du document</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items" xml:space="preserve">
+    <value>Seulement hébreu</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items1" xml:space="preserve">
+    <value>Seulement hébreu avec commentaire</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items2" xml:space="preserve">
+    <value>Mot-à-mot</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items3" xml:space="preserve">
+    <value>Mot-à-mot avec commentaire</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items4" xml:space="preserve">
+    <value>Hébreu</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items5" xml:space="preserve">
+    <value>Hébreu avec commentaire</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items6" xml:space="preserve">
+    <value>Seulement traduction</value>
+  </data>
+  <data name="SelectExportDocumentModel.Items7" xml:space="preserve">
+    <value>Seulement traduction avec commentaire</value>
+  </data>
+  <data name="TabPageTools.Text" xml:space="preserve">
+    <value>Outils</value>
   </data>
   <data name="SaveThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
@@ -604,58 +706,46 @@
   <data name="OpenThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
   </data>
+  <data name="MenuPredefinedPageSizes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 202</value>
+  </data>
+  <data name="ActionSetPageSizeA5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeA4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizePocket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizePocket.Text" xml:space="preserve">
+    <value>Livre de poche</value>
+  </data>
+  <data name="ActionSetPageSizeDigest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeRoman.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeRoyal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeCrownQuarto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeExecutive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeExecutive.Text" xml:space="preserve">
+    <value>Exécutif</value>
+  </data>
+  <data name="ActionSetPageSizeUSLetter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="ActionSetPageSizeUSLetter.Text" xml:space="preserve">
+    <value>Lettre US</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="TabPageBookmarks.Text" xml:space="preserve">
-    <value>Favoris</value>
-  </data>
-  <data name="TabPageTheme.Text" xml:space="preserve">
-    <value>Thème</value>
-  </data>
-  <data name="EditAutoSaveOnLeaveControl.Text" xml:space="preserve">
-    <value>Sauvegarder automatiquement à la sortie d'une zone d'édition</value>
-  </data>
-  <data name="TabPageEditing.Text" xml:space="preserve">
-    <value>Édition</value>
-  </data>
-  <data name="TabPageMouse.Text" xml:space="preserve">
-    <value>Souris</value>
-  </data>
-  <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
-    <value>Caractères hébreux en gras pour la recherche</value>
-  </data>
-  <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
-    <value>Petit</value>
-  </data>
-  <data name="SelectExportDocumentTheme.Items1" xml:space="preserve">
-    <value>Moyen</value>
-  </data>
-  <data name="SelectExportDocumentTheme.Items2" xml:space="preserve">
-    <value>Large</value>
-  </data>
-  <data name="LabelExportDocumentTheme.Text" xml:space="preserve">
-    <value>Thème du document</value>
-  </data>
-  <data name="TabPageExport.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="LabelDocumentMargins.Text" xml:space="preserve">
-    <value>Marges du document haut, bas, gauche et droite en millimètres</value>
-  </data>
-  <data name="EditExportDocumentOverrideWordColumnsCount.Text" xml:space="preserve">
-    <value>Remplacer le calcul automatique du nombre de mots hébreux par ligne dans le document</value>
-  </data>
-  <data name="EditExportDocumentLandscape.Text" xml:space="preserve">
-    <value>Document en paysage, sinon portrait</value>
-  </data>
-  <data name="EditExportDocumentDifferentOddAndEvenPages.Text" xml:space="preserve">
-    <value>Pages paires et impaires différentes</value>
-  </data>
-  <data name="EditDifferentFirstPage.Text" xml:space="preserve">
-    <value>Première page différente</value>
-  </data>
-  <data name="LabelDocumentSize.Text" xml:space="preserve">
-    <value>Largeur et hauteur du document en millimètres</value>
   </data>
 </root>

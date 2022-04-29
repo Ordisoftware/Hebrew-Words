@@ -464,5 +464,8 @@
     <Setting Name="ExportDocumentDifferentFirstPage" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ExportDocumentModel" Type="Ordisoftware.Hebrew.Words.ExportDocumentModel" Scope="User">
+      <Value Profile="(Default)">WordForWordWithComment</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

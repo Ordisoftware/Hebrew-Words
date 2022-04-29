@@ -1870,5 +1870,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ExportDocumentDifferentFirstPage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WordForWordWithComment")]
+        public global::Ordisoftware.Hebrew.Words.ExportDocumentModel ExportDocumentModel {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.ExportDocumentModel)(this["ExportDocumentModel"]));
+            }
+            set {
+                this["ExportDocumentModel"] = value;
+            }
+        }
     }
 }

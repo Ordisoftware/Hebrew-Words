@@ -369,6 +369,7 @@
     <Compile Include="Source\Entities\ReferenceItem.Initialize.cs" />
     <Compile Include="Source\Entities\ReferenceItem.ToString.cs" />
     <Compile Include="Source\Entities\ReferenceItem.Operators.cs" />
+    <Compile Include="Source\Enums\ExportDocumentModel.cs" />
     <Compile Include="Source\Enums\HebrewWordClickAction.cs" />
     <Compile Include="Source\Forms\Boxes\ParashotForm.cs">
       <SubType>Form</SubType>
