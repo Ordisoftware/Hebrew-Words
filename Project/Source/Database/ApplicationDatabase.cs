@@ -117,6 +117,8 @@ class ApplicationDatabase : SQLiteDatabase
   {
     if ( !HasChanges ) return;
     CheckAccess(Books, BooksTableName);
+    foreach ( AbstractRow row in ModifiedObjects )
+      row.DateModified = DateTime.Now;
     Connection.UpdateAll(ModifiedObjects);
     ModifiedObjects.Clear();
   }
