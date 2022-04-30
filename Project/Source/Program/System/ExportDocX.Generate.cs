@@ -134,7 +134,7 @@ static partial class ExportDocX
         paragraphVerseRef.Font(FontCalibri);
         paragraphVerseRef.FontSize(VerseRefTextSize);
         paragraphVerseRef.SpacingAfter(WordTextSpacing);
-        if ( VerseRefTextInBold ) paragraphVerseRef.Bold();
+        if ( Settings.ExportDocumentVerseRefInBold ) paragraphVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();

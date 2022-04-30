@@ -243,6 +243,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditExportDocumentVerseRefInBold = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -1632,6 +1633,7 @@
       this.TabPageExport.Controls.Add(this.EditDocumentWordColumnsCount);
       this.TabPageExport.Controls.Add(this.EditDocumentMarginTop);
       this.TabPageExport.Controls.Add(this.EditAutoOpenExportedFile);
+      this.TabPageExport.Controls.Add(this.EditExportDocumentVerseRefInBold);
       this.TabPageExport.Controls.Add(this.EditDifferentFirstPage);
       this.TabPageExport.Controls.Add(this.EditExportDocumentDifferentOddAndEvenPages);
       this.TabPageExport.Controls.Add(this.EditExportDocumentLandscape);
@@ -2020,6 +2022,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditExportDocumentVerseRefInBold
+      // 
+      resources.ApplyResources(this.EditExportDocumentVerseRefInBold, "EditExportDocumentVerseRefInBold");
+      this.EditExportDocumentVerseRefInBold.Name = "EditExportDocumentVerseRefInBold";
+      this.EditExportDocumentVerseRefInBold.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2298,5 +2306,6 @@
     private ToolStripMenuItem ActionSetPageSizeUSLetter;
     private Label label5;
     private ComboBox SelectExportDocumentModel;
+    private CheckBox EditExportDocumentVerseRefInBold;
   }
 }

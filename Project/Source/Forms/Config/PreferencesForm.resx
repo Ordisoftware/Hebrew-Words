@@ -1426,7 +1426,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelDocumentMargins.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="LabelDocumentMarginIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1459,7 +1459,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelDocumentMarginIntervalInfo.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
     <value>Small</value>
@@ -1489,7 +1489,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;SelectExportDocumentTheme.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <data name="SelectImageExportFileFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>323, 380</value>
@@ -1510,7 +1510,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;SelectImageExportFileFormat.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="LabelDataExportFileFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1543,7 +1543,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelDataExportFileFormat.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="SelectDataExportFileFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>323, 325</value>
@@ -1564,7 +1564,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;SelectDataExportFileFormat.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="LabelExportDocumentTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1597,7 +1597,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelExportDocumentTheme.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="LabelImageExportFileFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1630,7 +1630,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelImageExportFileFormat.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="EditAutoOpenExportedFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1690,7 +1690,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="LabelInfoAutoBackupCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5641,6 +5641,36 @@
   <data name="&gt;&gt;EditDocumentMarginTop.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="EditExportDocumentVerseRefInBold.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditExportDocumentVerseRefInBold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditExportDocumentVerseRefInBold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 329</value>
+  </data>
+  <data name="EditExportDocumentVerseRefInBold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 17</value>
+  </data>
+  <data name="EditExportDocumentVerseRefInBold.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditExportDocumentVerseRefInBold.Text" xml:space="preserve">
+    <value>Verse ref in bold</value>
+  </data>
+  <data name="&gt;&gt;EditExportDocumentVerseRefInBold.Name" xml:space="preserve">
+    <value>EditExportDocumentVerseRefInBold</value>
+  </data>
+  <data name="&gt;&gt;EditExportDocumentVerseRefInBold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportDocumentVerseRefInBold.Parent" xml:space="preserve">
+    <value>TabPageExport</value>
+  </data>
+  <data name="&gt;&gt;EditExportDocumentVerseRefInBold.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="EditDifferentFirstPage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5669,7 +5699,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;EditDifferentFirstPage.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditExportDocumentDifferentOddAndEvenPages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5699,7 +5729,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;EditExportDocumentDifferentOddAndEvenPages.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditExportDocumentLandscape.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5729,7 +5759,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;EditExportDocumentLandscape.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditExportDocumentOverrideWordColumnsCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5759,7 +5789,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;EditExportDocumentOverrideWordColumnsCount.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5792,7 +5822,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="LabelDocumentWordColumnsCountIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5825,7 +5855,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelDocumentWordColumnsCountIntervalInfo.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="LabelDocumentMarginHFIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5858,7 +5888,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;LabelDocumentMarginHFIntervalInfo.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="SelectExportDocumentModel.Items" xml:space="preserve">
     <value>Only Hebrew</value>
@@ -5903,7 +5933,7 @@
     <value>TabPageExport</value>
   </data>
   <data name="&gt;&gt;SelectExportDocumentModel.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="TabPageExport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>

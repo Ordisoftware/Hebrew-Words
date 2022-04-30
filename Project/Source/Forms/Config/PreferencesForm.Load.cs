@@ -78,7 +78,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditExportDocumentDifferentOddAndEvenPages.Checked = Settings.ExportDocumentDifferentOddAndEvenPages);
     SystemManager.TryCatch(() => EditExportDocumentOverrideWordColumnsCount.Checked = Settings.ExportDocumentOverrideWordColumnsCount);
     SystemManager.TryCatch(() => EditDocumentWordColumnsCount.Value = Settings.ExportDocumentWordColumnsCount);
-
+    SystemManager.TryCatch(() => EditExportDocumentVerseRefInBold.Checked = Settings.ExportDocumentVerseRefInBold);
     LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;

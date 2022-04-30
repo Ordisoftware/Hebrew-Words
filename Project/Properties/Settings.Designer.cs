@@ -1882,5 +1882,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ExportDocumentModel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportDocumentVerseRefInBold {
+            get {
+                return ((bool)(this["ExportDocumentVerseRefInBold"]));
+            }
+            set {
+                this["ExportDocumentVerseRefInBold"] = value;
+            }
+        }
     }
 }
