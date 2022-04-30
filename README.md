@@ -66,7 +66,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 - SQLite ODBC Driver is no more needed.
 - Overall performances are optimized.
-- Added and improved keyboard shortcuts
+- Added and improved keyboard shortcuts.
 - Added verse navigator in the verses view panel.
 - Added option to render only current verse or all of the chapter.
 - Added book name translation text box in the navigation panel.
