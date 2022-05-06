@@ -32,7 +32,7 @@ A libre and open-source software written in C# that helps for the literal word-f
 
 ## Functionalities
 
-- Translate verses word-for-word with various help tools.
+- Translate verses word-for-word with various helper tools and spell checker.
 - Contextual menu for a word to search online its definition, to see already translated, to search it in database, or to study it in Hebrew Letters.
 - Contextual menu for a verse to read it online, to manage bookmarks, to export, or to import.
 - Search the Tanak for Hebrew or translated words with filters.
