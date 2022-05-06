@@ -494,7 +494,7 @@ namespace NHunspellExtender
     private Hunspell myNHunspell = null;
 
     // Hashtables
-    private Hashtable controlEnabled;
+    internal Hashtable controlEnabled;
     private Hashtable mySpellCheckers;
     private Hashtable myCustomPaintingTextBoxes;
     private Hashtable myContextMenus;
@@ -1054,69 +1054,69 @@ namespace NHunspellExtender
     /// EnableTextBoxBase(TextBox1)
     /// EnableTextBoxBase(RichTextBox1, RichTextBox2, TextBox1)
     /// </remarks>
-    public void EnableTextBoxBase(params TextBoxBase[] TextBoxesToEnable) // ByRef TextBoxToEnable As TextBoxBase)
-    {
-      for ( int c = 0, loopTo = Information.UBound(TextBoxesToEnable); c <= loopTo; c++ )
-      {
-        if ( TextBoxesToEnable[c] is TextBoxBase )
-        {
+    //public void EnableTextBoxBase(params TextBoxBase[] TextBoxesToEnable) // ByRef TextBoxToEnable As TextBoxBase)
+    //{
+    //  for ( int c = 0, loopTo = Information.UBound(TextBoxesToEnable); c <= loopTo; c++ )
+    //  {
+    //    if ( TextBoxesToEnable[c] is TextBoxBase )
+    //    {
 
-          var TextBoxToEnable = TextBoxesToEnable[c];
+    //      var TextBoxToEnable = TextBoxesToEnable[c];
 
-          // Set the hashtables
-          if ( controlEnabled[TextBoxToEnable] is null )
-          {
-            controlEnabled.Add(TextBoxToEnable, true);
-            mySpellCheckers.Add(TextBoxToEnable, new SpellCheckControl(ref myNHunspell));
-            var argCallingTextBox = TextBoxToEnable;
-            SpellCheckControl argThisSpellCheckControl = (SpellCheckControl)mySpellCheckers[TextBoxToEnable];
-            var argParent = this;
-            myCustomPaintingTextBoxes.Add(TextBoxToEnable, new CustomPaintTextBox(ref argCallingTextBox, ref argThisSpellCheckControl, ref argParent));
-            ( (CustomPaintTextBox)myCustomPaintingTextBoxes[TextBoxToEnable] ).CustomPaintComplete += OnCustomPaintComplete;
+    //      // Set the hashtables
+    //      if ( controlEnabled[TextBoxToEnable] is null )
+    //      {
+    //        controlEnabled.Add(TextBoxToEnable, true);
+    //        mySpellCheckers.Add(TextBoxToEnable, new SpellCheckControl(ref myNHunspell));
+    //        var argCallingTextBox = TextBoxToEnable;
+    //        SpellCheckControl argThisSpellCheckControl = (SpellCheckControl)mySpellCheckers[TextBoxToEnable];
+    //        var argParent = this;
+    //        myCustomPaintingTextBoxes.Add(TextBoxToEnable, new CustomPaintTextBox(ref argCallingTextBox, ref argThisSpellCheckControl, ref argParent));
+    //        ( (CustomPaintTextBox)myCustomPaintingTextBoxes[TextBoxToEnable] ).CustomPaintComplete += OnCustomPaintComplete;
 
-            if ( TextBoxToEnable.ContextMenuStrip is null )
-            {
-              TextBoxToEnable.ContextMenuStrip = new ContextMenuStrip();
-            }
-            TextBoxToEnable.ContextMenuStrip.Tag = TextBoxToEnable.Name;
+    //        if ( TextBoxToEnable.ContextMenuStrip is null )
+    //        {
+    //          TextBoxToEnable.ContextMenuStrip = new ContextMenuStrip();
+    //        }
+    //        TextBoxToEnable.ContextMenuStrip.Tag = TextBoxToEnable.Name;
 
-            myContextMenus.Add(TextBoxToEnable, TextBoxToEnable.ContextMenuStrip);
+    //        myContextMenus.Add(TextBoxToEnable, TextBoxToEnable.ContextMenuStrip);
 
-            bool boolFound = false;
-            for ( int i = 0, loopTo1 = Information.UBound(myControls); i <= loopTo1; i++ )
-            {
-              if ( ( myControls[i].Name ?? "" ) == ( TextBoxToEnable.Name ?? "" ) )
-              {
-                boolFound = true;
-                break;
-              }
-            }
+    //        bool boolFound = false;
+    //        for ( int i = 0, loopTo1 = Information.UBound(myControls); i <= loopTo1; i++ )
+    //        {
+    //          if ( ( myControls[i].Name ?? "" ) == ( TextBoxToEnable.Name ?? "" ) )
+    //          {
+    //            boolFound = true;
+    //            break;
+    //          }
+    //        }
 
-            if ( !boolFound )
-            {
-              Array.Resize(ref myControls, Information.UBound(myControls) + 1 + 1);
-              myControls[Information.UBound(myControls)] = TextBoxToEnable;
-            }
+    //        if ( !boolFound )
+    //        {
+    //          Array.Resize(ref myControls, Information.UBound(myControls) + 1 + 1);
+    //          myControls[Information.UBound(myControls)] = TextBoxToEnable;
+    //        }
 
-            // Set up all of the handlers
-            TextBoxToEnable.TextChanged += TextBox_TextChanged;
-            TextBoxToEnable.KeyDown += TextBox_KeyDown;
-            TextBoxToEnable.KeyPress += TextBox_KeyPress;
-            TextBoxToEnable.MouseMove += TextBox_MouseMove;
-            TextBoxToEnable.ContextMenuStrip.Opening += ContextMenu_Opening;
-            TextBoxToEnable.ContextMenuStrip.Closed += ContextMenu_Closed;
+    //        // Set up all of the handlers
+    //        TextBoxToEnable.TextChanged += TextBox_TextChanged;
+    //        TextBoxToEnable.KeyDown += TextBox_KeyDown;
+    //        TextBoxToEnable.KeyPress += TextBox_KeyPress;
+    //        TextBoxToEnable.MouseMove += TextBox_MouseMove;
+    //        TextBoxToEnable.ContextMenuStrip.Opening += ContextMenu_Opening;
+    //        TextBoxToEnable.ContextMenuStrip.Closed += ContextMenu_Closed;
 
-            ( (SpellCheckControl)mySpellCheckers[TextBoxToEnable] ).SetText(TextBoxToEnable.Text);
-          }
-          else
-          {
-            controlEnabled[TextBoxToEnable] = true;
-          }
+    //        ( (SpellCheckControl)mySpellCheckers[TextBoxToEnable] ).SetText(TextBoxToEnable.Text);
+    //      }
+    //      else
+    //      {
+    //        controlEnabled[TextBoxToEnable] = true;
+    //      }
 
-          TextBoxToEnable.Invalidate();
-        }
-      }
-    }
+    //      TextBoxToEnable.Invalidate();
+    //    }
+    //  }
+    //}
 
 
 
@@ -1125,11 +1125,11 @@ namespace NHunspellExtender
     /// </summary>
     /// <param name="TextBoxToDisable"></param>
     /// <remarks></remarks>
-    public void DisableTextBoxBase(ref TextBoxBase TextBoxToDisable)
-    {
-      controlEnabled[TextBoxToDisable] = false;
-      TextBoxToDisable.Invalidate();
-    }
+    //public void DisableTextBoxBase(ref TextBoxBase TextBoxToDisable)
+    //{
+    //  controlEnabled[TextBoxToDisable] = false;
+    //  TextBoxToDisable.Invalidate();
+    //}
 
 
 
@@ -1205,14 +1205,19 @@ namespace NHunspellExtender
         myCustomPaintingTextBoxes.Add(extendee, new CustomPaintTextBox(ref argCallingTextBox, ref argThisSpellCheckControl, ref argParent));
         ( (CustomPaintTextBox)myCustomPaintingTextBoxes[extendee] ).CustomPaintComplete += OnCustomPaintComplete;
 
-        if ( ( (TextBoxBase)extendee ).ContextMenuStrip is null )
+        if ( extendee.ContextMenuStrip is null )
         {
-          ( (TextBoxBase)extendee ).ContextMenuStrip = new ContextMenuStrip();
+          extendee.ContextMenuStrip = new ContextMenuStrip();
 
-        } ( (TextBoxBase)extendee ).ContextMenuStrip.Opening += ContextMenu_Opening;
-        ( (TextBoxBase)extendee ).ContextMenuStrip.Closed += ContextMenu_Closed;
+        }
 
-        myContextMenus.Add(extendee, ( (TextBoxBase)extendee ).ContextMenuStrip);
+        if ( extendee is not TextBoxEx )
+        {
+          extendee.ContextMenuStrip.Opening += ContextMenu_Opening;
+          extendee.ContextMenuStrip.Closed += ContextMenu_Closed;
+        }
+
+        myContextMenus.Add(extendee, extendee.ContextMenuStrip);
 
         Array.Resize(ref myControls, Information.UBound(myControls) + 1 + 1);
         myControls[Information.UBound(myControls)] = extendee;
@@ -1873,7 +1878,7 @@ namespace NHunspellExtender
     /// <param name="sender"></param>
     /// <param name="e"></param>
     /// <remarks></remarks>
-    private void ContextMenu_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+    internal void ContextMenu_Closed(object sender, ToolStripDropDownClosedEventArgs e)
     {
       if ( e.CloseReason == ToolStripDropDownCloseReason.ItemClicked )
         return;
@@ -1945,7 +1950,7 @@ namespace NHunspellExtender
     /// <param name="sender"></param>
     /// <param name="e"></param>
     /// <remarks></remarks>
-    private void ContextMenu_Opening(object sender, CancelEventArgs e)
+    internal void ContextMenu_Opening(object sender, CancelEventArgs e)
     {
       if ( !_SpellAsYouType )
         return;

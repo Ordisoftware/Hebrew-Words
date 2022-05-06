@@ -91,8 +91,15 @@ partial class TextBoxEx
     resources.ApplyResources(ActionDelete, "ActionDelete");
     if ( !Globals.IsVisualStudioDesigner )
     {
-      // TODO clear if ( NHunspellTextBoxExtender is not null) NHunspellTextBoxExtender.
+      if ( NHunspellTextBoxExtender is not null )
+      {
+        ContextMenuEdit.Opening -= NHunspellTextBoxExtender.ContextMenu_Opening;
+        ContextMenuEdit.Closed -= NHunspellTextBoxExtender.ContextMenu_Closed;
+        NHunspellTextBoxExtender.controlEnabled.Clear();
+      }
       NHunspellTextBoxExtender = new();
+      ContextMenuEdit.Opening += NHunspellTextBoxExtender.ContextMenu_Opening;
+      ContextMenuEdit.Closed += NHunspellTextBoxExtender.ContextMenu_Closed;
     }
   }
 
