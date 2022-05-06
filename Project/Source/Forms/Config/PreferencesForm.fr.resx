@@ -751,4 +751,7 @@
   <data name="EditWordControlTabInverted.Text" xml:space="preserve">
     <value>Inverser la touche de tabulation des WordControls</value>
   </data>
+  <data name="EditSpellCheckEnabled.Text" xml:space="preserve">
+    <value>Activer le vérificateur d'orthographe (réduit les performances)</value>
+  </data>
 </root>

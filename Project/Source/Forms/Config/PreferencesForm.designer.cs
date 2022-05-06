@@ -112,7 +112,7 @@
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.ActionCheckAllComments = new System.Windows.Forms.Button();
-      this.EditCommentLinePrefix = new System.Windows.Forms.TextBox();
+      this.EditCommentLinePrefix = new Ordisoftware.Core.TextBoxEx();
       this.LabelInfoAutoSaveDelay = new System.Windows.Forms.Label();
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.EditCommentLineRemovePrefix = new System.Windows.Forms.CheckBox();
@@ -230,8 +230,8 @@
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
-      this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
-      this.EditOnlineSearch = new System.Windows.Forms.TextBox();
+      this.EditOnlineVerseURL = new Ordisoftware.Core.TextBoxEx();
+      this.EditOnlineSearch = new Ordisoftware.Core.TextBoxEx();
       this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -547,6 +547,7 @@
       this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditBackupFolder.Name = "EditBackupFolder";
       this.EditBackupFolder.ReadOnly = true;
+      this.EditBackupFolder.SpellCheckAllowed = true;
       // 
       // EditExportFolder
       // 
@@ -555,6 +556,7 @@
       this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditExportFolder.Name = "EditExportFolder";
       this.EditExportFolder.ReadOnly = true;
+      this.EditExportFolder.SpellCheckAllowed = true;
       // 
       // EditCalculatorPath
       // 
@@ -563,6 +565,7 @@
       this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditCalculatorPath.Name = "EditCalculatorPath";
       this.EditCalculatorPath.ReadOnly = true;
+      this.EditCalculatorPath.SpellCheckAllowed = true;
       // 
       // EditHebrewLettersPath
       // 
@@ -571,6 +574,7 @@
       this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      this.EditHebrewLettersPath.SpellCheckAllowed = true;
       // 
       // LabelDocumentMargins
       // 
@@ -906,8 +910,10 @@
       // 
       // EditCommentLinePrefix
       // 
+      this.EditCommentLinePrefix.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditCommentLinePrefix, "EditCommentLinePrefix");
       this.EditCommentLinePrefix.Name = "EditCommentLinePrefix";
+      this.EditCommentLinePrefix.SpellCheckAllowed = false;
       // 
       // LabelInfoAutoSaveDelay
       // 
@@ -1949,12 +1955,16 @@
       // EditOnlineVerseURL
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
+      this.EditOnlineVerseURL.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
+      this.EditOnlineVerseURL.SpellCheckAllowed = false;
       // 
       // EditOnlineSearch
       // 
       resources.ApplyResources(this.EditOnlineSearch, "EditOnlineSearch");
+      this.EditOnlineSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditOnlineSearch.Name = "EditOnlineSearch";
+      this.EditOnlineSearch.SpellCheckAllowed = false;
       // 
       // SaveThemeDialog
       // 
@@ -2193,8 +2203,8 @@
     private Button ActionOnlineVerseHelp;
     private Button ActionSelectOnlineSearch;
     private Button ActionSelectOnlineVerseURL;
-    private TextBox EditOnlineVerseURL;
-    private TextBox EditOnlineSearch;
+    private TextBoxEx EditOnlineVerseURL;
+    private TextBoxEx EditOnlineSearch;
     private CheckBox EditGoToMasterBookmarkAtStartup;
     private NumericUpDown EditAutoSaveDelay;
     private NumericUpDown EditAutoBackupCount;
@@ -2259,7 +2269,7 @@
     private NumericUpDown EditFontSizeCommentary;
     private CheckBox EditBookNameHebrewWithCommonName;
     private CheckBox EditCommentLineAddPrefix;
-    private TextBox EditCommentLinePrefix;
+    private TextBoxEx EditCommentLinePrefix;
     private CheckBox EditCommentLineRemovePrefix;
     private Button ActionCheckAllComments;
     private CheckBox EditGoToLastVerseAtStartup;
@@ -2324,7 +2334,7 @@
     private Label label5;
     private ComboBox SelectExportDocumentModel;
     private CheckBox EditExportDocumentVerseRefInBold;
-    private CheckBox EditWordControlTabInverted;
     private CheckBox EditSpellCheckEnabled;
+    private CheckBox EditWordControlTabInverted;
   }
 }
