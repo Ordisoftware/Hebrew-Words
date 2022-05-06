@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -80,6 +80,8 @@ partial class PreferencesForm
     Settings.ExportDocumentOverrideWordColumnsCount = EditExportDocumentOverrideWordColumnsCount.Checked;
     Settings.ExportDocumentWordColumnsCount = (int)EditDocumentWordColumnsCount.Value;
     Settings.ExportDocumentVerseRefInBold = EditExportDocumentVerseRefInBold.Checked;
+    Settings.WordControlTabInverted = EditWordControlTabInverted.Checked;
+    Settings.SpellCheckEnabled = EditSpellCheckEnabled.Checked;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 130</value>
+    <value>20, 150</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 13</value>
@@ -448,7 +448,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -2627,7 +2627,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCheckAllComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 60</value>
+    <value>98, 80</value>
   </data>
   <data name="ActionCheckAllComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2648,7 +2648,7 @@
     <value>0</value>
   </data>
   <data name="EditCommentLinePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 63</value>
+    <value>42, 83</value>
   </data>
   <data name="EditCommentLinePrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2678,7 +2678,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelInfoAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 154</value>
+    <value>69, 174</value>
   </data>
   <data name="LabelInfoAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -2699,10 +2699,10 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;LabelInfoAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
+    <value>23, 170</value>
   </data>
   <data name="EditAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -2720,7 +2720,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="EditCommentLineRemovePrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2729,7 +2729,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCommentLineRemovePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 40</value>
+    <value>23, 60</value>
   </data>
   <data name="EditCommentLineRemovePrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 17</value>
@@ -2759,7 +2759,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCommentLineAddPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 40</value>
   </data>
   <data name="EditCommentLineAddPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 17</value>
@@ -2950,6 +2950,66 @@
   <data name="&gt;&gt;TabPageBookmarks.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="EditSpellCheckEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSpellCheckEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSpellCheckEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 210</value>
+  </data>
+  <data name="EditSpellCheckEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="EditSpellCheckEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditSpellCheckEnabled.Text" xml:space="preserve">
+    <value>Spell check enabled</value>
+  </data>
+  <data name="&gt;&gt;EditSpellCheckEnabled.Name" xml:space="preserve">
+    <value>EditSpellCheckEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditSpellCheckEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSpellCheckEnabled.Parent" xml:space="preserve">
+    <value>TabPageEditing</value>
+  </data>
+  <data name="&gt;&gt;EditSpellCheckEnabled.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditWordControlTabInverted.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWordControlTabInverted.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditWordControlTabInverted.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditWordControlTabInverted.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="EditWordControlTabInverted.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditWordControlTabInverted.Text" xml:space="preserve">
+    <value>Invert Word Control tab key</value>
+  </data>
+  <data name="&gt;&gt;EditWordControlTabInverted.Name" xml:space="preserve">
+    <value>EditWordControlTabInverted</value>
+  </data>
+  <data name="&gt;&gt;EditWordControlTabInverted.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWordControlTabInverted.Parent" xml:space="preserve">
+    <value>TabPageEditing</value>
+  </data>
+  <data name="&gt;&gt;EditWordControlTabInverted.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="EditAutoSaveOnLeaveControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2957,7 +3017,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 100</value>
+    <value>23, 120</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -2978,7 +3038,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveOnLeaveControl.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="TabPageEditing.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -6363,9 +6423,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>604, 521</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

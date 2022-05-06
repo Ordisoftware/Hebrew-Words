@@ -1894,5 +1894,29 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ExportDocumentVerseRefInBold"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WordControlTabInverted {
+            get {
+                return ((bool)(this["WordControlTabInverted"]));
+            }
+            set {
+                this["WordControlTabInverted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SpellCheckEnabled {
+            get {
+                return ((bool)(this["SpellCheckEnabled"]));
+            }
+            set {
+                this["SpellCheckEnabled"] = value;
+            }
+        }
     }
 }

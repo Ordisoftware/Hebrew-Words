@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using System.IO.Pipes;
@@ -50,6 +50,7 @@ static partial class Program
       SystemManager.TryCatch(Settings.Save);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
+      Globals.SpellCheckEnabled = Settings.SpellCheckEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
       HebrewGlobals.GetHebrewCalendarExePath = () => string.Empty;

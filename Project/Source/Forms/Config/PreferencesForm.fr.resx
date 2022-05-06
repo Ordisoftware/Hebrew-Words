@@ -748,4 +748,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditWordControlTabInverted.Text" xml:space="preserve">
+    <value>Inverser la touche de tabulation des WordControls</value>
+  </data>
 </root>
