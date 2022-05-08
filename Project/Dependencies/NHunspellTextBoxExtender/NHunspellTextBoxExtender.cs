@@ -2022,6 +2022,8 @@ namespace NHunspellExtender
       // get the textbox
       ownerTextBox = currentTextBox;
 
+      //if ( ownerTextBox is null ) return;
+
       // See if spell-checking is enabled
       if ( controlEnabled.ContainsKey(ownerTextBox) )
         if ( Conversions.ToBoolean(!(bool)controlEnabled[ownerTextBox]) )

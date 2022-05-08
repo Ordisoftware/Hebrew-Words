@@ -2079,30 +2079,6 @@ partial class MainForm : Form
     return control;
   }*/
 
-  /// <summary>
-  /// Calculates the sum value of torah letters.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void CalculateSumValueOfTorahLetters(object sender, EventArgs e)
-  {
-    long value = 0;
-    var books = from book in ApplicationDatabase.Instance.Books
-                where book.Number <= BooksBounds.Torah.Max
-                select book;
-    foreach ( BookRow book in books )
-      foreach ( ChapterRow chapter in book.Chapters )
-        foreach ( VerseRow verse in chapter.Verses )
-          foreach ( WordRow word in verse.Words )
-            foreach ( char letter in word.Hebrew )
-            {
-              int index = Array.IndexOf(HebrewAlphabet.Codes, HebrewAlphabet.SetFinal(letter.ToString(), false));
-              if ( index == -1 ) { }
-              value += HebrewAlphabet.ValuesSimple[index];
-            }
-    DisplayManager.Show(value.ToString());
-  }
-
   #endregion
 
 }

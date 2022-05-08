@@ -58,6 +58,7 @@
       this.EditTranslation.Margin = new System.Windows.Forms.Padding(0);
       this.EditTranslation.Name = "EditTranslation";
       this.EditTranslation.Size = new System.Drawing.Size(140, 23);
+      this.EditTranslation.SpellCheckAllowed = true;
       this.EditTranslation.TabIndex = 1;
       this.EditTranslation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 

@@ -69,6 +69,7 @@
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);
       this.EditCommentary.Name = "EditCommentary";
       this.EditCommentary.Size = new System.Drawing.Size(330, 20);
+      this.EditCommentary.SpellCheckAllowed = true;
       this.EditCommentary.TabIndex = 0;
       this.EditCommentary.Enter += new System.EventHandler(this.EditComment_Enter);
       this.EditCommentary.Leave += new System.EventHandler(this.EditComment_Leave);
