@@ -313,7 +313,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
         public int HistoryCount {
             get {
                 return ((int)(this["HistoryCount"]));
@@ -1868,6 +1868,54 @@ namespace Ordisoftware.Hebrew.Words.Properties {
             }
             set {
                 this["ExportDocumentDifferentFirstPage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WordForWordWithComment")]
+        public global::Ordisoftware.Hebrew.Words.ExportDocumentModel ExportDocumentModel {
+            get {
+                return ((global::Ordisoftware.Hebrew.Words.ExportDocumentModel)(this["ExportDocumentModel"]));
+            }
+            set {
+                this["ExportDocumentModel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportDocumentVerseRefInBold {
+            get {
+                return ((bool)(this["ExportDocumentVerseRefInBold"]));
+            }
+            set {
+                this["ExportDocumentVerseRefInBold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WordControlTabInverted {
+            get {
+                return ((bool)(this["WordControlTabInverted"]));
+            }
+            set {
+                this["WordControlTabInverted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SpellCheckEnabled {
+            get {
+                return ((bool)(this["SpellCheckEnabled"]));
+            }
+            set {
+                this["SpellCheckEnabled"] = value;
             }
         }
     }

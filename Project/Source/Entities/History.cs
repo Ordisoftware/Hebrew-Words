@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 class History : ReferencesList
@@ -25,7 +25,7 @@ class History : ReferencesList
     foreach ( var item in Items.Where(item => item.Equals(reference)).ToList() )
       Items.Remove(item);
     Items.Insert(0, new ReferenceItem(reference));
-    while ( Items.Count > Program.Settings.BookmarksCount )
+    while ( Items.Count > Program.Settings.HistoryCount )
       Items.RemoveAt(Items.Count - 1);
     Save();
   }

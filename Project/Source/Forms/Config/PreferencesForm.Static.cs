@@ -40,7 +40,7 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) AutoSaveDelayInterval = (0, 15, 5, 1);
   static public readonly (int, int, int, int) BookmarksCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-  static public readonly (int, int, int, int) CommentLinesCountInterval = (1, 20, 2, 1);
+  static public readonly (int, int, int, int) CommentLinesCountInterval = (1, 50, 2, 1);
   static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 10, 1);
   static public readonly (int, int, int, int) FontSizeHebrewInterval = (12, 24, 16, 1);
   static public readonly (int, int, int, int) FontSizeTranslationInterval = (8, 16, 10, 1);

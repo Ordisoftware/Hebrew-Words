@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -514,6 +514,12 @@ partial class PreferencesForm : Form
   {
     EditPageWidth.Value = 216;
     EditPageHeight.Value = 279;
+  }
+
+  private void EditUseSpellCheck_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    Globals.SpellCheckEnabled = EditSpellCheckEnabled.Checked;
   }
 
 }

@@ -75,7 +75,7 @@
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="HistoryCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">20</Value>
+      <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="FoundReferencesToOpenDialog" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
@@ -463,6 +463,18 @@
     </Setting>
     <Setting Name="ExportDocumentDifferentFirstPage" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExportDocumentModel" Type="Ordisoftware.Hebrew.Words.ExportDocumentModel" Scope="User">
+      <Value Profile="(Default)">WordForWordWithComment</Value>
+    </Setting>
+    <Setting Name="ExportDocumentVerseRefInBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WordControlTabInverted" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SpellCheckEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

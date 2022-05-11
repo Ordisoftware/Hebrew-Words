@@ -54,6 +54,14 @@ partial class PreferencesForm
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
+    // TODO remove when ready
+    if ( Globals.IsDebugExecutable )
+    {
+      SelectExportDocumentModel.Items.RemoveAt(4); // Hebrew
+      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewWithComment
+      SelectExportDocumentModel.Items.RemoveAt(4); // OnlyTranslation
+      SelectExportDocumentModel.Items.RemoveAt(4); // OnlyTranslationWithComment
+    }
   }
 
   /// <summary>

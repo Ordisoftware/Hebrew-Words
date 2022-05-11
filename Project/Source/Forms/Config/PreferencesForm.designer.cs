@@ -112,7 +112,7 @@
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.ActionCheckAllComments = new System.Windows.Forms.Button();
-      this.EditCommentLinePrefix = new System.Windows.Forms.TextBox();
+      this.EditCommentLinePrefix = new Ordisoftware.Core.TextBoxEx();
       this.LabelInfoAutoSaveDelay = new System.Windows.Forms.Label();
       this.EditAutoSaveDelay = new System.Windows.Forms.NumericUpDown();
       this.EditCommentLineRemovePrefix = new System.Windows.Forms.CheckBox();
@@ -125,6 +125,8 @@
       this.EditBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.LabelInfoBookmarksCount = new System.Windows.Forms.Label();
       this.TabPageEditing = new System.Windows.Forms.TabPage();
+      this.EditSpellCheckEnabled = new System.Windows.Forms.CheckBox();
+      this.EditWordControlTabInverted = new System.Windows.Forms.CheckBox();
       this.EditAutoSaveOnLeaveControl = new System.Windows.Forms.CheckBox();
       this.TabPageRendering = new System.Windows.Forms.TabPage();
       this.ActionResetRendering = new System.Windows.Forms.Button();
@@ -214,19 +216,22 @@
       this.EditDocumentMarginBottom = new System.Windows.Forms.NumericUpDown();
       this.EditDocumentWordColumnsCount = new System.Windows.Forms.NumericUpDown();
       this.EditDocumentMarginTop = new System.Windows.Forms.NumericUpDown();
+      this.EditExportDocumentVerseRefInBold = new System.Windows.Forms.CheckBox();
       this.EditDifferentFirstPage = new System.Windows.Forms.CheckBox();
       this.EditExportDocumentDifferentOddAndEvenPages = new System.Windows.Forms.CheckBox();
       this.EditExportDocumentLandscape = new System.Windows.Forms.CheckBox();
       this.EditExportDocumentOverrideWordColumnsCount = new System.Windows.Forms.CheckBox();
+      this.label5 = new System.Windows.Forms.Label();
       this.LabelDocumentWordColumnsCountIntervalInfo = new System.Windows.Forms.Label();
       this.LabelDocumentMarginHFIntervalInfo = new System.Windows.Forms.Label();
+      this.SelectExportDocumentModel = new System.Windows.Forms.ComboBox();
       this.TabPageTools = new System.Windows.Forms.TabPage();
       this.ActionOnlineSearchHelp = new System.Windows.Forms.Button();
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
-      this.EditOnlineVerseURL = new System.Windows.Forms.TextBox();
-      this.EditOnlineSearch = new System.Windows.Forms.TextBox();
+      this.EditOnlineVerseURL = new Ordisoftware.Core.TextBoxEx();
+      this.EditOnlineSearch = new Ordisoftware.Core.TextBoxEx();
       this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -259,26 +264,26 @@
       this.PanelButtons.SuspendLayout();
       this.TabPagePaths.SuspendLayout();
       this.TabPageStartup.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoBackupCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoBackupCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).BeginInit();
       this.TabPageApplication.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).BeginInit();
       this.TabControl.SuspendLayout();
       this.TabPageBookmarks.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).BeginInit();
       this.TabPageEditing.SuspendLayout();
       this.TabPageRendering.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeTranslation)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeHebrew)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordTranslateLinesCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeCommentary ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeTranslation ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeHebrew ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditSearchMinRefForDialog ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditSearchDisplayMaxRef ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordTranslateLinesCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).BeginInit();
       this.TabPageTheme.SuspendLayout();
       this.TabPageMouse.SuspendLayout();
       this.GroupBoxHebrewWordClickShift.SuspendLayout();
@@ -288,15 +293,15 @@
       this.GroupBoxHebrewWordClickCtrl.SuspendLayout();
       this.GroupBoxTranslatedItemDoubleClick.SuspendLayout();
       this.TabPageExport.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditPageHeight)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditPageWidth)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginFooter)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginRight)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginHeader)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginLeft)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginBottom)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentWordColumnsCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginTop)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditPageHeight ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditPageWidth ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginFooter ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginRight ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginHeader ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginLeft ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginBottom ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentWordColumnsCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginTop ) ).BeginInit();
       this.TabPageTools.SuspendLayout();
       this.MenuPredefinedPageSizes.SuspendLayout();
       this.SuspendLayout();
@@ -901,6 +906,7 @@
       // 
       // EditCommentLinePrefix
       // 
+      this.EditCommentLinePrefix.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditCommentLinePrefix, "EditCommentLinePrefix");
       this.EditCommentLinePrefix.Name = "EditCommentLinePrefix";
       // 
@@ -1002,12 +1008,27 @@
       this.TabPageEditing.Controls.Add(this.EditCommentLineAddPrefix);
       this.TabPageEditing.Controls.Add(this.EditCommentLineRemovePrefix);
       this.TabPageEditing.Controls.Add(this.EditCommentLinePrefix);
+      this.TabPageEditing.Controls.Add(this.EditSpellCheckEnabled);
+      this.TabPageEditing.Controls.Add(this.EditWordControlTabInverted);
       this.TabPageEditing.Controls.Add(this.EditAutoSaveOnLeaveControl);
       this.TabPageEditing.Controls.Add(LabelAutoSaveDelay);
       this.TabPageEditing.Controls.Add(this.LabelInfoAutoSaveDelay);
       this.TabPageEditing.Controls.Add(this.EditAutoSaveDelay);
       resources.ApplyResources(this.TabPageEditing, "TabPageEditing");
       this.TabPageEditing.Name = "TabPageEditing";
+      // 
+      // EditSpellCheckEnabled
+      // 
+      resources.ApplyResources(this.EditSpellCheckEnabled, "EditSpellCheckEnabled");
+      this.EditSpellCheckEnabled.Name = "EditSpellCheckEnabled";
+      this.EditSpellCheckEnabled.UseVisualStyleBackColor = true;
+      this.EditSpellCheckEnabled.CheckedChanged += new System.EventHandler(this.EditUseSpellCheck_CheckedChanged);
+      // 
+      // EditWordControlTabInverted
+      // 
+      resources.ApplyResources(this.EditWordControlTabInverted, "EditWordControlTabInverted");
+      this.EditWordControlTabInverted.Name = "EditWordControlTabInverted";
+      this.EditWordControlTabInverted.UseVisualStyleBackColor = true;
       // 
       // EditAutoSaveOnLeaveControl
       // 
@@ -1662,6 +1683,7 @@
       this.TabPageExport.Controls.Add(this.EditDocumentWordColumnsCount);
       this.TabPageExport.Controls.Add(this.EditDocumentMarginTop);
       this.TabPageExport.Controls.Add(this.EditAutoOpenExportedFile);
+      this.TabPageExport.Controls.Add(this.EditExportDocumentVerseRefInBold);
       this.TabPageExport.Controls.Add(this.EditDifferentFirstPage);
       this.TabPageExport.Controls.Add(this.EditExportDocumentDifferentOddAndEvenPages);
       this.TabPageExport.Controls.Add(this.EditExportDocumentLandscape);
@@ -1670,11 +1692,13 @@
       this.TabPageExport.Controls.Add(this.LabelDataExportFileFormat);
       this.TabPageExport.Controls.Add(this.SelectDataExportFileFormat);
       this.TabPageExport.Controls.Add(this.LabelDocumentMargins);
+      this.TabPageExport.Controls.Add(this.label5);
       this.TabPageExport.Controls.Add(this.LabelExportDocumentTheme);
       this.TabPageExport.Controls.Add(this.LabelDocumentWordColumnsCountIntervalInfo);
       this.TabPageExport.Controls.Add(this.LabelImageExportFileFormat);
       this.TabPageExport.Controls.Add(this.LabelDocumentMarginHFIntervalInfo);
       this.TabPageExport.Controls.Add(this.LabelDocumentMarginIntervalInfo);
+      this.TabPageExport.Controls.Add(this.SelectExportDocumentModel);
       this.TabPageExport.Controls.Add(this.SelectImageExportFileFormat);
       this.TabPageExport.Controls.Add(this.SelectExportDocumentTheme);
       resources.ApplyResources(this.TabPageExport, "TabPageExport");
@@ -1808,6 +1832,12 @@
       this.EditDocumentMarginTop.Name = "EditDocumentMarginTop";
       this.EditDocumentMarginTop.ReadOnly = true;
       // 
+      // EditExportDocumentVerseRefInBold
+      // 
+      resources.ApplyResources(this.EditExportDocumentVerseRefInBold, "EditExportDocumentVerseRefInBold");
+      this.EditExportDocumentVerseRefInBold.Name = "EditExportDocumentVerseRefInBold";
+      this.EditExportDocumentVerseRefInBold.UseVisualStyleBackColor = true;
+      // 
       // EditDifferentFirstPage
       // 
       resources.ApplyResources(this.EditDifferentFirstPage, "EditDifferentFirstPage");
@@ -1833,6 +1863,11 @@
       this.EditExportDocumentOverrideWordColumnsCount.UseVisualStyleBackColor = true;
       this.EditExportDocumentOverrideWordColumnsCount.CheckedChanged += new System.EventHandler(this.EditExportDocumentOverrideWordColumnsCount_CheckedChanged);
       // 
+      // label5
+      // 
+      resources.ApplyResources(this.label5, "label5");
+      this.label5.Name = "label5";
+      // 
       // LabelDocumentWordColumnsCountIntervalInfo
       // 
       resources.ApplyResources(this.LabelDocumentWordColumnsCountIntervalInfo, "LabelDocumentWordColumnsCountIntervalInfo");
@@ -1844,6 +1879,22 @@
       resources.ApplyResources(this.LabelDocumentMarginHFIntervalInfo, "LabelDocumentMarginHFIntervalInfo");
       this.LabelDocumentMarginHFIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelDocumentMarginHFIntervalInfo.Name = "LabelDocumentMarginHFIntervalInfo";
+      // 
+      // SelectExportDocumentModel
+      // 
+      this.SelectExportDocumentModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectExportDocumentModel.FormattingEnabled = true;
+      this.SelectExportDocumentModel.Items.AddRange(new object[] {
+            resources.GetString("SelectExportDocumentModel.Items"),
+            resources.GetString("SelectExportDocumentModel.Items1"),
+            resources.GetString("SelectExportDocumentModel.Items2"),
+            resources.GetString("SelectExportDocumentModel.Items3"),
+            resources.GetString("SelectExportDocumentModel.Items4"),
+            resources.GetString("SelectExportDocumentModel.Items5"),
+            resources.GetString("SelectExportDocumentModel.Items6"),
+            resources.GetString("SelectExportDocumentModel.Items7")});
+      resources.ApplyResources(this.SelectExportDocumentModel, "SelectExportDocumentModel");
+      this.SelectExportDocumentModel.Name = "SelectExportDocumentModel";
       // 
       // TabPageTools
       // 
@@ -1899,11 +1950,13 @@
       // EditOnlineVerseURL
       // 
       resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
+      this.EditOnlineVerseURL.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
       // 
       // EditOnlineSearch
       // 
       resources.ApplyResources(this.EditOnlineSearch, "EditOnlineSearch");
+      this.EditOnlineSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditOnlineSearch.Name = "EditOnlineSearch";
       // 
       // SaveThemeDialog
@@ -2017,30 +2070,30 @@
       this.TabPagePaths.PerformLayout();
       this.TabPageStartup.ResumeLayout(false);
       this.TabPageStartup.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoBackupCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoBackupCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).EndInit();
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoSaveDelay)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoSaveDelay ) ).EndInit();
       this.TabControl.ResumeLayout(false);
       this.TabPageBookmarks.ResumeLayout(false);
       this.TabPageBookmarks.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditHistoryCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarksCount)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditHistoryCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarksCount ) ).EndInit();
       this.TabPageEditing.ResumeLayout(false);
       this.TabPageEditing.PerformLayout();
       this.TabPageRendering.ResumeLayout(false);
       this.TabPageRendering.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeCommentary)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeTranslation)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSizeHebrew)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordControlWidth)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditSearchMinRefForDialog)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditSearchDisplayMaxRef)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditWordTranslateLinesCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCommentaryLinesCount)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeCommentary ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeTranslation ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSizeHebrew ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordControlWidth ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditSearchMinRefForDialog ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditSearchDisplayMaxRef ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditWordTranslateLinesCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditCommentaryLinesCount ) ).EndInit();
       this.TabPageTheme.ResumeLayout(false);
       this.TabPageTheme.PerformLayout();
       this.TabPageMouse.ResumeLayout(false);
@@ -2058,15 +2111,15 @@
       this.GroupBoxTranslatedItemDoubleClick.PerformLayout();
       this.TabPageExport.ResumeLayout(false);
       this.TabPageExport.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditPageHeight)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditPageWidth)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginFooter)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginRight)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginHeader)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginLeft)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginBottom)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentWordColumnsCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDocumentMarginTop)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditPageHeight ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditPageWidth ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginFooter ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginRight ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginHeader ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginLeft ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginBottom ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentWordColumnsCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDocumentMarginTop ) ).EndInit();
       this.TabPageTools.ResumeLayout(false);
       this.TabPageTools.PerformLayout();
       this.MenuPredefinedPageSizes.ResumeLayout(false);
@@ -2143,8 +2196,8 @@
     private Button ActionOnlineVerseHelp;
     private Button ActionSelectOnlineSearch;
     private Button ActionSelectOnlineVerseURL;
-    private TextBox EditOnlineVerseURL;
-    private TextBox EditOnlineSearch;
+    private TextBoxEx EditOnlineVerseURL;
+    private TextBoxEx EditOnlineSearch;
     private CheckBox EditGoToMasterBookmarkAtStartup;
     private NumericUpDown EditAutoSaveDelay;
     private NumericUpDown EditAutoBackupCount;
@@ -2209,7 +2262,7 @@
     private NumericUpDown EditFontSizeCommentary;
     private CheckBox EditBookNameHebrewWithCommonName;
     private CheckBox EditCommentLineAddPrefix;
-    private TextBox EditCommentLinePrefix;
+    private TextBoxEx EditCommentLinePrefix;
     private CheckBox EditCommentLineRemovePrefix;
     private Button ActionCheckAllComments;
     private CheckBox EditGoToLastVerseAtStartup;
@@ -2271,5 +2324,10 @@
     private ToolStripMenuItem ActionSetPageSizeCrownQuarto;
     private ToolStripMenuItem ActionSetPageSizeExecutive;
     private ToolStripMenuItem ActionSetPageSizeUSLetter;
+    private Label label5;
+    private ComboBox SelectExportDocumentModel;
+    private CheckBox EditExportDocumentVerseRefInBold;
+    private CheckBox EditSpellCheckEnabled;
+    private CheckBox EditWordControlTabInverted;
   }
 }

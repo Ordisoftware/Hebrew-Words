@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class SelectReferenceForm : Form
 {
 
-  static private ReferenceItem LastReference = new ReferenceItem(1, 1, 1);
+  static private ReferenceItem LastReference = new(1, 1, 1);
 
   static public ReferenceItem Run()
   {
@@ -27,8 +27,6 @@ partial class SelectReferenceForm : Form
       {
         if ( form.ShowDialog() != DialogResult.OK ) return null;
         LastReference = new ReferenceItem(form.EditReference.Text);
-        if ( LastReference is null )
-          return null;
         if ( LastReference.Book is null )
           throw new KeyNotFoundException(nameof(LastReference.Book));
         if ( LastReference.Chapter is null )

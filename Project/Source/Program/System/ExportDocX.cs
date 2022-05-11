@@ -31,11 +31,27 @@ static partial class ExportDocX
   /// </remarks>
   static private DocX Document;
 
+  static private readonly Properties.Settings Settings = Program.Settings;
+
+  static private bool WithHebrew
+    => Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslation
+    && Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslationWithComment;
+
+  static private bool WithTranslation
+    => Settings.ExportDocumentModel != ExportDocumentModel.OnlyHebrew
+    && Settings.ExportDocumentModel != ExportDocumentModel.OnlyHebrewWithComment;
+
+  static private bool WithMemo
+    => Settings.ExportDocumentModel == ExportDocumentModel.WordForWordWithComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.HebrewWithComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.OnlyHebrewWithComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.OnlyTranslationWithComment;
+
   /// <summary>
   /// Exports a book to MS Word file.
   /// </summary>
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
-  static public void Run(string filePath, BookRow book, bool withTranslation, bool withMemo, Func<bool> showProgress)
+  static public void CreateBook(string filePath, BookRow book, Func<bool> showProgress)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
@@ -45,17 +61,17 @@ static partial class ExportDocX
         foreach ( ChapterRow chapter in book.Chapters )
         {
           if ( showProgress is not null && showProgress() ) break;
-          AddChapterTitle(chapter, withMemo);
+          AddChapterTitle(chapter, WithMemo);
           foreach ( VerseRow verse in chapter.Verses )
           {
-            string strref = Program.Settings.ExportWordPrintFullReference
+            string referenceText = Settings.ExportWordPrintFullReference
               ? new ReferenceItem(book.Number, chapter.Number, verse.Number).ToStringOnlyNumbersNoBook()
               : verse.Number.ToString();
-            AddVerse(verse, withTranslation, withMemo, strref);
+            AddVerse(verse, referenceText);
           }
         }
         Document.Save();
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( IOException ex )
@@ -71,23 +87,23 @@ static partial class ExportDocX
   /// <summary>
   /// Exports a chapter to MS Word file.
   /// </summary>
-  static public void Run(string filePath, BookRow book, ChapterRow chapter, bool withTranslation, bool withMemo)
+  static public void CreateChapter(string filePath, BookRow book, ChapterRow chapter)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
       {
         SetPageProperties();
-        AddBookTitle(book, withMemo);
-        AddChapterTitle(chapter, withMemo);
+        AddBookTitle(book, WithMemo);
+        AddChapterTitle(chapter, WithMemo);
         foreach ( VerseRow verse in chapter.Verses )
         {
-          string strref = Program.Settings.ExportWordPrintFullReference
+          string strref = Settings.ExportWordPrintFullReference
             ? new ReferenceItem(book.Number, chapter.Number, verse.Number).ToStringOnlyNumbersNoBook()
             : verse.Number.ToString();
-          AddVerse(verse, withTranslation, withMemo, strref);
+          AddVerse(verse, strref);
         }
         Document.Save();
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( IOException ex )
@@ -103,7 +119,7 @@ static partial class ExportDocX
   /// <summary>
   /// Exports a verse to a MS Word file without book and chapter memos.
   /// </summary>
-  static public void Run(string filePath, BookRow book, ChapterRow chapter, int verse, bool withTranslation, bool withMemo)
+  static public void CreateVerse(string filePath, BookRow book, ChapterRow chapter, int verse)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )
       try
@@ -111,12 +127,12 @@ static partial class ExportDocX
         SetPageProperties();
         AddBookTitle(book, false);
         AddChapterTitle(chapter, false);
-        string strref = Program.Settings.ExportWordPrintFullReference
+        string referenceText = Settings.ExportWordPrintFullReference
           ? new ReferenceItem(book.Number, chapter.Number, verse).ToStringOnlyNumbersNoBook()
           : verse.ToString();
-        AddVerse(chapter.Verses[verse - 1], withTranslation, withMemo, strref);
+        AddVerse(chapter.Verses[verse - 1], referenceText);
         Document.Save();
-        if ( Program.Settings.AutoOpenExportedFile )
+        if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       }
       catch ( IOException ex )

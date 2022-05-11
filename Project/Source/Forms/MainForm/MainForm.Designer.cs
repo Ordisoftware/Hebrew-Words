@@ -52,9 +52,9 @@
       this.ActionApplyFilterBook = new System.Windows.Forms.Button();
       this.ActionClearFilterChapter = new System.Windows.Forms.Button();
       this.ActionClearFilterBook = new System.Windows.Forms.Button();
-      this.EditFilterVerse = new System.Windows.Forms.TextBox();
-      this.EditFilterChapter = new System.Windows.Forms.TextBox();
-      this.EditFilterBook = new System.Windows.Forms.TextBox();
+      this.EditFilterVerse = new Ordisoftware.Core.TextBoxEx();
+      this.EditFilterChapter = new Ordisoftware.Core.TextBoxEx();
+      this.EditFilterBook = new Ordisoftware.Core.TextBoxEx();
       this.EditFilterVersesTranslated = new System.Windows.Forms.CheckBox();
       this.EditFilterChaptersWithTitle = new System.Windows.Forms.CheckBox();
       this.SelectFilterVerse = new System.Windows.Forms.ComboBox();
@@ -78,7 +78,7 @@
       this.ActionSearchInAddAll = new System.Windows.Forms.Button();
       this.SelectSearchInBook = new System.Windows.Forms.ComboBox();
       this.SelectSearchPaging = new System.Windows.Forms.TrackBar();
-      this.EditSearchPaging = new System.Windows.Forms.TextBox();
+      this.EditSearchPaging = new Ordisoftware.Core.TextBoxEx();
       this.EditSearchInKetouvim = new System.Windows.Forms.CheckBox();
       this.EditSearchInNeviim = new System.Windows.Forms.CheckBox();
       this.EditSearchInTorah = new System.Windows.Forms.CheckBox();
@@ -517,24 +517,30 @@
       // 
       // EditFilterVerse
       // 
+      this.EditFilterVerse.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFilterVerse, "EditFilterVerse");
       this.EditFilterVerse.Name = "EditFilterVerse";
+      this.EditFilterVerse.SpellCheckAllowed = true;
       this.EditFilterVerse.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
       this.EditFilterVerse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
       this.EditFilterVerse.Leave += new System.EventHandler(this.EditFilter_Leave);
       // 
       // EditFilterChapter
       // 
+      this.EditFilterChapter.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFilterChapter, "EditFilterChapter");
       this.EditFilterChapter.Name = "EditFilterChapter";
+      this.EditFilterChapter.SpellCheckAllowed = true;
       this.EditFilterChapter.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
       this.EditFilterChapter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
       this.EditFilterChapter.Leave += new System.EventHandler(this.EditFilter_Leave);
       // 
       // EditFilterBook
       // 
+      this.EditFilterBook.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFilterBook, "EditFilterBook");
       this.EditFilterBook.Name = "EditFilterBook";
+      this.EditFilterBook.SpellCheckAllowed = true;
       this.EditFilterBook.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
       this.EditFilterBook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterBook_KeyUp);
       this.EditFilterBook.Leave += new System.EventHandler(this.EditFilter_Leave);
@@ -724,8 +730,10 @@
       // EditSearchPaging
       // 
       resources.ApplyResources(this.EditSearchPaging, "EditSearchPaging");
+      this.EditSearchPaging.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditSearchPaging.Name = "EditSearchPaging";
       this.EditSearchPaging.ReadOnly = true;
+      this.EditSearchPaging.SpellCheckAllowed = false;
       this.EditSearchPaging.TabStop = false;
       // 
       // EditSearchInKetouvim
@@ -896,6 +904,7 @@
       this.EditSearchTranslation.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditSearchTranslation, "EditSearchTranslation");
       this.EditSearchTranslation.Name = "EditSearchTranslation";
+      this.EditSearchTranslation.SpellCheckAllowed = true;
       this.EditSearchTranslation.TextChanged += new System.EventHandler(this.EditSearchTranslation_TextChanged);
       this.EditSearchTranslation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
       // 
@@ -1140,6 +1149,7 @@
       this.EditChapterMemo.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditChapterMemo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Memo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditChapterMemo.Name = "EditChapterMemo";
+      this.EditChapterMemo.SpellCheckAllowed = true;
       this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
       this.EditChapterMemo.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
@@ -1219,6 +1229,7 @@
       this.EditBookTranslation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BooksBindingSource, "Translation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditBookTranslation, "EditBookTranslation");
       this.EditBookTranslation.Name = "EditBookTranslation";
+      this.EditBookTranslation.SpellCheckAllowed = true;
       this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
       this.EditBookTranslation.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
@@ -1230,6 +1241,7 @@
       this.EditChapterTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Title", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditChapterTitle, "EditChapterTitle");
       this.EditChapterTitle.Name = "EditChapterTitle";
+      this.EditChapterTitle.SpellCheckAllowed = true;
       this.EditChapterTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
       this.EditChapterTitle.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
@@ -1242,6 +1254,7 @@
       this.EditELS50Single.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "ELS50", true));
       this.EditELS50Single.Name = "EditELS50Single";
       this.EditELS50Single.ReadOnly = true;
+      this.EditELS50Single.SpellCheckAllowed = false;
       this.EditELS50Single.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditELS50Single_MouseClick);
       this.EditELS50Single.TextChanged += new System.EventHandler(this.EditELS50_TextChanged);
       this.EditELS50Single.DragDrop += new System.Windows.Forms.DragEventHandler(this.EditELS50Single_DragDrop);
@@ -2394,7 +2407,7 @@
     private System.Windows.Forms.TabPage TabPageTranslations;
     private System.Windows.Forms.TabPage TabPageVerses;
     private Ordisoftware.Core.TextBoxEx EditELS50Single;
-    private System.Windows.Forms.TextBox EditSearchPaging;
+    private Ordisoftware.Core.TextBoxEx EditSearchPaging;
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.ToolStripButton ActionExit;
     private System.Windows.Forms.ToolStripButton ActionGoToReference;
@@ -2495,9 +2508,6 @@
     internal Button ActionClearFilterVerse;
     internal Button ActionClearFilterChapter;
     internal Button ActionClearFilterBook;
-    private TextBox EditFilterVerse;
-    private TextBox EditFilterChapter;
-    private TextBox EditFilterBook;
     private CheckBox EditFilterVersesTranslated;
     private CheckBox EditFilterChaptersWithTitle;
     private ComboBox SelectFilterVerse;
@@ -2570,6 +2580,9 @@
     internal ToolStripMenuItem EditIncludeComment;
     internal ToolStripButton ActionPreferences;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
+    private TextBoxEx EditFilterVerse;
+    private TextBoxEx EditFilterChapter;
+    private TextBoxEx EditFilterBook;
   }
 }
 

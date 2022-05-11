@@ -19,24 +19,24 @@ using Xceed.Document.NET;
 static partial class ExportDocX
 {
 
+  static private Border TheBorder = new(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray);
+
   /// <summary>
   /// Sets the MS Word document page properties like orientation and margins.
   /// </summary>
   static private void SetPageProperties()
   {
-    //Settings.ExportDocumentPageWidth = 156;
-    //Settings.ExportDocumentPageHeight = 234;
     Document.PageLayout.Orientation = Program.Settings.ExportDocumentLandscape
       ? Orientation.Landscape
       : Orientation.Portrait;
-    Document.PageWidth = (int)( Program.Settings.ExportDocumentPageWidth / 0.0352778 ) / 10;
-    Document.PageHeight = (int)( Program.Settings.ExportDocumentPageHeight / 0.0352778 ) / 10;
-    Document.MarginTop = (int)( Program.Settings.ExportDocumentMarginTop / 0.0352778 ) / 10; ;
-    Document.MarginBottom = (int)( Program.Settings.ExportDocumentMarginBottom / 0.0352778 ) / 10; ;
-    Document.MarginLeft = (int)( Program.Settings.ExportDocumentMarginLeft / 0.0352778 ) / 10; ;
-    Document.MarginRight = (int)( Program.Settings.ExportDocumentMarginRight / 0.0352778 ) / 10; ;
-    Document.MarginHeader = (int)( Program.Settings.ExportDocumentMarginHeader / 0.0352778 ) / 10; ;
-    Document.MarginFooter = (int)( Program.Settings.ExportDocumentMarginFooter / 0.0352778 ) / 10; ;
+    Document.PageWidth = (int)( Program.Settings.ExportDocumentPageWidth / 0.0352778f / 10 );
+    Document.PageHeight = (int)( Program.Settings.ExportDocumentPageHeight / 0.0352778f / 10 );
+    Document.MarginTop = (int)( Program.Settings.ExportDocumentMarginTop / 0.0352778f / 10 );
+    Document.MarginBottom = (int)( Program.Settings.ExportDocumentMarginBottom / 0.0352778f / 10 );
+    Document.MarginLeft = (int)( Program.Settings.ExportDocumentMarginLeft / 0.0352778f / 10 );
+    Document.MarginRight = (int)( Program.Settings.ExportDocumentMarginRight / 0.0352778f / 10 );
+    Document.MarginHeader = (int)( Program.Settings.ExportDocumentMarginHeader / 0.0352778f / 10 );
+    Document.MarginFooter = (int)( Program.Settings.ExportDocumentMarginFooter / 0.0352778f / 10 );
     Document.DifferentFirstPage = Program.Settings.ExportDocumentDifferentFirstPage;
     Document.DifferentOddAndEvenPages = Program.Settings.ExportDocumentDifferentOddAndEvenPages;
   }
@@ -47,8 +47,9 @@ static partial class ExportDocX
   static private void AddBookTitle(BookRow book, bool withMemo)
   {
     AddTitle(book.Hebrew, FontHebrew, Heading1TextSize, Heading1).Alignment = Alignment.center;
-    if ( book.Transcription.Length != 0 && book.Translation.Length != 0 )
-      AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
+    if ( WithTranslation )
+      if ( book.Transcription.Length != 0 && book.Translation.Length != 0 )
+        AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
     Document.InsertParagraph();
     Document.InsertParagraph();
     if ( withMemo && book.Memo.Length != 0 )
@@ -65,8 +66,9 @@ static partial class ExportDocX
   static private void AddChapterTitle(ChapterRow chapter, bool withMemo)
   {
     AddTitle($"{AppTranslations.BookChapterTitle.GetLang()} {chapter.Number}", FontCalibri, Heading2TextSize, Heading2);
-    if ( chapter.Title.Length != 0 )
-      AddTitle(chapter.Title, FontCalibri, Heading2TextSizeSub, Heading2);
+    if ( WithTranslation )
+      if ( chapter.Title.Length != 0 )
+        AddTitle(chapter.Title, FontCalibri, Heading2TextSizeSub, Heading2);
     Document.InsertParagraph();
     Document.InsertParagraph();
     if ( withMemo && chapter.Memo.Length != 0 )
@@ -106,10 +108,11 @@ static partial class ExportDocX
   /// <summary>
   /// Adds a verse's words with translations and memo tables.
   /// </summary>
-  static private void AddVerse(VerseRow verse, bool withTranslation, bool withMemo, string fullref)
+  static private void AddVerse(VerseRow verse, string fullref)
   {
+    // TODO use if (WithHebrew) ...
     string strVerseRef = fullref ?? verse.Number.ToString();
-    int rowFactor = Convert.ToInt32(withTranslation) + 1;
+    int rowFactor = Convert.ToInt32(WithTranslation) + 1;
     int countWords = verse.Words.Count;
     int indexWord = countWords - 1;
     int countRows = ( (int)Math.Ceiling((double)countWords / WordColumnsCount) ) * rowFactor;
@@ -130,7 +133,8 @@ static partial class ExportDocX
         var paragraphVerseRef = cellVerse.Paragraphs[0].Append(" " + strVerseRef);
         paragraphVerseRef.Font(FontCalibri);
         paragraphVerseRef.FontSize(VerseRefTextSize);
-        if ( VerseRefTextInBold ) paragraphVerseRef.Bold();
+        paragraphVerseRef.SpacingAfter(WordTextSpacing);
+        if ( Settings.ExportDocumentVerseRefInBold ) paragraphVerseRef.Bold();
         cellVerse.VerticalAlignment = VerticalAlignment.Center;
       }
       var words = verse.Words.OrderByDescending(w => w.Number).ToList();
@@ -144,7 +148,7 @@ static partial class ExportDocX
         paragraphWord.Font(FontHebrew);
         paragraphWord.FontSize(WordHebrewTextSize);
         paragraphWord.Spacing(1);
-        if ( withTranslation )
+        if ( WithTranslation )
         {
           var paragraphTranslation = table.Rows[row + 1].Cells[column].Paragraphs[0].Append(word.Translation);
           paragraphTranslation.Alignment = Alignment.right;
@@ -156,7 +160,7 @@ static partial class ExportDocX
           paragraphWord.SpacingAfter(WordTextSpacing);
       }
     }
-    if ( withMemo && verse.Comment.Length > 0 )
+    if ( WithMemo && verse.Comment.Length > 0 )
     {
       Document.InsertParagraph();
       AddMemo(verse.Comment);
@@ -182,10 +186,10 @@ static partial class ExportDocX
     cellComment.MarginRight = MemoCellMargin;
     cellComment.MarginTop = MemoCellMargin;
     cellComment.MarginBottom = MemoCellMargin;
-    cellComment.SetBorder(TableCellBorderType.Top, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
-    cellComment.SetBorder(TableCellBorderType.Bottom, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
-    cellComment.SetBorder(TableCellBorderType.Left, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
-    cellComment.SetBorder(TableCellBorderType.Right, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray));
+    cellComment.SetBorder(TableCellBorderType.Top, TheBorder);
+    cellComment.SetBorder(TableCellBorderType.Bottom, TheBorder);
+    cellComment.SetBorder(TableCellBorderType.Left, TheBorder);
+    cellComment.SetBorder(TableCellBorderType.Right, TheBorder);
     var cellVerse = table.Rows[0].Cells[1];
     cellVerse.Width = CellVerseWidth;
     cellVerse.MarginLeft = MemoCellMargin;

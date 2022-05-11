@@ -32,7 +32,7 @@ A libre and open-source software written in C# that helps for the literal word-f
 
 ## Functionalities
 
-- Translate verses word-for-word with various help tools.
+- Translate verses word-for-word with various helper tools and spell checker.
 - Contextual menu for a word to search online its definition, to see already translated, to search it in database, or to study it in Hebrew Letters.
 - Contextual menu for a verse to read it online, to manage bookmarks, to export, or to import.
 - Search the Tanak for Hebrew or translated words with filters.
@@ -66,7 +66,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 - SQLite ODBC Driver is no more needed.
 - Overall performances are optimized.
-- Added and improved keyboard shortcuts
+- Added and improved keyboard shortcuts.
 - Added verse navigator in the verses view panel.
 - Added option to render only current verse or all of the chapter.
 - Added book name translation text box in the navigation panel.

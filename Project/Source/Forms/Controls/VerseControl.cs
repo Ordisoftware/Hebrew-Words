@@ -117,11 +117,15 @@ public partial class VerseControl : UserControl
     WordControl control = null;
     int width = Settings.WordControlWidth;
     int count = WordControls.Length;
+    int tabIndexFirst = Settings.WordControlTabInverted ? 0 : count - 1;
+    int tabIndexDelta = Settings.WordControlTabInverted ? 1 : -1;
     for ( int index = 0; index < count; index++ )
     {
       control = new WordControl(new ReferenceItem(Reference, Reference.Verse.Words[index]));
       control.LabelHebrew.ContextMenuStrip = MainForm.Instance.ContextMenuStripWord;
       control.Width = width;
+      control.TabIndex = tabIndexFirst;
+      tabIndexFirst += tabIndexDelta;
       WordControls[index] = control;
     }
     PanelWords.Controls.AddRange(WordControls);

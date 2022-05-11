@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using System.IO.Pipes;
@@ -31,11 +31,13 @@ static partial class Program
   {
     try
     {
+      //
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
       Globals.ChronoStartingApp.Start();
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
       Globals.AlternativeToURL = "";
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
+      //
       var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       SystemManager.IPCSendCommands = IPCSendCommands;
@@ -48,17 +50,27 @@ static partial class Program
       CheckSettingsReset();
       if ( lang != Language.None ) Settings.LanguageSelected = lang;
       SystemManager.TryCatch(Settings.Save);
+      //
       Globals.Settings = Settings;
-      Globals.MainForm = MainForm.Instance;
+      Globals.SpellCheckEnabled = Settings.SpellCheckEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      //
+      TextBoxEx.InstanceCreated += TextBox_UpdateSpellChecker;
+      TextBoxEx.UpdateSpellChecker += TextBox_UpdateSpellChecker;
+      TextBoxEx.Relocalized += TextBox_Relocalized;
+      TextBox_Relocalized();
+      //
+      Globals.MainForm = MainForm.Instance;
       HebrewGlobals.GetHebrewCalendarExePath = () => string.Empty;
       HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
       HebrewGlobals.GetHebrewWordsExePath = () => Globals.ApplicationExeFullPath;
       HebrewGlobals.GetCustomWebSearchPattern = () => Settings.CustomWebSearch;
+      //
       Globals.ChronoStartingApp.Stop();
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();
+      //
       LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
       AboutBox.LicenseAsRTF = Properties.Resources.MPL_2_0;
       AboutBox.DescriptionText = AppTranslations.ApplicationDescription;
@@ -69,6 +81,7 @@ static partial class Program
       ex.Manage();
     }
     Application.Run(MainForm.Instance);
+    SystemManager.Exit();
   }
 
   /// <summary>
@@ -245,8 +258,8 @@ static partial class Program
       // Various updates
       if ( Globals.IsReady )
       {
-        LoadingForm.Instance.Relocalize();
         TextBoxEx.Relocalize();
+        LoadingForm.Instance.Relocalize();
         AboutBox.Instance.AboutBox_Shown(null, null);
         TranscriptionGuideForm.HTMLBrowserForm_Shown(null, null);
         GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
@@ -266,6 +279,45 @@ static partial class Program
     {
       Globals.ChronoTranslate.Stop();
       Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
+    }
+  }
+
+  /// <summary>
+  /// Indicates spell checker for TextBoxEx.
+  /// </summary>
+  static private NHunspellExtender.NHunspellTextBoxExtender SpellChecker;
+
+  /// <summary>
+  /// Creates or update the spell checker to display context menu items.
+  /// </summary>
+  static public void TextBox_Relocalized()
+  {
+    if ( Globals.IsVisualStudioDesigner ) return;
+    if ( SpellChecker is not null )
+    {
+      TextBoxEx.ContextMenuEdit.Opening -= SpellChecker.ContextMenu_Opening;
+      TextBoxEx.ContextMenuEdit.Closed -= SpellChecker.ContextMenu_Closed;
+      SpellChecker.controlEnabled.Clear();
+    }
+    SpellChecker = new();
+    TextBoxEx.ContextMenuEdit.Opening += SpellChecker.ContextMenu_Opening;
+    TextBoxEx.ContextMenuEdit.Closed += SpellChecker.ContextMenu_Closed;
+  }
+
+  /// <summary>
+  /// Update the connection between the spell checker and a TextBoxEx.
+  /// </summary>
+  static public void TextBox_UpdateSpellChecker(object sender, EventArgs e)
+  {
+    if ( SpellChecker is null ) return;
+    if ( sender is not TextBoxEx textbox ) return;
+    if ( !Globals.SpellCheckEnabled || !textbox.SpellCheckAllowed || textbox.ReadOnly )
+      SpellChecker.SetSpellCheckEnabled(textbox, false);
+    else
+    if ( Globals.SpellCheckEnabled && textbox.SpellCheckAllowed )
+    {
+      SpellChecker.SetSpellCheckEnabled(textbox, true);
+      textbox.Disposed += (_, _) => SpellChecker.SetSpellCheckEnabled(textbox, false);
     }
   }
 
