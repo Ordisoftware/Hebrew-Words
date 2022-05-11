@@ -243,6 +243,7 @@ These options can be used to control the software when it is already running, bu
 
 #### Later
 
+- Add a tray icon.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add form to edit strong's concordances.
