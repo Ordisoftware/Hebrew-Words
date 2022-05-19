@@ -282,6 +282,17 @@
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+      this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -323,6 +334,7 @@
       this.ContextMenuStripVerse.SuspendLayout();
       this.ContextMenuStripWord.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).BeginInit();
+      this.MenuTray.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelMain
@@ -2263,6 +2275,71 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
+      // TrayIcon
+      // 
+      this.TrayIcon.ContextMenuStrip = this.MenuTray;
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
+      // 
+      // MenuTray
+      // 
+      this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuShowHide,
+            this.SeparatorTrayMenu2,
+            this.MenuTools,
+            this.MenuWebLinks,
+            this.SeparatorTrayMenu5,
+            this.MenuInformation,
+            this.MenuPreferences,
+            this.toolStripSeparator26,
+            this.MenuExit});
+      this.MenuTray.Name = "contextMenuStrip";
+      resources.ApplyResources(this.MenuTray, "MenuTray");
+      // 
+      // MenuShowHide
+      // 
+      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
+      this.MenuShowHide.Name = "MenuShowHide";
+      // 
+      // MenuWebLinks
+      // 
+      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
+      this.MenuWebLinks.Name = "MenuWebLinks";
+      // 
+      // SeparatorTrayMenu5
+      // 
+      this.SeparatorTrayMenu5.Name = "SeparatorTrayMenu5";
+      resources.ApplyResources(this.SeparatorTrayMenu5, "SeparatorTrayMenu5");
+      // 
+      // MenuInformation
+      // 
+      resources.ApplyResources(this.MenuInformation, "MenuInformation");
+      this.MenuInformation.Name = "MenuInformation";
+      // 
+      // MenuPreferences
+      // 
+      resources.ApplyResources(this.MenuPreferences, "MenuPreferences");
+      this.MenuPreferences.Name = "MenuPreferences";
+      // 
+      // toolStripSeparator26
+      // 
+      this.toolStripSeparator26.Name = "toolStripSeparator26";
+      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      // 
+      // MenuExit
+      // 
+      resources.ApplyResources(this.MenuExit, "MenuExit");
+      this.MenuExit.Name = "MenuExit";
+      // 
+      // SeparatorTrayMenu2
+      // 
+      this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
+      resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
+      // 
+      // MenuTools
+      // 
+      resources.ApplyResources(this.MenuTools, "MenuTools");
+      this.MenuTools.Name = "MenuTools";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2326,6 +2403,7 @@
       this.ContextMenuStripVerse.ResumeLayout(false);
       this.ContextMenuStripWord.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.WordsBindingSource)).EndInit();
+      this.MenuTray.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -2583,6 +2661,17 @@
     private TextBoxEx EditFilterVerse;
     private TextBoxEx EditFilterChapter;
     private TextBoxEx EditFilterBook;
+    private NotifyIcon TrayIcon;
+    public ContextMenuStrip MenuTray;
+    public ToolStripMenuItem MenuShowHide;
+    private ToolStripSeparator SeparatorTrayMenu2;
+    private ToolStripMenuItem MenuTools;
+    private ToolStripMenuItem MenuWebLinks;
+    private ToolStripSeparator SeparatorTrayMenu5;
+    private ToolStripMenuItem MenuInformation;
+    private ToolStripMenuItem MenuPreferences;
+    private ToolStripSeparator toolStripSeparator26;
+    private ToolStripMenuItem MenuExit;
   }
 }
 

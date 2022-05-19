@@ -464,6 +464,10 @@ namespace NHunspellExtender
       {
         TextBoxBase tempTextBox = (TextBoxBase)sender;
 
+        // ORDISOFTWARE MODIF BEGIN
+        if ( tempTextBox.Width <= 0 || tempTextBox.Height <= 0 ) return;
+        // ORDISOFTWARE MODIF END
+
         // Create a bitmap with the same dimensions as the textbox
         myBitmap = new Bitmap(tempTextBox.Width, tempTextBox.Height);
 
