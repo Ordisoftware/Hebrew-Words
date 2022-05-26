@@ -41,10 +41,10 @@ class ApplicationStatistics
          ApplicationDatabase.Instance.Words?.Count ).ToString() ?? SysTranslations.NullSlot.GetLang();
 
   public string DBEngine
-    => SQLiteNetHelper.EngineNameAndVersion;
+    => SQLiteNetORM.EngineNameAndVersion;
 
   public string DBProvider
-    => SQLiteNetHelper.ProviderName;
+    => SQLiteNetORM.ProviderName;
 
   public string DBFileSize
   {
