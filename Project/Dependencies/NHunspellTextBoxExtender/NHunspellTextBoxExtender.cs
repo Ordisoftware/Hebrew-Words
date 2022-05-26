@@ -1177,7 +1177,6 @@ namespace NHunspellExtender
       return Conversions.ToBoolean(controlEnabled[extendee]);
     }
 
-
     /// <summary>
     /// Sets whether the spellcheck is enabled.  This is only called if the requested value
     /// is different from the default value (therefore if the spell check is enabled).
@@ -1251,11 +1250,7 @@ namespace NHunspellExtender
 
     #endregion
 
-
     #endregion
-
-
-
 
     #region Properties
 
@@ -1418,9 +1413,6 @@ namespace NHunspellExtender
 
     #endregion
 
-
-
-
     #region Events
 
 
@@ -1576,9 +1568,6 @@ namespace NHunspellExtender
 
 
     #endregion
-
-
-
 
     #region ContextMenu
 
@@ -2607,9 +2596,6 @@ namespace NHunspellExtender
 
     #endregion
 
-
-
-
     #region Change Language
     //public string[] GetAvailableLanguages()
     //{
@@ -3127,9 +3113,6 @@ namespace NHunspellExtender
     //}
     #endregion
 
-
-
-
     #region SpellCheckForm
 
     public void RunFullSpellChecker(ref TextBoxBase callingTextBox)
@@ -3226,8 +3209,6 @@ namespace NHunspellExtender
 
 
     #endregion
-
-
 
   }
 }

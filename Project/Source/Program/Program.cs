@@ -183,6 +183,9 @@ static partial class Program
     if ( cmd is null ) return;
     if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
     if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
+
+    // TODO check that that is not conform
+
     if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend($"--verse {cmd.ReferenceToGo}");
     if ( !cmd.SearchWord.IsNullOrEmpty() ) SystemManager.IPCSend($"--word {cmd.SearchWord}");
     if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend($"--translated {cmd.SearchTranslated}");
@@ -309,6 +312,8 @@ static partial class Program
   /// </summary>
   static public void TextBox_UpdateSpellChecker(object sender, EventArgs e)
   {
+    return;
+
     if ( SpellChecker is null ) return;
     if ( sender is not TextBoxEx textbox ) return;
     if ( !Globals.SpellCheckEnabled || !textbox.SpellCheckAllowed || textbox.ReadOnly )
