@@ -45,12 +45,12 @@ public partial class VerseRow
     => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
 
   public string AsHebrewWithNumber
-    => $"{NumberFormatted}: " + Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
+    => $"{NumberFormatted} : " + Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
 
   public string AsUnicode
     => Words.Select(word => word.Unicode).AsMultiSpace();
 
   public string AsUnicodeWithNumber
-    => $"{NumberFormatted}: " + Words.Select(word => word.Unicode).AsMultiSpace();
+    => $"{NumberFormatted} : " + Words.Select(word => word.Unicode).AsMultiSpace();
 
 }
