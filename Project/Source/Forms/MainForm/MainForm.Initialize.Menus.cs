@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -78,7 +78,8 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses
+                                    || Settings.CurrentView == ViewMode.VerseFiltered ) )
       {
         var reference = ( (VerseControl)label.Parent ).Reference;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,
