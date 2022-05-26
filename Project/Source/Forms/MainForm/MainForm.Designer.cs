@@ -1690,8 +1690,8 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionBooksBoard,
-            this.toolStripSeparator28,
             this.ActionParashotBoard,
+            this.toolStripSeparator28,
             this.ActionGoToParashah,
             this.ActionDummyParashah,
             this.toolStripSeparator6,

@@ -113,7 +113,7 @@ partial class MainForm
     Settings.LastReferenceVerse = CurrentReference.Verse.Number;
     Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
     MoveVerseBindingSourceAndAddCurrentToHistory(isHistory);
-    updateLabelTitle();
+    updateSubTitle();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
     IsGoToRunning = true;
     try
@@ -126,7 +126,9 @@ partial class MainForm
     }
     UpdateHistoryButtons();
     //
-    void updateLabelTitle()
+    // Update sub title
+    //
+    void updateSubTitle()
     {
       LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
       if ( BooksBounds.Torah.IsIn(CurrentReference.Book.Number) )
@@ -138,7 +140,7 @@ partial class MainForm
           return CurrentReference >= ref1 && CurrentReference <= ref2;
         });
         if ( parashah is not null )
-          LabelTitleReferenceName.Text += " | PARASHAH " + parashah.Name.ToUpper();
+          LabelTitleReferenceName.Text += " [" + parashah.Name.ToUpper() + "]";
       }
       LabelTitleReferenceName.Refresh();
     }
