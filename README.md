@@ -185,7 +185,8 @@ These options can be used to control the software when it is already running, bu
 | F8 or Ctrl + R | Refresh |
 | Alt + F8 | Close all translated windows |
 | Ctrl + B | Books board |
-| Ctrl + B | Parashot board |
+| Ctrl + P | Parashot board |
+| Alt + P | Go to parashah |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
@@ -267,6 +268,8 @@ These options can be used to control the software when it is already running, bu
 - Add options to set fonts size.
 - Add filter verses view panel.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
+- Add goto parashah menu in Tools.
+- Add current parashah name in the sub-title in case of a reference of a book of the Torah.
 - Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.
 - Add original word in the search translated form.
 - Add Ctrl+T shortcut to open the translated form the focused Hebrew word.
