@@ -117,6 +117,9 @@ partial class MainForm
           if ( ActionWebLinks.Enabled )
             ActionWebLinks.ShowDropDown();
           return true;
+        case Keys.Alt | Keys.P:
+          ActionGoToParashah.ShowDropDown();
+          return true;
         // Top menu drop downs
         case Keys.Alt | Keys.B:
           ActionBookmarks.ShowDropDown();

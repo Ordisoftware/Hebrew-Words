@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -113,8 +113,7 @@ partial class MainForm
     Settings.LastReferenceVerse = CurrentReference.Verse.Number;
     Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
     MoveVerseBindingSourceAndAddCurrentToHistory(isHistory);
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
-    LabelTitleReferenceName.Refresh();
+    updateSubTitle();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
     IsGoToRunning = true;
     try
@@ -126,6 +125,25 @@ partial class MainForm
       IsGoToRunning = false;
     }
     UpdateHistoryButtons();
+    //
+    // Update sub title
+    //
+    void updateSubTitle()
+    {
+      LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
+      if ( BooksBounds.Torah.IsIn(CurrentReference.Book.Number) )
+      {
+        var parashah = ParashotFactory.Instance.All.SingleOrDefault(p =>
+        {
+          var ref1 = new ReferenceItem(p.FullReferenceBegin);
+          var ref2 = new ReferenceItem(p.FullReferenceEnd);
+          return CurrentReference >= ref1 && CurrentReference <= ref2;
+        });
+        if ( parashah is not null )
+          LabelTitleReferenceName.Text += " [" + parashah.Name.ToUpper() + "]";
+      }
+      LabelTitleReferenceName.Refresh();
+    }
     //
     // Check combo boxes
     // 

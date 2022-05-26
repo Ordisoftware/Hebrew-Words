@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -33,6 +33,7 @@ partial class MainForm : Form
                                       ActionViewLog_Click,
                                       ActionViewStats_Click);
     InitializeSpecialMenus();
+    InitializeGoToParashahMenu();
   }
 
   /// <summary>
@@ -77,7 +78,8 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
       else
-      if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+      if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses
+                                    || Settings.CurrentView == ViewMode.VerseFiltered ) )
       {
         var reference = ( (VerseControl)label.Parent ).Reference;
         HebrewTools.OpenBibleProvider((string)menuitem.Tag,
@@ -86,6 +88,23 @@ partial class MainForm : Form
                                       reference.Verse.Number);
       }
     });
+  }
+
+  private void InitializeGoToParashahMenu()
+  {
+    foreach ( var book in ParashotFactory.Instance.Items.Keys )
+    {
+      var menuitem = new ToolStripMenuItem(book.ToString(), ActionVerseReadDefault.Image);
+      menuitem.ImageScaling = ToolStripItemImageScaling.None;
+      ActionGoToParashah.DropDownItems.Add(menuitem);
+      foreach ( var parashah in ParashotFactory.Instance.Items[book] )
+      {
+        var subitem = menuitem.DropDownItems.Add(parashah.Name, ActionDummyParashah.Image);
+        subitem.ImageScaling = ToolStripItemImageScaling.None;
+        subitem.Click += (_s, _e) => GoToReference(parashah.FullReferenceBegin);
+      }
+    }
+
   }
 
 }
