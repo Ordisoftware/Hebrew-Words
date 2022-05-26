@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -79,9 +79,9 @@ partial class MainForm
     int bookSelected = Settings.SearchInBookSelectedNumber;
     bool isBookSelected(int index)
     {
-      return ( Settings.SearchInTorah && index <= BooksBounds.Torah.Max )
-          || ( Settings.SearchInNeviim && index >= BooksBounds.Neviim.Min && index <= BooksBounds.Neviim.Max )
-          || ( Settings.SearchInKetouvim && index >= BooksBounds.Ketouvim.Min )
+      return ( Settings.SearchInTorah && BooksBounds.Torah.IsIn(index) )
+          || ( Settings.SearchInNeviim && BooksBounds.Neviim.IsIn(index) )
+          || ( Settings.SearchInKetouvim && BooksBounds.Ketouvim.IsIn(index) )
           || ( index == bookSelected && !Settings.SearchInTorah && !Settings.SearchInNeviim && !Settings.SearchInKetouvim );
     }
     //

@@ -195,7 +195,10 @@
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGoToParashah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionDummyParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
@@ -285,14 +288,14 @@
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1687,7 +1690,10 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionBooksBoard,
+            this.toolStripSeparator28,
             this.ActionParashotBoard,
+            this.ActionGoToParashah,
+            this.ActionDummyParashah,
             this.toolStripSeparator6,
             this.ActionShowTranscriptionGuide,
             this.ActionShowGrammarGuide,
@@ -1711,11 +1717,26 @@
       this.ActionBooksBoard.Name = "ActionBooksBoard";
       this.ActionBooksBoard.Click += new System.EventHandler(this.ActionBooksBoard_Click);
       // 
+      // toolStripSeparator28
+      // 
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
+      // 
       // ActionParashotBoard
       // 
       resources.ApplyResources(this.ActionParashotBoard, "ActionParashotBoard");
       this.ActionParashotBoard.Name = "ActionParashotBoard";
       this.ActionParashotBoard.Click += new System.EventHandler(this.ActionParashotBoard_Click);
+      // 
+      // ActionGoToParashah
+      // 
+      resources.ApplyResources(this.ActionGoToParashah, "ActionGoToParashah");
+      this.ActionGoToParashah.Name = "ActionGoToParashah";
+      // 
+      // ActionDummyParashah
+      // 
+      resources.ApplyResources(this.ActionDummyParashah, "ActionDummyParashah");
+      this.ActionDummyParashah.Name = "ActionDummyParashah";
       // 
       // toolStripSeparator6
       // 
@@ -2300,6 +2321,16 @@
       resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Name = "MenuShowHide";
       // 
+      // SeparatorTrayMenu2
+      // 
+      this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
+      resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
+      // 
+      // MenuTools
+      // 
+      resources.ApplyResources(this.MenuTools, "MenuTools");
+      this.MenuTools.Name = "MenuTools";
+      // 
       // MenuWebLinks
       // 
       resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
@@ -2329,16 +2360,6 @@
       // 
       resources.ApplyResources(this.MenuExit, "MenuExit");
       this.MenuExit.Name = "MenuExit";
-      // 
-      // SeparatorTrayMenu2
-      // 
-      this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
-      resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
-      // 
-      // MenuTools
-      // 
-      resources.ApplyResources(this.MenuTools, "MenuTools");
-      this.MenuTools.Name = "MenuTools";
       // 
       // MainForm
       // 
@@ -2672,6 +2693,8 @@
     private ToolStripMenuItem MenuPreferences;
     private ToolStripSeparator toolStripSeparator26;
     private ToolStripMenuItem MenuExit;
+    internal ToolStripMenuItem ActionGoToParashah;
+    private ToolStripSeparator toolStripSeparator28;
+    internal ToolStripMenuItem ActionDummyParashah;
   }
 }
-

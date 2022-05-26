@@ -1147,4 +1147,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionShowTranscriptionGuide.Text" xml:space="preserve">
     <value>Guide de transcription</value>
   </data>
+  <data name="ActionGoToParashah.Text" xml:space="preserve">
+    <value>Aller à la parashah</value>
+  </data>
 </root>
