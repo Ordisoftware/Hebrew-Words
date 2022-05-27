@@ -119,7 +119,7 @@ partial class SearchTranslatedForm : Form
     if ( e.KeyChar == '\r' )
       UpdateResult();
     else
-    if ( !HebrewAlphabet.Codes.Contains(Convert.ToString(e.KeyChar)) )
+    if ( !HebrewAlphabet.KeyCodes.Contains(Convert.ToString(e.KeyChar)) )
       e.KeyChar = '\x0';
     else
       KeyProcessed = true;

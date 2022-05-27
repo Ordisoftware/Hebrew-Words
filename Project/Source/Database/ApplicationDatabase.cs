@@ -203,7 +203,7 @@ class ApplicationDatabase : SQLiteDatabase
       WordRow word = null;
       string path = Program.TanakFolderPath;
       string strELS50 = "";
-      int nounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.Codes, "n")];
+      int nounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.KeyCodes, "n")];
       void nextChapter()
       {
         book.Chapters.Add(chapter);
@@ -226,16 +226,18 @@ class ApplicationDatabase : SQLiteDatabase
           continue;
         }
         var filecontent = File.ReadAllLines(filePath);
-        book = new();
-        book.ID = Guid.NewGuid();
-        book.Number = (int)bookNumber;
-        book.Unicode = BookInfos.Unicode[bookNumber];
-        book.Hebrew = BookInfos.Hebrew[bookNumber];
-        book.Transcription = BookInfos.Transcriptions.GetLang(bookNumber);
-        book.CommonName = BookInfos.Common.GetLang(bookNumber);
-        book.Translation = string.Empty;
-        book.Lettriq = string.Empty;
-        book.Memo = string.Empty;
+        book = new()
+        {
+          ID = Guid.NewGuid(),
+          Number = (int)bookNumber,
+          Unicode = BookInfos.Unicode[bookNumber],
+          Hebrew = BookInfos.Hebrew[bookNumber],
+          Transcription = BookInfos.Transcriptions.GetLang(bookNumber),
+          CommonName = BookInfos.Common.GetLang(bookNumber),
+          Translation = string.Empty,
+          Lettriq = string.Empty,
+          Memo = string.Empty
+        };
         Books.Add(book);
         int countChapters = 0;
         int countVerses = 0;
@@ -247,12 +249,14 @@ class ApplicationDatabase : SQLiteDatabase
           {
             if ( chapter is not null ) nextChapter();
             countVerses = 0;
-            chapter = new();
-            chapter.ID = Guid.NewGuid();
-            chapter.BookID = book.ID;
-            chapter.Number = ++countChapters;
-            chapter.Title = string.Empty;
-            chapter.Memo = string.Empty;
+            chapter = new()
+            {
+              ID = Guid.NewGuid(),
+              BookID = book.ID,
+              Number = ++countChapters,
+              Title = string.Empty,
+              Memo = string.Empty
+            };
           }
           else
           {
@@ -263,11 +267,13 @@ class ApplicationDatabase : SQLiteDatabase
             if ( list.Length == 2 )
             {
               countWords = 0;
-              verse = new();
-              verse.ID = Guid.NewGuid();
-              verse.ChapterID = chapter.ID;
-              verse.Number = ++countVerses;
-              verse.Comment = string.Empty;
+              verse = new()
+              {
+                ID = Guid.NewGuid(),
+                ChapterID = chapter.ID,
+                Number = ++countVerses,
+                Comment = string.Empty
+              };
               listWordsUnicode = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
               listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
               chapter.Verses.Add(verse);
@@ -282,13 +288,15 @@ class ApplicationDatabase : SQLiteDatabase
             {
               ref var wordHebrew = ref listWordsHebrew[i];
               if ( wordHebrew.Length == 0 ) continue;
-              word = new();
-              word.ID = Guid.NewGuid();
-              word.VerseID = verse.ID;
-              word.Number = ++countWords;
-              word.Unicode = new string(listWordsUnicode[i].Reverse().ToArray());
-              word.Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray());
-              word.Translation = string.Empty;
+              word = new()
+              {
+                ID = Guid.NewGuid(),
+                VerseID = verse.ID,
+                Number = ++countWords,
+                Unicode = new string(listWordsUnicode[i].Reverse().ToArray()),
+                Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray()),
+                Translation = string.Empty
+              };
               verse.Words.Add(word);
               Words.Add(word);
               strELS50 = wordHebrew + strELS50;
