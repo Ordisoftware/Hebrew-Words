@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -29,6 +29,9 @@ partial class MainForm
         foreach ( var reference in HistoryItems )
         {
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
+          // TODO improve display
+          item.Text += " - " + reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length));
           item.Tag = reference;
           item.Click += GoToHistory;
           item.ImageScaling = ToolStripItemImageScaling.None;

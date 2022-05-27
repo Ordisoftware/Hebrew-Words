@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -49,6 +49,9 @@ partial class MainForm
         }
       }
       ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
+      // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
+      // TODO improve display
+      ActionGoToBookmarkMain.Text += " - " + bookmarkMaster.Verse.Translation.Substring(0, Math.Min(150, bookmarkMaster.Verse.Translation.Length));
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
@@ -60,6 +63,9 @@ partial class MainForm
         foreach ( var reference in BookmarkItems )
         {
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          //if ( Settings.BookmarksAndHistoryShowVerse )
+          // TODO improve display
+          item.Text += " - " + reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length));
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;
