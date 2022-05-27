@@ -22,6 +22,20 @@ public partial class ReferenceItem
 
   const string Null = "(null)";
 
+  public bool HasParashah
+    => BooksBounds.Torah.IsIn(Book.Number);
+
+  public string ParashahName
+    => HasParashah
+       ? ParashotFactory.Instance.All.Single(p =>
+         {
+           // TODO optimize in constructor
+           var ref1 = new ReferenceItem(p.FullReferenceBegin);
+           var ref2 = new ReferenceItem(p.FullReferenceEnd);
+           return this >= ref1 && this <= ref2;
+         }).Name
+       : string.Empty;
+
   public override string ToString()
     => $"{Book?.Transcription ?? Null} {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
@@ -32,9 +46,11 @@ public partial class ReferenceItem
     => $"{Book?.Transcription ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
   public string ToStringBasedOnPrefs()
-    => Program.Settings.BookNameHebrewWithCommonName
-       ? ToStringFull()
-       : ToString();
+    => ( Program.Settings.BookNameHebrewWithCommonName ? ToStringFull() : ToString() ) +
+       ( // TODO option Program.Settings.ReferenceWithParashah ? 
+         HasParashah ? " [" + ParashahName + "]" : string.Empty )
+         //: string.Empty
+         ;
 
   public string ToStringFullWordIncluded()
     => $"{ToStringFull()}:{Word?.Number.ToString() ?? Null}";

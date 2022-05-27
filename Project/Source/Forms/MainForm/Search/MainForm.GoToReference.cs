@@ -112,8 +112,9 @@ partial class MainForm
     Settings.LastReferenceChapter = CurrentReference.Chapter.Number;
     Settings.LastReferenceVerse = CurrentReference.Verse.Number;
     Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Refresh();
     MoveVerseBindingSourceAndAddCurrentToHistory(isHistory);
-    updateSubTitle();
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
     IsGoToRunning = true;
     try
@@ -125,25 +126,6 @@ partial class MainForm
       IsGoToRunning = false;
     }
     UpdateHistoryButtons();
-    //
-    // Update sub title
-    //
-    void updateSubTitle()
-    {
-      LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
-      if ( BooksBounds.Torah.IsIn(CurrentReference.Book.Number) )
-      {
-        var parashah = ParashotFactory.Instance.All.SingleOrDefault(p =>
-        {
-          var ref1 = new ReferenceItem(p.FullReferenceBegin);
-          var ref2 = new ReferenceItem(p.FullReferenceEnd);
-          return CurrentReference >= ref1 && CurrentReference <= ref2;
-        });
-        if ( parashah is not null )
-          LabelTitleReferenceName.Text += " [" + parashah.Name.ToUpper() + "]";
-      }
-      LabelTitleReferenceName.Refresh();
-    }
     //
     // Check combo boxes
     // 
