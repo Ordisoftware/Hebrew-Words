@@ -839,7 +839,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser">
-      <Version>2.8.0</Version>
+      <Version>2.9.1</Version>
     </PackageReference>
     <PackageReference Include="DocX">
       <Version>[1.4.1]</Version>
@@ -902,7 +902,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>1.0.701</Version>
+      <Version>1.0.702</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
