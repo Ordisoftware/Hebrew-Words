@@ -19,11 +19,12 @@ using Xceed.Document.NET;
 static partial class ExportDocX
 {
 
-  static private Border TheBorder = new(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray);
+  static private readonly Border TheBorder = new(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Gray);
 
   /// <summary>
   /// Sets the MS Word document page properties like orientation and margins.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "<En attente>")]
   static private void SetPageProperties()
   {
     Document.PageLayout.Orientation = Program.Settings.ExportDocumentLandscape
@@ -52,12 +53,10 @@ static partial class ExportDocX
         AddTitle(( book.Transcription + " - " + book.Translation ).ToUpper(), FontCalibri, Heading1TextSizeSub, Heading1).Alignment = Alignment.center;
     Document.InsertParagraph();
     Document.InsertParagraph();
-    if ( withMemo && book.Memo.Length != 0 )
-    {
-      AddMemo(book.Memo);
-      Document.InsertParagraph();
-      Document.InsertParagraph();
-    }
+    if ( !withMemo || book.Memo.Length == 0 ) return;
+    AddMemo(book.Memo);
+    Document.InsertParagraph();
+    Document.InsertParagraph();
   }
 
   /// <summary>
@@ -71,12 +70,10 @@ static partial class ExportDocX
         AddTitle(chapter.Title, FontCalibri, Heading2TextSizeSub, Heading2);
     Document.InsertParagraph();
     Document.InsertParagraph();
-    if ( withMemo && chapter.Memo.Length != 0 )
-    {
-      AddMemo(chapter.Memo);
-      Document.InsertParagraph();
-      Document.InsertParagraph();
-    }
+    if ( !withMemo || chapter.Memo.Length == 0 ) return;
+    AddMemo(chapter.Memo);
+    Document.InsertParagraph();
+    Document.InsertParagraph();
   }
 
   /// <summary>

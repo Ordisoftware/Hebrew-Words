@@ -36,8 +36,8 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.ListView = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.columnHeader2 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuStripResults = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseTranslation = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAddTranslation = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +53,10 @@
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.EditWholeWord = new System.Windows.Forms.CheckBox();
       this.EditHebrew = new Ordisoftware.Core.TextBoxEx();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.ContextMenuStripResults.SuspendLayout();
@@ -133,10 +137,14 @@
       this.ContextMenuStripResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUseTranslation,
             this.ActionAddTranslation,
+            this.toolStripSeparator6,
+            this.ActionReachReference,
             this.toolStripSeparator2,
             this.ActionCopyTranslation,
             this.toolStripSeparator1,
-            this.ActionReachReference});
+            this.ActionShowTranscriptionGuide,
+            this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewLetters});
       this.ContextMenuStripResults.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripResults, "ContextMenuStripResults");
       // 
@@ -237,10 +245,35 @@
       // 
       resources.ApplyResources(this.EditHebrew, "EditHebrew");
       this.EditHebrew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditHebrew.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditHebrew.Name = "EditHebrew";
+      this.EditHebrew.SpellCheckAllowed = false;
       this.EditHebrew.TextChanged += new System.EventHandler(this.EditHebrew_TextChanged);
       this.EditHebrew.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditHebrew_KeyPress);
       this.EditHebrew.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditHebrew_KeyUp);
+      // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
+      // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // SearchTranslatedForm
       // 
@@ -290,5 +323,9 @@
     private System.Windows.Forms.ToolStripMenuItem ActionAddTranslation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.Label LabelHebrewWordSource;
+    private ToolStripSeparator toolStripSeparator6;
+    private ToolStripMenuItem ActionShowTranscriptionGuide;
+    private ToolStripMenuItem ActionShowGrammarGuide;
+    private ToolStripMenuItem ActionOpenHebrewLetters;
   }
 }

@@ -195,8 +195,8 @@
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDummyParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -1699,8 +1699,8 @@
             this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
-            this.ActionViewBibleStatistics,
             this.ActionOpenCalculator,
+            this.ActionViewBibleStatistics,
             this.toolStripSeparator1,
             this.ActionCopyToClipboard,
             this.ActionRefresh,
@@ -1717,16 +1717,16 @@
       this.ActionBooksBoard.Name = "ActionBooksBoard";
       this.ActionBooksBoard.Click += new System.EventHandler(this.ActionBooksBoard_Click);
       // 
-      // toolStripSeparator28
-      // 
-      this.toolStripSeparator28.Name = "toolStripSeparator28";
-      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
-      // 
       // ActionParashotBoard
       // 
       resources.ApplyResources(this.ActionParashotBoard, "ActionParashotBoard");
       this.ActionParashotBoard.Name = "ActionParashotBoard";
       this.ActionParashotBoard.Click += new System.EventHandler(this.ActionParashotBoard_Click);
+      // 
+      // toolStripSeparator28
+      // 
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // ActionGoToParashah
       // 

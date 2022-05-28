@@ -58,7 +58,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.35.5
+- SQLite 3.38.3
 
 ## Download
 
@@ -342,6 +342,7 @@ These options can be used to control the software when it is already running, bu
 - Improve setup to select hebrew font version.
 - Disable IPC intercom for non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
+- Serilog WinForms must remains at v2.3.1
 
 #### 2020.09.01 - Version 2.5
 

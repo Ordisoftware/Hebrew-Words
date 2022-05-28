@@ -312,18 +312,16 @@ static partial class Program
   /// </summary>
   static public void TextBox_UpdateSpellChecker(object sender, EventArgs e)
   {
-    return;
-
-    if ( SpellChecker is null ) return;
-    if ( sender is not TextBoxEx textbox ) return;
-    if ( !Globals.SpellCheckEnabled || !textbox.SpellCheckAllowed || textbox.ReadOnly )
-      SpellChecker.SetSpellCheckEnabled(textbox, false);
-    else
-    if ( Globals.SpellCheckEnabled && textbox.SpellCheckAllowed )
-    {
-      SpellChecker.SetSpellCheckEnabled(textbox, true);
-      textbox.Disposed += (_, _) => SpellChecker.SetSpellCheckEnabled(textbox, false);
-    }
+    //if ( SpellChecker is null ) return;
+    //if ( sender is not TextBoxEx textbox ) return;
+    //if ( !Globals.SpellCheckEnabled || !textbox.SpellCheckAllowed || textbox.ReadOnly )
+    //  SpellChecker.SetSpellCheckEnabled(textbox, false);
+    //else
+    //if ( Globals.SpellCheckEnabled && textbox.SpellCheckAllowed )
+    //{
+    //  SpellChecker.SetSpellCheckEnabled(textbox, true);
+    //  textbox.Disposed += (_, _) => SpellChecker.SetSpellCheckEnabled(textbox, false);
+    //}
   }
 
 }

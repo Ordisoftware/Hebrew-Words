@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable
+using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -11,7 +12,6 @@ namespace NHunspellExtender
 
   public partial class SpellCheckForm
   {
-
 
     #region Private variables
     private RichTextBox _originalRichTextBox;
@@ -54,7 +54,6 @@ namespace NHunspellExtender
 
     private bool _DisableConfirmationPrompt;
     #endregion
-
 
     #region New and Shown
 
@@ -114,7 +113,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
 
     #region Add Word to Dictionary
 
@@ -228,7 +226,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
 
     #region Ignore
 
@@ -354,7 +351,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
 
     #region Change Word
 
@@ -582,7 +578,6 @@ namespace NHunspellExtender
 
     #endregion
 
-
     #region Cancel
 
     private void cmdCancel_Click(object sender, EventArgs e)
@@ -591,7 +586,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
 
     #region Events
 
@@ -652,7 +646,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
 
     #region Other Subs and Functions
     public bool DisableConfirmationPrompt
@@ -954,3 +947,4 @@ namespace NHunspellExtender
 
   }
 }
+#pragma warning enable

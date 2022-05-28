@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SearchTranslatedForm : Form
@@ -278,14 +278,27 @@ partial class SearchTranslatedForm : Form
 
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
-    switch ( keyData )
+    if ( keyData == ( Keys.Alt | Keys.F8 ) )
     {
-      case Keys.F8:
-      case Keys.Alt | Keys.F8:
-        MainForm.Instance.ActionCloseTranslatedWindows.PerformClick();
-        return true;
+      MainForm.Instance.ActionCloseTranslatedWindows.PerformClick();
+      return true;
     }
     return base.ProcessCmdKey(ref msg, keyData);
+  }
+
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    Program.TranscriptionGuideForm.Popup();
+  }
+
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    Program.GrammarGuideForm.Popup();
+  }
+
+  private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewLetters(EditHebrew.Text);
   }
 
 }

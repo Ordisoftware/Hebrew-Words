@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using Microsoft.VisualBasic;
@@ -16,7 +17,6 @@ namespace NHunspellExtender
   public class SpellCheckControl
   {
 
-
     #region Variables
     private string FullText;
     private string[,] _Text;
@@ -29,20 +29,18 @@ namespace NHunspellExtender
     private bool _dontResetIgnoreRanges;
     #endregion
 
-
     #region New
     public SpellCheckControl(ref Hunspell NHunspellObject)
     {
       _Text = new string[2, 0];
-      _spellingErrors = new string[0];
+      _spellingErrors = Array.Empty<string>();
       FullText = "";
       myNHunspell = NHunspellObject;
       _setTextCalledFirst = false;
-      _ignoreRange = new CharacterRange[0];
+      _ignoreRange = Array.Empty<CharacterRange>();
       _dontResetIgnoreRanges = false;
     }
     #endregion
-
 
     #region Adding or Removing Text
     /// <summary>
@@ -71,7 +69,7 @@ namespace NHunspellExtender
       // If we are allowed to reset the ignore ranges, reset them
       if ( !_dontResetIgnoreRanges )
       {
-        _ignoreRange = new CharacterRange[0];
+        _ignoreRange = Array.Empty<CharacterRange>();
       }
 
       // Check if the input is a letter or digit and if not, see if it is splitting up
@@ -632,7 +630,7 @@ namespace NHunspellExtender
       // If we can reset the ignoreRanges, then do that
       if ( !_dontResetIgnoreRanges )
       {
-        _ignoreRange = new CharacterRange[0];
+        _ignoreRange = Array.Empty<CharacterRange>();
       }
 
 
@@ -641,7 +639,7 @@ namespace NHunspellExtender
       {
         FullText = "";
         _Text = new string[2, 0];
-        _spellingErrors = new string[0];
+        _spellingErrors = Array.Empty<string>();
         return;
       }
 
@@ -948,7 +946,7 @@ namespace NHunspellExtender
                       }
                       else
                       {
-                        _spellingErrors = new string[0];
+                        _spellingErrors = Array.Empty<string>();
                         resetSpellingRanges = true;
                       }
                       break;
@@ -995,7 +993,7 @@ namespace NHunspellExtender
                     }
                     else
                     {
-                      _spellingErrors = new string[0];
+                      _spellingErrors = Array.Empty<string>();
                       resetSpellingRanges = true;
                     }
                     break;
@@ -1057,7 +1055,7 @@ namespace NHunspellExtender
                   }
                   else
                   {
-                    _spellingErrors = new string[0];
+                    _spellingErrors = Array.Empty<string>();
                     resetSpellingRanges = true;
                   }
                   break;
@@ -1201,7 +1199,7 @@ namespace NHunspellExtender
       // If we can reset the ignore ranges, then do that
       if ( !_dontResetIgnoreRanges )
       {
-        _ignoreRange = new CharacterRange[0];
+        _ignoreRange = Array.Empty<CharacterRange>();
       }
 
       _setTextCalledFirst = true;
@@ -1212,8 +1210,8 @@ namespace NHunspellExtender
       int wordStart = 1;
       bool wordStarted = false;
       _Text = new string[2, 0];
-      _spellingErrors = new string[0];
-      _spellingErrorRanges = new CharacterRange[0];
+      _spellingErrors = Array.Empty<string>();
+      _spellingErrorRanges = Array.Empty<CharacterRange>();
 
       // set FullText
       FullText = Input;
@@ -1372,7 +1370,6 @@ namespace NHunspellExtender
 
     #endregion
 
-
     #region FindPositions
     /// <summary>
     /// Given a starting point, we're looking at the characters before it to find the
@@ -1449,7 +1446,6 @@ namespace NHunspellExtender
 
     #endregion
 
-
     #region Spelling Functions and Subs
     /// <summary>
     /// Add the range of a word to ignore.
@@ -1465,7 +1461,7 @@ namespace NHunspellExtender
 
     public void ClearIgnoreRanges()
     {
-      _ignoreRange = new CharacterRange[0];
+      _ignoreRange = Array.Empty<CharacterRange>();
     }
 
 
@@ -1515,7 +1511,7 @@ namespace NHunspellExtender
     {
       string[] suggestions;
       var NHunspellSugg = new List<string>();
-      suggestions = new string[0];
+      suggestions = Array.Empty<string>();
       NHunspellSugg = myNHunspell.Suggest(Word);
 
       for ( int i = 0, loopTo = NumberOfSuggestions - 1; i <= loopTo; i++ )
@@ -1608,7 +1604,7 @@ namespace NHunspellExtender
     /// <remarks></remarks>
     public void SetSpellingErrorRanges()
     {
-      _spellingErrorRanges = new CharacterRange[0];
+      _spellingErrorRanges = Array.Empty<CharacterRange>();
 
       if ( !HasSpellingErrors() )
         return;
@@ -1686,9 +1682,7 @@ namespace NHunspellExtender
       }
     }
 
-
     #endregion
-
 
     public void UpdateHunspell(ref Hunspell newHunspell)
     {
@@ -1697,3 +1691,4 @@ namespace NHunspellExtender
 
   }
 }
+#pragma warning enable

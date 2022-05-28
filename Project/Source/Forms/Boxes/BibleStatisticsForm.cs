@@ -14,6 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 partial class BibleStatisticsForm : Form
 {
 
@@ -221,7 +222,8 @@ partial class BibleStatisticsForm : Form
   private List<(string Key, int Count)> OccurencesLessFrequentTanak;
 
   [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
-  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void InitializeOccurences()
   {
     int max = BooksBounds.Torah.Max;
@@ -396,7 +398,7 @@ partial class BibleStatisticsForm : Form
     //
     void addControls(GroupBox group, string caption, string hebrew, int value, bool isHebrew = false)
     {
-      var linklabel = new LinkLabel()
+      var linklabel = new LinkLabel
       {
         LinkBehavior = LinkBehavior.HoverUnderline,
         TextAlign = ContentAlignment.TopLeft,
@@ -430,7 +432,7 @@ partial class BibleStatisticsForm : Form
             }
             MainForm.Instance.SearchHebrewWord(hebrew);
           };
-      var labelValue = new Label()
+      var labelValue = new Label
       {
         AutoSize = false,
         Size = new Size(50, 13),
