@@ -436,7 +436,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
+    Program.TranscriptionGuideForm.Popup();
   }
 
   /// <summary>
@@ -446,7 +446,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.GrammarGuideForm);
+    Program.GrammarGuideForm.Popup();
   }
 
   /// <summary>
@@ -768,8 +768,8 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    using var form = new NormalizeTextsForm();
-    if ( form.ShowDialog() != DialogResult.OK ) return;
+    //using var form = new NormalizeTextsForm();
+    //if ( form.ShowDialog() != DialogResult.OK ) return;
     // TODO normalize texts
   }
 
@@ -1537,24 +1537,24 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   private void ActionCountOccurencesTorah_Click(object sender, EventArgs e)
   {
-    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-    {
-      string str = controlWord.Reference?.Word?.Unicode;
-      int max = BooksBounds.Torah.Max;
-      var query = from book in ApplicationDatabase.Instance.Books
-                  from chapter in book.Chapters
-                  from verse in chapter.Verses
-                  from word in verse.Words
-                  where book.Number <= max
-                     && chapter.BookID == book.ID
-                     && verse.ChapterID == chapter.ID
-                     && word.VerseID == verse.ID
-                     && word.Unicode == str
-                  select word;
-      DisplayManager.Show($"Number of {str} occurrences in Torah is {query.Count()}");
-    }
+    if ( ActiveControl is not VerseControl controlVerse || controlVerse.ActiveControl is not WordControl controlWord )
+      return;
+    string str = controlWord.Reference?.Word?.Unicode;
+    int max = BooksBounds.Torah.Max;
+    var query = from book in ApplicationDatabase.Instance.Books
+                from chapter in book.Chapters
+                from verse in chapter.Verses
+                from word in verse.Words
+                where book.Number <= max
+                   && chapter.BookID == book.ID
+                   && verse.ChapterID == chapter.ID
+                   && word.VerseID == verse.ID
+                   && word.Unicode == str
+                select word;
+    DisplayManager.Show($"Number of {str} occurrences in Torah is {query.Count()}");
   }
 
   /// <summary>
@@ -1562,22 +1562,22 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   private void ActionCountOccurencesTanak_Click(object sender, EventArgs e)
   {
-    if ( ActiveControl is VerseControl controlVerse && controlVerse.ActiveControl is WordControl controlWord )
-    {
-      string str = controlWord.Reference?.Word?.Unicode;
-      var query = from book in ApplicationDatabase.Instance.Books
-                  from chapter in book.Chapters
-                  from verse in chapter.Verses
-                  from word in verse.Words
-                  where chapter.BookID == book.ID
-                     && verse.ChapterID == chapter.ID
-                     && word.VerseID == verse.ID
-                     && word.Unicode == str
-                  select word;
-      DisplayManager.Show($"Number of {str} occurrences in Tanak is {query.Count()}");
-    }
+    if ( ActiveControl is not VerseControl controlVerse || controlVerse.ActiveControl is not WordControl controlWord )
+      return;
+    string str = controlWord.Reference?.Word?.Unicode;
+    var query = from book in ApplicationDatabase.Instance.Books
+                from chapter in book.Chapters
+                from verse in chapter.Verses
+                from word in verse.Words
+                where chapter.BookID == book.ID
+                   && verse.ChapterID == chapter.ID
+                   && word.VerseID == verse.ID
+                   && word.Unicode == str
+                select word;
+    DisplayManager.Show($"Number of {str} occurrences in Tanak is {query.Count()}");
   }
 
   #endregion

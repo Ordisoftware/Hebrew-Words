@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -79,3 +80,4 @@ namespace NHunspellExtender
     }
   }
 }
+#pragma warning enable

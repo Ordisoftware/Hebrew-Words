@@ -48,10 +48,9 @@ partial class EditBooksForm : Form
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == ColumnTranslation.Index || e.ColumnIndex == ColumnLettriq.Index )
-      if ( e.Value is null || e.Value == DBNull.Value )
-        e.Value = string.Empty;
-      else
-        e.Value = ( (string)e.Value ).Trim();
+      e.Value = e.Value is null || e.Value == DBNull.Value
+        ? string.Empty
+        : (object)( (string)e.Value ).Trim();
   }
 
   private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -141,7 +140,7 @@ partial class EditBooksForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.GrammarGuideForm);
+    Program.GrammarGuideForm.Popup();
   }
 
 }

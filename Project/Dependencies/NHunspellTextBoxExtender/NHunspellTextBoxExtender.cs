@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable
+using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
@@ -22,7 +23,6 @@ namespace NHunspellExtender
   {
 
     // Private Const MessageLogPath As String = "D:\Messagelog6.txt"
-
 
     #region Private Classes
 
@@ -143,7 +143,7 @@ namespace NHunspellExtender
         // Now, find out if any of the spelling errors are within the visible part of the textbox
         var CharRanges = mySpellCheckControl.GetSpellingErrorRanges();
         CharacterRange[] visibleRanges;
-        visibleRanges = new CharacterRange[0];
+        visibleRanges = Array.Empty<CharacterRange>();
 
         // First get the ranges of characters visible in the textbox
         var startPoint = new Point(0, 0);
@@ -482,7 +482,6 @@ namespace NHunspellExtender
 
 
     #endregion
-
 
     //public byte[] CurrentLangAff = My.Resources.Resources.fr_FR;
     //public byte[] CurrentLangDic = My.Resources.Resources.fr_FR_dic;
@@ -1025,7 +1024,7 @@ namespace NHunspellExtender
     // End Function
     public static Assembly MyResolveEventHandler(object sender, ResolveEventArgs args)
     {
-      for ( int i = 0, loopTo = AppDomain.CurrentDomain.GetAssemblies().Count() - 1; i <= loopTo; i++ )
+      for ( int i = 0, loopTo = AppDomain.CurrentDomain.GetAssemblies().Length - 1; i <= loopTo; i++ )
       {
         MessageBox.Show(args.Name + Constants.vbNewLine + AppDomain.CurrentDomain.GetAssemblies()[i].GetName().Name);
 
@@ -1039,9 +1038,6 @@ namespace NHunspellExtender
     }
 
     #endregion
-
-
-
 
     #region Enable/Disable
 
@@ -1135,21 +1131,12 @@ namespace NHunspellExtender
     //  TextBoxToDisable.Invalidate();
     //}
 
-
-
-
     public bool IsEnabled(ref TextBoxBase TextBoxBaseToCheck)
     {
       return Conversions.ToBoolean(controlEnabled[TextBoxBaseToCheck]);
     }
 
-
-
-
     #endregion
-
-
-
 
     #region Provided Properties
 
@@ -2141,7 +2128,7 @@ namespace NHunspellExtender
 
       // Get the suggestions
       string[] suggestions;
-      suggestions = new string[0];
+      suggestions = Array.Empty<string>();
       string misspelledWord;
       {
         var withBlock2 = (SpellCheckControl)mySpellCheckers[ownerTextBox];
@@ -3207,8 +3194,8 @@ namespace NHunspellExtender
       }
     }
 
-
     #endregion
 
   }
 }
+#pragma warning enable

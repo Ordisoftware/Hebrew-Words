@@ -16,6 +16,7 @@ namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
 {
+  private const int BookmarkMinWidth = 150;
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   private void UpdateBookmarks()
@@ -51,7 +52,11 @@ partial class MainForm
       ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
       // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
       // TODO improve display
-      ActionGoToBookmarkMain.Text += " - " + bookmarkMaster.Verse.Translation.Substring(0, Math.Min(150, bookmarkMaster.Verse.Translation.Length));
+      string verseText = bookmarkMaster.Verse
+                                       .Translation
+                                       .Substring(0, Math.Min(BookmarkMinWidth,
+                                                              bookmarkMaster.Verse.Translation.Length));
+      ActionGoToBookmarkMain.Text += $" - {verseText}";
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
@@ -65,7 +70,7 @@ partial class MainForm
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           //if ( Settings.BookmarksAndHistoryShowVerse )
           // TODO improve display
-          item.Text += " - " + reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length));
+          item.Text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;

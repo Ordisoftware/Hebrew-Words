@@ -34,6 +34,7 @@ class ApplicationDatabase : SQLiteDatabase
   static public void Restart()
   {
     Instance?.Close();
+    Instance?.Dispose();
     Instance = new ApplicationDatabase();
   }
 
@@ -41,7 +42,6 @@ class ApplicationDatabase : SQLiteDatabase
   public List<ChapterRow> Chapters { get; private set; } = new();
   public List<VerseRow> Verses { get; private set; } = new();
   public List<WordRow> Words { get; private set; } = new();
-
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }

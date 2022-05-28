@@ -54,14 +54,16 @@ partial class MainForm
         if ( Globals.CancelRequired ) { Globals.CancelRequired = false; break; }
         xpos = maxX;
         ypos += marginY;
-        linklabel = new();
-        linklabel.AutoSize = true;
-        linklabel.Tag = reference;
-        linklabel.Font = LatinFont8;
-        linklabel.Text = reference.ToString();
-        linklabel.Location = new Point(xpos -= referenceSize, ypos);
-        linklabel.ContextMenuStrip = ContextMenuStripVerse;
-        linklabel.LinkColor = Color.DarkBlue;
+        linklabel = new()
+        {
+          AutoSize = true,
+          Tag = reference,
+          Font = LatinFont8,
+          Text = reference.ToString(),
+          Location = new Point(xpos -= referenceSize, ypos),
+          ContextMenuStrip = ContextMenuStripVerse,
+          LinkColor = Color.DarkBlue
+        };
         linklabel.LinkClicked += (sender, e) =>
         {
           if ( e.Button == MouseButtons.Left )

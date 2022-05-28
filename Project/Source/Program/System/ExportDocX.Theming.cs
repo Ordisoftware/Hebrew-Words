@@ -31,8 +31,8 @@ static partial class ExportDocX
   static private readonly Font FontHebrew = new("Hebrew");
   static private readonly Font FontCalibri = new("Calibri");
 
-  static private readonly string Heading1 = "Heading1";
-  static private readonly string Heading2 = "Heading2";
+  private const string Heading1 = "Heading1";
+  private const string Heading2 = "Heading2";
 
   static private int MemoCellMargin => Settings.ExportDocumentTheme switch
   {

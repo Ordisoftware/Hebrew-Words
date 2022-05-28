@@ -31,7 +31,7 @@ partial class MainForm
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
           // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
           // TODO improve display
-          item.Text += " - " + reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length));
+          item.Text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
           item.Tag = reference;
           item.Click += GoToHistory;
           item.ImageScaling = ToolStripItemImageScaling.None;
