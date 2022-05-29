@@ -71,11 +71,7 @@
       this.GroupBoxMostFrequentWordsTorah = new System.Windows.Forms.GroupBox();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
-      this.tabPage3 = new System.Windows.Forms.TabPage();
-      this.GroupBoxLessFrequentWordsTorah = new System.Windows.Forms.GroupBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.tabPage4 = new System.Windows.Forms.TabPage();
-      this.GroupBoxLessFrequentWordsTanak = new System.Windows.Forms.GroupBox();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
@@ -85,9 +81,7 @@
       this.groupBox1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
-      this.tabPage3.SuspendLayout();
       this.tabPage2.SuspendLayout();
-      this.tabPage4.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -365,9 +359,7 @@
       // 
       resources.ApplyResources(this.tabControl1, "tabControl1");
       this.tabControl1.Controls.Add(this.tabPage1);
-      this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Controls.Add(this.tabPage2);
-      this.tabControl1.Controls.Add(this.tabPage4);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       // 
@@ -378,38 +370,12 @@
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.UseVisualStyleBackColor = true;
       // 
-      // tabPage3
-      // 
-      this.tabPage3.Controls.Add(this.GroupBoxLessFrequentWordsTorah);
-      resources.ApplyResources(this.tabPage3, "tabPage3");
-      this.tabPage3.Name = "tabPage3";
-      this.tabPage3.UseVisualStyleBackColor = true;
-      // 
-      // GroupBoxLessFrequentWordsTorah
-      // 
-      resources.ApplyResources(this.GroupBoxLessFrequentWordsTorah, "GroupBoxLessFrequentWordsTorah");
-      this.GroupBoxLessFrequentWordsTorah.Name = "GroupBoxLessFrequentWordsTorah";
-      this.GroupBoxLessFrequentWordsTorah.TabStop = false;
-      // 
       // tabPage2
       // 
       this.tabPage2.Controls.Add(this.GroupBoxMostFrequentWordsTanak);
       resources.ApplyResources(this.tabPage2, "tabPage2");
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // tabPage4
-      // 
-      this.tabPage4.Controls.Add(this.GroupBoxLessFrequentWordsTanak);
-      resources.ApplyResources(this.tabPage4, "tabPage4");
-      this.tabPage4.Name = "tabPage4";
-      this.tabPage4.UseVisualStyleBackColor = true;
-      // 
-      // GroupBoxLessFrequentWordsTanak
-      // 
-      resources.ApplyResources(this.GroupBoxLessFrequentWordsTanak, "GroupBoxLessFrequentWordsTanak");
-      this.GroupBoxLessFrequentWordsTanak.Name = "GroupBoxLessFrequentWordsTanak";
-      this.GroupBoxLessFrequentWordsTanak.TabStop = false;
       // 
       // BibleStatisticsForm
       // 
@@ -442,9 +408,7 @@
       this.groupBox1.PerformLayout();
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
-      this.tabPage3.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
-      this.tabPage4.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -482,10 +446,6 @@
     private TabControl tabControl1;
     private TabPage tabPage1;
     private TabPage tabPage2;
-    private TabPage tabPage3;
-    private TabPage tabPage4;
-    private GroupBox GroupBoxLessFrequentWordsTorah;
-    private GroupBox GroupBoxLessFrequentWordsTanak;
     internal ContextMenuStrip ContextMenuStripWord;
     private ToolStripMenuItem ActionWordSearchDefault;
     private ToolStripMenuItem ActionWordSearchOnline;
