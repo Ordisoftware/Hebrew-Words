@@ -149,7 +149,7 @@
     <value>Verset :</value>
   </data>
   <data name="GroupBoxOccurencesTorah.Text" xml:space="preserve">
-    <value>Occurences de la Torah</value>
+    <value>Occurences de la Torah *</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -159,7 +159,7 @@
     <value>Statistiques au sujet de la Torah et du Tanak</value>
   </data>
   <data name="GroupBoxOccurencesAll.Text" xml:space="preserve">
-    <value>Occurences du Tanak</value>
+    <value>Occurences du Tanak *</value>
   </data>
   <data name="LabelInfoOccurences.Text" xml:space="preserve">
     <value>* Ceci n'est qu'une approximation basée sur les mots contenant la partie principale du terme spécifique</value>

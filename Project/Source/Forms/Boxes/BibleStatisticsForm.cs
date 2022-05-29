@@ -244,6 +244,11 @@ partial class BibleStatisticsForm : Form
     addCountOne("Abraham", "mhrba", s => s.Contains("mhrba"));
     addCountOne("Mosheh", "h>m", s => s.Contains("h>m"));
     addCountOne("Aharon", "nrha", s => s.Contains("nrha"));
+    //"Sarai"
+    //"Sarah"
+    //addCountOne("Salomon", ""
+    //addCountOne("David", ""
+    //addCountOne("Yeroushalayim" "myl>vry"
     addCountOne("Mitsvah", "vjm", s => s.Contains("hvjm") || s.Contains("tvjm"));
     addCountOne("Shalom", "mvl>", s => s.Contains("mvl>"));
     addCountOne("ʿIbrai", "yrbi", s => s.Contains("yrbi"));
@@ -255,8 +260,6 @@ partial class BibleStatisticsForm : Form
     // Most frequent words Tanak
     addMostTorah();
     addMostTanak();
-    addLessTorah();
-    addLessTanak();
     //
     void addMostOrLess(Action createQuery, ref List<(string Key, int Count)> result, GroupBox groupbox)
     {
@@ -320,54 +323,6 @@ partial class BibleStatisticsForm : Form
       },
       ref OccurencesMostFrequentTanak,
       GroupBoxMostFrequentWordsTanak);
-    }
-    //
-    // TODO test
-    void addLessTorah()
-    {
-      addMostOrLess(() =>
-      {
-        var query = from book in ApplicationDatabase.Instance.Books
-                    from chapter in book.Chapters
-                    from verse in chapter.Verses
-                    from word in verse.Words
-                    where book.Number <= max
-                       && chapter.BookID == book.ID
-                       && verse.ChapterID == chapter.ID
-                       && word.VerseID == verse.ID
-                    group word by word.Hebrew into grouping
-                    select new
-                    {
-                      grouping.Key,
-                      Count = grouping.Count()
-                    };
-        OccurencesLessFrequentTorah = query.OrderBy(item => item.Count)
-                                           .Take(40)
-                                           .Select(item => (item.Key, item.Count))
-                                           .ToList();
-      },
-      ref OccurencesLessFrequentTorah,
-      GroupBoxLessFrequentWordsTorah);
-    }
-    //
-    void addLessTanak()
-    {
-      addMostOrLess(() =>
-      {
-        var query = from word in ApplicationDatabase.Instance.Words
-                    group word by word.Hebrew into grouping
-                    select new
-                    {
-                      grouping.Key,
-                      Count = grouping.Count()
-                    };
-        OccurencesLessFrequentTanak = query.OrderBy(item => item.Count)
-                                           .Take(40)
-                                           .Select(item => (item.Key, item.Count))
-                                           .ToList();
-      },
-      ref OccurencesLessFrequentTanak,
-      GroupBoxLessFrequentWordsTanak);
     }
     //
     void addCountOne(string caption, string hebrew, Func<string, bool> check)
