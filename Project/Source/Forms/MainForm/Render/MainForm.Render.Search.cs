@@ -78,10 +78,12 @@ partial class MainForm
         Label label = null;
         foreach ( var word in reference.Verse.Words )
         {
-          label = new();
-          label.AutoSize = true;
-          label.Font = HebrewFont12;
-          label.Text = word.Hebrew.Trim();
+          label = new()
+          {
+            AutoSize = true,
+            Font = HebrewFont12,
+            Text = word.Hebrew.Trim()
+          };
           xpos -= label.PreferredSize.Width;
           if ( xpos < minX )
           {
@@ -105,8 +107,7 @@ partial class MainForm
         }
         ypos += label.PreferredHeight + marginY;
         if ( !reference.Verse.HasTranslation ) continue;
-        label = new();
-        label.AutoSize = true;
+        label = new() { AutoSize = true };
         label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
         label.Text = reference.Verse.Translation;
         label.Location = new Point(xx - label.PreferredSize.Width, ypos);

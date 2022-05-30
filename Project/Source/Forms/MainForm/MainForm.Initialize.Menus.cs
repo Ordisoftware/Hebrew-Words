@@ -92,6 +92,7 @@ partial class MainForm : Form
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "Analysis error")]
   [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+  [SuppressMessage("Style", "IDE0017:Simplifier l'initialisation des objets", Justification = "Opinion")]
   private void InitializeGoToParashahMenu()
   {
     foreach ( var book in ParashotFactory.Instance.Items.Keys )
