@@ -218,8 +218,6 @@ partial class BibleStatisticsForm : Form
 
   private List<(string Key, int Count)> OccurencesMostFrequentTorah;
   private List<(string Key, int Count)> OccurencesMostFrequentTanak;
-  private List<(string Key, int Count)> OccurencesLessFrequentTorah;
-  private List<(string Key, int Count)> OccurencesLessFrequentTanak;
 
   [SuppressMessage("Performance", "U2U1208:Do not call LINQ methods whose effect is undone by subsequent methods", Justification = "N/A")]
   [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
