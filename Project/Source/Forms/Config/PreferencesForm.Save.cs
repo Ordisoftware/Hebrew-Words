@@ -82,6 +82,7 @@ partial class PreferencesForm
     Settings.ExportDocumentVerseRefInBold = EditExportDocumentVerseRefInBold.Checked;
     Settings.WordControlTabInverted = EditWordControlTabInverted.Checked;
     Settings.SpellCheckEnabled = EditSpellCheckEnabled.Checked;
+    Settings.SystemStatisticsCalculateDbSize = EditSystemStatisticsCalculateDbSize.Checked;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

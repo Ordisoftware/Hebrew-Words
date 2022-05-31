@@ -1918,5 +1918,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SpellCheckEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SystemStatisticsCalculateDbSize {
+            get {
+                return ((bool)(this["SystemStatisticsCalculateDbSize"]));
+            }
+            set {
+                this["SystemStatisticsCalculateDbSize"] = value;
+            }
+        }
     }
 }

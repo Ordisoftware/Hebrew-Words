@@ -247,6 +247,7 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditSystemStatisticsCalculateDbSize = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -811,6 +812,7 @@
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditTrayIconEnabled);
+      this.TabPageApplication.Controls.Add(this.EditSystemStatisticsCalculateDbSize);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
@@ -2064,6 +2066,13 @@
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
       // 
+      // EditSystemStatisticsCalculateDbSize
+      // 
+      resources.ApplyResources(this.EditSystemStatisticsCalculateDbSize, "EditSystemStatisticsCalculateDbSize");
+      this.EditSystemStatisticsCalculateDbSize.Name = "EditSystemStatisticsCalculateDbSize";
+      this.EditSystemStatisticsCalculateDbSize.UseVisualStyleBackColor = true;
+      this.EditSystemStatisticsCalculateDbSize.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2346,5 +2355,6 @@
     private CheckBox EditSpellCheckEnabled;
     private CheckBox EditWordControlTabInverted;
     private CheckBox EditTrayIconEnabled;
+    private CheckBox EditSystemStatisticsCalculateDbSize;
   }
 }
