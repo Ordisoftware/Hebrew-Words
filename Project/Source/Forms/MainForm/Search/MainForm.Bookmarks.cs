@@ -67,10 +67,11 @@ partial class MainForm
       {
         foreach ( var reference in BookmarkItems )
         {
-          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          string text = reference.ToStringBasedOnPrefs();
           //if ( Settings.BookmarksAndHistoryShowVerse )
           // TODO improve display
-          item.Text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
+          text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
+          var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(text);
           item.Tag = reference;
           item.Click += GoToBookmark;
           item.MouseUp += bookmarkClicked;

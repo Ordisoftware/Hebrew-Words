@@ -33,9 +33,9 @@ static partial class ExportDocX
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static private bool WithHebrew
-    => Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslation
-    && Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslationWithComment;
+  //static private bool WithHebrew
+  //  => Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslation
+  //  && Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslationWithComment;
 
   static private bool WithTranslation
     => Settings.ExportDocumentModel != ExportDocumentModel.OnlyHebrew
