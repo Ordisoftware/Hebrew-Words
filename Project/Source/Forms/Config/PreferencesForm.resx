@@ -2191,7 +2191,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSearchHebrewCharsInBold.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 210</value>
+    <value>23, 230</value>
   </data>
   <data name="EditSearchHebrewCharsInBold.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 17</value>
@@ -2407,7 +2407,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 160</value>
+    <value>23, 180</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -2437,7 +2437,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 190</value>
+    <value>23, 210</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 17</value>
@@ -2467,7 +2467,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 140</value>
+    <value>23, 160</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -2527,7 +2527,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTrayIconEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 240</value>
+    <value>23, 260</value>
   </data>
   <data name="EditTrayIconEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 17</value>
@@ -2549,6 +2549,36 @@
   </data>
   <data name="&gt;&gt;EditTrayIconEnabled.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 130</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.Text" xml:space="preserve">
+    <value>Calculate database size</value>
+  </data>
+  <data name="&gt;&gt;EditSystemStatisticsCalculateDbSize.Name" xml:space="preserve">
+    <value>EditSystemStatisticsCalculateDbSize</value>
+  </data>
+  <data name="&gt;&gt;EditSystemStatisticsCalculateDbSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSystemStatisticsCalculateDbSize.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditSystemStatisticsCalculateDbSize.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2578,7 +2608,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2608,7 +2638,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>

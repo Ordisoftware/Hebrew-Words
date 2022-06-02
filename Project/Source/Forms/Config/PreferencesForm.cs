@@ -182,6 +182,7 @@ partial class PreferencesForm : Form
 
   private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
   {
+    EditSystemStatisticsCalculateDbSize.Enabled = EditUsageStatisticsEnabled.Checked;
     CommonMenusControl.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
     AboutBox.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
     StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;

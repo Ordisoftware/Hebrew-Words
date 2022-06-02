@@ -28,10 +28,11 @@ partial class MainForm
       {
         foreach ( var reference in HistoryItems )
         {
-          var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(reference.ToStringBasedOnPrefs());
+          string text = reference.ToStringBasedOnPrefs();
           // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
           // TODO improve display
-          item.Text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
+          text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
+          var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(text);
           item.Tag = reference;
           item.Click += GoToHistory;
           item.ImageScaling = ToolStripItemImageScaling.None;

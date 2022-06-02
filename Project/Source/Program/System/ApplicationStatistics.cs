@@ -65,7 +65,7 @@ class ApplicationStatistics
   {
     get
     {
-      if ( UpdateDBMemorySizeRequired )
+      if ( Program.Settings.SystemStatisticsCalculateDbSize && UpdateDBMemorySizeRequired )
         try
         {
           LoadingForm.Instance.Initialize(SysTranslations.CalcutalingDataMemorySize.GetLang(), 4, quantify: false);
@@ -91,7 +91,7 @@ class ApplicationStatistics
       return _DBMemorySize;
     }
   }
-  static private string _DBMemorySize;
+  static private string _DBMemorySize = "-";
   static internal bool UpdateDBMemorySizeRequired { get; set; } = true;
 
   public string DBCommonFileSize

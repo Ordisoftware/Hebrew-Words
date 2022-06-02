@@ -81,6 +81,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditExportDocumentVerseRefInBold.Checked = Settings.ExportDocumentVerseRefInBold);
     SystemManager.TryCatch(() => EditWordControlTabInverted.Checked = Settings.WordControlTabInverted);
     SystemManager.TryCatch(() => EditSpellCheckEnabled.Checked = Settings.SpellCheckEnabled);
+    SystemManager.TryCatch(() => EditSystemStatisticsCalculateDbSize.Checked = Settings.SystemStatisticsCalculateDbSize);
     LoadColors();
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
