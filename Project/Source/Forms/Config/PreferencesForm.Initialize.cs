@@ -55,7 +55,7 @@ partial class PreferencesForm
     ActionResetSettings.TabStop = false;
     IsReady = true;
     // TODO remove when ready
-    if ( Globals.IsDebugExecutable )
+    if ( ApplicationCommandLine.Instance.IsPreviewEnabled )
     {
       SelectExportDocumentModel.Items.RemoveAt(4); // Hebrew
       SelectExportDocumentModel.Items.RemoveAt(4); // HebrewWithComment
