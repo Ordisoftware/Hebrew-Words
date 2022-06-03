@@ -177,16 +177,8 @@ static partial class Program
   /// </summary>
   static private void IPCSendCommands()
   {
-    var cmd = ApplicationCommandLine.Instance;
-    if ( cmd is null ) return;
-    if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
-    if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
-
-    // TODO check that that is not conform
-
-    if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend($"--verse {cmd.ReferenceToGo}");
-    if ( !cmd.SearchWord.IsNullOrEmpty() ) SystemManager.IPCSend($"--word {cmd.SearchWord}");
-    if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend($"--translated {cmd.SearchTranslated}");
+    if ( SystemManager.CommandLineArguments.Count > 0 )
+      SystemManager.IPCSend(SystemManager.CommandLineArguments.AsMultiLine());
   }
 
   /// <summary>
