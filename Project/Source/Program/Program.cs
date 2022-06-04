@@ -38,7 +38,6 @@ static partial class Program
       Globals.AlternativeToURL = "";
       var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-      SystemManager.IPCSendCommands = IPCSendCommands;
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Globals.IsSettingsUpgraded = upgrade;
@@ -170,23 +169,6 @@ static partial class Program
       server.Close();
       SystemManager.CreateIPCServer(IPCRequests);
     }
-  }
-
-  /// <summary>
-  /// Sends IPC commands.
-  /// </summary>
-  static private void IPCSendCommands()
-  {
-    var cmd = ApplicationCommandLine.Instance;
-    if ( cmd is null ) return;
-    if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
-    if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
-
-    // TODO check that that is not conform
-
-    if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) SystemManager.IPCSend($"--verse {cmd.ReferenceToGo}");
-    if ( !cmd.SearchWord.IsNullOrEmpty() ) SystemManager.IPCSend($"--word {cmd.SearchWord}");
-    if ( !cmd.SearchTranslated.IsNullOrEmpty() ) SystemManager.IPCSend($"--translated {cmd.SearchTranslated}");
   }
 
   /// <summary>
