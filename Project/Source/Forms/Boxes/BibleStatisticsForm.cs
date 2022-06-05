@@ -242,8 +242,8 @@ partial class BibleStatisticsForm : Form
     addCountOne("Abraham", "mhrba", s => s.Contains("mhrba"));
     addCountOne("Mosheh", "h>m", s => s.Contains("h>m"));
     addCountOne("Aharon", "nrha", s => s.Contains("nrha"));
-    //"Sarai"
-    //"Sarah"
+    //"Sharaï"
+    //"Sharah"
     //addCountOne("Salomon", ""
     //addCountOne("David", ""
     //addCountOne("Yeroushalayim" "myl>vry"
