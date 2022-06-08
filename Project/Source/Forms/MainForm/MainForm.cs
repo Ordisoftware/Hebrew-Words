@@ -266,6 +266,7 @@ partial class MainForm : Form
         CreateFilterDataSource();
         SelectSearchInBook.DataSource = new BindingList<BookRow>(ApplicationDatabase.Instance.Books);
         UpdateCurrentReference();
+        // TODO reconstruct search query
         RenderAll(true);
         VerseControl.ResetMetricsRequired = true;
         WordControl.ResetMetricsRequired = true;
