@@ -268,23 +268,23 @@ static partial class Program
   /// <summary>
   /// Indicates spell checker for TextBoxEx.
   /// </summary>
-  static private NHunspellExtender.NHunspellTextBoxExtender SpellChecker;
+  //static private NHunspellExtender.NHunspellTextBoxExtender SpellChecker;
 
   /// <summary>
   /// Creates or update the spell checker to display context menu items.
   /// </summary>
   static public void TextBox_Relocalized()
   {
-    if ( Globals.IsVisualStudioDesigner ) return;
-    if ( SpellChecker is not null )
-    {
-      TextBoxEx.ContextMenuEdit.Opening -= SpellChecker.ContextMenu_Opening;
-      TextBoxEx.ContextMenuEdit.Closed -= SpellChecker.ContextMenu_Closed;
-      SpellChecker.controlEnabled.Clear();
-    }
-    SpellChecker = new();
-    TextBoxEx.ContextMenuEdit.Opening += SpellChecker.ContextMenu_Opening;
-    TextBoxEx.ContextMenuEdit.Closed += SpellChecker.ContextMenu_Closed;
+    //if ( Globals.IsVisualStudioDesigner ) return;
+    //if ( SpellChecker is not null )
+    //{
+    //  TextBoxEx.ContextMenuEdit.Opening -= SpellChecker.ContextMenu_Opening;
+    //  TextBoxEx.ContextMenuEdit.Closed -= SpellChecker.ContextMenu_Closed;
+    //  SpellChecker.controlEnabled.Clear();
+    //}
+    //SpellChecker = new();
+    //TextBoxEx.ContextMenuEdit.Opening += SpellChecker.ContextMenu_Opening;
+    //TextBoxEx.ContextMenuEdit.Closed += SpellChecker.ContextMenu_Closed;
   }
 
   /// <summary>

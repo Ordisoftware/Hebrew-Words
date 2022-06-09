@@ -86,22 +86,6 @@
     <Compile Include="Dependencies\Meziantou.AccessToken\TokenPrivilegeEntry.cs" />
     <Compile Include="Dependencies\Meziantou.AccessToken\TokenType.cs" />
     <Compile Include="Dependencies\Meziantou.AccessToken\WellKnownSidType.cs" />
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\MyDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\MyDialog.Designer.cs">
-      <DependentUpon>MyDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\NHunspellTextBoxExtender.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\SpellCheckControl.cs" />
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\SpellCheckForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dependencies\NHunspellTextBoxExtender\SpellCheckForm.Designer.cs">
-      <DependentUpon>SpellCheckForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\Hotkey.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyAction.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyEventArgs.cs" />
@@ -604,12 +588,6 @@
     <Compile Include="Source\Forms\Boxes\SearchTranslatedForm.Designer.cs">
       <DependentUpon>SearchTranslatedForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dependencies\NHunspellTextBoxExtender\MyDialog.resx">
-      <DependentUpon>MyDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dependencies\NHunspellTextBoxExtender\SpellCheckForm.resx">
-      <DependentUpon>SpellCheckForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinControls\ComboBoxNavigator.resx">
       <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
     </EmbeddedResource>
@@ -922,8 +900,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dependencies\NHunspellTextBoxExtender\Source\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
