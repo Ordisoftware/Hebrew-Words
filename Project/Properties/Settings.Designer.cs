@@ -1930,5 +1930,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SystemStatisticsCalculateDbSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PreviewModeNotified {
+            get {
+                return ((bool)(this["PreviewModeNotified"]));
+            }
+            set {
+                this["PreviewModeNotified"] = value;
+            }
+        }
     }
 }
