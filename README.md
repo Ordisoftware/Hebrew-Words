@@ -25,10 +25,12 @@ A libre and open-source software written in C# that helps for the literal word-f
 4. [Download](#download)
 5. [Screenshots](#screenshots)
 6. [Videos](#videos)
-7. [Frequently asked questions](#frequently-asked-questions)
-8. [Keyboard shortcuts](#keyboard-shortcuts)
-9. [Future improvements](#future-improvements)
-10. [Changelog](#changelog)
+7. [System FAQ](#system-frequently-asked-questions)
+8. [Application FAQ](#application-frequently-asked-questions)
+9. [Command-line options](#command-line-options)
+10. [Keyboard shortcuts](#keyboard-shortcuts)
+11. [Future improvements](#future-improvements)
+12. [Changelog](#changelog)
 
 ## Functionalities
 
@@ -101,7 +103,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 [![Showing video](https://img.youtube.com/vi/2c5JAdFU1Kk/mqdefault.jpg)](https://www.youtube.com/watch?v=2c5JAdFU1Kk)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/Wc5SdiASvCg/mqdefault.jpg)](https://www.youtube.com/watch?v=Wc5SdiASvCg)
 
-## Frequently asked questions
+## System Frequently asked questions
 
 #### What code analyzers are used in addition to Visual Studio?
 
@@ -133,6 +135,8 @@ When disabled, top menu and some controls painting may cause latency, and dynami
 
 The refresh view button of the menu at the top redraws the entire form.
 
+## Application Frequently asked questions
+
 #### Why all verses of a chapter are not rendered?
 
 Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100 to 150 verses cannot be fully rendered.
@@ -145,7 +149,7 @@ Yes, because implementing features requires a lot of Windows resources that depe
 
 In this case, one verse at a time should be used.
 
-#### What are command-line options?
+## Command-line options
 
 - Change interface language (does not change the database):
 
