@@ -151,9 +151,13 @@ In this case, one verse at a time should be used.
 
 ## Command-line options
 
-- Change interface language (does not change the database):
+- Change interface language (does not change the database content):
 
   `Ordisoftware.Hebrew.Words.exe --lang [en|fr]`
+
+- Enable or disable future functionnalities preview:
+
+  `Ordisoftware.Hebrew.Calendar.exe --withpreview | --nopreview`
 
 - Go to a reference like "1.1.1" or "bereshit 1.1" or "genesis/genèse 1.1":
 
@@ -172,6 +176,26 @@ In this case, one verse at a time should be used.
   If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
 
 These options can be used to control the software when it is already running, but if this case this only works for administrator users.
+
+### How to open a verse reference from a selected sentence from any application such as browser or text editor?
+
+It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this `Shift + Ctrl + Alt + V` command on a selected word:
+
+```
+!^+V::
+  clipboardOld := ClipboardAll
+  ControlGetFocus, ctrl
+  Send, ^c
+  sleep 100
+  word := Clipboard
+  Clipboard := clipboardOld
+  appPath := "C:\Program Files\Ordisoftware\Hebrew Words\Bin\"
+  appExe := "Ordisoftware.Hebrew.Words.exe"
+  cmdLine := appPath appExe " --verse " word
+  sleep 200
+  Run %cmdLine%
+  return 
+```
 
 ## Keyboard shortcuts
 
