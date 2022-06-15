@@ -29,6 +29,11 @@ static partial class Program
   [STAThread]
   static void Main(string[] args)
   {
+    CommonMenusControl.PreviewFunctions = new()
+    {
+      [Language.EN] = "    • Web links edition",
+      [Language.FR] = "    • Edition des liens web"
+    };
     try
     {
       Application.EnableVisualStyles();
@@ -126,12 +131,29 @@ static partial class Program
         if ( File.Exists(pathLettersDefault) )
           Settings.HebrewLettersExe = pathLettersDefault;
       // Save settings
+      CheckPreviewNotice();
       SystemManager.TryCatch(Settings.Save);
     }
     catch ( Exception ex )
     {
       ex.Manage();
     }
+  }
+
+  /// <summary>
+  /// Checks if the app is in preview mode or not and display a notice if needed.
+  /// </summary>
+  static internal void CheckPreviewNotice()
+  {
+    if ( CommonMenusControl.PreviewFunctions is null ) return;
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled || Settings.PreviewModeNotified ) return;
+    string msg = SysTranslations.AskForPreviewMode.GetLang(CommonMenusControl.PreviewFunctions[Languages.Current]);
+    if ( !DisplayManager.QueryYesNo(msg) )
+    {
+      SystemManager.CommandLineOptions.WithPreview = false;
+      SystemManager.CommandLineOptions.NoPreview = true;
+    }
+    Settings.PreviewModeNotified = true;
   }
 
   /// <summary>
