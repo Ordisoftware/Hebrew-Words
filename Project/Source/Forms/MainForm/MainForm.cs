@@ -908,14 +908,15 @@ partial class MainForm : Form
     {
       var reference = (ReferenceItem)control.Tag;
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
+      // TODO refactor in verse row ?
+      Clipboard.SetText($"{reference.ToStringFull()} : {verse.Translation}{Globals.NL2}{verse.Comment}");
     }
     else
     if ( control is Label label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       var reference = ( (VerseControl)label.Parent ).Reference;
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
+      Clipboard.SetText($"{reference.ToStringFull()} : {verse.Translation}{Globals.NL2}{verse.Comment}");
     }
   }
 
