@@ -284,6 +284,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### In progress for 2022 - Version 3.0
 
+> Add take screenshot, full window or only current verse if applicable.
+
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
 - Speed up data loading at startup.
