@@ -338,7 +338,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>170, 19</value>
   </data>
   <data name="SelectSearchTranslationOnlyTranslations.Text" xml:space="preserve">
-    <value>Seulement les translations</value>
+    <value>Seulement les traductions</value>
   </data>
   <data name="SelectSearchTranslationOnlyTranslations.ToolTip" xml:space="preserve">
     <value />

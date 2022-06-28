@@ -107,6 +107,7 @@ partial class MainForm
         }
         ypos += label.PreferredHeight + marginY;
         if ( !reference.Verse.HasTranslation ) continue;
+        // TODO use a rich text box to display terms in color
         label = new() { AutoSize = true };
         label.MaximumSize = new Size(xx - marginX, label.MaximumSize.Height);
         label.Text = reference.Verse.Translation;
