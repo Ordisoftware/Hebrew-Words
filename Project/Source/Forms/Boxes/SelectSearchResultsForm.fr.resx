@@ -140,7 +140,7 @@
     <value>Vous pouvez sélectionner les livres dans lesquels rechercher.</value>
   </data>
   <data name="ActionSelect.Text" xml:space="preserve">
-    <value>Sélectionner</value>
+    <value>Sélection</value>
   </data>
   <data name="ActionAll.Text" xml:space="preserve">
     <value>Tous</value>
