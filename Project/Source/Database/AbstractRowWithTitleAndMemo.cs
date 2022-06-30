@@ -17,37 +17,38 @@ namespace Ordisoftware.Hebrew.Words;
 using SQLite;
 
 [Serializable]
-[Table("Verses")]
-public partial class VerseRow : AbstractRowWithTitle
+public abstract class AbstractRowWithTitleAndMemo : AbstractRow
 {
 
   [NotNull]
-  [Indexed]
-  public Guid ChapterID
+  public string Title
   {
-    get => _ChapterID;
+    get => _Title;
     set
     {
-      if ( _ChapterID == value ) return;
-      _ChapterID = value;
-      NotifyPropertyChanged(nameof(ChapterID));
+      if ( _Title == value ) return;
+      _Title = value;
+      NotifyPropertyChanged(nameof(Title));
     }
   }
-  private Guid _ChapterID;
+  private string _Title = string.Empty;
+
+  public bool HasTitle => !Title.IsNullOrEmpty();
 
   [NotNull]
-  public string Comment
+  public string Memo
   {
-    get => _Comment;
+    get => _Memo;
     set
     {
-      if ( _Comment == value ) return;
-      _Comment = value;
-      NotifyPropertyChanged(nameof(Comment));
+      if ( _Memo == value ) return;
+
+      _Memo = value;
+      NotifyPropertyChanged(nameof(Memo));
     }
   }
-  private string _Comment = string.Empty;
+  private string _Memo = string.Empty;
 
-  public List<WordRow> Words { get; } = new();
+  public bool HasMemo => !Memo.IsNullOrEmpty();
 
 }

@@ -11,14 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
 
 [Serializable]
 [Table("Chapters")]
-public partial class ChapterRow : AbstractRow
+public partial class ChapterRow : AbstractRowWithTitleAndMemo
 {
 
   [NotNull]
@@ -34,32 +34,6 @@ public partial class ChapterRow : AbstractRow
     }
   }
   private Guid _BookID;
-
-  [NotNull]
-  public string Title
-  {
-    get => _Title;
-    set
-    {
-      if ( _Title == value ) return;
-      _Title = value;
-      NotifyPropertyChanged(nameof(Title));
-    }
-  }
-  private string _Title = string.Empty;
-
-  [NotNull]
-  public string Memo
-  {
-    get => _Memo;
-    set
-    {
-      if ( _Memo == value ) return;
-      _Memo = value;
-      NotifyPropertyChanged(nameof(Memo));
-    }
-  }
-  private string _Memo = string.Empty;
 
   [NotNull]
   [Column("ELS50")]

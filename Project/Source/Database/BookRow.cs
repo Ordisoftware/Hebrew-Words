@@ -11,14 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
 
 [Serializable]
 [Table("Books")]
-public partial class BookRow : AbstractRow
+public partial class BookRow : AbstractRowWithMemo
 {
 
   /// <summary>
@@ -92,19 +92,6 @@ public partial class BookRow : AbstractRow
   private string _CommonName = string.Empty;
 
   [NotNull]
-  public string Lettriq
-  {
-    get => _Lettriq;
-    set
-    {
-      if ( _Lettriq == value ) return;
-      _Lettriq = value;
-      NotifyPropertyChanged(nameof(Lettriq));
-    }
-  }
-  private string _Lettriq = string.Empty;
-
-  [NotNull]
   public string Translation
   {
     get => _Translation;
@@ -118,23 +105,18 @@ public partial class BookRow : AbstractRow
   private string _Translation = string.Empty;
 
   [NotNull]
-  public string Memo
+  public string Lettriq
   {
-    get => _Memo;
+    get => _Lettriq;
     set
     {
-      if ( _Memo == value ) return;
-
-      _Memo = value;
-      NotifyPropertyChanged(nameof(Memo));
+      if ( _Lettriq == value ) return;
+      _Lettriq = value;
+      NotifyPropertyChanged(nameof(Lettriq));
     }
   }
-  private string _Memo = string.Empty;
+  private string _Lettriq = string.Empty;
 
-  public bool HasMemo
-    => !Memo.IsNullOrEmpty();
-
-  public List<ChapterRow> Chapters { get; }
-    = new();
+  public List<ChapterRow> Chapters { get; } = new();
 
 }

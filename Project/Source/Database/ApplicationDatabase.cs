@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -145,6 +145,7 @@ class ApplicationDatabase : SQLiteDatabase
       checkColumnText(BooksTableName, nameof(BookRow.Memo));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Title));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Memo));
+      checkColumnText(VersesTableName, nameof(VerseRow.Title));
     }
     Globals.IsDatabaseUpgraded = upgrade;
     //

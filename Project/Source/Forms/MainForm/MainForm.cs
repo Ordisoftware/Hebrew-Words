@@ -147,7 +147,7 @@ partial class MainForm : Form
   {
     if ( !SelectRenderAllVerses.Checked && ResizeBeginWidth != ClientSize.Width )
     {
-      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
+      SelectVerse.DropDownWidth = EditVerseTitle.Width;
       ActionRefresh.PerformClick();
     }
   }

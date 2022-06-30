@@ -491,7 +491,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value />
   </data>
   <data name="LabelChapterMemo.Text" xml:space="preserve">
-    <value>Ch. Mémo</value>
+    <value>Mémo</value>
   </data>
   <data name="LabelChapterMemo.ToolTip" xml:space="preserve">
     <value />
