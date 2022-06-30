@@ -286,8 +286,6 @@
       this.ActionCountRootOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
-      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
@@ -298,6 +296,8 @@
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -2317,11 +2317,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // TrayIcon
-      // 
-      this.TrayIcon.ContextMenuStrip = this.MenuTray;
-      resources.ApplyResources(this.TrayIcon, "TrayIcon");
-      // 
       // MenuTray
       // 
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2381,6 +2376,11 @@
       // 
       resources.ApplyResources(this.MenuExit, "MenuExit");
       this.MenuExit.Name = "MenuExit";
+      // 
+      // TrayIcon
+      // 
+      this.TrayIcon.ContextMenuStrip = this.MenuTray;
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
       // 
       // MainForm
       // 

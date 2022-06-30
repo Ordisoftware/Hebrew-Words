@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseRow
@@ -29,14 +29,15 @@ public partial class VerseRow
   }
 
   /// <summary>
-  /// Indicates the translation sentence of the verse with [...] in place of the untranslated words.
+  /// Indicates the translation sentence of the verse with [...] in place of the untranslated words 
+  /// and with new lines replaced by spaces.
   /// </summary>
   public string Translation
     => Words.Select(word =>
     {
       var str = word.Translation;
       return str.Length > 0 ? str : "[...]";
-    }).AsMultiSpace();
+    }).AsMultiSpace().Replace(Globals.NL, " ");
 
   public string TranslationWithNumber
     => NumberFormatted + ". " + Translation;

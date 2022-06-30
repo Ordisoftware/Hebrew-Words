@@ -166,10 +166,10 @@
     <value>NoControl</value>
   </data>
   <data name="EditELS50HScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 41</value>
+    <value>550, 39</value>
   </data>
   <data name="EditELS50HScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 14</value>
+    <value>374, 14</value>
   </data>
   <data name="EditELS50HScrollBar.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -196,7 +196,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="SelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 73</value>
+    <value>70, 71</value>
   </data>
   <data name="SelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>350, 23</value>
@@ -217,7 +217,7 @@
     <value>25</value>
   </data>
   <data name="SelectChapterNavigator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 103</value>
+    <value>306, 101</value>
   </data>
   <data name="SelectChapterNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -250,7 +250,7 @@
     <value>False</value>
   </data>
   <data name="SelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 5</value>
+    <value>70, 3</value>
   </data>
   <data name="SelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>350, 23</value>
@@ -271,7 +271,7 @@
     <value>20</value>
   </data>
   <data name="SelectBookNavigator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 35</value>
+    <value>306, 33</value>
   </data>
   <data name="SelectBookNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -317,7 +317,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectRenderAllVersesKeepHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 130</value>
+    <value>550, 128</value>
   </data>
   <data name="ActionSelectRenderAllVersesKeepHelp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -353,7 +353,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="SelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 103</value>
+    <value>550, 101</value>
   </data>
   <data name="SelectVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 21</value>
@@ -374,7 +374,7 @@
     <value>5</value>
   </data>
   <data name="SelectVerseNavigator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>812, 103</value>
+    <value>810, 101</value>
   </data>
   <data name="SelectVerseNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -404,7 +404,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>654, 135</value>
+    <value>650, 133</value>
   </data>
   <data name="SelectRenderAllVersesKeep.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 17</value>
@@ -431,7 +431,7 @@
     <value>True</value>
   </data>
   <data name="SelectRenderAllVerses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 135</value>
+    <value>585, 133</value>
   </data>
   <data name="SelectRenderAllVerses.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 17</value>
@@ -464,7 +464,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 77</value>
+    <value>480, 75</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 15</value>
@@ -497,7 +497,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 133</value>
+    <value>70, 131</value>
   </data>
   <data name="EditChapterMemo.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -533,7 +533,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapterMemo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 136</value>
+    <value>0, 134</value>
   </data>
   <data name="LabelChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
@@ -566,7 +566,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 38</value>
+    <value>0, 36</value>
   </data>
   <data name="LabelBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 15</value>
@@ -599,7 +599,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 106</value>
+    <value>480, 104</value>
   </data>
   <data name="LabelSelectVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 15</value>
@@ -632,7 +632,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 106</value>
+    <value>0, 104</value>
   </data>
   <data name="LabelChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 15</value>
@@ -687,7 +687,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionEditBookMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
+    <value>29, 29</value>
   </data>
   <data name="ActionEditBookMemo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -736,7 +736,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionEditChapterMemo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
+    <value>29, 29</value>
   </data>
   <data name="ActionEditChapterMemo.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -789,7 +789,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 5</value>
+    <value>928, 3</value>
   </data>
   <data name="ActionELS50CopyToClipboard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -855,7 +855,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionExportChapter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
+    <value>29, 29</value>
   </data>
   <data name="ActionExportChapter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -915,7 +915,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ActionExportBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
+    <value>29, 29</value>
   </data>
   <data name="ActionExportBook.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -968,7 +968,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSearchVerse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 97</value>
+    <value>928, 95</value>
   </data>
   <data name="ActionSearchVerse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -998,7 +998,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditBookTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 35</value>
+    <value>70, 33</value>
   </data>
   <data name="EditBookTranslation.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 21</value>
@@ -1028,7 +1028,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditVerseTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 74</value>
+    <value>550, 72</value>
   </data>
   <data name="EditVerseTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 21</value>
@@ -1052,7 +1052,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="EditChapterTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 103</value>
+    <value>70, 101</value>
   </data>
   <data name="EditChapterTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 21</value>
@@ -1079,7 +1079,7 @@
     <value>Hebrew, 14.2499981pt</value>
   </data>
   <data name="EditELS50Single.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 5</value>
+    <value>550, 3</value>
   </data>
   <data name="EditELS50Single.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 35</value>
@@ -1115,7 +1115,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelChapterELS50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 9</value>
+    <value>480, 7</value>
   </data>
   <data name="LabelChapterELS50.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 15</value>
@@ -1148,7 +1148,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 9</value>
+    <value>0, 7</value>
   </data>
   <data name="LabelSelectBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 15</value>
@@ -1181,7 +1181,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 77</value>
+    <value>0, 75</value>
   </data>
   <data name="LabelSelectChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 15</value>
@@ -4231,13 +4231,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>18, 117</value>
   </data>
   <data name="SelectSearchTranslationOnlyComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
+    <value>156, 19</value>
   </data>
   <data name="SelectSearchTranslationOnlyComments.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="SelectSearchTranslationOnlyComments.Text" xml:space="preserve">
-    <value>Only comments</value>
+    <value>Only title and comments</value>
   </data>
   <data name="&gt;&gt;SelectSearchTranslationOnlyComments.Name" xml:space="preserve">
     <value>SelectSearchTranslationOnlyComments</value>
@@ -4258,13 +4258,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>18, 99</value>
   </data>
   <data name="SelectSearchTranslationIncludeComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
+    <value>172, 19</value>
   </data>
   <data name="SelectSearchTranslationIncludeComments.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="SelectSearchTranslationIncludeComments.Text" xml:space="preserve">
-    <value>Include comments</value>
+    <value>Include title and comments</value>
   </data>
   <data name="&gt;&gt;SelectSearchTranslationIncludeComments.Name" xml:space="preserve">
     <value>SelectSearchTranslationIncludeComments</value>
@@ -6111,7 +6111,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionDummyParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAX5JREFUOE+Vk9tOwkAQhrk08fASPoIP5IXvgfoq0AOEo+GOlLZA79ToQ5hAwYhI
+        vAAADrwBlbxySQAAAX5JREFUOE+Vk9tOwkAQhrk08fASPoIP5IXvgfoq0AOEo+GOlLZA79ToQ5hAwYhI
         W6AcfmemWwQJQb/kz+zfnZmd3aSZlIdGY1Sp11Gq/VK1RqqiUquhWq8PVPo+XHwM3/dRrlQMVbJLmU5g
         3rRr+NlT9G/PJbJncoYpsd/rgXJNVfYDj8v42RMgegHCV4niCc0sIF4sZM2T0MRlVZpQUhP0CzcY3J1h
         cH8hsUeeeXx6hm6ayOu6eH4TVZrAD8UMx1O8BysMgzWGk6X4cBbL3jacr0oTyqqBrhto2S6sloPPrxA6
@@ -7453,12 +7453,6 @@ A verse is founded if the translation of one of its words contains an expression
   <metadata name="ToolTipSearchResult.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>636, 50</value>
-  </metadata>
-  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>870, 17</value>
-  </metadata>
   <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>954, 17</value>
   </metadata>
@@ -7470,59 +7464,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;MenuTray.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="TrayIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAIAEBAAAAEACABoBQAAJgAAABAQAAABACAAaAQAAI4FAAAoAAAAEAAAACAAAAABAAgAAAAAAAAB
-        AAAAAAAAAAAAAAABAAAAAQAAAAAAAAUFBQAODg4AJSUkACgoKAA0NDQAVFNTAFZVVQBaWVkAZWVlAGho
-        ZwBqamoAbm5uAHJycgB0dHQAenl5AIKBgQCMi4sAmpmZAJ+fngClpKQAs7KyALWzswDCwMAAxsXEAM3M
-        zADR0dEA1NPTANXU0wDW1tYA2NjXANra2gDe3NwA4eDgAOrp6QDs6uoA7e3tAPHx8QD09PMA9vX1APn5
-        +QD8+/sA/v7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAA////AAALDQsJCQkLDQsNCwkJDQAN//////////////////8NC///JB4h
-        JP////8lICX/CQn//xcAAhEl////FQck/wkJ//8bAAAKJf///xUHJP8JCf///xsDEv////8XByT/Cwn/
-        //8kBCX/////Gwcl/w0J////Fwf//////xsH//8LCf///xIS//////8ZCP//CQn///8gDSQlJSUkEAj/
-        /wkJ////FAAAAAAAAAAP//8JCf///wsAAAAAAAAFJP//Cwn///8bFSQkJCQk/////w0J////////////
-        //////8NDf//////////////////DQANDQ0NDQ0NDQ0NDQ0NDQCAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAKAAAABAAAAAgAAAAAQAgAAAA
-        AABABAAAAAAAAAAAAAAAAAAAAAAAAEtLS1FpaWn7bW1t9mVlZe9gYGD0X19f9GBgYPRlZWXvbW1t9m1t
-        bfptbW32Y2Nj8WBgYPRgYGD0bm5u8ktLS1lubm73////////////////////////////////////////
-        //////////////////////////////////9nZ2fvaWlp/P//////////7u3t/9jY1//h4OD/7Orq////
-        ///////////////////y8fH/3tzc//f39///////YGBg9GRkZP3//////////8LAwP8FBQX/Dg4O/4yL
-        i//09PP/////////////////s7Kx/1VUVP/p6Oj//////2BgYPRkZGT9///////////U09P/BgYG/wAA
-        AP9oaGf/9fT0/////////////////7Wzs/9UU1P/6+rq//////9gYGD0ZGRk/f///////////Pz8/9XU
-        0/8lJST/m5qa///////////////////////HxsX/VVRU/+3s7P//////Y2Nj8WRkZP3/////////////
-        ///r6ur/KCgo//Py8v//////////////////////0dDQ/1ZWVv/09PP//////2hoaOxkZGT9////////
-        ////////xsXE/1dXV//6+vr//////////////////////9LS0v9XV1f/+Pj4//////9jY2PxZGRk/f//
-        ////////+/v7/5+fnv+ZmJj////////////////////////////NzMz/WVhY//n5+f//////YGBg9GRk
-        ZP3////////////////a2tr/dnZ1/+jo6P/x8fH/8fHx//Hx8f/q6ur/goGB/1taWv/6+vr//////2Bg
-        YPRkZGT9///////////+/v7/paSk/wcHB/8CAgL/AgIC/wICAv8CAgL/AQEB/wAAAP96eXn//Pv7////
-        //9gYGD0ZGRk/f///////////Pz8/2tra/8AAAD/AwMD/wMDA/8DAwP/AwMD/wUFBf80NDT/6Ojo////
-        ////////ZWVl7mRkZP3///////////7+/v/W1tb/s7Oz/+rq6v/r6+v/6+vr/+vr6//u7u7/+/v7//7+
-        /v///////////2hoaOxkZGT9////////////////////////////////////////////////////////
-        //////////////////9oaGjsb29v9v//////////////////////////////////////////////////
-        ////////////////////////ampq7UxMTE1nZ2fvaGho7GhoaOxoaGjsaGho7GhoaOxoaGjsaGho7Gho
-        aOxoaGjsaGho7GhoaOxoaGjsampq7EVFRUIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-</value>
-  </data>
-  <data name="TrayIcon.Text" xml:space="preserve">
-    <value>Hebrew Calendar</value>
-  </data>
-  <data name="TrayIcon.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="MenuShowHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7659,6 +7600,65 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="MenuExit.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>636, 50</value>
+  </metadata>
+  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>870, 17</value>
+  </metadata>
+  <data name="TrayIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEACABoBQAAJgAAABAQAAABACAAaAQAAI4FAAAoAAAAEAAAACAAAAABAAgAAAAAAAAB
+        AAAAAAAAAAAAAAABAAAAAQAAAAAAAAUFBQAODg4AJSUkACgoKAA0NDQAVFNTAFZVVQBaWVkAZWVlAGho
+        ZwBqamoAbm5uAHJycgB0dHQAenl5AIKBgQCMi4sAmpmZAJ+fngClpKQAs7KyALWzswDCwMAAxsXEAM3M
+        zADR0dEA1NPTANXU0wDW1tYA2NjXANra2gDe3NwA4eDgAOrp6QDs6uoA7e3tAPHx8QD09PMA9vX1APn5
+        +QD8+/sA/v7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA////AAALDQsJCQkLDQsNCwkJDQAN//////////////////8NC///JB4h
+        JP////8lICX/CQn//xcAAhEl////FQck/wkJ//8bAAAKJf///xUHJP8JCf///xsDEv////8XByT/Cwn/
+        //8kBCX/////Gwcl/w0J////Fwf//////xsH//8LCf///xIS//////8ZCP//CQn///8gDSQlJSUkEAj/
+        /wkJ////FAAAAAAAAAAP//8JCf///wsAAAAAAAAFJP//Cwn///8bFSQkJCQk/////w0J////////////
+        //////8NDf//////////////////DQANDQ0NDQ0NDQ0NDQ0NDQCAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAKAAAABAAAAAgAAAAAQAgAAAA
+        AABABAAAAAAAAAAAAAAAAAAAAAAAAEtLS1FpaWn7bW1t9mVlZe9gYGD0X19f9GBgYPRlZWXvbW1t9m1t
+        bfptbW32Y2Nj8WBgYPRgYGD0bm5u8ktLS1lubm73////////////////////////////////////////
+        //////////////////////////////////9nZ2fvaWlp/P//////////7u3t/9jY1//h4OD/7Orq////
+        ///////////////////y8fH/3tzc//f39///////YGBg9GRkZP3//////////8LAwP8FBQX/Dg4O/4yL
+        i//09PP/////////////////s7Kx/1VUVP/p6Oj//////2BgYPRkZGT9///////////U09P/BgYG/wAA
+        AP9oaGf/9fT0/////////////////7Wzs/9UU1P/6+rq//////9gYGD0ZGRk/f///////////Pz8/9XU
+        0/8lJST/m5qa///////////////////////HxsX/VVRU/+3s7P//////Y2Nj8WRkZP3/////////////
+        ///r6ur/KCgo//Py8v//////////////////////0dDQ/1ZWVv/09PP//////2hoaOxkZGT9////////
+        ////////xsXE/1dXV//6+vr//////////////////////9LS0v9XV1f/+Pj4//////9jY2PxZGRk/f//
+        ////////+/v7/5+fnv+ZmJj////////////////////////////NzMz/WVhY//n5+f//////YGBg9GRk
+        ZP3////////////////a2tr/dnZ1/+jo6P/x8fH/8fHx//Hx8f/q6ur/goGB/1taWv/6+vr//////2Bg
+        YPRkZGT9///////////+/v7/paSk/wcHB/8CAgL/AgIC/wICAv8CAgL/AQEB/wAAAP96eXn//Pv7////
+        //9gYGD0ZGRk/f///////////Pz8/2tra/8AAAD/AwMD/wMDA/8DAwP/AwMD/wUFBf80NDT/6Ojo////
+        ////////ZWVl7mRkZP3///////////7+/v/W1tb/s7Oz/+rq6v/r6+v/6+vr/+vr6//u7u7/+/v7//7+
+        /v///////////2hoaOxkZGT9////////////////////////////////////////////////////////
+        //////////////////9oaGjsb29v9v//////////////////////////////////////////////////
+        ////////////////////////ampq7UxMTE1nZ2fvaGho7GhoaOxoaGjsaGho7GhoaOxoaGjsaGho7Gho
+        aOxoaGjsaGho7GhoaOxoaGjsampq7EVFRUIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+  <data name="TrayIcon.Text" xml:space="preserve">
+    <value>Hebrew Calendar</value>
+  </data>
+  <data name="TrayIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -8509,18 +8509,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ToolTipSearchResult.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SaveDataBoardDialog.Name" xml:space="preserve">
-    <value>SaveDataBoardDialog</value>
-  </data>
-  <data name="&gt;&gt;SaveDataBoardDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TrayIcon.Name" xml:space="preserve">
-    <value>TrayIcon</value>
-  </data>
-  <data name="&gt;&gt;TrayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;MenuShowHide.Name" xml:space="preserve">
     <value>MenuShowHide</value>
   </data>
@@ -8574,6 +8562,18 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;MenuExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveDataBoardDialog.Name" xml:space="preserve">
+    <value>SaveDataBoardDialog</value>
+  </data>
+  <data name="&gt;&gt;SaveDataBoardDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TrayIcon.Name" xml:space="preserve">
+    <value>TrayIcon</value>
+  </data>
+  <data name="&gt;&gt;TrayIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

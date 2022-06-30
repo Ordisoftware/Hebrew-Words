@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 static partial class AppTranslations
@@ -41,13 +41,13 @@ static partial class AppTranslations
 
     [Language.EN] = "Filter books on any number, transcription, common name, translation, lettriq and memo." + Globals.NL2 +
                     "Filter chapters on the title and the memo." + Globals.NL2 +
-                    "Filter verses on the translation and the comment." + Globals.NL2 +
+                    "Filter verses on the title, translation and the comment." + Globals.NL2 +
                     "Only one word or sentence per filter." + Globals.NL2 +
                     "The filters are cumulative without case or signs, press Enter or exit the input box to start the query.",
 
     [Language.FR] = "Filtre les livres sur toute transcription, nom commun, traduction, lettrique et mémo." + Globals.NL2 +
                     "Filtre les chapitres sur le titre et le mémo." + Globals.NL2 +
-                    "Filtre les versets sur la traduction et le commentaire." + Globals.NL2 +
+                    "Filtre les versets sur le titre, la traduction et le commentaire." + Globals.NL2 +
                     "Un seul mot ou phrase par filtre." + Globals.NL2 +
                     "Note: Les filtres sont cumulatifs sans casse ni signes, appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête."
 
