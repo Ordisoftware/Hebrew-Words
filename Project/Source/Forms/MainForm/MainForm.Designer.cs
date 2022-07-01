@@ -126,6 +126,7 @@
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectRenderAllVersesKeep = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
+      this.label1 = new System.Windows.Forms.Label();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
@@ -138,6 +139,7 @@
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
+      this.EditVerseTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditELS50Single = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterELS50 = new System.Windows.Forms.Label();
@@ -204,8 +206,8 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRefresh = new System.Windows.Forms.ToolStripMenuItem();
@@ -284,8 +286,6 @@
       this.ActionCountRootOccurencesTanak = new System.Windows.Forms.ToolStripMenuItem();
       this.WordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ToolTipSearchResult = new System.Windows.Forms.ToolTip(this.components);
-      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
@@ -296,6 +296,8 @@
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1026,6 +1028,7 @@
       this.PanelNavigation.Controls.Add(this.SelectVerse);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVersesKeep);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVerses);
+      this.PanelNavigation.Controls.Add(this.label1);
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
@@ -1039,6 +1042,7 @@
       this.PanelNavigation.Controls.Add(this.ActionSearchVerse);
       this.PanelNavigation.Controls.Add(this.SelectBook);
       this.PanelNavigation.Controls.Add(this.EditBookTranslation);
+      this.PanelNavigation.Controls.Add(this.EditVerseTitle);
       this.PanelNavigation.Controls.Add(this.EditChapterTitle);
       this.PanelNavigation.Controls.Add(this.EditELS50Single);
       this.PanelNavigation.Controls.Add(this.SelectChapter);
@@ -1109,8 +1113,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
       this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1156,13 +1160,18 @@
       this.SelectRenderAllVerses.UseVisualStyleBackColor = true;
       this.SelectRenderAllVerses.CheckedChanged += new System.EventHandler(this.SelectRenderAllVerses_CheckedChanged);
       // 
+      // label1
+      // 
+      resources.ApplyResources(this.label1, "label1");
+      this.label1.Name = "label1";
+      // 
       // EditChapterMemo
       // 
-      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
       this.EditChapterMemo.BackColor = System.Drawing.Color.LightYellow;
       this.EditChapterMemo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.EditChapterMemo.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditChapterMemo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ChaptersBindingSource, "Memo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditChapterMemo, "EditChapterMemo");
       this.EditChapterMemo.Name = "EditChapterMemo";
       this.EditChapterMemo.SpellCheckAllowed = true;
       this.EditChapterMemo.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
@@ -1198,8 +1207,8 @@
       // 
       // ActionEditChapterMemo
       // 
-      resources.ApplyResources(this.ActionEditChapterMemo, "ActionEditChapterMemo");
       this.ActionEditChapterMemo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEditChapterMemo, "ActionEditChapterMemo");
       this.ActionEditChapterMemo.Name = "ActionEditChapterMemo";
       this.ActionEditChapterMemo.UseVisualStyleBackColor = true;
       this.ActionEditChapterMemo.Click += new System.EventHandler(this.ActionEditChapterMemo_Click);
@@ -1230,8 +1239,8 @@
       // 
       // ActionSearchVerse
       // 
-      this.ActionSearchVerse.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSearchVerse, "ActionSearchVerse");
+      this.ActionSearchVerse.FlatAppearance.BorderSize = 0;
       this.ActionSearchVerse.Name = "ActionSearchVerse";
       this.ActionSearchVerse.UseVisualStyleBackColor = true;
       this.ActionSearchVerse.Click += new System.EventHandler(this.ActionSearchVerse_Click);
@@ -1247,6 +1256,18 @@
       this.EditBookTranslation.SpellCheckAllowed = true;
       this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
       this.EditBookTranslation.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
+      // 
+      // EditVerseTitle
+      // 
+      resources.ApplyResources(this.EditVerseTitle, "EditVerseTitle");
+      this.EditVerseTitle.BackColor = System.Drawing.Color.LightYellow;
+      this.EditVerseTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditVerseTitle.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditVerseTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VersesBindingSource, "Title", true));
+      this.EditVerseTitle.Name = "EditVerseTitle";
+      this.EditVerseTitle.SpellCheckAllowed = true;
+      this.EditVerseTitle.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
+      this.EditVerseTitle.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
       // EditChapterTitle
       // 
@@ -1766,18 +1787,18 @@
       this.toolStripSeparator16.Name = "toolStripSeparator16";
       resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
-      // ActionViewBibleStatistics
-      // 
-      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
-      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
-      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
-      // 
       // ActionOpenCalculator
       // 
       this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
       this.ActionOpenCalculator.Name = "ActionOpenCalculator";
       this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
+      // 
+      // ActionViewBibleStatistics
+      // 
+      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
+      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
+      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
       // 
       // toolStripSeparator1
       // 
@@ -2296,11 +2317,6 @@
       this.WordsBindingSource.DataMember = "Words";
       this.WordsBindingSource.DataSource = this.VersesBindingSource;
       // 
-      // TrayIcon
-      // 
-      this.TrayIcon.ContextMenuStrip = this.MenuTray;
-      resources.ApplyResources(this.TrayIcon, "TrayIcon");
-      // 
       // MenuTray
       // 
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2360,6 +2376,11 @@
       // 
       resources.ApplyResources(this.MenuExit, "MenuExit");
       this.MenuExit.Name = "MenuExit";
+      // 
+      // TrayIcon
+      // 
+      this.TrayIcon.ContextMenuStrip = this.MenuTray;
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
       // 
       // MainForm
       // 
@@ -2696,5 +2717,7 @@
     internal ToolStripMenuItem ActionGoToParashah;
     private ToolStripSeparator toolStripSeparator28;
     internal ToolStripMenuItem ActionDummyParashah;
+    private Label label1;
+    private TextBoxEx EditVerseTitle;
   }
 }

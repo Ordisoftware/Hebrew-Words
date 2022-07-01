@@ -226,7 +226,7 @@
     <value>0</value>
   </data>
   <data name="ActionSelect.Text" xml:space="preserve">
-    <value>Select</value>
+    <value>Selection</value>
   </data>
   <data name="&gt;&gt;ActionSelect.Name" xml:space="preserve">
     <value>ActionSelect</value>
@@ -530,9 +530,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>324, 508</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>340, 550</value>

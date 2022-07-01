@@ -147,7 +147,7 @@ partial class MainForm : Form
   {
     if ( !SelectRenderAllVerses.Checked && ResizeBeginWidth != ClientSize.Width )
     {
-      SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
+      SelectVerse.DropDownWidth = EditVerseTitle.Width;
       ActionRefresh.PerformClick();
     }
   }
@@ -908,14 +908,15 @@ partial class MainForm : Form
     {
       var reference = (ReferenceItem)control.Tag;
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
+      // TODO refactor in verse row ?
+      Clipboard.SetText($"{reference.ToStringFull()} : {verse.Translation}{Globals.NL2}{verse.Comment}");
     }
     else
     if ( control is Label label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
       var reference = ( (VerseControl)label.Parent ).Reference;
       var verse = reference.Verse;
-      Clipboard.SetText($"{reference.ToStringFull()}: {verse.Translation}{Globals.NL2}{verse.Comment}");
+      Clipboard.SetText($"{reference.ToStringFull()} : {verse.Translation}{Globals.NL2}{verse.Comment}");
     }
   }
 
@@ -1338,8 +1339,9 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditELS50_TextChanged(object sender, EventArgs e)
   {
+    int width = TextRenderer.MeasureText(EditELS50Single.Text, EditELS50Single.Font).Width;
+    EditELS50HScrollBar.Enabled = width > EditELS50Single.Width;
     EditELS50HScrollBar.Value = EditELS50HScrollBar.Maximum;
-    EditELS50HScrollBar.Enabled = TextRenderer.MeasureText(EditELS50Single.Text, EditELS50Single.Font).Width > EditELS50Single.Width;
   }
 
   /// <summary>
@@ -1705,7 +1707,8 @@ partial class MainForm : Form
                                                 || c.Memo.RawContains(EditFilterChapter.Text)));
 
     if ( EditFilterVerse.Text.Length != 0 )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(EditFilterVerse.Text)
+                                                                  || v.Translation.RawContains(EditFilterVerse.Text)
                                                                   || v.Comment.RawContains(EditFilterVerse.Text))));
     var list = books.ToList();
     SelectFilterBook.DataSource = new BindingList<BookRow>(list);
@@ -1739,7 +1742,8 @@ partial class MainForm : Form
       chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
                                   || c.Memo.RawContains(EditFilterChapter.Text));
     if ( EditFilterVerse.Text.Length != 0 )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.Translation.RawContains(EditFilterVerse.Text)
+      chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(EditFilterVerse.Text)
+                                                    || v.Translation.RawContains(EditFilterVerse.Text)
                                                     || v.Comment.RawContains(EditFilterVerse.Text)));
     var list = chapters.ToList();
     SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
@@ -1764,7 +1768,8 @@ partial class MainForm : Form
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
     if ( EditFilterVerse.Text.Length != 0 )
-      verses = verses.Where(v => v.Translation.RawContains(EditFilterVerse.Text)
+      verses = verses.Where(v => v.Title.RawContains(EditFilterVerse.Text)
+                              || v.Translation.RawContains(EditFilterVerse.Text)
                               || v.Comment.RawContains(EditFilterVerse.Text));
     SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
   }

@@ -31,7 +31,7 @@ partial class MainForm
           string text = reference.ToStringBasedOnPrefs();
           // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
           // TODO improve display
-          text += $" - {reference.Verse.Translation.Substring(0, Math.Min(125, reference.Verse.Translation.Length))}";
+          text += $" - {GetExtract(reference.Verse.Translation)}";
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(text);
           item.Tag = reference;
           item.Click += GoToHistory;
