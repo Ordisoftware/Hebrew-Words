@@ -240,6 +240,24 @@
   <data name="PanelSearchResultsOuter.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="PanelSearchResults.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PanelSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelSearchResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelSearchResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 39</value>
+  </data>
+  <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;PanelSearchResults.Name" xml:space="preserve">
     <value>PanelSearchResults</value>
   </data>
@@ -256,13 +274,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelSearchResultsOuter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 250</value>
+    <value>10, 333</value>
   </data>
   <data name="PanelSearchResultsOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelSearchResultsOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>928, 144</value>
+    <value>928, 61</value>
   </data>
   <data name="PanelSearchResultsOuter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -283,7 +301,7 @@
     <value>Top</value>
   </data>
   <data name="PanelViewSearchSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 240</value>
+    <value>10, 323</value>
   </data>
   <data name="PanelViewSearchSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>928, 10</value>
@@ -303,6 +321,39 @@
   <data name="&gt;&gt;PanelViewSearchSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionSearchWordOpenInLetters.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAgZJREFUSEu1lTtOQkEUhlkBCR0boCYsgIIN0GmkZAVa0CMtjdpQYCcFMdqpBe5A
+        C7VBkPjAAqFBoKQa842eyZn7wJhcb/LnXs7j/89jJqTkaTQaJkn80H4/zWbTrNfrROFE+IgKSAJW5D8F
+        mEykwHK1Mr3etWm1WiGfgJiTTsecnZ1H+oETIFijVqsxP5PL5cx8/hlKxFYul23M1ta2zRGfcPAdKfA0
+        ejbpdNomg93dPc8PqFr8IKrIWIHJ5MNks1mPgI6oWmIYn/ZLjOaJFQD1+n6IgE5EhPdOpRKKabePzWKx
+        dDxOYLFc2iRNUK1WQwTYJCY4JsBeNI8TEKPGdDazVQdJELm5ubUHgAXrTjTXrwLsglEVCgVPALAjcHf/
+        YA8FonSk8zcKQE5SsVi0BHJsNUqlknl5HYdy6Zy3JzCdziwp4FsIeZMg3QRFGBEFECMQHk9AjKDfH5hM
+        JmMJ8vm8HYP4okRYLCKaA8QKsEB90RgTNvHHiVCY5uG4egJv43cL5krrmoBFiwj+TZ0ID3twAkIM+IaM
+        8WgCRMUPUZQIF014PAEMJAEJuLi8crsACGp/lAj3Rng8ATEK6ACn3gW/g3H9x6G7J8RyF8QXKwA5lXBD
+        BQeHR16MYDAc2fvAQeh2Tz2fJ8DytPMvoCA6CdoR+Bnh9/8yhiRhq9cPatzcJOAqT6VSX5iJeJm5DWGf
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 24</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 34</value>
+  </data>
+  <data name="ActionSearchWordOpenInLetters.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
   <data name="&gt;&gt;ActionSearchWordOpenInLetters.Name" xml:space="preserve">
     <value>ActionSearchWordOpenInLetters</value>
   </data>
@@ -314,6 +365,30 @@
   </data>
   <data name="&gt;&gt;ActionSearchWordOpenInLetters.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 145</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionSearchInRemoveAll.Text" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="&gt;&gt;ActionSearchInRemoveAll.Name" xml:space="preserve">
     <value>ActionSearchInRemoveAll</value>
@@ -327,6 +402,30 @@
   <data name="&gt;&gt;ActionSearchInRemoveAll.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionSearchInAddAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ActionSearchInAddAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchInAddAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionSearchInAddAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchInAddAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 145</value>
+  </data>
+  <data name="ActionSearchInAddAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionSearchInAddAll.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionSearchInAddAll.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
   <data name="&gt;&gt;ActionSearchInAddAll.Name" xml:space="preserve">
     <value>ActionSearchInAddAll</value>
   </data>
@@ -338,6 +437,27 @@
   </data>
   <data name="&gt;&gt;ActionSearchInAddAll.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="SelectSearchInBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="SelectSearchInBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SelectSearchInBook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="SelectSearchInBook.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 232</value>
+  </data>
+  <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 23</value>
+  </data>
+  <data name="SelectSearchInBook.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;SelectSearchInBook.Name" xml:space="preserve">
     <value>SelectSearchInBook</value>
@@ -351,6 +471,27 @@
   <data name="&gt;&gt;SelectSearchInBook.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SelectSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SelectSearchPaging.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SelectSearchPaging.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SelectSearchPaging.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 303</value>
+  </data>
+  <data name="SelectSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 18</value>
+  </data>
+  <data name="SelectSearchPaging.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;SelectSearchPaging.Name" xml:space="preserve">
     <value>SelectSearchPaging</value>
   </data>
@@ -362,6 +503,30 @@
   </data>
   <data name="&gt;&gt;SelectSearchPaging.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="EditSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="EditSearchPaging.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditSearchPaging.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="EditSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 278</value>
+  </data>
+  <data name="EditSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 21</value>
+  </data>
+  <data name="EditSearchPaging.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditSearchPaging.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditSearchPaging.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Name" xml:space="preserve">
     <value>EditSearchPaging</value>
@@ -375,6 +540,30 @@
   <data name="&gt;&gt;EditSearchPaging.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="EditSearchInKetouvim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditSearchInKetouvim.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSearchInKetouvim.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="EditSearchInKetouvim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 209</value>
+  </data>
+  <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 19</value>
+  </data>
+  <data name="EditSearchInKetouvim.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditSearchInKetouvim.Text" xml:space="preserve">
+    <value>Ketouvim</value>
+  </data>
   <data name="&gt;&gt;EditSearchInKetouvim.Name" xml:space="preserve">
     <value>EditSearchInKetouvim</value>
   </data>
@@ -386,6 +575,30 @@
   </data>
   <data name="&gt;&gt;EditSearchInKetouvim.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="EditSearchInNeviim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditSearchInNeviim.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSearchInNeviim.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="EditSearchInNeviim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 189</value>
+  </data>
+  <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 19</value>
+  </data>
+  <data name="EditSearchInNeviim.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditSearchInNeviim.Text" xml:space="preserve">
+    <value>Nevi'im</value>
   </data>
   <data name="&gt;&gt;EditSearchInNeviim.Name" xml:space="preserve">
     <value>EditSearchInNeviim</value>
@@ -399,6 +612,30 @@
   <data name="&gt;&gt;EditSearchInNeviim.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="EditSearchInTorah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditSearchInTorah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSearchInTorah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="EditSearchInTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 169</value>
+  </data>
+  <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 19</value>
+  </data>
+  <data name="EditSearchInTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditSearchInTorah.Text" xml:space="preserve">
+    <value>Torah</value>
+  </data>
   <data name="&gt;&gt;EditSearchInTorah.Name" xml:space="preserve">
     <value>EditSearchInTorah</value>
   </data>
@@ -410,6 +647,59 @@
   </data>
   <data name="&gt;&gt;EditSearchInTorah.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="ActionSearchRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ActionSearchRun.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSearchRun.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchRun.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAABWhJREFUWEe1lgtQlFUUx0EjGzPUItNM08lXpmKMgeDIqIuDpVnMmNY4momVZSWl
+        xkjIOKsC7qbAIC8NU9LynYTkIxURCdFVWGBxQUHEQeQhr4WFfbj//nfRccNF5HVmfvPt3u/e8z/fvfec
+        e22eYLZpIbOn5e+YC3XUu1BHzoI6oi08m4n0RF7MHOT/4gX6ebbZXfvNLilQsq44fhWARqIlTW0g+mmI
+        Hsb6PKgi5tyjn37N7tpvvf+VSxIrL++ASX8DtYrpqL3iSWa1At8pZqDhugi4DoX7vOHlMmQu/XQ4APvL
+        WyUqTeEJGKpOQZPxATTKBeRjK7A9cx7qlPMAYykq0mOw70eXOPoYRjq8BC/mhktgqFVBVxoLTRZFchaR
+        xVZYyPcfwVBzFtqSC0gLdi/g+HHkBWIrnLXXbDcuGe+kjpkNmEqhLfBDffZi1Ku8rbCU7xZBVxIFk64Y
+        +bsWYOTAPu704UB6mr11wHrG/+T27c2Dy2Ey3kbDtS/QkPs5n8sfJ3cZtHkrAUMRSk4GINR7wgaOH0Ls
+        zJ46aL1OSKeEladthakxA9prQuRr8k0L2MZ3Jq0CdQXxSNrodpVjx5DeZi+dsD6X5FNz6/IPwFj9NxrV
+        K9CY70O+t4D/81bAULaHGZgPVdQskfOTSH/SQzjpjPXPDnWHvjoVhvI4NF6n2I3VZM0D+Pv6D2gqkgL3
+        i1F4YBm8JcM+5bhXyTNmD52x951fGa6KnMl6ooauWIamAl80FfpZsJZta1ibMlGhiMAeH8fdHPYG6WV2
+        0EnrEfXlxJkF+5cAuhzobgVAV+RPxPMh68haTn0mlFvckCl3gXKrG5lilazQqcgOn/7UZdnutHRyWNmF
+        TUB9GvQU1N+Skg3/p2g9jGW7GEQWZyqbWZDTAtHGd0YVK2MFbh5aKgIQ+6NNez4l0Dm1Th0HU+1x6G9v
+        JMFWCCKbiHjPgB5DivslwVymc6jOjkbS5hnJ9P1ys8STrV+G3EVrrEqCqeogjHdkrK5bzBju/AxDSUvk
+        LZCRzZydbZwdBWqyonHMz/E8/U4gojK2aQ7KEFdOWx4Ptr1AVTRQvZ3PGM5kBO7fDWNQoUQ8rRHCfju5
+        LFdw69hKRC4bHUGfbwu/5KkyZIAyzB2ZW1yRIZ9s5iq5EjwJOVFePHEvMYhwIoKxZBsJZ6D7uO5KFCd+
+        h6BFIwLp7y0i1v6p01N0diISCzxWzX3NvzydApqTMJVHk+0WxJjbUHsEaEiDeteH8PUa5stxo4k9aVdh
+        EqkighhgwdCLMrc7xupkfuFemCpiyc4H8HdlLDPmFMVTzeIejv3nc8wIIta801XRxtPJYVDB4a+4rhcZ
+        wG7gXtwjqliKG5OgK0tAmty5/D0nByEu7gHiPOjQUdzSep5ZP+7X+ht/cPoTHgj/1kw1N2lTCvR3/8RF
+        mWsl+04hQ8lzpEvEhfXJjvJkzU9vFnz45TX7WSnPoUoZgjPrxhaynysRZ4FYwi4Tt/3dZ9T80uQAFpST
+        j8RrKa5PQbVSjiOrR4scdyYDSafuANasV7J0/AVTzXGKHuJ6C/GDFD+Pm0e9sd9nVAL7iIwRG7XLxYX1
+        LTi8mJvsH04/11wEYUhCUfxn2PDJUJHjorq9RDp89XqS9UjwHemnyYvk5jtKmON1iciJkSBooVlc3HzE
+        lbtbxIX1vrptahP0/HrtX8zzeKh2eGD6OHuRZqNI1+R4K2br7zXYsTLdn2X1NPQlsVDIJrLAmMWHE5Hj
+        3SYuzO5swJhEGI7zFNyJ1MDxFWwTV+3XSZfmeGtmr5BNwKWgsUiRvlnD/25kMBFXrm4XF9aXiB0+jbxD
+        BpFuSbPWzPJAEju9m8RtbP4D0DnrgrY/KYYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSearchRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 267</value>
+  </data>
+  <data name="ActionSearchRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ActionSearchRun.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionSearchRun.Name" xml:space="preserve">
     <value>ActionSearchRun</value>
@@ -423,6 +713,54 @@
   <data name="&gt;&gt;ActionSearchRun.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="ActionNavigateSearchFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAABEZJREFUWEfFln9MlHUcx23Z/eHmVm26/ujHH/ZfKekfVmhwx2FKqEHJglRk6srl
+        sray1VoWB4KAwYAQJSGn+COFUpI7vAj1GM8dBxeXJ+duF2k5juNAhiTGVu7d5/OlB7znucPg1vXZXvvw
+        eX+/n+/nfc9zD/fMAvC/ElKMJiHFaBJSjCYhRYZidoLBeDbe0IS4bBM463NM0iML4zS8+C9Co6MeLcHn
+        UD2bRdUcpSBDMZebpavDaO0ZEpnr59/ev4LW7uMNU4QmLrsJ37v7cNEbEH2kzeUF1RylIEMxjz95s2cQ
+        i/Muisz1M5mGJFq7nzeECU08Db/gCWDBR40wu/3gmvR5vKiaoxRkKObH00DTlUE8t7dNZK4Xvf7Jalp7
+        gDeECDG8+Uo/YgxmLMw2w3S5TzYwnzeo5igFGW7ggd9dHsTyEpvI9zCg0bJhdz+W5rcgtuA8lua1oMEV
+        oYHTLrqHZR0iT2FADD9zyY9lRRZoi1uhK2kVf9c7IzRwyhlAYoVD5DAGxPD6rl7ElbRBXyphRbkViWVW
+        xFN9wuGTv4TTN8AHH+0KIOnATyJzHRNsQAw/4eiFvtyGlV+0I2mfHS8RSRV2MmFDbWeEBg47AlhT7RKZ
+        60XpH/NTwAY0WoMJtZJ3dFVlJ5IPdGJtlWOCNcSqyg4cskdooKZzAKlfdYvM9VOv7tTT2hwt3ddqi2c0
+        +Usn1h50IqXaidS74Hp1VRcO2vqgI6N8Hh+qmqMUZLiBB1Z1BLDuiEdkrhfoN8Yl5J7DvvOeP7K+9uCV
+        GhfWHXIhTQFrKTWXsN/mm7kBHQ2sbB9A+jGvyFw/Hpu6kg2Umd1jW+u8eO2IGxm1atKJtMPdqJAiuAK6
+        bCPKafCGk7+IzPWTL25OobVYvq+l5u7bGce9WH/cgw0KWMs46kGZ5I/MQKltCFl1v4rM9dNpO/kpeIJY
+        zlekuOXnvzLrrmLTqR5k3QXXG0/2oEQKRGag2HoDW05fF5nrmPW7kmltDvEoQSaM+NzSiy3f/oat31wL
+        YnP9NeyVxq8cn0eo5ygFGW7gxiLrEN5s8IksDEz+H+CfZTbxAuuFFh+2NfRi25nrE7xBFLYNRmagwDqM
+        7Ua/yAoDHEEmimy01+TH9kaf4C1ijzRunPbMzMAe6SZ2nBsQOYQBjkkTnzWioH0E75oH8E5TP3Y0BZD/
+        j3Fan5mB3dZbeK/5hshhDHAEmci338L7PwyN99lGZm4ggRpzbKP44MKwyFyHMcAxYUJLJnbbx/ChZQS5
+        9tuij/TpG9DT45Pr+BO7rGMic70kM+dlWgtlgGPSxKdnUei8g7wf74g+0qZvIDHH+Ds38yfgnGhovEn6
+        Y8SUr2SEMME99CILPofqaRt4kFhMJBD8A8R5CfEwcc+XUoJNPEtwH5/D56nnKAUZCr7M3MTOZbgOd/mV
+        wSYeIoL6VHOUgsx/Fao5SiHahBSjSUgxemDW3/JI16J4IB+LAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 267</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 42</value>
+  </data>
+  <data name="ActionNavigateSearchFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;ActionNavigateSearchFirst.Name" xml:space="preserve">
     <value>ActionNavigateSearchFirst</value>
   </data>
@@ -434,6 +772,48 @@
   </data>
   <data name="&gt;&gt;ActionNavigateSearchFirst.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAr5JREFUWEfFlktME1EUhllodyay0JVb97qxiYr2AVEhECUagxokgQUJC1z4CGoi
+        UBSx8hIiKKJGSdCAGAjTKa9WC1aeEW2ElPIQpNBKYoyKsjD+njs4QCc3CrEznuTL5P53eu43tzPTRgD4
+        r3BDLeGGWsINtYQbKllD6YyWFjDMubZmGq9jIa+nDDdUssrS7c2xo2N4Fg+6xmEiCco2sAleTxluqGQV
+        JS3+fOQDtl4QUO0agzHXzj64iU3yespwQyV/KWnx9uEgtlnaJKqejdLXIAlsZifwespwQyV/KJ0hR4Q4
+        FMSOfAd2Fjihv+pEpVMbAWnxxjcB7LK6YCjqhLG4E1GFLpQ7fKoLSIs/eeXHnuIXMJe6EVP2UsJQ4kZJ
+        m49uQvUEpMUfDfhhLuvGvvIeHLjZi1iCHWNofL11RDUBnSFXRI3bN7+/oh9xt/qRcHtgiXgitrIfBS3q
+        7ABduZ0eMe98XNUgEu4M4mD1IA6tgI3jae6KGH4BnSmvBRXOke8pj71IvOvB4fseHFHAssR7HljE0bAL
+        RDKBG21DC2n1Phx9OISkGj5sLtsW/h2IJPQGeruVtr79llTrw/FaL05wOEZcEsK/AzpiC7HbSE9AkWP0
+        R3L9BE7WjSFFQXLdOC4KY+rchMRvCRsKXX6kPp1CWsO7EFIbJnFeYD9G4RdgJUtEMYlrrhmkN/mR3vh+
+        maZpZDVPqCbAKkTC2v0JGWIAGcLMIrYAzgmTMNH7gs5RRYDVskS2gIKezzjVOodMexCZdDwrTKkuwCpE
+        Ir/3K053fFxEnNZEgNWShIEkLvctIKuLRMRZ+kumjQCrFTvRDOvrnzjTPofoPPVuQl4tSZgtIqLpCYix
+        iF9orJkAK1lCT5iI7cRGgttThhsqWUMxCfbaZlfOFl9PcHvKcEMl/1q8njLcUEu4oZZwQ+1AxC/rHjzh
+        PLW5MgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 267</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 42</value>
+  </data>
+  <data name="ActionSearchNavigatePrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionSearchNavigatePrevious.Name" xml:space="preserve">
     <value>ActionSearchNavigatePrevious</value>
@@ -447,6 +827,49 @@
   <data name="&gt;&gt;ActionSearchNavigatePrevious.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="ActionSearchNavigateNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSearchNavigateNext.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAxVJREFUWEfFlF1Ik2Ecxb2o7oK6aFfddR3RjUEfuqlRZolFUtKXlEQUVFAXdVXO
+        r9RS1MwyFSnDPrRQ1Nk0rYlzLs2huVhLisJtaolYmhfJ6f+89YQ+/dM3knXgB3sO78458H6EAPivsGYw
+        Yc1gwprBhDVVSIsizA11RnMjTASdlwhTr7hMCWuqkJaK8mfeYTS5/QhL/rsRXKaENVVIK8Kp1OoOYNX5
+        ejz1DEOcydc1gsuUsKYKySAKLS/9WJ1sxRqzFc2vhnSP4DIlrKlC0gbU9vkRmt6C9ZmtCM1ogcU9BGOy
+        Zd4RXKaENVVI2oBqlx8bsm0w5bbBmNOm/a7pDcw7gsuUsKYKySAewrvdPoTntiMqvwObCzoQmWdHGJ2r
+        ewbnHMFlSlhThaQNqOjyUbkD0YVObLvmRDSx5WonIgscNO7PI7hMCWuqkLQB5U4fthY9x47ibsTOIOZG
+        F/ldqLB7J4zm30dwmRLWVCEZTBRc4vBje3EP4kpd2DkDcY4tcSHmpgulNs+EUXk7uEwJa6qQtAHXHT7E
+        lfVid3kf4hWEt6usD4n3PChqff01IvXxrxFcpoQ1VeSAQrsf8bf6sbfCjQSGPbfdSKryIr/JPfVzwPIF
+        HZBvDyDhjgf7Kj3YryC8hEov8qz9k+J5of+sIxZ2QK59GAfuD+DQgwEkzkCcD1a9RU7Lm2+mH2/CRmIl
+        sYC3ILkBl+0jOFz9DkkPZ3Pk0XtcsQ1CXEPXzioX4jIlrKlC0gZktX/E0ZoPODaT2kFk2XyyfBMxq1yI
+        y5SwpgpJG3DJPorj9T6ckFgCyHaMzVkuxGVKWFOFpA3I6BjDycZhnGocwmnrCDI7x2G6WD9nuRCXKWFN
+        FZI2IM0xjjPNn3D2ySgynF90lQtxmRLWVCEZImhAqnMS52zjSHNOwaizXIjLlLCmCskQSa9h+otpZLmm
+        YbxQp7tciMuUsKYKyRCV0vA5MsUCMYTOusuFuEwJa6qQlhFriQhCfOF0lwtxmRLWVCEtJsQIAyE+r7rL
+        hbhMCWuq/Ku4TAlrBhPWDCasGTwQ8h39rkBJV4CZ4gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSearchNavigateNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 267</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchNavigateNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 42</value>
+  </data>
+  <data name="ActionSearchNavigateNext.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="&gt;&gt;ActionSearchNavigateNext.Name" xml:space="preserve">
     <value>ActionSearchNavigateNext</value>
   </data>
@@ -459,6 +882,53 @@
   <data name="&gt;&gt;ActionSearchNavigateNext.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="ActionSearchNavigateLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSearchNavigateLast.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAA+FJREFUWEfFVF9sU2Uc5UF9M9EHeOLNB5+M4QWJImvXGZ38CRiILKIuQtRIgiYY
+        oy8C29jchlu2OSaTTQJDFDaFydZR5oAua++61RXKSkodoGRtdzuaORksAXL8zrd+sdzbuaaN9ZecnP3O
+        3fmdc5O2iwD8r0gp5hIpxVwipZhLpBQJMY/kl3SftpT0wCog9scopjHSlyc8q/bYQeZOnQ9NOUZBQczj
+        DL8Q0nE2EBHH0i4hfa7rU+gfi0vmTp0PTTlGQUHM4jwR6ghE8dRnXTgf1MFd6AuVWMw37w1OYln5Bcnc
+        qfOhKccoKIhZwkD75Qie2ePAsyUO9F6ZSKeE8NlhvzKJFfsGJHOnzoemHKOgMHeoB53+CJaX9+H5ynNY
+        XtEHe2AClrmD85WQBX6+PImVtZrkrAp0+CJ4odoJa20/LDX98u9Tl6L/VkIWOOnXYakfkpxxAX54vveG
+        kVc7gIJ6N15qcMNW58IqsXeMjM9XQhY44dNR0OiVnFWBtuGwCNdQ2OjBq/s9KBR4+atB2Bo0US5liSXU
+        jo7oKDxwUXLifzIrcMgTxitNQ1jb7MW6JKw+MCz0YbS5QjOWkodKyAKHvTrWtvglZ1zAKg4f1CJY0zyC
+        9S0+bEgC93UHfVj9jQ8tzuCM5Z9vhyzQOhzDhm9HJWdV4GstjPWtl7DxkB+bDKD2WqsfxT8E0XTu6t38
+        sjM0LmVg85COjUeCkrMq0OiKYNPhUWxuC6AoBV4/EsC29hDqzwZmEwWetorApsEYNn8Xksyd93jUlGMU
+        FGhggXpXFEVHg3jjWBBbDKBWdCyEOsfoncTP7XMCokA3GkTwluPXJHPnPR415RgFBRpYoNal483jY3j7
+        xBiKk8D9rfbrqOn77X7iDVcKLCUYWKfFUdz+u+TMCwjjPlcM73TcwLYfH8bWn/7Al85xdVyFyw8htRr3
+        LWw9eVNyVgWqBibx7qmbeD8ZneOocobV4RcFVDhH+qrdcbzXGZacVYEvXHF80BXGdgV7FNXa1HzhHOmr
+        dE9he3dUclYFKsSBHT06PuyZwEeOGCoHp2Hd3TVfOCdR/E/sOBOTnFWBvdo0dvbewse/xFHhub1QOGfO
+        574tfeSMC+QLY5nnDj51TmOvZxaWhcM50leqzeCT81OSuVPnQ1OOUVCgwSa+huW/PkCV7wEsu06nE86R
+        vjLvPXzunpXMnTofmnKMggINBaXdf9lK7epAOuGcOZ/w8M3J3KnzoSnHKCiIeUJgmUC+AH/h0gnnJPts
+        CeZO3ZxjFBTEPJowsfmTAumEc5J9Ctypm3OMgsJ/NaYco5BrpBRziZRi7oBFfwNV6r7/dbYtBAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSearchNavigateLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 267</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchNavigateLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 42</value>
+  </data>
+  <data name="ActionSearchNavigateLast.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
   <data name="&gt;&gt;ActionSearchNavigateLast.Name" xml:space="preserve">
     <value>ActionSearchNavigateLast</value>
   </data>
@@ -470,6 +940,56 @@
   </data>
   <data name="&gt;&gt;ActionSearchNavigateLast.ZOrder" xml:space="preserve">
     <value>13</value>
+  </data>
+  <data name="ActionSearchClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ActionSearchClear.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSearchClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSearchClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAABJhJREFUWEfdl9lPG1cUh5FQ5ymPqH1o/4Y8V0rTl/4tCPUBoSZSVamhkVIwJC1h
+        CWAKTdlMWQ0OAdF4wTZgDNjGxmzGmCXG431sAzYEcPvruWOMAnKwaU0feqRPoDsz5zv3nnuHoeD/FoUd
+        pfWtPWVNYHSW1rewsdSl24/Cl18/HxKWtoCzpMgRH0bft22ga1zqltsLrru0EWfHJwiPGLAnHYOnZQw8
+        /cTJKSZ+HrrVIkR5Mn4EQTEL38s38LWr4OsgflPC1zqBv+LHGP9p8FaK4LrYzKNxRF4ZRbG/S3OZDjX8
+        VFQylsDYs/68FsGNPe3Dn5FDREcXEOzUICjTZqZrEsF2NZLCIdgz7NlUin8e3OvqXpwFYwh1ahGS6RH6
+        fep6unUItWtwFoiBPctypFLdPLhRCcn5CCKyKQi90xD6Zq6H7gl363Hij0CQz8A7v4HhZ7I2ynXjI8o1
+        tkqRdAuI9s4g0m9AZGD2eugeoWca70gekhuoFVqcrnkw/LiLrcKdVNrcgpNKpfDzfvgHDTgYmENsKAuD
+        RsR6DTjxncu7dIj1GZB0+CB/3MkKKEqlzh5cc3Mz+LdeTKg0+ENNm2pkDodyM/aHTZmREwPzl+TRASMS
+        Civ42XW0fdcwTHlzKoBramrC1vYO1Fo9NDo91LopqPV6hEfNiI9YcKC4AhsbMok9D1HPL+SjNgg0Lvvm
+        RYDy3iWytoBrbGyEa2sb+ukZTM0YLtAbCBoLji/imGaVeGVFnEG/x+WWzHJase4HUrb0nxMfE9duQu5F
+        QwOcWy4YjHMZmSF080Z4VIt493oJCQYVceKPZpTLUvIviE+Jj5jkQ8HV19fDuenC/IL5WuYIg9kEr2oJ
+        Jwo7TqnnwXN5jORHl+X3ic9Yfib5UHB1dXVwODdhXrTBbLFmxUQYzWac0etWkBvpragV5ce0Ipt07GQP
+        byCvra2FY8MJm30Z1iV7TrAiBCGCOcsifLQS+3T0jmnmLpL3PGzJXf68pkaUr66tY3llNTvLK7Da7BAi
+        JF8wwThvgtWxhv3ZDWz/qkPvg19yl9eQfN3hFJd+zbGRlVWCHU0hImDORHuB5PbVNezsuWHXWlHxVJKz
+        vLC8/Ps2C/Wb533ixsuK04XdnV1adgEqjZbkZiyT/K17DzbNAiqrKnOWs7jz45Mn8AYC8Hi94qyy4fZ4
+        EKGeqye14klIy5VKFSRVuc88HUUVFRUIhsLw+vzYdbuvhff6xZ6rrshVSjWqqqpuLGdRVFZWNsQ2np9W
+        gffy8PCZCQSDKblmMm9yFux9fLeyspI2oQNhWlp/IAifP3CJMPWbbbh8y1mw9/EnxD3WCufmJmL7+6Iw
+        FA6LRKOx8w13LqfVYvI3SuW/lqeDPcgS3GdFbO/sIHF0JBZycHj4Xs8tWCG528NDqVLlTZ6OiyIk1A6F
+        QiEWEU8koKO/elbbMpyuLToFu+jvH0B1dXVe5elIF3GvpKRkrPzRI0gkEnGm1dVVYPvkh/JyFBcXj7N7
+        zu/NmzwdLCHbE+yD4UviqyuwMXaN3ZN3eTrYxmSng30ysQ+H92Fj7Np/9k/nLUZBwd9bEPty5pKc3gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSearchClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSearchClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 267</value>
+  </data>
+  <data name="ActionSearchClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ActionSearchClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ActionSearchClear.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ActionSearchClear.Name" xml:space="preserve">
     <value>ActionSearchClear</value>
@@ -490,7 +1010,7 @@
     <value>560, 0</value>
   </data>
   <data name="PanelSearchFiltersRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 230</value>
+    <value>368, 313</value>
   </data>
   <data name="PanelSearchFiltersRight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -517,7 +1037,7 @@
     <value>0, 0</value>
   </data>
   <data name="EditSearchWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 199</value>
+    <value>552, 282</value>
   </data>
   <data name="EditSearchWord.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -541,7 +1061,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelSearchTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 199</value>
+    <value>552, 282</value>
   </data>
   <data name="PanelSearchTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -562,7 +1082,7 @@
     <value>4, 27</value>
   </data>
   <data name="SelectSearchTypeHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 199</value>
+    <value>552, 282</value>
   </data>
   <data name="SelectSearchTypeHebrew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -688,7 +1208,7 @@
     <value>0, 0</value>
   </data>
   <data name="SelectSearchType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 230</value>
+    <value>560, 313</value>
   </data>
   <data name="SelectSearchType.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -712,7 +1232,7 @@
     <value>10, 10</value>
   </data>
   <data name="PanelSearchFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>928, 230</value>
+    <value>928, 313</value>
   </data>
   <data name="PanelSearchFilters.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2544,718 +3064,6 @@
   </data>
   <data name="&gt;&gt;LabelFilterVerse.ZOrder" xml:space="preserve">
     <value>18</value>
-  </data>
-  <data name="PanelSearchResults.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PanelSearchResults.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelSearchResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="PanelSearchResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="PanelSearchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>906, 122</value>
-  </data>
-  <data name="PanelSearchResults.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PanelSearchResults.Name" xml:space="preserve">
-    <value>PanelSearchResults</value>
-  </data>
-  <data name="&gt;&gt;PanelSearchResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSearchResults.Parent" xml:space="preserve">
-    <value>PanelSearchResultsOuter</value>
-  </data>
-  <data name="&gt;&gt;PanelSearchResults.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAgZJREFUSEu1lTtOQkEUhlkBCR0boCYsgIIN0GmkZAVa0CMtjdpQYCcFMdqpBe5A
-        C7VBkPjAAqFBoKQa842eyZn7wJhcb/LnXs7j/89jJqTkaTQaJkn80H4/zWbTrNfrROFE+IgKSAJW5D8F
-        mEykwHK1Mr3etWm1WiGfgJiTTsecnZ1H+oETIFijVqsxP5PL5cx8/hlKxFYul23M1ta2zRGfcPAdKfA0
-        ejbpdNomg93dPc8PqFr8IKrIWIHJ5MNks1mPgI6oWmIYn/ZLjOaJFQD1+n6IgE5EhPdOpRKKabePzWKx
-        dDxOYLFc2iRNUK1WQwTYJCY4JsBeNI8TEKPGdDazVQdJELm5ubUHgAXrTjTXrwLsglEVCgVPALAjcHf/
-        YA8FonSk8zcKQE5SsVi0BHJsNUqlknl5HYdy6Zy3JzCdziwp4FsIeZMg3QRFGBEFECMQHk9AjKDfH5hM
-        JmMJ8vm8HYP4okRYLCKaA8QKsEB90RgTNvHHiVCY5uG4egJv43cL5krrmoBFiwj+TZ0ID3twAkIM+IaM
-        8WgCRMUPUZQIF014PAEMJAEJuLi8crsACGp/lAj3Rng8ATEK6ACn3gW/g3H9x6G7J8RyF8QXKwA5lXBD
-        BQeHR16MYDAc2fvAQeh2Tz2fJ8DytPMvoCA6CdoR+Bnh9/8yhiRhq9cPatzcJOAqT6VSX5iJeJm5DWGf
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
-  </data>
-  <data name="ActionSearchWordOpenInLetters.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchWordOpenInLetters.Name" xml:space="preserve">
-    <value>ActionSearchWordOpenInLetters</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchWordOpenInLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchWordOpenInLetters.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchWordOpenInLetters.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 62</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ActionSearchInRemoveAll.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInRemoveAll.Name" xml:space="preserve">
-    <value>ActionSearchInRemoveAll</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInRemoveAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInRemoveAll.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInRemoveAll.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActionSearchInAddAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="ActionSearchInAddAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchInAddAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionSearchInAddAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchInAddAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 62</value>
-  </data>
-  <data name="ActionSearchInAddAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
-  </data>
-  <data name="ActionSearchInAddAll.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ActionSearchInAddAll.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInAddAll.Name" xml:space="preserve">
-    <value>ActionSearchInAddAll</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInAddAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInAddAll.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchInAddAll.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SelectSearchInBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="SelectSearchInBook.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SelectSearchInBook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="SelectSearchInBook.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="SelectSearchInBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 149</value>
-  </data>
-  <data name="SelectSearchInBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 23</value>
-  </data>
-  <data name="SelectSearchInBook.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchInBook.Name" xml:space="preserve">
-    <value>SelectSearchInBook</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchInBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchInBook.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchInBook.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SelectSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="SelectSearchPaging.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SelectSearchPaging.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SelectSearchPaging.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 220</value>
-  </data>
-  <data name="SelectSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 18</value>
-  </data>
-  <data name="SelectSearchPaging.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchPaging.Name" xml:space="preserve">
-    <value>SelectSearchPaging</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchPaging.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchPaging.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;SelectSearchPaging.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditSearchPaging.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="EditSearchPaging.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="EditSearchPaging.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="EditSearchPaging.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 195</value>
-  </data>
-  <data name="EditSearchPaging.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="EditSearchPaging.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="EditSearchPaging.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditSearchPaging.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;EditSearchPaging.Name" xml:space="preserve">
-    <value>EditSearchPaging</value>
-  </data>
-  <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;EditSearchPaging.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EditSearchInKetouvim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="EditSearchInKetouvim.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditSearchInKetouvim.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="EditSearchInKetouvim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditSearchInKetouvim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 126</value>
-  </data>
-  <data name="EditSearchInKetouvim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 19</value>
-  </data>
-  <data name="EditSearchInKetouvim.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="EditSearchInKetouvim.Text" xml:space="preserve">
-    <value>Ketouvim</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInKetouvim.Name" xml:space="preserve">
-    <value>EditSearchInKetouvim</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInKetouvim.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInKetouvim.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInKetouvim.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="EditSearchInNeviim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="EditSearchInNeviim.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditSearchInNeviim.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="EditSearchInNeviim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditSearchInNeviim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 106</value>
-  </data>
-  <data name="EditSearchInNeviim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 19</value>
-  </data>
-  <data name="EditSearchInNeviim.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditSearchInNeviim.Text" xml:space="preserve">
-    <value>Nevi'im</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInNeviim.Name" xml:space="preserve">
-    <value>EditSearchInNeviim</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInNeviim.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInNeviim.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInNeviim.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="EditSearchInTorah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="EditSearchInTorah.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditSearchInTorah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="EditSearchInTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditSearchInTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 86</value>
-  </data>
-  <data name="EditSearchInTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 19</value>
-  </data>
-  <data name="EditSearchInTorah.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EditSearchInTorah.Text" xml:space="preserve">
-    <value>Torah</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInTorah.Name" xml:space="preserve">
-    <value>EditSearchInTorah</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInTorah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInTorah.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;EditSearchInTorah.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="ActionSearchRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="ActionSearchRun.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionSearchRun.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchRun.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionSearchRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 184</value>
-  </data>
-  <data name="ActionSearchRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
-  </data>
-  <data name="ActionSearchRun.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchRun.Name" xml:space="preserve">
-    <value>ActionSearchRun</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchRun.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchRun.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAABEZJREFUWEfFln9MlHUcx23Z/eHmVm26/ujHH/ZfKekfVmhwx2FKqEHJglRk6srl
-        sray1VoWB4KAwYAQJSGn+COFUpI7vAj1GM8dBxeXJ+duF2k5juNAhiTGVu7d5/OlB7znucPg1vXZXvvw
-        eX+/n+/nfc9zD/fMAvC/ElKMJiHFaBJSjCYhRYZidoLBeDbe0IS4bBM463NM0iML4zS8+C9Co6MeLcHn
-        UD2bRdUcpSBDMZebpavDaO0ZEpnr59/ev4LW7uMNU4QmLrsJ37v7cNEbEH2kzeUF1RylIEMxjz95s2cQ
-        i/Muisz1M5mGJFq7nzeECU08Db/gCWDBR40wu/3gmvR5vKiaoxRkKObH00DTlUE8t7dNZK4Xvf7Jalp7
-        gDeECDG8+Uo/YgxmLMw2w3S5TzYwnzeo5igFGW7ggd9dHsTyEpvI9zCg0bJhdz+W5rcgtuA8lua1oMEV
-        oYHTLrqHZR0iT2FADD9zyY9lRRZoi1uhK2kVf9c7IzRwyhlAYoVD5DAGxPD6rl7ElbRBXyphRbkViWVW
-        xFN9wuGTv4TTN8AHH+0KIOnATyJzHRNsQAw/4eiFvtyGlV+0I2mfHS8RSRV2MmFDbWeEBg47AlhT7RKZ
-        60XpH/NTwAY0WoMJtZJ3dFVlJ5IPdGJtlWOCNcSqyg4cskdooKZzAKlfdYvM9VOv7tTT2hwt3ddqi2c0
-        +Usn1h50IqXaidS74Hp1VRcO2vqgI6N8Hh+qmqMUZLiBB1Z1BLDuiEdkrhfoN8Yl5J7DvvOeP7K+9uCV
-        GhfWHXIhTQFrKTWXsN/mm7kBHQ2sbB9A+jGvyFw/Hpu6kg2Umd1jW+u8eO2IGxm1atKJtMPdqJAiuAK6
-        bCPKafCGk7+IzPWTL25OobVYvq+l5u7bGce9WH/cgw0KWMs46kGZ5I/MQKltCFl1v4rM9dNpO/kpeIJY
-        zlekuOXnvzLrrmLTqR5k3QXXG0/2oEQKRGag2HoDW05fF5nrmPW7kmltDvEoQSaM+NzSiy3f/oat31wL
-        YnP9NeyVxq8cn0eo5ygFGW7gxiLrEN5s8IksDEz+H+CfZTbxAuuFFh+2NfRi25nrE7xBFLYNRmagwDqM
-        7Ua/yAoDHEEmimy01+TH9kaf4C1ijzRunPbMzMAe6SZ2nBsQOYQBjkkTnzWioH0E75oH8E5TP3Y0BZD/
-        j3Fan5mB3dZbeK/5hshhDHAEmci338L7PwyN99lGZm4ggRpzbKP44MKwyFyHMcAxYUJLJnbbx/ChZQS5
-        9tuij/TpG9DT45Pr+BO7rGMic70kM+dlWgtlgGPSxKdnUei8g7wf74g+0qZvIDHH+Ds38yfgnGhovEn6
-        Y8SUr2SEMME99CILPofqaRt4kFhMJBD8A8R5CfEwcc+XUoJNPEtwH5/D56nnKAUZCr7M3MTOZbgOd/mV
-        wSYeIoL6VHOUgsx/Fao5SiHahBSjSUgxemDW3/JI16J4IB+LAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 184</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 42</value>
-  </data>
-  <data name="ActionNavigateSearchFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ActionNavigateSearchFirst.Name" xml:space="preserve">
-    <value>ActionNavigateSearchFirst</value>
-  </data>
-  <data name="&gt;&gt;ActionNavigateSearchFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionNavigateSearchFirst.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionNavigateSearchFirst.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAr5JREFUWEfFlktME1EUhllodyay0JVb97qxiYr2AVEhECUagxokgQUJC1z4CGoi
-        UBSx8hIiKKJGSdCAGAjTKa9WC1aeEW2ElPIQpNBKYoyKsjD+njs4QCc3CrEznuTL5P53eu43tzPTRgD4
-        r3BDLeGGWsINtYQbKllD6YyWFjDMubZmGq9jIa+nDDdUssrS7c2xo2N4Fg+6xmEiCco2sAleTxluqGQV
-        JS3+fOQDtl4QUO0agzHXzj64iU3yespwQyV/KWnx9uEgtlnaJKqejdLXIAlsZifwespwQyV/KJ0hR4Q4
-        FMSOfAd2Fjihv+pEpVMbAWnxxjcB7LK6YCjqhLG4E1GFLpQ7fKoLSIs/eeXHnuIXMJe6EVP2UsJQ4kZJ
-        m49uQvUEpMUfDfhhLuvGvvIeHLjZi1iCHWNofL11RDUBnSFXRI3bN7+/oh9xt/qRcHtgiXgitrIfBS3q
-        7ABduZ0eMe98XNUgEu4M4mD1IA6tgI3jae6KGH4BnSmvBRXOke8pj71IvOvB4fseHFHAssR7HljE0bAL
-        RDKBG21DC2n1Phx9OISkGj5sLtsW/h2IJPQGeruVtr79llTrw/FaL05wOEZcEsK/AzpiC7HbSE9AkWP0
-        R3L9BE7WjSFFQXLdOC4KY+rchMRvCRsKXX6kPp1CWsO7EFIbJnFeYD9G4RdgJUtEMYlrrhmkN/mR3vh+
-        maZpZDVPqCbAKkTC2v0JGWIAGcLMIrYAzgmTMNH7gs5RRYDVskS2gIKezzjVOodMexCZdDwrTKkuwCpE
-        Ir/3K053fFxEnNZEgNWShIEkLvctIKuLRMRZ+kumjQCrFTvRDOvrnzjTPofoPPVuQl4tSZgtIqLpCYix
-        iF9orJkAK1lCT5iI7cRGgttThhsqWUMxCfbaZlfOFl9PcHvKcEMl/1q8njLcUEu4oZZwQ+1AxC/rHjzh
-        PLW5MgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 184</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 42</value>
-  </data>
-  <data name="ActionSearchNavigatePrevious.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigatePrevious.Name" xml:space="preserve">
-    <value>ActionSearchNavigatePrevious</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigatePrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigatePrevious.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigatePrevious.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionSearchNavigateNext.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAxVJREFUWEfFlF1Ik2Ecxb2o7oK6aFfddR3RjUEfuqlRZolFUtKXlEQUVFAXdVXO
-        r9RS1MwyFSnDPrRQ1Nk0rYlzLs2huVhLisJtaolYmhfJ6f+89YQ+/dM3knXgB3sO78458H6EAPivsGYw
-        Yc1gwprBhDVVSIsizA11RnMjTASdlwhTr7hMCWuqkJaK8mfeYTS5/QhL/rsRXKaENVVIK8Kp1OoOYNX5
-        ejz1DEOcydc1gsuUsKYKySAKLS/9WJ1sxRqzFc2vhnSP4DIlrKlC0gbU9vkRmt6C9ZmtCM1ogcU9BGOy
-        Zd4RXKaENVVI2oBqlx8bsm0w5bbBmNOm/a7pDcw7gsuUsKYKySAewrvdPoTntiMqvwObCzoQmWdHGJ2r
-        ewbnHMFlSlhThaQNqOjyUbkD0YVObLvmRDSx5WonIgscNO7PI7hMCWuqkLQB5U4fthY9x47ibsTOIOZG
-        F/ldqLB7J4zm30dwmRLWVCEZTBRc4vBje3EP4kpd2DkDcY4tcSHmpgulNs+EUXk7uEwJa6qQtAHXHT7E
-        lfVid3kf4hWEt6usD4n3PChqff01IvXxrxFcpoQ1VeSAQrsf8bf6sbfCjQSGPbfdSKryIr/JPfVzwPIF
-        HZBvDyDhjgf7Kj3YryC8hEov8qz9k+J5of+sIxZ2QK59GAfuD+DQgwEkzkCcD1a9RU7Lm2+mH2/CRmIl
-        sYC3ILkBl+0jOFz9DkkPZ3Pk0XtcsQ1CXEPXzioX4jIlrKlC0gZktX/E0ZoPODaT2kFk2XyyfBMxq1yI
-        y5SwpgpJG3DJPorj9T6ckFgCyHaMzVkuxGVKWFOFpA3I6BjDycZhnGocwmnrCDI7x2G6WD9nuRCXKWFN
-        FZI2IM0xjjPNn3D2ySgynF90lQtxmRLWVCEZImhAqnMS52zjSHNOwaizXIjLlLCmCskQSa9h+otpZLmm
-        YbxQp7tciMuUsKYKyRCV0vA5MsUCMYTOusuFuEwJa6qQlhFriQhCfOF0lwtxmRLWVCEtJsQIAyE+r7rL
-        hbhMCWuq/Ku4TAlrBhPWDCasGTwQ8h39rkBJV4CZ4gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSearchNavigateNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 184</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchNavigateNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 42</value>
-  </data>
-  <data name="ActionSearchNavigateNext.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateNext.Name" xml:space="preserve">
-    <value>ActionSearchNavigateNext</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateNext.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateNext.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionSearchNavigateLast.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAA+FJREFUWEfFVF9sU2Uc5UF9M9EHeOLNB5+M4QWJImvXGZ38CRiILKIuQtRIgiYY
-        oy8C29jchlu2OSaTTQJDFDaFydZR5oAua++61RXKSkodoGRtdzuaORksAXL8zrd+sdzbuaaN9ZecnP3O
-        3fmdc5O2iwD8r0gp5hIpxVwipZhLpBQJMY/kl3SftpT0wCog9scopjHSlyc8q/bYQeZOnQ9NOUZBQczj
-        DL8Q0nE2EBHH0i4hfa7rU+gfi0vmTp0PTTlGQUHM4jwR6ghE8dRnXTgf1MFd6AuVWMw37w1OYln5Bcnc
-        qfOhKccoKIhZwkD75Qie2ePAsyUO9F6ZSKeE8NlhvzKJFfsGJHOnzoemHKOgMHeoB53+CJaX9+H5ynNY
-        XtEHe2AClrmD85WQBX6+PImVtZrkrAp0+CJ4odoJa20/LDX98u9Tl6L/VkIWOOnXYakfkpxxAX54vveG
-        kVc7gIJ6N15qcMNW58IqsXeMjM9XQhY44dNR0OiVnFWBtuGwCNdQ2OjBq/s9KBR4+atB2Bo0US5liSXU
-        jo7oKDxwUXLifzIrcMgTxitNQ1jb7MW6JKw+MCz0YbS5QjOWkodKyAKHvTrWtvglZ1zAKg4f1CJY0zyC
-        9S0+bEgC93UHfVj9jQ8tzuCM5Z9vhyzQOhzDhm9HJWdV4GstjPWtl7DxkB+bDKD2WqsfxT8E0XTu6t38
-        sjM0LmVg85COjUeCkrMq0OiKYNPhUWxuC6AoBV4/EsC29hDqzwZmEwWetorApsEYNn8Xksyd93jUlGMU
-        FGhggXpXFEVHg3jjWBBbDKBWdCyEOsfoncTP7XMCokA3GkTwluPXJHPnPR415RgFBRpYoNal483jY3j7
-        xBiKk8D9rfbrqOn77X7iDVcKLCUYWKfFUdz+u+TMCwjjPlcM73TcwLYfH8bWn/7Al85xdVyFyw8htRr3
-        LWw9eVNyVgWqBibx7qmbeD8ZneOocobV4RcFVDhH+qrdcbzXGZacVYEvXHF80BXGdgV7FNXa1HzhHOmr
-        dE9he3dUclYFKsSBHT06PuyZwEeOGCoHp2Hd3TVfOCdR/E/sOBOTnFWBvdo0dvbewse/xFHhub1QOGfO
-        574tfeSMC+QLY5nnDj51TmOvZxaWhcM50leqzeCT81OSuVPnQ1OOUVCgwSa+huW/PkCV7wEsu06nE86R
-        vjLvPXzunpXMnTofmnKMggINBaXdf9lK7epAOuGcOZ/w8M3J3KnzoSnHKCiIeUJgmUC+AH/h0gnnJPts
-        CeZO3ZxjFBTEPJowsfmTAumEc5J9Ctypm3OMgsJ/NaYco5BrpBRziZRi7oBFfwNV6r7/dbYtBAAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSearchNavigateLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 184</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchNavigateLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 42</value>
-  </data>
-  <data name="ActionSearchNavigateLast.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateLast.Name" xml:space="preserve">
-    <value>ActionSearchNavigateLast</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateLast.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchNavigateLast.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="ActionSearchClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="ActionSearchClear.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionSearchClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSearchClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAABJhJREFUWEfdl9lPG1cUh5FQ5ymPqH1o/4Y8V0rTl/4tCPUBoSZSVamhkVIwJC1h
-        CWAKTdlMWQ0OAdF4wTZgDNjGxmzGmCXG431sAzYEcPvruWOMAnKwaU0feqRPoDsz5zv3nnuHoeD/FoUd
-        pfWtPWVNYHSW1rewsdSl24/Cl18/HxKWtoCzpMgRH0bft22ga1zqltsLrru0EWfHJwiPGLAnHYOnZQw8
-        /cTJKSZ+HrrVIkR5Mn4EQTEL38s38LWr4OsgflPC1zqBv+LHGP9p8FaK4LrYzKNxRF4ZRbG/S3OZDjX8
-        VFQylsDYs/68FsGNPe3Dn5FDREcXEOzUICjTZqZrEsF2NZLCIdgz7NlUin8e3OvqXpwFYwh1ahGS6RH6
-        fep6unUItWtwFoiBPctypFLdPLhRCcn5CCKyKQi90xD6Zq6H7gl363Hij0CQz8A7v4HhZ7I2ynXjI8o1
-        tkqRdAuI9s4g0m9AZGD2eugeoWca70gekhuoFVqcrnkw/LiLrcKdVNrcgpNKpfDzfvgHDTgYmENsKAuD
-        RsR6DTjxncu7dIj1GZB0+CB/3MkKKEqlzh5cc3Mz+LdeTKg0+ENNm2pkDodyM/aHTZmREwPzl+TRASMS
-        Civ42XW0fdcwTHlzKoBramrC1vYO1Fo9NDo91LopqPV6hEfNiI9YcKC4AhsbMok9D1HPL+SjNgg0Lvvm
-        RYDy3iWytoBrbGyEa2sb+ukZTM0YLtAbCBoLji/imGaVeGVFnEG/x+WWzHJase4HUrb0nxMfE9duQu5F
-        QwOcWy4YjHMZmSF080Z4VIt493oJCQYVceKPZpTLUvIviE+Jj5jkQ8HV19fDuenC/IL5WuYIg9kEr2oJ
-        Jwo7TqnnwXN5jORHl+X3ic9Yfib5UHB1dXVwODdhXrTBbLFmxUQYzWac0etWkBvpragV5ce0Ipt07GQP
-        byCvra2FY8MJm30Z1iV7TrAiBCGCOcsifLQS+3T0jmnmLpL3PGzJXf68pkaUr66tY3llNTvLK7Da7BAi
-        JF8wwThvgtWxhv3ZDWz/qkPvg19yl9eQfN3hFJd+zbGRlVWCHU0hImDORHuB5PbVNezsuWHXWlHxVJKz
-        vLC8/Ps2C/Wb533ixsuK04XdnV1adgEqjZbkZiyT/K17DzbNAiqrKnOWs7jz45Mn8AYC8Hi94qyy4fZ4
-        EKGeqye14klIy5VKFSRVuc88HUUVFRUIhsLw+vzYdbuvhff6xZ6rrshVSjWqqqpuLGdRVFZWNsQ2np9W
-        gffy8PCZCQSDKblmMm9yFux9fLeyspI2oQNhWlp/IAifP3CJMPWbbbh8y1mw9/EnxD3WCufmJmL7+6Iw
-        FA6LRKOx8w13LqfVYvI3SuW/lqeDPcgS3GdFbO/sIHF0JBZycHj4Xs8tWCG528NDqVLlTZ6OiyIk1A6F
-        QiEWEU8koKO/elbbMpyuLToFu+jvH0B1dXVe5elIF3GvpKRkrPzRI0gkEnGm1dVVYPvkh/JyFBcXj7N7
-        zu/NmzwdLCHbE+yD4UviqyuwMXaN3ZN3eTrYxmSng30ysQ+H92Fj7Np/9k/nLUZBwd9bEPty5pKc3gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSearchClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSearchClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 184</value>
-  </data>
-  <data name="ActionSearchClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ActionSearchClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
-  </data>
-  <data name="ActionSearchClear.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchClear.Name" xml:space="preserve">
-    <value>ActionSearchClear</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchClear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchClear.Parent" xml:space="preserve">
-    <value>PanelSearchFiltersRight</value>
-  </data>
-  <data name="&gt;&gt;ActionSearchClear.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="&gt;&gt;LabelSearchTranslationHelp.Name" xml:space="preserve">
     <value>LabelSearchTranslationHelp</value>
