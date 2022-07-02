@@ -85,6 +85,7 @@ partial class BibleStatisticsForm : Form
 
   private void InitializeCounters()
   {
+    //
     foreach ( BookRow book in ApplicationDatabase.Instance.Books )
     {
       var stat = new BookStatistic { Book = book };
@@ -114,29 +115,52 @@ partial class BibleStatisticsForm : Form
         }
       }
     }
+    //
     if ( LabelLongestTanakReferenceValue.Tag is not null )
       LabelLongestTanakReferenceValue.Text = ( (ReferenceItem)LabelLongestTanakReferenceValue.Tag ).ToString();
     if ( LabelLongestTorahReferenceValue.Tag is not null )
       LabelLongestTorahReferenceValue.Text = ( (ReferenceItem)LabelLongestTorahReferenceValue.Tag ).ToString();
+    //
     void count(TanakBook book, BookStatistic counters)
     {
-      try
+      SystemManager.TryCatch(() =>
       {
         counters.CountChapters += CountersBooks[book].CountChapters;
         counters.CountVerses += CountersBooks[book].CountVerses;
         counters.CountWords += CountersBooks[book].CountWords;
         counters.CountLetters += CountersBooks[book].CountLetters;
-      }
-      catch
-      {
-      }
+      });
     }
     foreach ( TanakBook book in Enum.GetValues(typeof(TanakBook)) )
       count(book, CountersAll);
     foreach ( TanakBook book in Enum.GetValues(typeof(TorahBook)) )
       count(book, CountersTorah);
+    //
     SetCounters(StatAllBooks, CountersAll);
     SetCounters(StatTorah, CountersTorah);
+    //
+    var averageWordLength = ApplicationDatabase.Instance.Words.Average(w => w.Hebrew.Length);
+    var countWords1or2 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length < 3);
+    var countWords3 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 3);
+    var countWords4 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 4);
+    var countWords5 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 5);
+    var countWords6 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 6);
+    var countWords7 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 7);
+    var countWords8 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 8);
+    var countWords9 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 9);
+    var countWords10 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length == 10);
+    var countWordsMoreThan10 = ApplicationDatabase.Instance.Words.Count(w => w.Hebrew.Length > 10);
+    LabelAverageWordLength.Text += Math.Round(averageWordLength, MidpointRounding.AwayFromZero);
+    LabelCountWordsLength1or2.Text += countWords1or2;
+    LabelCountWordsLength3.Text += countWords3;
+    LabelCountWordsLength4.Text += countWords4;
+    LabelCountWordsLength5.Text += countWords5;
+    LabelCountWordsLength6.Text += countWords6;
+    LabelCountWordsLength7.Text += countWords7;
+    LabelCountWordsLength8.Text += countWords8;
+    LabelCountWordsLength9.Text += countWords9;
+    LabelCountWordsLength10.Text += countWords10;
+    LabelCountWordsLengthMoreThan10.Text += countWordsMoreThan10;
   }
 
   void SetCounters(StatControl control, BookStatistic stat)

@@ -72,6 +72,18 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.LabelCountWordsLength5 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength4 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength3 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength1or2 = new System.Windows.Forms.Label();
+      this.LabelAverageWordLength = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength6 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength7 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength8 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength9 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength10 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLengthMoreThan10 = new System.Windows.Forms.Label();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
@@ -82,6 +94,7 @@
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
       this.tabPage2.SuspendLayout();
+      this.tabPage3.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -360,6 +373,7 @@
       resources.ApplyResources(this.tabControl1, "tabControl1");
       this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Controls.Add(this.tabPage2);
+      this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       // 
@@ -376,6 +390,78 @@
       resources.ApplyResources(this.tabPage2, "tabPage2");
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // tabPage3
+      // 
+      this.tabPage3.Controls.Add(this.LabelCountWordsLengthMoreThan10);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength10);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength9);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength8);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength7);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength6);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength5);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength4);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength3);
+      this.tabPage3.Controls.Add(this.LabelCountWordsLength1or2);
+      this.tabPage3.Controls.Add(this.LabelAverageWordLength);
+      resources.ApplyResources(this.tabPage3, "tabPage3");
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // LabelCountWordsLength5
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength5, "LabelCountWordsLength5");
+      this.LabelCountWordsLength5.Name = "LabelCountWordsLength5";
+      // 
+      // LabelCountWordsLength4
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength4, "LabelCountWordsLength4");
+      this.LabelCountWordsLength4.Name = "LabelCountWordsLength4";
+      // 
+      // LabelCountWordsLength3
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength3, "LabelCountWordsLength3");
+      this.LabelCountWordsLength3.Name = "LabelCountWordsLength3";
+      // 
+      // LabelCountWordsLength1or2
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength1or2, "LabelCountWordsLength1or2");
+      this.LabelCountWordsLength1or2.Name = "LabelCountWordsLength1or2";
+      // 
+      // LabelAverageWordLength
+      // 
+      resources.ApplyResources(this.LabelAverageWordLength, "LabelAverageWordLength");
+      this.LabelAverageWordLength.Name = "LabelAverageWordLength";
+      // 
+      // LabelCountWordsLength6
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength6, "LabelCountWordsLength6");
+      this.LabelCountWordsLength6.Name = "LabelCountWordsLength6";
+      // 
+      // LabelCountWordsLength7
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength7, "LabelCountWordsLength7");
+      this.LabelCountWordsLength7.Name = "LabelCountWordsLength7";
+      // 
+      // LabelCountWordsLength8
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength8, "LabelCountWordsLength8");
+      this.LabelCountWordsLength8.Name = "LabelCountWordsLength8";
+      // 
+      // LabelCountWordsLength9
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength9, "LabelCountWordsLength9");
+      this.LabelCountWordsLength9.Name = "LabelCountWordsLength9";
+      // 
+      // LabelCountWordsLength10
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength10, "LabelCountWordsLength10");
+      this.LabelCountWordsLength10.Name = "LabelCountWordsLength10";
+      // 
+      // LabelCountWordsLengthMoreThan10
+      // 
+      resources.ApplyResources(this.LabelCountWordsLengthMoreThan10, "LabelCountWordsLengthMoreThan10");
+      this.LabelCountWordsLengthMoreThan10.Name = "LabelCountWordsLengthMoreThan10";
       // 
       // BibleStatisticsForm
       // 
@@ -409,6 +495,8 @@
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
+      this.tabPage3.ResumeLayout(false);
+      this.tabPage3.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -458,5 +546,17 @@
     private Label LabelLongestWordTorahValue;
     private Label label2;
     private Label LabelLongestTorahWordReference;
+    private TabPage tabPage3;
+    private Label LabelAverageWordLength;
+    private Label LabelCountWordsLength1or2;
+    private Label LabelCountWordsLength3;
+    private Label LabelCountWordsLength5;
+    private Label LabelCountWordsLength4;
+    private Label LabelCountWordsLength8;
+    private Label LabelCountWordsLength7;
+    private Label LabelCountWordsLength6;
+    private Label LabelCountWordsLength9;
+    private Label LabelCountWordsLengthMoreThan10;
+    private Label LabelCountWordsLength10;
   }
 }
