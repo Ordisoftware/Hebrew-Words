@@ -60,6 +60,12 @@ public partial class VerseControl : UserControl
       ResetMetrics(container);
     }
     if ( ResetMetricsRequired ) ResetMetrics();
+    if ( Settings.VerseCommentaryLinesCount == 0 )
+    {
+      PanelComment.Visible = false;
+      PanelSeparator.Visible = false;
+    }
+    else
     if ( Settings.VerseCommentaryLinesCount > 1 )
     {
       EditCommentary.Multiline = true;
@@ -75,12 +81,17 @@ public partial class VerseControl : UserControl
       LabelVerseNumber.Text = reference.Verse.Number.ToString();
       LabelVerseNumber.Width = metrics.LabelVerseNumberWidth;
       LabelVerseNumber.ContextMenuStrip = MainForm.Instance.ContextMenuStripVerse;
-      EditCommentary.Font = metrics.EditCommentaryFont;
-      EditCommentary.Text = reference.Verse.Comment;
-      EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
-      PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
-      PanelComment.Height = metrics.EditCommentaryHeight;
-      Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
+      if ( Settings.VerseCommentaryLinesCount != 0 )
+      {
+        EditCommentary.Font = metrics.EditCommentaryFont;
+        EditCommentary.Text = reference.Verse.Comment;
+        EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
+        PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
+        PanelComment.Height = metrics.EditCommentaryHeight;
+        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
+      }
+      else
+        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines;
     }
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
     Width = metrics.ControlWidth;
@@ -105,9 +116,12 @@ public partial class VerseControl : UserControl
     metrics.LabelVerseNumberWidth = TextRenderer.MeasureText(graphicsNumber, "000", metrics.LabelVerseNumberFont).Width + 10;
     metrics.ControlWidth = width;
     metrics.WordControlsPerLine = ( width - Padding.Left - Padding.Right - metrics.LabelVerseNumberWidth ) / Settings.WordControlWidth;
-    metrics.EditCommentaryFont = new Font(EditCommentary.Font.Name, Settings.FontSizeCommentary);
-    metrics.EditCommentaryHeight = metrics.EditCommentaryFont.Height * Settings.VerseCommentaryLinesCount + metrics.EditCommentaryFont.Height / 2;
-    metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
+    if ( Settings.VerseCommentaryLinesCount != 0 )
+    {
+      metrics.EditCommentaryFont = new Font(EditCommentary.Font.Name, Settings.FontSizeCommentary);
+      metrics.EditCommentaryHeight = metrics.EditCommentaryFont.Height * Settings.VerseCommentaryLinesCount + metrics.EditCommentaryFont.Height / 2;
+      metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
+    }
     metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 

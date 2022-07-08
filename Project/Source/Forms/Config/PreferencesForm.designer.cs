@@ -110,6 +110,7 @@
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditTrayIconEnabled = new System.Windows.Forms.CheckBox();
+      this.EditSystemStatisticsCalculateDbSize = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.ActionCheckAllComments = new System.Windows.Forms.Button();
@@ -137,8 +138,8 @@
       this.LabelFontSizeTranslationInfo = new System.Windows.Forms.Label();
       this.LabelFontSizeHebrewInfo = new System.Windows.Forms.Label();
       this.LabelInfoWordControlWidth = new System.Windows.Forms.Label();
-      this.LabelInfoWordtranslateLinesCount = new System.Windows.Forms.Label();
-      this.LabelInfoCommentLinesCount = new System.Windows.Forms.Label();
+      this.LabelWordtranslateLinesCountInfo = new System.Windows.Forms.Label();
+      this.LabelInfoCommentLinesCountInfos = new System.Windows.Forms.Label();
       this.EditFontSizeCommentary = new System.Windows.Forms.NumericUpDown();
       this.EditFontSizeTranslation = new System.Windows.Forms.NumericUpDown();
       this.EditFontSizeHebrew = new System.Windows.Forms.NumericUpDown();
@@ -247,7 +248,6 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditSystemStatisticsCalculateDbSize = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -896,6 +896,13 @@
       this.EditTrayIconEnabled.UseVisualStyleBackColor = true;
       this.EditTrayIconEnabled.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
       // 
+      // EditSystemStatisticsCalculateDbSize
+      // 
+      resources.ApplyResources(this.EditSystemStatisticsCalculateDbSize, "EditSystemStatisticsCalculateDbSize");
+      this.EditSystemStatisticsCalculateDbSize.Name = "EditSystemStatisticsCalculateDbSize";
+      this.EditSystemStatisticsCalculateDbSize.UseVisualStyleBackColor = true;
+      this.EditSystemStatisticsCalculateDbSize.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
+      // 
       // EditUsageStatisticsEnabled
       // 
       resources.ApplyResources(this.EditUsageStatisticsEnabled, "EditUsageStatisticsEnabled");
@@ -1063,8 +1070,8 @@
       this.TabPageRendering.Controls.Add(this.LabelFontSizeTranslationInfo);
       this.TabPageRendering.Controls.Add(this.LabelFontSizeHebrewInfo);
       this.TabPageRendering.Controls.Add(this.LabelInfoWordControlWidth);
-      this.TabPageRendering.Controls.Add(this.LabelInfoWordtranslateLinesCount);
-      this.TabPageRendering.Controls.Add(this.LabelInfoCommentLinesCount);
+      this.TabPageRendering.Controls.Add(this.LabelWordtranslateLinesCountInfo);
+      this.TabPageRendering.Controls.Add(this.LabelInfoCommentLinesCountInfos);
       this.TabPageRendering.Controls.Add(this.EditFontSizeCommentary);
       this.TabPageRendering.Controls.Add(this.EditFontSizeTranslation);
       this.TabPageRendering.Controls.Add(this.EditFontSizeHebrew);
@@ -1129,17 +1136,17 @@
       this.LabelInfoWordControlWidth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelInfoWordControlWidth.Name = "LabelInfoWordControlWidth";
       // 
-      // LabelInfoWordtranslateLinesCount
+      // LabelInfoWordtranslateLinesCountInfos
       // 
-      resources.ApplyResources(this.LabelInfoWordtranslateLinesCount, "LabelInfoWordtranslateLinesCount");
-      this.LabelInfoWordtranslateLinesCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoWordtranslateLinesCount.Name = "LabelInfoWordtranslateLinesCount";
+      resources.ApplyResources(this.LabelWordtranslateLinesCountInfo, "LabelInfoWordtranslateLinesCountInfos");
+      this.LabelWordtranslateLinesCountInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelWordtranslateLinesCountInfo.Name = "LabelInfoWordtranslateLinesCountInfos";
       // 
-      // LabelInfoCommentLinesCount
+      // LabelInfoCommentLinesCountInfos
       // 
-      resources.ApplyResources(this.LabelInfoCommentLinesCount, "LabelInfoCommentLinesCount");
-      this.LabelInfoCommentLinesCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoCommentLinesCount.Name = "LabelInfoCommentLinesCount";
+      resources.ApplyResources(this.LabelInfoCommentLinesCountInfos, "LabelInfoCommentLinesCountInfos");
+      this.LabelInfoCommentLinesCountInfos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoCommentLinesCountInfos.Name = "LabelInfoCommentLinesCountInfos";
       // 
       // EditFontSizeCommentary
       // 
@@ -2066,13 +2073,6 @@
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
       // 
-      // EditSystemStatisticsCalculateDbSize
-      // 
-      resources.ApplyResources(this.EditSystemStatisticsCalculateDbSize, "EditSystemStatisticsCalculateDbSize");
-      this.EditSystemStatisticsCalculateDbSize.Name = "EditSystemStatisticsCalculateDbSize";
-      this.EditSystemStatisticsCalculateDbSize.UseVisualStyleBackColor = true;
-      this.EditSystemStatisticsCalculateDbSize.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2238,7 +2238,7 @@
     private Label LabelInfoHistoryCount;
     private Label LabelInfoBookmarksCount;
     private Label LabelInfoWordControlWidth;
-    private Label LabelInfoCommentLinesCount;
+    private Label LabelInfoCommentLinesCountInfos;
     private GroupBox GroupBoxHebrewWordClickAlt;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl5;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl1;
@@ -2273,7 +2273,7 @@
     private RadioButton GroupBoxHebrewWordClickShift0;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl0;
     private RadioButton GroupBoxHebrewWordClickCtrl0;
-    private Label LabelInfoWordtranslateLinesCount;
+    private Label LabelWordtranslateLinesCountInfo;
     private NumericUpDown EditWordTranslateLinesCount;
     private RadioButton GroupBoxHebrewWordClickShift3;
     private RadioButton GroupBoxHebrewWordClickShiftCtrl3;

@@ -301,4 +301,10 @@ partial class SearchTranslatedForm : Form
     HebrewTools.OpenHebrewLetters(EditHebrew.Text);
   }
 
+  private void ActionCloseAll_Click(object sender, EventArgs e)
+  {
+    Close();
+    MainForm.Instance.ActionCloseTranslatedWindows.PerformClick();
+  }
+
 }

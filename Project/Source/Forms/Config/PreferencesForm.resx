@@ -3374,70 +3374,70 @@
   <data name="&gt;&gt;LabelInfoWordControlWidth.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelInfoWordtranslateLinesCountInfos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelInfoWordtranslateLinesCountInfos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelInfoWordtranslateLinesCountInfos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelInfoWordtranslateLinesCountInfos.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 99</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelInfoWordtranslateLinesCountInfos.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelInfoWordtranslateLinesCountInfos.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCount.Text" xml:space="preserve">
+  <data name="LabelInfoWordtranslateLinesCountInfos.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.Name" xml:space="preserve">
-    <value>LabelInfoWordtranslateLinesCount</value>
+  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Name" xml:space="preserve">
+    <value>LabelInfoWordtranslateLinesCountInfos</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCount.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelInfoCommentLinesCountInfos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelInfoCommentLinesCountInfos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelInfoCommentLinesCountInfos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelInfoCommentLinesCountInfos.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 154</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelInfoCommentLinesCountInfos.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelInfoCommentLinesCountInfos.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
   </data>
-  <data name="LabelInfoCommentLinesCount.Text" xml:space="preserve">
+  <data name="LabelInfoCommentLinesCountInfos.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelInfoCommentLinesCount.Name" xml:space="preserve">
-    <value>LabelInfoCommentLinesCount</value>
+  <data name="&gt;&gt;LabelInfoCommentLinesCountInfos.Name" xml:space="preserve">
+    <value>LabelInfoCommentLinesCountInfos</value>
   </data>
-  <data name="&gt;&gt;LabelInfoCommentLinesCount.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCommentLinesCountInfos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelInfoCommentLinesCount.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCommentLinesCountInfos.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;LabelInfoCommentLinesCount.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelInfoCommentLinesCountInfos.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="EditFontSizeCommentary.Location" type="System.Drawing.Point, System.Drawing">
