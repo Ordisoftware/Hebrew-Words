@@ -36,6 +36,19 @@ public partial class VerseRow : AbstractRowWithTitle
   private Guid _ChapterID;
 
   [NotNull]
+  public string Concept
+  {
+    get => _Concept;
+    set
+    {
+      if ( _Concept == value ) return;
+      _Concept = value;
+      NotifyPropertyChanged(nameof(Concept));
+    }
+  }
+  private string _Concept = string.Empty;
+
+  [NotNull]
   public string Comment
   {
     get => _Comment;

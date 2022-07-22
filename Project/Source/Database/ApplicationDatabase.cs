@@ -146,6 +146,7 @@ class ApplicationDatabase : SQLiteDatabase
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Title));
       checkColumnText(ChaptersTableName, nameof(ChapterRow.Memo));
       checkColumnText(VersesTableName, nameof(VerseRow.Title));
+      checkColumnText(VersesTableName, nameof(VerseRow.Concept));
     }
     Globals.IsDatabaseUpgraded = upgrade;
     //
@@ -273,6 +274,7 @@ class ApplicationDatabase : SQLiteDatabase
                 ID = Guid.NewGuid(),
                 ChapterID = chapter.ID,
                 Number = ++countVerses,
+                Concept = string.Empty,
                 Comment = string.Empty
               };
               listWordsUnicode = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();

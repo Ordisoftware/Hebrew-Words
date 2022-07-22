@@ -126,7 +126,8 @@
       this.VersesBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SelectRenderAllVersesKeep = new System.Windows.Forms.CheckBox();
       this.SelectRenderAllVerses = new System.Windows.Forms.CheckBox();
-      this.label1 = new System.Windows.Forms.Label();
+      this.LabelVerseConcept = new System.Windows.Forms.Label();
+      this.LabelVerseTitle = new System.Windows.Forms.Label();
       this.EditChapterMemo = new Ordisoftware.Core.TextBoxEx();
       this.LabelChapterMemo = new System.Windows.Forms.Label();
       this.LabelBookTranslation = new System.Windows.Forms.Label();
@@ -139,6 +140,7 @@
       this.ActionExportBook = new System.Windows.Forms.Button();
       this.ActionSearchVerse = new System.Windows.Forms.Button();
       this.EditBookTranslation = new Ordisoftware.Core.TextBoxEx();
+      this.EditVerseConcept = new Ordisoftware.Core.TextBoxEx();
       this.EditVerseTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditChapterTitle = new Ordisoftware.Core.TextBoxEx();
       this.EditELS50Single = new Ordisoftware.Core.TextBoxEx();
@@ -1029,7 +1031,8 @@
       this.PanelNavigation.Controls.Add(this.SelectVerse);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVersesKeep);
       this.PanelNavigation.Controls.Add(this.SelectRenderAllVerses);
-      this.PanelNavigation.Controls.Add(this.label1);
+      this.PanelNavigation.Controls.Add(this.LabelVerseConcept);
+      this.PanelNavigation.Controls.Add(this.LabelVerseTitle);
       this.PanelNavigation.Controls.Add(this.EditChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelChapterMemo);
       this.PanelNavigation.Controls.Add(this.LabelBookTranslation);
@@ -1043,6 +1046,7 @@
       this.PanelNavigation.Controls.Add(this.ActionSearchVerse);
       this.PanelNavigation.Controls.Add(this.SelectBook);
       this.PanelNavigation.Controls.Add(this.EditBookTranslation);
+      this.PanelNavigation.Controls.Add(this.EditVerseConcept);
       this.PanelNavigation.Controls.Add(this.EditVerseTitle);
       this.PanelNavigation.Controls.Add(this.EditChapterTitle);
       this.PanelNavigation.Controls.Add(this.EditELS50Single);
@@ -1114,8 +1118,8 @@
       // 
       // ActionSelectRenderAllVersesKeepHelp
       // 
-      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectRenderAllVersesKeepHelp, "ActionSelectRenderAllVersesKeepHelp");
+      this.ActionSelectRenderAllVersesKeepHelp.FlatAppearance.BorderSize = 0;
       this.ActionSelectRenderAllVersesKeepHelp.Name = "ActionSelectRenderAllVersesKeepHelp";
       this.ActionSelectRenderAllVersesKeepHelp.UseVisualStyleBackColor = true;
       this.ActionSelectRenderAllVersesKeepHelp.Click += new System.EventHandler(this.ActionSelectRenderAllVersesKeepHelp_Click);
@@ -1161,10 +1165,15 @@
       this.SelectRenderAllVerses.UseVisualStyleBackColor = true;
       this.SelectRenderAllVerses.CheckedChanged += new System.EventHandler(this.SelectRenderAllVerses_CheckedChanged);
       // 
-      // label1
+      // LabelVerseConcept
       // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
+      resources.ApplyResources(this.LabelVerseConcept, "LabelVerseConcept");
+      this.LabelVerseConcept.Name = "LabelVerseConcept";
+      // 
+      // LabelVerseTitle
+      // 
+      resources.ApplyResources(this.LabelVerseTitle, "LabelVerseTitle");
+      this.LabelVerseTitle.Name = "LabelVerseTitle";
       // 
       // EditChapterMemo
       // 
@@ -1257,6 +1266,18 @@
       this.EditBookTranslation.SpellCheckAllowed = true;
       this.EditBookTranslation.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
       this.EditBookTranslation.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
+      // 
+      // EditVerseConcept
+      // 
+      resources.ApplyResources(this.EditVerseConcept, "EditVerseConcept");
+      this.EditVerseConcept.BackColor = System.Drawing.Color.LightYellow;
+      this.EditVerseConcept.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditVerseConcept.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditVerseConcept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VersesBindingSource, "Concept", true));
+      this.EditVerseConcept.Name = "EditVerseConcept";
+      this.EditVerseConcept.SpellCheckAllowed = true;
+      this.EditVerseConcept.Enter += new System.EventHandler(this.EditDbTextBox_Enter);
+      this.EditVerseConcept.Leave += new System.EventHandler(this.EditDbTextBox_Leave);
       // 
       // EditVerseTitle
       // 
@@ -2718,7 +2739,9 @@
     internal ToolStripMenuItem ActionGoToParashah;
     private ToolStripSeparator toolStripSeparator28;
     internal ToolStripMenuItem ActionDummyParashah;
-    private Label label1;
+    private Label LabelVerseTitle;
     private TextBoxEx EditVerseTitle;
+    private Label LabelVerseConcept;
+    private TextBoxEx EditVerseConcept;
   }
 }
