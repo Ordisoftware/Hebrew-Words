@@ -29,7 +29,7 @@ public partial class VerseRow
   }
 
   /// <summary>
-  /// Indicates the translation sentence of the verse with [...] in place of the untranslated words 
+  /// Indicates the translation sentence of the verse with [...] in place of the untranslated words
   /// and with new lines replaced by spaces.
   /// </summary>
   public string Translation

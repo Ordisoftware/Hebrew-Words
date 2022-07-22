@@ -857,6 +857,7 @@
       this.EditSearchWord.BackColor = System.Drawing.Color.Transparent;
       this.EditSearchWord.ContextMenuDetailsVisible = false;
       resources.ApplyResources(this.EditSearchWord, "EditSearchWord");
+      this.EditSearchWord.InititialWord = null;
       this.EditSearchWord.Name = "EditSearchWord";
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);

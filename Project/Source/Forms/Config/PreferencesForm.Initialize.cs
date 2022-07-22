@@ -104,7 +104,7 @@ partial class PreferencesForm
     setInterval(EditAutoSaveDelay, LabelInfoAutoSaveDelay, AutoSaveDelayInterval);
     setInterval(EditBookmarksCount, LabelInfoBookmarksCount, BookmarksCountInterval);
     setInterval(EditCheckUpdateAtStartupInterval, LabelInfoCheckUpdateAtStartup, CheckUpdateInterval);
-    setInterval(EditCommentaryLinesCount, LabelInfoCommentLinesCount, CommentLinesCountInterval);
+    setInterval(EditCommentaryLinesCount, LabelInfoCommentLinesCountInfos, CommentLinesCountInterval);
     setInterval(EditFontSizeCommentary, LabelFontSizeCommentaryInfo, FontSizeCommentaryInterval);
     setInterval(EditFontSizeHebrew, LabelFontSizeHebrewInfo, FontSizeHebrewInterval);
     setInterval(EditFontSizeTranslation, LabelFontSizeTranslationInfo, FontSizeTranslationInterval);
@@ -122,6 +122,7 @@ partial class PreferencesForm
     setInterval(EditPageWidth, LabelPageWidthIntervalInfo, DocumentPageWidthInterval);
     setInterval(EditPageHeight, LabelPageHeightIntervalInfo, DocumentPageHeightInterval);
     setInterval(EditDocumentWordColumnsCount, LabelDocumentWordColumnsCountIntervalInfo, DocumentWordColumnsCountInterval);
+    setInterval(EditWordTranslateLinesCount, LabelWordtranslateLinesCountInfo, WordTranslationLinesCountInterval);
     // TODO setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
     //
     static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
