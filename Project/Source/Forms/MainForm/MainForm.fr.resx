@@ -879,4 +879,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
+  <data name="LabelVerseTitle.Text" xml:space="preserve">
+    <value>Titre</value>
+  </data>
 </root>
