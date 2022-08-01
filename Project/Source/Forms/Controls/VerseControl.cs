@@ -45,7 +45,7 @@ public partial class VerseControl : UserControl
     InitializeComponent();
   }
 
-  public VerseControl(Panel container, ReferenceItem reference) : this()
+  public VerseControl(Panel container, ReferenceItem reference, int widthDelta = 0) : this()
   {
     Reference = reference;
     if ( reference.Verse is null ) return;
@@ -94,7 +94,7 @@ public partial class VerseControl : UserControl
         Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines;
     }
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
-    Width = metrics.ControlWidth;
+    Width = metrics.ControlWidth - widthDelta;
   }
 
   public void ResetMetrics()
