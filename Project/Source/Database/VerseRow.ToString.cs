@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseRow
 {
 
+  // TODO debug error null after changing language and go to fileted verse
   public string NumberFormatted
     => FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
 
