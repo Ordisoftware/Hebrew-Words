@@ -233,8 +233,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 | Shift + Alt + Right | Next verse |
 | Shift + Alt + Up | Last verse of previous chapter |
 | Shift + Alt + Down | First verse of next chapter |
-| Alt + Home | Reach the beginning of the view |
-| Alt + End | Reach the ending of the view |
+| Alt + Home | Reach the beginning of the view or first verse |
+| Alt + End | Reach the ending of the view or last verse |
 | Alt + PageUp | Scroll the view up |
 | Alt + PageDown | Scroll the view down |
 | Alt + Up | Fine scroll the view up |

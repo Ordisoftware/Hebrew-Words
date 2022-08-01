@@ -39,7 +39,7 @@ static partial class AppTranslations
                     "F7 or Shift + Ctrl + F : Go to reference" + Globals.NL +
                     "F9 or Ctrl + R : Refresh" + Globals.NL +
                     "Ctrl + B : Books board" + Globals.NL +
-                    "Ctrl + B : Parashot board" + Globals.NL +
+                    "Ctrl + P : Parashot board" + Globals.NL +
                     "Ctrl + Alt + I : Import console" + Globals.NL +
                     "Ctrl + Alt + S : Tanak's statistics" + Globals.NL +
                     "Alt + C : Calculator" + Globals.NL +
@@ -57,8 +57,8 @@ static partial class AppTranslations
                     "Shift + Alt + Right : Last verse" + Globals.NL +
                     "Shift + Alt + Up : Last verse of previous chapter" + Globals.NL +
                     "Shift + Alt + Down : First verse of next chapter" + Globals.NL +
-                    "Alt + Home : Reach the beginning of the view" + Globals.NL +
-                    "Alt + End : Reach the ending of the view" + Globals.NL +
+                    "Alt + Home : Reach the beginning of the view or first verse" + Globals.NL +
+                    "Alt + End : Reach the ending of the view or last verse" + Globals.NL +
                     "Alt + PageUp : Scroll the view up" + Globals.NL +
                     "Alt + PageDown : Scroll the view down" + Globals.NL +
                     "Alt + Up : Fine scroll the view up" + Globals.NL +
@@ -88,7 +88,7 @@ static partial class AppTranslations
                     "F7 ou Maj + Ctrl + F : Aller à la référence" + Globals.NL +
                     "F9 ou Ctrl + R : Rafraîchir" + Globals.NL +
                     "Ctrl + B : Tableau des livres" + Globals.NL +
-                    "Ctrl + B : tableau des parashot" + Globals.NL +
+                    "Ctrl + P : tableau des parashot" + Globals.NL +
                     "Ctrl + Alt + I : Console d'importation" + Globals.NL +
                     "Ctrl + Alt + S : Statistiques de Tanak" + Globals.NL +
                     "Alt + C : Calculatrice" + Globals.NL +
@@ -106,10 +106,10 @@ static partial class AppTranslations
                     "Maj + Alt + Droite : Dernier verset" + Globals.NL +
                     "Maj + Alt + Haut : Dernier couplet du chapitre précédent" + Globals.NL +
                     "Maj + Alt + Bas : Premier verset du chapitre suivant" + Globals.NL +
-                    "Alt + Accueil : Atteindre le début de la vue" + Globals.NL +
-                    "Alt + End : Atteindre la fin de la vue" + Globals.NL +
-                    "Alt + PageUp : Faire défiler la vue vers le haut" + Globals.NL +
-                    "Alt + PageDown : Faire défiler la vue vers le bas" + Globals.NL +
+                    "Alt + Accueil : Atteindre le début de la vue ou premier verset" + Globals.NL +
+                    "Alt + End : Atteindre la fin de la vue ou dernier verset" + Globals.NL +
+                    "Alt + PagePrec : Faire défiler la vue vers le haut" + Globals.NL +
+                    "Alt + PageSuiv : Faire défiler la vue vers le bas" + Globals.NL +
                     "Alt + Haut : Faire défiler la vue vers le haut (fin)" + Globals.NL +
                     "Alt + Bas : Faire défiler la vue vers le bas (fin)" + Globals.NL +
                     "Alt + B : Menu des signets" + Globals.NL +
