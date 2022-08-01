@@ -221,7 +221,10 @@ partial class MainForm
         case Keys.Shift | Keys.Alt | Keys.Left:
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number > 1 )
+            {
               GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, 1);
+              return true;
+            }
           break;
         case Keys.Shift | Keys.Alt | Keys.Right:
           if ( NagigableViews.Contains(Settings.CurrentView) )

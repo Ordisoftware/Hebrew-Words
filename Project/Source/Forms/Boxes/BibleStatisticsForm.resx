@@ -155,27 +155,6 @@
   <data name="&gt;&gt;GroupBoxAllBooks.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 25</value>
-  </data>
-  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
-    <value>StatAllBooks</value>
-  </data>
-  <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
-    <value>GroupBoxAllBooks</value>
-  </data>
-  <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
     <value>ActionClose</value>
   </data>
@@ -279,27 +258,6 @@
   <data name="&gt;&gt;GroupBoxTorah.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="StatTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 25</value>
-  </data>
-  <data name="StatTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <data name="StatTorah.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;StatTorah.Name" xml:space="preserve">
-    <value>StatTorah</value>
-  </data>
-  <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
-    <value>GroupBoxTorah</value>
-  </data>
-  <data name="&gt;&gt;StatTorah.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;SelectBook.Name" xml:space="preserve">
     <value>SelectBook</value>
   </data>
@@ -369,165 +327,12 @@
   <data name="&gt;&gt;SelectBook.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="StatBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 25</value>
-  </data>
-  <data name="StatBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 63</value>
-  </data>
-  <data name="StatBook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;StatBook.Name" xml:space="preserve">
-    <value>StatBook</value>
-  </data>
-  <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
-    <value>GroupBoxBook</value>
-  </data>
-  <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Name" xml:space="preserve">
-    <value>LabelMiddleReferenceValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetter.Name" xml:space="preserve">
-    <value>LabelMiddleLetter</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetter.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetterValue.Name" xml:space="preserve">
-    <value>LabelMiddleLetterValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetterValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetterValue.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleLetterValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWordValue.Name" xml:space="preserve">
-    <value>LabelMiddleWordValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWordValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWordValue.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWordValue.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWord.Name" xml:space="preserve">
-    <value>LabelMiddleWord</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWord.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleWord.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReference.Name" xml:space="preserve">
-    <value>LabelMiddleReference</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReference.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReference.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReference.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxMiddle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 237</value>
-  </data>
-  <data name="GroupBoxMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 125</value>
-  </data>
-  <data name="GroupBoxMiddle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupBoxMiddle.Text" xml:space="preserve">
-    <value>Middle of the Torah</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Name" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxMiddle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="LabelMiddleReferenceValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <metadata name="ContextMenuStripWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 110</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
-    <value>ContextMenuStripWord</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelMiddleReferenceValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelMiddleReferenceValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 33</value>
-  </data>
-  <data name="LabelMiddleReferenceValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
-  </data>
-  <data name="LabelMiddleReferenceValue.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelMiddleReferenceValue.Text" xml:space="preserve">
-    <value>Reference</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Name" xml:space="preserve">
-    <value>LabelMiddleReferenceValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.Parent" xml:space="preserve">
-    <value>GroupBoxMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleReferenceValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ActionWordSearchDefault.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -622,8 +427,41 @@
   <data name="ActionOpenHebrewLetters2.Text" xml:space="preserve">
     <value>Analyze with Hebrew Letters</value>
   </data>
-  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
+  <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 126</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
+    <value>ContextMenuStripWord</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 33</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.Text" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Name" xml:space="preserve">
+    <value>LabelMiddleReferenceValue</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.Parent" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleReferenceValue.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelMiddleLetter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -781,6 +619,30 @@
   <data name="&gt;&gt;LabelMiddleReference.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="GroupBoxMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 237</value>
+  </data>
+  <data name="GroupBoxMiddle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 125</value>
+  </data>
+  <data name="GroupBoxMiddle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxMiddle.Text" xml:space="preserve">
+    <value>Middle of the Torah</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.Name" xml:space="preserve">
+    <value>GroupBoxMiddle</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMiddle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="GroupBoxOccurencesTorah.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 15</value>
   </data>
@@ -804,126 +666,6 @@
   </data>
   <data name="&gt;&gt;GroupBoxOccurencesTorah.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahReferenceValue.Name" xml:space="preserve">
-    <value>LabelLongestTorahReferenceValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahReferenceValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahReferenceValue.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahReferenceValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTorahValue.Name" xml:space="preserve">
-    <value>LabelLongestWordTorahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTorahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTorahValue.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTorahValue.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWordReference.Name" xml:space="preserve">
-    <value>LabelLongestTorahWordReference</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWordReference.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWordReference.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWordReference.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakReferenceValue.Name" xml:space="preserve">
-    <value>LabelLongestTanakReferenceValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakReferenceValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakReferenceValue.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakReferenceValue.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTanakValue.Name" xml:space="preserve">
-    <value>LabelLongestWordTanakValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTanakValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTanakValue.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestWordTanakValue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakWord.Name" xml:space="preserve">
-    <value>LabelLongestTanakWord</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakWord.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTanakWord.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWord.Name" xml:space="preserve">
-    <value>LabelLongestTorahWord</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWord.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;LabelLongestTorahWord.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 237</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 125</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Longest word</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="LabelLongestTorahReferenceValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1171,6 +913,30 @@
   <data name="&gt;&gt;LabelLongestTorahWord.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 237</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 125</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Longest word</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="GroupBoxOccurencesAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 15</value>
   </data>
@@ -1318,6 +1084,63 @@
   <data name="tabControl1.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Name" xml:space="preserve">
+    <value>TabPageWordsLength</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 378</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>673, 230</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
@@ -1366,23 +1189,53 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;GroupBoxWordslength.Name" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;GroupBoxWordslength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 169</value>
+  <data name="&gt;&gt;GroupBoxWordslength.Parent" xml:space="preserve">
+    <value>TabPageWordsLength</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 13</value>
+  <data name="&gt;&gt;GroupBoxWordslength.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="TabPageWordsLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
   </data>
-  <data name="LabelCountWordsLengthMoreThan10.Text" xml:space="preserve">
-    <value>Number of words having more than 10 letters: </value>
+  <data name="TabPageWordsLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="TabPageWordsLength.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPageWordsLength.Text" xml:space="preserve">
+    <value>Length of words</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Name" xml:space="preserve">
+    <value>TabPageWordsLength</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPageWordsLength.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelAverageWordLength.Name" xml:space="preserve">
+    <value>LabelAverageWordLength</value>
+  </data>
+  <data name="&gt;&gt;LabelAverageWordLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelAverageWordLength.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelAverageWordLength.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.Name" xml:space="preserve">
     <value>LabelCountWordsLengthMoreThan10</value>
@@ -1391,268 +1244,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+    <value>GroupBoxWordslength</value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LabelCountWordsLength10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 154</value>
-  </data>
-  <data name="LabelCountWordsLength10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 13</value>
-  </data>
-  <data name="LabelCountWordsLength10.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength10.Text" xml:space="preserve">
-    <value>Number of words having 10 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength10.Name" xml:space="preserve">
-    <value>LabelCountWordsLength10</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength10.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength10.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="LabelCountWordsLength9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 139</value>
-  </data>
-  <data name="LabelCountWordsLength9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength9.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength9.Text" xml:space="preserve">
-    <value>Number of words having 9 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength9.Name" xml:space="preserve">
-    <value>LabelCountWordsLength9</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength9.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength9.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LabelCountWordsLength8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 124</value>
-  </data>
-  <data name="LabelCountWordsLength8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength8.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength8.Text" xml:space="preserve">
-    <value>Number of words having 8 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength8.Name" xml:space="preserve">
-    <value>LabelCountWordsLength8</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength8.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength8.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelCountWordsLength7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 109</value>
-  </data>
-  <data name="LabelCountWordsLength7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength7.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength7.Text" xml:space="preserve">
-    <value>Number of words having 7 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength7.Name" xml:space="preserve">
-    <value>LabelCountWordsLength7</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength7.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength7.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 94</value>
-  </data>
-  <data name="LabelCountWordsLength6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength6.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength6.Text" xml:space="preserve">
-    <value>Number of words having 6 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength6.Name" xml:space="preserve">
-    <value>LabelCountWordsLength6</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength6.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LabelCountWordsLength5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 79</value>
-  </data>
-  <data name="LabelCountWordsLength5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelCountWordsLength5.Text" xml:space="preserve">
-    <value>Number of words having 5 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength5.Name" xml:space="preserve">
-    <value>LabelCountWordsLength5</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength5.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength5.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LabelCountWordsLength4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 64</value>
-  </data>
-  <data name="LabelCountWordsLength4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="LabelCountWordsLength4.Text" xml:space="preserve">
-    <value>Number of words having 4 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength4.Name" xml:space="preserve">
-    <value>LabelCountWordsLength4</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength4.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LabelCountWordsLength3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 49</value>
-  </data>
-  <data name="LabelCountWordsLength3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="LabelCountWordsLength3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LabelCountWordsLength3.Text" xml:space="preserve">
-    <value>Number of words having 3 letters: </value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength3.Name" xml:space="preserve">
-    <value>LabelCountWordsLength3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength3.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;LabelCountWordsLength3.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 34</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 13</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LabelCountWordsLength1or2.Text" xml:space="preserve">
-    <value>Number of words having less than 3 letters: </value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLength1or2.Name" xml:space="preserve">
     <value>LabelCountWordsLength1or2</value>
@@ -1661,10 +1256,130 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLength1or2.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+    <value>GroupBoxWordslength</value>
   </data>
   <data name="&gt;&gt;LabelCountWordsLength1or2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Name" xml:space="preserve">
+    <value>LabelCountWordsLength10</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Name" xml:space="preserve">
+    <value>LabelCountWordsLength3</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Name" xml:space="preserve">
+    <value>LabelCountWordsLength9</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Name" xml:space="preserve">
+    <value>LabelCountWordsLength4</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Name" xml:space="preserve">
+    <value>LabelCountWordsLength8</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Name" xml:space="preserve">
+    <value>LabelCountWordsLength5</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Name" xml:space="preserve">
+    <value>LabelCountWordsLength7</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Name" xml:space="preserve">
+    <value>LabelCountWordsLength6</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="GroupBoxWordslength.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GroupBoxWordslength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GroupBoxWordslength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 201</value>
+  </data>
+  <data name="GroupBoxWordslength.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxWordslength.Name" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxWordslength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxWordslength.Parent" xml:space="preserve">
+    <value>TabPageWordsLength</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxWordslength.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelAverageWordLength.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1673,7 +1388,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAverageWordLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 19</value>
+    <value>15, 18</value>
   </data>
   <data name="LabelAverageWordLength.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 13</value>
@@ -1691,58 +1406,373 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelAverageWordLength.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+    <value>GroupBoxWordslength</value>
   </data>
   <data name="&gt;&gt;LabelAverageWordLength.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 168</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 13</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.Text" xml:space="preserve">
+    <value>Number of words having more than 10 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.Name" xml:space="preserve">
+    <value>LabelCountWordsLengthMoreThan10</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLengthMoreThan10.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 33</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 13</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelCountWordsLength1or2.Text" xml:space="preserve">
+    <value>Number of words having less than 3 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength1or2.Name" xml:space="preserve">
+    <value>LabelCountWordsLength1or2</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength1or2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength1or2.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength1or2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelCountWordsLength10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 153</value>
+  </data>
+  <data name="LabelCountWordsLength10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 13</value>
+  </data>
+  <data name="LabelCountWordsLength10.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength10.Text" xml:space="preserve">
+    <value>Number of words having 10 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Name" xml:space="preserve">
+    <value>LabelCountWordsLength10</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength10.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelCountWordsLength3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 48</value>
+  </data>
+  <data name="LabelCountWordsLength3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelCountWordsLength3.Text" xml:space="preserve">
+    <value>Number of words having 3 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Name" xml:space="preserve">
+    <value>LabelCountWordsLength3</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 138</value>
+  </data>
+  <data name="LabelCountWordsLength9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength9.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength9.Text" xml:space="preserve">
+    <value>Number of words having 9 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Name" xml:space="preserve">
+    <value>LabelCountWordsLength9</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength9.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LabelCountWordsLength4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 63</value>
+  </data>
+  <data name="LabelCountWordsLength4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LabelCountWordsLength4.Text" xml:space="preserve">
+    <value>Number of words having 4 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Name" xml:space="preserve">
+    <value>LabelCountWordsLength4</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LabelCountWordsLength8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 123</value>
+  </data>
+  <data name="LabelCountWordsLength8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength8.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength8.Text" xml:space="preserve">
+    <value>Number of words having 8 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Name" xml:space="preserve">
+    <value>LabelCountWordsLength8</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength8.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LabelCountWordsLength5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 78</value>
+  </data>
+  <data name="LabelCountWordsLength5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength5.Text" xml:space="preserve">
+    <value>Number of words having 5 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Name" xml:space="preserve">
+    <value>LabelCountWordsLength5</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength5.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LabelCountWordsLength7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 108</value>
+  </data>
+  <data name="LabelCountWordsLength7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength7.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength7.Text" xml:space="preserve">
+    <value>Number of words having 7 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Name" xml:space="preserve">
+    <value>LabelCountWordsLength7</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength7.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LabelCountWordsLength6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountWordsLength6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCountWordsLength6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 93</value>
+  </data>
+  <data name="LabelCountWordsLength6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelCountWordsLength6.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelCountWordsLength6.Text" xml:space="preserve">
+    <value>Number of words having 6 letters: </value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Name" xml:space="preserve">
+    <value>LabelCountWordsLength6</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.Parent" xml:space="preserve">
+    <value>GroupBoxWordslength</value>
+  </data>
+  <data name="&gt;&gt;LabelCountWordsLength6.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
+  <data name="StatTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 25</value>
   </data>
-  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="StatTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
   </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>665, 201</value>
+  <data name="StatTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;StatTorah.Name" xml:space="preserve">
+    <value>StatTorah</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Others</value>
+  <data name="&gt;&gt;StatTorah.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
+  <data name="&gt;&gt;StatTorah.Parent" xml:space="preserve">
+    <value>GroupBoxTorah</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;StatTorah.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="StatBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 25</value>
   </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="StatBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
   </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 378</value>
+  <data name="StatBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>673, 230</value>
+  <data name="&gt;&gt;StatBook.Name" xml:space="preserve">
+    <value>StatBook</value>
   </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+  <data name="&gt;&gt;StatBook.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;StatBook.Parent" xml:space="preserve">
+    <value>GroupBoxBook</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;StatBook.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="StatAllBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 25</value>
   </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="StatAllBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 63</value>
+  </data>
+  <data name="StatAllBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Name" xml:space="preserve">
+    <value>StatAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Words.StatControl, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.Parent" xml:space="preserve">
+    <value>GroupBoxAllBooks</value>
+  </data>
+  <data name="&gt;&gt;StatAllBooks.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1752,6 +1782,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>709, 686</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -1797,12 +1830,6 @@
   </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator14.Name" xml:space="preserve">
-    <value>toolStripSeparator14</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>BibleStatisticsForm</value>

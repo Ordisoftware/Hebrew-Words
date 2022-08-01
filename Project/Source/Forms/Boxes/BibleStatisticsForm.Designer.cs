@@ -31,14 +31,11 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibleStatisticsForm));
       this.GroupBoxAllBooks = new System.Windows.Forms.GroupBox();
-      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.panel1 = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.GroupBoxTorah = new System.Windows.Forms.GroupBox();
-      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxBook = new System.Windows.Forms.GroupBox();
       this.SelectBook = new System.Windows.Forms.ComboBox();
-      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxMiddle = new System.Windows.Forms.GroupBox();
       this.LabelMiddleReferenceValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuStripWord = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -48,7 +45,6 @@
       this.ActionSearchWord = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters2 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.LabelMiddleLetter = new System.Windows.Forms.Label();
       this.LabelMiddleLetterValue = new System.Windows.Forms.Label();
       this.LabelMiddleWordValue = new System.Windows.Forms.Label();
@@ -72,18 +68,22 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.tabPage3 = new System.Windows.Forms.TabPage();
-      this.LabelCountWordsLength5 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength4 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength3 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength1or2 = new System.Windows.Forms.Label();
+      this.TabPageWordsLength = new System.Windows.Forms.TabPage();
+      this.GroupBoxWordslength = new System.Windows.Forms.GroupBox();
       this.LabelAverageWordLength = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength6 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength7 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength8 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength9 = new System.Windows.Forms.Label();
-      this.LabelCountWordsLength10 = new System.Windows.Forms.Label();
       this.LabelCountWordsLengthMoreThan10 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength1or2 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength10 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength3 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength9 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength4 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength8 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength5 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength7 = new System.Windows.Forms.Label();
+      this.LabelCountWordsLength6 = new System.Windows.Forms.Label();
+      this.StatTorah = new Ordisoftware.Hebrew.Words.StatControl();
+      this.StatBook = new Ordisoftware.Hebrew.Words.StatControl();
+      this.StatAllBooks = new Ordisoftware.Hebrew.Words.StatControl();
       this.GroupBoxAllBooks.SuspendLayout();
       this.panel1.SuspendLayout();
       this.GroupBoxTorah.SuspendLayout();
@@ -94,7 +94,8 @@
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
       this.tabPage2.SuspendLayout();
-      this.tabPage3.SuspendLayout();
+      this.TabPageWordsLength.SuspendLayout();
+      this.GroupBoxWordslength.SuspendLayout();
       this.SuspendLayout();
       // 
       // GroupBoxAllBooks
@@ -103,11 +104,6 @@
       resources.ApplyResources(this.GroupBoxAllBooks, "GroupBoxAllBooks");
       this.GroupBoxAllBooks.Name = "GroupBoxAllBooks";
       this.GroupBoxAllBooks.TabStop = false;
-      // 
-      // StatAllBooks
-      // 
-      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
-      this.StatAllBooks.Name = "StatAllBooks";
       // 
       // panel1
       // 
@@ -129,11 +125,6 @@
       this.GroupBoxTorah.Name = "GroupBoxTorah";
       this.GroupBoxTorah.TabStop = false;
       // 
-      // StatTorah
-      // 
-      resources.ApplyResources(this.StatTorah, "StatTorah");
-      this.StatTorah.Name = "StatTorah";
-      // 
       // GroupBoxBook
       // 
       this.GroupBoxBook.Controls.Add(this.SelectBook);
@@ -149,11 +140,6 @@
       resources.ApplyResources(this.SelectBook, "SelectBook");
       this.SelectBook.Name = "SelectBook";
       this.SelectBook.SelectedIndexChanged += new System.EventHandler(this.SelectBook_SelectedIndexChanged);
-      // 
-      // StatBook
-      // 
-      resources.ApplyResources(this.StatBook, "StatBook");
-      this.StatBook.Name = "StatBook";
       // 
       // GroupBoxMiddle
       // 
@@ -186,8 +172,7 @@
             this.toolStripSeparator10,
             this.ActionSearchWord,
             this.toolStripSeparator8,
-            this.ActionOpenHebrewLetters2,
-            this.toolStripSeparator14});
+            this.ActionOpenHebrewLetters2});
       this.ContextMenuStripWord.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuStripWord, "ContextMenuStripWord");
       // 
@@ -223,11 +208,6 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters2, "ActionOpenHebrewLetters2");
       this.ActionOpenHebrewLetters2.Name = "ActionOpenHebrewLetters2";
       this.ActionOpenHebrewLetters2.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
-      // 
-      // toolStripSeparator14
-      // 
-      this.toolStripSeparator14.Name = "toolStripSeparator14";
-      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
       // LabelMiddleLetter
       // 
@@ -373,7 +353,7 @@
       resources.ApplyResources(this.tabControl1, "tabControl1");
       this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Controls.Add(this.tabPage2);
-      this.tabControl1.Controls.Add(this.tabPage3);
+      this.tabControl1.Controls.Add(this.TabPageWordsLength);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       // 
@@ -391,77 +371,99 @@
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
       // 
-      // tabPage3
+      // TabPageWordsLength
       // 
-      this.tabPage3.Controls.Add(this.LabelCountWordsLengthMoreThan10);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength10);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength9);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength8);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength7);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength6);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength5);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength4);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength3);
-      this.tabPage3.Controls.Add(this.LabelCountWordsLength1or2);
-      this.tabPage3.Controls.Add(this.LabelAverageWordLength);
-      resources.ApplyResources(this.tabPage3, "tabPage3");
-      this.tabPage3.Name = "tabPage3";
-      this.tabPage3.UseVisualStyleBackColor = true;
+      this.TabPageWordsLength.Controls.Add(this.GroupBoxWordslength);
+      resources.ApplyResources(this.TabPageWordsLength, "TabPageWordsLength");
+      this.TabPageWordsLength.Name = "TabPageWordsLength";
+      this.TabPageWordsLength.UseVisualStyleBackColor = true;
       // 
-      // LabelCountWordsLength5
+      // GroupBoxWordslength
       // 
-      resources.ApplyResources(this.LabelCountWordsLength5, "LabelCountWordsLength5");
-      this.LabelCountWordsLength5.Name = "LabelCountWordsLength5";
-      // 
-      // LabelCountWordsLength4
-      // 
-      resources.ApplyResources(this.LabelCountWordsLength4, "LabelCountWordsLength4");
-      this.LabelCountWordsLength4.Name = "LabelCountWordsLength4";
-      // 
-      // LabelCountWordsLength3
-      // 
-      resources.ApplyResources(this.LabelCountWordsLength3, "LabelCountWordsLength3");
-      this.LabelCountWordsLength3.Name = "LabelCountWordsLength3";
-      // 
-      // LabelCountWordsLength1or2
-      // 
-      resources.ApplyResources(this.LabelCountWordsLength1or2, "LabelCountWordsLength1or2");
-      this.LabelCountWordsLength1or2.Name = "LabelCountWordsLength1or2";
+      this.GroupBoxWordslength.Controls.Add(this.LabelAverageWordLength);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLengthMoreThan10);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength1or2);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength10);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength3);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength9);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength4);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength8);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength5);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength7);
+      this.GroupBoxWordslength.Controls.Add(this.LabelCountWordsLength6);
+      resources.ApplyResources(this.GroupBoxWordslength, "GroupBoxWordslength");
+      this.GroupBoxWordslength.Name = "GroupBoxWordslength";
+      this.GroupBoxWordslength.TabStop = false;
       // 
       // LabelAverageWordLength
       // 
       resources.ApplyResources(this.LabelAverageWordLength, "LabelAverageWordLength");
       this.LabelAverageWordLength.Name = "LabelAverageWordLength";
       // 
-      // LabelCountWordsLength6
+      // LabelCountWordsLengthMoreThan10
       // 
-      resources.ApplyResources(this.LabelCountWordsLength6, "LabelCountWordsLength6");
-      this.LabelCountWordsLength6.Name = "LabelCountWordsLength6";
+      resources.ApplyResources(this.LabelCountWordsLengthMoreThan10, "LabelCountWordsLengthMoreThan10");
+      this.LabelCountWordsLengthMoreThan10.Name = "LabelCountWordsLengthMoreThan10";
       // 
-      // LabelCountWordsLength7
+      // LabelCountWordsLength1or2
       // 
-      resources.ApplyResources(this.LabelCountWordsLength7, "LabelCountWordsLength7");
-      this.LabelCountWordsLength7.Name = "LabelCountWordsLength7";
-      // 
-      // LabelCountWordsLength8
-      // 
-      resources.ApplyResources(this.LabelCountWordsLength8, "LabelCountWordsLength8");
-      this.LabelCountWordsLength8.Name = "LabelCountWordsLength8";
-      // 
-      // LabelCountWordsLength9
-      // 
-      resources.ApplyResources(this.LabelCountWordsLength9, "LabelCountWordsLength9");
-      this.LabelCountWordsLength9.Name = "LabelCountWordsLength9";
+      resources.ApplyResources(this.LabelCountWordsLength1or2, "LabelCountWordsLength1or2");
+      this.LabelCountWordsLength1or2.Name = "LabelCountWordsLength1or2";
       // 
       // LabelCountWordsLength10
       // 
       resources.ApplyResources(this.LabelCountWordsLength10, "LabelCountWordsLength10");
       this.LabelCountWordsLength10.Name = "LabelCountWordsLength10";
       // 
-      // LabelCountWordsLengthMoreThan10
+      // LabelCountWordsLength3
       // 
-      resources.ApplyResources(this.LabelCountWordsLengthMoreThan10, "LabelCountWordsLengthMoreThan10");
-      this.LabelCountWordsLengthMoreThan10.Name = "LabelCountWordsLengthMoreThan10";
+      resources.ApplyResources(this.LabelCountWordsLength3, "LabelCountWordsLength3");
+      this.LabelCountWordsLength3.Name = "LabelCountWordsLength3";
+      // 
+      // LabelCountWordsLength9
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength9, "LabelCountWordsLength9");
+      this.LabelCountWordsLength9.Name = "LabelCountWordsLength9";
+      // 
+      // LabelCountWordsLength4
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength4, "LabelCountWordsLength4");
+      this.LabelCountWordsLength4.Name = "LabelCountWordsLength4";
+      // 
+      // LabelCountWordsLength8
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength8, "LabelCountWordsLength8");
+      this.LabelCountWordsLength8.Name = "LabelCountWordsLength8";
+      // 
+      // LabelCountWordsLength5
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength5, "LabelCountWordsLength5");
+      this.LabelCountWordsLength5.Name = "LabelCountWordsLength5";
+      // 
+      // LabelCountWordsLength7
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength7, "LabelCountWordsLength7");
+      this.LabelCountWordsLength7.Name = "LabelCountWordsLength7";
+      // 
+      // LabelCountWordsLength6
+      // 
+      resources.ApplyResources(this.LabelCountWordsLength6, "LabelCountWordsLength6");
+      this.LabelCountWordsLength6.Name = "LabelCountWordsLength6";
+      // 
+      // StatTorah
+      // 
+      resources.ApplyResources(this.StatTorah, "StatTorah");
+      this.StatTorah.Name = "StatTorah";
+      // 
+      // StatBook
+      // 
+      resources.ApplyResources(this.StatBook, "StatBook");
+      this.StatBook.Name = "StatBook";
+      // 
+      // StatAllBooks
+      // 
+      resources.ApplyResources(this.StatAllBooks, "StatAllBooks");
+      this.StatAllBooks.Name = "StatAllBooks";
       // 
       // BibleStatisticsForm
       // 
@@ -495,8 +497,9 @@
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
-      this.tabPage3.ResumeLayout(false);
-      this.tabPage3.PerformLayout();
+      this.TabPageWordsLength.ResumeLayout(false);
+      this.GroupBoxWordslength.ResumeLayout(false);
+      this.GroupBoxWordslength.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -541,12 +544,11 @@
     private ToolStripMenuItem ActionSearchWord;
     private ToolStripSeparator toolStripSeparator8;
     private ToolStripMenuItem ActionOpenHebrewLetters2;
-    private ToolStripSeparator toolStripSeparator14;
     private LinkLabel LabelLongestTorahReferenceValue;
     private Label LabelLongestWordTorahValue;
     private Label label2;
     private Label LabelLongestTorahWordReference;
-    private TabPage tabPage3;
+    private TabPage TabPageWordsLength;
     private Label LabelAverageWordLength;
     private Label LabelCountWordsLength1or2;
     private Label LabelCountWordsLength3;
@@ -558,5 +560,6 @@
     private Label LabelCountWordsLength9;
     private Label LabelCountWordsLengthMoreThan10;
     private Label LabelCountWordsLength10;
+    private GroupBox GroupBoxWordslength;
   }
 }

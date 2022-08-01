@@ -176,10 +176,73 @@
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Plus fréquents du Tanak **</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Moins fréquents de la Torah **</value>
+  <data name="TabPageWordsLength.Text" xml:space="preserve">
+    <value>Longueur des mots</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Moins fréquents du Tanak **</value>
+  <data name="LabelCountWordsLength6.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 6 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength9.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 9 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength3.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 3 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength10.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 10 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength7.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 7 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength5.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 5 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength4.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 4 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength1or2.Text" xml:space="preserve">
+    <value>Nombre de mots ayant moins de 3 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLength8.Text" xml:space="preserve">
+    <value>Nombre de mots ayant 8 lettres : </value>
+  </data>
+  <data name="LabelCountWordsLengthMoreThan10.Text" xml:space="preserve">
+    <value>Nombre de mots ayant plus de 10 lettres : </value>
+  </data>
+  <data name="LabelAverageWordLength.Text" xml:space="preserve">
+    <value>Longueur moyenne des mots dans le Tanak : </value>
+  </data>
+  <data name="LabelLongestTorahReferenceValue.Text" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="LabelMiddleReferenceValue.Text" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="ActionOpenHebrewLetters2.Text" xml:space="preserve">
+    <value>Analyser avec Hebrew Letters</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Mot :</value>
+  </data>
+  <data name="LabelLongestTorahWordReference.Text" xml:space="preserve">
+    <value>Verset :</value>
+  </data>
+  <data name="ActionWordSearchDefault.Text" xml:space="preserve">
+    <value>Recherche par défaut</value>
+  </data>
+  <data name="ActionSearchWord.Text" xml:space="preserve">
+    <value>Chercher dans la base de données</value>
+  </data>
+  <data name="LabelLongestTanakReferenceValue.Text" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="ActionWordSearchOnline.Text" xml:space="preserve">
+    <value>Chercher en ligne</value>
+  </data>
+  <data name="LabelLongestTanakWord.Text" xml:space="preserve">
+    <value>Mot :</value>
+  </data>
+  <data name="LabelLongestTorahWord.Text" xml:space="preserve">
+    <value>Verset :</value>
   </data>
 </root>

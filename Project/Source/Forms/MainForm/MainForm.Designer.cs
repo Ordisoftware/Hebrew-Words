@@ -860,7 +860,9 @@
       this.EditSearchWord.ContextMenuDetailsVisible = false;
       resources.ApplyResources(this.EditSearchWord, "EditSearchWord");
       this.EditSearchWord.InititialWord = null;
+      this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
+      this.EditSearchWord.ShowGematria = false;
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditSearchWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
@@ -2489,7 +2491,6 @@
     private System.Windows.Forms.Button ActionExportBook;
     private System.Windows.Forms.Button ActionExportChapter;
     private System.Windows.Forms.Button ActionNavigateSearchFirst;
-    private System.Windows.Forms.Button ActionSearchClear;
     private System.Windows.Forms.Button ActionSearchInAddAll;
     private System.Windows.Forms.Button ActionSearchInRemoveAll;
     private System.Windows.Forms.Button ActionSearchNavigateLast;
@@ -2605,7 +2606,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
-    internal Ordisoftware.Hebrew.LettersControl EditSearchWord;
     internal System.Windows.Forms.Button ActionSearchRun;
     internal System.Windows.Forms.Panel PanelViewVerses;
     internal System.Windows.Forms.TabControl SelectSearchType;
@@ -2743,5 +2743,7 @@
     private TextBoxEx EditVerseTitle;
     private Label LabelVerseConcept;
     private TextBoxEx EditVerseConcept;
+    internal LettersControl EditSearchWord;
+    private Button ActionSearchClear;
   }
 }

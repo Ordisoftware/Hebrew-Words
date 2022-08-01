@@ -273,6 +273,7 @@ static partial class Program
         MainForm.Instance.RenderChapterELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
       }
+      MainForm.Instance.EditSearchWord.CheckClipboardContentType();
       task?.Wait();
       MainForm.Instance.CreateSystemInformationMenu();
     }
@@ -291,6 +292,8 @@ static partial class Program
   /// Indicates spell checker for TextBoxEx.
   /// </summary>
   //static private NHunspellExtender.NHunspellTextBoxExtender SpellChecker;
+
+  // https://www.nuget.org/packages/NHunspell.Patched/1.2.5554
 
   /// <summary>
   /// Creates or update the spell checker to display context menu items.

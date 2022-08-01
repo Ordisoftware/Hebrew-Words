@@ -228,9 +228,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 | Ctrl + F | Find verse in current chapter |
 | Ctrl + S | Save changes |
 | Alt + Left | Previous verse |
-| Alt + Right | Next verse in single verse, translation and original views |
-| Alt + Home | First verse in single verse, translation and original views |
-| Alt + End | Last verse |
+| Alt + Right | Next verse |
 | Shift + Alt + Left | First verse |
 | Shift + Alt + Right | Next verse |
 | Shift + Alt + Up | Last verse of previous chapter |
@@ -259,9 +257,10 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### Soon
 
+- Check and fix search module (come results may be different from bible's stats)
 - Add filters on all translated books or chapters.
 - Add search history.
-- Add bookmarks and history backup and restore with automatically extendiong length to multiple of 5.
+- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
 - Add title and memo of book and chapter in DOCX export.
@@ -273,6 +272,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 #### Later
 
 - Add a tray icon.
+- Add take screenshot, full window or only current verse if applicable.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add form to edit strong's concordances.
@@ -283,8 +283,6 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 ## Changelog
 
 #### In progress for 2022 - Version 3.0
-
-> Add take screenshot, full window or only current verse if applicable.
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
