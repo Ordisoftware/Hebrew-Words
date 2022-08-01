@@ -252,6 +252,7 @@ static partial class Program
       new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = BibleStatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
       foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
@@ -272,6 +273,10 @@ static partial class Program
         MainForm.Instance.RenderChapterOriginal();
         MainForm.Instance.RenderChapterELS50();
         MainForm.Instance.SetView(Settings.CurrentView, true);
+        MainForm.Instance.LabelTitle.Visible = true;
+        MainForm.Instance.LabelTitleReferenceName.Visible = true;
+        MainForm.Instance.LabelProgress.Visible = true;
+        MainForm.Instance.UpdateTitle();
       }
       MainForm.Instance.EditSearchWord.CheckClipboardContentType();
       task?.Wait();

@@ -862,6 +862,7 @@
       this.EditSearchWord.InititialWord = null;
       this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
+      this.EditSearchWord.ShowBottomPanel = false;
       this.EditSearchWord.ShowGematria = false;
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
@@ -2480,7 +2481,6 @@
     internal BindingSource VersesBindingSource;
     internal BindingSource WordsBindingSource;
     internal System.Windows.Forms.ToolStrip ToolStrip;
-    private Label LabelProgress;
     private Ordisoftware.Core.TextBoxEx EditBookTranslation;
     private Ordisoftware.Core.TextBoxEx EditChapterMemo;
     private Ordisoftware.Core.TextBoxEx EditChapterTitle;
@@ -2512,7 +2512,6 @@
     private System.Windows.Forms.Label LabelSearchTranslationHelp;
     private System.Windows.Forms.Label LabelSelectBook;
     private System.Windows.Forms.Label LabelSelectChapter;
-    private System.Windows.Forms.Label LabelTitle;
     private System.Windows.Forms.OpenFileDialog OpenFileDialogDB;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelMainCenter;
@@ -2666,7 +2665,6 @@
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
-    private Label LabelTitleReferenceName;
     private ToolTip ToolTipSearchResult;
     private ComboBoxNavigator SelectChapterNavigator;
     private ComboBoxNavigator SelectBookNavigator;
@@ -2745,5 +2743,8 @@
     private TextBoxEx EditVerseConcept;
     internal LettersControl EditSearchWord;
     private Button ActionSearchClear;
+    internal Label LabelProgress;
+    internal Label LabelTitle;
+    internal Label LabelTitleReferenceName;
   }
 }
