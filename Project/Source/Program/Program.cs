@@ -110,9 +110,9 @@ static partial class Program
         Settings.SetFirstAndUpgradeFlagsOff();
         Settings.VacuumAtStartup = true;
         Settings.CurrentView = ViewMode.ChapterVerses;
-        Settings.VerseCommentaryLinesCount = 5;
-        Settings.VerseWordTranslationLinesCount = 2;
-        Settings.WordControlWidth = PreferencesForm.WordControlWidthInterval.Item3;
+        Settings.VerseCommentaryLinesCount = 5; // TODO update from default setting
+        Settings.VerseWordTranslationLinesCount = 2; // TODO update from default setting
+        Settings.WordControlWidth = 205; // TODO update from default setting
         if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
           Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
       }
