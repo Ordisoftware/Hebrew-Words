@@ -862,7 +862,6 @@
       this.EditSearchWord.InititialWord = null;
       this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
-      this.EditSearchWord.ShowBottomPanel = false;
       this.EditSearchWord.ShowGematria = false;
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
