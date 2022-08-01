@@ -282,6 +282,10 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 ## Changelog
 
+#### In progress - Version 3.1
+
+- Fix colors for verse Title and Concept text boxes.
+
 #### 2022.08.01 - Version 3.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
