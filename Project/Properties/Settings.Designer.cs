@@ -265,7 +265,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("210")]
+        [global::System.Configuration.DefaultSettingValueAttribute("205")]
         public int WordControlWidth {
             get {
                 return ((int)(this["WordControlWidth"]));

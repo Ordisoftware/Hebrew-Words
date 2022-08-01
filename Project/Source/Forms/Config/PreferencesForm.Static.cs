@@ -47,7 +47,7 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
-  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 210, 5);
+  static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 205, 5);
   static public readonly (int, int, int, int) WordTranslationLinesCountInterval = (1, 5, 1, 1);
   static public readonly (int, int, int, int) DocumentMarginInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) DocumentMarginHFInterval = (0, 40, 13, 1);
