@@ -284,6 +284,8 @@ partial class MainForm : Form
     EditChapterTitle.BackColor = Settings.ThemeNavigatorItems;
     EditELS50Single.BackColor = Settings.ThemeNavigatorItems;
     EditChapterMemo.BackColor = Settings.ThemeNavigatorItems;
+    EditVerseConcept.BackColor = Settings.ThemeNavigatorItems;
+    EditVerseTitle.BackColor = Settings.ThemeNavigatorItems;
     // Letters control
     EditSearchWord.LettersBackColor = Settings.ThemeSearchLettersBack;
     EditSearchWord.InputBackColor = Settings.ThemeSearchWordBack;
