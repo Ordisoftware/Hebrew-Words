@@ -112,7 +112,7 @@ static partial class Program
         Settings.CurrentView = ViewMode.ChapterVerses;
         Settings.VerseCommentaryLinesCount = 5;
         Settings.VerseWordTranslationLinesCount = 2;
-        Settings.WordControlWidth = 210;
+        Settings.WordControlWidth = PreferencesForm.WordControlWidthInterval.Item3;
         if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
           Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
       }
