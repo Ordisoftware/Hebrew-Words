@@ -860,7 +860,9 @@
       this.EditSearchWord.ContextMenuDetailsVisible = false;
       resources.ApplyResources(this.EditSearchWord, "EditSearchWord");
       this.EditSearchWord.InititialWord = null;
+      this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
+      this.EditSearchWord.ShowGematria = false;
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
       this.EditSearchWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PanelLetterSearch_KeyPress);
@@ -2478,7 +2480,6 @@
     internal BindingSource VersesBindingSource;
     internal BindingSource WordsBindingSource;
     internal System.Windows.Forms.ToolStrip ToolStrip;
-    private Label LabelProgress;
     private Ordisoftware.Core.TextBoxEx EditBookTranslation;
     private Ordisoftware.Core.TextBoxEx EditChapterMemo;
     private Ordisoftware.Core.TextBoxEx EditChapterTitle;
@@ -2489,7 +2490,6 @@
     private System.Windows.Forms.Button ActionExportBook;
     private System.Windows.Forms.Button ActionExportChapter;
     private System.Windows.Forms.Button ActionNavigateSearchFirst;
-    private System.Windows.Forms.Button ActionSearchClear;
     private System.Windows.Forms.Button ActionSearchInAddAll;
     private System.Windows.Forms.Button ActionSearchInRemoveAll;
     private System.Windows.Forms.Button ActionSearchNavigateLast;
@@ -2511,7 +2511,6 @@
     private System.Windows.Forms.Label LabelSearchTranslationHelp;
     private System.Windows.Forms.Label LabelSelectBook;
     private System.Windows.Forms.Label LabelSelectChapter;
-    private System.Windows.Forms.Label LabelTitle;
     private System.Windows.Forms.OpenFileDialog OpenFileDialogDB;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelMainCenter;
@@ -2605,7 +2604,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
     private ToolStripMenuItem ActionOpenExportFolder;
-    internal Ordisoftware.Hebrew.LettersControl EditSearchWord;
     internal System.Windows.Forms.Button ActionSearchRun;
     internal System.Windows.Forms.Panel PanelViewVerses;
     internal System.Windows.Forms.TabControl SelectSearchType;
@@ -2666,7 +2664,6 @@
     private Button LabelInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
-    private Label LabelTitleReferenceName;
     private ToolTip ToolTipSearchResult;
     private ComboBoxNavigator SelectChapterNavigator;
     private ComboBoxNavigator SelectBookNavigator;
@@ -2743,5 +2740,10 @@
     private TextBoxEx EditVerseTitle;
     private Label LabelVerseConcept;
     private TextBoxEx EditVerseConcept;
+    internal LettersControl EditSearchWord;
+    private Button ActionSearchClear;
+    internal Label LabelProgress;
+    internal Label LabelTitle;
+    internal Label LabelTitleReferenceName;
   }
 }

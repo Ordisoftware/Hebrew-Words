@@ -45,6 +45,7 @@ partial class MainForm : Form
     EditELS50HScrollBar.LargeChange = 20;
     EditELS50HScrollBar.SmallChange = 10;
     EditSearchWord.ContextMenuDetailsVisible = false;
+    NativeMethods.ClipboardViewerNext = NativeMethods.SetClipboardViewer(Handle);
     HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
     InitializeTheme();
     if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when ready
@@ -82,6 +83,8 @@ partial class MainForm : Form
     UpdateSearchButtons();
     BookmarkMenuIndex = ActionBookmarks.DropDownItems.Count;
     HistoryIndexMenu = ActionHistory.DropDownItems.Count;
+    EditSearchWord.ActionClear.Visible = false;
+    EditSearchWord.PanelSeparatorActionClear.Visible = false;
     DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
   }
 
@@ -112,8 +115,8 @@ partial class MainForm : Form
     Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                            AppTranslations.NoticeKeyboardShortcuts,
                                                            true, false,
-                                                           MessageBoxEx.DefaultHeightMedium,
                                                            MessageBoxEx.DefaultHeightBig,
+                                                           MessageBoxEx.DefaultHeightHuge,
                                                            false, false);
     Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
     Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
@@ -236,6 +239,9 @@ partial class MainForm : Form
     {
       case NativeMethods.WM_QUERYENDSESSION:
         SessionEnding(this, null);
+        break;
+      case NativeMethods.WM_DRAWCLIPBOARD:
+        EditSearchWord.CheckClipboardContentType();
         break;
       default:
         base.WndProc(ref m);

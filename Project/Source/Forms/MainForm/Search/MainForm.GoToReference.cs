@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -112,8 +112,7 @@ partial class MainForm
     Settings.LastReferenceChapter = CurrentReference.Chapter.Number;
     Settings.LastReferenceVerse = CurrentReference.Verse.Number;
     Settings.LastReferenceWord = CurrentReference.Word?.Number ?? 1;
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
-    LabelTitleReferenceName.Refresh();
+    UpdateTitle();
     MoveVerseBindingSourceAndAddCurrentToHistory(isHistory);
     if ( updated || !SelectRenderAllVerses.Checked || forceUpdateView ) RenderAll();
     IsGoToRunning = true;

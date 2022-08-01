@@ -49,7 +49,7 @@ static class SettingsHelper
     MainForm.EditShowTips.Checked = true;
     MainForm.EditSoundsEnabled.Checked = true;
     MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = true;
-    MainForm.EditIncludeOriginalText.Checked = true;
+    MainForm.EditIncludeOriginalText.Checked = false;
     MainForm.EditIncludeComment.Checked = true;
     DisplayManager.AdvancedFormUseSounds = true;
     MainForm.EditUseAdvancedDialogBoxes.Checked = true;
@@ -104,7 +104,7 @@ static class SettingsHelper
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
       MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked = settings.ExportUseHebrewFontElseUnicodeChars;
       MainForm.EditIncludeOriginalText.Checked = settings.IncludeOriginalTextInChapterTranslation;
-      MainForm.EditIncludeComment.Checked = settings.IncludeOriginalTextInChapterTranslation;
+      MainForm.EditIncludeComment.Checked = settings.IncludeCommentInChapterTranslation;
       //
       EditMemoForm.LastLocation = settings.EditMemoFormLastLocation;
       EditMemoForm.LastSize = settings.EditMemoFormLastSize;

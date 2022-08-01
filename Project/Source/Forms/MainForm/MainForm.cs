@@ -128,7 +128,7 @@ partial class MainForm : Form
       if ( PreviousWindowsState != WindowState )
         if ( !SelectRenderAllVerses.Checked )
         {
-          SelectVerse.DropDownWidth = ActionEditChapterMemo.Right - SelectVerse.Left + 5;
+          SelectVerse.DropDownWidth = Math.Max(ActionEditChapterMemo.Right - SelectVerse.Left + 5, 350);
           ActionRefresh.PerformClick();
         }
     }
@@ -1848,6 +1848,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditLetters_InputTextChanged(object sender, EventArgs e)
   {
+    EditSearchWord.UpdateControls();
     UpdateSearchButtons();
   }
 

@@ -399,7 +399,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="IncludeOriginalTextInChapterTranslation" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="IncludeCommentInChapterTranslation" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

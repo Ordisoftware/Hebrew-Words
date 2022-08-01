@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -49,11 +49,42 @@ partial class MainForm : Form
       ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
   }
 
+  static private readonly Image HebrewWordsIcon = CreateImage("hebrew_words16.ico");
+
+  static private Image CreateImage(string fileName)
+  {
+    try
+    {
+      return Image.FromFile(Path.Combine(Globals.ProjectIconsApplicationsFolderPath, fileName));
+    }
+    catch ( Exception ex )
+    {
+      DebugManager.Trace(LogTraceEvent.Exception, new ExceptionInfo(null, ex).FullText);
+      return null;
+    }
+  }
+
   /// <summary>
   /// Creates providers links menu items.
   /// </summary>
   private void CreateProvidersLinks()
   {
+    // Edit word search
+    EditSearchWord.ContextMenuSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord,
+      (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        HebrewTools.OpenWordProvider((string)menuitem.Tag, EditSearchWord.TextBox.Text);
+        EditSearchWord.Focus();
+      },
+      () =>
+      {
+        var menuitem = new ToolStripMenuItem(HebrewGlobals.AppNameHebrewWords, HebrewWordsIcon);
+        menuitem.Click += (sender, e) => HebrewTools.OpenHebrewWordsSearchWord(EditSearchWord.InputText);
+        if ( EditSearchWord.ContextMenuSearchOnline.Items.Count > 0 )
+          EditSearchWord.ContextMenuSearchOnline.Items.Add(new ToolStripSeparator());
+        EditSearchWord.ContextMenuSearchOnline.Items.Add(menuitem);
+      });
     // Word search online
     ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {

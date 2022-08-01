@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -81,7 +81,7 @@ partial class MainForm
   /// </summary>
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  void ShowPanelToolTip(string str)
+  private void ShowPanelToolTip(string str)
   {
     Panel panel = null;
     int width = TextRenderer.MeasureText(str, SystemFonts.SmallCaptionFont).Width;
@@ -108,7 +108,7 @@ partial class MainForm
   //
   // Update history buttons
   //
-  void UpdateHistoryButtons()
+  private void UpdateHistoryButtons()
   {
     if ( CurrentReference is null )
     {
@@ -128,6 +128,18 @@ partial class MainForm
     bool canHistoryMove = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
     ActionHistoryVerseNext.Enabled = canHistoryMove && index != 0;
     ActionHistoryVerseBack.Enabled = canHistoryMove && index != list.Count - 1;
+  }
+
+  internal void UpdateTitle(bool forceView = false)
+  {
+    if ( !Globals.IsReady ) return;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Refresh();
+    if ( forceView )
+    {
+      LabelTitle.Text = AppTranslations.ViewPanelTitle.GetLang(Settings.CurrentView).ToUpper();
+      LabelTitle.Refresh();
+    }
   }
 
 }

@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 180</value>
+    <value>20, 140</value>
   </data>
   <data name="LabelAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 13</value>
@@ -448,7 +448,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;LabelAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="LabelBackupCount.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -2527,7 +2527,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTrayIconEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 260</value>
+    <value>23, 321</value>
   </data>
   <data name="EditTrayIconEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 17</value>
@@ -2537,6 +2537,9 @@
   </data>
   <data name="EditTrayIconEnabled.Text" xml:space="preserve">
     <value>Enable tray icon</value>
+  </data>
+  <data name="EditTrayIconEnabled.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditTrayIconEnabled.Name" xml:space="preserve">
     <value>EditTrayIconEnabled</value>
@@ -2687,7 +2690,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCheckAllComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 100</value>
+    <value>98, 60</value>
   </data>
   <data name="ActionCheckAllComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2707,27 +2710,6 @@
   <data name="&gt;&gt;ActionCheckAllComments.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditCommentLinePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 103</value>
-  </data>
-  <data name="EditCommentLinePrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditCommentLinePrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;EditCommentLinePrefix.Name" xml:space="preserve">
-    <value>EditCommentLinePrefix</value>
-  </data>
-  <data name="&gt;&gt;EditCommentLinePrefix.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditCommentLinePrefix.Parent" xml:space="preserve">
-    <value>TabPageEditing</value>
-  </data>
-  <data name="&gt;&gt;EditCommentLinePrefix.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="LabelInfoAutoSaveDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2738,7 +2720,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelInfoAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 204</value>
+    <value>69, 164</value>
   </data>
   <data name="LabelInfoAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -2759,10 +2741,10 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;LabelInfoAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="EditAutoSaveDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 200</value>
+    <value>23, 160</value>
   </data>
   <data name="EditAutoSaveDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -2780,7 +2762,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveDelay.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="EditCommentLineRemovePrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2789,7 +2771,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCommentLineRemovePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 80</value>
+    <value>23, 40</value>
   </data>
   <data name="EditCommentLineRemovePrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 17</value>
@@ -2819,7 +2801,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCommentLineAddPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 60</value>
+    <value>23, 20</value>
   </data>
   <data name="EditCommentLineAddPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 17</value>
@@ -3017,7 +2999,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditSpellCheckEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 308</value>
   </data>
   <data name="EditSpellCheckEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 17</value>
@@ -3027,6 +3009,9 @@
   </data>
   <data name="EditSpellCheckEnabled.Text" xml:space="preserve">
     <value>Spell check enabled (reduces performance)</value>
+  </data>
+  <data name="EditSpellCheckEnabled.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditSpellCheckEnabled.Name" xml:space="preserve">
     <value>EditSpellCheckEnabled</value>
@@ -3038,7 +3023,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditSpellCheckEnabled.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="EditWordControlTabInverted.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3071,7 +3056,7 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditWordControlTabInverted.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3080,7 +3065,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
+    <value>23, 110</value>
   </data>
   <data name="EditAutoSaveOnLeaveControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -3101,7 +3086,28 @@
     <value>TabPageEditing</value>
   </data>
   <data name="&gt;&gt;EditAutoSaveOnLeaveControl.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
+  </data>
+  <data name="EditCommentLinePrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 63</value>
+  </data>
+  <data name="EditCommentLinePrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditCommentLinePrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Name" xml:space="preserve">
+    <value>EditCommentLinePrefix</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.Parent" xml:space="preserve">
+    <value>TabPageEditing</value>
+  </data>
+  <data name="&gt;&gt;EditCommentLinePrefix.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="TabPageEditing.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -3374,37 +3380,37 @@
   <data name="&gt;&gt;LabelInfoWordControlWidth.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelWordtranslateLinesCountInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelWordtranslateLinesCountInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelWordtranslateLinesCountInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelWordtranslateLinesCountInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 99</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelWordtranslateLinesCountInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelWordtranslateLinesCountInfo.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
   </data>
-  <data name="LabelInfoWordtranslateLinesCountInfos.Text" xml:space="preserve">
+  <data name="LabelWordtranslateLinesCountInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Name" xml:space="preserve">
-    <value>LabelInfoWordtranslateLinesCountInfos</value>
+  <data name="&gt;&gt;LabelWordtranslateLinesCountInfo.Name" xml:space="preserve">
+    <value>LabelWordtranslateLinesCountInfo</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelWordtranslateLinesCountInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelWordtranslateLinesCountInfo.Parent" xml:space="preserve">
     <value>TabPageRendering</value>
   </data>
-  <data name="&gt;&gt;LabelInfoWordtranslateLinesCountInfos.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelWordtranslateLinesCountInfo.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="LabelInfoCommentLinesCountInfos.AutoSize" type="System.Boolean, mscorlib">
@@ -6486,6 +6492,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>604, 521</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
