@@ -5786,7 +5786,7 @@
     <value>4</value>
   </data>
   <data name="EditExportDocumentVerseRefInBold.Text" xml:space="preserve">
-    <value>Verse ref in bold</value>
+    <value>Verse reference in bold</value>
   </data>
   <data name="&gt;&gt;EditExportDocumentVerseRefInBold.Name" xml:space="preserve">
     <value>EditExportDocumentVerseRefInBold</value>

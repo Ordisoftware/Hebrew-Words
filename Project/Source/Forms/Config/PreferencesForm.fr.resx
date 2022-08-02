@@ -754,4 +754,13 @@
   <data name="EditSpellCheckEnabled.Text" xml:space="preserve">
     <value>Activer le vérificateur d'orthographe (réduit les performances)</value>
   </data>
+  <data name="EditExportDocumentVerseRefInBold.Text" xml:space="preserve">
+    <value>Référence de verset en gras</value>
+  </data>
+  <data name="EditSystemStatisticsCalculateDbSize.Text" xml:space="preserve">
+    <value>Calculer la taille de la base de données</value>
+  </data>
+  <data name="EditTrayIconEnabled.Text" xml:space="preserve">
+    <value>Activer la tray icon</value>
+  </data>
 </root>
