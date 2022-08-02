@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseRow
@@ -19,7 +19,7 @@ public partial class VerseRow
 
   // TODO debug error null after changing language and go to filtered verse (need to reload combox or update bindinge ?)
   public string NumberFormatted
-    => FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID).Verses.Count);
+    => FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID)?.Verses?.Count ?? 0);
 
   public override string ToString()
     => HasTranslation ? TranslationWithNumber : NumberFormatted;

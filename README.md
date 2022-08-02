@@ -282,9 +282,10 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 ## Changelog
 
-#### In progress - Version 3.1
+#### 2022.08.02 - Version 3.1
 
 - Fix colors for verse Title and Concept text boxes.
+- Fix volume label in preferences form.
 
 #### 2022.08.01 - Version 3.0
 

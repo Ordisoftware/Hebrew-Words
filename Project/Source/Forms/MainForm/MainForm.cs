@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
@@ -1287,7 +1287,7 @@ partial class MainForm : Form
   private void EditDbTextBox_Enter(object sender, EventArgs e)
   {
     var control = (Control)sender;
-    control.BackColor = Color.Ivory;
+    control.BackColor = ControlPaint.LightLight(Settings.ThemeNavigatorItems);
     TextBoxMutex = true;
   }
 
@@ -1299,10 +1299,10 @@ partial class MainForm : Form
   private void EditDbTextBox_Leave(object sender, EventArgs e)
   {
     var control = (Control)sender;
-    control.BackColor = Color.LightYellow;
+    control.BackColor = Settings.ThemeNavigatorItems;
     TextBoxMutex = false;
     if ( Settings.AutoSaveOnLeaveControl )
-      MainForm.Instance.ActionSave_Click(MainForm.Instance.ActionSave, EventArgs.Empty);
+      Instance.ActionSave_Click(Instance.ActionSave, EventArgs.Empty);
   }
 
   /// <summary>
