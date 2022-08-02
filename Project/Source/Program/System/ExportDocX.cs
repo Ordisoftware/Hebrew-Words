@@ -38,14 +38,14 @@ static partial class ExportDocX
   //  && Settings.ExportDocumentModel != ExportDocumentModel.OnlyTranslationWithComment;
 
   static private bool WithTranslation
-    => Settings.ExportDocumentModel != ExportDocumentModel.OnlyHebrew
-    && Settings.ExportDocumentModel != ExportDocumentModel.OnlyHebrewWithComment;
+    => Settings.ExportDocumentModel != ExportDocumentModel.HebrewTabular
+    && Settings.ExportDocumentModel != ExportDocumentModel.HebrewTabularWithComment;
 
   static private bool WithMemo
-    => Settings.ExportDocumentModel == ExportDocumentModel.WordForWordWithComment
-    || Settings.ExportDocumentModel == ExportDocumentModel.HebrewWithComment
-    || Settings.ExportDocumentModel == ExportDocumentModel.OnlyHebrewWithComment
-    || Settings.ExportDocumentModel == ExportDocumentModel.OnlyTranslationWithComment;
+    => Settings.ExportDocumentModel == ExportDocumentModel.HebrewTabularWithWordForWordAndComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.HebrewOriginalWithComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.HebrewTabularWithComment
+    || Settings.ExportDocumentModel == ExportDocumentModel.TranslationWithComment;
 
   /// <summary>
   /// Exports a book to MS Word file.

@@ -1873,7 +1873,7 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WordForWordWithComment")]
+        [global::System.Configuration.DefaultSettingValueAttribute("HebrewTabularWithWordForWordAndComment")]
         public global::Ordisoftware.Hebrew.Words.ExportDocumentModel ExportDocumentModel {
             get {
                 return ((global::Ordisoftware.Hebrew.Words.ExportDocumentModel)(this["ExportDocumentModel"]));

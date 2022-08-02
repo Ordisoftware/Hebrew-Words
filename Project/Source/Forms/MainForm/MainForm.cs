@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
 
-// TODO refactor dup code for context menus items
+// TODO refactor duplicate code for context menus items
 
 /// <summary>
 /// Provides application's main form.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -55,12 +55,13 @@ partial class PreferencesForm
     ActionResetSettings.TabStop = false;
     IsReady = true;
     // TODO remove when ready
-    if ( ApplicationCommandLine.Instance.IsPreviewEnabled )
+    //if ( !ApplicationCommandLine.Instance.IsPreviewEnabled )
     {
-      SelectExportDocumentModel.Items.RemoveAt(4); // Hebrew
-      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewWithComment
-      SelectExportDocumentModel.Items.RemoveAt(4); // OnlyTranslation
-      SelectExportDocumentModel.Items.RemoveAt(4); // OnlyTranslationWithComment
+      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginal
+      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithComment
+      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithTranslationAndComment
+      SelectExportDocumentModel.Items.RemoveAt(4); // Translation
+      SelectExportDocumentModel.Items.RemoveAt(4); // TranslationWithComment
     }
   }
 

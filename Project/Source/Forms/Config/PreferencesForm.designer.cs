@@ -68,6 +68,10 @@
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectBackupFolder = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditBackupFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.LabelDocumentMargins = new System.Windows.Forms.Label();
       this.LabelDocumentMarginIntervalInfo = new System.Windows.Forms.Label();
       this.SelectExportDocumentTheme = new System.Windows.Forms.ComboBox();
@@ -99,13 +103,13 @@
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
+      this.EditTrayIconEnabled = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditBookNameHebrewWithCommonName = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
-      this.EditTrayIconEnabled = new System.Windows.Forms.CheckBox();
       this.EditSystemStatisticsCalculateDbSize = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
@@ -125,6 +129,7 @@
       this.EditSpellCheckEnabled = new System.Windows.Forms.CheckBox();
       this.EditWordControlTabInverted = new System.Windows.Forms.CheckBox();
       this.EditAutoSaveOnLeaveControl = new System.Windows.Forms.CheckBox();
+      this.EditCommentLinePrefix = new Ordisoftware.Core.TextBoxEx();
       this.TabPageRendering = new System.Windows.Forms.TabPage();
       this.ActionResetRendering = new System.Windows.Forms.Button();
       this.LabelInfoSearchMinRefForDialog = new System.Windows.Forms.Label();
@@ -227,6 +232,8 @@
       this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
       this.ActionSelectOnlineSearch = new System.Windows.Forms.Button();
       this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
+      this.EditOnlineVerseURL = new Ordisoftware.Core.TextBoxEx();
+      this.EditOnlineSearch = new Ordisoftware.Core.TextBoxEx();
       this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectSearchRequest = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -241,13 +248,6 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditCommentLinePrefix = new Ordisoftware.Core.TextBoxEx();
-      this.EditBackupFolder = new Ordisoftware.Core.TextBoxEx();
-      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
-      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditOnlineVerseURL = new Ordisoftware.Core.TextBoxEx();
-      this.EditOnlineSearch = new Ordisoftware.Core.TextBoxEx();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -542,6 +542,42 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditBackupFolder
+      // 
+      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
+      this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditBackupFolder.Name = "EditBackupFolder";
+      this.EditBackupFolder.ReadOnly = true;
+      this.EditBackupFolder.SpellCheckAllowed = false;
+      // 
+      // EditExportFolder
+      // 
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
+      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditExportFolder.Name = "EditExportFolder";
+      this.EditExportFolder.ReadOnly = true;
+      this.EditExportFolder.SpellCheckAllowed = false;
+      // 
+      // EditCalculatorPath
+      // 
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
+      this.EditCalculatorPath.SpellCheckAllowed = false;
+      // 
+      // EditHebrewLettersPath
+      // 
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      this.EditHebrewLettersPath.SpellCheckAllowed = false;
+      // 
       // LabelDocumentMargins
       // 
       resources.ApplyResources(this.LabelDocumentMargins, "LabelDocumentMargins");
@@ -769,13 +805,13 @@
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
+      this.TabPageApplication.Controls.Add(this.EditTrayIconEnabled);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditBookNameHebrewWithCommonName);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
-      this.TabPageApplication.Controls.Add(this.EditTrayIconEnabled);
       this.TabPageApplication.Controls.Add(this.EditSystemStatisticsCalculateDbSize);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
@@ -808,6 +844,13 @@
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
       this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelVolumeValue.Name = "LabelVolumeValue";
+      // 
+      // EditTrayIconEnabled
+      // 
+      resources.ApplyResources(this.EditTrayIconEnabled, "EditTrayIconEnabled");
+      this.EditTrayIconEnabled.Name = "EditTrayIconEnabled";
+      this.EditTrayIconEnabled.UseVisualStyleBackColor = true;
+      this.EditTrayIconEnabled.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
       // 
       // ActionSelectLangEN
       // 
@@ -852,13 +895,6 @@
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
-      // 
-      // EditTrayIconEnabled
-      // 
-      resources.ApplyResources(this.EditTrayIconEnabled, "EditTrayIconEnabled");
-      this.EditTrayIconEnabled.Name = "EditTrayIconEnabled";
-      this.EditTrayIconEnabled.UseVisualStyleBackColor = true;
-      this.EditTrayIconEnabled.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
       // 
       // EditSystemStatisticsCalculateDbSize
       // 
@@ -1015,6 +1051,13 @@
       resources.ApplyResources(this.EditAutoSaveOnLeaveControl, "EditAutoSaveOnLeaveControl");
       this.EditAutoSaveOnLeaveControl.Name = "EditAutoSaveOnLeaveControl";
       this.EditAutoSaveOnLeaveControl.UseVisualStyleBackColor = true;
+      // 
+      // EditCommentLinePrefix
+      // 
+      this.EditCommentLinePrefix.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCommentLinePrefix, "EditCommentLinePrefix");
+      this.EditCommentLinePrefix.Name = "EditCommentLinePrefix";
+      this.EditCommentLinePrefix.SpellCheckAllowed = false;
       // 
       // TabPageRendering
       // 
@@ -1872,7 +1915,8 @@
             resources.GetString("SelectExportDocumentModel.Items4"),
             resources.GetString("SelectExportDocumentModel.Items5"),
             resources.GetString("SelectExportDocumentModel.Items6"),
-            resources.GetString("SelectExportDocumentModel.Items7")});
+            resources.GetString("SelectExportDocumentModel.Items7"),
+            resources.GetString("SelectExportDocumentModel.Items8")});
       resources.ApplyResources(this.SelectExportDocumentModel, "SelectExportDocumentModel");
       this.SelectExportDocumentModel.Name = "SelectExportDocumentModel";
       // 
@@ -1926,6 +1970,20 @@
       this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
       this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
       this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
+      // 
+      // EditOnlineVerseURL
+      // 
+      resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
+      this.EditOnlineVerseURL.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
+      this.EditOnlineVerseURL.SpellCheckAllowed = false;
+      // 
+      // EditOnlineSearch
+      // 
+      resources.ApplyResources(this.EditOnlineSearch, "EditOnlineSearch");
+      this.EditOnlineSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditOnlineSearch.Name = "EditOnlineSearch";
+      this.EditOnlineSearch.SpellCheckAllowed = false;
       // 
       // SaveThemeDialog
       // 
@@ -2015,63 +2073,6 @@
       this.ActionSetPageSizeUSLetter.Name = "ActionSetPageSizeUSLetter";
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
-      // 
-      // EditCommentLinePrefix
-      // 
-      this.EditCommentLinePrefix.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCommentLinePrefix, "EditCommentLinePrefix");
-      this.EditCommentLinePrefix.Name = "EditCommentLinePrefix";
-      this.EditCommentLinePrefix.SpellCheckAllowed = false;
-      // 
-      // EditBackupFolder
-      // 
-      resources.ApplyResources(this.EditBackupFolder, "EditBackupFolder");
-      this.EditBackupFolder.BackColor = System.Drawing.SystemColors.Control;
-      this.EditBackupFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditBackupFolder.Name = "EditBackupFolder";
-      this.EditBackupFolder.ReadOnly = true;
-      this.EditBackupFolder.SpellCheckAllowed = false;
-      // 
-      // EditExportFolder
-      // 
-      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
-      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
-      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditExportFolder.Name = "EditExportFolder";
-      this.EditExportFolder.ReadOnly = true;
-      this.EditExportFolder.SpellCheckAllowed = false;
-      // 
-      // EditCalculatorPath
-      // 
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
-      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditCalculatorPath.Name = "EditCalculatorPath";
-      this.EditCalculatorPath.ReadOnly = true;
-      this.EditCalculatorPath.SpellCheckAllowed = false;
-      // 
-      // EditHebrewLettersPath
-      // 
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      this.EditHebrewLettersPath.SpellCheckAllowed = false;
-      // 
-      // EditOnlineVerseURL
-      // 
-      resources.ApplyResources(this.EditOnlineVerseURL, "EditOnlineVerseURL");
-      this.EditOnlineVerseURL.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditOnlineVerseURL.Name = "EditOnlineVerseURL";
-      this.EditOnlineVerseURL.SpellCheckAllowed = false;
-      // 
-      // EditOnlineSearch
-      // 
-      resources.ApplyResources(this.EditOnlineSearch, "EditOnlineSearch");
-      this.EditOnlineSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditOnlineSearch.Name = "EditOnlineSearch";
-      this.EditOnlineSearch.SpellCheckAllowed = false;
       // 
       // PreferencesForm
       // 

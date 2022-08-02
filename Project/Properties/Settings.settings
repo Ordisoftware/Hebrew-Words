@@ -465,7 +465,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ExportDocumentModel" Type="Ordisoftware.Hebrew.Words.ExportDocumentModel" Scope="User">
-      <Value Profile="(Default)">WordForWordWithComment</Value>
+      <Value Profile="(Default)">HebrewTabularWithWordForWordAndComment</Value>
     </Setting>
     <Setting Name="ExportDocumentVerseRefInBold" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
