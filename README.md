@@ -284,8 +284,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### In progress - Version 3.2
 
-- Fix printing models list that was ambiguous.
-- Fix some texts.
+- Fix some texts in preferences form.
+- Fix list of printing models that was ambiguous in preferences form.
 
 #### 2022.08.02 - Version 3.1
 
