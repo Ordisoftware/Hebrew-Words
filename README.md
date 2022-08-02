@@ -282,6 +282,11 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 ## Changelog
 
+#### In progress - Version 3.2
+
+- Fix printing models list that was ambiguous.
+- Fix some texts.
+
 #### 2022.08.02 - Version 3.1
 
 - Fix colors for verse Title and Concept text boxes.

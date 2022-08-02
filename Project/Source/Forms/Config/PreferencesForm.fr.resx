@@ -239,7 +239,7 @@
     <value>302, 13</value>
   </data>
   <data name="LabelDocumentMargins.Text" xml:space="preserve">
-    <value>Marges du document haut, bas, gauche et droite en millimètres</value>
+    <value>Marges du document en haut, en bas, à gauche et à droite ainsi que l'en-tête et le pied de page en millimètres</value>
   </data>
   <data name="SelectExportDocumentTheme.Items" xml:space="preserve">
     <value>Petit</value>
