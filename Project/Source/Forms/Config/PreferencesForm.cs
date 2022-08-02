@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -198,7 +198,7 @@ partial class PreferencesForm : Form
   private void EditVolume_ValueChanged(object sender, EventArgs e)
   {
     MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
-    LabelVolumeValue.Text = "${EditVolume.Value}%";
+    LabelVolumeValue.Text = $"{EditVolume.Value}%";
     if ( !IsReady ) return;
     Settings.ApplicationVolume = EditVolume.Value;
     SystemManager.TryCatch(Settings.Store);
