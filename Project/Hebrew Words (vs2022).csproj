@@ -358,6 +358,7 @@
     <Compile Include="Source\Database\AbstractRowWithMemo.cs" />
     <Compile Include="Source\Database\AbstractRowWithTitleAndMemo.cs" />
     <Compile Include="Source\Database\AbstractRowWithTitle.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Fill.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
     <Compile Include="Source\Database\BookRow.ToString.cs" />
     <Compile Include="Source\Database\ChapterRow.ToString.cs" />

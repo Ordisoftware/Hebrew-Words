@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -24,7 +24,7 @@ partial class MainForm
       using var box = new RichTextBoxEx();
       foreach ( VerseRow verse in CurrentReference.Chapter.Verses )
       {
-        AddTextRightAligned(box, HebrewFont12, verse.InHebrew);
+        AddTextRightAligned(box, HebrewFont12, verse.AsHebrew);
         AddTextRightAligned(box, LatinFont10, $" :{verse.NumberFormatted}");
         box.AppendText(Globals.NL2);
       }

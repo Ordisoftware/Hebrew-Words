@@ -847,12 +847,12 @@ partial class MainForm : Form
   private void ActionCopyFontCharsVerse_Click(object sender, EventArgs e)
   {
     if ( ActiveControl is VerseControl controlVerse )
-      Clipboard.SetText(controlVerse.Reference?.Verse.InHebrew);
+      Clipboard.SetText(controlVerse.Reference?.Verse.AsHebrew);
     else
     if ( Settings.CurrentView == ViewMode.Search )
       if ( sender is ToolStripMenuItem menuitem )
         if ( ( (ContextMenuStrip)menuitem.Owner ).SourceControl is LinkLabel control )
-          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.InHebrew);
+          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.AsHebrew);
   }
 
   /// <summary>
@@ -863,12 +863,12 @@ partial class MainForm : Form
   private void ActionCopyUnicodeCharsVerse_Click(object sender, EventArgs e)
   {
     if ( ActiveControl is VerseControl controlVerse )
-      Clipboard.SetText(controlVerse.Reference?.Verse.InUnicode);
+      Clipboard.SetText(controlVerse.Reference?.Verse.AsUnicode);
     else
     if ( Settings.CurrentView == ViewMode.Search )
       if ( sender is ToolStripMenuItem menuitem )
         if ( ( (ContextMenuStrip)menuitem.Owner ).SourceControl is LinkLabel control )
-          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.InUnicode);
+          Clipboard.SetText(( (ReferenceItem)control.Tag )?.Verse.AsUnicode);
   }
 
   /// <summary>
