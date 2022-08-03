@@ -290,7 +290,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### 2022.08.04 - Version 3.4
 
-- Fix select verse controls are enabled when current view is ELS50.
+- Fix verse title and concept text boxes and check boxes enabled when current view is ELS50.
+- Disable text box in verses because not yet available.
 
 #### 2022.08.03 - Version 3.3
 
