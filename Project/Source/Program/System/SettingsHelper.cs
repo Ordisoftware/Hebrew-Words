@@ -164,7 +164,7 @@ static class SettingsHelper
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
       settings.ExportUseHebrewFontElseUnicodeChars = MainForm.EditExportUseHebrewFontElseUnicodeChars.Checked;
       settings.IncludeOriginalTextInChapterTranslation = MainForm.EditIncludeOriginalText.Checked;
-      settings.IncludeOriginalTextInChapterTranslation = MainForm.EditIncludeComment.Checked;
+      settings.IncludeCommentInChapterTranslation = MainForm.EditIncludeComment.Checked;
       //
       settings.EditMemoFormLastLocation = EditMemoForm.LastLocation;
       settings.EditMemoFormLastSize = EditMemoForm.LastSize;
