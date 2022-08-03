@@ -263,7 +263,6 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### Soon
 
-- Check and fix search module (some results may be different from bible's stats)
 - Add spell checker.
 - Add search history.
 - Add filters to show all translated books or chapters, or those are not.
