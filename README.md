@@ -263,7 +263,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 #### Soon
 
-- Check and fix search module (come results may be different from bible's stats)
+- Check and fix search module (some results may be different from bible's stats)
+- Add spell checker.
 - Add search history.
 - Add filters to show all translated books or chapters, or those are not.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
@@ -273,6 +274,8 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
 - Add take a screenshot of full window or current verse if applicable.
+- Add load and save theme.
+- Imporove tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
@@ -294,6 +297,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Fix some controls tabs in several windows.
 - Fix verse title and concept text boxes and check boxes enabled when current view is ELS50.
 - Fix reset button in letters control.
+- Fix export buttons in original text and ELS50 views.
 - Few fixes and improvements.
 
 #### 2022.08.03 - Version 3.3

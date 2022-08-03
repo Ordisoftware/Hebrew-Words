@@ -56,13 +56,11 @@ partial class PreferencesForm
     IsReady = true;
     // TODO remove when ready
     //if ( !ApplicationCommandLine.Instance.IsPreviewEnabled )
-    {
-      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginal
-      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithComment
-      SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithTranslationAndComment
-      SelectExportDocumentModel.Items.RemoveAt(4); // Translation
-      SelectExportDocumentModel.Items.RemoveAt(4); // TranslationWithComment
-    }
+    SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginal
+    SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithComment
+    SelectExportDocumentModel.Items.RemoveAt(4); // HebrewOriginalWithTranslationAndComment
+    SelectExportDocumentModel.Items.RemoveAt(4); // Translation
+    SelectExportDocumentModel.Items.RemoveAt(4); // TranslationWithComment
   }
 
   /// <summary>
