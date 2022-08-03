@@ -184,8 +184,8 @@ partial class MainForm
       PanelMain.Refresh();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
-      ActionExportBook.Enabled = PanelNavigation.Visible;
-      ActionExportChapter.Enabled = PanelNavigation.Visible;
+      ActionExportBook.Enabled = PanelNavigation.Visible && view != ViewMode.ChapterTranslation && view != ViewMode.ChapterOriginal;
+      ActionExportChapter.Enabled = PanelNavigation.Visible && view != ViewMode.BookELS50;
       //
       SelectBook.Enabled = PanelNavigation.Visible;
       SelectBookNavigator.Enabled = SelectBook.Enabled;
