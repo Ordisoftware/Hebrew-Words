@@ -1961,7 +1961,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditSearchWord.TextBox.Text = HebrewAlphabet.SetFinal(word, false);
+    EditSearchWord.InititialWord = HebrewAlphabet.SetFinal(word, false);
+    EditSearchWord.TextBox.Text = EditSearchWord.InititialWord;
     EditSearchWord.TextBox.SelectionStart = EditSearchWord.TextBox.Text.Length;
     ActionSearchRun.PerformClick();
   }

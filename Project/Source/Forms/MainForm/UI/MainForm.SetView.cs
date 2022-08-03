@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -184,7 +184,6 @@ partial class MainForm
       PanelMain.Refresh();
       //
       ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
-      SelectRenderAllVerses.Enabled = view == ViewMode.ChapterVerses;
       ActionExportBook.Enabled = PanelNavigation.Visible;
       ActionExportChapter.Enabled = PanelNavigation.Visible;
       //
@@ -203,6 +202,13 @@ partial class MainForm
       SelectVerse.Enabled = PanelNavigation.Visible && view != ViewMode.BookELS50;
       SelectVerseNavigator.Enabled = SelectVerse.Enabled;
       LabelSelectVerse.Enabled = SelectVerse.Enabled;
+      LabelVerseTitle.Enabled = SelectVerse.Enabled;
+      EditVerseTitle.Enabled = SelectVerse.Enabled;
+      LabelVerseConcept.Enabled = SelectVerse.Enabled;
+      EditVerseConcept.Enabled = SelectVerse.Enabled;
+      ActionSelectRenderAllVersesKeepHelp.Enabled = SelectVerse.Enabled;
+      SelectRenderAllVerses.Enabled = SelectVerse.Enabled && view == ViewMode.ChapterVerses;
+      SelectRenderAllVersesKeep.Enabled = SelectVerse.Enabled;
       ActionSearchVerse.Enabled = SelectVerse.Enabled;
       //
       UpdateHistoryButtons();
