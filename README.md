@@ -294,6 +294,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Fix some controls tabs in several windows.
 - Fix verse title and concept text boxes and check boxes enabled when current view is ELS50.
 - Fix reset button in letters control.
+- Few fixes and improvements.
 
 #### 2022.08.03 - Version 3.3
 
