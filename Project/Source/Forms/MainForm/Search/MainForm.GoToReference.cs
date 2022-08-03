@@ -219,6 +219,7 @@ partial class MainForm
               : verses.LastOrDefault(v => !v.IsFullyTranslated);
           }
         }
+        // TODO manage search text
         if ( result is null ) ShowPanelToolTip(AppTranslations.NoSearchResultFound.GetLang());
         return result;
       }
