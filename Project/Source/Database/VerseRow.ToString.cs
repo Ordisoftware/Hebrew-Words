@@ -43,12 +43,18 @@ public partial class VerseRow
   public string TranslationWithNumber
     => NumberFormatted + ". " + Translation;
 
+  /// <summary>
+  /// Indicates the text of the word using the Hebrew font.
+  /// </summary>
   public string AsHebrew
     => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
 
   public string AsHebrewWithNumber
     => $"{NumberFormatted} : " + Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
 
+  /// <summary>
+  /// Indicates the text of the word using Unicode codes.
+  /// </summary>
   public string AsUnicode
     => Words.Select(word => word.Unicode).AsMultiSpace();
 

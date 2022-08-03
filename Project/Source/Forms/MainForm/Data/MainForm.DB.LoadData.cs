@@ -49,6 +49,12 @@ partial class MainForm : Form
       {
         CurrentReference = null;
         PopulateData();
+        if ( ApplicationDatabase.Instance.Chapters[0].ELS50 != "rrlixymvybvrmj>mahmiyyrhmyynyyhrvt" )
+        {
+          DisplayManager.ShowWarning(AppTranslations.RepairELS50.GetLang());
+          ApplicationDatabase.Instance.RepairELS50();
+          RenderChapterELS50();
+        }
       }
       catch ( Exception ex )
       {

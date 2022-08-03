@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class ChapterRow
@@ -25,7 +25,7 @@ public partial class ChapterRow
   }
 
   public string NumberFormatted
-    => FormatNumber(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID).Chapters.Count);
+    => FormatNumber(ApplicationDatabase.Instance.Books.Find(b => b.ID == BookID)?.Chapters.Count ?? 0);
 
   public string AsHebrew
     => Verses.Select(verse => verse.AsHebrew).AsMultiDoubleLine();

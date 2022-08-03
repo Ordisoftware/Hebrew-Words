@@ -11,23 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseRow
 {
-
-  /// <summary>
-  /// Indicates the text of the word using the Hebrew font.
-  /// </summary>
-  public string InHebrew
-    => Words.Select(word => word.Hebrew).Reverse().AsMultiSpace();
-
-  /// <summary>
-  /// Indicates the text of the word using Unicode codes.
-  /// </summary>
-  public string InUnicode
-    => Words.Select(word => word.Unicode).AsMultiSpace();
 
   /// <summary>
   /// Indicates if the verse has at least one word translated.

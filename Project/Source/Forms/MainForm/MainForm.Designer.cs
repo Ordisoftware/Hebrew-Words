@@ -862,6 +862,7 @@
       this.EditSearchWord.InititialWord = null;
       this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
+      this.EditSearchWord.ShowBottomPanel = false;
       this.EditSearchWord.ShowGematria = false;
       this.EditSearchWord.ShowValues = false;
       this.EditSearchWord.InputTextChanged += new System.EventHandler(this.EditLetters_InputTextChanged);
@@ -2711,7 +2712,6 @@
     private ToolStripSeparator toolStripSeparator25;
     private ToolStripMenuItem ActionCountRootOccurencesTanak;
     private ToolStripMenuItem ActionImportConsoleAuto;
-    private ToolStripSeparator SeparatorActionNormalizeTexts;
     private ToolStripMenuItem ActionNormalizeTexts;
     internal ToolStripMenuItem EditExportUseHebrewFontElseUnicodeChars;
     private ToolStripSeparator toolStripSeparator27;
@@ -2745,5 +2745,6 @@
     internal Label LabelProgress;
     internal Label LabelTitle;
     internal Label LabelTitleReferenceName;
+    private ToolStripSeparator SeparatorActionNormalizeTexts;
   }
 }

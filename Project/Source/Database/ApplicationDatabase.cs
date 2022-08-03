@@ -11,12 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
 
-class ApplicationDatabase : SQLiteDatabase
+partial class ApplicationDatabase : SQLiteDatabase
 {
 
   static public readonly string BooksTableName = nameof(Books);
@@ -187,156 +187,6 @@ class ApplicationDatabase : SQLiteDatabase
         LoadingForm.Instance.Hide();
       }
     return false;
-  }
-
-  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
-  private void FillFromFiles()
-  {
-    try
-    {
-      Globals.ChronoStartingApp.Stop();
-      Globals.ChronoLoadData.Stop();
-      MainForm.Instance.SetFormDisabled(true);
-      Books.Clear();
-      Loaded = false;
-      BookRow book = null;
-      ChapterRow chapter = null;
-      VerseRow verse = null;
-      WordRow word = null;
-      string path = Program.TanakFolderPath;
-      string strELS50 = "";
-      int nounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.KeyCodes, "n")];
-      void nextChapter()
-      {
-        book.Chapters.Add(chapter);
-        Chapters.Add(chapter);
-        strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
-        int i = strELS50.Length - 1;
-        while ( i >= 0 && strELS50[i] != 't' ) i--;
-        string res = "";
-        for ( int p = i; p >= 0; p -= nounValue ) res = strELS50[p] + res;
-        chapter.ELS50 = res;
-        strELS50 = "";
-      }
-      LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
-      foreach ( TanakBook bookNumber in Enums.GetValues<TanakBook>() )
-      {
-        string filePath = Path.Combine(path, bookNumber.ToString().Replace('_', ' ') + ".txt");
-        if ( !File.Exists(filePath) )
-        {
-          DisplayManager.ShowWarning(SysTranslations.FileNotFound.GetLang(filePath));
-          continue;
-        }
-        var filecontent = File.ReadAllLines(filePath);
-        book = new()
-        {
-          ID = Guid.NewGuid(),
-          Number = (int)bookNumber,
-          Unicode = BookInfos.Unicode[bookNumber],
-          Hebrew = BookInfos.Hebrew[bookNumber],
-          Transcription = BookInfos.Transcriptions.GetLang(bookNumber),
-          CommonName = BookInfos.Common.GetLang(bookNumber),
-          Translation = string.Empty,
-          Lettriq = string.Empty,
-          Memo = string.Empty
-        };
-        Books.Add(book);
-        int countChapters = 0;
-        int countVerses = 0;
-        int countWords = 0;
-        foreach ( string item in filecontent )
-        {
-          string line = item;
-          if ( line.Contains("    ") )
-          {
-            if ( chapter is not null ) nextChapter();
-            countVerses = 0;
-            chapter = new()
-            {
-              ID = Guid.NewGuid(),
-              BookID = book.ID,
-              Number = ++countChapters,
-              Title = string.Empty,
-              Memo = string.Empty
-            };
-          }
-          else
-          {
-            line = line.Replace(":", "");
-            var list = line.Split('\t');
-            string[] listWordsUnicode;
-            string[] listWordsHebrew;
-            if ( list.Length == 2 )
-            {
-              countWords = 0;
-              verse = new()
-              {
-                ID = Guid.NewGuid(),
-                ChapterID = chapter.ID,
-                Number = ++countVerses,
-                Concept = string.Empty,
-                Comment = string.Empty
-              };
-              listWordsUnicode = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
-              listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
-              chapter.Verses.Add(verse);
-              Verses.Add(verse);
-            }
-            else
-            {
-              listWordsUnicode = line.Replace('-', ' ').Split(' ').Reverse().ToArray();
-              listWordsHebrew = HebrewAlphabet.ToHebrewFont(line).Split(' ').ToArray();
-            }
-            for ( int i = 0; i < listWordsHebrew.Length; i++ )
-            {
-              ref var wordHebrew = ref listWordsHebrew[i];
-              if ( wordHebrew.Length == 0 ) continue;
-              word = new()
-              {
-                ID = Guid.NewGuid(),
-                VerseID = verse.ID,
-                Number = ++countWords,
-                Unicode = new string(listWordsUnicode[i].Reverse().ToArray()),
-                Hebrew = new string(wordHebrew.ToCharArray().Reverse().ToArray()),
-                Translation = string.Empty
-              };
-              verse.Words.Add(word);
-              Words.Add(word);
-              strELS50 = wordHebrew + strELS50;
-            }
-          }
-        }
-      }
-      if ( chapter is not null ) nextChapter();
-      BeginTransaction();
-      try
-      {
-        LoadingForm.Instance.DoProgress(operation: SysTranslations.SavingData.GetLang());
-        Connection.InsertAll(Books);
-        Connection.InsertAll(Chapters);
-        Connection.InsertAll(Verses);
-        Connection.InsertAll(Words);
-        LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
-        Commit();
-        Vacuum(true);
-      }
-      catch
-      {
-        Rollback();
-        throw;
-      }
-      Loaded = true;
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-    finally
-    {
-      MainForm.Instance.SetFormDisabled(false);
-      Globals.ChronoStartingApp.Start();
-      Globals.ChronoLoadData.Start();
-    }
   }
 
 }
