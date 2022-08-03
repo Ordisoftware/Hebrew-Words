@@ -264,21 +264,21 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 #### Soon
 
 - Check and fix search module (come results may be different from bible's stats)
-- Add filters on all translated books or chapters.
 - Add search history.
+- Add filters to show all translated books or chapters, or those are not.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
-- Add title and memo of book and chapter in DOCX export.
-- Add book name/translation/memo and chapter number/title/memo in RTF export.
+- Add book translation RTF export.
+- Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
+- Add take a screenshot of full window or current verse if applicable.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
 #### Later
 
 - Add a tray icon.
-- Add take screenshot, full window or only current verse if applicable.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add form to edit strong's concordances.
@@ -294,6 +294,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Fix some controls tabs in several windows.
 - Fix verse title and concept text boxes and check boxes enabled when current view is ELS50.
 - Fix reset button in letters control.
+- Few fixes and improvements.
 
 #### 2022.08.03 - Version 3.3
 
