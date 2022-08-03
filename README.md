@@ -101,7 +101,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 [![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-original-en-300x226.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-original-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en-300x226.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x213.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en.png)
+[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en.png)
 
 [![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en-211x300.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-stats-en-297x300.png)](https://www.ordisoftware.com/uploads/2022/08/hebrew-words-stats-en.png)
 
