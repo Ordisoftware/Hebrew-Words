@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Words
       this.panel1 = new System.Windows.Forms.Panel();
       this.LabelVerse = new System.Windows.Forms.Label();
       this.EditVerseNumber = new System.Windows.Forms.NumericUpDown();
-      this.PanelOptions = new System.Windows.Forms.Panel();
+      this.PanelOptionsDirection = new System.Windows.Forms.Panel();
       this.SelectVerseFromFirstToLast = new System.Windows.Forms.RadioButton();
       this.SelectVerseFromCurrentToLast = new System.Windows.Forms.RadioButton();
       this.SelectVerseTakeFirstElseLast = new System.Windows.Forms.CheckBox();
@@ -57,9 +57,11 @@ namespace Ordisoftware.Hebrew.Words
       this.SelectVerseFromCurrentToFirst = new System.Windows.Forms.RadioButton();
       this.LabelSearchText = new System.Windows.Forms.Label();
       this.EditSearchText = new Ordisoftware.Core.TextBoxEx();
+      this.PanelOptionsProcess = new System.Windows.Forms.Panel();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
-      this.PanelOptions.SuspendLayout();
+      this.PanelOptionsDirection.SuspendLayout();
+      this.PanelOptionsProcess.SuspendLayout();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -100,18 +102,14 @@ namespace Ordisoftware.Hebrew.Words
       this.EditVerseNumber.ValueChanged += new System.EventHandler(this.Edit_Changed);
       this.EditVerseNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditVerseNumber_KeyUp);
       // 
-      // PanelOptions
+      // PanelOptionsDirection
       // 
-      resources.ApplyResources(this.PanelOptions, "PanelOptions");
-      this.PanelOptions.Controls.Add(this.SelectVerseFromFirstToLast);
-      this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToLast);
-      this.PanelOptions.Controls.Add(this.SelectVerseTakeFirstElseLast);
-      this.PanelOptions.Controls.Add(this.SelectVerseTranslated);
-      this.PanelOptions.Controls.Add(this.SelectVerseWithoutComment);
-      this.PanelOptions.Controls.Add(this.SelectVerseFullyTranslated);
-      this.PanelOptions.Controls.Add(this.SelectVerseFromLastToFirst);
-      this.PanelOptions.Controls.Add(this.SelectVerseFromCurrentToFirst);
-      this.PanelOptions.Name = "PanelOptions";
+      resources.ApplyResources(this.PanelOptionsDirection, "PanelOptionsDirection");
+      this.PanelOptionsDirection.Controls.Add(this.SelectVerseFromFirstToLast);
+      this.PanelOptionsDirection.Controls.Add(this.SelectVerseFromCurrentToLast);
+      this.PanelOptionsDirection.Controls.Add(this.SelectVerseFromLastToFirst);
+      this.PanelOptionsDirection.Controls.Add(this.SelectVerseFromCurrentToFirst);
+      this.PanelOptionsDirection.Name = "PanelOptionsDirection";
       // 
       // SelectVerseFromFirstToLast
       // 
@@ -199,7 +197,17 @@ namespace Ordisoftware.Hebrew.Words
       this.EditSearchText.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditSearchText, "EditSearchText");
       this.EditSearchText.Name = "EditSearchText";
+      this.EditSearchText.SpellCheckAllowed = false;
       this.EditSearchText.TextChanged += new System.EventHandler(this.Edit_Changed);
+      // 
+      // PanelOptionsProcess
+      // 
+      this.PanelOptionsProcess.Controls.Add(this.SelectVerseTakeFirstElseLast);
+      this.PanelOptionsProcess.Controls.Add(this.SelectVerseFullyTranslated);
+      this.PanelOptionsProcess.Controls.Add(this.SelectVerseWithoutComment);
+      this.PanelOptionsProcess.Controls.Add(this.SelectVerseTranslated);
+      resources.ApplyResources(this.PanelOptionsProcess, "PanelOptionsProcess");
+      this.PanelOptionsProcess.Name = "PanelOptionsProcess";
       // 
       // SelectVerseForm
       // 
@@ -207,8 +215,9 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.PanelOptionsProcess);
       this.Controls.Add(this.LabelSearchText);
-      this.Controls.Add(this.PanelOptions);
+      this.Controls.Add(this.PanelOptionsDirection);
       this.Controls.Add(this.EditSearchText);
       this.Controls.Add(this.EditVerseNumber);
       this.Controls.Add(this.LabelVerse);
@@ -221,8 +230,10 @@ namespace Ordisoftware.Hebrew.Words
       this.Load += new System.EventHandler(this.SelectVerseForm_Load);
       this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
-      this.PanelOptions.ResumeLayout(false);
-      this.PanelOptions.PerformLayout();
+      this.PanelOptionsDirection.ResumeLayout(false);
+      this.PanelOptionsDirection.PerformLayout();
+      this.PanelOptionsProcess.ResumeLayout(false);
+      this.PanelOptionsProcess.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -256,11 +267,12 @@ namespace Ordisoftware.Hebrew.Words
     private RadioButton SelectVerseFromCurrentToLast;
     private CheckBox SelectVerseTranslated;
     private CheckBox SelectVerseFullyTranslated;
-    private Panel PanelOptions;
+    private Panel PanelOptionsDirection;
     private CheckBox SelectVerseTakeFirstElseLast;
     private CheckBox SelectVerseWithoutComment;
     private TextBoxEx EditSearchText;
     private Label LabelSearchText;
+    private Panel PanelOptionsProcess;
   }
 
 }

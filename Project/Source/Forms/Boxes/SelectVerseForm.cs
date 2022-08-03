@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class SelectVerseForm : Form
@@ -31,6 +31,11 @@ partial class SelectVerseForm : Form
   {
     InitializeComponent();
     EditVerseNumber.Select(0, 1);
+    if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when ready
+    {
+      LabelSearchText.Enabled = false;
+      EditSearchText.Enabled = false;
+    }
   }
 
   private void SelectVerseForm_Load(object sender, EventArgs e)
@@ -40,9 +45,11 @@ partial class SelectVerseForm : Form
 
   private void Edit_Changed(object sender, EventArgs e)
   {
-    PanelOptions.Enabled = EditVerseNumber.Text.Length != 0
-                        && EditSearchText.Text.Length == 0
-                        && EditVerseNumber.Value == 0;
+    PanelOptionsDirection.Enabled = EditVerseNumber.Text.Length != 0
+                                 && EditVerseNumber.Value == 0;
+    PanelOptionsProcess.Enabled = EditVerseNumber.Text.Length != 0
+                               && EditSearchText.Text.Length == 0
+                               && EditVerseNumber.Value == 0;
   }
 
   private void SelectVerseFromFirstToLast_Click(object sender, EventArgs e)
