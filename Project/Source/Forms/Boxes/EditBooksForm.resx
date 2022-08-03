@@ -488,7 +488,7 @@
     <value>True</value>
   </metadata>
   <data name="ColumnHasMemo.HeaderText" xml:space="preserve">
-    <value>ColumnHasMemo</value>
+    <value />
   </data>
   <data name="ColumnHasMemo.Width" type="System.Int32, mscorlib">
     <value>20</value>
