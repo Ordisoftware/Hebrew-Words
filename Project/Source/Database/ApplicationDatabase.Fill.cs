@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class ApplicationDatabase
 {
 
-  static private int NounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.KeyCodes, "n")];
+  static private readonly int NounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.KeyCodes, "n")];
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   internal void FillFromFiles()
@@ -115,8 +115,8 @@ partial class ApplicationDatabase
             {
               ref var wordHebrew = ref listWordsHebrew[index];
               if ( wordHebrew.Length == 0 ) continue;
-              string wordHebrewReversed = new string(wordHebrew.Reverse().ToArray());
-              string wordUnicodeReversed = new string(listWordsUnicode[index].Reverse().ToArray());
+              string wordHebrewReversed = new(wordHebrew.Reverse().ToArray());
+              string wordUnicodeReversed = new(listWordsUnicode[index].Reverse().ToArray());
               word = new()
               {
                 ID = Guid.NewGuid(),
@@ -169,12 +169,8 @@ partial class ApplicationDatabase
   {
     try
     {
-      string strELS50 = "";
       foreach ( var chapter in Chapters )
-      {
-        string txt = chapter.Verses.Select(verse => verse.AsHebrew).Reverse().Join("").Replace(" ", "");
-        chapter.ELS50 = CreateELS50(txt);
-      }
+        chapter.ELS50 = CreateELS50(chapter.Verses.Select(verse => verse.AsHebrew).Reverse().Join("").Replace(" ", ""));
       SaveAll();
     }
     catch ( Exception ex )
