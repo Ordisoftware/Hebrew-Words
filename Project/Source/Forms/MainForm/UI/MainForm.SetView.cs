@@ -206,9 +206,9 @@ partial class MainForm
       EditVerseTitle.Enabled = SelectVerse.Enabled;
       LabelVerseConcept.Enabled = SelectVerse.Enabled;
       EditVerseConcept.Enabled = SelectVerse.Enabled;
-      ActionSelectRenderAllVersesKeepHelp.Enabled = SelectVerse.Enabled;
       SelectRenderAllVerses.Enabled = SelectVerse.Enabled && view == ViewMode.ChapterVerses;
-      SelectRenderAllVersesKeep.Enabled = SelectVerse.Enabled;
+      SelectRenderAllVersesKeep.Enabled = SelectRenderAllVerses.Enabled;
+      ActionSelectRenderAllVersesKeepHelp.Enabled = SelectRenderAllVerses.Enabled;
       ActionSearchVerse.Enabled = SelectVerse.Enabled;
       //
       UpdateHistoryButtons();
