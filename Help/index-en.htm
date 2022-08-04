@@ -48,8 +48,10 @@ Letters.</li>
             <td style="width: 50%; text-align: center;"><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en.png" data-slb-active="1" data-slb-asset="1188334506" data-slb-internal="0" data-slb-group="3628"><img class="alignnone wp-image-8389 size-medium" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en-300x226.png" alt="" width="300" height="226"></a></td>
         </tr>
         <tr>
-            <td style="width: 50%; text-align: center;"><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png" data-slb-active="1" data-slb-asset="1109612390" data-slb-internal="0" data-slb-group="3628"><img class="alignnone wp-image-8387" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png" alt="" srcset="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png 300w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-200x156.png 200w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-768x601.png 768w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-150x117.png 150w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-400x313.png 400w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png 886w" sizes="(max-width: 270px) 100vw, 270px" width="270" height="211"></a></td>
-            <td style="width: 50%; text-align: center;"><img class="alignnone size-medium wp-image-8392" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png" alt="" srcset="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png 300w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-200x141.png 200w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-768x540.png 768w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-150x105.png 150w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-400x281.png 400w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en.png 986w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="211"></td>
+            <td style="width: 50%; text-align: center;"><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png" data-slb-active="1" data-slb-asset="1109612390" data-slb-internal="0" data-slb-group="3628"><img class="alignnone wp-image-8387" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png" alt="" srcset="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png 300w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-200x156.png
+200w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-768x601.png 768w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-150x117.png 150w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-400x313.png 400w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png 886w" sizes="(max-width: 270px) 100vw, 270px" width="270" height="211"></a></td>
+            <td style="width: 50%; text-align: center;"><img class="alignnone size-medium wp-image-8392" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png" alt="" srcset="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png 300w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-200x141.png 200w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-768x540.png 768w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-150x105.png
+150w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-400x281.png 400w, https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en.png 986w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="211"></td>
         </tr>
         <tr>
             <td style="width: 50%; text-align: center;"><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en.png" data-slb-active="1" data-slb-asset="1671364632" data-slb-internal="0" data-slb-group="3628"><img class="alignnone wp-image-8405 size-medium" src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en-211x300.png" alt="" width="211" height="300"></a></td>
@@ -130,22 +132,16 @@ and dynamic items can be generated slowly the larger the number.</p>
             <p><code>Ordisoftware.Hebrew.Words.exe --word [word]</code> </p>
         </li>
         <li>
-            <p>Search a translation in the database using unicode &quot;<code>בראשית</code>&quot; and or hebrew font &quot;<code>ty&gt;arb</code>&quot;:</p>
+            <p>Search a translation of a word in the database like &quot;<code>elohim</code>&quot;:</p>
             <p><code>Ordisoftware.Hebrew.Words.exe --translated [word]</code> </p>
-            <p>All diacritics and case are removed, and if the word can't be processed it is set to empty.</p>
-            <p>If any Hebrew Unicode chars is present, all non Unicode are removed, 
-else Hebrew font chars are used and all non-font chars are removed.</p>
         </li>
     </ul>
-    <p>These options can be used to control the software when it is already 
-running, but if this case this only works for administrator users.</p>
+    <p>All diacritics and case are removed, and if the word can't be processed it is set to empty.</p>
+    <p>If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.</p>
+    <p>These options can be used to control the software when it is already running, but if this case this only works for administrator users.</p>
     <h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
     <table>
         <thead>
-        <tr>
-            <th>Keys</th>
-            <th>Actions</th>
-        </tr>
         </thead>
         <tbody>
         <tr>
