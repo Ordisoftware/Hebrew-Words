@@ -177,9 +177,9 @@ In this case, one verse at a time should be used.
 
   `Ordisoftware.Hebrew.Words.exe --translated [word]` 
 
-  All diacritics and case are removed, and if the word can't be processed it is set to empty.
+All diacritics and case are removed, and if the word can't be processed it is set to empty.
 
-  If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
+If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.
 
 These options can be used to control the software when it is already running, but if this case this only works for administrator users.
 
@@ -322,6 +322,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add option to enable or disable the display of translation in bookmarks and history.
 - Improve search reference to replace `,` or `:` or `-` or `_` by `.` (works also for IPC command).
 - Fix commande line go to a reference to replace spaces by `%20` (see FAQ).
+- Fix FAQ and help about `--translated` command-line option.
 - Few fixes and improvements.
 
 #### 2022.08.04 - Version 3.4
