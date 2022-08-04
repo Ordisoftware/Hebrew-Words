@@ -173,7 +173,7 @@ In this case, one verse at a time should be used.
 
   `Ordisoftware.Hebrew.Words.exe --word [word]` 
 
-- Search a translation in the database using unicode "`בראשית`" and or hebrew font "`ty>arb`":
+- Search a translation of a word in the database like "`elohim`":
 
   `Ordisoftware.Hebrew.Words.exe --translated [word]` 
 
