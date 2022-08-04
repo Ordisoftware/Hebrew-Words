@@ -277,6 +277,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | F10 | Log file window |
 | F11 | Usage statistics window |
 | F12 | About |
+| Ctrl + F12 | Take a window screenshot |
+| Shift + F12 | Take a view screenshot |
 | Alt + F4 (or Escape) | Close window |
 
 ## Future improvements
@@ -311,11 +313,11 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### Todo - Version 3.x
 
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
-- Add take a screenshot of full window or current verse if applicable.
 - Add normalize texts window.
 
 #### 2022.08.05 - Version 3.5
 
+- Add menu items in Tools to take a screenshot of the window or the current view.
 - Add option to enable or disable the display of Hebrew book's name with its common name.
 - Add option to enable or disable the display of parashah name with the book's name.
 - Add option to enable or disable the display of parashah name in bookmarks and history.
