@@ -5430,33 +5430,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ToolStrip.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 0</value>
-  </data>
-  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 54</value>
-  </data>
-  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="ToolStrip.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
-    <value>ToolStrip</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="ActionExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -5595,113 +5568,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionBookmarks.ToolTipText" xml:space="preserve">
     <value>Bookmarks (Alt+B)</value>
   </data>
-  <data name="ActionAddBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAgxJREFUOE+tUj1MU2EUPUBwYBBxMHVhIGEjJuLiDqWiDhRDAlEmE6K7qZg4GEl8
-        2Dakf/BaSmIAE00rcREcSkAQIq9GrQ0wkEAYdHBycJDteG/7vRS13TjJzbu53z3nO9+9DyeOa2Fc8o4j
-        122BXRL67XkK9oaQ0zPTVh2+ICaHpk5zaeceD389497PGPPfH3Bxd5hPFi+wP9rA6yFkTPvfuBJE5vbM
-        ef7mMp1vw7Tfg5FVMPoOTG6Ac/k22usXORBvoDiZNLQy1Npgook/jhb4ouBhQgiRddBFVMRSH8D0ViOt
-        tx72RaAiled4Law8d4a4fNDLhDRqTAjJheZTW+D0RxFeO8U7s+DVIFYNHegZBzcPA0zmpWFTyOLAWqsI
-        aK61uAinRCSQLTmgoYsDEVjZH+Fc4Yyh1Ib9CRxdEAehYwK6ptdFP+e3z5q22rC/VBGQDXBm4zKTX8GY
-        3DAhNi2x60JzrcU/yxwKVZ7Q/RjOaPYcbaeF09ugXRSCCLnQXGvpHTAs87g7W0ffGBxDBzoH4ffLasbe
-        NDNVrGd6V24TNy4015o6DGTrSmvsvAm/oZfQ1PUQmf4oeP9VPcO6dyG8PPCUQnOtKflGTH5x6VVOmVpB
-        q/cRcqquFgMZEZO3amiuNT0z5NYy5X+0dfThlk9mokPSSWtorjU9k56aZBdqrV1Cf9XjobV/bAN/AHvm
-        pb0Q58cgAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionAddBookmark.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionAddBookmark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionAddBookmark.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionSortBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAchJREFUOE+Fk0tLAlEUx9236MP0AbJyk5tsIWFQEBW0yuyxi6BCogdZiyIo0IIe
-        UEFPenyA+gStiuhhT5VpNGdGR/13zmGssNF+cPjPPffc/9w7c66jEgvrJ7AebQEqTM9FjhB9iYPVSv1B
-        DBbXT93za8cIRQ4RCh9ilmJ6ZR/KxyfNQ5THnOd5rptfPQbtzi0GvNgOPZPD1V1M1I6lrXMWh4MdmZsn
-        FffvaTzEdNy+JHEdVXBDcfusUk5DNGGIch2ze3bJQga0LSaa0DAyFoTTWYe3ZBaPsZTEq5rBWHASLpcL
-        o6TPiiH1O6cXLD8Gb4qOVBbw+Vqh6kBMNRCnRJLqm5o8UuPxNEPRCvK8XWoQpwVpMvAHAtDo2KqWR2Oj
-        G5oJRNY20D8whL7+QXxSDfNtwF+XSekm2Nvb4pOxli0gncmD0pJnOjq7QClh+6TEwKC3jgcnUOusF+WP
-        nzZMyQcnplBX34CpmRBMy+3PEfLF11iYuQIy2Zzob4p133+hXB/8x9Km1Qfd/uFe6UTaCR9nNnyA6eU9
-        JJSUFLLymPPFbuRO9Lb3tIkBUU1RUxoh6y6w2s1TVBUNylFj3UYutuU/A6bsYgaA4wvOSYCdlAhAkAAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSortBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionSortBookmarks.Text" xml:space="preserve">
-    <value>Sort</value>
-  </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
-        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
-        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
-        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
-        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
-        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
-        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
-        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
-        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
-        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionClearBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionClearBookmarks.Text" xml:space="preserve">
-    <value>Empty</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAiFJREFUOE+VU0trE1EUnqUgCtIqFEF8FF25UXClS3+EC9GNO0UKuin4WPgI2Iqg
-        C0NmmtBMM6XNZCZMmpngJhUVhGx0q4smaZqkzWPyMmlC8nnunaF2SqX6wTf33HPv+c65d+4RAAhxw6ir
-        uo5oLIZlD1U+qpqGmK5vCvuBCbANB6FcLrMEETfsD2hNYJkZ1rI5ZHN55PIF4jqfM4QXFvhYKhYR1TTF
-        DXVA/h0BSRJRKpURCoVgGAZMM8n9sqKgPxhwm1Wix/WoG+4V2NyqYqtSRaVaI9ZpXuH+TCYDZVFBJOJU
-        Yugq3HCvwJwkwbIs1G0bwWCQ271el6/tRjqxtL+A3Wg6bLbQbLXRILbbHTycW4HwpIALbzcw7lvHY/kj
-        Ts0Wjpx/k5/2CIiBANqtDp3d5NmtVIqOYUO9dxSfbOBDHbi+3MSEL4sr74uYfJ2DR+BXt7vD3vY2sY/B
-        CFDvj+HmV+D5T+BqxMajz2187wBnZrJeAVEUkUwm+Y1LdB+mleJ+bWocl8h8+gO4pjRwy2rgwTfg7CtX
-        gL02huFwyDkaUVqC86UKpo7j0Isajj3LYuLlGm6YLdz+AkzO7hHw+/18DNBdaPQ6V5Imn8t3x1DrcxMX
-        323ghC+P0zPE6dWg5wh/g3jnsGs5WE0sst94mXiSC7BG+h8k4nse0rwsp1lD8Q5UqQN3k3zRmLPGKmX7
-        wnI47YY7AoRzRFbSv5LtJwjCbzIe1UtgkG/iAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="SeparatorBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
@@ -5747,33 +5613,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionHistory.ToolTipText" xml:space="preserve">
     <value>History (Alt+H)</value>
-  </data>
-  <data name="ActionClearHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
-        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
-        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
-        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
-        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
-        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
-        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
-        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
-        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
-        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionClearHistory.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionClearHistory.Text" xml:space="preserve">
-    <value>Empty</value>
-  </data>
-  <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
   </data>
   <data name="ActionHistoryVerseBack.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -6211,273 +6050,11 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 46</value>
   </data>
-  <data name="ActionDatabaseNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKUSURBVDhPjVNNTxNRFH1rf4Tu/AP+CHdEIzEmItGVhqXG
-        YOLORBM/SBcgCHYG0ypSCmX4sNJWPlpb2g5jaxk6FPoBBQpYhBYqFCh4vG9aBCILT3Jy5713z517z8xj
-        HO+6ei8JFumL0WKDsfMM0j4/53m64CREq9T6XrLDG9YQTS0juZJDYnnjL/ma7/NznsfzK9IyBEsvQrE0
-        QtNpKNocJqL/ku/zc57H8yvSMniLue0SUisblDAPJZrExNQx+To0PY/U8jpyOyV9pIq0DKGrF5/dAcQX
-        V7Ga38bW7iE2dw+QL5awWTzQn7P5HcQXfsDpkbkXpwvQTLCP+eHyKnAHVfi/zyJM7c6m1xCZWUIwkoBH
-        iWJ4PASHW0a7tf90gXZrHxyeIEb9YXgpUVYTJFxEbC4LNZGBMpXCeDgGt6xi2BuGqdt5ukBDizhoaDPj
-        Y78TQ/QGJZqCGs9QBz/J/VWEtDQJJyHZZbS1O9HYOmitSMtoFMw964U9ajUGacgDm30U/U4fPo0EMOAa
-        R9+QD66RaTwyXUb1W4brbQw3jQy3RdaiFxC7JDi+ykhmslgrFPGrBBT2D7G1d0gR2P8NCN57qLMyGFUG
-        df0hRIr3bZUixyZ+g4fmDES4iQv6CGp8BZNaHlWvGZpkBoOfgcMQYHijMNwSGHQT7fQZuYk+RdNNnCT3
-        Z+bXoCWziMYKuNLMIC890MVHUDL1qKFRWEOz0GOyDWJgxEcdTOmfUCPzkks56mIDsfgOrrUyvBhleOIq
-        d8DjqzGGWpEKEC7cqL1T0yR2BLkf/Fc9ukRCpwSTdRiPzVW4+4HhqZPBO1ePZxTrOhiqX7Ju3UjCOeJF
-        Ir9tZ/Lqc2bhb+Rz81gRnyf+N3jyyaK0ZuwPA850XlhhRgIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionDatabaseNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionDatabaseNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionDatabaseNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionDatabaseNew.Text" xml:space="preserve">
-    <value>New database</value>
-  </data>
-  <data name="ActionDatabaseRestore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALbSURBVDhPbZNdSFNhHMaPEWQKBXbnRXRZVxHeeCEtoqHU
-        boLtbqVRaEQRCJEoNOyTirBASIw+RMfU/JrNs6XmPtRtuuncpnM7mztzznN0aaRkoE2e3nc7oZIvPJyX
-        9/9/fpzn/57D7F7NLHtEqzeqdL0DVR0mi6Zrl9oN36pa9f0q2iO17ywAWe90PXWsdRxOfxj+qIBgPLlH
-        9IzWTDYXPrT11FGPZGeY0tLSbIPZDvsURxSCw8vtK1qjor3UI9kZRq5W57IWO6LCKiZneQxPzMDs9O4R
-        PaO1ucUVmKwOqIlHsmcA2m4j+oddcE9HEIyJ4AksvvwTC8k18OIPhGJLcM9EMDDiBu39D1Bfr9+kRcuY
-        Dw5PCJOBGGYiIgJzS/DMzsNJ4lnH/RgcnUD9597NPQClUnlYq+tbaelioR8YJhA/eZMoZqPLCPJJeAhs
-        xB1A35AD7V8GoevpW6Eeyc4wCoUiR9vNwhuKYSoYxbgvBJefI5BwWnTvIme05iM92h4W5eWKHMlOIsjV
-        uc2dhvQM6MDsk0FMzPCYDgvpGN6GC+DarkCwPYI4+hyi/QU8uooayZ6J8KqxiTMMjcLm8qfzemZjJL+Y
-        jiE632CDb4U48gQJ43VscK/hay3TSPYMoNs0BOvYFHr7beg2WcGax2B2eGFx+CCMPkaKr8afaC22V3ux
-        aK1GoF29A5DL5bmf2vXpK5oMzIGLLyFGrm4huY7E93UIIzVIxR5gK3wfqcRbArgH7/uLXyX7XsB+1yjY
-        KpGa1xBAFXm+RGLwJsThSkh2hpHJZNnqGxXaFjJIo9mZBvi4BLj5FYTjqxCst7Adr8VWpArLQ+X4zT8k
-        87i7AyB/U1Z+/sljeXl5hYVFZ6vPyYsbzxcXN8nkGT2rOGMJd17+tea+DaH/KhrunO54Wnbqo+TevZBV
-        UlJyqIB8FzTWP6lUBUdVioLjyqL8axWXTtRrNLKDGo3mAMMwzF/C/G6SNq1kKQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionDatabaseRestore.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionDatabaseRestore.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionDatabaseRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionDatabaseRestore.Text" xml:space="preserve">
-    <value>Restore database</value>
-  </data>
-  <data name="ActionDatabaseBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPfZJbTxNhEIb3t6h3eued/hyvJBpDDBLihYIi
-        hUIIF1Lk0JO6tgsFirSlpTGtbTksPVJ6ZrdtWrBaaJsCCU0kr9+stVxIOsmT2Xd2dt4v3w5HMTQjLA1p
-        ljCoWexAmupKQ7d4pRGW9LYAHHsZ2MU0bAzKpKlO79utN8fLKR5nrd+on12i1ryGNNXpfbv15hiY/IwT
-        1mwXs4wMHO1MmuoDk5+6D+ifMKLSuICYPUEwxzg8VTJpqr8YN3Yf0McayidNDGvtGNE7oGJQJl1i9d5R
-        fWeA0Wy90368jr4xPfKVGsJSDdF8vUNEriNTqkI9x0NrXr6aNy3jHwvmFWhNq9PKgOdjOmSOqnin++s+
-        athQUBmcEGwuOP0i0sWfODw6Ra5NimlXIAgtb0lwvaoFxPPHiOQbzLmBGFEgmpjjBcjHNezGJQQi6Q6k
-        5R91zJuXwfWOzCOcKzNXJ8aMLqg/Em7GN3ZcC1JyGbXzSzRbVzi9aKF5ecV0C2lmqgx4NjyLrVQe1kCM
-        sY/1rSQcOzIcuwXozGuwe7bh2YlhLy4jKVcQThbhCx7A6ROhFVbBPWUDPNEsLN4wI4I1XwoP1BwejnMw
-        CA5seEV834sjlMgjXfiFaLqEQDiJTboDZcCbGbiCKdh3JSx6g9gQi7D6MnCHqtALXxUnP3Mk50yxiv1s
-        GdvRFNxbIegWreCevJ1h23eAFX8EKz4GZX8Mq/598OubMK074RXjyodSuY6kVIE/lMAXVv/AmyTuUb/a
-        0zM4jcev3/9Hz6AGE1q+RE7075U9YBdHR5+aNbjZFtylVbjNuN+FezfUiFscx3F/ADzWcFgEDfkbAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionDatabaseBackup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionDatabaseBackup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionDatabaseBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionDatabaseBackup.Text" xml:space="preserve">
-    <value>Backup database</value>
-  </data>
-  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
-  </data>
-  <data name="ActionVacuum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKeSURBVDhPfZLJT1NRFMbvAlf+AW6NiSs3GoMLEySRMQTj
-        QhQiYAQcSYgoYgBDBBEsLUVodSUx0ZioBAPlda5VlDKVFkqRqZXZVksxKFCHuPg8R55BcDjJl5d7z/e7
-        Ofe7T/yqVJWITlKJx7FKEUmsFfibuMce9srYWqWoxMU0TRSq9btxz5GIdm8GdEPpG8R73GMPe5mRcSH4
-        dOPEORjHT6N9NA+6kVxZObLW1twzkIe9zMi4EHE3BSIYgH+1Ga4FLToDNaTqP+Ra0JDnCXndYEbGhYin
-        hW7oGPrfqTD3VY9PGCS58BH9sly0HsDsNyPcoQYYRnPAjIwLkUDjtHnS0OLJQBuNrPcVwDpbhu5wAxwL
-        atjfVsA0dRnSRD50r09CGjmBBMVvB/B9JG862oazoR8/C/NkEZ7PV6CT4J5FDTqC1bDNlMH0phD6sTOU
-        Vc7GDA6UCH1J83aozPvwwHkERjK+DFahe7ERzqU76AzVwjJ9BQ/dx6G2xaC0ZSeYkXEhYsvF02X0wuKr
-        xN2uTNRa46G0JqPuWSrU9kNQ2VKgtCWiqTsLFn8VltEHZmScQqT7SPTO7lA9At/N+IxhStqDFQpzhcJb
-        pW8EXupZ4AlrYRrL2xQiHbAeYi4M/gLYZq+iJ9wIR7ge9kAlzFPF/w+R/7ZWbxYkCsk0eQn2+Wt09zp6
-        iUa8CN6AdaYURv8FSKOnYBjbFGKyUqCVJpDofY2+fFini9ERuI6u8C30fbiNV+8VsM+VwzpVBLPvPE2Q
-        jSRiZFyImEKhTtNGocYQjUeDmXAEK+BcrIdnpQnDkftwLWnRG1Kg2ZsLhWU/jmq2gBkZ/1nbdh0W2QfL
-        hYXu9oUDiqvZKN7jHnvYy8waul5bSTtIe0h7/yHusYe9VEL8ADwuLVho+a2eAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionVacuum.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionVacuum.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionVacuum.Text" xml:space="preserve">
-    <value>Optimize database</value>
-  </data>
-  <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
-  </data>
-  <data name="ActionNormalizeTexts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPdZPJT5NRFMXfXhNBKSx0ZWJcG+M/wNr/gBCr
-        SzZqQnQnpSbaMEtJQwhQQEtKsdqCdoiYtKWU0Q6m7dfRToyBJiw0DkCO9359RiHxJTe5Off88t477/vE
-        n3Xl2YdbGr3ber7T862+w426DtepYo1n7GGvxGrrst778HrPR7S7EjB/KiNQPIC/sH+qWOMZe9jLjMSF
-        aOj0wBYrU5VgiRTxMlzA1JlijWfsYS8zEheino6Y+QksbH7FrLIHc7QMc+RMkcYz9rCXGYkLcVHnRn9A
-        gT2zj9DBERK/gDiZ4j9kUc/aUvUIr9P76PUnwYzEa1fo8ys0UGAMZjC6moMlXMRceheOxJbas2ZcTKPb
-        p6DHlzx9BY3eixfBFAaXMhheyWNio4CZWAVzyjbmU7tqz9rwcg4DtEH/ooJGYiROV2h/9a7Z4IR2wg+d
-        O4axtS+wx7fgyuzCnd1T+7G1HJ64orhj9qP5uRPMSJxCfDxjT9Jdjcsl3LdH0TK+hNbJZWgtq7hnWVf7
-        lvEgHtBsMFQCe5mRuBCXdB71Cs58FeuHx8ieAOljIHVUK+5ZWzs8gSNbVQNnRuK1EDlANUTKYXQ1j+lw
-        CfN0BSeFOB0pqZoxWAux+2yIDXoPBgIpDCymYKKgzBSYNVqBI7lNQe7ASiGyZgpl0Uc+3khDjMSFaHrq
-        Vd/WFMpghHaaomeb/bxJL7CD9+k92KhnbWQlhyE6YZcvAWYkTs/YNtR7rWsBd23rMPhSeBOvwE3fgI//
-        A/oHXOkdVTPQ8bW2DbCXGYmrq6nudltr4yOr94Lu7Xf+yv79I7lnjWfsYS8zNfTvOkd1leoG1c3/FM/Y
-        w15aQvwGVuNspzWd1osAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionNormalizeTexts.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionNormalizeTexts.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionNormalizeTexts.Text" xml:space="preserve">
-    <value>Normalize texts</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
-  </data>
-  <data name="ActionOpenBackupPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVDhPfZLZTxNRFMbnzUT/Al9NNEYeSMBikFW2VyVG
-        o8ZEeWR5UAE1EX3QF6NIoGyl4AZa2SwCDbJGhKKkpe1My5QuTAEpSEoqstoW2s8zHazEGE7ym7vMOd89
-        59zLmGvTV9iqJJjkp8OIc06e5DYpz0RxirQYc01WbIT6rFhekXmK2WtiAHamgV82iYAThjIZjBXxEdG9
-        iP7m2jTPbjjDmOQJFMjDz12Hj81BcFkDbNkBn0PCL+KUxgARmgmLWOrSZX8FtnTw87lEAfyTeYQ4z0XA
-        modtWz527PkIOkRyQR+wlYloLomL3hVIBNaHsW2/gW1HIVEUZsdZhKDrNoTWs9CXyjBRGkvEwPAsBqby
-        OMoiEZwiVU0C1IP1XsrsDkKz9xCaKwFEvt3HbPs5eAeygW0LpW+iMowSAZZKmYKlOgGMqTKZSuiCqz0b
-        uieyMHrC8PQkPENXoB2qQp1KjcqmDoLGRjWUzZ0YGe7A8ON4LcNWp8InlMP2KoNuQ5AaJRK0Q939FpoR
-        DvzsMhxubwR+1oMeLQt5UxfHcDVp8GhvYnGwAFgboLqLqZxiYL6QHDSYXviJcYuAMZMtgrh2fV9BQ8sH
-        MFxtOoT2i9h0lAHeRoQWHgKLjwDPA1S+0YAXFvBjw4c1fxDeTT/WfEFa+2GbWSQBNRhzXQZ1NIUa1UbN
-        rAdW5RIbpahW9UDzaRzD4xz0FhesriUYrXMYnZhE36gOL1opA1aRsmpWpJNIKr20ZBgJlm6Gl8ugaO3H
-        xxEdRvQWGPgZ2Kh21jaPMaMVA2MTkgBZ9N1Lx68VXTh29Q+3zh+9nJN5OFv5fhC9o3po6UTxZPvcMswO
-        N76yUxj8YsDLts6wgGiHiIP/cKBGpXGquvvxWWcJBwruFViFJWgNPN5p+uh6mwXy29dOVChfD4qpPm/p
-        QEOzOtw4cS3u0/8oyW1/O0LE/gfaZ5jflq+abaxZrf8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionOpenBackupPath.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenBackupPath.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionOpenBackupPath.Text" xml:space="preserve">
-    <value>Open archive folder</value>
-  </data>
-  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
-        igKhw5WakSc85Fp1kYKC6Txs00qJuintIo8zNcMoEGwHnc7ZtjSzsER0ZM7T0/Ptm7Yo8oEf//f7vvd9
-        eP/v+wm7QT1vrYmFRX88gBTb9LHTlvrEwzZjUpS9TqPcokGjdBhTjolQSQVY+wD8dMqsTGCoQoX3VdFb
-        pqFI+XZD0mywXAiL/gQLHfDbLmHZehnr39qApXFg2SXjl5iQzxWy4Q2YDJvUqt8GS4PwO9JJJvwjGVhh
-        vDqahvWxNGA8A5i4GiSdBi4M18agRXs0PGgQA/j6sTqehVVXLsljYg7guQ5MXsP885Nw66PgqZaIhLcm
-        EpNGFabqozFpim6hAWfg62JnBdj4WMwiMp2P1MYnEHmvIfL7IQp4FoZQRLQDiCh5CmGpjuMVXsDTfBqD
-        ZSoMlSvhqjgSKNxOCp0ZwlqbgGV3JZxNydyGG7wLPzkgcrvlrAG+f6uBrv0T8E7DOAW6Vm6NUmjbIWx1
-        SZh9k42Znkxg8SXg5Qw+Z0FkmwNJt1vduNvhQVmXB6WdXpQwLm3nNijZwKCGu/kcfrgqgLlHwMwd4PtN
-        GsgdTPn5ag2oNDvxlecXcq+L/wulKKaB3ZTMvcaz9WccZgO7qOJMynkFdkPNsWBhAzB2j8HH50ViYCwp
-        YGA1xi/YjWqaJPBPi4OdW/HWKDn5vkCSyTyC+z2jaHrlxMPeUTxg3NgbYkCFF54/dDHv7MFUiZwzBy5c
-        Sdx7ShT9uYXHfXKRpM04MIOgdpNdIewQ2u3XGKbr2DL4S2EFzf17mKAobsPOG2TzJFLrUvG+W52LwfR/
-        aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOpenExportFolder.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+E</value>
-  </data>
-  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
-    <value>Open export folder</value>
-  </data>
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="ActionTools.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="ActionTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 46</value>
   </data>
   <data name="ActionBooksBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6737,7 +6314,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionTakeScreenshotWindow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
+        vwAADr8BOAVTJAAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
         0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
         iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
         RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
@@ -6755,8 +6332,8 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionTakeScreenshotWindow.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionTakeScreenshotWindow.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl + PrintScr</value>
+  <data name="ActionTakeScreenshotWindow.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F12</value>
   </data>
   <data name="ActionTakeScreenshotWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
@@ -6767,7 +6344,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionTakeScreenshotView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
+        vwAADr8BOAVTJAAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
         0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
         iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
         RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
@@ -6786,10 +6363,10 @@ A verse is founded if the translation of one of its words contains an expression
     <value>None</value>
   </data>
   <data name="ActionTakeScreenshotView.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift + PrintScr</value>
+    <value>Shift + F12</value>
   </data>
   <data name="ActionTakeScreenshotView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 22</value>
+    <value>290, 22</value>
   </data>
   <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
     <value>Take a screenshot of the view</value>
@@ -6901,6 +6478,51 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionImportConcordances.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="ActionTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 46</value>
   </data>
   <data name="ActionWebLinks.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -7045,6 +6667,384 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 46</value>
+  </data>
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 0</value>
+  </data>
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 54</value>
+  </data>
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ToolStrip.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionAddBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAgxJREFUOE+tUj1MU2EUPUBwYBBxMHVhIGEjJuLiDqWiDhRDAlEmE6K7qZg4GEl8
+        2Dakf/BaSmIAE00rcREcSkAQIq9GrQ0wkEAYdHBycJDteG/7vRS13TjJzbu53z3nO9+9DyeOa2Fc8o4j
+        122BXRL67XkK9oaQ0zPTVh2+ICaHpk5zaeceD389497PGPPfH3Bxd5hPFi+wP9rA6yFkTPvfuBJE5vbM
+        ef7mMp1vw7Tfg5FVMPoOTG6Ac/k22usXORBvoDiZNLQy1Npgook/jhb4ouBhQgiRddBFVMRSH8D0ViOt
+        tx72RaAiled4Law8d4a4fNDLhDRqTAjJheZTW+D0RxFeO8U7s+DVIFYNHegZBzcPA0zmpWFTyOLAWqsI
+        aK61uAinRCSQLTmgoYsDEVjZH+Fc4Yyh1Ib9CRxdEAehYwK6ptdFP+e3z5q22rC/VBGQDXBm4zKTX8GY
+        3DAhNi2x60JzrcU/yxwKVZ7Q/RjOaPYcbaeF09ugXRSCCLnQXGvpHTAs87g7W0ffGBxDBzoH4ffLasbe
+        NDNVrGd6V24TNy4015o6DGTrSmvsvAm/oZfQ1PUQmf4oeP9VPcO6dyG8PPCUQnOtKflGTH5x6VVOmVpB
+        q/cRcqquFgMZEZO3amiuNT0z5NYy5X+0dfThlk9mokPSSWtorjU9k56aZBdqrV1Cf9XjobV/bAN/AHvm
+        pb0Q58cgAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionAddBookmark.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionAddBookmark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionAddBookmark.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionSortBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAchJREFUOE+Fk0tLAlEUx9236MP0AbJyk5tsIWFQEBW0yuyxi6BCogdZiyIo0IIe
+        UEFPenyA+gStiuhhT5VpNGdGR/13zmGssNF+cPjPPffc/9w7c66jEgvrJ7AebQEqTM9FjhB9iYPVSv1B
+        DBbXT93za8cIRQ4RCh9ilmJ6ZR/KxyfNQ5THnOd5rptfPQbtzi0GvNgOPZPD1V1M1I6lrXMWh4MdmZsn
+        FffvaTzEdNy+JHEdVXBDcfusUk5DNGGIch2ze3bJQga0LSaa0DAyFoTTWYe3ZBaPsZTEq5rBWHASLpcL
+        o6TPiiH1O6cXLD8Gb4qOVBbw+Vqh6kBMNRCnRJLqm5o8UuPxNEPRCvK8XWoQpwVpMvAHAtDo2KqWR2Oj
+        G5oJRNY20D8whL7+QXxSDfNtwF+XSekm2Nvb4pOxli0gncmD0pJnOjq7QClh+6TEwKC3jgcnUOusF+WP
+        nzZMyQcnplBX34CpmRBMy+3PEfLF11iYuQIy2Zzob4p133+hXB/8x9Km1Qfd/uFe6UTaCR9nNnyA6eU9
+        JJSUFLLymPPFbuRO9Lb3tIkBUU1RUxoh6y6w2s1TVBUNylFj3UYutuU/A6bsYgaA4wvOSYCdlAhAkAAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSortBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionSortBookmarks.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionClearBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionClearBookmarks.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAiFJREFUOE+VU0trE1EUnqUgCtIqFEF8FF25UXClS3+EC9GNO0UKuin4WPgI2Iqg
+        C0NmmtBMM6XNZCZMmpngJhUVhGx0q4smaZqkzWPyMmlC8nnunaF2SqX6wTf33HPv+c65d+4RAAhxw6ir
+        uo5oLIZlD1U+qpqGmK5vCvuBCbANB6FcLrMEETfsD2hNYJkZ1rI5ZHN55PIF4jqfM4QXFvhYKhYR1TTF
+        DXVA/h0BSRJRKpURCoVgGAZMM8n9sqKgPxhwm1Wix/WoG+4V2NyqYqtSRaVaI9ZpXuH+TCYDZVFBJOJU
+        Yugq3HCvwJwkwbIs1G0bwWCQ271el6/tRjqxtL+A3Wg6bLbQbLXRILbbHTycW4HwpIALbzcw7lvHY/kj
+        Ts0Wjpx/k5/2CIiBANqtDp3d5NmtVIqOYUO9dxSfbOBDHbi+3MSEL4sr74uYfJ2DR+BXt7vD3vY2sY/B
+        CFDvj+HmV+D5T+BqxMajz2187wBnZrJeAVEUkUwm+Y1LdB+mleJ+bWocl8h8+gO4pjRwy2rgwTfg7CtX
+        gL02huFwyDkaUVqC86UKpo7j0Isajj3LYuLlGm6YLdz+AkzO7hHw+/18DNBdaPQ6V5Imn8t3x1DrcxMX
+        323ghC+P0zPE6dWg5wh/g3jnsGs5WE0sst94mXiSC7BG+h8k4nse0rwsp1lD8Q5UqQN3k3zRmLPGKmX7
+        wnI47YY7AoRzRFbSv5LtJwjCbzIe1UtgkG/iAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="SeparatorBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionClearHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionClearHistory.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionClearHistory.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionDatabaseNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKUSURBVDhPjVNNTxNRFH1rf4Tu/AP+CHdEIzEmItGVhqXG
+        YOLORBM/SBcgCHYG0ypSCmX4sNJWPlpb2g5jaxk6FPoBBQpYhBYqFCh4vG9aBCILT3Jy5713z517z8xj
+        HO+6ei8JFumL0WKDsfMM0j4/53m64CREq9T6XrLDG9YQTS0juZJDYnnjL/ma7/NznsfzK9IyBEsvQrE0
+        QtNpKNocJqL/ku/zc57H8yvSMniLue0SUisblDAPJZrExNQx+To0PY/U8jpyOyV9pIq0DKGrF5/dAcQX
+        V7Ga38bW7iE2dw+QL5awWTzQn7P5HcQXfsDpkbkXpwvQTLCP+eHyKnAHVfi/zyJM7c6m1xCZWUIwkoBH
+        iWJ4PASHW0a7tf90gXZrHxyeIEb9YXgpUVYTJFxEbC4LNZGBMpXCeDgGt6xi2BuGqdt5ukBDizhoaDPj
+        Y78TQ/QGJZqCGs9QBz/J/VWEtDQJJyHZZbS1O9HYOmitSMtoFMw964U9ajUGacgDm30U/U4fPo0EMOAa
+        R9+QD66RaTwyXUb1W4brbQw3jQy3RdaiFxC7JDi+ykhmslgrFPGrBBT2D7G1d0gR2P8NCN57qLMyGFUG
+        df0hRIr3bZUixyZ+g4fmDES4iQv6CGp8BZNaHlWvGZpkBoOfgcMQYHijMNwSGHQT7fQZuYk+RdNNnCT3
+        Z+bXoCWziMYKuNLMIC890MVHUDL1qKFRWEOz0GOyDWJgxEcdTOmfUCPzkks56mIDsfgOrrUyvBhleOIq
+        d8DjqzGGWpEKEC7cqL1T0yR2BLkf/Fc9ukRCpwSTdRiPzVW4+4HhqZPBO1ePZxTrOhiqX7Ju3UjCOeJF
+        Ir9tZ/Lqc2bhb+Rz81gRnyf+N3jyyaK0ZuwPA850XlhhRgIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionDatabaseNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionDatabaseNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionDatabaseNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionDatabaseNew.Text" xml:space="preserve">
+    <value>New database</value>
+  </data>
+  <data name="ActionDatabaseRestore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALbSURBVDhPbZNdSFNhHMaPEWQKBXbnRXRZVxHeeCEtoqHU
+        boLtbqVRaEQRCJEoNOyTirBASIw+RMfU/JrNs6XmPtRtuuncpnM7mztzznN0aaRkoE2e3nc7oZIvPJyX
+        9/9/fpzn/57D7F7NLHtEqzeqdL0DVR0mi6Zrl9oN36pa9f0q2iO17ywAWe90PXWsdRxOfxj+qIBgPLlH
+        9IzWTDYXPrT11FGPZGeY0tLSbIPZDvsURxSCw8vtK1qjor3UI9kZRq5W57IWO6LCKiZneQxPzMDs9O4R
+        PaO1ucUVmKwOqIlHsmcA2m4j+oddcE9HEIyJ4AksvvwTC8k18OIPhGJLcM9EMDDiBu39D1Bfr9+kRcuY
+        Dw5PCJOBGGYiIgJzS/DMzsNJ4lnH/RgcnUD9597NPQClUnlYq+tbaelioR8YJhA/eZMoZqPLCPJJeAhs
+        xB1A35AD7V8GoevpW6Eeyc4wCoUiR9vNwhuKYSoYxbgvBJefI5BwWnTvIme05iM92h4W5eWKHMlOIsjV
+        uc2dhvQM6MDsk0FMzPCYDgvpGN6GC+DarkCwPYI4+hyi/QU8uooayZ6J8KqxiTMMjcLm8qfzemZjJL+Y
+        jiE632CDb4U48gQJ43VscK/hay3TSPYMoNs0BOvYFHr7beg2WcGax2B2eGFx+CCMPkaKr8afaC22V3ux
+        aK1GoF29A5DL5bmf2vXpK5oMzIGLLyFGrm4huY7E93UIIzVIxR5gK3wfqcRbArgH7/uLXyX7XsB+1yjY
+        KpGa1xBAFXm+RGLwJsThSkh2hpHJZNnqGxXaFjJIo9mZBvi4BLj5FYTjqxCst7Adr8VWpArLQ+X4zT8k
+        87i7AyB/U1Z+/sljeXl5hYVFZ6vPyYsbzxcXN8nkGT2rOGMJd17+tea+DaH/KhrunO54Wnbqo+TevZBV
+        UlJyqIB8FzTWP6lUBUdVioLjyqL8axWXTtRrNLKDGo3mAMMwzF/C/G6SNq1kKQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionDatabaseRestore.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionDatabaseRestore.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionDatabaseRestore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionDatabaseRestore.Text" xml:space="preserve">
+    <value>Restore database</value>
+  </data>
+  <data name="ActionDatabaseBackup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPfZJbTxNhEIb3t6h3eued/hyvJBpDDBLihYIi
+        hUIIF1Lk0JO6tgsFirSlpTGtbTksPVJ6ZrdtWrBaaJsCCU0kr9+stVxIOsmT2Xd2dt4v3w5HMTQjLA1p
+        ljCoWexAmupKQ7d4pRGW9LYAHHsZ2MU0bAzKpKlO79utN8fLKR5nrd+on12i1ryGNNXpfbv15hiY/IwT
+        1mwXs4wMHO1MmuoDk5+6D+ifMKLSuICYPUEwxzg8VTJpqr8YN3Yf0McayidNDGvtGNE7oGJQJl1i9d5R
+        fWeA0Wy90368jr4xPfKVGsJSDdF8vUNEriNTqkI9x0NrXr6aNy3jHwvmFWhNq9PKgOdjOmSOqnin++s+
+        athQUBmcEGwuOP0i0sWfODw6Ra5NimlXIAgtb0lwvaoFxPPHiOQbzLmBGFEgmpjjBcjHNezGJQQi6Q6k
+        5R91zJuXwfWOzCOcKzNXJ8aMLqg/Em7GN3ZcC1JyGbXzSzRbVzi9aKF5ecV0C2lmqgx4NjyLrVQe1kCM
+        sY/1rSQcOzIcuwXozGuwe7bh2YlhLy4jKVcQThbhCx7A6ROhFVbBPWUDPNEsLN4wI4I1XwoP1BwejnMw
+        CA5seEV834sjlMgjXfiFaLqEQDiJTboDZcCbGbiCKdh3JSx6g9gQi7D6MnCHqtALXxUnP3Mk50yxiv1s
+        GdvRFNxbIegWreCevJ1h23eAFX8EKz4GZX8Mq/598OubMK074RXjyodSuY6kVIE/lMAXVv/AmyTuUb/a
+        0zM4jcev3/9Hz6AGE1q+RE7075U9YBdHR5+aNbjZFtylVbjNuN+FezfUiFscx3F/ADzWcFgEDfkbAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionDatabaseBackup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionDatabaseBackup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionDatabaseBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionDatabaseBackup.Text" xml:space="preserve">
+    <value>Backup database</value>
+  </data>
+  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="ActionVacuum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKeSURBVDhPfZLJT1NRFMbvAlf+AW6NiSs3GoMLEySRMQTj
+        QhQiYAQcSYgoYgBDBBEsLUVodSUx0ZioBAPlda5VlDKVFkqRqZXZVksxKFCHuPg8R55BcDjJl5d7z/e7
+        Ofe7T/yqVJWITlKJx7FKEUmsFfibuMce9srYWqWoxMU0TRSq9btxz5GIdm8GdEPpG8R73GMPe5mRcSH4
+        dOPEORjHT6N9NA+6kVxZObLW1twzkIe9zMi4EHE3BSIYgH+1Ga4FLToDNaTqP+Ra0JDnCXndYEbGhYin
+        hW7oGPrfqTD3VY9PGCS58BH9sly0HsDsNyPcoQYYRnPAjIwLkUDjtHnS0OLJQBuNrPcVwDpbhu5wAxwL
+        atjfVsA0dRnSRD50r09CGjmBBMVvB/B9JG862oazoR8/C/NkEZ7PV6CT4J5FDTqC1bDNlMH0phD6sTOU
+        Vc7GDA6UCH1J83aozPvwwHkERjK+DFahe7ERzqU76AzVwjJ9BQ/dx6G2xaC0ZSeYkXEhYsvF02X0wuKr
+        xN2uTNRa46G0JqPuWSrU9kNQ2VKgtCWiqTsLFn8VltEHZmScQqT7SPTO7lA9At/N+IxhStqDFQpzhcJb
+        pW8EXupZ4AlrYRrL2xQiHbAeYi4M/gLYZq+iJ9wIR7ge9kAlzFPF/w+R/7ZWbxYkCsk0eQn2+Wt09zp6
+        iUa8CN6AdaYURv8FSKOnYBjbFGKyUqCVJpDofY2+fFini9ERuI6u8C30fbiNV+8VsM+VwzpVBLPvPE2Q
+        jSRiZFyImEKhTtNGocYQjUeDmXAEK+BcrIdnpQnDkftwLWnRG1Kg2ZsLhWU/jmq2gBkZ/1nbdh0W2QfL
+        hYXu9oUDiqvZKN7jHnvYy8waul5bSTtIe0h7/yHusYe9VEL8ADwuLVho+a2eAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionVacuum.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionVacuum.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionVacuum.Text" xml:space="preserve">
+    <value>Optimize database</value>
+  </data>
+  <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="ActionNormalizeTexts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPdZPJT5NRFMXfXhNBKSx0ZWJcG+M/wNr/gBCr
+        SzZqQnQnpSbaMEtJQwhQQEtKsdqCdoiYtKWU0Q6m7dfRToyBJiw0DkCO9359RiHxJTe5Off88t477/vE
+        n3Xl2YdbGr3ber7T862+w426DtepYo1n7GGvxGrrst778HrPR7S7EjB/KiNQPIC/sH+qWOMZe9jLjMSF
+        aOj0wBYrU5VgiRTxMlzA1JlijWfsYS8zEheino6Y+QksbH7FrLIHc7QMc+RMkcYz9rCXGYkLcVHnRn9A
+        gT2zj9DBERK/gDiZ4j9kUc/aUvUIr9P76PUnwYzEa1fo8ys0UGAMZjC6moMlXMRceheOxJbas2ZcTKPb
+        p6DHlzx9BY3eixfBFAaXMhheyWNio4CZWAVzyjbmU7tqz9rwcg4DtEH/ooJGYiROV2h/9a7Z4IR2wg+d
+        O4axtS+wx7fgyuzCnd1T+7G1HJ64orhj9qP5uRPMSJxCfDxjT9Jdjcsl3LdH0TK+hNbJZWgtq7hnWVf7
+        lvEgHtBsMFQCe5mRuBCXdB71Cs58FeuHx8ieAOljIHVUK+5ZWzs8gSNbVQNnRuK1EDlANUTKYXQ1j+lw
+        CfN0BSeFOB0pqZoxWAux+2yIDXoPBgIpDCymYKKgzBSYNVqBI7lNQe7ASiGyZgpl0Uc+3khDjMSFaHrq
+        Vd/WFMpghHaaomeb/bxJL7CD9+k92KhnbWQlhyE6YZcvAWYkTs/YNtR7rWsBd23rMPhSeBOvwE3fgI//
+        A/oHXOkdVTPQ8bW2DbCXGYmrq6nudltr4yOr94Lu7Xf+yv79I7lnjWfsYS8zNfTvOkd1leoG1c3/FM/Y
+        w15aQvwGVuNspzWd1osAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionNormalizeTexts.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionNormalizeTexts.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionNormalizeTexts.Text" xml:space="preserve">
+    <value>Normalize texts</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="ActionOpenBackupPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVDhPfZLZTxNRFMbnzUT/Al9NNEYeSMBikFW2VyVG
+        o8ZEeWR5UAE1EX3QF6NIoGyl4AZa2SwCDbJGhKKkpe1My5QuTAEpSEoqstoW2s8zHazEGE7ym7vMOd89
+        59zLmGvTV9iqJJjkp8OIc06e5DYpz0RxirQYc01WbIT6rFhekXmK2WtiAHamgV82iYAThjIZjBXxEdG9
+        iP7m2jTPbjjDmOQJFMjDz12Hj81BcFkDbNkBn0PCL+KUxgARmgmLWOrSZX8FtnTw87lEAfyTeYQ4z0XA
+        modtWz527PkIOkRyQR+wlYloLomL3hVIBNaHsW2/gW1HIVEUZsdZhKDrNoTWs9CXyjBRGkvEwPAsBqby
+        OMoiEZwiVU0C1IP1XsrsDkKz9xCaKwFEvt3HbPs5eAeygW0LpW+iMowSAZZKmYKlOgGMqTKZSuiCqz0b
+        uieyMHrC8PQkPENXoB2qQp1KjcqmDoLGRjWUzZ0YGe7A8ON4LcNWp8InlMP2KoNuQ5AaJRK0Q939FpoR
+        DvzsMhxubwR+1oMeLQt5UxfHcDVp8GhvYnGwAFgboLqLqZxiYL6QHDSYXviJcYuAMZMtgrh2fV9BQ8sH
+        MFxtOoT2i9h0lAHeRoQWHgKLjwDPA1S+0YAXFvBjw4c1fxDeTT/WfEFa+2GbWSQBNRhzXQZ1NIUa1UbN
+        rAdW5RIbpahW9UDzaRzD4xz0FhesriUYrXMYnZhE36gOL1opA1aRsmpWpJNIKr20ZBgJlm6Gl8ugaO3H
+        xxEdRvQWGPgZ2Kh21jaPMaMVA2MTkgBZ9N1Lx68VXTh29Q+3zh+9nJN5OFv5fhC9o3po6UTxZPvcMswO
+        N76yUxj8YsDLts6wgGiHiIP/cKBGpXGquvvxWWcJBwruFViFJWgNPN5p+uh6mwXy29dOVChfD4qpPm/p
+        QEOzOtw4cS3u0/8oyW1/O0LE/gfaZ5jflq+abaxZrf8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionOpenBackupPath.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenBackupPath.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionOpenBackupPath.Text" xml:space="preserve">
+    <value>Open archive folder</value>
+  </data>
+  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
+        igKhw5WakSc85Fp1kYKC6Txs00qJuintIo8zNcMoEGwHnc7ZtjSzsER0ZM7T0/Ptm7Yo8oEf//f7vvd9
+        eP/v+wm7QT1vrYmFRX88gBTb9LHTlvrEwzZjUpS9TqPcokGjdBhTjolQSQVY+wD8dMqsTGCoQoX3VdFb
+        pqFI+XZD0mywXAiL/gQLHfDbLmHZehnr39qApXFg2SXjl5iQzxWy4Q2YDJvUqt8GS4PwO9JJJvwjGVhh
+        vDqahvWxNGA8A5i4GiSdBi4M18agRXs0PGgQA/j6sTqehVVXLsljYg7guQ5MXsP885Nw66PgqZaIhLcm
+        EpNGFabqozFpim6hAWfg62JnBdj4WMwiMp2P1MYnEHmvIfL7IQp4FoZQRLQDiCh5CmGpjuMVXsDTfBqD
+        ZSoMlSvhqjgSKNxOCp0ZwlqbgGV3JZxNydyGG7wLPzkgcrvlrAG+f6uBrv0T8E7DOAW6Vm6NUmjbIWx1
+        SZh9k42Znkxg8SXg5Qw+Z0FkmwNJt1vduNvhQVmXB6WdXpQwLm3nNijZwKCGu/kcfrgqgLlHwMwd4PtN
+        GsgdTPn5ag2oNDvxlecXcq+L/wulKKaB3ZTMvcaz9WccZgO7qOJMynkFdkPNsWBhAzB2j8HH50ViYCwp
+        YGA1xi/YjWqaJPBPi4OdW/HWKDn5vkCSyTyC+z2jaHrlxMPeUTxg3NgbYkCFF54/dDHv7MFUiZwzBy5c
+        Sdx7ShT9uYXHfXKRpM04MIOgdpNdIewQ2u3XGKbr2DL4S2EFzf17mKAobsPOG2TzJFLrUvG+W52LwfR/
+        aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenExportFolder.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+E</value>
+  </data>
+  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Open export folder</value>
   </data>
   <data name="ActionScreenPosition.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7642,6 +7642,15 @@ A verse is founded if the translation of one of its words contains an expression
   <metadata name="ContextMenuStripWord.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>538, 16</value>
   </metadata>
+  <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 320</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
+    <value>ContextMenuStripWord</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ActionWordSearchDefault.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -7953,15 +7962,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionCountRootOccurencesTanak.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="ContextMenuStripWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 320</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripWord.Name" xml:space="preserve">
-    <value>ContextMenuStripWord</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="WordsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>491, 85</value>
