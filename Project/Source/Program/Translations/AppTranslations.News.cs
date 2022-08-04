@@ -25,7 +25,8 @@ static partial class AppTranslations
 
     ["3.5"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Add option to enable or disable the display of Hebrew book's name with its common name." + Globals.NL +
+      [Language.EN] = "• Add menu items in Tools to take a screenshot of the window or the current view." + Globals.NL +
+                      "• Add option to enable or disable the display of Hebrew book's name with its common name." + Globals.NL +
                       "• Add option to enable or disable the display of parashah name with the book's name." + Globals.NL +
                       "• Add option to enable or disable the display of parashah name in bookmarks and history." + Globals.NL +
                       "• Add option to enable or disable the display of translation in bookmarks and history." + Globals.NL +
@@ -33,7 +34,8 @@ static partial class AppTranslations
                       "• Fix commande line go to a reference to replace spaces by `% 20` (see FAQ)." + Globals.NL +
                       "• Few fixes and improvements.",
 
-      [Language.FR] = "• Ajout d'une option pour activer ou désactiver l'affichage du nom du livre hébreu avec son nom commun." + Globals.NL +
+      [Language.FR] = "• Ajout d'éléments de menu dans Outils pour faire une capture d'écran de la fenêtre ou de la vue en cours." + Globals.NL + 
+                      "• Ajout d'une option pour activer ou désactiver l'affichage du nom du livre hébreu avec son nom commun." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage du nom de parashah avec le nom du livre." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage du nom de parashah dans les signets et l'historique." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage de la traduction dans les signets et l'historique." + Globals.NL +
