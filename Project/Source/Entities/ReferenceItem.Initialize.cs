@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -42,7 +42,12 @@ public partial class ReferenceItem
   {
     if ( !reference.IsNullOrEmpty() )
     {
-      reference = reference.SanitizeAndTrimEmptyLinesAndSpaces();
+      reference = reference.SanitizeAndTrimEmptyLinesAndSpaces()
+                           .Replace("%20", " ")
+                           .Replace(",", ".")
+                           .Replace(":", ".")
+                           .Replace("-", ".")
+                           .Replace("_", ".");
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
