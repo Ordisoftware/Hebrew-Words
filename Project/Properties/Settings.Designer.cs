@@ -1942,5 +1942,41 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["PreviewModeNotified"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BookNameHebrewWithParashah {
+            get {
+                return ((bool)(this["BookNameHebrewWithParashah"]));
+            }
+            set {
+                this["BookNameHebrewWithParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BookmarksWithParashah {
+            get {
+                return ((bool)(this["BookmarksWithParashah"]));
+            }
+            set {
+                this["BookmarksWithParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BookmarksWithTranslation {
+            get {
+                return ((bool)(this["BookmarksWithTranslation"]));
+            }
+            set {
+                this["BookmarksWithTranslation"] = value;
+            }
+        }
     }
 }

@@ -183,12 +183,32 @@ In this case, one verse at a time should be used.
 
 These options can be used to control the software when it is already running, but if this case this only works for administrator users.
 
-### How to open a verse reference from a selected sentence from any application such as browser or text editor?
+#### _How to open a verse reference from a selected sentence from any application such as browser or text editor?_
 
-It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this `Shift + Ctrl + Alt + V` command on a selected word:
+It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this `Shift + Ctrl + Alt + V` command on a selected reference:
 
 ```
 !^+V::
+  clipboardOld := ClipboardAll
+  ControlGetFocus, ctrl
+  Send, ^c
+  sleep 100
+  reference := StrReplace(Clipboard, A_Space, "%20")
+  Clipboard := clipboardOld
+  appPath := "C:\Program Files\Ordisoftware\Hebrew Words\Bin\"
+  appExe := "Ordisoftware.Hebrew.Words.exe"
+  cmdLine := appPath appExe " --verse " reference
+  sleep 200
+  Run %cmdLine%
+  return 
+```
+
+#### _How to search a word from a selected unicode from any application such as browser or text editor?_
+
+Also for example to use `Shift + Ctrl + Alt + S` :
+
+```
+!^+S::
   clipboardOld := ClipboardAll
   ControlGetFocus, ctrl
   Send, ^c
@@ -197,7 +217,7 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
   Clipboard := clipboardOld
   appPath := "C:\Program Files\Ordisoftware\Hebrew Words\Bin\"
   appExe := "Ordisoftware.Hebrew.Words.exe"
-  cmdLine := appPath appExe " --verse " word
+  cmdLine := appPath appExe " --word " word
   sleep 200
   Run %cmdLine%
   return 
@@ -288,13 +308,21 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 
 ## Changelog
 
+#### Todo - Version 3.x
+
+- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
+- Add take a screenshot of full window or current verse if applicable.
+- Add normalize texts window.
+
 #### In progress - Version 3.5
 
+- Add option to enable or disable the display of Hebrew book's name with its common name.
+- Add option to enable or disable the display of parashah name with the book's name.
 - Add option to enable or disable the display of parashah name in bookmarks and history.
-- Add option to enable or disable the display translation in bookmarks and history.
-- Add normalize texts window.
-- Add take a screenshot of full window or current verse if applicable.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
+- Add option to enable or disable the display of translation in bookmarks and history.
+- Improve search reference to replace `,` or `:` or `-` or `_` by `.` (works also for IPC command).
+- Fix commande line go to a reference to replace spaces by `%20` (see FAQ).
+- Few fixes and improvements.
 
 #### 2022.08.04 - Version 3.4
 

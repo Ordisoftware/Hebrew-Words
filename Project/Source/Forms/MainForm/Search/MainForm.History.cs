@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -28,10 +28,9 @@ partial class MainForm
       {
         foreach ( var reference in HistoryItems )
         {
-          string text = reference.ToStringBasedOnPrefs();
-          // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
-          // TODO improve display
-          text += $" - {GetExtract(reference.Verse.Translation)}";
+          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          if ( Settings.BookmarksWithTranslation )
+            text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(text);
           item.Tag = reference;
           item.Click += GoToHistory;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -45,12 +45,11 @@ public partial class ReferenceItem
   public string ToStringFull()
     => $"{Book?.Transcription ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
-  public string ToStringBasedOnPrefs()
+  public string ToStringBasedOnPrefs(bool forceNoParashah = false)
     => ( Program.Settings.BookNameHebrewWithCommonName ? ToStringFull() : ToString() ) +
-       ( // TODO option Program.Settings.ReferenceWithParashah ? 
-         HasParashah ? " [" + ParashahName + "]" : string.Empty )
-         //: string.Empty
-         ;
+       ( HasParashah && Program.Settings.BookNameHebrewWithParashah && !forceNoParashah
+         ? " [" + ParashahName + "]"
+         : string.Empty );
 
   public string ToStringFullWordIncluded()
     => $"{ToStringFull()}:{Word?.Number.ToString() ?? Null}";
