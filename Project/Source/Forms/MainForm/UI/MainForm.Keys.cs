@@ -59,6 +59,13 @@ partial class MainForm
     if ( Globals.IsReady )
       switch ( keyData )
       {
+        // Print screen
+        case Keys.Control | Keys.F12:
+          ActionTakeScreenshotWindow.PerformClick();
+          return true;
+        case Keys.Shift | Keys.F12:
+          ActionTakeScreenshotView.PerformClick();
+          return true;
         // Top menu system
         case Keys.Alt | Keys.S:
           ActionSettings.ShowDropDown();
