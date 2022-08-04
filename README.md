@@ -314,7 +314,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add take a screenshot of full window or current verse if applicable.
 - Add normalize texts window.
 
-#### In progress - Version 3.5
+#### 2022.08.05 - Version 3.5
 
 - Add option to enable or disable the display of Hebrew book's name with its common name.
 - Add option to enable or disable the display of parashah name with the book's name.

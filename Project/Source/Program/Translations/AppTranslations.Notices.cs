@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 static partial class AppTranslations
@@ -20,17 +20,17 @@ static partial class AppTranslations
   static public readonly TranslationsDictionary SelectVerseNotice = new()
   {
 
-    [Language.EN] = "Search a book using its number, transcription or common name (English/French without case or signs)." + Globals.NL2 +
+    [Language.EN] = "Search a book using its number, transcription or common name (English or French case and diacritics insensitive using . or , or : or - or _)." + Globals.NL2 +
                     "Samples:" + Globals.NL2 +
                     "    bereshit 1.1" + Globals.NL +
-                    "    judges 10.2" + Globals.NL +
+                    "    judges 10,2" + Globals.NL +
                     "    tehilim 3" + Globals.NL +
                     "    1.2.3",
 
-    [Language.FR] = "Chercher un livre par son numéro, transcription ou nom commun (anglais/français sans casse ni signes)." + Globals.NL2 +
+    [Language.FR] = "Chercher un livre par son numéro, transcription ou nom commun (anglais ou français casse et diacritique insensible en utilisant . ou , ou : ou - ou _)." + Globals.NL2 +
                     "Examples:" + Globals.NL2 +
                     "    bereshit 1.1" + Globals.NL +
-                    "    juges 10.2" + Globals.NL +
+                    "    juges 10,2" + Globals.NL +
                     "    psaume 3" + Globals.NL +
                     "    1.2.3"
 
