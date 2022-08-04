@@ -5316,7 +5316,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>290, 22</value>
   </data>
   <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
-    <value>Take a window screenshot</value>
+    <value>Screenshot of the window</value>
   </data>
   <data name="ActionTakeScreenshotView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5346,7 +5346,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>290, 22</value>
   </data>
   <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
-    <value>Take a screenshot of the view</value>
+    <value>Screenshot of the view</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 6</value>

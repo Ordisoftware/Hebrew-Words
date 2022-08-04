@@ -368,7 +368,7 @@
     <value>256, 17</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Text" xml:space="preserve">
-    <value>Afficher le nom de parashah avec le nom du livre</value>
+    <value>Afficher le nom du livre hébreu avec son nom commun</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
