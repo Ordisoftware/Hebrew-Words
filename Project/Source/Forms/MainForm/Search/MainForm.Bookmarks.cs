@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -52,11 +52,9 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs();
-      // TODO option if ( Settings.BookmarksAndHistoryShowVerse )
-      // TODO improve display
-      string verseText = GetExtract(bookmarkMaster.Verse.Translation);
-      ActionGoToBookmarkMain.Text += $" - {verseText}";
+      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+      if ( Settings.BookmarksWithTranslation )
+        ActionGoToBookmarkMain.Text += $" - {GetExtract(bookmarkMaster.Verse.Translation)}"; // TODO improve display
       ActionGoToBookmarkMain.Tag = bookmarkMaster;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
       if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
@@ -67,10 +65,9 @@ partial class MainForm
       {
         foreach ( var reference in BookmarkItems )
         {
-          string text = reference.ToStringBasedOnPrefs();
-          //if ( Settings.BookmarksAndHistoryShowVerse )
-          // TODO improve display
-          text += $" - {GetExtract(reference.Verse.Translation)}";
+          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          if ( Settings.BookmarksWithTranslation )
+            text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(text);
           item.Tag = reference;
           item.Click += GoToBookmark;

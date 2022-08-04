@@ -323,10 +323,10 @@
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
   <data name="EditSearchHebrewCharsInBold.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 17</value>
+    <value>348, 17</value>
   </data>
   <data name="EditSearchHebrewCharsInBold.Text" xml:space="preserve">
-    <value>Caractères hébreux en gras pour la recherche</value>
+    <value>Afficher les lettres hébraïques en gras dans le contrôle de recherche</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 13</value>
@@ -346,11 +346,29 @@
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
     <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
+  <data name="EditBookmarksWithParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 17</value>
+  </data>
+  <data name="EditBookmarksWithParashah.Text" xml:space="preserve">
+    <value>Afficher le nom de parashah dans les signets et l'historique</value>
+  </data>
+  <data name="EditBookmarksWithTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 17</value>
+  </data>
+  <data name="EditBookmarksWithTranslation.Text" xml:space="preserve">
+    <value>Afficher la traduction dans les signets et l'historique</value>
+  </data>
+  <data name="EditBookNameHebrewWithParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 17</value>
+  </data>
+  <data name="EditBookNameHebrewWithParashah.Text" xml:space="preserve">
+    <value>Afficher le nom de parashah avec le nom du livre</value>
+  </data>
   <data name="EditBookNameHebrewWithCommonName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 17</value>
+    <value>256, 17</value>
   </data>
   <data name="EditBookNameHebrewWithCommonName.Text" xml:space="preserve">
-    <value>Afficher le nom hébreu d'un livre avec son nom commun entre parenthèses</value>
+    <value>Afficher le nom de parashah avec le nom du livre</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
@@ -727,6 +745,9 @@
   <data name="SelectExportDocumentModel.Items7" xml:space="preserve">
     <value>Traduction</value>
   </data>
+  <data name="SelectExportDocumentModel.Items8" xml:space="preserve">
+    <value>Traduction avec commentaire</value>
+  </data>
   <data name="TabPageTools.Text" xml:space="preserve">
     <value>Outils</value>
   </data>
@@ -777,12 +798,9 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="SelectExportDocumentModel.Items8" xml:space="preserve">
-    <value>Traduction avec commentaire</value>
   </data>
 </root>
