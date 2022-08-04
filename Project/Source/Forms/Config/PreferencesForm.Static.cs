@@ -25,14 +25,15 @@ partial class PreferencesForm
 
   // Tab pages indexes
   static public int TabIndexApplication { get; private set; }
+  static public int TabIndexStartup { get; private set; }
   static public int TabIndexBookmarks { get; private set; }
   static public int TabIndexEditing { get; private set; }
-  static public int TabIndexExport { get; private set; }
-  static public int TabIndexMouse { get; private set; }
-  static public int TabIndexPaths { get; private set; }
   static public int TabIndexRendering { get; private set; }
-  static public int TabIndexStartup { get; private set; }
   static public int TabIndexTheme { get; private set; }
+  static public int TabIndexMouse { get; private set; }
+  static public int TabIndexMSWord { get; private set; }
+  static public int TabIndexExport { get; private set; }
+  static public int TabIndexPaths { get; private set; }
   static public int TabIndexTools { get; private set; }
 
   // Numeric intervals as (Min, Max, Default, Increment)
@@ -41,6 +42,11 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) BookmarksCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
   static public readonly (int, int, int, int) CommentLinesCountInterval = (0, 50, 2, 1);
+  static public readonly (int, int, int, int) DocumentMarginHFInterval = (0, 40, 13, 1);
+  static public readonly (int, int, int, int) DocumentMarginInterval = (0, 50, 20, 1);
+  static public readonly (int, int, int, int) DocumentPageHeightInterval = (37, 1414, 297, 1);
+  static public readonly (int, int, int, int) DocumentPageWidthInterval = (26, 1000, 210, 1);
+  static public readonly (int, int, int, int) DocumentWordColumnsCountInterval = (4, 12, 5, 1);
   static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 10, 1);
   static public readonly (int, int, int, int) FontSizeHebrewInterval = (12, 24, 16, 1);
   static public readonly (int, int, int, int) FontSizeTranslationInterval = (8, 16, 10, 1);
@@ -49,11 +55,6 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
   static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 205, 5);
   static public readonly (int, int, int, int) WordTranslationLinesCountInterval = (1, 5, 1, 1);
-  static public readonly (int, int, int, int) DocumentMarginInterval = (0, 50, 20, 1);
-  static public readonly (int, int, int, int) DocumentMarginHFInterval = (0, 40, 13, 1);
-  static public readonly (int, int, int, int) DocumentWordColumnsCountInterval = (4, 12, 5, 1);
-  static public readonly (int, int, int, int) DocumentPageWidthInterval = (26, 1000, 210, 1);
-  static public readonly (int, int, int, int) DocumentPageHeightInterval = (37, 1414, 297, 1);
   //static public readonly (int, int, int, int) PrintingMarginInterval = (10, 160, 60, 10);
 
   static private bool First;
@@ -76,14 +77,15 @@ partial class PreferencesForm
   {
     using var form = new PreferencesForm();
     TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
+    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
     TabIndexBookmarks = form.TabControl.TabPages.IndexOf(form.TabPageBookmarks);
     TabIndexEditing = form.TabControl.TabPages.IndexOf(form.TabPageEditing);
-    TabIndexExport = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
-    TabIndexMouse = form.TabControl.TabPages.IndexOf(form.TabPageMouse);
-    TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
     TabIndexRendering = form.TabControl.TabPages.IndexOf(form.TabPageRendering);
-    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
     TabIndexTheme = form.TabControl.TabPages.IndexOf(form.TabPageTheme);
+    TabIndexMouse = form.TabControl.TabPages.IndexOf(form.TabPageMouse);
+    TabIndexMSWord = form.TabControl.TabPages.IndexOf(form.TabPageMSWord);
+    TabIndexExport = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
+    TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
     TabIndexTools = form.TabControl.TabPages.IndexOf(form.TabPageTools);
   }
 
