@@ -44,9 +44,9 @@ static partial class AppTranslations
 
     ["3.4"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Few fixes and improvements.",
+      [Language.EN] = "• Few UI fixes and improvements.",
 
-      [Language.FR] = "• Quelques correctifs et améliorations."
+      [Language.FR] = "• Quelques correctifs et améliorations UI."
     },
 
     ["3.3"] = new TranslationsDictionary
@@ -65,9 +65,9 @@ static partial class AppTranslations
 
     ["3.1"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Few UI fixes in preferences window.",
+      [Language.EN] = "• Few UI fixes in main and preferences windows.",
 
-      [Language.FR] = "• Quelques correctifs d'UI dans la fenêtre des préférences."
+      [Language.FR] = "• Quelques correctifs d'UI dans les fenêtres principale et préférences."
     },
 
     ["3.0"] = new TranslationsDictionary
