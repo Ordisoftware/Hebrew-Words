@@ -308,15 +308,21 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
+#### Todo - Version 3.x
+
+- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
+- Add take a screenshot of full window or current verse if applicable.
+- Add normalize texts window.
+
 #### In progress - Version 3.5
 
+- Add option to enable or disable the display of Hebrew book's name with its common name.
+- Add option to enable or disable the display of parashah name with the book's name.
 - Add option to enable or disable the display of parashah name in bookmarks and history.
-- Add option to enable or disable the display translation in bookmarks and history.
-- Add normalize texts window.
-- Add take a screenshot of full window or current verse if applicable.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
+- Add option to enable or disable the display of translation in bookmarks and history.
 - Improve search reference to replace `,` or `:` or `-` or `_` by `.` (works also for IPC command).
-- Fix commande line search reference to replace spaces by `%20` (see FAQ).
+- Fix commande line go to a reference to replace spaces by `%20` (see FAQ).
+- Few fixes and improvements.
 
 #### 2022.08.04 - Version 3.4
 
