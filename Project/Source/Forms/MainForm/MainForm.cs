@@ -966,6 +966,22 @@ partial class MainForm : Form
     form.ShowDialog();
   }
 
+  private void ActionTakeScreenshotWindow_Click(object sender, EventArgs e)
+  {
+    using var bitmap = this.GetBitmap();
+    Clipboard.SetImage(bitmap);
+    DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
+                                      Globals.ScreenshotSoundFilePath);
+  }
+
+  private void ActionTakeScreenshotView_Click(object sender, EventArgs e)
+  {
+    using var bitmap = PanelMain.GetBitmap();
+    Clipboard.SetImage(bitmap);
+    DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
+                                      Globals.ScreenshotSoundFilePath);
+  }
+
   #endregion
 
   #region Menu Bookmarks and History

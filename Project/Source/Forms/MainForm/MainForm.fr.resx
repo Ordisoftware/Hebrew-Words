@@ -882,4 +882,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="LabelVerseTitle.Text" xml:space="preserve">
     <value>Titre</value>
   </data>
+  <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
+    <value>Faire une copie écran de la fenêtre</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
+    <value>Faire une copie écran de la vue</value>
+  </data>
 </root>

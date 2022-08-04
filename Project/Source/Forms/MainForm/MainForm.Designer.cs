@@ -208,8 +208,11 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionTakeScreenshotWindow = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionTakeScreenshotView = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionRefresh = new System.Windows.Forms.ToolStripMenuItem();
@@ -1744,8 +1747,11 @@
             this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
-            this.ActionOpenCalculator,
             this.ActionViewBibleStatistics,
+            this.ActionOpenCalculator,
+            this.toolStripSeparator29,
+            this.ActionTakeScreenshotWindow,
+            this.ActionTakeScreenshotView,
             this.toolStripSeparator1,
             this.ActionCopyToClipboard,
             this.ActionRefresh,
@@ -1811,6 +1817,12 @@
       this.toolStripSeparator16.Name = "toolStripSeparator16";
       resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
+      // ActionViewBibleStatistics
+      // 
+      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
+      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
+      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
+      // 
       // ActionOpenCalculator
       // 
       this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -1818,11 +1830,22 @@
       this.ActionOpenCalculator.Name = "ActionOpenCalculator";
       this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
       // 
-      // ActionViewBibleStatistics
+      // toolStripSeparator29
       // 
-      resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
-      this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
-      this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
+      this.toolStripSeparator29.Name = "toolStripSeparator29";
+      resources.ApplyResources(this.toolStripSeparator29, "toolStripSeparator29");
+      // 
+      // ActionTakeScreenshotWindow
+      // 
+      resources.ApplyResources(this.ActionTakeScreenshotWindow, "ActionTakeScreenshotWindow");
+      this.ActionTakeScreenshotWindow.Name = "ActionTakeScreenshotWindow";
+      this.ActionTakeScreenshotWindow.Click += new System.EventHandler(this.ActionTakeScreenshotWindow_Click);
+      // 
+      // ActionTakeScreenshotView
+      // 
+      resources.ApplyResources(this.ActionTakeScreenshotView, "ActionTakeScreenshotView");
+      this.ActionTakeScreenshotView.Name = "ActionTakeScreenshotView";
+      this.ActionTakeScreenshotView.Click += new System.EventHandler(this.ActionTakeScreenshotView_Click);
       // 
       // toolStripSeparator1
       // 
@@ -2745,5 +2768,8 @@
     internal Label LabelTitle;
     internal Label LabelTitleReferenceName;
     private ToolStripSeparator SeparatorActionNormalizeTexts;
+    private ToolStripSeparator toolStripSeparator29;
+    private ToolStripMenuItem ActionTakeScreenshotWindow;
+    private ToolStripMenuItem ActionTakeScreenshotView;
   }
 }

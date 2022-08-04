@@ -75,6 +75,8 @@ static partial class AppTranslations
                     "F10 : Log file window" + Globals.NL +
                     "F11 : Usage statistics window" + Globals.NL +
                     "F12 : About" + Globals.NL +
+                    "Ctrl + F12 : Take a window screenshot" + Globals.NL +
+                    "Shift + F12 : Take a view screenshot" + Globals.NL +
                     "Alt + F4 (or Escape) : Close window",
 
     [Language.FR] = "Ctrl + Tab : Vue suivante" + Globals.NL +
@@ -124,6 +126,8 @@ static partial class AppTranslations
                     "F10 : Fenêtre du fichier log" + Globals.NL +
                     "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +
                     "F12 : A propos" + Globals.NL +
+                    "Ctrl + F12 : Faire une copie écran de la fenêtre" + Globals.NL +
+                    "Maj + F12 : Faire une copie écran de la vue" + Globals.NL +
                     "Alt + F4 (ou Échap) : Ferme la fenêtre",
   };
 

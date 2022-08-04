@@ -119,7 +119,9 @@ partial class MainForm
             ActionWebLinks.ShowDropDown();
           return true;
         case Keys.Alt | Keys.P:
+          ActionTools.ShowDropDown();
           ActionGoToParashah.ShowDropDown();
+          ActionGoToParashah.DropDownItems[0].Select();
           return true;
         // Top menu drop downs
         case Keys.Alt | Keys.B:
