@@ -266,15 +266,13 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Add spell checker.
 - Add search history.
 - Add filters to show all translated books or chapters, or those are not.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
 - Add book translation RTF export.
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
-- Add take a screenshot of full window or current verse if applicable.
 - Add load and save theme.
-- Imporove tanak's statistics window.
+- Improve tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
@@ -289,6 +287,14 @@ It is possible to use [AutoHotKey](https://www.autohotkey.com) to define for exa
 - Change contextual click on a Hebrew word to use database instead of web search.
 
 ## Changelog
+
+#### In progress - Version 3.5
+
+- Add option to enable or disable the display of parashah name in bookmarks and history.
+- Add option to enable or disable the display translation in bookmarks and history.
+- Add normalize texts window.
+- Add take a screenshot of full window or current verse if applicable.
+- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 
 #### 2022.08.04 - Version 3.4
 
