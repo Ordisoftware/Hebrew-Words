@@ -285,7 +285,6 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
-- Add merge database to import translated verses from another database.
 - Add spell checker.
 - Add search history.
 - Add filters to show all translated books or chapters, or those are not.
@@ -313,6 +312,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Todo - Version 3.x
 
+- Add import parashot board.
+- Add merge database to import translated verses from another database only for untranslated verses.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add normalize texts window.
 
