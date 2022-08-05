@@ -320,6 +320,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### In progress - Version 3.6
 
 - Add menu item in Database to open the database folder.
+- Remove focused control color and selection when taking screenshot.
+- Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click.
 
 #### 2022.08.05 - Version 3.5
 
