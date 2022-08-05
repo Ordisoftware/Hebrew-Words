@@ -317,6 +317,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add normalize texts window.
 
+#### In progress - Version 3.6
+
+- Add menu item in Database to open the database folder.
+
 #### 2022.08.05 - Version 3.5
 
 - Add menu items in Tools to take a screenshot of the window or the current view.
