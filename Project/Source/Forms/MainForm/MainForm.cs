@@ -979,18 +979,70 @@ partial class MainForm : Form
 
   private void ActionTakeScreenshotWindow_Click(object sender, EventArgs e)
   {
+    TextBoxBase control = null;
+    int selectionStart = 0;
+    int selectionLength = 0;
+    // Get control
+    if ( ActiveControl is VerseControl controlVerse )
+    {
+      if ( controlVerse.ActiveControl is WordControl wordControl )
+        control = wordControl.ActiveControl as TextBoxBase;
+      else
+      if ( controlVerse.ActiveControl is TextBox textbox )
+        control = textbox;
+    }
+    else
+    if ( ActiveControl is RichTextBoxEx controlRichTextBoxEx )
+      control = controlRichTextBoxEx;
+    else
+    if ( ActiveControl is TextBox controlTextBox )
+      if ( controlTextBox.BackColor == Program.FocusedGeneralTextBoxColor )
+        control = controlTextBox;
+    // Process control
+    if ( control is not null )
+    {
+      if ( control.BackColor == Program.FocusedControlCurrentColor )
+        control.BackColor = Program.FocusedControlOriginalColor;
+      else
+        control = null;
+      if ( control.SelectionLength > 0 )
+      {
+        selectionStart = control.SelectionStart;
+        selectionLength = control.SelectionLength;
+        control.SelectionStart = 0;
+        control.SelectionLength = 0;
+      }
+    }
+    // Take screenshot
     using var bitmap = this.GetBitmap();
     Clipboard.SetImage(bitmap);
     DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
                                       Globals.ScreenshotSoundFilePath);
+    // Restore screenshot
+    if ( control is not null )
+      control.BackColor = Program.FocusedControlCurrentColor;
+    if ( selectionLength > 0 )
+    {
+      control.SelectionStart = selectionStart;
+      control.SelectionLength = selectionLength;
+    }
+
   }
 
   private void ActionTakeScreenshotView_Click(object sender, EventArgs e)
   {
+    bool colorRemoved = false;
+    if ( ActiveControl.BackColor == Program.FocusedControlCurrentColor )
+    {
+      colorRemoved = true;
+      ActiveControl.BackColor = Program.FocusedControlOriginalColor;
+    }
     using var bitmap = PanelMain.GetBitmap();
     Clipboard.SetImage(bitmap);
     DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
                                       Globals.ScreenshotSoundFilePath);
+    if ( colorRemoved )
+      ActiveControl.BackColor = Program.FocusedControlCurrentColor;
   }
 
   #endregion
@@ -1313,8 +1365,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditDbTextBox_Enter(object sender, EventArgs e)
   {
-    var control = (Control)sender;
-    control.BackColor = ControlPaint.LightLight(Settings.ThemeNavigatorItems);
+    Program.ChangeControlColor((Control)sender, Program.FocusedGeneralTextBoxColor);
     TextBoxMutex = true;
   }
 
@@ -1325,8 +1376,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditDbTextBox_Leave(object sender, EventArgs e)
   {
-    var control = (Control)sender;
-    control.BackColor = Settings.ThemeNavigatorItems;
+    Program.RestoreControlColor((Control)sender);
     TextBoxMutex = false;
     if ( Settings.AutoSaveOnLeaveControl )
       Instance.ActionSave_Click(Instance.ActionSave, EventArgs.Empty);

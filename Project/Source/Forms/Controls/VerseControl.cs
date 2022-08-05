@@ -188,7 +188,7 @@ public partial class VerseControl : UserControl
 
   private void EditComment_Enter(object sender, EventArgs e)
   {
-    EditCommentary.BackColor = Settings.ThemeCurrentControl;
+    Program.ChangeControlColor(EditCommentary, Settings.ThemeCurrentControl);
     if ( MainForm.Instance.IsComboBoxChanging ) return;
     if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
     MainForm.Instance.CurrentReference = Reference;
@@ -197,7 +197,7 @@ public partial class VerseControl : UserControl
 
   private void EditComment_Leave(object sender, EventArgs e)
   {
-    EditCommentary.BackColor = Settings.ThemeCommentaryBack;
+    Program.RestoreControlColor(EditCommentary);
     EditCommentary.Text = CheckComment(EditCommentary.Text);
     if ( Settings.AutoSaveOnLeaveControl && MainForm.Instance.ActionSave.Enabled )
       MainForm.Instance.ActionSave.PerformClick();

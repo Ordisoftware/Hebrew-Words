@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -70,5 +70,23 @@ static partial class Program
 
   static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadBook(BibleJsonFilePath);
+
+  static public Color FocusedGeneralTextBoxColor => ControlPaint.LightLight(Settings.ThemeNavigatorItems);
+
+  static public Color FocusedControlOriginalColor;
+  static public Color FocusedControlCurrentColor;
+
+  static internal void ChangeControlColor(Control control, Color color)
+  {
+    FocusedControlOriginalColor = control.BackColor;
+    FocusedControlCurrentColor = color;
+    control.BackColor = color;
+  }
+
+  static internal void RestoreControlColor(Control control)
+  {
+    control.BackColor = FocusedControlOriginalColor;
+    FocusedControlCurrentColor = FocusedControlOriginalColor;
+  }
 
 }
