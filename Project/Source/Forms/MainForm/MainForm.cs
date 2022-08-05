@@ -728,6 +728,16 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionOpenExportFolder for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenExportFolder_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Settings.GetExportDirectory());
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionOpenBackupPath for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -738,13 +748,13 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionOpenExportFolder for click events.
+  /// Event handler. Called by ActionOpenFolderDatabase for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionOpenExportFolder_Click(object sender, EventArgs e)
+  private void ActionOpenFolderDatabase_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Settings.GetExportDirectory());
+    SystemManager.RunShell(Globals.DatabaseFolderPath);
   }
 
   /// <summary>

@@ -427,13 +427,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
-  <data name="ActionOpenBackupPath.Text" xml:space="preserve">
+  <data name="ActionOpenFolderBackup.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'archivage</value>
   </data>
   <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+  <data name="ActionOpenFolderExport.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export</value>
   </data>
   <data name="ActionBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
@@ -887,5 +887,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
     <value>Copie écran de la vue</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
+    <value>Ouvrir le dossier de la base de données</value>
   </data>
 </root>

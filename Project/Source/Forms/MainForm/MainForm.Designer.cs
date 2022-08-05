@@ -194,8 +194,9 @@
       this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenBackupPath = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenFolderDatabase = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenFolderExport = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenFolderBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -1664,8 +1665,9 @@
             this.SeparatorActionNormalizeTexts,
             this.ActionNormalizeTexts,
             this.toolStripSeparator2,
-            this.ActionOpenBackupPath,
-            this.ActionOpenExportFolder});
+            this.ActionOpenFolderExport,
+            this.ActionOpenFolderBackup,
+            this.ActionOpenFolderDatabase});
       resources.ApplyResources(this.ActionDatabase, "ActionDatabase");
       this.ActionDatabase.Name = "ActionDatabase";
       this.ActionDatabase.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1715,17 +1717,23 @@
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
-      // ActionOpenBackupPath
+      // ActionOpenFolderDatabase
       // 
-      resources.ApplyResources(this.ActionOpenBackupPath, "ActionOpenBackupPath");
-      this.ActionOpenBackupPath.Name = "ActionOpenBackupPath";
-      this.ActionOpenBackupPath.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
+      resources.ApplyResources(this.ActionOpenFolderDatabase, "ActionOpenFolderDatabase");
+      this.ActionOpenFolderDatabase.Name = "ActionOpenFolderDatabase";
+      this.ActionOpenFolderDatabase.Click += new System.EventHandler(this.ActionOpenFolderDatabase_Click);
       // 
-      // ActionOpenExportFolder
+      // ActionOpenFolderExport
       // 
-      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
-      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
-      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      resources.ApplyResources(this.ActionOpenFolderExport, "ActionOpenFolderExport");
+      this.ActionOpenFolderExport.Name = "ActionOpenFolderExport";
+      this.ActionOpenFolderExport.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      // 
+      // ActionOpenFolderBackup
+      // 
+      resources.ApplyResources(this.ActionOpenFolderBackup, "ActionOpenFolderBackup");
+      this.ActionOpenFolderBackup.Name = "ActionOpenFolderBackup";
+      this.ActionOpenFolderBackup.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
       // 
       // toolStripSeparator20
       // 
@@ -2598,7 +2606,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionGoToBookmarkMain;
     private System.Windows.Forms.ToolStripMenuItem ActionImportConsole;
     private System.Windows.Forms.ToolStripMenuItem ActionDatabaseNew;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenBackupPath;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenFolderBackup;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters2;
     private System.Windows.Forms.ToolStripMenuItem ActionVerseReadOnline;
@@ -2626,7 +2634,7 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorBookmarks;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     private System.Windows.Forms.TrackBar SelectSearchPaging;
-    private ToolStripMenuItem ActionOpenExportFolder;
+    private ToolStripMenuItem ActionOpenFolderExport;
     internal System.Windows.Forms.Button ActionSearchRun;
     internal System.Windows.Forms.Panel PanelViewVerses;
     internal System.Windows.Forms.TabControl SelectSearchType;
@@ -2771,5 +2779,6 @@
     private ToolStripSeparator toolStripSeparator29;
     private ToolStripMenuItem ActionTakeScreenshotWindow;
     private ToolStripMenuItem ActionTakeScreenshotView;
+    private ToolStripMenuItem ActionOpenFolderDatabase;
   }
 }
