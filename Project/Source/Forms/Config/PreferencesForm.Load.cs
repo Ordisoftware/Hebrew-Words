@@ -85,7 +85,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditBookNameHebrewWithParashah.Checked = Settings.BookNameHebrewWithParashah);
     SystemManager.TryCatch(() => EditBookmarksWithParashah.Checked = Settings.BookmarksWithParashah);
     SystemManager.TryCatch(() => EditBookmarksWithTranslation.Checked = Settings.BookmarksWithTranslation);
-    LoadColors();
+    SystemManager.TryCatch(() => EditDatabaseRestoreAskToBackup.Checked = Settings.DatabaseRestoreAskToBackup);
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
     GroupBoxHebrewWordClick1.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.OnlineSearch;

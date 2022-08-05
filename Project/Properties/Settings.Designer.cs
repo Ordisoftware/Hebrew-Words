@@ -1978,5 +1978,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["BookmarksWithTranslation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DatabaseRestoreAskToBackup {
+            get {
+                return ((bool)(this["DatabaseRestoreAskToBackup"]));
+            }
+            set {
+                this["DatabaseRestoreAskToBackup"] = value;
+            }
+        }
     }
 }
