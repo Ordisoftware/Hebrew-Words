@@ -86,6 +86,7 @@ partial class PreferencesForm
     Settings.BookNameHebrewWithParashah = EditBookNameHebrewWithParashah.Checked;
     Settings.BookmarksWithParashah = EditBookmarksWithParashah.Checked;
     Settings.BookmarksWithTranslation = EditBookmarksWithTranslation.Checked;
+    Settings.DatabaseRestoreAskToBackup = EditDatabaseRestoreAskToBackup.Checked;
     SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;

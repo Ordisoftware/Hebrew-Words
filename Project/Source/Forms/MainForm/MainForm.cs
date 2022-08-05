@@ -672,8 +672,9 @@ partial class MainForm : Form
   private void ActionRestore_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
-      ActionDatabaseBackup.PerformClick();
+    if ( Settings.DatabaseRestoreAskToBackup )
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+        ActionDatabaseBackup.PerformClick();
     if ( OpenFileDialogDB.ShowDialog() == DialogResult.Cancel )
       return;
     string fileName = Path.GetFileNameWithoutExtension(OpenFileDialogDB.FileName);

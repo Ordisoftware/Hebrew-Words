@@ -252,6 +252,7 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditDatabaseRestoreAskToBackup = new System.Windows.Forms.CheckBox();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -815,6 +816,7 @@
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditBookmarksWithParashah);
+      this.TabPageApplication.Controls.Add(this.EditDatabaseRestoreAskToBackup);
       this.TabPageApplication.Controls.Add(this.EditBookmarksWithTranslation);
       this.TabPageApplication.Controls.Add(this.EditBookNameHebrewWithParashah);
       this.TabPageApplication.Controls.Add(this.EditBookNameHebrewWithCommonName);
@@ -2111,6 +2113,13 @@
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
       // 
+      // EditDatabaseRestoreAskToBackup
+      // 
+      resources.ApplyResources(this.EditDatabaseRestoreAskToBackup, "EditDatabaseRestoreAskToBackup");
+      this.EditDatabaseRestoreAskToBackup.Name = "EditDatabaseRestoreAskToBackup";
+      this.EditDatabaseRestoreAskToBackup.UseVisualStyleBackColor = true;
+      this.EditDatabaseRestoreAskToBackup.CheckedChanged += new System.EventHandler(this.EditBookNameHebrewWithCommonName_CheckedChanged);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2400,5 +2409,6 @@
     private CheckBox EditBookmarksWithTranslation;
     private CheckBox EditBookNameHebrewWithParashah;
     private TabPage TabPageMSWord;
+    private CheckBox EditDatabaseRestoreAskToBackup;
   }
 }

@@ -799,4 +799,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditDatabaseRestoreAskToBackup.Text" xml:space="preserve">
+    <value>Demander de sauvegarder la base de données actuelle avant de restaurer une base de données</value>
+  </data>
 </root>

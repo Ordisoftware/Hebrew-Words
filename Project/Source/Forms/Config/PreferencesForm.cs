@@ -193,6 +193,7 @@ partial class PreferencesForm : Form
   private void EditBookNameHebrewWithCommonName_CheckedChanged(object sender, EventArgs e)
   {
     UpdateViewRequired = true;
+    EditBookmarksWithParashah.Enabled = EditBookNameHebrewWithParashah.Checked;
   }
 
   private void EditVolume_ValueChanged(object sender, EventArgs e)
