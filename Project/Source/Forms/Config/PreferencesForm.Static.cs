@@ -50,7 +50,7 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) FontSizeCommentaryInterval = (8, 16, 10, 1);
   static public readonly (int, int, int, int) FontSizeHebrewInterval = (12, 24, 16, 1);
   static public readonly (int, int, int, int) FontSizeTranslationInterval = (8, 16, 10, 1);
-  static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 20, 1);
+  static public readonly (int, int, int, int) HistoryCountInterval = (0, 50, 30, 1);
   static public readonly (int, int, int, int) SearchDisplayMaxRefInterval = (10, 100, 20, 5);
   static public readonly (int, int, int, int) SearchMinRefForDialogInterval = (0, 200, 20, 5);
   static public readonly (int, int, int, int) WordControlWidthInterval = (150, 500, 205, 5);

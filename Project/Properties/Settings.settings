@@ -75,7 +75,7 @@
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="HistoryCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">40</Value>
+      <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="FoundReferencesToOpenDialog" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
@@ -147,7 +147,7 @@
       <Value Profile="(Default)">250</Value>
     </Setting>
     <Setting Name="AutoSortBookmarks" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
