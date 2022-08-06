@@ -1990,5 +1990,65 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["DatabaseRestoreAskToBackup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
+        public global::System.Drawing.Color ThemeVerseNumberColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeVerseNumberColor"]));
+            }
+            set {
+                this["ThemeVerseNumberColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("RoyalBlue")]
+        public global::System.Drawing.Color ThemeVerseNumberColorHover {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeVerseNumberColorHover"]));
+            }
+            set {
+                this["ThemeVerseNumberColorHover"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
+        public global::System.Drawing.Color ThemeVerseHebrewColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeVerseHebrewColor"]));
+            }
+            set {
+                this["ThemeVerseHebrewColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
+        public global::System.Drawing.Color ThemeVerseHebrewColorHover {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeVerseHebrewColorHover"]));
+            }
+            set {
+                this["ThemeVerseHebrewColorHover"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
+        public global::System.Drawing.Color ThemeTranslationTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ThemeTranslationTextColor"]));
+            }
+            set {
+                this["ThemeTranslationTextColor"] = value;
+            }
+        }
     }
 }

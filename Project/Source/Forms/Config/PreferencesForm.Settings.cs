@@ -142,6 +142,12 @@ partial class PreferencesForm
     EditThemeCommentaryBack.BackColor = Color.Honeydew;
     EditThemeSearchLettersBack.BackColor = Color.LightYellow;
     EditThemeSearchWordBack.BackColor = Color.AliceBlue;
+    EditThemeVerseNumberColor.BackColor = Color.DarkBlue;
+    EditThemeVerseNumberColorHover.BackColor = Color.RoyalBlue;
+    EditThemeVerseHebrewColor.BackColor = SystemColors.ControlText;
+    EditThemeVerseHebrewColorHover.BackColor = Color.DarkRed;
+    EditThemeTranslationTextColor.BackColor = SystemColors.ControlText;
+    //
     SaveColors();
     MainForm.Instance.InitializeTheme();
     UpdateViewRequired = true;
@@ -155,6 +161,11 @@ partial class PreferencesForm
     EditThemeCommentaryBack.BackColor = SystemColors.Window;
     EditThemeSearchLettersBack.BackColor = SystemColors.Control;
     EditThemeSearchWordBack.BackColor = SystemColors.Window;
+    EditThemeVerseNumberColor.BackColor = SystemColors.ControlText;
+    EditThemeVerseNumberColorHover.BackColor = SystemColors.HotTrack;
+    EditThemeVerseHebrewColor.BackColor = SystemColors.ControlText;
+    EditThemeVerseHebrewColorHover.BackColor = SystemColors.HotTrack;
+    EditThemeTranslationTextColor.BackColor = SystemColors.ControlText;
     SaveColors();
     MainForm.Instance.InitializeTheme();
     UpdateViewRequired = true;

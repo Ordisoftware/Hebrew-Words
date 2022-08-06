@@ -87,7 +87,6 @@ partial class PreferencesForm
     Settings.BookmarksWithParashah = EditBookmarksWithParashah.Checked;
     Settings.BookmarksWithTranslation = EditBookmarksWithTranslation.Checked;
     Settings.DatabaseRestoreAskToBackup = EditDatabaseRestoreAskToBackup.Checked;
-    SaveColors();
     // Word click action 1
     if ( GroupBoxHebrewWordClick0.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.ContextMenu;
     if ( GroupBoxHebrewWordClick1.Checked ) Settings.HebrewWordClickAction = HebrewWordClickAction.OnlineSearch;
@@ -132,6 +131,7 @@ partial class PreferencesForm
       MainForm.Instance.TimerAutoSave.Interval = Settings.AutoSaveDelay * Globals.MilliSecondsInOneMinute;
     // End
     Settings.PreferencesFormSelectedTabIndex = TabControl.SelectedIndex;
+    SaveColors();
     Settings.Store();
   }
 
@@ -143,6 +143,11 @@ partial class PreferencesForm
     Settings.ThemeCommentaryBack = EditThemeCommentaryBack.BackColor;
     Settings.ThemeSearchLettersBack = EditThemeSearchLettersBack.BackColor;
     Settings.ThemeSearchWordBack = EditThemeSearchWordBack.BackColor;
+    Settings.ThemeVerseNumberColor = EditThemeVerseNumberColor.BackColor;
+    Settings.ThemeVerseNumberColorHover = EditThemeVerseNumberColorHover.BackColor;
+    Settings.ThemeVerseHebrewColor = EditThemeVerseHebrewColor.BackColor;
+    Settings.ThemeVerseHebrewColorHover = EditThemeVerseHebrewColorHover.BackColor;
+    Settings.ThemeTranslationTextColor = EditThemeTranslationTextColor.BackColor;
   }
 
 }

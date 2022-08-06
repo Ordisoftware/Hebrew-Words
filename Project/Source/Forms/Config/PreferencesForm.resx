@@ -1288,7 +1288,7 @@
     <value>EditBackupFolder</value>
   </data>
   <data name="&gt;&gt;EditBackupFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBackupFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -1312,7 +1312,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -1336,7 +1336,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -1360,7 +1360,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3221,7 +3221,7 @@
     <value>EditCommentLinePrefix</value>
   </data>
   <data name="&gt;&gt;EditCommentLinePrefix.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCommentLinePrefix.Parent" xml:space="preserve">
     <value>TabPageEditing</value>
@@ -3853,6 +3853,63 @@
   <data name="&gt;&gt;ActionSaveTheme.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LabelThemeVerseNumberColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 20</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelThemeVerseNumberColor.Text" xml:space="preserve">
+    <value>Verse number color</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColor.Name" xml:space="preserve">
+    <value>LabelThemeVerseNumberColor</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditThemeVerseNumberColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditThemeVerseNumberColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 40</value>
+  </data>
+  <data name="EditThemeVerseNumberColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditThemeVerseNumberColor.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColor.Name" xml:space="preserve">
+    <value>EditThemeVerseNumberColor</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3884,7 +3941,40 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 140</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColor.Text" xml:space="preserve">
+    <value>Verse hebrew text color</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColor.Name" xml:space="preserve">
+    <value>LabelThemeVerseHebrewColor</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColor.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="EditThemeNavigatorItems.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3908,7 +3998,31 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeNavigatorItems.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
+  </data>
+  <data name="EditThemeVerseHebrewColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditThemeVerseHebrewColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 160</value>
+  </data>
+  <data name="EditThemeVerseHebrewColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditThemeVerseHebrewColor.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColor.Name" xml:space="preserve">
+    <value>EditThemeVerseHebrewColor</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColor.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3941,7 +4055,97 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 260</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelThemeTranslationTextColor.Text" xml:space="preserve">
+    <value>Translation text color</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeTranslationTextColor.Name" xml:space="preserve">
+    <value>LabelThemeTranslationTextColor</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeTranslationTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeTranslationTextColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeTranslationTextColor.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 200</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 13</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelThemeVerseHebrewColorHover.Text" xml:space="preserve">
+    <value>Mouse hover verse hebrew text color</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColorHover.Name" xml:space="preserve">
+    <value>LabelThemeVerseHebrewColorHover</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColorHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColorHover.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseHebrewColorHover.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="EditThemeTranslationTextColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditThemeTranslationTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 280</value>
+  </data>
+  <data name="EditThemeTranslationTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditThemeTranslationTextColor.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;EditThemeTranslationTextColor.Name" xml:space="preserve">
+    <value>EditThemeTranslationTextColor</value>
+  </data>
+  <data name="&gt;&gt;EditThemeTranslationTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditThemeTranslationTextColor.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;EditThemeTranslationTextColor.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="EditThemeTranslationBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3965,7 +4169,31 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeTranslationBack.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>12</value>
+  </data>
+  <data name="EditThemeVerseHebrewColorHover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditThemeVerseHebrewColorHover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 220</value>
+  </data>
+  <data name="EditThemeVerseHebrewColorHover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditThemeVerseHebrewColorHover.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColorHover.Name" xml:space="preserve">
+    <value>EditThemeVerseHebrewColorHover</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColorHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColorHover.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseHebrewColorHover.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3998,7 +4226,40 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>14</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 80</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 13</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelThemeVerseNumberColorHover.Text" xml:space="preserve">
+    <value>Mouse hover verse number color</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColorHover.Name" xml:space="preserve">
+    <value>LabelThemeVerseNumberColorHover</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColorHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColorHover.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;LabelThemeVerseNumberColorHover.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="EditThemeCommentaryBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4022,7 +4283,31 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeCommentaryBack.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>16</value>
+  </data>
+  <data name="EditThemeVerseNumberColorHover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditThemeVerseNumberColorHover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 100</value>
+  </data>
+  <data name="EditThemeVerseNumberColorHover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditThemeVerseNumberColorHover.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColorHover.Name" xml:space="preserve">
+    <value>EditThemeVerseNumberColorHover</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColorHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColorHover.Parent" xml:space="preserve">
+    <value>TabPageTheme</value>
+  </data>
+  <data name="&gt;&gt;EditThemeVerseNumberColorHover.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4055,7 +4340,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>18</value>
   </data>
   <data name="EditThemeCurrentControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4079,7 +4364,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeCurrentControl.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>19</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4112,7 +4397,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>20</value>
   </data>
   <data name="EditThemeSearchLettersBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4136,7 +4421,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeSearchLettersBack.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>21</value>
   </data>
   <data name="EditThemeSearchWordBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4160,7 +4445,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;EditThemeSearchWordBack.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>22</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4193,7 +4478,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>23</value>
   </data>
   <data name="ActionUseColorsPastel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4226,7 +4511,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;ActionUseColorsPastel.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>24</value>
   </data>
   <data name="ActionUseColorsSystem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4259,7 +4544,7 @@
     <value>TabPageTheme</value>
   </data>
   <data name="&gt;&gt;ActionUseColorsSystem.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>25</value>
   </data>
   <data name="TabPageTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -6443,7 +6728,7 @@
     <value>EditOnlineVerseURL</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOnlineVerseURL.Parent" xml:space="preserve">
     <value>TabPageTools</value>
@@ -6467,7 +6752,7 @@
     <value>EditOnlineSearch</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOnlineSearch.Parent" xml:space="preserve">
     <value>TabPageTools</value>

@@ -142,6 +142,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
     // System
     EditLogEnabled.Enabled = DebugManager.Enabled;
+    LoadColors();
   }
 
   private void LoadColors()
@@ -152,6 +153,11 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditThemeCommentaryBack.BackColor = Settings.ThemeCommentaryBack);
     SystemManager.TryCatch(() => EditThemeSearchLettersBack.BackColor = Settings.ThemeSearchLettersBack);
     SystemManager.TryCatch(() => EditThemeSearchWordBack.BackColor = Settings.ThemeSearchWordBack);
+    SystemManager.TryCatch(() => EditThemeVerseNumberColor.BackColor = Settings.ThemeVerseNumberColor);
+    SystemManager.TryCatch(() => EditThemeVerseNumberColorHover.BackColor = Settings.ThemeVerseNumberColorHover);
+    SystemManager.TryCatch(() => EditThemeVerseHebrewColor.BackColor = Settings.ThemeVerseHebrewColor);
+    SystemManager.TryCatch(() => EditThemeVerseHebrewColorHover.BackColor = Settings.ThemeVerseHebrewColorHover);
+    SystemManager.TryCatch(() => EditThemeTranslationTextColor.BackColor = Settings.ThemeTranslationTextColor);
   }
 
 }

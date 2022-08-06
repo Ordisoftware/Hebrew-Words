@@ -62,7 +62,8 @@ partial class MainForm
           Text = reference.ToString(),
           Location = new Point(xpos -= referenceSize, ypos),
           ContextMenuStrip = ContextMenuStripVerse,
-          LinkColor = Color.DarkBlue
+          LinkColor = Settings.ThemeVerseNumberColorHover,
+          ForeColor = Settings.ThemeVerseNumberColor
         };
         linklabel.LinkClicked += (sender, e) =>
         {
