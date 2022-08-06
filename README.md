@@ -317,11 +317,13 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add normalize texts window.
 
-#### In progress - Version 3.6
+#### 2022.08.07 - Version 3.6
 
 - Add menu item in Database to open the database folder.
 - Remove focused control color and selection when taking screenshot.
 - Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click.
+- Fix theming is partially reseted when re-opening preferences.
+- Fix preferences form does not load theme colors. 
 
 #### 2022.08.05 - Version 3.5
 
