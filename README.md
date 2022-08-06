@@ -285,8 +285,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
-- Add normalize texts window.
 - Add load and save theme.
+- Add normalize texts window.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add merge database to import translated verses from another database only for untranslated verses.
 - Add import parashot board.
