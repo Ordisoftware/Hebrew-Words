@@ -285,15 +285,19 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
-- Add spell checker.
+- Add normalize texts window.
+- Add load and save theme.
+- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
+- Add merge database to import translated verses from another database only for untranslated verses.
+- Add import parashot board.
 - Add search history.
+- Add spell checker.
 - Add filters to show all translated books or chapters, or those are not.
 - Add count the number of a word occurrences.
 - Add word occurrences calculator button in the search panel.
 - Add book translation RTF export.
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
-- Add load and save theme.
 - Improve tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
@@ -310,20 +314,14 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
-#### Todo - Version 3.x
-
-- Add import parashot board.
-- Add merge database to import translated verses from another database only for untranslated verses.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
-- Add normalize texts window.
-
 #### 2022.08.07 - Version 3.6
 
 - Add menu item in Database to open the database folder.
-- Remove focused control color and selection when taking screenshot.
-- Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click.
-- Fix theming is partially reseted when re-opening preferences.
+- Add theme colors for verse number and hebrew hover link.
 - Fix preferences form does not load theme colors. 
+- Fix theming reseted to pastel when opening preferences.
+- Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click.
+- Remove focused control color and selection when taking screenshot.
 
 #### 2022.08.05 - Version 3.5
 
