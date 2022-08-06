@@ -290,6 +290,8 @@ partial class MainForm : Form
     EditSearchWord.LettersBackColor = Settings.ThemeSearchLettersBack;
     EditSearchWord.InputBackColor = Settings.ThemeSearchWordBack;
     EditSearchTranslation.BackColor = Settings.ThemeSearchWordBack;
+    //
+    ActionRefresh.PerformClick();
   }
 
 }

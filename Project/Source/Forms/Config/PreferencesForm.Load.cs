@@ -142,6 +142,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString());
     // System
     EditLogEnabled.Enabled = DebugManager.Enabled;
+    LoadColors();
   }
 
   private void LoadColors()

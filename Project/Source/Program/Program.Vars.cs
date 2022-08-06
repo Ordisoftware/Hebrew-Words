@@ -74,6 +74,7 @@ static partial class Program
   static public Color FocusedGeneralTextBoxColor => ControlPaint.LightLight(Settings.ThemeNavigatorItems);
 
   static public Color FocusedControlOriginalColor;
+
   static public Color FocusedControlCurrentColor;
 
   static internal void ChangeControlColor(Control control, Color color)
