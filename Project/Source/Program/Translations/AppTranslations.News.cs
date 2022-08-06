@@ -23,6 +23,23 @@ static partial class AppTranslations
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
+    ["3.6"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Add menu item in Database to open the database folder." + Globals.NL +
+                      "• Add theme colors for verse number and hebrew hover link." + Globals.NL +
+                      "• Fix preferences form does not load theme colors." + Globals.NL +
+                      "• Fix theming reseted to pastel when opening preferences." + Globals.NL +
+                      "• Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click." + Globals.NL +
+                      "• Remove focused control color and selection when taking screenshot.",
+
+      [Language.FR] = "• Ajout d'un élément de menu dans Base de données pour ouvrir le dossier de la base de données." + Globals.NL +
+                      "• Ajout de couleurs de thème pour le numéro de verset et le survol du lien hébreu." + Globals.NL +
+                      "• Correction du formulaire de préférences qui ne charge pas les couleurs du thème." + Globals.NL +
+                      "• Correction du thème réinitialisé au pastel lors de l'ouverture des préférences." + Globals.NL +
+                      "• Correction des boîtes de message parfois mal dessinées, comme lors de la suppression de signets à l'aide du clic droit de la souris." + Globals.NL +
+                      "• Suppression de la couleur et de la sélection des contrôles cibles lors de la capture d'écran.",
+    },
+
     ["3.5"] = new TranslationsDictionary
     {
       [Language.EN] = "• Add menu items in Tools to take a screenshot of the window or the current view." + Globals.NL +
@@ -34,7 +51,7 @@ static partial class AppTranslations
                       "• Fix commande line go to a reference to replace spaces by `% 20` (see FAQ)." + Globals.NL +
                       "• Few fixes and improvements.",
 
-      [Language.FR] = "• Ajout d'éléments de menu dans Outils pour faire une capture d'écran de la fenêtre ou de la vue en cours." + Globals.NL + 
+      [Language.FR] = "• Ajout d'éléments de menu dans Outils pour faire une capture d'écran de la fenêtre ou de la vue en cours." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage du nom du livre hébreu avec son nom commun." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage du nom de parashah avec le nom du livre." + Globals.NL +
                       "• Ajout d'une option pour activer ou désactiver l'affichage du nom de parashah dans les signets et l'historique." + Globals.NL +
