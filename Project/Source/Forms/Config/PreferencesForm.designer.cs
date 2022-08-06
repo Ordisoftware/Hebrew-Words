@@ -108,6 +108,7 @@
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditBookmarksWithParashah = new System.Windows.Forms.CheckBox();
+      this.EditDatabaseRestoreAskToBackup = new System.Windows.Forms.CheckBox();
       this.EditBookmarksWithTranslation = new System.Windows.Forms.CheckBox();
       this.EditBookNameHebrewWithParashah = new System.Windows.Forms.CheckBox();
       this.EditBookNameHebrewWithCommonName = new System.Windows.Forms.CheckBox();
@@ -252,7 +253,16 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditDatabaseRestoreAskToBackup = new System.Windows.Forms.CheckBox();
+      this.EditThemeVerseNumberColorHover = new System.Windows.Forms.Panel();
+      this.LabelThemeVerseNumberColorHover = new System.Windows.Forms.Label();
+      this.EditThemeVerseHebrewColorHover = new System.Windows.Forms.Panel();
+      this.LabelThemeVerseHebrewColorHover = new System.Windows.Forms.Label();
+      this.EditThemeVerseHebrewColor = new System.Windows.Forms.Panel();
+      this.LabelThemeVerseHebrewColor = new System.Windows.Forms.Label();
+      this.EditThemeVerseNumberColor = new System.Windows.Forms.Panel();
+      this.LabelThemeVerseNumberColor = new System.Windows.Forms.Label();
+      this.EditThemeTranslationTextColor = new System.Windows.Forms.Panel();
+      this.LabelThemeTranslationTextColor = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -893,6 +903,13 @@
       this.EditBookmarksWithParashah.UseVisualStyleBackColor = true;
       this.EditBookmarksWithParashah.CheckedChanged += new System.EventHandler(this.EditBookNameHebrewWithCommonName_CheckedChanged);
       // 
+      // EditDatabaseRestoreAskToBackup
+      // 
+      resources.ApplyResources(this.EditDatabaseRestoreAskToBackup, "EditDatabaseRestoreAskToBackup");
+      this.EditDatabaseRestoreAskToBackup.Name = "EditDatabaseRestoreAskToBackup";
+      this.EditDatabaseRestoreAskToBackup.UseVisualStyleBackColor = true;
+      this.EditDatabaseRestoreAskToBackup.CheckedChanged += new System.EventHandler(this.EditBookNameHebrewWithCommonName_CheckedChanged);
+      // 
       // EditBookmarksWithTranslation
       // 
       resources.ApplyResources(this.EditBookmarksWithTranslation, "EditBookmarksWithTranslation");
@@ -1278,12 +1295,22 @@
       this.TabPageTheme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageTheme.Controls.Add(this.ActionOpenTheme);
       this.TabPageTheme.Controls.Add(this.ActionSaveTheme);
+      this.TabPageTheme.Controls.Add(this.LabelThemeVerseNumberColor);
+      this.TabPageTheme.Controls.Add(this.EditThemeVerseNumberColor);
       this.TabPageTheme.Controls.Add(this.label8);
+      this.TabPageTheme.Controls.Add(this.LabelThemeVerseHebrewColor);
       this.TabPageTheme.Controls.Add(this.EditThemeNavigatorItems);
+      this.TabPageTheme.Controls.Add(this.EditThemeVerseHebrewColor);
       this.TabPageTheme.Controls.Add(this.label4);
+      this.TabPageTheme.Controls.Add(this.LabelThemeTranslationTextColor);
+      this.TabPageTheme.Controls.Add(this.LabelThemeVerseHebrewColorHover);
+      this.TabPageTheme.Controls.Add(this.EditThemeTranslationTextColor);
       this.TabPageTheme.Controls.Add(this.EditThemeTranslationBack);
+      this.TabPageTheme.Controls.Add(this.EditThemeVerseHebrewColorHover);
       this.TabPageTheme.Controls.Add(this.label2);
+      this.TabPageTheme.Controls.Add(this.LabelThemeVerseNumberColorHover);
       this.TabPageTheme.Controls.Add(this.EditThemeCommentaryBack);
+      this.TabPageTheme.Controls.Add(this.EditThemeVerseNumberColorHover);
       this.TabPageTheme.Controls.Add(this.label1);
       this.TabPageTheme.Controls.Add(this.EditThemeCurrentControl);
       this.TabPageTheme.Controls.Add(this.label3);
@@ -2113,12 +2140,75 @@
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
       // 
-      // EditDatabaseRestoreAskToBackup
+      // EditThemeVerseNumberColorHover
       // 
-      resources.ApplyResources(this.EditDatabaseRestoreAskToBackup, "EditDatabaseRestoreAskToBackup");
-      this.EditDatabaseRestoreAskToBackup.Name = "EditDatabaseRestoreAskToBackup";
-      this.EditDatabaseRestoreAskToBackup.UseVisualStyleBackColor = true;
-      this.EditDatabaseRestoreAskToBackup.CheckedChanged += new System.EventHandler(this.EditBookNameHebrewWithCommonName_CheckedChanged);
+      this.EditThemeVerseNumberColorHover.BackColor = System.Drawing.Color.RoyalBlue;
+      this.EditThemeVerseNumberColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseNumberColorHover, "EditThemeVerseNumberColorHover");
+      this.EditThemeVerseNumberColorHover.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseNumberColorHover.Name = "EditThemeVerseNumberColorHover";
+      this.EditThemeVerseNumberColorHover.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // LabelThemeVerseNumberColorHover
+      // 
+      resources.ApplyResources(this.LabelThemeVerseNumberColorHover, "LabelThemeVerseNumberColorHover");
+      this.LabelThemeVerseNumberColorHover.Name = "LabelThemeVerseNumberColorHover";
+      // 
+      // EditThemeVerseHebrewColorHover
+      // 
+      this.EditThemeVerseHebrewColorHover.BackColor = System.Drawing.Color.DarkRed;
+      this.EditThemeVerseHebrewColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseHebrewColorHover, "EditThemeVerseHebrewColorHover");
+      this.EditThemeVerseHebrewColorHover.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseHebrewColorHover.Name = "EditThemeVerseHebrewColorHover";
+      this.EditThemeVerseHebrewColorHover.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // LabelThemeVerseHebrewColorHover
+      // 
+      resources.ApplyResources(this.LabelThemeVerseHebrewColorHover, "LabelThemeVerseHebrewColorHover");
+      this.LabelThemeVerseHebrewColorHover.Name = "LabelThemeVerseHebrewColorHover";
+      // 
+      // EditThemeVerseHebrewColor
+      // 
+      this.EditThemeVerseHebrewColor.BackColor = System.Drawing.SystemColors.ControlText;
+      this.EditThemeVerseHebrewColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseHebrewColor, "EditThemeVerseHebrewColor");
+      this.EditThemeVerseHebrewColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseHebrewColor.Name = "EditThemeVerseHebrewColor";
+      this.EditThemeVerseHebrewColor.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // LabelThemeVerseHebrewColor
+      // 
+      resources.ApplyResources(this.LabelThemeVerseHebrewColor, "LabelThemeVerseHebrewColor");
+      this.LabelThemeVerseHebrewColor.Name = "LabelThemeVerseHebrewColor";
+      // 
+      // EditThemeVerseNumberColor
+      // 
+      this.EditThemeVerseNumberColor.BackColor = System.Drawing.Color.DarkBlue;
+      this.EditThemeVerseNumberColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseNumberColor, "EditThemeVerseNumberColor");
+      this.EditThemeVerseNumberColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseNumberColor.Name = "EditThemeVerseNumberColor";
+      this.EditThemeVerseNumberColor.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // LabelThemeVerseNumberColor
+      // 
+      resources.ApplyResources(this.LabelThemeVerseNumberColor, "LabelThemeVerseNumberColor");
+      this.LabelThemeVerseNumberColor.Name = "LabelThemeVerseNumberColor";
+      // 
+      // EditThemeTranslationTextColor
+      // 
+      this.EditThemeTranslationTextColor.BackColor = System.Drawing.SystemColors.ControlText;
+      this.EditThemeTranslationTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeTranslationTextColor, "EditThemeTranslationTextColor");
+      this.EditThemeTranslationTextColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeTranslationTextColor.Name = "EditThemeTranslationTextColor";
+      this.EditThemeTranslationTextColor.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // LabelThemeTranslationTextColor
+      // 
+      resources.ApplyResources(this.LabelThemeTranslationTextColor, "LabelThemeTranslationTextColor");
+      this.LabelThemeTranslationTextColor.Name = "LabelThemeTranslationTextColor";
       // 
       // PreferencesForm
       // 
@@ -2410,5 +2500,15 @@
     private CheckBox EditBookNameHebrewWithParashah;
     private TabPage TabPageMSWord;
     private CheckBox EditDatabaseRestoreAskToBackup;
+    private Label LabelThemeVerseNumberColor;
+    public Panel EditThemeVerseNumberColor;
+    private Label LabelThemeVerseHebrewColor;
+    public Panel EditThemeVerseHebrewColor;
+    private Label LabelThemeVerseHebrewColorHover;
+    public Panel EditThemeVerseHebrewColorHover;
+    private Label LabelThemeVerseNumberColorHover;
+    public Panel EditThemeVerseNumberColorHover;
+    private Label LabelThemeTranslationTextColor;
+    public Panel EditThemeTranslationTextColor;
   }
 }

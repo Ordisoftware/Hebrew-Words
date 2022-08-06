@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 public partial class VerseControl : UserControl
@@ -77,6 +77,7 @@ public partial class VerseControl : UserControl
     {
       int numberOfLines = WordControls.Length / metrics.WordControlsPerLine;
       if ( WordControls.Length % metrics.WordControlsPerLine > 0 ) numberOfLines++;
+      LabelVerseNumber.ForeColor = Settings.ThemeVerseNumberColor;
       LabelVerseNumber.Font = metrics.LabelVerseNumberFont;
       LabelVerseNumber.Text = reference.Verse.Number.ToString();
       LabelVerseNumber.Width = metrics.LabelVerseNumberWidth;
@@ -93,6 +94,7 @@ public partial class VerseControl : UserControl
       else
         Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines;
     }
+    EditCommentary.ForeColor = Settings.ThemeTranslationTextColor;
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
     Width = metrics.ControlWidth - widthDelta;
   }
@@ -149,13 +151,13 @@ public partial class VerseControl : UserControl
   private void LabelVerseNumber_MouseEnter(object sender, EventArgs e)
   {
     LabelVerseNumber.Cursor = Cursors.Hand;
-    LabelVerseNumber.ForeColor = Color.RoyalBlue;
+    LabelVerseNumber.ForeColor = Settings.ThemeVerseNumberColorHover;
   }
 
   private void LabelVerseNumber_MouseLeave(object sender, EventArgs e)
   {
     LabelVerseNumber.Cursor = Cursors.Default;
-    LabelVerseNumber.ForeColor = Color.DarkBlue;
+    LabelVerseNumber.ForeColor = Settings.ThemeVerseNumberColor;
   }
 
   private void LabelVerseNumber_MouseDown(object sender, MouseEventArgs e)

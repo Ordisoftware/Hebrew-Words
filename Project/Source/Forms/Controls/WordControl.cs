@@ -50,7 +50,9 @@ public partial class WordControl : UserControl
       EditTranslation.Height = Metrics.EditTranslationHeight;
     }
     Height = Metrics.TotalHeight;
+    LabelHebrew.ForeColor = Settings.ThemeTranslationTextColor;
     LabelHebrew.Font = Metrics.LabelHebrewFont;
+    EditTranslation.ForeColor = Settings.ThemeTranslationTextColor;
     EditTranslation.Font = Metrics.EditTranslationFont;
     EditTranslation.BackColor = Settings.ThemeTranslationBack;
     LabelHebrew.DataBindings.Add("Text", reference.Word, "Hebrew", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -105,13 +107,13 @@ public partial class WordControl : UserControl
   private void LabelHebrew_MouseEnter(object sender, EventArgs e)
   {
     LabelHebrew.Cursor = Cursors.Hand;
-    LabelHebrew.ForeColor = Color.DarkRed;
+    LabelHebrew.ForeColor = Settings.ThemeVerseHebrewColorHover;
   }
 
   private void LabelHebrew_MouseLeave(object sender, EventArgs e)
   {
     LabelHebrew.Cursor = Cursors.Default;
-    LabelHebrew.ForeColor = SystemColors.ControlText;
+    LabelHebrew.ForeColor = Settings.ThemeVerseHebrewColor;
   }
 
   private void LabelHebrew_MouseClick(object sender, MouseEventArgs e)
