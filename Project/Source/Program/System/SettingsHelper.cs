@@ -199,17 +199,29 @@ static class SettingsHelper
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
-    return settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    string path = settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    if ( !Directory.Exists(path) ) Directory.CreateDirectory(path);
+    return path;
   }
 
   /// <summary>
-  /// Get the backup directory.
+  /// Gets the settings export directory.
+  /// </summary>
+  static internal string GetExportSettingsDirectory(this Settings settings)
+  {
+    string path = Path.Combine(settings.GetExportDirectory(), "Settings");
+    if ( !Directory.Exists(path) ) Directory.CreateDirectory(path);
+    return path;
+  }
+
+  /// <summary>
+  /// Gets the backup directory.
   /// </summary>
   static internal string GetBackupDirectory(this Settings settings)
   {
-    string result = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-    Directory.CreateDirectory(result);
-    return result;
+    string path = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    if ( !Directory.Exists(path) ) Directory.CreateDirectory(path);
+    return path;
   }
 
 }

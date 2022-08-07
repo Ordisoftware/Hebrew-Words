@@ -26,7 +26,7 @@ partial class PreferencesForm
   /// </summary>
   private void DoFormLoad()
   {
-    SaveSettingsDialog.InitialDirectory = Settings.GetExportDirectory();
+    SaveSettingsDialog.InitialDirectory = Settings.GetExportSettingsDirectory();
     OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
     SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
     OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
