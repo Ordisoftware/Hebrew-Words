@@ -288,6 +288,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add a tray icon.
 - Add search history.
 - Add normalize texts window.
+- Add bookmarks and history auto-backup like the database.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add merge database to import translated verses from another database only for untranslated verses.
 - Add import parashot board.
@@ -313,7 +314,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
-#### 2022.08.10 - Version 3.7
+#### 2022.08.08 - Version 3.7
 
 - Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
 - Fix load and save theme buttons not visible in preferences.
