@@ -285,35 +285,35 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
+- Add a tray icon.
+- Add search history.
 - Add normalize texts window.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add merge database to import translated verses from another database only for untranslated verses.
 - Add import parashot board.
-- Add search history.
 - Add spell checker.
-- Add filters to show all translated books or chapters, or those are not.
-- Add count the number of a word occurrences.
-- Add word occurrences calculator button in the search panel.
+- Add count the number of a word occurrences in verse view.
+- Add word occurrences label in the search panel in addition to the number of references.
 - Add book translation RTF export.
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
+- Add filters to show all translated books or chapters, or those are not.
 - Improve tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
 #### Later
 
-- Add a tray icon.
 - Add strong's concordances to database.
 - Add classic English translation to database.
+- Add classic English translation label between an Hebrew word and the working translation.
 - Add form to edit strong's concordances.
 - Add form to edit classic English translation.
-- Add classic English translation between an Hebrew word and the working translation.
-- Change contextual click on a Hebrew word to use database instead of web search.
+- Add contextual click on a Hebrew word to use the strong's database instead of web search.
 
 ## Changelog
 
-#### 2022.08.07 - Version 3.7
+#### 2022.08.10 - Version 3.7
 
 - Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
 - Fix load and save theme buttons not visible in preferences.
