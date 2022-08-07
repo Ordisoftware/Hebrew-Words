@@ -316,9 +316,9 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### 2022.08.08 - Version 3.7
 
-- Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
 - Fix load and save theme buttons not visible in preferences.
 - Fix theming colors that can be ugly in search view.
+- Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
 
 #### 2022.08.07 - Version 3.6
 
