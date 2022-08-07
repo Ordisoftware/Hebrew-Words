@@ -155,12 +155,22 @@
       this.TabPageTheme = new System.Windows.Forms.TabPage();
       this.ActionOpenTheme = new System.Windows.Forms.Button();
       this.ActionSaveTheme = new System.Windows.Forms.Button();
+      this.LabelThemeVerseNumberColor = new System.Windows.Forms.Label();
+      this.EditThemeVerseNumberColor = new System.Windows.Forms.Panel();
       this.label8 = new System.Windows.Forms.Label();
+      this.LabelThemeVerseHebrewColor = new System.Windows.Forms.Label();
       this.EditThemeNavigatorItems = new System.Windows.Forms.Panel();
+      this.EditThemeVerseHebrewColor = new System.Windows.Forms.Panel();
       this.label4 = new System.Windows.Forms.Label();
+      this.LabelThemeTranslationTextColor = new System.Windows.Forms.Label();
+      this.LabelThemeVerseHebrewColorHover = new System.Windows.Forms.Label();
+      this.EditThemeTranslationTextColor = new System.Windows.Forms.Panel();
       this.EditThemeTranslationBack = new System.Windows.Forms.Panel();
+      this.EditThemeVerseHebrewColorHover = new System.Windows.Forms.Panel();
       this.label2 = new System.Windows.Forms.Label();
+      this.LabelThemeVerseNumberColorHover = new System.Windows.Forms.Label();
       this.EditThemeCommentaryBack = new System.Windows.Forms.Panel();
+      this.EditThemeVerseNumberColorHover = new System.Windows.Forms.Panel();
       this.label1 = new System.Windows.Forms.Label();
       this.EditThemeCurrentControl = new System.Windows.Forms.Panel();
       this.label3 = new System.Windows.Forms.Label();
@@ -253,16 +263,6 @@
       this.ActionSetPageSizeCrownQuarto = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeExecutive = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetPageSizeUSLetter = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditThemeVerseNumberColorHover = new System.Windows.Forms.Panel();
-      this.LabelThemeVerseNumberColorHover = new System.Windows.Forms.Label();
-      this.EditThemeVerseHebrewColorHover = new System.Windows.Forms.Panel();
-      this.LabelThemeVerseHebrewColorHover = new System.Windows.Forms.Label();
-      this.EditThemeVerseHebrewColor = new System.Windows.Forms.Panel();
-      this.LabelThemeVerseHebrewColor = new System.Windows.Forms.Label();
-      this.EditThemeVerseNumberColor = new System.Windows.Forms.Panel();
-      this.LabelThemeVerseNumberColor = new System.Windows.Forms.Label();
-      this.EditThemeTranslationTextColor = new System.Windows.Forms.Panel();
-      this.LabelThemeTranslationTextColor = new System.Windows.Forms.Label();
       LabelWordControlWidth = new System.Windows.Forms.Label();
       LabelMinRefCount = new System.Windows.Forms.Label();
       LabelMaxRefCount = new System.Windows.Forms.Label();
@@ -1338,10 +1338,29 @@
       this.ActionSaveTheme.UseVisualStyleBackColor = true;
       this.ActionSaveTheme.Click += new System.EventHandler(this.ActionSaveTheme_Click);
       // 
+      // LabelThemeVerseNumberColor
+      // 
+      resources.ApplyResources(this.LabelThemeVerseNumberColor, "LabelThemeVerseNumberColor");
+      this.LabelThemeVerseNumberColor.Name = "LabelThemeVerseNumberColor";
+      // 
+      // EditThemeVerseNumberColor
+      // 
+      this.EditThemeVerseNumberColor.BackColor = System.Drawing.Color.DarkBlue;
+      this.EditThemeVerseNumberColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseNumberColor, "EditThemeVerseNumberColor");
+      this.EditThemeVerseNumberColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseNumberColor.Name = "EditThemeVerseNumberColor";
+      this.EditThemeVerseNumberColor.Click += new System.EventHandler(this.EditColor_Click);
+      // 
       // label8
       // 
       resources.ApplyResources(this.label8, "label8");
       this.label8.Name = "label8";
+      // 
+      // LabelThemeVerseHebrewColor
+      // 
+      resources.ApplyResources(this.LabelThemeVerseHebrewColor, "LabelThemeVerseHebrewColor");
+      this.LabelThemeVerseHebrewColor.Name = "LabelThemeVerseHebrewColor";
       // 
       // EditThemeNavigatorItems
       // 
@@ -1352,10 +1371,38 @@
       this.EditThemeNavigatorItems.Name = "EditThemeNavigatorItems";
       this.EditThemeNavigatorItems.Click += new System.EventHandler(this.EditColor_Click);
       // 
+      // EditThemeVerseHebrewColor
+      // 
+      this.EditThemeVerseHebrewColor.BackColor = System.Drawing.SystemColors.ControlText;
+      this.EditThemeVerseHebrewColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseHebrewColor, "EditThemeVerseHebrewColor");
+      this.EditThemeVerseHebrewColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseHebrewColor.Name = "EditThemeVerseHebrewColor";
+      this.EditThemeVerseHebrewColor.Click += new System.EventHandler(this.EditColor_Click);
+      // 
       // label4
       // 
       resources.ApplyResources(this.label4, "label4");
       this.label4.Name = "label4";
+      // 
+      // LabelThemeTranslationTextColor
+      // 
+      resources.ApplyResources(this.LabelThemeTranslationTextColor, "LabelThemeTranslationTextColor");
+      this.LabelThemeTranslationTextColor.Name = "LabelThemeTranslationTextColor";
+      // 
+      // LabelThemeVerseHebrewColorHover
+      // 
+      resources.ApplyResources(this.LabelThemeVerseHebrewColorHover, "LabelThemeVerseHebrewColorHover");
+      this.LabelThemeVerseHebrewColorHover.Name = "LabelThemeVerseHebrewColorHover";
+      // 
+      // EditThemeTranslationTextColor
+      // 
+      this.EditThemeTranslationTextColor.BackColor = System.Drawing.SystemColors.ControlText;
+      this.EditThemeTranslationTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeTranslationTextColor, "EditThemeTranslationTextColor");
+      this.EditThemeTranslationTextColor.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeTranslationTextColor.Name = "EditThemeTranslationTextColor";
+      this.EditThemeTranslationTextColor.Click += new System.EventHandler(this.EditColor_Click);
       // 
       // EditThemeTranslationBack
       // 
@@ -1366,10 +1413,24 @@
       this.EditThemeTranslationBack.Name = "EditThemeTranslationBack";
       this.EditThemeTranslationBack.Click += new System.EventHandler(this.EditColor_Click);
       // 
+      // EditThemeVerseHebrewColorHover
+      // 
+      this.EditThemeVerseHebrewColorHover.BackColor = System.Drawing.Color.DarkRed;
+      this.EditThemeVerseHebrewColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseHebrewColorHover, "EditThemeVerseHebrewColorHover");
+      this.EditThemeVerseHebrewColorHover.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseHebrewColorHover.Name = "EditThemeVerseHebrewColorHover";
+      this.EditThemeVerseHebrewColorHover.Click += new System.EventHandler(this.EditColor_Click);
+      // 
       // label2
       // 
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
+      // 
+      // LabelThemeVerseNumberColorHover
+      // 
+      resources.ApplyResources(this.LabelThemeVerseNumberColorHover, "LabelThemeVerseNumberColorHover");
+      this.LabelThemeVerseNumberColorHover.Name = "LabelThemeVerseNumberColorHover";
       // 
       // EditThemeCommentaryBack
       // 
@@ -1379,6 +1440,15 @@
       this.EditThemeCommentaryBack.ForeColor = System.Drawing.SystemColors.Control;
       this.EditThemeCommentaryBack.Name = "EditThemeCommentaryBack";
       this.EditThemeCommentaryBack.Click += new System.EventHandler(this.EditColor_Click);
+      // 
+      // EditThemeVerseNumberColorHover
+      // 
+      this.EditThemeVerseNumberColorHover.BackColor = System.Drawing.Color.RoyalBlue;
+      this.EditThemeVerseNumberColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditThemeVerseNumberColorHover, "EditThemeVerseNumberColorHover");
+      this.EditThemeVerseNumberColorHover.ForeColor = System.Drawing.SystemColors.Control;
+      this.EditThemeVerseNumberColorHover.Name = "EditThemeVerseNumberColorHover";
+      this.EditThemeVerseNumberColorHover.Click += new System.EventHandler(this.EditColor_Click);
       // 
       // label1
       // 
@@ -2139,76 +2209,6 @@
       this.ActionSetPageSizeUSLetter.Name = "ActionSetPageSizeUSLetter";
       resources.ApplyResources(this.ActionSetPageSizeUSLetter, "ActionSetPageSizeUSLetter");
       this.ActionSetPageSizeUSLetter.Click += new System.EventHandler(this.ActionSetPageSizeUSLetter_Click);
-      // 
-      // EditThemeVerseNumberColorHover
-      // 
-      this.EditThemeVerseNumberColorHover.BackColor = System.Drawing.Color.RoyalBlue;
-      this.EditThemeVerseNumberColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditThemeVerseNumberColorHover, "EditThemeVerseNumberColorHover");
-      this.EditThemeVerseNumberColorHover.ForeColor = System.Drawing.SystemColors.Control;
-      this.EditThemeVerseNumberColorHover.Name = "EditThemeVerseNumberColorHover";
-      this.EditThemeVerseNumberColorHover.Click += new System.EventHandler(this.EditColor_Click);
-      // 
-      // LabelThemeVerseNumberColorHover
-      // 
-      resources.ApplyResources(this.LabelThemeVerseNumberColorHover, "LabelThemeVerseNumberColorHover");
-      this.LabelThemeVerseNumberColorHover.Name = "LabelThemeVerseNumberColorHover";
-      // 
-      // EditThemeVerseHebrewColorHover
-      // 
-      this.EditThemeVerseHebrewColorHover.BackColor = System.Drawing.Color.DarkRed;
-      this.EditThemeVerseHebrewColorHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditThemeVerseHebrewColorHover, "EditThemeVerseHebrewColorHover");
-      this.EditThemeVerseHebrewColorHover.ForeColor = System.Drawing.SystemColors.Control;
-      this.EditThemeVerseHebrewColorHover.Name = "EditThemeVerseHebrewColorHover";
-      this.EditThemeVerseHebrewColorHover.Click += new System.EventHandler(this.EditColor_Click);
-      // 
-      // LabelThemeVerseHebrewColorHover
-      // 
-      resources.ApplyResources(this.LabelThemeVerseHebrewColorHover, "LabelThemeVerseHebrewColorHover");
-      this.LabelThemeVerseHebrewColorHover.Name = "LabelThemeVerseHebrewColorHover";
-      // 
-      // EditThemeVerseHebrewColor
-      // 
-      this.EditThemeVerseHebrewColor.BackColor = System.Drawing.SystemColors.ControlText;
-      this.EditThemeVerseHebrewColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditThemeVerseHebrewColor, "EditThemeVerseHebrewColor");
-      this.EditThemeVerseHebrewColor.ForeColor = System.Drawing.SystemColors.Control;
-      this.EditThemeVerseHebrewColor.Name = "EditThemeVerseHebrewColor";
-      this.EditThemeVerseHebrewColor.Click += new System.EventHandler(this.EditColor_Click);
-      // 
-      // LabelThemeVerseHebrewColor
-      // 
-      resources.ApplyResources(this.LabelThemeVerseHebrewColor, "LabelThemeVerseHebrewColor");
-      this.LabelThemeVerseHebrewColor.Name = "LabelThemeVerseHebrewColor";
-      // 
-      // EditThemeVerseNumberColor
-      // 
-      this.EditThemeVerseNumberColor.BackColor = System.Drawing.Color.DarkBlue;
-      this.EditThemeVerseNumberColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditThemeVerseNumberColor, "EditThemeVerseNumberColor");
-      this.EditThemeVerseNumberColor.ForeColor = System.Drawing.SystemColors.Control;
-      this.EditThemeVerseNumberColor.Name = "EditThemeVerseNumberColor";
-      this.EditThemeVerseNumberColor.Click += new System.EventHandler(this.EditColor_Click);
-      // 
-      // LabelThemeVerseNumberColor
-      // 
-      resources.ApplyResources(this.LabelThemeVerseNumberColor, "LabelThemeVerseNumberColor");
-      this.LabelThemeVerseNumberColor.Name = "LabelThemeVerseNumberColor";
-      // 
-      // EditThemeTranslationTextColor
-      // 
-      this.EditThemeTranslationTextColor.BackColor = System.Drawing.SystemColors.ControlText;
-      this.EditThemeTranslationTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditThemeTranslationTextColor, "EditThemeTranslationTextColor");
-      this.EditThemeTranslationTextColor.ForeColor = System.Drawing.SystemColors.Control;
-      this.EditThemeTranslationTextColor.Name = "EditThemeTranslationTextColor";
-      this.EditThemeTranslationTextColor.Click += new System.EventHandler(this.EditColor_Click);
-      // 
-      // LabelThemeTranslationTextColor
-      // 
-      resources.ApplyResources(this.LabelThemeTranslationTextColor, "LabelThemeTranslationTextColor");
-      this.LabelThemeTranslationTextColor.Name = "LabelThemeTranslationTextColor";
       // 
       // PreferencesForm
       // 
