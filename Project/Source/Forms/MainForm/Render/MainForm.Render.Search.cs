@@ -62,9 +62,10 @@ partial class MainForm
           Text = reference.ToString(),
           Location = new Point(xpos -= referenceSize, ypos),
           ContextMenuStrip = ContextMenuStripVerse,
-          LinkColor = Settings.ThemeVerseNumberColorHover,
-          ForeColor = Settings.ThemeVerseNumberColor
+          LinkColor = Settings.ThemeVerseNumberColor
         };
+        linklabel.MouseEnter += (sender, e) => ( (LinkLabel)sender ).LinkColor = Settings.ThemeVerseNumberColorHover;
+        linklabel.MouseLeave += (sender, e) => ( (LinkLabel)sender ).LinkColor = Settings.ThemeVerseNumberColor;
         linklabel.LinkClicked += (sender, e) =>
         {
           if ( e.Button == MouseButtons.Left )
@@ -97,7 +98,7 @@ partial class MainForm
             if ( CheckWord(word) )
             {
               label.Tag = new ReferenceItem(reference, word);
-              label.ForeColor = Color.DarkRed;
+              label.ForeColor = Settings.ThemeVerseHebrewColorHover;
               label.MouseEnter += LabelMouseEnter;
               label.MouseLeave += LabelMouseLeave;
               label.MouseClick += LabelMouseClick;

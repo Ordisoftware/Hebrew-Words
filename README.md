@@ -314,6 +314,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
+#### 2022.08.07 - Version 3.7
+
+- Fix theming colors in search view.
+
 #### 2022.08.07 - Version 3.6
 
 - Add menu item in Database to open the database folder.
