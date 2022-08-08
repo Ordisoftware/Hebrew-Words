@@ -145,11 +145,11 @@ The refresh view button of the menu at the top redraws the entire form.
 
 #### Why all verses of a chapter are not rendered?
 
-Due to Windows Forms limitation inherited from 16-bit APIs, some chapters with too many verses cannot be fully rendered.
+Due to Windows Forms limitation, some chapters with too many verses cannot be fully rendered.
 
 In this case, one verse at a time should be used.
 
-These chapters having more than 60 verses are currently not completely displayed:
+List of chapters concerned:
 
 - Bereshit 24 (67)
 - Bamidbar 7 (89)
