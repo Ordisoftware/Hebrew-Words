@@ -149,7 +149,7 @@ Due to Windows Forms limitation inherited from 16-bit APIs, some chapters with t
 
 In this case, one verse at a time should be used.
 
-These chapters having more than 80 verses are currently not completely displayed:
+These chapters having more than 60 verses are currently not completely displayed:
 
 - Bereshit 24 (67)
 - Bamidbar 7 (89)
