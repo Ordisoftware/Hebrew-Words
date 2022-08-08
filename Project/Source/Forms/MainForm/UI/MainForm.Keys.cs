@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -210,7 +210,7 @@ partial class MainForm
           break;
         case Keys.Shift | Keys.Alt | Keys.Down:
           if ( NagigableViews.Contains(Settings.CurrentView) )
-            if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count - 1 )
+            if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count )
             {
               var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
               if ( chapter is not null )
@@ -232,7 +232,7 @@ partial class MainForm
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Chapter.Verses.Count )
             {
-              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count);
               return true;
             }
           break;
@@ -279,7 +279,7 @@ partial class MainForm
               if ( SelectRenderAllVerses.Checked )
                 scroll(PanelViewVerses, PanelViewVerses.DisplayRectangle.Height, false);
               else
-                GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+                GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count);
               return true;
             case ViewMode.VerseFiltered:
               return scroll(PanelViewVerseFiltered, PanelViewVerseFiltered.DisplayRectangle.Height, false);
@@ -287,7 +287,7 @@ partial class MainForm
               return scroll(PanelSearchResults, PanelSearchResults.DisplayRectangle.Height, false);
             case ViewMode.ChapterTranslation:
             case ViewMode.ChapterOriginal:
-              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count - 1);
+              GoToReference(CurrentReference.Book.Number, CurrentReference.Chapter.Number, CurrentReference.Chapter.Verses.Count);
               return true;
           }
           break;
