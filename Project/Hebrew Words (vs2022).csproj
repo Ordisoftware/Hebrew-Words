@@ -421,6 +421,7 @@
     <Compile Include="Source\Forms\Config\StatisticsForm.designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Controls\ControlHelper.cs" />
     <Compile Include="Source\Forms\Controls\VerseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
