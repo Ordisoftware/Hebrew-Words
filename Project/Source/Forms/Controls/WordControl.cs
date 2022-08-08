@@ -84,7 +84,7 @@ public partial class WordControl : UserControl
   private void EditTranslation_Enter(object sender, EventArgs e)
   {
     if ( Globals.IsRendering ) return;
-    Program.ChangeControlColor(EditTranslation, Settings.ThemeCurrentControl);
+    EditTranslation.ChangeControlColor(Settings.ThemeCurrentControl);
     EditTranslation.SelectionStart = 0;
     if ( MainForm.Instance.IsComboBoxChanging ) return;
     if ( Settings.CurrentView == ViewMode.VerseFiltered ) return;
@@ -94,7 +94,7 @@ public partial class WordControl : UserControl
 
   private void EditTranslation_Leave(object sender, EventArgs e)
   {
-    Program.RestoreControlColor(EditTranslation);
+    EditTranslation.RestoreControlColor();
     EditTranslation.Text = EditTranslation.Text.SanitizeAndTrimEmptyLinesAndSpaces();
     // TODO remove here and use that for the cleanup tool
     //if ( Reference.Word.Number == Reference.Verse.Words.Count

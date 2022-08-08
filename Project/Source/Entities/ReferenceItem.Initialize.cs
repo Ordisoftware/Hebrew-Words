@@ -44,10 +44,10 @@ public partial class ReferenceItem
     {
       reference = reference.SanitizeAndTrimEmptyLinesAndSpaces()
                            .Replace("%20", " ")
-                           .Replace(",", ".")
-                           .Replace(":", ".")
-                           .Replace("-", ".")
-                           .Replace("_", ".");
+                           .Replace(',', '.')
+                           .Replace(':', '.')
+                           .Replace('-', '.')
+                           .Replace('_', '.');
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
