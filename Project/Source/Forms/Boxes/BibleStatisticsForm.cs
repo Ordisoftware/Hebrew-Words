@@ -63,6 +63,15 @@ partial class BibleStatisticsForm : Form
       if ( sender is not ToolStripMenuItem menuitem ) return;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, LastLabelClicked.Text);
     });
+    //var query = ApplicationDatabase.Instance
+    //                               .Chapters
+    //                               .Where(c => c.Verses.Count > 50)
+    //                               .Select(c => (c.BookID, c.Number, c.Verses.Count));
+    //var str = from book in ApplicationDatabase.Instance.Books
+    //          join pair in query on book.ID equals pair.BookID
+    //          from id in query
+    //          select book.Transcription + " " + pair.Number + " : " + pair.Count + " verses";
+    //new ShowTextForm("Large chapters", str.Distinct().AsMultiLine()).ShowDialog();
   }
 
   private void BibleStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)

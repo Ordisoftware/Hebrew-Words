@@ -145,9 +145,17 @@ The refresh view button of the menu at the top redraws the entire form.
 
 #### Why all verses of a chapter are not rendered?
 
-Due to Windows Forms limitation inherited from 16-bits APIs, chapters having more than 100 to 150 verses cannot be fully rendered.
+Due to Windows Forms limitation inherited from 16-bit APIs, some chapters with too many verses cannot be fully rendered.
 
 In this case, one verse at a time should be used.
+
+These chapters having more than 80 verses are currently not completely displayed:
+
+- Bereshit 24 (67)
+- Bamidbar 7 (89)
+- Devarim 28 (69)
+- Melakim I 8 (66)
+- Tehilim 118 (176)
 
 #### The software sometimes runs slowly, is this normal?
 
@@ -285,6 +293,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
+- Add pagination for chapters having more than 80 verses and not fully displayed.
+- Add option for pagination trigger like 50 or 60 by default.
 - Add a tray icon.
 - Add search history.
 - Add normalize texts window.
@@ -299,6 +309,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Add menu to open a batch export form to select books or chapters to export.
 - Add filters to show all translated books or chapters, or those are not.
+- Improve displaying all verses with pagination when more than 100.
 - Improve tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
@@ -313,6 +324,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add contextual click on a Hebrew word to use the strong's database instead of web search.
 
 ## Changelog
+
+#### In progress - Version 3.8
+
+- Fix some navigation keys.
 
 #### 2022.08.08 - Version 3.7
 
