@@ -24,7 +24,7 @@ partial class NormalizeTextsForm : Form
 
   private void ActionOpenPreferences_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionPreferences.PerformClick();
+    MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexEditing, null);
   }
 
 }

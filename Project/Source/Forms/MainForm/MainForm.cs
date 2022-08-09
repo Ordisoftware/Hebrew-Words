@@ -242,11 +242,11 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionPreferences_Click(object sender, EventArgs e)
+  internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
     Settings.Store();
-    bool refresh = PreferencesForm.Run();
+    bool refresh = PreferencesForm.Run(sender is int index ? index : -1);
     UpdateBookmarks();
     UpdateHistory();
     InitializeSpecialMenus();
