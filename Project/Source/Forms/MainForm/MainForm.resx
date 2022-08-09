@@ -520,7 +520,7 @@
     <value>TextBoxTranslations</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -577,7 +577,7 @@
     <value>TextBoxTranslations</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -808,7 +808,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -820,7 +820,7 @@
     <value>EditFilterChapter</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -832,7 +832,7 @@
     <value>EditFilterBook</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1352,7 +1352,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1376,7 +1376,7 @@
     <value>EditFilterChapter</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1400,7 +1400,7 @@
     <value>EditFilterBook</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1988,7 +1988,7 @@
     <value>EditSearchPaging</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
@@ -2339,7 +2339,7 @@
     <value>EditSearchPaging</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
@@ -2916,7 +2916,7 @@
     <value>EditSearchWord</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -2964,7 +2964,7 @@
     <value>EditSearchWord</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -3000,7 +3000,7 @@
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -3267,7 +3267,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -3546,7 +3546,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterOriginal</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
     <value>PanelViewOriginalText</value>
@@ -3600,7 +3600,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterOriginal</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
     <value>PanelViewOriginalText</value>
@@ -3651,7 +3651,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterELS50</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -3705,7 +3705,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterELS50</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -3729,7 +3729,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectChapterNavigator</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3741,7 +3741,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectBookNavigator</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3765,7 +3765,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectVerseNavigator</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3825,7 +3825,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3957,7 +3957,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3969,7 +3969,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseConcept</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3981,7 +3981,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseTitle</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3993,7 +3993,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4005,7 +4005,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditELS50Single</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4146,7 +4146,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectChapterNavigator</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4209,7 +4209,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectBookNavigator</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4315,7 +4315,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectVerseNavigator</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4477,7 +4477,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4969,7 +4969,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4996,7 +4996,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseConcept</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5023,7 +5023,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseTitle</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5047,7 +5047,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5080,7 +5080,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditELS50Single</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -6038,7 +6038,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionDatabaseNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionDatabaseNew.Text" xml:space="preserve">
     <value>New database</value>
@@ -6068,7 +6068,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionDatabaseRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionDatabaseRestore.Text" xml:space="preserve">
     <value>Restore database</value>
@@ -6097,13 +6097,48 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionDatabaseBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionDatabaseBackup.Text" xml:space="preserve">
     <value>Backup database</value>
   </data>
+  <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 6</value>
+  </data>
+  <data name="ActionNormalizeTexts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPdZPJT5NRFMXfXhNBKSx0ZWJcG+M/wNr/gBCr
+        SzZqQnQnpSbaMEtJQwhQQEtKsdqCdoiYtKWU0Q6m7dfRToyBJiw0DkCO9359RiHxJTe5Off88t477/vE
+        n3Xl2YdbGr3ber7T862+w426DtepYo1n7GGvxGrrst778HrPR7S7EjB/KiNQPIC/sH+qWOMZe9jLjMSF
+        aOj0wBYrU5VgiRTxMlzA1JlijWfsYS8zEheino6Y+QksbH7FrLIHc7QMc+RMkcYz9rCXGYkLcVHnRn9A
+        gT2zj9DBERK/gDiZ4j9kUc/aUvUIr9P76PUnwYzEa1fo8ys0UGAMZjC6moMlXMRceheOxJbas2ZcTKPb
+        p6DHlzx9BY3eixfBFAaXMhheyWNio4CZWAVzyjbmU7tqz9rwcg4DtEH/ooJGYiROV2h/9a7Z4IR2wg+d
+        O4axtS+wx7fgyuzCnd1T+7G1HJ64orhj9qP5uRPMSJxCfDxjT9Jdjcsl3LdH0TK+hNbJZWgtq7hnWVf7
+        lvEgHtBsMFQCe5mRuBCXdB71Cs58FeuHx8ieAOljIHVUK+5ZWzs8gSNbVQNnRuK1EDlANUTKYXQ1j+lw
+        CfN0BSeFOB0pqZoxWAux+2yIDXoPBgIpDCymYKKgzBSYNVqBI7lNQe7ASiGyZgpl0Uc+3khDjMSFaHrq
+        Vd/WFMpghHaaomeb/bxJL7CD9+k92KhnbWQlhyE6YZcvAWYkTs/YNtR7rWsBd23rMPhSeBOvwE3fgI//
+        A/oHXOkdVTPQ8bW2DbCXGYmrq6nudltr4yOr94Lu7Xf+yv79I7lnjWfsYS8zNfTvOkd1leoG1c3/FM/Y
+        w15aQvwGVuNspzWd1osAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionNormalizeTexts.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionNormalizeTexts.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionNormalizeTexts.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Maj+T</value>
+  </data>
+  <data name="ActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 22</value>
+  </data>
+  <data name="ActionNormalizeTexts.Text" xml:space="preserve">
+    <value>Normalize texts</value>
+  </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
+    <value>221, 6</value>
   </data>
   <data name="ActionVacuum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6129,45 +6164,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionVacuum.Text" xml:space="preserve">
     <value>Optimize database</value>
   </data>
-  <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
-  </data>
-  <data name="ActionNormalizeTexts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVDhPdZPJT5NRFMXfXhNBKSx0ZWJcG+M/wNr/gBCr
-        SzZqQnQnpSbaMEtJQwhQQEtKsdqCdoiYtKWU0Q6m7dfRToyBJiw0DkCO9359RiHxJTe5Off88t477/vE
-        n3Xl2YdbGr3ber7T862+w426DtepYo1n7GGvxGrrst778HrPR7S7EjB/KiNQPIC/sH+qWOMZe9jLjMSF
-        aOj0wBYrU5VgiRTxMlzA1JlijWfsYS8zEheino6Y+QksbH7FrLIHc7QMc+RMkcYz9rCXGYkLcVHnRn9A
-        gT2zj9DBERK/gDiZ4j9kUc/aUvUIr9P76PUnwYzEa1fo8ys0UGAMZjC6moMlXMRceheOxJbas2ZcTKPb
-        p6DHlzx9BY3eixfBFAaXMhheyWNio4CZWAVzyjbmU7tqz9rwcg4DtEH/ooJGYiROV2h/9a7Z4IR2wg+d
-        O4axtS+wx7fgyuzCnd1T+7G1HJ64orhj9qP5uRPMSJxCfDxjT9Jdjcsl3LdH0TK+hNbJZWgtq7hnWVf7
-        lvEgHtBsMFQCe5mRuBCXdB71Cs58FeuHx8ieAOljIHVUK+5ZWzs8gSNbVQNnRuK1EDlANUTKYXQ1j+lw
-        CfN0BSeFOB0pqZoxWAux+2yIDXoPBgIpDCymYKKgzBSYNVqBI7lNQe7ASiGyZgpl0Uc+3khDjMSFaHrq
-        Vd/WFMpghHaaomeb/bxJL7CD9+k92KhnbWQlhyE6YZcvAWYkTs/YNtR7rWsBd23rMPhSeBOvwE3fgI//
-        A/oHXOkdVTPQ8bW2DbCXGYmrq6nudltr4yOr94Lu7Xf+yv79I7lnjWfsYS8zNfTvOkd1leoG1c3/FM/Y
-        w15aQvwGVuNspzWd1osAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionNormalizeTexts.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionNormalizeTexts.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
-  </data>
-  <data name="ActionNormalizeTexts.Text" xml:space="preserve">
-    <value>Normalize texts</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
+    <value>221, 6</value>
   </data>
   <data name="ActionOpenFolderExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6196,7 +6199,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Alt+E</value>
   </data>
   <data name="ActionOpenFolderExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionOpenFolderExport.Text" xml:space="preserve">
     <value>Open export folder</value>
@@ -6226,7 +6229,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionOpenFolderBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionOpenFolderBackup.Text" xml:space="preserve">
     <value>Open archive folder</value>
@@ -6256,7 +6259,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionOpenFolderDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 22</value>
+    <value>224, 22</value>
   </data>
   <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
     <value>Open database folder</value>
@@ -8500,12 +8503,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenFolderDatabase.Name" xml:space="preserve">
-    <value>ActionOpenFolderDatabase</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenFolderDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionOpenFolderExport.Name" xml:space="preserve">
     <value>ActionOpenFolderExport</value>
   </data>
@@ -8516,6 +8513,12 @@ A verse is founded if the translation of one of its words contains an expression
     <value>ActionOpenFolderBackup</value>
   </data>
   <data name="&gt;&gt;ActionOpenFolderBackup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDatabase.Name" xml:space="preserve">
+    <value>ActionOpenFolderDatabase</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDatabase.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">

@@ -785,8 +785,8 @@ partial class MainForm : Form
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
         ActionDatabaseBackup.PerformClick();
     using var form = new NormalizeTextsForm();
-    if ( form.ShowDialog() != DialogResult.OK ) return;
-    // TODO normalize texts
+    if ( form.ShowDialog() == DialogResult.OK )
+      ApplicationDatabase.Instance.DoNormalizeTexts();
   }
 
   #endregion

@@ -194,9 +194,9 @@
       this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenFolderDatabase = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenFolderExport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenFolderBackup = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenFolderDatabase = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionBooksBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -1660,10 +1660,10 @@
             this.ActionDatabaseNew,
             this.ActionDatabaseRestore,
             this.ActionDatabaseBackup,
-            this.toolStripSeparator22,
-            this.ActionVacuum,
             this.SeparatorActionNormalizeTexts,
             this.ActionNormalizeTexts,
+            this.toolStripSeparator22,
+            this.ActionVacuum,
             this.toolStripSeparator2,
             this.ActionOpenFolderExport,
             this.ActionOpenFolderBackup,
@@ -1717,12 +1717,6 @@
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
-      // ActionOpenFolderDatabase
-      // 
-      resources.ApplyResources(this.ActionOpenFolderDatabase, "ActionOpenFolderDatabase");
-      this.ActionOpenFolderDatabase.Name = "ActionOpenFolderDatabase";
-      this.ActionOpenFolderDatabase.Click += new System.EventHandler(this.ActionOpenFolderDatabase_Click);
-      // 
       // ActionOpenFolderExport
       // 
       resources.ApplyResources(this.ActionOpenFolderExport, "ActionOpenFolderExport");
@@ -1734,6 +1728,12 @@
       resources.ApplyResources(this.ActionOpenFolderBackup, "ActionOpenFolderBackup");
       this.ActionOpenFolderBackup.Name = "ActionOpenFolderBackup";
       this.ActionOpenFolderBackup.Click += new System.EventHandler(this.ActionOpenBackupPath_Click);
+      // 
+      // ActionOpenFolderDatabase
+      // 
+      resources.ApplyResources(this.ActionOpenFolderDatabase, "ActionOpenFolderDatabase");
+      this.ActionOpenFolderDatabase.Name = "ActionOpenFolderDatabase";
+      this.ActionOpenFolderDatabase.Click += new System.EventHandler(this.ActionOpenFolderDatabase_Click);
       // 
       // toolStripSeparator20
       // 

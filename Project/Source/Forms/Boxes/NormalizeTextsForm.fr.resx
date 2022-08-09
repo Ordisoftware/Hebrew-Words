@@ -121,21 +121,6 @@
     <value>Annuler</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionOpenPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAhtJREFUOE+1kk1PE1EYhbvoFk1Ql/0FGk1cETf+Av+CSWOiRSsWa41CC7aFKW2n
-        tGLcFWNCBAkbbcciEoNo1ai11I8WrYYVFoFKYnD/cp87I9GFS9/kJG/Oec6d2+m4/te4zWyukMmOCWLH
-        s6N/jztpZq1UJrep9s5E0pTt7V9a7HhkMLAU/hx33EiW7hctmX+8ILEhQyYmpuRj45MWOx4ZTNxIlOjY
-        VXs6hozUVunhI2m11mR19Zu021syOzevxY5HBgNLx67as0fpaGQwJlZpTl5XqnJnclqS6YyYo9f1jkcG
-        A+t09Lj7I9FieCAq+fHbslR7L5N3ZxQYlwuBi1rseGQwsOHB2O676AgPXJNNdc3W2nd58rQs6UxOeoMh
-        8Xg8PsRujKRl8VlZMeuapUOXAw5c7Y9Ivb4sbypv5fmLV5IyR6VPeSrbh9jxyGBg6dDVB/h7ehcvXe7T
-        v7dSrcm9giXB0BUZTiS12PHIYGDp/D6Aaxzq6jp2vicQVE+oSu3dBylYJRlJmRKNDUvxwaz2yGBg6Thd
-        /SL2B4KhH1PTM9JsrsiSghvLTak3Pmux45HBwNJxunr2+rr9C/n8LQ2c6T4nYzduypevK1op9XfikcHA
-        0rGr9nCVw95Tp1/6zvp/qv0EhfWNthY7HhkMrNPZHa7CCyHgIzly0ustU0TseE4GA/vXp8xgcCpfWKfS
-        QaXjjtjxyGCcssu1A7b9phhCu4x5AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="EditApplyToComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
   </data>
@@ -198,5 +183,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Normaliser les textes</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sauf mention contraire, appliquer à :</value>
   </data>
 </root>

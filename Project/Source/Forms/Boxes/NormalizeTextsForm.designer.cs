@@ -74,17 +74,17 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionOpenPreferences);
       this.panel1.Controls.Add(this.ActionCancel);
       this.panel1.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // ActionOpenPreferences
       // 
-      resources.ApplyResources(this.ActionOpenPreferences, "ActionOpenPreferences");
       this.ActionOpenPreferences.AllowDrop = true;
       this.ActionOpenPreferences.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenPreferences, "ActionOpenPreferences");
       this.ActionOpenPreferences.Name = "ActionOpenPreferences";
       this.ActionOpenPreferences.UseVisualStyleBackColor = true;
       this.ActionOpenPreferences.Click += new System.EventHandler(this.ActionOpenPreferences_Click);

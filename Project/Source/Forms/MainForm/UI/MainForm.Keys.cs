@@ -193,7 +193,14 @@ partial class MainForm
             ActionImportConsole.PerformClick();
             return true;
           }
-          return true;
+          break;
+        case Keys.Control | Keys.Alt | Keys.Shift | Keys.I:
+          if ( ActiveControl is VerseControl )
+          {
+            ActionImportConsoleAuto.PerformClick();
+            return true;
+          }
+          break;
         // Verse navigation
         case Keys.Shift | Keys.Alt | Keys.Up:
           if ( NagigableViews.Contains(Settings.CurrentView) )
