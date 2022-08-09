@@ -2050,5 +2050,125 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["ThemeTranslationTextColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeTrimSpacesAndEmptyLines {
+            get {
+                return ((bool)(this["NormalizeTrimSpacesAndEmptyLines"]));
+            }
+            set {
+                this["NormalizeTrimSpacesAndEmptyLines"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeRemoveEmptyLines {
+            get {
+                return ((bool)(this["NormalizeRemoveEmptyLines"]));
+            }
+            set {
+                this["NormalizeRemoveEmptyLines"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeRemoveMultipleEmptyLines {
+            get {
+                return ((bool)(this["NormalizeRemoveMultipleEmptyLines"]));
+            }
+            set {
+                this["NormalizeRemoveMultipleEmptyLines"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeRemoveMultipleSpaces {
+            get {
+                return ((bool)(this["NormalizeRemoveMultipleSpaces"]));
+            }
+            set {
+                this["NormalizeRemoveMultipleSpaces"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NormalizeReplaceNewlinesBySpaceInTranslation {
+            get {
+                return ((bool)(this["NormalizeReplaceNewlinesBySpaceInTranslation"]));
+            }
+            set {
+                this["NormalizeReplaceNewlinesBySpaceInTranslation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeTitleizeSentences {
+            get {
+                return ((bool)(this["NormalizeTitleizeSentences"]));
+            }
+            set {
+                this["NormalizeTitleizeSentences"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeAddPeriodAtTheEnd {
+            get {
+                return ((bool)(this["NormalizeAddPeriodAtTheEnd"]));
+            }
+            set {
+                this["NormalizeAddPeriodAtTheEnd"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizePrefix {
+            get {
+                return ((bool)(this["NormalizePrefix"]));
+            }
+            set {
+                this["NormalizePrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeApplyToTranslations {
+            get {
+                return ((bool)(this["NormalizeApplyToTranslations"]));
+            }
+            set {
+                this["NormalizeApplyToTranslations"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NormalizeApplyToComments {
+            get {
+                return ((bool)(this["NormalizeApplyToComments"]));
+            }
+            set {
+                this["NormalizeApplyToComments"] = value;
+            }
+        }
     }
 }

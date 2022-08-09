@@ -780,8 +780,12 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    //using var form = new NormalizeTextsForm();
-    //if ( form.ShowDialog() != DialogResult.OK ) return;
+    ActionSave.PerformClick();
+    if ( Settings.DatabaseRestoreAskToBackup )
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+        ActionDatabaseBackup.PerformClick();
+    using var form = new NormalizeTextsForm();
+    if ( form.ShowDialog() != DialogResult.OK ) return;
     // TODO normalize texts
   }
 
