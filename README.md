@@ -249,6 +249,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Ctrl + B | Books board |
 | Ctrl + P | Parashot board |
 | Alt + P | Go to parashah |
+| Ctrl + Shift + T | Normalize texts |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
@@ -297,7 +298,6 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add option for pagination trigger like 50 or 60 by default.
 - Add a tray icon.
 - Add search history.
-- Add normalize texts window.
 - Add bookmarks and history auto-backup like the database.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add merge database to import translated verses from another database only for untranslated verses.
@@ -327,6 +327,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### In progress - Version 3.8
 
+- Add normalize texts window.
 - Fix some navigation keys.
 
 #### 2022.08.08 - Version 3.7
