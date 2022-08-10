@@ -40,6 +40,7 @@ static partial class AppTranslations
                     "F9 or Ctrl + R : Refresh" + Globals.NL +
                     "Ctrl + B : Books board" + Globals.NL +
                     "Ctrl + P : Parashot board" + Globals.NL +
+                    "Ctrl + Shift + T : Normalize texts" + Globals.NL +
                     "Ctrl + Alt + I : Import console" + Globals.NL +
                     "Ctrl + Alt + S : Tanak's statistics" + Globals.NL +
                     "Alt + C : Calculator" + Globals.NL +
@@ -91,6 +92,7 @@ static partial class AppTranslations
                     "F9 ou Ctrl + R : Rafraîchir" + Globals.NL +
                     "Ctrl + B : Tableau des livres" + Globals.NL +
                     "Ctrl + P : tableau des parashot" + Globals.NL +
+                    "Ctrl + Maj + T : Normalize texts" + Globals.NL +
                     "Ctrl + Alt + I : Console d'importation" + Globals.NL +
                     "Ctrl + Alt + S : Statistiques de Tanak" + Globals.NL +
                     "Alt + C : Calculatrice" + Globals.NL +

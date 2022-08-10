@@ -242,11 +242,11 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionPreferences_Click(object sender, EventArgs e)
+  internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
     Settings.Store();
-    bool refresh = PreferencesForm.Run();
+    bool refresh = PreferencesForm.Run(sender is int index ? index : -1);
     UpdateBookmarks();
     UpdateHistory();
     InitializeSpecialMenus();
@@ -780,9 +780,13 @@ partial class MainForm : Form
 
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
-    //using var form = new NormalizeTextsForm();
-    //if ( form.ShowDialog() != DialogResult.OK ) return;
-    // TODO normalize texts
+    ActionSave.PerformClick();
+    if ( Settings.DatabaseRestoreAskToBackup )
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToBackupDatabaseBeforeReplace.GetLang()) )
+        ActionDatabaseBackup.PerformClick();
+    using var form = new NormalizeTextsForm();
+    if ( form.ShowDialog() == DialogResult.OK )
+      ApplicationDatabase.Instance.DoNormalizeTexts();
   }
 
   #endregion

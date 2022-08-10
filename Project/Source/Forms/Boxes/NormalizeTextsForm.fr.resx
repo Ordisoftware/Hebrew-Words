@@ -117,42 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SelectVerseTakeFirstElseLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 17</value>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EditApplyToComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="EditApplyToComments.Text" xml:space="preserve">
+    <value>Commentaires</value>
+  </data>
+  <data name="EditApplyToTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="EditApplyToTranslations.Text" xml:space="preserve">
+    <value>Traductions</value>
+  </data>
+  <data name="EditAddPeriodAtTheEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 17</value>
+  </data>
+  <data name="EditAddPeriodAtTheEnd.Text" xml:space="preserve">
+    <value>Ajouter un point à la fin des phrases si non présent</value>
+  </data>
+  <data name="EditTitleizeSentences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="EditTitleizeSentences.Text" xml:space="preserve">
+    <value>Titrer les phrases</value>
+  </data>
+  <data name="EditNormalizePrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 17</value>
+  </data>
+  <data name="EditNormalizePrefix.Text" xml:space="preserve">
+    <value>Normaliser le préfixe des commentaires selon les préférences</value>
+  </data>
+  <data name="EditRemoveMultipleEmptyLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 17</value>
+  </data>
+  <data name="EditRemoveMultipleEmptyLines.Text" xml:space="preserve">
+    <value>Remplacer plusieurs lignes vides par une seule</value>
+  </data>
+  <data name="EditRemoveMultipleSpaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 17</value>
+  </data>
+  <data name="EditRemoveMultipleSpaces.Text" xml:space="preserve">
+    <value>Remplacer plusieurs espaces par un seul</value>
+  </data>
+  <data name="EditReplaceNewlinesBySpaceInTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 17</value>
+  </data>
+  <data name="EditReplaceNewlinesBySpaceInTranslation.Text" xml:space="preserve">
+    <value>Remplacer les nouvelles lignes dans les traductions par un espace</value>
+  </data>
+  <data name="EditRemoveEmptyLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="EditRemoveEmptyLines.Text" xml:space="preserve">
+    <value>Supprimer toutes les lignes vides</value>
+  </data>
+  <data name="EditTrimSpacesAndEmptyLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 17</value>
+  </data>
+  <data name="EditTrimSpacesAndEmptyLines.Text" xml:space="preserve">
+    <value>Supprimer les espaces et les lignes vides au début et à la fin</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Normaliser les textes</value>
   </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Supprimer les espaces et les lignes vides au début et à la fin des traductions et des commentaires</value>
-  </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Supprimer toutes les lignes vides</value>
-  </data>
-  <data name="checkBox3.Text" xml:space="preserve">
-    <value>Remplacer les nouvelles lignes dans les traductions de mots par un espace</value>
-  </data>
-  <data name="checkBox4.Text" xml:space="preserve">
-    <value>Remplacer plusieurs espaces en un seul</value>
-  </data>
-  <data name="checkBox5.Text" xml:space="preserve">
-    <value>Ajouter un point à la fin de la traduction du dernier mot s'il n'est pas vide</value>
-  </data>
-  <data name="checkBox7.Text" xml:space="preserve">
-    <value>Normaliser le préfixe des commentaires selon les préférences</value>
-  </data>
-  <data name="checkBox8.Text" xml:space="preserve">
-    <value>Remplacer plusieurs lignes vides en une seule</value>
-  </data>
-  <data name="checkBox6.Text" xml:space="preserve">
-    <value>Titrer la traduction du premier mot des versets s'il n'est pas vide</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sauf mention contraire, appliquer à :</value>
   </data>
 </root>

@@ -8,7 +8,7 @@
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
-[![Lang: C#](https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
+[![Lang: C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
 [![DB: SQLite](https://img.shields.io/badge/SQLite%203.38-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
@@ -249,6 +249,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Ctrl + B | Books board |
 | Ctrl + P | Parashot board |
 | Alt + P | Go to parashah |
+| Ctrl + Shift + T | Normalize texts |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
@@ -297,7 +298,6 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add option for pagination trigger like 50 or 60 by default.
 - Add a tray icon.
 - Add search history.
-- Add normalize texts window.
 - Add bookmarks and history auto-backup like the database.
 - Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
 - Add merge database to import translated verses from another database only for untranslated verses.
@@ -325,7 +325,11 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
-#### In progress - Version 3.8
+#### In progress - Version 3.x
+
+- Add normalize texts window.
+
+#### 2022.08.10 - Version 3.8
 
 - Fix some navigation keys.
 

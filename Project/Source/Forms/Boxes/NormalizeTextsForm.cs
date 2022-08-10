@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2022-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class NormalizeTextsForm : Form
@@ -24,7 +24,7 @@ partial class NormalizeTextsForm : Form
 
   private void ActionOpenPreferences_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionPreferences.PerformClick();
+    MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexEditing, null);
   }
 
 }
