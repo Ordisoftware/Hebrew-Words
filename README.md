@@ -332,6 +332,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### 2022.08.10 - Version 3.8
 
 - Fix some navigation keys.
+- Update web links with Elamite language.
 
 #### 2022.08.08 - Version 3.7
 
