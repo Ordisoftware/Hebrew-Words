@@ -150,10 +150,8 @@ partial class MainForm : Form
 
   public int CommonCount<T>(IEnumerable<T> source, IEnumerable<T> sequence, IEqualityComparer<T> comparer = null)
   {
-    if ( sequence is null )
-      return 0;
-    if ( comparer is null )
-      comparer = EqualityComparer<T>.Default;
+    if ( sequence is null ) return 0;
+    comparer ??= EqualityComparer<T>.Default;
     return source.GroupBy(t => t, comparer)
                  .Join(sequence.GroupBy(t => t, comparer),
                                         g => g.Key,
