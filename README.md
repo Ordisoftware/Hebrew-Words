@@ -329,6 +329,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
+#### In progress - Version 3.9
+
+- Add view verses by date of modification.
+
 #### 2022.08.10 - Version 3.8
 
 - Fix some navigation keys.
