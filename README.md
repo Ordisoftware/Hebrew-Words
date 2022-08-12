@@ -249,6 +249,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Ctrl + B | Books board |
 | Ctrl + P | Parashot board |
 | Alt + P | Go to parashah |
+| Ctrl + Alt + F | Display verses by updated date |
 | Ctrl + Shift + T | Normalize texts |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
