@@ -891,4 +891,7 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
     <value>Ouvrir le dossier de la base de données</value>
   </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Afficher les versets par date de mise à jour</value>
+  </data>
 </root>

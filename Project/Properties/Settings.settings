@@ -539,5 +539,8 @@
     <Setting Name="NormalizeApplyToComments" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormDisplayCount" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

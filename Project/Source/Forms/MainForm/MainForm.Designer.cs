@@ -189,10 +189,10 @@
       this.ActionDatabaseNew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDatabaseRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDatabaseBackup = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenFolderExport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenFolderBackup = new System.Windows.Forms.ToolStripMenuItem();
@@ -304,6 +304,7 @@
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+      this.ActionViewVersesByDateUpdated = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1661,6 +1662,7 @@
             this.ActionDatabaseRestore,
             this.ActionDatabaseBackup,
             this.SeparatorActionNormalizeTexts,
+            this.ActionViewVersesByDateUpdated,
             this.ActionNormalizeTexts,
             this.toolStripSeparator22,
             this.ActionVacuum,
@@ -1690,17 +1692,6 @@
       this.ActionDatabaseBackup.Name = "ActionDatabaseBackup";
       this.ActionDatabaseBackup.Click += new System.EventHandler(this.ActionBackup_Click);
       // 
-      // toolStripSeparator22
-      // 
-      this.toolStripSeparator22.Name = "toolStripSeparator22";
-      resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
-      // 
-      // ActionVacuum
-      // 
-      resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
-      this.ActionVacuum.Name = "ActionVacuum";
-      this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
-      // 
       // SeparatorActionNormalizeTexts
       // 
       this.SeparatorActionNormalizeTexts.Name = "SeparatorActionNormalizeTexts";
@@ -1711,6 +1702,17 @@
       resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
       this.ActionNormalizeTexts.Name = "ActionNormalizeTexts";
       this.ActionNormalizeTexts.Click += new System.EventHandler(this.ActionNormalizeTexts_Click);
+      // 
+      // toolStripSeparator22
+      // 
+      this.toolStripSeparator22.Name = "toolStripSeparator22";
+      resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+      // 
+      // ActionVacuum
+      // 
+      resources.ApplyResources(this.ActionVacuum, "ActionVacuum");
+      this.ActionVacuum.Name = "ActionVacuum";
+      this.ActionVacuum.Click += new System.EventHandler(this.ActionVacuum_Click);
       // 
       // toolStripSeparator2
       // 
@@ -2437,6 +2439,12 @@
       this.TrayIcon.ContextMenuStrip = this.MenuTray;
       resources.ApplyResources(this.TrayIcon, "TrayIcon");
       // 
+      // ActionViewVersesByDateUpdated
+      // 
+      resources.ApplyResources(this.ActionViewVersesByDateUpdated, "ActionViewVersesByDateUpdated");
+      this.ActionViewVersesByDateUpdated.Name = "ActionViewVersesByDateUpdated";
+      this.ActionViewVersesByDateUpdated.Click += new System.EventHandler(this.ActionViewVersesByDateUpdated_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2780,5 +2788,6 @@
     private ToolStripMenuItem ActionTakeScreenshotWindow;
     private ToolStripMenuItem ActionTakeScreenshotView;
     private ToolStripMenuItem ActionOpenFolderDatabase;
-  }
+        private ToolStripMenuItem ActionViewVersesByDateUpdated;
+    }
 }

@@ -389,6 +389,12 @@
     <Compile Include="Source\Forms\Boxes\NormalizeTextsForm.designer.cs">
       <DependentUpon>NormalizeTextsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.designer.cs">
+      <DependentUpon>SelectVersesByDateUpdatedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -708,6 +714,12 @@
     <EmbeddedResource Include="Source\Forms\Boxes\NormalizeTextsForm.resx">
       <DependentUpon>NormalizeTextsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.fr.resx">
+      <DependentUpon>SelectVersesByDateUpdatedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.resx">
+      <DependentUpon>SelectVersesByDateUpdatedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectVerseForm.fr.resx">
       <DependentUpon>SelectVerseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -889,7 +901,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>1.0.708</Version>
+      <Version>1.0.711</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -899,7 +911,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers">
-      <Version>17.2.32</Version>
+      <Version>17.3.44</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

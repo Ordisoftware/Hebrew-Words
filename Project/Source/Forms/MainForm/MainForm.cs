@@ -778,6 +778,22 @@ partial class MainForm : Form
     ActionSave.PerformClick();
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionViewVersesByDateUpdated for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewVersesByDateUpdated_Click(object sender, EventArgs e)
+  {
+    var reference = SelectVersesByDateUpdatedForm.Run();
+    if ( reference is not null ) GoToReference(reference);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionNormalizeTexts for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
