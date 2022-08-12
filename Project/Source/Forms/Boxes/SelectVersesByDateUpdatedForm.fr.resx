@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Fermerr</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
@@ -139,16 +139,22 @@
   <data name="ColumnBook.HeaderText" xml:space="preserve">
     <value>Livre</value>
   </data>
-  <data name="ColumnChapter.HeaderText" xml:space="preserve">
+  <data name="ColumnChapterNumber.HeaderText" xml:space="preserve">
     <value>Chapitre</value>
   </data>
-  <data name="ColumnNumber.HeaderText" xml:space="preserve">
+  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
     <value>Verset</value>
   </data>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
     <value>Traduction</value>
   </data>
   <data name="LabelDisplayCount.Text" xml:space="preserve">
     <value>Afficher</value>
+  </data>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>Atteindre</value>
+  </data>
+  <data name="ColumnDateModified.HeaderText" xml:space="preserve">
+    <value>Modifié</value>
   </data>
 </root>

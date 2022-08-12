@@ -190,6 +190,7 @@
       this.ActionDatabaseRestore = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDatabaseBackup = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorActionNormalizeTexts = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewVersesByDateUpdated = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionNormalizeTexts = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionVacuum = new System.Windows.Forms.ToolStripMenuItem();
@@ -304,7 +305,6 @@
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
-      this.ActionViewVersesByDateUpdated = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelMainOuter.SuspendLayout();
       this.PanelMainInner.SuspendLayout();
@@ -1697,6 +1697,12 @@
       this.SeparatorActionNormalizeTexts.Name = "SeparatorActionNormalizeTexts";
       resources.ApplyResources(this.SeparatorActionNormalizeTexts, "SeparatorActionNormalizeTexts");
       // 
+      // ActionViewVersesByDateUpdated
+      // 
+      resources.ApplyResources(this.ActionViewVersesByDateUpdated, "ActionViewVersesByDateUpdated");
+      this.ActionViewVersesByDateUpdated.Name = "ActionViewVersesByDateUpdated";
+      this.ActionViewVersesByDateUpdated.Click += new System.EventHandler(this.ActionViewVersesByDateUpdated_Click);
+      // 
       // ActionNormalizeTexts
       // 
       resources.ApplyResources(this.ActionNormalizeTexts, "ActionNormalizeTexts");
@@ -2438,12 +2444,6 @@
       // 
       this.TrayIcon.ContextMenuStrip = this.MenuTray;
       resources.ApplyResources(this.TrayIcon, "TrayIcon");
-      // 
-      // ActionViewVersesByDateUpdated
-      // 
-      resources.ApplyResources(this.ActionViewVersesByDateUpdated, "ActionViewVersesByDateUpdated");
-      this.ActionViewVersesByDateUpdated.Name = "ActionViewVersesByDateUpdated";
-      this.ActionViewVersesByDateUpdated.Click += new System.EventHandler(this.ActionViewVersesByDateUpdated_Click);
       // 
       // MainForm
       // 

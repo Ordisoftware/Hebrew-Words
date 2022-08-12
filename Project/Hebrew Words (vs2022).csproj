@@ -716,6 +716,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.fr.resx">
       <DependentUpon>SelectVersesByDateUpdatedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectVersesByDateUpdatedForm.resx">
       <DependentUpon>SelectVersesByDateUpdatedForm.cs</DependentUpon>

@@ -136,7 +136,7 @@
     <value>0</value>
   </data>
   <data name="ActionOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Reach</value>
   </data>
   <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
     <value>ActionOK</value>
@@ -166,7 +166,7 @@
     <value>1</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
     <value>ActionCancel</value>
@@ -286,40 +286,52 @@
     <value />
   </data>
   <data name="ColumnId.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>21</value>
   </data>
-  <metadata name="ColumnBook.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ColumnBookTranscription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColumnBook.HeaderText" xml:space="preserve">
+  <data name="ColumnBookTranscription.HeaderText" xml:space="preserve">
     <value>Book</value>
   </data>
-  <data name="ColumnBook.Width" type="System.Int32, mscorlib">
-    <value>130</value>
+  <data name="ColumnBookTranscription.Width" type="System.Int32, mscorlib">
+    <value>57</value>
   </data>
-  <metadata name="ColumnChapter.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ColumnBookNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ColumnChapter.HeaderText" xml:space="preserve">
+  <data name="ColumnBookNumber.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColumnBookNumber.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="ColumnChapterNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnChapterNumber.HeaderText" xml:space="preserve">
     <value>Chapter</value>
   </data>
-  <data name="ColumnChapter.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+  <data name="ColumnChapterNumber.Width" type="System.Int32, mscorlib">
+    <value>69</value>
   </data>
-  <data name="ColumnNumber.HeaderText" xml:space="preserve">
+  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
     <value>Verse</value>
   </data>
-  <data name="ColumnNumber.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+  <data name="ColumnVerseNumber.Width" type="System.Int32, mscorlib">
+    <value>59</value>
   </data>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
     <value>Translation</value>
   </data>
   <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ColumnDateModified.HeaderText" xml:space="preserve">
-    <value>Date</value>
+    <value>Updated</value>
+  </data>
+  <data name="ColumnDateModified.Width" type="System.Int32, mscorlib">
+    <value>73</value>
   </data>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -375,28 +387,34 @@
   <data name="&gt;&gt;ColumnId.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
-    <value>ColumnBook</value>
+  <data name="&gt;&gt;ColumnBookTranscription.Name" xml:space="preserve">
+    <value>ColumnBookTranscription</value>
   </data>
-  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
+  <data name="&gt;&gt;ColumnBookTranscription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnChapter.Name" xml:space="preserve">
-    <value>ColumnChapter</value>
+  <data name="&gt;&gt;ColumnBookNumber.Name" xml:space="preserve">
+    <value>ColumnBookNumber</value>
   </data>
-  <data name="&gt;&gt;ColumnChapter.Type" xml:space="preserve">
+  <data name="&gt;&gt;ColumnBookNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
-    <value>ColumnNumber</value>
+  <data name="&gt;&gt;ColumnChapterNumber.Name" xml:space="preserve">
+    <value>ColumnChapterNumber</value>
   </data>
-  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
+  <data name="&gt;&gt;ColumnChapterNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
+  <data name="&gt;&gt;ColumnVerseNumber.Name" xml:space="preserve">
+    <value>ColumnVerseNumber</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+  <data name="&gt;&gt;ColumnVerseNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Name" xml:space="preserve">
+    <value>ColumnVerseTranslation</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnDateModified.Name" xml:space="preserve">

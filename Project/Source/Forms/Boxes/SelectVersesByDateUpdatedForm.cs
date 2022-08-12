@@ -40,6 +40,7 @@ partial class SelectVersesByDateUpdatedForm : Form
                 {
                   ID = ++count,
                   BookTranscription = book.Transcription,
+                  BookNumber = book.Number,
                   ChapterNumber = chapter.Number,
                   verse.Number,
                   verse.Translation,
@@ -47,6 +48,23 @@ partial class SelectVersesByDateUpdatedForm : Form
                 };
     BindingSource.DataSource = query.Take((int)EditDisplayCount.Value);
     ActiveControl = DataGridView;
+  }
+
+  private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+  {
+    ActionOK.PerformClick();
+  }
+
+  private void ActionOK_Click(object sender, EventArgs e)
+  {
+    if ( DataGridView.SelectedRows.Count > 0 )
+    {
+      var row = DataGridView.SelectedRows[0];
+      int book = (int)row.Cells[ColumnBookNumber.Index].Value;
+      int chapter = (int)row.Cells[ColumnChapterNumber.Index].Value;
+      int verse = (int)row.Cells[ColumnVerseNumber.Index].Value;
+      Reference = new ReferenceItem(book, chapter, verse);
+    }
   }
 
 }

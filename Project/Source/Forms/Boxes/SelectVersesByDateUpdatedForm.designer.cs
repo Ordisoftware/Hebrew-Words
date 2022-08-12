@@ -44,21 +44,22 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditDisplayCount = new System.Windows.Forms.NumericUpDown();
+      this.LabelDisplayCount = new System.Windows.Forms.Label();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnChapter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnBookTranscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnBookNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnChapterNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnVerseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnVerseTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.LabelDisplayCount = new System.Windows.Forms.Label();
-      this.EditDisplayCount = new System.Windows.Forms.NumericUpDown();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -67,6 +68,7 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // ActionCancel
       // 
@@ -83,80 +85,6 @@ namespace Ordisoftware.Hebrew.Words
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // PanelSeparator
-      // 
-      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
-      this.PanelSeparator.Name = "PanelSeparator";
-      // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
-      // 
-      // DataGridView
-      // 
-      this.DataGridView.AutoGenerateColumns = false;
-      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId,
-            this.ColumnBook,
-            this.ColumnChapter,
-            this.ColumnNumber,
-            this.dataGridViewTextBoxColumn2,
-            this.ColumnDateModified});
-      this.DataGridView.DataSource = this.BindingSource;
-      resources.ApplyResources(this.DataGridView, "DataGridView");
-      this.DataGridView.Name = "DataGridView";
-      this.DataGridView.RowHeadersVisible = false;
-      this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      // 
-      // ColumnId
-      // 
-      this.ColumnId.DataPropertyName = "ID";
-      resources.ApplyResources(this.ColumnId, "ColumnId");
-      this.ColumnId.Name = "ColumnId";
-      this.ColumnId.ReadOnly = true;
-      // 
-      // ColumnBook
-      // 
-      this.ColumnBook.DataPropertyName = "BookTranscription";
-      resources.ApplyResources(this.ColumnBook, "ColumnBook");
-      this.ColumnBook.Name = "ColumnBook";
-      this.ColumnBook.ReadOnly = true;
-      // 
-      // ColumnChapter
-      // 
-      this.ColumnChapter.DataPropertyName = "ChapterNumber";
-      resources.ApplyResources(this.ColumnChapter, "ColumnChapter");
-      this.ColumnChapter.Name = "ColumnChapter";
-      this.ColumnChapter.ReadOnly = true;
-      // 
-      // ColumnNumber
-      // 
-      this.ColumnNumber.DataPropertyName = "Number";
-      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
-      this.ColumnNumber.Name = "ColumnNumber";
-      this.ColumnNumber.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn2
-      // 
-      this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.dataGridViewTextBoxColumn2.DataPropertyName = "Translation";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-      this.dataGridViewTextBoxColumn2.ReadOnly = true;
-      // 
-      // ColumnDateModified
-      // 
-      this.ColumnDateModified.DataPropertyName = "DateModified";
-      resources.ApplyResources(this.ColumnDateModified, "ColumnDateModified");
-      this.ColumnDateModified.Name = "ColumnDateModified";
-      this.ColumnDateModified.ReadOnly = true;
-      // 
-      // LabelDisplayCount
-      // 
-      resources.ApplyResources(this.LabelDisplayCount, "LabelDisplayCount");
-      this.LabelDisplayCount.Name = "LabelDisplayCount";
       // 
       // EditDisplayCount
       // 
@@ -180,6 +108,94 @@ namespace Ordisoftware.Hebrew.Words
       this.EditDisplayCount.Name = "EditDisplayCount";
       this.EditDisplayCount.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDisplayCount;
       // 
+      // LabelDisplayCount
+      // 
+      resources.ApplyResources(this.LabelDisplayCount, "LabelDisplayCount");
+      this.LabelDisplayCount.Name = "LabelDisplayCount";
+      // 
+      // PanelSeparator
+      // 
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
+      // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
+      // 
+      // DataGridView
+      // 
+      this.DataGridView.AutoGenerateColumns = false;
+      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnBookTranscription,
+            this.ColumnBookNumber,
+            this.ColumnChapterNumber,
+            this.ColumnVerseNumber,
+            this.ColumnVerseTranslation,
+            this.ColumnDateModified});
+      this.DataGridView.DataSource = this.BindingSource;
+      resources.ApplyResources(this.DataGridView, "DataGridView");
+      this.DataGridView.Name = "DataGridView";
+      this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
+      // 
+      // ColumnId
+      // 
+      this.ColumnId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnId.DataPropertyName = "ID";
+      resources.ApplyResources(this.ColumnId, "ColumnId");
+      this.ColumnId.Name = "ColumnId";
+      this.ColumnId.ReadOnly = true;
+      // 
+      // ColumnBookTranscription
+      // 
+      this.ColumnBookTranscription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnBookTranscription.DataPropertyName = "BookTranscription";
+      resources.ApplyResources(this.ColumnBookTranscription, "ColumnBookTranscription");
+      this.ColumnBookTranscription.Name = "ColumnBookTranscription";
+      this.ColumnBookTranscription.ReadOnly = true;
+      // 
+      // ColumnBookNumber
+      // 
+      this.ColumnBookNumber.DataPropertyName = "BookNumber";
+      resources.ApplyResources(this.ColumnBookNumber, "ColumnBookNumber");
+      this.ColumnBookNumber.Name = "ColumnBookNumber";
+      this.ColumnBookNumber.ReadOnly = true;
+      // 
+      // ColumnChapterNumber
+      // 
+      this.ColumnChapterNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnChapterNumber.DataPropertyName = "ChapterNumber";
+      resources.ApplyResources(this.ColumnChapterNumber, "ColumnChapterNumber");
+      this.ColumnChapterNumber.Name = "ColumnChapterNumber";
+      this.ColumnChapterNumber.ReadOnly = true;
+      // 
+      // ColumnVerseNumber
+      // 
+      this.ColumnVerseNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnVerseNumber.DataPropertyName = "Number";
+      resources.ApplyResources(this.ColumnVerseNumber, "ColumnVerseNumber");
+      this.ColumnVerseNumber.Name = "ColumnVerseNumber";
+      this.ColumnVerseNumber.ReadOnly = true;
+      // 
+      // ColumnVerseTranslation
+      // 
+      this.ColumnVerseTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnVerseTranslation.DataPropertyName = "Translation";
+      resources.ApplyResources(this.ColumnVerseTranslation, "ColumnVerseTranslation");
+      this.ColumnVerseTranslation.Name = "ColumnVerseTranslation";
+      this.ColumnVerseTranslation.ReadOnly = true;
+      // 
+      // ColumnDateModified
+      // 
+      this.ColumnDateModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnDateModified.DataPropertyName = "DateModified";
+      resources.ApplyResources(this.ColumnDateModified, "ColumnDateModified");
+      this.ColumnDateModified.Name = "ColumnDateModified";
+      this.ColumnDateModified.ReadOnly = true;
+      // 
       // SelectVersesByDateUpdatedForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -196,9 +212,9 @@ namespace Ordisoftware.Hebrew.Words
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -222,14 +238,15 @@ namespace Ordisoftware.Hebrew.Words
     private Panel PanelSeparator;
     private BindingSource BindingSource;
     private DataGridView DataGridView;
-    private DataGridViewTextBoxColumn ColumnId;
-    private DataGridViewTextBoxColumn ColumnBook;
-    private DataGridViewTextBoxColumn ColumnChapter;
-    private DataGridViewTextBoxColumn ColumnNumber;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private DataGridViewTextBoxColumn ColumnDateModified;
     private Label LabelDisplayCount;
     private NumericUpDown EditDisplayCount;
-  }
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnBookTranscription;
+        private DataGridViewTextBoxColumn ColumnBookNumber;
+        private DataGridViewTextBoxColumn ColumnChapterNumber;
+        private DataGridViewTextBoxColumn ColumnVerseNumber;
+        private DataGridViewTextBoxColumn ColumnVerseTranslation;
+        private DataGridViewTextBoxColumn ColumnDateModified;
+    }
 
 }
