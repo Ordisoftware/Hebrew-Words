@@ -1,3 +1,4 @@
+using System.Linq;
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
@@ -44,7 +45,7 @@ partial class SelectVersesByDateUpdatedForm : Form
                   verse.Translation,
                   verse.DateModified
                 };
-    BindingSource.DataSource = query.Take(500);
+    BindingSource.DataSource = query.Take((int)EditDisplayCount.Value);
     ActiveControl = DataGridView;
   }
 

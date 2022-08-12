@@ -124,9 +124,6 @@
   <data name="LabelVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
   </data>
-  <data name="LabelVerse.Text" xml:space="preserve">
-    <value>Verset</value>
-  </data>
   <data name="LabelChapter.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
@@ -138,5 +135,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Versets par date de mise à jour</value>
+  </data>
+  <data name="ColumnBook.HeaderText" xml:space="preserve">
+    <value>Livre</value>
+  </data>
+  <data name="ColumnChapter.HeaderText" xml:space="preserve">
+    <value>Chapitre</value>
+  </data>
+  <data name="ColumnNumber.HeaderText" xml:space="preserve">
+    <value>Verset</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+    <value>Traduction</value>
+  </data>
+  <data name="LabelDisplayCount.Text" xml:space="preserve">
+    <value>Afficher</value>
   </data>
 </root>
