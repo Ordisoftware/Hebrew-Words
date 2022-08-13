@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using SQLite;
@@ -71,7 +71,6 @@ public abstract class AbstractRow : INotifyPropertyChanged
     {
       if ( _DateModified == value ) return;
       _DateModified = value;
-      NotifyPropertyChanged(nameof(DateModified));
     }
   }
   private DateTime _DateModified;

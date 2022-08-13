@@ -72,7 +72,8 @@ partial class SelectVersesByDateUpdatedForm : Form
                   ChapterNumber = chapter.Number,
                   verse.Number,
                   verse.Translation,
-                  verse.DateModified
+                  DateModified = new DateTime(Math.Max(verse.DateModified.Ticks,
+                                                       verse.Words.Max(w => w.DateModified.Ticks)))
                 };
     query = query.Take((int)EditDisplayCount.Value);
     BindingSource.DataSource = query;

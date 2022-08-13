@@ -5917,7 +5917,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Display verses by date updated</value>
   </data>
   <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
-    <value>Display verses by date updated (Ctrl+F7, Ctrl+Alt+F)</value>
+    <value>Display verses by date updated (Ctrl+F5, Ctrl+Alt+F)</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>

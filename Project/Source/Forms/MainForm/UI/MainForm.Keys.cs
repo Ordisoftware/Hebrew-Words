@@ -104,7 +104,7 @@ partial class MainForm
         case Keys.Shift | Keys.Control | Keys.F:
           ActionGoToReference.PerformClick();
           return true;
-        case Keys.Control | Keys.F7:
+        case Keys.Control | Keys.F5:
         case Keys.Control | Keys.Alt | Keys.F:
           ActionViewVersesByDateUpdated.PerformClick();
           return true;

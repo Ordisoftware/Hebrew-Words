@@ -34,14 +34,14 @@ static partial class AppTranslations
                     "F2 : Chapter translation view" + Globals.NL +
                     "F3 : Filter verses view" + Globals.NL +
                     "F4 or Alt + F : Search in database view" + Globals.NL +
-                    "F5 : Original Hebrew text view" + Globals.NL +
-                    "F6 : ELS50 verses view" + Globals.NL +
-                    "F7 or Shift + Ctrl + F : Go to reference" + Globals.NL +
-                    "F9 or Ctrl + R : Refresh" + Globals.NL +
+                    "F5 or Shift + Ctrl + F : Go to reference" + Globals.NL +
+                    "F6 : Original Hebrew text view" + Globals.NL +
+                    "F7 : ELS50 verses view" + Globals.NL +
+                    "F8 or Ctrl + R : Refresh" + Globals.NL +
                     "Ctrl + B : Books board" + Globals.NL +
                     "Ctrl + P : Parashot board" + Globals.NL +
                     "Ctrl + Shift + T : Normalize texts" + Globals.NL +
-                    "Ctrl + Alt + F or Ctrl + F7 | Display verses by updated date" + Globals.NL +
+                    "Ctrl + Alt + F or Ctrl + F5 | Display verses by updated date" + Globals.NL +
                     "Ctrl + Alt + I : Import console" + Globals.NL +
                     "Ctrl + Alt + S : Tanak's statistics" + Globals.NL +
                     "Alt + C : Calculator" + Globals.NL +
@@ -87,14 +87,14 @@ static partial class AppTranslations
                     "F2 : Vue de la traduction des chapitres" + Globals.NL +
                     "F3 : Vue du filtre des versets" + Globals.NL +
                     "F4 ou Alt + F : Vue de rechercher dans la base de données" + Globals.NL +
-                    "F5 : Vue du texte original en hébreu" + Globals.NL +
-                    "F6 : vue des versets ELS50" + Globals.NL +
-                    "F7 ou Maj + Ctrl + F : Aller à la référence" + Globals.NL +
-                    "F9 ou Ctrl + R : Rafraîchir" + Globals.NL +
+                    "F5 ou Maj + Ctrl + F : Aller à la référence" + Globals.NL +
+                    "F6 : Vue du texte original en hébreu" + Globals.NL +
+                    "F7 : vue des versets ELS50" + Globals.NL +
+                    "F8 ou Ctrl + R : Rafraîchir" + Globals.NL +
                     "Ctrl + B : Tableau des livres" + Globals.NL +
                     "Ctrl + P : tableau des parashot" + Globals.NL +
                     "Ctrl + Maj + T : Normalize texts" + Globals.NL +
-                    "Ctrl + Alt + F or Ctrl + F7 | Afficher les versets par date de mise à jour" + Globals.NL +
+                    "Ctrl + Alt + F or Ctrl + F5 | Afficher les versets par date de mise à jour" + Globals.NL +
                     "Ctrl + Alt + I : Console d'importation" + Globals.NL +
                     "Ctrl + Alt + S : Statistiques de Tanak" + Globals.NL +
                     "Alt + C : Calculatrice" + Globals.NL +

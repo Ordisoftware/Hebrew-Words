@@ -895,6 +895,6 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Afficher les versets par date de mise à jour</value>
   </data>
   <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
-    <value>Afficher les versets par date de mise à jour (Ctrl+F7, Ctrl+Alt+F)</value>
+    <value>Afficher les versets par date de mise à jour (Ctrl+F5, Ctrl+Alt+F)</value>
   </data>
 </root>
