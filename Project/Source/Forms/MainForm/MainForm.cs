@@ -94,6 +94,16 @@ partial class MainForm : Form
     DoFormClosed(sender, e);
   }
 
+  /// <summary>
+  /// Event handler. Called by MainForm for resize events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void MainForm_Resize(object sender, EventArgs e)
+  {
+    MainMenuSeparatorLeftButtons.Visible = Width < 1050;
+  }
+
   private bool PreviousWindowsStateToggle = true;
   private FormWindowState PreviousWindowsState;
 

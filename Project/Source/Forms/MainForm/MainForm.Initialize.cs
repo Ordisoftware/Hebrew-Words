@@ -80,6 +80,7 @@ partial class MainForm : Form
     }
     Globals.ChronoStartingApp.Start();
     MainForm_ResizeEnd(null, null);
+    MainForm_Resize(null, null);
     UpdateSearchButtons();
     BookmarkMenuIndex = ActionBookmarks.DropDownItems.Count;
     HistoryIndexMenu = ActionHistory.DropDownItems.Count;
