@@ -321,24 +321,6 @@
   <data name="ColumnId.Width" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
-    <value>Verse</value>
-  </data>
-  <data name="ColumnVerseNumber.Width" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
-    <value>Translation</value>
-  </data>
-  <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ColumnDateModified.HeaderText" xml:space="preserve">
-    <value>Updated</value>
-  </data>
-  <data name="ColumnDateModified.Width" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
   <metadata name="ColumnBookTranscription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -366,6 +348,24 @@
   <data name="ColumnChapterNumber.Width" type="System.Int32, mscorlib">
     <value>69</value>
   </data>
+  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
+    <value>Verse</value>
+  </data>
+  <data name="ColumnVerseNumber.Width" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnDateModified.HeaderText" xml:space="preserve">
+    <value>Updated</value>
+  </data>
+  <data name="ColumnDateModified.Width" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
   <metadata name="BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -379,7 +379,7 @@
     <value>914, 503</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
     <value>DataGridView</value>
@@ -402,6 +402,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>934, 561</value>
   </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, -1</value>
+  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
@@ -415,24 +418,6 @@
     <value>ColumnId</value>
   </data>
   <data name="&gt;&gt;ColumnId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseNumber.Name" xml:space="preserve">
-    <value>ColumnVerseNumber</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseTranslation.Name" xml:space="preserve">
-    <value>ColumnVerseTranslation</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnDateModified.Name" xml:space="preserve">
-    <value>ColumnDateModified</value>
-  </data>
-  <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnBookTranscription.Name" xml:space="preserve">
@@ -451,6 +436,24 @@
     <value>ColumnChapterNumber</value>
   </data>
   <data name="&gt;&gt;ColumnChapterNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseNumber.Name" xml:space="preserve">
+    <value>ColumnVerseNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Name" xml:space="preserve">
+    <value>ColumnVerseTranslation</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnDateModified.Name" xml:space="preserve">
+    <value>ColumnDateModified</value>
+  </data>
+  <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">

@@ -2194,5 +2194,41 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SelectVersesByDateUpdatedFormOnlyFullyTranslated"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point SelectVersesByDateUpdatedFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SelectVersesByDateUpdatedFormLocation"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("934, 561")]
+        public global::System.Drawing.Size SelectVersesByDateUpdatedFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["SelectVersesByDateUpdatedFormClientSize"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormClientSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState SelectVersesByDateUpdatedFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["SelectVersesByDateUpdatedFormWindowState"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormWindowState"] = value;
+            }
+        }
     }
 }

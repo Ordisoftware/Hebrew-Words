@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Words;
 partial class SelectVersesByDateUpdatedForm : Form
 {
 
+  static public readonly Properties.Settings Settings = Properties.Settings.Default;
+
   static private ReferenceItem Reference = new(1, 1, 1);
 
   static public ReferenceItem Run()
@@ -30,6 +32,27 @@ partial class SelectVersesByDateUpdatedForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     UpdateQuery();
+  }
+
+  private void SelectVersesByDateUpdatedForm_Load(object sender, EventArgs e)
+  {
+    Location = Settings.SelectVersesByDateUpdatedFormLocation;
+    ClientSize = Settings.SelectVersesByDateUpdatedFormClientSize;
+    this.CheckLocationOrCenterToMainFormElseScreen();
+    WindowState = Settings.SelectVersesByDateUpdatedFormWindowState;
+  }
+
+  private void SelectVersesByDateUpdatedForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    if ( WindowState == FormWindowState.Minimized )
+      WindowState = FormWindowState.Normal;
+    Settings.SelectVersesByDateUpdatedFormWindowState = WindowState;
+    if ( WindowState == FormWindowState.Maximized )
+      WindowState = FormWindowState.Normal;
+    Settings.SelectVersesByDateUpdatedFormLocation = Location;
+    Settings.SelectVersesByDateUpdatedFormClientSize = ClientSize;
+    SystemManager.TryCatch(Settings.Save);
+    BindingSource.DataSource = null;
   }
 
   private void UpdateQuery()
