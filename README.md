@@ -239,7 +239,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Shift + Ctrl + Tab | Previous view |
 | F1 | Chapter verses view |
 | F2 | Chapter translation view |
-| F5 or Alt + F | Search in database view |
+| F3 or Alt + F | Search in database view |
 | F4 | Filter verses view |
 | F5 or Shift + Ctrl + F | Go to reference |
 | F6 | Original Hebrew text view |
@@ -250,7 +250,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Ctrl + P | Parashot board |
 | Alt + P | Go to parashah |
 | Ctrl + Shift + T | Normalize texts |
-| Ctrl + Alt + F or Ctrl + F7 | Display verses by updated date |
+| Ctrl + Alt + F or Ctrl + F5 | Display verses by updated date |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
@@ -333,6 +333,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### 2022.08.16 - Version 3.9
 
 - Add view verses by date of modification.
+- Fix keyboard notice.
 
 #### 2022.08.10 - Version 3.8
 
