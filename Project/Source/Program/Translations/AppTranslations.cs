@@ -23,6 +23,12 @@ static partial class AppTranslations
     [Language.FR] = "Traducteur littéral mot-à-mot de la Bible hébraïque"
   };
 
+  static public readonly TranslationsDictionary SelectVersesByDateUpdatedFormTitle = new()
+  {
+    [Language.EN] = "Verses by date updated - {0} found",
+    [Language.FR] = "Versets par date de mise à jour - {0} trouvés"
+  };
+
   static public readonly TranslationsDictionary AskToCreateNewDatabase = new()
   {
     [Language.EN] = "Do you want to create a new database which will replace the actual?",

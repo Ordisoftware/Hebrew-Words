@@ -94,6 +94,16 @@ partial class MainForm : Form
     DoFormClosed(sender, e);
   }
 
+  /// <summary>
+  /// Event handler. Called by MainForm for resize events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void MainForm_Resize(object sender, EventArgs e)
+  {
+    MainMenuSeparatorLeftButtons.Visible = Width < 1050;
+  }
+
   private bool PreviousWindowsStateToggle = true;
   private FormWindowState PreviousWindowsState;
 
@@ -571,9 +581,21 @@ partial class MainForm : Form
     ActionSave.PerformClick();
     var reference = SelectReferenceForm.Run();
     if ( reference is null ) return;
-    if ( Settings.CurrentView == ViewMode.Search
-      || Settings.CurrentView == ViewMode.VerseFiltered
-      || Settings.CurrentView == ViewMode.BookELS50 )
+    if ( IsSearchOrFilteredOrELS50(Settings.CurrentView) )
+      SetView(ViewMode.ChapterVerses);
+    GoToReference(reference, true);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionViewVersesByDateUpdated for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionViewVersesByDateUpdated_Click(object sender, EventArgs e)
+  {
+    var reference = SelectVersesByDateUpdatedForm.Run();
+    if ( reference is null ) return;
+    if ( IsSearchOrFilteredOrELS50(Settings.CurrentView) )
       SetView(ViewMode.ChapterVerses);
     GoToReference(reference, true);
   }
@@ -778,6 +800,11 @@ partial class MainForm : Form
     ActionSave.PerformClick();
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionNormalizeTexts for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionNormalizeTexts_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
@@ -1067,9 +1094,7 @@ partial class MainForm : Form
   private void ActionHistoryVerseNext_Click(object sender, EventArgs e)
   {
     if ( CurrentReference is null ) return;
-    if ( Settings.CurrentView != ViewMode.ChapterVerses
-      && Settings.CurrentView != ViewMode.ChapterTranslation
-      && Settings.CurrentView != ViewMode.ChapterOriginal )
+    if ( !IsVersesOrTranslationOrOriginal(Settings.CurrentView) )
       SetView(ViewMode.ChapterVerses);
     var list = HistoryItems.ToList();
     int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
@@ -1079,9 +1104,7 @@ partial class MainForm : Form
   private void ActionHistoryVerseBack_Click(object sender, EventArgs e)
   {
     if ( CurrentReference is null ) return;
-    if ( Settings.CurrentView != ViewMode.ChapterVerses
-      && Settings.CurrentView != ViewMode.ChapterTranslation
-      && Settings.CurrentView != ViewMode.ChapterOriginal )
+    if ( !IsVersesOrTranslationOrOriginal(Settings.CurrentView) )
       SetView(ViewMode.ChapterVerses);
     var list = HistoryItems.ToList();
     int index = list.FindIndex(r => r.CompareTo(CurrentReference) == 0);
@@ -1133,7 +1156,7 @@ partial class MainForm : Form
                                     reference.Verse.Number);
     }
     else
-    if ( control is Label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    if ( control is Label && IsVersesOrFiltered(Settings.CurrentView) )
     {
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1162,7 +1185,7 @@ partial class MainForm : Form
                                     reference.Verse.Number);
     }
     else
-    if ( control is Label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    if ( control is Label && IsVersesOrFiltered(Settings.CurrentView) )
     {
       int index = Convert.ToInt32(control.Text) - 1;
       reference = new ReferenceItem(CurrentReference.Book.Number,
@@ -1233,12 +1256,13 @@ partial class MainForm : Form
     ProcessGoToBookmarkOrHistory((ReferenceItem)( (ToolStripMenuItem)sender ).Tag, true);
   }
 
+  /// <summary>
+  /// Process go to history reference.
+  /// </summary>
   private void ProcessGoToBookmarkOrHistory(ReferenceItem reference, bool isHistory)
   {
     ActionSave.PerformClick();
-    if ( Settings.CurrentView == ViewMode.VerseFiltered
-      || Settings.CurrentView == ViewMode.BookELS50
-      || Settings.CurrentView == ViewMode.Search )
+    if ( IsSearchOrFilteredOrELS50(Settings.CurrentView) )
       SetView(ViewMode.ChapterVerses);
     GoToReference(reference, isHistory: isHistory);
   }
@@ -1572,7 +1596,7 @@ partial class MainForm : Form
     if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
       reference = (ReferenceItem)control.Tag;
     else
-    if ( control is Label label && ( Settings.CurrentView == ViewMode.ChapterVerses || Settings.CurrentView == ViewMode.VerseFiltered ) )
+    if ( control is Label label && IsVersesOrFiltered(Settings.CurrentView) )
       reference = ( (VerseControl)label.Parent ).Reference;
     else
       return;

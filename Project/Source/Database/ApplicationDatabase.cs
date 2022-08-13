@@ -115,10 +115,21 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoSaveAll()
   {
+    DoTheSaveAll();
+  }
+
+  public void SaveAllWithoutUpdateDateModified()
+  {
+    DoTheSaveAll(false);
+  }
+
+  private void DoTheSaveAll(bool updateModifiedDate = true)
+  {
     if ( !HasChanges ) return;
     CheckAccess(Books, BooksTableName);
-    foreach ( AbstractRow row in ModifiedObjects )
-      row.DateModified = DateTime.Now;
+    if ( updateModifiedDate )
+      foreach ( AbstractRow row in ModifiedObjects )
+        row.DateModified = DateTime.Now;
     Connection.UpdateAll(ModifiedObjects);
     ModifiedObjects.Clear();
   }

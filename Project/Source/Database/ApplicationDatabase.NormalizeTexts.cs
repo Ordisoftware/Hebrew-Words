@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2021-12 </created>
+/// <created> 2022-08 </created>
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
@@ -19,6 +19,7 @@ partial class ApplicationDatabase
 
   public void DoNormalizeTexts()
   {
+    SaveAll();
 
     //foreach ( var book in Instance.Books )
     //{
@@ -48,6 +49,7 @@ partial class ApplicationDatabase
     //  verse.Comment = VerseControl.CheckComment(verse.Comment);
     //}
 
+    SaveAllWithoutUpdateDateModified();
   }
 
 }

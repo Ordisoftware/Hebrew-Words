@@ -414,6 +414,7 @@ partial class PreferencesForm : Form
 
   private void ActionCheckAllComments_Click(object sender, EventArgs e)
   {
+    // TODO improve to call ActionNormalizeTexts.PerformClick and move code
     string msg = EditCommentLineAddPrefix.Checked
       ? AppTranslations.CommentPrefixAddAll.GetLang(EditCommentLinePrefix.Text)
       : AppTranslations.CommentPrefixRemoveAll.GetLang(EditCommentLinePrefix.Text);
@@ -424,8 +425,7 @@ partial class PreferencesForm : Form
     var verses = ApplicationDatabase.Instance.Verses;
     for ( int index = 0; index < verses.Count; index++ )
       verses[index].Comment = VerseControl.CheckComment(verses[index].Comment);
-    MainForm.Instance.ActionSave.PerformClick();
-    // TODO improve to call ActionNormalizeTexts.PerformClick and move code
+    ApplicationDatabase.Instance.SaveAllWithoutUpdateDateModified();
   }
 
   #endregion

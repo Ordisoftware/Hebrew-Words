@@ -520,7 +520,7 @@
     <value>TextBoxTranslations</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -577,7 +577,7 @@
     <value>TextBoxTranslations</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -808,7 +808,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -820,7 +820,7 @@
     <value>EditFilterChapter</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -832,7 +832,7 @@
     <value>EditFilterBook</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1352,7 +1352,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1376,7 +1376,7 @@
     <value>EditFilterChapter</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1400,7 +1400,7 @@
     <value>EditFilterBook</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1988,7 +1988,7 @@
     <value>EditSearchPaging</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
@@ -2339,7 +2339,7 @@
     <value>EditSearchPaging</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
@@ -2916,7 +2916,7 @@
     <value>EditSearchWord</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -2964,7 +2964,7 @@
     <value>EditSearchWord</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -3000,7 +3000,7 @@
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -3267,7 +3267,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -3546,7 +3546,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterOriginal</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
     <value>PanelViewOriginalText</value>
@@ -3600,7 +3600,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterOriginal</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
     <value>PanelViewOriginalText</value>
@@ -3651,7 +3651,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterELS50</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -3705,7 +3705,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterELS50</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -3729,7 +3729,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectChapterNavigator</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3741,7 +3741,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectBookNavigator</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3765,7 +3765,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectVerseNavigator</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3825,7 +3825,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3957,7 +3957,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3969,7 +3969,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseConcept</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3981,7 +3981,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseTitle</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3993,7 +3993,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4005,7 +4005,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditELS50Single</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4146,7 +4146,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectChapterNavigator</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4209,7 +4209,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectBookNavigator</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4315,7 +4315,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectVerseNavigator</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4477,7 +4477,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4969,7 +4969,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4996,7 +4996,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseConcept</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5023,7 +5023,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseTitle</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5047,7 +5047,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5080,7 +5080,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditELS50Single</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -5560,7 +5560,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 46</value>
+    <value>49, 46</value>
   </data>
   <data name="ActionBookmarks.Text" xml:space="preserve">
     <value>Bookmarks</value>
@@ -5606,16 +5606,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 46</value>
+    <value>49, 46</value>
   </data>
   <data name="ActionHistory.Text" xml:space="preserve">
     <value>History</value>
   </data>
   <data name="ActionHistory.ToolTipText" xml:space="preserve">
     <value>History (Alt+H)</value>
-  </data>
-  <data name="ActionHistoryVerseBack.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="ActionHistoryVerseBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5633,16 +5630,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionHistoryVerseBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 46</value>
+    <value>44, 46</value>
   </data>
   <data name="ActionHistoryVerseBack.Text" xml:space="preserve">
     <value>Previous</value>
   </data>
   <data name="ActionHistoryVerseBack.ToolTipText" xml:space="preserve">
     <value>Previous (Shift+Ctrl+P)</value>
-  </data>
-  <data name="ActionHistoryVerseNext.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="ActionHistoryVerseNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5660,7 +5654,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionHistoryVerseNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 46</value>
+    <value>44, 46</value>
   </data>
   <data name="ActionHistoryVerseNext.Text" xml:space="preserve">
     <value>Next</value>
@@ -5843,6 +5837,9 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="ActionViewVerseFiltered.ToolTipText" xml:space="preserve">
     <value>Filter verses (F4)</value>
   </data>
+  <data name="toolStripSeparator30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
+  </data>
   <data name="ActionGoToReference.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -5882,6 +5879,45 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
     <value>Go to reference (F5, Shift+Ctrl+F)</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 46</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.Text" xml:space="preserve">
+    <value>Display verses by date updated</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
+    <value>Display verses by date updated (Ctrl+F5, Ctrl+Alt+F)</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
@@ -6013,6 +6049,392 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionSave.ToolTipText" xml:space="preserve">
     <value>Save (Ctrl+S)</value>
+  </data>
+  <data name="ActionDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionDatabase.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 46</value>
+  </data>
+  <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="ActionTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 46</value>
+  </data>
+  <data name="ActionWebLinks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionWebLinks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionWebLinks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 46</value>
+  </data>
+  <data name="ActionInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionInformation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 46</value>
+  </data>
+  <data name="MainMenuSeparatorLeftButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="ActionSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="ActionSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 44</value>
+  </data>
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 0</value>
+  </data>
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 54</value>
+  </data>
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ToolStrip.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionAddBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAgxJREFUOE+tUj1MU2EUPUBwYBBxMHVhIGEjJuLiDqWiDhRDAlEmE6K7qZg4GEl8
+        2Dakf/BaSmIAE00rcREcSkAQIq9GrQ0wkEAYdHBycJDteG/7vRS13TjJzbu53z3nO9+9DyeOa2Fc8o4j
+        122BXRL67XkK9oaQ0zPTVh2+ICaHpk5zaeceD389497PGPPfH3Bxd5hPFi+wP9rA6yFkTPvfuBJE5vbM
+        ef7mMp1vw7Tfg5FVMPoOTG6Ac/k22usXORBvoDiZNLQy1Npgook/jhb4ouBhQgiRddBFVMRSH8D0ViOt
+        tx72RaAiled4Law8d4a4fNDLhDRqTAjJheZTW+D0RxFeO8U7s+DVIFYNHegZBzcPA0zmpWFTyOLAWqsI
+        aK61uAinRCSQLTmgoYsDEVjZH+Fc4Yyh1Ib9CRxdEAehYwK6ptdFP+e3z5q22rC/VBGQDXBm4zKTX8GY
+        3DAhNi2x60JzrcU/yxwKVZ7Q/RjOaPYcbaeF09ugXRSCCLnQXGvpHTAs87g7W0ffGBxDBzoH4ffLasbe
+        NDNVrGd6V24TNy4015o6DGTrSmvsvAm/oZfQ1PUQmf4oeP9VPcO6dyG8PPCUQnOtKflGTH5x6VVOmVpB
+        q/cRcqquFgMZEZO3amiuNT0z5NYy5X+0dfThlk9mokPSSWtorjU9k56aZBdqrV1Cf9XjobV/bAN/AHvm
+        pb0Q58cgAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionAddBookmark.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionAddBookmark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionAddBookmark.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionSortBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAchJREFUOE+Fk0tLAlEUx9236MP0AbJyk5tsIWFQEBW0yuyxi6BCogdZiyIo0IIe
+        UEFPenyA+gStiuhhT5VpNGdGR/13zmGssNF+cPjPPffc/9w7c66jEgvrJ7AebQEqTM9FjhB9iYPVSv1B
+        DBbXT93za8cIRQ4RCh9ilmJ6ZR/KxyfNQ5THnOd5rptfPQbtzi0GvNgOPZPD1V1M1I6lrXMWh4MdmZsn
+        FffvaTzEdNy+JHEdVXBDcfusUk5DNGGIch2ze3bJQga0LSaa0DAyFoTTWYe3ZBaPsZTEq5rBWHASLpcL
+        o6TPiiH1O6cXLD8Gb4qOVBbw+Vqh6kBMNRCnRJLqm5o8UuPxNEPRCvK8XWoQpwVpMvAHAtDo2KqWR2Oj
+        G5oJRNY20D8whL7+QXxSDfNtwF+XSekm2Nvb4pOxli0gncmD0pJnOjq7QClh+6TEwKC3jgcnUOusF+WP
+        nzZMyQcnplBX34CpmRBMy+3PEfLF11iYuQIy2Zzob4p133+hXB/8x9Km1Qfd/uFe6UTaCR9nNnyA6eU9
+        JJSUFLLymPPFbuRO9Lb3tIkBUU1RUxoh6y6w2s1TVBUNylFj3UYutuU/A6bsYgaA4wvOSYCdlAhAkAAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSortBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionSortBookmarks.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionClearBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionClearBookmarks.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAiFJREFUOE+VU0trE1EUnqUgCtIqFEF8FF25UXClS3+EC9GNO0UKuin4WPgI2Iqg
+        C0NmmtBMM6XNZCZMmpngJhUVhGx0q4smaZqkzWPyMmlC8nnunaF2SqX6wTf33HPv+c65d+4RAAhxw6ir
+        uo5oLIZlD1U+qpqGmK5vCvuBCbANB6FcLrMEETfsD2hNYJkZ1rI5ZHN55PIF4jqfM4QXFvhYKhYR1TTF
+        DXVA/h0BSRJRKpURCoVgGAZMM8n9sqKgPxhwm1Wix/WoG+4V2NyqYqtSRaVaI9ZpXuH+TCYDZVFBJOJU
+        Yugq3HCvwJwkwbIs1G0bwWCQ271el6/tRjqxtL+A3Wg6bLbQbLXRILbbHTycW4HwpIALbzcw7lvHY/kj
+        Ts0Wjpx/k5/2CIiBANqtDp3d5NmtVIqOYUO9dxSfbOBDHbi+3MSEL4sr74uYfJ2DR+BXt7vD3vY2sY/B
+        CFDvj+HmV+D5T+BqxMajz2187wBnZrJeAVEUkUwm+Y1LdB+mleJ+bWocl8h8+gO4pjRwy2rgwTfg7CtX
+        gL02huFwyDkaUVqC86UKpo7j0Isajj3LYuLlGm6YLdz+AkzO7hHw+/18DNBdaPQ6V5Imn8t3x1DrcxMX
+        323ghC+P0zPE6dWg5wh/g3jnsGs5WE0sst94mXiSC7BG+h8k4nse0rwsp1lD8Q5UqQN3k3zRmLPGKmX7
+        wnI47YY7AoRzRFbSv5LtJwjCbzIe1UtgkG/iAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="SeparatorBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
+  </data>
+  <data name="ActionClearHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
+        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
+        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
+        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
+        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
+        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
+        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
+        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
+        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
+        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionClearHistory.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="ActionClearHistory.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 6</value>
   </data>
   <data name="ActionDatabaseNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6263,398 +6685,6 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
     <value>Open database folder</value>
-  </data>
-  <data name="ActionDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionDatabase.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 46</value>
-  </data>
-  <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 49</value>
-  </data>
-  <data name="ActionTools.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 46</value>
-  </data>
-  <data name="ActionWebLinks.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionWebLinks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAfpSURBVFhHtZcJVJXXEcfHPYom4ahEilEbjdYlTUolJ00x
-        aCAaUSOIrbggiOyLyHJQUMCILBExLogCohEroqgsIuDC+lgfpIh7NKypKDHEuKBJm55/Z75HiMJTG9vM
-        Ob9z33e/+83MvXfu3Hn0q4nF9sHklrGFVmTdoxU56MQzu5Hf9tEM+nWkN7lnZinG3LPvknXMFjK0ms39
-        v6dJ5rPIkx3yzGrm5/+7Ez3J6YgPecpMs3+k6f4e3GfITGBGMPrMaMZIcY7oJea/lh609LPR5Hg0jpwy
-        viLH4yCHTOivzYf+mnzlt9LnxLhkgd73XsnfjGP0GB2mt6KDqB8zijyOt3I7lHmm9KAlCWPIMf28jt8p
-        zI2vxo6iBvy9sQ3VDW2oYtQdrZB3uRWr0i9jTGgRaHn6OVoSM0bR8bgM5dhoU9pnSE+yP2gnS+qacgGV
-        9W2IL66Hx8FazNhSAqPwArwdXsgUwCK2HNbxVVibdhGxhXUo+7INoTlXQR7ZUHSIrp9lMDkdzlXap0hP
-        Wpa07JU1edhd2oR4VSM+iq3A1GgVTJgpUcWYzwbnxlZi2uYSBXn33iYVjPndvF2VSCxtREr1P6AXeAa0
-        NGmZolMjL5PTsTylfYL0IJt9cwf4nkLW+Vb4Hb2EKdGlGLryxLe9prmHGa7N+GLF4QvIvvg1ln5Wg1k7
-        KjGbHTHndsb2CnywrQKmW8tgsrkUG3gVMmpvoj/rEp2KbqKBzCsdrVbpT85ZiFM1w+fIJQxZzTOw2pZD
-        +pMsJ4QU/bglrwGRp+pgtKkM4uQLPicxmMcYby6HRdznmL2zGuaxVZgRo4bZtkr4p13huGnUBKjo1gTk
-        Cx1tN+lNTqkZc+KqEZZbx3vIx8XYdQ0N1P3zpPASbC1shEfqJY54jvqpXhH0lqUb/dZoEUd9BC3PeDBq
-        XRHm766BRfzn+Eic2VWNmezM9qJmvPtpBcjuwCa20UtjSrsMIvcTWJV5FT29ckHjZ9iQ3u/e+U1QATbn
-        N2Ejz14xTjSNmciMZOSMj2dMyPlA+9Rt1Zi/pxaWu88qzE2ogdWes4gpbvppFeRYahUOvP3BSuSyE/Tq
-        G7JnY3U4a4WdbkBC+XUYBBeAZq6L4v5RzABGspkspSztCDL1DTAILsTCpIv4y97zmM9YMfP2nMe63HpM
-        iiwBLY5z47GPnopO6U8uR+uVLDXyjxb8PJpsUwtdUr/AjtLrsDlwGTp+HA9zIgP4nbYAGkBzP1k1yP8M
-        lhy4AuukS1jQwV8Z+d7pEG+f3cEsHisx0E10FeNz1oXy79G0OHG10WY1EtWtsE25isWs1DCqDMN5hq+G
-        FGFEF6RP3hlycC47dE0Z3xXfTI4ru7QW1v+iYrGLDKHlyae5HUfDXzeQGIguboF7WgOWHLwGm5Rr2K2+
-        hcSqZ8BjlqfWwZadsDv05WOEF7RwqlbiQGsSGsQMZ4bSskNpC3gf1+ddh+3hetil1sP+SAMcjzXCOb0J
-        LunNWnHtwC2jGe4ZX8Ej83FC8m+CXPmu0NwR3UQTTPM+mdZ75UlsL78F57QmOLBRJ8Y9sxmyv8opcOZZ
-        PA2ZpTbEuAQ56Ugi0ip9aXmqalHyFQScvgFnnoUL48ree+e0YFhQIWiMiaRV0/8BuaJ1GS0ywXxYX85s
-        W9W34XHiBtyzOAYYjxMt8D/dCgMONJq+yp5Hyt0uy/g8iPG+TDfpRXYpez9MvACfkzfgc+preOXexIoc
-        Db78PGcvHyPb5HQeK/d6V+lBdknv9vTKwYiPixVnDYIZaRnpG8bPmi3Q7sBASUDWydeU/fI70wb/vDY2
-        fIuduaU8h6q+BbnxPpqteL3jm0elHzkcrTWNO4et1fcQrb6L6EqG20+r7iL2bDve23lOElEcj+12DHvQ
-        wu3W4l1fb765FsSVjdxQhvVl9xFQ+B3882+zM7cRorqDJamcjh3SueA4FEr2+yaTffJkWrp/OtkfqZkY
-        VYlN6vtYU/Qdf3dbIbCIvyu5A8+cVk7FShp/g+mWjvuRc6qmkLSJP8PP79PCuIKJUVxkqO4hpPQe1hTf
-        RWDxHYRVtvPW3ML4jWpe0mLoB6swip21/FsdNlY9QBCPX81OC4FFdxBccg9BTB/vkyBTLx/WPYzpdiG9
-        SG7ZPygOmPlKMfkaY0iLE1R9OCgdj99AuPp7fFzezs60Y31FO8IrHyKi6nuFcPVDrC9/wMZ49uyAOB1c
-        eh+hFQ/hkfsNXgrgunG6fxjrlBJN7o1uMkQxLmgqV7lohjBvkbFTIM1O/6d+iAoWyfWK4jAxWPFAcSaI
-        jT5KSFk7G36AyOofMGXXRfkfAJqxOoJ1SZEqya5rjaiIXqcDI9+Um05uK0lMUjZJwBmTmU84LUqoIMcM
-        iDOGW2uwjmMksmMVBHHOIbMFk7fVam7UBbEq0h05k78fy4hxrbegyM8OLNrpyM8/DRRv5eaS8zuWxpla
-        caTfUZS7cmaToGKHOnFibPbVkUVUCukamPM3f2AMGFnRJxoX0SOH4990OmG790PuE+Oa/wPOqX7c9y/l
-        nUn2v+lNS3d+Z8Z0zXJSqPyJkWJFDMtx01p6dRVd+sDXu9OBJ7EoZj+PfZuRbZFo7prlpNaXTCczfmrp
-        1VVkmUfTrLUR3Yw6HqujWUEb+L0xI2dYLhIZrzWYnldkfyRINAH3+JK+w0gEy4ylEvpFM/slIk7IGZVi
-        oeuSSv9Tg+j5hOg/EpEYaVWPBRQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionWebLinks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionWebLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 46</value>
-  </data>
-  <data name="ActionInformation.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionInformation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 46</value>
-  </data>
-  <data name="ActionSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="ActionSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 46</value>
-  </data>
-  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 0</value>
-  </data>
-  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 54</value>
-  </data>
-  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="ToolStrip.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
-    <value>ToolStrip</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ActionAddBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAgxJREFUOE+tUj1MU2EUPUBwYBBxMHVhIGEjJuLiDqWiDhRDAlEmE6K7qZg4GEl8
-        2Dakf/BaSmIAE00rcREcSkAQIq9GrQ0wkEAYdHBycJDteG/7vRS13TjJzbu53z3nO9+9DyeOa2Fc8o4j
-        122BXRL67XkK9oaQ0zPTVh2+ICaHpk5zaeceD389497PGPPfH3Bxd5hPFi+wP9rA6yFkTPvfuBJE5vbM
-        ef7mMp1vw7Tfg5FVMPoOTG6Ac/k22usXORBvoDiZNLQy1Npgook/jhb4ouBhQgiRddBFVMRSH8D0ViOt
-        tx72RaAiled4Law8d4a4fNDLhDRqTAjJheZTW+D0RxFeO8U7s+DVIFYNHegZBzcPA0zmpWFTyOLAWqsI
-        aK61uAinRCSQLTmgoYsDEVjZH+Fc4Yyh1Ib9CRxdEAehYwK6ptdFP+e3z5q22rC/VBGQDXBm4zKTX8GY
-        3DAhNi2x60JzrcU/yxwKVZ7Q/RjOaPYcbaeF09ugXRSCCLnQXGvpHTAs87g7W0ffGBxDBzoH4ffLasbe
-        NDNVrGd6V24TNy4015o6DGTrSmvsvAm/oZfQ1PUQmf4oeP9VPcO6dyG8PPCUQnOtKflGTH5x6VVOmVpB
-        q/cRcqquFgMZEZO3amiuNT0z5NYy5X+0dfThlk9mokPSSWtorjU9k56aZBdqrV1Cf9XjobV/bAN/AHvm
-        pb0Q58cgAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionAddBookmark.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionAddBookmark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionAddBookmark.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionSortBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAchJREFUOE+Fk0tLAlEUx9236MP0AbJyk5tsIWFQEBW0yuyxi6BCogdZiyIo0IIe
-        UEFPenyA+gStiuhhT5VpNGdGR/13zmGssNF+cPjPPffc/9w7c66jEgvrJ7AebQEqTM9FjhB9iYPVSv1B
-        DBbXT93za8cIRQ4RCh9ilmJ6ZR/KxyfNQ5THnOd5rptfPQbtzi0GvNgOPZPD1V1M1I6lrXMWh4MdmZsn
-        FffvaTzEdNy+JHEdVXBDcfusUk5DNGGIch2ze3bJQga0LSaa0DAyFoTTWYe3ZBaPsZTEq5rBWHASLpcL
-        o6TPiiH1O6cXLD8Gb4qOVBbw+Vqh6kBMNRCnRJLqm5o8UuPxNEPRCvK8XWoQpwVpMvAHAtDo2KqWR2Oj
-        G5oJRNY20D8whL7+QXxSDfNtwF+XSekm2Nvb4pOxli0gncmD0pJnOjq7QClh+6TEwKC3jgcnUOusF+WP
-        nzZMyQcnplBX34CpmRBMy+3PEfLF11iYuQIy2Zzob4p133+hXB/8x9Km1Qfd/uFe6UTaCR9nNnyA6eU9
-        JJSUFLLymPPFbuRO9Lb3tIkBUU1RUxoh6y6w2s1TVBUNylFj3UYutuU/A6bsYgaA4wvOSYCdlAhAkAAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSortBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionSortBookmarks.Text" xml:space="preserve">
-    <value>Sort</value>
-  </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionClearBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
-        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
-        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
-        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
-        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
-        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
-        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
-        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
-        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
-        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionClearBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionClearBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionClearBookmarks.Text" xml:space="preserve">
-    <value>Empty</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAiFJREFUOE+VU0trE1EUnqUgCtIqFEF8FF25UXClS3+EC9GNO0UKuin4WPgI2Iqg
-        C0NmmtBMM6XNZCZMmpngJhUVhGx0q4smaZqkzWPyMmlC8nnunaF2SqX6wTf33HPv+c65d+4RAAhxw6ir
-        uo5oLIZlD1U+qpqGmK5vCvuBCbANB6FcLrMEETfsD2hNYJkZ1rI5ZHN55PIF4jqfM4QXFvhYKhYR1TTF
-        DXVA/h0BSRJRKpURCoVgGAZMM8n9sqKgPxhwm1Wix/WoG+4V2NyqYqtSRaVaI9ZpXuH+TCYDZVFBJOJU
-        Yugq3HCvwJwkwbIs1G0bwWCQ271el6/tRjqxtL+A3Wg6bLbQbLXRILbbHTycW4HwpIALbzcw7lvHY/kj
-        Ts0Wjpx/k5/2CIiBANqtDp3d5NmtVIqOYUO9dxSfbOBDHbi+3MSEL4sr74uYfJ2DR+BXt7vD3vY2sY/B
-        CFDvj+HmV+D5T+BqxMajz2187wBnZrJeAVEUkUwm+Y1LdB+mleJ+bWocl8h8+gO4pjRwy2rgwTfg7CtX
-        gL02huFwyDkaUVqC86UKpo7j0Isajj3LYuLlGm6YLdz+AkzO7hHw+/18DNBdaPQ6V5Imn8t3x1DrcxMX
-        323ghC+P0zPE6dWg5wh/g3jnsGs5WE0sst94mXiSC7BG+h8k4nse0rwsp1lD8Q5UqQN3k3zRmLPGKmX7
-        wnI47YY7AoRzRFbSv5LtJwjCbzIe1UtgkG/iAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionGoToBookmarkMain.Text" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="SeparatorBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
-  </data>
-  <data name="ActionClearHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAhNJREFUOE+Fk29PUlEcx89r8QX4hBfVg2quWow1ZhswmBDrQSmbMioMEzOWW87c
-        ogIJCoz/6spsNOHCxeu9XuSPF4uv5xz0DiX1t3137jk7n88599xzidvtHorzsYuEjD7y2uTlCRqnydwd
-        z3xgbAqsZX02vmR+Tq4VsMn+208BqYGeqPCW9YP3p68XsEkclpuoPwtDpKn7PlDJIfy3nuDtA9/lgsV7
-        3j580IY0G4EUWOPZexGBVpaAPRVvjDPh/womHjnJ3M1JQO1AfRWHEkxAWaChz11RRsWzzHfxcmwSQ7DL
-        5SJWmxVqu4WdpS9oLq5DZVlIQqNnIHjfQw5EgUMNUzcmVodhqxWddgefojGEYzHsrqyjHcrosDIfQ/dd
-        Dn62OiEjOux0OonFYsGRpiH+NYnEtxTiyRSiySS61QMIMyt9eDmH2bseBhvYVzoHHx//RTqTRYYlm0Pq
-        exr7ioJCKEzfv7/yIMwFbNsM/tfrobixiY3NLZ58oQhZlvHxcwTpfAGlShnsIg3CXGC324ugtf1rR8+P
-        n9vYP4Uz2QJ2KwIsDusQzAUPx8eluiTRSRX8KZfxu1SCrJzBeZQpbLPZODx4vXUBrVGTyQS10UBNFM+t
-        PAhf/D90QbVWYxKD2WxGRzvCWjxBz2ILFaGqw/ygLxNUBIE0Wy0uoYDocDjAQoWrZ/CVggs1SmM4zQgb
-        uLoIOQFIwlQoo91XNAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionClearHistory.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="ActionClearHistory.Text" xml:space="preserve">
-    <value>Empty</value>
-  </data>
-  <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 6</value>
   </data>
   <data name="ActionBooksBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8413,10 +8443,22 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionViewVerseFiltered.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator30.Name" xml:space="preserve">
+    <value>toolStripSeparator30</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator30.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionGoToReference.Name" xml:space="preserve">
     <value>ActionGoToReference</value>
   </data>
   <data name="&gt;&gt;ActionGoToReference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewVersesByDateUpdated.Name" xml:space="preserve">
+    <value>ActionViewVersesByDateUpdated</value>
+  </data>
+  <data name="&gt;&gt;ActionViewVersesByDateUpdated.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator17.Name" xml:space="preserve">
@@ -8473,18 +8515,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionDatabaseBackup.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
-    <value>toolStripSeparator22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionVacuum.Name" xml:space="preserve">
-    <value>ActionVacuum</value>
-  </data>
-  <data name="&gt;&gt;ActionVacuum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;SeparatorActionNormalizeTexts.Name" xml:space="preserve">
     <value>SeparatorActionNormalizeTexts</value>
   </data>
@@ -8495,6 +8525,18 @@ A verse is founded if the translation of one of its words contains an expression
     <value>ActionNormalizeTexts</value>
   </data>
   <data name="&gt;&gt;ActionNormalizeTexts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
+    <value>toolStripSeparator22</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionVacuum.Name" xml:space="preserve">
+    <value>ActionVacuum</value>
+  </data>
+  <data name="&gt;&gt;ActionVacuum.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
@@ -8676,6 +8718,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;ActionInformation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenuSeparatorLeftButtons.Name" xml:space="preserve">
+    <value>MainMenuSeparatorLeftButtons</value>
+  </data>
+  <data name="&gt;&gt;MainMenuSeparatorLeftButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSettings.Name" xml:space="preserve">
     <value>ActionSettings</value>

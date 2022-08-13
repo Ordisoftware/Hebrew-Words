@@ -891,4 +891,10 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
     <value>Ouvrir le dossier de la base de données</value>
   </data>
+  <data name="ActionViewVersesByDateUpdated.Text" xml:space="preserve">
+    <value>Afficher les versets par date de mise à jour</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
+    <value>Afficher les versets par date de mise à jour (Ctrl+F5, Ctrl+Alt+F)</value>
+  </data>
 </root>
