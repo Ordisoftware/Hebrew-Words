@@ -148,7 +148,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -178,7 +178,37 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 6</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditOnlyFullyTranslated.Text" xml:space="preserve">
+    <value>Only fully translated</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyFullyTranslated.Name" xml:space="preserve">
+    <value>EditOnlyFullyTranslated</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyFullyTranslated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyFullyTranslated.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditOnlyFullyTranslated.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="EditDisplayCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 4</value>
@@ -187,7 +217,7 @@
     <value>55, 20</value>
   </data>
   <data name="EditDisplayCount.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditDisplayCount.Name" xml:space="preserve">
     <value>EditDisplayCount</value>
@@ -199,10 +229,13 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditDisplayCount.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelDisplayCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="LabelDisplayCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="LabelDisplayCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 7</value>
@@ -226,7 +259,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelDisplayCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -276,9 +309,9 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="DataGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
   <metadata name="ColumnId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -286,7 +319,25 @@
     <value />
   </data>
   <data name="ColumnId.Width" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>19</value>
+  </data>
+  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
+    <value>Verse</value>
+  </data>
+  <data name="ColumnVerseNumber.Width" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnDateModified.HeaderText" xml:space="preserve">
+    <value>Updated</value>
+  </data>
+  <data name="ColumnDateModified.Width" type="System.Int32, mscorlib">
+    <value>73</value>
   </data>
   <metadata name="ColumnBookTranscription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -315,24 +366,9 @@
   <data name="ColumnChapterNumber.Width" type="System.Int32, mscorlib">
     <value>69</value>
   </data>
-  <data name="ColumnVerseNumber.HeaderText" xml:space="preserve">
-    <value>Verse</value>
-  </data>
-  <data name="ColumnVerseNumber.Width" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
-    <value>Translation</value>
-  </data>
-  <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <data name="ColumnDateModified.HeaderText" xml:space="preserve">
-    <value>Updated</value>
-  </data>
-  <data name="ColumnDateModified.Width" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -343,7 +379,7 @@
     <value>914, 503</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
     <value>DataGridView</value>
@@ -375,16 +411,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Verses by date updated</value>
   </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnId.Name" xml:space="preserve">
     <value>ColumnId</value>
   </data>
   <data name="&gt;&gt;ColumnId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseNumber.Name" xml:space="preserve">
+    <value>ColumnVerseNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Name" xml:space="preserve">
+    <value>ColumnVerseTranslation</value>
+  </data>
+  <data name="&gt;&gt;ColumnVerseTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnDateModified.Name" xml:space="preserve">
+    <value>ColumnDateModified</value>
+  </data>
+  <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnBookTranscription.Name" xml:space="preserve">
@@ -405,23 +453,11 @@
   <data name="&gt;&gt;ColumnChapterNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnVerseNumber.Name" xml:space="preserve">
-    <value>ColumnVerseNumber</value>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
   </data>
-  <data name="&gt;&gt;ColumnVerseNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseTranslation.Name" xml:space="preserve">
-    <value>ColumnVerseTranslation</value>
-  </data>
-  <data name="&gt;&gt;ColumnVerseTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnDateModified.Name" xml:space="preserve">
-    <value>ColumnDateModified</value>
-  </data>
-  <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SelectVersesByDateUpdatedForm</value>

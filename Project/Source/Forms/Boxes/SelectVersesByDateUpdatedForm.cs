@@ -1,4 +1,3 @@
-using System.Linq;
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
@@ -30,11 +29,17 @@ partial class SelectVersesByDateUpdatedForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
+    UpdateQuery();
+  }
+
+  private void UpdateQuery()
+  {
+    BindingSource.DataSource = null;
     int count = 0;
     var query = from verse in ApplicationDatabase.Instance.Verses
                 join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
                 join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
-                where verse.HasTranslation
+                where EditOnlyFullyTranslated.Checked ? verse.IsFullyTranslated : verse.HasTranslation
                 orderby verse.DateModified descending
                 select new
                 {
@@ -46,8 +51,11 @@ partial class SelectVersesByDateUpdatedForm : Form
                   verse.Translation,
                   verse.DateModified
                 };
-    BindingSource.DataSource = query.Take((int)EditDisplayCount.Value);
+    query = query.Take((int)EditDisplayCount.Value);
+    BindingSource.DataSource = query;
     ActiveControl = DataGridView;
+    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(query.Count());
+
   }
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -65,6 +73,16 @@ partial class SelectVersesByDateUpdatedForm : Form
       int verse = (int)row.Cells[ColumnVerseNumber.Index].Value;
       Reference = new ReferenceItem(book, chapter, verse);
     }
+  }
+
+  private void EditDisplayCount_ValueChanged(object sender, EventArgs e)
+  {
+    UpdateQuery();
+  }
+
+  private void EditOnlyFullyTranslated_CheckedChanged(object sender, EventArgs e)
+  {
+    UpdateQuery();
   }
 
 }

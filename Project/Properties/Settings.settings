@@ -542,5 +542,8 @@
     <Setting Name="SelectVersesByDateUpdatedFormDisplayCount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormOnlyFullyTranslated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

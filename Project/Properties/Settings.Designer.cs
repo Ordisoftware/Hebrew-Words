@@ -2182,5 +2182,17 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SelectVersesByDateUpdatedFormDisplayCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVersesByDateUpdatedFormOnlyFullyTranslated {
+            get {
+                return ((bool)(this["SelectVersesByDateUpdatedFormOnlyFullyTranslated"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormOnlyFullyTranslated"] = value;
+            }
+        }
     }
 }

@@ -157,4 +157,7 @@
   <data name="ColumnDateModified.HeaderText" xml:space="preserve">
     <value>Modifié</value>
   </data>
+  <data name="EditOnlyFullyTranslated.Text" xml:space="preserve">
+    <value>Seulement entièrement traduits</value>
+  </data>
 </root>
