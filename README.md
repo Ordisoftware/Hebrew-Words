@@ -250,7 +250,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 | Ctrl + P | Parashot board |
 | Alt + P | Go to parashah |
 | Ctrl + Shift + T | Normalize texts |
-| Ctrl + Alt + F or Ctrl + F5 | Display verses by updated date |
+| Ctrl + Alt + F or Ctrl + F7 | Display verses by updated date |
 | Ctrl + Alt + I | Import console |
 | Ctrl + Alt + S | Tanak's statistics |
 | Alt + C | Calculator |
