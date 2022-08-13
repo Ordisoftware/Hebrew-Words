@@ -1,4 +1,6 @@
-﻿/// <license>
+﻿using Ordisoftware.Hebrew.Words.Properties;
+using System.Windows.Forms;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -20,6 +22,21 @@ namespace Ordisoftware.Hebrew.Words;
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 partial class MainForm
 {
+
+  public bool IsVersesOrFiltered(ViewMode view)
+    => view == ViewMode.ChapterVerses || view == ViewMode.VerseFiltered;
+
+  public bool IsSearchOrFiltered(ViewMode view)
+    => view == ViewMode.ChapterVerses || view == ViewMode.VerseFiltered;
+
+  public bool IsVersesOrTranslationOrOriginal(ViewMode view)
+    => view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
+
+  public bool IsTranslationOrOriginalOrELS50(ViewMode view)
+    => view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
+
+  public bool IsSearchOrFilteredOrELS50(ViewMode view)
+   => view == ViewMode.Search || view == ViewMode.VerseFiltered || view == ViewMode.BookELS50;
 
   /// <summary>
   /// Provides view connector.
@@ -170,7 +187,7 @@ partial class MainForm
       {
         ActionSave.PerformClick();
         if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
-          if ( view == ViewMode.VerseFiltered || view == ViewMode.Search )
+          if ( IsSearchOrFiltered(view) )
             Settings.RenderAllChapterVerses = false;
       }
     }
@@ -183,7 +200,7 @@ partial class MainForm
       PanelNavigation.Visible = view != ViewMode.VerseFiltered && view != ViewMode.Search;
       PanelMain.Refresh();
       //
-      ActionCopyToClipboard.Enabled = view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal || view == ViewMode.BookELS50;
+      ActionCopyToClipboard.Enabled = IsTranslationOrOriginalOrELS50(view);
       ActionExportBook.Enabled = PanelNavigation.Visible
                               && view != ViewMode.ChapterTranslation  // TODO remove when ready
                               && view != ViewMode.ChapterOriginal;    // TODO remove when ready

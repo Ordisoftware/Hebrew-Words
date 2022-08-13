@@ -31,10 +31,7 @@ partial class MainForm
     get
     {
       var cp = base.CreateParams;
-      if ( Settings.WindowsDoubleBufferingEnabled
-        && Settings.CurrentView != ViewMode.ChapterTranslation
-        && Settings.CurrentView != ViewMode.ChapterOriginal
-        && Settings.CurrentView != ViewMode.BookELS50 )
+      if ( Settings.WindowsDoubleBufferingEnabled && !IsTranslationOrOriginalOrELS50(Settings.CurrentView) )
       {
         cp.ExStyle |= Globals.WS_EX_COMPOSITED;
         //cp.Style &= Globals.WS_CLIPCHILDREN;
@@ -125,7 +122,7 @@ partial class MainForm
       return;
     }
     var view = Settings.CurrentView;
-    bool canHistoryMove = view == ViewMode.ChapterVerses || view == ViewMode.ChapterTranslation || view == ViewMode.ChapterOriginal;
+    bool canHistoryMove = IsVersesOrTranslationOrOriginal(view);
     ActionHistoryVerseNext.Enabled = canHistoryMove && index != 0;
     ActionHistoryVerseBack.Enabled = canHistoryMove && index != list.Count - 1;
   }
