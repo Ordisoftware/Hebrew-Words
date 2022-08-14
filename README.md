@@ -330,7 +330,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
-#### 2022.08.16 - Version 3.9
+#### 2022.08.14 - Version 3.9
 
 - Add view verses by date of modification.
 - Fix keyboard notice.
