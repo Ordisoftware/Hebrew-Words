@@ -128,7 +128,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     if ( !HasChanges ) return;
     CheckAccess(Books, BooksTableName);
     if ( updateModifiedDate )
-      foreach ( AbstractRow row in ModifiedObjects )
+      foreach ( AbstractRow row in ModifiedObjects.Cast<AbstractRow>() )
         row.DateModified = DateTime.Now;
     Connection.UpdateAll(ModifiedObjects);
     ModifiedObjects.Clear();
