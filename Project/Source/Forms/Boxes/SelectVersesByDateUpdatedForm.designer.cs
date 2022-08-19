@@ -46,8 +46,11 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditFontSize = new System.Windows.Forms.NumericUpDown();
+      this.EditOnlyPartiallyTranslated = new System.Windows.Forms.CheckBox();
       this.EditOnlyFullyTranslated = new System.Windows.Forms.CheckBox();
       this.EditDisplayCount = new System.Windows.Forms.NumericUpDown();
+      this.label1 = new System.Windows.Forms.Label();
       this.LabelDisplayCount = new System.Windows.Forms.Label();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
@@ -60,6 +63,7 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
@@ -82,32 +86,60 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditFontSize);
+      this.PanelBottom.Controls.Add(this.EditOnlyPartiallyTranslated);
       this.PanelBottom.Controls.Add(this.EditOnlyFullyTranslated);
       this.PanelBottom.Controls.Add(this.EditDisplayCount);
+      this.PanelBottom.Controls.Add(this.label1);
       this.PanelBottom.Controls.Add(this.LabelDisplayCount);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
+      // EditFontSize
+      // 
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
+      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditFontSize.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditFontSize.Minimum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+      this.EditFontSize.Name = "EditFontSize";
+      this.EditFontSize.ReadOnly = true;
+      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormFontSize;
+      this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
+      // 
+      // EditOnlyPartiallyTranslated
+      // 
+      resources.ApplyResources(this.EditOnlyPartiallyTranslated, "EditOnlyPartiallyTranslated");
+      this.EditOnlyPartiallyTranslated.Name = "EditOnlyPartiallyTranslated";
+      this.EditOnlyPartiallyTranslated.UseVisualStyleBackColor = true;
+      this.EditOnlyPartiallyTranslated.CheckedChanged += new System.EventHandler(this.EditOnlyPartiallyTranslated_CheckedChanged);
+      // 
       // EditOnlyFullyTranslated
       // 
       resources.ApplyResources(this.EditOnlyFullyTranslated, "EditOnlyFullyTranslated");
-      this.EditOnlyFullyTranslated.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormOnlyFullyTranslated;
-      this.EditOnlyFullyTranslated.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormOnlyFullyTranslated", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditOnlyFullyTranslated.Name = "EditOnlyFullyTranslated";
       this.EditOnlyFullyTranslated.UseVisualStyleBackColor = true;
       this.EditOnlyFullyTranslated.CheckedChanged += new System.EventHandler(this.EditOnlyFullyTranslated_CheckedChanged);
       // 
       // EditDisplayCount
       // 
+      resources.ApplyResources(this.EditDisplayCount, "EditDisplayCount");
       this.EditDisplayCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDisplayCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDisplayCount.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-      resources.ApplyResources(this.EditDisplayCount, "EditDisplayCount");
       this.EditDisplayCount.Maximum = new decimal(new int[] {
             25000,
             0,
@@ -121,6 +153,11 @@ namespace Ordisoftware.Hebrew.Words
       this.EditDisplayCount.Name = "EditDisplayCount";
       this.EditDisplayCount.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDisplayCount;
       this.EditDisplayCount.ValueChanged += new System.EventHandler(this.EditDisplayCount_ValueChanged);
+      // 
+      // label1
+      // 
+      resources.ApplyResources(this.label1, "label1");
+      this.label1.Name = "label1";
       // 
       // LabelDisplayCount
       // 
@@ -178,6 +215,7 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.DataGridView.ShowCellToolTips = false;
       this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
+      this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
       // ColumnId
       // 
@@ -251,8 +289,10 @@ namespace Ordisoftware.Hebrew.Words
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectVersesByDateUpdatedForm_FormClosed);
       this.Load += new System.EventHandler(this.SelectVersesByDateUpdatedForm_Load);
+      this.Shown += new System.EventHandler(this.SelectVersesByDateUpdatedForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
@@ -282,6 +322,9 @@ namespace Ordisoftware.Hebrew.Words
     private NumericUpDown EditDisplayCount;
     private CheckBox EditOnlyFullyTranslated;
     private DataGridView DataGridView;
+        private CheckBox EditOnlyPartiallyTranslated;
+        private NumericUpDown EditFontSize;
+        private Label label1;
         private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnBookTranscription;
         private DataGridViewTextBoxColumn ColumnBookNumber;
