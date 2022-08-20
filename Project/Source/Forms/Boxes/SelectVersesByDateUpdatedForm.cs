@@ -19,19 +19,20 @@ partial class SelectVersesByDateUpdatedForm : Form
 
   static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
-  static private ReferenceItem Reference = new(1, 1, 1);
-
   static public ReferenceItem Run()
   {
     using var form = new SelectVersesByDateUpdatedForm();
-    return form.ShowDialog() == DialogResult.OK ? Reference : null;
+    return form.ShowDialog() == DialogResult.OK ? form.Reference : null;
   }
+
+  private bool OptionsMutex = true;
+
+  private ReferenceItem Reference = new(1, 1, 1);
 
   private SelectVersesByDateUpdatedForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    UpdateQuery();
   }
 
   private void SelectVersesByDateUpdatedForm_Load(object sender, EventArgs e)
@@ -40,6 +41,15 @@ partial class SelectVersesByDateUpdatedForm : Form
     ClientSize = Settings.SelectVersesByDateUpdatedFormClientSize;
     this.CheckLocationOrCenterToMainFormElseScreen();
     WindowState = Settings.SelectVersesByDateUpdatedFormWindowState;
+    EditOnlyFullyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyFullyTranslated;
+    EditOnlyPartiallyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated;
+    OptionsMutex = false;
+  }
+
+  private void SelectVersesByDateUpdatedForm_Shown(object sender, EventArgs e)
+  {
+    EditFontSize_ValueChanged(null, null);
+    UpdateQuery();
   }
 
   private void SelectVersesByDateUpdatedForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -51,6 +61,8 @@ partial class SelectVersesByDateUpdatedForm : Form
       WindowState = FormWindowState.Normal;
     Settings.SelectVersesByDateUpdatedFormLocation = Location;
     Settings.SelectVersesByDateUpdatedFormClientSize = ClientSize;
+    Settings.SelectVersesByDateUpdatedFormOnlyFullyTranslated = EditOnlyFullyTranslated.Checked;
+    Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated = EditOnlyPartiallyTranslated.Checked;
     SystemManager.TryCatch(Settings.Save);
     BindingSource.DataSource = null;
   }
@@ -62,7 +74,11 @@ partial class SelectVersesByDateUpdatedForm : Form
     var query = from verse in ApplicationDatabase.Instance.Verses
                 join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
                 join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
-                where EditOnlyFullyTranslated.Checked ? verse.IsFullyTranslated : verse.HasTranslation
+                where EditOnlyFullyTranslated.Checked
+                      ? verse.IsFullyTranslated
+                      : EditOnlyPartiallyTranslated.Checked
+                        ? verse.IsPartiallyTranslated
+                        : verse.HasTranslation
                 orderby verse.DateModified descending
                 select new
                 {
@@ -87,6 +103,16 @@ partial class SelectVersesByDateUpdatedForm : Form
     ActionOK.PerformClick();
   }
 
+  private void DataGridView_KeyDown(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Enter )
+    {
+      e.SuppressKeyPress = true;
+      e.Handled = true;
+      ActionOK.PerformClick();
+    }
+  }
+
   private void ActionOK_Click(object sender, EventArgs e)
   {
     if ( DataGridView.SelectedRows.Count > 0 )
@@ -99,6 +125,12 @@ partial class SelectVersesByDateUpdatedForm : Form
     }
   }
 
+  private void EditFontSize_ValueChanged(object sender, EventArgs e)
+  {
+    DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+    // TODO remove if ( DataGridView.Rows.Count > 0 ) DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
+  }
+
   private void EditDisplayCount_ValueChanged(object sender, EventArgs e)
   {
     UpdateQuery();
@@ -106,7 +138,22 @@ partial class SelectVersesByDateUpdatedForm : Form
 
   private void EditOnlyFullyTranslated_CheckedChanged(object sender, EventArgs e)
   {
-    UpdateQuery();
+    bool update = !OptionsMutex;
+    OptionsMutex = true;
+    if ( EditOnlyFullyTranslated.Checked && EditOnlyPartiallyTranslated.Checked )
+      EditOnlyPartiallyTranslated.Checked = false;
+    if ( update ) UpdateQuery();
+    OptionsMutex = false;
+  }
+
+  private void EditOnlyPartiallyTranslated_CheckedChanged(object sender, EventArgs e)
+  {
+    bool update = !OptionsMutex;
+    OptionsMutex = true;
+    if ( EditOnlyFullyTranslated.Checked && EditOnlyPartiallyTranslated.Checked )
+      EditOnlyFullyTranslated.Checked = false;
+    if ( update ) UpdateQuery();
+    OptionsMutex = false;
   }
 
 }

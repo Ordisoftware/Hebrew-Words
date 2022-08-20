@@ -136,9 +136,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Versets par date de mise à jour</value>
   </data>
-  <data name="ColumnBook.HeaderText" xml:space="preserve">
-    <value>Livre</value>
-  </data>
   <data name="ColumnChapterNumber.HeaderText" xml:space="preserve">
     <value>Chapitre</value>
   </data>
@@ -159,5 +156,11 @@
   </data>
   <data name="EditOnlyFullyTranslated.Text" xml:space="preserve">
     <value>Seulement entièrement traduits</value>
+  </data>
+  <data name="ColumnBookTranscription.HeaderText" xml:space="preserve">
+    <value>Livre</value>
+  </data>
+  <data name="EditOnlyPartiallyTranslated.Text" xml:space="preserve">
+    <value>Seulement les partiellement traduits</value>
   </data>
 </root>

@@ -2230,5 +2230,29 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SelectVersesByDateUpdatedFormWindowState"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SelectVersesByDateUpdatedFormOnlyPartiallyTranslated {
+            get {
+                return ((bool)(this["SelectVersesByDateUpdatedFormOnlyPartiallyTranslated"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormOnlyPartiallyTranslated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal SelectVersesByDateUpdatedFormFontSize {
+            get {
+                return ((decimal)(this["SelectVersesByDateUpdatedFormFontSize"]));
+            }
+            set {
+                this["SelectVersesByDateUpdatedFormFontSize"] = value;
+            }
+        }
     }
 }
