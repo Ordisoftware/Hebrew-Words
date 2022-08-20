@@ -330,9 +330,12 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
-#### 2022.08. - Version 3.10
+#### 2022.08.21 - Version 3.10
 
-- Add option to show only partially translated verses in the list of by date of modification window.
+- Add option to show only partially translated in the list of verses by date updated window.
+- Add enter key press to reach selected reference the in list of verses by date updated window.
+- Fix parashot board header growing on changing font size.
+- Fix H'eqev parashah transcription.
 
 #### 2022.08.14 - Version 3.9
 
