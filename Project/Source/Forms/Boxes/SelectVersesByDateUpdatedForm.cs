@@ -67,6 +67,7 @@ partial class SelectVersesByDateUpdatedForm : Form
     BindingSource.DataSource = null;
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void UpdateQuery()
   {
     BindingSource.DataSource = null;
