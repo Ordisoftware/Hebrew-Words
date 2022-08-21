@@ -93,9 +93,12 @@ partial class SelectVersesByDateUpdatedForm : Form
                                                        verse.Words.Max(w => w.DateModified.Ticks)))
                 };
     query = query.Take((int)EditDisplayCount.Value);
-    BindingSource.DataSource = query;
+    count = query.Count();
+    if ( count > 0 )
+      BindingSource.DataSource = query;
+    ActionOK.Visible = count > 0;
     ActiveControl = DataGridView;
-    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(query.Count());
+    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(count);
 
   }
 
