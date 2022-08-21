@@ -96,7 +96,7 @@ partial class SelectVersesByDateUpdatedForm : Form
     count = query.Count();
     if ( count > 0 )
       BindingSource.DataSource = query;
-    ActionOK.Visible = count > 0;
+    ActionOK.Enabled = count > 0;
     ActiveControl = DataGridView;
     Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(count);
 
