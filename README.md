@@ -326,9 +326,14 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
-#### In progress - Version 3.x
+#### In progress - Version 3.x or 4.0
 
 - Add normalize texts window.
+
+#### 2022.08.23 - Version 3.11
+
+- Add date filters to verses by date updated window.
+- Fix many things in verses by date updated window.
 
 #### 2022.08.21 - Version 3.10
 

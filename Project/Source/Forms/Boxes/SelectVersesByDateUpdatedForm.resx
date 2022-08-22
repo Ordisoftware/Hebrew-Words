@@ -148,7 +148,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -178,7 +178,115 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
+  </data>
+  <data name="EditDateEnd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditDateEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 26</value>
+  </data>
+  <data name="EditDateEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="EditDateEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;EditDateEnd.Name" xml:space="preserve">
+    <value>EditDateEnd</value>
+  </data>
+  <data name="&gt;&gt;EditDateEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditDateEnd.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditDateEnd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditDateStart.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditDateStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 1</value>
+  </data>
+  <data name="EditDateStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="EditDateStart.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;EditDateStart.Name" xml:space="preserve">
+    <value>EditDateStart</value>
+  </data>
+  <data name="&gt;&gt;EditDateStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditDateStart.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditDateStart.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectDateEnd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectDateEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectDateEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 29</value>
+  </data>
+  <data name="SelectDateEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
+  </data>
+  <data name="SelectDateEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="SelectDateEnd.Text" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="&gt;&gt;SelectDateEnd.Name" xml:space="preserve">
+    <value>SelectDateEnd</value>
+  </data>
+  <data name="&gt;&gt;SelectDateEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectDateEnd.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;SelectDateEnd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectDateStart.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectDateStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectDateStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 4</value>
+  </data>
+  <data name="SelectDateStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="SelectDateStart.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="SelectDateStart.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;SelectDateStart.Name" xml:space="preserve">
+    <value>SelectDateStart</value>
+  </data>
+  <data name="&gt;&gt;SelectDateStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectDateStart.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;SelectDateStart.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="EditFontSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -202,7 +310,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="EditOnlyPartiallyTranslated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -214,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOnlyPartiallyTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 28</value>
+    <value>385, 28</value>
   </data>
   <data name="EditOnlyPartiallyTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -235,7 +343,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditOnlyPartiallyTranslated.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="EditOnlyFullyTranslated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -247,7 +355,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditOnlyFullyTranslated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 3</value>
+    <value>385, 3</value>
   </data>
   <data name="EditOnlyFullyTranslated.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 17</value>
@@ -268,7 +376,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditOnlyFullyTranslated.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="EditDisplayCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -292,40 +400,40 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditDisplayCount.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="LabelFontSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelFontSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelFontSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 30</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelFontSize.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="LabelFontSize.Text" xml:space="preserve">
     <value>Text</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;LabelFontSize.Name" xml:space="preserve">
+    <value>LabelFontSize</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelFontSize.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelFontSize.Parent" xml:space="preserve">
     <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="LabelDisplayCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -358,7 +466,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelDisplayCount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -516,6 +624,12 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Verses by date updated</value>
   </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnId.Name" xml:space="preserve">
     <value>ColumnId</value>
   </data>
@@ -557,12 +671,6 @@
   </data>
   <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SelectVersesByDateUpdatedForm</value>

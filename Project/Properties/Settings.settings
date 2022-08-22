@@ -560,5 +560,17 @@
     <Setting Name="SelectVersesByDateUpdatedFormFontSize" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">8</Value>
     </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormDateStartEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormDateEndEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormDateStart" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">1900-01-01</Value>
+    </Setting>
+    <Setting Name="SelectVersesByDateUpdatedFormDateEnd" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">1900-01-01</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

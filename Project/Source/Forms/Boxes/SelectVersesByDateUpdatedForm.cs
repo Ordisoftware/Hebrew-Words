@@ -43,6 +43,11 @@ partial class SelectVersesByDateUpdatedForm : Form
     WindowState = Settings.SelectVersesByDateUpdatedFormWindowState;
     EditOnlyFullyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyFullyTranslated;
     EditOnlyPartiallyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated;
+    EditDateStart.Enabled = SelectDateStart.Checked;
+    EditDateEnd.Enabled = SelectDateEnd.Checked;
+    var date = new DateTime(1900, 1, 1);
+    if ( EditDateStart.Value.Date == date ) EditDateStart.Value = DateTime.Now.Date;
+    if ( EditDateEnd.Value.Date == date ) EditDateEnd.Value = DateTime.Now.Date;
     OptionsMutex = false;
   }
 
@@ -67,11 +72,21 @@ partial class SelectVersesByDateUpdatedForm : Form
     BindingSource.DataSource = null;
   }
 
+  private class VerseItem
+  {
+    public int Id { get; set; }
+    public string BookTranscription { get; set; }
+    public int BookNumber { get; set; }
+    public int ChapterNumber { get; set; }
+    public int Number { get; set; }
+    public string Translation { get; set; }
+    public DateTime DateModified { get; set; }
+  }
+
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private void UpdateQuery()
+  private void UpdateQuery(bool focusGrid = true)
   {
     BindingSource.DataSource = null;
-    int count = 0;
     var query = from verse in ApplicationDatabase.Instance.Verses
                 join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
                 join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
@@ -80,26 +95,33 @@ partial class SelectVersesByDateUpdatedForm : Form
                       : EditOnlyPartiallyTranslated.Checked
                         ? verse.IsPartiallyTranslated
                         : verse.HasTranslation
-                orderby verse.DateModified descending
-                select new
+                select new VerseItem
                 {
-                  ID = ++count,
                   BookTranscription = book.Transcription,
                   BookNumber = book.Number,
                   ChapterNumber = chapter.Number,
-                  verse.Number,
-                  verse.Translation,
+                  Number = verse.Number,
+                  Translation = verse.Translation,
                   DateModified = new DateTime(Math.Max(verse.DateModified.Ticks,
                                                        verse.Words.Max(w => w.DateModified.Ticks)))
                 };
-    query = query.Take((int)EditDisplayCount.Value);
-    count = query.Count();
-    if ( count > 0 )
-      BindingSource.DataSource = query;
-    ActionOK.Visible = count > 0;
-    ActiveControl = DataGridView;
-    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(count);
-
+    query = query.OrderByDescending(v => v.DateModified);
+    int countAll = query.Count();
+    if ( SelectDateStart.Checked ) query = query.Where(v => v.DateModified.Date >= EditDateStart.Value.Date);
+    if ( SelectDateEnd.Checked ) query = query.Where(v => v.DateModified.Date <= EditDateEnd.Value.Date);
+    var list = query.Take((int)EditDisplayCount.Value).ToList();
+    int countToDisplay = list.Count;
+    if ( countToDisplay == 0 )
+      ActionOK.Enabled = false;
+    else
+    {
+      int index = 0;
+      foreach ( var item in list ) item.Id = ++index;
+      BindingSource.DataSource = list;
+      ActionOK.Enabled = countToDisplay > 0;
+    }
+    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(countToDisplay, countAll);
+    if ( focusGrid ) ActiveControl = DataGridView;
   }
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -127,17 +149,20 @@ partial class SelectVersesByDateUpdatedForm : Form
       int verse = (int)row.Cells[ColumnVerseNumber.Index].Value;
       Reference = new ReferenceItem(book, chapter, verse);
     }
+    Close();
   }
 
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
     DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
-    // TODO remove if ( DataGridView.Rows.Count > 0 ) DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
 
   private void EditDisplayCount_ValueChanged(object sender, EventArgs e)
   {
-    UpdateQuery();
+    bool update = !OptionsMutex;
+    OptionsMutex = true;
+    if ( update ) UpdateQuery(false);
+    OptionsMutex = false;
   }
 
   private void EditOnlyFullyTranslated_CheckedChanged(object sender, EventArgs e)
@@ -158,6 +183,46 @@ partial class SelectVersesByDateUpdatedForm : Form
       EditOnlyFullyTranslated.Checked = false;
     if ( update ) UpdateQuery();
     OptionsMutex = false;
+  }
+
+  private void SelectDateStart_CheckedChanged(object sender, EventArgs e)
+  {
+    bool update = !OptionsMutex;
+    OptionsMutex = true;
+    EditDateStart.Enabled = SelectDateStart.Checked;
+    CheckDates();
+    if ( update ) UpdateQuery();
+    OptionsMutex = false;
+  }
+
+  private void SelectDateEnd_CheckedChanged(object sender, EventArgs e)
+  {
+    bool update = !OptionsMutex;
+    OptionsMutex = true;
+    EditDateEnd.Enabled = SelectDateEnd.Checked;
+    CheckDates();
+    if ( update ) UpdateQuery(false);
+    OptionsMutex = false;
+  }
+
+  private void EditDate_ValueChanged(object sender, EventArgs e)
+  {
+    if ( OptionsMutex ) return;
+    OptionsMutex = true;
+    CheckDates();
+    UpdateQuery(false);
+    OptionsMutex = false;
+  }
+
+  private void CheckDates()
+  {
+    if ( SelectDateStart.Checked && SelectDateEnd.Checked )
+      if ( EditDateStart.Value > EditDateEnd.Value )
+      {
+        var temp = EditDateStart.Value;
+        EditDateStart.Value = EditDateEnd.Value;
+        EditDateEnd.Value = temp;
+      }
   }
 
 }
