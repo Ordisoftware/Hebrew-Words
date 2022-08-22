@@ -42,18 +42,24 @@ namespace Ordisoftware.Hebrew.Words
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectVersesByDateUpdatedForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditDateEnd = new System.Windows.Forms.DateTimePicker();
+      this.EditDateStart = new System.Windows.Forms.DateTimePicker();
+      this.SelectDateEnd = new System.Windows.Forms.CheckBox();
+      this.SelectDateStart = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditOnlyPartiallyTranslated = new System.Windows.Forms.CheckBox();
       this.EditOnlyFullyTranslated = new System.Windows.Forms.CheckBox();
       this.EditDisplayCount = new System.Windows.Forms.NumericUpDown();
-      this.label1 = new System.Windows.Forms.Label();
+      this.LabelFontSize = new System.Windows.Forms.Label();
       this.LabelDisplayCount = new System.Windows.Forms.Label();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBookTranscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBookNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +67,6 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnVerseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnVerseTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
@@ -86,16 +91,56 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditDateEnd);
+      this.PanelBottom.Controls.Add(this.EditDateStart);
+      this.PanelBottom.Controls.Add(this.SelectDateEnd);
+      this.PanelBottom.Controls.Add(this.SelectDateStart);
       this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.EditOnlyPartiallyTranslated);
       this.PanelBottom.Controls.Add(this.EditOnlyFullyTranslated);
       this.PanelBottom.Controls.Add(this.EditDisplayCount);
-      this.PanelBottom.Controls.Add(this.label1);
+      this.PanelBottom.Controls.Add(this.LabelFontSize);
       this.PanelBottom.Controls.Add(this.LabelDisplayCount);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // EditDateEnd
+      // 
+      this.EditDateEnd.Checked = false;
+      this.EditDateEnd.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDateEnd", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditDateEnd, "EditDateEnd");
+      this.EditDateEnd.Name = "EditDateEnd";
+      this.EditDateEnd.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDateEnd;
+      this.EditDateEnd.ValueChanged += new System.EventHandler(this.EditDate_ValueChanged);
+      // 
+      // EditDateStart
+      // 
+      this.EditDateStart.Checked = false;
+      this.EditDateStart.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDateStart", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditDateStart, "EditDateStart");
+      this.EditDateStart.Name = "EditDateStart";
+      this.EditDateStart.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDateStart;
+      this.EditDateStart.ValueChanged += new System.EventHandler(this.EditDate_ValueChanged);
+      // 
+      // SelectDateEnd
+      // 
+      resources.ApplyResources(this.SelectDateEnd, "SelectDateEnd");
+      this.SelectDateEnd.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDateEndEnabled;
+      this.SelectDateEnd.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDateEndEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectDateEnd.Name = "SelectDateEnd";
+      this.SelectDateEnd.UseVisualStyleBackColor = true;
+      this.SelectDateEnd.CheckedChanged += new System.EventHandler(this.SelectDateEnd_CheckedChanged);
+      // 
+      // SelectDateStart
+      // 
+      resources.ApplyResources(this.SelectDateStart, "SelectDateStart");
+      this.SelectDateStart.Checked = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDateStartEnabled;
+      this.SelectDateStart.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDateStartEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.SelectDateStart.Name = "SelectDateStart";
+      this.SelectDateStart.UseVisualStyleBackColor = true;
+      this.SelectDateStart.CheckedChanged += new System.EventHandler(this.SelectDateStart_CheckedChanged);
       // 
       // EditFontSize
       // 
@@ -136,17 +181,17 @@ namespace Ordisoftware.Hebrew.Words
       resources.ApplyResources(this.EditDisplayCount, "EditDisplayCount");
       this.EditDisplayCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDisplayCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDisplayCount.Increment = new decimal(new int[] {
-            100,
+            50,
             0,
             0,
             0});
       this.EditDisplayCount.Maximum = new decimal(new int[] {
-            25000,
+            1000,
             0,
             0,
             0});
       this.EditDisplayCount.Minimum = new decimal(new int[] {
-            100,
+            50,
             0,
             0,
             0});
@@ -154,10 +199,10 @@ namespace Ordisoftware.Hebrew.Words
       this.EditDisplayCount.Value = global::Ordisoftware.Hebrew.Words.Properties.Settings.Default.SelectVersesByDateUpdatedFormDisplayCount;
       this.EditDisplayCount.ValueChanged += new System.EventHandler(this.EditDisplayCount_ValueChanged);
       // 
-      // label1
+      // LabelFontSize
       // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // LabelDisplayCount
       // 
@@ -197,15 +242,15 @@ namespace Ordisoftware.Hebrew.Words
             this.ColumnVerseTranslation,
             this.ColumnDateModified});
       this.DataGridView.DataSource = this.BindingSource;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle2.NullValue = "String.Empty";
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.DataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+      dataGridViewCellStyle3.NullValue = "String.Empty";
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
       this.DataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.DataGridView.EnableHeadersVisualStyles = false;
       this.DataGridView.MultiSelect = false;
@@ -217,10 +262,16 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
+      // 
       // ColumnId
       // 
       this.ColumnId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnId.DataPropertyName = "ID";
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      this.ColumnId.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.ColumnId, "ColumnId");
       this.ColumnId.Name = "ColumnId";
       this.ColumnId.ReadOnly = true;
@@ -272,13 +323,8 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnDateModified.Name = "ColumnDateModified";
       this.ColumnDateModified.ReadOnly = true;
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
-      // 
       // SelectVersesByDateUpdatedForm
       // 
-      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -324,7 +370,11 @@ namespace Ordisoftware.Hebrew.Words
     private DataGridView DataGridView;
         private CheckBox EditOnlyPartiallyTranslated;
         private NumericUpDown EditFontSize;
-        private Label label1;
+        private Label LabelFontSize;
+        private CheckBox SelectDateStart;
+        private CheckBox SelectDateEnd;
+        private DateTimePicker EditDateStart;
+        private DateTimePicker EditDateEnd;
         private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnBookTranscription;
         private DataGridViewTextBoxColumn ColumnBookNumber;

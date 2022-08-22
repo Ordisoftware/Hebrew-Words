@@ -163,4 +163,13 @@
   <data name="EditOnlyPartiallyTranslated.Text" xml:space="preserve">
     <value>Seulement les partiellement traduits</value>
   </data>
+  <data name="SelectDateStart.Text" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="SelectDateEnd.Text" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="LabelFontSize.Text" xml:space="preserve">
+    <value>texte</value>
+  </data>
 </root>
