@@ -330,7 +330,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
-#### 2022.08.23 - Version 3.11
+#### 2022.08.28 - Version 3.11
 
 - Add date filters to verses by date updated window.
 - Fix many things in verses by date updated window.
