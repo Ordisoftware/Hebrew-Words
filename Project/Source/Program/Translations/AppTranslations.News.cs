@@ -25,8 +25,8 @@ static partial class AppTranslations
 
     ["3.11"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Add date filters to the window of verses by update date." + Globals.NL +
-                      "• Many fixes in the window of verses by update date.",
+      [Language.EN] = "• Add date filters to the window of verses by updated date." + Globals.NL +
+                      "• Many fixes in the window of verses by updated date.",
 
       [Language.FR] = "• Ajout des filtres de date à la fenêtre des versets par date de mise à jour." + Globals.NL +
                       "• Beaucoup de corrections dans la fenêtre des versets par date de mise à jour.",

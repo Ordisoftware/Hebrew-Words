@@ -5914,10 +5914,10 @@ A verse is founded if the translation of one of its words contains an expression
 		<value>44, 46</value>
 	</data>
 	<data name="ActionViewVersesByDateUpdated.Text" xml:space="preserve">
-    <value>Display verses by update date</value>
+    <value>Display verses by updated date</value>
   </data>
 	<data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
-    <value>Display verses by update date (Ctrl+F5, Ctrl+Alt+F)</value>
+    <value>Display verses by updated date (Ctrl+F5, Ctrl+Alt+F)</value>
   </data>
 	<data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 49</value>
