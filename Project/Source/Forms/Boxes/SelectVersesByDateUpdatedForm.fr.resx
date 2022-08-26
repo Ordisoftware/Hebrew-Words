@@ -170,6 +170,9 @@
     <value>Fin</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
-    <value>texte</value>
+    <value>Texte</value>
+  </data>
+  <data name="LabelFilterWords.Text" xml:space="preserve">
+    <value>Chercher</value>
   </data>
 </root>

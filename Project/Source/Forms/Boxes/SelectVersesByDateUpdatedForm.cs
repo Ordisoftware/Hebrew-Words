@@ -17,6 +17,17 @@ namespace Ordisoftware.Hebrew.Words;
 partial class SelectVersesByDateUpdatedForm : Form
 {
 
+  private class VerseItem
+  {
+    public int Id { get; set; }
+    public string BookTranscription { get; set; }
+    public int BookNumber { get; set; }
+    public int ChapterNumber { get; set; }
+    public int Number { get; set; }
+    public string Translation { get; set; }
+    public DateTime DateModified { get; set; }
+  }
+
   static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
   static public ReferenceItem Run()
@@ -74,15 +85,9 @@ partial class SelectVersesByDateUpdatedForm : Form
     BindingSource.DataSource = null;
   }
 
-  private class VerseItem
+  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
   {
-    public int Id { get; set; }
-    public string BookTranscription { get; set; }
-    public int BookNumber { get; set; }
-    public int ChapterNumber { get; set; }
-    public int Number { get; set; }
-    public string Translation { get; set; }
-    public DateTime DateModified { get; set; }
+    DisplayManager.ShowInformation(AppTranslations.FilterTranslationNotice.GetLang());
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
@@ -92,11 +97,16 @@ partial class SelectVersesByDateUpdatedForm : Form
     var query = from verse in ApplicationDatabase.Instance.Verses
                 join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
                 join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
-                where EditOnlyFullyTranslated.Checked
-                      ? verse.IsFullyTranslated
-                      : EditOnlyPartiallyTranslated.Checked
-                        ? verse.IsPartiallyTranslated
-                        : verse.HasTranslation
+                where ( EditOnlyFullyTranslated.Checked
+                        ? verse.IsFullyTranslated
+                        : EditOnlyPartiallyTranslated.Checked
+                          ? verse.IsPartiallyTranslated
+                          : verse.HasTranslation )
+                     && ( EditFilterVerse.Text.Length != 0
+                          ? verse.Title.RawContains(EditFilterVerse.Text)
+                            || verse.Translation.RawContains(EditFilterVerse.Text)
+                            || verse.Comment.RawContains(EditFilterVerse.Text)
+                          : true )
                 select new VerseItem
                 {
                   BookTranscription = book.Transcription,
@@ -225,6 +235,44 @@ partial class SelectVersesByDateUpdatedForm : Form
         EditDateStart.Value = EditDateEnd.Value;
         EditDateEnd.Value = temp;
       }
+  }
+
+  private bool FilterWordModified;
+
+  private void ActionApplyFilterVerse_Click(object sender, EventArgs e)
+  {
+    UpdateQuery(false);
+  }
+
+  private void ActionClearFilterVerse_Click(object sender, EventArgs e)
+  {
+    EditFilterVerse.Text = string.Empty;
+    ActionApplyFilterVerse_Click(sender, e);
+  }
+
+  private void EditFilterVerse_Leave(object sender, EventArgs e)
+  {
+    if ( FilterWordModified )
+    {
+      FilterWordModified = false;
+      ActionApplyFilterVerse_Click(sender, e);
+    }
+  }
+
+  private void EditFilterVerse_KeyUp(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Enter && FilterWordModified )
+    {
+      FilterWordModified = false;
+      ActionApplyFilterVerse_Click(sender, e);
+    }
+  }
+
+  private void EditFilterVerse_TextChanged(object sender, EventArgs e)
+  {
+    FilterWordModified = true;
+    ActionApplyFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
+    ActionClearFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
   }
 
 }

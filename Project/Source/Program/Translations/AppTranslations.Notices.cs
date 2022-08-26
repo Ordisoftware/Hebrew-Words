@@ -43,13 +43,30 @@ static partial class AppTranslations
                     "Filter chapters on the title and the memo." + Globals.NL2 +
                     "Filter verses on the title, translation and the comment." + Globals.NL2 +
                     "Only one word or sentence per filter." + Globals.NL2 +
-                    "The filters are cumulative without case or signs, press Enter or exit the input box to start the query.",
+                    "Case and signs are not considered." + Globals.NL2 +
+                    "Press Enter or exit the input box to start the query.",
 
     [Language.FR] = "Filtre les livres sur toute transcription, nom commun, traduction, lettrique et mémo." + Globals.NL2 +
                     "Filtre les chapitres sur le titre et le mémo." + Globals.NL2 +
                     "Filtre les versets sur le titre, la traduction et le commentaire." + Globals.NL2 +
                     "Un seul mot ou phrase par filtre." + Globals.NL2 +
-                    "Note: Les filtres sont cumulatifs sans casse ni signes, appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête."
+                    "La casse et les signes ne sont pas considérés." + Globals.NL2 +
+                    "Appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête."
+
+  };
+
+  static public readonly TranslationsDictionary FilterTranslationNotice = new()
+  {
+
+    [Language.EN] = "Filter verses on the title, translation and the comment." + Globals.NL2 +
+                    "Only one word or sentence." + Globals.NL2 +
+                    "Case and signs are not considered." + Globals.NL2 +
+                    "Press Enter or exit the input box to start the query.",
+
+    [Language.FR] = "Filtre les versets sur le titre, la traduction et le commentaire." + Globals.NL2 +
+                    "Un seul mot ou phrase." + Globals.NL2 +
+                    "La casse et les signes ne sont pas considérés." + Globals.NL2 +
+                    "Appuyez sur Entrée ou quittez la zone de saisie pour lancer la requête."
 
   };
 
@@ -65,6 +82,7 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary ImportNotice = new()
   {
+
     [Language.EN] = "This console allows for example to import an MS Word verse table." + Globals.NL2 +
                     "This table must first be converted to text with | as a separator." + Globals.NL2 +
                     "The import text must be presented in groups of two lines:" + Globals.NL +
@@ -80,6 +98,7 @@ static partial class AppTranslations
                     "- Une deuxième contenant une liste de traductions." + Globals.NL2 +
                     "Il peut y avoir autant de groupe de deux lignes que nécessaire." + Globals.NL2 +
                     "Les champs de traduction importés peuvent être édités dans la grille du résultat."
+
   };
 
 }

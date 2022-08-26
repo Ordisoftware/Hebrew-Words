@@ -47,6 +47,11 @@ namespace Ordisoftware.Hebrew.Words
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.LabelFilterWords = new System.Windows.Forms.Label();
+      this.LabelInfoFilterVerses = new System.Windows.Forms.Button();
+      this.ActionApplyFilterVerse = new System.Windows.Forms.Button();
+      this.ActionClearFilterVerse = new System.Windows.Forms.Button();
+      this.EditFilterVerse = new Ordisoftware.Core.TextBoxEx();
       this.EditDateEnd = new System.Windows.Forms.DateTimePicker();
       this.EditDateStart = new System.Windows.Forms.DateTimePicker();
       this.SelectDateEnd = new System.Windows.Forms.CheckBox();
@@ -68,10 +73,10 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -91,6 +96,11 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.LabelFilterWords);
+      this.PanelBottom.Controls.Add(this.LabelInfoFilterVerses);
+      this.PanelBottom.Controls.Add(this.ActionApplyFilterVerse);
+      this.PanelBottom.Controls.Add(this.ActionClearFilterVerse);
+      this.PanelBottom.Controls.Add(this.EditFilterVerse);
       this.PanelBottom.Controls.Add(this.EditDateEnd);
       this.PanelBottom.Controls.Add(this.EditDateStart);
       this.PanelBottom.Controls.Add(this.SelectDateEnd);
@@ -105,6 +115,45 @@ namespace Ordisoftware.Hebrew.Words
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // LabelFilterWords
+      // 
+      resources.ApplyResources(this.LabelFilterWords, "LabelFilterWords");
+      this.LabelFilterWords.Name = "LabelFilterWords";
+      // 
+      // LabelInfoFilterVerses
+      // 
+      this.LabelInfoFilterVerses.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.LabelInfoFilterVerses, "LabelInfoFilterVerses");
+      this.LabelInfoFilterVerses.Name = "LabelInfoFilterVerses";
+      this.LabelInfoFilterVerses.UseVisualStyleBackColor = true;
+      this.LabelInfoFilterVerses.Click += new System.EventHandler(this.LabelInfoFilterVerses_Click);
+      // 
+      // ActionApplyFilterVerse
+      // 
+      resources.ApplyResources(this.ActionApplyFilterVerse, "ActionApplyFilterVerse");
+      this.ActionApplyFilterVerse.FlatAppearance.BorderSize = 0;
+      this.ActionApplyFilterVerse.Name = "ActionApplyFilterVerse";
+      this.ActionApplyFilterVerse.UseVisualStyleBackColor = true;
+      this.ActionApplyFilterVerse.Click += new System.EventHandler(this.ActionApplyFilterVerse_Click);
+      // 
+      // ActionClearFilterVerse
+      // 
+      resources.ApplyResources(this.ActionClearFilterVerse, "ActionClearFilterVerse");
+      this.ActionClearFilterVerse.FlatAppearance.BorderSize = 0;
+      this.ActionClearFilterVerse.Name = "ActionClearFilterVerse";
+      this.ActionClearFilterVerse.UseVisualStyleBackColor = true;
+      this.ActionClearFilterVerse.Click += new System.EventHandler(this.ActionClearFilterVerse_Click);
+      // 
+      // EditFilterVerse
+      // 
+      this.EditFilterVerse.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFilterVerse, "EditFilterVerse");
+      this.EditFilterVerse.Name = "EditFilterVerse";
+      this.EditFilterVerse.SpellCheckAllowed = true;
+      this.EditFilterVerse.TextChanged += new System.EventHandler(this.EditFilterVerse_TextChanged);
+      this.EditFilterVerse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditFilterVerse_KeyUp);
+      this.EditFilterVerse.Leave += new System.EventHandler(this.EditFilterVerse_Leave);
       // 
       // EditDateEnd
       // 
@@ -136,9 +185,9 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // EditFontSize
       // 
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -170,13 +219,13 @@ namespace Ordisoftware.Hebrew.Words
       // 
       // EditDisplayCount
       // 
-      resources.ApplyResources(this.EditDisplayCount, "EditDisplayCount");
       this.EditDisplayCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Words.Properties.Settings.Default, "SelectVersesByDateUpdatedFormDisplayCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditDisplayCount.Increment = new decimal(new int[] {
             50,
             0,
             0,
             0});
+      resources.ApplyResources(this.EditDisplayCount, "EditDisplayCount");
       this.EditDisplayCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -217,7 +266,7 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -236,7 +285,7 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.DataSource = this.BindingSource;
       dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle3.NullValue = "String.Empty";
       dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -330,10 +379,10 @@ namespace Ordisoftware.Hebrew.Words
       this.Shown += new System.EventHandler(this.SelectVersesByDateUpdatedForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -374,6 +423,11 @@ namespace Ordisoftware.Hebrew.Words
     private DataGridViewTextBoxColumn ColumnVerseNumber;
     private DataGridViewTextBoxColumn ColumnVerseTranslation;
     private DataGridViewTextBoxColumn ColumnDateModified;
-  }
+        private Button LabelInfoFilterVerses;
+        internal Button ActionApplyFilterVerse;
+        internal Button ActionClearFilterVerse;
+        private TextBoxEx EditFilterVerse;
+        private Label LabelFilterWords;
+    }
 
 }
