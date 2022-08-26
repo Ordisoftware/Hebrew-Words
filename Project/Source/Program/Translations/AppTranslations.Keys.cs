@@ -94,7 +94,7 @@ static partial class AppTranslations
                     "Ctrl + B : Tableau des livres" + Globals.NL +
                     "Ctrl + P : tableau des parashot" + Globals.NL +
                     "Ctrl + Maj + T : Normalize texts" + Globals.NL +
-                    "Ctrl + Alt + F or Ctrl + F5 | Afficher les versets par date de mise à jour" + Globals.NL +
+                    "Ctrl + Alt + F ou Ctrl + F5 | Afficher les versets par date de mise à jour" + Globals.NL +
                     "Ctrl + Alt + I : Console d'importation" + Globals.NL +
                     "Ctrl + Alt + S : Statistiques de Tanak" + Globals.NL +
                     "Alt + C : Calculatrice" + Globals.NL +
