@@ -330,15 +330,15 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
-#### 2022.08.28 - Version 3.11
+#### 2022.08.26 - Version 3.11
 
-- Add date filters to verses by date updated window.
-- Fix many things in verses by date updated window.
+- Add date filters to the window of verses by updated date.
+- Many fixes in the window of verses by update date.
 
 #### 2022.08.21 - Version 3.10
 
-- Add option to show only partially translated in the list of verses by date updated window.
-- Add enter key press to reach selected reference the in list of verses by date updated window.
+- Add option to show only partially translated in the list of verses by update date window.
+- Add enter key press to reach selected reference the in list of verses by update date window.
 - Fix parashot board header growing on changing font size.
 - Fix H'eqev parashah transcription.
 

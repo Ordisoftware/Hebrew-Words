@@ -45,9 +45,11 @@ partial class SelectVersesByDateUpdatedForm : Form
     EditOnlyPartiallyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated;
     EditDateStart.Enabled = SelectDateStart.Checked;
     EditDateEnd.Enabled = SelectDateEnd.Checked;
-    var date = new DateTime(1900, 1, 1);
-    if ( EditDateStart.Value.Date == date ) EditDateStart.Value = DateTime.Now.Date;
-    if ( EditDateEnd.Value.Date == date ) EditDateEnd.Value = DateTime.Now.Date;
+    //TODO delete var date = new DateTime(1900, 1, 1);
+    //if ( EditDateStart.Value.Date == date )
+    EditDateStart.Value = DateTime.Now.Date.AddDays(-7);
+    //if ( EditDateEnd.Value.Date == date )
+    EditDateEnd.Value = DateTime.Now.Date;
     OptionsMutex = false;
   }
 

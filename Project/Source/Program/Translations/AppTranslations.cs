@@ -25,7 +25,7 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary SelectVersesByDateUpdatedFormTitle = new()
   {
-    [Language.EN] = "Verses by date updated - {0} found out of {1}",
+    [Language.EN] = "Verses by update date - {0} found out of {1}",
     [Language.FR] = "Versets par date de mise à jour - {0} sur {1} trouvés"
   };
 

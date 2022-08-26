@@ -2254,53 +2254,5 @@ namespace Ordisoftware.Hebrew.Words.Properties {
                 this["SelectVersesByDateUpdatedFormFontSize"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SelectVersesByDateUpdatedFormDateStartEnabled {
-            get {
-                return ((bool)(this["SelectVersesByDateUpdatedFormDateStartEnabled"]));
-            }
-            set {
-                this["SelectVersesByDateUpdatedFormDateStartEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SelectVersesByDateUpdatedFormDateEndEnabled {
-            get {
-                return ((bool)(this["SelectVersesByDateUpdatedFormDateEndEnabled"]));
-            }
-            set {
-                this["SelectVersesByDateUpdatedFormDateEndEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1900-01-01")]
-        public global::System.DateTime SelectVersesByDateUpdatedFormDateStart {
-            get {
-                return ((global::System.DateTime)(this["SelectVersesByDateUpdatedFormDateStart"]));
-            }
-            set {
-                this["SelectVersesByDateUpdatedFormDateStart"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1900-01-01")]
-        public global::System.DateTime SelectVersesByDateUpdatedFormDateEnd {
-            get {
-                return ((global::System.DateTime)(this["SelectVersesByDateUpdatedFormDateEnd"]));
-            }
-            set {
-                this["SelectVersesByDateUpdatedFormDateEnd"] = value;
-            }
-        }
     }
 }
