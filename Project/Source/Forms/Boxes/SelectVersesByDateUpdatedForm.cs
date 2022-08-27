@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 partial class SelectVersesByDateUpdatedForm : Form
 {
 
-  private class VerseItem
+  private sealed class VerseItem
   {
     public int Id { get; set; }
     public string BookTranscription { get; set; }
@@ -35,6 +35,8 @@ partial class SelectVersesByDateUpdatedForm : Form
     using var form = new SelectVersesByDateUpdatedForm();
     return form.ShowDialog() == DialogResult.OK ? form.Reference : null;
   }
+
+  private bool FilterWordModified;
 
   private bool OptionsMutex = true;
 
@@ -56,10 +58,7 @@ partial class SelectVersesByDateUpdatedForm : Form
     EditOnlyPartiallyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated;
     EditDateStart.Enabled = SelectDateStart.Checked;
     EditDateEnd.Enabled = SelectDateEnd.Checked;
-    //TODO delete var date = new DateTime(1900, 1, 1);
-    //if ( EditDateStart.Value.Date == date )
     EditDateStart.Value = DateTime.Now.Date.AddDays(-7);
-    //if ( EditDateEnd.Value.Date == date )
     EditDateEnd.Value = DateTime.Now.Date;
     OptionsMutex = false;
   }
@@ -85,55 +84,22 @@ partial class SelectVersesByDateUpdatedForm : Form
     BindingSource.DataSource = null;
   }
 
-  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
+  private void ActionInfoFilterVerses_Click(object sender, EventArgs e)
   {
     DisplayManager.ShowInformation(AppTranslations.FilterTranslationNotice.GetLang());
   }
 
-  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private void UpdateQuery(bool focusGrid = true)
+  private void ActionOK_Click(object sender, EventArgs e)
   {
-    BindingSource.DataSource = null;
-    var query = from verse in ApplicationDatabase.Instance.Verses
-                join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
-                join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
-                where ( EditOnlyFullyTranslated.Checked
-                        ? verse.IsFullyTranslated
-                        : EditOnlyPartiallyTranslated.Checked
-                          ? verse.IsPartiallyTranslated
-                          : verse.HasTranslation )
-                     && ( EditFilterVerse.Text.Length != 0
-                          ? verse.Title.RawContains(EditFilterVerse.Text)
-                            || verse.Translation.RawContains(EditFilterVerse.Text)
-                            || verse.Comment.RawContains(EditFilterVerse.Text)
-                          : true )
-                select new VerseItem
-                {
-                  BookTranscription = book.Transcription,
-                  BookNumber = book.Number,
-                  ChapterNumber = chapter.Number,
-                  Number = verse.Number,
-                  Translation = verse.Translation,
-                  DateModified = new DateTime(Math.Max(verse.DateModified.Ticks,
-                                                       verse.Words.Max(w => w.DateModified.Ticks)))
-                };
-    query = query.OrderByDescending(v => v.DateModified);
-    int countAll = query.Count();
-    if ( SelectDateStart.Checked ) query = query.Where(v => v.DateModified.Date >= EditDateStart.Value.Date);
-    if ( SelectDateEnd.Checked ) query = query.Where(v => v.DateModified.Date <= EditDateEnd.Value.Date);
-    var list = query.Take((int)EditDisplayCount.Value).ToList();
-    int countToDisplay = list.Count;
-    if ( countToDisplay == 0 )
-      ActionOK.Enabled = false;
-    else
+    if ( DataGridView.SelectedRows.Count > 0 )
     {
-      int index = 0;
-      foreach ( var item in list ) item.Id = ++index;
-      BindingSource.DataSource = list;
-      ActionOK.Enabled = countToDisplay > 0;
+      var row = DataGridView.SelectedRows[0];
+      int book = (int)row.Cells[ColumnBookNumber.Index].Value;
+      int chapter = (int)row.Cells[ColumnChapterNumber.Index].Value;
+      int verse = (int)row.Cells[ColumnVerseNumber.Index].Value;
+      Reference = new ReferenceItem(book, chapter, verse);
     }
-    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(countToDisplay, countAll);
-    if ( focusGrid ) ActiveControl = DataGridView;
+    Close();
   }
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -149,19 +115,6 @@ partial class SelectVersesByDateUpdatedForm : Form
       e.Handled = true;
       ActionOK.PerformClick();
     }
-  }
-
-  private void ActionOK_Click(object sender, EventArgs e)
-  {
-    if ( DataGridView.SelectedRows.Count > 0 )
-    {
-      var row = DataGridView.SelectedRows[0];
-      int book = (int)row.Cells[ColumnBookNumber.Index].Value;
-      int chapter = (int)row.Cells[ColumnChapterNumber.Index].Value;
-      int verse = (int)row.Cells[ColumnVerseNumber.Index].Value;
-      Reference = new ReferenceItem(book, chapter, verse);
-    }
-    Close();
   }
 
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
@@ -228,16 +181,9 @@ partial class SelectVersesByDateUpdatedForm : Form
 
   private void CheckDates()
   {
-    if ( SelectDateStart.Checked && SelectDateEnd.Checked )
-      if ( EditDateStart.Value > EditDateEnd.Value )
-      {
-        var temp = EditDateStart.Value;
-        EditDateStart.Value = EditDateEnd.Value;
-        EditDateEnd.Value = temp;
-      }
+    if ( SelectDateStart.Checked && SelectDateEnd.Checked && EditDateStart.Value > EditDateEnd.Value )
+      (EditDateEnd.Value, EditDateStart.Value) = (EditDateStart.Value, EditDateEnd.Value);
   }
-
-  private bool FilterWordModified;
 
   private void ActionApplyFilterVerse_Click(object sender, EventArgs e)
   {
@@ -273,6 +219,69 @@ partial class SelectVersesByDateUpdatedForm : Form
     FilterWordModified = true;
     ActionApplyFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
     ActionClearFilterVerse.Enabled = EditFilterVerse.Text.Length != 0;
+  }
+
+  private void UpdateQuery(bool focusGrid = true)
+  {
+    BindingSource.DataSource = null;
+    // Create query
+    string filterTranslation = EditFilterVerse.Text;
+    bool filterOnTranslation = filterTranslation.Length == 0;
+    bool partiallyTranslated = EditOnlyPartiallyTranslated.Checked;
+    bool onlyFull = EditOnlyFullyTranslated.Checked;
+    var query = from verse in ApplicationDatabase.Instance.Verses
+                join chapter in ApplicationDatabase.Instance.Chapters on verse.ChapterID equals chapter.ID
+                join book in ApplicationDatabase.Instance.Books on chapter.BookID equals book.ID
+                where ( onlyFull
+                        ? verse.IsFullyTranslated
+                        : partiallyTranslated
+                          ? verse.IsPartiallyTranslated
+                          : verse.HasTranslation )
+                   && ( filterOnTranslation
+                        || verse.Title.RawContains(filterTranslation)
+                        || verse.Translation.RawContains(filterTranslation)
+                        || verse.Comment.RawContains(filterTranslation) )
+                select new VerseItem
+                {
+                  BookTranscription = book.Transcription,
+                  BookNumber = book.Number,
+                  ChapterNumber = chapter.Number,
+                  Number = verse.Number,
+                  Translation = verse.Translation,
+                  DateModified = new DateTime(Math.Max(verse.DateModified.Ticks,
+                                                       verse.Words.Max(w => w.DateModified.Ticks)))
+                };
+    // Full query
+    query = query.OrderByDescending(v => v.DateModified);
+    int countAll = query.Count();
+    // Filtered query
+    if ( SelectDateStart.Checked )
+    {
+      var dateStart = EditDateStart.Value.Date;
+      query = query.Where(v => v.DateModified.Date >= dateStart);
+    }
+    if ( SelectDateEnd.Checked )
+    {
+      var dateEnd = EditDateEnd.Value.Date;
+      query = query.Where(v => v.DateModified.Date <= dateEnd);
+    }
+    // Create list
+    var list = query.Take((int)EditDisplayCount.Value).ToList();
+    int countToDisplay = list.Count;
+    if ( countToDisplay == 0 )
+    {
+      ActionOK.Enabled = false;
+    }
+    else
+    {
+      int index = 0;
+      foreach ( var item in list ) item.Id = ++index;
+      BindingSource.DataSource = list;
+      ActionOK.Enabled = countToDisplay > 0;
+    }
+    // Update UI
+    Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(countToDisplay, countAll);
+    if ( focusGrid ) ActiveControl = DataGridView;
   }
 
 }
