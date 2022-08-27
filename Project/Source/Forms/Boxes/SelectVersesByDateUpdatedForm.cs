@@ -226,7 +226,7 @@ partial class SelectVersesByDateUpdatedForm : Form
     BindingSource.DataSource = null;
     // Create query
     string filterTranslation = EditFilterVerse.Text;
-    bool filterOnTranslation = filterTranslation.Length == 0;
+    bool filterTranslationOff = filterTranslation.Length == 0;
     bool partiallyTranslated = EditOnlyPartiallyTranslated.Checked;
     bool onlyFull = EditOnlyFullyTranslated.Checked;
     var query = from verse in ApplicationDatabase.Instance.Verses
@@ -236,8 +236,11 @@ partial class SelectVersesByDateUpdatedForm : Form
                         ? verse.IsFullyTranslated
                         : partiallyTranslated
                           ? verse.IsPartiallyTranslated
-                          : verse.HasTranslation )
-                   && ( filterOnTranslation
+                          : verse.HasTranslation
+                            || verse.Title.Length != 0
+                            || verse.Concept.Length != 0
+                            || verse.Comment.Length != 0 )
+                   && ( filterTranslationOff
                         || verse.Title.RawContains(filterTranslation)
                         || verse.Translation.RawContains(filterTranslation)
                         || verse.Comment.RawContains(filterTranslation) )
@@ -265,21 +268,16 @@ partial class SelectVersesByDateUpdatedForm : Form
       var dateEnd = EditDateEnd.Value.Date;
       query = query.Where(v => v.DateModified.Date <= dateEnd);
     }
-    // Create list
+    // Create list and update UI
     var list = query.Take((int)EditDisplayCount.Value).ToList();
     int countToDisplay = list.Count;
-    if ( countToDisplay == 0 )
-    {
-      ActionOK.Enabled = false;
-    }
-    else
+    ActionOK.Enabled = countToDisplay > 0;
+    if ( ActionOK.Enabled )
     {
       int index = 0;
       foreach ( var item in list ) item.Id = ++index;
       BindingSource.DataSource = list;
-      ActionOK.Enabled = countToDisplay > 0;
     }
-    // Update UI
     Text = AppTranslations.SelectVersesByDateUpdatedFormTitle.GetLang(countToDisplay, countAll);
     if ( focusGrid ) ActiveControl = DataGridView;
   }

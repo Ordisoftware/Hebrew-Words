@@ -1819,6 +1819,7 @@ partial class MainForm : Form
     {
       string filterVerse = EditFilterVerse.Text;
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
+                                                                  || v.Concept.RawContains(filterVerse)
                                                                   || v.Translation.RawContains(filterVerse)
                                                                   || v.Comment.RawContains(filterVerse))));
     }
@@ -1855,6 +1856,7 @@ partial class MainForm : Form
                                   || c.Memo.RawContains(EditFilterChapter.Text));
     if ( EditFilterVerse.Text.Length != 0 )
       chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(EditFilterVerse.Text)
+                                                    || v.Concept.RawContains(EditFilterVerse.Text)
                                                     || v.Translation.RawContains(EditFilterVerse.Text)
                                                     || v.Comment.RawContains(EditFilterVerse.Text)));
     var list = chapters.ToList();
@@ -1881,6 +1883,7 @@ partial class MainForm : Form
       verses = verses.Where(v => v.HasTranslation);
     if ( EditFilterVerse.Text.Length != 0 )
       verses = verses.Where(v => v.Title.RawContains(EditFilterVerse.Text)
+                              || v.Concept.RawContains(EditFilterVerse.Text)
                               || v.Translation.RawContains(EditFilterVerse.Text)
                               || v.Comment.RawContains(EditFilterVerse.Text));
     SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
