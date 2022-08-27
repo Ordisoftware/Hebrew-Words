@@ -1819,6 +1819,7 @@ partial class MainForm : Form
     {
       string filterVerse = EditFilterVerse.Text;
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
+                                                                  || v.Concept.RawContains(filterVerse)
                                                                   || v.Translation.RawContains(filterVerse)
                                                                   || v.Comment.RawContains(filterVerse))));
     }
@@ -1851,12 +1852,19 @@ partial class MainForm : Form
     if ( EditFilterVersesTranslated.Checked )
       chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
     if ( EditFilterChapter.Text.Length != 0 )
-      chapters = chapters.Where(c => c.Title.RawContains(EditFilterChapter.Text)
-                                  || c.Memo.RawContains(EditFilterChapter.Text));
+    {
+      string filterChapter = EditFilterChapter.Text;
+      chapters = chapters.Where(c => c.Title.RawContains(filterChapter)
+                                  || c.Memo.RawContains(filterChapter));
+    }
     if ( EditFilterVerse.Text.Length != 0 )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(EditFilterVerse.Text)
-                                                    || v.Translation.RawContains(EditFilterVerse.Text)
-                                                    || v.Comment.RawContains(EditFilterVerse.Text)));
+    {
+      string filterVerse = EditFilterVerse.Text;
+      chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
+                                                    || v.Concept.RawContains(filterVerse)
+                                                    || v.Translation.RawContains(filterVerse)
+                                                    || v.Comment.RawContains(filterVerse)));
+    }
     var list = chapters.ToList();
     SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
     if ( list.Count == 0 )
@@ -1880,9 +1888,13 @@ partial class MainForm : Form
     if ( EditFilterVersesTranslated.Checked )
       verses = verses.Where(v => v.HasTranslation);
     if ( EditFilterVerse.Text.Length != 0 )
-      verses = verses.Where(v => v.Title.RawContains(EditFilterVerse.Text)
-                              || v.Translation.RawContains(EditFilterVerse.Text)
-                              || v.Comment.RawContains(EditFilterVerse.Text));
+    {
+      string filterVerse = EditFilterVerse.Text;
+      verses = verses.Where(v => v.Title.RawContains(filterVerse)
+                              || v.Concept.RawContains(filterVerse)
+                              || v.Translation.RawContains(filterVerse)
+                              || v.Comment.RawContains(filterVerse));
+    }
     SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
   }
 
