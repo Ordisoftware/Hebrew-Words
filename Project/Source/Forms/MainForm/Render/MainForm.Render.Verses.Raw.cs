@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class MainForm
@@ -30,11 +30,13 @@ partial class MainForm
       if ( itemBook is null || itemChapter is null ) return;
       EditELS50Single.Text = itemChapter.ELS50;
       EditELS50Single.SelectionStart = EditELS50Single.TextLength;
+      int numberBook = itemBook.Number;
+      int numberChapter = itemChapter.Number;
       var references = SelectRenderAllVerses.Checked
         ? ( from book in ApplicationDatabase.Instance.Books
             from chapter in book.Chapters
             from verse in chapter.Verses
-            where book.Number == itemBook.Number && chapter.Number == itemChapter.Number
+            where book.Number == numberBook && chapter.Number == numberChapter
             select new ReferenceItem(book, chapter, verse) ).ToList()
         : new List<ReferenceItem> { CurrentReference };
       if ( SelectRenderAllVerses.Checked )

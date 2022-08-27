@@ -23,6 +23,13 @@ static partial class AppTranslations
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
+    ["3.12"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Add translated word filter to the window of verses by updated date.",
+
+      [Language.FR] = "• Ajout d'un filtre de mot traduit à la fenêtre des versets par date de mise à jour.",
+    },
+
     ["3.11"] = new TranslationsDictionary
     {
       [Language.EN] = "• Add date filters to the window of verses by updated date." + Globals.NL +

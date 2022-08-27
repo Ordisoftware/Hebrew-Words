@@ -210,7 +210,8 @@ partial class MainForm
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Chapter.Number > 1 )
             {
-              var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number - 1);
+              int numberChapter = CurrentReference.Chapter.Number - 1;
+              var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == numberChapter);
               if ( chapter is not null )
               {
                 var verse = chapter.Verses[chapter.Verses.Count - 1];
@@ -223,7 +224,8 @@ partial class MainForm
           if ( NagigableViews.Contains(Settings.CurrentView) )
             if ( CurrentReference.Verse.Number < CurrentReference.Book.Chapters.Count )
             {
-              var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == CurrentReference.Chapter.Number + 1);
+              int numberChapter = CurrentReference.Chapter.Number - 1;
+              var chapter = CurrentReference.Book.Chapters.Find(c => c.Number == numberChapter);
               if ( chapter is not null )
               {
                 GoToReference(new ReferenceItem(CurrentReference.Book, chapter, chapter.Verses[0]));

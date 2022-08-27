@@ -44,7 +44,7 @@
       this.PanelViewVerseFiltered = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilteredSingle = new System.Windows.Forms.Panel();
       this.PanelViewVerseFilters = new System.Windows.Forms.Panel();
-      this.LabelInfoFilterVerses = new System.Windows.Forms.Button();
+      this.ActionInfoFilterVerses = new System.Windows.Forms.Button();
       this.ActionGoFromVerseFilteredToVersesPanel = new System.Windows.Forms.Button();
       this.ActionApplyFilterVerse = new System.Windows.Forms.Button();
       this.ActionClearFilterVerse = new System.Windows.Forms.Button();
@@ -455,7 +455,7 @@
       // 
       // PanelViewVerseFilters
       // 
-      this.PanelViewVerseFilters.Controls.Add(this.LabelInfoFilterVerses);
+      this.PanelViewVerseFilters.Controls.Add(this.ActionInfoFilterVerses);
       this.PanelViewVerseFilters.Controls.Add(this.ActionGoFromVerseFilteredToVersesPanel);
       this.PanelViewVerseFilters.Controls.Add(this.ActionApplyFilterVerse);
       this.PanelViewVerseFilters.Controls.Add(this.ActionClearFilterVerse);
@@ -477,13 +477,13 @@
       resources.ApplyResources(this.PanelViewVerseFilters, "PanelViewVerseFilters");
       this.PanelViewVerseFilters.Name = "PanelViewVerseFilters";
       // 
-      // LabelInfoFilterVerses
+      // ActionInfoFilterVerses
       // 
-      resources.ApplyResources(this.LabelInfoFilterVerses, "LabelInfoFilterVerses");
-      this.LabelInfoFilterVerses.FlatAppearance.BorderSize = 0;
-      this.LabelInfoFilterVerses.Name = "LabelInfoFilterVerses";
-      this.LabelInfoFilterVerses.UseVisualStyleBackColor = true;
-      this.LabelInfoFilterVerses.Click += new System.EventHandler(this.LabelInfoFilterVerses_Click);
+      resources.ApplyResources(this.ActionInfoFilterVerses, "ActionInfoFilterVerses");
+      this.ActionInfoFilterVerses.FlatAppearance.BorderSize = 0;
+      this.ActionInfoFilterVerses.Name = "ActionInfoFilterVerses";
+      this.ActionInfoFilterVerses.UseVisualStyleBackColor = true;
+      this.ActionInfoFilterVerses.Click += new System.EventHandler(this.ActionInfoFilterVerses_Click);
       // 
       // ActionGoFromVerseFilteredToVersesPanel
       // 
@@ -2721,7 +2721,7 @@
     internal Button ActionApplyFilterChapter;
     internal Button ActionApplyFilterBook;
     internal System.Windows.Forms.Panel PanelViewVerseFilteredSingle;
-    private Button LabelInfoFilterVerses;
+    private Button ActionInfoFilterVerses;
     private CheckBox SelectRenderAllVersesKeep;
     private Button ActionSelectRenderAllVersesKeepHelp;
     private ToolTip ToolTipSearchResult;

@@ -23,12 +23,6 @@ static partial class AppTranslations
     [Language.FR] = "Traducteur littéral mot-à-mot de la Bible hébraïque"
   };
 
-  static public readonly TranslationsDictionary SelectVersesByDateUpdatedFormTitle = new()
-  {
-    [Language.EN] = "Verses by updated date - {0} found out of {1}",
-    [Language.FR] = "Versets par date de mise à jour - {0} sur {1} trouvés"
-  };
-
   static public readonly TranslationsDictionary AskToCreateNewDatabase = new()
   {
     [Language.EN] = "Do you want to create a new database which will replace the actual?",
@@ -51,6 +45,12 @@ static partial class AppTranslations
   {
     [Language.EN] = "Restore default books common names?",
     [Language.FR] = "Restaurer les noms communs par défaut des livres ?"
+  };
+
+  static public readonly TranslationsDictionary SelectVersesByDateUpdatedFormTitle = new()
+  {
+    [Language.EN] = "Verses by updated date : {0} displayed out of {1} found",
+    [Language.FR] = "Versets par date de mise à jour : {0} affichés sur {1} trouvés"
   };
 
   static public readonly TranslationsDictionary Rendering = new()

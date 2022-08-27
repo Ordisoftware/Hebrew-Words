@@ -330,6 +330,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
+#### 2022.08.30 - Version 3.12
+
+- Add translated word filter to the window of verses by updated date.
+
 #### 2022.08.26 - Version 3.11
 
 - Add date filters to the window of verses by updated date.
