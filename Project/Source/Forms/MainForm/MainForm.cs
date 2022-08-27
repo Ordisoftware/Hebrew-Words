@@ -22,7 +22,6 @@ using Equin.ApplicationFramework;
 /// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
-[SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
 partial class MainForm : Form
 {
 
@@ -1802,19 +1801,27 @@ partial class MainForm : Form
     if ( EditFilterVersesTranslated.Checked )
       books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
     if ( EditFilterBook.Text.Length != 0 )
-      books = books.Where(b => b.Transcription.RawContains(EditFilterBook.Text)
-                            || b.CommonName.RawContains(EditFilterBook.Text)
-                            || b.Translation.RawContains(EditFilterBook.Text)
-                            || b.Lettriq.RawContains(EditFilterBook.Text)
-                            || b.Memo.RawContains(EditFilterBook.Text));
+    {
+      string filterBook = EditFilterBook.Text;
+      books = books.Where(b => b.Transcription.RawContains(filterBook)
+                            || b.CommonName.RawContains(filterBook)
+                            || b.Translation.RawContains(filterBook)
+                            || b.Lettriq.RawContains(filterBook)
+                            || b.Memo.RawContains(filterBook));
+    }
     if ( EditFilterChapter.Text.Length != 0 )
-      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(EditFilterChapter.Text)
-                                                || c.Memo.RawContains(EditFilterChapter.Text)));
-
+    {
+      string filterChapter = EditFilterChapter.Text;
+      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(filterChapter)
+                                                || c.Memo.RawContains(filterChapter)));
+    }
     if ( EditFilterVerse.Text.Length != 0 )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(EditFilterVerse.Text)
-                                                                  || v.Translation.RawContains(EditFilterVerse.Text)
-                                                                  || v.Comment.RawContains(EditFilterVerse.Text))));
+    {
+      string filterVerse = EditFilterVerse.Text;
+      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
+                                                                  || v.Translation.RawContains(filterVerse)
+                                                                  || v.Comment.RawContains(filterVerse))));
+    }
     var list = books.ToList();
     SelectFilterBook.DataSource = new BindingList<BookRow>(list);
     if ( list.Count == 0 )
@@ -1903,11 +1910,11 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by LabelInfoFilterVerses for click events.
+  /// Event handler. Called by ActionInfoFilterVerses for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void LabelInfoFilterVerses_Click(object sender, EventArgs e)
+  private void ActionInfoFilterVerses_Click(object sender, EventArgs e)
   {
     DisplayManager.ShowInformation(AppTranslations.FilterVersesNotice.GetLang());
   }

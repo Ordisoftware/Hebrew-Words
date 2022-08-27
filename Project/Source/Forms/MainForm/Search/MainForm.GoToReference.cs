@@ -132,9 +132,10 @@ partial class MainForm
     {
       if ( ( SelectBook.SelectedItem as ObjectView<BookRow> )?.Object.Number != reference.Book.Number )
       {
+        int numberBook = reference.Book.Number;
         var item = SelectBook.Items
                              .AsIEnumerable<ObjectView<BookRow>>()
-                             .FirstOrDefault(item => item.Object.Number == reference.Book.Number);
+                             .FirstOrDefault(item => item.Object.Number == numberBook);
         SelectBook.SelectedItem = item ?? throw new SystemException(AppTranslations.SelectedBookItemIsNull.GetLang());
         updated = true;
       }
@@ -236,9 +237,12 @@ partial class MainForm
     switch ( Settings.CurrentView )
     {
       case ViewMode.ChapterVerses:
-        var control = PanelViewVerses.Controls
-                                     .OfType<VerseControl>()
-                                     .FirstOrDefault(c => c.Reference.Verse.Number == CurrentReference.Verse?.Number);
+        int numberVerse = CurrentReference.Verse?.Number ?? 0;
+        var control = numberVerse == 0
+          ? null
+          : PanelViewVerses.Controls
+                           .OfType<VerseControl>()
+                           .FirstOrDefault(c => c.Reference.Verse.Number == numberVerse);
         if ( control is not null )
         {
           PanelViewVerses.Focus();
