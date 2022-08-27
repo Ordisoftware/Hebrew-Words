@@ -1,4 +1,4 @@
-#define MyAppVersion "3.11"
+#define MyAppVersion "3.12"
 #define MyAppName "Hebrew Words"
 #define MyAppNameNoSpace "HebrewWords"
 #define MyAppExeName "Ordisoftware.Hebrew.Words.exe"
