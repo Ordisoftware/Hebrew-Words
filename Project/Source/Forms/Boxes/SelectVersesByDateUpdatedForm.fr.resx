@@ -161,7 +161,7 @@
     <value>Livre</value>
   </data>
   <data name="EditOnlyPartiallyTranslated.Text" xml:space="preserve">
-    <value>Seulement les partiellement traduits</value>
+    <value>Seulement partiellement traduits</value>
   </data>
   <data name="SelectDateStart.Text" xml:space="preserve">
     <value>Début</value>
