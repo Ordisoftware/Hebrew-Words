@@ -21,8 +21,6 @@ using Xceed.Words.NET;
 static partial class ExportDocX
 {
 
-  // TODO add option to convert " in '«•' and '•»' (utiliser un bool alternatif depuis le premier rencontré)
-
   /// <summary>
   /// Indicates the DocX document.
   /// </summary>
