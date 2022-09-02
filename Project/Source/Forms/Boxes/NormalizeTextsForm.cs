@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Words;
 partial class NormalizeTextsForm : Form
 {
 
+  // TODO add option to convert " in '«•' and '•»' (utiliser un bool alternatif depuis le premier rencontré)
+
   public NormalizeTextsForm()
   {
     InitializeComponent();

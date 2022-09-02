@@ -55,6 +55,8 @@ namespace Ordisoftware.Hebrew.Words
       this.EditReplaceNewlinesBySpaceInTranslation = new System.Windows.Forms.CheckBox();
       this.EditRemoveEmptyLines = new System.Windows.Forms.CheckBox();
       this.EditTrimSpacesAndEmptyLines = new System.Windows.Forms.CheckBox();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.checkBox2 = new System.Windows.Forms.CheckBox();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -183,6 +185,18 @@ namespace Ordisoftware.Hebrew.Words
       this.EditTrimSpacesAndEmptyLines.Name = "EditTrimSpacesAndEmptyLines";
       this.EditTrimSpacesAndEmptyLines.UseVisualStyleBackColor = true;
       // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // checkBox2
+      // 
+      resources.ApplyResources(this.checkBox2, "checkBox2");
+      this.checkBox2.Name = "checkBox2";
+      this.checkBox2.UseVisualStyleBackColor = true;
+      // 
       // NormalizeTextsForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -197,6 +211,8 @@ namespace Ordisoftware.Hebrew.Words
       this.Controls.Add(this.EditNormalizePrefix);
       this.Controls.Add(this.EditRemoveMultipleEmptyLines);
       this.Controls.Add(this.EditRemoveMultipleSpaces);
+      this.Controls.Add(this.checkBox2);
+      this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.EditReplaceNewlinesBySpaceInTranslation);
       this.Controls.Add(this.EditRemoveEmptyLines);
       this.Controls.Add(this.EditTrimSpacesAndEmptyLines);
@@ -240,6 +256,8 @@ namespace Ordisoftware.Hebrew.Words
     private CheckBox EditApplyToTranslations;
     private CheckBox EditApplyToComments;
     private Label label1;
-  }
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
+    }
 
 }
