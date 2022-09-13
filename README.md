@@ -330,6 +330,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
+#### 2022.09.20 - Version 3.13
+
+- Update nugets SQLitePCL.raw, FileHelpers, Serilog and Serilog.Sinks.WinForms.
+
 #### 2022.08.30 - Version 3.12
 
 - Add translated word filter to the window of verses by updated date.
