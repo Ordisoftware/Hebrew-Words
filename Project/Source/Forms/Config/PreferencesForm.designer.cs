@@ -85,7 +85,7 @@
       this.TabPageStartup = new System.Windows.Forms.TabPage();
       this.LabelInfoAutoBackupCount = new System.Windows.Forms.Label();
       this.EditGoToLastVerseAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditGoToMasterBookmarkAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditGoToBookmarkMainAtStartup = new System.Windows.Forms.CheckBox();
       this.EditAutoBackupCount = new System.Windows.Forms.NumericUpDown();
       this.EditShowLastNewInVersionAfterUpdate = new System.Windows.Forms.CheckBox();
       this.LabelLastDBOptimizeDate = new System.Windows.Forms.Label();
@@ -669,7 +669,7 @@
       this.TabPageStartup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageStartup.Controls.Add(this.LabelInfoAutoBackupCount);
       this.TabPageStartup.Controls.Add(this.EditGoToLastVerseAtStartup);
-      this.TabPageStartup.Controls.Add(this.EditGoToMasterBookmarkAtStartup);
+      this.TabPageStartup.Controls.Add(this.EditGoToBookmarkMainAtStartup);
       this.TabPageStartup.Controls.Add(this.EditAutoBackupCount);
       this.TabPageStartup.Controls.Add(this.EditShowLastNewInVersionAfterUpdate);
       this.TabPageStartup.Controls.Add(this.LabelLastDBOptimizeDate);
@@ -699,12 +699,12 @@
       this.EditGoToLastVerseAtStartup.UseVisualStyleBackColor = true;
       this.EditGoToLastVerseAtStartup.CheckedChanged += new System.EventHandler(this.EditGoToLastVerseAtStartup_CheckedChanged);
       // 
-      // EditGoToMasterBookmarkAtStartup
+      // EditGoToBookmarkMainAtStartup
       // 
-      resources.ApplyResources(this.EditGoToMasterBookmarkAtStartup, "EditGoToMasterBookmarkAtStartup");
-      this.EditGoToMasterBookmarkAtStartup.Name = "EditGoToMasterBookmarkAtStartup";
-      this.EditGoToMasterBookmarkAtStartup.UseVisualStyleBackColor = true;
-      this.EditGoToMasterBookmarkAtStartup.CheckedChanged += new System.EventHandler(this.EditGoToMasterBookmarkAtStartup_CheckedChanged);
+      resources.ApplyResources(this.EditGoToBookmarkMainAtStartup, "EditGoToBookmarkMainAtStartup");
+      this.EditGoToBookmarkMainAtStartup.Name = "EditGoToBookmarkMainAtStartup";
+      this.EditGoToBookmarkMainAtStartup.UseVisualStyleBackColor = true;
+      this.EditGoToBookmarkMainAtStartup.CheckedChanged += new System.EventHandler(this.EditGoToBookmarkMainAtStartup_CheckedChanged);
       // 
       // EditAutoBackupCount
       // 
@@ -2362,7 +2362,7 @@
     private Button ActionSelectOnlineVerseURL;
     private TextBoxEx EditOnlineVerseURL;
     private TextBoxEx EditOnlineSearch;
-    private CheckBox EditGoToMasterBookmarkAtStartup;
+    private CheckBox EditGoToBookmarkMainAtStartup;
     private NumericUpDown EditAutoSaveDelay;
     private NumericUpDown EditAutoBackupCount;
     private TextBoxEx EditBackupFolder;

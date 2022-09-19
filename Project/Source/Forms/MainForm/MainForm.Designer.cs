@@ -2180,7 +2180,7 @@
       // 
       resources.ApplyResources(this.ActionSetAsBookmarkMain, "ActionSetAsBookmarkMain");
       this.ActionSetAsBookmarkMain.Name = "ActionSetAsBookmarkMain";
-      this.ActionSetAsBookmarkMain.Click += new System.EventHandler(this.ActionSetAsBookmarkMaster_Click);
+      this.ActionSetAsBookmarkMain.Click += new System.EventHandler(this.ActionSetAsBookmarkMain_Click);
       // 
       // ActionAddToBookmarks
       // 

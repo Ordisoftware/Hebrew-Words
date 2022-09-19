@@ -53,13 +53,13 @@
     <Setting Name="BookmarksCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="BookmarkMasterBook" Type="System.Int32" Scope="User">
+    <Setting Name="BookmarkMainBook" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="BookmarkMasterChapter" Type="System.Int32" Scope="User">
+    <Setting Name="BookmarkMainChapter" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="BookmarkMasterVerse" Type="System.Int32" Scope="User">
+    <Setting Name="BookmarkMainVerse" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="WordControlWidth" Type="System.Int32" Scope="User">
@@ -137,7 +137,7 @@
     <Setting Name="EditBooksFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">884, 661</Value>
     </Setting>
-    <Setting Name="GoToMasterBookmarkAtStartup" Type="System.Boolean" Scope="User">
+    <Setting Name="GoToBookmarkMainAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ImportVerseFormGridColumnWidthHebrew" Type="System.Int32" Scope="User">

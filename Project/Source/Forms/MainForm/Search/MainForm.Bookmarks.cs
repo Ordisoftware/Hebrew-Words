@@ -30,9 +30,9 @@ partial class MainForm
         BookmarkItems.Sort();
       while ( ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex )
         ActionBookmarks.DropDownItems.RemoveAt(BookmarkMenuIndex);
-      var bookmarkMaster = new ReferenceItem(Settings.BookmarkMasterBook,
-                                             Settings.BookmarkMasterChapter,
-                                             Settings.BookmarkMasterVerse);
+      var BookmarkMain = new ReferenceItem(Settings.BookmarkMainBook,
+                                             Settings.BookmarkMainChapter,
+                                             Settings.BookmarkMainVerse);
       void bookmarkClicked(object sender, MouseEventArgs e)
       {
         if ( e.Button != MouseButtons.Right ) return;
@@ -41,9 +41,9 @@ partial class MainForm
           return;
         if ( menuitem == ActionGoToBookmarkMain )
         {
-          Settings.BookmarkMasterBook = 1;
-          Settings.BookmarkMasterChapter = 1;
-          Settings.BookmarkMasterVerse = 1;
+          Settings.BookmarkMainBook = 1;
+          Settings.BookmarkMainChapter = 1;
+          Settings.BookmarkMainVerse = 1;
           UpdateBookmarks();
         }
         else
@@ -52,12 +52,12 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMaster.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+      ActionGoToBookmarkMain.Text = BookmarkMain.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
       if ( Settings.BookmarksWithTranslation )
-        ActionGoToBookmarkMain.Text += $" - {GetExtract(bookmarkMaster.Verse.Translation)}"; // TODO improve display
-      ActionGoToBookmarkMain.Tag = bookmarkMaster;
+        ActionGoToBookmarkMain.Text += $" - {GetExtract(BookmarkMain.Verse.Translation)}"; // TODO improve display
+      ActionGoToBookmarkMain.Tag = BookmarkMain;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
-      if ( bookmarkMaster.CompareTo(CurrentReference) == 0 )
+      if ( BookmarkMain.CompareTo(CurrentReference) == 0 )
         ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Bold);
       else
         ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Regular);

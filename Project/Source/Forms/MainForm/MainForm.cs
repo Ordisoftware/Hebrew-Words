@@ -1111,27 +1111,27 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionSetAsBookmarkMaster for click events.
+  /// Event handler. Called by ActionSetAsBookmarkMain for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionSetAsBookmarkMaster_Click(object sender, EventArgs e)
+  private void ActionSetAsBookmarkMain_Click(object sender, EventArgs e)
   {
     var menuitem = (ToolStripMenuItem)sender;
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
     if ( control is LinkLabel && Settings.CurrentView == ViewMode.Search )
     {
       var reference = (ReferenceItem)control.Tag;
-      Settings.BookmarkMasterBook = reference.Book.Number;
-      Settings.BookmarkMasterChapter = reference.Chapter.Number;
-      Settings.BookmarkMasterVerse = reference.Verse.Number;
+      Settings.BookmarkMainBook = reference.Book.Number;
+      Settings.BookmarkMainChapter = reference.Chapter.Number;
+      Settings.BookmarkMainVerse = reference.Verse.Number;
     }
     else
     if ( control is Label && Settings.CurrentView == ViewMode.ChapterVerses )
     {
-      Settings.BookmarkMasterBook = CurrentReference.Book.Number;
-      Settings.BookmarkMasterChapter = CurrentReference.Chapter.Number;
-      Settings.BookmarkMasterVerse = Convert.ToInt32(control.Text);
+      Settings.BookmarkMainBook = CurrentReference.Book.Number;
+      Settings.BookmarkMainChapter = CurrentReference.Chapter.Number;
+      Settings.BookmarkMainVerse = Convert.ToInt32(control.Text);
     }
     Settings.Store();
     UpdateBookmarks();
@@ -1215,9 +1215,9 @@ partial class MainForm : Form
   private void ActionClearBookmarks_Click(object sender, EventArgs e)
   {
     if ( !DisplayManager.QueryYesNo(SysTranslations.AskToEmptyBookmarks.GetLang()) ) return;
-    Settings.BookmarkMasterBook = 1;
-    Settings.BookmarkMasterChapter = 1;
-    Settings.BookmarkMasterVerse = 1;
+    Settings.BookmarkMainBook = 1;
+    Settings.BookmarkMainChapter = 1;
+    Settings.BookmarkMainVerse = 1;
     BookmarkItems.Clear();
     Settings.Store();
     UpdateBookmarks();
@@ -1599,9 +1599,9 @@ partial class MainForm : Form
       reference = ( (VerseControl)label.Parent ).Reference;
     else
       return;
-    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMasterBook == reference.Book.Number
-                                         && Settings.BookmarkMasterChapter == reference.Chapter.Number
-                                         && Settings.BookmarkMasterVerse == reference.Verse.Number );
+    ActionSetAsBookmarkMain.Enabled = !( Settings.BookmarkMainBook == reference.Book.Number
+                                         && Settings.BookmarkMainChapter == reference.Chapter.Number
+                                         && Settings.BookmarkMainVerse == reference.Verse.Number );
     ActionAddToBookmarks.Enabled = !BookmarkItems.Contains(reference);
     ActionRemoveFromBookmarks.Enabled = BookmarkItems.Contains(reference);
 
