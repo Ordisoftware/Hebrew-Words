@@ -59,7 +59,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCommentLineAddPrefix.Checked = Settings.CommentLineAddPrefix);
     SystemManager.TryCatch(() => EditCommentLinePrefix.Text = Settings.CommentLinePrefix);
     SystemManager.TryCatch(() => EditCommentLineRemovePrefix.Checked = Settings.CommentLineRemovePrefix);
-    SystemManager.TryCatch(() => EditGoToMasterBookmarkAtStartup.Checked = Settings.GoToMasterBookmarkAtStartup);
+    SystemManager.TryCatch(() => EditGoToBookmarkMainAtStartup.Checked = Settings.GoToBookmarkMainAtStartup);
     SystemManager.TryCatch(() => EditGoToLastVerseAtStartup.Checked = Settings.GoToLastVerseAtStartup);
     SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditAutoSaveOnLeaveControl.Checked = Settings.AutoSaveOnLeaveControl);

@@ -215,16 +215,16 @@ partial class PreferencesForm : Form
 
   #region Startup
 
-  private void EditGoToMasterBookmarkAtStartup_CheckedChanged(object sender, EventArgs e)
+  private void EditGoToBookmarkMainAtStartup_CheckedChanged(object sender, EventArgs e)
   {
-    if ( EditGoToMasterBookmarkAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
+    if ( EditGoToBookmarkMainAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
       EditGoToLastVerseAtStartup.Checked = false;
   }
 
   private void EditGoToLastVerseAtStartup_CheckedChanged(object sender, EventArgs e)
   {
-    if ( EditGoToMasterBookmarkAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
-      EditGoToMasterBookmarkAtStartup.Checked = false;
+    if ( EditGoToBookmarkMainAtStartup.Checked && EditGoToLastVerseAtStartup.Checked )
+      EditGoToBookmarkMainAtStartup.Checked = false;
   }
 
   private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)

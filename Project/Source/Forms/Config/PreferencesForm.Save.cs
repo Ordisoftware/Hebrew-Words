@@ -59,8 +59,8 @@ partial class PreferencesForm
     Settings.CommentLineAddPrefix = EditCommentLineAddPrefix.Checked;
     Settings.CommentLineRemovePrefix = EditCommentLineRemovePrefix.Checked;
     Settings.CommentLinePrefix = EditCommentLinePrefix.Text;
-    Settings.GoToMasterBookmarkAtStartup = EditGoToMasterBookmarkAtStartup.Checked;
-    Settings.GoToMasterBookmarkAtStartup = EditGoToMasterBookmarkAtStartup.Checked;
+    Settings.GoToBookmarkMainAtStartup = EditGoToBookmarkMainAtStartup.Checked;
+    Settings.GoToBookmarkMainAtStartup = EditGoToBookmarkMainAtStartup.Checked;
     Settings.GoToLastVerseAtStartup = EditGoToLastVerseAtStartup.Checked;
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.AutoSaveOnLeaveControl = EditAutoSaveOnLeaveControl.Checked;

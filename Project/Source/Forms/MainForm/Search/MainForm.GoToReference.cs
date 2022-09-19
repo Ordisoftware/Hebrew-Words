@@ -29,10 +29,10 @@ partial class MainForm
   /// </summary>
   private void DoStartGoToReference()
   {
-    if ( Settings.GoToMasterBookmarkAtStartup )
-      GoToReference(Settings.BookmarkMasterBook,
-                    Settings.BookmarkMasterChapter,
-                    Settings.BookmarkMasterVerse,
+    if ( Settings.GoToBookmarkMainAtStartup )
+      GoToReference(Settings.BookmarkMainBook,
+                    Settings.BookmarkMainChapter,
+                    Settings.BookmarkMainVerse,
                     true);
     else
     if ( Settings.GoToLastVerseAtStartup )

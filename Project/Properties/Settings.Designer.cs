@@ -230,36 +230,36 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int BookmarkMasterBook {
+        public int BookmarkMainBook {
             get {
-                return ((int)(this["BookmarkMasterBook"]));
+                return ((int)(this["BookmarkMainBook"]));
             }
             set {
-                this["BookmarkMasterBook"] = value;
+                this["BookmarkMainBook"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int BookmarkMasterChapter {
+        public int BookmarkMainChapter {
             get {
-                return ((int)(this["BookmarkMasterChapter"]));
+                return ((int)(this["BookmarkMainChapter"]));
             }
             set {
-                this["BookmarkMasterChapter"] = value;
+                this["BookmarkMainChapter"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int BookmarkMasterVerse {
+        public int BookmarkMainVerse {
             get {
-                return ((int)(this["BookmarkMasterVerse"]));
+                return ((int)(this["BookmarkMainVerse"]));
             }
             set {
-                this["BookmarkMasterVerse"] = value;
+                this["BookmarkMainVerse"] = value;
             }
         }
         
@@ -566,12 +566,12 @@ namespace Ordisoftware.Hebrew.Words.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool GoToMasterBookmarkAtStartup {
+        public bool GoToBookmarkMainAtStartup {
             get {
-                return ((bool)(this["GoToMasterBookmarkAtStartup"]));
+                return ((bool)(this["GoToBookmarkMainAtStartup"]));
             }
             set {
-                this["GoToMasterBookmarkAtStartup"] = value;
+                this["GoToBookmarkMainAtStartup"] = value;
             }
         }
         
