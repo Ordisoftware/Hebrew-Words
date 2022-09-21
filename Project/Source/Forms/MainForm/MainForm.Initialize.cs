@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using Microsoft.Win32;
@@ -185,8 +185,12 @@ partial class MainForm : Form
     if ( !Globals.IsReady ) return;
     if ( Globals.IsExiting ) return;
     ActionSave.PerformClick();
+    if ( Globals.IsSessionEnding ) return;
     if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
       Globals.IsExiting = true;
+    else
+    if ( !Globals.AllowClose )
+      e.Cancel = true;
     else
     if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
@@ -201,13 +205,13 @@ partial class MainForm : Form
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
     DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-    Globals.IsExiting = true;
-    Globals.IsSessionEnding = true;
-    Globals.AllowClose = true;
     if ( !Settings.RenderAllChapterVersesKeep && Settings.RenderAllChapterVerses )
       Settings.RenderAllChapterVerses = false;
-    Settings.Store();
+    SystemManager.TryCatch(Settings.Store);
+    Globals.AllowClose = true;
+    Globals.IsExiting = true;
     Interlocks.Release();
+    DebugManager.Stop();
     TimerTooltip.Stop();
     FormsHelper.CloseAll();
   }
@@ -217,17 +221,12 @@ partial class MainForm : Form
   /// </summary>
   private void SessionEnding(object sender, SessionEndingEventArgs e)
   {
-    if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
-    DebugManager.Enter();
-    try
-    {
-      DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(NativeMethods.WM_QUERYENDSESSION));
-      Close();
-    }
-    finally
-    {
-      DebugManager.Leave();
-    }
+    if ( Globals.IsExiting ) return;
+    if ( Globals.IsSessionEnding ) return;
+    DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(NativeMethods.WM_QUERYENDSESSION));
+    Globals.AllowClose = true;
+    Globals.IsSessionEnding = true;
+    Close();
   }
 
   /// <summary>
