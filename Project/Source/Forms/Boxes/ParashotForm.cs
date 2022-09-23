@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Words.Program;
@@ -473,6 +473,28 @@ partial class ParashotForm : Form
   private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
   {
     Program.TranscriptionGuideForm.Popup();
+  }
+
+  private void ActionClearSearch_Click(object sender, EventArgs e)
+  {
+    EditSearch.Clear();
+  }
+
+  private void EditSearch_TextChanged(object sender, EventArgs e)
+  {
+    string match = EditSearch.Text;
+    ActionClearSearch.Enabled = match.Length > 0;
+    if ( match.Length <= 2 ) return;
+    var row = DataGridView.Rows
+                          .AsIEnumerable()
+                          .Where(row => ( (string)row.Cells[ColumnName.Index].Value ).RawContains(match))
+                          .FirstOrDefault();
+    if ( row is not null )
+    {
+      row.Selected = true;
+      DataGridView.CurrentCell = row.Cells[0];
+      DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
+    }
   }
 
 }
