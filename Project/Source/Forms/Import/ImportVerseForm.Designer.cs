@@ -43,12 +43,12 @@
       this.ActionAnalyse = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).BeginInit();
       this.PanelMain.Panel1.SuspendLayout();
       this.PanelMain.Panel2.SuspendLayout();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.WordMatchesBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordMatchesBindingSource ) ).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -99,7 +99,7 @@
       // 
       this.ColumnHebrew.DataPropertyName = "Hebrew";
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
@@ -175,10 +175,10 @@
       this.PanelMain.Panel1.ResumeLayout(false);
       this.PanelMain.Panel1.PerformLayout();
       this.PanelMain.Panel2.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.PanelMain)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PanelMain ) ).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.WordMatchesBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.WordMatchesBindingSource ) ).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 

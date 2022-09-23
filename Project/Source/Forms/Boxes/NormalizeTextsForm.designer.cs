@@ -256,8 +256,8 @@ namespace Ordisoftware.Hebrew.Words
     private CheckBox EditApplyToTranslations;
     private CheckBox EditApplyToComments;
     private Label label1;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-    }
+    private CheckBox checkBox1;
+    private CheckBox checkBox2;
+  }
 
 }

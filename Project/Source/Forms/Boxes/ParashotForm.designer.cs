@@ -41,6 +41,8 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClearSearch = new System.Windows.Forms.Button();
+      this.EditSearch = new System.Windows.Forms.TextBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
       this.ActionViewLockers = new System.Windows.Forms.LinkLabel();
@@ -75,6 +77,7 @@
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -95,17 +98,18 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
       this.PanelMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionClearSearch);
+      this.PanelBottom.Controls.Add(this.EditSearch);
       this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
@@ -120,10 +124,24 @@
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
+      // ActionClearSearch
+      // 
+      resources.ApplyResources(this.ActionClearSearch, "ActionClearSearch");
+      this.ActionClearSearch.FlatAppearance.BorderSize = 0;
+      this.ActionClearSearch.Name = "ActionClearSearch";
+      this.ActionClearSearch.UseVisualStyleBackColor = true;
+      this.ActionClearSearch.Click += new System.EventHandler(this.ActionClearSearch_Click);
+      // 
+      // EditSearch
+      // 
+      resources.ApplyResources(this.EditSearch, "EditSearch");
+      this.EditSearch.Name = "EditSearch";
+      this.EditSearch.TextChanged += new System.EventHandler(this.EditSearch_TextChanged);
+      // 
       // EditFontSize
       // 
-      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -184,8 +202,8 @@
       // ActionReset
       // 
       this.ActionReset.AllowDrop = true;
-      this.ActionReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.FlatAppearance.BorderSize = 0;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
@@ -202,8 +220,8 @@
       // ActionErase
       // 
       this.ActionErase.AllowDrop = true;
-      this.ActionErase.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionErase, "ActionErase");
+      this.ActionErase.FlatAppearance.BorderSize = 0;
       this.ActionErase.Name = "ActionErase";
       this.ActionErase.UseVisualStyleBackColor = true;
       this.ActionErase.Click += new System.EventHandler(this.ActionEmpty_Click);
@@ -241,7 +259,7 @@
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -265,7 +283,7 @@
       this.DataGridView.DataSource = this.BindingSource;
       dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle10.NullValue = "string.Empty";
       dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -364,7 +382,7 @@
       this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
       dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
       resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
       this.ColumnLinked.Name = "ColumnLinked";
@@ -376,7 +394,7 @@
       this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnHebrew.DataPropertyName = "Hebrew";
       dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle8;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
@@ -478,6 +496,12 @@
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
       resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
       // 
       // ActionShowGrammarGuide
       // 
@@ -595,12 +619,6 @@
       this.Timer.Interval = 3000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
-      // ActionShowTranscriptionGuide
-      // 
-      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
-      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
-      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
-      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -614,11 +632,11 @@
       this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -680,5 +698,7 @@
     private ToolStripSeparator toolStripSeparator5;
     private ToolStripMenuItem ActionEditMemo;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
+    internal Button ActionClearSearch;
+    private TextBox EditSearch;
   }
 }
