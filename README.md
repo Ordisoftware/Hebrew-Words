@@ -330,6 +330,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
+#### 2022.09.25 - Version 3.14
+
+- Add search parashah text box in parashot board.
+
 #### 2022.09.14 - Version 3.13
 
 - Update nugets SQLitePCL.raw, FileHelpers, Serilog and Serilog.Sinks.WinForms.
