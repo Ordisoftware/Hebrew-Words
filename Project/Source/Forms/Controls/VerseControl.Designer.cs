@@ -64,7 +64,7 @@
       this.EditCommentary.BackColor = System.Drawing.Color.Honeydew;
       this.EditCommentary.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.EditCommentary.Dock = System.Windows.Forms.DockStyle.Top;
-      this.EditCommentary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.EditCommentary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.EditCommentary.Location = new System.Drawing.Point(10, 0);
       this.EditCommentary.Margin = new System.Windows.Forms.Padding(0);
       this.EditCommentary.Name = "EditCommentary";
@@ -85,7 +85,7 @@
       // LabelVerseNumber
       // 
       this.LabelVerseNumber.Dock = System.Windows.Forms.DockStyle.Right;
-      this.LabelVerseNumber.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.LabelVerseNumber.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.LabelVerseNumber.ForeColor = System.Drawing.Color.DarkBlue;
       this.LabelVerseNumber.Location = new System.Drawing.Point(345, 20);
       this.LabelVerseNumber.Margin = new System.Windows.Forms.Padding(0);

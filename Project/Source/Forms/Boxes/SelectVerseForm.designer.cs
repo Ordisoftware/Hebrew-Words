@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Words
       this.EditSearchText = new Ordisoftware.Core.TextBoxEx();
       this.PanelOptionsProcess = new System.Windows.Forms.Panel();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).BeginInit();
       this.PanelOptionsDirection.SuspendLayout();
       this.PanelOptionsProcess.SuspendLayout();
       this.SuspendLayout();
@@ -229,7 +229,7 @@ namespace Ordisoftware.Hebrew.Words
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectVerseForm_Load);
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditVerseNumber)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditVerseNumber ) ).EndInit();
       this.PanelOptionsDirection.ResumeLayout(false);
       this.PanelOptionsDirection.PerformLayout();
       this.PanelOptionsProcess.ResumeLayout(false);

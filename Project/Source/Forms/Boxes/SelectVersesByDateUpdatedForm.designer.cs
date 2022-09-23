@@ -73,10 +73,10 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -266,7 +266,7 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -285,7 +285,7 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.DataSource = this.BindingSource;
       dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle6.NullValue = "String.Empty";
       dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -378,10 +378,10 @@ namespace Ordisoftware.Hebrew.Words
       this.Shown += new System.EventHandler(this.SelectVersesByDateUpdatedForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -422,11 +422,11 @@ namespace Ordisoftware.Hebrew.Words
     private DataGridViewTextBoxColumn ColumnVerseNumber;
     private DataGridViewTextBoxColumn ColumnVerseTranslation;
     private DataGridViewTextBoxColumn ColumnDateModified;
-        private Button ActionInfoFilterVerses;
-        internal Button ActionApplyFilterVerse;
-        internal Button ActionClearFilterVerse;
-        private TextBoxEx EditFilterVerse;
-        private Label LabelFilterWords;
-    }
+    private Button ActionInfoFilterVerses;
+    internal Button ActionApplyFilterVerse;
+    internal Button ActionClearFilterVerse;
+    private TextBoxEx EditFilterVerse;
+    private Label LabelFilterWords;
+  }
 
 }
