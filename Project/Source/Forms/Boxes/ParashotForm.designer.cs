@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -67,7 +66,7 @@
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
-      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip();
       this.ActionShowDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +88,7 @@
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.BindingSource = new System.Windows.Forms.BindingSource();
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,13 +96,13 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.Timer = new System.Windows.Forms.Timer();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -137,6 +136,7 @@
       resources.ApplyResources(this.EditSearch, "EditSearch");
       this.EditSearch.Name = "EditSearch";
       this.EditSearch.TextChanged += new System.EventHandler(this.EditSearch_TextChanged);
+      this.EditSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditSearch_KeyDown);
       // 
       // EditFontSize
       // 
@@ -259,7 +259,7 @@
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -283,7 +283,7 @@
       this.DataGridView.DataSource = this.BindingSource;
       dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle10.NullValue = "string.Empty";
       dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -382,7 +382,7 @@
       this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
       dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
       resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
       this.ColumnLinked.Name = "ColumnLinked";
@@ -394,7 +394,7 @@
       this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnHebrew.DataPropertyName = "Hebrew";
       dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle8;
       resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
       this.ColumnHebrew.Name = "ColumnHebrew";
@@ -632,11 +632,11 @@
       this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.PanelMain.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
