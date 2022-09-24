@@ -346,7 +346,7 @@ partial class ParashotForm : Form
     e.ThrowException = false;
   }
 
-  private KeysConverter KeysConverter = new KeysConverter();
+  private KeysConverter KeysConverter = new();
 
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
   {
