@@ -29,6 +29,13 @@ static partial class AppTranslations
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
+    ["3.14"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Add search parashah text box in parashot board.",
+
+      [Language.FR] = "• Ajout d'une zone de texte de recherche de parashah dans le tableau des parashot."
+    },
+
     ["3.12"] = new TranslationsDictionary
     {
       [Language.EN] = "• Add translated word filter to the window of verses by updated date.",
