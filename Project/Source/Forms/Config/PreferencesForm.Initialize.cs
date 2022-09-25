@@ -122,7 +122,6 @@ partial class PreferencesForm
     setInterval(EditPageHeight, LabelPageHeightIntervalInfo, DocumentPageHeightInterval);
     setInterval(EditDocumentWordColumnsCount, LabelDocumentWordColumnsCountIntervalInfo, DocumentWordColumnsCountInterval);
     setInterval(EditWordTranslateLinesCount, LabelWordtranslateLinesCountInfo, WordTranslationLinesCountInterval);
-    // TODO setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
     //
     static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
     {
