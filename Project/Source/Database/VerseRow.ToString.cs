@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 public partial class VerseRow
 {
 
-  // TODO debug error null after changing language and go to filtered verse (need to reload combox or update bindinge ?)
+  // TODO debug error null after changing lang and go to filtered verse (need to reload combox or update bindings ?)
   public string NumberFormatted
     => FormatNumber(ApplicationDatabase.Instance.Chapters.Find(c => c.ID == ChapterID)?.Verses?.Count ?? 0);
 

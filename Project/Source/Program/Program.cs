@@ -107,9 +107,9 @@ static partial class Program
         Settings.SetFirstAndUpgradeFlagsOff();
         Settings.VacuumAtStartup = true;
         Settings.CurrentView = ViewMode.ChapterVerses;
-        Settings.VerseCommentaryLinesCount = 5; // TODO update from default setting
-        Settings.VerseWordTranslationLinesCount = 2; // TODO update from default setting
-        Settings.WordControlWidth = 210; // TODO update from default setting
+        Settings.VerseCommentaryLinesCount = (int)Settings.Properties["VerseCommentaryLinesCount"].DefaultValue;
+        Settings.VerseWordTranslationLinesCount = (int)Settings.Properties["VerseWordTranslationLinesCount"].DefaultValue;
+        Settings.WordControlWidth = (int)Settings.Properties["WordControlWidth"].DefaultValue;
         if ( Settings.SearchOnlineURL == "https://www.google.com/search?q=strong+hebrew+" )
           Settings.SearchOnlineURL = "https://www.pealim.com/search/?q=%WORD%";
       }
