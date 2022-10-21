@@ -59,7 +59,6 @@ public partial class WordControl : UserControl
     EditTranslation.DataBindings.Add("Text", reference.Word, "Translation", false, DataSourceUpdateMode.OnPropertyChanged);
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   public void ResetMetrics()
   {
     ResetMetricsRequired = false;

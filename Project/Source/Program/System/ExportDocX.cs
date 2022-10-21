@@ -48,7 +48,6 @@ static partial class ExportDocX
   /// <summary>
   /// Exports a book to MS Word file.
   /// </summary>
-  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   static public void CreateBook(string filePath, BookRow book, Func<bool> showProgress)
   {
     using ( Document = DocX.Create(filePath, DocumentTypes.Document) )

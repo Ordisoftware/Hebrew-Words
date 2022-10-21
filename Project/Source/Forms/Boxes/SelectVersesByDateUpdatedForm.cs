@@ -36,6 +36,8 @@ partial class SelectVersesByDateUpdatedForm : Form
     return form.ShowDialog() == DialogResult.OK ? form.Reference : null;
   }
 
+  private const int DaysRange = -7;
+
   private bool FilterWordModified;
 
   private bool OptionsMutex = true;
@@ -58,7 +60,7 @@ partial class SelectVersesByDateUpdatedForm : Form
     EditOnlyPartiallyTranslated.Checked = Settings.SelectVersesByDateUpdatedFormOnlyPartiallyTranslated;
     EditDateStart.Enabled = SelectDateStart.Checked;
     EditDateEnd.Enabled = SelectDateEnd.Checked;
-    EditDateStart.Value = DateTime.Now.Date.AddDays(-7);
+    EditDateStart.Value = DateTime.Now.Date.AddDays(DaysRange);
     EditDateEnd.Value = DateTime.Now.Date;
     OptionsMutex = false;
   }
@@ -109,12 +111,10 @@ partial class SelectVersesByDateUpdatedForm : Form
 
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
   {
-    if ( e.KeyCode == Keys.Enter )
-    {
-      e.SuppressKeyPress = true;
-      e.Handled = true;
-      ActionOK.PerformClick();
-    }
+    if ( e.KeyCode != Keys.Enter ) return;
+    e.SuppressKeyPress = true;
+    e.Handled = true;
+    ActionOK.PerformClick();
   }
 
   private void EditFontSize_ValueChanged(object sender, EventArgs e)

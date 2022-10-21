@@ -30,9 +30,9 @@ partial class MainForm
         BookmarkItems.Sort();
       while ( ActionBookmarks.DropDownItems.Count > BookmarkMenuIndex )
         ActionBookmarks.DropDownItems.RemoveAt(BookmarkMenuIndex);
-      var BookmarkMain = new ReferenceItem(Settings.BookmarkMainBook,
-                                             Settings.BookmarkMainChapter,
-                                             Settings.BookmarkMainVerse);
+      var bookmarkMain = new ReferenceItem(Settings.BookmarkMainBook,
+                                           Settings.BookmarkMainChapter,
+                                           Settings.BookmarkMainVerse);
       void bookmarkClicked(object sender, MouseEventArgs e)
       {
         if ( e.Button != MouseButtons.Right ) return;
@@ -52,12 +52,12 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = BookmarkMain.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+      ActionGoToBookmarkMain.Text = bookmarkMain.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
       if ( Settings.BookmarksWithTranslation )
-        ActionGoToBookmarkMain.Text += $" - {GetExtract(BookmarkMain.Verse.Translation)}"; // TODO improve display
-      ActionGoToBookmarkMain.Tag = BookmarkMain;
+        ActionGoToBookmarkMain.Text += $" - {GetExtract(bookmarkMain.Verse.Translation)}"; // TODO improve display
+      ActionGoToBookmarkMain.Tag = bookmarkMain;
       ActionGoToBookmarkMain.MouseUp += bookmarkClicked;
-      if ( BookmarkMain.CompareTo(CurrentReference) == 0 )
+      if ( bookmarkMain.CompareTo(CurrentReference) == 0 )
         ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Bold);
       else
         ActionGoToBookmarkMain.Font = new Font(ActionGoToBookmarkMain.Font, FontStyle.Regular);
