@@ -106,7 +106,6 @@ public partial class VerseControl : UserControl
       ResetMetrics(container);
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   public void ResetMetrics(Panel container)
   {
     using var graphicsNumber = LabelVerseNumber.CreateGraphics();
@@ -127,7 +126,7 @@ public partial class VerseControl : UserControl
     metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   private int CreateWordControls()
   {
     WordControl control = null;

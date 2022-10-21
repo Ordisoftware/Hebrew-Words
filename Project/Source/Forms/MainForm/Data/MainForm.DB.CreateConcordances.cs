@@ -51,7 +51,6 @@ partial class MainForm : Form
   //Dictionary<int, SortedDictionary<string, WordWithConcordance>> VersesWithConcordances
   //  = new Dictionary<int, SortedDictionary<string, WordWithConcordance>>();
 
-  [SuppressMessage("CodeQuality", "IDE0051:Supprimer les membres privés non utilisés", Justification = "<En attente>")]
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "<En attente>")]
   private void ImportWordsConcordances()
   {
