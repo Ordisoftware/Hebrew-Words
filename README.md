@@ -330,6 +330,11 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 
+#### In progress - Version 3.15
+
+- Fix screen location of the show "new in version" box when app starts minimized.
+- Fix auto web check update shows some message (must not).
+
 #### 2022.09.25 - Version 3.14
 
 - Add search parashah text box in parashot board.
