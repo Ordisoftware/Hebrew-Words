@@ -365,7 +365,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelBottom</value>
@@ -739,6 +739,9 @@
   <data name="ColumnVerseTranslation.HeaderText" xml:space="preserve">
     <value>Translation</value>
   </data>
+  <data name="ColumnVerseTranslation.MinimumWidth" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
   <metadata name="ColumnDateModified.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -799,6 +802,12 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Verses by updated date</value>
   </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnId.Name" xml:space="preserve">
     <value>ColumnId</value>
   </data>
@@ -840,12 +849,6 @@
   </data>
   <data name="&gt;&gt;ColumnDateModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SelectVersesByDateUpdatedForm</value>
