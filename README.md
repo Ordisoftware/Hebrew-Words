@@ -329,6 +329,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### In progress - Version 3.x or 4.0
 
 - Add normalize texts window.
+- Add replace text in the database.
+- Add search next or previous occurence of a word in the verses view.
 
 #### In progress - Version 3.15
 
