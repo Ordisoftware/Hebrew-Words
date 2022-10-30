@@ -41,9 +41,9 @@ namespace Ordisoftware.Hebrew.Words
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectVersesByDateUpdatedForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
@@ -64,6 +64,7 @@ namespace Ordisoftware.Hebrew.Words
       this.LabelDisplayCount = new System.Windows.Forms.Label();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBookTranscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBookNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,12 +72,11 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnVerseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnVerseTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnDateModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // ActionOK
@@ -264,14 +264,14 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridView.BackgroundColor = System.Drawing.Color.White;
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
-      dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -283,15 +283,15 @@ namespace Ordisoftware.Hebrew.Words
             this.ColumnVerseTranslation,
             this.ColumnDateModified});
       this.DataGridView.DataSource = this.BindingSource;
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
-      dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle6.NullValue = "String.Empty";
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+      dataGridViewCellStyle3.NullValue = "String.Empty";
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
       this.DataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.DataGridView.EnableHeadersVisualStyles = false;
       this.DataGridView.MultiSelect = false;
@@ -302,12 +302,16 @@ namespace Ordisoftware.Hebrew.Words
       this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
+      // 
       // ColumnId
       // 
       this.ColumnId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnId.DataPropertyName = "ID";
-      dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-      this.ColumnId.DefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      this.ColumnId.DefaultCellStyle = dataGridViewCellStyle2;
       resources.ApplyResources(this.ColumnId, "ColumnId");
       this.ColumnId.Name = "ColumnId";
       this.ColumnId.ReadOnly = true;
@@ -359,10 +363,6 @@ namespace Ordisoftware.Hebrew.Words
       this.ColumnDateModified.Name = "ColumnDateModified";
       this.ColumnDateModified.ReadOnly = true;
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Words.VerseRow);
-      // 
       // SelectVersesByDateUpdatedForm
       // 
       resources.ApplyResources(this, "$this");
@@ -378,10 +378,10 @@ namespace Ordisoftware.Hebrew.Words
       this.Shown += new System.EventHandler(this.SelectVersesByDateUpdatedForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDisplayCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDisplayCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -415,18 +415,18 @@ namespace Ordisoftware.Hebrew.Words
     private CheckBox SelectDateEnd;
     private DateTimePicker EditDateStart;
     private DateTimePicker EditDateEnd;
-    private DataGridViewTextBoxColumn ColumnId;
-    private DataGridViewTextBoxColumn ColumnBookTranscription;
-    private DataGridViewTextBoxColumn ColumnBookNumber;
-    private DataGridViewTextBoxColumn ColumnChapterNumber;
-    private DataGridViewTextBoxColumn ColumnVerseNumber;
-    private DataGridViewTextBoxColumn ColumnVerseTranslation;
-    private DataGridViewTextBoxColumn ColumnDateModified;
     private Button ActionInfoFilterVerses;
     internal Button ActionApplyFilterVerse;
     internal Button ActionClearFilterVerse;
     private TextBoxEx EditFilterVerse;
     private Label LabelFilterWords;
-  }
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnBookTranscription;
+        private DataGridViewTextBoxColumn ColumnBookNumber;
+        private DataGridViewTextBoxColumn ColumnChapterNumber;
+        private DataGridViewTextBoxColumn ColumnVerseNumber;
+        private DataGridViewTextBoxColumn ColumnVerseTranslation;
+        private DataGridViewTextBoxColumn ColumnDateModified;
+    }
 
 }
