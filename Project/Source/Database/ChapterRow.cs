@@ -53,7 +53,7 @@ public partial class ChapterRow : AbstractRowWithTitleAndMemo
     => $"{_ELS50AsHebrew} :{NumberFormatted}";
 
   public string ELS50AsUnicode
-    => HebrewAlphabet.ToUnicode(_ELS50AsHebrew);
+    => HebrewAlphabet.ToUnicodeChars(_ELS50AsHebrew);
 
   public string ELS50AsUnicodeWithNumber
     => $"{ELS50AsUnicode} :{NumberFormatted}";
