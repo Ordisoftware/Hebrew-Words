@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -55,7 +56,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionShowDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +78,7 @@
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +86,7 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.Timer = new System.Windows.Forms.Timer();
+      this.Timer = new System.Windows.Forms.Timer(this.components);
       this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -555,7 +556,7 @@
       // ColumnBegin
       // 
       this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBegin.DataPropertyName = "VerseBegin";
+      this.ColumnBegin.DataPropertyName = "ChapterAndVerseBegin";
       dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
       resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
@@ -566,7 +567,7 @@
       // ColumnEnd
       // 
       this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnEnd.DataPropertyName = "VerseEnd";
+      this.ColumnEnd.DataPropertyName = "ChapterAndVerseEnd";
       dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
       resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
