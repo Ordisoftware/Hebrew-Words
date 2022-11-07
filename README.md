@@ -330,12 +330,16 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add normalize texts window.
 - Add replace text in the database.
-- Add search next or previous occurence of a word in the verses view.
+- Add search next or previous occurrence of a word in the verses view.
 
-#### In progress - Version 3.15
+#### 2022.11.15 - Version 3.15
 
+- Add verse references for Shabat in celebrations board.
+- Change export behavior to set default sub-folders to `Boards` and `Verses`.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).
+- Some UI/UX fixes and improvements.
+- Update web links.
 
 #### 2022.09.25 - Version 3.14
 
