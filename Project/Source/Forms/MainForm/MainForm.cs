@@ -417,11 +417,11 @@ partial class MainForm : Form
   #region Menu Tools
 
   /// <summary>
-  /// Event handler. Called by ActionBooksBoard for click events.
+  /// Event handler. Called by ActionShowBooksBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionBooksBoard_Click(object sender, EventArgs e)
+  private void ActionShowBooksBoard_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
     using var form = new EditBooksForm();
@@ -431,13 +431,25 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionParashotBoard for click events.
+  /// Event handler. Called by ActionShowParashotBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionParashotBoard_Click(object sender, EventArgs e)
+  private void ActionShowParashotBoard_Click(object sender, EventArgs e)
   {
     ParashotForm.Run();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowCelebrationVersesBoard for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
+  {
+    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                   TorahCelebration.Pessah);
   }
 
   /// <summary>

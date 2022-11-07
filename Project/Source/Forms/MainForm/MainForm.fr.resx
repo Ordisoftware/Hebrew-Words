@@ -439,13 +439,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionBooksBoard.Text" xml:space="preserve">
+  <data name="ActionShowBooksBoard.Text" xml:space="preserve">
     <value>Tableau des livres</value>
   </data>
   <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionParashotBoard.Text" xml:space="preserve">
+  <data name="ActionShowParashotBoard.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
   <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
@@ -896,5 +896,8 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   </data>
   <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
     <value>Afficher les versets par date de mise à jour (Ctrl+F5, Ctrl+Alt+F)</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Tableau des célébrations</value>
   </data>
 </root>
