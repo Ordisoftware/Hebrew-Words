@@ -202,7 +202,7 @@
     <value>TextBoxTranslations</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxTranslations.Parent" xml:space="preserve">
     <value>PanelViewTranslations</value>
@@ -689,7 +689,7 @@
     <value>EditFilterVerse</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterVerse.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -713,7 +713,7 @@
     <value>EditFilterChapter</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterChapter.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -737,7 +737,7 @@
     <value>EditFilterBook</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilterBook.Parent" xml:space="preserve">
     <value>PanelViewVerseFilters</value>
@@ -1379,7 +1379,7 @@
     <value>EditSearchPaging</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchPaging.Parent" xml:space="preserve">
     <value>PanelSearchFiltersRight</value>
@@ -1893,7 +1893,7 @@
     <value>EditSearchWord</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.LettersControl, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchWord.Parent" xml:space="preserve">
     <value>PanelSearchTop</value>
@@ -2136,7 +2136,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditSearchTranslation</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditSearchTranslation.Parent" xml:space="preserve">
     <value>SelectSearchTypeTranslation</value>
@@ -2460,7 +2460,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterOriginal</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterOriginal.Parent" xml:space="preserve">
     <value>PanelViewOriginalText</value>
@@ -2541,7 +2541,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterELS50</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterELS50.Parent" xml:space="preserve">
     <value>PanelViewELS50</value>
@@ -2781,7 +2781,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectChapterNavigator</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectChapterNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -2835,7 +2835,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectBookNavigator</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectBookNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -2941,7 +2941,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>SelectVerseNavigator</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectVerseNavigator.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3100,7 +3100,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterMemo</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterMemo.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3592,7 +3592,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditBookTranslation</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditBookTranslation.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3619,7 +3619,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseConcept</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseConcept.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3646,7 +3646,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditVerseTitle</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditVerseTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3670,7 +3670,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditChapterTitle</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditChapterTitle.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -3703,7 +3703,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>EditELS50Single</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.15.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditELS50Single.Parent" xml:space="preserve">
     <value>PanelNavigation</value>
@@ -4644,27 +4644,27 @@ A verse is founded if the translation of one of its words contains an expression
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT2SURBVFhHxVZbU1tlFEXrWOpox1pk/AH64D/wwTf9GzJ2
-        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
+        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
 </value>
   </data>
   <data name="ActionViewVersesByDateUpdated.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -5099,63 +5099,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
-  <data name="ActionBooksBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ+SURBVDhPjZBbSBRxFMbnKSQiErpIRD5U3lJQ2yWKyrJS
-        0jB8cHXW1kwUYn0IibIicdamrCipl6w0anWTch8k3HIVt3aJtjRDQrObudtiOualMifLgq/z3xlvRdEH
-        P86cc75zZuZwvyvhpH1lvNiIOJMdG4WGP2B11mc+dWS2Ngu28v1VrWh+IcH9dhgPu4emYDmrsz7zqSOz
-        FWdqkC80vUIZob/yCOmX3NARLLKc1Vmf+dSRacWfcm5POu1AxYMeGC1P8VoaxUyxnNVZP5l828SmRHVU
-        0QbRYTFWtUG0PUee+QlyrrUi62oLDJWP/ZHlrM76+eZWbDHZrP7BM1nrV5zlV2NraTMK67pQYH2G/Jp2
-        P8YZTNZY/3BdJxLI719Qkq4pd1zMR1COFUGGKizKNBMsEnp61l+fYqEalxrMWJVbrSwQdCGy1FaBBbtv
-        Au/vYrzXjrGBexiTHJB9DZA9Nsg99VOMe+qBvjtseA0n8trEc3lxwMBtzM2gBegiejCybA7kTRH03A1M
-        dALfOxQmiJ8EOhGcW81zRTqN1WU5iC9vKpEtViBAbwW314ZPYYH4lqQBl12PAN5Ky29hnr4WgYZaLNlT
-        g+U5FoTtuwHOlKHF0MvLGO44j5H2E/jYLqC/4zhGwhfja/I6+NwH0OcwQiL6G40oSw9VPn2SEl6LoymR
-        OLQjRCEpFAW7IjAUPB9j8bEoSAlH4c4wHCGKUiNRyscoh5uUoIvFZ6kFg14XPnjuE05I71zo9SlIXqe/
-        Nki1UfLRCHvztARdDB1EosN4gR+ev8P65BPSonl1VFFxRsxocVo0jqVGEZH/IArMJ2aunf0LpGhi+ij/
-        hyqO+wUs0CWpfV/nKAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionBooksBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionBooksBoard.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionBooksBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+B</value>
-  </data>
-  <data name="ActionBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
-  </data>
-  <data name="ActionBooksBoard.Text" xml:space="preserve">
-    <value>Books board</value>
-  </data>
-  <data name="ActionParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
-        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
-        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
-        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
-        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionParashotBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
-  </data>
-  <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 22</value>
-  </data>
-  <data name="ActionParashotBoard.Text" xml:space="preserve">
-    <value>Parashot board</value>
-  </data>
-  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 6</value>
-  </data>
   <data name="ActionGoToParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -5206,6 +5149,89 @@ A verse is founded if the translation of one of its words contains an expression
     <value>False</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 6</value>
+  </data>
+  <data name="ActionShowParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
+        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
+        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
+        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionShowParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowParashotBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F1</value>
+  </data>
+  <data name="ActionShowParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="ActionShowParashotBoard.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
+        PY8dvKnoYcg2PHpx2NKWpLQsJYZ8fAkJiVRS+vi+X3UzmMPm3vDke76XPL+8XyBarVbzqtUqKpXKP4kz
+        nNXYPLQ4qzGNq9Goo6s3sfvtDO1WE+f1Rqp+nrPqKsPZ34Bep40XW8eYKh7BNg0YHR26wetYt143dDTb
+        LZVJArpdRMLEk/Uj+LaJfr+PC9uBIyRsRyix516390tlEgDT7CGSfZrgEJFrQUoH2dw05hYW8fbde6yu
+        fUB+aRkzs88JYqtMAmBZFkJpY6KwTwAHQgi4ng8/COH5gRJ77lkXKQAhbAwCAQwk4lDClTzyfdmOkz5B
+        4Ln0EX/g084pZjePcRX59DYP0k1KSI9AUmUSgMsooHsEwxR4XDwgP8BoNMSI3Fh8AVfDGEEYkrsBlMtl
+        tUEcYftLHc82vuLzialamWwOr+YW8PrNClZW1zCfX0JuegZDgnBx9g8AMR4V9vB0/QCTH/dveukVx0O1
+        KsDtEcaD3i3aj2jsVI0B6gj//S+USqXvbJhWoZH+SvQsZzirUWVILx8mLXMNYJks6JMA880AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F2</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebrations board</value>
+  </data>
+  <data name="ActionShowBooksBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ+SURBVDhPjZBbSBRxFMbnKSQiErpIRD5U3lJQ2yWKyrJS
+        0jB8cHXW1kwUYn0IibIicdamrCipl6w0anWTch8k3HIVt3aJtjRDQrObudtiOualMifLgq/z3xlvRdEH
+        P86cc75zZuZwvyvhpH1lvNiIOJMdG4WGP2B11mc+dWS2Ngu28v1VrWh+IcH9dhgPu4emYDmrsz7zqSOz
+        FWdqkC80vUIZob/yCOmX3NARLLKc1Vmf+dSRacWfcm5POu1AxYMeGC1P8VoaxUyxnNVZP5l828SmRHVU
+        0QbRYTFWtUG0PUee+QlyrrUi62oLDJWP/ZHlrM76+eZWbDHZrP7BM1nrV5zlV2NraTMK67pQYH2G/Jp2
+        P8YZTNZY/3BdJxLI719Qkq4pd1zMR1COFUGGKizKNBMsEnp61l+fYqEalxrMWJVbrSwQdCGy1FaBBbtv
+        Au/vYrzXjrGBexiTHJB9DZA9Nsg99VOMe+qBvjtseA0n8trEc3lxwMBtzM2gBegiejCybA7kTRH03A1M
+        dALfOxQmiJ8EOhGcW81zRTqN1WU5iC9vKpEtViBAbwW314ZPYYH4lqQBl12PAN5Ky29hnr4WgYZaLNlT
+        g+U5FoTtuwHOlKHF0MvLGO44j5H2E/jYLqC/4zhGwhfja/I6+NwH0OcwQiL6G40oSw9VPn2SEl6LoymR
+        OLQjRCEpFAW7IjAUPB9j8bEoSAlH4c4wHCGKUiNRyscoh5uUoIvFZ6kFg14XPnjuE05I71zo9SlIXqe/
+        Nki1UfLRCHvztARdDB1EosN4gR+ev8P65BPSonl1VFFxRsxocVo0jqVGEZH/IArMJ2aunf0LpGhi+ij/
+        hyqO+wUs0CWpfV/nKAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionShowBooksBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowBooksBoard.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionShowBooksBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F3</value>
+  </data>
+  <data name="ActionShowBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="ActionShowBooksBoard.Text" xml:space="preserve">
+    <value>Books board</value>
+  </data>
+  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 6</value>
   </data>
   <data name="ActionShowTranscriptionGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -5292,7 +5318,7 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 6</value>
   </data>
-  <data name="ActionViewBibleStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHESURBVDhPxVJNTxpRFB1kQldqujOkIs4w1MzAg8EItBSp
@@ -5306,6 +5332,34 @@ A verse is founded if the translation of one of its words contains an expression
         wlKxS9KhEQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="toolStripMenuItem2.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripMenuItem2.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+S</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 22</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Tanak's statistics</value>
+  </data>
+  <data name="ActionViewBibleStatistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGKSURBVDhPnVNZTgJBFOy7cAQvwSL8eRoMsoj8qIeAYQiS
+        6IcgfnoSNS4ISACN4G5Z1dDjMPFHK3mp7ppXr18vYzYq3Ulmu4NUsY31UgeZ8qnlZOE4iN90eeQ1GoSx
+        X8kvR8DXkoWw7iCvSRbadnI5B65egVIua/liBpw/LTiqKwR5TYptCb034IYJt+TrF5pUUGay5is6Q0hy
+        2ybNve3t5FHkCoMPoNXwcMfkA7+KHguKNW/5tUDvk7tHTaRKJz8djD6BIT8M34EBjX2u5kJzfXO6WLAd
+        JHiiwoiiolmvWh4+M5GtiqP6PYsI8ppEflFgzI9jrjLlNsQjGZcR1ceuAL1BB49MUDS8quUpkycyMqL6
+        A7cp2A7cGVAHi9uY8wHMeCYuNA/rGgvBLeyW89jazEKFfc8Dd4N6rbrCvlcL5srrHEZuQWCH4AI2QR25
+        0FzfnK6xkFjcwuIlOmglQc9YxdxzDusO8pp0qIO/Ql6TzjXO9JfpROO8lrjjaIR05cojryFijLX/hYl9
+        AzVQQYmTWjcNAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="ActionViewBibleStatistics.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -5313,13 +5367,13 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionViewBibleStatistics.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+S</value>
+    <value>Ctrl+Alt+Maj+S</value>
   </data>
   <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 22</value>
   </data>
   <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
-    <value>Tanak's statistics</value>
+    <value>Working statistics</value>
   </data>
   <data name="ActionOpenCalculator.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5933,7 +5987,7 @@ A verse is founded if the translation of one of its words contains an expression
     <value>Magenta</value>
   </data>
   <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 46</value>
+    <value>49, 44</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -7201,24 +7255,6 @@ A verse is founded if the translation of one of its words contains an expression
   <data name="&gt;&gt;ActionTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionBooksBoard.Name" xml:space="preserve">
-    <value>ActionBooksBoard</value>
-  </data>
-  <data name="&gt;&gt;ActionBooksBoard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionParashotBoard.Name" xml:space="preserve">
-    <value>ActionParashotBoard</value>
-  </data>
-  <data name="&gt;&gt;ActionParashotBoard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
-    <value>toolStripSeparator28</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionGoToParashah.Name" xml:space="preserve">
     <value>ActionGoToParashah</value>
   </data>
@@ -7235,6 +7271,30 @@ A verse is founded if the translation of one of its words contains an expression
     <value>toolStripSeparator6</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowParashotBoard.Name" xml:space="preserve">
+    <value>ActionShowParashotBoard</value>
+  </data>
+  <data name="&gt;&gt;ActionShowParashotBoard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Name" xml:space="preserve">
+    <value>ActionShowCelebrationVersesBoard</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowBooksBoard.Name" xml:space="preserve">
+    <value>ActionShowBooksBoard</value>
+  </data>
+  <data name="&gt;&gt;ActionShowBooksBoard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
+    <value>toolStripSeparator28</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShowTranscriptionGuide.Name" xml:space="preserve">
@@ -7260,6 +7320,12 @@ A verse is founded if the translation of one of its words contains an expression
   </data>
   <data name="&gt;&gt;toolStripSeparator16.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewBibleStatistics.Name" xml:space="preserve">
     <value>ActionViewBibleStatistics</value>

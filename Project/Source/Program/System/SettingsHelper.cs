@@ -195,7 +195,17 @@ static class SettingsHelper
   }
 
   /// <summary>
-  /// Get the export directory.
+  /// Gets the backup directory.
+  /// </summary>
+  static internal string GetBackupDirectory(this Settings settings)
+  {
+    string result = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the export directory.
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
@@ -215,11 +225,31 @@ static class SettingsHelper
   }
 
   /// <summary>
-  /// Gets the backup directory.
+  /// Gets the images export directory.
   /// </summary>
-  static internal string GetBackupDirectory(this Settings settings)
+  static internal string GetExportImagesDirectory(this Settings settings)
   {
-    string result = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
+    string result = Path.Combine(settings.GetExportDirectory(), "Images");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the boards export directory.
+  /// </summary>
+  static internal string GetExportBoardsDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Boards");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the verses export directory.
+  /// </summary>
+  static internal string GetExportVersesDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Verses");
     if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
     return result;
   }
