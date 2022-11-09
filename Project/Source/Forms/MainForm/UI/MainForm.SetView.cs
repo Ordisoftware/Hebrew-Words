@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using Ordisoftware.Core;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -36,69 +37,6 @@ partial class MainForm
   public bool IsSearchOrFilteredOrELS50(ViewMode view)
    => view == ViewMode.Search || view == ViewMode.VerseFiltered || view == ViewMode.BookELS50;
 
-  private Dictionary<ViewMode, ViewConnectorButton> ViewConnectors;
-
-  private void InitializeViewConnectors()
-  {
-    ViewConnectors = new Dictionary<ViewMode, ViewConnectorButton>
-    {
-      {
-        ViewMode.ChapterVerses,
-        new ViewConnectorButton
-        {
-          Button = ActionViewVerses,
-          Panel = PanelViewVerses,
-          Focused = PanelViewVerses
-        }
-      },
-      {
-        ViewMode.VerseFiltered,
-        new ViewConnectorButton
-        {
-          Button = ActionViewVerseFiltered,
-          Panel = PanelViewVerseFiltered,
-          Focused = PanelViewVerseFiltered
-        }
-      },
-      {
-        ViewMode.ChapterTranslation,
-        new ViewConnectorButton
-        {
-          Button = ActionViewTranslations,
-          Panel = PanelViewTranslations,
-          Focused = TextBoxTranslations
-        }
-      },
-      {
-        ViewMode.ChapterOriginal,
-        new ViewConnectorButton
-        {
-          Button = ActionViewRawText,
-          Panel = PanelViewOriginalText,
-          Focused = EditChapterOriginal
-        }
-      },
-      {
-        ViewMode.BookELS50,
-        new ViewConnectorButton
-        {
-          Button = ActionViewELS50,
-          Panel = PanelViewELS50,
-          Focused = EditChapterELS50
-        }
-      },
-      {
-        ViewMode.Search,
-        new ViewConnectorButton
-        {
-          Button = ActionViewSearch,
-          Panel = PanelViewSearch,
-          Focused = SelectSearchType
-        }
-      }
-    };
-  }
-
   /// <summary>
   /// Set the view panel.
   /// </summary>
@@ -124,9 +62,9 @@ partial class MainForm
       return;
     }
     checkFirst();
-    ViewConnectors[Settings.CurrentView].Button.Checked = false;
+    ViewConnectors[Settings.CurrentView].Component.Checked = false;
     ViewConnectors[Settings.CurrentView].Panel.Parent = null;
-    ViewConnectors[view].Button.Checked = true;
+    ViewConnectors[view].Component.Checked = true;
     ViewConnectors[view].Panel.Parent = PanelMainCenter;
     if ( view != ViewMode.Search )
       ViewConnectors[view].Focused?.Focus();
@@ -187,7 +125,7 @@ partial class MainForm
                               && view != ViewMode.ChapterOriginal;    // TODO remove when ready
       ActionExportChapter.Enabled = PanelNavigation.Visible
                                  && view != ViewMode.BookELS50;       // TODO remove wgen ready
-      //
+                                                                      //
       SelectBook.Enabled = PanelNavigation.Visible;
       SelectBookNavigator.Enabled = SelectBook.Enabled;
       LabelSelectBook.Enabled = SelectBook.Enabled;
