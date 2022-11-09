@@ -36,11 +36,11 @@ partial class MainForm
   public bool IsSearchOrFilteredOrELS50(ViewMode view)
    => view == ViewMode.Search || view == ViewMode.VerseFiltered || view == ViewMode.BookELS50;
 
-  private Dictionary<ViewMode, ViewConnectorButton> ViewPanels;
+  private Dictionary<ViewMode, ViewConnectorButton> ViewConnectors;
 
-  private void InitializeViewPanels()
+  private void InitializeViewConnectors()
   {
-    ViewPanels = new Dictionary<ViewMode, ViewConnectorButton>
+    ViewConnectors = new Dictionary<ViewMode, ViewConnectorButton>
     {
       {
         ViewMode.ChapterVerses,
@@ -124,12 +124,12 @@ partial class MainForm
       return;
     }
     checkFirst();
-    ViewPanels[Settings.CurrentView].Button.Checked = false;
-    ViewPanels[Settings.CurrentView].Panel.Parent = null;
-    ViewPanels[view].Button.Checked = true;
-    ViewPanels[view].Panel.Parent = PanelMainCenter;
+    ViewConnectors[Settings.CurrentView].Button.Checked = false;
+    ViewConnectors[Settings.CurrentView].Panel.Parent = null;
+    ViewConnectors[view].Button.Checked = true;
+    ViewConnectors[view].Panel.Parent = PanelMainCenter;
     if ( view != ViewMode.Search )
-      ViewPanels[view].Focused?.Focus();
+      ViewConnectors[view].Focused?.Focus();
     Settings.CurrentView = view;
     updateControls();
     switch ( view )

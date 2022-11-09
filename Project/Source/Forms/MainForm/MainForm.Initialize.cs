@@ -30,7 +30,7 @@ partial class MainForm : Form
   private void DoConstructor()
   {
     Interlocks.Take();
-    InitializeViewPanels();
+    InitializeViewConnectors();
     new Task(InitializeIconsAndSound).Start();
     new Task(InitializeDialogsDirectory).Start();
     new Task(() => BookmarkItems = new Bookmarks(Program.BookmarksFilePath)).Start();
