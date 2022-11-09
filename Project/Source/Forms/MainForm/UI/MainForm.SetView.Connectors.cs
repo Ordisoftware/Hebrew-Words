@@ -29,7 +29,7 @@ partial class MainForm
     {
       {
         ViewMode.ChapterVerses,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewVerses,
           Panel = PanelViewVerses,
@@ -38,7 +38,7 @@ partial class MainForm
       },
       {
         ViewMode.VerseFiltered,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewVerseFiltered,
           Panel = PanelViewVerseFiltered,
@@ -47,7 +47,7 @@ partial class MainForm
       },
       {
         ViewMode.ChapterTranslation,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewTranslations,
           Panel = PanelViewTranslations,
@@ -56,7 +56,7 @@ partial class MainForm
       },
       {
         ViewMode.ChapterOriginal,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewRawText,
           Panel = PanelViewOriginalText,
@@ -65,7 +65,7 @@ partial class MainForm
       },
       {
         ViewMode.BookELS50,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewELS50,
           Panel = PanelViewELS50,
@@ -74,7 +74,7 @@ partial class MainForm
       },
       {
         ViewMode.Search,
-        new ViewConnector<ViewMode, ToolStripButton>
+        new ViewConnector<ToolStripButton>
         {
           Component = ActionViewSearch,
           Panel = PanelViewSearch,
