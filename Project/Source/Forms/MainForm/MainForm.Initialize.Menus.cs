@@ -46,7 +46,7 @@ partial class MainForm : Form
     CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
     if ( Settings.WebLinksMenuEnabled )
-      ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+      ActionWebLinks.CreateWebLinks(InitializeSpecialMenus);
   }
 
   static private readonly Image HebrewWordsIcon = CreateImage("hebrew_words16.ico");
@@ -70,7 +70,7 @@ partial class MainForm : Form
   private void CreateProvidersLinks()
   {
     // Edit word search
-    EditSearchWord.ContextMenuSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord,
+    EditSearchWord.ContextMenuSearchOnline.Initialize(HebrewGlobals.WebProvidersWord,
       (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -86,7 +86,7 @@ partial class MainForm : Form
         EditSearchWord.ContextMenuSearchOnline.Items.Add(menuitem);
       });
     // Word search online
-    ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    ActionWordSearchOnline.Initialize(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       if ( sender is not ToolStripMenuItem menuitem ) return;
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;
@@ -95,7 +95,7 @@ partial class MainForm : Form
       HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
     });
     // Verse read online
-    ActionVerseReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ActionVerseReadOnline.Initialize(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = sender as ToolStripMenuItem;
       var contextmenu = ( menuitem?.GetCurrentParent() as ToolStripDropDownMenu )?.OwnerItem?.Owner as ContextMenuStrip;

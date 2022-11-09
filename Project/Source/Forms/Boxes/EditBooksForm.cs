@@ -26,7 +26,7 @@ partial class EditBooksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    ActionSearchOnline.Initialize(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, SelectedBook?.Hebrew);
