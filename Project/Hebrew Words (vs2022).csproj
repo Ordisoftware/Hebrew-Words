@@ -226,6 +226,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\Core\WinControls\ToolStripMenuItemHelper.cs" />
+    <Compile Include="Source\Common\Core\WinControls\ViewConnectorMenuItem.cs" />
     <Compile Include="Source\Common\Core\WinForms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,6 +470,7 @@
     </Compile>
     <Compile Include="Source\Entities\ReferencesList.cs" />
     <Compile Include="Source\Entities\History.cs" />
+    <Compile Include="Source\Common\Core\WinControls\ViewConnectorButton.cs" />
     <Compile Include="Source\Program\Program.Guides.cs" />
     <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
     <Compile Include="Source\Program\System\ApplicationStatistics.cs" />

@@ -1,6 +1,4 @@
-﻿using Ordisoftware.Hebrew.Words.Properties;
-using System.Windows.Forms;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
 /// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -13,7 +11,7 @@ using System.Windows.Forms;
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -38,27 +36,67 @@ partial class MainForm
   public bool IsSearchOrFilteredOrELS50(ViewMode view)
    => view == ViewMode.Search || view == ViewMode.VerseFiltered || view == ViewMode.BookELS50;
 
-  /// <summary>
-  /// Provides view connector.
-  /// </summary>
-  private sealed class ViewConnector
+  private Dictionary<ViewMode, ViewConnectorButton> ViewPanels;
+
+  private void InitializeViewPanels()
   {
-
-    /// <summary>
-    /// The menu item.
-    /// </summary>
-    public ToolStripButton MenuItem;
-
-    /// <summary>
-    /// The panel.
-    /// </summary>
-    public Panel Panel;
-
-    /// <summary>
-    /// The focused control.
-    /// </summary>
-    public Control Focused;
-
+    ViewPanels = new Dictionary<ViewMode, ViewConnectorButton>
+    {
+      {
+        ViewMode.ChapterVerses,
+        new ViewConnectorButton
+        {
+          Button = ActionViewVerses,
+          Panel = PanelViewVerses,
+          Focused = PanelViewVerses
+        }
+      },
+      {
+        ViewMode.VerseFiltered,
+        new ViewConnectorButton
+        {
+          Button = ActionViewVerseFiltered,
+          Panel = PanelViewVerseFiltered,
+          Focused = PanelViewVerseFiltered
+        }
+      },
+      {
+        ViewMode.ChapterTranslation,
+        new ViewConnectorButton
+        {
+          Button = ActionViewTranslations,
+          Panel = PanelViewTranslations,
+          Focused = TextBoxTranslations
+        }
+      },
+      {
+        ViewMode.ChapterOriginal,
+        new ViewConnectorButton
+        {
+          Button = ActionViewRawText,
+          Panel = PanelViewOriginalText,
+          Focused = EditChapterOriginal
+        }
+      },
+      {
+        ViewMode.BookELS50,
+        new ViewConnectorButton
+        {
+          Button = ActionViewELS50,
+          Panel = PanelViewELS50,
+          Focused = EditChapterELS50
+        }
+      },
+      {
+        ViewMode.Search,
+        new ViewConnectorButton
+        {
+          Button = ActionViewSearch,
+          Panel = PanelViewSearch,
+          Focused = SelectSearchType
+        }
+      }
+    };
   }
 
   /// <summary>
@@ -79,63 +117,6 @@ partial class MainForm
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   public void SetView(ViewMode view, bool first)
   {
-    var viewPanels = new Dictionary<ViewMode, ViewConnector>
-    {
-      {
-        ViewMode.ChapterVerses,
-        new ViewConnector
-        {
-          MenuItem = ActionViewVerses,
-          Panel = PanelViewVerses,
-          Focused = PanelViewVerses
-        }
-      },
-      {
-        ViewMode.VerseFiltered,
-        new ViewConnector
-        {
-          MenuItem = ActionViewVerseFiltered,
-          Panel = PanelViewVerseFiltered,
-          Focused = PanelViewVerseFiltered
-        }
-      },
-      {
-        ViewMode.ChapterTranslation,
-        new ViewConnector
-        {
-          MenuItem = ActionViewTranslations,
-          Panel = PanelViewTranslations,
-          Focused = TextBoxTranslations
-        }
-      },
-      {
-        ViewMode.ChapterOriginal,
-        new ViewConnector
-        {
-          MenuItem = ActionViewRawText,
-          Panel = PanelViewOriginalText,
-          Focused = EditChapterOriginal
-        }
-      },
-      {
-        ViewMode.BookELS50,
-        new ViewConnector
-        {
-          MenuItem = ActionViewELS50,
-          Panel = PanelViewELS50,
-          Focused = EditChapterELS50
-        }
-      },
-      {
-        ViewMode.Search,
-        new ViewConnector
-        {
-          MenuItem = ActionViewSearch,
-          Panel = PanelViewSearch,
-          Focused = SelectSearchType
-        }
-      }
-    };
     if ( Settings.CurrentView == view && !first )
     {
       if ( Settings.CurrentView == ViewMode.Search )
@@ -143,12 +124,12 @@ partial class MainForm
       return;
     }
     checkFirst();
-    viewPanels[Settings.CurrentView].MenuItem.Checked = false;
-    viewPanels[Settings.CurrentView].Panel.Parent = null;
-    viewPanels[view].MenuItem.Checked = true;
-    viewPanels[view].Panel.Parent = PanelMainCenter;
+    ViewPanels[Settings.CurrentView].Button.Checked = false;
+    ViewPanels[Settings.CurrentView].Panel.Parent = null;
+    ViewPanels[view].Button.Checked = true;
+    ViewPanels[view].Panel.Parent = PanelMainCenter;
     if ( view != ViewMode.Search )
-      viewPanels[view].Focused?.Focus();
+      ViewPanels[view].Focused?.Focus();
     Settings.CurrentView = view;
     updateControls();
     switch ( view )

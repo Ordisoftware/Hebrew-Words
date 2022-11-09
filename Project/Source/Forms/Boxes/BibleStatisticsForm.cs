@@ -58,7 +58,7 @@ partial class BibleStatisticsForm : Form
     {
       MainForm.Instance.Cursor = temp;
     }
-    ActionWordSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    ActionWordSearchOnline.Initialize(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       if ( sender is not ToolStripMenuItem menuitem ) return;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, LastLabelClicked.Text);

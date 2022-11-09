@@ -447,9 +447,12 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+    CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
+                                   nameof(Settings.CelebrationVersesBoardFormLocation),
                                    nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                   TorahCelebration.Pessah);
+                                   string.Empty,
+                                   true,
+                                   null); // TODO create setting
   }
 
   /// <summary>
