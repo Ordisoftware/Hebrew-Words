@@ -15,6 +15,7 @@
 namespace Ordisoftware.Hebrew.Words;
 
 using Equin.ApplicationFramework;
+using MoreLinq;
 
 partial class MainForm
 {
@@ -70,7 +71,6 @@ partial class MainForm
   {
     GoToReference(new ReferenceItem(reference), forceUpdateView, setViewChapterVerses, isHistory);
   }
-
 
   /// <summary>
   /// Goes to a reference instance.

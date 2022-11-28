@@ -1051,7 +1051,7 @@ partial class MainForm : Form
         control.BackColor = ControlHelper.FocusedControlOriginalColor;
       else
         control = null;
-      if ( control.SelectionLength > 0 )
+      if ( control?.SelectionLength > 0 )
       {
         selectionStart = control.SelectionStart;
         selectionLength = control.SelectionLength;
@@ -1066,13 +1066,14 @@ partial class MainForm : Form
                                       Globals.ScreenshotSoundFilePath);
     // Restore screenshot
     if ( control is not null )
-      control.BackColor = ControlHelper.FocusedControlCurrentColor;
-    if ( selectionLength > 0 )
     {
-      control.SelectionStart = selectionStart;
-      control.SelectionLength = selectionLength;
+      control.BackColor = ControlHelper.FocusedControlCurrentColor;
+      if ( selectionLength > 0 )
+      {
+        control.SelectionStart = selectionStart;
+        control.SelectionLength = selectionLength;
+      }
     }
-
   }
 
   private void ActionTakeScreenshotView_Click(object sender, EventArgs e)
