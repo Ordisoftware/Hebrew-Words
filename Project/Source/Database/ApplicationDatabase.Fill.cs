@@ -22,6 +22,7 @@ partial class ApplicationDatabase
   static private readonly int NounValue = HebrewAlphabet.ValuesSimple[Array.IndexOf(HebrewAlphabet.KeyCodes, "n")];
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Major Bug", "S2259:Null pointers should not be dereferenced", Justification = "N/A")]
   internal void FillFromFiles()
   {
     try
