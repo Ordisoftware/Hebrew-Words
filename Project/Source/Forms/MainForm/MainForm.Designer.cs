@@ -212,8 +212,8 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewBibleStatistics = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewWorkingStatistics = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTakeScreenshotWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -1779,8 +1779,8 @@
             this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator16,
-            this.toolStripMenuItem2,
             this.ActionViewBibleStatistics,
+            this.ActionViewWorkingStatistics,
             this.ActionOpenCalculator,
             this.toolStripSeparator29,
             this.ActionTakeScreenshotWindow,
@@ -1857,16 +1857,16 @@
       this.toolStripSeparator16.Name = "toolStripSeparator16";
       resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
       // 
-      // toolStripMenuItem2
-      // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      // 
       // ActionViewBibleStatistics
       // 
       resources.ApplyResources(this.ActionViewBibleStatistics, "ActionViewBibleStatistics");
       this.ActionViewBibleStatistics.Name = "ActionViewBibleStatistics";
       this.ActionViewBibleStatistics.Click += new System.EventHandler(this.ActionViewBibleStatistics_Click);
+      // 
+      // ActionViewWorkingStatistics
+      // 
+      resources.ApplyResources(this.ActionViewWorkingStatistics, "ActionViewWorkingStatistics");
+      this.ActionViewWorkingStatistics.Name = "ActionViewWorkingStatistics";
       // 
       // ActionOpenCalculator
       // 
@@ -2662,7 +2662,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide2;
     private System.Windows.Forms.ToolStripMenuItem ActionSortBookmarks;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuum;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewBibleStatistics;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewWorkingStatistics;
     private System.Windows.Forms.ToolStripMenuItem ActionShowBooksBoard;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
@@ -2828,6 +2828,6 @@
     private ToolStripSeparator MainMenuSeparatorLeftButtons;
     private ToolStripSeparator toolStripSeparator30;
     internal ToolStripMenuItem ActionShowCelebrationVersesBoard;
-    private ToolStripMenuItem toolStripMenuItem2;
+    private ToolStripMenuItem ActionViewBibleStatistics;
   }
 }
