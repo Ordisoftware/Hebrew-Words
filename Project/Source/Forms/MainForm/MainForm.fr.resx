@@ -223,6 +223,12 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="SelectRenderAllVerses.Text" xml:space="preserve">
     <value>Tous</value>
   </data>
+  <data name="LabelVerseTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 15</value>
+  </data>
+  <data name="LabelVerseTitle.Text" xml:space="preserve">
+    <value>Titre</value>
+  </data>
   <data name="LabelChapterMemo.Text" xml:space="preserve">
     <value>Mémo</value>
   </data>
@@ -317,13 +323,13 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Historique (Alt+H)</value>
   </data>
   <data name="ActionClearHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>101, 22</value>
   </data>
   <data name="ActionClearHistory.Text" xml:space="preserve">
     <value>Vider</value>
   </data>
   <data name="SeparatorHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>98, 6</value>
   </data>
   <data name="ActionHistoryVerseBack.Text" xml:space="preserve">
     <value>Précédent</value>
@@ -367,6 +373,12 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="ActionGoToReference.ToolTipText" xml:space="preserve">
     <value>Aller à la référence (F5, Maj+Ctrl+F)</value>
   </data>
+  <data name="ActionViewVersesByDateUpdated.Text" xml:space="preserve">
+    <value>Afficher les versets par date de mise à jour</value>
+  </data>
+  <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
+    <value>Afficher les versets par date de mise à jour (Ctrl+F5, Ctrl+Alt+F)</value>
+  </data>
   <data name="ActionViewRawText.Text" xml:space="preserve">
     <value>Voir le texte original</value>
   </data>
@@ -386,70 +398,61 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>Sauvegarder (Ctrl+S)</value>
   </data>
   <data name="ActionDatabaseNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
+    <value>278, 22</value>
   </data>
   <data name="ActionDatabaseNew.Text" xml:space="preserve">
     <value>Nouvelle base de données</value>
   </data>
   <data name="ActionDatabaseRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
+    <value>278, 22</value>
   </data>
   <data name="ActionDatabaseRestore.Text" xml:space="preserve">
     <value>Restaurer base de données</value>
   </data>
   <data name="ActionDatabaseBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
+    <value>278, 22</value>
   </data>
   <data name="ActionDatabaseBackup.Text" xml:space="preserve">
     <value>Archiver base de données</value>
   </data>
-  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
-  </data>
-  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
-  </data>
-  <data name="ActionVacuum.Text" xml:space="preserve">
-    <value>Optimiser la base de données</value>
-  </data>
   <data name="SeparatorActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
+    <value>275, 6</value>
   </data>
   <data name="ActionNormalizeTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
+    <value>278, 22</value>
   </data>
   <data name="ActionNormalizeTexts.Text" xml:space="preserve">
     <value>Normaliser les textes</value>
   </data>
+  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 6</value>
+  </data>
+  <data name="ActionVacuum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 22</value>
+  </data>
+  <data name="ActionVacuum.Text" xml:space="preserve">
+    <value>Optimiser la base de données</value>
+  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
+    <value>275, 6</value>
   </data>
-  <data name="ActionOpenBackupPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
-  </data>
-  <data name="ActionOpenFolderBackup.Text" xml:space="preserve">
-    <value>Ouvrir le dossier d'archivage</value>
-  </data>
-  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
+  <data name="ActionOpenFolderExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 22</value>
   </data>
   <data name="ActionOpenFolderExport.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export</value>
   </data>
-  <data name="ActionBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+  <data name="ActionOpenFolderBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 22</value>
   </data>
-  <data name="ActionShowBooksBoard.Text" xml:space="preserve">
-    <value>Tableau des livres</value>
+  <data name="ActionOpenFolderBackup.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'archivage</value>
   </data>
-  <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+  <data name="ActionOpenFolderDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 22</value>
   </data>
-  <data name="ActionShowParashotBoard.Text" xml:space="preserve">
-    <value>Tableau des Parashot</value>
-  </data>
-  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
+  <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
+    <value>Ouvrir le dossier de la base de données</value>
   </data>
   <data name="ActionGoToParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
@@ -461,6 +464,27 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
     <value>279, 22</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
+  </data>
+  <data name="ActionShowParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionShowParashotBoard.Text" xml:space="preserve">
+    <value>Tableau des Parashot</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Tableau des célébrations</value>
+  </data>
+  <data name="ActionShowBooksBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionShowBooksBoard.Text" xml:space="preserve">
+    <value>Tableau des livres</value>
+  </data>
+  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 6</value>
   </data>
   <data name="ActionShowTranscriptionGuide.Size" type="System.Drawing.Size, System.Drawing">
@@ -481,17 +505,38 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 6</value>
   </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
+    <value>Statistiques du Tanak</value>
+  </data>
+  <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionViewWorkingStatistics.Text" xml:space="preserve">
+    <value>Statistiques de travail</value>
+  </data>
   <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Calculatrice</value>
   </data>
-  <data name="ActionViewBibleStatistics.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSeparator29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 22</value>
   </data>
-  <data name="ActionViewBibleStatistics.Text" xml:space="preserve">
-    <value>Statistiques du Tanak</value>
+  <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
+    <value>Copie écran de la fenêtre</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
+    <value>Copie écran de la vue</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 6</value>
@@ -878,26 +923,5 @@ Un verset est trouvé si la traduction d'un de ses mots contient une expression.
         aOxoaGjsaGho7GhoaOxoaGjsampq7EVFRUIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
-  </data>
-  <data name="LabelVerseTitle.Text" xml:space="preserve">
-    <value>Titre</value>
-  </data>
-  <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
-    <value>Copie écran de la fenêtre</value>
-  </data>
-  <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
-    <value>Copie écran de la vue</value>
-  </data>
-  <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
-    <value>Ouvrir le dossier de la base de données</value>
-  </data>
-  <data name="ActionViewVersesByDateUpdated.Text" xml:space="preserve">
-    <value>Afficher les versets par date de mise à jour</value>
-  </data>
-  <data name="ActionViewVersesByDateUpdated.ToolTipText" xml:space="preserve">
-    <value>Afficher les versets par date de mise à jour (Ctrl+F5, Ctrl+Alt+F)</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
-    <value>Tableau des célébrations</value>
   </data>
 </root>

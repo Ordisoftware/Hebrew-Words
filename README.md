@@ -332,14 +332,17 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
 
-#### 2022.11.15 - Version 3.15
+#### 2023.01.05 - Version 3.15
 
 - Add verse references for Shabat in celebrations board.
 - Change export behavior to set default sub-folders to `Boards` and `Verses`.
 - Fix screen location of the show "new in version" box when app starts minimized.
-- Fix auto web check update shows some error message (must not).
+- Fix auto web check update showing some error message (must not).
+- Improve web update checker security.
+- Improve IPC interop security.
+- Code improvement and refactoring.
 - Some UI/UX fixes and improvements.
-- Update web links.
+- Add links to Peninei Halakha and some other.
 
 #### 2022.09.25 - Version 3.14
 

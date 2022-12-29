@@ -54,6 +54,7 @@ partial class MainForm : Form
     {
       ActionNormalizeTexts.Visible = false;
       SeparatorActionNormalizeTexts.Visible = false;
+      ActionViewWorkingStatistics.Visible = false;
     }
   }
 
