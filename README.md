@@ -339,10 +339,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update showing some error message (must not).
 - Improve web update checker security.
-- Improve IPC interop security.
+- Improve IPC interoperability security.
 - Code improvement and refactoring.
 - Some UI/UX fixes and improvements.
-- Add links to Peninei Halakha and some other.
+- Add links for Peninei Halakha and some others.
 
 #### 2022.09.25 - Version 3.14
 
