@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -28,6 +28,43 @@ static partial class AppTranslations
 
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
+
+    //Template
+    //["x.y"] = new TranslationsDictionary
+    //{
+    //  [Language.EN] = """
+
+    //                  """,
+
+    //  [Language.FR] = """
+
+    //                  """,
+    //},
+
+    ["3.15"] = new TranslationsDictionary
+    {
+      [Language.EN] = """
+                      • Add verse references for Shabat in celebrations board.
+                      • Change export behavior to set default sub-folders to `Boards` and `Verses`.
+                      • Fix screen location of the show "new in version" box when app starts minimized.
+                      • Improve web update checker security.
+                      • Improve IPC interoperability security.
+                      • Code improvement and refactoring.
+                      • Some UI/UX fixes and improvements.
+                      • Add links for Peninei Halakha and some others.
+                      """,
+
+      [Language.FR] = """
+                      • Ajout de références de versets pour le Shabat dans le tableau des célébrations.
+                      • Modification de l'exportation pour définir les sous-dossiers par défaut pour `Boards` et `Verses`.
+                      • Correction de l'emplacement de l'écran de la boîte d'affichage "nouveautés" lorsque l'application démarre minimisée.
+                      • Amélioration la sécurité du vérificateur de mise à jour Web.
+                      • Amélioration la sécurité de l'interopérabilité IPC.
+                      • Amélioration et refactorisation du code.
+                      • Quelques correctifs et améliorations UI/UX.
+                      • Ajouter des liens pour Peninei Halakha et quelques autres.
+                      """,
+    },
 
     ["3.14"] = new TranslationsDictionary
     {
