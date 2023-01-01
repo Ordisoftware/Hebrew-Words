@@ -52,6 +52,17 @@ partial class PreferencesForm
     Close();
   }
 
+  private void DoExportSettings()
+  {
+    SaveSettingsDialog.FileName = "Settings";
+    if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
+    TabControl.SelectedIndex = 0;
+    SaveSettings();
+    Settings.Store();
+    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+    config.SaveAs(SaveSettingsDialog.FileName);
+  }
+
   private void DoImportSettings()
   {
     OpenSettingsDialog.FileName = string.Empty;
@@ -86,17 +97,6 @@ partial class PreferencesForm
       DisplayManager.ShowError(ex.Message);
       Settings.Reload();
     }
-  }
-
-  private void DoExportSettings()
-  {
-    SaveSettingsDialog.FileName = "Settings";
-    if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-    TabControl.SelectedIndex = 0;
-    SaveSettings();
-    Settings.Store();
-    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-    config.SaveAs(SaveSettingsDialog.FileName);
   }
 
 }
