@@ -77,6 +77,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Added online search a word for several providers : Pealim, Sefaria, Wiktionary, Google, Bing...
 - Added filter verses view panel.
 - Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
+- Added celebration verses board.
 - Added options to choose mouse actions on words and verses.
 - Added menu for web links.
 - Added theming options.
@@ -334,14 +335,14 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### 2023.01.05 - Version 3.15
 
-- Add verse references for Shabat in celebrations board.
+- Add celebration verses board.
 - Change export behavior to set default sub-folders to `Boards` and `Verses`.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update showing some error message (must not).
 - Improve web update checker security.
 - Improve IPC interoperability security.
-- Code improvement and refactoring.
 - Some UI/UX fixes and improvements.
+- Code improvement and refactoring.
 - Add links for Peninei Halakha and some others.
 
 #### 2022.09.25 - Version 3.14
