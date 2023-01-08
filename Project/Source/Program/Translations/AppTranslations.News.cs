@@ -46,7 +46,6 @@ static partial class AppTranslations
       [Language.EN] = """
                       • Add celebration verses board.
                       • Change export behavior to set default sub-folders to `Boards` and `Verses`.
-                      • Fix screen location of the show "new in version" box when app starts minimized.
                       • Improve web update checker security.
                       • Improve IPC interoperability security.
                       • Code improvement and refactoring.
@@ -57,7 +56,6 @@ static partial class AppTranslations
       [Language.FR] = """
                       • Ajout d'un tableau des versets des célébrations.
                       • Modification de l'exportation pour définir les sous-dossiers par défaut pour `Boards` et `Verses`.
-                      • Correction de l'emplacement de l'écran de la boîte d'affichage "nouveautés" lorsque l'application démarre minimisée.
                       • Amélioration la sécurité du vérificateur de mise à jour Web.
                       • Amélioration la sécurité de l'interopérabilité IPC.
                       • Amélioration et refactorisation du code.
