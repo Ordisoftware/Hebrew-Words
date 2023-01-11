@@ -11,11 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
-
-using System.IO.Pipes;
-using System.Runtime.Serialization.Formatters.Binary;
 
 /// <summary>
 /// Provides Program class.
@@ -36,7 +33,7 @@ static partial class Program
       //
       Globals.ChronoStartingApp.Start();
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
-      Globals.AlternativeToURL = "";
+      Globals.AlternativeToURL = string.Empty;
       CommonMenusControl.PreviewFunctions = AppTranslations.PreviewFunctions;
       //
       var lang = Settings.LanguageSelected;
@@ -127,209 +124,15 @@ static partial class Program
         if ( File.Exists(pathLettersDefault) )
           Settings.HebrewLettersExe = pathLettersDefault;
       // Save settings
-      CheckPreviewNotice();
+      bool previewModeNotified = Settings.PreviewModeNotified;
+      SystemCommandLine.CheckPreviewNotice(ref previewModeNotified);
+      Settings.PreviewModeNotified = previewModeNotified;
       SystemManager.TryCatch(Settings.Save);
     }
     catch ( Exception ex )
     {
       ex.Manage();
     }
-  }
-
-  /// <summary>
-  /// Checks if the app is in preview mode or not and display a notice if needed.
-  /// </summary>
-  static internal void CheckPreviewNotice()
-  {
-    if ( CommonMenusControl.PreviewFunctions is null ) return;
-    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled || Settings.PreviewModeNotified ) return;
-    string msg = SysTranslations.AskForPreviewMode.GetLang(CommonMenusControl.PreviewFunctions[Languages.Current]);
-    if ( !DisplayManager.QueryYesNo(msg) )
-    {
-      SystemManager.CommandLineOptions.WithPreview = false;
-      SystemManager.CommandLineOptions.NoPreview = true;
-    }
-    Settings.PreviewModeNotified = true;
-  }
-
-  /// <summary>
-  /// IPC requests.
-  /// </summary>
-  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-  [SuppressMessage("Vulnerability", "SEC0029:Insecure Deserialization", Justification = "N/A")]
-  static void IPCRequests(IAsyncResult ar)
-  {
-    var server = ar.AsyncState as NamedPipeServerStream;
-    try
-    {
-      server.EndWaitForConnection(ar);
-      using var reader = new BinaryReader(server);
-      string command = reader.ReadString();
-      if ( command is null ) return;
-      if ( !Globals.IsReady ) return;
-      var lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
-      var form = MainForm.Instance;
-      var cmd = ApplicationCommandLine.Instance;
-      if ( cmd is null ) return;
-      Action action = null;
-      if ( cmd.ShowMainForm ) action = () => form.Popup();
-      if ( !cmd.ReferenceToGo.IsNullOrEmpty() ) action = () => form.GoToReference(cmd.ReferenceToGo, false, true);
-      if ( !cmd.SearchWord.IsNullOrEmpty() ) action = () => form.SearchHebrewWord(cmd.SearchWord);
-      if ( !cmd.SearchTranslated.IsNullOrEmpty() ) action = () => form.SearchTranslatedWord(cmd.SearchTranslated);
-      if ( action is not null )
-        SystemManager.TryCatch(() =>
-        {
-          form.ToolStrip.SyncUI(() => MainForm.Instance.Popup());
-          form.ToolStrip.SyncUI(action);
-        });
-    }
-    finally
-    {
-      server.Close();
-      SystemManager.CreateIPCServer(IPCRequests);
-    }
-  }
-
-  /// <summary>
-  /// Processes command line options.
-  /// </summary>
-  static private void ProcessCommandLineOptions()
-  {
-    try
-    {
-      if ( SystemManager.CommandLineOptions is null ) return;
-      if ( SystemManager.CommandLineOptions.ResetSettings )
-      {
-        SystemManager.CleanAllLocalAppSettingsFolders();
-        CheckSettingsReset(true);
-      }
-      else
-      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
-        Globals.ForceStartupHide = true;
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-  }
-
-  /// <summary>
-  /// Updates localization strings to the whole application.
-  /// </summary>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
-  static public void UpdateLocalization()
-  {
-    Globals.ChronoTranslate.Restart();
-    Task task = null;
-    try
-    {
-      static void update(Form form)
-      {
-        new Infralution.Localization.CultureManager().ManagedControl = form;
-        var resources = new ComponentResourceManager(form.GetType());
-        resources.ApplyResources(form.Controls);
-      }
-      string lang = "en-US";
-      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
-      var culture = new CultureInfo(lang);
-      Thread.CurrentThread.CurrentCulture = culture;
-      Thread.CurrentThread.CurrentUICulture = culture;
-      task = new Task(HebrewGlobals.LoadProviders);
-      task.Start();
-      if ( Globals.IsReady )
-      {
-        MessageBoxEx.CloseAll();
-        AboutBox.Instance.Hide();
-        //StatisticsForm.Instance.Hide();
-      }
-      else
-        update(MainForm.Instance);
-      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
-      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-      new Infralution.Localization.CultureManager().ManagedControl = BibleStatisticsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
-      foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
-      {
-        update(form);
-        if ( form is ShowTextForm formShowText )
-          formShowText.Relocalize();
-      }
-      // Various updates
-      if ( Globals.IsReady )
-      {
-        TextBoxEx.Relocalize();
-        LoadingForm.Instance.Relocalize();
-        AboutBox.Instance.AboutBox_Shown(null, null);
-        TranscriptionGuideForm.HTMLBrowserForm_Shown(null, null);
-        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-        MainForm.Instance.RenderChapterTranslation();
-        MainForm.Instance.RenderChapterOriginal();
-        MainForm.Instance.RenderChapterELS50();
-        MainForm.Instance.SetView(Settings.CurrentView, true);
-        MainForm.Instance.LabelTitle.Visible = true;
-        MainForm.Instance.LabelTitleReferenceName.Visible = true;
-        MainForm.Instance.LabelProgress.Visible = true;
-        MainForm.Instance.UpdateTitle();
-      }
-      MainForm.Instance.EditSearchWord.CheckClipboardContentType();
-      task?.Wait();
-      MainForm.Instance.CreateSystemInformationMenu();
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-    finally
-    {
-      Globals.ChronoTranslate.Stop();
-      Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
-    }
-  }
-
-  /// <summary>
-  /// Indicates spell checker for TextBoxEx.
-  /// </summary>
-  //static private NHunspellExtender.NHunspellTextBoxExtender SpellChecker;
-
-  // https://www.nuget.org/packages/NHunspell.Patched/1.2.5554
-
-  /// <summary>
-  /// Creates or update the spell checker to display context menu items.
-  /// </summary>
-  static public void TextBox_Relocalized()
-  {
-    //if ( Globals.IsVisualStudioDesigner ) return;
-    //if ( SpellChecker is not null )
-    //{
-    //  TextBoxEx.ContextMenuEdit.Opening -= SpellChecker.ContextMenu_Opening;
-    //  TextBoxEx.ContextMenuEdit.Closed -= SpellChecker.ContextMenu_Closed;
-    //  SpellChecker.controlEnabled.Clear();
-    //}
-    //SpellChecker = new();
-    //TextBoxEx.ContextMenuEdit.Opening += SpellChecker.ContextMenu_Opening;
-    //TextBoxEx.ContextMenuEdit.Closed += SpellChecker.ContextMenu_Closed;
-  }
-
-  /// <summary>
-  /// Update the connection between the spell checker and a TextBoxEx.
-  /// </summary>
-  static public void TextBox_UpdateSpellChecker(object sender, EventArgs e)
-  {
-    //if ( SpellChecker is null ) return;
-    //if ( sender is not TextBoxEx textbox ) return;
-    //if ( !Globals.SpellCheckEnabled || !textbox.SpellCheckAllowed || textbox.ReadOnly )
-    //  SpellChecker.SetSpellCheckEnabled(textbox, false);
-    //else
-    //if ( Globals.SpellCheckEnabled && textbox.SpellCheckAllowed )
-    //{
-    //  SpellChecker.SetSpellCheckEnabled(textbox, true);
-    //  textbox.Disposed += (_, _) => SpellChecker.SetSpellCheckEnabled(textbox, false);
-    //}
   }
 
 }
