@@ -335,7 +335,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### 2023.01.24 - Version 3.16
 
-- Add links for ancient-hebrew.org (website, search words and read verses online).
+- Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
 
 #### 2023.01.08 - Version 3.15
 
