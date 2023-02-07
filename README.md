@@ -333,9 +333,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
 
-#### 2023.01.24 - Version 3.16
+#### 2023.01.31 - Version 3.16
 
 - Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
+- Add links to study parashot and celebrations for yechiva.com and torathaim.net (french).
 
 #### 2023.01.08 - Version 3.15
 
