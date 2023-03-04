@@ -333,6 +333,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
 
+#### 2023.03.04 - Version 3.17
+
+- Fix first launch error for check settings reset since a previous version.
+
 #### 2023.03.03 - Version 3.16
 
 - Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
