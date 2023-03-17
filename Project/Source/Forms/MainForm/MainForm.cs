@@ -22,7 +22,7 @@ using Equin.ApplicationFramework;
 /// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
-partial class MainForm : Form
+sealed partial class MainForm : Form
 {
 
   private const int MenuSeparatorLeftLimit = 1050;

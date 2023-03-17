@@ -14,7 +14,7 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SearchTranslatedForm : Form
+sealed partial class SearchTranslatedForm : Form
 {
 
   static public readonly List<SearchTranslatedForm> Forms = new();

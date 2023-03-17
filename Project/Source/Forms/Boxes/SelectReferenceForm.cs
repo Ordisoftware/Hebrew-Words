@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SelectReferenceForm : Form
+sealed partial class SelectReferenceForm : Form
 {
 
   static private ReferenceItem LastReference = new(1, 1, 1);

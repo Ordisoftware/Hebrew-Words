@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class ImportVerseForm : Form
+sealed partial class ImportVerseForm : Form
 {
 
   static public void Run(ReferenceItem reference, bool isAutoFromClipboard)

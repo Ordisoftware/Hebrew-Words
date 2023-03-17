@@ -18,7 +18,7 @@ using Program = Words.Program;
 using Properties = Words.Properties;
 using MainForm = Words.MainForm;
 
-partial class ParashotForm : Form
+sealed partial class ParashotForm : Form
 {
 
   static public ParashotForm Instance { get; private set; }
