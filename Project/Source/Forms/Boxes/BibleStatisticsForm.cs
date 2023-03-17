@@ -15,7 +15,7 @@
 namespace Ordisoftware.Hebrew.Words;
 
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-partial class BibleStatisticsForm : Form
+sealed partial class BibleStatisticsForm : Form
 {
 
   private sealed class BookStatistic

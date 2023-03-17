@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SelectVersesByDateUpdatedForm : Form
+sealed partial class SelectVersesByDateUpdatedForm : Form
 {
 
   private sealed class VerseItem

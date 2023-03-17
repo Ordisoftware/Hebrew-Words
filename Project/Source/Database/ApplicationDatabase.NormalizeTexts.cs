@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class ApplicationDatabase
+sealed partial class ApplicationDatabase
 {
 
   public void DoNormalizeTexts()
