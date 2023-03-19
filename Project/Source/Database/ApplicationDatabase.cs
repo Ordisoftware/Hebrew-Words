@@ -24,7 +24,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   static public readonly string VersesTableName = nameof(ChapterRow.Verses);
   static public readonly string WordsTableName = nameof(VerseRow.Words);
 
-  static public ApplicationDatabase Instance { get; protected set; }
+  static public ApplicationDatabase Instance { get; private set; }
 
   static ApplicationDatabase()
   {
