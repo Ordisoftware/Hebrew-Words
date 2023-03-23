@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SelectSearchResultsForm : Form
+sealed partial class SelectSearchResultsForm : Form
 {
 
   static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)

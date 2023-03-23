@@ -22,7 +22,7 @@ using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-partial class PreferencesForm : Form
+sealed partial class PreferencesForm : Form
 {
 
   private bool IsReady;
