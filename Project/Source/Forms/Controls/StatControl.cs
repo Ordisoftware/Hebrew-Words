@@ -14,7 +14,7 @@
 /// <edited> 2019-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class StatControl : UserControl
+sealed partial class StatControl : UserControl
 {
 
   public StatControl()

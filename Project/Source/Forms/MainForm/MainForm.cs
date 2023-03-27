@@ -1814,9 +1814,9 @@ sealed partial class MainForm : Form
   {
     var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
     if ( EditFilterChaptersWithTitle.Checked )
-      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
+      books = books.Where(b => b.Chapters.Exists(c => !c.Title.IsNullOrEmpty()));
     if ( EditFilterVersesTranslated.Checked )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
+      books = books.Where(b => b.Chapters.Exists(c => c.Verses.Exists(v => v.HasTranslation)));
     if ( EditFilterBook.Text.Length != 0 )
     {
       string filterBook = EditFilterBook.Text;
@@ -1829,16 +1829,16 @@ sealed partial class MainForm : Form
     if ( EditFilterChapter.Text.Length != 0 )
     {
       string filterChapter = EditFilterChapter.Text;
-      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(filterChapter)
-                                                || c.Memo.RawContains(filterChapter)));
+      books = books.Where(b => b.Chapters.Exists(c => c.Title.RawContains(filterChapter)
+                                                   || c.Memo.RawContains(filterChapter)));
     }
     if ( EditFilterVerse.Text.Length != 0 )
     {
       string filterVerse = EditFilterVerse.Text;
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
-                                                                  || v.Concept.RawContains(filterVerse)
-                                                                  || v.Translation.RawContains(filterVerse)
-                                                                  || v.Comment.RawContains(filterVerse))));
+      books = books.Where(b => b.Chapters.Exists(c => c.Verses.Exists(v => v.Title.RawContains(filterVerse)
+                                                                        || v.Concept.RawContains(filterVerse)
+                                                                        || v.Translation.RawContains(filterVerse)
+                                                                        || v.Comment.RawContains(filterVerse))));
     }
     var list = books.ToList();
     SelectFilterBook.DataSource = new BindingList<BookRow>(list);
@@ -1867,7 +1867,7 @@ sealed partial class MainForm : Form
     if ( EditFilterChaptersWithTitle.Checked )
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
     if ( EditFilterVersesTranslated.Checked )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+      chapters = chapters.Where(c => c.Verses.Exists(v => v.HasTranslation));
     if ( EditFilterChapter.Text.Length != 0 )
     {
       string filterChapter = EditFilterChapter.Text;
@@ -1877,10 +1877,10 @@ sealed partial class MainForm : Form
     if ( EditFilterVerse.Text.Length != 0 )
     {
       string filterVerse = EditFilterVerse.Text;
-      chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
-                                                    || v.Concept.RawContains(filterVerse)
-                                                    || v.Translation.RawContains(filterVerse)
-                                                    || v.Comment.RawContains(filterVerse)));
+      chapters = chapters.Where(c => c.Verses.Exists(v => v.Title.RawContains(filterVerse)
+                                                       || v.Concept.RawContains(filterVerse)
+                                                       || v.Translation.RawContains(filterVerse)
+                                                       || v.Comment.RawContains(filterVerse)));
     }
     var list = chapters.ToList();
     SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);

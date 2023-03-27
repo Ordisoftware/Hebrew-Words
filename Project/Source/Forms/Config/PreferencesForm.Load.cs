@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew.Words;
 /// Provides form to edit the preferences.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
-sealed partial class PreferencesForm
+partial class PreferencesForm
 {
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]

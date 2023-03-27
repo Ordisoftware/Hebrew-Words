@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SelectVerseForm : Form
+sealed partial class SelectVerseForm : Form
 {
 
   static public ReferenceItem Run()

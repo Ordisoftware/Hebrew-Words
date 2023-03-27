@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-public partial class VerseControl : UserControl
+sealed partial class VerseControl : UserControl
 {
 
   private sealed class MetricsItem

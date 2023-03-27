@@ -14,7 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class ImportStrongForm : Form
+sealed partial class ImportStrongForm : Form
 {
 
   public ImportStrongForm()

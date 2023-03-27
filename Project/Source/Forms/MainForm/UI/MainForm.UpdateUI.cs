@@ -53,7 +53,7 @@ partial class MainForm
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  protected void DoScreenPosition(object sender, EventArgs e)
+  private void DoScreenPosition(object sender, EventArgs e)
   {
     if ( DoScreenPositionMutex ) return;
     try
