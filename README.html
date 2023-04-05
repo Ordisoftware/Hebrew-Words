@@ -1,0 +1,774 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hebrew Words</title>
+</head>
+<body>
+
+    <p><a href="LICENSE"><img src="https://img.shields.io/github/license/ordisoftware/hebrew-words" alt="License: MPL 2.0" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Words/releases"><img src="https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total" alt="GitHub all releases downloads" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Words/releases/latest"><img src="https://img.shields.io/github/v/release/ordisoftware/hebrew-words" alt="GitHub release (latest by date)" /></a> 
+<a href="#"><img src="https://img.shields.io/github/repo-size/ordisoftware/hebrew-words" alt="GitHub repo size" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project"><img src="https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words" alt="GitHub code size in bytes" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project"><img src="https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words" alt="Lines of code" /></a> <br/>
+<a href="https://www.microsoft.com/windows/"><img src="https://img.shields.io/badge/Windows%207%2B-279CE8?label=os" alt="OS: Windows" /></a> 
+<a href="https://github.com/dotnet/winforms"><img src="https://img.shields.io/badge/WinForms-279CE8?label=ui" alt="UI: WinForms" /></a> 
+<a href="https://dotnet.microsoft.com"><img src="https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework" alt="Framework: .Net" /></a> 
+<a href="https://visualstudio.microsoft.com"><img src="https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide" alt="IDE: Visual Studio" /></a> 
+<a href="https://docs.microsoft.com/dotnet/csharp/"><img src="https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang" alt="Lang: C#" /></a> 
+<a href="https://www.sqlite.org"><img src="https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db" alt="DB: SQLite" /></a> <br/>
+<a href="https://www.ordisoftware.com/hebrew-words"><img src="https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&amp;logoColor=white" alt="Ordisoftware.com Project" /></a> 
+<a href="https://github.com/Ordisoftware/Guidelines"><img src="https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&amp;logoColor=white" alt="Manufacturing Software Guidelines" /></a> </p>
+<h1 id="hebrew-words">Hebrew Words</h1>
+<p>A libre and open-source software written in C# that helps for the literal word-for-word translation of the Torah and the Hebrew Bible.</p>
+<h2 id="table-of-content">Table of content</h2>
+<ol>
+<li><a href="#functionalities">Functionalities</a></li>
+<li><a href="#review">Review</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#download">Download</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#system-frequently-asked-questions">System FAQ</a></li>
+<li><a href="#application-frequently-asked-questions">Application FAQ</a></li>
+<li><a href="#command-line-options">Command-line options</a></li>
+<li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="#future-improvements">Future improvements</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ol>
+<h2 id="functionalities">Functionalities</h2>
+<ul>
+<li>Translate verses word-for-word with various helper tools and spell checker.</li>
+<li>Contextual menu for a word to search online its definition, to see already translated, to search it in database, or to study it in Hebrew Letters.</li>
+<li>Contextual menu for a verse to read it online, to manage bookmarks, to export, or to import.</li>
+<li>Search the Tanak for Hebrew or translated words with filters.</li>
+<li>Determine hidden verses of Pessah kabalah according to the Equidistant Letter Sequence of 50 for Tav.</li>
+<li>Window showing a board of editable books.</li>
+<li>Window showing a board of parashot with descriptions.</li>
+<li>Window showing a grammar guide.</li>
+<li>Window showing some Tanak's statistics.</li>
+<li>MS Word export of a book, a chapter or a verse.</li>
+<li>Links to various online resources.</li>
+<li>English, French.</li>
+</ul>
+<h2 id="review">Review</h2>
+<p><a href="https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml">Softpedia.com</a></p>
+<p><em>&quot;Well-designed Hebrew Bible app that can serve both as an exploratory tool, as well as a way to perform exact translations&quot;</em></p>
+<p><a href="https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml"><img src="https://www.ordisoftware.com/wp-content/theming/softpedia3.5-white.png" alt="Note" /></a></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Screen 1024x768 or higher</li>
+<li>Windows 7 SP1 x32/x64 or higher</li>
+<li>Framework .NET 4.8</li>
+<li>SQLite 3.40.1</li>
+</ul>
+<h2 id="download">Download</h2>
+<p><strong>What's new in the latest version 3</strong></p>
+<ul>
+<li>SQLite ODBC Driver is no more needed.</li>
+<li>Overall performances are optimized.</li>
+<li>Added and improved keyboard shortcuts.</li>
+<li>Added verse navigator in the verses view panel.</li>
+<li>Added option to render only current verse or all of the chapter.</li>
+<li>Added book name translation text box in the navigation panel.</li>
+<li>Added chapter title and memo text boxes in the navigation panel.</li>
+<li>Added buttons to edit book and chapter memos in the navigation panel.</li>
+<li>Added online search a word for several providers : Pealim, Sefaria, Wiktionary, Google, Bing...</li>
+<li>Added filter verses view panel.</li>
+<li>Added parashot board with literal translations, lettriqs, verses references, study tools, edition and export.</li>
+<li>Added celebration verses board.</li>
+<li>Added options to choose mouse actions on words and verses.</li>
+<li>Added menu for web links.</li>
+<li>Added theming options.</li>
+<li>Added usage statistics form in tools menu.</li>
+<li>Added command line options.</li>
+<li>Improved search options.</li>
+<li>Improved about box.</li>
+<li>Improved message boxes.</li>
+<li>Improved check update.</li>
+<li>Improved debugger.</li>
+<li>Many fixes and improvements.</li>
+</ul>
+<p><a href="https://github.com/Ordisoftware/Hebrew-Words/releases/latest">Last release</a></p>
+<p><a href="https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books/tree/master/Tanak">French Tanak database decoded by the author</a></p>
+<h2 id="screenshots">Screenshots</h2>
+<p><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-en-300x226.png" alt="" /></a>    <a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-translation-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-translation-en-300x226.png" alt="" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-search-select-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-search-select-en-300x226.png" alt="" /></a>    <a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-search-results-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-search-results-en-300x226.png" alt="" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-original-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-original-en-300x226.png" alt="" /></a>    <a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-els50-en-300x226.png" alt="" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-books-fr-300x235.png" alt="" /></a>    <a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-parashot-en-300x211.png" alt="" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-verses-reach-en-211x300.png" alt="" /></a>    <a href="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-stats-en.png"><img src="https://www.ordisoftware.com/uploads/2022/08/hebrew-words-stats-en-297x300.png" alt="" /></a></p>
+<h2 id="videos">Videos</h2>
+<p><a href="https://www.youtube.com/watch?v=2c5JAdFU1Kk"><img src="https://img.youtube.com/vi/2c5JAdFU1Kk/mqdefault.jpg" alt="Showing video" /></a>     <a href="https://www.youtube.com/watch?v=Wc5SdiASvCg"><img src="https://img.youtube.com/vi/Wc5SdiASvCg/mqdefault.jpg" alt="Showing video" /></a></p>
+<h2 id="system-frequently-asked-questions">System Frequently asked questions</h2>
+<h4 id="what-code-analyzers-are-used-in-addition-to-visual-studio">What code analyzers are used in addition to Visual Studio?</h4>
+<table>
+<thead>
+<tr>
+<th>IDE Extension</th>
+<th>Project NuGet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022">SonarLint</a><br><a href="https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022">Roslynator</a><br><a href="https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS">F0.Analyzers</a><br><a href="https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper">Parallel Helper</a><br><a href="https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker">Parallel Checker</a><br><a href="https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022">AsyncFixer</a><br><a href="https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer">Async Method Name Fixer</a><br><a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7">U2U Consult Performance Analyzers</a><br><a href="https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019">Security Code Scan</a><br><a href="https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan">Puma Scan</a></td>
+<td><a href="https://github.com/dotnet/roslyn-analyzers">Microsoft.CodeAnalysis.NetAnalyzers</a><br><a href="https://github.com/microsoft/vs-threading">Microsoft.VisualStudio.Threading.Analyzers</a><br><a href="https://github.com/cezarypiatek/MultithreadingAnalyzer">MultithreadingAnalyzer</a><br><a href="https://github.com/meziantou/Meziantou.Analyzer">Meziantou.Analyzer</a><br><a href="https://github.com/Geeksltd/GCop">GCop.All.Common</a><br><a href="https://github.com/DotNetAnalyzers/ReflectionAnalyzers">ReflectionAnalyzers</a><br><a href="https://github.com/DotNetAnalyzers/IDisposableAnalyzers">IDisposableAnalyzers</a><br><a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.CoreAnalyzers</a><br><a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.Structs</a><br><br></td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-to-do-if-the-check-update-tells-that-the-ssl-certificate-is-wrong-or-expired">What to do if the check update tells that the SSL certificate is wrong or expired?</h4>
+<p>The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it.</p>
+<p>You can manually check the latest version available online in case of problem.</p>
+<h4 id="what-to-do-if-the-application-does-not-work-normally-despite-restoring-settings">What to do if the application does not work normally despite restoring settings?</h4>
+<p>Use the Start Menu link:</p>
+<p> <code>Ordisoftware\Hebrew Words\Reset Hebrew Words settings</code></p>
+<p>This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.</p>
+<h4 id="what-is-the-windows-double-buffering">What is the Windows double-buffering?</h4>
+<p>When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.</p>
+<p>When disabled, top menu and some controls painting may cause latency, and dynamic items can be generated slowly the larger the number.</p>
+<h4 id="what-to-do-if-there-is-a-problem-with-the-display">What to do if there is a problem with the display?</h4>
+<p>The refresh view button of the menu at the top redraws the entire form.</p>
+<h2 id="application-frequently-asked-questions">Application Frequently asked questions</h2>
+<h4 id="why-all-verses-of-a-chapter-are-not-rendered">Why all verses of a chapter are not rendered?</h4>
+<p>Due to Windows Forms limitation, some chapters with too many verses cannot be fully rendered.</p>
+<p>In this case, one verse at a time should be used.</p>
+<p>List of chapters concerned:</p>
+<ul>
+<li>Bereshit 24 (67)</li>
+<li>Bamidbar 7 (89)</li>
+<li>Devarim 28 (69)</li>
+<li>Melakim I 8 (66)</li>
+<li>Tehilim 118 (176)</li>
+</ul>
+<h4 id="the-software-sometimes-runs-slowly-is-this-normal">The software sometimes runs slowly, is this normal?</h4>
+<p>Yes, because implementing features requires a lot of Windows resources that depends on the performance of the computer.</p>
+<p>In this case, one verse at a time should be used.</p>
+<h2 id="command-line-options">Command-line options</h2>
+<ul>
+<li><p>Change interface language (does not change the database content):</p>
+<p><code>Ordisoftware.Hebrew.Words.exe --lang [en|fr]</code></p>
+</li>
+<li><p>Enable or disable future functionalities preview:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --withpreview | --nopreview</code></p>
+</li>
+<li><p>Go to a reference like &quot;1.1.1&quot; or &quot;bereshit 1.1&quot; or &quot;genesis/genèse 1.1&quot;:</p>
+<p><code>Ordisoftware.Hebrew.Words.exe --verse [reference]</code></p>
+</li>
+<li><p>Search a word in the database using unicode &quot;<code>בראשית</code>&quot; and or hebrew font &quot;<code>ty&gt;arb</code>&quot;:</p>
+<p><code>Ordisoftware.Hebrew.Words.exe --word [word]</code></p>
+</li>
+<li><p>Search a translation of a word in the database like &quot;<code>elohim</code>&quot;:</p>
+<p><code>Ordisoftware.Hebrew.Words.exe --translated [word]</code></p>
+</li>
+</ul>
+<p>All diacritics and case are removed, and if the word can't be processed it is set to empty.</p>
+<p>If any Hebrew Unicode chars is present, all non Unicode are removed, else Hebrew font chars are used and all non-font chars are removed.</p>
+<p>These options can be used to control the software when it is already running, but if this case this only works for administrator users.</p>
+<h4 id="how-to-open-a-verse-reference-from-a-selected-sentence-from-any-application-such-as-browser-or-text-editor"><em>How to open a verse reference from a selected sentence from any application such as browser or text editor?</em></h4>
+<p>It is possible to use <a href="https://www.autohotkey.com">AutoHotKey</a> to define for example this <code>Shift + Ctrl + Alt + V</code> command on a selected reference:</p>
+<pre><code>!^+V::
+  clipboardOld := ClipboardAll
+  ControlGetFocus, ctrl
+  Send, ^c
+  sleep 100
+  reference := StrReplace(Clipboard, A_Space, &quot;%20&quot;)
+  Clipboard := clipboardOld
+  appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Words\Bin\&quot;
+  appExe := &quot;Ordisoftware.Hebrew.Words.exe&quot;
+  cmdLine := appPath appExe &quot; --verse &quot; reference
+  sleep 200
+  Run %cmdLine%
+  return 
+</code></pre>
+<h4 id="how-to-search-a-word-from-a-selected-unicode-from-any-application-such-as-browser-or-text-editor"><em>How to search a word from a selected unicode from any application such as browser or text editor?</em></h4>
+<p>Also for example to use <code>Shift + Ctrl + Alt + S</code> :</p>
+<pre><code>!^+S::
+  clipboardOld := ClipboardAll
+  ControlGetFocus, ctrl
+  Send, ^c
+  sleep 100
+  word := Clipboard
+  Clipboard := clipboardOld
+  appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Words\Bin\&quot;
+  appExe := &quot;Ordisoftware.Hebrew.Words.exe&quot;
+  cmdLine := appPath appExe &quot; --word &quot; word
+  sleep 200
+  Run %cmdLine%
+  return 
+</code></pre>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Tab</td>
+<td>Next view</td>
+</tr>
+<tr>
+<td>Shift + Ctrl + Tab</td>
+<td>Previous view</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Chapter verses view</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Chapter translation view</td>
+</tr>
+<tr>
+<td>F3 or Alt + F</td>
+<td>Search in database view</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Filter verses view</td>
+</tr>
+<tr>
+<td>F5 or Shift + Ctrl + F</td>
+<td>Go to reference</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Original Hebrew text view</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>ELS50 verses view</td>
+</tr>
+<tr>
+<td>F8 or Ctrl + R</td>
+<td>Refresh</td>
+</tr>
+<tr>
+<td>Alt + F8</td>
+<td>Close all translated windows</td>
+</tr>
+<tr>
+<td>Ctrl + B</td>
+<td>Books board</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>Parashot board</td>
+</tr>
+<tr>
+<td>Alt + P</td>
+<td>Go to parashah</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + T</td>
+<td>Normalize texts</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + F or Ctrl + F5</td>
+<td>Display verses by updated date</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + I</td>
+<td>Import console</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + S</td>
+<td>Tanak's statistics</td>
+</tr>
+<tr>
+<td>Alt + C</td>
+<td>Calculator</td>
+</tr>
+<tr>
+<td>Ctrl + H</td>
+<td>Open Hebrew Letters</td>
+</tr>
+<tr>
+<td>Ctrl + L</td>
+<td>Open transcription guide</td>
+</tr>
+<tr>
+<td>Ctrl + G</td>
+<td>Open grammar guide</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>Open verse context menu</td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td>Open word context menu</td>
+</tr>
+<tr>
+<td>Ctrl + T</td>
+<td>See already translated for the focused Hebrew word</td>
+</tr>
+<tr>
+<td>Ctrl + K</td>
+<td>Search in database for the focused Hebrew word</td>
+</tr>
+<tr>
+<td>Ctrl + F</td>
+<td>Find verse in current chapter</td>
+</tr>
+<tr>
+<td>Ctrl + S</td>
+<td>Save changes</td>
+</tr>
+<tr>
+<td>Alt + Left</td>
+<td>Previous verse</td>
+</tr>
+<tr>
+<td>Alt + Right</td>
+<td>Next verse</td>
+</tr>
+<tr>
+<td>Shift + Alt + Left</td>
+<td>First verse</td>
+</tr>
+<tr>
+<td>Shift + Alt + Right</td>
+<td>Next verse</td>
+</tr>
+<tr>
+<td>Shift + Alt + Up</td>
+<td>Last verse of previous chapter</td>
+</tr>
+<tr>
+<td>Shift + Alt + Down</td>
+<td>First verse of next chapter</td>
+</tr>
+<tr>
+<td>Alt + Home</td>
+<td>Reach the beginning of the view or first verse</td>
+</tr>
+<tr>
+<td>Alt + End</td>
+<td>Reach the ending of the view or last verse</td>
+</tr>
+<tr>
+<td>Alt + PageUp</td>
+<td>Scroll the view up</td>
+</tr>
+<tr>
+<td>Alt + PageDown</td>
+<td>Scroll the view down</td>
+</tr>
+<tr>
+<td>Alt + Up</td>
+<td>Fine scroll the view up</td>
+</tr>
+<tr>
+<td>Alt + Down</td>
+<td>Fine scroll the view down</td>
+</tr>
+<tr>
+<td>Alt + B</td>
+<td>Bookmarks menu</td>
+</tr>
+<tr>
+<td>Alt + H</td>
+<td>History menu</td>
+</tr>
+<tr>
+<td>Alt + D</td>
+<td>Database menu</td>
+</tr>
+<tr>
+<td>Alt + T</td>
+<td>Tools menu</td>
+</tr>
+<tr>
+<td>Alt + L</td>
+<td>Web links menu</td>
+</tr>
+<tr>
+<td>Alt + S</td>
+<td>Settings menu</td>
+</tr>
+<tr>
+<td>Alt + I</td>
+<td>Information menu</td>
+</tr>
+<tr>
+<td>Alt + E</td>
+<td>Export folder</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>Preferences</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>Log file window</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>Usage statistics window</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>About</td>
+</tr>
+<tr>
+<td>Ctrl + F12</td>
+<td>Take a window screenshot</td>
+</tr>
+<tr>
+<td>Shift + F12</td>
+<td>Take a view screenshot</td>
+</tr>
+<tr>
+<td>Alt + F4 (or Escape)</td>
+<td>Close window</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-improvements">Future improvements</h2>
+<h4 id="soon">Soon</h4>
+<ul>
+<li>Add pagination for chapters having more than 80 verses and not fully displayed.</li>
+<li>Add option for pagination trigger like 50 or 60 by default.</li>
+<li>Add a tray icon.</li>
+<li>Add search history.</li>
+<li>Add bookmarks and history auto-backup like the database.</li>
+<li>Add bookmarks and history backup and restore with automatically extending length to multiple of 5.</li>
+<li>Add merge database to import translated verses from another database only for untranslated verses.</li>
+<li>Add import parashot board.</li>
+<li>Add spell checker.</li>
+<li>Add count the number of a word occurrences in verse view.</li>
+<li>Add word occurrences label in the search panel in addition to the number of references.</li>
+<li>Add book translation RTF export.</li>
+<li>Add book name, title and memo as well chapter number, title and memo in RTF export.</li>
+<li>Add menu to open a batch export form to select books or chapters to export.</li>
+<li>Add filters to show all translated books or chapters, or those are not.</li>
+<li>Improve displaying all verses with pagination when more than 100.</li>
+<li>Improve tanak's statistics window.</li>
+<li>Improve auto-backup to allow periodic archive as weekly or monthly.</li>
+<li>Improve import console to support Hebrew Unicode chars in addition to Hebrew font.</li>
+</ul>
+<h4 id="later">Later</h4>
+<ul>
+<li>Add strong's concordances to database.</li>
+<li>Add classic English translation to database.</li>
+<li>Add classic English translation label between an Hebrew word and the working translation.</li>
+<li>Add form to edit strong's concordances.</li>
+<li>Add form to edit classic English translation.</li>
+<li>Add contextual click on a Hebrew word to use the strong's database instead of web search.</li>
+</ul>
+<h2 id="changelog">Changelog</h2>
+<h4 id="in-progress-version-3.x-or-4.0">In progress - Version 3.x or 4.0</h4>
+<ul>
+<li>Add normalize texts window.</li>
+<li>Add replace text in the database.</li>
+<li>Add search next or previous occurrence of a word in the verses view.</li>
+</ul>
+<h4 id="version-3.17">2023.03.04 - Version 3.17</h4>
+<ul>
+<li>Fix first launch error for check settings reset since a previous version.</li>
+</ul>
+<h4 id="version-3.16">2023.03.03 - Version 3.16</h4>
+<ul>
+<li>Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).</li>
+<li>Add links to study parashot and celebrations for yechiva.com and torathaim.net (french).</li>
+<li>Fix first launch crash for Parashot table since v10.x</li>
+</ul>
+<h4 id="version-3.15">2023.01.08 - Version 3.15</h4>
+<ul>
+<li>Add celebration verses board.</li>
+<li>Change export behavior to set default sub-folders to <code>Boards</code> and <code>Verses</code>.</li>
+<li>Fix auto web check update showing some error message (must not).</li>
+<li>Improve web update checker security.</li>
+<li>Improve IPC interoperability security.</li>
+<li>Some UI/UX fixes and improvements.</li>
+<li>Code improvement and refactoring.</li>
+<li>Add links for Peninei Halakha and some others.</li>
+</ul>
+<h4 id="version-3.14">2022.09.25 - Version 3.14</h4>
+<ul>
+<li>Add search parashah text box in parashot board.</li>
+</ul>
+<h4 id="version-3.13">2022.09.14 - Version 3.13</h4>
+<ul>
+<li>Update nugets SQLitePCL.raw, FileHelpers, Serilog and Serilog.Sinks.WinForms.</li>
+</ul>
+<h4 id="version-3.12">2022.08.30 - Version 3.12</h4>
+<ul>
+<li>Add translated word filter to the window of verses by updated date.</li>
+</ul>
+<h4 id="version-3.11">2022.08.26 - Version 3.11</h4>
+<ul>
+<li>Add date filters to the window of verses by updated date.</li>
+<li>Many fixes in the window of verses by updated date.</li>
+</ul>
+<h4 id="version-3.10">2022.08.21 - Version 3.10</h4>
+<ul>
+<li>Add option to show only partially translated in the list of verses by updated date window.</li>
+<li>Add enter key press to reach selected reference the in list of verses by updated date window.</li>
+<li>Fix parashot board header growing on changing font size.</li>
+<li>Fix H'eqev parashah transcription.</li>
+</ul>
+<h4 id="version-3.9">2022.08.14 - Version 3.9</h4>
+<ul>
+<li>Add view verses by date of modification.</li>
+<li>Fix keyboard notice.</li>
+</ul>
+<h4 id="version-3.8">2022.08.10 - Version 3.8</h4>
+<ul>
+<li>Fix some navigation keys.</li>
+<li>Update web links with Elamite language.</li>
+</ul>
+<h4 id="version-3.7">2022.08.08 - Version 3.7</h4>
+<ul>
+<li>Fix load and save theme buttons not visible in preferences.</li>
+<li>Fix theming colors that can be ugly in search view.</li>
+<li>Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.</li>
+</ul>
+<h4 id="version-3.6">2022.08.07 - Version 3.6</h4>
+<ul>
+<li>Add menu item in Database to open the database folder.</li>
+<li>Add theme colors for verse number and hebrew hover link.</li>
+<li>Fix preferences form does not load theme colors.</li>
+<li>Fix theming reseted to pastel when opening preferences.</li>
+<li>Fix message boxes sometimes incorrectly drawn like when deleting bookmarks using mouse right click.</li>
+<li>Remove focused control color and selection when taking screenshot.</li>
+</ul>
+<h4 id="version-3.5">2022.08.05 - Version 3.5</h4>
+<ul>
+<li>Add menu items in Tools to take a screenshot of the window or the current view.</li>
+<li>Add option to enable or disable the display of Hebrew book's name with its common name.</li>
+<li>Add option to enable or disable the display of parashah name with the book's name.</li>
+<li>Add option to enable or disable the display of parashah name in bookmarks and history.</li>
+<li>Add option to enable or disable the display of translation in bookmarks and history.</li>
+<li>Improve search reference to replace <code>,</code> or <code>:</code> or <code>-</code> or <code>_</code> by <code>.</code> (works also for IPC command).</li>
+<li>Fix commande line go to a reference to replace spaces by <code>%20</code> (see FAQ).</li>
+<li>Fix FAQ and help about <code>--translated</code> command-line option.</li>
+<li>Few fixes and improvements.</li>
+</ul>
+<h4 id="version-3.4">2022.08.04 - Version 3.4</h4>
+<ul>
+<li>Disable text box in verses because not yet available.</li>
+<li>Fix some controls tabs in several windows.</li>
+<li>Fix verse title and concept text boxes and check boxes enabled when current view is ELS50.</li>
+<li>Fix reset button in letters control.</li>
+<li>Fix export buttons in original text and ELS50 views.</li>
+<li>Few fixes and improvements.</li>
+</ul>
+<h4 id="version-3.3">2022.08.03 - Version 3.3</h4>
+<ul>
+<li>Add auto-repair ELS50 verses incorrectly generated by a previous version.</li>
+<li>Fix include original text option for translation view not saved.</li>
+</ul>
+<h4 id="version-3.2">2022.08.03 - Version 3.2</h4>
+<ul>
+<li>Rename export document models that were ambiguous in preferences form.</li>
+<li>Remove export document not yet available in preferences form.</li>
+<li>Fix some texts in preferences form.</li>
+</ul>
+<h4 id="version-3.1">2022.08.02 - Version 3.1</h4>
+<ul>
+<li>Fix colors for verse Title and Concept text boxes.</li>
+<li>Fix volume label in preferences form.</li>
+</ul>
+<h4 id="version-3.0">2022.08.01 - Version 3.0</h4>
+<ul>
+<li>Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.</li>
+<li>Optimize overall performances.</li>
+<li>Speed up data loading at startup.</li>
+<li>Speed up application startup when viewing a single verse.</li>
+<li>Add go back and next buttons.</li>
+<li>Add verse navigator in the verses view panel.</li>
+<li>Add Alt + Left and Right to navigate between verses.</li>
+<li>Add option to render only current verse or all of the chapter.</li>
+<li>Add option to set word translation text-box number of lines.</li>
+<li>Add options to set fonts size.</li>
+<li>Add filter verses view panel.</li>
+<li>Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.</li>
+<li>Add goto parashah menu in Tools.</li>
+<li>Add current parashah name in the sub-title in case of a reference of a book of the Torah.</li>
+<li>Add online search a word for several providers : Pealim, Sefaria, Dict.com, Wiktionary, Google, Bing, Reverso, Glosbe.</li>
+<li>Add original word in the search translated form.</li>
+<li>Add Ctrl+T shortcut to open the translated form the focused Hebrew word.</li>
+<li>Add Ctrl+K shortcut to open the search view for the focused Hebrew word.</li>
+<li>Add &quot;Add translation (to a word)&quot; action in the search translated form, in addition to the &quot;Use&quot; action.</li>
+<li>Add &quot;Add a bookmark&quot; menu item.</li>
+<li>Add &quot;Sort bookmarks&quot; menu item.</li>
+<li>Add auto sort bookmarks option.</li>
+<li>Add book name translation text box in the navigation panel.</li>
+<li>Add chapter title and memo text boxes in the navigation panel.</li>
+<li>Add buttons to edit book and chapter memos in the navigation panel.</li>
+<li>Add options to filter the books in the go to reference form.</li>
+<li>Add new input panel from Hebrew Letters v4+.</li>
+<li>Add new advanced text-box for future undo/redo.</li>
+<li>Add menu for web links.</li>
+<li>Add transcription guide in Tools menu.</li>
+<li>Add optimize database menu.</li>
+<li>Add normalize texts in Database menu.</li>
+<li>Add usage statistics form in Tools menu.</li>
+<li>Add keyboard shortcuts notice in windows settings menu.</li>
+<li>Add and change many shortcuts.</li>
+<li>Add sounds to clipboard actions.</li>
+<li>Add color theming options.</li>
+<li>Add option to theme MSWord export (font sizes).</li>
+<li>Add options to choose mouse actions on words and verses.</li>
+<li>Add option to go at startup to the previous verse else the main bookmark else the first verse of the Tanak.</li>
+<li>Add option to enable or disable the web links menu.</li>
+<li>Add option to enable or disable message boxes sounds.</li>
+<li>Add option to enable or disable success dialogs.</li>
+<li>Add option to set application's volume.</li>
+<li>Add option to enable debugger.</li>
+<li>Add option to set automatic web check update frequency.</li>
+<li>Add option to auto optimize database at startup once a week.</li>
+<li>Add show usage statistics from about box.</li>
+<li>Add check update from about box.</li>
+<li>Add command line options.</li>
+<li>Change web check update to use GitHub as an alternative if author's website is down.</li>
+<li>Improve statistics about the Bible.</li>
+<li>Improve select verse with more options.</li>
+<li>Improve search options.</li>
+<li>Improve import console.</li>
+<li>Improve MSWord export.</li>
+<li>Improve check update to allow auto update or direct download or open app web page.</li>
+<li>Improve check update to verify the SSL certificate of the website and the checksum of the setup file.</li>
+<li>Improve debugger to support logging.</li>
+<li>Improve exception form to view log.</li>
+<li>Improve about box to dynamically display the list of dependencies and media used.</li>
+<li>Improve message boxes.</li>
+<li>Improve UI/UX.</li>
+<li>Fix drop down menus shown on another monitor instead of the same screen.</li>
+<li>Fix error message when several SearchTranslatedForm are opened.</li>
+<li>Fix error message when typing in the comment boxes.</li>
+<li>Fix edit books information form : modifications are not saved since an old version.</li>
+<li>Many fixes and improvements.</li>
+<li>Replace simple internal command line parser by CommandLineParser NuGet package.</li>
+<li>Replace DocX 1.2 dependency by the NuGet package 1.4.1 version (the last being in MS-PL, up to 1.6 being proprietary and from 1.7 limited to 10 end-users).</li>
+<li>Add custom debugger and serilog tracing for exception information with GitHub issue creation.</li>
+<li>The application now permanently lock database file while running.</li>
+<li>Move online providers values from code to files in the application documents folder.</li>
+<li>Move Tanak text files in Documents in a dedicated folder.</li>
+<li>Add books common names field in the database and in the edit books information form.</li>
+<li>Add common code written since two years for Hebrew Calendar and Hebrew Letters.</li>
+<li>Massive files and code refactoring.</li>
+<li>Upgrade to Visual Studio 2022 and C# 10.</li>
+<li>Update to Framework .NET 4.8 and supported Windows only 7 SP1 or higher.</li>
+<li>Update setup for Framework .NET 4.8</li>
+<li>Update Hebrew applications' icons.</li>
+<li>Update web links.</li>
+<li>Update help.</li>
+<li>Improve setup to select hebrew font version.</li>
+<li>Disable IPC intercom for non-admin users.</li>
+<li>Add Hebrew font version available on Fonts2u (can be manually installed).</li>
+<li>Serilog WinForms must remains at v2.3.1</li>
+</ul>
+<h4 id="version-2.5">2020.09.01 - Version 2.5</h4>
+<ul>
+<li>Maintenance release.</li>
+</ul>
+<h4 id="version-2.4">2019.11.14 - Version 2.4</h4>
+<ul>
+<li>Add history persistence.</li>
+<li>Fix buttons location when resizing SearchTranslatedForm.</li>
+<li>Change SearchTranslatedForm and GrammarGuideForm min width.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-2.3">2019.10.18 - Version 2.3</h4>
+<ul>
+<li>Improve UI.</li>
+<li>Some fixes.</li>
+<li>Some code refactorings.</li>
+<li>Setup install SQLite ODBC Driver if not present.</li>
+</ul>
+<h4 id="version-2.2">2019.09.24 - Version 2.2</h4>
+<ul>
+<li>Add option to choose language.</li>
+<li>Improve UI.</li>
+<li>Update help.</li>
+<li>Fix reload data.</li>
+<li>Some code refactorings.</li>
+</ul>
+<h4 id="version-2.1">2019.09.21 - Version 2.1</h4>
+<ul>
+<li>Add find reference menu button.</li>
+<li>Add search in book filter.</li>
+<li>Add option to open generated MSWord files.</li>
+<li>Add import verse console.</li>
+<li>Improve reference management.</li>
+<li>Fix books file names and indexes.</li>
+</ul>
+<h4 id="version-2.0">2019.09.19 - Version 2.0</h4>
+<ul>
+<li>Add context menu on Hebrew words, on verses numbers and on search reference found.</li>
+<li>Add search translations of a word.</li>
+<li>Add option to define URL to open verse online.</li>
+<li>Add option to set commentary lines count.</li>
+<li>Add option to disable startup check update.</li>
+<li>Add master bookmark used at startup.</li>
+<li>Add bookmarks.</li>
+<li>Add navigation history.</li>
+<li>Add grammar guide.</li>
+<li>Improve UI.</li>
+<li>Improve verses rendering.</li>
+<li>Improve translations rendering.</li>
+<li>Improve search rendering.</li>
+<li>Improve search filters.</li>
+<li>Improve statistics.</li>
+<li>Improve tools.</li>
+<li>Some fixes.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-1.8">2019.09.03 - Version 1.8</h4>
+<ul>
+<li>Improve verses view.</li>
+<li>Improve export UI.</li>
+<li>Fix select chapter combo-box.</li>
+</ul>
+<h4 id="version-1.7">2019.08.30 - Version 1.7</h4>
+<ul>
+<li>Add MSWord export for one verse.</li>
+<li>Auto save option.</li>
+<li>Some fixes.</li>
+</ul>
+<h4 id="version-1.6">2019.08.29 - Version 1.6</h4>
+<ul>
+<li>Add default backup location.</li>
+<li>Add auto backup.</li>
+<li>Add copy to clipboard.</li>
+<li>Add export to RTF.</li>
+<li>Fix backup operations.</li>
+</ul>
+<h4 id="version-1.5">2019.08.28 - Version 1.5</h4>
+<ul>
+<li>Add create new and restore database.</li>
+</ul>
+<h4 id="version-1.4">2019.08.25 - Version 1.4</h4>
+<ul>
+<li>Add shortcut for Hebrew raw text view.</li>
+<li>Improve check update.</li>
+</ul>
+<h4 id="version-1.3">2019.05.22 - Version 1.3</h4>
+<ul>
+<li>Add backup database.</li>
+<li>Add check update.</li>
+</ul>
+<h4 id="version-1.2">2019.01.29 - Version 1.2</h4>
+<ul>
+<li>Add word DOCX export.</li>
+</ul>
+<h4 id="version-1.1">2019.01.28 - Version 1.1</h4>
+<ul>
+<li>Add books names translation form.</li>
+<li>Add search a word.</li>
+<li>Add open verse online.</li>
+<li>Add verse comment edition.</li>
+<li>Some improvements.</li>
+</ul>
+<h4 id="version-1.0">2019.01.26 - Version 1.0</h4>
+<ul>
+<li>Initial release.</li>
+</ul>
+
+
+</body>
+</html>
