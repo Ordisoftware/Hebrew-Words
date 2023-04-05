@@ -629,10 +629,10 @@ sealed partial class MainForm : Form
     ActionSave.PerformClick();
     VerseControl.ResetMetricsRequired = true;
     WordControl.ResetMetricsRequired = true;
-    int book = CurrentReference.Book?.Number ?? 1;
-    int chapter = CurrentReference.Chapter?.Number ?? 1;
-    int verse = CurrentReference.Verse?.Number ?? 1;
-    int word = CurrentReference.Verse?.Number ?? 1;
+    int book = CurrentReference?.Book?.Number ?? 1;
+    int chapter = CurrentReference?.Chapter?.Number ?? 1;
+    int verse = CurrentReference?.Verse?.Number ?? 1;
+    int word = CurrentReference?.Verse?.Number ?? 1;
     GoToReference(new ReferenceItem(book, chapter, verse, word), true);
   }
 
