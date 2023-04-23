@@ -296,21 +296,18 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
-- Add pagination for chapters having more than 80 verses and not fully displayed.
-- Add option for pagination trigger like 50 or 60 by default.
 - Add a tray icon.
-- Add search history.
-- Add bookmarks and history auto-backup like the database.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
-- Add merge database to import translated verses from another database only for untranslated verses.
+- Add search in history.
 - Add import parashot board.
-- Add spell checker.
+- Add bookmarks and history backup and restore.
+- Add bookmarks and history auto-backup like the database.
+- Add merge database to import translated verses from another database only for untranslated verses.
 - Add count the number of a word occurrences in verse view.
 - Add word occurrences label in the search panel in addition to the number of references.
-- Add book translation RTF export.
-- Add book name, title and memo as well chapter number, title and memo in RTF export.
-- Add menu to open a batch export form to select books or chapters to export.
 - Add filters to show all translated books or chapters, or those are not.
+- Add menu to open a batch export form to select books or chapters to export.
+- Add export book translation to RTF.
+- Add book name, title and memo as well chapter number, title and memo in RTF export.
 - Improve displaying all verses with pagination when more than 100.
 - Improve tanak's statistics window.
 - Improve auto-backup to allow periodic archive as weekly or monthly.
@@ -318,6 +315,9 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Later
 
+- Add pagination for chapters having more than 80 verses and not fully displayed.
+- Add option for pagination trigger like 50 or 60 by default.
+- Add spell checker.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add classic English translation label between an Hebrew word and the working translation.
@@ -332,6 +332,10 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add normalize texts window.
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
+
+#### Version 3.18
+
+- Add option to ignore lines beginning by some chars for add prefix.
 - Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
 
 #### 2023.03.04 - Version 3.17
