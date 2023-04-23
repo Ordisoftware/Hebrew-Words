@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 /// <summary>
@@ -86,6 +86,9 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditBookmarksWithParashah.Checked = Settings.BookmarksWithParashah);
     SystemManager.TryCatch(() => EditBookmarksWithTranslation.Checked = Settings.BookmarksWithTranslation);
     SystemManager.TryCatch(() => EditDatabaseRestoreAskToBackup.Checked = Settings.DatabaseRestoreAskToBackup);
+    SystemManager.TryCatch(() => EditCommentLineAddPrefixIgnoreCharsEnabled.Checked = Settings.CommentLineAddPrefixIgnoreCharsEnabled);
+    SystemManager.TryCatch(() => EditCommentLineAddPrefixIgnoreChars.Text = Settings.CommentLineAddPrefixIgnoreChars);
+
     // Word click action 1
     GroupBoxHebrewWordClick0.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.ContextMenu;
     GroupBoxHebrewWordClick1.Checked = Settings.HebrewWordClickAction == HebrewWordClickAction.OnlineSearch;
