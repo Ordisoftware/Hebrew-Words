@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Words.Program;
@@ -128,7 +128,7 @@ sealed partial class ParashotForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
-  private void Select(Parashah parashah)
+  public void Select(Parashah parashah)
   {
     if ( parashah is null ) return;
     foreach ( DataGridViewRow row in DataGridView.Rows )
