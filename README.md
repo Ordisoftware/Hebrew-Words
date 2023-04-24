@@ -156,7 +156,7 @@ List of chapters concerned:
 - Bamidbar 7 (89)
 - Devarim 28 (69)
 - Melakim I 8 (66)
-- Tehilim 118 (176)
+- Tehilim 119 (176)
 
 #### The software sometimes runs slowly, is this normal?
 
