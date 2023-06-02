@@ -329,6 +329,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### In progress - Version 3.x or 4.0
 
+- Add search in full word option
+- Add search in parashah options.
 - Add normalize texts window.
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
