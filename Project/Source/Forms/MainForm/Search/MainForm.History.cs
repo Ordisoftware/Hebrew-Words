@@ -28,7 +28,7 @@ partial class MainForm
       {
         foreach ( var reference in HistoryItems )
         {
-          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          string text = reference.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
           if ( Settings.BookmarksWithTranslation )
             text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(text);

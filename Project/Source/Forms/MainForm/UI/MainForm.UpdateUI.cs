@@ -130,7 +130,7 @@ partial class MainForm
   internal void UpdateTitle(bool forceView = false)
   {
     if ( !Globals.IsReady ) return;
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPreferences().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();
     if ( forceView )
     {

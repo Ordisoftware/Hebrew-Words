@@ -868,7 +868,7 @@
       this.EditSearchWord.BackColor = System.Drawing.Color.Transparent;
       this.EditSearchWord.ContextMenuDetailsVisible = false;
       resources.ApplyResources(this.EditSearchWord, "EditSearchWord");
-      this.EditSearchWord.InititialWord = null;
+      this.EditSearchWord.InitialWord = null;
       this.EditSearchWord.MarginX = -5;
       this.EditSearchWord.Name = "EditSearchWord";
       this.EditSearchWord.ShowGematria = false;
