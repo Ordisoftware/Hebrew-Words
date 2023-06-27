@@ -42,7 +42,7 @@ static partial class Program
     => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
 
   /// <summary>
-  /// Indicates file path of the bookmaks.
+  /// Indicates file path of the bookmarks.
   /// </summary>
   static public string BookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
@@ -65,10 +65,10 @@ static partial class Program
   static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJSonStrongs
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(HebrewStrongsJSonFilePath);
 
-  static public readonly Dictionary<string, Json.Strong.StrongItem> GreekJsonStrongs
+  static public readonly Dictionary<string, Json.Strong.StrongItem> GreekJSonStrongs
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(GreekStrongsJSonFilePath);
 
-  static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
+  static public readonly Json.Verse.JsonVerse[] JSonBibleBookGenesis
     = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadBook(BibleJSonFilePath);
 
 }

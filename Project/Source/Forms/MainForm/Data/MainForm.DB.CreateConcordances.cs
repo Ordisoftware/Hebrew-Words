@@ -75,7 +75,7 @@ partial class MainForm : Form
             indexVerse++;
             int indexWord = -1;
             int countBad = 0;
-            var words = Program.JsonBibleBookGenesis[indexVerse].Items;
+            var words = Program.JSonBibleBookGenesis[indexVerse].Items;
             //.SelectMany(w => new { strong = w.I, word = w.Word.Split('#') })//.Replace("-", "").Replace("׃", "").Split(' '))
             //.ToArray();
             /*if ( verse.Words.Length != words.Length )
@@ -84,7 +84,7 @@ partial class MainForm : Form
               //indexVerse--;
               continue;
             }*/
-            if ( indexVerse < Program.JsonBibleBookGenesis.Length )
+            if ( indexVerse < Program.JSonBibleBookGenesis.Length )
               foreach ( WordRow word in verse.Words )
               {
                 indexWord++;
