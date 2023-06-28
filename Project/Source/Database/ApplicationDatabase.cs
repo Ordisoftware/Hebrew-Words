@@ -24,6 +24,8 @@ partial class ApplicationDatabase : SQLiteDatabase
   static public readonly string VersesTableName = nameof(ChapterRow.Verses);
   static public readonly string WordsTableName = nameof(VerseRow.Words);
 
+  static private readonly Properties.Settings Settings = Program.Settings;
+
   static public ApplicationDatabase Instance { get; private set; }
 
   static ApplicationDatabase()
@@ -53,14 +55,13 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void Vacuum(bool force = false)
   {
-    var settings = Program.Settings;
-    if ( settings.VacuumAtStartup || force )
+    if ( Settings.VacuumAtStartup || force )
     {
-      var dateNew = Connection.Optimize(settings.VacuumLastDone, settings.VacuumAtStartupDaysInterval, force);
-      if ( settings.VacuumLastDone != dateNew )
+      var dateNew = Connection.Optimize(Settings.VacuumLastDone, Settings.VacuumAtStartupDaysInterval, force);
+      if ( Settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
-        settings.VacuumLastDone = dateNew;
+        Settings.VacuumLastDone = dateNew;
       }
     }
   }
@@ -68,7 +69,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoClose()
   {
     if ( Books is null ) return;
-    if ( ClearListsOnCloseOrRelease ) Books?.Clear();
+    if ( ClearListsOnCloseOrRelease ) Books.Clear();
     Books = null;
   }
 
