@@ -45,7 +45,7 @@ public partial class ReferenceItem
   public string ToStringFull()
     => $"{Book?.Transcription ?? Null} ({Book?.CommonName ?? Null}) {Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";
 
-  public string ToStringBasedOnPrefs(bool forceNoParashah = false)
+  public string ToStringBasedOnPreferences(bool forceNoParashah = false)
     => ( Program.Settings.BookNameHebrewWithCommonName ? ToStringFull() : ToString() ) +
        ( HasParashah && Program.Settings.BookNameHebrewWithParashah && !forceNoParashah
          ? " [" + ParashahName + "]"
@@ -54,8 +54,8 @@ public partial class ReferenceItem
   public string ToStringFullWordIncluded()
     => $"{ToStringFull()}:{Word?.Number.ToString() ?? Null}";
 
-  public string ToStringBasedOnPrefsWordIncluded()
-    => $"{ToStringBasedOnPrefs()}:{Word?.Number.ToString() ?? Null}";
+  public string ToStringBasedOnPreferencesWordIncluded()
+    => $"{ToStringBasedOnPreferences()}:{Word?.Number.ToString() ?? Null}";
 
   public string ToStringOnlyNumbers()
     => $"{Book?.Number.ToString() ?? Null}.{Chapter?.Number.ToString() ?? Null}.{Verse?.Number.ToString() ?? Null}";

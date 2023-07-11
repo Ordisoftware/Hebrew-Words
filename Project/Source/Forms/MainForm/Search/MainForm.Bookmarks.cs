@@ -52,7 +52,7 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMain.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+      ActionGoToBookmarkMain.Text = bookmarkMain.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
       if ( Settings.BookmarksWithTranslation )
         ActionGoToBookmarkMain.Text += $" - {GetExtract(bookmarkMain.Verse.Translation)}"; // TODO improve display
       ActionGoToBookmarkMain.Tag = bookmarkMain;
@@ -65,7 +65,7 @@ partial class MainForm
       {
         foreach ( var reference in BookmarkItems )
         {
-          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          string text = reference.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
           if ( Settings.BookmarksWithTranslation )
             text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(text);

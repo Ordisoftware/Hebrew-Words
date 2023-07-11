@@ -1,4 +1,5 @@
-﻿namespace Ordisoftware.Hebrew.Words
+﻿#pragma warning disable VSSpell001 // Spell Check
+namespace Ordisoftware.Hebrew.Words
 {
   static public partial class JsonHelper
   {
@@ -62,3 +63,4 @@ namespace Ordisoftware.Hebrew.Words.Json.Strong
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

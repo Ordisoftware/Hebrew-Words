@@ -2102,8 +2102,8 @@ sealed partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditSearchWord.InititialWord = HebrewAlphabet.SetFinal(word, false);
-    EditSearchWord.TextBox.Text = EditSearchWord.InititialWord;
+    EditSearchWord.InitialWord = HebrewAlphabet.SetFinal(word, false);
+    EditSearchWord.TextBox.Text = EditSearchWord.InitialWord;
     EditSearchWord.TextBox.SelectionStart = EditSearchWord.TextBox.Text.Length;
     ActionSearchRun.PerformClick();
   }

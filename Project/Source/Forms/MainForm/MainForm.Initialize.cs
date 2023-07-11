@@ -48,7 +48,7 @@ partial class MainForm : Form
     EditELS50HScrollBar.SmallChange = 10;
     EditSearchWord.ContextMenuDetailsVisible = false;
     NativeMethods.ClipboardViewerNext = NativeMethods.SetClipboardViewer(Handle);
-    HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
+    HebrewGlobals.GetHebrewLettersExecutablePath = () => Settings.HebrewLettersExe;
     InitializeTheme();
     if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when ready
     {

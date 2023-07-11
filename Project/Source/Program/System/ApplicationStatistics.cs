@@ -68,7 +68,7 @@ class ApplicationStatistics
       if ( Program.Settings.SystemStatisticsCalculateDbSize && UpdateDBMemorySizeRequired )
         try
         {
-          LoadingForm.Instance.Initialize(SysTranslations.CalcutalingDataMemorySize.GetLang(), 4, quantify: false);
+          LoadingForm.Instance.Initialize(SysTranslations.CalculatingDataMemorySize.GetLang(), 4, quantify: false);
           UpdateDBMemorySizeRequired = false;
           long size1 = ApplicationDatabase.Instance.Books?.SizeOf() ?? 0;
           LoadingForm.Instance.DoProgress();
