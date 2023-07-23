@@ -25,8 +25,6 @@ using Equin.ApplicationFramework;
 sealed partial class MainForm : Form
 {
 
-  private const int MenuSeparatorLeftLimit = 1050;
-
   #region Singleton
 
   /// <summary>
@@ -102,7 +100,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void MainForm_Resize(object sender, EventArgs e)
   {
-    MainMenuSeparatorLeftButtons.Visible = Width < MenuSeparatorLeftLimit;
+    MainMenuSeparatorLeftButtons.Visible = Width < MinimumSize.Width + 50;
   }
 
   private bool PreviousWindowsStateToggle = true;

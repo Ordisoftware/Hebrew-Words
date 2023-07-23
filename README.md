@@ -297,43 +297,42 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 #### Soon
 
 - Add a tray icon.
-- Add search in history.
-- Add import parashot board.
+- Add search in history and/or bookmarks.
+- Add bookmarks and history auto-backup.
 - Add bookmarks and history backup and restore.
-- Add bookmarks and history auto-backup like the database.
-- Add merge database to import translated verses from another database only for untranslated verses.
-- Add count the number of a word occurrences in verse view.
-- Add word occurrences label in the search panel in addition to the number of references.
-- Add filters to show all translated books or chapters, or those are not.
-- Add menu to open a batch export form to select books or chapters to export.
+- Add count number of occurrences in contextual menu of hebrew word.
+- Add number of word occurrences in the search panel in addition to the number of references.
+- Add filters to show all translated books or chapters, or those are not in verse navigator.
+- Add batch export form to select books or chapters to export.
 - Add export book translation to RTF.
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
-- Improve displaying all verses with pagination when more than 100.
 - Improve tanak's statistics window.
-- Improve auto-backup to allow periodic archive as weekly or monthly.
+- Improve auto-backup to allow periodic archive as daily, weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
 #### Later
 
+- Add import parashot board.
+- Add merge database.
 - Add pagination for chapters having more than 80 verses and not fully displayed.
-- Add option for pagination trigger like 50 or 60 by default.
+- Add pagination for verse view in addition to show all.
 - Add spell checker.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add classic English translation label between an Hebrew word and the working translation.
-- Add form to edit strong's concordances.
-- Add form to edit classic English translation.
-- Add contextual click on a Hebrew word to use the strong's database instead of web search.
+- Add strong's concordances editor.
+- Add classic English translation editor.
 
 ## Changelog
 
 #### In progress - Version 3.x or 4.0
 
-- Add search in full word option
-- Add search in parashah options.
+- Add option to search partial or full hebrew word.
+- Add option to search in parashot instead of books.
 - Add normalize texts window.
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
+- Update web links.
 
 #### Version 3.18
 
