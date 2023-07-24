@@ -410,8 +410,8 @@ sealed partial class ParashotForm : Form
   private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
   {
     if ( DataGridView.ReadOnly ) return;
-    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
-    ActionEditMemo.PerformClick();
+    if ( e.RowIndex >= 0 && e.ColumnIndex == ColumnMemo.Index )
+      ActionEditMemo.PerformClick();
   }
 
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
