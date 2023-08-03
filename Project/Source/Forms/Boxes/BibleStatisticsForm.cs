@@ -297,7 +297,7 @@ sealed partial class BibleStatisticsForm : Form
       if ( result is null ) createQuery();
       xpos = 15;
       ypos = 25;
-      for ( int index = 0; index < result.Count; index += 10 )
+      for ( int index = 0; index < result?.Count; index += 10 )
       {
         foreach ( var (Key, Count) in result.Skip(index).Take(10) )
         {
