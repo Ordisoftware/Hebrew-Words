@@ -14,8 +14,6 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-using MoreLinq;
-
 partial class ApplicationDatabase
 {
 
@@ -23,6 +21,7 @@ partial class ApplicationDatabase
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Major Bug", "S2259:Null pointers should not be dereferenced", Justification = "N/A")]
+  [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   internal void FillFromFiles()
   {
     try
@@ -182,6 +181,7 @@ partial class ApplicationDatabase
     }
   }
 
+  [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   private string CreateELS50(string strELS50)
   {
     strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
