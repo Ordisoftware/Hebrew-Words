@@ -325,7 +325,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 ## Changelog
 
-#### In progress - Version 3.x or 4.0
+#### In progress
 
 - Add option to search partial or full hebrew word.
 - Add option to search in parashot instead of books.
@@ -338,6 +338,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 - Add option to ignore lines beginning by some chars for add prefix.
 - Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
+- Some fixes.
+- Update web links.
 
 #### 2023.03.04 - Version 3.17
 
