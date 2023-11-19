@@ -76,6 +76,7 @@ partial class MainForm
   /// Goes to a reference instance.
   /// </summary>
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   public void GoToReference(
     ReferenceItem reference,
     bool forceUpdateView = false,
@@ -231,6 +232,7 @@ partial class MainForm
   /// Sets Tanak item focus.
   /// </summary>
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   void SetTanakItemFocus()
   {
     if ( CurrentReference is null ) return;

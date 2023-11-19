@@ -127,6 +127,7 @@ partial class MainForm
     ActionHistoryVerseBack.Enabled = canHistoryMove && index != list.Count - 1;
   }
 
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   internal void UpdateTitle(bool forceView = false)
   {
     if ( !Globals.IsReady ) return;

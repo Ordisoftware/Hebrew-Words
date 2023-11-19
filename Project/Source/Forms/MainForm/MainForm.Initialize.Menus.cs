@@ -67,6 +67,7 @@ partial class MainForm : Form
   /// <summary>
   /// Creates providers links menu items.
   /// </summary>
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   private void CreateProvidersLinks()
   {
     // Edit word search

@@ -18,6 +18,7 @@ partial class MainForm
 {
 
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   private void RenderText(RichTextBoxEx textbox, bool isChapterElseBook, bool isGrouped, Action render)
   {
     if ( !isGrouped && !CanRender ) return;
