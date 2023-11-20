@@ -28,7 +28,7 @@ partial class MainForm
   /// <summary>
   /// Indicates the user parashot table.
   /// </summary>
-  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+  static internal List<Parashah> UserParashot { get; set; } = [];
 
   /// <summary>
   /// Indicates last shown tool-tip.

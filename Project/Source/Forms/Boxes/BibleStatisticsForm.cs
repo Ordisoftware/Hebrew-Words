@@ -85,7 +85,7 @@ sealed partial class BibleStatisticsForm : Form
     Close();
   }
 
-  private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = new();
+  private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = [];
 
   private readonly BookStatistic CountersAll = new();
   private readonly BookStatistic CountersTorah = new();

@@ -32,7 +32,7 @@ sealed partial class VerseControl : UserControl
   static private readonly Properties.Settings Settings = Program.Settings;
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = new();
+  static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = [];
 
   static internal bool ResetMetricsRequired { get; set; }
 

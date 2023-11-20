@@ -38,7 +38,7 @@ partial class MainForm
             from verse in chapter.Verses
             where book.Number == numberBook && chapter.Number == numberChapter
             select new ReferenceItem(book, chapter, verse) ).ToList()
-        : new List<ReferenceItem> { CurrentReference };
+        : [CurrentReference];
       if ( SelectRenderAllVerses.Checked )
       {
         int controlsCount = references.Count * 2 + references.Select(r => r.Verse.Words.Count).Sum();

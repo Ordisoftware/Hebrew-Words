@@ -51,7 +51,7 @@ public partial class ReferenceItem
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
-        return new int[] { getBookRef(reference), 1, 1 };
+        return [getBookRef(reference), 1, 1];
       if ( countSpaces == 0 && char.IsNumber(reference[0]) )
       {
         if ( countPoints == 0 )

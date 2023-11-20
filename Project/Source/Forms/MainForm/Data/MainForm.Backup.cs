@@ -21,8 +21,8 @@ partial class MainForm
   {
     var list = Directory.Exists(pathname)
       ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
-      : Array.Empty<string>();
-    return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
+      : [];
+    return [.. ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime)];
   }
 
   private void DoBackupDB()

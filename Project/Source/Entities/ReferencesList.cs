@@ -19,7 +19,7 @@ abstract class ReferencesList : IEnumerable<ReferenceItem>
 
   private bool Mutex;
 
-  protected readonly List<ReferenceItem> Items = new();
+  protected readonly List<ReferenceItem> Items = [];
 
   protected readonly string FilePath;
 

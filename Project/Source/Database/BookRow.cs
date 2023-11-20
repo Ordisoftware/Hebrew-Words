@@ -117,6 +117,6 @@ public partial class BookRow : AbstractRowWithMemo
   }
   private string _Lettriq = string.Empty;
 
-  public List<ChapterRow> Chapters { get; } = new();
+  public List<ChapterRow> Chapters { get; } = [];
 
 }

@@ -61,6 +61,6 @@ public partial class VerseRow : AbstractRowWithTitle
   }
   private string _Comment = string.Empty;
 
-  public List<WordRow> Words { get; } = new();
+  public List<WordRow> Words { get; } = [];
 
 }
