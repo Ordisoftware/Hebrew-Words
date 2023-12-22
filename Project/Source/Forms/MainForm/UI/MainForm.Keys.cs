@@ -34,12 +34,12 @@ partial class MainForm
       SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
   }
 
-  private static readonly ViewMode[] NagigableViews = new[]
-  {
+  private static readonly ViewMode[] NagigableViews =
+  [
     ViewMode.ChapterVerses,
     ViewMode.ChapterTranslation,
     ViewMode.ChapterOriginal
-  };
+  ];
 
   /// <summary>
   /// Process the command key.

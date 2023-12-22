@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Words;
 sealed partial class SearchTranslatedForm : Form
 {
 
-  static public readonly List<SearchTranslatedForm> Forms = new();
+  static public readonly List<SearchTranslatedForm> Forms = [];
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static public void Run(WordControl sender)

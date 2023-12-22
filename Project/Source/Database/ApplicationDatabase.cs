@@ -41,9 +41,9 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<BookRow> Books { get; private set; }
-  public List<ChapterRow> Chapters { get; private set; } = new();
-  public List<VerseRow> Verses { get; private set; } = new();
-  public List<WordRow> Words { get; private set; } = new();
+  public List<ChapterRow> Chapters { get; private set; } = [];
+  public List<VerseRow> Verses { get; private set; } = [];
+  public List<WordRow> Words { get; private set; } = [];
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }

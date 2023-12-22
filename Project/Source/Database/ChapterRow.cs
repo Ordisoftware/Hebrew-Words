@@ -58,6 +58,6 @@ public partial class ChapterRow : AbstractRowWithTitleAndMemo
   public string ELS50AsUnicodeWithNumber
     => $"{ELS50AsUnicode} :{NumberFormatted}";
 
-  public List<VerseRow> Verses { get; } = new();
+  public List<VerseRow> Verses { get; } = [];
 
 }

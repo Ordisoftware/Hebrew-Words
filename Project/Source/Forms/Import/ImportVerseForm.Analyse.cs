@@ -17,9 +17,9 @@ namespace Ordisoftware.Hebrew.Words;
 sealed partial class ImportVerseForm : Form
 {
 
-  private readonly char[] ElementsSeparator = { '|', '\t' };
+  private readonly char[] ElementsSeparator = ['|', '\t'];
 
-  private readonly List<ImportWordMatch> WordMatches = new();
+  private readonly List<ImportWordMatch> WordMatches = [];
 
   [SuppressMessage("Performance", "U2U1015:Do not index an array multiple times within a loop body", Justification = "N/A")]
   private void DoAnalyse()

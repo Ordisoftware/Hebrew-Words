@@ -103,22 +103,22 @@ partial class ApplicationDatabase
                 Concept = string.Empty,
                 Comment = string.Empty
               };
-              listWordsUnicode = list[0].Replace('-', ' ').Split(' ').Reverse().ToArray();
-              listWordsHebrew = HebrewAlphabet.ToHebrewFont(list[0]).Split(' ').ToArray();
+              listWordsUnicode = [.. list[0].Replace('-', ' ').Split(' ').Reverse()];
+              listWordsHebrew = [.. HebrewAlphabet.ToHebrewFont(list[0]).Split(' ')];
               chapter.Verses.Add(verse);
               Verses.Add(verse);
             }
             else
             {
-              listWordsUnicode = line.Replace('-', ' ').Split(' ').Reverse().ToArray();
-              listWordsHebrew = HebrewAlphabet.ToHebrewFont(line).Split(' ').ToArray();
+              listWordsUnicode = [.. line.Replace('-', ' ').Split(' ').Reverse()];
+              listWordsHebrew = [.. HebrewAlphabet.ToHebrewFont(line).Split(' ')];
             }
             for ( int index = 0; index < listWordsHebrew.Length; index++ )
             {
               ref var wordHebrew = ref listWordsHebrew[index];
               if ( wordHebrew.Length == 0 ) continue;
-              string wordHebrewReversed = new(wordHebrew.Reverse().ToArray());
-              string wordUnicodeReversed = new(listWordsUnicode[index].Reverse().ToArray());
+              string wordHebrewReversed = new([.. wordHebrew.Reverse()]);
+              string wordUnicodeReversed = new([.. listWordsUnicode[index].Reverse()]);
               word = new()
               {
                 ID = Guid.NewGuid(),
