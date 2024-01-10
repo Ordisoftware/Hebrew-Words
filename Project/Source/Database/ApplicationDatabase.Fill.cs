@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 partial class ApplicationDatabase
@@ -36,13 +36,13 @@ partial class ApplicationDatabase
       VerseRow verse = null;
       WordRow word = null;
       string path = Program.TanakFolderPath;
-      string strELS50 = "";
+      var builderELS50 = new StringBuilder(255);
       void nextChapter()
       {
         book.Chapters.Add(chapter);
         Chapters.Add(chapter);
-        chapter.ELS50 = CreateELS50(strELS50);
-        strELS50 = "";
+        chapter.ELS50 = CreateELS50(builderELS50.ToString());
+        builderELS50.Clear();
       }
       LoadingForm.Instance.DoProgress(operation: SysTranslations.CreatingData.GetLang());
       foreach ( TanakBook bookNumber in Enums.GetValues<TanakBook>() )
@@ -130,7 +130,7 @@ partial class ApplicationDatabase
               };
               verse.Words.Add(word);
               Words.Add(word);
-              strELS50 = wordHebrewReversed + strELS50;
+              builderELS50.Insert(0, wordHebrewReversed);
             }
           }
         }
@@ -187,9 +187,9 @@ partial class ApplicationDatabase
     strELS50 = HebrewAlphabet.UnFinalAll(strELS50);
     int index = strELS50.Length - 1;
     while ( index >= 0 && strELS50[index] != 't' ) index--;
-    string result = "";
-    for ( int pos = index; pos >= 0; pos -= NounValue ) result = strELS50[pos] + result;
-    return result;
+    var result = new StringBuilder(255);
+    for ( int pos = index; pos >= 0; pos -= NounValue ) result.Insert(0, strELS50[pos]);
+    return result.ToString();
   }
 
 }
