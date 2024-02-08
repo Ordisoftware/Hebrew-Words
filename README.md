@@ -60,7 +60,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.44
+- SQLite 3.45
 
 ## Download
 
