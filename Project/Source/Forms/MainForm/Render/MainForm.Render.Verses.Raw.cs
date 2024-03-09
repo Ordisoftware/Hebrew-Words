@@ -41,7 +41,7 @@ partial class MainForm
         : [CurrentReference];
       if ( SelectRenderAllVerses.Checked )
       {
-        int controlsCount = references.Count * 2 + references.Select(r => r.Verse.Words.Count).Sum();
+        int controlsCount = references.Count * 2 + references.Sum(r => r.Verse.Words.Count);
         int countVerses = CurrentReference.Chapter.Verses.Count;
         LabelProgress.Text = AppTranslations.Rendering.GetLang(controlsCount, countVerses).ToUpper();
         LabelProgress.Refresh();

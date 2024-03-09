@@ -19,7 +19,7 @@ sealed partial class SelectSearchResultsForm : Form
 
   static public IEnumerable<ReferenceItem> Run(IEnumerable<ReferenceItem> references)
   {
-    if ( references is null ) return new List<ReferenceItem>();
+    if ( references is null ) return [];
     using var form = new SelectSearchResultsForm(references);
     if ( form.ShowDialog() == DialogResult.Cancel )
       form.References = null;
@@ -124,7 +124,7 @@ sealed partial class SelectSearchResultsForm : Form
       ActionAddAll.PerformClick();
     }
     else
-      CreateReferences(OriginalReferences.ToList());
+      CreateReferences([.. OriginalReferences]);
   }
 
   private void EditOnlyWithoutTranslation_CheckedChanged(object sender, EventArgs e)
@@ -139,7 +139,7 @@ sealed partial class SelectSearchResultsForm : Form
       ActionAddAll.PerformClick();
     }
     else
-      CreateReferences(OriginalReferences.ToList());
+      CreateReferences([.. OriginalReferences]);
   }
 
   private void LabelCount_TextChanged(object sender, EventArgs e)
