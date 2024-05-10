@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-public partial class WordControl : UserControl
+sealed partial class WordControl : UserControl
 {
 
   private sealed class MetricsItem
@@ -115,6 +115,8 @@ public partial class WordControl : UserControl
     LabelHebrew.ForeColor = Settings.ThemeVerseHebrewColor;
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private void LabelHebrew_MouseClick(object sender, MouseEventArgs e)
   {
     EditTranslation.Focus();
@@ -139,6 +141,8 @@ public partial class WordControl : UserControl
     {
       switch ( value )
       {
+        case HebrewWordClickAction.Nothing:
+          break;
         case HebrewWordClickAction.ContextMenu:
           LabelHebrew.ContextMenuStrip?.Show(LabelHebrew, new Point(0, LabelHebrew.Height));
           break;
@@ -149,10 +153,11 @@ public partial class WordControl : UserControl
         case HebrewWordClickAction.SearchTranslated:
           MainForm.Instance.ActionSearchTranslated.PerformClick();
           break;
+        case HebrewWordClickAction.SearchInDatabase:
+          MainForm.Instance.ActionViewSearch.PerformClick();
+          break;
         case HebrewWordClickAction.HebrewLetters:
           HebrewTools.OpenHebrewLetters(LabelHebrew.Text);
-          break;
-        case HebrewWordClickAction.Nothing:
           break;
         default:
           throw new AdvNotImplementedException(value);

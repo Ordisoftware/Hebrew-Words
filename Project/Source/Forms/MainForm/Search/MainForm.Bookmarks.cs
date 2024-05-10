@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -52,7 +52,7 @@ partial class MainForm
           UpdateBookmarks();
         }
       }
-      ActionGoToBookmarkMain.Text = bookmarkMain.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+      ActionGoToBookmarkMain.Text = bookmarkMain.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
       if ( Settings.BookmarksWithTranslation )
         ActionGoToBookmarkMain.Text += $" - {GetExtract(bookmarkMain.Verse.Translation)}"; // TODO improve display
       ActionGoToBookmarkMain.Tag = bookmarkMain;
@@ -65,7 +65,7 @@ partial class MainForm
       {
         foreach ( var reference in BookmarkItems )
         {
-          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          string text = reference.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
           if ( Settings.BookmarksWithTranslation )
             text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionBookmarks.DropDownItems.Add(text);

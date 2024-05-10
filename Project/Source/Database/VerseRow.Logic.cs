@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -21,20 +21,20 @@ public partial class VerseRow
   /// Indicates if the verse has at least one word translated.
   /// </summary>
   public bool HasTranslation
-    => Words.Any(word => word.Translation.Trim().Length > 0);
+    => Words.Exists(word => word.Translation.Trim().Length > 0);
 
   /// <summary>
   /// Indicates if all the words of the verse are translated.
   /// </summary>
   public bool IsFullyTranslated
-    => Words.All(word => word.Translation.Trim().Length > 0);
+    => Words.TrueForAll(word => word.Translation.Trim().Length > 0);
 
   /// <summary>
   /// Indicates if all the words of the verse are not translated.
   /// </summary>
   /// <returns>True if none or not all words are translated.</returns>
   public bool IsFullyUntranslated
-    => Words.All(word => word.Translation.Trim().Length == 0);
+    => Words.TrueForAll(word => word.Translation.Trim().Length == 0);
 
   /// <summary>
   /// Indicates if at least one word is not translated while one is.

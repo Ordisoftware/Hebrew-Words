@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -22,10 +22,8 @@ using Equin.ApplicationFramework;
 /// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
-partial class MainForm : Form
+sealed partial class MainForm : Form
 {
-
-  private const int MenuSeparatorLeftLimit = 1050;
 
   #region Singleton
 
@@ -102,7 +100,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void MainForm_Resize(object sender, EventArgs e)
   {
-    MainMenuSeparatorLeftButtons.Visible = Width < MenuSeparatorLeftLimit;
+    MainMenuSeparatorLeftButtons.Visible = Width < MinimumSize.Width + 50;
   }
 
   private bool PreviousWindowsStateToggle = true;
@@ -629,10 +627,10 @@ partial class MainForm : Form
     ActionSave.PerformClick();
     VerseControl.ResetMetricsRequired = true;
     WordControl.ResetMetricsRequired = true;
-    int book = CurrentReference.Book?.Number ?? 1;
-    int chapter = CurrentReference.Chapter?.Number ?? 1;
-    int verse = CurrentReference.Verse?.Number ?? 1;
-    int word = CurrentReference.Verse?.Number ?? 1;
+    int book = CurrentReference?.Book?.Number ?? 1;
+    int chapter = CurrentReference?.Chapter?.Number ?? 1;
+    int verse = CurrentReference?.Verse?.Number ?? 1;
+    int word = CurrentReference?.Verse?.Number ?? 1;
     GoToReference(new ReferenceItem(book, chapter, verse, word), true);
   }
 
@@ -662,6 +660,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private void ActionCopyToClipboard_Click(object sender, EventArgs e)
   {
     switch ( Settings.CurrentView )
@@ -1814,9 +1813,9 @@ partial class MainForm : Form
   {
     var books = (IEnumerable<BookRow>)ApplicationDatabase.Instance.Books;
     if ( EditFilterChaptersWithTitle.Checked )
-      books = books.Where(b => b.Chapters.Any(c => !c.Title.IsNullOrEmpty()));
+      books = books.Where(b => b.Chapters.Exists(c => !c.Title.IsNullOrEmpty()));
     if ( EditFilterVersesTranslated.Checked )
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.HasTranslation)));
+      books = books.Where(b => b.Chapters.Exists(c => c.Verses.Exists(v => v.HasTranslation)));
     if ( EditFilterBook.Text.Length != 0 )
     {
       string filterBook = EditFilterBook.Text;
@@ -1829,16 +1828,16 @@ partial class MainForm : Form
     if ( EditFilterChapter.Text.Length != 0 )
     {
       string filterChapter = EditFilterChapter.Text;
-      books = books.Where(b => b.Chapters.Any(c => c.Title.RawContains(filterChapter)
-                                                || c.Memo.RawContains(filterChapter)));
+      books = books.Where(b => b.Chapters.Exists(c => c.Title.RawContains(filterChapter)
+                                                   || c.Memo.RawContains(filterChapter)));
     }
     if ( EditFilterVerse.Text.Length != 0 )
     {
       string filterVerse = EditFilterVerse.Text;
-      books = books.Where(b => b.Chapters.Any(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
-                                                                  || v.Concept.RawContains(filterVerse)
-                                                                  || v.Translation.RawContains(filterVerse)
-                                                                  || v.Comment.RawContains(filterVerse))));
+      books = books.Where(b => b.Chapters.Exists(c => c.Verses.Exists(v => v.Title.RawContains(filterVerse)
+                                                                        || v.Concept.RawContains(filterVerse)
+                                                                        || v.Translation.RawContains(filterVerse)
+                                                                        || v.Comment.RawContains(filterVerse))));
     }
     var list = books.ToList();
     SelectFilterBook.DataSource = new BindingList<BookRow>(list);
@@ -1867,7 +1866,7 @@ partial class MainForm : Form
     if ( EditFilterChaptersWithTitle.Checked )
       chapters = chapters.Where(c => !c.Title.IsNullOrEmpty());
     if ( EditFilterVersesTranslated.Checked )
-      chapters = chapters.Where(c => c.Verses.Any(v => v.HasTranslation));
+      chapters = chapters.Where(c => c.Verses.Exists(v => v.HasTranslation));
     if ( EditFilterChapter.Text.Length != 0 )
     {
       string filterChapter = EditFilterChapter.Text;
@@ -1877,10 +1876,10 @@ partial class MainForm : Form
     if ( EditFilterVerse.Text.Length != 0 )
     {
       string filterVerse = EditFilterVerse.Text;
-      chapters = chapters.Where(c => c.Verses.Any(v => v.Title.RawContains(filterVerse)
-                                                    || v.Concept.RawContains(filterVerse)
-                                                    || v.Translation.RawContains(filterVerse)
-                                                    || v.Comment.RawContains(filterVerse)));
+      chapters = chapters.Where(c => c.Verses.Exists(v => v.Title.RawContains(filterVerse)
+                                                       || v.Concept.RawContains(filterVerse)
+                                                       || v.Translation.RawContains(filterVerse)
+                                                       || v.Comment.RawContains(filterVerse)));
     }
     var list = chapters.ToList();
     SelectFilterChapter.DataSource = new BindingList<ChapterRow>(list);
@@ -2102,8 +2101,8 @@ partial class MainForm : Form
   {
     SetView(ViewMode.Search);
     SelectSearchType.SelectedTab = SelectSearchTypeHebrew;
-    EditSearchWord.InititialWord = HebrewAlphabet.SetFinal(word, false);
-    EditSearchWord.TextBox.Text = EditSearchWord.InititialWord;
+    EditSearchWord.InitialWord = HebrewAlphabet.SetFinal(word, false);
+    EditSearchWord.TextBox.Text = EditSearchWord.InitialWord;
     EditSearchWord.TextBox.SelectionStart = EditSearchWord.TextBox.Text.Length;
     ActionSearchRun.PerformClick();
   }

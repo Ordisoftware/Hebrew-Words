@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -21,8 +21,8 @@ partial class MainForm
   {
     var list = Directory.Exists(pathname)
       ? Directory.GetFiles(pathname, pattern, SearchOption.TopDirectoryOnly)
-      : Array.Empty<string>();
-    return ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime).ToList();
+      : [];
+    return [.. ( from file in list select new FileInfo(file) ).OrderBy(file => file.CreationTime)];
   }
 
   private void DoBackupDB()

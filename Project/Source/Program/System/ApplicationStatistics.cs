@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -68,7 +68,7 @@ class ApplicationStatistics
       if ( Program.Settings.SystemStatisticsCalculateDbSize && UpdateDBMemorySizeRequired )
         try
         {
-          LoadingForm.Instance.Initialize(SysTranslations.CalcutalingDataMemorySize.GetLang(), 4, quantify: false);
+          LoadingForm.Instance.Initialize(SysTranslations.CalculatingDataMemorySize.GetLang(), 4, quantify: false);
           UpdateDBMemorySizeRequired = false;
           long size1 = ApplicationDatabase.Instance.Books?.SizeOf() ?? 0;
           LoadingForm.Instance.DoProgress();

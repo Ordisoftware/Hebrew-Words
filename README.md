@@ -2,14 +2,14 @@
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-words/total)](https://github.com/Ordisoftware/Hebrew-Words/releases)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-words)](#)&nbsp;
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;
-[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/master/Project)&nbsp;<br/>
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/main/Project)&nbsp;
+[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-words)](https://github.com/Ordisoftware/Hebrew-Words/tree/main/Project)&nbsp;<br/>
 [![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
-[![Lang: C#](https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![DB: SQLite](https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![Lang: C#](https://img.shields.io/badge/C%23%2012-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.44-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-words)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -60,7 +60,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.40.1
+- SQLite 3.45
 
 ## Download
 
@@ -92,7 +92,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Words/releases/latest)
 
-[French Tanak database decoded by the author](https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books/tree/master/Tanak)
+[French Tanak database decoded by the author](https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books/tree/main/Tanak)
 
 ## Screenshots
 
@@ -116,7 +116,7 @@ _"Well-designed Hebrew Bible app that can serve both as an exploratory tool, as 
 
 |IDE Extension|Project NuGet| 
 |-|-|
-|[SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)<br>[Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)<br>[F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)<br>[Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)<br>[Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)<br>[AsyncFixer](https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022)<br>[Async Method Name Fixer](https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer)<br>[U2U Consult Performance Analyzers](https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7)<br>[Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)<br>[Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)|[Microsoft.CodeAnalysis.NetAnalyzers](https://github.com/dotnet/roslyn-analyzers)<br>[Microsoft.VisualStudio.Threading.Analyzers](https://github.com/microsoft/vs-threading)<br>[MultithreadingAnalyzer](https://github.com/cezarypiatek/MultithreadingAnalyzer)<br>[Meziantou.Analyzer](https://github.com/meziantou/Meziantou.Analyzer)<br>[GCop.All.Common](https://github.com/Geeksltd/GCop)<br>[ReflectionAnalyzers](https://github.com/DotNetAnalyzers/ReflectionAnalyzers)<br>[IDisposableAnalyzers](https://github.com/DotNetAnalyzers/IDisposableAnalyzers)<br>[ErrorProne.NET.CoreAnalyzers](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br>[ErrorProne.NET.Structs](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br><br>|
+|[SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)<br>[Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)<br>[F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)<br>[Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)<br>[Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)<br>[AsyncFixer](https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022)<br>[Async Method Name Fixer](https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer)<br>[U2U Consult Performance Analyzers](https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7)<br>[TSQL Analyzer](https://github.com/Zefek/TSQLAnalyzer)<br>[Serilog Analyzer](https://github.com/Suchiman/SerilogAnalyzer)<br>[Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)<br>[Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)<br>[SharpSource](https://github.com/Vannevelj/SharpSource)<br>[Inclusiveness Analyzer](https://github.com/microsoft/InclusivenessAnalyzerVisualStudio)|[Microsoft.CodeAnalysis.NetAnalyzers](https://github.com/dotnet/roslyn-analyzers)<br>[Microsoft.VisualStudio.Threading.Analyzers](https://github.com/microsoft/vs-threading)<br>[MultithreadingAnalyzer](https://github.com/cezarypiatek/MultithreadingAnalyzer)<br>[Meziantou.Analyzer](https://github.com/meziantou/Meziantou.Analyzer)<br>[GCop.All.Common](https://github.com/Geeksltd/GCop)<br>[ReflectionAnalyzers](https://github.com/DotNetAnalyzers/ReflectionAnalyzers)<br>[IDisposableAnalyzers](https://github.com/DotNetAnalyzers/IDisposableAnalyzers)<br>[ErrorProne.NET.CoreAnalyzers](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br>[ErrorProne.NET.Structs](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br><br><br><br><br><br>|
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
@@ -156,7 +156,7 @@ List of chapters concerned:
 - Bamidbar 7 (89)
 - Devarim 28 (69)
 - Melakim I 8 (66)
-- Tehilim 118 (176)
+- Tehilim 119 (176)
 
 #### The software sometimes runs slowly, is this normal?
 
@@ -296,42 +296,50 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
-- Add pagination for chapters having more than 80 verses and not fully displayed.
-- Add option for pagination trigger like 50 or 60 by default.
 - Add a tray icon.
-- Add search history.
-- Add bookmarks and history auto-backup like the database.
-- Add bookmarks and history backup and restore with automatically extending length to multiple of 5.
-- Add merge database to import translated verses from another database only for untranslated verses.
-- Add import parashot board.
-- Add spell checker.
-- Add count the number of a word occurrences in verse view.
-- Add word occurrences label in the search panel in addition to the number of references.
-- Add book translation RTF export.
+- Add search in history and/or bookmarks.
+- Add bookmarks and history auto-backup.
+- Add bookmarks and history backup and restore.
+- Add count number of occurrences in contextual menu of hebrew word.
+- Add number of word occurrences in the search panel in addition to the number of references.
+- Add filters to show all translated books or chapters, or those are not in verse navigator.
+- Add batch export form to select books or chapters to export.
+- Add export book translation to RTF.
 - Add book name, title and memo as well chapter number, title and memo in RTF export.
-- Add menu to open a batch export form to select books or chapters to export.
-- Add filters to show all translated books or chapters, or those are not.
-- Improve displaying all verses with pagination when more than 100.
 - Improve tanak's statistics window.
-- Improve auto-backup to allow periodic archive as weekly or monthly.
+- Improve auto-backup to allow periodic archive as daily, weekly or monthly.
 - Improve import console to support Hebrew Unicode chars in addition to Hebrew font.
 
 #### Later
 
+- Add import parashot board.
+- Add merge database.
+- Add pagination for chapters having more than 80 verses and not fully displayed.
+- Add pagination for verse view in addition to show all.
+- Add spell checker.
 - Add strong's concordances to database.
 - Add classic English translation to database.
 - Add classic English translation label between an Hebrew word and the working translation.
-- Add form to edit strong's concordances.
-- Add form to edit classic English translation.
-- Add contextual click on a Hebrew word to use the strong's database instead of web search.
+- Add strong's concordances editor.
+- Add classic English translation editor.
 
 ## Changelog
 
-#### In progress - Version 3.x or 4.0
+#### In progress
 
+- Add option to search partial or full hebrew word.
+- Add option to search in parashot instead of books.
 - Add normalize texts window.
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
+- Update web links.
+
+#### Version 3.18
+
+- Add option to ignore lines beginning by some chars for add prefix.
+- Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
+- Some fixes.
+- Update web links.
 
 #### 2023.03.04 - Version 3.17
 

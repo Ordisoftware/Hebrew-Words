@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,10 +14,10 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class SearchTranslatedForm : Form
+sealed partial class SearchTranslatedForm : Form
 {
 
-  static public readonly List<SearchTranslatedForm> Forms = new();
+  static public readonly List<SearchTranslatedForm> Forms = [];
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static public void Run(WordControl sender)
@@ -144,6 +144,8 @@ partial class SearchTranslatedForm : Form
   {
     switch ( Program.Settings.TranslatedItemDoubleClickAction )
     {
+      case TranslatedItemDoubleClickAction.Nothing:
+        break;
       case TranslatedItemDoubleClickAction.UseTranslation:
         ActionUseTranslation.PerformClick();
         break;
