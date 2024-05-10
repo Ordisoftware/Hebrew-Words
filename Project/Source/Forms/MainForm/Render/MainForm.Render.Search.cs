@@ -107,6 +107,7 @@ partial class MainForm
               label.ForeColor = SystemColors.ControlText;
           controls[indexControl++] = label;
         }
+        if ( label is null ) break;
         ypos += label.PreferredHeight + marginY;
         if ( !reference.Verse.HasTranslation ) continue;
         // TODO use a rich text box to display terms in color

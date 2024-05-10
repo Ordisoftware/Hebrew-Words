@@ -58,8 +58,7 @@ public partial class ReferenceItem
           return reference.Split('.').Select(int.Parse).Append(1).Append(1).ToArray();
         if ( countPoints == 1 )
           return reference.Split('.').Select(int.Parse).Append(1).ToArray();
-        if ( countPoints >= 2 )
-          return reference.Split('.').Select(int.Parse).Take(3).ToArray();
+        return reference.Split('.').Select(int.Parse).Take(3).ToArray();
       }
       else
         try
