@@ -19,7 +19,7 @@ sealed partial class VerseControl : UserControl
 
   private sealed class MetricsItem
   {
-    public int DeltaHeight;
+    public int OffsetHeight;
     public int ControlWidth;
     public int WordControlsPerLine;
     public int LabelVerseNumberWidth;
@@ -45,7 +45,7 @@ sealed partial class VerseControl : UserControl
     InitializeComponent();
   }
 
-  public VerseControl(Panel container, ReferenceItem reference, int widthDelta = 0) : this()
+  public VerseControl(Panel container, ReferenceItem reference, int widthOffset = 0) : this()
   {
     Reference = reference;
     if ( reference.Verse is null ) return;
@@ -89,14 +89,14 @@ sealed partial class VerseControl : UserControl
         EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
         PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
         PanelComment.Height = metrics.EditCommentaryHeight;
-        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
+        Height = metrics.OffsetHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
       }
       else
-        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines;
+        Height = metrics.OffsetHeight + CreateWordControls() * numberOfLines;
     }
     EditCommentary.ForeColor = Settings.ThemeTranslationTextColor;
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
-    Width = metrics.ControlWidth - widthDelta;
+    Width = metrics.ControlWidth - widthOffset;
   }
 
   public void ResetMetrics()
@@ -123,7 +123,7 @@ sealed partial class VerseControl : UserControl
       metrics.EditCommentaryHeight = metrics.EditCommentaryFont.Height * Settings.VerseCommentaryLinesCount + metrics.EditCommentaryFont.Height / 2;
       metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
     }
-    metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
+    metrics.OffsetHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
@@ -133,14 +133,14 @@ sealed partial class VerseControl : UserControl
     int width = Settings.WordControlWidth;
     int count = WordControls.Length;
     int tabIndexFirst = Settings.WordControlTabInverted ? 0 : count - 1;
-    int tabIndexDelta = Settings.WordControlTabInverted ? 1 : -1;
+    int tabIndexOffset = Settings.WordControlTabInverted ? 1 : -1;
     for ( int index = 0; index < count; index++ )
     {
       control = new WordControl(new ReferenceItem(Reference, Reference.Verse.Words[index]));
       control.LabelHebrew.ContextMenuStrip = MainForm.Instance.ContextMenuStripWord;
       control.Width = width;
       control.TabIndex = tabIndexFirst;
-      tabIndexFirst += tabIndexDelta;
+      tabIndexFirst += tabIndexOffset;
       WordControls[index] = control;
     }
     PanelWords.Controls.AddRange(WordControls);
