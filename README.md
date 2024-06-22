@@ -341,6 +341,8 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Some fixes.
 - Update web links.
 
+>- Add save screenshot to file
+
 #### 2024.05.10 - Version 3.17.1
 
 - Update SSL certificate data for the web update checker.
