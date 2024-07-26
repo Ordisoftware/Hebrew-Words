@@ -195,7 +195,7 @@ partial class MainForm : Form
     if ( !Globals.AllowClose )
       e.Cancel = true;
     else
-    if ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
+    if ( EditConfirmClosing.Checked )
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
         e.Cancel = true;
       else
