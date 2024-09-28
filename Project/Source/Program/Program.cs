@@ -20,6 +20,8 @@ namespace Ordisoftware.Hebrew.Words;
 static partial class Program
 {
 
+  // TODO calc nb occurrence each letter
+
   /// <summary>
   /// Process startup method.
   /// </summary>
