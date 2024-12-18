@@ -53,11 +53,11 @@ partial class ApplicationDatabase : SQLiteDatabase
     AutoLoadAllAtOpen = false;
   }
 
-  protected override void Vacuum(bool force = false)
+  protected override void AutoVacuum()
   {
-    if ( Settings.VacuumAtStartup || force )
+    if ( Settings.VacuumAtStartup )
     {
-      var dateNew = Connection.Optimize(Settings.VacuumLastDone, Settings.VacuumAtStartupDaysInterval, force);
+      var dateNew = Connection.Optimize(Settings.VacuumLastDone, Settings.VacuumAtStartupDaysInterval);
       if ( Settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
