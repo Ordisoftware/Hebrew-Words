@@ -146,7 +146,6 @@ partial class ApplicationDatabase
         Connection.InsertAll(Words);
         LoadingForm.Instance.DoProgress(operation: SysTranslations.Finalizing.GetLang());
         Commit();
-        Vacuum(true);
       }
       catch
       {
