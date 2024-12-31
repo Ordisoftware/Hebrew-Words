@@ -334,7 +334,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add search next or previous occurrence of a word in the verses view.
 - Update web links.
 
-#### Version 3.18
+#### Version 4.0
 
 - Add option to ignore lines beginning by some chars for add prefix.
 - Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
