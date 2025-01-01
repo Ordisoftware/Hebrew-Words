@@ -336,6 +336,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Version 4.0
 
+- Upgrade to framework 4.8.1 and discontinuation of Windows 7 support.
 - Add option to ignore lines beginning by some chars for add prefix.
 - Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
 - Some fixes.
