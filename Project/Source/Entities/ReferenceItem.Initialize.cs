@@ -55,10 +55,10 @@ public partial class ReferenceItem
       if ( countSpaces == 0 && char.IsNumber(reference[0]) )
       {
         if ( countPoints == 0 )
-          return reference.Split('.').Select(int.Parse).Append(1).Append(1).ToArray();
+          return [.. reference.Split('.').Select(int.Parse), 1, 1];
         if ( countPoints == 1 )
-          return reference.Split('.').Select(int.Parse).Append(1).ToArray();
-        return reference.Split('.').Select(int.Parse).Take(3).ToArray();
+          return [.. reference.Split('.').Select(int.Parse), 1];
+        return [.. reference.Split('.').Select(int.Parse).Take(3)];
       }
       else
         try
