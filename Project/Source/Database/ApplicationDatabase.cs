@@ -83,7 +83,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoLoadAll()
   {
-    Books = new(Connection.Table<BookRow>());
+    Books = [.. Connection.Table<BookRow>()];
     OnLoadingData(SysTranslations.LoadingData.GetLang());
     Parallel.ForEach(Books, (book) =>
     {

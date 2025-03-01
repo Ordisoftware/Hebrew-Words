@@ -43,7 +43,7 @@ sealed partial class SelectSearchResultsForm : Form
   private SelectSearchResultsForm(IEnumerable<ReferenceItem> references)
   : this()
   {
-    OriginalReferences = references.ToList();
+    OriginalReferences = [.. references];
     LabelFound.Text = string.Format(LabelFound.Text, OriginalReferences.Count);
   }
 
