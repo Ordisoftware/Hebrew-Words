@@ -327,10 +327,9 @@ sealed partial class BibleStatisticsForm : Form
                       grouping.Key,
                       Count = grouping.Count()
                     };
-        OccurencesMostFrequentTorah = query.OrderByDescending(item => item.Count)
-                                           .Take(40)
-                                           .Select(item => (item.Key, item.Count))
-                                           .ToList();
+        OccurencesMostFrequentTorah = [.. query.OrderByDescending(item => item.Count)
+                                               .Take(40)
+                                               .Select(item => (item.Key, item.Count))];
       },
       ref OccurencesMostFrequentTorah,
       GroupBoxMostFrequentWordsTorah);

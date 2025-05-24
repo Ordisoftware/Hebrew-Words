@@ -1911,7 +1911,7 @@ sealed partial class MainForm : Form
                               || v.Translation.RawContains(filterVerse)
                               || v.Comment.RawContains(filterVerse));
     }
-    SelectFilterVerse.DataSource = new BindingList<VerseRow>(verses.ToList());
+    SelectFilterVerse.DataSource = new BindingList<VerseRow>([.. verses]);
   }
 
   /// <summary>

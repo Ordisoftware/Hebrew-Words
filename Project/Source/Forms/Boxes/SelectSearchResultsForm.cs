@@ -58,7 +58,7 @@ sealed partial class SelectSearchResultsForm : Form
     Initializing = true;
     try
     {
-      References = references.ToList();
+      References = [.. references];
       Count = 0;
       LabelCount.Text = "0";
       var query = from reference in references

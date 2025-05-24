@@ -100,9 +100,9 @@ partial class ApplicationDatabase : SQLiteDatabase
         });
       });
     });
-    Chapters = Books.SelectMany(b => b.Chapters).ToList();
-    Verses = Chapters.SelectMany(c => c.Verses).ToList();
-    Words = Verses.SelectMany(v => v.Words).ToList();
+    Chapters = [.. Books.SelectMany(b => b.Chapters)];
+    Verses = [.. Chapters.SelectMany(c => c.Verses)];
+    Words = [.. Verses.SelectMany(v => v.Words)];
     OnDataLoaded(SysTranslations.DataLoaded.GetLang());
   }
 
