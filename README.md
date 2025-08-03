@@ -333,6 +333,15 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 - Add replace text in the database.
 - Add search next or previous occurrence of a word in the verses view.
 
+#### 2025.08.03 - Version 3.17.2
+
+- Fix SSL certificate data for the web update checker.
+- Update and fix web links and providers.
+
+#### 2024.10.05 - Version 3.17.1
+
+- Fix SSL certificate data for the web update checker.
+- 
 #### 2023.03.04 - Version 3.17
 
 - Fix first launch error for check settings reset since a previous version.
