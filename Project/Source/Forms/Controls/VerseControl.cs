@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,15 +11,15 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-public partial class VerseControl : UserControl
+sealed partial class VerseControl : UserControl
 {
 
   private sealed class MetricsItem
   {
-    public int DeltaHeight;
+    public int OffsetHeight;
     public int ControlWidth;
     public int WordControlsPerLine;
     public int LabelVerseNumberWidth;
@@ -32,7 +32,7 @@ public partial class VerseControl : UserControl
   static private readonly Properties.Settings Settings = Program.Settings;
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = new();
+  static private readonly Dictionary<Panel, MetricsItem> MetricsCollection = [];
 
   static internal bool ResetMetricsRequired { get; set; }
 
@@ -45,7 +45,7 @@ public partial class VerseControl : UserControl
     InitializeComponent();
   }
 
-  public VerseControl(Panel container, ReferenceItem reference, int widthDelta = 0) : this()
+  public VerseControl(Panel container, ReferenceItem reference, int widthOffset = 0) : this()
   {
     Reference = reference;
     if ( reference.Verse is null ) return;
@@ -89,14 +89,14 @@ public partial class VerseControl : UserControl
         EditCommentary.DataBindings.Add("Text", reference.Verse, "Comment", false, DataSourceUpdateMode.OnPropertyChanged);
         PanelCommentLeft.Width = metrics.EditCommentaryMarginLeft;
         PanelComment.Height = metrics.EditCommentaryHeight;
-        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
+        Height = metrics.OffsetHeight + CreateWordControls() * numberOfLines + PanelSeparator.Height + PanelComment.Height;
       }
       else
-        Height = metrics.DeltaHeight + CreateWordControls() * numberOfLines;
+        Height = metrics.OffsetHeight + CreateWordControls() * numberOfLines;
     }
     EditCommentary.ForeColor = Settings.ThemeTranslationTextColor;
     EditCommentary.BackColor = Settings.ThemeCommentaryBack;
-    Width = metrics.ControlWidth - widthDelta;
+    Width = metrics.ControlWidth - widthOffset;
   }
 
   public void ResetMetrics()
@@ -123,7 +123,7 @@ public partial class VerseControl : UserControl
       metrics.EditCommentaryHeight = metrics.EditCommentaryFont.Height * Settings.VerseCommentaryLinesCount + metrics.EditCommentaryFont.Height / 2;
       metrics.EditCommentaryMarginLeft = width - metrics.LabelVerseNumberWidth - Padding.Left - Settings.WordControlWidth * metrics.WordControlsPerLine;
     }
-    metrics.DeltaHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
+    metrics.OffsetHeight = Padding.Top + PanelSeparator.Height + Padding.Bottom + 5;
   }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
@@ -133,14 +133,14 @@ public partial class VerseControl : UserControl
     int width = Settings.WordControlWidth;
     int count = WordControls.Length;
     int tabIndexFirst = Settings.WordControlTabInverted ? 0 : count - 1;
-    int tabIndexDelta = Settings.WordControlTabInverted ? 1 : -1;
+    int tabIndexOffset = Settings.WordControlTabInverted ? 1 : -1;
     for ( int index = 0; index < count; index++ )
     {
       control = new WordControl(new ReferenceItem(Reference, Reference.Verse.Words[index]));
       control.LabelHebrew.ContextMenuStrip = MainForm.Instance.ContextMenuStripWord;
       control.Width = width;
       control.TabIndex = tabIndexFirst;
-      tabIndexFirst += tabIndexDelta;
+      tabIndexFirst += tabIndexOffset;
       WordControls[index] = control;
     }
     PanelWords.Controls.AddRange(WordControls);
@@ -168,13 +168,13 @@ public partial class VerseControl : UserControl
   private void LabelVerseNumber_MouseClick(object sender, MouseEventArgs e)
   {
     if ( e.Button != MouseButtons.Left ) return;
-    switch ( Program.Settings.VerseLabelClickAction )
+    switch ( Settings.VerseLabelClickAction )
     {
       case VerseLabelClickAction.ContextMenu:
         LabelVerseNumber.ContextMenuStrip?.Show(LabelVerseNumber, e.Location);
         break;
       case VerseLabelClickAction.OnlineRead:
-        HebrewTools.OpenBibleProvider(Program.Settings.OpenVerseOnlineURL,
+        HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL,
                                       Reference.Book.Number,
                                       Reference.Chapter.Number,
                                       Reference.Verse.Number);
@@ -183,7 +183,7 @@ public partial class VerseControl : UserControl
       case VerseLabelClickAction.Nothing:
         break;
       default:
-        throw new AdvNotImplementedException(Program.Settings.VerseLabelClickAction);
+        throw new AdvNotImplementedException(Settings.VerseLabelClickAction);
     }
   }
 
@@ -207,35 +207,32 @@ public partial class VerseControl : UserControl
   static public string CheckComment(string value)
   {
     value = value.SanitizeAndTrimEmptyLinesAndSpaces();
-    if ( Program.Settings.CommentLinePrefix.Length == 0 ) return value;
+    string prefix = Settings.CommentLinePrefix;
+    if ( prefix.Length == 0 ) return value;
+    bool prefixAdd = Settings.CommentLineAddPrefix;
+    bool prefixRemove = Settings.CommentLineRemovePrefix;
+    bool ignoreEnabled = Settings.CommentLineAddPrefixIgnoreCharsEnabled;
+    var ignoreChars = Settings.CommentLineAddPrefixIgnoreChars;
     var lines = value.SplitKeepEmptyLines();
-    bool changed = false;
     for ( int index = 0; index < lines.Length; index++ )
     {
       ref string line = ref lines[index];
-      if ( !line.IsEmpty() )
+      if ( line.IsEmpty() ) continue;
+      if ( !line.EndsWith(".", StringComparison.Ordinal) ) line += ".";
+      if ( prefixRemove )
       {
-        if ( Program.Settings.CommentLineAddPrefix )
-        {
-          if ( !line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
-            line = Program.Settings.CommentLinePrefix + line;
-          changed = true;
-        }
-        else
-        if ( Program.Settings.CommentLineRemovePrefix )
-        {
-          if ( line.StartsWith(Program.Settings.CommentLinePrefix, StringComparison.Ordinal) )
-            line = line.Substring(Program.Settings.CommentLinePrefix.Length);
-          changed = true;
-        }
-        if ( !line.EndsWith(".", StringComparison.Ordinal) )
-        {
-          line += ".";
-          changed = true;
-        }
+        if ( line.StartsWith(prefix, StringComparison.Ordinal) )
+          line = line.Substring(prefix.Length);
+      }
+      else
+      if ( prefixAdd )
+      {
+        if ( ignoreEnabled && ignoreChars.Contains(line[0]) ) continue;
+        if ( !line.StartsWith(prefix, StringComparison.Ordinal) )
+          line = prefix + line;
       }
     }
-    return changed ? lines.AsMultiLine() : value;
+    return lines.AsMultiLine();
   }
 
 }

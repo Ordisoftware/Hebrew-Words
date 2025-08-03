@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -24,7 +24,9 @@ partial class ApplicationDatabase : SQLiteDatabase
   static public readonly string VersesTableName = nameof(ChapterRow.Verses);
   static public readonly string WordsTableName = nameof(VerseRow.Words);
 
-  static public ApplicationDatabase Instance { get; protected set; }
+  static private readonly Properties.Settings Settings = Program.Settings;
+
+  static public ApplicationDatabase Instance { get; private set; }
 
   static ApplicationDatabase()
   {
@@ -39,9 +41,9 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<BookRow> Books { get; private set; }
-  public List<ChapterRow> Chapters { get; private set; } = new();
-  public List<VerseRow> Verses { get; private set; } = new();
-  public List<WordRow> Words { get; private set; } = new();
+  public List<ChapterRow> Chapters { get; private set; } = [];
+  public List<VerseRow> Verses { get; private set; } = [];
+  public List<WordRow> Words { get; private set; } = [];
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public BindingListView<BookRow> BooksAsBindingList { get; private set; }
@@ -51,16 +53,15 @@ partial class ApplicationDatabase : SQLiteDatabase
     AutoLoadAllAtOpen = false;
   }
 
-  protected override void Vacuum(bool force = false)
+  protected override void AutoVacuum()
   {
-    var settings = Program.Settings;
-    if ( settings.VacuumAtStartup || force )
+    if ( Settings.VacuumAtStartup )
     {
-      var dateNew = Connection.Optimize(settings.VacuumLastDone, settings.VacuumAtStartupDaysInterval, force);
-      if ( settings.VacuumLastDone != dateNew )
+      var dateNew = Connection.Optimize(Settings.VacuumLastDone, Settings.VacuumAtStartupDaysInterval);
+      if ( Settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
-        settings.VacuumLastDone = dateNew;
+        Settings.VacuumLastDone = dateNew;
       }
     }
   }
@@ -68,7 +69,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoClose()
   {
     if ( Books is null ) return;
-    if ( ClearListsOnCloseOrRelease ) Books?.Clear();
+    if ( ClearListsOnCloseOrRelease ) Books.Clear();
     Books = null;
   }
 
@@ -82,7 +83,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoLoadAll()
   {
-    Books = new(Connection.Table<BookRow>());
+    Books = [.. Connection.Table<BookRow>()];
     OnLoadingData(SysTranslations.LoadingData.GetLang());
     Parallel.ForEach(Books, (book) =>
     {
@@ -99,9 +100,9 @@ partial class ApplicationDatabase : SQLiteDatabase
         });
       });
     });
-    Chapters = Books.SelectMany(b => b.Chapters).ToList();
-    Verses = Chapters.SelectMany(c => c.Verses).ToList();
-    Words = Verses.SelectMany(v => v.Words).ToList();
+    Chapters = [.. Books.SelectMany(b => b.Chapters)];
+    Verses = [.. Chapters.SelectMany(c => c.Verses)];
+    Words = [.. Verses.SelectMany(v => v.Words)];
     OnDataLoaded(SysTranslations.DataLoaded.GetLang());
   }
 

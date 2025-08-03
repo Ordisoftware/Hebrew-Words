@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -51,15 +51,14 @@ public partial class ReferenceItem
       int countSpaces = reference.Count(c => c == ' ');
       int countPoints = reference.Count(c => c == '.');
       if ( countPoints == 0 && !reference.Any(c => char.IsNumber(c)) )
-        return new int[] { getBookRef(reference), 1, 1 };
+        return [getBookRef(reference), 1, 1];
       if ( countSpaces == 0 && char.IsNumber(reference[0]) )
       {
         if ( countPoints == 0 )
-          return reference.Split('.').Select(int.Parse).Append(1).Append(1).ToArray();
+          return [.. reference.Split('.').Select(int.Parse), 1, 1];
         if ( countPoints == 1 )
-          return reference.Split('.').Select(int.Parse).Append(1).ToArray();
-        if ( countPoints >= 2 )
-          return reference.Split('.').Select(int.Parse).Take(3).ToArray();
+          return [.. reference.Split('.').Select(int.Parse), 1];
+        return [.. reference.Split('.').Select(int.Parse).Take(3)];
       }
       else
         try

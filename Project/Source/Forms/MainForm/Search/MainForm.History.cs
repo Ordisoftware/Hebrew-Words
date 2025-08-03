@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -28,7 +28,7 @@ partial class MainForm
       {
         foreach ( var reference in HistoryItems )
         {
-          string text = reference.ToStringBasedOnPrefs(!Settings.BookmarksWithParashah);
+          string text = reference.ToStringBasedOnPreferences(!Settings.BookmarksWithParashah);
           if ( Settings.BookmarksWithTranslation )
             text += $" - {GetExtract(reference.Verse.Translation)}"; // TODO improve display
           var item = (ToolStripMenuItem)ActionHistory.DropDownItems.Add(text);

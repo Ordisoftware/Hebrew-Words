@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -42,7 +42,7 @@ static partial class Program
     => Path.Combine(Globals.DocumentsFolderPath, "Tanak");
 
   /// <summary>
-  /// Indicates file path of the bookmaks.
+  /// Indicates file path of the bookmarks.
   /// </summary>
   static public string BookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "Bookmarks.txt");
@@ -53,22 +53,22 @@ static partial class Program
   static public string HistoryFilePath
   => Path.Combine(Globals.UserDataFolderPath, "History.txt");
 
-  static public string HebrewStrongsJsonFilePath
+  static public string HebrewStrongsJSonFilePath
     => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-hebrew-dictionary.js");
 
-  static public string GreekStrongsJsonFilePath
+  static public string GreekStrongsJSonFilePath
     => Path.Combine(Globals.DocumentsFolderPath, @"Strongs\strongs-greek-dictionary.js");
 
-  static public string BibleJsonFilePath
+  static public string BibleJSonFilePath
     => Path.Combine(Globals.DocumentsFolderPath, @"Bible\genesis.json");
 
-  static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJsonStrongs
-    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(HebrewStrongsJsonFilePath);
+  static public readonly Dictionary<string, Json.Strong.StrongItem> HebrewJSonStrongs
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(HebrewStrongsJSonFilePath);
 
-  static public readonly Dictionary<string, Json.Strong.StrongItem> GreekJsonStrongs
-    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(GreekStrongsJsonFilePath);
+  static public readonly Dictionary<string, Json.Strong.StrongItem> GreekJSonStrongs
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadStrongs(GreekStrongsJSonFilePath);
 
-  static public readonly Json.Verse.JsonVerse[] JsonBibleBookGenesis
-    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadBook(BibleJsonFilePath);
+  static public readonly Json.Verse.JsonVerse[] JSonBibleBookGenesis
+    = Globals.IsVisualStudioDesigner ? null : JsonHelper.LoadBook(BibleJSonFilePath);
 
 }

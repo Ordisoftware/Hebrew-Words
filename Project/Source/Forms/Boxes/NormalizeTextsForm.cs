@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
-partial class NormalizeTextsForm : Form
+sealed partial class NormalizeTextsForm : Form
 {
 
   // TODO add option to convert " in '«•' and '•»' (utiliser un bool alternatif depuis le premier rencontré)

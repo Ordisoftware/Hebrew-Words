@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,6 +19,8 @@ namespace Ordisoftware.Hebrew.Words;
 /// </summary>
 static partial class Program
 {
+
+  // TODO calc nb occurrence each letter
 
   /// <summary>
   /// Process startup method.
@@ -58,9 +60,9 @@ static partial class Program
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
       //
-      HebrewGlobals.GetHebrewCalendarExePath = () => string.Empty;
-      HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
-      HebrewGlobals.GetHebrewWordsExePath = () => Globals.ApplicationExeFullPath;
+      HebrewGlobals.GetHebrewCalendarExecutablePath = () => string.Empty;
+      HebrewGlobals.GetHebrewLettersExecutablePath = () => Settings.HebrewLettersExe;
+      HebrewGlobals.GetHebrewWordsExecutablePath = () => Globals.ApplicationExecutableFullPath;
       HebrewGlobals.GetCustomWebSearchPattern = () => Settings.CustomWebSearch;
       //
       Globals.ChronoStartingApp.Stop();

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -15,7 +15,7 @@
 namespace Ordisoftware.Hebrew.Words;
 
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-partial class BibleStatisticsForm : Form
+sealed partial class BibleStatisticsForm : Form
 {
 
   private sealed class BookStatistic
@@ -85,7 +85,7 @@ partial class BibleStatisticsForm : Form
     Close();
   }
 
-  private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = new();
+  private readonly Dictionary<TanakBook, BookStatistic> CountersBooks = [];
 
   private readonly BookStatistic CountersAll = new();
   private readonly BookStatistic CountersTorah = new();
@@ -297,7 +297,7 @@ partial class BibleStatisticsForm : Form
       if ( result is null ) createQuery();
       xpos = 15;
       ypos = 25;
-      for ( int index = 0; index < result.Count; index += 10 )
+      for ( int index = 0; index < result?.Count; index += 10 )
       {
         foreach ( var (Key, Count) in result.Skip(index).Take(10) )
         {
@@ -327,10 +327,9 @@ partial class BibleStatisticsForm : Form
                       grouping.Key,
                       Count = grouping.Count()
                     };
-        OccurencesMostFrequentTorah = query.OrderByDescending(item => item.Count)
-                                           .Take(40)
-                                           .Select(item => (item.Key, item.Count))
-                                           .ToList();
+        OccurencesMostFrequentTorah = [.. query.OrderByDescending(item => item.Count)
+                                               .Take(40)
+                                               .Select(item => (item.Key, item.Count))];
       },
       ref OccurencesMostFrequentTorah,
       GroupBoxMostFrequentWordsTorah);

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -107,6 +107,7 @@ partial class MainForm
               label.ForeColor = SystemColors.ControlText;
           controls[indexControl++] = label;
         }
+        if ( label is null ) break;
         ypos += label.PreferredHeight + marginY;
         if ( !reference.Verse.HasTranslation ) continue;
         // TODO use a rich text box to display terms in color

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2024-03 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -22,7 +22,7 @@ using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-partial class PreferencesForm : Form
+sealed partial class PreferencesForm : Form
 {
 
   private bool IsReady;
@@ -37,24 +37,19 @@ partial class PreferencesForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     this.InitDropDowns();
-    void action1(object sender, EventArgs e)
+    create(HebrewGlobals.WebProvidersBible, MenuSelectOnlineVerseURL, doVerse);
+    create(HebrewGlobals.WebProvidersWord, MenuSelectSearchRequest, doSearch);
+    //
+    void doVerse(object sender, EventArgs e) => EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+    void doSearch(object sender, EventArgs e) => EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+    void create(OnlineProviders provider, ContextMenuStrip menu, EventHandler action)
     {
-      EditOnlineVerseURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
+      foreach ( var item in provider.Items )
+        if ( item.Name == "-" )
+          menu.Items.Add(new ToolStripSeparator());
+        else
+          menu.Items.Add(item.CreateMenuItem(action));
     }
-    void action2(object sender, EventArgs e)
-    {
-      EditOnlineSearch.Text = (string)( (ToolStripMenuItem)sender ).Tag;
-    }
-    foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
-      if ( item.Name == "-" )
-        MenuSelectOnlineVerseURL.Items.Add(new ToolStripSeparator());
-      else
-        MenuSelectOnlineVerseURL.Items.Add(item.CreateMenuItem(action1));
-    foreach ( var item in HebrewGlobals.WebProvidersWord.Items )
-      if ( item.Name == "-" )
-        MenuSelectSearchRequest.Items.Add(new ToolStripSeparator());
-      else
-        MenuSelectSearchRequest.Items.Add(item.CreateMenuItem(action2));
   }
 
   /// <summary>

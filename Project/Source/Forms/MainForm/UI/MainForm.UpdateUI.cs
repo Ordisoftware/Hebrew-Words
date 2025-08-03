@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -53,7 +53,7 @@ partial class MainForm
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  protected void DoScreenPosition(object sender, EventArgs e)
+  private void DoScreenPosition(object sender, EventArgs e)
   {
     if ( DoScreenPositionMutex ) return;
     try
@@ -78,6 +78,8 @@ partial class MainForm
   /// </summary>
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private void ShowPanelToolTip(string str)
   {
     Panel panel = null;
@@ -127,10 +129,11 @@ partial class MainForm
     ActionHistoryVerseBack.Enabled = canHistoryMove && index != list.Count - 1;
   }
 
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   internal void UpdateTitle(bool forceView = false)
   {
     if ( !Globals.IsReady ) return;
-    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPrefs().ToUpper() ?? string.Empty;
+    LabelTitleReferenceName.Text = " " + CurrentReference?.ToStringBasedOnPreferences().ToUpper() ?? string.Empty;
     LabelTitleReferenceName.Refresh();
     if ( forceView )
     {
