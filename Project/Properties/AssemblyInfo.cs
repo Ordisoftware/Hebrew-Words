@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-words")]
-[assembly: AssemblyCopyright("Copyright 2012-2023 Olivier Rogier")]
+[assembly: AssemblyCopyright("Copyright 2012-2025 Olivier Rogier")]
 [assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.17.0.0")]
-[assembly: AssemblyFileVersion("3.17.0.0")]
+[assembly: AssemblyVersion("3.17.2.0")]
+[assembly: AssemblyFileVersion("3.17.2.0")]
 [assembly: NeutralResourcesLanguage("en")]
