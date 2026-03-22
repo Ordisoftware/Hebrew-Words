@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Words.
-/// Copyright 2012-2025 Olivier Rogier.
+/// Copyright 2012-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,6 +14,7 @@
 /// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+[SuppressMessage("Correctness", "SS004:Implement Equals() and GetHashcode() methods for a type used in a collection.", Justification = "N/A")]
 sealed partial class VerseControl : UserControl
 {
 
