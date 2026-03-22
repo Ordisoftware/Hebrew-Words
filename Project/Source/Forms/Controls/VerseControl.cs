@@ -14,6 +14,7 @@
 /// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Words;
 
+[SuppressMessage("Correctness", "SS004:Implement Equals() and GetHashcode() methods for a type used in a collection.", Justification = "N/A")]
 sealed partial class VerseControl : UserControl
 {
 

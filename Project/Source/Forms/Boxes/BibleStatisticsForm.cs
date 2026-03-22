@@ -346,10 +346,9 @@ sealed partial class BibleStatisticsForm : Form
                       grouping.Key,
                       Count = grouping.Count()
                     };
-        OccurencesMostFrequentTanak = query.OrderByDescending(item => item.Count)
-                                           .Take(40)
-                                           .Select(item => (item.Key, item.Count))
-                                           .ToList();
+        OccurencesMostFrequentTanak = [.. query.OrderByDescending(item => item.Count)
+                                               .Take(40)
+                                               .Select(item => (item.Key, item.Count))];
       },
       ref OccurencesMostFrequentTanak,
       GroupBoxMostFrequentWordsTanak);
