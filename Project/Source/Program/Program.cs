@@ -20,6 +20,9 @@ namespace Ordisoftware.Hebrew.Words;
 static partial class Program
 {
 
+  private const string SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
+  private const string AlternativeToURL = "";
+
   // TODO calc nb occurrence each letter
 
   /// <summary>
@@ -34,8 +37,8 @@ static partial class Program
       Application.SetCompatibleTextRenderingDefault(false);
       //
       Globals.ChronoStartingApp.Start();
-      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Words.shtml";
-      Globals.AlternativeToURL = string.Empty;
+      Globals.SoftpediaURL = SoftpediaURL;
+      Globals.AlternativeToURL = AlternativeToURL;
       CommonMenusControl.PreviewFunctions = AppTranslations.PreviewFunctions;
       //
       var lang = Settings.LanguageSelected;

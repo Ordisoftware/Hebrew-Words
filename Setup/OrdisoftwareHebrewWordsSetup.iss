@@ -1,14 +1,12 @@
-#define MyAppVersion "3.17.2"
+#define MyAppVersion "4.0"
+#define MyAppCopyright="Copyright 2012-2026 Olivier Rogier"
+#define MyAppPublisher "Ordisoftware"
 #define MyAppName "Hebrew Words"
 #define MyAppNameNoSpace "HebrewWords"
 #define MyAppExeName "Ordisoftware.Hebrew.Words.exe"
-#define MyAppPublisher "Ordisoftware"
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-words"
 
 [Setup]
-MinVersion=0,6.1sp1
-LicenseFile=..\Project\Licenses\MPL 2.0.rtf
-AppCopyright=Copyright 2012-2026 Olivier Rogier
 AppId={{9D7815C4-E95E-48E7-9D2E-0CB5118BDC61}
 ;AppMutex=9117fa5b-51de-481e-9cb1-65a606d6ca69
 #include "Scripts\Setup.iss"
