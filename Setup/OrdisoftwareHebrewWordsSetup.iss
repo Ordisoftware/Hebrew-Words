@@ -1,4 +1,4 @@
-#define MyAppVersion "3.18"
+#define MyAppVersion "4.0"
 #define MyAppCopyright="Copyright 2012-2026 Olivier Rogier"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppName "Hebrew Words"
