@@ -13,8 +13,8 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|Any CPU.Build.0 = Debug|x64
 		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|x64.ActiveCfg = Debug|x64
 		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Debug|x64.Build.0 = Debug|x64
 		{9117FA5B-51DE-481E-9CB1-65A606D6CA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,7 +26,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		color = Gold
 		SolutionGuid = {8D073FC8-0F5B-4403-9140-BBB0ECE5CF75}
+		color = Gold
 	EndGlobalSection
 EndGlobal

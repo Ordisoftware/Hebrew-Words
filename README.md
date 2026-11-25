@@ -295,6 +295,7 @@ Also for example to use `Shift + Ctrl + Alt + S` :
 
 #### Soon
 
+- Add link menu item to auto-open an IA Chat page to study a word.
 - Add a tray icon.
 - Add search in history and/or bookmarks.
 - Add bookmarks and history auto-backup.
